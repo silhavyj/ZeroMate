@@ -1,0 +1,52 @@
+{
+    "version":2,
+    "configurePresets":[
+       {
+          "name":"unix_base",
+          "description":"Build using Unix Makefiles generator",
+          "generator":"Unix Makefiles",
+          "binaryDir":"${sourceDir}/build/unix_makefiles",
+          "cacheVariables":{
+             "ENABLE_TESTING":"ON",
+             "CMAKE_C_COMPILER":"gcc",
+             "CMAKE_CXX_COMPILER":"g++"
+          }
+       },
+       {
+          "name":"unix_release",
+          "description":"Release build using Unix Makefiles generator",
+          "inherits":"unix_base",
+          "binaryDir":"${sourceDir}/build/unix_makefiles/release",
+          "cacheVariables":{
+             "CMAKE_BUILD_TYPE":"Release"
+          }
+       },
+       {
+          "name":"unix_debug",
+          "description":"Debug build using Unix Makefiles generator",
+          "inherits":"unix_base",
+          "binaryDir":"${sourceDir}/build/unix_makefiles/debug",
+          "cacheVariables":{
+             "CMAKE_BUILD_TYPE":"Debug"
+          }
+       },
+       {
+          "name":"unix_code_coverage",
+          "description":"Code coverage build using Unix Makefiles generator",
+          "inherits":"unix_base",
+          "binaryDir":"${sourceDir}/build/unix_makefiles/code_coverage",
+          "cacheVariables":{
+             "ENABLE_COVERAGE":"ON"
+          }
+       },
+       {
+          "name":"msvc",
+          "description":"Build using Visual Studio 17 2022 generator",
+          "generator":"Visual Studio 17 2022",
+          "binaryDir":"${sourceDir}/build/msvc",
+          "cacheVariables":{
+            "ENABLE_TESTING":"ON"
+          }
+       }
+    ]
+ }

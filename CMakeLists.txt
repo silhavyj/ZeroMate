@@ -46,7 +46,10 @@ include(cmake/static_analyzers.cmake)
 set(CONAN_EXTRA_REQUIRES
     "gtest/1.11.0"
     "spdlog/1.11.0"
-    "fmt/9.1.0")
+    "fmt/9.1.0"
+    "imgui/cci.20220621+1.88.docking"
+    "glfw/3.3.6"
+    "glew/2.2.0")
 
 set(CONAN_EXTRA_IMPORTS "")
 
