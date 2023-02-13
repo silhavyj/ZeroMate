@@ -1,0 +1,40 @@
+name: Windows
+
+# Define the rules when this workflow should be applied
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    # Specify the type of the machine
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Install Conan package manager
+      # Usually, this is done automatically by CMake. However, it does
+      # not add it to the PATH variable.
+      - name: Install Conan
+        id: conan
+        uses: turtlebrowser/get-conan@main
+
+      # Configure the CMake project using the default generator (MSVC)
+      - name: Configure CMake
+        run: cmake -S . -B build
+
+      # Build the project
+      - name: Build
+        run: cmake --build build --config Debug -j4
+
+      # Run tests
+      - name: Tests
+        working-directory: build
+        run: ctest --build-config Debug
+
+# EOF

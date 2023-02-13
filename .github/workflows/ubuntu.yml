@@ -1,0 +1,38 @@
+name: Ubuntu
+
+# Define the rules when this workflow should be applied
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    # Specify the type of the machine
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    # Install all dependencies needed for a successful build
+    # This is done primarily for the GUI library
+    - name: Install dependencies
+      run: /bin/bash .github/scripts/install_dependencies.sh
+
+    # Configure the CMake project using CMake Presets
+    - name: Configure CMake
+      run: cmake --preset=unix_release
+
+    # Build the project
+    - name: Build
+      run: cmake --build build/unix_makefiles/release -j4
+
+    # Run tests
+    - name: Tests
+      working-directory: build/unix_makefiles/release
+      run: ctest
+
+# EOF
