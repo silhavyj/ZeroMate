@@ -1,6 +1,9 @@
 # Build of the application
-<img src="../misc/img/logo/conan.png" width=50>
-<img src="../misc/img/logo/cmake.png" width=100>
+
+<p float="left">
+    <img src="../misc/img/logo/conan.png" width=50>
+    <img src="../misc/img/logo/cmake.png" width=100>
+</p>
 
 ## Dependencies
 
