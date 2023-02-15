@@ -1,6 +1,6 @@
 # Build of the application
-
----
+<img src="../misc/img/logo/conan.png" width=50>
+<img src="../misc/img/logo/cmake.png" width=100>
 
 ## Dependencies
 
@@ -21,7 +21,7 @@ If the user uses Windows, they can build the application using either option. Ho
 
 ## Third-party libraries
 
-The application uses several third-party libraries. Nevertheless, the user is not required to do anything as they are all downloaded, built, and linked automatically using `CMake` with the help of the `conan` extension. [Conan](https://conan.io/) itself is installed automatically by `CMake`, assuming `PyPI` is found on the system. The list of all libraries used in the project can be found in `CMakeLists.txt` located in the root folder of the project structure (search for `CONAN_EXTRA_REQUIRES`). On a Windows machine, they user may also need to add the path to the `conan` executable file manually to their environment `PATH` variable as it is not done automatically. For most users, the executable will be installed to `C:\Users\<user>\AppData\Local\Programs\Python\<python_version>\Scripts\conan.exe`. After they have done so, they will need to log-out and log-in again for the change to take effect. 
+The application uses several third-party libraries. Nevertheless, the user is not required to do anything as they are all downloaded, built, and linked automatically using `CMake` with the help of the `conan` extension. [Conan](https://conan.io/) itself is installed automatically by `CMake`, assuming `PyPI` is found on the system. The list of all libraries used in the project can be found in `CMakeLists.txt` located in the root folder of the project structure (search for `CONAN_EXTRA_REQUIRES`). On a Windows machine, the user may also need to add the path to the `conan` executable file to their environment `PATH` variable as it is not done automatically. For most users, the executable will be installed to `C:\Users\<user>\AppData\Local\Programs\Python\<python_version>\Scripts\conan.exe`. After they have done so, they will need to log-out and log-in again for the change to take effect. 
 
 ## Build
 
