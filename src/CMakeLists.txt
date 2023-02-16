@@ -7,7 +7,11 @@ add_executable(
     main.cpp
     utils/math.hpp
     cpu/registers/cspr.hpp
-    cpu/registers/cspr.cpp)
+    cpu/registers/cspr.cpp
+    cpu/isa/instruction.hpp
+    cpu/isa/instruction.cpp
+    cpu/isa/data_processing.hpp
+    cpu/isa/data_processing.cpp)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
