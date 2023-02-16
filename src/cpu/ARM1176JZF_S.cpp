@@ -1,5 +1,6 @@
 #include "ARM1176JZF_S.hpp"
 #include "../utils/math.hpp"
+#include "isa/decoder.hpp"
 
 namespace zero_mate::cpu
 {
@@ -80,18 +81,6 @@ namespace zero_mate::cpu
         return false;
     }
 
-    isa::CInstruction::NType CARM1176JZF_S::Get_Instruction_Type(isa::CInstruction instruction) noexcept
-    {
-        for (const auto& [mask, expected, type] : INSTRUCTION_LOOKUP_TABLE)
-        {
-            if ((instruction.Get_Value() & mask) == expected)
-            {
-                return type;
-            }
-        }
-
-        return isa::CInstruction::NType::Unknown;
-    }
 
     void CARM1176JZF_S::Execute(std::initializer_list<isa::CInstruction> instructions)
     {
@@ -106,7 +95,7 @@ namespace zero_mate::cpu
 
     void CARM1176JZF_S::Execute(isa::CInstruction instruction)
     {
-        const auto type = Get_Instruction_Type(instruction);
+        const auto type = isa::decoder::Get_Instruction_Type(instruction);
 
         switch (type)
         {

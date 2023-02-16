@@ -6,7 +6,8 @@ set(SRC_FILES
     ../src/cpu/registers/cspr.cpp
     ../src/cpu/ARM1176JZF_S.cpp
     ../src/cpu/isa/instruction.cpp
-    ../src/cpu/isa/data_processing.cpp)
+    ../src/cpu/isa/data_processing.cpp
+    ../src/cpu/isa/decoder.cpp)
 
 # Build unit tests
 add_executable(

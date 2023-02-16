@@ -12,6 +12,8 @@ add_executable(
     cpu/isa/instruction.cpp
     cpu/isa/data_processing.hpp
     cpu/isa/data_processing.cpp
+    cpu/isa/decoder.hpp
+    cpu/isa/decoder.cpp
     cpu/ARM1176JZF_S.hpp
     cpu/ARM1176JZF_S.cpp)
 
