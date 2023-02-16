@@ -46,7 +46,7 @@ namespace zero_mate::cpu::isa
             Unknown
         };
 
-        explicit CInstruction(std::uint32_t value) noexcept;
+        CInstruction(std::uint32_t value) noexcept;
 
         [[nodiscard]] std::uint32_t Get_Value() const noexcept;
         [[nodiscard]] NCondition Get_Condition() const noexcept;

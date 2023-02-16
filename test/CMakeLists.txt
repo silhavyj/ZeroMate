@@ -3,7 +3,10 @@ include_directories(../src)
 
 # List of src files to be compiler with the unit tests
 set(SRC_FILES
-    ../src/cpu/registers/cspr.cpp)
+    ../src/cpu/registers/cspr.cpp
+    ../src/cpu/ARM1176JZF_S.cpp
+    ../src/cpu/isa/instruction.cpp
+    ../src/cpu/isa/data_processing.cpp)
 
 # Build unit tests
 add_executable(
@@ -18,7 +21,9 @@ add_executable(
     utils/math/ror_test.cpp
     utils/math/is_negative_test.cpp
     cpu/registers/cspr/is_flag_set_test.cpp
-    cpu/registers/cspr/set_flag_test.cpp)
+    cpu/registers/cspr/set_flag_test.cpp
+    cpu/isa/mov_test.cpp
+    cpu/isa/mvn_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(
