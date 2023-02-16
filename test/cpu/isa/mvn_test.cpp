@@ -2,7 +2,7 @@
 
 #include "cpu/ARM1176JZF_S.hpp"
 
-TEST(mvn, test_01)
+TEST(mvn_instruction, test_01)
 {
     using namespace zero_mate::cpu;
 

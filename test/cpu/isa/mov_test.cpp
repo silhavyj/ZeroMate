@@ -2,7 +2,7 @@
 
 #include "cpu/ARM1176JZF_S.hpp"
 
-TEST(mov, test_01)
+TEST(mov_instruction, test_01)
 {
     using namespace zero_mate::cpu;
 
@@ -17,7 +17,7 @@ TEST(mov, test_01)
     EXPECT_EQ(cpu.m_regs[3], 0b10000000);
 }
 
-TEST(mov, test_02)
+TEST(mov_instruction, test_02)
 {
     using namespace zero_mate::cpu;
 
@@ -32,7 +32,7 @@ TEST(mov, test_02)
     EXPECT_EQ(cpu.m_regs[1], 155);
 }
 
-TEST(mov, test_03)
+TEST(mov_instruction, test_03)
 {
     using namespace zero_mate::cpu;
 
@@ -48,14 +48,14 @@ TEST(mov, test_03)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), true);
 
     cpu.Execute({
-    { 0x01b02001 } // moveqs r2, r1
+    { 0x01b02001 } // movseq r2, r1
     });
 
     EXPECT_EQ(cpu.m_regs[2], 1024);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
 }
 
-TEST(mov, test_04)
+TEST(mov_instruction, test_04)
 {
     using namespace zero_mate::cpu;
 
@@ -72,7 +72,7 @@ TEST(mov, test_04)
     EXPECT_EQ(cpu.m_regs[2], 0);
 }
 
-TEST(mov, test_05)
+TEST(mov_instruction, test_05)
 {
     using namespace zero_mate::cpu;
 
@@ -100,7 +100,7 @@ TEST(mov, test_05)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
 }
 
-TEST(mov, test_06)
+TEST(mov_instruction, test_06)
 {
     using namespace zero_mate::cpu;
 
@@ -115,7 +115,7 @@ TEST(mov, test_06)
     EXPECT_EQ(cpu.m_regs[0], 32);
 }
 
-TEST(mov, test_07)
+TEST(mov_instruction, test_07)
 {
     using namespace zero_mate::cpu;
 
@@ -131,7 +131,7 @@ TEST(mov, test_07)
     EXPECT_EQ(cpu.m_regs[0], 256);
 }
 
-TEST(mov, test_08)
+TEST(mov_instruction, test_08)
 {
     using namespace zero_mate::cpu;
 
@@ -148,7 +148,7 @@ TEST(mov, test_08)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
 }
 
-TEST(mov, test_09)
+TEST(mov_instruction, test_09)
 {
     using namespace zero_mate::cpu;
 
@@ -163,7 +163,7 @@ TEST(mov, test_09)
     EXPECT_EQ(cpu.m_regs[2], 2);
 }
 
-TEST(mov, test_10)
+TEST(mov_instruction, test_10)
 {
     using namespace zero_mate::cpu;
 
@@ -179,7 +179,7 @@ TEST(mov, test_10)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
 }
 
-TEST(mov, test_11)
+TEST(mov_instruction, test_11)
 {
     using namespace zero_mate::cpu;
 
@@ -192,14 +192,18 @@ TEST(mov, test_11)
     });
 
     EXPECT_EQ(cpu.m_regs[2], 0);
+
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), true);
 
     cpu.Execute({
     { 0xe3a01005 }, // mov r1, #5
-    { 0x21b021e1 }  // movhss r2, r1, ROR #3
+    { 0x21b021e1 }  // movshs r2, r1, ROR #3
     });
 
     EXPECT_EQ(cpu.m_regs[2], 0b10100000'00000000'00000000'00000000);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
 }

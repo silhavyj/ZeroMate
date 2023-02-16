@@ -24,7 +24,8 @@ add_executable(
     cpu/registers/cspr/is_flag_set_test.cpp
     cpu/registers/cspr/set_flag_test.cpp
     cpu/isa/mov_test.cpp
-    cpu/isa/mvn_test.cpp)
+    cpu/isa/mvn_test.cpp
+    cpu/isa/and_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(
