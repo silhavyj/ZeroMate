@@ -4,7 +4,8 @@ set(EXECUTABLE_NAME ZeroMate)
 # List out source files making up the executable
 add_executable(
     ${EXECUTABLE_NAME}
-    main.cpp)
+    main.cpp
+    utils/math.hpp)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(

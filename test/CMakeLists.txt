@@ -4,7 +4,14 @@ include_directories(../src)
 # Build unit tests
 add_executable(
     unit_tests
-    tests_main.cpp)
+    tests_main.cpp
+    utils/math/is_bit_set_test.cpp
+    utils/math/set_bit_test.cpp
+    utils/math/lsl_test.cpp
+    utils/math/lsr_test.cpp
+    utils/math/asr_test.cpp
+    utils/math/ror_test.cpp
+    utils/math/is_negative_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(
