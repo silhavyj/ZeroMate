@@ -109,7 +109,7 @@ TEST(mov, test_06)
     cpu.Execute({
     { 0xe3a03005 }, // mov r3, #5 (r3 = 5)
     { 0xe3a01001 }, // mov r1, #1 (r1 = 1)
-    { 0xe1b00311 }  // movs r0, r1, LSL r3 (r0 = r1 >> r3)
+    { 0xe1b00311 }  // movs r0, r1, LSL r3 (r0 = r1 << r3)
     });
 
     EXPECT_EQ(cpu.m_regs[0], 32);
@@ -125,7 +125,7 @@ TEST(mov, test_07)
 
     cpu.Execute({
     { 0xe3a01001 }, // mov r1, #1 (r1 = 1)
-    { 0xe1b00311 }  // movs r0, r1, LSL r3 (r0 = r1 >> (r3 & 0xFF))
+    { 0xe1b00311 }  // movs r0, r1, LSL r3 (r0 = r1 << (r3 & 0xFF))
     });
 
     EXPECT_EQ(cpu.m_regs[0], 256);
