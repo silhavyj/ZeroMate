@@ -59,6 +59,9 @@ set(CONAN_EXTRA_OPTIONS "")
 include(cmake/conan.cmake)
 run_conan()
 
+# Add the imgui_glfw folder 
+add_subdirectory(external/imgui_glfw)
+
 # Add the src folder
 add_subdirectory(src)
 

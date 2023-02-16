@@ -1,6 +1,3 @@
-# Add the imgui_glfw folder 
-add_subdirectory(gui/imgui_glfw)
-
 # Define the name of the executable
 set(EXECUTABLE_NAME ZeroMate)
 
