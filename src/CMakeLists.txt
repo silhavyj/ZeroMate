@@ -5,7 +5,9 @@ set(EXECUTABLE_NAME ZeroMate)
 add_executable(
     ${EXECUTABLE_NAME}
     main.cpp
-    utils/math.hpp)
+    utils/math.hpp
+    cpu/registers/cspr.hpp
+    cpu/registers/cspr.cpp)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(

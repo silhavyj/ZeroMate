@@ -1,9 +1,14 @@
 # So we have access to all files in the src folder
 include_directories(../src)
 
+# List of src files to be compiler with the unit tests
+set(SRC_FILES
+    ../src/cpu/registers/cspr.cpp)
+
 # Build unit tests
 add_executable(
     unit_tests
+    ${SRC_FILES}
     tests_main.cpp
     utils/math/is_bit_set_test.cpp
     utils/math/set_bit_test.cpp
@@ -11,7 +16,9 @@ add_executable(
     utils/math/lsr_test.cpp
     utils/math/asr_test.cpp
     utils/math/ror_test.cpp
-    utils/math/is_negative_test.cpp)
+    utils/math/is_negative_test.cpp
+    cpu/registers/cspr/is_flag_set_test.cpp
+    cpu/registers/cspr/set_flag_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(

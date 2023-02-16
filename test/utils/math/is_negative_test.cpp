@@ -42,7 +42,7 @@ TEST(is_negative, uint64_uint32_test_01)
 {
     using namespace zero_mate::utils::math;
 
-    const std::uint64_t value{ 0b00000000'00000000'00000000'00000000'00000000'00000000'00000000'00000000  };
+    const std::uint64_t value{ 0b00000000'00000000'00000000'00000000'00000000'00000000'00000000'00000000 };
     const bool negative = Is_Negative<std::uint64_t, std::uint32_t>(value);
 
     EXPECT_EQ(negative, false);
@@ -52,7 +52,7 @@ TEST(is_negative, uint64_uint32_test_02)
 {
     using namespace zero_mate::utils::math;
 
-    const std::uint64_t value{ 0b00000000'00000000'00000000'00000000'10000000'00000000'00000000'00000000  };
+    const std::uint64_t value{ 0b00000000'00000000'00000000'00000000'10000000'00000000'00000000'00000000 };
     const bool negative = Is_Negative<std::uint64_t, std::uint32_t>(value);
 
     EXPECT_EQ(negative, true);
@@ -62,7 +62,7 @@ TEST(is_negative, uint64_uint32_test_03)
 {
     using namespace zero_mate::utils::math;
 
-    const std::uint64_t value{ 0b11111111'11111111'11111111'11111111'01111111'11111111'11111111'11111111  };
+    const std::uint64_t value{ 0b11111111'11111111'11111111'11111111'01111111'11111111'11111111'11111111 };
     const bool negative = Is_Negative<std::uint64_t, std::uint32_t>(value);
 
     EXPECT_EQ(negative, false);
@@ -72,7 +72,7 @@ TEST(is_negative, uint64_uint32_test_04)
 {
     using namespace zero_mate::utils::math;
 
-    const std::uint64_t value{ 0b11111111'11111111'11111111'11111111'11111111'11111111'11111111'11111111  };
+    const std::uint64_t value{ 0b11111111'11111111'11111111'11111111'11111111'11111111'11111111'11111111 };
     const bool negative = Is_Negative<std::uint64_t, std::uint32_t>(value);
 
     EXPECT_EQ(negative, true);
