@@ -16,7 +16,7 @@ namespace zero_mate::cpu::isa::decoder
 
     // clang-format off
     inline constexpr std::array<TInstruction_Lookup_Record, 1> INSTRUCTION_LOOKUP_TABLE = {{
-        { 0b0000'110'0000'0'0000'0000'000000000000, 0b0000'000'0000'0'0000'0000'000000000000, CInstruction::NType::Data_Processing }
+        { .mask = 0b0000'110'0000'0'0000'0000'000000000000, .expected = 0b0000'000'0000'0'0000'0000'000000000000, .type = CInstruction::NType::Data_Processing }
     }};
     // clang-format on
 

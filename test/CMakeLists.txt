@@ -26,7 +26,9 @@ add_executable(
     cpu/isa/mov_test.cpp
     cpu/isa/mvn_test.cpp
     cpu/isa/and_test.cpp
-    cpu/isa/eor_test.cpp)
+    cpu/isa/eor_test.cpp
+    cpu/isa/tst_test.cpp
+    cpu/isa/helpers/register_state_checker.hpp)
 
 # Link libraries to the executable
 target_link_libraries(

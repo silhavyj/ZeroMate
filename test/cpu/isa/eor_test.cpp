@@ -49,7 +49,6 @@ TEST(eor_instruction, test_03)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
 }
 
-
 TEST(eor_instruction, test_04)
 {
     using namespace zero_mate::cpu;
