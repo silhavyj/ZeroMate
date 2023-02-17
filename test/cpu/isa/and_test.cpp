@@ -9,7 +9,7 @@ TEST(and_instruction, test_01)
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe3e00000 }, // mvns r0, #0
+    { 0xe3e00000 }, // mvn r0, #0
     { 0xe3a01106 }, // mov r1, 0x80000001
     { 0xe0101001 }  // ands r1, r0, r1
     });
@@ -25,7 +25,7 @@ TEST(and_instruction, test_02)
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe3e00000 }, // mvns r0, #0
+    { 0xe3e00000 }, // mvn r0, #0
     { 0xe3a01106 }, // mov r1, 0x80000001
     { 0xe0001001 }  // and r1, r0, r1
     });

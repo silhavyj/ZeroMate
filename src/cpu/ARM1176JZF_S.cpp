@@ -81,7 +81,6 @@ namespace zero_mate::cpu
         return false;
     }
 
-
     void CARM1176JZF_S::Execute(std::initializer_list<isa::CInstruction> instructions)
     {
         for (const auto& instruction : instructions)
@@ -143,7 +142,7 @@ namespace zero_mate::cpu
 
                 if (shift_amount != 0 && shift_amount != std::numeric_limits<std::uint32_t>::digits)
                 {
-                    shifted_immediate = utils::math::ROR(immediate, shift_amount, false).result;
+                    shifted_immediate = utils::math::ROR(immediate, shift_amount).result;
                 }
 
                 return { m_cspr.Is_Flag_Set(CCSPR::NFlag::C), shifted_immediate };

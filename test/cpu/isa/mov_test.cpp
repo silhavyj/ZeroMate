@@ -48,7 +48,7 @@ TEST(mov_instruction, test_03)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), true);
 
     cpu.Execute({
-    { 0x01b02001 } // movseq r2, r1
+    { 0x01b02001 } // moveqs r2, r1
     });
 
     EXPECT_EQ(cpu.m_regs[2], 1024);
@@ -199,7 +199,7 @@ TEST(mov_instruction, test_11)
 
     cpu.Execute({
     { 0xe3a01005 }, // mov r1, #5
-    { 0x21b021e1 }  // movshs r2, r1, ROR #3
+    { 0x21b021e1 }  // movhss r2, r1, ROR #3
     });
 
     EXPECT_EQ(cpu.m_regs[2], 0b10100000'00000000'00000000'00000000);

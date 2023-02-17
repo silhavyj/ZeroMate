@@ -181,3 +181,13 @@ TEST(ror, uint8_test_09)
     EXPECT_EQ(carry_flag, true);
     EXPECT_EQ(result, 0b01000000);
 }
+
+TEST(ror, uint8_test_10)
+{
+    using namespace zero_mate::utils::math;
+
+    const auto [carry_flag, result] = ROR<std::uint8_t>(0b00000011U, 0U, true);
+
+    EXPECT_EQ(carry_flag, true);
+    EXPECT_EQ(result, 0b10000001);
+}
