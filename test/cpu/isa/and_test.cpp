@@ -10,12 +10,16 @@ TEST(and_instruction, test_01)
 
     cpu.Execute({
     { 0xe3e00000 }, // mvn r0, #0
-    { 0xe3a01106 }, // mov r1, 0x80000001
+    { 0xe3a01106 }, // mov r1, #0x80000001
     { 0xe0101001 }  // ands r1, r0, r1
     });
 
     EXPECT_EQ(cpu.m_regs[1], 0x80000001);
+
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
 TEST(and_instruction, test_02)
@@ -26,12 +30,16 @@ TEST(and_instruction, test_02)
 
     cpu.Execute({
     { 0xe3e00000 }, // mvn r0, #0
-    { 0xe3a01106 }, // mov r1, 0x80000001
+    { 0xe3a01106 }, // mov r1, #0x80000001
     { 0xe0001001 }  // and r1, r0, r1
     });
 
     EXPECT_EQ(cpu.m_regs[1], 0x80000001);
+
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
 TEST(and_instruction, test_03)
@@ -47,7 +55,11 @@ TEST(and_instruction, test_03)
     });
 
     EXPECT_EQ(cpu.m_regs[2], 0b10000);
+
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
 TEST(and_instruction, test_04)
@@ -63,7 +75,11 @@ TEST(and_instruction, test_04)
     });
 
     EXPECT_EQ(cpu.m_regs[2], 0);
+
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
 TEST(and_instruction, test_05)
@@ -74,11 +90,14 @@ TEST(and_instruction, test_05)
 
     cpu.Execute({
     { 0xe3e00000 }, // mvn r0, #0
-    { 0xe3a01007 }, // mov r1, #b111
+    { 0xe3a01007 }, // mov r1, #0b111
     { 0xe01021e1 }  // ands r2, r0, r1, ror #3
     });
 
     EXPECT_EQ(cpu.m_regs[2], 0b11100000'00000000'00000000'00000000);
+
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }

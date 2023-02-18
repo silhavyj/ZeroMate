@@ -15,7 +15,7 @@ TEST(tst_instruction, test_01)
 
     cpu.Execute({
     { 0xe3e00000 }, // mvn r0, #0
-    { 0xe3a01106 }, // mov r1, 0x80000001
+    { 0xe3a01106 }, // mov r1, #0x80000001
     { 0xe1100001 }  // tst r0, r1
     });
 
@@ -26,6 +26,9 @@ TEST(tst_instruction, test_01)
     // clang-format on
 
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
 TEST(tst_instruction, test_02)
@@ -50,7 +53,10 @@ TEST(tst_instruction, test_02)
                             { .idx = 1, .expected_value = 0b10000111 } }), false);
     // clang-format on
 
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
 TEST(tst_instruction, test_03)
@@ -65,7 +71,7 @@ TEST(tst_instruction, test_03)
 
     cpu.Execute({
     { 0xe3e00000 }, // mvn r0, #0
-    { 0xe3a01007 }, // mov r1, #b111
+    { 0xe3a01007 }, // mov r1, #0b111
     { 0xe11001e1 }  // tst r0, r1, ror #3
     });
 
@@ -76,7 +82,9 @@ TEST(tst_instruction, test_03)
     // clang-format on
 
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
 TEST(tst_instruction, test_04)
@@ -102,6 +110,7 @@ TEST(tst_instruction, test_04)
     // clang-format on
 
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
