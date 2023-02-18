@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <initializer_list>
 
-namespace zero_mate::test::helpers
+namespace zero_mate::test
 {
     template<typename Registers>
     class CRegister_State_Checker final
