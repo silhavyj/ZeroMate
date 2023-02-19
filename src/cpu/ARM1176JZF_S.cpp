@@ -195,16 +195,14 @@ namespace zero_mate::cpu
             const auto result_32 = static_cast<std::uint32_t>(result_64);
             const bool carry = utils::math::Is_Bit_Set<std::uint64_t>(result_64, std::numeric_limits<std::uint32_t>::digits);
 
-            const bool first_operand_signed = utils::math::Is_Negative<std::uint64_t, std::uint32_t>(first_operand_64);
-            const bool second_operand_signed = utils::math::Is_Negative<std::uint64_t, std::uint32_t>(second_operand_64);
-            const bool result_signed = utils::math::Is_Negative<std::uint64_t, std::uint32_t>(result_64);
-
             if (instruction.Is_S_Bit_Set() && destination_reg != PC_REG_IDX)
             {
-                m_cspr.Set_Flag(CCSPR::NFlag::N, result_signed);
+                m_cspr.Set_Flag(CCSPR::NFlag::N, utils::math::Is_Negative<std::uint64_t, std::uint32_t>(result_64));
                 m_cspr.Set_Flag(CCSPR::NFlag::Z, result_32 == 0);
                 m_cspr.Set_Flag(CCSPR::NFlag::C, subtraction == !carry);
-                m_cspr.Set_Flag(CCSPR::NFlag::V, (first_operand_signed == second_operand_signed) && (result_signed != first_operand_signed));
+                m_cspr.Set_Flag(CCSPR::NFlag::V, utils::math::Check_Overflow<std::int32_t>(static_cast<std::int32_t>(first_operand),
+                                                                                           static_cast<std::int32_t>(second_operand),
+                                                                                           subtraction));
             }
 
             if (write)

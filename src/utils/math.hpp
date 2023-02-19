@@ -133,4 +133,45 @@ namespace zero_mate::utils::math
         static_assert(std::numeric_limits<Type_Narrower>::digits <= std::numeric_limits<Type>::digits);
         return Is_Bit_Set<Type>(value, std::numeric_limits<Type_Narrower>::digits - 1U);
     }
+
+    template<std::signed_integral Type>
+    [[nodiscard]] bool Check_Overflow_Subtraction(Type op1, Type op2, [[maybe_unused]] bool carry_flag) noexcept
+    {
+        if (op2 < 0 && op1 > (std::numeric_limits<Type>::max() + op2))
+        {
+            return true; // overflow
+        }
+        if (op2 > 0 && op1 < (std::numeric_limits<Type>::lowest() + op2))
+        {
+            return true; // underflow
+        }
+
+        return false;
+    }
+
+    template<std::signed_integral Type>
+    [[nodiscard]] bool Check_Overflow_Addition(Type op1, Type op2, [[maybe_unused]] bool carry_flag) noexcept
+    {
+        if (op1 > 0 && op2 > (std::numeric_limits<Type>::max() - op1))
+        {
+            return true; // overflow
+        }
+        if (op1 < 0 && op2 < (std::numeric_limits<Type>::lowest() - op1))
+        {
+            return true; // underflow
+        }
+
+        return false;
+    }
+
+    template<std::signed_integral Type>
+    [[nodiscard]] bool Check_Overflow(Type op1, Type op2, bool subtraction, bool carry_flag = false) noexcept
+    {
+        if (subtraction)
+        {
+            return Check_Overflow_Subtraction<Type>(op1, op2, carry_flag);
+        }
+
+        return Check_Overflow_Addition<Type>(op1, op2, carry_flag);
+    }
 }
