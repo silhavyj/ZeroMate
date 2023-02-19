@@ -23,14 +23,16 @@ add_executable(
     utils/math/is_negative_test.cpp
     cpu/registers/cspr/is_flag_set_test.cpp
     cpu/registers/cspr/set_flag_test.cpp
-    cpu/isa/mov_test.cpp
-    cpu/isa/mvn_test.cpp
-    cpu/isa/and_test.cpp
-    cpu/isa/eor_test.cpp
-    cpu/isa/tst_test.cpp
-    cpu/isa/register_state_checker.hpp
-    cpu/isa/teq_test.cpp
-    cpu/isa/orr_test.cpp)
+    cpu/isa/data_processing/mov_test.cpp
+    cpu/isa/data_processing/mvn_test.cpp
+    cpu/isa/data_processing/and_test.cpp
+    cpu/isa/data_processing/eor_test.cpp
+    cpu/isa/data_processing/tst_test.cpp
+    cpu/isa/data_processing/register_state_checker.hpp
+    cpu/isa/data_processing/teq_test.cpp
+    cpu/isa/data_processing/orr_test.cpp
+    cpu/isa/data_processing/bic_test.cpp
+    cpu/isa/data_processing/sub_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(
