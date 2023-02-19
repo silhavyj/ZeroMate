@@ -92,3 +92,59 @@ TEST(teq_instruction, test_03)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
+
+TEST(teq_instruction, test_04)
+{
+    using namespace zero_mate::cpu;
+    using namespace zero_mate::test;
+
+    CARM1176JZF_S cpu{};
+
+    CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
+    register_state_checker.Record_State(cpu.m_regs);
+
+    cpu.Execute({
+    { 0xe3a00000 }, // mov r0, #0
+    { 0xe3a01000 }, // mov r1, #0
+    { 0xe1300001 }  // teq r0, r1
+    });
+
+    // clang-format off
+    EXPECT_EQ(register_state_checker.Is_Any_Other_Register_Modified(
+              cpu.m_regs, { { .idx = 0, .expected_value = 0 },
+                            { .idx = 1, .expected_value = 0 } }), false);
+    // clang-format on
+
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+}
+
+TEST(teq_instruction, test_05)
+{
+    using namespace zero_mate::cpu;
+    using namespace zero_mate::test;
+
+    CARM1176JZF_S cpu{};
+
+    CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
+    register_state_checker.Record_State(cpu.m_regs);
+
+    cpu.Execute({
+    { 0xe3a00002 }, // mov r0, #0b10
+    { 0xe3a01001 }, // mov r1, #0b01
+    { 0xe1300001 }  // teq r0, r1
+    });
+
+    // clang-format off
+    EXPECT_EQ(register_state_checker.Is_Any_Other_Register_Modified(
+              cpu.m_regs, { { .idx = 0, .expected_value = 0b10 },
+                            { .idx = 1, .expected_value = 0b01 } }), false);
+    // clang-format on
+
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+}
