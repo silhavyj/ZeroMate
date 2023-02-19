@@ -29,7 +29,8 @@ add_executable(
     cpu/isa/eor_test.cpp
     cpu/isa/tst_test.cpp
     cpu/isa/register_state_checker.hpp
-    cpu/isa/teq_test.cpp)
+    cpu/isa/teq_test.cpp
+    cpu/isa/orr_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(
