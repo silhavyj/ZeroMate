@@ -189,7 +189,7 @@ namespace zero_mate::cpu
 
         const auto Arithmetic_Operation = [&](bool write, bool subtraction, const auto operation) -> void {
             const auto first_operand_64 = static_cast<std::uint64_t>(first_operand);
-            const auto second_operand_64 = static_cast<std::uint64_t>(first_operand);
+            const auto second_operand_64 = static_cast<std::uint64_t>(second_operand);
             const std::uint64_t result_64 = operation(first_operand_64, second_operand_64, carry_flag);
 
             const auto result_32 = static_cast<std::uint32_t>(result_64);
