@@ -200,8 +200,17 @@ namespace zero_mate::cpu
             const std::uint64_t result_64 = operation(first_operand_64, second_operand_64, carry_flag);
             const auto result_32 = static_cast<std::uint32_t>(result_64);
 
+            std::int32_t op_c = 0;
+            if (params.carry)
+            {
+                op_c = static_cast<std::int32_t>(carry_flag);
+                if (params.subtraction)
+                {
+                    --op_c;
+                }
+            }
+            const bool overflow = utils::math::Check_Overflow<std::int32_t>(static_cast<std::int32_t>(first_operand), static_cast<std::int32_t>(second_operand), params.subtraction, op_c);
             const bool carry = utils::math::Is_Bit_Set<std::uint64_t>(result_64, std::numeric_limits<std::uint32_t>::digits);
-            const bool overflow = utils::math::Check_Overflow<std::int32_t>(static_cast<std::int32_t>(first_operand), static_cast<std::int32_t>(second_operand), params.subtraction, carry);
 
             if (instruction.Is_S_Bit_Set() && destination_reg != PC_REG_IDX)
             {

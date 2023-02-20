@@ -135,7 +135,7 @@ namespace zero_mate::utils::math
     }
 
     template<std::signed_integral Type>
-    [[nodiscard]] bool Check_Overflow_Subtraction(Type op1, Type op2, [[maybe_unused]] bool carry_flag) noexcept
+    [[nodiscard]] bool Check_Overflow_Subtraction(Type op1, Type op2) noexcept
     {
         if (op2 < 0 && op1 > (std::numeric_limits<Type>::max() + op2))
         {
@@ -150,7 +150,7 @@ namespace zero_mate::utils::math
     }
 
     template<std::signed_integral Type>
-    [[nodiscard]] bool Check_Overflow_Addition(Type op1, Type op2, [[maybe_unused]] bool carry_flag) noexcept
+    [[nodiscard]] bool Check_Overflow_Addition(Type op1, Type op2) noexcept
     {
         if (op1 > 0 && op2 > (std::numeric_limits<Type>::max() - op1))
         {
@@ -165,13 +165,20 @@ namespace zero_mate::utils::math
     }
 
     template<std::signed_integral Type>
-    [[nodiscard]] bool Check_Overflow(Type op1, Type op2, bool subtraction, bool carry_flag = false) noexcept
+    [[nodiscard]] bool Check_Overflow(Type op1, Type op2, bool subtraction, Type carry) noexcept
     {
-        if (subtraction)
+        if (Check_Overflow_Addition<Type>(op2, carry))
         {
-            return Check_Overflow_Subtraction<Type>(op1, op2, carry_flag);
+            return true;
         }
 
-        return Check_Overflow_Addition<Type>(op1, op2, carry_flag);
+        op2 += carry;
+
+        if (subtraction)
+        {
+            return Check_Overflow_Subtraction<Type>(op1, op2);
+        }
+
+        return Check_Overflow_Addition<Type>(op1, op2);
     }
 }

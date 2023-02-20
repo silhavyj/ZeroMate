@@ -148,7 +148,7 @@ TEST(sub_instruction, test_08)
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe2510102 }  // subs r0, r1, #0x80000000
+    { 0xe2510102 } // subs r0, r1, #0x80000000
     });
 
     EXPECT_EQ(cpu.m_regs[0], 0x80000000);
