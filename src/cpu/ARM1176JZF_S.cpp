@@ -192,6 +192,7 @@ namespace zero_mate::cpu
             bool write{};
             bool subtraction{};
             bool carry{};
+            bool reversed{};
         };
 
         const auto Arithmetic_Operation = [&](const TALU_Input_Params& params, const auto operation) -> void {
@@ -209,7 +210,17 @@ namespace zero_mate::cpu
                     --op_c;
                 }
             }
-            const bool overflow = utils::math::Check_Overflow<std::int32_t>(static_cast<std::int32_t>(first_operand), static_cast<std::int32_t>(second_operand), params.subtraction, op_c);
+
+            bool overflow{};
+            if (params.reversed)
+            {
+                overflow = utils::math::Check_Overflow<std::int32_t>(static_cast<std::int32_t>(second_operand), static_cast<std::int32_t>(first_operand), params.subtraction, op_c);
+            }
+            else
+            {
+                overflow = utils::math::Check_Overflow<std::int32_t>(static_cast<std::int32_t>(first_operand), static_cast<std::int32_t>(second_operand), params.subtraction, op_c);
+            }
+
             const bool carry = utils::math::Is_Bit_Set<std::uint64_t>(result_64, std::numeric_limits<std::uint32_t>::digits);
 
             if (instruction.Is_S_Bit_Set() && destination_reg != PC_REG_IDX)
@@ -261,7 +272,7 @@ namespace zero_mate::cpu
                                             });
 
             case isa::CData_Processing::NOpcode::RSB:
-                return Arithmetic_Operation({ .write = true, .subtraction = true, .carry = false },
+                return Arithmetic_Operation({ .write = true, .subtraction = true, .carry = false, .reversed = true },
                                             [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
                                                 return op2 - op1;
                                             });
@@ -285,7 +296,7 @@ namespace zero_mate::cpu
                                             });
 
             case isa::CData_Processing::NOpcode::RSC:
-                return Arithmetic_Operation({ .write = true, .subtraction = true, .carry = true },
+                return Arithmetic_Operation({ .write = true, .subtraction = true, .carry = true, .reversed = true },
                                             [](std::uint64_t op1, std::uint64_t op2, bool carry) -> std::uint64_t {
                                                 return op2 - op1 + static_cast<std::uint64_t>(carry) - 1;
                                             });

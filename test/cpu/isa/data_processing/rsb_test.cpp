@@ -2,16 +2,16 @@
 
 #include "cpu/ARM1176JZF_S.hpp"
 
-TEST(sub_instruction, test_01)
+TEST(rsb_instruction, test_01)
 {
     using namespace zero_mate::cpu;
 
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe3a000ba }, // mov r0, #186
-    { 0xe3a01023 }, // mov r1, #35
-    { 0xe0502001 }  // subs r2, r0, r1
+    { 0xe3a010ba }, // mov r1, #186
+    { 0xe3a00023 }, // mov r0, #35
+    { 0xe0702001 }  // rsbs r2, r0, r1
     });
 
     EXPECT_EQ(cpu.m_regs[2], 151);
@@ -22,16 +22,16 @@ TEST(sub_instruction, test_01)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
-TEST(sub_instruction, test_02)
+TEST(rsb_instruction, test_02)
 {
     using namespace zero_mate::cpu;
 
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe3e00000 }, // mvn r0, #0
     { 0xe3e01000 }, // mvn r1, #0
-    { 0xe0502001 }  // subs r2, r0, r1
+    { 0xe3e00000 }, // mvn r0, #0
+    { 0xe0702001 }  // rsbs r2, r0, r1
     });
 
     EXPECT_EQ(cpu.m_regs[2], 0);
@@ -42,16 +42,16 @@ TEST(sub_instruction, test_02)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
-TEST(sub_instruction, test_03)
+TEST(rsb_instruction, test_03)
 {
     using namespace zero_mate::cpu;
 
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
+    { 0xe3e01000 }, // mvn r0, #0
     { 0xe3e00000 }, // mvn r0, #0
-    { 0xe3e01000 }, // mvn r1, #0
-    { 0xe0402001 }  // sub r2, r0, r1
+    { 0xe0602001 }  // rsb r2, r0, r1
     });
 
     EXPECT_EQ(cpu.m_regs[2], 0);
@@ -62,16 +62,16 @@ TEST(sub_instruction, test_03)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
-TEST(sub_instruction, test_04)
+TEST(rsb_instruction, test_04)
 {
     using namespace zero_mate::cpu;
 
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe3a00000 }, // mov r0, #0
-    { 0xe3e01000 }, // mvn r1, #0
-    { 0xe0502001 }  // subs r2, r0, r1
+    { 0xe3a01000 }, // mov r1, #0
+    { 0xe3e00000 }, // mvn r0, #0
+    { 0xe0702001 }  // rsbs r2, r0, r1
     });
 
     EXPECT_EQ(cpu.m_regs[2], 1);
@@ -82,16 +82,16 @@ TEST(sub_instruction, test_04)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
-TEST(sub_instruction, test_05)
+TEST(rsb_instruction, test_05)
 {
     using namespace zero_mate::cpu;
 
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe3e00000 }, // mvn r0, #0
-    { 0xe3a01000 }, // mov r1, #0
-    { 0xe0502001 }  // subs r2, r0, r1
+    { 0xe3e01000 }, // mvn r1, #0
+    { 0xe3a00000 }, // mov r0, #0
+    { 0xe0702001 }  // rsbs r2, r0, r1
     });
 
     EXPECT_EQ(cpu.m_regs[2], 0xFFFFFFFF);
@@ -102,7 +102,7 @@ TEST(sub_instruction, test_05)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
-TEST(sub_instruction, test_06)
+TEST(rsb_instruction, test_06)
 {
     using namespace zero_mate::cpu;
 
@@ -110,27 +110,27 @@ TEST(sub_instruction, test_06)
 
     cpu.Execute({
     { 0xe3a00000 }, // mov r0, #0
-    { 0xe2501001 }  // subs r1, r0, #1
+    { 0xe2710001 }  // rsbs r0, r1, #1
     });
 
-    EXPECT_EQ(cpu.m_regs[1], 0xFFFFFFFF);
+    EXPECT_EQ(cpu.m_regs[1], 0);
 
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
-TEST(sub_instruction, test_07)
+TEST(rsb_instruction, test_07)
 {
     using namespace zero_mate::cpu;
 
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe3e00102 }, // mov r0, #0x7FFFFFFF
-    { 0xe3e01000 }, // mov r1, #0xFFFFFFFF
-    { 0xe0502001 }  // subs r2, r0, r1
+    { 0xe3e01102 }, // mov r1, #0x7FFFFFFF
+    { 0xe3e00000 }, // mov r0, #0xFFFFFFFF
+    { 0xe0702001 }  // rsbs r2, r0, r1
     });
 
     EXPECT_EQ(cpu.m_regs[2], 0x80000000);
@@ -141,34 +141,34 @@ TEST(sub_instruction, test_07)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), true);
 }
 
-TEST(sub_instruction, test_08)
+TEST(rsb_instruction, test_08)
 {
     using namespace zero_mate::cpu;
 
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe2510102 } // subs r0, r1, #0x80000000
+    { 0xe2701102 } // rsbs r1, r0, #0x80000000
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 0x80000000);
+    EXPECT_EQ(cpu.m_regs[0], 0);
 
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
-TEST(sub_instruction, test_09)
+TEST(rsb_instruction, test_09)
 {
     using namespace zero_mate::cpu;
 
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe3a0000f }, // mov r0, #15
-    { 0xe3a01003 }, // mov r1, #0b11
-    { 0xe0502001 }  // subs r2, r0, r1, ASR #0
+    { 0xe3a0100f }, // mov r, #15
+    { 0xe3a00003 }, // mov r0, #0b11
+    { 0xe0702001 }  // rsbs r2, r0, r1, ASR #0
     });
 
     EXPECT_EQ(cpu.m_regs[2], 12);
@@ -179,19 +179,19 @@ TEST(sub_instruction, test_09)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
 
-TEST(sub_instruction, test_10)
+TEST(rsb_instruction, test_10)
 {
     using namespace zero_mate::cpu;
 
     CARM1176JZF_S cpu{};
 
     cpu.Execute({
-    { 0xe3a00102 }, // mov r0, #0x80000000
-    { 0xe3e01000 }, // mvn r1, #0
-    { 0xe05027c1 }  // subs r2, r0, r1, ASR #15
+    { 0xe3a01102 }, // mov r1, #0x80000000
+    { 0xe3e00000 }, // mvn r0, #0
+    { 0xe07027c1 }  // rsbs r2, r0, r1, ASR #15
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0x80000001);
+    EXPECT_EQ(cpu.m_regs[2], 0xFFFF0001);
 
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
