@@ -216,29 +216,29 @@ namespace zero_mate::cpu
         };
 
         const auto Arithmetic_Operation = [&](const TALU_Input_Params& alu_params, std::uint32_t op1, std::uint32_t op2, const auto operation) -> void {
-            const auto first_operand_64 = static_cast<std::uint64_t>(op1);
-            const auto second_operand_64 = static_cast<std::uint64_t>(op2);
-            const std::uint64_t result_64 = operation(first_operand_64, second_operand_64, carry_flag);
-            const auto result_32 = static_cast<std::uint32_t>(result_64);
+            const auto op1_64u = static_cast<std::uint64_t>(op1);
+            const auto op2_64u = static_cast<std::uint64_t>(op2);
 
-            const bool overflow = utils::math::Check_Overflow<std::int32_t>(static_cast<std::int32_t>(alu_params.reversed ? op2 : op1),
-                                                                            static_cast<std::int32_t>(alu_params.reversed ? op1 : op2),
-                                                                            alu_params.subtraction,
-                                                                            Calculate_Carry_Part(alu_params));
+            const auto op1_32 = static_cast<std::int32_t>(alu_params.reversed ? op2 : op1);
+            const auto op2_32 = static_cast<std::int32_t>(alu_params.reversed ? op1 : op2);
 
-            const bool carry = utils::math::Is_Bit_Set<std::uint64_t>(result_64, std::numeric_limits<std::uint32_t>::digits);
+            const auto result_64u = operation(op1_64u, op2_64u, carry_flag);
+            const auto result_32u = static_cast<std::uint32_t>(result_64u);
+
+            const bool overflow = utils::math::Check_Overflow<std::int32_t>(op1_32, op2_32, alu_params.subtraction, Calculate_Carry_Part(alu_params));
+            const bool carry = utils::math::Is_Bit_Set<std::uint64_t>(result_64u, std::numeric_limits<std::uint32_t>::digits);
 
             if (instruction.Is_S_Bit_Set() && destination_reg != PC_REG_IDX)
             {
-                m_cspr.Set_Flag(CCSPR::NFlag::N, utils::math::Is_Negative<std::uint64_t, std::uint32_t>(result_64));
-                m_cspr.Set_Flag(CCSPR::NFlag::Z, result_32 == 0);
+                m_cspr.Set_Flag(CCSPR::NFlag::N, utils::math::Is_Negative<std::uint64_t, std::uint32_t>(result_64u));
+                m_cspr.Set_Flag(CCSPR::NFlag::Z, result_32u == 0);
                 m_cspr.Set_Flag(CCSPR::NFlag::C, alu_params.subtraction == !carry);
                 m_cspr.Set_Flag(CCSPR::NFlag::V, overflow);
             }
 
             if (alu_params.write)
             {
-                m_regs.at(destination_reg) = result_32;
+                m_regs.at(destination_reg) = result_32u;
             }
         };
 
