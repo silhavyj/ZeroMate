@@ -187,25 +187,31 @@ namespace zero_mate::cpu
             }
         };
 
-        const auto Arithmetic_Operation = [&](bool write, bool subtraction, const auto operation) -> void {
+        struct TALU_Input_Params
+        {
+            bool write{};
+            bool subtraction{};
+            bool carry{};
+        };
+
+        const auto Arithmetic_Operation = [&](const TALU_Input_Params& params, const auto operation) -> void {
             const auto first_operand_64 = static_cast<std::uint64_t>(first_operand);
             const auto second_operand_64 = static_cast<std::uint64_t>(second_operand);
             const std::uint64_t result_64 = operation(first_operand_64, second_operand_64, carry_flag);
-
             const auto result_32 = static_cast<std::uint32_t>(result_64);
+
             const bool carry = utils::math::Is_Bit_Set<std::uint64_t>(result_64, std::numeric_limits<std::uint32_t>::digits);
+            const bool overflow = utils::math::Check_Overflow<std::int32_t>(static_cast<std::int32_t>(first_operand), static_cast<std::int32_t>(second_operand), params.subtraction, carry);
 
             if (instruction.Is_S_Bit_Set() && destination_reg != PC_REG_IDX)
             {
                 m_cspr.Set_Flag(CCSPR::NFlag::N, utils::math::Is_Negative<std::uint64_t, std::uint32_t>(result_64));
                 m_cspr.Set_Flag(CCSPR::NFlag::Z, result_32 == 0);
-                m_cspr.Set_Flag(CCSPR::NFlag::C, subtraction == !carry);
-                m_cspr.Set_Flag(CCSPR::NFlag::V, utils::math::Check_Overflow<std::int32_t>(static_cast<std::int32_t>(first_operand),
-                                                                                           static_cast<std::int32_t>(second_operand),
-                                                                                           subtraction));
+                m_cspr.Set_Flag(CCSPR::NFlag::C, params.subtraction == !carry);
+                m_cspr.Set_Flag(CCSPR::NFlag::V, overflow);
             }
 
-            if (write)
+            if (params.write)
             {
                 m_regs.at(destination_reg) = result_32;
             }
@@ -216,84 +222,76 @@ namespace zero_mate::cpu
         switch (opcode)
         {
             case isa::CData_Processing::NOpcode::AND:
-                Logical_Operation(first_operand & second_operand, true);
-                break;
+                return Logical_Operation(first_operand & second_operand, true);
 
             case isa::CData_Processing::NOpcode::EOR:
-                Logical_Operation(first_operand ^ second_operand, true);
-                break;
+                return Logical_Operation(first_operand ^ second_operand, true);
 
             case isa::CData_Processing::NOpcode::TST:
-                Logical_Operation(first_operand & second_operand, false);
-                break;
+                return Logical_Operation(first_operand & second_operand, false);
 
             case isa::CData_Processing::NOpcode::TEQ:
-                Logical_Operation(first_operand ^ second_operand, false);
-                break;
+                return Logical_Operation(first_operand ^ second_operand, false);
 
             case isa::CData_Processing::NOpcode::ORR:
-                Logical_Operation(first_operand | second_operand, true);
-                break;
+                return Logical_Operation(first_operand | second_operand, true);
 
             case isa::CData_Processing::NOpcode::MOV:
-                Logical_Operation(second_operand, true);
-                break;
+                return Logical_Operation(second_operand, true);
 
             case isa::CData_Processing::NOpcode::BIC:
-                Logical_Operation(first_operand & (~second_operand), true);
-                break;
+                return Logical_Operation(first_operand & (~second_operand), true);
 
             case isa::CData_Processing::NOpcode::MVN:
-                Logical_Operation(~second_operand, true);
-                break;
+                return Logical_Operation(~second_operand, true);
 
             case isa::CData_Processing::NOpcode::SUB:
-                Arithmetic_Operation(true, true, [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
-                    return op1 - op2;
-                });
-                break;
+                return Arithmetic_Operation({ .write = true, .subtraction = true, .carry = false },
+                                            [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
+                                                return op1 - op2;
+                                            });
 
             case isa::CData_Processing::NOpcode::RSB:
-                Arithmetic_Operation(true, true, [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
-                    return op2 - op1;
-                });
-                break;
+                return Arithmetic_Operation({ .write = true, .subtraction = true, .carry = false },
+                                            [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
+                                                return op2 - op1;
+                                            });
 
             case isa::CData_Processing::NOpcode::ADD:
-                Arithmetic_Operation(true, false, [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
-                    return op2 + op1;
-                });
-                break;
+                return Arithmetic_Operation({ .write = true, .subtraction = false, .carry = false },
+                                            [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
+                                                return op2 + op1;
+                                            });
 
             case isa::CData_Processing::NOpcode::ADC:
-                Arithmetic_Operation(true, false, [](std::uint64_t op1, std::uint64_t op2, bool carry) -> std::uint64_t {
-                    return op2 + op1 + static_cast<std::uint64_t>(carry);
-                });
-                break;
+                return Arithmetic_Operation({ .write = true, .subtraction = false, .carry = true },
+                                            [](std::uint64_t op1, std::uint64_t op2, bool carry) -> std::uint64_t {
+                                                return op2 + op1 + static_cast<std::uint64_t>(carry);
+                                            });
 
             case isa::CData_Processing::NOpcode::SBC:
-                Arithmetic_Operation(true, true, [](std::uint64_t op1, std::uint64_t op2, bool carry) -> std::uint64_t {
-                    return op1 - op2 + static_cast<std::uint64_t>(carry) - 1;
-                });
-                break;
+                return Arithmetic_Operation({ .write = true, .subtraction = true, .carry = true },
+                                            [](std::uint64_t op1, std::uint64_t op2, bool carry) -> std::uint64_t {
+                                                return op1 - op2 + static_cast<std::uint64_t>(carry) - 1;
+                                            });
 
             case isa::CData_Processing::NOpcode::RSC:
-                Arithmetic_Operation(true, true, [](std::uint64_t op1, std::uint64_t op2, bool carry) -> std::uint64_t {
-                    return op2 - op1 + static_cast<std::uint64_t>(carry) - 1;
-                });
-                break;
+                return Arithmetic_Operation({ .write = true, .subtraction = true, .carry = true },
+                                            [](std::uint64_t op1, std::uint64_t op2, bool carry) -> std::uint64_t {
+                                                return op2 - op1 + static_cast<std::uint64_t>(carry) - 1;
+                                            });
 
             case isa::CData_Processing::NOpcode::CMP:
-                Arithmetic_Operation(false, true, [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
-                    return op1 - op2;
-                });
-                break;
+                return Arithmetic_Operation({ .write = false, .subtraction = true, .carry = false },
+                                            [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
+                                                return op1 - op2;
+                                            });
 
             case isa::CData_Processing::NOpcode::CMN:
-                Arithmetic_Operation(false, false, [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
-                    return op2 + op1;
-                });
-                break;
+                return Arithmetic_Operation({ .write = false, .subtraction = false, .carry = false },
+                                            [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
+                                                return op2 + op1;
+                                            });
         }
     }
 }
