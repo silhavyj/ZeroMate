@@ -139,13 +139,16 @@ namespace zero_mate::cpu
                 const std::uint32_t immediate = instruction.Get_Immediate();
                 const std::uint32_t shift_amount = instruction.Get_Rotate() * 2;
                 std::uint32_t shifted_immediate = immediate;
+                bool carry_flag = m_cspr.Is_Flag_Set(CCSPR::NFlag::C); // TODO should this be defaulted to 0/1?
 
                 if (shift_amount != 0 && shift_amount != std::numeric_limits<std::uint32_t>::digits)
                 {
-                    shifted_immediate = utils::math::ROR(immediate, shift_amount).result;
+                    const auto tmp = utils::math::ROR(immediate, shift_amount);
+                    shifted_immediate = tmp.result;
+                    carry_flag = tmp.carry_flag;
                 }
 
-                return { m_cspr.Is_Flag_Set(CCSPR::NFlag::C), shifted_immediate };
+                return { carry_flag, shifted_immediate };
             }
 
             const std::uint32_t shift_amount = Get_Shift_Amount();
