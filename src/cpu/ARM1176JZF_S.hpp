@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <initializer_list>
 
+#include "../utils/math.hpp"
 #include "registers/cspr.hpp"
 #include "isa/instruction.hpp"
 #include "isa/data_processing.hpp"
@@ -31,6 +32,9 @@ namespace zero_mate::cpu
         [[nodiscard]] std::uint32_t& SP() noexcept;
 
         [[nodiscard]] bool Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept;
+        [[nodiscard]] std::uint32_t Get_Shift_Amount(isa::CData_Processing instruction) const noexcept;
+        [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand_Imm(isa::CData_Processing instruction) const noexcept;
+        [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand(isa::CData_Processing instruction) const noexcept;
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CData_Processing instruction);

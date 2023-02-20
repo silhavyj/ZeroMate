@@ -1,5 +1,4 @@
 #include "ARM1176JZF_S.hpp"
-#include "../utils/math.hpp"
 #include "isa/decoder.hpp"
 
 namespace zero_mate::cpu
@@ -122,59 +121,64 @@ namespace zero_mate::cpu
         }
     }
 
+    std::uint32_t CARM1176JZF_S::Get_Shift_Amount(isa::CData_Processing instruction) const noexcept
+    {
+        if (instruction.Is_Immediate_Shift())
+        {
+            return instruction.Get_Shift_Amount();
+        }
+
+        return m_regs.at(instruction.Get_Rs()) & 0xFFU;
+    }
+
+    utils::math::TShift_Result<std::uint32_t> CARM1176JZF_S::Get_Second_Operand_Imm(isa::CData_Processing instruction) const noexcept
+    {
+        const std::uint32_t immediate = instruction.Get_Immediate();
+        const std::uint32_t shift_amount = instruction.Get_Rotate() * 2;
+
+        utils::math::TShift_Result<std::uint32_t> second_operand{ m_cspr.Is_Flag_Set(CCSPR::NFlag::C), immediate };
+
+        if (shift_amount != 0 && shift_amount != std::numeric_limits<std::uint32_t>::digits)
+        {
+            second_operand = utils::math::ROR(immediate, shift_amount);
+        }
+
+        return second_operand;
+    }
+
+    utils::math::TShift_Result<std::uint32_t> CARM1176JZF_S::Get_Second_Operand(isa::CData_Processing instruction) const noexcept
+    {
+        if (instruction.Is_I_Bit_Set())
+        {
+            return Get_Second_Operand_Imm(instruction);
+        }
+
+        const std::uint32_t shift_amount = Get_Shift_Amount(instruction);
+        const auto shift_type = instruction.Get_Shift_Type();
+
+        switch (shift_type)
+        {
+            case isa::CData_Processing::NShift_Type::LSL:
+                return utils::math::LSL<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
+
+            case isa::CData_Processing::NShift_Type::LSR:
+                return utils::math::LSR<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount);
+
+            case isa::CData_Processing::NShift_Type::ASR:
+                return utils::math::ASR<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount);
+
+            case isa::CData_Processing::NShift_Type::ROR:
+                return utils::math::ROR<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
+        }
+
+        return {};
+    }
+
     void CARM1176JZF_S::Execute(isa::CData_Processing instruction)
     {
-        const auto Get_Shift_Amount = [&]() -> std::uint32_t {
-            if (instruction.Is_Immediate_Shift())
-            {
-                return instruction.Get_Shift_Amount();
-            }
-
-            return m_regs.at(instruction.Get_Rs()) & 0xFFU;
-        };
-
-        auto Get_Second_Operand = [&]() -> utils::math::TShift_Result<std::uint32_t> {
-            if (instruction.Is_I_Bit_Set())
-            {
-                const std::uint32_t immediate = instruction.Get_Immediate();
-                const std::uint32_t shift_amount = instruction.Get_Rotate() * 2;
-                std::uint32_t shifted_immediate = immediate;
-                bool carry_flag = m_cspr.Is_Flag_Set(CCSPR::NFlag::C); // TODO should this be defaulted to 0/1?
-
-                if (shift_amount != 0 && shift_amount != std::numeric_limits<std::uint32_t>::digits)
-                {
-                    const auto tmp = utils::math::ROR(immediate, shift_amount);
-                    shifted_immediate = tmp.result;
-                    carry_flag = tmp.carry_flag;
-                }
-
-                return { carry_flag, shifted_immediate };
-            }
-
-            const std::uint32_t shift_amount = Get_Shift_Amount();
-            const auto shift_type = instruction.Get_Shift_Type();
-
-            switch (shift_type)
-            {
-                case isa::CData_Processing::NShift_Type::LSL:
-                    return utils::math::LSL<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
-
-                case isa::CData_Processing::NShift_Type::LSR:
-                    return utils::math::LSR<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount);
-
-                case isa::CData_Processing::NShift_Type::ASR:
-                    return utils::math::ASR<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount);
-
-                case isa::CData_Processing::NShift_Type::ROR:
-                    return utils::math::ROR<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
-            }
-
-            return {};
-        };
-
         const std::uint32_t first_operand = m_regs.at(instruction.Get_Rn());
         const std::uint32_t destination_reg = instruction.Get_Rd();
-        const auto [carry_flag, second_operand] = Get_Second_Operand();
+        const auto [carry_flag, second_operand] = Get_Second_Operand(instruction);
 
         const auto Logical_Operation = [&](std::uint32_t result, bool write) -> void {
             if (instruction.Is_S_Bit_Set() && destination_reg != PC_REG_IDX)
