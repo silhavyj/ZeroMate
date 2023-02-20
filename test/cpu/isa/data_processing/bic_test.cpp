@@ -88,10 +88,7 @@ TEST(bic_instruction, test_05)
 
     cpu.Execute({
     { 0xe3a01005 }, // mov r1, #5
-    { 0xe1b020a1 } // movs r2, r1, LSR #1
-    });
-
-    cpu.Execute({
+    { 0xe1b020a1 }, // movs r2, r1, LSR #1
     { 0xe3d01000 }  // bics r1, r0, #0
     });
 
@@ -111,10 +108,7 @@ TEST(bic_instruction, test_06)
 
     cpu.Execute({
     { 0xe3a01005 }, // mov r1, #5
-    { 0xe1b020a1 } // movs r2, r1, LSR #1
-    });
-
-    cpu.Execute({
+    { 0xe1b020a1 }, // movs r2, r1, LSR #1
     { 0xe3d01020 }  // bics r1, r0, #32
     });
 
