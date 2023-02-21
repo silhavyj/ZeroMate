@@ -209,7 +209,7 @@ namespace zero_mate::cpu
 
             if (alu_params.carry)
             {
-                carry = static_cast<std::int32_t>(carry_flag) - static_cast<std::int32_t>(alu_params.subtraction);
+                carry = static_cast<std::int32_t>(alu_params.subtraction ? !carry_flag : carry_flag);
             }
 
             return carry;
@@ -218,11 +218,10 @@ namespace zero_mate::cpu
         const auto Arithmetic_Operation = [&](const TALU_Input_Params& alu_params, std::uint32_t op1, std::uint32_t op2, const auto operation) -> void {
             const auto op1_64u = static_cast<std::uint64_t>(op1);
             const auto op2_64u = static_cast<std::uint64_t>(op2);
+            const auto result_64u = operation(op1_64u, op2_64u, carry_flag);
 
             const auto op1_32 = static_cast<std::int32_t>(alu_params.reversed ? op2 : op1);
             const auto op2_32 = static_cast<std::int32_t>(alu_params.reversed ? op1 : op2);
-
-            const auto result_64u = operation(op1_64u, op2_64u, carry_flag);
             const auto result_32u = static_cast<std::uint32_t>(result_64u);
 
             const bool overflow = utils::math::Check_Overflow<std::int32_t>(op1_32, op2_32, alu_params.subtraction, Calculate_Carry_Part(alu_params));
@@ -232,7 +231,7 @@ namespace zero_mate::cpu
             {
                 m_cspr.Set_Flag(CCSPR::NFlag::N, utils::math::Is_Negative<std::uint64_t, std::uint32_t>(result_64u));
                 m_cspr.Set_Flag(CCSPR::NFlag::Z, result_32u == 0);
-                m_cspr.Set_Flag(CCSPR::NFlag::C, alu_params.subtraction == !carry);
+                m_cspr.Set_Flag(CCSPR::NFlag::C, alu_params.subtraction ? !carry : carry);
                 m_cspr.Set_Flag(CCSPR::NFlag::V, overflow);
             }
 
@@ -312,14 +311,14 @@ namespace zero_mate::cpu
                 return Arithmetic_Operation({ .write = true, .subtraction = false, .carry = false },
                     first_operand, second_operand,
                     [](std::uint64_t op1, std::uint64_t op2, [[maybe_unused]] bool carry) -> std::uint64_t {
-                        return op2 + op1;
+                        return op1 + op2;
                     });
 
             case isa::CData_Processing::NOpcode::ADC:
                 return Arithmetic_Operation({ .write = true, .subtraction = false, .carry = true },
                     first_operand, second_operand,
                     [](std::uint64_t op1, std::uint64_t op2, bool carry) -> std::uint64_t {
-                        return op2 + op1 + static_cast<std::uint64_t>(carry);
+                        return op1 + op2 + static_cast<std::uint64_t>(carry);
                     });
 
             case isa::CData_Processing::NOpcode::SBC:

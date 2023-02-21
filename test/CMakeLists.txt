@@ -35,7 +35,9 @@ add_executable(
     cpu/isa/data_processing/sub_test.cpp
     cpu/isa/data_processing/rsb_test.cpp
     cpu/isa/data_processing/add_test.cpp
-    cpu/isa/data_processing/adc_test.cpp)
+    cpu/isa/data_processing/adc_test.cpp
+    cpu/isa/data_processing/sbc_test.cpp
+    cpu/isa/data_processing/rsc_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(
