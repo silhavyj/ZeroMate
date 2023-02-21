@@ -209,7 +209,7 @@ namespace zero_mate::cpu
 
             if (alu_params.carry)
             {
-                carry = static_cast<std::int32_t>(carry_flag) - static_cast<std::int32_t>(alu_params.carry);
+                carry = static_cast<std::int32_t>(carry_flag) - static_cast<std::int32_t>(alu_params.subtraction);
             }
 
             return carry;
