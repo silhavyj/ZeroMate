@@ -103,6 +103,9 @@ namespace zero_mate::cpu
                 break;
 
             case isa::CInstruction::NType::Multiply:
+                Execute(isa::CMultiply{ instruction });
+                break;
+
             case isa::CInstruction::NType::Multiply_Long:
             case isa::CInstruction::NType::Single_Data_Swap:
             case isa::CInstruction::NType::Branch_And_Exchange:
@@ -195,5 +198,33 @@ namespace zero_mate::cpu
             m_cspr.Set_Flag(CCSPR::NFlag::C, result.c_flag);
             m_cspr.Set_Flag(CCSPR::NFlag::V, result.v_flag);
         }
+    }
+
+    void CARM1176JZF_S::Execute(isa::CMultiply instruction)
+    {
+        const std::uint32_t dest_reg = instruction.Get_Rd();
+        const auto reg_rm_64u = static_cast<std::uint64_t>(m_regs.at(instruction.Get_Rm()));
+        const auto reg_rs_64u = static_cast<std::uint64_t>(m_regs.at(instruction.Get_Rs()));
+
+        std::uint64_t result_64u = reg_rm_64u * reg_rs_64u;
+
+        if (instruction.Is_A_Bit_Set())
+        {
+            result_64u += static_cast<std::uint64_t>(m_regs.at(instruction.Get_Rn()));
+        }
+
+        const auto result_32u = static_cast<std::uint32_t>(result_64u);
+
+        if (instruction.Is_S_Bit_Set() && dest_reg != PC_REG_IDX)
+        {
+            m_cspr.Set_Flag(CCSPR::NFlag::N, utils::math::Is_Negative<std::uint32_t>(result_32u));
+            m_cspr.Set_Flag(CCSPR::NFlag::Z, result_32u == 0);
+
+            // TODO
+            // m_cspr.Set_Flag(CCSPR::NFlag::C, false);
+            // m_cspr.Set_Flag(CCSPR::NFlag::V, false);
+        }
+
+        m_regs.at(dest_reg) = result_32u;
     }
 }

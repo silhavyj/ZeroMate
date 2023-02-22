@@ -9,6 +9,7 @@
 #include "registers/cspr.hpp"
 #include "isa/instruction.hpp"
 #include "isa/data_processing.hpp"
+#include "isa/multiply.hpp"
 
 namespace zero_mate::cpu
 {
@@ -37,6 +38,7 @@ namespace zero_mate::cpu
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CData_Processing instruction);
+        void Execute(isa::CMultiply instruction);
 
     public:
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
