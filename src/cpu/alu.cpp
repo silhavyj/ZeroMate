@@ -1,3 +1,5 @@
+#include <functional>
+
 #include "alu.hpp"
 
 namespace zero_mate::cpu::alu
@@ -13,13 +15,16 @@ namespace zero_mate::cpu::alu
         bool subtraction{ false };
         bool reversed_operands{ false };
         bool account_for_carry{ false };
+        bool is_logical_op{ true };
+        std::function<std::uint32_t(std::uint32_t, std::uint32_t)> logical_op{};
+        std::function<std::uint64_t(std::uint64_t, std::uint64_t, std::uint64_t)> arithmetic_op{};
     };
 
-    [[nodiscard]] static TResult Execute_Logical_Operation(const CARM1176JZF_S& cpu, const TParams& params, const auto operation)
+    [[nodiscard]] static TResult Execute_Logical_Operation(const CARM1176JZF_S& cpu, const TParams& params)
     {
         TResult result{};
 
-        result.value = operation(params.op1, params.op2);
+        result.value = params.logical_op(params.op1, params.op2);
         result.write_back = params.write_back;
         result.set_flags = params.instruction.Is_S_Bit_Set() && params.dest_reg != CARM1176JZF_S::PC_REG_IDX;
 
@@ -53,7 +58,7 @@ namespace zero_mate::cpu::alu
         return carry;
     }
 
-    [[nodiscard]] static TResult Execute_Arithmetic_Operation(const CARM1176JZF_S& cpu, const TParams& params, const auto operation)
+    [[nodiscard]] static TResult Execute_Arithmetic_Operation(const CARM1176JZF_S& cpu, const TParams& params)
     {
         TResult result{};
 
@@ -61,7 +66,7 @@ namespace zero_mate::cpu::alu
 
         const auto op1_64u = static_cast<std::uint64_t>(params.op1);
         const auto op2_64u = static_cast<std::uint64_t>(params.op2);
-        const auto result_64u = operation(op1_64u, op2_64u, static_cast<std::uint64_t>(c_flag));
+        const auto result_64u = params.arithmetic_op(op1_64u, op2_64u, static_cast<std::uint64_t>(c_flag));
 
         result.value = static_cast<std::uint32_t>(result_64u);
         result.write_back = params.write_back;
@@ -84,75 +89,115 @@ namespace zero_mate::cpu::alu
         return result;
     }
 
+    [[nodiscard]] static TResult Execute(const CARM1176JZF_S& cpu, const TParams& params)
+    {
+        if (params.is_logical_op)
+        {
+            return Execute_Logical_Operation(cpu, params);
+        }
+
+        return Execute_Arithmetic_Operation(cpu, params);
+    }
+
     TResult Execute(const CARM1176JZF_S& cpu, isa::CData_Processing instruction, std::uint32_t first_operand, std::uint32_t second_operand, std::uint32_t dest_reg, bool carry_out)
     {
-        TParams params{ .instruction = instruction, .op1 = first_operand, .op2 = second_operand, .dest_reg = dest_reg, .carry_out = carry_out };
+        TParams params{
+            .instruction = instruction,
+            .op1 = first_operand,
+            .op2 = second_operand,
+            .dest_reg = dest_reg,
+            .carry_out = carry_out
+        };
 
         switch (instruction.Get_Opcode())
         {
             case isa::CData_Processing::NOpcode::AND:
-                return Execute_Logical_Operation(cpu, params, [](const auto op1, const auto op2) { return op1 & op2; });
+                params.logical_op = [](auto op1, auto op2) { return op1 & op2; };
+                break;
 
             case isa::CData_Processing::NOpcode::EOR:
-                return Execute_Logical_Operation(cpu, params, [](const auto op1, const auto op2) { return op1 ^ op2; });
+                params.logical_op = [](auto op1, auto op2) { return op1 ^ op2; };
+                break;
 
             case isa::CData_Processing::NOpcode::TST:
                 params.write_back = false;
-                return Execute_Logical_Operation(cpu, params, [](const auto op1, const auto op2) { return op1 & op2; });
+                params.logical_op = [](auto op1, auto op2) { return op1 & op2; };
+                break;
 
             case isa::CData_Processing::NOpcode::TEQ:
                 params.write_back = false;
-                return Execute_Logical_Operation(cpu, params, [](const auto op1, const auto op2) { return op1 ^ op2; });
+                params.logical_op = [](auto op1, auto op2) { return op1 ^ op2; };
+                break;
 
             case isa::CData_Processing::NOpcode::ORR:
-                return Execute_Logical_Operation(cpu, params, [](const auto op1, auto op2) { return op1 | op2; });
+                params.logical_op = [](auto op1, auto op2) { return op1 | op2; };
+                break;
 
             case isa::CData_Processing::NOpcode::MOV:
-                return Execute_Logical_Operation(cpu, params, []([[maybe_unused]] const auto op1, const auto op2) { return op2; });
+                params.logical_op = []([[maybe_unused]] auto op1, auto op2) { return op2; };
+                break;
 
             case isa::CData_Processing::NOpcode::BIC:
-                return Execute_Logical_Operation(cpu, params, [](const auto op1, const auto op2) { return op1 & (~op2); });
+                params.logical_op = [](auto op1, auto op2) { return op1 & (~op2); };
+                break;
 
             case isa::CData_Processing::NOpcode::MVN:
-                return Execute_Logical_Operation(cpu, params, []([[maybe_unused]] const auto op1, const auto op2) { return ~op2; });
+                params.logical_op = []([[maybe_unused]] auto op1, auto op2) { return ~op2; };
+                break;
 
             case isa::CData_Processing::NOpcode::SUB:
+                params.is_logical_op = false;
                 params.subtraction = true;
-                return Execute_Arithmetic_Operation(cpu, params, [](const auto op1, const auto op2, [[maybe_unused]] const auto carry) { return op1 - op2; });
+                params.arithmetic_op = [](auto op1, auto op2, [[maybe_unused]] auto carry) { return op1 - op2; };
+                break;
 
             case isa::CData_Processing::NOpcode::RSB:
+                params.is_logical_op = false;
                 params.subtraction = true;
                 params.reversed_operands = true;
-                return Execute_Arithmetic_Operation(cpu, params, [](const auto op1, const auto op2, [[maybe_unused]] const auto carry) { return op2 - op1; });
+                params.arithmetic_op = [](auto op1, auto op2, [[maybe_unused]] auto carry) { return op2 - op1; };
+                break;
 
             case isa::CData_Processing::NOpcode::ADD:
-                return Execute_Arithmetic_Operation(cpu, params, [](const auto op1, const auto op2, [[maybe_unused]] const auto carry) { return op1 + op2; });
+                params.is_logical_op = false;
+                params.arithmetic_op = [](auto op1, auto op2, [[maybe_unused]] auto carry) { return op1 + op2; };
+                break;
 
             case isa::CData_Processing::NOpcode::ADC:
+                params.is_logical_op = false;
                 params.account_for_carry = true;
-                return Execute_Arithmetic_Operation(cpu, params, [](const auto op1, const auto op2, const auto carry) { return op1 + op2 + carry; });
+                params.arithmetic_op = [](auto op1, auto op2, auto carry) { return op1 + op2 + carry; };
+                break;
 
             case isa::CData_Processing::NOpcode::SBC:
+                params.is_logical_op = false;
                 params.account_for_carry = true;
                 params.subtraction = true;
-                return Execute_Arithmetic_Operation(cpu, params, [](const auto op1, const auto op2, const auto carry) { return op1 - op2 + carry - 1; });
+                params.arithmetic_op = [](auto op1, auto op2, auto carry) { return op1 - op2 + carry - 1; };
+                break;
 
             case isa::CData_Processing::NOpcode::RSC:
+                params.is_logical_op = false;
                 params.account_for_carry = true;
                 params.subtraction = true;
                 params.reversed_operands = true;
-                return Execute_Arithmetic_Operation(cpu, params, [](const auto op1, const auto op2, const auto carry) { return op2 - op1 + carry - 1; });
+                params.arithmetic_op = [](auto op1, auto op2, auto carry) { return op2 - op1 + carry - 1; };
+                break;
 
             case isa::CData_Processing::NOpcode::CMP:
+                params.is_logical_op = false;
                 params.subtraction = true;
                 params.write_back = false;
-                return Execute_Arithmetic_Operation(cpu, params, [](const auto op1, const auto op2, [[maybe_unused]] const auto carry) { return op1 - op2; });
+                params.arithmetic_op = [](auto op1, auto op2, [[maybe_unused]] auto carry) { return op1 - op2; };
+                break;
 
             case isa::CData_Processing::NOpcode::CMN:
+                params.is_logical_op = false;
                 params.write_back = false;
-                return Execute_Arithmetic_Operation(cpu, params, [](const auto op1, const auto op2, [[maybe_unused]] const auto carry) { return op1 + op2; });
+                params.arithmetic_op = [](auto op1, auto op2, [[maybe_unused]] auto carry) { return op1 + op2; };
+                break;
         }
 
-        return {};
+        return Execute(cpu, params);
     }
 }
