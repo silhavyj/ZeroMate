@@ -23,8 +23,8 @@ message("Using C++ standard ${CMAKE_CXX_STANDARD}")
 include(cmake/standard_project_settings.cmake)
 
 # Install conan using PyPI
-find_package(Python COMPONENTS Interpreter REQUIRED)
-execute_process(COMMAND ${Python_EXECUTABLE} -m pip install --upgrade pip setuptools conan)
+# find_package(Python COMPONENTS Interpreter REQUIRED)
+# execute_process(COMMAND ${Python_EXECUTABLE} -m pip install --upgrade pip setuptools conan)
 
 add_library(project_warnings INTERFACE)
 add_library(project_options INTERFACE)
@@ -42,25 +42,10 @@ enable_sanitizers(project_options)
 # Allow for static analysis option
 include(cmake/static_analyzers.cmake)
 
-# Set up some extra Conan dependencies based on our needs before loading Conan
-set(CONAN_EXTRA_REQUIRES
-    "gtest/1.11.0"
-    "spdlog/1.11.0"
-    "fmt/9.1.0"
-    "imgui/cci.20220621+1.88.docking"
-    "glfw/3.3.6"
-    "glew/2.2.0")
-
-set(CONAN_EXTRA_IMPORTS "")
-
-set(CONAN_EXTRA_OPTIONS "")
-
-# Enable conan package manager
-include(cmake/conan.cmake)
-run_conan()
-
-# Add the imgui_glfw folder 
-add_subdirectory(external/imgui_glfw)
+# Add submodules (libraries)
+add_subdirectory(external/fmt)
+add_subdirectory(external/spdlog)
+#add_subdirectory(external/googletest)
 
 # Add the src folder
 add_subdirectory(src)

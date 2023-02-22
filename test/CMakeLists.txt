@@ -44,8 +44,7 @@ add_executable(
 target_link_libraries(
     unit_tests
     PRIVATE project_warnings project_options
-    PRIVATE CONAN_PKG::gtest
-    PRIVATE CONAN_PKG::spdlog)
+    PRIVATE gtest)
 
 # Download a CMake file for working with gtests
 include(FetchContent)

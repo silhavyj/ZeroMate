@@ -24,11 +24,7 @@ target_link_libraries(
     ${EXECUTABLE_NAME}
     PRIVATE project_warnings
     PRIVATE project_options
-    PRIVATE CONAN_PKG::fmt
-    PRIVATE CONAN_PKG::spdlog
-    PRIVATE CONAN_PKG::imgui
-    PRIVATE CONAN_PKG::glew
-    PRIVATE CONAN_PKG::glfw
-    PRIVATE imgui_glfw)
+    PRIVATE fmt
+    PRIVATE spdlog)
 
 # EOF
