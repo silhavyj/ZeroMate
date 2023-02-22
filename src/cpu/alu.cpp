@@ -9,7 +9,6 @@ namespace zero_mate::cpu::alu
         isa::CData_Processing instruction{ 0 };
         std::uint32_t op1{};
         std::uint32_t op2{};
-        std::uint32_t dest_reg{};
         bool carry_out{};
         bool write_back{ true };
         bool subtraction{ false };
@@ -26,7 +25,7 @@ namespace zero_mate::cpu::alu
 
         result.value = params.logical_op(params.op1, params.op2);
         result.write_back = params.write_back;
-        result.set_flags = params.instruction.Is_S_Bit_Set() && params.dest_reg != CARM1176JZF_S::PC_REG_IDX;
+        result.set_flags = params.instruction.Is_S_Bit_Set();
 
         if (result.set_flags)
         {
@@ -70,7 +69,7 @@ namespace zero_mate::cpu::alu
 
         result.value = static_cast<std::uint32_t>(result_64u);
         result.write_back = params.write_back;
-        result.set_flags = params.instruction.Is_S_Bit_Set() && params.dest_reg != CARM1176JZF_S::PC_REG_IDX;
+        result.set_flags = params.instruction.Is_S_Bit_Set();
 
         const auto op1_32s = static_cast<std::int32_t>(params.reversed_operands ? params.op2 : params.op1);
         const auto op2_32s = static_cast<std::int32_t>(params.reversed_operands ? params.op1 : params.op2);
@@ -99,13 +98,12 @@ namespace zero_mate::cpu::alu
         return Execute_Arithmetic_Operation(cpu, params);
     }
 
-    TResult Execute(const CARM1176JZF_S& cpu, isa::CData_Processing instruction, std::uint32_t first_operand, std::uint32_t second_operand, std::uint32_t dest_reg, bool carry_out)
+    TResult Execute(const CARM1176JZF_S& cpu, isa::CData_Processing instruction, std::uint32_t first_operand, std::uint32_t second_operand, bool carry_out)
     {
         TParams params{
             .instruction = instruction,
             .op1 = first_operand,
             .op2 = second_operand,
-            .dest_reg = dest_reg,
             .carry_out = carry_out
         };
 

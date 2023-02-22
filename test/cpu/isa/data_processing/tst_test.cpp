@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "cpu/ARM1176JZF_S.hpp"
+#include "cpu/arm1176jzf_s.hpp"
 #include "register_state_checker.hpp"
 
 TEST(tst_instruction, test_01)

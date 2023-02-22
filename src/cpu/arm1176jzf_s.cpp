@@ -1,4 +1,4 @@
-#include "ARM1176JZF_S.hpp"
+#include "arm1176jzf_s.hpp"
 #include "isa/decoder.hpp"
 #include "alu.hpp"
 
@@ -181,14 +181,14 @@ namespace zero_mate::cpu
         const auto [carry_out, second_operand] = Get_Second_Operand(instruction);
         const std::uint32_t dest_reg = instruction.Get_Rd();
 
-        const auto result = alu::Execute(*this, instruction, first_operand, second_operand, dest_reg, carry_out);
+        const auto result = alu::Execute(*this, instruction, first_operand, second_operand, carry_out);
 
         if (result.write_back)
         {
             m_regs.at(dest_reg) = result.value;
         }
 
-        if (result.set_flags)
+        if (result.set_flags && dest_reg != PC_REG_IDX)
         {
             m_cspr.Set_Flag(CCSPR::NFlag::N, result.n_flag);
             m_cspr.Set_Flag(CCSPR::NFlag::Z, result.z_flag);

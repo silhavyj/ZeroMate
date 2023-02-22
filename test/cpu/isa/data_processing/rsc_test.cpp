@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "cpu/ARM1176JZF_S.hpp"
+#include "cpu/arm1176jzf_s.hpp"
 
 TEST(rsc_instruction, test_01)
 {
