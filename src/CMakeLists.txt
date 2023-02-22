@@ -15,7 +15,9 @@ add_executable(
     cpu/isa/decoder.hpp
     cpu/isa/decoder.cpp
     cpu/ARM1176JZF_S.hpp
-    cpu/ARM1176JZF_S.cpp)
+    cpu/ARM1176JZF_S.cpp
+    cpu/alu.hpp
+    cpu/alu.cpp)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(

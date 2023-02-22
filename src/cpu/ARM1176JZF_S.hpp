@@ -14,14 +14,13 @@ namespace zero_mate::cpu
 {
     class CARM1176JZF_S final
     {
-    private:
+    public:
         static constexpr std::size_t NUMBER_OF_REGS = 16;
         static constexpr std::size_t PC_REG_IDX = 15;
         static constexpr std::size_t LR_REG_IDX = 14;
         static constexpr std::size_t SP_REG_IDX = 13;
         static constexpr auto MAX_ADDR = std::numeric_limits<std::uint32_t>::max() - sizeof(std::uint32_t);
 
-    public:
         CARM1176JZF_S() noexcept;
 
         void Execute(std::initializer_list<isa::CInstruction> instructions);
