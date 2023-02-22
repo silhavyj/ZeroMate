@@ -209,7 +209,8 @@ namespace zero_mate::cpu
 
             if (alu_params.carry)
             {
-                carry = static_cast<std::int32_t>(alu_params.subtraction ? !carry_flag : carry_flag);
+                // carry = static_cast<std::int32_t>(alu_params.subtraction ? !carry_flag : carry_flag);
+                carry = static_cast<std::int32_t>(alu_params.subtraction ? !m_cspr.Is_Flag_Set(CCSPR::NFlag::C) : m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
             }
 
             return carry;
@@ -218,7 +219,8 @@ namespace zero_mate::cpu
         const auto Arithmetic_Operation = [&](const TALU_Input_Params& alu_params, std::uint32_t op1, std::uint32_t op2, const auto operation) -> void {
             const auto op1_64u = static_cast<std::uint64_t>(op1);
             const auto op2_64u = static_cast<std::uint64_t>(op2);
-            const auto result_64u = operation(op1_64u, op2_64u, carry_flag);
+            // const auto result_64u = operation(op1_64u, op2_64u, carry_flag);
+            const auto result_64u = operation(op1_64u, op2_64u, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
 
             const auto op1_32 = static_cast<std::int32_t>(alu_params.reversed ? op2 : op1);
             const auto op2_32 = static_cast<std::int32_t>(alu_params.reversed ? op1 : op2);

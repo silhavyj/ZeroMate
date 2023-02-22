@@ -206,3 +206,47 @@ TEST(sbc_instruction, test_10)
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
     EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
 }
+
+TEST(sbc_instruction, test_11)
+{
+    using namespace zero_mate::cpu;
+
+    CARM1176JZF_S cpu{};
+
+    cpu.Execute({
+    { 0xe3e01002 }, // mvn r1, #2
+    { 0xe3e00000 }, // mvn r0, #0
+    { 0xe0d027e1 }, // sbcs r2, r0, r1, ror #15
+    { 0xe05037e1 }  // subs r3, r0, r1, ror #15
+    });
+
+    EXPECT_EQ(cpu.m_regs[2], 0x3FFFF);
+    EXPECT_EQ(cpu.m_regs[3], 0x40000);
+
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+}
+
+TEST(sbc_instruction, test_12)
+{
+    using namespace zero_mate::cpu;
+
+    CARM1176JZF_S cpu{};
+
+    cpu.Execute({
+    { 0xe3e00002 }, // mvn r0, #2
+    { 0xe3e01000 }, // mvn r1, #0
+    { 0xe0d027a1 }, // sbcs r2, r0, r1, lsr #15
+    { 0xe05037a1 }  // subs r3, r0, r1, lsr #15
+    });
+
+    EXPECT_EQ(cpu.m_regs[2], 0xFFFDFFFD);
+    EXPECT_EQ(cpu.m_regs[3], 0xFFFDFFFE);
+
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+}
