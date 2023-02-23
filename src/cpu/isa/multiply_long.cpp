@@ -22,12 +22,12 @@ namespace zero_mate::cpu::isa
         return static_cast<bool>((m_value >> 20U) & 0b1U);
     }
 
-    std::uint32_t CMultiply_Long::Get_RdHi() const noexcept
+    std::uint32_t CMultiply_Long::Get_Rd_Hi() const noexcept
     {
         return (m_value >> 16U) & 0b1111U;
     }
 
-    std::uint32_t CMultiply_Long::Get_RdLo() const noexcept
+    std::uint32_t CMultiply_Long::Get_Rd_Lo() const noexcept
     {
         return (m_value >> 12U) & 0b1111U;
     }

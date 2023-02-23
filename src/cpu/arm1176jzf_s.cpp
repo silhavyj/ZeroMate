@@ -6,7 +6,6 @@ namespace zero_mate::cpu
     CARM1176JZF_S::CARM1176JZF_S() noexcept
     : m_regs{}
     , m_cspr{ 0 }
-    , m_instruction_decoder{}
     {
         LR() = MAX_ADDR;
     }
@@ -228,32 +227,41 @@ namespace zero_mate::cpu
 
     void CARM1176JZF_S::Execute(isa::CMultiply_Long instruction)
     {
-        const auto reg_rs = m_regs.at(instruction.Get_Rs());
-        const auto reg_rm = m_regs.at(instruction.Get_Rm());
-        const auto reg_rd_lo = instruction.Get_RdLo();
-        const auto reg_rd_hi = instruction.Get_RdHi();
+        const auto reg_rs_32u = m_regs.at(instruction.Get_Rs());
+        const auto reg_rm_32u = m_regs.at(instruction.Get_Rm());
+
+        const auto reg_rs_32s = static_cast<std::int32_t>(reg_rs_32u);
+        const auto reg_rm_32s = static_cast<std::int32_t>(reg_rm_32u);
+
+        const auto reg_rs_64u = static_cast<std::uint64_t>(reg_rs_32u);
+        const auto reg_rm_64u = static_cast<std::uint64_t>(reg_rm_32u);
+
+        const auto reg_rs_64s = static_cast<std::int64_t>(reg_rs_32s);
+        const auto reg_rm_64s = static_cast<std::int64_t>(reg_rm_32s);
+
+        const auto reg_rd_lo = instruction.Get_Rd_Lo();
+        const auto reg_rd_hi = instruction.Get_Rd_Hi();
+
+        const auto acc_value = (static_cast<std::uint64_t>(m_regs.at(reg_rd_hi)) << 32U) + m_regs.at(reg_rd_lo);
 
         std::uint64_t result{};
 
         if (instruction.Is_U_Bit_Set())
         {
-            result = static_cast<std::uint64_t>(static_cast<std::int64_t>(reg_rm) * static_cast<std::int64_t>(reg_rs));
+            result = static_cast<std::uint64_t>(reg_rs_64s * reg_rm_64s);
         }
         else
         {
-            result = static_cast<std::uint64_t>(reg_rs) * static_cast<std::uint64_t>(reg_rm);
+            result = reg_rs_64u * reg_rm_64u;
         }
 
         if (instruction.Is_A_Bit_Set())
         {
-            m_regs.at(reg_rd_hi) += static_cast<std::uint32_t>(result >> 32U);
-            m_regs.at(reg_rd_lo) += static_cast<std::uint32_t>(result & 0xFFFFFFFFU);
+            result += acc_value;
         }
-        else
-        {
-            m_regs.at(reg_rd_hi) = static_cast<std::uint32_t>(result >> 32U);
-            m_regs.at(reg_rd_lo) = static_cast<std::uint32_t>(result & 0xFFFFFFFFU);
-        }
+
+        m_regs.at(reg_rd_hi) = static_cast<std::uint32_t>((result >> 32U) & 0xFFFFFFFFU);
+        m_regs.at(reg_rd_lo) = static_cast<std::uint32_t>(result & 0xFFFFFFFFU);
 
         if (instruction.Is_S_Bit_Set())
         {
