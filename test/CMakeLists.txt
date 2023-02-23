@@ -10,7 +10,7 @@ set(SRC_FILES
     ../src/cpu/isa/data_processing.cpp
     ../src/cpu/isa/multiply.cpp
     ../src/cpu/isa/multiply_long.cpp
-    ../src/cpu/isa/decoder.cpp)
+    ../src/cpu/instruction_decoder.cpp)
 
 # Build unit tests
 add_executable(

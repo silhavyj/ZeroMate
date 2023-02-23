@@ -11,7 +11,7 @@
 #include "isa/data_processing.hpp"
 #include "isa/multiply.hpp"
 #include "isa/multiply_long.hpp"
-#include "isa/decoder.hpp"
+#include "instruction_decoder.hpp"
 
 namespace zero_mate::cpu
 {

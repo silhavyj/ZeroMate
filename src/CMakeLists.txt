@@ -16,8 +16,8 @@ add_executable(
     cpu/isa/multiply.cpp
     cpu/isa/multiply_long.hpp
     cpu/isa/multiply_long.cpp
-    cpu/isa/decoder.hpp
-    cpu/isa/decoder.cpp
+    cpu/instruction_decoder.hpp
+    cpu/instruction_decoder.cpp
     cpu/arm1176jzf_s.hpp
     cpu/arm1176jzf_s.cpp
     cpu/alu.hpp

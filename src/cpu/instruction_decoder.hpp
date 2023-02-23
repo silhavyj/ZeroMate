@@ -3,7 +3,7 @@
 #include <array>
 #include <cstdint>
 
-#include "instruction.hpp"
+#include "isa/instruction.hpp"
 
 namespace zero_mate::cpu::isa
 {

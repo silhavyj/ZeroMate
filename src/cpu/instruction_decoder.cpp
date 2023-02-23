@@ -1,8 +1,8 @@
 #include <algorithm>
 #include <bitset>
 
-#include "../../utils/math.hpp"
-#include "decoder.hpp"
+#include "../utils/math.hpp"
+#include "instruction_decoder.hpp"
 
 namespace zero_mate::cpu::isa
 {
