@@ -10,6 +10,8 @@
 #include "isa/instruction.hpp"
 #include "isa/data_processing.hpp"
 #include "isa/multiply.hpp"
+#include "isa/multiply_long.hpp"
+#include "isa/decoder.hpp"
 
 namespace zero_mate::cpu
 {
@@ -39,9 +41,11 @@ namespace zero_mate::cpu
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CData_Processing instruction);
         void Execute(isa::CMultiply instruction);
+        void Execute(isa::CMultiply_Long instruction);
 
     public:
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
         CCSPR m_cspr;
+        isa::CInstruction_Decoder m_instruction_decoder;
     };
 }

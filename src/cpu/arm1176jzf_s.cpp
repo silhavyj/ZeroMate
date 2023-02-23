@@ -1,5 +1,4 @@
 #include "arm1176jzf_s.hpp"
-#include "isa/decoder.hpp"
 #include "alu.hpp"
 
 namespace zero_mate::cpu
@@ -7,6 +6,7 @@ namespace zero_mate::cpu
     CARM1176JZF_S::CARM1176JZF_S() noexcept
     : m_regs{}
     , m_cspr{ 0 }
+    , m_instruction_decoder{}
     {
         LR() = MAX_ADDR;
     }
@@ -94,7 +94,7 @@ namespace zero_mate::cpu
 
     void CARM1176JZF_S::Execute(isa::CInstruction instruction)
     {
-        const auto type = isa::decoder::Get_Instruction_Type(instruction);
+        const auto type = m_instruction_decoder.Get_Instruction_Type(instruction);
 
         switch (type)
         {
@@ -107,6 +107,9 @@ namespace zero_mate::cpu
                 break;
 
             case isa::CInstruction::NType::Multiply_Long:
+                Execute(isa::CMultiply_Long{ instruction });
+                break;
+
             case isa::CInstruction::NType::Single_Data_Swap:
             case isa::CInstruction::NType::Branch_And_Exchange:
             case isa::CInstruction::NType::Halfword_Data_Transfer_Register_Offset:
@@ -221,5 +224,41 @@ namespace zero_mate::cpu
         }
 
         m_regs.at(dest_reg) = result_32u;
+    }
+
+    void CARM1176JZF_S::Execute(isa::CMultiply_Long instruction)
+    {
+        const auto reg_rs = m_regs.at(instruction.Get_Rs());
+        const auto reg_rm = m_regs.at(instruction.Get_Rs());
+        const auto reg_rd_lo = instruction.Get_RdLo();
+        const auto reg_rd_hi = instruction.Get_RdHi();
+
+        std::uint64_t result{};
+
+        if (instruction.Is_U_Bit_Set())
+        {
+            result = static_cast<std::uint64_t>(reg_rs) * static_cast<std::uint64_t>(reg_rm);
+        }
+        else
+        {
+            result = static_cast<std::uint64_t>(static_cast<std::int64_t>(reg_rm) * static_cast<std::int64_t>(reg_rs));
+        }
+
+        if (instruction.Is_A_Bit_Set())
+        {
+            m_regs.at(reg_rd_hi) += static_cast<std::uint32_t>(result >> 32U);
+            m_regs.at(reg_rd_lo) += static_cast<std::uint32_t>(result & 0xFFFFFFFFU);
+        }
+        else
+        {
+            m_regs.at(reg_rd_hi) = static_cast<std::uint32_t>(result >> 32U);
+            m_regs.at(reg_rd_lo) = static_cast<std::uint32_t>(result & 0xFFFFFFFFU);
+        }
+
+        if (instruction.Is_S_Bit_Set())
+        {
+            m_cspr.Set_Flag(CCSPR::NFlag::N, utils::math::Is_Negative<std::uint64_t>(result));
+            m_cspr.Set_Flag(CCSPR::NFlag::Z, result == 0);
+        }
     }
 }

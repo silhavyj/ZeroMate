@@ -181,4 +181,20 @@ namespace zero_mate::utils::math
 
         return Check_Overflow_Addition<Type>(op1, op2);
     }
+
+    template<std::unsigned_integral Type>
+    [[nodiscard]] Type Get_Number_Of_Set_Bits(Type value) noexcept
+    {
+        Type count{ 0 };
+
+        for (Type idx = 0; idx < std::numeric_limits<Type>::digits; ++idx)
+        {
+            if (Is_Bit_Set<Type>(value, idx))
+            {
+                ++count;
+            }
+        }
+
+        return count;
+    }
 }

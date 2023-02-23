@@ -9,6 +9,7 @@ set(SRC_FILES
     ../src/cpu/isa/instruction.cpp
     ../src/cpu/isa/data_processing.cpp
     ../src/cpu/isa/multiply.cpp
+    ../src/cpu/isa/multiply_long.cpp
     ../src/cpu/isa/decoder.cpp)
 
 # Build unit tests
@@ -43,7 +44,8 @@ add_executable(
     cpu/isa/data_processing/cmp_test.cpp
     cpu/isa/data_processing/cmn_test.cpp
     cpu/isa/multiply/mul_test.cpp
-    cpu/isa/multiply/mla_test.cpp)
+    cpu/isa/multiply/mla_test.cpp
+    cpu/isa/multiply_long/umull_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(
