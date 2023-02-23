@@ -16,5 +16,5 @@ namespace zero_mate::cpu::alu
         bool v_flag{};
     };
 
-    [[nodiscard]] TResult Execute(const CARM1176JZF_S& cpu, isa::CData_Processing instruction, std::uint32_t first_operand, std::uint32_t second_operand, bool carry_out);
+    [[nodiscard]] TResult Execute(const CARM1176JZF_S& cpu, isa::CData_Processing instruction, std::uint32_t first_operand, std::uint32_t second_operand, bool carry_out) noexcept;
 }

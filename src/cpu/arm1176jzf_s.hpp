@@ -36,9 +36,9 @@ namespace zero_mate::cpu
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand(isa::CData_Processing instruction) const noexcept;
 
         void Execute(isa::CInstruction instruction);
-        void Execute(isa::CData_Processing instruction);
-        void Execute(isa::CMultiply instruction);
-        void Execute(isa::CMultiply_Long instruction);
+        void Execute(isa::CData_Processing instruction) noexcept;
+        void Execute(isa::CMultiply instruction) noexcept;
+        void Execute(isa::CMultiply_Long instruction) noexcept;
 
     public:
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;

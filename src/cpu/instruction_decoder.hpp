@@ -28,6 +28,6 @@ namespace zero_mate::cpu
     public:
         CInstruction_Decoder() noexcept;
 
-        [[nodiscard]] isa::CInstruction::NType Get_Instruction_Type(isa::CInstruction instruction) noexcept;
+        [[nodiscard]] isa::CInstruction::NType Get_Instruction_Type(isa::CInstruction instruction) const noexcept;
     };
 }

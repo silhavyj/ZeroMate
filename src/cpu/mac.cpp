@@ -3,7 +3,7 @@
 
 namespace zero_mate::cpu::mac
 {
-    TResult Execute(isa::CMultiply instruction, std::uint32_t reg_rm, std::uint32_t reg_rs, std::uint32_t reg_rn)
+    TResult Execute(isa::CMultiply instruction, std::uint32_t reg_rm, std::uint32_t reg_rs, std::uint32_t reg_rn) noexcept
     {
         TResult result{};
 
@@ -30,7 +30,7 @@ namespace zero_mate::cpu::mac
         return result;
     }
 
-    TResult Execute(isa::CMultiply_Long instruction, std::uint32_t reg_rm, std::uint32_t reg_rs, std::uint32_t reg_rd_lo, std::uint32_t reg_rd_hi)
+    TResult Execute(isa::CMultiply_Long instruction, std::uint32_t reg_rm, std::uint32_t reg_rs, std::uint32_t reg_rd_lo, std::uint32_t reg_rd_hi) noexcept
     {
         TResult result{};
         std::uint64_t result_value_64u{};

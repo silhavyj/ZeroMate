@@ -19,7 +19,7 @@ namespace zero_mate::cpu::alu
         std::function<std::uint64_t(std::uint64_t, std::uint64_t, std::uint64_t)> arithmetic_op{};
     };
 
-    [[nodiscard]] static TResult Execute_Logical_Operation(const CARM1176JZF_S& cpu, const TALU_Settings& params)
+    [[nodiscard]] static TResult Execute_Logical_Operation(const CARM1176JZF_S& cpu, const TALU_Settings& params) noexcept
     {
         TResult result{};
 
@@ -38,7 +38,7 @@ namespace zero_mate::cpu::alu
         return result;
     }
 
-    [[nodiscard]] std::int32_t Get_Carry(const TALU_Settings& params, bool c_flag)
+    [[nodiscard]] std::int32_t Get_Carry(const TALU_Settings& params, bool c_flag) noexcept
     {
         std::int32_t carry{ 0 };
 
@@ -57,7 +57,7 @@ namespace zero_mate::cpu::alu
         return carry;
     }
 
-    [[nodiscard]] static TResult Execute_Arithmetic_Operation(const CARM1176JZF_S& cpu, const TALU_Settings& params)
+    [[nodiscard]] static TResult Execute_Arithmetic_Operation(const CARM1176JZF_S& cpu, const TALU_Settings& params) noexcept
     {
         TResult result{};
 
@@ -88,7 +88,7 @@ namespace zero_mate::cpu::alu
         return result;
     }
 
-    [[nodiscard]] static TResult Execute(const CARM1176JZF_S& cpu, const TALU_Settings& params)
+    [[nodiscard]] static TResult Execute(const CARM1176JZF_S& cpu, const TALU_Settings& params) noexcept
     {
         if (params.is_logical_op)
         {
@@ -98,7 +98,7 @@ namespace zero_mate::cpu::alu
         return Execute_Arithmetic_Operation(cpu, params);
     }
 
-    TResult Execute(const CARM1176JZF_S& cpu, isa::CData_Processing instruction, std::uint32_t first_operand, std::uint32_t second_operand, bool carry_out)
+    TResult Execute(const CARM1176JZF_S& cpu, isa::CData_Processing instruction, std::uint32_t first_operand, std::uint32_t second_operand, bool carry_out) noexcept
     {
         TALU_Settings params{
             .instruction = instruction,

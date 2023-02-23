@@ -122,6 +122,7 @@ namespace zero_mate::cpu
             case isa::CInstruction::NType::Coprocessor_Data_Operation:
             case isa::CInstruction::NType::Coprocessor_Register_Transfer:
             case isa::CInstruction::NType::Software_Interrupt:
+
             case isa::CInstruction::NType::Unknown:
                 // TODO throw an exception once interrupts are implemented
                 break;
@@ -181,7 +182,7 @@ namespace zero_mate::cpu
         return {};
     }
 
-    void CARM1176JZF_S::Execute(isa::CData_Processing instruction)
+    void CARM1176JZF_S::Execute(isa::CData_Processing instruction) noexcept
     {
         const std::uint32_t first_operand = m_regs.at(instruction.Get_Rn());
         const auto [carry_out, second_operand] = Get_Second_Operand(instruction);
@@ -203,7 +204,7 @@ namespace zero_mate::cpu
         }
     }
 
-    void CARM1176JZF_S::Execute(isa::CMultiply instruction)
+    void CARM1176JZF_S::Execute(isa::CMultiply instruction) noexcept
     {
         const auto result = mac::Execute(instruction,
                                          m_regs.at(instruction.Get_Rm()),
@@ -219,7 +220,7 @@ namespace zero_mate::cpu
         m_regs.at(instruction.Get_Rd()) = result.value_lo;
     }
 
-    void CARM1176JZF_S::Execute(isa::CMultiply_Long instruction)
+    void CARM1176JZF_S::Execute(isa::CMultiply_Long instruction) noexcept
     {
         const auto reg_rd_lo = instruction.Get_Rd_Lo();
         const auto reg_rd_hi = instruction.Get_Rd_Hi();

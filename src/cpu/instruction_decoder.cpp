@@ -16,7 +16,7 @@ namespace zero_mate::cpu
                   });
     }
 
-    isa::CInstruction::NType CInstruction_Decoder::Get_Instruction_Type(isa::CInstruction instruction) noexcept
+    isa::CInstruction::NType CInstruction_Decoder::Get_Instruction_Type(isa::CInstruction instruction) const noexcept
     {
         for (const auto& [mask, expected, type] : INSTRUCTION_LOOKUP_TABLE)
         {
