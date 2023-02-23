@@ -205,7 +205,6 @@ namespace zero_mate::cpu
         const std::uint32_t dest_reg = instruction.Get_Rd();
         const auto reg_rm_64u = static_cast<std::uint64_t>(m_regs.at(instruction.Get_Rm()));
         const auto reg_rs_64u = static_cast<std::uint64_t>(m_regs.at(instruction.Get_Rs()));
-
         std::uint64_t result_64u = reg_rm_64u * reg_rs_64u;
 
         if (instruction.Is_A_Bit_Set())
@@ -219,10 +218,6 @@ namespace zero_mate::cpu
         {
             m_cspr.Set_Flag(CCSPR::NFlag::N, utils::math::Is_Negative<std::uint32_t>(result_32u));
             m_cspr.Set_Flag(CCSPR::NFlag::Z, result_32u == 0);
-
-            // TODO
-            // m_cspr.Set_Flag(CCSPR::NFlag::C, false);
-            // m_cspr.Set_Flag(CCSPR::NFlag::V, false);
         }
 
         m_regs.at(dest_reg) = result_32u;
