@@ -11,6 +11,8 @@ set(SRC_FILES
     ../src/cpu/isa/data_processing.cpp
     ../src/cpu/isa/multiply.cpp
     ../src/cpu/isa/multiply_long.cpp
+    ../src/cpu/isa/branch_and_exchange.cpp
+    ../src/cpu/isa/branch.cpp
     ../src/cpu/instruction_decoder.cpp)
 
 # Build unit tests

@@ -112,12 +112,18 @@ namespace zero_mate::cpu
 
             case isa::CInstruction::NType::Single_Data_Swap:
             case isa::CInstruction::NType::Branch_And_Exchange:
+                Execute(isa::CBranch_And_Exchange{ instruction });
+                break;
+
             case isa::CInstruction::NType::Halfword_Data_Transfer_Register_Offset:
             case isa::CInstruction::NType::Halfword_Data_Transfer_Immediate_Offset:
             case isa::CInstruction::NType::Single_Data_Transfer:
             case isa::CInstruction::NType::Undefined:
             case isa::CInstruction::NType::Block_Data_Transfer:
             case isa::CInstruction::NType::Branch:
+                Execute(isa::CBranch{ instruction });
+                break;
+
             case isa::CInstruction::NType::Coprocessor_Data_Transfer:
             case isa::CInstruction::NType::Coprocessor_Data_Operation:
             case isa::CInstruction::NType::Coprocessor_Register_Transfer:
@@ -202,6 +208,27 @@ namespace zero_mate::cpu
             m_cspr.Set_Flag(CCSPR::NFlag::C, result.c_flag);
             m_cspr.Set_Flag(CCSPR::NFlag::V, result.v_flag);
         }
+    }
+
+    void CARM1176JZF_S::Execute(isa::CBranch_And_Exchange instruction) noexcept
+    {
+        if (instruction.Switch_To_Thumb())
+        {
+            // TODO print an info message saying that thumb instructions are not supported
+        }
+
+        PC() = m_regs.at(instruction.Get_Rn());
+    }
+
+    void CARM1176JZF_S::Execute(isa::CBranch instruction) noexcept
+    {
+        if (instruction.Is_L_Bit_Set())
+        {
+            LR() = PC();
+        }
+
+        // TODO
+        // PC() += instruction.Get_Offset() << 2;
     }
 
     void CARM1176JZF_S::Execute(isa::CMultiply instruction) noexcept
