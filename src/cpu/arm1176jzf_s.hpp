@@ -5,12 +5,9 @@
 #include <cstdint>
 #include <initializer_list>
 
+#include "isa/isa.hpp"
 #include "../utils/math.hpp"
 #include "registers/cspr.hpp"
-#include "isa/instruction.hpp"
-#include "isa/data_processing.hpp"
-#include "isa/multiply.hpp"
-#include "isa/multiply_long.hpp"
 #include "instruction_decoder.hpp"
 
 namespace zero_mate::cpu
@@ -46,6 +43,6 @@ namespace zero_mate::cpu
     public:
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
         CCSPR m_cspr;
-        isa::CInstruction_Decoder m_instruction_decoder;
+        CInstruction_Decoder m_instruction_decoder;
     };
 }

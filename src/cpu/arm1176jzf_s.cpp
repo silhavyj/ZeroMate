@@ -229,7 +229,7 @@ namespace zero_mate::cpu
     void CARM1176JZF_S::Execute(isa::CMultiply_Long instruction)
     {
         const auto reg_rs = m_regs.at(instruction.Get_Rs());
-        const auto reg_rm = m_regs.at(instruction.Get_Rs());
+        const auto reg_rm = m_regs.at(instruction.Get_Rm());
         const auto reg_rd_lo = instruction.Get_RdLo();
         const auto reg_rd_hi = instruction.Get_RdHi();
 
@@ -237,11 +237,11 @@ namespace zero_mate::cpu
 
         if (instruction.Is_U_Bit_Set())
         {
-            result = static_cast<std::uint64_t>(reg_rs) * static_cast<std::uint64_t>(reg_rm);
+            result = static_cast<std::uint64_t>(static_cast<std::int64_t>(reg_rm) * static_cast<std::int64_t>(reg_rs));
         }
         else
         {
-            result = static_cast<std::uint64_t>(static_cast<std::int64_t>(reg_rm) * static_cast<std::int64_t>(reg_rs));
+            result = static_cast<std::uint64_t>(reg_rs) * static_cast<std::uint64_t>(reg_rm);
         }
 
         if (instruction.Is_A_Bit_Set())

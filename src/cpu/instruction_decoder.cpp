@@ -4,7 +4,7 @@
 #include "../utils/math.hpp"
 #include "instruction_decoder.hpp"
 
-namespace zero_mate::cpu::isa
+namespace zero_mate::cpu
 {
     CInstruction_Decoder::CInstruction_Decoder() noexcept
     {
@@ -16,7 +16,7 @@ namespace zero_mate::cpu::isa
                   });
     }
 
-    CInstruction::NType CInstruction_Decoder::Get_Instruction_Type(CInstruction instruction) noexcept
+    isa::CInstruction::NType CInstruction_Decoder::Get_Instruction_Type(isa::CInstruction instruction) noexcept
     {
         for (const auto& [mask, expected, type] : INSTRUCTION_LOOKUP_TABLE)
         {
@@ -26,6 +26,6 @@ namespace zero_mate::cpu::isa
             }
         }
 
-        return CInstruction::NType::Unknown;
+        return isa::CInstruction::NType::Unknown;
     }
 }
