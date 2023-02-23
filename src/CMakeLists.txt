@@ -21,7 +21,9 @@ add_executable(
     cpu/arm1176jzf_s.hpp
     cpu/arm1176jzf_s.cpp
     cpu/alu.hpp
-    cpu/alu.cpp)
+    cpu/alu.cpp
+    cpu/mac.hpp
+    cpu/mac.cpp)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(

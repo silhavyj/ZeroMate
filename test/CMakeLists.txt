@@ -6,6 +6,7 @@ set(SRC_FILES
     ../src/cpu/registers/cspr.cpp
     ../src/cpu/arm1176jzf_s.cpp
     ../src/cpu/alu.cpp
+    ../src/cpu/mac.cpp
     ../src/cpu/isa/instruction.cpp
     ../src/cpu/isa/data_processing.cpp
     ../src/cpu/isa/multiply.cpp

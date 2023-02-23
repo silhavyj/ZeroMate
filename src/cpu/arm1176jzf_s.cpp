@@ -1,5 +1,6 @@
 #include "arm1176jzf_s.hpp"
 #include "alu.hpp"
+#include "mac.hpp"
 
 namespace zero_mate::cpu
 {
@@ -204,69 +205,38 @@ namespace zero_mate::cpu
 
     void CARM1176JZF_S::Execute(isa::CMultiply instruction)
     {
-        const std::uint32_t dest_reg = instruction.Get_Rd();
-        const auto reg_rm_64u = static_cast<std::uint64_t>(m_regs.at(instruction.Get_Rm()));
-        const auto reg_rs_64u = static_cast<std::uint64_t>(m_regs.at(instruction.Get_Rs()));
-        std::uint64_t result_64u = reg_rm_64u * reg_rs_64u;
+        const auto result = mac::Execute(instruction,
+                                         m_regs.at(instruction.Get_Rm()),
+                                         m_regs.at(instruction.Get_Rs()),
+                                         m_regs.at(instruction.Get_Rn()));
 
-        if (instruction.Is_A_Bit_Set())
+        if (result.set_fags)
         {
-            result_64u += static_cast<std::uint64_t>(m_regs.at(instruction.Get_Rn()));
+            m_cspr.Set_Flag(CCSPR::NFlag::N, result.n_flag);
+            m_cspr.Set_Flag(CCSPR::NFlag::Z, result.z_flag);
         }
 
-        const auto result_32u = static_cast<std::uint32_t>(result_64u);
-
-        if (instruction.Is_S_Bit_Set() && dest_reg != PC_REG_IDX)
-        {
-            m_cspr.Set_Flag(CCSPR::NFlag::N, utils::math::Is_Negative<std::uint32_t>(result_32u));
-            m_cspr.Set_Flag(CCSPR::NFlag::Z, result_32u == 0);
-        }
-
-        m_regs.at(dest_reg) = result_32u;
+        m_regs.at(instruction.Get_Rd()) = result.value_lo;
     }
 
     void CARM1176JZF_S::Execute(isa::CMultiply_Long instruction)
     {
-        const auto reg_rs_32u = m_regs.at(instruction.Get_Rs());
-        const auto reg_rm_32u = m_regs.at(instruction.Get_Rm());
-
-        const auto reg_rs_32s = static_cast<std::int32_t>(reg_rs_32u);
-        const auto reg_rm_32s = static_cast<std::int32_t>(reg_rm_32u);
-
-        const auto reg_rs_64u = static_cast<std::uint64_t>(reg_rs_32u);
-        const auto reg_rm_64u = static_cast<std::uint64_t>(reg_rm_32u);
-
-        const auto reg_rs_64s = static_cast<std::int64_t>(reg_rs_32s);
-        const auto reg_rm_64s = static_cast<std::int64_t>(reg_rm_32s);
-
         const auto reg_rd_lo = instruction.Get_Rd_Lo();
         const auto reg_rd_hi = instruction.Get_Rd_Hi();
 
-        const auto acc_value = (static_cast<std::uint64_t>(m_regs.at(reg_rd_hi)) << 32U) + m_regs.at(reg_rd_lo);
+        const auto result = mac::Execute(instruction,
+                                         m_regs.at(instruction.Get_Rm()),
+                                         m_regs.at(instruction.Get_Rs()),
+                                         m_regs.at(reg_rd_lo),
+                                         m_regs.at(reg_rd_hi));
 
-        std::uint64_t result{};
-
-        if (instruction.Is_U_Bit_Set())
+        if (result.set_fags)
         {
-            result = static_cast<std::uint64_t>(reg_rs_64s * reg_rm_64s);
-        }
-        else
-        {
-            result = reg_rs_64u * reg_rm_64u;
-        }
-
-        if (instruction.Is_A_Bit_Set())
-        {
-            result += acc_value;
+            m_cspr.Set_Flag(CCSPR::NFlag::N, result.n_flag);
+            m_cspr.Set_Flag(CCSPR::NFlag::Z, result.z_flag);
         }
 
-        m_regs.at(reg_rd_hi) = static_cast<std::uint32_t>((result >> 32U) & 0xFFFFFFFFU);
-        m_regs.at(reg_rd_lo) = static_cast<std::uint32_t>(result & 0xFFFFFFFFU);
-
-        if (instruction.Is_S_Bit_Set())
-        {
-            m_cspr.Set_Flag(CCSPR::NFlag::N, utils::math::Is_Negative<std::uint64_t>(result));
-            m_cspr.Set_Flag(CCSPR::NFlag::Z, result == 0);
-        }
+        m_regs.at(reg_rd_lo) = result.value_lo;
+        m_regs.at(reg_rd_hi) = result.value_hi;
     }
 }
