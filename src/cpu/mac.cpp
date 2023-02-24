@@ -44,19 +44,26 @@ namespace zero_mate::cpu::mac
         const auto reg_rs_64s = static_cast<std::int64_t>(reg_rs_32s);
         const auto reg_rm_64s = static_cast<std::int64_t>(reg_rm_32s);
 
-        const auto acc_value = (static_cast<std::uint64_t>(reg_rd_hi) << 32U) + reg_rd_lo;
+        const auto acc_value_64u = (static_cast<std::uint64_t>(reg_rd_hi) << 32U) + static_cast<std::uint64_t>(reg_rd_lo);
+        const auto acc_value_64s = static_cast<std::int64_t>(acc_value_64u);
+
+        const auto Execute = [&](const auto reg1, const auto reg2, const auto acc_value) -> std::uint64_t {
+            auto result_value = reg1 * reg2;
+            if (instruction.Is_A_Bit_Set())
+            {
+                result_value += acc_value;
+            }
+
+            return static_cast<std::uint64_t>(result_value);
+        };
 
         if (instruction.Is_U_Bit_Set())
         {
-            result_value_64u = static_cast<std::uint64_t>(reg_rs_64s * reg_rm_64s);
+            result_value_64u = Execute(reg_rs_64s, reg_rm_64s, acc_value_64s);
         }
         else
         {
-            result_value_64u = reg_rs_64u * reg_rm_64u;
-        }
-        if (instruction.Is_A_Bit_Set())
-        {
-            result_value_64u += acc_value;
+            result_value_64u = Execute(reg_rs_64u, reg_rm_64u, acc_value_64u);
         }
 
         result.set_fags = instruction.Is_S_Bit_Set();
