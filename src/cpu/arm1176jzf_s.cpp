@@ -267,15 +267,18 @@ namespace zero_mate::cpu
         }
 
         const std::int32_t offset = [&]() -> std::int32_t {
+            static constexpr std::uint32_t MASK_28_BITS = 0xFFFFFFFU;
+            static constexpr std::uint32_t MASK_24_BITS = 0xFFFFFFU;
+
             const auto instruction_value = instruction.Get_Value();
 
             if (utils::math::Is_Bit_Set(instruction_value, 23U))
             {
-                const std::uint32_t twos_compliment = ((~(instruction_value & 0xFFFFFFFU) + 1) & 0xFFFFFFU);
+                const std::uint32_t twos_compliment = ((~(instruction_value & MASK_28_BITS) + 1) & MASK_24_BITS);
                 return -static_cast<std::int32_t>(twos_compliment << 2U);
             }
 
-            return static_cast<std::int32_t>((instruction_value & 0xFFFFFFU) << 2U);
+            return static_cast<std::int32_t>((instruction_value & MASK_24_BITS) << 2U);
         }();
 
         if (offset < 0)
@@ -287,6 +290,7 @@ namespace zero_mate::cpu
             PC() += static_cast<std::uint32_t>(offset);
         }
 
+        // PC is already pointing at the next instruction. Hence, +4 and not +8
         PC() += sizeof(std::uint32_t);
     }
 

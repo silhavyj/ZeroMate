@@ -16,8 +16,8 @@ TEST(bx_instruction, test_01)
     };
 
     CARM1176JZF_S cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
-    cpu.Step(2);
 
+    cpu.Step(2);
     EXPECT_EQ(cpu.m_regs[1], 12);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 12);
 }
@@ -35,8 +35,8 @@ TEST(bx_instruction, test_02)
     };
 
     CARM1176JZF_S cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
-    cpu.Step(14);
 
+    cpu.Step(14);
     EXPECT_EQ(cpu.m_regs[1], 4);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 8);
 }
