@@ -46,7 +46,7 @@ TEST(b_instruction, test_03)
     using namespace zero_mate::cpu;
 
     const std::vector<std::uint32_t> ram_content = {
-        //          label1:
+                    //          label1:
         0xeafffffe, // 00000000     b label1
     };
 

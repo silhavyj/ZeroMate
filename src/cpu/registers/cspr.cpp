@@ -49,4 +49,15 @@ namespace zero_mate::cpu
 
         return false;
     }
+
+    void CCSPR::Set_CPU_Mode(NCPU_Mode mode) noexcept
+    {
+        m_value &= ~(CPU_MODE_MASK);
+        m_value |= static_cast<std::uint32_t>(mode);
+    }
+
+    CCSPR::NCPU_Mode CCSPR::Get_CPU_Mode() const noexcept
+    {
+        return static_cast<NCPU_Mode>(m_value & CPU_MODE_MASK);
+    }
 }

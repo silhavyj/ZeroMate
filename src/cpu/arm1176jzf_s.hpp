@@ -47,6 +47,7 @@ namespace zero_mate::cpu
         void Execute(isa::CData_Processing instruction) noexcept;
         void Execute(isa::CMultiply instruction) noexcept;
         void Execute(isa::CMultiply_Long instruction) noexcept;
+        void Execute(isa::CSingle_Data_Transfer instruction) noexcept;
 
     public:
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;

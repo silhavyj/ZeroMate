@@ -152,6 +152,9 @@ namespace zero_mate::cpu
             case isa::CInstruction::NType::Halfword_Data_Transfer_Register_Offset:
             case isa::CInstruction::NType::Halfword_Data_Transfer_Immediate_Offset:
             case isa::CInstruction::NType::Single_Data_Transfer:
+                Execute(isa::CSingle_Data_Transfer{ instruction });
+                break;
+
             case isa::CInstruction::NType::Undefined:
             case isa::CInstruction::NType::Block_Data_Transfer:
             case isa::CInstruction::NType::Branch:
@@ -290,7 +293,7 @@ namespace zero_mate::cpu
             PC() += static_cast<std::uint32_t>(offset);
         }
 
-        // PC is already pointing at the next instruction. Hence, +4 and not +8
+        // PC is already pointing at the next instruction. Hence, +4 and not +8.
         PC() += sizeof(std::uint32_t);
     }
 
@@ -329,5 +332,11 @@ namespace zero_mate::cpu
 
         m_regs.at(reg_rd_lo) = result.value_lo;
         m_regs.at(reg_rd_hi) = result.value_hi;
+    }
+
+    void CARM1176JZF_S::Execute(isa::CSingle_Data_Transfer instruction) noexcept
+    {
+        // TODO
+        static_cast<void>(instruction);
     }
 }

@@ -20,6 +20,8 @@ add_executable(
     cpu/isa/branch_and_exchange.cpp
     cpu/isa/branch.hpp
     cpu/isa/branch.cpp
+    cpu/isa/single_data_transfer.hpp
+    cpu/isa/single_data_transfer.cpp
     cpu/instruction_decoder.hpp
     cpu/instruction_decoder.cpp
     cpu/arm1176jzf_s.hpp
