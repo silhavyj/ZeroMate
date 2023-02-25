@@ -246,7 +246,7 @@ namespace zero_mate::cpu
 
     void CARM1176JZF_S::Execute(isa::CBranch_And_Exchange instruction) noexcept
     {
-        if (instruction.Switch_To_Thumb())
+        if (instruction.Get_Instruction_Mode() == isa::CBranch_And_Exchange::NCPU_Instruction_Mode::Thumb)
         {
             // TODO print an info message saying that thumb instructions are not supported
         }
@@ -256,20 +256,38 @@ namespace zero_mate::cpu
             LR() = PC();
         }
 
-        PC() = m_regs.at(instruction.Get_Rm());
+        PC() = m_regs.at(instruction.Get_Rm()) & 0xFFFFFFFEU;
     }
 
     void CARM1176JZF_S::Execute(isa::CBranch instruction) noexcept
     {
-        static_cast<void>(instruction);
+        if (instruction.Is_L_Bit_Set())
+        {
+            LR() = PC();
+        }
 
-        // if (instruction.Is_L_Bit_Set())
-        // {
-        //    LR() = PC();
-        // }
+        const std::int32_t offset = [&]() -> std::int32_t {
+            const auto instruction_value = instruction.Get_Value();
 
-        // TODO
-        // PC() += instruction.Get_Offset() << 2;
+            if (utils::math::Is_Bit_Set(instruction_value, 23U))
+            {
+                const std::uint32_t twos_compliment = ((~(instruction_value & 0xFFFFFFFU) + 1) & 0xFFFFFFU);
+                return -static_cast<std::int32_t>(twos_compliment << 2U);
+            }
+
+            return static_cast<std::int32_t>((instruction_value & 0xFFFFFFU) << 2U);
+        }();
+
+        if (offset < 0)
+        {
+            PC() -= static_cast<std::uint32_t>(-offset);
+        }
+        else
+        {
+            PC() += static_cast<std::uint32_t>(offset);
+        }
+
+        PC() += sizeof(std::uint32_t);
     }
 
     void CARM1176JZF_S::Execute(isa::CMultiply instruction) noexcept

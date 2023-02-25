@@ -30,6 +30,19 @@ namespace zero_mate::cpu::mac
         return result;
     }
 
+    template<typename Type>
+    [[nodiscard]] static std::uint64_t Multiply_Acc(Type value1, Type value2, Type acc_value, bool accumulate) noexcept
+    {
+        Type result_value = value1 * value2;
+
+        if (accumulate)
+        {
+            result_value += acc_value;
+        }
+
+        return static_cast<std::uint64_t>(result_value);
+    }
+
     TResult Execute(isa::CMultiply_Long instruction, std::uint32_t reg_rm, std::uint32_t reg_rs, std::uint32_t reg_rd_lo, std::uint32_t reg_rd_hi) noexcept
     {
         TResult result{};
@@ -47,23 +60,13 @@ namespace zero_mate::cpu::mac
         const auto acc_value_64u = (static_cast<std::uint64_t>(reg_rd_hi) << 32U) + static_cast<std::uint64_t>(reg_rd_lo);
         const auto acc_value_64s = static_cast<std::int64_t>(acc_value_64u);
 
-        const auto Execute = [&](const auto reg1, const auto reg2, const auto acc_value) -> std::uint64_t {
-            auto result_value = reg1 * reg2;
-            if (instruction.Is_A_Bit_Set())
-            {
-                result_value += acc_value;
-            }
-
-            return static_cast<std::uint64_t>(result_value);
-        };
-
         if (instruction.Is_U_Bit_Set())
         {
-            result_value_64u = Execute(reg_rs_64s, reg_rm_64s, acc_value_64s);
+            result_value_64u = Multiply_Acc(reg_rs_64s, reg_rm_64s, acc_value_64s, instruction.Is_A_Bit_Set());
         }
         else
         {
-            result_value_64u = Execute(reg_rs_64u, reg_rm_64u, acc_value_64u);
+            result_value_64u = Multiply_Acc(reg_rs_64u, reg_rm_64u, acc_value_64u, instruction.Is_A_Bit_Set());
         }
 
         result.set_fags = instruction.Is_S_Bit_Set();
