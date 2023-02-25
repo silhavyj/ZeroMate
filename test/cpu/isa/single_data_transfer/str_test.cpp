@@ -89,3 +89,37 @@ TEST(str_instruction, test_05)
 
     EXPECT_EQ(ram->Read<CARM1176JZF_S::word_t>(204), 13);
 }
+
+TEST(str_instruction, test_06)
+{
+    using namespace zero_mate::cpu;
+
+    auto ram = std::make_shared<mocks::CRAM>();
+    CARM1176JZF_S cpu{ 0, ram };
+
+    cpu.Execute({
+    { 0xe3a00c02 }, // mov r0, #512
+    { 0xe3a010a9 }, // mov r1, #169
+    { 0xe3a02002 }, // mov r2, #2
+    { 0xe6c01002 }, // strb r1, [r0], r2
+    });
+
+    EXPECT_EQ(ram->Read<CARM1176JZF_S::byte_t>(512), 169);
+    EXPECT_EQ(cpu.m_regs[0], 514);
+}
+
+TEST(str_instruction, test_07)
+{
+    using namespace zero_mate::cpu;
+
+    auto ram = std::make_shared<mocks::CRAM>();
+    CARM1176JZF_S cpu{ 0, ram };
+
+    cpu.Execute({
+    { 0xe3a00c02 }, // mov r0, #512
+    { 0xe3e01003 }, // mov r1, #-4
+    { 0xe7801101 }  // str r1, [r0, r1, LSL #2]
+    });
+
+    EXPECT_EQ(ram->Read<CARM1176JZF_S::word_t>(496), 0xfffffffc);
+}

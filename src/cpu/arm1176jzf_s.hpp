@@ -44,6 +44,7 @@ namespace zero_mate::cpu
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand_Imm(isa::CData_Processing instruction) const noexcept;
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand(isa::CData_Processing instruction) const noexcept;
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Perform_Shift(isa::CInstruction::NShift_Type shift_type, std::uint32_t shift_amount, std::uint32_t shift_reg) const noexcept;
+        [[nodiscard]] std::int64_t Get_Offset(isa::CSingle_Data_Transfer instruction) const noexcept;
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;
@@ -51,7 +52,22 @@ namespace zero_mate::cpu
         void Execute(isa::CData_Processing instruction) noexcept;
         void Execute(isa::CMultiply instruction) noexcept;
         void Execute(isa::CMultiply_Long instruction) noexcept;
-        void Execute(isa::CSingle_Data_Transfer instruction) noexcept;
+        void Execute(isa::CSingle_Data_Transfer instruction);
+
+        template<std::unsigned_integral Type>
+        void Read_Write_Value(isa::CSingle_Data_Transfer instruction, std::uint32_t addr, std::uint32_t reg_idx)
+        {
+            // TODO make sure the address is Type-aligned
+
+            if (instruction.Is_L_Bit_Set())
+            {
+                m_regs.at(reg_idx) = m_ram->Read<Type>(addr);
+            }
+            else
+            {
+                m_ram->Write<Type>(addr, static_cast<Type>(m_regs.at(reg_idx)));
+            }
+        }
 
     public:
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
