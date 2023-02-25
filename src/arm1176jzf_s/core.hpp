@@ -8,8 +8,8 @@
 #include <initializer_list>
 
 #include "isa/isa.hpp"
+#include "isa/isa_decoder.hpp"
 #include "registers/cspr.hpp"
-#include "instruction_decoder.hpp"
 #include "mocks/ram.hpp"
 #include "../utils/math.hpp"
 
@@ -74,7 +74,7 @@ namespace zero_mate::arm1176jzf_s
     public:
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
         CCSPR m_cspr;
-        CInstruction_Decoder m_instruction_decoder;
+        isa::CISA_Decoder m_instruction_decoder;
         std::shared_ptr<mocks::CRAM> m_ram;
     };
 }

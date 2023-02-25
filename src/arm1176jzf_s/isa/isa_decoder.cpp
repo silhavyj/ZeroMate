@@ -1,12 +1,12 @@
 #include <algorithm>
 #include <bitset>
 
-#include "../utils/math.hpp"
-#include "instruction_decoder.hpp"
+#include "../../utils/math.hpp"
+#include "isa_decoder.hpp"
 
-namespace zero_mate::arm1176jzf_s
+namespace zero_mate::arm1176jzf_s::isa
 {
-    CInstruction_Decoder::CInstruction_Decoder() noexcept
+    CISA_Decoder::CISA_Decoder() noexcept
     {
         std::sort(INSTRUCTION_LOOKUP_TABLE.begin(),
                   INSTRUCTION_LOOKUP_TABLE.end(),
@@ -16,7 +16,7 @@ namespace zero_mate::arm1176jzf_s
                   });
     }
 
-    isa::CInstruction::NType CInstruction_Decoder::Get_Instruction_Type(isa::CInstruction instruction) const noexcept
+    CInstruction::NType CISA_Decoder::Get_Instruction_Type(CInstruction instruction) const noexcept
     {
         for (const auto& [mask, expected, type] : INSTRUCTION_LOOKUP_TABLE)
         {
@@ -26,6 +26,6 @@ namespace zero_mate::arm1176jzf_s
             }
         }
 
-        return isa::CInstruction::NType::Unknown;
+        return CInstruction::NType::Unknown;
     }
 }
