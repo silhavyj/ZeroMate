@@ -3,12 +3,14 @@
 #include <array>
 #include <limits>
 #include <cstdint>
+#include <memory>
 #include <initializer_list>
 
 #include "isa/isa.hpp"
-#include "../utils/math.hpp"
 #include "registers/cspr.hpp"
 #include "instruction_decoder.hpp"
+#include "mocks/ram.hpp"
+#include "../utils/math.hpp"
 
 namespace zero_mate::cpu
 {
@@ -22,13 +24,17 @@ namespace zero_mate::cpu
         static constexpr auto MAX_ADDR = std::numeric_limits<std::uint32_t>::max() - sizeof(std::uint32_t);
 
         CARM1176JZF_S() noexcept;
+        CARM1176JZF_S(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram);
 
+        void Step(std::size_t count);
+        void Step();
         void Execute(std::initializer_list<isa::CInstruction> instructions);
 
     private:
         [[nodiscard]] std::uint32_t& PC() noexcept;
         [[nodiscard]] std::uint32_t& LR() noexcept;
         [[nodiscard]] std::uint32_t& SP() noexcept;
+        [[nodiscard]] isa::CInstruction Fetch_Instruction();
 
         [[nodiscard]] bool Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept;
         [[nodiscard]] std::uint32_t Get_Shift_Amount(isa::CData_Processing instruction) const noexcept;
@@ -46,5 +52,6 @@ namespace zero_mate::cpu
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
         CCSPR m_cspr;
         CInstruction_Decoder m_instruction_decoder;
+        std::shared_ptr<mocks::CRAM> m_ram;
     };
 }

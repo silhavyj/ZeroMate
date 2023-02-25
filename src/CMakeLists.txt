@@ -27,7 +27,8 @@ add_executable(
     cpu/alu.hpp
     cpu/alu.cpp
     cpu/mac.hpp
-    cpu/mac.cpp)
+    cpu/mac.cpp
+    cpu/mocks/ram.hpp)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(

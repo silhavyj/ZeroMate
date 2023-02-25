@@ -1,14 +1,46 @@
-#include "arm1176jzf_s.hpp"
 #include "alu.hpp"
 #include "mac.hpp"
+#include "arm1176jzf_s.hpp"
 
 namespace zero_mate::cpu
 {
     CARM1176JZF_S::CARM1176JZF_S() noexcept
+    : CARM1176JZF_S(MAX_ADDR, nullptr)
+    {
+    }
+
+    CARM1176JZF_S::CARM1176JZF_S(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram)
     : m_regs{}
     , m_cspr{ 0 }
+    , m_ram{ ram }
     {
         LR() = MAX_ADDR;
+        PC() = pc;
+    }
+
+    void CARM1176JZF_S::Step(std::size_t count)
+    {
+        while (count > 0)
+        {
+            Step();
+            --count;
+        }
+    }
+
+    void CARM1176JZF_S::Step()
+    {
+        if (PC() != MAX_ADDR && m_ram != nullptr)
+        {
+            const auto instruction = Fetch_Instruction();
+            Execute({ instruction });
+        }
+    }
+
+    isa::CInstruction CARM1176JZF_S::Fetch_Instruction()
+    {
+        const auto instruction = m_ram->Read<std::uint32_t>(PC());
+        PC() += sizeof(std::uint32_t);
+        return instruction;
     }
 
     std::uint32_t& CARM1176JZF_S::PC() noexcept
@@ -217,15 +249,22 @@ namespace zero_mate::cpu
             // TODO print an info message saying that thumb instructions are not supported
         }
 
-        PC() = m_regs.at(instruction.Get_Rn());
-    }
-
-    void CARM1176JZF_S::Execute(isa::CBranch instruction) noexcept
-    {
         if (instruction.Is_L_Bit_Set())
         {
             LR() = PC();
         }
+
+        PC() = m_regs.at(instruction.Get_Rm());
+    }
+
+    void CARM1176JZF_S::Execute(isa::CBranch instruction) noexcept
+    {
+        static_cast<void>(instruction);
+
+        // if (instruction.Is_L_Bit_Set())
+        // {
+        //    LR() = PC();
+        // }
 
         // TODO
         // PC() += instruction.Get_Offset() << 2;
