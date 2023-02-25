@@ -9,7 +9,7 @@ namespace zero_mate::cpu
     {
     }
 
-    CARM1176JZF_S::CARM1176JZF_S(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram)
+    CARM1176JZF_S::CARM1176JZF_S(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram) noexcept
     : m_regs{}
     , m_cspr{ 0 }
     , m_ram{ ram }
@@ -51,11 +51,6 @@ namespace zero_mate::cpu
     std::uint32_t& CARM1176JZF_S::LR() noexcept
     {
         return m_regs[LR_REG_IDX];
-    }
-
-    std::uint32_t& CARM1176JZF_S::SP() noexcept
-    {
-        return m_regs[SP_REG_IDX];
     }
 
     bool CARM1176JZF_S::Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept
@@ -275,20 +270,7 @@ namespace zero_mate::cpu
             LR() = PC();
         }
 
-        const std::int32_t offset = [&]() -> std::int32_t {
-            static constexpr std::uint32_t MASK_28_BITS = 0xFFFFFFFU;
-            static constexpr std::uint32_t MASK_24_BITS = 0xFFFFFFU;
-
-            const auto instruction_value = instruction.Get_Value();
-
-            if (utils::math::Is_Bit_Set(instruction_value, 23U))
-            {
-                const std::uint32_t twos_compliment = ((~(instruction_value & MASK_28_BITS) + 1) & MASK_24_BITS);
-                return -static_cast<std::int32_t>(twos_compliment << 2U);
-            }
-
-            return static_cast<std::int32_t>((instruction_value & MASK_24_BITS) << 2U);
-        }();
+        const auto offset = instruction.Get_Offset();
 
         if (offset < 0)
         {
@@ -375,11 +357,11 @@ namespace zero_mate::cpu
 
         if (instruction.Is_B_Bit_Set())
         {
-            Read_Write_Value<byte_t>(instruction, addr, instruction.Get_Rd());
+            Read_Write_Value<std::uint8_t>(instruction, addr, instruction.Get_Rd());
         }
         else
         {
-            Read_Write_Value<word_t>(instruction, addr, instruction.Get_Rd());
+            Read_Write_Value<std::uint32_t>(instruction, addr, instruction.Get_Rd());
         }
 
         if (!pre_indexed || instruction.Is_W_Bit_Set())

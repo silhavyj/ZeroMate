@@ -17,7 +17,7 @@ TEST(str_instruction, test_01)
     { 0xe7850001 }  // str r0, [r5, r1]
     });
 
-    EXPECT_EQ(ram->Read<CARM1176JZF_S::word_t>(24), 1024);
+    EXPECT_EQ(ram->Read<std::uint32_t>(24), 1024);
 }
 
 TEST(str_instruction, test_02)
@@ -34,7 +34,7 @@ TEST(str_instruction, test_02)
     { 0xe7c50001 }  // strb r0, [r5, r1]
     });
 
-    EXPECT_EQ(ram->Read<CARM1176JZF_S::byte_t>(228), 0x54);
+    EXPECT_EQ(ram->Read<std::uint8_t>(228), 0x54);
 }
 
 TEST(str_instruction, test_03)
@@ -51,7 +51,7 @@ TEST(str_instruction, test_03)
     { 0xe7c50001 }  // strb r0, [r5, r1]
     });
 
-    EXPECT_EQ(ram->Read<CARM1176JZF_S::byte_t>(220), 0x54);
+    EXPECT_EQ(ram->Read<std::uint8_t>(220), 0x54);
 }
 
 TEST(str_instruction, test_04)
@@ -70,8 +70,8 @@ TEST(str_instruction, test_04)
     { 0xe7c50001 }  // strb r0, [r5, r1]
     });
 
-    EXPECT_EQ(ram->Read<CARM1176JZF_S::byte_t>(220), 0x54);
-    EXPECT_EQ(ram->Read<CARM1176JZF_S::byte_t>(219), 0x54);
+    EXPECT_EQ(ram->Read<std::uint8_t>(220), 0x54);
+    EXPECT_EQ(ram->Read<std::uint8_t>(219), 0x54);
 }
 
 TEST(str_instruction, test_05)
@@ -87,7 +87,7 @@ TEST(str_instruction, test_05)
     { 0xe5801004 }, // str r1, [r0, #4]
     });
 
-    EXPECT_EQ(ram->Read<CARM1176JZF_S::word_t>(204), 13);
+    EXPECT_EQ(ram->Read<std::uint32_t>(204), 13);
 }
 
 TEST(str_instruction, test_06)
@@ -104,7 +104,7 @@ TEST(str_instruction, test_06)
     { 0xe6c01002 }, // strb r1, [r0], r2
     });
 
-    EXPECT_EQ(ram->Read<CARM1176JZF_S::byte_t>(512), 169);
+    EXPECT_EQ(ram->Read<std::uint8_t>(512), 169);
     EXPECT_EQ(cpu.m_regs[0], 514);
 }
 
@@ -121,5 +121,5 @@ TEST(str_instruction, test_07)
     { 0xe7801101 }  // str r1, [r0, r1, LSL #2]
     });
 
-    EXPECT_EQ(ram->Read<CARM1176JZF_S::word_t>(496), 0xfffffffc);
+    EXPECT_EQ(ram->Read<std::uint32_t>(496), 0xfffffffc);
 }

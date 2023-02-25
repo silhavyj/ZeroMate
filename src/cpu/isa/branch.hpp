@@ -10,6 +10,6 @@ namespace zero_mate::cpu::isa
         explicit CBranch(CInstruction instruction) noexcept;
 
         [[nodiscard]] bool Is_L_Bit_Set() const noexcept;
-        [[nodiscard]] std::uint32_t Get_Offset() const noexcept;
+        [[nodiscard]] std::int32_t Get_Offset() const noexcept;
     };
 }

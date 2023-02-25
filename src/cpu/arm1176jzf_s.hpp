@@ -4,6 +4,7 @@
 #include <limits>
 #include <cstdint>
 #include <memory>
+#include <cassert>
 #include <initializer_list>
 
 #include "isa/isa.hpp"
@@ -17,9 +18,6 @@ namespace zero_mate::cpu
     class CARM1176JZF_S final
     {
     public:
-        using word_t = std::uint32_t;
-        using byte_t = std::uint8_t;
-
         static constexpr std::size_t NUMBER_OF_REGS = 16;
         static constexpr std::size_t PC_REG_IDX = 15;
         static constexpr std::size_t LR_REG_IDX = 14;
@@ -27,7 +25,7 @@ namespace zero_mate::cpu
         static constexpr auto MAX_ADDR = std::numeric_limits<std::uint32_t>::max() - sizeof(std::uint32_t);
 
         CARM1176JZF_S() noexcept;
-        CARM1176JZF_S(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram);
+        CARM1176JZF_S(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram) noexcept;
 
         void Step(std::size_t count);
         void Step();
@@ -36,7 +34,6 @@ namespace zero_mate::cpu
     private:
         [[nodiscard]] std::uint32_t& PC() noexcept;
         [[nodiscard]] std::uint32_t& LR() noexcept;
-        [[nodiscard]] std::uint32_t& SP() noexcept;
         [[nodiscard]] isa::CInstruction Fetch_Instruction();
 
         [[nodiscard]] bool Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept;
@@ -57,7 +54,12 @@ namespace zero_mate::cpu
         template<std::unsigned_integral Type>
         void Read_Write_Value(isa::CSingle_Data_Transfer instruction, std::uint32_t addr, std::uint32_t reg_idx)
         {
-            // TODO make sure the address is Type-aligned
+            assert(m_ram != nullptr);
+
+            if (static_cast<std::size_t>(addr) % sizeof(Type) != 0)
+            {
+                // TODO react appropriately (abort, throw an exception?)
+            }
 
             if (instruction.Is_L_Bit_Set())
             {
