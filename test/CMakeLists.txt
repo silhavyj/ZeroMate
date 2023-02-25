@@ -52,7 +52,8 @@ add_executable(
     cpu/isa/multiply_long/smull_test.cpp
     cpu/isa/multiply_long/umlal_test.cpp
     cpu/isa/multiply_long/smlal_test.cpp
-    cpu/isa/branch_and_exchange/bx_test.cpp)
+    cpu/isa/branch_and_exchange/bx_test.cpp
+    cpu/isa/branch_and_exchange/blx_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(

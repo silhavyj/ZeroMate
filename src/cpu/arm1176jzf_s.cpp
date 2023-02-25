@@ -32,7 +32,7 @@ namespace zero_mate::cpu
         if (PC() != MAX_ADDR && m_ram != nullptr)
         {
             const auto instruction = Fetch_Instruction();
-            Execute({ instruction });
+            Execute(instruction);
         }
     }
 
@@ -117,15 +117,17 @@ namespace zero_mate::cpu
     {
         for (const auto& instruction : instructions)
         {
-            if (Is_Instruction_Condition_Met(instruction))
-            {
-                Execute(instruction);
-            }
+            Execute(instruction);
         }
     }
 
     void CARM1176JZF_S::Execute(isa::CInstruction instruction)
     {
+        if (!Is_Instruction_Condition_Met(instruction))
+        {
+            return;
+        }
+
         const auto type = m_instruction_decoder.Get_Instruction_Type(instruction);
 
         switch (type)
