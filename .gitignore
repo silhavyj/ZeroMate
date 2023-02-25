@@ -2,3 +2,6 @@
 /.idea
 /.vs
 /build
+/misc/test_env/*.o
+/misc/test_env/*.elf
+/misc/test_env/*.list
