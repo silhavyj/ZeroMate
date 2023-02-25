@@ -61,4 +61,14 @@ namespace zero_mate::cpu::isa
     {
         return m_value & 0b1111U;
     }
+
+    std::uint32_t CSingle_Data_Transfer::Get_Shift_Amount() const noexcept
+    {
+        return (m_value >> 7U) & 0b11111U;
+    }
+
+    CSingle_Data_Transfer::NShift_Type CSingle_Data_Transfer::Get_Shift_Type() const noexcept
+    {
+        return static_cast<NShift_Type>((m_value >> 5U) & 0b11U);
+    }
 }

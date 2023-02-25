@@ -27,14 +27,6 @@ namespace zero_mate::cpu::isa
             MVN = 0b1111  // NOT operand2(operand1 is ignored)
         };
 
-        enum class NShift_Type : std::uint32_t
-        {
-            LSL = 0b00, // Logical shift left
-            LSR = 0b01, // Logical shift right
-            ASR = 0b10, // Arithmetic shift right
-            ROR = 0b11  // Rotate right
-        };
-
         explicit CData_Processing(CInstruction instruction) noexcept;
 
         [[nodiscard]] bool Is_I_Bit_Set() const noexcept;

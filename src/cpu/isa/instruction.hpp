@@ -46,6 +46,14 @@ namespace zero_mate::cpu::isa
             Unknown
         };
 
+        enum class NShift_Type : std::uint32_t
+        {
+            LSL = 0b00, // Logical shift left
+            LSR = 0b01, // Logical shift right
+            ASR = 0b10, // Arithmetic shift right
+            ROR = 0b11  // Rotate right
+        };
+
         CInstruction(std::uint32_t value) noexcept;
 
         [[nodiscard]] std::uint32_t Get_Value() const noexcept;

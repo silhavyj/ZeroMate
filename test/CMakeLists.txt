@@ -56,7 +56,8 @@ add_executable(
     cpu/isa/branch_and_exchange/bx_test.cpp
     cpu/isa/branch_and_exchange/blx_test.cpp
     cpu/isa/branch/b_test.cpp
-    cpu/isa/branch/bl_test.cpp)
+    cpu/isa/branch/bl_test.cpp
+    cpu/isa/single_data_transfer/str_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(

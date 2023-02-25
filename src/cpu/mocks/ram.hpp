@@ -20,6 +20,8 @@ namespace zero_mate::cpu::mocks
         using RAM_t = std::array<std::uint8_t, SIZE>;
 
     public:
+        CRAM() = default;
+
         CRAM(std::uint32_t addr, const std::vector<std::uint32_t>& instructions)
         {
             assert((instructions.size() / sizeof(uint32_t)) < SIZE);
@@ -38,7 +40,7 @@ namespace zero_mate::cpu::mocks
 
             for (std::size_t byte_idx = 0; byte_idx < sizeof(Type); ++byte_idx)
             {
-                value |= (static_cast<Type>(m_ram[addr]) << ((sizeof(Type) - byte_idx - 1) * std::numeric_limits<std::uint8_t>::digits));
+                value |= static_cast<Type>((static_cast<Type>(m_ram[addr]) << ((sizeof(Type) - byte_idx - 1) * std::numeric_limits<std::uint8_t>::digits)));
                 ++addr;
             }
 

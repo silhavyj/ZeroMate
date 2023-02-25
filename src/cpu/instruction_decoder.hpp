@@ -24,7 +24,7 @@ namespace zero_mate::cpu
             { .mask = 0b0000'1100'0000'0000'0000'0000'0000'0000U, .expected = 0b0000'0000'0000'0000'0000'0000'0000'0000U, .type = isa::CInstruction::NType::Data_Processing      },
             { .mask = 0b0000'1111'1100'0000'0000'0000'1111'0000U, .expected = 0b0000'0000'0000'0000'0000'0000'1001'0000U, .type = isa::CInstruction::NType::Multiply             },
             { .mask = 0b0000'1111'1000'0000'0000'0000'1111'0000U, .expected = 0b0000'0000'1000'0000'0000'0000'1001'0000U, .type = isa::CInstruction::NType::Multiply_Long        },
-            { .mask = 0b0000'1100'1000'0000'0000'0000'0000'0000U, .expected = 0b0000'0100'0000'0000'0000'0000'0000'0000U, .type = isa::CInstruction::NType::Single_Data_Transfer }
+            { .mask = 0b0000'1100'0000'0000'0000'0000'0000'0000U, .expected = 0b0000'0100'0000'0000'0000'0000'0000'0000U, .type = isa::CInstruction::NType::Single_Data_Transfer }
         }};
         // clang-format on
 

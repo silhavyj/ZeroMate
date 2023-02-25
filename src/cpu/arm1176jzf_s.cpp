@@ -197,6 +197,26 @@ namespace zero_mate::cpu
         return second_operand;
     }
 
+    utils::math::TShift_Result<std::uint32_t> CARM1176JZF_S::Perform_Shift(isa::CInstruction::NShift_Type shift_type, std::uint32_t shift_amount, std::uint32_t shift_reg) const noexcept
+    {
+        switch (shift_type)
+        {
+            case isa::CData_Processing::NShift_Type::LSL:
+                return utils::math::LSL<std::uint32_t>(shift_reg, shift_amount, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
+
+            case isa::CData_Processing::NShift_Type::LSR:
+                return utils::math::LSR<std::uint32_t>(shift_reg, shift_amount);
+
+            case isa::CData_Processing::NShift_Type::ASR:
+                return utils::math::ASR<std::uint32_t>(shift_reg, shift_amount);
+
+            case isa::CData_Processing::NShift_Type::ROR:
+                return utils::math::ROR<std::uint32_t>(shift_reg, shift_amount, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
+        }
+
+        return {};
+    }
+
     utils::math::TShift_Result<std::uint32_t> CARM1176JZF_S::Get_Second_Operand(isa::CData_Processing instruction) const noexcept
     {
         if (instruction.Is_I_Bit_Set())
@@ -206,23 +226,9 @@ namespace zero_mate::cpu
 
         const std::uint32_t shift_amount = Get_Shift_Amount(instruction);
         const auto shift_type = instruction.Get_Shift_Type();
+        const auto shift_reg = m_regs.at(instruction.Get_Rm());
 
-        switch (shift_type)
-        {
-            case isa::CData_Processing::NShift_Type::LSL:
-                return utils::math::LSL<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
-
-            case isa::CData_Processing::NShift_Type::LSR:
-                return utils::math::LSR<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount);
-
-            case isa::CData_Processing::NShift_Type::ASR:
-                return utils::math::ASR<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount);
-
-            case isa::CData_Processing::NShift_Type::ROR:
-                return utils::math::ROR<std::uint32_t>(m_regs.at(instruction.Get_Rm()), shift_amount, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
-        }
-
-        return {};
+        return Perform_Shift(shift_type, shift_amount, shift_reg);
     }
 
     void CARM1176JZF_S::Execute(isa::CData_Processing instruction) noexcept
@@ -336,7 +342,63 @@ namespace zero_mate::cpu
 
     void CARM1176JZF_S::Execute(isa::CSingle_Data_Transfer instruction) noexcept
     {
-        // TODO
-        static_cast<void>(instruction);
+        const auto index_offset = [&]() -> std::int64_t {
+            std::int64_t offset{};
+
+            if (!instruction.Is_I_Bit_Set())
+            {
+                offset = static_cast<std::int64_t>(instruction.Get_Immediate_Offset());
+            }
+            else
+            {
+                const auto shift_type = instruction.Get_Shift_Type();
+                const auto shift_amount = instruction.Get_Shift_Amount();
+                const auto shift_reg = m_regs.at(instruction.Get_Rm());
+
+                offset = static_cast<std::int64_t>(Perform_Shift(shift_type, shift_amount, shift_reg).result);
+            }
+            if (!instruction.Is_U_Bit_Set())
+            {
+                return -offset;
+            }
+
+            return offset;
+        }();
+
+        const auto base_location = m_regs.at(instruction.Get_Rn());
+        const bool pre_indexed = instruction.Is_P_Bit_Set();
+        const auto src_dest_register = instruction.Get_Rd();
+        const auto indexed_location = static_cast<std::uint32_t>(static_cast<std::int64_t>(base_location) + index_offset);
+        const auto location = pre_indexed ? indexed_location : base_location;
+
+        if (instruction.Is_B_Bit_Set())
+        {
+            if (instruction.Is_L_Bit_Set())
+            {
+                m_regs.at(src_dest_register) = m_ram->Read<byte_t>(location);
+            }
+            else
+            {
+                m_ram->Write<byte_t>(location, static_cast<byte_t>(m_regs.at(src_dest_register) & 0xFFU));
+            }
+        }
+        else
+        {
+            // TODO make sure the location is word-aligned
+
+            if (instruction.Is_L_Bit_Set())
+            {
+                m_regs.at(src_dest_register) = m_ram->Read<word_t>(location);
+            }
+            else
+            {
+                m_ram->Write<word_t>(location, m_regs.at(src_dest_register));
+            }
+        }
+
+        if (!pre_indexed || instruction.Is_W_Bit_Set())
+        {
+            m_regs.at(instruction.Get_Rn()) = indexed_location;
+        }
     }
 }

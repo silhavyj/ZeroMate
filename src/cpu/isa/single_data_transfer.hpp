@@ -20,5 +20,7 @@ namespace zero_mate::cpu::isa
         [[nodiscard]] std::uint32_t Get_Immediate_Offset() const noexcept;
         [[nodiscard]] std::uint32_t Get_Shift() const noexcept;
         [[nodiscard]] std::uint32_t Get_Rm() const noexcept;
+        [[nodiscard]] std::uint32_t Get_Shift_Amount() const noexcept;
+        [[nodiscard]] NShift_Type Get_Shift_Type() const noexcept;
     };
 }
