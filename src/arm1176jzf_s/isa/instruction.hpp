@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace zero_mate::cpu::isa
+namespace zero_mate::arm1176jzf_s::isa
 {
     class CInstruction
     {

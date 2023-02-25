@@ -1,11 +1,11 @@
 #include <gtest/gtest.h>
 
-#include "cpu/mocks/ram.hpp"
-#include "cpu/arm1176jzf_s.hpp"
+#include "arm1176jzf_s/mocks/ram.hpp"
+#include "arm1176jzf_s/core.hpp"
 
 TEST(bx_instruction, test_01)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
     const std::vector<std::uint32_t> ram_content = {
         0xe3a0100c, // 00000000 mov r1, #12
@@ -15,7 +15,7 @@ TEST(bx_instruction, test_01)
         0xe320f000  // 00000010 nop
     };
 
-    CARM1176JZF_S cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
+    CCPU_Core cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
 
     cpu.Step(2);
     EXPECT_EQ(cpu.m_regs[1], 12);
@@ -24,7 +24,7 @@ TEST(bx_instruction, test_01)
 
 TEST(bx_instruction, test_02)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
     const std::vector<std::uint32_t> ram_content = {
         0xe3a04004, // 00000000 mov r4, #4
@@ -34,7 +34,7 @@ TEST(bx_instruction, test_02)
         0xe12fff14  // 00000010 bx r4
     };
 
-    CARM1176JZF_S cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
+    CCPU_Core cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
 
     cpu.Step(14);
     EXPECT_EQ(cpu.m_regs[1], 4);

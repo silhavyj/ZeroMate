@@ -2,7 +2,7 @@
 
 #include "instruction.hpp"
 
-namespace zero_mate::cpu::isa
+namespace zero_mate::arm1176jzf_s::isa
 {
     class CData_Processing final : public CInstruction
     {

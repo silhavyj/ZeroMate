@@ -1,6 +1,6 @@
 #include "data_processing.hpp"
 
-namespace zero_mate::cpu::isa
+namespace zero_mate::arm1176jzf_s::isa
 {
     CData_Processing::CData_Processing(CInstruction instruction) noexcept
     : CInstruction{ instruction.Get_Value() }

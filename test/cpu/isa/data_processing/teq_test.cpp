@@ -1,14 +1,14 @@
 #include <gtest/gtest.h>
 
-#include "cpu/arm1176jzf_s.hpp"
+#include "arm1176jzf_s/core.hpp"
 #include "register_state_checker.hpp"
 
 TEST(teq_instruction, test_01)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -29,10 +29,10 @@ TEST(teq_instruction, test_01)
 
 TEST(teq_instruction, test_02)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -57,10 +57,10 @@ TEST(teq_instruction, test_02)
 
 TEST(teq_instruction, test_03)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -95,10 +95,10 @@ TEST(teq_instruction, test_03)
 
 TEST(teq_instruction, test_04)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -123,10 +123,10 @@ TEST(teq_instruction, test_04)
 
 TEST(teq_instruction, test_05)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);

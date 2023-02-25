@@ -3,7 +3,7 @@
 #include "isa/multiply.hpp"
 #include "isa/multiply_long.hpp"
 
-namespace zero_mate::cpu::mac
+namespace zero_mate::arm1176jzf_s::mac
 {
     struct TResult
     {

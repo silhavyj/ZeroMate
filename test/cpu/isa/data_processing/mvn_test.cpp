@@ -1,12 +1,12 @@
 #include <gtest/gtest.h>
 
-#include "cpu/arm1176jzf_s.hpp"
+#include "arm1176jzf_s/core.hpp"
 
 TEST(mvn_instruction, test_01)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3f05000 } // mvns r5, #0
@@ -22,9 +22,9 @@ TEST(mvn_instruction, test_01)
 
 TEST(mvn_instruction, test_02)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a00007 }, // mov r0, #7
@@ -41,9 +41,9 @@ TEST(mvn_instruction, test_02)
 
 TEST(mvn_instruction, test_03)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a04102 }, // mov r4, #0x80000000
@@ -61,9 +61,9 @@ TEST(mvn_instruction, test_03)
 
 TEST(mvn_instruction, test_04)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a04003 }, // mov r4, #0b11
@@ -91,9 +91,9 @@ TEST(mvn_instruction, test_04)
 
 TEST(mvn_instruction, test_05)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0x13e0b2bf } // mvnne r11, #0xF000000B
@@ -109,9 +109,9 @@ TEST(mvn_instruction, test_05)
 
 TEST(mvn_instruction, test_06)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a01001 }, // mov r1, #1
@@ -128,9 +128,9 @@ TEST(mvn_instruction, test_06)
 
 TEST(mvn_instruction, test_07)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a01001 }, // mov r1, #1
@@ -148,9 +148,9 @@ TEST(mvn_instruction, test_07)
 
 TEST(mvn_instruction, test_08)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a01001 }, // mov r1, #1

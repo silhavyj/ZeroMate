@@ -1,7 +1,7 @@
 #include "cspr.hpp"
 #include "../../utils/math.hpp"
 
-namespace zero_mate::cpu
+namespace zero_mate::arm1176jzf_s
 {
     CCSPR::CCSPR(uint32_t value) noexcept
     : m_value{ value }

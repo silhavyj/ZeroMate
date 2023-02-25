@@ -13,9 +13,9 @@
 #include "mocks/ram.hpp"
 #include "../utils/math.hpp"
 
-namespace zero_mate::cpu
+namespace zero_mate::arm1176jzf_s
 {
-    class CARM1176JZF_S final
+    class CCPU_Core final
     {
     public:
         static constexpr std::size_t NUMBER_OF_REGS = 16;
@@ -24,8 +24,8 @@ namespace zero_mate::cpu
         static constexpr std::size_t SP_REG_IDX = 13;
         static constexpr auto MAX_ADDR = std::numeric_limits<std::uint32_t>::max() - sizeof(std::uint32_t);
 
-        CARM1176JZF_S() noexcept;
-        CARM1176JZF_S(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram) noexcept;
+        CCPU_Core() noexcept;
+        CCPU_Core(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram) noexcept;
 
         void Step(std::size_t count);
         void Step();

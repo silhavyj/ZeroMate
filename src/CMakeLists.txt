@@ -6,31 +6,31 @@ add_executable(
     ${EXECUTABLE_NAME}
     main.cpp
     utils/math.hpp
-    cpu/registers/cspr.hpp
-    cpu/registers/cspr.cpp
-    cpu/isa/instruction.hpp
-    cpu/isa/instruction.cpp
-    cpu/isa/data_processing.hpp
-    cpu/isa/data_processing.cpp
-    cpu/isa/multiply.hpp
-    cpu/isa/multiply.cpp
-    cpu/isa/multiply_long.hpp
-    cpu/isa/multiply_long.cpp
-    cpu/isa/branch_and_exchange.hpp
-    cpu/isa/branch_and_exchange.cpp
-    cpu/isa/branch.hpp
-    cpu/isa/branch.cpp
-    cpu/isa/single_data_transfer.hpp
-    cpu/isa/single_data_transfer.cpp
-    cpu/instruction_decoder.hpp
-    cpu/instruction_decoder.cpp
-    cpu/arm1176jzf_s.hpp
-    cpu/arm1176jzf_s.cpp
-    cpu/alu.hpp
-    cpu/alu.cpp
-    cpu/mac.hpp
-    cpu/mac.cpp
-    cpu/mocks/ram.hpp)
+    arm1176jzf_s/registers/cspr.hpp
+    arm1176jzf_s/registers/cspr.cpp
+    arm1176jzf_s/isa/instruction.hpp
+    arm1176jzf_s/isa/instruction.cpp
+    arm1176jzf_s/isa/data_processing.hpp
+    arm1176jzf_s/isa/data_processing.cpp
+    arm1176jzf_s/isa/multiply.hpp
+    arm1176jzf_s/isa/multiply.cpp
+    arm1176jzf_s/isa/multiply_long.hpp
+    arm1176jzf_s/isa/multiply_long.cpp
+    arm1176jzf_s/isa/branch_and_exchange.hpp
+    arm1176jzf_s/isa/branch_and_exchange.cpp
+    arm1176jzf_s/isa/branch.hpp
+    arm1176jzf_s/isa/branch.cpp
+    arm1176jzf_s/isa/single_data_transfer.hpp
+    arm1176jzf_s/isa/single_data_transfer.cpp
+    arm1176jzf_s/instruction_decoder.hpp
+    arm1176jzf_s/instruction_decoder.cpp
+    arm1176jzf_s/core.hpp
+    arm1176jzf_s/core.cpp
+    arm1176jzf_s/alu.hpp
+    arm1176jzf_s/alu.cpp
+    arm1176jzf_s/mac.hpp
+    arm1176jzf_s/mac.cpp
+    arm1176jzf_s/mocks/ram.hpp)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(

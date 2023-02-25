@@ -4,7 +4,7 @@
 #include "../utils/math.hpp"
 #include "instruction_decoder.hpp"
 
-namespace zero_mate::cpu
+namespace zero_mate::arm1176jzf_s
 {
     CInstruction_Decoder::CInstruction_Decoder() noexcept
     {

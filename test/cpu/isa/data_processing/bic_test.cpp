@@ -1,12 +1,12 @@
 #include <gtest/gtest.h>
 
-#include "cpu/arm1176jzf_s.hpp"
+#include "arm1176jzf_s/core.hpp"
 
 TEST(bic_instruction, test_01)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3e00000 }, // mvn r0, #0
@@ -24,9 +24,9 @@ TEST(bic_instruction, test_01)
 
 TEST(bic_instruction, test_02)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3e00000 }, // mvn r0, #0
@@ -44,9 +44,9 @@ TEST(bic_instruction, test_02)
 
 TEST(bic_instruction, test_03)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3d01102 } // bics r1, r0, #0x80000000
@@ -62,9 +62,9 @@ TEST(bic_instruction, test_03)
 
 TEST(bic_instruction, test_04)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3e00000 }, // mov r0, #0xFFFFFFFF
@@ -82,9 +82,9 @@ TEST(bic_instruction, test_04)
 
 TEST(bic_instruction, test_05)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a01005 }, // mov r1, #5
@@ -102,9 +102,9 @@ TEST(bic_instruction, test_05)
 
 TEST(bic_instruction, test_06)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a01005 }, // mov r1, #5

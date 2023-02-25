@@ -1,6 +1,6 @@
 #include "branch_and_exchange.hpp"
 
-namespace zero_mate::cpu::isa
+namespace zero_mate::arm1176jzf_s::isa
 {
     CBranch_And_Exchange::CBranch_And_Exchange(CInstruction instruction) noexcept
     : CInstruction{ instruction.Get_Value() }

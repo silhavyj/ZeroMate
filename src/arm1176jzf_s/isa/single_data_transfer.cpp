@@ -1,6 +1,6 @@
 #include "single_data_transfer.hpp"
 
-namespace zero_mate::cpu::isa
+namespace zero_mate::arm1176jzf_s::isa
 {
     CSingle_Data_Transfer::CSingle_Data_Transfer(CInstruction instruction) noexcept
     : CInstruction{ instruction.Get_Value() }

@@ -1,6 +1,6 @@
 #include "multiply_long.hpp"
 
-namespace zero_mate::cpu::isa
+namespace zero_mate::arm1176jzf_s::isa
 {
     CMultiply_Long::CMultiply_Long(CInstruction instruction) noexcept
     : CInstruction{ instruction.Get_Value() }

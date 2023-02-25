@@ -1,11 +1,11 @@
 #include <gtest/gtest.h>
 
-#include "cpu/mocks/ram.hpp"
-#include "cpu/arm1176jzf_s.hpp"
+#include "arm1176jzf_s/mocks/ram.hpp"
+#include "arm1176jzf_s/core.hpp"
 
 TEST(blx_instruction, test_01)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
     const std::vector<std::uint32_t> ram_content = {
         0xe3a04010, // 00000000 mov r4, #0x10
@@ -18,7 +18,7 @@ TEST(blx_instruction, test_01)
         0xe12fff14  // 0000001C bx r4
     };
 
-    CARM1176JZF_S cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
+    CCPU_Core cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
 
     // blx r4
     cpu.Step(3);

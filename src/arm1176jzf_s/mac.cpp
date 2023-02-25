@@ -1,7 +1,7 @@
 #include "mac.hpp"
 #include "../utils/math.hpp"
 
-namespace zero_mate::cpu::mac
+namespace zero_mate::arm1176jzf_s::mac
 {
     TResult Execute(isa::CMultiply instruction, std::uint32_t reg_rm, std::uint32_t reg_rs, std::uint32_t reg_rn) noexcept
     {

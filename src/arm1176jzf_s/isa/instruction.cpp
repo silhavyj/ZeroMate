@@ -1,6 +1,6 @@
 #include "instruction.hpp"
 
-namespace zero_mate::cpu::isa
+namespace zero_mate::arm1176jzf_s::isa
 {
     CInstruction::CInstruction(std::uint32_t value) noexcept
     : m_value{ value }

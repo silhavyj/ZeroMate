@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
 
-#include "cpu/registers/cspr.hpp"
+#include "arm1176jzf_s/registers/cspr.hpp"
 
 TEST(set_flag_set, test_01)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     CCSPR cspr{ 0 };
 
     EXPECT_EQ(cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
@@ -22,7 +22,7 @@ TEST(set_flag_set, test_01)
 
 TEST(set_flag_set, test_02)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     CCSPR cspr{ 0b11110000'00000000'00000000'00000000U };
 
     EXPECT_EQ(cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
@@ -40,7 +40,7 @@ TEST(set_flag_set, test_02)
 
 TEST(set_flag_set, test_03)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     CCSPR cspr{ 0b00000000'00000000'00000000'00000000U };
 
     EXPECT_EQ(cspr.Is_Flag_Set(CCSPR::NFlag::N), false);

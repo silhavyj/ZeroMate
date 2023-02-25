@@ -3,18 +3,18 @@ include_directories(../src)
 
 # List of src files to be compiler with the unit tests
 set(SRC_FILES
-    ../src/cpu/registers/cspr.cpp
-    ../src/cpu/arm1176jzf_s.cpp
-    ../src/cpu/alu.cpp
-    ../src/cpu/mac.cpp
-    ../src/cpu/isa/instruction.cpp
-    ../src/cpu/isa/data_processing.cpp
-    ../src/cpu/isa/multiply.cpp
-    ../src/cpu/isa/multiply_long.cpp
-    ../src/cpu/isa/branch_and_exchange.cpp
-    ../src/cpu/isa/branch.cpp
-    ../src/cpu/isa/single_data_transfer.cpp
-    ../src/cpu/instruction_decoder.cpp)
+    ../src/arm1176jzf_s/registers/cspr.cpp
+    ../src/arm1176jzf_s/core.cpp
+    ../src/arm1176jzf_s/alu.cpp
+    ../src/arm1176jzf_s/mac.cpp
+    ../src/arm1176jzf_s/isa/instruction.cpp
+    ../src/arm1176jzf_s/isa/data_processing.cpp
+    ../src/arm1176jzf_s/isa/multiply.cpp
+    ../src/arm1176jzf_s/isa/multiply_long.cpp
+    ../src/arm1176jzf_s/isa/branch_and_exchange.cpp
+    ../src/arm1176jzf_s/isa/branch.cpp
+    ../src/arm1176jzf_s/isa/single_data_transfer.cpp
+    ../src/arm1176jzf_s/instruction_decoder.cpp)
 
 # Build unit tests
 add_executable(

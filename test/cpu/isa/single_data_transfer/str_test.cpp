@@ -1,14 +1,14 @@
 #include <gtest/gtest.h>
 
-#include "cpu/mocks/ram.hpp"
-#include "cpu/arm1176jzf_s.hpp"
+#include "arm1176jzf_s/mocks/ram.hpp"
+#include "arm1176jzf_s/core.hpp"
 
 TEST(str_instruction, test_01)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
     auto ram = std::make_shared<mocks::CRAM>();
-    CARM1176JZF_S cpu{ 0, ram };
+    CCPU_Core cpu{ 0, ram };
 
     cpu.Execute({
     { 0xe3a05014 }, // mov r5, #20
@@ -22,10 +22,10 @@ TEST(str_instruction, test_01)
 
 TEST(str_instruction, test_02)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
     auto ram = std::make_shared<mocks::CRAM>();
-    CARM1176JZF_S cpu{ 0, ram };
+    CCPU_Core cpu{ 0, ram };
 
     cpu.Execute({
     { 0xe3a050e0 }, // mov r5, #224
@@ -39,10 +39,10 @@ TEST(str_instruction, test_02)
 
 TEST(str_instruction, test_03)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
     auto ram = std::make_shared<mocks::CRAM>();
-    CARM1176JZF_S cpu{ 0, ram };
+    CCPU_Core cpu{ 0, ram };
 
     cpu.Execute({
     { 0xe3a050e0 }, // mov r5, #224
@@ -56,10 +56,10 @@ TEST(str_instruction, test_03)
 
 TEST(str_instruction, test_04)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
     auto ram = std::make_shared<mocks::CRAM>();
-    CARM1176JZF_S cpu{ 0, ram };
+    CCPU_Core cpu{ 0, ram };
 
     cpu.Execute({
     { 0xe3a050e0 }, // mov r5, #224
@@ -76,10 +76,10 @@ TEST(str_instruction, test_04)
 
 TEST(str_instruction, test_05)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
     auto ram = std::make_shared<mocks::CRAM>();
-    CARM1176JZF_S cpu{ 0, ram };
+    CCPU_Core cpu{ 0, ram };
 
     cpu.Execute({
     { 0xe3a000c8 }, // mov r0, #200
@@ -92,10 +92,10 @@ TEST(str_instruction, test_05)
 
 TEST(str_instruction, test_06)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
     auto ram = std::make_shared<mocks::CRAM>();
-    CARM1176JZF_S cpu{ 0, ram };
+    CCPU_Core cpu{ 0, ram };
 
     cpu.Execute({
     { 0xe3a00c02 }, // mov r0, #512
@@ -110,10 +110,10 @@ TEST(str_instruction, test_06)
 
 TEST(str_instruction, test_07)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
     auto ram = std::make_shared<mocks::CRAM>();
-    CARM1176JZF_S cpu{ 0, ram };
+    CCPU_Core cpu{ 0, ram };
 
     cpu.Execute({
     { 0xe3a00c02 }, // mov r0, #512

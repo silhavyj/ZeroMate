@@ -9,7 +9,7 @@
 #include <concepts>
 #include <algorithm>
 
-namespace zero_mate::cpu::mocks
+namespace zero_mate::arm1176jzf_s::mocks
 {
     class CRAM final
     {

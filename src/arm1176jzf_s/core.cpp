@@ -1,15 +1,15 @@
 #include "alu.hpp"
 #include "mac.hpp"
-#include "arm1176jzf_s.hpp"
+#include "core.hpp"
 
-namespace zero_mate::cpu
+namespace zero_mate::arm1176jzf_s
 {
-    CARM1176JZF_S::CARM1176JZF_S() noexcept
-    : CARM1176JZF_S(MAX_ADDR, nullptr)
+    CCPU_Core::CCPU_Core() noexcept
+    : CCPU_Core(MAX_ADDR, nullptr)
     {
     }
 
-    CARM1176JZF_S::CARM1176JZF_S(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram) noexcept
+    CCPU_Core::CCPU_Core(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram) noexcept
     : m_regs{}
     , m_cspr{ 0 }
     , m_ram{ ram }
@@ -18,7 +18,7 @@ namespace zero_mate::cpu
         PC() = pc;
     }
 
-    void CARM1176JZF_S::Step(std::size_t count)
+    void CCPU_Core::Step(std::size_t count)
     {
         while (count > 0)
         {
@@ -27,7 +27,7 @@ namespace zero_mate::cpu
         }
     }
 
-    void CARM1176JZF_S::Step()
+    void CCPU_Core::Step()
     {
         if (PC() != MAX_ADDR && m_ram != nullptr)
         {
@@ -36,24 +36,24 @@ namespace zero_mate::cpu
         }
     }
 
-    isa::CInstruction CARM1176JZF_S::Fetch_Instruction()
+    isa::CInstruction CCPU_Core::Fetch_Instruction()
     {
         const auto instruction = m_ram->Read<std::uint32_t>(PC());
         PC() += sizeof(std::uint32_t);
         return instruction;
     }
 
-    std::uint32_t& CARM1176JZF_S::PC() noexcept
+    std::uint32_t& CCPU_Core::PC() noexcept
     {
         return m_regs[PC_REG_IDX];
     }
 
-    std::uint32_t& CARM1176JZF_S::LR() noexcept
+    std::uint32_t& CCPU_Core::LR() noexcept
     {
         return m_regs[LR_REG_IDX];
     }
 
-    bool CARM1176JZF_S::Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept
+    bool CCPU_Core::Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept
     {
         const auto condition = instruction.Get_Condition();
 
@@ -108,7 +108,7 @@ namespace zero_mate::cpu
         return false;
     }
 
-    void CARM1176JZF_S::Execute(std::initializer_list<isa::CInstruction> instructions)
+    void CCPU_Core::Execute(std::initializer_list<isa::CInstruction> instructions)
     {
         for (const auto& instruction : instructions)
         {
@@ -116,7 +116,7 @@ namespace zero_mate::cpu
         }
     }
 
-    void CARM1176JZF_S::Execute(isa::CInstruction instruction)
+    void CCPU_Core::Execute(isa::CInstruction instruction)
     {
         if (!Is_Instruction_Condition_Met(instruction))
         {
@@ -167,7 +167,7 @@ namespace zero_mate::cpu
         }
     }
 
-    std::uint32_t CARM1176JZF_S::Get_Shift_Amount(isa::CData_Processing instruction) const noexcept
+    std::uint32_t CCPU_Core::Get_Shift_Amount(isa::CData_Processing instruction) const noexcept
     {
         if (instruction.Is_Immediate_Shift())
         {
@@ -177,7 +177,7 @@ namespace zero_mate::cpu
         return m_regs.at(instruction.Get_Rs()) & 0xFFU;
     }
 
-    utils::math::TShift_Result<std::uint32_t> CARM1176JZF_S::Get_Second_Operand_Imm(isa::CData_Processing instruction) const noexcept
+    utils::math::TShift_Result<std::uint32_t> CCPU_Core::Get_Second_Operand_Imm(isa::CData_Processing instruction) const noexcept
     {
         const std::uint32_t immediate = instruction.Get_Immediate();
         const std::uint32_t shift_amount = instruction.Get_Rotate() * 2;
@@ -192,7 +192,7 @@ namespace zero_mate::cpu
         return second_operand;
     }
 
-    utils::math::TShift_Result<std::uint32_t> CARM1176JZF_S::Perform_Shift(isa::CInstruction::NShift_Type shift_type, std::uint32_t shift_amount, std::uint32_t shift_reg) const noexcept
+    utils::math::TShift_Result<std::uint32_t> CCPU_Core::Perform_Shift(isa::CInstruction::NShift_Type shift_type, std::uint32_t shift_amount, std::uint32_t shift_reg) const noexcept
     {
         switch (shift_type)
         {
@@ -212,7 +212,7 @@ namespace zero_mate::cpu
         return {};
     }
 
-    utils::math::TShift_Result<std::uint32_t> CARM1176JZF_S::Get_Second_Operand(isa::CData_Processing instruction) const noexcept
+    utils::math::TShift_Result<std::uint32_t> CCPU_Core::Get_Second_Operand(isa::CData_Processing instruction) const noexcept
     {
         if (instruction.Is_I_Bit_Set())
         {
@@ -226,7 +226,7 @@ namespace zero_mate::cpu
         return Perform_Shift(shift_type, shift_amount, shift_reg);
     }
 
-    void CARM1176JZF_S::Execute(isa::CData_Processing instruction) noexcept
+    void CCPU_Core::Execute(isa::CData_Processing instruction) noexcept
     {
         const std::uint32_t first_operand = m_regs.at(instruction.Get_Rn());
         const auto [carry_out, second_operand] = Get_Second_Operand(instruction);
@@ -248,7 +248,7 @@ namespace zero_mate::cpu
         }
     }
 
-    void CARM1176JZF_S::Execute(isa::CBranch_And_Exchange instruction) noexcept
+    void CCPU_Core::Execute(isa::CBranch_And_Exchange instruction) noexcept
     {
         if (instruction.Get_Instruction_Mode() == isa::CBranch_And_Exchange::NCPU_Instruction_Mode::Thumb)
         {
@@ -263,7 +263,7 @@ namespace zero_mate::cpu
         PC() = m_regs.at(instruction.Get_Rm()) & 0xFFFFFFFEU;
     }
 
-    void CARM1176JZF_S::Execute(isa::CBranch instruction) noexcept
+    void CCPU_Core::Execute(isa::CBranch instruction) noexcept
     {
         if (instruction.Is_L_Bit_Set())
         {
@@ -285,7 +285,7 @@ namespace zero_mate::cpu
         PC() += sizeof(std::uint32_t);
     }
 
-    void CARM1176JZF_S::Execute(isa::CMultiply instruction) noexcept
+    void CCPU_Core::Execute(isa::CMultiply instruction) noexcept
     {
         const auto result = mac::Execute(instruction,
                                          m_regs.at(instruction.Get_Rm()),
@@ -301,7 +301,7 @@ namespace zero_mate::cpu
         m_regs.at(instruction.Get_Rd()) = result.value_lo;
     }
 
-    void CARM1176JZF_S::Execute(isa::CMultiply_Long instruction) noexcept
+    void CCPU_Core::Execute(isa::CMultiply_Long instruction) noexcept
     {
         const auto reg_rd_lo = instruction.Get_Rd_Lo();
         const auto reg_rd_hi = instruction.Get_Rd_Hi();
@@ -322,7 +322,7 @@ namespace zero_mate::cpu
         m_regs.at(reg_rd_hi) = result.value_hi;
     }
 
-    std::int64_t CARM1176JZF_S::Get_Offset(isa::CSingle_Data_Transfer instruction) const noexcept
+    std::int64_t CCPU_Core::Get_Offset(isa::CSingle_Data_Transfer instruction) const noexcept
     {
         std::int64_t offset{};
 
@@ -346,7 +346,7 @@ namespace zero_mate::cpu
         return offset;
     }
 
-    void CARM1176JZF_S::Execute(isa::CSingle_Data_Transfer instruction)
+    void CCPU_Core::Execute(isa::CSingle_Data_Transfer instruction)
     {
         const auto base_addr = m_regs.at(instruction.Get_Rn());
         const auto offset = Get_Offset(instruction);

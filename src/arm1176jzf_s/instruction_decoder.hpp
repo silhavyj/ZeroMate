@@ -5,7 +5,7 @@
 
 #include "isa/instruction.hpp"
 
-namespace zero_mate::cpu
+namespace zero_mate::arm1176jzf_s
 {
     class CInstruction_Decoder
     {

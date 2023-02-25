@@ -1,6 +1,6 @@
 #include "multiply.hpp"
 
-namespace zero_mate::cpu::isa
+namespace zero_mate::arm1176jzf_s::isa
 {
     CMultiply::CMultiply(CInstruction instruction) noexcept
     : CInstruction{ instruction.Get_Value() }

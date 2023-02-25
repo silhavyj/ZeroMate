@@ -1,14 +1,14 @@
 #include <gtest/gtest.h>
 
-#include "cpu/arm1176jzf_s.hpp"
+#include "arm1176jzf_s/core.hpp"
 #include "register_state_checker.hpp"
 
 TEST(cmp_instruction, test_01)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -33,10 +33,10 @@ TEST(cmp_instruction, test_01)
 
 TEST(cmp_instruction, test_02)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -61,10 +61,10 @@ TEST(cmp_instruction, test_02)
 
 TEST(cmp_instruction, test_03)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -89,10 +89,10 @@ TEST(cmp_instruction, test_03)
 
 TEST(cmp_instruction, test_04)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -117,10 +117,10 @@ TEST(cmp_instruction, test_04)
 
 TEST(cmp_instruction, test_05)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -143,10 +143,10 @@ TEST(cmp_instruction, test_05)
 
 TEST(cmp_instruction, test_06)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -171,10 +171,10 @@ TEST(cmp_instruction, test_06)
 
 TEST(cmp_instruction, test_07)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -196,10 +196,10 @@ TEST(cmp_instruction, test_07)
 
 TEST(cmp_instruction, test_08)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);
@@ -224,10 +224,10 @@ TEST(cmp_instruction, test_08)
 
 TEST(cmp_instruction, test_09)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
     using namespace zero_mate::test;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     CRegister_State_Checker<decltype(cpu.m_regs)> register_state_checker{};
     register_state_checker.Record_State(cpu.m_regs);

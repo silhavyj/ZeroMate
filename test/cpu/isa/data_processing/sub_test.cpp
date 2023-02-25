@@ -1,12 +1,12 @@
 #include <gtest/gtest.h>
 
-#include "cpu/arm1176jzf_s.hpp"
+#include "arm1176jzf_s/core.hpp"
 
 TEST(sub_instruction, test_01)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a000ba }, // mov r0, #186
@@ -24,9 +24,9 @@ TEST(sub_instruction, test_01)
 
 TEST(sub_instruction, test_02)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3e00000 }, // mvn r0, #0
@@ -44,9 +44,9 @@ TEST(sub_instruction, test_02)
 
 TEST(sub_instruction, test_03)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3e00000 }, // mvn r0, #0
@@ -64,9 +64,9 @@ TEST(sub_instruction, test_03)
 
 TEST(sub_instruction, test_04)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a00000 }, // mov r0, #0
@@ -84,9 +84,9 @@ TEST(sub_instruction, test_04)
 
 TEST(sub_instruction, test_05)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3e00000 }, // mvn r0, #0
@@ -104,9 +104,9 @@ TEST(sub_instruction, test_05)
 
 TEST(sub_instruction, test_06)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a00000 }, // mov r0, #0
@@ -123,9 +123,9 @@ TEST(sub_instruction, test_06)
 
 TEST(sub_instruction, test_07)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3e00102 }, // mov r0, #0x7FFFFFFF
@@ -143,9 +143,9 @@ TEST(sub_instruction, test_07)
 
 TEST(sub_instruction, test_08)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe2510102 } // subs r0, r1, #0x80000000
@@ -161,9 +161,9 @@ TEST(sub_instruction, test_08)
 
 TEST(sub_instruction, test_09)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a0000f }, // mov r0, #15
@@ -181,9 +181,9 @@ TEST(sub_instruction, test_09)
 
 TEST(sub_instruction, test_10)
 {
-    using namespace zero_mate::cpu;
+    using namespace zero_mate::arm1176jzf_s;
 
-    CARM1176JZF_S cpu{};
+    CCPU_Core cpu{};
 
     cpu.Execute({
     { 0xe3a00102 }, // mov r0, #0x80000000
