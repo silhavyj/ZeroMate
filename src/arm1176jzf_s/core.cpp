@@ -151,7 +151,13 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CInstruction::NType::Undefined:
+                // TODO throw an exception once interrupts are implemented
+                break;
+
             case isa::CInstruction::NType::Block_Data_Transfer:
+                Execute(isa::CBlock_Data_Transfer{ instruction });
+                break;
+
             case isa::CInstruction::NType::Branch:
                 Execute(isa::CBranch{ instruction });
                 break;
@@ -368,5 +374,11 @@ namespace zero_mate::arm1176jzf_s
         {
             m_regs.at(instruction.Get_Rn()) = indexed_addr;
         }
+    }
+
+    void CCPU_Core::Execute(isa::CBlock_Data_Transfer instruction)
+    {
+        // TODO
+        static_cast<void>(instruction);
     }
 }

@@ -14,6 +14,7 @@ set(SRC_FILES
     ../src/arm1176jzf_s/isa/branch_and_exchange.cpp
     ../src/arm1176jzf_s/isa/branch.cpp
     ../src/arm1176jzf_s/isa/single_data_transfer.cpp
+    ../src/arm1176jzf_s/isa/block_data_transfer.cpp
     ../src/arm1176jzf_s/isa/isa_decoder.cpp)
 
 # Build unit tests

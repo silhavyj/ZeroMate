@@ -22,6 +22,8 @@ add_executable(
     arm1176jzf_s/isa/branch.cpp
     arm1176jzf_s/isa/single_data_transfer.hpp
     arm1176jzf_s/isa/single_data_transfer.cpp
+    arm1176jzf_s/isa/block_data_transfer.hpp
+    arm1176jzf_s/isa/block_data_transfer.cpp
     arm1176jzf_s/isa/isa_decoder.hpp
     arm1176jzf_s/isa/isa_decoder.cpp
     arm1176jzf_s/core.hpp
