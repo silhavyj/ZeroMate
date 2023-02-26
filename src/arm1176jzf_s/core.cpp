@@ -1,3 +1,5 @@
+#include <bit>
+
 #include "alu.hpp"
 #include "mac.hpp"
 #include "core.hpp"
@@ -378,7 +380,62 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CBlock_Data_Transfer instruction)
     {
-        // TODO
-        static_cast<void>(instruction);
+        const auto register_list = instruction.Get_Register_List();
+        const auto number_of_regs = static_cast<std::uint32_t>(std::popcount(register_list));
+        const auto base_reg = instruction.Get_Rn();
+
+        auto addr = [&]() -> std::uint32_t {
+            switch (instruction.Get_Addressing_Mode())
+            {
+                case isa::CBlock_Data_Transfer::NAddressing_Mode::IB:
+                    return m_regs.at(base_reg) + REG_SIZE;
+
+                case isa::CBlock_Data_Transfer::NAddressing_Mode::IA:
+                    return m_regs.at(base_reg);
+
+                case isa::CBlock_Data_Transfer::NAddressing_Mode::DB:
+                    return m_regs.at(base_reg) - (number_of_regs * REG_SIZE);
+
+                case isa::CBlock_Data_Transfer::NAddressing_Mode::DA:
+                    return m_regs.at(base_reg) - (number_of_regs * REG_SIZE) + REG_SIZE;
+            }
+
+            return {};
+        }();
+
+        // TODO handle PSR
+
+        const bool store_value = !instruction.Is_L_Bit_Set();
+
+        for (std::size_t reg_idx = 0; reg_idx < NUMBER_OF_REGS; ++reg_idx)
+        {
+            if (utils::math::Is_Bit_Set<std::uint32_t>(register_list, static_cast<std::uint32_t>(reg_idx)))
+            {
+                if (store_value)
+                {
+                    m_ram->Write<std::uint32_t>(addr, m_regs.at(reg_idx));
+                }
+                else
+                {
+                    m_regs.at(reg_idx) = m_ram->Read<std::uint32_t>(addr);
+                }
+
+                addr += REG_SIZE;
+            }
+        }
+
+        if (instruction.Is_W_Bit_Set())
+        {
+            const std::uint32_t total_size_transferred{ REG_SIZE * number_of_regs };
+
+            if (!instruction.Is_U_Bit_Set())
+            {
+                m_regs.at(base_reg) -= total_size_transferred;
+            }
+            else
+            {
+                m_regs.at(base_reg) += total_size_transferred;
+            }
+        }
     }
 }

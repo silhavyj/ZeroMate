@@ -29,37 +29,39 @@ add_executable(
     utils/math/asr_test.cpp
     utils/math/ror_test.cpp
     utils/math/is_negative_test.cpp
-    cpu/registers/cspr/is_flag_set_test.cpp
-    cpu/registers/cspr/set_flag_test.cpp
-    cpu/isa/data_processing/register_state_checker.hpp
-    cpu/isa/data_processing/mov_test.cpp
-    cpu/isa/data_processing/mvn_test.cpp
-    cpu/isa/data_processing/and_test.cpp
-    cpu/isa/data_processing/eor_test.cpp
-    cpu/isa/data_processing/tst_test.cpp
-    cpu/isa/data_processing/teq_test.cpp
-    cpu/isa/data_processing/orr_test.cpp
-    cpu/isa/data_processing/bic_test.cpp
-    cpu/isa/data_processing/sub_test.cpp
-    cpu/isa/data_processing/rsb_test.cpp
-    cpu/isa/data_processing/add_test.cpp
-    cpu/isa/data_processing/adc_test.cpp
-    cpu/isa/data_processing/sbc_test.cpp
-    cpu/isa/data_processing/rsc_test.cpp
-    cpu/isa/data_processing/cmp_test.cpp
-    cpu/isa/data_processing/cmn_test.cpp
-    cpu/isa/multiply/mul_test.cpp
-    cpu/isa/multiply/mla_test.cpp
-    cpu/isa/multiply_long/umull_test.cpp
-    cpu/isa/multiply_long/smull_test.cpp
-    cpu/isa/multiply_long/umlal_test.cpp
-    cpu/isa/multiply_long/smlal_test.cpp
-    cpu/isa/branch_and_exchange/bx_test.cpp
-    cpu/isa/branch_and_exchange/blx_test.cpp
-    cpu/isa/branch/b_test.cpp
-    cpu/isa/branch/bl_test.cpp
-    cpu/isa/single_data_transfer/str_test.cpp
-    cpu/isa/single_data_transfer/ldr_test.cpp)
+    arm1176jzf_s/registers/cspr/is_flag_set_test.cpp
+    arm1176jzf_s/registers/cspr/set_flag_test.cpp
+    arm1176jzf_s/isa/data_processing/register_state_checker.hpp
+    arm1176jzf_s/isa/data_processing/mov_test.cpp
+    arm1176jzf_s/isa/data_processing/mvn_test.cpp
+    arm1176jzf_s/isa/data_processing/and_test.cpp
+    arm1176jzf_s/isa/data_processing/eor_test.cpp
+    arm1176jzf_s/isa/data_processing/tst_test.cpp
+    arm1176jzf_s/isa/data_processing/teq_test.cpp
+    arm1176jzf_s/isa/data_processing/orr_test.cpp
+    arm1176jzf_s/isa/data_processing/bic_test.cpp
+    arm1176jzf_s/isa/data_processing/sub_test.cpp
+    arm1176jzf_s/isa/data_processing/rsb_test.cpp
+    arm1176jzf_s/isa/data_processing/add_test.cpp
+    arm1176jzf_s/isa/data_processing/adc_test.cpp
+    arm1176jzf_s/isa/data_processing/sbc_test.cpp
+    arm1176jzf_s/isa/data_processing/rsc_test.cpp
+    arm1176jzf_s/isa/data_processing/cmp_test.cpp
+    arm1176jzf_s/isa/data_processing/cmn_test.cpp
+    arm1176jzf_s/isa/multiply/mul_test.cpp
+    arm1176jzf_s/isa/multiply/mla_test.cpp
+    arm1176jzf_s/isa/multiply_long/umull_test.cpp
+    arm1176jzf_s/isa/multiply_long/smull_test.cpp
+    arm1176jzf_s/isa/multiply_long/umlal_test.cpp
+    arm1176jzf_s/isa/multiply_long/smlal_test.cpp
+    arm1176jzf_s/isa/branch_and_exchange/bx_test.cpp
+    arm1176jzf_s/isa/branch_and_exchange/blx_test.cpp
+    arm1176jzf_s/isa/branch/b_test.cpp
+    arm1176jzf_s/isa/branch/bl_test.cpp
+    arm1176jzf_s/isa/single_data_transfer/str_test.cpp
+    arm1176jzf_s/isa/single_data_transfer/ldr_test.cpp
+    arm1176jzf_s/isa/block_data_transfer/stmia_test.cpp
+    arm1176jzf_s/isa/block_data_transfer/stmib_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(

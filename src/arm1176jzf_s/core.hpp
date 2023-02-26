@@ -18,6 +18,8 @@ namespace zero_mate::arm1176jzf_s
     class CCPU_Core final
     {
     public:
+        static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
+
         static constexpr std::size_t NUMBER_OF_REGS = 16;
         static constexpr std::size_t PC_REG_IDX = 15;
         static constexpr std::size_t LR_REG_IDX = 14;

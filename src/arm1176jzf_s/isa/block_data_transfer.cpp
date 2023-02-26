@@ -32,6 +32,11 @@ namespace zero_mate::arm1176jzf_s::isa
         return static_cast<bool>((m_value >> 20U) & 0b1U);
     }
 
+    CBlock_Data_Transfer::NAddressing_Mode CBlock_Data_Transfer::Get_Addressing_Mode() const noexcept
+    {
+        return static_cast<NAddressing_Mode>((m_value >> 23U) & 0b11U);
+    }
+
     std::uint32_t CBlock_Data_Transfer::Get_Rn() const noexcept
     {
         return (m_value >> 16U) & 0b1111U;
