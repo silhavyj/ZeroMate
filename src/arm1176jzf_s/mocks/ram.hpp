@@ -7,7 +7,6 @@
 #include <numeric>
 #include <cstdint>
 #include <concepts>
-#include <algorithm>
 
 namespace zero_mate::arm1176jzf_s::mocks
 {
@@ -38,10 +37,12 @@ namespace zero_mate::arm1176jzf_s::mocks
         {
             Type value{};
 
-            for (std::size_t byte_idx = 0; byte_idx < sizeof(Type); ++byte_idx)
+            const std::size_t size = sizeof(Type);
+
+            for (std::size_t idx = 0; idx < size; ++idx)
             {
-                value |= static_cast<Type>((static_cast<Type>(m_ram[addr]) << ((sizeof(Type) - byte_idx - 1) * std::numeric_limits<std::uint8_t>::digits)));
-                ++addr;
+                const auto byte = static_cast<Type>(m_ram.at(addr + idx)) << (idx * std::numeric_limits<std::uint8_t>::digits);
+                value |= static_cast<Type>(byte);
             }
 
             return value;
@@ -51,15 +52,13 @@ namespace zero_mate::arm1176jzf_s::mocks
         void Write(std::uint32_t addr, Type value)
         {
             using byte_array_t = std::array<std::uint8_t, sizeof(Type)>;
-            const auto bytes = std::bit_cast<byte_array_t, Type>(value);
-            const auto last_addr = addr + sizeof(Type) - 1;
-            std::uint32_t byte_idx{ 0 };
+
+            auto bytes = std::bit_cast<byte_array_t, Type>(value);
 
             for (const auto& byte : bytes)
             {
-                m_ram[last_addr - byte_idx] = byte;
+                m_ram[addr] = byte;
                 ++addr;
-                ++byte_idx;
             }
         }
 
