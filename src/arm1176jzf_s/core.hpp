@@ -24,11 +24,11 @@ namespace zero_mate::arm1176jzf_s
         static constexpr std::size_t PC_REG_IDX = 15;
         static constexpr std::size_t LR_REG_IDX = 14;
         static constexpr std::size_t SP_REG_IDX = 13;
-        static constexpr auto MAX_ADDR = std::numeric_limits<std::uint32_t>::max() - sizeof(std::uint32_t);
 
         CCPU_Core() noexcept;
         CCPU_Core(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram) noexcept;
 
+        void Run(std::uint32_t last_execution_addr);
         void Step(std::size_t count);
         void Step();
         void Execute(std::initializer_list<isa::CInstruction> instructions);

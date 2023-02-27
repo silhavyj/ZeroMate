@@ -163,3 +163,20 @@ TEST(str_instruction, test_09)
     EXPECT_EQ(ram->Read<std::uint8_t>(255), 0xFF);
     EXPECT_EQ(ram->Read<std::uint32_t>(254), 0x3500FFFF);
 }
+
+TEST(str_instruction, test_10)
+{
+    using namespace zero_mate::arm1176jzf_s;
+
+    auto ram = std::make_shared<mocks::CRAM>();
+    CCPU_Core cpu{ 0, ram };
+
+    cpu.Execute({
+    { 0xe3a0d0c8 }, // mov sp, #200
+    { 0xe3a010ff }, // mov r1, #0xFF
+    { 0xe52d1004 }  // push {r1}
+    });
+
+    EXPECT_EQ(cpu.m_regs[cpu.SP_REG_IDX], 196);
+    EXPECT_EQ(ram->Read<std::uint32_t>(196), 0xFF);
+}

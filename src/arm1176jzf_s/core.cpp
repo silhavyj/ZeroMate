@@ -7,7 +7,7 @@
 namespace zero_mate::arm1176jzf_s
 {
     CCPU_Core::CCPU_Core() noexcept
-    : CCPU_Core(MAX_ADDR, nullptr)
+    : CCPU_Core(0, nullptr)
     {
     }
 
@@ -16,8 +16,15 @@ namespace zero_mate::arm1176jzf_s
     , m_cspr{ 0 }
     , m_ram{ ram }
     {
-        LR() = MAX_ADDR;
         PC() = pc;
+    }
+
+    void CCPU_Core::Run(std::uint32_t last_execution_addr)
+    {
+        while (PC() != last_execution_addr)
+        {
+            Step();
+        }
     }
 
     void CCPU_Core::Step(std::size_t count)
@@ -31,11 +38,10 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Step()
     {
-        if (PC() != MAX_ADDR && m_ram != nullptr)
-        {
-            const auto instruction = Fetch_Instruction();
-            Execute(instruction);
-        }
+        assert(m_ram != nullptr);
+
+        const auto instruction = Fetch_Instruction();
+        Execute(instruction);
     }
 
     isa::CInstruction CCPU_Core::Fetch_Instruction()

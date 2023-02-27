@@ -61,7 +61,8 @@ add_executable(
     arm1176jzf_s/isa/single_data_transfer/str_test.cpp
     arm1176jzf_s/isa/single_data_transfer/ldr_test.cpp
     arm1176jzf_s/isa/block_data_transfer/stmia_test.cpp
-    arm1176jzf_s/isa/block_data_transfer/stmib_test.cpp)
+    arm1176jzf_s/isa/block_data_transfer/stmib_test.cpp
+    simple_programs/fibonacci/fibonacci_test.cpp)
 
 # Link libraries to the executable
 target_link_libraries(
