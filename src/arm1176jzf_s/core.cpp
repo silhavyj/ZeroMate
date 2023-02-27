@@ -148,12 +148,16 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CInstruction::NType::Single_Data_Swap:
+                break;
+
             case isa::CInstruction::NType::Branch_And_Exchange:
                 Execute(isa::CBranch_And_Exchange{ instruction });
                 break;
 
-            case isa::CInstruction::NType::Halfword_Data_Transfer_Register_Offset:
-            case isa::CInstruction::NType::Halfword_Data_Transfer_Immediate_Offset:
+            case isa::CInstruction::NType::Halfword_Data_Transfer:
+                Execute(isa::CHalfword_Data_Transfer{ instruction });
+                break;
+
             case isa::CInstruction::NType::Single_Data_Transfer:
                 Execute(isa::CSingle_Data_Transfer{ instruction });
                 break;
@@ -171,9 +175,16 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CInstruction::NType::Coprocessor_Data_Transfer:
+                break;
+
             case isa::CInstruction::NType::Coprocessor_Data_Operation:
+                break;
+
             case isa::CInstruction::NType::Coprocessor_Register_Transfer:
+                break;
+
             case isa::CInstruction::NType::Software_Interrupt:
+                break;
 
             case isa::CInstruction::NType::Unknown:
                 // TODO throw an exception once interrupts are implemented
@@ -443,5 +454,11 @@ namespace zero_mate::arm1176jzf_s
                 m_regs.at(base_reg) += total_size_transferred;
             }
         }
+    }
+
+    void CCPU_Core::Execute(isa::CHalfword_Data_Transfer instruction)
+    {
+        // TODO
+        static_cast<void>(instruction);
     }
 }

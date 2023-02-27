@@ -8,3 +8,4 @@
 #include "multiply_long.hpp"
 #include "single_data_transfer.hpp"
 #include "block_data_transfer.hpp"
+#include "halfword_data_transfer.hpp"
