@@ -7,7 +7,7 @@ TEST(fibonacci, test_01)
 {
     using namespace zero_mate::arm1176jzf_s;
 
-    // Non-recursive version
+    // Non-recursive version - calculates fib(100)
     const std::vector<std::uint32_t> ram_content = {
         0xe3a0db01, 0xeb000024, 0xeafffffe, 0xe52db004, 0xe28db000,
         0xe24dd01c, 0xe50b0018, 0xe3a03000, 0xe50b3008, 0xe3a03001,
@@ -32,9 +32,9 @@ TEST(fibonacci, test_02)
 {
     using namespace zero_mate::arm1176jzf_s;
 
-    // Recursive version
+    // Recursive version - calculates fib(10)
     // Caution: The source code may be overwritten by the stack
-    // causing unpredictable behavior (if x in fib(x) was set too high)
+    // causing unpredictable behavior (if x in fib(x) is set too high)
 
     const std::vector<std::uint32_t> ram_content = {
         0xe3a0db01, 0xeb000018, 0xeafffffe, 0xe92d4810, 0xe28db008,
@@ -52,4 +52,42 @@ TEST(fibonacci, test_02)
     cpu.Run(0x8);
 
     EXPECT_EQ(cpu.m_regs[0], 55);
+}
+
+TEST(fibonacci, test_03)
+{
+    using namespace zero_mate::arm1176jzf_s;
+
+    // DP version - calculates  fib(10) + fib(15) + fib(5);
+    // Caution: The source code may be overwritten by the stack
+    // causing unpredictable behavior (if x in fib(x) is set too high)
+
+    const std::vector<std::uint32_t> ram_content = {
+        0xe3a0db01, 0xeb000038, 0xeafffffe, 0xe92d4810, 0xe28db008,
+        0xe24dd00c, 0xe50b0010, 0xe50b1014, 0xe51b3010, 0xe3530001,
+        0xca000007, 0xe51b3010, 0xe1a03103, 0xe51b2014, 0xe0823003,
+        0xe51b2010, 0xe5832000, 0xe51b3010, 0xea000023, 0xe51b3010,
+        0xe1a03103, 0xe51b2014, 0xe0823003, 0xe5933000, 0xe3730001,
+        0x0a000005, 0xe51b3010, 0xe1a03103, 0xe51b2014, 0xe0823003,
+        0xe5933000, 0xea000016, 0xe51b3010, 0xe2433001, 0xe51b1014,
+        0xe1a00003, 0xebffffdd, 0xe1a04000, 0xe51b3010, 0xe2433002,
+        0xe51b1014, 0xe1a00003, 0xebffffd7, 0xe1a01000, 0xe51b3010,
+        0xe1a03103, 0xe51b2014, 0xe0823003, 0xe0842001, 0xe5832000,
+        0xe51b3010, 0xe1a03103, 0xe51b2014, 0xe0823003, 0xe5933000,
+        0xe1a00003, 0xe24bd008, 0xe8bd4810, 0xe12fff1e, 0xe92d4810,
+        0xe28db008, 0xe24dd06c, 0xe3a03000, 0xe50b3010, 0xea000008,
+        0xe51b3010, 0xe1a03103, 0xe24b200c, 0xe0823003, 0xe3e02000,
+        0xe5032064, 0xe51b3010, 0xe2833001, 0xe50b3010, 0xe51b3010,
+        0xe3530017, 0xdafffff3, 0xe24b3070, 0xe1a01003, 0xe3a0000a,
+        0xebffffb1, 0xe1a04000, 0xe24b3070, 0xe1a01003, 0xe3a0000f,
+        0xebffffac, 0xe1a03000, 0xe0844003, 0xe24b3070, 0xe1a01003,
+        0xe3a00005, 0xebffffa6, 0xe1a03000, 0xe0843003, 0xe1a00003,
+        0xe24bd008, 0xe8bd4810, 0xe12fff1e
+    };
+
+    CCPU_Core cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
+
+    cpu.Run(0x8);
+
+    EXPECT_EQ(cpu.m_regs[0], 670);
 }
