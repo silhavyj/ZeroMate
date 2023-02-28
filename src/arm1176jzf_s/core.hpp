@@ -54,6 +54,7 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CSingle_Data_Transfer instruction);
         void Execute(isa::CBlock_Data_Transfer instruction);
         void Execute(isa::CHalfword_Data_Transfer instruction);
+        void Execute(isa::CSingle_Data_Swap instruction);
 
         template<std::unsigned_integral Type>
         void Read_Write_Value(isa::CSingle_Data_Transfer instruction, std::uint32_t addr, std::uint32_t reg_idx)

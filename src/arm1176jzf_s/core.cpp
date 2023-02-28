@@ -148,6 +148,7 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CInstruction::NType::Single_Data_Swap:
+                Execute(isa::CSingle_Data_Swap{ instruction });
                 break;
 
             case isa::CInstruction::NType::Branch_And_Exchange:
@@ -457,6 +458,12 @@ namespace zero_mate::arm1176jzf_s
     }
 
     void CCPU_Core::Execute(isa::CHalfword_Data_Transfer instruction)
+    {
+        // TODO
+        static_cast<void>(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CSingle_Data_Swap instruction)
     {
         // TODO
         static_cast<void>(instruction);

@@ -6,7 +6,7 @@
 namespace zero_mate::arm1176jzf_s::isa
 {
     // clang-format off
-    std::array<CISA_Decoder::TInstruction_Lookup_Record, 8> CISA_Decoder::s_instruction_lookup_table = {{
+    std::array<CISA_Decoder::TInstruction_Lookup_Record, CISA_Decoder::NUMBER_OF_INSTRUCTION_TYPES> CISA_Decoder::s_instruction_lookup_table = {{
     { .mask = 0b0000'1111'1111'1111'1111'1111'1101'0000U, .expected = 0b0000'0001'0010'1111'1111'1111'0001'0000U, .type = CInstruction::NType::Branch_And_Exchange     },
     { .mask = 0b0000'1110'0000'0000'0000'0000'0000'0000U, .expected = 0b0000'1010'0000'0000'0000'0000'0000'0000U, .type = CInstruction::NType::Branch                  },
     { .mask = 0b0000'1100'0000'0000'0000'0000'0000'0000U, .expected = 0b0000'0000'0000'0000'0000'0000'0000'0000U, .type = CInstruction::NType::Data_Processing         },
@@ -14,7 +14,8 @@ namespace zero_mate::arm1176jzf_s::isa
     { .mask = 0b0000'1111'1000'0000'0000'0000'1111'0000U, .expected = 0b0000'0000'1000'0000'0000'0000'1001'0000U, .type = CInstruction::NType::Multiply_Long           },
     { .mask = 0b0000'1100'0000'0000'0000'0000'0000'0000U, .expected = 0b0000'0100'0000'0000'0000'0000'0000'0000U, .type = CInstruction::NType::Single_Data_Transfer    },
     { .mask = 0b0000'1110'0000'0000'0000'0000'0000'0000U, .expected = 0b0000'1000'0000'0000'0000'0000'0000'0000U, .type = CInstruction::NType::Block_Data_Transfer     },
-    { .mask = 0b0000'1110'0000'0000'0000'1111'1001'0000U, .expected = 0b0000'0000'0000'0000'0000'0000'1001'0000U, .type = CInstruction::NType::Halfword_Data_Transfer  }
+    { .mask = 0b0000'1110'0000'0000'0000'1111'1001'0000U, .expected = 0b0000'0000'0000'0000'0000'0000'1001'0000U, .type = CInstruction::NType::Halfword_Data_Transfer  },
+    { .mask = 0b0000'1111'1011'0000'0000'1111'1111'0000U, .expected = 0b0000'0001'0000'0000'0000'0000'1001'0000U, .type = CInstruction::NType::Single_Data_Swap        }
     }};
     // clang-format on
 
