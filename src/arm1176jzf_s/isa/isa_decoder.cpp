@@ -1,4 +1,5 @@
 #include <bitset>
+#include <algorithm>
 
 #include "../../utils/math.hpp"
 #include "isa_decoder.hpp"
