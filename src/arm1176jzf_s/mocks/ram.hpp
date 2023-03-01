@@ -23,7 +23,7 @@ namespace zero_mate::arm1176jzf_s::mocks
 
         CRAM(std::uint32_t addr, const std::vector<std::uint32_t>& instructions)
         {
-            assert((instructions.size() / sizeof(uint32_t)) < SIZE);
+            assert((instructions.size() / sizeof(std::uint32_t)) < SIZE);
 
             for (const auto& instruction : instructions)
             {

@@ -465,7 +465,19 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CSingle_Data_Swap instruction)
     {
-        // TODO
-        static_cast<void>(instruction);
+        const auto swap_addr = m_regs.at(instruction.Get_Rn());
+        const auto src_reg = m_regs.at(instruction.Get_Rm());
+        const auto dest_reg = instruction.Get_Rd();
+
+        if (instruction.Is_B_Bit_Set())
+        {
+            m_regs.at(dest_reg) = m_ram->Read<std::uint8_t>(swap_addr);
+            m_ram->Write<std::uint8_t>(swap_addr, static_cast<std::uint8_t>(src_reg & 0xFF));
+        }
+        else
+        {
+            m_regs.at(dest_reg) = m_ram->Read<std::uint32_t>(swap_addr);
+            m_ram->Write<std::uint32_t>(swap_addr, src_reg);
+        }
     }
 }
