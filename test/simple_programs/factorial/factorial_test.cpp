@@ -3,11 +3,10 @@
 #include "arm1176jzf_s/mocks/ram.hpp"
 #include "arm1176jzf_s/core.hpp"
 
-TEST(factorial, test_01)
+TEST(factorial, non_recursive)
 {
     using namespace zero_mate::arm1176jzf_s;
 
-    // Non-recursive version
     // Calculates 25! using the long long datatype and returns the result as a 32 signed integer
     const std::vector<std::uint32_t> ram_content = {
         0xe3a0db01, 0xeb000032, 0xeafffffe, 0xe92d0830, 0xe28db008,
@@ -32,11 +31,10 @@ TEST(factorial, test_01)
     EXPECT_EQ(cpu.m_regs[0], -775946240);
 }
 
-TEST(factorial, test_02)
+TEST(factorial, recursive)
 {
     using namespace zero_mate::arm1176jzf_s;
 
-    // Recursive version
     // Calculates 7! using the long long datatype and returns the result as a 32 signed integer
     const std::vector<std::uint32_t> ram_content = {
         0xe3a0db01, 0xeb000026, 0xeafffffe, 0xe92d4830, 0xe28db00c,

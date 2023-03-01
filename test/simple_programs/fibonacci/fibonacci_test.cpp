@@ -3,7 +3,7 @@
 #include "arm1176jzf_s/mocks/ram.hpp"
 #include "arm1176jzf_s/core.hpp"
 
-TEST(fibonacci, test_01)
+TEST(fibonacci, non_recursive)
 {
     using namespace zero_mate::arm1176jzf_s;
 
@@ -28,12 +28,12 @@ TEST(fibonacci, test_01)
     EXPECT_EQ(cpu.m_regs[0], -980107325);
 }
 
-TEST(fibonacci, test_02)
+TEST(fibonacci, recursive)
 {
     using namespace zero_mate::arm1176jzf_s;
 
-    // Recursive version - calculates fib(10)
-    // Caution: The source code may be overwritten by the stack
+    // Calculates fib(10)
+    // Note: The source code may be overwritten by the stack
     // causing unpredictable behavior (if x in fib(x) is set too high)
 
     const std::vector<std::uint32_t> ram_content = {
@@ -54,12 +54,12 @@ TEST(fibonacci, test_02)
     EXPECT_EQ(cpu.m_regs[0], 55);
 }
 
-TEST(fibonacci, test_03)
+TEST(fibonacci, dynamic)
 {
     using namespace zero_mate::arm1176jzf_s;
 
-    // DP version - calculates  fib(10) + fib(15) + fib(5);
-    // Caution: The source code may be overwritten by the stack
+    // Calculates  fib(10) + fib(15) + fib(5);
+    // Note: The source code may be overwritten by the stack
     // causing unpredictable behavior (if x in fib(x) is set too high)
 
     const std::vector<std::uint32_t> ram_content = {
