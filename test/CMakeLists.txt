@@ -70,6 +70,9 @@ add_executable(
     arm1176jzf_s/isa/block_data_transfer/ldmia_test.cpp
     arm1176jzf_s/isa/block_data_transfer/ldmda_test.cpp
     arm1176jzf_s/isa/block_data_transfer/ldmdb_test.cpp
+    arm1176jzf_s/isa/halfword_data_transfer/ldrsb_test.cpp
+    arm1176jzf_s/isa/halfword_data_transfer/ldrh_test.cpp
+    arm1176jzf_s/isa/halfword_data_transfer/ldrsh_test.cpp
     simple_programs/fibonacci/fibonacci_test.cpp
     simple_programs/factorial/factorial_test.cpp)
 

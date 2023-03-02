@@ -1,4 +1,5 @@
 #include <bit>
+#include <variant>
 
 #include "alu.hpp"
 #include "mac.hpp"
@@ -454,10 +455,77 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
+    std::uint32_t CCPU_Core::Get_Offset(isa::CHalfword_Data_Transfer instruction) const noexcept
+    {
+        if (instruction.Is_Immediate_Offset())
+        {
+            const auto high_4_bits = instruction.Get_Immediate_Offset_High();
+            const auto low_4_bits = instruction.Get_Immediate_Offset_Low();
+
+            return (high_4_bits << 4U) | low_4_bits;
+        }
+
+        return m_regs.at(instruction.Get_Rm());
+    }
+
+    void CCPU_Core::Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t src_dest_reg)
+    {
+        std::variant<std::uint8_t, std::uint16_t> read_value;
+
+        switch (type)
+        {
+            case isa::CHalfword_Data_Transfer::NType::SWP:
+                // TODO what does this do?
+                break;
+
+            case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
+                m_regs.at(src_dest_reg) = m_ram->Read<std::uint16_t>(addr);
+                break;
+
+            case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
+                read_value = m_ram->Read<std::uint8_t>(addr);
+                m_regs.at(src_dest_reg) = Sign_Extend_Value(std::get<std::uint8_t>(read_value));
+                break;
+
+            case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
+                read_value = m_ram->Read<std::uint16_t>(addr);
+                m_regs.at(src_dest_reg) = Sign_Extend_Value(std::get<std::uint16_t>(read_value));
+                break;
+        }
+    }
+
     void CCPU_Core::Execute(isa::CHalfword_Data_Transfer instruction)
     {
-        // TODO
-        static_cast<void>(instruction);
+        const auto offset = Get_Offset(instruction);
+        const auto src_dest_reg = instruction.Get_Rd();
+        auto base_addr = m_regs.at(instruction.Get_Rn());
+        const bool pre_indexed = instruction.Is_P_Bit_Set();
+        std::uint32_t pre_indexed_addr{ base_addr };
+
+        if (instruction.Is_U_Bit_Set())
+        {
+            pre_indexed_addr += offset;
+        }
+        else
+        {
+            pre_indexed_addr -= offset;
+        }
+
+        const auto addr = pre_indexed ? pre_indexed_addr : base_addr;
+
+        if (instruction.Is_L_Bit_Set())
+        {
+            Perform_Halfword_Data_Transfer_Read(instruction.Get_Type(), addr, src_dest_reg);
+        }
+        else
+        {
+            // TODO
+        }
+
+        if (!pre_indexed || instruction.Is_W_Bit_Set())
+        {
+            m_regs.at(instruction.Get_Rn()) = pre_indexed_addr;
+        }
     }
 
     void CCPU_Core::Execute(isa::CSW_Interrupt instruction)
