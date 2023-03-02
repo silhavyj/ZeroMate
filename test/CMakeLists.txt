@@ -16,7 +16,6 @@ set(SRC_FILES
     ../src/arm1176jzf_s/isa/single_data_transfer.cpp
     ../src/arm1176jzf_s/isa/block_data_transfer.cpp
     ../src/arm1176jzf_s/isa/halfword_data_transfer.cpp
-    ../src/arm1176jzf_s/isa/single_data_swap.cpp
     ../src/arm1176jzf_s/isa/sw_interrupt.cpp
     ../src/arm1176jzf_s/isa/isa_decoder.cpp)
 
@@ -71,7 +70,6 @@ add_executable(
     arm1176jzf_s/isa/block_data_transfer/ldmia_test.cpp
     arm1176jzf_s/isa/block_data_transfer/ldmda_test.cpp
     arm1176jzf_s/isa/block_data_transfer/ldmdb_test.cpp
-    arm1176jzf_s/isa/single_data_swap/swp_test.cpp
     simple_programs/fibonacci/fibonacci_test.cpp
     simple_programs/factorial/factorial_test.cpp)
 

@@ -31,7 +31,6 @@ namespace zero_mate::arm1176jzf_s::isa
             Data_Processing,
             Multiply,
             Multiply_Long,
-            Single_Data_Swap,
             Branch_And_Exchange,
             Halfword_Data_Transfer,
             Single_Data_Transfer,
