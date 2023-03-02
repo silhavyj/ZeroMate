@@ -66,4 +66,9 @@ namespace zero_mate::arm1176jzf_s::isa
     {
         return m_value & 0b1111U;
     }
+
+    CHalfword_Data_Transfer::NType CHalfword_Data_Transfer::Get_Type() const noexcept
+    {
+        return static_cast<NType>((m_value >> 5U) & 0b11U);
+    }
 }

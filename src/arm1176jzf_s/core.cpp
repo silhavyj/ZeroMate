@@ -185,6 +185,7 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CInstruction::NType::Software_Interrupt:
+                Execute(isa::CSW_Interrupt{ instruction });
                 break;
 
             case isa::CInstruction::NType::Unknown:
@@ -479,5 +480,11 @@ namespace zero_mate::arm1176jzf_s
             m_regs.at(dest_reg) = m_ram->Read<std::uint32_t>(swap_addr);
             m_ram->Write<std::uint32_t>(swap_addr, src_reg);
         }
+    }
+
+    void CCPU_Core::Execute(isa::CSW_Interrupt instruction)
+    {
+        // TODO
+        static_cast<void>(instruction);
     }
 }
