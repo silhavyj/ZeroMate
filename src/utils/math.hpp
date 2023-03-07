@@ -197,4 +197,24 @@ namespace zero_mate::utils::math
 
         return count;
     }
+
+    template<std::unsigned_integral Type>
+    [[nodiscard]] static std::uint32_t Sign_Extend_Value(Type value) noexcept
+    {
+        static_assert(std::numeric_limits<Type>::digits < std::numeric_limits<std::uint32_t>::digits);
+
+        if (utils::math::Is_Negative<Type>(value))
+        {
+            auto mask = static_cast<std::uint32_t>(-1);
+
+            for (std::size_t i = 0; i < sizeof(Type); ++i)
+            {
+                mask <<= static_cast<std::uint32_t>(std::numeric_limits<std::uint8_t>::digits);
+            }
+
+            return mask | static_cast<std::uint32_t>(value);
+        }
+
+        return static_cast<std::uint32_t>(value);
+    }
 }

@@ -23,3 +23,22 @@ TEST(ldrh_instruction, test_01)
     EXPECT_EQ(cpu.m_regs[1], 0x000000C7);
     EXPECT_EQ(cpu.m_regs[2], 0x0000008C);
 }
+
+TEST(ldrh_instruction, test_02)
+{
+    using namespace zero_mate::arm1176jzf_s;
+
+    auto ram = std::make_shared<mocks::CRAM>();
+    CCPU_Core cpu{ 0, ram };
+
+    cpu.Execute({
+    { 0xe3a010c8 }, // mov r1, #200
+    { 0xe3e02000 }, // mvn r2, #0
+    { 0xe5812000 }, // str r2, [r1]
+    { 0xe3a02002 }, // mov r2, #2
+    { 0xe1b100b2 }  // ldrh r0, [r1, r2]!
+    });
+
+    EXPECT_EQ(cpu.m_regs[0], 0x0000FFFF);
+    EXPECT_EQ(cpu.m_regs[1], 0x000000CA);
+}

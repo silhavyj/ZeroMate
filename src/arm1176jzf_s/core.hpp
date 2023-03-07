@@ -45,7 +45,8 @@ namespace zero_mate::arm1176jzf_s
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Perform_Shift(isa::CInstruction::NShift_Type shift_type, std::uint32_t shift_amount, std::uint32_t shift_reg) const noexcept;
         [[nodiscard]] std::int64_t Get_Offset(isa::CSingle_Data_Transfer instruction) const noexcept;
         [[nodiscard]] std::uint32_t Get_Offset(isa::CHalfword_Data_Transfer instruction) const noexcept;
-        void Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t src_dest_reg);
+        void Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t dest_reg);
+        void Perform_Halfword_Data_Transfer_Write(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t src_reg);
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;
@@ -77,26 +78,6 @@ namespace zero_mate::arm1176jzf_s
             {
                 m_ram->Write<Type>(addr, static_cast<Type>(m_regs.at(reg_idx)));
             }
-        }
-
-        template<std::unsigned_integral Type>
-        [[nodiscard]] static std::uint32_t Sign_Extend_Value(Type value) noexcept
-        {
-            static_assert(std::numeric_limits<Type>::digits < std::numeric_limits<std::uint32_t>::digits);
-
-            if (utils::math::Is_Negative<Type>(value))
-            {
-                auto mask = static_cast<std::uint32_t>(-1);
-
-                for (std::size_t i = 0; i < sizeof(Type); ++i)
-                {
-                    mask <<= static_cast<std::uint32_t>(std::numeric_limits<std::uint8_t>::digits);
-                }
-
-                return mask | static_cast<std::uint32_t>(value);
-            }
-
-            return static_cast<std::uint32_t>(value);
         }
 
     public:

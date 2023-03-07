@@ -47,7 +47,7 @@ namespace zero_mate::arm1176jzf_s
 
     isa::CInstruction CCPU_Core::Fetch_Instruction()
     {
-        const auto instruction = m_ram->Read<std::uint32_t>(PC());
+        const std::unsigned_integral auto instruction = m_ram->Read<std::uint32_t>(PC());
         PC() += sizeof(std::uint32_t);
         return instruction;
     }
@@ -173,11 +173,8 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CInstruction::NType::Coprocessor_Data_Transfer:
-                break;
-
+                [[fallthrough]];
             case isa::CInstruction::NType::Coprocessor_Data_Operation:
-                break;
-
             case isa::CInstruction::NType::Coprocessor_Register_Transfer:
                 break;
 
@@ -468,7 +465,7 @@ namespace zero_mate::arm1176jzf_s
         return m_regs.at(instruction.Get_Rm());
     }
 
-    void CCPU_Core::Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t src_dest_reg)
+    void CCPU_Core::Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t dest_reg)
     {
         std::variant<std::uint8_t, std::uint16_t> read_value;
 
@@ -479,17 +476,37 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                m_regs.at(src_dest_reg) = m_ram->Read<std::uint16_t>(addr);
+                m_regs.at(dest_reg) = m_ram->Read<std::uint16_t>(addr);
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
                 read_value = m_ram->Read<std::uint8_t>(addr);
-                m_regs.at(src_dest_reg) = Sign_Extend_Value(std::get<std::uint8_t>(read_value));
+                m_regs.at(dest_reg) = utils::math::Sign_Extend_Value(std::get<std::uint8_t>(read_value));
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
                 read_value = m_ram->Read<std::uint16_t>(addr);
-                m_regs.at(src_dest_reg) = Sign_Extend_Value(std::get<std::uint16_t>(read_value));
+                m_regs.at(dest_reg) = utils::math::Sign_Extend_Value(std::get<std::uint16_t>(read_value));
+                break;
+        }
+    }
+
+    void CCPU_Core::Perform_Halfword_Data_Transfer_Write(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t src_reg)
+    {
+        std::uint16_t value{};
+
+        switch (type)
+        {
+            case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
+                value = static_cast<std::uint16_t>(m_regs.at(src_reg) & 0x0000FFFFU);
+                m_ram->Write<std::uint16_t>(addr, value);
+                break;
+
+            case isa::CHalfword_Data_Transfer::NType::SWP:
+                [[fallthrough]];
+            case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
+            case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
+                // TODO print out a warning even though this should not happen?
                 break;
         }
     }
@@ -498,6 +515,7 @@ namespace zero_mate::arm1176jzf_s
     {
         const auto offset = Get_Offset(instruction);
         const auto src_dest_reg = instruction.Get_Rd();
+        const auto operation_type = instruction.Get_Type();
         auto base_addr = m_regs.at(instruction.Get_Rn());
         const bool pre_indexed = instruction.Is_P_Bit_Set();
         std::uint32_t pre_indexed_addr{ base_addr };
@@ -515,11 +533,11 @@ namespace zero_mate::arm1176jzf_s
 
         if (instruction.Is_L_Bit_Set())
         {
-            Perform_Halfword_Data_Transfer_Read(instruction.Get_Type(), addr, src_dest_reg);
+            Perform_Halfword_Data_Transfer_Read(operation_type, addr, src_dest_reg);
         }
         else
         {
-            // TODO
+            Perform_Halfword_Data_Transfer_Write(operation_type, addr, src_dest_reg);
         }
 
         if (!pre_indexed || instruction.Is_W_Bit_Set())
