@@ -78,7 +78,7 @@ namespace zero_mate
             {
                 return false;
             }
-            if ((peripheral_iter->start_addr + peripheral_iter->peripheral->Get_Size()) < addr)
+            if ((peripheral_iter->start_addr + peripheral_iter->peripheral->Get_Size()) <= addr)
             {
                 return false;
             }

@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <cassert>
 #include <concepts>
+#include <algorithm>
 
 #include "peripheral.hpp"
 
@@ -19,7 +20,7 @@ namespace zero_mate::peripheral
 
         CRAM(std::uint32_t addr, const std::vector<std::uint32_t>& instructions)
         {
-            assert((instructions.size() / sizeof(std::uint32_t)) < Size);
+            assert((instructions.size() / sizeof(std::uint32_t)) < (Size - addr));
 
             for (const auto& instruction : instructions)
             {
@@ -35,20 +36,12 @@ namespace zero_mate::peripheral
 
         void Write(std::uint32_t addr, const char* data, std::uint32_t size) override
         {
-            for (std::size_t i = 0; i < size; ++i)
-            {
-                m_data[addr] = data[i];
-                ++addr;
-            }
+            std::copy_n(data, size, &m_data[addr]);
         }
 
         void Read(std::uint32_t addr, char* data, std::uint32_t size) override
         {
-            for (std::size_t i = 0; i < size; ++i)
-            {
-                data[i] = m_data[addr];
-                ++addr;
-            }
+            std::copy_n(&m_data[addr], size, data);
         }
 
         void Write_Callback([[maybe_unused]] std::uint32_t addr) override
