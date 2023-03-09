@@ -4,18 +4,46 @@ set(EXECUTABLE_NAME ZeroMate)
 # List out source files making up the executable
 add_executable(
     ${EXECUTABLE_NAME}
-    main.cpp)
+    main.cpp
+    utils/math.hpp
+    arm1176jzf_s/registers/cspr.hpp
+    arm1176jzf_s/registers/cspr.cpp
+    arm1176jzf_s/isa/instruction.hpp
+    arm1176jzf_s/isa/instruction.cpp
+    arm1176jzf_s/isa/data_processing.hpp
+    arm1176jzf_s/isa/data_processing.cpp
+    arm1176jzf_s/isa/multiply.hpp
+    arm1176jzf_s/isa/multiply.cpp
+    arm1176jzf_s/isa/multiply_long.hpp
+    arm1176jzf_s/isa/multiply_long.cpp
+    arm1176jzf_s/isa/branch_and_exchange.hpp
+    arm1176jzf_s/isa/branch_and_exchange.cpp
+    arm1176jzf_s/isa/branch.hpp
+    arm1176jzf_s/isa/branch.cpp
+    arm1176jzf_s/isa/single_data_transfer.hpp
+    arm1176jzf_s/isa/single_data_transfer.cpp
+    arm1176jzf_s/isa/block_data_transfer.hpp
+    arm1176jzf_s/isa/block_data_transfer.cpp
+    arm1176jzf_s/isa/halfword_data_transfer.hpp
+    arm1176jzf_s/isa/halfword_data_transfer.cpp
+    arm1176jzf_s/isa/sw_interrupt.hpp
+    arm1176jzf_s/isa/sw_interrupt.cpp
+    arm1176jzf_s/isa/isa_decoder.hpp
+    arm1176jzf_s/isa/isa_decoder.cpp
+    arm1176jzf_s/core.hpp
+    arm1176jzf_s/core.cpp
+    arm1176jzf_s/alu.hpp
+    arm1176jzf_s/alu.cpp
+    arm1176jzf_s/mac.hpp
+    arm1176jzf_s/mac.cpp
+    arm1176jzf_s/mocks/ram.hpp)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
     ${EXECUTABLE_NAME}
     PRIVATE project_warnings
     PRIVATE project_options
-    PRIVATE CONAN_PKG::fmt
-    PRIVATE CONAN_PKG::spdlog
-    PRIVATE CONAN_PKG::imgui
-    PRIVATE CONAN_PKG::glew
-    PRIVATE CONAN_PKG::glfw
-    PRIVATE imgui_glfw)
+    PRIVATE fmt
+    PRIVATE spdlog)
 
 # EOF
