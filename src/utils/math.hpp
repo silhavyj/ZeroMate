@@ -199,7 +199,7 @@ namespace zero_mate::utils::math
     }
 
     template<std::unsigned_integral Type>
-    [[nodiscard]] static std::uint32_t Sign_Extend_Value(Type value) noexcept
+    [[nodiscard]] std::uint32_t Sign_Extend_Value(Type value) noexcept
     {
         static_assert(std::numeric_limits<Type>::digits < std::numeric_limits<std::uint32_t>::digits);
 
