@@ -1,14 +1,20 @@
 #include <gtest/gtest.h>
 
-#include "arm1176jzf_s/mocks/ram.hpp"
+#include "peripherals/ram.hpp"
 #include "arm1176jzf_s/core.hpp"
+
+using namespace zero_mate;
+
+static constexpr std::uint32_t RAM_SIZE = 1024;
 
 TEST(stmda_instruction, test_01)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a010c8 }, // mov r1, #200
@@ -22,12 +28,12 @@ TEST(stmda_instruction, test_01)
     { 0xe5912004 }  // ldr r2, [r1, #4]
     });
 
-    EXPECT_EQ(ram->Read<std::uint32_t>(200 - 20), 1);
-    EXPECT_EQ(ram->Read<std::uint32_t>(200 - 16), 2);
-    EXPECT_EQ(ram->Read<std::uint32_t>(200 - 12), 3);
-    EXPECT_EQ(ram->Read<std::uint32_t>(200 - 8), 4);
-    EXPECT_EQ(ram->Read<std::uint32_t>(200 - 4), 5);
-    EXPECT_EQ(ram->Read<std::uint32_t>(200), 6);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200 - 20), 1);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200 - 16), 2);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200 - 12), 3);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200 - 8), 4);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200 - 4), 5);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200), 6);
 
     EXPECT_EQ(cpu.m_regs[1], 200 - 24);
     EXPECT_EQ(cpu.m_regs[2], 1);
@@ -35,10 +41,12 @@ TEST(stmda_instruction, test_01)
 
 TEST(stmda_instruction, test_02)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a010c8 }, // mov r1, #200
@@ -52,12 +60,12 @@ TEST(stmda_instruction, test_02)
     { 0xe5912000 }  // ldr r2, [r1]
     });
 
-    EXPECT_EQ(ram->Read<std::uint32_t>(200 - 20), 1);
-    EXPECT_EQ(ram->Read<std::uint32_t>(200 - 16), 2);
-    EXPECT_EQ(ram->Read<std::uint32_t>(200 - 12), 3);
-    EXPECT_EQ(ram->Read<std::uint32_t>(200 - 8), 4);
-    EXPECT_EQ(ram->Read<std::uint32_t>(200 - 4), 5);
-    EXPECT_EQ(ram->Read<std::uint32_t>(200), 6);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200 - 20), 1);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200 - 16), 2);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200 - 12), 3);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200 - 8), 4);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200 - 4), 5);
+    EXPECT_EQ(bus->Read<std::uint32_t>(200), 6);
 
     EXPECT_EQ(cpu.m_regs[1], 200);
     EXPECT_EQ(cpu.m_regs[2], 6);

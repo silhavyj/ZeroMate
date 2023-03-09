@@ -10,8 +10,8 @@
 #include "isa/isa.hpp"
 #include "isa/isa_decoder.hpp"
 #include "registers/cspr.hpp"
-#include "mocks/ram.hpp"
 #include "../utils/math.hpp"
+#include "../bus/bus.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -26,7 +26,7 @@ namespace zero_mate::arm1176jzf_s
         static constexpr std::size_t SP_REG_IDX = 13;
 
         CCPU_Core() noexcept;
-        CCPU_Core(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram) noexcept;
+        CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept;
 
         void Run(std::uint32_t last_execution_addr);
         void Step(std::size_t count);
@@ -50,10 +50,10 @@ namespace zero_mate::arm1176jzf_s
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;
-        void Execute(isa::CBranch instruction) noexcept;
-        void Execute(isa::CData_Processing instruction) noexcept;
-        void Execute(isa::CMultiply instruction) noexcept;
-        void Execute(isa::CMultiply_Long instruction) noexcept;
+        void Execute(isa::CBranch instruction);
+        void Execute(isa::CData_Processing instruction);
+        void Execute(isa::CMultiply instruction);
+        void Execute(isa::CMultiply_Long instruction);
         void Execute(isa::CSingle_Data_Transfer instruction);
         void Execute(isa::CBlock_Data_Transfer instruction);
         void Execute(isa::CHalfword_Data_Transfer instruction);
@@ -62,21 +62,15 @@ namespace zero_mate::arm1176jzf_s
         template<std::unsigned_integral Type>
         void Read_Write_Value(isa::CSingle_Data_Transfer instruction, std::uint32_t addr, std::uint32_t reg_idx)
         {
-            assert(m_ram != nullptr);
-
-            // TODO do this check in IBus once it is implemented
-            if (static_cast<std::size_t>(addr) % sizeof(Type) != 0)
-            {
-                // TODO react appropriately (abort, throw an exception?)
-            }
+            assert(m_bus != nullptr);
 
             if (instruction.Is_L_Bit_Set())
             {
-                m_regs.at(reg_idx) = m_ram->Read<Type>(addr);
+                m_regs.at(reg_idx) = m_bus->Read<Type>(addr);
             }
             else
             {
-                m_ram->Write<Type>(addr, static_cast<Type>(m_regs.at(reg_idx)));
+                m_bus->Write<Type>(addr, static_cast<Type>(m_regs.at(reg_idx)));
             }
         }
 
@@ -84,6 +78,6 @@ namespace zero_mate::arm1176jzf_s
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
         CCSPR m_cspr;
         isa::CISA_Decoder m_instruction_decoder;
-        std::shared_ptr<mocks::CRAM> m_ram;
+        std::shared_ptr<CBus> m_bus;
     };
 }

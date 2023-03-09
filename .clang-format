@@ -11,6 +11,7 @@ BraceWrapping:
   AfterStruct: true
   BeforeElse: true
   AfterEnum: true
+  BeforeCatch: true
 BreakBeforeBinaryOperators: None
 BreakBeforeBraces: Custom
 BreakConstructorInitializers: BeforeColon
