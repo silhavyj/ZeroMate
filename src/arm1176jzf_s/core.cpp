@@ -126,13 +126,17 @@ namespace zero_mate::arm1176jzf_s
             {
                 Execute(instruction);
             }
+            catch (const exceptions::CSoftware_Interrupt& ex)
+            {
+                // TODO
+            }
             catch (const exceptions::CUndefined_Instruction& ex)
             {
-                // TODO log the error massage
+                // TODO
             }
-            catch (const exceptions::CBus_Fault& ex)
+            catch (const exceptions::CData_Abort& ex)
             {
-                // TODO log the error massage
+                // TODO
             }
         }
     }
