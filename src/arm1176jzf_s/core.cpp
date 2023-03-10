@@ -4,6 +4,7 @@
 #include "alu.hpp"
 #include "mac.hpp"
 #include "core.hpp"
+#include "exceptions.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -12,10 +13,10 @@ namespace zero_mate::arm1176jzf_s
     {
     }
 
-    CCPU_Core::CCPU_Core(std::uint32_t pc, std::shared_ptr<mocks::CRAM> ram) noexcept
+    CCPU_Core::CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept
     : m_regs{}
     , m_cspr{ 0 }
-    , m_ram{ ram }
+    , m_bus{ bus }
     {
         PC() = pc;
     }
@@ -39,7 +40,7 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Step()
     {
-        assert(m_ram != nullptr);
+        assert(m_bus != nullptr);
 
         const auto instruction = Fetch_Instruction();
         Execute(instruction);
@@ -47,7 +48,7 @@ namespace zero_mate::arm1176jzf_s
 
     isa::CInstruction CCPU_Core::Fetch_Instruction()
     {
-        const std::unsigned_integral auto instruction = m_ram->Read<std::uint32_t>(PC());
+        const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
         PC() += sizeof(std::uint32_t);
         return instruction;
     }
@@ -121,7 +122,22 @@ namespace zero_mate::arm1176jzf_s
     {
         for (const auto& instruction : instructions)
         {
-            Execute(instruction);
+            try
+            {
+                Execute(instruction);
+            }
+            catch (const exceptions::CSoftware_Interrupt& ex)
+            {
+                // TODO
+            }
+            catch (const exceptions::CUndefined_Instruction& ex)
+            {
+                // TODO
+            }
+            catch (const exceptions::CData_Abort& ex)
+            {
+                // TODO
+            }
         }
     }
 
@@ -161,8 +177,7 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CInstruction::NType::Undefined:
-                // TODO throw an exception once interrupts are implemented
-                break;
+                throw exceptions::CUndefined_Instruction{};
 
             case isa::CInstruction::NType::Block_Data_Transfer:
                 Execute(isa::CBlock_Data_Transfer{ instruction });
@@ -183,8 +198,7 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CInstruction::NType::Unknown:
-                // TODO throw an exception once interrupts are implemented
-                break;
+                throw exceptions::CUndefined_Instruction{};
         }
     }
 
@@ -247,7 +261,7 @@ namespace zero_mate::arm1176jzf_s
         return Perform_Shift(shift_type, shift_amount, shift_reg);
     }
 
-    void CCPU_Core::Execute(isa::CData_Processing instruction) noexcept
+    void CCPU_Core::Execute(isa::CData_Processing instruction)
     {
         const std::uint32_t first_operand = m_regs.at(instruction.Get_Rn());
         const auto [carry_out, second_operand] = Get_Second_Operand(instruction);
@@ -284,7 +298,7 @@ namespace zero_mate::arm1176jzf_s
         PC() = m_regs.at(instruction.Get_Rm()) & 0xFFFFFFFEU;
     }
 
-    void CCPU_Core::Execute(isa::CBranch instruction) noexcept
+    void CCPU_Core::Execute(isa::CBranch instruction)
     {
         if (instruction.Is_L_Bit_Set())
         {
@@ -306,7 +320,7 @@ namespace zero_mate::arm1176jzf_s
         PC() += sizeof(std::uint32_t);
     }
 
-    void CCPU_Core::Execute(isa::CMultiply instruction) noexcept
+    void CCPU_Core::Execute(isa::CMultiply instruction)
     {
         const auto result = mac::Execute(instruction,
                                          m_regs.at(instruction.Get_Rm()),
@@ -322,7 +336,7 @@ namespace zero_mate::arm1176jzf_s
         m_regs.at(instruction.Get_Rd()) = result.value_lo;
     }
 
-    void CCPU_Core::Execute(isa::CMultiply_Long instruction) noexcept
+    void CCPU_Core::Execute(isa::CMultiply_Long instruction)
     {
         const auto reg_rd_lo = instruction.Get_Rd_Lo();
         const auto reg_rd_hi = instruction.Get_Rd_Hi();
@@ -426,11 +440,11 @@ namespace zero_mate::arm1176jzf_s
             {
                 if (store_value)
                 {
-                    m_ram->Write<std::uint32_t>(addr, m_regs.at(reg_idx));
+                    m_bus->Write<std::uint32_t>(addr, m_regs.at(reg_idx));
                 }
                 else
                 {
-                    m_regs.at(reg_idx) = m_ram->Read<std::uint32_t>(addr);
+                    m_regs.at(reg_idx) = m_bus->Read<std::uint32_t>(addr);
                 }
 
                 addr += REG_SIZE;
@@ -476,16 +490,16 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                m_regs.at(dest_reg) = m_ram->Read<std::uint16_t>(addr);
+                m_regs.at(dest_reg) = m_bus->Read<std::uint16_t>(addr);
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
-                read_value = m_ram->Read<std::uint8_t>(addr);
+                read_value = m_bus->Read<std::uint8_t>(addr);
                 m_regs.at(dest_reg) = utils::math::Sign_Extend_Value(std::get<std::uint8_t>(read_value));
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
-                read_value = m_ram->Read<std::uint16_t>(addr);
+                read_value = m_bus->Read<std::uint16_t>(addr);
                 m_regs.at(dest_reg) = utils::math::Sign_Extend_Value(std::get<std::uint16_t>(read_value));
                 break;
         }
@@ -499,7 +513,7 @@ namespace zero_mate::arm1176jzf_s
         {
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
                 value = static_cast<std::uint16_t>(m_regs.at(src_reg) & 0x0000FFFFU);
-                m_ram->Write<std::uint16_t>(addr, value);
+                m_bus->Write<std::uint16_t>(addr, value);
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::SWP:

@@ -36,7 +36,11 @@ add_executable(
     arm1176jzf_s/alu.cpp
     arm1176jzf_s/mac.hpp
     arm1176jzf_s/mac.cpp
-    arm1176jzf_s/mocks/ram.hpp)
+    arm1176jzf_s/exceptions.hpp
+    peripherals/peripheral.hpp
+    peripherals/ram.hpp
+    bus/bus.hpp
+    bus/bus.cpp)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(

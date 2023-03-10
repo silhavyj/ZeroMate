@@ -1,12 +1,14 @@
 #include <gtest/gtest.h>
 
-#include "arm1176jzf_s/mocks/ram.hpp"
+#include "peripherals/ram.hpp"
 #include "arm1176jzf_s/core.hpp"
+
+using namespace zero_mate;
+
+static constexpr std::uint32_t RAM_SIZE = 1024;
 
 TEST(blx_instruction, test_01)
 {
-    using namespace zero_mate::arm1176jzf_s;
-
     const std::vector<std::uint32_t> ram_content = {
         0xe3a04010, // 00000000 mov r4, #0x10
         0xe0200000, // 00000004 eor r0, r0, r0
@@ -18,7 +20,12 @@ TEST(blx_instruction, test_01)
         0xe12fff14  // 0000001C bx r4
     };
 
-    CCPU_Core cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>(0, ram_content);
+    auto bus = std::make_shared<CBus>();
+
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     // blx r4
     cpu.Step(3);

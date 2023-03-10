@@ -1,14 +1,20 @@
 #include <gtest/gtest.h>
 
-#include "arm1176jzf_s/mocks/ram.hpp"
+#include "peripherals/ram.hpp"
 #include "arm1176jzf_s/core.hpp"
+
+using namespace zero_mate;
+
+static constexpr std::uint32_t RAM_SIZE = 1024;
 
 TEST(stmib_instruction, test_01)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a010c8 }, // mov r1, #200
@@ -22,22 +28,24 @@ TEST(stmib_instruction, test_01)
     { 0xe5912000 }  // ldr r2, [r1]
     });
 
-    EXPECT_EQ(ram->Read<std::uint32_t>(204), 1);
-    EXPECT_EQ(ram->Read<std::uint32_t>(208), 2);
-    EXPECT_EQ(ram->Read<std::uint32_t>(212), 3);
-    EXPECT_EQ(ram->Read<std::uint32_t>(216), 4);
-    EXPECT_EQ(ram->Read<std::uint32_t>(220), 5);
-    EXPECT_EQ(ram->Read<std::uint32_t>(224), 6);
+    EXPECT_EQ(bus->Read<std::uint32_t>(204), 1);
+    EXPECT_EQ(bus->Read<std::uint32_t>(208), 2);
+    EXPECT_EQ(bus->Read<std::uint32_t>(212), 3);
+    EXPECT_EQ(bus->Read<std::uint32_t>(216), 4);
+    EXPECT_EQ(bus->Read<std::uint32_t>(220), 5);
+    EXPECT_EQ(bus->Read<std::uint32_t>(224), 6);
     EXPECT_EQ(cpu.m_regs[1], 224);
     EXPECT_EQ(cpu.m_regs[2], 6);
 }
 
 TEST(stmib_instruction, test_02)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     for (std::size_t idx = 1; idx < cpu.NUMBER_OF_REGS; ++idx)
     {
@@ -51,7 +59,7 @@ TEST(stmib_instruction, test_02)
 
     for (std::size_t idx = 1; idx < cpu.NUMBER_OF_REGS; ++idx)
     {
-        EXPECT_EQ(ram->Read<std::uint32_t>(static_cast<std::uint32_t>(200 + (idx * cpu.REG_SIZE) + cpu.REG_SIZE)), 42 + idx);
+        EXPECT_EQ(bus->Read<std::uint32_t>(static_cast<std::uint32_t>(200 + (idx * cpu.REG_SIZE) + cpu.REG_SIZE)), 42 + idx);
     }
 
     EXPECT_EQ(cpu.m_regs[0], 200 + (cpu.NUMBER_OF_REGS * cpu.REG_SIZE));

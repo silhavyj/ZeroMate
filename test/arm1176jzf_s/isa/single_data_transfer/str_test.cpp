@@ -1,14 +1,20 @@
 #include <gtest/gtest.h>
 
-#include "arm1176jzf_s/mocks/ram.hpp"
+#include "peripherals/ram.hpp"
 #include "arm1176jzf_s/core.hpp"
+
+using namespace zero_mate;
+
+static constexpr std::uint32_t RAM_SIZE = 1024;
 
 TEST(str_instruction, test_01)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a05014 }, // mov r5, #20
@@ -17,15 +23,17 @@ TEST(str_instruction, test_01)
     { 0xe7850001 }  // str r0, [r5, r1]
     });
 
-    EXPECT_EQ(ram->Read<std::uint32_t>(24), 1024);
+    EXPECT_EQ(bus->Read<std::uint32_t>(24), 1024);
 }
 
 TEST(str_instruction, test_02)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a050e0 }, // mov r5, #224
@@ -34,16 +42,17 @@ TEST(str_instruction, test_02)
     { 0xe7c50001 }  // strb r0, [r5, r1]
     });
 
-    EXPECT_EQ(ram->Read<std::uint8_t>(228), 0x54);
+    EXPECT_EQ(bus->Read<std::uint8_t>(228), 0x54);
 }
 
 TEST(str_instruction, test_03)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
 
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
     cpu.Execute({
     { 0xe3a050e0 }, // mov r5, #224
     { 0xe3e01003 }, // mov r1, #-4
@@ -51,15 +60,17 @@ TEST(str_instruction, test_03)
     { 0xe7c50001 }  // strb r0, [r5, r1]
     });
 
-    EXPECT_EQ(ram->Read<std::uint8_t>(220), 0x54);
+    EXPECT_EQ(bus->Read<std::uint8_t>(220), 0x54);
 }
 
 TEST(str_instruction, test_04)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a050e0 }, // mov r5, #224
@@ -70,16 +81,18 @@ TEST(str_instruction, test_04)
     { 0xe7c50001 }  // strb r0, [r5, r1]
     });
 
-    EXPECT_EQ(ram->Read<std::uint8_t>(220), 0x54);
-    EXPECT_EQ(ram->Read<std::uint8_t>(219), 0x54);
+    EXPECT_EQ(bus->Read<std::uint8_t>(220), 0x54);
+    EXPECT_EQ(bus->Read<std::uint8_t>(219), 0x54);
 }
 
 TEST(str_instruction, test_05)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a000c8 }, // mov r0, #200
@@ -87,15 +100,17 @@ TEST(str_instruction, test_05)
     { 0xe5801004 }, // str r1, [r0, #4]
     });
 
-    EXPECT_EQ(ram->Read<std::uint32_t>(204), 13);
+    EXPECT_EQ(bus->Read<std::uint32_t>(204), 13);
 }
 
 TEST(str_instruction, test_06)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a00c02 }, // mov r0, #512
@@ -104,16 +119,18 @@ TEST(str_instruction, test_06)
     { 0xe6c01002 }  // strb r1, [r0], r2
     });
 
-    EXPECT_EQ(ram->Read<std::uint8_t>(512), 169);
+    EXPECT_EQ(bus->Read<std::uint8_t>(512), 169);
     EXPECT_EQ(cpu.m_regs[0], 514);
 }
 
 TEST(str_instruction, test_07)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a00c02 }, // mov r0, #512
@@ -121,15 +138,17 @@ TEST(str_instruction, test_07)
     { 0xe7801101 }  // str r1, [r0, r1, LSL #2]
     });
 
-    EXPECT_EQ(ram->Read<std::uint32_t>(496), 0xfffffffc);
+    EXPECT_EQ(bus->Read<std::uint32_t>(496), 0xfffffffc);
 }
 
 TEST(str_instruction, test_08)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a00c01 }, // mov r0, #256
@@ -139,15 +158,17 @@ TEST(str_instruction, test_08)
     { 0xe5401001 }  // strb r1, [r0, #-1]
     });
 
-    EXPECT_EQ(ram->Read<std::uint32_t>(252), 0x35FFFF54);
+    EXPECT_EQ(bus->Read<std::uint32_t>(252), 0x35FFFF54);
 }
 
 TEST(str_instruction, test_09)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a00c01 }, // mov r0, #256
@@ -157,19 +178,21 @@ TEST(str_instruction, test_09)
     { 0xe5c01001 }  // strb r1, [r0, #1]
     });
 
-    EXPECT_EQ(ram->Read<std::uint32_t>(252), 0xFFFFFF54);
-    EXPECT_EQ(ram->Read<std::uint8_t>(257), 0x35);
-    EXPECT_EQ(ram->Read<std::uint8_t>(256), 0x0);
-    EXPECT_EQ(ram->Read<std::uint8_t>(255), 0xFF);
-    EXPECT_EQ(ram->Read<std::uint32_t>(254), 0x3500FFFF);
+    EXPECT_EQ(bus->Read<std::uint32_t>(252), 0xFFFFFF54);
+    EXPECT_EQ(bus->Read<std::uint8_t>(257), 0x35);
+    EXPECT_EQ(bus->Read<std::uint8_t>(256), 0x0);
+    EXPECT_EQ(bus->Read<std::uint8_t>(255), 0xFF);
+    EXPECT_EQ(bus->Read<std::uint32_t>(254, false), 0x3500FFFF); // Explicitly enable unaligned access
 }
 
 TEST(str_instruction, test_10)
 {
-    using namespace zero_mate::arm1176jzf_s;
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto bus = std::make_shared<CBus>();
 
-    auto ram = std::make_shared<mocks::CRAM>();
-    CCPU_Core cpu{ 0, ram };
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Execute({
     { 0xe3a0d0c8 }, // mov sp, #200
@@ -178,5 +201,5 @@ TEST(str_instruction, test_10)
     });
 
     EXPECT_EQ(cpu.m_regs[cpu.SP_REG_IDX], 196);
-    EXPECT_EQ(ram->Read<std::uint32_t>(196), 0xFF);
+    EXPECT_EQ(bus->Read<std::uint32_t>(196), 0xFF);
 }

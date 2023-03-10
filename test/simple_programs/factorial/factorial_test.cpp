@@ -1,12 +1,14 @@
 #include <gtest/gtest.h>
 
-#include "arm1176jzf_s/mocks/ram.hpp"
+#include "peripherals/ram.hpp"
 #include "arm1176jzf_s/core.hpp"
+
+using namespace zero_mate;
+
+static constexpr std::uint32_t RAM_SIZE = 1024;
 
 TEST(factorial, non_recursive)
 {
-    using namespace zero_mate::arm1176jzf_s;
-
     // Calculates 25! using the long long datatype and returns the result as a 32 signed integer
     const std::vector<std::uint32_t> ram_content = {
         0xe3a0db01, 0xeb000032, 0xeafffffe, 0xe92d0830, 0xe28db008,
@@ -24,7 +26,12 @@ TEST(factorial, non_recursive)
         0xe1a03002, 0xe1a00003, 0xe24bd004, 0xe8bd4800, 0xe12fff1e
     };
 
-    CCPU_Core cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>(0, ram_content);
+    auto bus = std::make_shared<CBus>();
+
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Run(0x8);
 
@@ -33,8 +40,6 @@ TEST(factorial, non_recursive)
 
 TEST(factorial, recursive)
 {
-    using namespace zero_mate::arm1176jzf_s;
-
     // Calculates 7! using the long long datatype and returns the result as a 32 signed integer
     const std::vector<std::uint32_t> ram_content = {
         0xe3a0db01, 0xeb000026, 0xeafffffe, 0xe92d4830, 0xe28db00c,
@@ -50,7 +55,12 @@ TEST(factorial, recursive)
         0xe24bd004, 0xe8bd4800, 0xe12fff1e
     };
 
-    CCPU_Core cpu{ 0, std::make_shared<mocks::CRAM>(0, ram_content) };
+    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>(0, ram_content);
+    auto bus = std::make_shared<CBus>();
+
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Run(0x8);
 
