@@ -18,7 +18,8 @@ set(SRC_FILES
     ../src/arm1176jzf_s/isa/halfword_data_transfer.cpp
     ../src/arm1176jzf_s/isa/sw_interrupt.cpp
     ../src/arm1176jzf_s/isa/isa_decoder.cpp
-    ../src/bus/bus.cpp)
+    ../src/bus/bus.cpp
+    ../src/utils/elf_loader.cpp)
 
 # Build unit tests
 add_executable(
@@ -76,14 +77,20 @@ add_executable(
     arm1176jzf_s/isa/halfword_data_transfer/ldrsh_test.cpp
     arm1176jzf_s/isa/halfword_data_transfer/strh_test.cpp
     simple_programs/fibonacci/fibonacci_test.cpp
-    simple_programs/factorial/factorial_test.cpp)
+    simple_programs/factorial/factorial_test.cpp
+    utils/elf/elf_loader.cpp)
+
+target_include_directories(
+    unit_tests
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/)
 
 # Link libraries to the executable
 target_link_libraries(
     unit_tests
     PRIVATE project_warnings project_options
     PRIVATE fmt
-    PRIVATE gtest)
+    PRIVATE gtest
+    PRIVATE elfio)
 
 # Include the download CMake file
 include(GoogleTest)
