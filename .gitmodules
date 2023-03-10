@@ -10,3 +10,13 @@
 [submodule "external/elfio"]
 	path = external/elfio
 	url = https://github.com/serge1/ELFIO.git
+[submodule "external/glew"]
+	path = external/glew
+	url = https://github.com/Perlmint/glew-cmake.git
+[submodule "external/glfw"]
+	path = external/glfw
+	url = https://github.com/glfw/glfw
+[submodule "external/imgui"]
+	path = external/imgui
+	url = https://github.com/ocornut/imgui.git
+	branch = docking

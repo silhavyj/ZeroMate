@@ -1,3 +1,27 @@
+# Build ImGUI sources separately as a static library.
+# Otherwise they would break the build as they do not pass
+# strict compiler warnings set up in the project
+
+add_library(
+    imgui_glfw
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui_tables.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui_widgets.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui_draw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui_demo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/backends/imgui_impl_glfw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/backends/imgui_impl_opengl3.cpp)
+
+target_include_directories(
+    imgui_glfw
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/backends)
+
+target_link_libraries(
+    imgui_glfw
+    PRIVATE libglew_static
+    PRIVATE glfw)
+
 # Define the name of the executable
 set(EXECUTABLE_NAME ZeroMate)
 
@@ -48,7 +72,9 @@ add_executable(
 
 target_include_directories(
     ${EXECUTABLE_NAME}
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/)
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
@@ -57,6 +83,16 @@ target_link_libraries(
     PRIVATE project_options
     PRIVATE fmt
     PRIVATE spdlog
-    PRIVATE elfio)
+    PRIVATE elfio
+    PRIVATE libglew_static
+    PRIVATE glfw
+    PRIVATE imgui_glfw)
+
+if(WIN32)
+    target_link_libraries(
+        ${EXECUTABLE_NAME}
+        PRIVATE $<$<CXX_COMPILER_ID:GNU>:opengl32.a>
+        PRIVATE $<$<CXX_COMPILER_ID:MSVC>:opengl32.lib>)
+endif()
 
 # EOF
