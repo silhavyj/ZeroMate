@@ -20,3 +20,6 @@
 	path = external/imgui
 	url = https://github.com/ocornut/imgui.git
 	branch = docking
+[submodule "external/imgui_club"]
+	path = external/imgui_club
+	url = https://github.com/ocornut/imgui_club.git

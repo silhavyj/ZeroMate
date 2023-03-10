@@ -16,11 +16,16 @@ namespace zero_mate::peripheral
     class CRAM final : public IPeripheral
     {
     public:
-        CRAM() = default;
+        CRAM()
+        {
+            Init_Data();
+        }
 
         CRAM(std::uint32_t addr, const std::vector<std::uint32_t>& instructions)
         {
             assert((instructions.size() / sizeof(std::uint32_t)) < (Size - addr));
+
+            Init_Data();
 
             for (const auto& instruction : instructions)
             {
@@ -48,7 +53,19 @@ namespace zero_mate::peripheral
         {
         }
 
+        char* Get_Raw_Data() const
+        {
+            return m_data.get();
+        }
+
     private:
-        std::array<char, Size> m_data{};
+        void Init_Data()
+        {
+            m_data = std::unique_ptr<char[]>(new (std::nothrow) char[Size]);
+            assert(m_data != nullptr);
+            std::fill_n(m_data.get(), Size, 0);
+        }
+
+        std::unique_ptr<char[]> m_data{ nullptr };
     };
 }

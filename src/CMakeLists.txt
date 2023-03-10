@@ -68,13 +68,16 @@ add_executable(
     utils/elf_loader.hpp
     utils/elf_loader.cpp
     utils/list_parser.hpp
-    utils/list_parser.cpp)
+    utils/list_parser.cpp
+    gui/gui.hpp
+    gui/gui.cpp)
 
 target_include_directories(
     ${EXECUTABLE_NAME}
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui)
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(

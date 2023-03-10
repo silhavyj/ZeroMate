@@ -28,6 +28,7 @@ namespace zero_mate::arm1176jzf_s
         CCPU_Core() noexcept;
         CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept;
 
+        void Set_PC(std::uint32_t pc);
         void Run(std::uint32_t last_execution_addr);
         void Step(std::size_t count);
         void Step();

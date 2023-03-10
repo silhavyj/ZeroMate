@@ -5,6 +5,8 @@
 #include <imgui/backends/imgui_impl_glfw.h>
 #include <imgui/backends/imgui_impl_opengl3.h>
 
+#include "gui/gui.hpp"
+
 static inline constexpr const char* const WINDOW_TITLE = "ZeroMate - Rpi Zero emulator";
 static inline constexpr uint32_t WINDOW_WIDTH = 1240;
 static inline constexpr uint32_t WINDOW_WEIGHT = 720;
@@ -103,6 +105,7 @@ int main([[maybe_unused]] int argc,
             ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
         }
 
+        zero_mate::gui::Render_GUI();
         ImGui::End();
         ImGui::Render();
 

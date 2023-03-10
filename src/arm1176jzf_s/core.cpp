@@ -18,6 +18,11 @@ namespace zero_mate::arm1176jzf_s
     , m_cspr{ 0 }
     , m_bus{ bus }
     {
+        Set_PC(pc);
+    }
+
+    void CCPU_Core::Set_PC(std::uint32_t pc)
+    {
         PC() = pc;
     }
 
