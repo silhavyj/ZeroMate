@@ -40,7 +40,9 @@ add_executable(
     peripherals/peripheral.hpp
     peripherals/ram.hpp
     bus/bus.hpp
-    bus/bus.cpp)
+    bus/bus.cpp
+    utils/elf_loader.hpp
+    utils/elf_loader.cpp)
 
 target_include_directories(
     ${EXECUTABLE_NAME}
