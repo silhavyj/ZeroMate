@@ -42,12 +42,17 @@ add_executable(
     bus/bus.hpp
     bus/bus.cpp)
 
+target_include_directories(
+    ${EXECUTABLE_NAME}
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/)
+
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
     ${EXECUTABLE_NAME}
     PRIVATE project_warnings
     PRIVATE project_options
     PRIVATE fmt
-    PRIVATE spdlog)
+    PRIVATE spdlog
+    PRIVATE elfio)
 
 # EOF

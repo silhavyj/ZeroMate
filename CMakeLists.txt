@@ -46,6 +46,7 @@ include(cmake/static_analyzers.cmake)
 add_subdirectory(external/fmt)
 add_subdirectory(external/spdlog)
 add_subdirectory(external/googletest)
+add_subdirectory(external/elfio)
 
 # Add the src folder
 add_subdirectory(src)
