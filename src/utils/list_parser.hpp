@@ -10,7 +10,7 @@ namespace zero_mate::utils
     {
         std::uint32_t addr;
         std::uint32_t opcode;
-        std::string desc;
+        std::string disassembly;
     };
 
     [[nodiscard]] std::vector<TText_Section_Record> Extract_Text_Section_From_List_File(const char* const filename);

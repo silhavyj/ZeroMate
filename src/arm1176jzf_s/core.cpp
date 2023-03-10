@@ -54,7 +54,7 @@ namespace zero_mate::arm1176jzf_s
     isa::CInstruction CCPU_Core::Fetch_Instruction()
     {
         const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
-        PC() += sizeof(std::uint32_t);
+        PC() += REG_SIZE;
         return instruction;
     }
 
@@ -322,7 +322,7 @@ namespace zero_mate::arm1176jzf_s
         }
 
         // PC is already pointing at the next instruction. Hence, +4 and not +8.
-        PC() += sizeof(std::uint32_t);
+        PC() += REG_SIZE;
     }
 
     void CCPU_Core::Execute(isa::CMultiply instruction)
@@ -389,7 +389,7 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Execute(isa::CSingle_Data_Transfer instruction)
     {
         const auto reg_rn = instruction.Get_Rn();
-        const auto base_addr = reg_rn == PC_REG_IDX ? (PC() + static_cast<std::uint32_t>(sizeof(std::uint32_t))) : m_regs.at(reg_rn);
+        const auto base_addr = reg_rn == PC_REG_IDX ? (PC() + REG_SIZE) : m_regs.at(reg_rn);
         const auto offset = Get_Offset(instruction);
 
         const bool pre_indexed = instruction.Is_P_Bit_Set();

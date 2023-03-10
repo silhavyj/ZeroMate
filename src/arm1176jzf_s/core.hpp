@@ -21,6 +21,8 @@ namespace zero_mate::arm1176jzf_s
         static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
 
         static constexpr std::size_t NUMBER_OF_REGS = 16;
+        static constexpr std::size_t NUMBER_OF_GENERAL_REGS = 13;
+
         static constexpr std::size_t PC_REG_IDX = 15;
         static constexpr std::size_t LR_REG_IDX = 14;
         static constexpr std::size_t SP_REG_IDX = 13;

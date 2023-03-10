@@ -53,12 +53,12 @@ namespace zero_mate::utils
 
             for (std::size_t i = 2; i < parts.size(); ++i)
             {
-                record.desc += parts[i] + '\t';
+                record.disassembly += parts[i] + '\t';
             }
 
-            if (!record.desc.empty() && record.desc[record.desc.length() - 1] == ' ')
+            if (!record.disassembly.empty() && record.disassembly[record.disassembly.length() - 1] == ' ')
             {
-                record.desc.pop_back();
+                record.disassembly.pop_back();
             }
         }
 
