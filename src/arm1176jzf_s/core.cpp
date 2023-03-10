@@ -383,7 +383,8 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CSingle_Data_Transfer instruction)
     {
-        const auto base_addr = m_regs.at(instruction.Get_Rn());
+        const auto reg_rn = instruction.Get_Rn();
+        const auto base_addr = reg_rn == PC_REG_IDX ? (PC() + static_cast<std::uint32_t>(sizeof(std::uint32_t))) : m_regs.at(reg_rn);
         const auto offset = Get_Offset(instruction);
 
         const bool pre_indexed = instruction.Is_P_Bit_Set();

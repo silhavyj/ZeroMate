@@ -40,7 +40,15 @@ add_executable(
     peripherals/peripheral.hpp
     peripherals/ram.hpp
     bus/bus.hpp
-    bus/bus.cpp)
+    bus/bus.cpp
+    utils/elf_loader.hpp
+    utils/elf_loader.cpp
+    utils/list_parser.hpp
+    utils/list_parser.cpp)
+
+target_include_directories(
+    ${EXECUTABLE_NAME}
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
@@ -48,6 +56,7 @@ target_link_libraries(
     PRIVATE project_warnings
     PRIVATE project_options
     PRIVATE fmt
-    PRIVATE spdlog)
+    PRIVATE spdlog
+    PRIVATE elfio)
 
 # EOF
