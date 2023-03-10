@@ -48,13 +48,14 @@ namespace zero_mate::utils
 
         if (parts.size() >= 3)
         {
-            record = {};
             record.addr = static_cast<std::uint32_t>(std::stoul(Trim(parts[0], ':'), nullptr, BASE));
             record.opcode = static_cast<std::uint32_t>(std::stoul(parts[1], nullptr, BASE));
+
             for (std::size_t i = 2; i < parts.size(); ++i)
             {
                 record.desc += parts[i] + '\t';
             }
+
             if (!record.desc.empty() && record.desc[record.desc.length() - 1] == ' ')
             {
                 record.desc.pop_back();
