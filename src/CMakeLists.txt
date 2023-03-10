@@ -42,7 +42,9 @@ add_executable(
     bus/bus.hpp
     bus/bus.cpp
     utils/elf_loader.hpp
-    utils/elf_loader.cpp)
+    utils/elf_loader.cpp
+    utils/list_parser.hpp
+    utils/list_parser.cpp)
 
 target_include_directories(
     ${EXECUTABLE_NAME}
