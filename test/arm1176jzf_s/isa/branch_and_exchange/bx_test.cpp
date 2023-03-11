@@ -24,7 +24,7 @@ TEST(bx_instruction, test_01)
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
-    cpu.Step(2);
+    cpu.Steps(2);
     EXPECT_EQ(cpu.m_regs[1], 12);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 12);
 }
@@ -46,7 +46,7 @@ TEST(bx_instruction, test_02)
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
-    cpu.Step(14);
+    cpu.Steps(14);
     EXPECT_EQ(cpu.m_regs[1], 4);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 8);
 }

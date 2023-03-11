@@ -28,17 +28,17 @@ TEST(blx_instruction, test_01)
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     // blx r4
-    cpu.Step(3);
+    cpu.Steps(3);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x10);
     EXPECT_EQ(cpu.m_regs[0], 0);
 
     // bx r4 (first iteration)
-    cpu.Step(4);
+    cpu.Steps(4);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x10);
     EXPECT_EQ(cpu.m_regs[0], 1);
 
     // 2 more iterations + cmp and mov (r0 should be 3)
-    cpu.Step(10);
+    cpu.Steps(10);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x0C);
     EXPECT_EQ(cpu.m_regs[0], 3);
 }

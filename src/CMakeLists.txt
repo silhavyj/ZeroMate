@@ -86,6 +86,7 @@ target_include_directories(
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/IconFontCppHeaders
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club)
 
 # Link project_warnings, project_options, and libraries

@@ -35,8 +35,8 @@ namespace zero_mate::arm1176jzf_s
         void Add_Breakpoint(std::uint32_t addr);
         void Remove_Breakpoint(std::uint32_t addr);
         void Run();
-        void Step(std::size_t count);
-        bool Step();
+        void Steps(std::size_t count);
+        bool Step(bool ignore_breakpoint = false);
         void Execute(std::initializer_list<isa::CInstruction> instructions);
 
     private:

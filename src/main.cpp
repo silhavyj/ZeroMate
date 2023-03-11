@@ -5,11 +5,15 @@
 #include <imgui/backends/imgui_impl_glfw.h>
 #include <imgui/backends/imgui_impl_opengl3.h>
 
+#include "IconsFontAwesome5.h"
+
 #include "gui/gui.hpp"
 
 static inline constexpr const char* const WINDOW_TITLE = "ZeroMate - Rpi Zero emulator";
 static inline constexpr uint32_t WINDOW_WIDTH = 1240;
 static inline constexpr uint32_t WINDOW_WEIGHT = 720;
+
+// TODO move all the GUI stuff into a separate file
 
 int main([[maybe_unused]] int argc,
          [[maybe_unused]] const char* argv[])
@@ -72,6 +76,20 @@ int main([[maybe_unused]] int argc,
              // TODO
         }
     }
+    else
+    {
+        imgui_io.Fonts->AddFontDefault();
+    }
+
+    float const baseFontSize = 13.0f;
+    float const iconFontSize = baseFontSize * 2.0f / 3.0f;
+
+    static const ImWchar icons_ranges[] = { ICON_MIN_FA, ICON_MAX_16_FA, 0 };
+    ImFontConfig icons_config;
+    icons_config.MergeMode = true;
+    icons_config.PixelSnapH = true;
+    icons_config.GlyphMinAdvanceX = iconFontSize;
+    imgui_io.Fonts->AddFontFromFileTTF( FONT_ICON_FILE_NAME_FAS, iconFontSize, &icons_config, icons_ranges );
 
     int display_w{};
     int display_h{};

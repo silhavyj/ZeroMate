@@ -47,7 +47,7 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
-    void CCPU_Core::Step(std::size_t count)
+    void CCPU_Core::Steps(std::size_t count)
     {
         while (count > 0)
         {
@@ -56,11 +56,11 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
-    bool CCPU_Core::Step()
+    bool CCPU_Core::Step(bool ignore_breakpoint)
     {
         assert(m_bus != nullptr);
 
-        if (!m_breakpoints.contains(PC()))
+        if (ignore_breakpoint || !m_breakpoints.contains(PC()))
         {
             const auto instruction = Fetch_Instruction();
             Execute(instruction);

@@ -14,9 +14,8 @@ namespace zero_mate::gui
 
     void CSource_Code_Window::Render()
     {
-        static const ImGuiTableFlags table_flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
-                                                   ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
-                                                   ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
+        static const ImGuiTableFlags table_flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_NoBordersInBody |
+                                                   ImGuiTableFlags_Resizable | ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 
         ImGui::Begin("Source Code Disassembly");
 
@@ -34,10 +33,15 @@ namespace zero_mate::gui
                 ImGui::TableNextRow();
                 ImGui::TableNextColumn();
 
-                ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
-                if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints[addr]))
+                if (!m_breakpoints.contains(addr))
                 {
-                    m_breakpoints[addr] = !m_breakpoints[addr];
+                    m_breakpoints[addr] = false;
+                }
+
+                ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
+                if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints.at(addr)))
+                {
+                    m_breakpoints.at(addr) = !m_breakpoints.at(addr);
                     if (m_breakpoints.at(addr))
                     {
                         m_cpu->Add_Breakpoint(addr);
@@ -58,7 +62,7 @@ namespace zero_mate::gui
 
                 if (addr == m_cpu->m_regs.at(m_cpu->PC_REG_IDX))
                 {
-                    const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.2f));
+                    const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
                     ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
                 }
             }

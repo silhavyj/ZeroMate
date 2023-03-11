@@ -1,4 +1,3 @@
-#include <imgui/imgui.h>
 #include <fmt/core.h>
 
 #include "registers_window.hpp"
@@ -37,21 +36,14 @@ namespace zero_mate::gui
             ImGui::EndTabBar();
         }
 
-        ImGui::Text("%s", fmt::format("N = {}", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::N)).c_str());
-        ImGui::Text("%s", fmt::format("Z = {}", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::Z)).c_str());
-        ImGui::Text("%s", fmt::format("C = {}", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::C)).c_str());
-        ImGui::Text("%s", fmt::format("V = {}", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::V)).c_str());
+        Render_Flags();
 
         ImGui::End();
     }
 
     void CRegisters_Window::Render_Registers_Table(const char* const title, const char* const type, const char* const format)
     {
-        static const ImGuiTableFlags table_flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
-                                                   ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
-                                                   ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
-
-        if (ImGui::BeginTable(fmt::format("##{}", title).c_str(), 2, table_flags))
+        if (ImGui::BeginTable(fmt::format("##{}", title).c_str(), 2, TABLE_FLAGS))
         {
             ImGui::TableSetupColumn("Register", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn(fmt::format("{}##{}", type, title).c_str(), ImGuiTableColumnFlags_WidthStretch);
@@ -85,6 +77,33 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::InputScalar(fmt::format("##PC{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs.at(m_cpu->PC_REG_IDX), nullptr, nullptr, format);
             ImGui::TableNextRow();
+
+            ImGui::EndTable();
+        }
+    }
+
+    void CRegisters_Window::Render_Flags()
+    {
+        ImGui::Text("Flags in CSPR");
+
+        if (ImGui::BeginTable("Flags", 4, TABLE_FLAGS))
+        {
+            ImGui::TableSetupColumn("N", ImGuiTableColumnFlags_WidthFixed);
+            ImGui::TableSetupColumn("Z", ImGuiTableColumnFlags_WidthFixed);
+            ImGui::TableSetupColumn("C", ImGuiTableColumnFlags_WidthFixed);
+            ImGui::TableSetupColumn("V", ImGuiTableColumnFlags_WidthStretch);
+
+            ImGui::TableHeadersRow();
+
+            ImGui::TableNextRow();
+            ImGui::TableNextColumn();
+            ImGui::Text("%d", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::N));
+            ImGui::TableNextColumn();
+            ImGui::Text("%d", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::Z));
+            ImGui::TableNextColumn();
+            ImGui::Text("%d", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::C));
+            ImGui::TableNextColumn();
+            ImGui::Text("%d", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::V));
 
             ImGui::EndTable();
         }

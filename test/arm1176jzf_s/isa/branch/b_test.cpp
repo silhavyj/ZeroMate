@@ -25,7 +25,7 @@ TEST(b_instruction, test_01)
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
-    cpu.Step(2);
+    cpu.Steps(2);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 12);
 }
 
@@ -47,7 +47,7 @@ TEST(b_instruction, test_02)
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
-    cpu.Step(5);
+    cpu.Steps(5);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x8);
 }
 
@@ -65,7 +65,7 @@ TEST(b_instruction, test_03)
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
-    cpu.Step(10);
+    cpu.Steps(10);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x0);
 }
 
@@ -93,18 +93,18 @@ TEST(b_instruction, test_04)
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     // Jump immediately to label4
-    cpu.Step(1);
+    cpu.Steps(1);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x18);
 
     // After a nop instruction, we should jump to label2
-    cpu.Step(2);
+    cpu.Steps(2);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x0C);
 
     // After two nop instructions, we should be at label3
-    cpu.Step(2);
+    cpu.Steps(2);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x14);
 
     // Infinite loop (stuck at label3)
-    cpu.Step(2);
+    cpu.Steps(2);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x14);
 }
