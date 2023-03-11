@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <memory>
 #include <cassert>
+#include <unordered_set>
 #include <initializer_list>
 
 #include "isa/isa.hpp"
@@ -31,7 +32,9 @@ namespace zero_mate::arm1176jzf_s
         CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept;
 
         void Set_PC(std::uint32_t pc);
-        void Run(std::uint32_t last_execution_addr);
+        void Add_Breakpoint(std::uint32_t addr);
+        void Remove_Breakpoint(std::uint32_t addr);
+        void Run();
         void Step(std::size_t count);
         void Step();
         void Execute(std::initializer_list<isa::CInstruction> instructions);
@@ -80,7 +83,10 @@ namespace zero_mate::arm1176jzf_s
     public:
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
         CCSPR m_cspr;
+
+    private:
         isa::CISA_Decoder m_instruction_decoder;
         std::shared_ptr<CBus> m_bus;
+        std::unordered_set<std::uint32_t> m_breakpoints;
     };
 }

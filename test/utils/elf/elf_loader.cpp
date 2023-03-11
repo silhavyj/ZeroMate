@@ -17,7 +17,9 @@ static void Run_Test(const char* filename, std::uint32_t expected_value)
     EXPECT_EQ(error_code, zero_mate::utils::elf::NError_Code::OK);
 
     zero_mate::arm1176jzf_s::CCPU_Core cpu{ pc, bus };
-    cpu.Run(0x1008);
+
+    cpu.Add_Breakpoint(0x1008);
+    cpu.Run();
 
     EXPECT_EQ(cpu.m_regs[0], expected_value);
 }

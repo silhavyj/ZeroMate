@@ -26,9 +26,22 @@ namespace zero_mate::arm1176jzf_s
         PC() = pc;
     }
 
-    void CCPU_Core::Run(std::uint32_t last_execution_addr)
+    void CCPU_Core::Add_Breakpoint(std::uint32_t addr)
     {
-        while (PC() != last_execution_addr)
+        m_breakpoints.insert(addr);
+    }
+
+    void CCPU_Core::Remove_Breakpoint(std::uint32_t addr)
+    {
+        if (m_breakpoints.contains(addr))
+        {
+            m_breakpoints.erase(addr);
+        }
+    }
+
+    void CCPU_Core::Run()
+    {
+        while (!m_breakpoints.contains(PC()))
         {
             Step();
         }

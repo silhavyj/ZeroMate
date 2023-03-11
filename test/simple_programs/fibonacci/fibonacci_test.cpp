@@ -30,7 +30,8 @@ TEST(fibonacci, non_recursive)
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
-    cpu.Run(0x8);
+    cpu.Add_Breakpoint(0x8);
+    cpu.Run();
 
     EXPECT_EQ(cpu.m_regs[0], -980107325);
 }
@@ -59,7 +60,8 @@ TEST(fibonacci, recursive)
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
-    cpu.Run(0x8);
+    cpu.Add_Breakpoint(0x8);
+    cpu.Run();
 
     EXPECT_EQ(cpu.m_regs[0], 55);
 }
@@ -100,7 +102,8 @@ TEST(fibonacci, dynamic)
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
-    cpu.Run(0x8);
+    cpu.Add_Breakpoint(0x8);
+    cpu.Run();
 
     EXPECT_EQ(cpu.m_regs[0], 670);
 }
