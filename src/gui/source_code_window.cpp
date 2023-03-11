@@ -1,4 +1,5 @@
 #include <imgui/imgui.h>
+#include <fmt/core.h>
 
 #include "source_code_window.hpp"
 
@@ -16,11 +17,11 @@ namespace zero_mate::gui
         static const ImGuiTableFlags table_flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
                                                    ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                    ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
-
         ImGui::Begin("Source Code Disassembly");
 
-        if (ImGui::BeginTable("##source_code_table", 3, table_flags))
+        if (ImGui::BeginTable("##source_code_table", 4, table_flags))
         {
+            ImGui::TableSetupColumn("##breakpoint", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn("Address", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn("Opcode", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn("Disassembly", ImGuiTableColumnFlags_WidthStretch);
@@ -30,6 +31,10 @@ namespace zero_mate::gui
             for (const auto& [addr, opcode, disassembly] : m_source_code)
             {
                 ImGui::TableNextRow();
+                ImGui::TableNextColumn();
+
+                 // TODO breakpoint
+
                 ImGui::TableNextColumn();
                 ImGui::Text("0x%08X", addr);
                 ImGui::TableNextColumn();

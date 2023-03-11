@@ -13,12 +13,35 @@ namespace zero_mate::gui
     {
         ImGui::Begin("Control");
 
+        static bool s_run{ false };
         static bool s_show_demo_window{ false };
 
-        if (ImGui::Button("Next"))
+        if (ImGui::Button("Next") && !s_run)
         {
             m_cpu->Step();
         }
+
+        ImGui::SameLine();
+
+        if (ImGui::Button("Run"))
+        {
+            s_run = true;
+        }
+
+        ImGui::SameLine();
+
+        if (ImGui::Button("Stop"))
+        {
+            s_run = false;
+        }
+
+        if (s_run)
+        {
+            m_cpu->Step();
+        }
+
+        // TODO add colors
+        ImGui::Text("State: %s", s_run ? "running" : "stopped");
 
         ImGui::Checkbox("Show demo window", &s_show_demo_window);
         if (s_show_demo_window)
