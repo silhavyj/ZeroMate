@@ -70,7 +70,16 @@ add_executable(
     utils/list_parser.hpp
     utils/list_parser.cpp
     gui/gui.hpp
-    gui/gui.cpp)
+    gui/gui.cpp
+    gui/window.hpp
+    gui/registers_window.hpp
+    gui/registers_window.cpp
+    gui/ram_window.hpp
+    gui/ram_window.cpp
+    gui/control_window.hpp
+    gui/control_window.cpp
+    gui/source_code_window.hpp
+    gui/source_code_window.cpp)
 
 target_include_directories(
     ${EXECUTABLE_NAME}

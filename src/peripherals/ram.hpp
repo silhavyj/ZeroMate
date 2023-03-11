@@ -12,7 +12,9 @@
 
 namespace zero_mate::peripheral
 {
-    template<std::uint32_t Size>
+    static constexpr std::uint32_t RAM_SIZE = 256 * 1024 * 1024;
+
+    template<std::uint32_t Size = RAM_SIZE>
     class CRAM final : public IPeripheral
     {
     public:
