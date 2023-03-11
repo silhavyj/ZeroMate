@@ -64,6 +64,15 @@ int main([[maybe_unused]] int argc,
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 130");
 
+    if (argc >= 2)
+    {
+        const ImFont* font = imgui_io.Fonts->AddFontFromFileTTF(argv[1], 15.0f);
+        if (font == nullptr)
+        {
+             // TODO
+        }
+    }
+
     int display_w{};
     int display_h{};
 

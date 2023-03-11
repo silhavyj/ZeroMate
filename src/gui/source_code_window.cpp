@@ -58,7 +58,7 @@ namespace zero_mate::gui
 
                 if (addr == m_cpu->m_regs.at(m_cpu->PC_REG_IDX))
                 {
-                    const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.35f));
+                    const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.2f));
                     ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
                 }
             }

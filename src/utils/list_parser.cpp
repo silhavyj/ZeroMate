@@ -53,7 +53,7 @@ namespace zero_mate::utils
 
             for (std::size_t i = 2; i < parts.size(); ++i)
             {
-                record.disassembly += parts[i] + '\t';
+                record.disassembly += parts[i] + ' ';
             }
 
             if (!record.disassembly.empty() && record.disassembly[record.disassembly.length() - 1] == ' ')
