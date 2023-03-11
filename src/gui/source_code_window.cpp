@@ -17,6 +17,7 @@ namespace zero_mate::gui
         static const ImGuiTableFlags table_flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
                                                    ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                    ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
+
         ImGui::Begin("Source Code Disassembly");
 
         if (ImGui::BeginTable("##source_code_table", 4, table_flags))
@@ -33,7 +34,20 @@ namespace zero_mate::gui
                 ImGui::TableNextRow();
                 ImGui::TableNextColumn();
 
-                 // TODO breakpoint
+                ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
+                if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints[addr]))
+                {
+                    m_breakpoints[addr] = !m_breakpoints[addr];
+                    if (m_breakpoints.at(addr))
+                    {
+                        m_cpu->Add_Breakpoint(addr);
+                    }
+                    else
+                    {
+                        m_cpu->Remove_Breakpoint(addr);
+                    }
+                }
+                ImGui::PopStyleColor();
 
                 ImGui::TableNextColumn();
                 ImGui::Text("0x%08X", addr);

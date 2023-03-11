@@ -1,5 +1,7 @@
 #pragma once
 
+#include <unordered_map>
+
 #include "window.hpp"
 
 #include "../arm1176jzf_s/core.hpp"
@@ -18,5 +20,6 @@ namespace zero_mate::gui
     private:
         std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;
         std::vector<utils::TText_Section_Record>& m_source_code;
+        std::unordered_map<std::uint32_t, bool> m_breakpoints;
     };
 }

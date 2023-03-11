@@ -56,15 +56,18 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
-    void CCPU_Core::Step()
+    bool CCPU_Core::Step()
     {
         assert(m_bus != nullptr);
 
         if (!m_breakpoints.contains(PC()))
         {
-           const auto instruction = Fetch_Instruction();
-           Execute(instruction);
+            const auto instruction = Fetch_Instruction();
+            Execute(instruction);
+            return true;
         }
+
+        return false;
     }
 
     isa::CInstruction CCPU_Core::Fetch_Instruction()

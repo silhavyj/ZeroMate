@@ -37,7 +37,10 @@ namespace zero_mate::gui
 
         if (s_run)
         {
-            m_cpu->Step();
+            if (!m_cpu->Step())
+            {
+                s_run = false;
+            }
         }
 
         // TODO add colors
