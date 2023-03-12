@@ -1,12 +1,12 @@
 #pragma once
 
-#include "window.hpp"
+#include "object.hpp"
 
 #include "../peripherals/ram.hpp"
 
 namespace zero_mate::gui
 {
-    class CRAM_Window : public CGUI_Window
+    class CRAM_Window final : public CGUI_Object
     {
     public:
         explicit CRAM_Window(std::shared_ptr<peripheral::CRAM<>> ram);

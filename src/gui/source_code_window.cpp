@@ -14,7 +14,7 @@ namespace zero_mate::gui
 
     void CSource_Code_Window::Render()
     {
-        static const ImGuiTableFlags table_flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_NoBordersInBody |
+        static const ImGuiTableFlags table_flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_BordersOuter |
                                                    ImGuiTableFlags_Resizable | ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 
         ImGui::Begin("Source Code Disassembly");

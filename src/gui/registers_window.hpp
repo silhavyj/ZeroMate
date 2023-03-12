@@ -2,13 +2,13 @@
 
 #include <imgui/imgui.h>
 
-#include "window.hpp"
+#include "object.hpp"
 
 #include "../arm1176jzf_s/core.hpp"
 
 namespace zero_mate::gui
 {
-    class CRegisters_Window final : public CGUI_Window
+    class CRegisters_Window final : public CGUI_Object
     {
     public:
         explicit CRegisters_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu);

@@ -1,0 +1,25 @@
+#pragma once
+
+#include "object.hpp"
+
+#include "../arm1176jzf_s/core.hpp"
+#include "../bus/bus.hpp"
+#include "../utils/list_parser.hpp"
+
+namespace zero_mate::gui
+{
+    class CFile_Window final : public CGUI_Object
+    {
+    public:
+        explicit CFile_Window(std::shared_ptr<CBus> bus,
+                              std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
+                              std::vector<utils::TText_Section_Record>& source_code);
+
+        void Render() override;
+
+    private:
+        std::shared_ptr<CBus> m_bus;
+        std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;
+        std::vector<utils::TText_Section_Record>& m_source_code;
+    };
+}

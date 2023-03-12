@@ -1,7 +1,6 @@
 # Build ImGUI sources separately as a static library.
 # Otherwise they would break the build as they do not pass
 # strict compiler warnings set up in the project
-
 add_library(
     imgui_glfw
     ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui.cpp
@@ -21,6 +20,18 @@ target_link_libraries(
     imgui_glfw
     PRIVATE libglew_static
     PRIVATE glfw)
+
+# Build ImGuiFileDialog sources separately as a static library.
+# Otherwise they would break the build as they do not pass
+# strict compiler warnings set up in the project
+add_library(
+    imgui_file_dialog
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog/ImGuiFileDialog.cpp)
+
+target_include_directories(
+    imgui_file_dialog
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog)
 
 # Define the name of the executable
 set(EXECUTABLE_NAME ZeroMate)
@@ -71,7 +82,7 @@ add_executable(
     utils/list_parser.cpp
     gui/gui.hpp
     gui/gui.cpp
-    gui/window.hpp
+    gui/object.hpp
     gui/registers_window.hpp
     gui/registers_window.cpp
     gui/ram_window.hpp
@@ -79,7 +90,9 @@ add_executable(
     gui/control_window.hpp
     gui/control_window.cpp
     gui/source_code_window.hpp
-    gui/source_code_window.cpp)
+    gui/source_code_window.cpp
+    gui/file_window.hpp
+    gui/file_window.cpp)
 
 target_include_directories(
     ${EXECUTABLE_NAME}
@@ -87,7 +100,8 @@ target_include_directories(
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/IconFontCppHeaders
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club)
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
@@ -99,7 +113,8 @@ target_link_libraries(
     PRIVATE elfio
     PRIVATE libglew_static
     PRIVATE glfw
-    PRIVATE imgui_glfw)
+    PRIVATE imgui_glfw
+    PRIVATE imgui_file_dialog)
 
 if(WIN32)
     target_link_libraries(
