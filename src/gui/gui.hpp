@@ -2,5 +2,5 @@
 
 namespace zero_mate::gui
 {
-    void Render_GUI();
+    int Main_GUI(int argc, const char* argv[]);
 }
