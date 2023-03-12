@@ -105,8 +105,7 @@ namespace zero_mate::gui
 
         if (argc >= 2)
         {
-            const ImFont* font = imgui_io.Fonts->AddFontFromFileTTF(argv[1], 15.0f);
-            if (font == nullptr)
+            if (imgui_io.Fonts->AddFontFromFileTTF(argv[1], 15.0f) == nullptr)
             {
                 // TODO
             }
@@ -116,16 +115,18 @@ namespace zero_mate::gui
             imgui_io.Fonts->AddFontDefault();
         }
 
-        // TODO
-        /*const float baseFontSize = 13.0f;
-        const float iconFontSize = baseFontSize * 2.0f / 3.0f;
+        if (argc >= 3)
+        {
+            const float baseFontSize = 13.0f;
+            const float iconFontSize = baseFontSize * 2.0f / 3.0f;
 
-        static const ImWchar icons_ranges[] = { ICON_MIN_FA, ICON_MAX_16_FA, 0 };
-        ImFontConfig icons_config;
-        icons_config.MergeMode = true;
-        icons_config.PixelSnapH = true;
-        icons_config.GlyphMinAdvanceX = iconFontSize;
-        imgui_io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icons_config, icons_ranges);*/
+            static const ImWchar icons_ranges[] = { ICON_MIN_FA, ICON_MAX_16_FA, 0 };
+            ImFontConfig icons_config;
+            icons_config.MergeMode = true;
+            icons_config.PixelSnapH = true;
+            icons_config.GlyphMinAdvanceX = iconFontSize;
+            imgui_io.Fonts->AddFontFromFileTTF(argv[2], iconFontSize, &icons_config, icons_ranges);
+        }
 
         int display_w{};
         int display_h{};

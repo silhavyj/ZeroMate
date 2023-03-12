@@ -20,11 +20,11 @@ namespace zero_mate::gui
     {
         ImGui::Begin("File");
 
-        static std::string s_filepath{};
-
         // TODO change these to an enum -> switch
         static bool s_open_elf{ false };
         static bool s_open_list{ false };
+        static std::string s_elf_filename{};
+        static std::string s_list_filename{};
 
         if (ImGui::Button("Open .ELF"))
         {
@@ -34,6 +34,10 @@ namespace zero_mate::gui
                 s_open_elf = true;
             }
         }
+
+        ImGui::SameLine();
+        ImGui::Text("%s", s_elf_filename.c_str());
+
         if (ImGui::Button("Open .list"))
         {
             if (!s_open_elf && !s_open_list)
@@ -43,15 +47,17 @@ namespace zero_mate::gui
             }
         }
 
+        ImGui::SameLine();
+        ImGui::Text("%s", s_list_filename.c_str());
+
         if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey"))
         {
             if (ImGuiFileDialog::Instance()->IsOk())
             {
-                s_filepath = ImGuiFileDialog::Instance()->GetFilePathName();
-
                 if (s_open_elf)
                 {
-                    const auto [error_code, pc] = utils::elf::Load_Kernel(*m_bus, s_filepath.c_str());
+                    s_elf_filename = ImGuiFileDialog::Instance()->GetFilePathName();
+                    const auto [error_code, pc] = utils::elf::Load_Kernel(*m_bus, s_elf_filename.c_str());
                     if (error_code != utils::elf::NError_Code::OK)
                     {
                         // TODO
@@ -61,7 +67,8 @@ namespace zero_mate::gui
                 }
                 else
                 {
-                    m_source_code = utils::Extract_Text_Section_From_List_File(s_filepath.c_str());
+                    s_list_filename = ImGuiFileDialog::Instance()->GetFilePathName();
+                    m_source_code = utils::Extract_Text_Section_From_List_File(s_list_filename.c_str());
                 }
 
                 s_open_elf = false;
