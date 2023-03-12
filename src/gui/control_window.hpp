@@ -14,8 +14,8 @@ namespace zero_mate::gui
         void Render() override;
 
     private:
-        static void Render_CPU_State(bool running);
-        void Render_Control_Buttons(bool& running);
+        static void Render_CPU_State(bool running, bool breakpoint);
+        void Render_Control_Buttons(bool& running, bool& breakpoint);
         static void Render_ImGUI_Demo();
 
         std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;

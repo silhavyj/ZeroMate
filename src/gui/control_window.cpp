@@ -15,9 +15,10 @@ namespace zero_mate::gui
         ImGui::Begin("Control");
 
         static bool s_running{ false };
+        static bool s_breakpoint{ false };
 
-        Render_Control_Buttons(s_running);
-        Render_CPU_State(s_running);
+        Render_Control_Buttons(s_running, s_breakpoint);
+        Render_CPU_State(s_running, s_breakpoint);
         Render_ImGUI_Demo();
 
         if (s_running)
@@ -25,13 +26,14 @@ namespace zero_mate::gui
             if (!m_cpu->Step())
             {
                 s_running = false;
+                s_breakpoint = true;
             }
         }
 
         ImGui::End();
     }
 
-    void CControl_Window::Render_Control_Buttons(bool& running)
+    void CControl_Window::Render_Control_Buttons(bool& running, bool& breakpoint)
     {
         if (ImGui::Button(ICON_FA_STEP_FORWARD " Next") && !running)
         {
@@ -43,6 +45,7 @@ namespace zero_mate::gui
         if (ImGui::Button(ICON_FA_PLAY_CIRCLE " Run"))
         {
             running = true;
+            breakpoint = false;
             m_cpu->Step(true);
         }
 
@@ -54,21 +57,30 @@ namespace zero_mate::gui
         }
     }
 
-    void CControl_Window::Render_CPU_State(bool running)
+    void CControl_Window::Render_CPU_State(bool running, bool breakpoint)
     {
         ImGui::Text("State:");
         ImGui::SameLine();
 
-        if (running)
+        if (breakpoint)
         {
-            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.f, 1.f, 0.f, 1.f));
-            ImGui::Text("running");
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 0.7f, 1.0f, 1.0f));
+            ImGui::Text("breakpoint");
         }
         else
         {
-            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 0.f, 0.f, 1.f));
-            ImGui::Text("stopped");
+            if (running)
+            {
+                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 1.0f, 0.0f, 1.0f));
+                ImGui::Text("running");
+            }
+            else
+            {
+                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
+                ImGui::Text("stopped");
+            }
         }
+
         ImGui::PopStyleColor();
     }
 
