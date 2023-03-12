@@ -37,11 +37,12 @@ namespace zero_mate::utils
         return parts;
     }
 
-    [[nodiscard]] static TText_Section_Record Create_Record(std::string& line)
+    [[nodiscard]] static TText_Section_Record Create_Instruction_Record(std::string& line)
     {
         static constexpr int BASE = 16;
 
         TText_Section_Record record{};
+        record.type = NText_Section_Record_Type::Instruction;
 
         line = Trim(line);
         const auto parts = Split(line, '\t');
@@ -60,6 +61,21 @@ namespace zero_mate::utils
             {
                 record.disassembly.pop_back();
             }
+        }
+
+        return record;
+    }
+
+    [[nodiscard]] static TText_Section_Record Create_Label_Record(const std::string& line)
+    {
+        TText_Section_Record record{};
+        record.type = NText_Section_Record_Type::Label;
+
+        const auto parts = Split(line, ' ');
+        if (parts.size() >= 2)
+        {
+            record.disassembly = parts[1];
+            record.disassembly.pop_back();
         }
 
         return record;
@@ -97,9 +113,16 @@ namespace zero_mate::utils
                     {
                         end = true;
                     }
-                    else if (!line.empty() && line[0] == ' ')
+                    else if (!line.empty())
                     {
-                        text_section.emplace_back(Create_Record(line));
+                        if (line[0] == ' ')
+                        {
+                            text_section.emplace_back(Create_Instruction_Record(line));
+                        }
+                        else if (std::isdigit(line[0]) != 0)
+                        {
+                            text_section.emplace_back(Create_Label_Record(line));
+                        }
                     }
                     break;
 

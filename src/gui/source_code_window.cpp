@@ -25,49 +25,68 @@ namespace zero_mate::gui
 
             ImGui::TableHeadersRow();
 
-            for (const auto& [addr, opcode, disassembly] : m_source_code)
+            for (const auto& [type, addr, opcode, disassembly] : m_source_code)
             {
                 ImGui::TableNextRow();
                 ImGui::TableNextColumn();
 
-                if (!m_breakpoints.contains(addr))
+                switch (type)
                 {
-                    m_breakpoints[addr] = false;
-                }
+                    case utils::NText_Section_Record_Type::Instruction:
+                        if (!m_breakpoints.contains(addr))
+                        {
+                            m_breakpoints[addr] = false;
+                        }
 
-                ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
-                if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints.at(addr)))
-                {
-                    m_breakpoints.at(addr) = !m_breakpoints.at(addr);
-                    if (m_breakpoints.at(addr))
-                    {
-                        m_cpu->Add_Breakpoint(addr);
-                    }
-                    else
-                    {
-                        m_cpu->Remove_Breakpoint(addr);
-                    }
-                }
-                ImGui::PopStyleColor();
+                        ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
+                        if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints.at(addr)))
+                        {
+                            m_breakpoints.at(addr) = !m_breakpoints.at(addr);
+                            if (m_breakpoints.at(addr))
+                            {
+                                m_cpu->Add_Breakpoint(addr);
+                            }
+                            else
+                            {
+                                m_cpu->Remove_Breakpoint(addr);
+                            }
+                        }
+                        ImGui::PopStyleColor();
 
-                ImGui::TableNextColumn();
+                        ImGui::TableNextColumn();
 
-                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 1.f, 1.f, 0.65f));
-                ImGui::Text("0x%08X", addr);
-                ImGui::PopStyleColor();
+                        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 1.f, 1.f, 0.65f));
+                        ImGui::Text("0x%08X", addr);
+                        ImGui::PopStyleColor();
 
-                ImGui::TableNextColumn();
-                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 1.f, 1.f, 0.65f));
-                ImGui::Text("0x%08X", opcode);
-                ImGui::PopStyleColor();
+                        ImGui::TableNextColumn();
+                        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, 0.65f));
+                        ImGui::Text("0x%08X", opcode);
+                        ImGui::PopStyleColor();
 
-                ImGui::TableNextColumn();
-                ImGui::Text("%s", disassembly.c_str());
+                        ImGui::TableNextColumn();
+                        ImGui::Text("%s", disassembly.c_str());
 
-                if (addr == m_cpu->m_regs.at(m_cpu->PC_REG_IDX))
-                {
-                    const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
-                    ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
+                        if (addr == m_cpu->m_regs.at(m_cpu->PC_REG_IDX))
+                        {
+                            const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
+                            ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
+                        }
+                        break;
+
+                    case utils::NText_Section_Record_Type::Label:
+                        ImGui::TableNextRow();
+                        ImGui::TableNextColumn();
+                        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, 0.0f));
+                        ImGui::Text("|");
+                        ImGui::PopStyleColor();
+
+                        ImGui::TableNextRow();
+                        ImGui::TableSetColumnIndex(2);
+                        ImGui::Text("%s", disassembly.c_str());
+                        const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(0.11f, 0.18f, 0.29f, 1.0f));
+                        ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
+                        break;
                 }
             }
 
