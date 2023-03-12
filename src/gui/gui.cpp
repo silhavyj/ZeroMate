@@ -18,8 +18,9 @@
 namespace zero_mate::gui
 {
     static inline constexpr const char* const WINDOW_TITLE = "ZeroMate - Rpi Zero emulator";
-    static inline constexpr uint32_t WINDOW_WIDTH = 1240;
-    static inline constexpr uint32_t WINDOW_WEIGHT = 720;
+
+    static inline constexpr std::uint32_t WINDOW_WIDTH = 1240;
+    static inline constexpr std::uint32_t WINDOW_WEIGHT = 720;
 
     static auto s_ram = std::make_shared<peripheral::CRAM<>>();
     static auto s_bus = std::make_shared<CBus>();
@@ -45,7 +46,7 @@ namespace zero_mate::gui
 
     static void Render_GUI()
     {
-        for (auto& window : s_windows)
+        for (const auto& window : s_windows)
         {
             window->Render();
         }
@@ -147,11 +148,13 @@ namespace zero_mate::gui
             ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
 
             const ImGuiViewport* viewport = ImGui::GetMainViewport();
+
             ImGui::SetNextWindowPos(viewport->WorkPos);
             ImGui::SetNextWindowSize(viewport->WorkSize);
             ImGui::SetNextWindowViewport(viewport->ID);
             ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
             ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+
             window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
             window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
 

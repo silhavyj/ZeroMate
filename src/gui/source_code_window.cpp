@@ -14,12 +14,9 @@ namespace zero_mate::gui
 
     void CSource_Code_Window::Render()
     {
-        static const ImGuiTableFlags table_flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_BordersOuter |
-                                                   ImGuiTableFlags_Resizable | ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
-
         ImGui::Begin("Source Code Disassembly");
 
-        if (ImGui::BeginTable("##source_code_table", 4, table_flags))
+        if (ImGui::BeginTable("##source_code_table", 4, TABLE_FLAGS))
         {
             ImGui::TableSetupColumn("##breakpoint", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn("Address", ImGuiTableColumnFlags_WidthFixed);
@@ -54,9 +51,16 @@ namespace zero_mate::gui
                 ImGui::PopStyleColor();
 
                 ImGui::TableNextColumn();
+
+                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 1.f, 1.f, 0.65f));
                 ImGui::Text("0x%08X", addr);
+                ImGui::PopStyleColor();
+
                 ImGui::TableNextColumn();
+                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 1.f, 1.f, 0.65f));
                 ImGui::Text("0x%08X", opcode);
+                ImGui::PopStyleColor();
+
                 ImGui::TableNextColumn();
                 ImGui::Text("%s", disassembly.c_str());
 

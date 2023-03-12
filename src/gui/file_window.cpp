@@ -70,10 +70,10 @@ namespace zero_mate::gui
                     s_list_filename = ImGuiFileDialog::Instance()->GetFilePathName();
                     m_source_code = utils::Extract_Text_Section_From_List_File(s_list_filename.c_str());
                 }
-
-                s_open_elf = false;
-                s_open_list = false;
             }
+
+            s_open_elf = false;
+            s_open_list = false;
 
             ImGuiFileDialog::Instance()->Close();
         }
