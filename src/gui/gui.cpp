@@ -9,11 +9,11 @@
 
 #include "gui.hpp"
 #include "object.hpp"
-#include "registers_window.hpp"
-#include "ram_window.hpp"
-#include "control_window.hpp"
-#include "source_code_window.hpp"
-#include "file_window.hpp"
+#include "windows/registers_window.hpp"
+#include "windows/ram_window.hpp"
+#include "windows/control_window.hpp"
+#include "windows/source_code_window.hpp"
+#include "windows/file_window.hpp"
 
 namespace zero_mate::gui
 {
