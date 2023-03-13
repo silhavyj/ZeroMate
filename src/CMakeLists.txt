@@ -83,16 +83,16 @@ add_executable(
     gui/gui.hpp
     gui/gui.cpp
     gui/object.hpp
-    gui/registers_window.hpp
-    gui/registers_window.cpp
-    gui/ram_window.hpp
-    gui/ram_window.cpp
-    gui/control_window.hpp
-    gui/control_window.cpp
-    gui/source_code_window.hpp
-    gui/source_code_window.cpp
-    gui/file_window.hpp
-    gui/file_window.cpp)
+    gui/windows/registers_window.hpp
+    gui/windows/registers_window.cpp
+    gui/windows/ram_window.hpp
+    gui/windows/ram_window.cpp
+    gui/windows/control_window.hpp
+    gui/windows/control_window.cpp
+    gui/windows/source_code_window.hpp
+    gui/windows/source_code_window.cpp
+    gui/windows/file_window.hpp
+    gui/windows/file_window.cpp)
 
 target_include_directories(
     ${EXECUTABLE_NAME}

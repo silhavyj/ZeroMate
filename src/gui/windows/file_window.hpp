@@ -1,10 +1,10 @@
 #pragma once
 
-#include "object.hpp"
+#include "../object.hpp"
 
-#include "../core/arm1176jzf_s/cpu_core.hpp"
-#include "../core/peripherals/bus.hpp"
-#include "../core/utils/list_parser.hpp"
+#include "../../core/arm1176jzf_s/cpu_core.hpp"
+#include "../../core/peripherals/bus.hpp"
+#include "../../core/utils/list_parser.hpp"
 
 namespace zero_mate::gui
 {

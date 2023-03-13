@@ -26,10 +26,10 @@ static void Run_Test(const char* filename, std::uint32_t expected_value)
 
 TEST(elf_loader, test_01)
 {
-    Run_Test("../../../../test/utils/elf/source_files/test_01/kernel.elf", 2);
+    Run_Test("../../../../test/core/utils/elf/source_files/test_01/kernel.elf", 2);
 }
 
 TEST(elf_loader, test_02)
 {
-    Run_Test("../../../../test/utils/elf/source_files/test_02/kernel.elf", 6);
+    Run_Test("../../../../test/core/utils/elf/source_files/test_02/kernel.elf", 6);
 }

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "object.hpp"
+#include "../object.hpp"
 
-#include "../core/peripherals/ram.hpp"
+#include "../../core/peripherals/ram.hpp"
 
 namespace zero_mate::gui
 {

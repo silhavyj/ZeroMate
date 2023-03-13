@@ -1,5 +1,5 @@
 #include <imgui/imgui.h>
-#include <fmt/core.h>
+#include <fmt/include/fmt/core.h>
 
 #include "source_code_window.hpp"
 

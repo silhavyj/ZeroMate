@@ -1,9 +1,9 @@
 #include <imgui/imgui.h>
 #include <ImGuiFileDialog/ImGuiFileDialog.h>
-#include <fmt/core.h>
+#include <fmt/include/fmt/core.h>
 
 #include "file_window.hpp"
-#include "../core/utils/elf_loader.hpp"
+#include "../../core/utils/elf_loader.hpp"
 
 namespace zero_mate::gui
 {

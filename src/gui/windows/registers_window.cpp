@@ -1,4 +1,4 @@
-#include <fmt/core.h>
+#include <fmt/include/fmt/core.h>
 
 #include "registers_window.hpp"
 
