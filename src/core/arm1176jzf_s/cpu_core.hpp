@@ -12,7 +12,7 @@
 #include "isa/isa_decoder.hpp"
 #include "registers/cspr.hpp"
 #include "../utils/math.hpp"
-#include "../bus/bus.hpp"
+#include "../peripherals/bus.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {

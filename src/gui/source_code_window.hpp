@@ -4,8 +4,8 @@
 
 #include "object.hpp"
 
-#include "../arm1176jzf_s/core.hpp"
-#include "../utils/list_parser.hpp"
+#include "../core/arm1176jzf_s/cpu_core.hpp"
+#include "../core/utils/list_parser.hpp"
 
 namespace zero_mate::gui
 {

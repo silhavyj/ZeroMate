@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "utils/math.hpp"
+#include "core/utils/math.hpp"
 
 TEST(is_bit_set, uint32_test_01)
 {

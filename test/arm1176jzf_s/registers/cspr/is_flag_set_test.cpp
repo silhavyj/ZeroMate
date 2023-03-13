@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "arm1176jzf_s/registers/cspr.hpp"
+#include "core/arm1176jzf_s/registers/cspr.hpp"
 
 TEST(is_flag_set, test_01)
 {

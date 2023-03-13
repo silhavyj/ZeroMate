@@ -3,23 +3,23 @@ include_directories(../src)
 
 # List of src files to be compiler with the unit tests
 set(SRC_FILES
-    ../src/arm1176jzf_s/registers/cspr.cpp
-    ../src/arm1176jzf_s/core.cpp
-    ../src/arm1176jzf_s/alu.cpp
-    ../src/arm1176jzf_s/mac.cpp
-    ../src/arm1176jzf_s/isa/instruction.cpp
-    ../src/arm1176jzf_s/isa/data_processing.cpp
-    ../src/arm1176jzf_s/isa/multiply.cpp
-    ../src/arm1176jzf_s/isa/multiply_long.cpp
-    ../src/arm1176jzf_s/isa/branch_and_exchange.cpp
-    ../src/arm1176jzf_s/isa/branch.cpp
-    ../src/arm1176jzf_s/isa/single_data_transfer.cpp
-    ../src/arm1176jzf_s/isa/block_data_transfer.cpp
-    ../src/arm1176jzf_s/isa/halfword_data_transfer.cpp
-    ../src/arm1176jzf_s/isa/sw_interrupt.cpp
-    ../src/arm1176jzf_s/isa/isa_decoder.cpp
-    ../src/bus/bus.cpp
-    ../src/utils/elf_loader.cpp)
+    ../src/core/arm1176jzf_s/registers/cspr.cpp
+    ../src/core/arm1176jzf_s/cpu_core.cpp
+    ../src/core/arm1176jzf_s/alu.cpp
+    ../src/core/arm1176jzf_s/mac.cpp
+    ../src/core/arm1176jzf_s/isa/instruction.cpp
+    ../src/core/arm1176jzf_s/isa/data_processing.cpp
+    ../src/core/arm1176jzf_s/isa/multiply.cpp
+    ../src/core/arm1176jzf_s/isa/multiply_long.cpp
+    ../src/core/arm1176jzf_s/isa/branch_and_exchange.cpp
+    ../src/core/arm1176jzf_s/isa/branch.cpp
+    ../src/core/arm1176jzf_s/isa/single_data_transfer.cpp
+    ../src/core/arm1176jzf_s/isa/block_data_transfer.cpp
+    ../src/core/arm1176jzf_s/isa/halfword_data_transfer.cpp
+    ../src/core/arm1176jzf_s/isa/sw_interrupt.cpp
+    ../src/core/arm1176jzf_s/isa/isa_decoder.cpp
+    ../src/core/peripherals/bus.cpp
+    ../src/core/utils/elf_loader.cpp)
 
 # Build unit tests
 add_executable(

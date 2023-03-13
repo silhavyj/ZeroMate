@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 
-#include <fmt/format.h>
+#include "fmt/format.h"
 
 namespace zero_mate::arm1176jzf_s::exceptions
 {

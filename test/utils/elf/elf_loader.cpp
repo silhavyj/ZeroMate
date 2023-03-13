@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 
-#include "peripherals/ram.hpp"
-#include "arm1176jzf_s/core.hpp"
-#include "utils/elf_loader.hpp"
+#include "core/peripherals/ram.hpp"
+#include "core/arm1176jzf_s/cpu_core.hpp"
+#include "core/utils/elf_loader.hpp"
 
 static void Run_Test(const char* filename, std::uint32_t expected_value)
 {

@@ -7,7 +7,7 @@
 #include <memory>
 
 #include "../arm1176jzf_s/exceptions.hpp"
-#include "../peripherals/peripheral.hpp"
+#include "peripheral.hpp"
 
 namespace zero_mate
 {

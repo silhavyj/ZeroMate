@@ -3,7 +3,7 @@
 #include <fmt/core.h>
 
 #include "file_window.hpp"
-#include "../utils/elf_loader.hpp"
+#include "../core/utils/elf_loader.hpp"
 
 namespace zero_mate::gui
 {

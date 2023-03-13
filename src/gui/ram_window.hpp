@@ -2,7 +2,7 @@
 
 #include "object.hpp"
 
-#include "../peripherals/ram.hpp"
+#include "../core/peripherals/ram.hpp"
 
 namespace zero_mate::gui
 {

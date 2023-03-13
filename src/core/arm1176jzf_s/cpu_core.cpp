@@ -3,7 +3,7 @@
 
 #include "alu.hpp"
 #include "mac.hpp"
-#include "core.hpp"
+#include "cpu_core.hpp"
 #include "exceptions.hpp"
 
 namespace zero_mate::arm1176jzf_s

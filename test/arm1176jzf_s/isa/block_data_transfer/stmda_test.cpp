@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
-#include "peripherals/ram.hpp"
-#include "arm1176jzf_s/core.hpp"
+#include "core/peripherals/ram.hpp"
+#include "core/arm1176jzf_s/cpu_core.hpp"
 
 using namespace zero_mate;
 

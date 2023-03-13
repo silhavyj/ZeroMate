@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "arm1176jzf_s/core.hpp"
+#include "core/arm1176jzf_s/cpu_core.hpp"
 #include "register_state_checker.hpp"
 
 TEST(cmp_instruction, test_01)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../bus/bus.hpp"
+#include "../peripherals/bus.hpp"
 
 namespace zero_mate::utils::elf
 {
