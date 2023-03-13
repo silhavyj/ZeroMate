@@ -1,0 +1,120 @@
+
+kernel.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	e3a0db01 	mov	sp, #1024	; 0x400
+   4:	eb000032 	bl	d4 <kernel_main>
+
+00000008 <hang>:
+   8:	eafffffe 	b	8 <hang>
+
+0000000c <factorial>:
+   c:	e92d0830 	push	{r4, r5, fp}
+  10:	e28db008 	add	fp, sp, #8
+  14:	e24dd01c 	sub	sp, sp, #28
+  18:	e50b0024 	str	r0, [fp, #-36]	; 0xffffffdc
+  1c:	e50b1020 	str	r1, [fp, #-32]	; 0xffffffe0
+  20:	e3a02001 	mov	r2, #1
+  24:	e3a03000 	mov	r3, #0
+  28:	e50b2014 	str	r2, [fp, #-20]	; 0xffffffec
+  2c:	e50b3010 	str	r3, [fp, #-16]
+  30:	e3a02002 	mov	r2, #2
+  34:	e3a03000 	mov	r3, #0
+  38:	e50b201c 	str	r2, [fp, #-28]	; 0xffffffe4
+  3c:	e50b3018 	str	r3, [fp, #-24]	; 0xffffffe8
+  40:	ea000015 	b	9c <factorial+0x90>
+  44:	e51b3010 	ldr	r3, [fp, #-16]
+  48:	e51b201c 	ldr	r2, [fp, #-28]	; 0xffffffe4
+  4c:	e0020293 	mul	r2, r3, r2
+  50:	e51b3018 	ldr	r3, [fp, #-24]	; 0xffffffe8
+  54:	e51b1014 	ldr	r1, [fp, #-20]	; 0xffffffec
+  58:	e0030391 	mul	r3, r1, r3
+  5c:	e0821003 	add	r1, r2, r3
+  60:	e51bc014 	ldr	ip, [fp, #-20]	; 0xffffffec
+  64:	e51b001c 	ldr	r0, [fp, #-28]	; 0xffffffe4
+  68:	e083209c 	umull	r2, r3, ip, r0
+  6c:	e0811003 	add	r1, r1, r3
+  70:	e1a03001 	mov	r3, r1
+  74:	e50b2014 	str	r2, [fp, #-20]	; 0xffffffec
+  78:	e50b3010 	str	r3, [fp, #-16]
+  7c:	e50b2014 	str	r2, [fp, #-20]	; 0xffffffec
+  80:	e50b3010 	str	r3, [fp, #-16]
+  84:	e24b301c 	sub	r3, fp, #28
+  88:	e893000c 	ldm	r3, {r2, r3}
+  8c:	e2924001 	adds	r4, r2, #1
+  90:	e2a35000 	adc	r5, r3, #0
+  94:	e50b401c 	str	r4, [fp, #-28]	; 0xffffffe4
+  98:	e50b5018 	str	r5, [fp, #-24]	; 0xffffffe8
+  9c:	e24b101c 	sub	r1, fp, #28
+  a0:	e8910003 	ldm	r1, {r0, r1}
+  a4:	e24b3024 	sub	r3, fp, #36	; 0x24
+  a8:	e893000c 	ldm	r3, {r2, r3}
+  ac:	e1500002 	cmp	r0, r2
+  b0:	e0d13003 	sbcs	r3, r1, r3
+  b4:	baffffe2 	blt	44 <factorial+0x38>
+  b8:	e24b3014 	sub	r3, fp, #20
+  bc:	e893000c 	ldm	r3, {r2, r3}
+  c0:	e1a00002 	mov	r0, r2
+  c4:	e1a01003 	mov	r1, r3
+  c8:	e24bd008 	sub	sp, fp, #8
+  cc:	e8bd0830 	pop	{r4, r5, fp}
+  d0:	e12fff1e 	bx	lr
+
+000000d4 <kernel_main>:
+  d4:	e92d4800 	push	{fp, lr}
+  d8:	e28db004 	add	fp, sp, #4
+  dc:	e3a00019 	mov	r0, #25
+  e0:	e3a01000 	mov	r1, #0
+  e4:	ebffffc8 	bl	c <factorial>
+  e8:	e1a02000 	mov	r2, r0
+  ec:	e1a03001 	mov	r3, r1
+  f0:	e1a03002 	mov	r3, r2
+  f4:	e1a00003 	mov	r0, r3
+  f8:	e24bd004 	sub	sp, fp, #4
+  fc:	e8bd4800 	pop	{fp, lr}
+ 100:	e12fff1e 	bx	lr
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00002541 	andeq	r2, r0, r1, asr #10
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	0000001b 	andeq	r0, r0, fp, lsl r0
+  10:	00543405 	subseq	r3, r4, r5, lsl #8
+  14:	01080206 	tsteq	r8, r6, lsl #4
+  18:	04120109 	ldreq	r0, [r2], #-265	; 0xfffffef7
+  1c:	01150114 	tsteq	r5, r4, lsl r1
+  20:	01180317 	tsteq	r8, r7, lsl r3
+  24:	Address 0x0000000000000024 is out of bounds.
+
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347 	bcc	10d0d24 <kernel_main+0x10d0c50>
+   4:	35312820 	ldrcc	r2, [r1, #-2080]!	; 0xfffff7e0
+   8:	322d393a 	eorcc	r3, sp, #950272	; 0xe8000
+   c:	2d393130 	ldfcss	f3, [r9, #-192]!	; 0xffffff40
+  10:	302d3471 	eorcc	r3, sp, r1, ror r4
+  14:	6e756275 	mrcvs	2, 3, r6, cr5, cr5, {3}
+  18:	29317574 	ldmdbcs	r1!, {r2, r4, r5, r6, r8, sl, ip, sp, lr}
+  1c:	322e3920 	eorcc	r3, lr, #32, 18	; 0x80000
+  20:	3220312e 	eorcc	r3, r0, #-2147483637	; 0x8000000b
+  24:	31393130 	teqcc	r9, r0, lsr r1
+  28:	20353230 	eorscs	r3, r5, r0, lsr r2
+  2c:	6c657228 	sfmvs	f7, 2, [r5], #-160	; 0xffffff60
+  30:	65736165 	ldrbvs	r6, [r3, #-357]!	; 0xfffffe9b
+  34:	415b2029 	cmpmi	fp, r9, lsr #32
+  38:	612f4d52 			; <UNDEFINED> instruction: 0x612f4d52
+  3c:	392d6d72 	pushcc	{r1, r4, r5, r6, r8, sl, fp, sp, lr}
+  40:	6172622d 	cmnvs	r2, sp, lsr #4
+  44:	2068636e 	rsbcs	r6, r8, lr, ror #6
+  48:	69766572 	ldmdbvs	r6!, {r1, r4, r5, r6, r8, sl, sp, lr}^
+  4c:	6e6f6973 			; <UNDEFINED> instruction: 0x6e6f6973
+  50:	37373220 	ldrcc	r3, [r7, -r0, lsr #4]!
+  54:	5d393935 			; <UNDEFINED> instruction: 0x5d393935
+	...

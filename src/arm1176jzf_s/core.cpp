@@ -18,18 +18,36 @@ namespace zero_mate::arm1176jzf_s
     , m_cspr{ 0 }
     , m_bus{ bus }
     {
+        Set_PC(pc);
+    }
+
+    void CCPU_Core::Set_PC(std::uint32_t pc)
+    {
         PC() = pc;
     }
 
-    void CCPU_Core::Run(std::uint32_t last_execution_addr)
+    void CCPU_Core::Add_Breakpoint(std::uint32_t addr)
     {
-        while (PC() != last_execution_addr)
+        m_breakpoints.insert(addr);
+    }
+
+    void CCPU_Core::Remove_Breakpoint(std::uint32_t addr)
+    {
+        if (m_breakpoints.contains(addr))
+        {
+            m_breakpoints.erase(addr);
+        }
+    }
+
+    void CCPU_Core::Run()
+    {
+        while (!m_breakpoints.contains(PC()))
         {
             Step();
         }
     }
 
-    void CCPU_Core::Step(std::size_t count)
+    void CCPU_Core::Steps(std::size_t count)
     {
         while (count > 0)
         {
@@ -38,18 +56,24 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
-    void CCPU_Core::Step()
+    bool CCPU_Core::Step(bool ignore_breakpoint)
     {
         assert(m_bus != nullptr);
 
-        const auto instruction = Fetch_Instruction();
-        Execute(instruction);
+        if (ignore_breakpoint || !m_breakpoints.contains(PC()))
+        {
+            const auto instruction = Fetch_Instruction();
+            Execute(instruction);
+            return true;
+        }
+
+        return false;
     }
 
     isa::CInstruction CCPU_Core::Fetch_Instruction()
     {
         const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
-        PC() += sizeof(std::uint32_t);
+        PC() += REG_SIZE;
         return instruction;
     }
 
@@ -317,7 +341,7 @@ namespace zero_mate::arm1176jzf_s
         }
 
         // PC is already pointing at the next instruction. Hence, +4 and not +8.
-        PC() += sizeof(std::uint32_t);
+        PC() += REG_SIZE;
     }
 
     void CCPU_Core::Execute(isa::CMultiply instruction)
@@ -384,7 +408,7 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Execute(isa::CSingle_Data_Transfer instruction)
     {
         const auto reg_rn = instruction.Get_Rn();
-        const auto base_addr = reg_rn == PC_REG_IDX ? (PC() + static_cast<std::uint32_t>(sizeof(std::uint32_t))) : m_regs.at(reg_rn);
+        const auto base_addr = reg_rn == PC_REG_IDX ? (PC() + REG_SIZE) : m_regs.at(reg_rn);
         const auto offset = Get_Offset(instruction);
 
         const bool pre_indexed = instruction.Is_P_Bit_Set();

@@ -29,15 +29,15 @@ TEST(bl_instruction, test_01)
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     // Skip the add subroutine (jump to main)
-    cpu.Step(1);
+    cpu.Steps(1);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x0C);
 
     // Entered the subroutine
-    cpu.Step(3);
+    cpu.Steps(3);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x04);
 
     // Returned from the subroutine (r0 should equal to 50)
-    cpu.Step(2);
+    cpu.Steps(2);
     EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x18);
     EXPECT_EQ(cpu.m_regs[0], 50);
 }
