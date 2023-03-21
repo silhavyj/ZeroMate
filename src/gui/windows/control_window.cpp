@@ -35,7 +35,7 @@ namespace zero_mate::gui
 
     void CControl_Window::Render_Control_Buttons(bool& running, bool& breakpoint)
     {
-        if (ImGui::Button(ICON_FA_STEP_FORWARD " Next") && !running)
+        if (ImGui::Button(ICON_FA_STEP_FORWARD " Step") && !running)
         {
             m_cpu->Step(true);
         }

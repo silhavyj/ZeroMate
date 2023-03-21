@@ -4,9 +4,24 @@
 
 namespace zero_mate::utils::elf
 {
+    static inline void Clear_BSS_Section(CBus& bus, const ELFIO::section& section)
+    {
+        for (ELFIO::Elf_Xword i = 0; i < section.get_size(); ++i)
+        {
+            const auto addr = static_cast<std::uint32_t>(section.get_address() + i);
+            bus.Write<std::uint8_t>(addr, 0);
+        }
+    }
+
     static inline void Map_Section_To_RAM(CBus& bus, const ELFIO::section& section)
     {
         const char* data = section.get_data();
+
+        if (data == nullptr)
+        {
+            Clear_BSS_Section(bus, section);
+            return;
+        }
 
         for (ELFIO::Elf_Xword i = 0; i < section.get_size(); ++i)
         {
