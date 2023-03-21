@@ -1,3 +1,5 @@
+#include <filesystem>
+
 #include <gtest/gtest.h>
 
 #include "core/peripherals/ram.hpp"
@@ -26,10 +28,12 @@ static void Run_Test(const char* filename, std::uint32_t expected_value)
 
 TEST(elf_loader, test_01)
 {
-    Run_Test("../../../../test/core/utils/elf/source_files/test_01/kernel.elf", 2);
+    const std::filesystem::path path = "../../../../test/core/utils/elf/source_files/test_01/kernel.elf";
+    Run_Test(path.c_str(), 2);
 }
 
 TEST(elf_loader, test_02)
 {
-    Run_Test("../../../../test/core/utils/elf/source_files/test_02/kernel.elf", 6);
+    const std::filesystem::path path = "../../../../test/core/utils/elf/source_files/test_02/kernel.elf";
+    Run_Test(path.c_str(), 6);
 }
