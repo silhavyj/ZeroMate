@@ -55,7 +55,7 @@ namespace zero_mate::peripheral
         {
         }
 
-        char* Get_Raw_Data() const
+        [[nodiscard]] char* Get_Raw_Data() const
         {
             return m_data.get();
         }
