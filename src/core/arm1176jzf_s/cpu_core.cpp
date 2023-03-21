@@ -146,22 +146,7 @@ namespace zero_mate::arm1176jzf_s
     {
         for (const auto& instruction : instructions)
         {
-            try
-            {
-                Execute(instruction);
-            }
-            catch (const exceptions::CSoftware_Interrupt& ex)
-            {
-                // TODO
-            }
-            catch (const exceptions::CUndefined_Instruction& ex)
-            {
-                // TODO
-            }
-            catch (const exceptions::CData_Abort& ex)
-            {
-                // TODO
-            }
+            Execute(instruction);
         }
     }
 
@@ -174,55 +159,70 @@ namespace zero_mate::arm1176jzf_s
 
         const auto type = m_instruction_decoder.Get_Instruction_Type(instruction);
 
-        switch (type)
+        try
         {
-            case isa::CInstruction::NType::Data_Processing:
-                Execute(isa::CData_Processing{ instruction });
-                break;
+            switch (type)
+            {
+                case isa::CInstruction::NType::Data_Processing:
+                    Execute(isa::CData_Processing{ instruction });
+                    break;
 
-            case isa::CInstruction::NType::Multiply:
-                Execute(isa::CMultiply{ instruction });
-                break;
+                case isa::CInstruction::NType::Multiply:
+                    Execute(isa::CMultiply{ instruction });
+                    break;
 
-            case isa::CInstruction::NType::Multiply_Long:
-                Execute(isa::CMultiply_Long{ instruction });
-                break;
+                case isa::CInstruction::NType::Multiply_Long:
+                    Execute(isa::CMultiply_Long{ instruction });
+                    break;
 
-            case isa::CInstruction::NType::Branch_And_Exchange:
-                Execute(isa::CBranch_And_Exchange{ instruction });
-                break;
+                case isa::CInstruction::NType::Branch_And_Exchange:
+                    Execute(isa::CBranch_And_Exchange{ instruction });
+                    break;
 
-            case isa::CInstruction::NType::Halfword_Data_Transfer:
-                Execute(isa::CHalfword_Data_Transfer{ instruction });
-                break;
+                case isa::CInstruction::NType::Halfword_Data_Transfer:
+                    Execute(isa::CHalfword_Data_Transfer{ instruction });
+                    break;
 
-            case isa::CInstruction::NType::Single_Data_Transfer:
-                Execute(isa::CSingle_Data_Transfer{ instruction });
-                break;
+                case isa::CInstruction::NType::Single_Data_Transfer:
+                    Execute(isa::CSingle_Data_Transfer{ instruction });
+                    break;
 
-            case isa::CInstruction::NType::Undefined:
-                throw exceptions::CUndefined_Instruction{};
+                case isa::CInstruction::NType::Undefined:
+                    throw exceptions::CUndefined_Instruction{};
 
-            case isa::CInstruction::NType::Block_Data_Transfer:
-                Execute(isa::CBlock_Data_Transfer{ instruction });
-                break;
+                case isa::CInstruction::NType::Block_Data_Transfer:
+                    Execute(isa::CBlock_Data_Transfer{ instruction });
+                    break;
 
-            case isa::CInstruction::NType::Branch:
-                Execute(isa::CBranch{ instruction });
-                break;
+                case isa::CInstruction::NType::Branch:
+                    Execute(isa::CBranch{ instruction });
+                    break;
 
-            case isa::CInstruction::NType::Coprocessor_Data_Transfer:
-                [[fallthrough]];
-            case isa::CInstruction::NType::Coprocessor_Data_Operation:
-            case isa::CInstruction::NType::Coprocessor_Register_Transfer:
-                break;
+                case isa::CInstruction::NType::Coprocessor_Data_Transfer:
+                    [[fallthrough]];
+                case isa::CInstruction::NType::Coprocessor_Data_Operation:
+                case isa::CInstruction::NType::Coprocessor_Register_Transfer:
+                    break;
 
-            case isa::CInstruction::NType::Software_Interrupt:
-                Execute(isa::CSW_Interrupt{ instruction });
-                break;
+                case isa::CInstruction::NType::Software_Interrupt:
+                    Execute(isa::CSW_Interrupt{ instruction });
+                    break;
 
-            case isa::CInstruction::NType::Unknown:
-                throw exceptions::CUndefined_Instruction{};
+                case isa::CInstruction::NType::Unknown:
+                    throw exceptions::CUndefined_Instruction{};
+            }
+        }
+        catch (const exceptions::CSoftware_Interrupt& ex)
+        {
+            // TODO
+        }
+        catch (const exceptions::CUndefined_Instruction& ex)
+        {
+            // TODO
+        }
+        catch (const exceptions::CData_Abort& ex)
+        {
+            // TODO
         }
     }
 
