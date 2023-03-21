@@ -16,6 +16,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
+      with:
+        submodules: recursive
 
     # Install all dependencies needed for a successful build
     # This is done primarily for the GUI library
