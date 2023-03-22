@@ -1,5 +1,6 @@
-int main([[maybe_unused]] int argc,
-         [[maybe_unused]] const char* argv[])
+#include "gui/gui.hpp"
+
+int main(int argc, const char* argv[])
 {
-    return 0;
+    return zero_mate::gui::Main_GUI(argc, argv);
 }

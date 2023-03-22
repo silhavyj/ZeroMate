@@ -16,6 +16,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
+      with:
+        submodules: recursive
 
     # Install all dependencies needed for a successful build
     # This is done primarily for the GUI library
@@ -33,6 +35,6 @@ jobs:
     # Run tests
     - name: Tests
       working-directory: build/unix_makefiles/release
-      run: ctest
+      run: ctest --rerun-failed --output-on-failure
 
 # EOF
