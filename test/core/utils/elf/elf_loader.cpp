@@ -28,22 +28,12 @@ static void Run_Test(const char* filename, std::uint32_t expected_value)
 
 TEST(elf_loader, test_01)
 {
-#ifdef _WIN32
-    const std::string path = "..\\..\\..\\..\\test\\core\\utils\\elf\\source_files\\test_01\\kernel.elf";
-#else
     const std::string path = "../../../../test/core/utils/elf/source_files/test_01/kernel.elf";
-#endif
-
     Run_Test(path.c_str(), 2);
 }
 
 TEST(elf_loader, test_02)
 {
-#ifdef _WIN32
-    const std::string path = "..\\..\\..\\..\\test\\core\\utils\\elf\\source_files\\test_02\\kernel.elf";
-#else
     const std::string path = "../../../../test/core/utils/elf/source_files/test_02/kernel.elf";
-#endif
-
     Run_Test(path.c_str(), 6);
 }
