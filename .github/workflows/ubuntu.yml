@@ -35,6 +35,6 @@ jobs:
     # Run tests
     - name: Tests
       working-directory: build/unix_makefiles/release
-      run: ctest
+      run: ctest --rerun-failed --output-on-failure
 
 # EOF
