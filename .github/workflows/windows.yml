@@ -37,6 +37,6 @@ jobs:
       # Run tests
       - name: Tests
         working-directory: build
-        run: ctest --build-config Debug
+        run: ctest --rerun-failed --output-on-failure --build-config Debug
 
 # EOF
