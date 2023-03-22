@@ -32,11 +32,11 @@ jobs:
 
       # Build the project
       - name: Build
-        run: cmake --build build --config Debug -j4
+        run: cmake --build build/msvc --config Debug -j4
 
       # Run tests
       - name: Tests
-        working-directory: build
+        working-directory: build/msvc
         run: ctest --rerun-failed --output-on-failure --build-config Debug
 
 # EOF
