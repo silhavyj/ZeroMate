@@ -19,16 +19,9 @@ jobs:
         with:
           submodules: recursive
 
-      # Install Conan package manager
-      # Usually, this is done automatically by CMake. However, it does
-      # not add it to the PATH variable.
-      - name: Install Conan
-        id: conan
-        uses: turtlebrowser/get-conan@main
-
       # Configure the CMake project using the default generator (MSVC)
       - name: Configure CMake
-        run: cmake -S . -B build
+        run: cmake -S . -B build/msvc
 
       # Build the project
       - name: Build
