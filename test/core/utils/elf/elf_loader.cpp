@@ -1,5 +1,3 @@
-#include <filesystem>
-
 #include <gtest/gtest.h>
 
 #include "core/peripherals/ram.hpp"
