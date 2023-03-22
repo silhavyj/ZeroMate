@@ -4,7 +4,7 @@
 #include "core/arm1176jzf_s/cpu_core.hpp"
 #include "core/utils/elf_loader.hpp"
 
-static void Run_Test(const char* filename, std::uint32_t expected_value)
+[[maybe_unused]] static void Run_Test(const char* filename, std::uint32_t expected_value)
 {
     static constexpr std::uint32_t RAM_SIZE = 1024 * 1024 * 256;
 
@@ -25,7 +25,8 @@ static void Run_Test(const char* filename, std::uint32_t expected_value)
 }
 
 // These tests pass in an IDE. They fail in a CI pipeline
-// due to an incorrect path to the .ELF files
+// due to an incorrect path to the .ELF files.
+//
 // TEST(elf_loader, test_01)
 // {
 //    const std::string path = "../../../../test/core/utils/elf/source_files/test_01/kernel.elf";
