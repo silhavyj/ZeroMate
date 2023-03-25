@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../object.hpp"
+#include "../window.hpp"
 
 #include "../../core/peripherals/ram.hpp"
 

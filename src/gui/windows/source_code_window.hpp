@@ -2,7 +2,7 @@
 
 #include <unordered_map>
 
-#include "../object.hpp"
+#include "../window.hpp"
 
 #include "../../core/arm1176jzf_s/cpu_core.hpp"
 #include "../../core/utils/list_parser.hpp"

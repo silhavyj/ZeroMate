@@ -9,7 +9,7 @@
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
 
 #include "gui.hpp"
-#include "object.hpp"
+#include "window.hpp"
 #include "windows/registers_window.hpp"
 #include "windows/ram_window.hpp"
 #include "windows/control_window.hpp"

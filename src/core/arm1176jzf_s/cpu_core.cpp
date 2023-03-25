@@ -221,12 +221,12 @@ namespace zero_mate::arm1176jzf_s
         }
         catch (const exceptions::CUndefined_Instruction& ex)
         {
-            m_logging_system.Info(fmt::format("Undefined instruction exception: {}", ex.what()).c_str());
+            m_logging_system.Warning(fmt::format("Undefined instruction exception: {}", ex.what()).c_str());
             // TODO
         }
         catch (const exceptions::CData_Abort& ex)
         {
-            m_logging_system.Info(fmt::format("Data abort exception: {}", ex.what()).c_str());
+            m_logging_system.Warning(fmt::format("Data abort exception: {}", ex.what()).c_str());
             // TODO
         }
     }

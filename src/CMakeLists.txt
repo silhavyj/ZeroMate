@@ -82,7 +82,7 @@ add_executable(
     core/utils/list_parser.cpp
     gui/gui.hpp
     gui/gui.cpp
-    gui/object.hpp
+    gui/window.hpp
     gui/windows/registers_window.hpp
     gui/windows/registers_window.cpp
     gui/windows/ram_window.hpp

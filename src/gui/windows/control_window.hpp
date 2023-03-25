@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../object.hpp"
+#include "../window.hpp"
 
 #include "../../core/arm1176jzf_s/cpu_core.hpp"
 
