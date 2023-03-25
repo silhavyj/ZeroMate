@@ -1,4 +1,5 @@
 #include <memory>
+#include <algorithm>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -65,10 +66,7 @@ namespace zero_mate::gui
 
     static void Render_GUI()
     {
-        for (const auto& window : s_windows)
-        {
-            window->Render();
-        }
+        std::for_each(s_windows.begin(), s_windows.end(), [](const auto& window) -> void { window->Render(); });
     }
 
     int Main_GUI(int argc, const char* argv[])
