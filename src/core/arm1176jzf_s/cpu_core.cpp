@@ -5,6 +5,7 @@
 #include "mac.hpp"
 #include "cpu_core.hpp"
 #include "exceptions.hpp"
+#include "../utils/singleton.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -17,6 +18,7 @@ namespace zero_mate::arm1176jzf_s
     : m_regs{}
     , m_cspr{ 0 }
     , m_bus{ bus }
+    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
         Set_PC(pc);
     }
@@ -214,14 +216,17 @@ namespace zero_mate::arm1176jzf_s
         }
         catch (const exceptions::CSoftware_Interrupt& ex)
         {
+            m_logging_system.Info(fmt::format("SW interrupt exception: {}", ex.what()).c_str());
             // TODO
         }
         catch (const exceptions::CUndefined_Instruction& ex)
         {
+            m_logging_system.Info(fmt::format("Undefined instruction exception: {}", ex.what()).c_str());
             // TODO
         }
         catch (const exceptions::CData_Abort& ex)
         {
+            m_logging_system.Info(fmt::format("Data abort exception: {}", ex.what()).c_str());
             // TODO
         }
     }
@@ -311,7 +316,7 @@ namespace zero_mate::arm1176jzf_s
     {
         if (instruction.Get_Instruction_Mode() == isa::CBranch_And_Exchange::NCPU_Instruction_Mode::Thumb)
         {
-            // TODO print an info message saying that thumb instructions are not supported
+            m_logging_system.Error("Thumb instructions are not supported by the emulator");
         }
 
         if (instruction.Is_L_Bit_Set())
@@ -545,7 +550,7 @@ namespace zero_mate::arm1176jzf_s
                 [[fallthrough]];
             case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
             case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
-                // TODO print out a warning even though this should not happen?
+                m_logging_system.Warning("Only unsigned halfwords should be used when performing a halfword data write");
                 break;
         }
     }

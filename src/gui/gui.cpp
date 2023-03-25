@@ -15,12 +15,18 @@
 #include "windows/source_code_window.hpp"
 #include "windows/file_window.hpp"
 
+#include "../core/utils/singleton.hpp"
+#include "../core/utils/logger/logger_stdo.hpp"
+
 namespace zero_mate::gui
 {
     static inline constexpr const char* const WINDOW_TITLE = "ZeroMate - Rpi Zero emulator";
 
     static inline constexpr std::uint32_t WINDOW_WIDTH = 1240;
     static inline constexpr std::uint32_t WINDOW_WEIGHT = 720;
+
+    static auto s_logger_stdo = std::make_shared<utils::CLogger_STDO>();
+    static auto& s_logging_system = *utils::CSingleton<utils::CLogging_System>::Get_Instance();
 
     static auto s_ram = std::make_shared<peripheral::CRAM<>>();
     static auto s_bus = std::make_shared<CBus>();
@@ -36,12 +42,24 @@ namespace zero_mate::gui
         std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code)
     };
 
-    static void Initialize()
+    static void Initialize_Logging_System()
+    {
+        s_logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
+        s_logging_system.Add_Logger(s_logger_stdo);
+    }
+
+    static void Initialize_Peripherals()
     {
         if (s_bus->Attach_Peripheral(0x0, s_ram) != 0)
         {
-            // TODO
+            s_logging_system.Error("Failed to attach RAM to the bus");
         }
+    }
+
+    static void Initialize()
+    {
+        Initialize_Logging_System();
+        Initialize_Peripherals();
     }
 
     static void Render_GUI()
@@ -54,13 +72,14 @@ namespace zero_mate::gui
 
     int Main_GUI(int argc, const char* argv[])
     {
-        glfwSetErrorCallback([]([[maybe_unused]] int error_code, [[maybe_unused]] const char* description) -> void {
-            // TODO
+        glfwSetErrorCallback([](int error_code, const char* description) -> void {
+            s_logging_system.Error(fmt::format("Error {} occurred when initializing GLFW: {}", error_code, description).c_str());
+            std::terminate();
         });
 
         if (GLFW_TRUE != glfwInit())
         {
-            // TODO
+            s_logging_system.Error("Failed to initialize GLFW");
             return 1;
         }
 
@@ -70,7 +89,7 @@ namespace zero_mate::gui
         GLFWwindow* window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_WEIGHT, WINDOW_TITLE, nullptr, nullptr);
         if (window == nullptr)
         {
-            // TODO
+            s_logging_system.Error("Failed to create a GLFW window");
             return 1;
         }
 
@@ -79,7 +98,7 @@ namespace zero_mate::gui
 
         if (glewInit() != GLEW_OK)
         {
-            // TODO
+            s_logging_system.Error("Failed to initialize GLEW");
             return 1;
         }
 

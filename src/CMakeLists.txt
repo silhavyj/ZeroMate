@@ -92,7 +92,12 @@ add_executable(
     gui/windows/source_code_window.hpp
     gui/windows/source_code_window.cpp
     gui/windows/file_window.hpp
-    gui/windows/file_window.cpp)
+    gui/windows/file_window.cpp
+    core/utils/logger/logger.hpp
+    core/utils/logger/logger.cpp
+    core/utils/logger/logger_stdo.hpp
+    core/utils/logger/logger_stdo.cpp
+    core/utils/singleton.hpp)
 
 target_include_directories(
     ${EXECUTABLE_NAME}
