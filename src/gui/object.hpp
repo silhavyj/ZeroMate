@@ -4,16 +4,16 @@
 
 namespace zero_mate::gui
 {
-    class CGUI_Object
+    class CGUI_Window
     {
     public:
-        CGUI_Object() = default;
-        virtual ~CGUI_Object() = default;
+        CGUI_Window() = default;
+        virtual ~CGUI_Window() = default;
 
-        CGUI_Object(const CGUI_Object&) = delete;
-        CGUI_Object& operator=(const CGUI_Object&) = delete;
-        CGUI_Object(CGUI_Object&&) = delete;
-        CGUI_Object& operator=(CGUI_Object&&) = delete;
+        CGUI_Window(const CGUI_Window&) = delete;
+        CGUI_Window& operator=(const CGUI_Window&) = delete;
+        CGUI_Window(CGUI_Window&&) = delete;
+        CGUI_Window& operator=(CGUI_Window&&) = delete;
 
         virtual void Render() = 0;
     };

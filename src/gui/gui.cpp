@@ -25,7 +25,6 @@ namespace zero_mate::gui
     static inline constexpr std::uint32_t WINDOW_WIDTH = 1240;
     static inline constexpr std::uint32_t WINDOW_WEIGHT = 720;
 
-    static auto s_logger_stdo = std::make_shared<utils::CLogger_STDO>();
     static auto& s_logging_system = *utils::CSingleton<utils::CLogging_System>::Get_Instance();
 
     static auto s_ram = std::make_shared<peripheral::CRAM<>>();
@@ -34,7 +33,7 @@ namespace zero_mate::gui
 
     static std::vector<utils::TText_Section_Record> s_source_code{};
 
-    static const std::vector<std::shared_ptr<CGUI_Object>> s_windows = {
+    static const std::vector<std::shared_ptr<CGUI_Window>> s_windows = {
         std::make_shared<CRegisters_Window>(s_cpu),
         std::make_shared<CRAM_Window>(s_ram),
         std::make_shared<CControl_Window>(s_cpu),
@@ -44,8 +43,10 @@ namespace zero_mate::gui
 
     static void Initialize_Logging_System()
     {
-        s_logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
-        s_logging_system.Add_Logger(s_logger_stdo);
+        auto logger_stdo = std::make_shared<utils::CLogger_STDO>();
+        logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
+
+        s_logging_system.Add_Logger(logger_stdo);
     }
 
     static void Initialize_Peripherals()
