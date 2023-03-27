@@ -20,5 +20,4 @@ namespace zero_mate::peripheral
         virtual void Read(std::uint32_t addr, char* data, std::uint32_t size) = 0;
         virtual void Write_Callback(std::uint32_t addr) = 0;
     };
-
 }

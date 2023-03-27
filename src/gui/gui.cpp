@@ -20,6 +20,8 @@
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
 
+// #define SHOW_EXAMPLE_OF_LOG_MESSAGES
+
 namespace zero_mate::gui
 {
     static inline constexpr const char* const WINDOW_TITLE = "ZeroMate - Rpi Zero emulator";
@@ -52,6 +54,14 @@ namespace zero_mate::gui
 
         s_logging_system.Add_Logger(logger_stdo);
         s_logging_system.Add_Logger(s_log_window);
+
+#ifdef SHOW_EXAMPLE_OF_LOG_MESSAGES
+        s_logging_system.Print("This is just a message");
+        s_logging_system.Debug("This is a debug message");
+        s_logging_system.Info("This is an info message");
+        s_logging_system.Warning("This is a warning message");
+        s_logging_system.Error("This is an error message");
+#endif
     }
 
     static void Initialize_Peripherals()

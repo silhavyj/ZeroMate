@@ -88,7 +88,9 @@ namespace zero_mate::gui
 
                     if (m_filter.PassFilter(line_start, line_end))
                     {
+                        Set_Log_Message_Color({ line_start, line_end });
                         ImGui::TextUnformatted(line_start, line_end);
+                        ImGui::PopStyleColor();
                     }
                 }
             }
@@ -104,7 +106,9 @@ namespace zero_mate::gui
                         const char* line_start = buf + m_line_offsets[line_no];
                         const char* line_end = (line_no + 1 < m_line_offsets.Size) ? (buf + m_line_offsets[line_no + 1] - 1) : buf_end;
 
+                        Set_Log_Message_Color({ line_start, line_end });
                         ImGui::TextUnformatted(line_start, line_end);
+                        ImGui::PopStyleColor();
                     }
                 }
                 clipper.End();
@@ -121,6 +125,30 @@ namespace zero_mate::gui
         ImGui::End();
     }
 
+    void CLog_Window::Set_Log_Message_Color(const std::string& message) const
+    {
+        if (message.starts_with(DEBUG_MSG_PREFIX))
+        {
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 0.7f, 1.0f, 1.0f));
+        }
+        else if (message.starts_with(INFO_MSG_PREFIX))
+        {
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 1.0f, 0.0f, 1.0f));
+        }
+        else if (message.starts_with(WARNING_MSG_PREFIX))
+        {
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 0.0f, 1.0f));
+        }
+        else if (message.starts_with(ERROR_MSG_PREFIX))
+        {
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
+        }
+        else
+        {
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, 1.0f));
+        }
+    }
+
     void CLog_Window::Print(const char* msg)
     {
         Add_Log("%s\n", msg);
@@ -134,7 +162,7 @@ namespace zero_mate::gui
         }
 
         const auto filename = ILogger::Extract_Filename(location);
-        Add_Log("%s\n", fmt::format("[debug] [{}:{}:{}] {}", filename, location.line(), location.function_name(), msg).c_str());
+        Add_Log("%s\n", fmt::format("{} [{}:{}:{}] {}", DEBUG_MSG_PREFIX, filename, location.line(), location.function_name(), msg).c_str());
     }
 
     void CLog_Window::Info(const char* msg, const std::source_location& location)
@@ -145,7 +173,7 @@ namespace zero_mate::gui
         }
 
         const auto filename = ILogger::Extract_Filename(location);
-        Add_Log("%s\n", fmt::format("[info] [{}:{}:{}] {}", filename, location.line(), location.function_name(), msg).c_str());
+        Add_Log("%s\n", fmt::format("{} [{}:{}:{}] {}", INFO_MSG_PREFIX, filename, location.line(), location.function_name(), msg).c_str());
     }
 
     void CLog_Window::Warning(const char* msg, const std::source_location& location)
@@ -156,7 +184,7 @@ namespace zero_mate::gui
         }
 
         const auto filename = ILogger::Extract_Filename(location);
-        Add_Log("%s\n", fmt::format("[warning] [{}:{}:{}] {}", filename, location.line(), location.function_name(), msg).c_str());
+        Add_Log("%s\n", fmt::format("{} [{}:{}:{}] {}", WARNING_MSG_PREFIX, filename, location.line(), location.function_name(), msg).c_str());
     }
 
     void CLog_Window::Error(const char* msg, const std::source_location& location)
@@ -167,6 +195,6 @@ namespace zero_mate::gui
         }
 
         const auto filename = ILogger::Extract_Filename(location);
-        Add_Log("%s\n", fmt::format("[error] [{}:{}:{}] {}", filename, location.line(), location.function_name(), msg).c_str());
+        Add_Log("%s\n", fmt::format("{} [{}:{}:{}] {}", ERROR_MSG_PREFIX, filename, location.line(), location.function_name(), msg).c_str());
     }
 }

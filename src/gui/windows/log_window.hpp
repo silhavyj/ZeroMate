@@ -21,8 +21,14 @@ namespace zero_mate::gui
         void Render() override;
 
     private:
+        static constexpr const char* const DEBUG_MSG_PREFIX = "[debug]";
+        static constexpr const char* const INFO_MSG_PREFIX = "[info]";
+        static constexpr const char* const WARNING_MSG_PREFIX = "[warning]";
+        static constexpr const char* const ERROR_MSG_PREFIX = "[error]";
+
         void Clear();
         void Add_Log(const char* fmt, ...) IM_FMTARGS(2);
+        void Set_Log_Message_Color(const std::string& message) const;
 
         ImGuiTextBuffer m_buffer;
         ImGuiTextFilter m_filter;
