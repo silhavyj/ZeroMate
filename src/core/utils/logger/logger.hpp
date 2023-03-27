@@ -32,6 +32,7 @@ namespace zero_mate::utils
         virtual void Warning(const char* msg, const std::source_location& location = std::source_location::current()) = 0;
         virtual void Error(const char* msg, const std::source_location& location = std::source_location::current()) = 0;
         virtual void Print(const char* msg) = 0;
+        static std::string_view Extract_Filename(const std::source_location& location);
 
     protected:
         NLogging_Level m_logging_level;

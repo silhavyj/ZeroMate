@@ -15,6 +15,7 @@
 #include "windows/control_window.hpp"
 #include "windows/source_code_window.hpp"
 #include "windows/file_window.hpp"
+#include "windows/log_window.hpp"
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
@@ -33,13 +34,15 @@ namespace zero_mate::gui
     static auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
 
     static std::vector<utils::TText_Section_Record> s_source_code{};
+    static auto s_log_window = std::make_shared<CLog_Window>();
 
     static const std::vector<std::shared_ptr<CGUI_Window>> s_windows = {
         std::make_shared<CRegisters_Window>(s_cpu),
         std::make_shared<CRAM_Window>(s_ram),
         std::make_shared<CControl_Window>(s_cpu),
         std::make_shared<CSource_Code_Window>(s_cpu, s_source_code),
-        std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code)
+        std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code),
+        s_log_window
     };
 
     static void Initialize_Logging_System()
@@ -48,6 +51,13 @@ namespace zero_mate::gui
         logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
 
         s_logging_system.Add_Logger(logger_stdo);
+        s_logging_system.Add_Logger(s_log_window);
+
+        s_logging_system.Print("This is just a normal message");
+        s_logging_system.Debug("This is just a DEBUG message");
+        s_logging_system.Info("This is just a INFO message");
+        s_logging_system.Warning("This is just a WARNING message");
+        s_logging_system.Error("This is just a ERROR message");
     }
 
     static void Initialize_Peripherals()

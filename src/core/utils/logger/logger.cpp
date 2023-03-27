@@ -14,6 +14,12 @@ namespace zero_mate::utils
         m_logging_level = logging_level;
     }
 
+    std::string_view ILogger::Extract_Filename(const std::source_location& location)
+    {
+        const std::string_view full_filename = location.file_name();
+        return full_filename.substr(full_filename.find_last_of('/') + 1);
+    }
+
     void CLogging_System::Add_Logger(std::shared_ptr<ILogger> logger)
     {
         m_loggers.push_back(logger);

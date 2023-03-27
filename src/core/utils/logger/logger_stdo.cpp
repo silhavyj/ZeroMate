@@ -4,6 +4,11 @@
 
 namespace zero_mate::utils
 {
+    CLogger_STDO::CLogger_STDO()
+    {
+        spdlog::set_level(spdlog::level::debug);
+    }
+
     void CLogger_STDO::Print(const char* msg)
     {
         spdlog::fmt_lib::print("{}\n", msg);
@@ -16,7 +21,7 @@ namespace zero_mate::utils
             return;
         }
 
-        const auto filename = Extract_Filename(location);
+        const auto filename = ILogger::Extract_Filename(location);
         spdlog::info("[{}:{}:{}] {}", filename, location.line(), location.function_name(), msg);
     }
 
@@ -27,7 +32,7 @@ namespace zero_mate::utils
             return;
         }
 
-        const auto filename = Extract_Filename(location);
+        const auto filename = ILogger::Extract_Filename(location);
         spdlog::debug("[{}:{}:{}] {}", filename, location.line(), location.function_name(), msg);
     }
 
@@ -38,7 +43,7 @@ namespace zero_mate::utils
             return;
         }
 
-        const auto filename = Extract_Filename(location);
+        const auto filename = ILogger::Extract_Filename(location);
         spdlog::warn("[{}:{}:{}] {}", filename, location.line(), location.function_name(), msg);
     }
 
@@ -49,13 +54,7 @@ namespace zero_mate::utils
             return;
         }
 
-        const auto filename = Extract_Filename(location);
+        const auto filename = ILogger::Extract_Filename(location);
         spdlog::error("[{}:{}:{}] {}", filename, location.line(), location.function_name(), msg);
-    }
-
-    std::string_view CLogger_STDO::Extract_Filename(const std::source_location& location)
-    {
-        const std::string_view full_filename = location.file_name();
-        return full_filename.substr(full_filename.find_last_of('/') + 1);
     }
 }
