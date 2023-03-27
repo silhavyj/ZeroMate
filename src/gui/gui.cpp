@@ -52,12 +52,6 @@ namespace zero_mate::gui
 
         s_logging_system.Add_Logger(logger_stdo);
         s_logging_system.Add_Logger(s_log_window);
-
-        s_logging_system.Print("This is just a normal message");
-        s_logging_system.Debug("This is just a DEBUG message");
-        s_logging_system.Info("This is just a INFO message");
-        s_logging_system.Warning("This is just a WARNING message");
-        s_logging_system.Error("This is just a ERROR message");
     }
 
     static void Initialize_Peripherals()
@@ -121,6 +115,7 @@ namespace zero_mate::gui
         imgui_io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
         ImGui::StyleColorsDark();
+        ImGui::GetStyle().FrameRounding = 4.0f;
         ImGuiStyle& style = ImGui::GetStyle();
 
         if (imgui_io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
