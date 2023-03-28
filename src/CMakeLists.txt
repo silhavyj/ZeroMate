@@ -101,7 +101,10 @@ add_executable(
     core/utils/logger/logger_stdo.cpp
     gui/windows/log_window.hpp
     gui/windows/log_window.cpp
-    core/utils/singleton.hpp)
+    core/utils/singleton.hpp
+    core/peripherals/gpio.hpp
+    core/peripherals/gpio.cpp
+    core/config.hpp)
 
 target_include_directories(
     ${EXECUTABLE_NAME}

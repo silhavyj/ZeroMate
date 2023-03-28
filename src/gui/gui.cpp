@@ -19,6 +19,7 @@
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
+#include "../core/peripherals/gpio.hpp"
 
 // #define SHOW_EXAMPLE_OF_LOG_MESSAGES
 
@@ -34,6 +35,7 @@ namespace zero_mate::gui
     static auto s_ram = std::make_shared<peripheral::CRAM<>>();
     static auto s_bus = std::make_shared<CBus>();
     static auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
+    static auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>();
 
     static std::vector<utils::TText_Section_Record> s_source_code{};
     static auto s_log_window = std::make_shared<CLog_Window>();
@@ -66,9 +68,14 @@ namespace zero_mate::gui
 
     static void Initialize_Peripherals()
     {
-        if (s_bus->Attach_Peripheral(0x0, s_ram) != 0)
+        if (s_bus->Attach_Peripheral(config::RAM_MAP_ADDR, s_ram) != 0)
         {
             s_logging_system.Error("Failed to attach RAM to the bus");
+        }
+
+        if (s_bus->Attach_Peripheral(config::GPIO_MAP_ADDR, s_gpio) != 0)
+        {
+            s_logging_system.Error("Failed to attach GPIO to the bus");
         }
     }
 
