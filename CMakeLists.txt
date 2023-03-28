@@ -22,10 +22,6 @@ message("Using C++ standard ${CMAKE_CXX_STANDARD}")
 # Standard project settings
 include(cmake/standard_project_settings.cmake)
 
-# Install conan using PyPI
-# find_package(Python COMPONENTS Interpreter REQUIRED)
-# execute_process(COMMAND ${Python_EXECUTABLE} -m pip install --upgrade pip setuptools conan)
-
 add_library(project_warnings INTERFACE)
 add_library(project_options INTERFACE)
 

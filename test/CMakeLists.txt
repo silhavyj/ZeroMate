@@ -19,7 +19,8 @@ set(SRC_FILES
     ../src/core/arm1176jzf_s/isa/sw_interrupt.cpp
     ../src/core/arm1176jzf_s/isa/isa_decoder.cpp
     ../src/core/peripherals/bus.cpp
-    ../src/core/utils/elf_loader.cpp)
+    ../src/core/utils/elf_loader.cpp
+    ../src/core/utils/logger/logger.cpp)
 
 # Build unit tests
 add_executable(
@@ -89,6 +90,7 @@ target_link_libraries(
     unit_tests
     PRIVATE project_warnings project_options
     PRIVATE fmt
+    PRIVATE spdlog
     PRIVATE gtest
     PRIVATE elfio)
 

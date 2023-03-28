@@ -4,6 +4,7 @@
 
 #include "file_window.hpp"
 #include "../../core/utils/elf_loader.hpp"
+#include "../../core/utils/singleton.hpp"
 
 namespace zero_mate::gui
 {
@@ -13,6 +14,7 @@ namespace zero_mate::gui
     : m_bus{ bus }
     , m_cpu{ cpu }
     , m_source_code{ source_code }
+    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
     }
 
@@ -58,12 +60,21 @@ namespace zero_mate::gui
                 {
                     s_elf_filename = ImGuiFileDialog::Instance()->GetFilePathName();
                     const auto [error_code, pc] = utils::elf::Load_Kernel(*m_bus, s_elf_filename.c_str());
-                    if (error_code != utils::elf::NError_Code::OK)
-                    {
-                        // TODO
-                    }
 
-                    m_cpu->Set_PC(pc);
+                    switch (error_code)
+                    {
+                        case utils::elf::NError_Code::OK:
+                            m_cpu->Set_PC(pc);
+                            break;
+
+                        case utils::elf::NError_Code::ELF_64_Not_Supported:
+                            m_logging_system.Error("64 bit ELF format is not supported by the emulator");
+                            break;
+
+                        case utils::elf::NError_Code::Error:
+                            m_logging_system.Error("Failed to load the ELF file. Make sure you entered a valid path to a valid ELF file");
+                            break;
+                    }
                 }
                 else
                 {

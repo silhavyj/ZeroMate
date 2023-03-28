@@ -13,6 +13,7 @@
 #include "registers/cspr.hpp"
 #include "../utils/math.hpp"
 #include "../peripherals/bus.hpp"
+#include "../utils/logger/logger.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -88,5 +89,6 @@ namespace zero_mate::arm1176jzf_s
         isa::CISA_Decoder m_instruction_decoder;
         std::shared_ptr<CBus> m_bus;
         std::unordered_set<std::uint32_t> m_breakpoints;
+        utils::CLogging_System& m_logging_system;
     };
 }

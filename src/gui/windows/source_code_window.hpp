@@ -2,14 +2,14 @@
 
 #include <unordered_map>
 
-#include "../object.hpp"
+#include "../window.hpp"
 
 #include "../../core/arm1176jzf_s/cpu_core.hpp"
 #include "../../core/utils/list_parser.hpp"
 
 namespace zero_mate::gui
 {
-    class CSource_Code_Window final : public CGUI_Object
+    class CSource_Code_Window final : public CGUI_Window
     {
     public:
         explicit CSource_Code_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,

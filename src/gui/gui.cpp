@@ -1,4 +1,5 @@
 #include <memory>
+#include <algorithm>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -8,12 +9,18 @@
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
 
 #include "gui.hpp"
-#include "object.hpp"
+#include "window.hpp"
 #include "windows/registers_window.hpp"
 #include "windows/ram_window.hpp"
 #include "windows/control_window.hpp"
 #include "windows/source_code_window.hpp"
 #include "windows/file_window.hpp"
+#include "windows/log_window.hpp"
+
+#include "../core/utils/singleton.hpp"
+#include "../core/utils/logger/logger_stdo.hpp"
+
+// #define SHOW_EXAMPLE_OF_LOG_MESSAGES
 
 namespace zero_mate::gui
 {
@@ -22,45 +29,70 @@ namespace zero_mate::gui
     static inline constexpr std::uint32_t WINDOW_WIDTH = 1240;
     static inline constexpr std::uint32_t WINDOW_WEIGHT = 720;
 
+    static auto& s_logging_system = *utils::CSingleton<utils::CLogging_System>::Get_Instance();
+
     static auto s_ram = std::make_shared<peripheral::CRAM<>>();
     static auto s_bus = std::make_shared<CBus>();
     static auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
 
     static std::vector<utils::TText_Section_Record> s_source_code{};
+    static auto s_log_window = std::make_shared<CLog_Window>();
 
-    static const std::vector<std::shared_ptr<CGUI_Object>> s_windows = {
+    static const std::vector<std::shared_ptr<CGUI_Window>> s_windows = {
         std::make_shared<CRegisters_Window>(s_cpu),
         std::make_shared<CRAM_Window>(s_ram),
         std::make_shared<CControl_Window>(s_cpu),
         std::make_shared<CSource_Code_Window>(s_cpu, s_source_code),
-        std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code)
+        std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code),
+        s_log_window
     };
 
-    static void Initialize()
+    static void Initialize_Logging_System()
+    {
+        auto logger_stdo = std::make_shared<utils::CLogger_STDO>();
+        logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
+
+        s_logging_system.Add_Logger(logger_stdo);
+        s_logging_system.Add_Logger(s_log_window);
+
+#ifdef SHOW_EXAMPLE_OF_LOG_MESSAGES
+        s_logging_system.Print("This is just a message");
+        s_logging_system.Debug("This is a debug message");
+        s_logging_system.Info("This is an info message");
+        s_logging_system.Warning("This is a warning message");
+        s_logging_system.Error("This is an error message");
+#endif
+    }
+
+    static void Initialize_Peripherals()
     {
         if (s_bus->Attach_Peripheral(0x0, s_ram) != 0)
         {
-            // TODO
+            s_logging_system.Error("Failed to attach RAM to the bus");
         }
+    }
+
+    static void Initialize()
+    {
+        Initialize_Logging_System();
+        Initialize_Peripherals();
     }
 
     static void Render_GUI()
     {
-        for (const auto& window : s_windows)
-        {
-            window->Render();
-        }
+        std::for_each(s_windows.begin(), s_windows.end(), [](const auto& window) -> void { window->Render(); });
     }
 
     int Main_GUI(int argc, const char* argv[])
     {
-        glfwSetErrorCallback([]([[maybe_unused]] int error_code, [[maybe_unused]] const char* description) -> void {
-            // TODO
+        glfwSetErrorCallback([](int error_code, const char* description) -> void {
+            s_logging_system.Error(fmt::format("Error {} occurred when initializing GLFW: {}", error_code, description).c_str());
+            std::terminate();
         });
 
         if (GLFW_TRUE != glfwInit())
         {
-            // TODO
+            s_logging_system.Error("Failed to initialize GLFW");
             return 1;
         }
 
@@ -70,7 +102,7 @@ namespace zero_mate::gui
         GLFWwindow* window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_WEIGHT, WINDOW_TITLE, nullptr, nullptr);
         if (window == nullptr)
         {
-            // TODO
+            s_logging_system.Error("Failed to create a GLFW window");
             return 1;
         }
 
@@ -79,7 +111,7 @@ namespace zero_mate::gui
 
         if (glewInit() != GLEW_OK)
         {
-            // TODO
+            s_logging_system.Error("Failed to initialize GLEW");
             return 1;
         }
 
@@ -93,6 +125,7 @@ namespace zero_mate::gui
         imgui_io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
         ImGui::StyleColorsDark();
+        ImGui::GetStyle().FrameRounding = 4.0f;
         ImGuiStyle& style = ImGui::GetStyle();
 
         if (imgui_io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
