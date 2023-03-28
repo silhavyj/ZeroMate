@@ -117,7 +117,7 @@ namespace zero_mate::peripheral
     private:
         void Update_Pin_Function(std::size_t reg_idx, bool last_reg);
         void Update_Pin_State(std::size_t reg_idx, CPin::NState state, bool last_reg);
-        void Propagate_Pin_State_To_GPLEVn(std::size_t pin_idx, CPin::NState state);
+        void Reflect_Pin_State_In_GPLEVn(std::size_t pin_idx, CPin::NState state);
         void Set_Edge_Change_Detection(std::size_t reg_idx, bool last_reg, CPin::NInterrupt_Type type);
 
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;

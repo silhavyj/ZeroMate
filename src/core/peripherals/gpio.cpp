@@ -10,6 +10,7 @@ namespace zero_mate::peripheral
     CGPIO_Manager::CPin::CPin()
     : m_state{ NState::Low }
     , m_function{ NFunction::Input }
+    , m_enabled_interrupts{}
     {
     }
 
@@ -64,7 +65,7 @@ namespace zero_mate::peripheral
 
         for (std::uint32_t idx = 0; idx < last_bit_idx; idx += 3)
         {
-            const auto function = static_cast<CPin::NFunction>((m_regs.at(reg_idx) >> idx) & 0b111);
+            const auto function = static_cast<CPin::NFunction>((m_regs.at(reg_idx) >> idx) & 0b111U);
             const auto pin_idx = (reg_idx * NUMBER_OF_PINS_IN_SEL_REG) + idx / 3;
 
             m_pins.at(pin_idx).Set_Function(function);
@@ -79,7 +80,7 @@ namespace zero_mate::peripheral
 
         for (std::uint32_t idx = 0; idx < last_bit_idx; ++idx)
         {
-            const auto set_bit = static_cast<bool>((m_regs.at(reg_idx) >> idx) & 0b1);
+            const auto set_bit = static_cast<bool>((m_regs.at(reg_idx) >> idx) & 0b1U);
             const auto pin_idx = last_reg ? (NUMBER_OF_PINS_IN_REG + idx) : idx;
 
             if (set_bit)
@@ -87,7 +88,7 @@ namespace zero_mate::peripheral
                 if (m_pins.at(pin_idx).Get_Function() == CPin::NFunction::Output)
                 {
                     m_pins.at(pin_idx).Set_State(state);
-                    Propagate_Pin_State_To_GPLEVn(pin_idx, state);
+                    Reflect_Pin_State_In_GPLEVn(pin_idx, state);
 
                     m_logging_system.Debug(fmt::format("State of pin {} is set to {}", pin_idx, static_cast<std::uint32_t>(state)).c_str());
                 }
@@ -101,7 +102,7 @@ namespace zero_mate::peripheral
         m_regs.at(reg_idx) = 0; // Only the last write sets the state of the PIN (RS flip-flop)
     }
 
-    void CGPIO_Manager::Propagate_Pin_State_To_GPLEVn(std::size_t pin_idx, CPin::NState state)
+    void CGPIO_Manager::Reflect_Pin_State_In_GPLEVn(std::size_t pin_idx, CPin::NState state)
     {
         const std::size_t reg_index = [&]() -> std::uint32_t {
             if (pin_idx >= NUMBER_OF_PINS_IN_REG)
@@ -121,11 +122,11 @@ namespace zero_mate::peripheral
 
         if (state == CPin::NState::High)
         {
-            GPLEVn_reg |= static_cast<std::uint32_t>(0b1 << pin_idx);
+            GPLEVn_reg |= (0b1U << pin_idx);
         }
         else
         {
-            GPLEVn_reg &= ~static_cast<std::uint32_t>(0b1 << pin_idx);
+            GPLEVn_reg &= ~(0b1U << pin_idx);
         }
     }
 
@@ -135,7 +136,7 @@ namespace zero_mate::peripheral
 
         for (std::uint32_t idx = 0; idx < last_bit_idx; ++idx)
         {
-            const auto set_bit = static_cast<bool>((m_regs.at(reg_idx) >> idx) & 0b1);
+            const auto set_bit = static_cast<bool>((m_regs.at(reg_idx) >> idx) & 0b1U);
             const auto pin_idx = last_reg ? (NUMBER_OF_PINS_IN_REG + idx) : idx;
 
             if (set_bit)
@@ -222,6 +223,10 @@ namespace zero_mate::peripheral
             case NRegister_Type::Reserved_06:
             case NRegister_Type::Reserved_07:
             case NRegister_Type::Reserved_08:
+            case NRegister_Type::Reserved_09:
+            case NRegister_Type::Reserved_10:
+            case NRegister_Type::Reserved_11:
+            case NRegister_Type::Reserved_12:
                 break;
 
             case NRegister_Type::GPFEN0:
