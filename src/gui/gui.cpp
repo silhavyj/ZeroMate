@@ -30,7 +30,7 @@ namespace zero_mate::gui
     static inline constexpr std::uint32_t WINDOW_WIDTH = 1240;
     static inline constexpr std::uint32_t WINDOW_WEIGHT = 720;
 
-    static auto& s_logging_system = *utils::CSingleton<utils::CLogging_System>::Get_Instance();
+    static auto& s_logging_system = utils::CSingleton<utils::CLogging_System>::Get_Instance();
 
     static auto s_ram = std::make_shared<peripheral::CRAM<>>();
     static auto s_bus = std::make_shared<CBus>();

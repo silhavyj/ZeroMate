@@ -1,6 +1,8 @@
 #pragma once
 
 #include <array>
+#include <limits>
+#include <functional>
 
 #include "peripheral.hpp"
 #include "../utils/logger/logger.hpp"
@@ -12,9 +14,11 @@ namespace zero_mate::peripheral
     public:
         static constexpr std::size_t NUMBER_OF_REGISTERS = 34;
         static constexpr std::size_t NUMBER_OF_GPIO_PINS = 54;
+        static constexpr std::uint32_t NUMBER_OF_PINS_IN_REG = std::numeric_limits<std::uint32_t>::digits;
 
-        struct CPin final
+        class CPin final
         {
+        public:
             enum class NFunction : std::uint32_t
             {
                 Input = 0b000,
@@ -35,58 +39,73 @@ namespace zero_mate::peripheral
 
             enum class NInterrupt_Type : std::uint8_t
             {
-                Rising_Edge,
-                Falling_Edge,
-                Low,
-                High
+                Rising_Edge = 0,
+                Falling_Edge = 1,
+                Low = 2,
+                High = 3
             };
 
-            NState m_state{ NState::Low };
-            NFunction m_function{ NFunction::Input };
+            static constexpr std::size_t NUMBER_OF_INTERRUPT_TYPES = 4;
+
+            CPin();
+
+            [[nodiscard]] NState Get_State() const noexcept;
+            void Set_State(NState state) noexcept;
+            [[nodiscard]] NFunction Get_Function() const noexcept;
+            void Set_Function(NFunction function) noexcept;
+            void Add_Interrupt_Type(NInterrupt_Type type);
+            void Remove_Interrupt_Type(NInterrupt_Type type);
+
+        private:
+            NState m_state;
+            NFunction m_function;
+            std::array<bool, NUMBER_OF_INTERRUPT_TYPES> m_enabled_interrupts;
         };
 
         enum class NRegister_Type : std::uint32_t
         {
             GPFSEL0 = 0,
-            GPFSEL1 = 1,
-            GPFSEL2 = 2,
-            GPFSEL3 = 3,
-            GPFSEL4 = 4,
-            GPFSEL5 = 5,
-            Reserved_01 = 6,
-            GPSET0 = 7,
-            GPSET1 = 8,
-            Reserved_02 = 9,
-            GPCLR0 = 10,
-            GPCLR1 = 11,
-            Reserved_03 = 12,
-            GPLEV0 = 13,
-            GPLEV1 = 14,
-            Reserved_04 = 15,
-            GPEDS0 = 16,
-            GPEDS1 = 17,
-            Reserved_05 = 16,
-            GPREN0 = 17,
-            GPREN1 = 18,
-            Reserved_06 = 17,
-            GPFEN0 = 18,
-            GPFEN1 = 19,
-            Reserved_07 = 20,
-            GPHEN0 = 21,
-            GPHEN1 = 22,
-            Reserved_08 = 23,
-            GPLEN0 = 24,
-            GPLEN1 = 25,
-            Reserved_09 = 26,
-            GPAREN0 = 27,
-            GPAREN1 = 28,
-            Reserved_10 = 27,
-            GPAFEN0 = 28,
-            GPAFEN1 = 29,
-            Reserved_11 = 30,
-            GPPUD = 31,
-            GPPUDCLK0 = 32,
-            GPPUDCLK1 = 33
+            GPFSEL1,
+            GPFSEL2,
+            GPFSEL3,
+            GPFSEL4,
+            GPFSEL5,
+            Reserved_01,
+            GPSET0,
+            GPSET1,
+            Reserved_02,
+            GPCLR0,
+            GPCLR1,
+            Reserved_03,
+            GPLEV0,
+            GPLEV1,
+            Reserved_04,
+            GPEDS0,
+            GPEDS1,
+            Reserved_05,
+            GPREN0,
+            GPREN1,
+            Reserved_06,
+            GPFEN0,
+            GPFEN1,
+            Reserved_07,
+            GPHEN0,
+            GPHEN1,
+            Reserved_08,
+            GPLEN0,
+            GPLEN1,
+            Reserved_09,
+            GPAREN0,
+            GPAREN1,
+            Reserved_10,
+            GPAFEN0,
+            GPAFEN1,
+            Reserved_11,
+            GPPUD,
+            GPPUDCLK0,
+            GPPUDCLK1,
+            Reserved_12,
+            Test
         };
 
         CGPIO_Manager() noexcept;
@@ -98,6 +117,8 @@ namespace zero_mate::peripheral
     private:
         void Update_Pin_Function(std::size_t reg_idx, bool last_reg);
         void Update_Pin_State(std::size_t reg_idx, CPin::NState state, bool last_reg);
+        void Propagate_Pin_State_To_GPLEVn(std::size_t pin_idx, CPin::NState state);
+        void Set_Edge_Change_Detection(std::size_t reg_idx, bool last_reg, CPin::NInterrupt_Type type);
 
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;
         std::array<CPin, NUMBER_OF_GPIO_PINS> m_pins;
