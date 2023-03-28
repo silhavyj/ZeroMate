@@ -46,8 +46,15 @@ namespace zero_mate::peripheral
 
             if (set_bit)
             {
-                m_pins.at(pin_idx).m_state = state;
-                m_logging_system.Debug(fmt::format("State of pin {} is set to {}", pin_idx, static_cast<std::uint32_t>(state)).c_str());
+                if (m_pins.at(pin_idx).m_function == CPin::NFunction::Output)
+                {
+                    m_pins.at(pin_idx).m_state = state;
+                    m_logging_system.Debug(fmt::format("State of pin {} is set to {}", pin_idx, static_cast<std::uint32_t>(state)).c_str());
+                }
+                else
+                {
+                    m_logging_system.Warning(fmt::format("Cannot change the state of pin {} as its function has not been to output", pin_idx).c_str());
+                }
             }
         }
 
@@ -56,13 +63,11 @@ namespace zero_mate::peripheral
 
     void CGPIO_Manager::Write(std::uint32_t addr, const char* data, std::uint32_t size)
     {
+        std::copy_n(data, size, &std::bit_cast<char*>(m_regs.data())[addr]);
+
         const std::size_t reg_idx = addr / sizeof(std::uint32_t);
-
-        // TODO think of a better way
-        char* raw_data = std::bit_cast<char*>(m_regs.data());
-        std::copy_n(data, size, &raw_data[reg_idx * sizeof(std::uint32_t)]);
-
         const auto reg_type = static_cast<NRegister_Type>(reg_idx);
+
         switch (reg_type)
         {
             case NRegister_Type::GPFSEL0:
@@ -156,7 +161,12 @@ namespace zero_mate::peripheral
 
     void CGPIO_Manager::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = addr / sizeof(std::uint32_t);
-        std::copy_n(&m_regs.at(reg_idx), size, data);
+        // TODO
+        static_cast<void>(addr);
+        static_cast<void>(data);
+        static_cast<void>(size);
+
+        // const std::size_t reg_idx = addr / sizeof(std::uint32_t);
+        // std::copy_n(&m_regs.at(reg_idx), size, data);
     }
 }
