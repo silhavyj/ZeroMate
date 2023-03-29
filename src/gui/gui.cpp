@@ -16,6 +16,7 @@
 #include "windows/source_code_window.hpp"
 #include "windows/file_window.hpp"
 #include "windows/log_window.hpp"
+#include "windows/gpio_window.hpp"
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
@@ -46,6 +47,7 @@ namespace zero_mate::gui
         std::make_shared<CControl_Window>(s_cpu),
         std::make_shared<CSource_Code_Window>(s_cpu, s_source_code),
         std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code),
+        std::make_shared<CGPIO_Window>(s_gpio),
         s_log_window
     };
 

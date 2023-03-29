@@ -95,6 +95,8 @@ add_executable(
     gui/windows/file_window.cpp
     gui/windows/log_window.hpp
     gui/windows/log_window.cpp
+    gui/windows/gpio_window.hpp
+    gui/windows/gpio_window.cpp
     core/utils/logger/logger.hpp
     core/utils/logger/logger.cpp
     core/utils/logger/logger_stdo.hpp

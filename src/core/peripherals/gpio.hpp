@@ -113,6 +113,7 @@ namespace zero_mate::peripheral
         [[nodiscard]] std::uint32_t Get_Size() const noexcept override;
         void Write(std::uint32_t addr, const char* data, std::uint32_t size) override;
         void Read(std::uint32_t addr, char* data, std::uint32_t size) override;
+        const std::array<CPin, NUMBER_OF_GPIO_PINS> Get_Pins() const;
 
     private:
         void Update_Pin_Function(std::size_t reg_idx, bool last_reg);

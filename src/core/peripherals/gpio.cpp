@@ -68,9 +68,12 @@ namespace zero_mate::peripheral
             const auto function = static_cast<CPin::NFunction>((m_regs.at(reg_idx) >> idx) & 0b111U);
             const auto pin_idx = (reg_idx * NUMBER_OF_PINS_IN_SEL_REG) + idx / 3;
 
-            m_pins.at(pin_idx).Set_Function(function);
+            if (m_pins.at(pin_idx).Get_Function() != function)
+            {
+                m_logging_system.Debug(fmt::format("Function of pin {} is set to {}", pin_idx, static_cast<std::uint32_t>(function)).c_str());
+            }
 
-            m_logging_system.Debug(fmt::format("Function of pin {} is set to {}", pin_idx, static_cast<std::uint32_t>(function)).c_str());
+            m_pins.at(pin_idx).Set_Function(function);
         }
     }
 
@@ -87,10 +90,13 @@ namespace zero_mate::peripheral
             {
                 if (m_pins.at(pin_idx).Get_Function() == CPin::NFunction::Output)
                 {
+                    if (m_pins.at(pin_idx).Get_State() != state)
+                    {
+                        m_logging_system.Debug(fmt::format("State of pin {} is set to {}", pin_idx, static_cast<std::uint32_t>(state)).c_str());
+                    }
+
                     m_pins.at(pin_idx).Set_State(state);
                     Reflect_Pin_State_In_GPLEVn(pin_idx, state);
-
-                    m_logging_system.Debug(fmt::format("State of pin {} is set to {}", pin_idx, static_cast<std::uint32_t>(state)).c_str());
                 }
                 else
                 {
@@ -107,6 +113,7 @@ namespace zero_mate::peripheral
         const std::size_t reg_index = [&]() -> std::uint32_t {
             if (pin_idx >= NUMBER_OF_PINS_IN_REG)
             {
+                pin_idx -= NUMBER_OF_PINS_IN_REG;
                 return static_cast<std::size_t>(NRegister_Type::GPLEV1);
             }
 
@@ -114,11 +121,6 @@ namespace zero_mate::peripheral
         }();
 
         auto& GPLEVn_reg = m_regs.at(reg_index);
-
-        if (pin_idx >= NUMBER_OF_PINS_IN_REG)
-        {
-            pin_idx -= NUMBER_OF_PINS_IN_REG;
-        }
 
         if (state == CPin::NState::High)
         {
@@ -245,5 +247,10 @@ namespace zero_mate::peripheral
     {
         const std::size_t reg_idx = addr / sizeof(std::uint32_t);
         std::copy_n(&m_regs.at(reg_idx), size, data);
+    }
+
+    const std::array<CGPIO_Manager::CPin, CGPIO_Manager::NUMBER_OF_GPIO_PINS> CGPIO_Manager::Get_Pins() const
+    {
+        return m_pins;
     }
 }
