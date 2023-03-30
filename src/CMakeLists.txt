@@ -124,7 +124,6 @@ target_link_libraries(
     PRIVATE project_warnings
     PRIVATE project_options
     PRIVATE fmt
-    PRIVATE spdlog
     PRIVATE elfio
     PRIVATE libglew_static
     PRIVATE glfw
