@@ -132,7 +132,7 @@ namespace zero_mate::peripheral
         }
     }
 
-    void CGPIO_Manager::Set_Edge_Change_Detection(std::size_t reg_idx, bool last_reg, CPin::NInterrupt_Type type)
+    void CGPIO_Manager::Set_Interrupt(std::size_t reg_idx, bool last_reg, CPin::NInterrupt_Type type)
     {
         const std::uint32_t last_bit_idx = last_reg ? (NUMBER_OF_GPIO_PINS - NUMBER_OF_PINS_IN_REG) : NUMBER_OF_PINS_IN_REG;
 
@@ -201,19 +201,19 @@ namespace zero_mate::peripheral
             case NRegister_Type::GPREN0:
                 [[fallthrough]];
             case NRegister_Type::GPREN1:
-                Set_Edge_Change_Detection(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::Rising_Edge);
+                Set_Interrupt(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::Rising_Edge);
                 break;
 
             case NRegister_Type::GPHEN0:
                 [[fallthrough]];
             case NRegister_Type::GPHEN1:
-                Set_Edge_Change_Detection(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::High);
+                Set_Interrupt(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::High);
                 break;
 
             case NRegister_Type::GPLEN0:
                 [[fallthrough]];
             case NRegister_Type::GPLEN1:
-                Set_Edge_Change_Detection(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::Low);
+                Set_Interrupt(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::Low);
                 break;
 
             case NRegister_Type::Reserved_01:
@@ -234,7 +234,7 @@ namespace zero_mate::peripheral
             case NRegister_Type::GPFEN0:
                 [[fallthrough]];
             case NRegister_Type::GPFEN1:
-                Set_Edge_Change_Detection(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::Falling_Edge);
+                Set_Interrupt(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::Falling_Edge);
                 break;
 
             default:

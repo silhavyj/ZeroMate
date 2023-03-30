@@ -119,7 +119,7 @@ namespace zero_mate::peripheral
         void Update_Pin_Function(std::size_t reg_idx, bool last_reg);
         void Update_Pin_State(std::size_t reg_idx, CPin::NState state, bool last_reg);
         void Reflect_Pin_State_In_GPLEVn(std::size_t pin_idx, CPin::NState state);
-        void Set_Edge_Change_Detection(std::size_t reg_idx, bool last_reg, CPin::NInterrupt_Type type);
+        void Set_Interrupt(std::size_t reg_idx, bool last_reg, CPin::NInterrupt_Type type);
 
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;
         std::array<CPin, NUMBER_OF_GPIO_PINS> m_pins;
