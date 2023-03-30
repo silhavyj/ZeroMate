@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string_view>
-
 #include "logger.hpp"
 
 namespace zero_mate::utils

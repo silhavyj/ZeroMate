@@ -3,6 +3,7 @@
 #include <vector>
 #include <memory>
 #include <cstdint>
+#include <string_view>
 #include <source_location>
 
 namespace zero_mate::utils
