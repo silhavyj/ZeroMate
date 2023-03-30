@@ -15,6 +15,10 @@ namespace zero_mate::gui
         void Render() override;
 
     private:
+        static constexpr ImGuiTableFlags TABLE_FLAGS = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
+                                                       ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
+                                                       ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
+
         std::shared_ptr<peripheral::CGPIO_Manager> m_gpio;
     };
 }

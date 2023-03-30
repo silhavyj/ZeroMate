@@ -46,6 +46,7 @@ namespace zero_mate::peripheral
             };
 
             static constexpr std::size_t NUMBER_OF_INTERRUPT_TYPES = 4;
+            using Interrupts_t = std::array<bool, NUMBER_OF_INTERRUPT_TYPES>;
 
             CPin();
 
@@ -55,11 +56,12 @@ namespace zero_mate::peripheral
             void Set_Function(NFunction function) noexcept;
             void Add_Interrupt_Type(NInterrupt_Type type);
             void Remove_Interrupt_Type(NInterrupt_Type type);
+            [[nodiscard]] const Interrupts_t& Get_Interrupts() const;
 
         private:
             NState m_state;
             NFunction m_function;
-            std::array<bool, NUMBER_OF_INTERRUPT_TYPES> m_enabled_interrupts;
+            Interrupts_t m_enabled_interrupts;
         };
 
         enum class NRegister_Type : std::uint32_t

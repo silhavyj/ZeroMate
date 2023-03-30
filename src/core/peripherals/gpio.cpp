@@ -44,6 +44,11 @@ namespace zero_mate::peripheral
         m_enabled_interrupts.at(static_cast<std::size_t>(type)) = false;
     }
 
+    const CGPIO_Manager::CPin::Interrupts_t& CGPIO_Manager::CPin::Get_Interrupts() const
+    {
+        return m_enabled_interrupts;
+    }
+
     CGPIO_Manager::CGPIO_Manager() noexcept
     : m_regs{}
     , m_pins{}

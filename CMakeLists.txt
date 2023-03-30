@@ -45,6 +45,7 @@ add_subdirectory(external/googletest)
 add_subdirectory(external/elfio)
 add_subdirectory(external/glew)
 add_subdirectory(external/glfw)
+add_subdirectory(external/magic_enum)
 
 # Add the src folder
 add_subdirectory(src)

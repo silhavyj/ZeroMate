@@ -115,7 +115,8 @@ target_include_directories(
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/IconFontCppHeaders
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog)
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
@@ -128,7 +129,8 @@ target_link_libraries(
     PRIVATE libglew_static
     PRIVATE glfw
     PRIVATE imgui_glfw
-    PRIVATE imgui_file_dialog)
+    PRIVATE imgui_file_dialog
+    PRIVATE magic_enum)
 
 if(WIN32)
     target_link_libraries(

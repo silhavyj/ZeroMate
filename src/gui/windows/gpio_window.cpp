@@ -1,4 +1,5 @@
 #include <imgui.h>
+#include <magic_enum.hpp>
 
 #include "gpio_window.hpp"
 
@@ -11,83 +12,42 @@ namespace zero_mate::gui
 
     void CGPIO_Window::Render()
     {
-        const std::size_t number_of_pins = peripheral::CGPIO_Manager::NUMBER_OF_GPIO_PINS;
-
-        static std::array<bool, number_of_pins> LED_values{};
-
-        for (std::size_t i = 0; i < LED_values.size(); ++i)
-        {
-            LED_values.at(i) = m_gpio->Get_Pins().at(i).Get_State() == peripheral::CGPIO_Manager::CPin::NState::High;
-        }
-
         ImGui::Begin("GPIO");
-        ImGui::Columns(10, 0, false);
 
         ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(0, 1, 0, 1));
 
-        // TODO this could certainly be done in a much better way
-        for (std::size_t i = 0; i < 10; i++)
+        if (ImGui::BeginTable("##GPIO", 4, TABLE_FLAGS))
         {
-            ImGui::PushID(static_cast<int>(i));
-            ImGui::Text("%d", static_cast<int>(i));
-            ImGui::RadioButton("", LED_values.at(i));
-            ImGui::NextColumn();
-            ImGui::PopID();
-        }
+            ImGui::TableSetupColumn("ID", ImGuiTableColumnFlags_WidthFixed);
+            ImGui::TableSetupColumn("Function", ImGuiTableColumnFlags_WidthFixed);
+            ImGui::TableSetupColumn("Int", ImGuiTableColumnFlags_WidthFixed);
+            ImGui::TableSetupColumn("State", ImGuiTableColumnFlags_WidthStretch);
 
-        ImGui::Columns(10, 0, false);
+            ImGui::TableHeadersRow();
 
-        for (std::size_t i = 10; i < 20; i++)
-        {
-            ImGui::PushID(static_cast<int>(i));
-            ImGui::Text("%d", static_cast<int>(i));
-            ImGui::RadioButton("", LED_values.at(i));
-            ImGui::NextColumn();
-            ImGui::PopID();
-        }
+            for (std::size_t i = 0; i < peripheral::CGPIO_Manager::NUMBER_OF_GPIO_PINS; ++i)
+            {
+                ImGui::TableNextRow();
+                ImGui::TableNextColumn();
+                ImGui::Text("%d", static_cast<int>(i));
+                ImGui::TableNextColumn();
+                ImGui::Text("%s", magic_enum::enum_name(m_gpio->Get_Pins().at(i).Get_Function()).data());
+                ImGui::TableNextColumn();
 
-        ImGui::Columns(10, 0, false);
+                for (std::size_t j = 0; j < peripheral::CGPIO_Manager::CPin::NUMBER_OF_INTERRUPT_TYPES; ++j)
+                {
+                    if (m_gpio->Get_Pins().at(i).Get_Interrupts().at(j))
+                    {
+                        const auto interrupt_type = magic_enum::enum_cast<peripheral::CGPIO_Manager::CPin::NInterrupt_Type>(static_cast<std::uint8_t>(j));
+                        const std::string_view interrupt_name = magic_enum::enum_name(interrupt_type.value());
+                        ImGui::Text("%s", interrupt_name.data());
+                    }
+                }
+                ImGui::TableNextColumn();
+                ImGui::RadioButton("", m_gpio->Get_Pins().at(i).Get_State() == peripheral::CGPIO_Manager::CPin::NState::High);
+            }
 
-        for (std::size_t i = 20; i < 30; i++)
-        {
-            ImGui::PushID(static_cast<int>(i));
-            ImGui::Text("%d", static_cast<int>(i));
-            ImGui::RadioButton("", LED_values.at(i));
-            ImGui::NextColumn();
-            ImGui::PopID();
-        }
-
-        ImGui::Columns(10, 0, false);
-
-        for (std::size_t i = 30; i < 40; i++)
-        {
-            ImGui::PushID(static_cast<int>(i));
-            ImGui::Text("%d", static_cast<int>(i));
-            ImGui::RadioButton("", LED_values.at(i));
-            ImGui::NextColumn();
-            ImGui::PopID();
-        }
-
-        ImGui::Columns(10, 0, false);
-
-        for (std::size_t i = 40; i < 50; i++)
-        {
-            ImGui::PushID(static_cast<int>(i));
-            ImGui::Text("%d", static_cast<int>(i));
-            ImGui::RadioButton("", LED_values.at(i));
-            ImGui::NextColumn();
-            ImGui::PopID();
-        }
-
-        ImGui::Columns(10, 0, false);
-
-        for (std::size_t i = 50; i < LED_values.size(); i++)
-        {
-            ImGui::PushID(static_cast<int>(i));
-            ImGui::Text("%d", static_cast<int>(i));
-            ImGui::RadioButton("", LED_values.at(i));
-            ImGui::NextColumn();
-            ImGui::PopID();
+            ImGui::EndTable();
         }
 
         ImGui::PopStyleColor();
