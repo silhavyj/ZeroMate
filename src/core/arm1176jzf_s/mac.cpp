@@ -3,6 +3,22 @@
 
 namespace zero_mate::arm1176jzf_s::mac
 {
+    namespace
+    {
+        template<typename Type>
+        [[nodiscard]] std::uint64_t Multiply_Acc(Type value1, Type value2, Type acc_value, bool accumulate) noexcept
+        {
+            Type result_value = value1 * value2;
+
+            if (accumulate)
+            {
+                result_value += acc_value;
+            }
+
+            return static_cast<std::uint64_t>(result_value);
+        }
+    }
+
     TResult Execute(isa::CMultiply instruction, std::uint32_t reg_rm, std::uint32_t reg_rs, std::uint32_t reg_rn) noexcept
     {
         TResult result{};
@@ -28,19 +44,6 @@ namespace zero_mate::arm1176jzf_s::mac
         }
 
         return result;
-    }
-
-    template<typename Type>
-    [[nodiscard]] static std::uint64_t Multiply_Acc(Type value1, Type value2, Type acc_value, bool accumulate) noexcept
-    {
-        Type result_value = value1 * value2;
-
-        if (accumulate)
-        {
-            result_value += acc_value;
-        }
-
-        return static_cast<std::uint64_t>(result_value);
     }
 
     TResult Execute(isa::CMultiply_Long instruction, std::uint32_t reg_rm, std::uint32_t reg_rs, std::uint32_t reg_rd_lo, std::uint32_t reg_rd_hi) noexcept

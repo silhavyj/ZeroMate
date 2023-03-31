@@ -4,45 +4,38 @@
 
 namespace zero_mate::utils::elf
 {
-    static inline void Clear_BSS_Section(CBus& bus, const ELFIO::section& section)
+    namespace
     {
-        for (ELFIO::Elf_Xword i = 0; i < section.get_size(); ++i)
+        inline void Map_Section_To_RAM(CBus& bus, const ELFIO::section& section)
         {
-            const auto addr = static_cast<std::uint32_t>(section.get_address() + i);
-            bus.Write<std::uint8_t>(addr, 0);
-        }
-    }
+            const char* data = section.get_data();
 
-    static inline void Map_Section_To_RAM(CBus& bus, const ELFIO::section& section)
-    {
-        const char* data = section.get_data();
-
-        if (data == nullptr)
-        {
-            Clear_BSS_Section(bus, section);
-            return;
-        }
-
-        for (ELFIO::Elf_Xword i = 0; i < section.get_size(); ++i)
-        {
-            const auto value = static_cast<std::uint8_t>(data[i]);
-            const auto addr = static_cast<std::uint32_t>(section.get_address() + i);
-
-            bus.Write<std::uint8_t>(addr, value);
-        }
-    }
-
-    static inline void Map_Sections_To_RAM(CBus& bus, const ELFIO::elfio& elf_reader)
-    {
-        const ELFIO::Elf_Half number_of_sections = elf_reader.sections.size();
-
-        for (ELFIO::Elf_Half idx = 0; idx < number_of_sections; ++idx)
-        {
-            const ELFIO::section& section = *elf_reader.sections[idx];
-
-            if ((section.get_flags() & ELFIO::SHF_ALLOC) == ELFIO::SHF_ALLOC)
+            if (data == nullptr)
             {
-                Map_Section_To_RAM(bus, section);
+                return;
+            }
+
+            for (ELFIO::Elf_Xword i = 0; i < section.get_size(); ++i)
+            {
+                const auto value = static_cast<std::uint8_t>(data[i]);
+                const auto addr = static_cast<std::uint32_t>(section.get_address() + i);
+
+                bus.Write<std::uint8_t>(addr, value);
+            }
+        }
+
+        inline void Map_Sections_To_RAM(CBus& bus, const ELFIO::elfio& elf_reader)
+        {
+            const ELFIO::Elf_Half number_of_sections = elf_reader.sections.size();
+
+            for (ELFIO::Elf_Half idx = 0; idx < number_of_sections; ++idx)
+            {
+                const ELFIO::section& section = *elf_reader.sections[idx];
+
+                if ((section.get_flags() & ELFIO::SHF_ALLOC) == ELFIO::SHF_ALLOC)
+                {
+                    Map_Section_To_RAM(bus, section);
+                }
             }
         }
     }

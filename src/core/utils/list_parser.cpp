@@ -5,80 +5,83 @@
 
 namespace zero_mate::utils
 {
-    [[nodiscard]] static std::string Trim(const std::string& str, char c = ' ')
+    namespace
     {
-        const auto str_begin = str.find_first_not_of(c);
-
-        if (str_begin == std::string::npos)
+        [[nodiscard]] std::string Trim(const std::string& str, char c = ' ')
         {
-            return "";
-        }
+            const auto str_begin = str.find_first_not_of(c);
 
-        const auto str_end = str.find_last_not_of(c);
-        const auto str_range = str_end - str_begin + 1;
-
-        return str.substr(str_begin, str_range);
-    }
-
-    [[nodiscard]] std::vector<std::string> Split(const std::string& str, char c)
-    {
-        std::vector<std::string> parts{};
-        std::stringstream sstream{ str };
-        std::string part{};
-
-        while (getline(sstream, part, c))
-        {
-            if (!part.empty())
+            if (str_begin == std::string::npos)
             {
-                parts.emplace_back(part);
-            }
-        }
-
-        return parts;
-    }
-
-    [[nodiscard]] static TText_Section_Record Create_Instruction_Record(std::string& line)
-    {
-        static constexpr int BASE = 16;
-
-        TText_Section_Record record{};
-        record.type = NText_Section_Record_Type::Instruction;
-
-        line = Trim(line);
-        const auto parts = Split(line, '\t');
-
-        if (parts.size() >= 3)
-        {
-            record.addr = static_cast<std::uint32_t>(std::stoul(Trim(parts[0], ':'), nullptr, BASE));
-            record.opcode = static_cast<std::uint32_t>(std::stoul(parts[1], nullptr, BASE));
-
-            for (std::size_t i = 2; i < parts.size(); ++i)
-            {
-                record.disassembly += parts[i] + ' ';
+                return "";
             }
 
-            if (!record.disassembly.empty() && record.disassembly[record.disassembly.length() - 1] == ' ')
+            const auto str_end = str.find_last_not_of(c);
+            const auto str_range = str_end - str_begin + 1;
+
+            return str.substr(str_begin, str_range);
+        }
+
+        [[nodiscard]] std::vector<std::string> Split(const std::string& str, char c)
+        {
+            std::vector<std::string> parts{};
+            std::stringstream sstream{ str };
+            std::string part{};
+
+            while (getline(sstream, part, c))
             {
+                if (!part.empty())
+                {
+                    parts.emplace_back(part);
+                }
+            }
+
+            return parts;
+        }
+
+        [[nodiscard]] TText_Section_Record Create_Instruction_Record(std::string& line)
+        {
+            static constexpr int BASE = 16;
+
+            TText_Section_Record record{};
+            record.type = NText_Section_Record_Type::Instruction;
+
+            line = Trim(line);
+            const auto parts = Split(line, '\t');
+
+            if (parts.size() >= 3)
+            {
+                record.addr = static_cast<std::uint32_t>(std::stoul(Trim(parts[0], ':'), nullptr, BASE));
+                record.opcode = static_cast<std::uint32_t>(std::stoul(parts[1], nullptr, BASE));
+
+                for (std::size_t i = 2; i < parts.size(); ++i)
+                {
+                    record.disassembly += parts[i] + ' ';
+                }
+
+                if (!record.disassembly.empty() && record.disassembly[record.disassembly.length() - 1] == ' ')
+                {
+                    record.disassembly.pop_back();
+                }
+            }
+
+            return record;
+        }
+
+        [[nodiscard]] TText_Section_Record Create_Label_Record(const std::string& line)
+        {
+            TText_Section_Record record{};
+            record.type = NText_Section_Record_Type::Label;
+
+            const auto parts = Split(line, ' ');
+            if (parts.size() >= 2)
+            {
+                record.disassembly = parts[1];
                 record.disassembly.pop_back();
             }
+
+            return record;
         }
-
-        return record;
-    }
-
-    [[nodiscard]] static TText_Section_Record Create_Label_Record(const std::string& line)
-    {
-        TText_Section_Record record{};
-        record.type = NText_Section_Record_Type::Label;
-
-        const auto parts = Split(line, ' ');
-        if (parts.size() >= 2)
-        {
-            record.disassembly = parts[1];
-            record.disassembly.pop_back();
-        }
-
-        return record;
     }
 
     std::vector<TText_Section_Record> Extract_Text_Section_From_List_File(const char* const filename)
