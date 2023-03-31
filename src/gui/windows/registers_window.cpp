@@ -50,7 +50,7 @@ namespace zero_mate::gui
 
             ImGui::TableHeadersRow();
 
-            for (std::uint32_t i = 0; i < m_cpu->NUMBER_OF_GENERAL_REGS; ++i)
+            for (std::uint32_t i = 0; i < arm1176jzf_s::CCPU_Core::NUMBER_OF_GENERAL_REGS; ++i)
             {
                 ImGui::TableNextRow();
                 ImGui::TableNextColumn();
@@ -63,19 +63,19 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::Text("R13 (LR)");
             ImGui::TableNextColumn();
-            ImGui::InputScalar(fmt::format("##LR{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs.at(m_cpu->LR_REG_IDX), nullptr, nullptr, format);
+            ImGui::InputScalar(fmt::format("##LR{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs.at(arm1176jzf_s::CCPU_Core::LR_REG_IDX), nullptr, nullptr, format);
             ImGui::TableNextRow();
 
             ImGui::TableNextColumn();
             ImGui::Text("R14 (SP)");
             ImGui::TableNextColumn();
-            ImGui::InputScalar(fmt::format("##SP{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs.at(m_cpu->SP_REG_IDX), nullptr, nullptr, format);
+            ImGui::InputScalar(fmt::format("##SP{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs.at(arm1176jzf_s::CCPU_Core::SP_REG_IDX), nullptr, nullptr, format);
             ImGui::TableNextRow();
 
             ImGui::TableNextColumn();
             ImGui::Text("R15 (PC)");
             ImGui::TableNextColumn();
-            ImGui::InputScalar(fmt::format("##PC{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs.at(m_cpu->PC_REG_IDX), nullptr, nullptr, format);
+            ImGui::InputScalar(fmt::format("##PC{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs.at(arm1176jzf_s::CCPU_Core::PC_REG_IDX), nullptr, nullptr, format);
             ImGui::TableNextRow();
 
             ImGui::EndTable();
