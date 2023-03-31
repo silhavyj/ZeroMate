@@ -1,6 +1,7 @@
 #include <algorithm>
 
 #include <fmt/format.h>
+#include <magic_enum.hpp>
 
 #include "../utils/singleton.hpp"
 #include "gpio.hpp"
@@ -75,7 +76,7 @@ namespace zero_mate::peripheral
 
             if (m_pins.at(pin_idx).Get_Function() != function)
             {
-                m_logging_system.Debug(fmt::format("Function of pin {} is set to {}", pin_idx, static_cast<std::uint32_t>(function)).c_str());
+                m_logging_system.Debug(fmt::format("Function of pin {} is set to {}", pin_idx, magic_enum::enum_name(function)).c_str());
             }
 
             m_pins.at(pin_idx).Set_Function(function);
@@ -97,7 +98,7 @@ namespace zero_mate::peripheral
                 {
                     if (m_pins.at(pin_idx).Get_State() != state)
                     {
-                        m_logging_system.Debug(fmt::format("State of pin {} is set to {}", pin_idx, static_cast<std::uint32_t>(state)).c_str());
+                        m_logging_system.Debug(fmt::format("State of pin {} is set to {}", pin_idx, magic_enum::enum_name(state)).c_str());
                     }
 
                     m_pins.at(pin_idx).Set_State(state);
