@@ -16,9 +16,11 @@
 #include "windows/source_code_window.hpp"
 #include "windows/file_window.hpp"
 #include "windows/log_window.hpp"
+#include "windows/gpio_window.hpp"
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
+#include "../core/peripherals/gpio.hpp"
 
 // #define SHOW_EXAMPLE_OF_LOG_MESSAGES
 
@@ -29,11 +31,12 @@ namespace zero_mate::gui
     static inline constexpr std::uint32_t WINDOW_WIDTH = 1240;
     static inline constexpr std::uint32_t WINDOW_WEIGHT = 720;
 
-    static auto& s_logging_system = *utils::CSingleton<utils::CLogging_System>::Get_Instance();
+    static auto& s_logging_system = utils::CSingleton<utils::CLogging_System>::Get_Instance();
 
     static auto s_ram = std::make_shared<peripheral::CRAM<>>();
     static auto s_bus = std::make_shared<CBus>();
     static auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
+    static auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>();
 
     static std::vector<utils::TText_Section_Record> s_source_code{};
     static auto s_log_window = std::make_shared<CLog_Window>();
@@ -44,6 +47,7 @@ namespace zero_mate::gui
         std::make_shared<CControl_Window>(s_cpu),
         std::make_shared<CSource_Code_Window>(s_cpu, s_source_code),
         std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code),
+        std::make_shared<CGPIO_Window>(s_gpio),
         s_log_window
     };
 
@@ -66,9 +70,14 @@ namespace zero_mate::gui
 
     static void Initialize_Peripherals()
     {
-        if (s_bus->Attach_Peripheral(0x0, s_ram) != 0)
+        if (s_bus->Attach_Peripheral(config::RAM_MAP_ADDR, s_ram) != 0)
         {
             s_logging_system.Error("Failed to attach RAM to the bus");
+        }
+
+        if (s_bus->Attach_Peripheral(config::GPIO_MAP_ADDR, s_gpio) != 0)
+        {
+            s_logging_system.Error("Failed to attach GPIO to the bus");
         }
     }
 

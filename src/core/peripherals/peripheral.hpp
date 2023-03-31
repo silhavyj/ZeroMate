@@ -18,6 +18,5 @@ namespace zero_mate::peripheral
         [[nodiscard]] virtual std::uint32_t Get_Size() const noexcept = 0;
         virtual void Write(std::uint32_t addr, const char* data, std::uint32_t size) = 0;
         virtual void Read(std::uint32_t addr, char* data, std::uint32_t size) = 0;
-        virtual void Write_Callback(std::uint32_t addr) = 0;
     };
 }

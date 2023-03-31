@@ -37,7 +37,6 @@ namespace zero_mate
             const auto relative_addr = addr - peripheral_iter->start_addr;
 
             peripheral_iter->peripheral->Write(relative_addr, std::bit_cast<const char*>(&value), sizeof(Type));
-            peripheral_iter->peripheral->Write_Callback(relative_addr);
         }
 
         template<typename Type>

@@ -1,0 +1,1 @@
+ZeroMate.exe ..\..\..\..\misc\fonts\Cousine-Regular.ttf ..\..\..\..\misc\fonts\icons\fa-solid-900.ttf

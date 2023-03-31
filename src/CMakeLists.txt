@@ -95,13 +95,18 @@ add_executable(
     gui/windows/file_window.cpp
     gui/windows/log_window.hpp
     gui/windows/log_window.cpp
+    gui/windows/gpio_window.hpp
+    gui/windows/gpio_window.cpp
     core/utils/logger/logger.hpp
     core/utils/logger/logger.cpp
     core/utils/logger/logger_stdo.hpp
     core/utils/logger/logger_stdo.cpp
     gui/windows/log_window.hpp
     gui/windows/log_window.cpp
-    core/utils/singleton.hpp)
+    core/utils/singleton.hpp
+    core/peripherals/gpio.hpp
+    core/peripherals/gpio.cpp
+    core/config.hpp)
 
 target_include_directories(
     ${EXECUTABLE_NAME}
@@ -110,7 +115,8 @@ target_include_directories(
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/IconFontCppHeaders
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog)
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog
+    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
@@ -118,12 +124,12 @@ target_link_libraries(
     PRIVATE project_warnings
     PRIVATE project_options
     PRIVATE fmt
-    PRIVATE spdlog
     PRIVATE elfio
     PRIVATE libglew_static
     PRIVATE glfw
     PRIVATE imgui_glfw
-    PRIVATE imgui_file_dialog)
+    PRIVATE imgui_file_dialog
+    PRIVATE magic_enum)
 
 if(WIN32)
     target_link_libraries(

@@ -18,7 +18,7 @@ namespace zero_mate::arm1176jzf_s
     : m_regs{}
     , m_cspr{ 0 }
     , m_bus{ bus }
-    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
         Set_PC(pc);
     }

@@ -14,7 +14,7 @@ namespace zero_mate::gui
     : m_bus{ bus }
     , m_cpu{ cpu }
     , m_source_code{ source_code }
-    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
     }
 

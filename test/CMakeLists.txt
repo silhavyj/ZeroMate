@@ -90,7 +90,6 @@ target_link_libraries(
     unit_tests
     PRIVATE project_warnings project_options
     PRIVATE fmt
-    PRIVATE spdlog
     PRIVATE gtest
     PRIVATE elfio)
 
