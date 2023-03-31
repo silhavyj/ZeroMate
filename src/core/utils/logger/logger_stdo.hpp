@@ -10,9 +10,9 @@ namespace zero_mate::utils
         CLogger_STDO() = default;
 
         void Print(const char* msg) override;
-        void Debug(const char* msg, const std::source_location& location = std::source_location::current()) override;
-        void Info(const char* msg, const std::source_location& location = std::source_location::current()) override;
-        void Warning(const char* msg, const std::source_location& location = std::source_location::current()) override;
-        void Error(const char* msg, const std::source_location& location = std::source_location::current()) override;
+        void Debug(const char* msg) override;
+        void Info(const char* msg) override;
+        void Warning(const char* msg) override;
+        void Error(const char* msg) override;
     };
 }

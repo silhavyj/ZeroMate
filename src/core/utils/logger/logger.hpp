@@ -28,12 +28,11 @@ namespace zero_mate::utils
         ILogger& operator=(ILogger&&) = delete;
 
         void Set_Logging_Level(NLogging_Level debug_level);
-        virtual void Debug(const char* msg, const std::source_location& location = std::source_location::current()) = 0;
-        virtual void Info(const char* msg, const std::source_location& location = std::source_location::current()) = 0;
-        virtual void Warning(const char* msg, const std::source_location& location = std::source_location::current()) = 0;
-        virtual void Error(const char* msg, const std::source_location& location = std::source_location::current()) = 0;
+        virtual void Debug(const char* msg) = 0;
+        virtual void Info(const char* msg) = 0;
+        virtual void Warning(const char* msg) = 0;
+        virtual void Error(const char* msg) = 0;
         virtual void Print(const char* msg) = 0;
-        static std::string_view Extract_Filename(const std::source_location& location);
 
     protected:
         NLogging_Level m_logging_level;
@@ -42,6 +41,11 @@ namespace zero_mate::utils
     class CLogging_System final
     {
     public:
+        static constexpr const char* const DEBUG_MSG_PREFIX = "[debug]";
+        static constexpr const char* const INFO_MSG_PREFIX = "[info]";
+        static constexpr const char* const WARNING_MSG_PREFIX = "[warning]";
+        static constexpr const char* const ERROR_MSG_PREFIX = "[error]";
+
         void Add_Logger(std::shared_ptr<ILogger> logger);
 
         void Debug(const char* msg, const std::source_location& location = std::source_location::current());
@@ -51,6 +55,8 @@ namespace zero_mate::utils
         void Print(const char* msg);
 
     private:
+        static std::string_view Extract_Filename(const std::source_location& location);
+
         std::vector<std::shared_ptr<ILogger>> m_loggers;
     };
 }

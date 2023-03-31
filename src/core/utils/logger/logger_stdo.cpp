@@ -9,47 +9,35 @@ namespace zero_mate::utils
         fmt::print("{}\n", msg);
     }
 
-    void CLogger_STDO::Info(const char* msg, const std::source_location& location)
+    void CLogger_STDO::Info(const char* msg)
     {
-        if (m_logging_level > NLogging_Level::Info)
+        if (m_logging_level <= NLogging_Level::Info)
         {
-            return;
+            fmt::print("{}\n", msg);
         }
-
-        const auto filename = ILogger::Extract_Filename(location);
-        fmt::print("[info][{}:{}:{}] {}\n", filename, location.line(), location.function_name(), msg);
     }
 
-    void CLogger_STDO::Debug(const char* msg, const std::source_location& location)
+    void CLogger_STDO::Debug(const char* msg)
     {
-        if (m_logging_level > NLogging_Level::Debug)
+        if (m_logging_level <= NLogging_Level::Debug)
         {
-            return;
+            fmt::print("{}\n", msg);
         }
-
-        const auto filename = ILogger::Extract_Filename(location);
-        fmt::print("[debug][{}:{}:{}] {}\n", filename, location.line(), location.function_name(), msg);
     }
 
-    void CLogger_STDO::Warning(const char* msg, const std::source_location& location)
+    void CLogger_STDO::Warning(const char* msg)
     {
-        if (m_logging_level > NLogging_Level::Warning)
+        if (m_logging_level <= NLogging_Level::Warning)
         {
-            return;
+            fmt::print("{}\n", msg);
         }
-
-        const auto filename = ILogger::Extract_Filename(location);
-        fmt::print("[{}:{}:{}] {}\n", filename, location.line(), location.function_name(), msg);
     }
 
-    void CLogger_STDO::Error(const char* msg, const std::source_location& location)
+    void CLogger_STDO::Error(const char* msg)
     {
-        if (m_logging_level > NLogging_Level::Error)
+        if (m_logging_level <= NLogging_Level::Error)
         {
-            return;
+            fmt::print("{}\n", msg);
         }
-
-        const auto filename = ILogger::Extract_Filename(location);
-        fmt::print("[{}:{}:{}] {}\n", filename, location.line(), location.function_name(), msg);
     }
 }

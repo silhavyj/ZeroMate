@@ -125,21 +125,21 @@ namespace zero_mate::gui
         ImGui::End();
     }
 
-    void CLog_Window::Set_Log_Message_Color(const std::string& message) const
+    void CLog_Window::Set_Log_Message_Color(const std::string& msg)
     {
-        if (message.starts_with(DEBUG_MSG_PREFIX))
+        if (msg.starts_with(utils::CLogging_System::DEBUG_MSG_PREFIX))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 0.7f, 1.0f, 1.0f));
         }
-        else if (message.starts_with(INFO_MSG_PREFIX))
+        else if (msg.starts_with(utils::CLogging_System::INFO_MSG_PREFIX))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 1.0f, 0.0f, 1.0f));
         }
-        else if (message.starts_with(WARNING_MSG_PREFIX))
+        else if (msg.starts_with(utils::CLogging_System::WARNING_MSG_PREFIX))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 0.0f, 1.0f));
         }
-        else if (message.starts_with(ERROR_MSG_PREFIX))
+        else if (msg.starts_with(utils::CLogging_System::ERROR_MSG_PREFIX))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
         }
@@ -154,47 +154,35 @@ namespace zero_mate::gui
         Add_Log("%s\n", msg);
     }
 
-    void CLog_Window::Debug(const char* msg, const std::source_location& location)
+    void CLog_Window::Debug(const char* msg)
     {
-        if (m_logging_level > NLogging_Level::Debug)
+        if (m_logging_level <= NLogging_Level::Debug)
         {
-            return;
+            Add_Log("%s\n", msg);
         }
-
-        const auto filename = ILogger::Extract_Filename(location);
-        Add_Log("%s\n", fmt::format("{} [{}:{}:{}] {}", DEBUG_MSG_PREFIX, filename, location.line(), location.function_name(), msg).c_str());
     }
 
-    void CLog_Window::Info(const char* msg, const std::source_location& location)
+    void CLog_Window::Info(const char* msg)
     {
-        if (m_logging_level > NLogging_Level::Info)
+        if (m_logging_level <= NLogging_Level::Info)
         {
-            return;
+            Add_Log("%s\n", msg);
         }
-
-        const auto filename = ILogger::Extract_Filename(location);
-        Add_Log("%s\n", fmt::format("{} [{}:{}:{}] {}", INFO_MSG_PREFIX, filename, location.line(), location.function_name(), msg).c_str());
     }
 
-    void CLog_Window::Warning(const char* msg, const std::source_location& location)
+    void CLog_Window::Warning(const char* msg)
     {
-        if (m_logging_level > NLogging_Level::Warning)
+        if (m_logging_level <= NLogging_Level::Warning)
         {
-            return;
+            Add_Log("%s\n", msg);
         }
-
-        const auto filename = ILogger::Extract_Filename(location);
-        Add_Log("%s\n", fmt::format("{} [{}:{}:{}] {}", WARNING_MSG_PREFIX, filename, location.line(), location.function_name(), msg).c_str());
     }
 
-    void CLog_Window::Error(const char* msg, const std::source_location& location)
+    void CLog_Window::Error(const char* msg)
     {
-        if (m_logging_level > NLogging_Level::Error)
+        if (m_logging_level <= NLogging_Level::Error)
         {
-            return;
+            Add_Log("%s\n", msg);
         }
-
-        const auto filename = ILogger::Extract_Filename(location);
-        Add_Log("%s\n", fmt::format("{} [{}:{}:{}] {}", ERROR_MSG_PREFIX, filename, location.line(), location.function_name(), msg).c_str());
     }
 }
