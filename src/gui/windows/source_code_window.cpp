@@ -33,16 +33,11 @@ namespace zero_mate::gui
                 switch (type)
                 {
                     case utils::NText_Section_Record_Type::Instruction:
-                        if (!m_breakpoints.contains(addr))
-                        {
-                            m_breakpoints[addr] = false;
-                        }
-
                         ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
-                        if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints.at(addr)))
+                        if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints[addr]))
                         {
-                            m_breakpoints.at(addr) = !m_breakpoints.at(addr);
-                            if (m_breakpoints.at(addr))
+                            m_breakpoints[addr] = !m_breakpoints[addr];
+                            if (m_breakpoints[addr])
                             {
                                 m_cpu->Add_Breakpoint(addr);
                             }
@@ -67,7 +62,7 @@ namespace zero_mate::gui
                         ImGui::TableNextColumn();
                         ImGui::Text("%s", disassembly.c_str());
 
-                        if (addr == m_cpu->m_regs.at(m_cpu->PC_REG_IDX))
+                        if (addr == m_cpu->m_regs[m_cpu->PC_REG_IDX])
                         {
                             const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
                             ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);

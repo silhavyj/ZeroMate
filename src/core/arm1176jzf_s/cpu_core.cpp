@@ -238,7 +238,7 @@ namespace zero_mate::arm1176jzf_s
             return instruction.Get_Shift_Amount();
         }
 
-        return m_regs.at(instruction.Get_Rs()) & 0xFFU;
+        return m_regs[instruction.Get_Rs()] & 0xFFU;
     }
 
     utils::math::TShift_Result<std::uint32_t> CCPU_Core::Get_Second_Operand_Imm(isa::CData_Processing instruction) const noexcept
@@ -285,14 +285,14 @@ namespace zero_mate::arm1176jzf_s
 
         const std::uint32_t shift_amount = Get_Shift_Amount(instruction);
         const auto shift_type = instruction.Get_Shift_Type();
-        const auto shift_reg = m_regs.at(instruction.Get_Rm());
+        const auto shift_reg = m_regs[instruction.Get_Rm()];
 
         return Perform_Shift(shift_type, shift_amount, shift_reg);
     }
 
     void CCPU_Core::Execute(isa::CData_Processing instruction)
     {
-        const std::uint32_t first_operand = m_regs.at(instruction.Get_Rn());
+        const std::uint32_t first_operand = m_regs[instruction.Get_Rn()];
         const auto [carry_out, second_operand] = Get_Second_Operand(instruction);
         const std::uint32_t dest_reg = instruction.Get_Rd();
 
@@ -300,7 +300,7 @@ namespace zero_mate::arm1176jzf_s
 
         if (result.write_back)
         {
-            m_regs.at(dest_reg) = result.value;
+            m_regs[dest_reg] = result.value;
         }
 
         if (result.set_flags && dest_reg != PC_REG_IDX)
@@ -324,7 +324,7 @@ namespace zero_mate::arm1176jzf_s
             LR() = PC();
         }
 
-        PC() = m_regs.at(instruction.Get_Rm()) & 0xFFFFFFFEU;
+        PC() = m_regs[instruction.Get_Rm()] & 0xFFFFFFFEU;
     }
 
     void CCPU_Core::Execute(isa::CBranch instruction)
@@ -352,9 +352,9 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Execute(isa::CMultiply instruction)
     {
         const auto result = mac::Execute(instruction,
-                                         m_regs.at(instruction.Get_Rm()),
-                                         m_regs.at(instruction.Get_Rs()),
-                                         m_regs.at(instruction.Get_Rn()));
+                                         m_regs[instruction.Get_Rm()],
+                                         m_regs[instruction.Get_Rs()],
+                                         m_regs[instruction.Get_Rn()]);
 
         if (result.set_fags)
         {
@@ -362,7 +362,7 @@ namespace zero_mate::arm1176jzf_s
             m_cspr.Set_Flag(CCSPR::NFlag::Z, result.z_flag);
         }
 
-        m_regs.at(instruction.Get_Rd()) = result.value_lo;
+        m_regs[instruction.Get_Rd()] = result.value_lo;
     }
 
     void CCPU_Core::Execute(isa::CMultiply_Long instruction)
@@ -371,10 +371,10 @@ namespace zero_mate::arm1176jzf_s
         const auto reg_rd_hi = instruction.Get_Rd_Hi();
 
         const auto result = mac::Execute(instruction,
-                                         m_regs.at(instruction.Get_Rm()),
-                                         m_regs.at(instruction.Get_Rs()),
-                                         m_regs.at(reg_rd_lo),
-                                         m_regs.at(reg_rd_hi));
+                                         m_regs[instruction.Get_Rm()],
+                                         m_regs[instruction.Get_Rs()],
+                                         m_regs[reg_rd_lo],
+                                         m_regs[reg_rd_hi]);
 
         if (result.set_fags)
         {
@@ -382,8 +382,8 @@ namespace zero_mate::arm1176jzf_s
             m_cspr.Set_Flag(CCSPR::NFlag::Z, result.z_flag);
         }
 
-        m_regs.at(reg_rd_lo) = result.value_lo;
-        m_regs.at(reg_rd_hi) = result.value_hi;
+        m_regs[reg_rd_lo] = result.value_lo;
+        m_regs[reg_rd_hi] = result.value_hi;
     }
 
     std::int64_t CCPU_Core::Get_Offset(isa::CSingle_Data_Transfer instruction) const noexcept
@@ -398,7 +398,7 @@ namespace zero_mate::arm1176jzf_s
         {
             const auto shift_type = instruction.Get_Shift_Type();
             const auto shift_amount = instruction.Get_Shift_Amount();
-            const auto shift_reg = m_regs.at(instruction.Get_Rm());
+            const auto shift_reg = m_regs[instruction.Get_Rm()];
 
             offset = static_cast<std::int64_t>(Perform_Shift(shift_type, shift_amount, shift_reg).result);
         }
@@ -413,7 +413,7 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Execute(isa::CSingle_Data_Transfer instruction)
     {
         const auto reg_rn = instruction.Get_Rn();
-        const auto base_addr = reg_rn == PC_REG_IDX ? (PC() + REG_SIZE) : m_regs.at(reg_rn);
+        const auto base_addr = reg_rn == PC_REG_IDX ? (PC() + REG_SIZE) : m_regs[reg_rn];
         const auto offset = Get_Offset(instruction);
 
         const bool pre_indexed = instruction.Is_P_Bit_Set();
@@ -431,7 +431,7 @@ namespace zero_mate::arm1176jzf_s
 
         if (!pre_indexed || instruction.Is_W_Bit_Set())
         {
-            m_regs.at(instruction.Get_Rn()) = indexed_addr;
+            m_regs[instruction.Get_Rn()] = indexed_addr;
         }
     }
 
@@ -445,16 +445,16 @@ namespace zero_mate::arm1176jzf_s
             switch (instruction.Get_Addressing_Mode())
             {
                 case isa::CBlock_Data_Transfer::NAddressing_Mode::IB:
-                    return m_regs.at(base_reg) + REG_SIZE;
+                    return m_regs[base_reg] + REG_SIZE;
 
                 case isa::CBlock_Data_Transfer::NAddressing_Mode::IA:
-                    return m_regs.at(base_reg);
+                    return m_regs[base_reg];
 
                 case isa::CBlock_Data_Transfer::NAddressing_Mode::DB:
-                    return m_regs.at(base_reg) - (number_of_regs * REG_SIZE);
+                    return m_regs[base_reg] - (number_of_regs * REG_SIZE);
 
                 case isa::CBlock_Data_Transfer::NAddressing_Mode::DA:
-                    return m_regs.at(base_reg) - (number_of_regs * REG_SIZE) + REG_SIZE;
+                    return m_regs[base_reg] - (number_of_regs * REG_SIZE) + REG_SIZE;
             }
 
             return {};
@@ -470,11 +470,11 @@ namespace zero_mate::arm1176jzf_s
             {
                 if (store_value)
                 {
-                    m_bus->Write<std::uint32_t>(addr, m_regs.at(reg_idx));
+                    m_bus->Write<std::uint32_t>(addr, m_regs[reg_idx]);
                 }
                 else
                 {
-                    m_regs.at(reg_idx) = m_bus->Read<std::uint32_t>(addr);
+                    m_regs[reg_idx] = m_bus->Read<std::uint32_t>(addr);
                 }
 
                 addr += REG_SIZE;
@@ -487,11 +487,11 @@ namespace zero_mate::arm1176jzf_s
 
             if (!instruction.Is_U_Bit_Set())
             {
-                m_regs.at(base_reg) -= total_size_transferred;
+                m_regs[base_reg] -= total_size_transferred;
             }
             else
             {
-                m_regs.at(base_reg) += total_size_transferred;
+                m_regs[base_reg] += total_size_transferred;
             }
         }
     }
@@ -506,7 +506,7 @@ namespace zero_mate::arm1176jzf_s
             return (high_4_bits << 4U) | low_4_bits;
         }
 
-        return m_regs.at(instruction.Get_Rm());
+        return m_regs[instruction.Get_Rm()];
     }
 
     void CCPU_Core::Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t dest_reg)
@@ -520,17 +520,17 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                m_regs.at(dest_reg) = m_bus->Read<std::uint16_t>(addr);
+                m_regs[dest_reg] = m_bus->Read<std::uint16_t>(addr);
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
                 read_value = m_bus->Read<std::uint8_t>(addr);
-                m_regs.at(dest_reg) = utils::math::Sign_Extend_Value(std::get<std::uint8_t>(read_value));
+                m_regs[dest_reg] = utils::math::Sign_Extend_Value(std::get<std::uint8_t>(read_value));
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
                 read_value = m_bus->Read<std::uint16_t>(addr);
-                m_regs.at(dest_reg) = utils::math::Sign_Extend_Value(std::get<std::uint16_t>(read_value));
+                m_regs[dest_reg] = utils::math::Sign_Extend_Value(std::get<std::uint16_t>(read_value));
                 break;
         }
     }
@@ -542,7 +542,7 @@ namespace zero_mate::arm1176jzf_s
         switch (type)
         {
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                value = static_cast<std::uint16_t>(m_regs.at(src_reg) & 0x0000FFFFU);
+                value = static_cast<std::uint16_t>(m_regs[src_reg] & 0x0000FFFFU);
                 m_bus->Write<std::uint16_t>(addr, value);
                 break;
 
@@ -560,7 +560,7 @@ namespace zero_mate::arm1176jzf_s
         const auto offset = Get_Offset(instruction);
         const auto src_dest_reg = instruction.Get_Rd();
         const auto operation_type = instruction.Get_Type();
-        auto base_addr = m_regs.at(instruction.Get_Rn());
+        auto base_addr = m_regs[instruction.Get_Rn()];
         const bool pre_indexed = instruction.Is_P_Bit_Set();
         std::uint32_t pre_indexed_addr{ base_addr };
 
@@ -586,7 +586,7 @@ namespace zero_mate::arm1176jzf_s
 
         if (!pre_indexed || instruction.Is_W_Bit_Set())
         {
-            m_regs.at(instruction.Get_Rn()) = pre_indexed_addr;
+            m_regs[instruction.Get_Rn()] = pre_indexed_addr;
         }
     }
 

@@ -31,20 +31,21 @@ namespace zero_mate::gui
                 ImGui::TableNextColumn();
                 ImGui::Text("%d", static_cast<int>(i));
                 ImGui::TableNextColumn();
-                ImGui::Text("%s", magic_enum::enum_name(m_gpio->Get_Pins().at(i).Get_Function()).data());
+                ImGui::Text("%s", magic_enum::enum_name(m_gpio->Get_Pin(i).Get_Function()).data());
                 ImGui::TableNextColumn();
 
                 for (std::size_t j = 0; j < peripheral::CGPIO_Manager::CPin::NUMBER_OF_INTERRUPT_TYPES; ++j)
                 {
-                    if (m_gpio->Get_Pins().at(i).Get_Interrupts().at(j))
+                    const auto interrupt_type = magic_enum::enum_cast<peripheral::CGPIO_Manager::CPin::NInterrupt_Type>(static_cast<std::uint8_t>(j));
+
+                    if (m_gpio->Get_Pin(i).Is_Interrupt_Enabled(interrupt_type.value_or(peripheral::CGPIO_Manager::CPin::NInterrupt_Type::Undefined)))
                     {
-                        const auto interrupt_type = magic_enum::enum_cast<peripheral::CGPIO_Manager::CPin::NInterrupt_Type>(static_cast<std::uint8_t>(j));
-                        const std::string_view interrupt_name = magic_enum::enum_name(interrupt_type.value());
+                        const std::string_view interrupt_name = magic_enum::enum_name(interrupt_type.value_or(peripheral::CGPIO_Manager::CPin::NInterrupt_Type::Undefined));
                         ImGui::Text("%s", interrupt_name.data());
                     }
                 }
                 ImGui::TableNextColumn();
-                ImGui::RadioButton("", m_gpio->Get_Pins().at(i).Get_State() == peripheral::CGPIO_Manager::CPin::NState::High);
+                ImGui::RadioButton("", m_gpio->Get_Pin(i).Get_State() == peripheral::CGPIO_Manager::CPin::NState::High);
             }
 
             ImGui::EndTable();
