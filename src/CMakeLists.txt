@@ -36,78 +36,20 @@ target_include_directories(
 # Define the name of the executable
 set(EXECUTABLE_NAME ZeroMate)
 
-# List out source files making up the executable
+# Find all source files making up the core of emulator
+file(GLOB_RECURSE core_source_files "core/*.cpp" "core/*.hpp")
+
+# Find all source files making up the GUI of emulator
+file(GLOB_RECURSE gui_source_files "gui/*.cpp" "gui/*.hpp")
+
+# Define the executable
 add_executable(
     ${EXECUTABLE_NAME}
     main.cpp
-    core/utils/math.hpp
-    core/arm1176jzf_s/registers/cspr.hpp
-    core/arm1176jzf_s/registers/cspr.cpp
-    core/arm1176jzf_s/isa/instruction.hpp
-    core/arm1176jzf_s/isa/instruction.cpp
-    core/arm1176jzf_s/isa/data_processing.hpp
-    core/arm1176jzf_s/isa/data_processing.cpp
-    core/arm1176jzf_s/isa/multiply.hpp
-    core/arm1176jzf_s/isa/multiply.cpp
-    core/arm1176jzf_s/isa/multiply_long.hpp
-    core/arm1176jzf_s/isa/multiply_long.cpp
-    core/arm1176jzf_s/isa/branch_and_exchange.hpp
-    core/arm1176jzf_s/isa/branch_and_exchange.cpp
-    core/arm1176jzf_s/isa/branch.hpp
-    core/arm1176jzf_s/isa/branch.cpp
-    core/arm1176jzf_s/isa/single_data_transfer.hpp
-    core/arm1176jzf_s/isa/single_data_transfer.cpp
-    core/arm1176jzf_s/isa/block_data_transfer.hpp
-    core/arm1176jzf_s/isa/block_data_transfer.cpp
-    core/arm1176jzf_s/isa/halfword_data_transfer.hpp
-    core/arm1176jzf_s/isa/halfword_data_transfer.cpp
-    core/arm1176jzf_s/isa/sw_interrupt.hpp
-    core/arm1176jzf_s/isa/sw_interrupt.cpp
-    core/arm1176jzf_s/isa/isa_decoder.hpp
-    core/arm1176jzf_s/isa/isa_decoder.cpp
-    core/arm1176jzf_s/cpu_core.hpp
-    core/arm1176jzf_s/cpu_core.cpp
-    core/arm1176jzf_s/alu.hpp
-    core/arm1176jzf_s/alu.cpp
-    core/arm1176jzf_s/mac.hpp
-    core/arm1176jzf_s/mac.cpp
-    core/arm1176jzf_s/exceptions.hpp
-    core/peripherals/peripheral.hpp
-    core/peripherals/ram.hpp
-    core/peripherals/bus.hpp
-    core/peripherals/bus.cpp
-    core/utils/elf_loader.hpp
-    core/utils/elf_loader.cpp
-    core/utils/list_parser.hpp
-    core/utils/list_parser.cpp
-    gui/gui.hpp
-    gui/gui.cpp
-    gui/window.hpp
-    gui/windows/registers_window.hpp
-    gui/windows/registers_window.cpp
-    gui/windows/ram_window.hpp
-    gui/windows/ram_window.cpp
-    gui/windows/control_window.hpp
-    gui/windows/control_window.cpp
-    gui/windows/source_code_window.hpp
-    gui/windows/source_code_window.cpp
-    gui/windows/file_window.hpp
-    gui/windows/file_window.cpp
-    gui/windows/log_window.hpp
-    gui/windows/log_window.cpp
-    gui/windows/gpio_window.hpp
-    gui/windows/gpio_window.cpp
-    core/utils/logger/logger.hpp
-    core/utils/logger/logger.cpp
-    core/utils/logger/logger_stdo.hpp
-    core/utils/logger/logger_stdo.cpp
-    gui/windows/log_window.hpp
-    gui/windows/log_window.cpp
-    core/utils/singleton.hpp
-    core/peripherals/gpio.hpp
-    core/peripherals/gpio.cpp
-    core/config.hpp)
+    ${core_source_files}
+    ${gui_source_files})
 
+# Add system headers, so they build passes all compiler warnings
 target_include_directories(
     ${EXECUTABLE_NAME}
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio
