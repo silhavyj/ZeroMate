@@ -12,21 +12,22 @@ namespace zero_mate::gui
 
     void CControl_Window::Render()
     {
-        ImGui::Begin("Control");
-
-        static bool s_running{ false };
-        static bool s_breakpoint{ false };
-
-        Render_Control_Buttons(s_running, s_breakpoint);
-        Render_CPU_State(s_running, s_breakpoint);
-        Render_ImGUI_Demo();
-
-        if (s_running)
+        if (ImGui::Begin("Control"))
         {
-            if (!m_cpu->Step())
+            static bool s_running{ false };
+            static bool s_breakpoint{ false };
+
+            Render_Control_Buttons(s_running, s_breakpoint);
+            Render_CPU_State(s_running, s_breakpoint);
+            Render_ImGUI_Demo();
+
+            if (s_running)
             {
-                s_running = false;
-                s_breakpoint = true;
+                if (!m_cpu->Step())
+                {
+                    s_running = false;
+                    s_breakpoint = true;
+                }
             }
         }
 

@@ -1,4 +1,5 @@
 #include <memory>
+#include <cassert>
 #include <algorithm>
 
 #include <GL/glew.h>
@@ -207,7 +208,7 @@ namespace zero_mate::gui
             }
 
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
-            ImGui::Begin("##ZeroMate Dockspace", &dockspace_open, window_flags);
+            assert(ImGui::Begin("##ZeroMate Dockspace", &dockspace_open, window_flags));
             ImGui::PopStyleVar();
             ImGui::PopStyleVar(2);
 

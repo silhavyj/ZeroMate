@@ -20,73 +20,74 @@ namespace zero_mate::gui
 
     void CFile_Window::Render()
     {
-        ImGui::Begin("File");
-
-        // TODO change these to an enum -> switch
-        static bool s_open_elf{ false };
-        static bool s_open_list{ false };
-        static std::string s_elf_filename{};
-        static std::string s_list_filename{};
-
-        if (ImGui::Button("Open .ELF"))
+        if (ImGui::Begin("File"))
         {
-            if (!s_open_elf && !s_open_list)
+            // TODO change these to an enum -> switch
+            static bool s_open_elf{ false };
+            static bool s_open_list{ false };
+            static std::string s_elf_filename{};
+            static std::string s_list_filename{};
+
+            if (ImGui::Button("Open .ELF"))
             {
-                ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey", "Choose File", ".elf", ".");
-                s_open_elf = true;
-            }
-        }
-
-        ImGui::SameLine();
-        ImGui::Text("%s", s_elf_filename.c_str());
-
-        if (ImGui::Button("Open .list"))
-        {
-            if (!s_open_elf && !s_open_list)
-            {
-                ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey", "Choose File", ".list", ".");
-                s_open_list = true;
-            }
-        }
-
-        ImGui::SameLine();
-        ImGui::Text("%s", s_list_filename.c_str());
-
-        if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey"))
-        {
-            if (ImGuiFileDialog::Instance()->IsOk())
-            {
-                if (s_open_elf)
+                if (!s_open_elf && !s_open_list)
                 {
-                    s_elf_filename = ImGuiFileDialog::Instance()->GetFilePathName();
-                    const auto [error_code, pc] = utils::elf::Load_Kernel(*m_bus, s_elf_filename.c_str());
+                    ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey", "Choose File", ".elf", ".");
+                    s_open_elf = true;
+                }
+            }
 
-                    switch (error_code)
+            ImGui::SameLine();
+            ImGui::Text("%s", s_elf_filename.c_str());
+
+            if (ImGui::Button("Open .list"))
+            {
+                if (!s_open_elf && !s_open_list)
+                {
+                    ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey", "Choose File", ".list", ".");
+                    s_open_list = true;
+                }
+            }
+
+            ImGui::SameLine();
+            ImGui::Text("%s", s_list_filename.c_str());
+
+            if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey"))
+            {
+                if (ImGuiFileDialog::Instance()->IsOk())
+                {
+                    if (s_open_elf)
                     {
-                        case utils::elf::NError_Code::OK:
-                            m_cpu->Set_PC(pc);
-                            break;
+                        s_elf_filename = ImGuiFileDialog::Instance()->GetFilePathName();
+                        const auto [error_code, pc] = utils::elf::Load_Kernel(*m_bus, s_elf_filename.c_str());
 
-                        case utils::elf::NError_Code::ELF_64_Not_Supported:
-                            m_logging_system.Error("64 bit ELF format is not supported by the emulator");
-                            break;
+                        switch (error_code)
+                        {
+                            case utils::elf::NError_Code::OK:
+                                m_cpu->Set_PC(pc);
+                                break;
 
-                        case utils::elf::NError_Code::Error:
-                            m_logging_system.Error("Failed to load the ELF file. Make sure you entered a valid path to a valid ELF file");
-                            break;
+                            case utils::elf::NError_Code::ELF_64_Not_Supported:
+                                m_logging_system.Error("64 bit ELF format is not supported by the emulator");
+                                break;
+
+                            case utils::elf::NError_Code::Error:
+                                m_logging_system.Error("Failed to load the ELF file. Make sure you entered a valid path to a valid ELF file");
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        s_list_filename = ImGuiFileDialog::Instance()->GetFilePathName();
+                        m_source_code = utils::Extract_Text_Section_From_List_File(s_list_filename.c_str());
                     }
                 }
-                else
-                {
-                    s_list_filename = ImGuiFileDialog::Instance()->GetFilePathName();
-                    m_source_code = utils::Extract_Text_Section_From_List_File(s_list_filename.c_str());
-                }
+
+                s_open_elf = false;
+                s_open_list = false;
+
+                ImGuiFileDialog::Instance()->Close();
             }
-
-            s_open_elf = false;
-            s_open_list = false;
-
-            ImGuiFileDialog::Instance()->Close();
         }
 
         ImGui::End();

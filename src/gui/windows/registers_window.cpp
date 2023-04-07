@@ -11,32 +11,33 @@ namespace zero_mate::gui
 
     void CRegisters_Window::Render()
     {
-        ImGui::Begin("CPU Registers");
-
-        if (ImGui::BeginTabBar("##cpu_regs_tabs", ImGuiTabBarFlags_None))
+        if (ImGui::Begin("CPU Registers"))
         {
-            if (ImGui::BeginTabItem("HEX"))
+            if (ImGui::BeginTabBar("##cpu_regs_tabs", ImGuiTabBarFlags_None))
             {
-                Render_Registers_Table("HEX", "Value", "%08X");
-                ImGui::EndTabItem();
+                if (ImGui::BeginTabItem("HEX"))
+                {
+                    Render_Registers_Table("HEX", "Value", "%08X");
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("U32"))
+                {
+                    Render_Registers_Table("U32", "Value", "%u");
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("S32"))
+                {
+                    Render_Registers_Table("S32", "Value", "%d");
+                    ImGui::EndTabItem();
+                }
+
+                ImGui::EndTabBar();
             }
 
-            if (ImGui::BeginTabItem("U32"))
-            {
-                Render_Registers_Table("U32", "Value", "%u");
-                ImGui::EndTabItem();
-            }
-
-            if (ImGui::BeginTabItem("S32"))
-            {
-                Render_Registers_Table("S32", "Value", "%d");
-                ImGui::EndTabItem();
-            }
-
-            ImGui::EndTabBar();
+            Render_Flags();
         }
-
-        Render_Flags();
 
         ImGui::End();
     }
