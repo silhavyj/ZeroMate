@@ -11,6 +11,7 @@ clean:
 	rm -f *.bin
 	rm -f *.hex
 	rm -f *.srec
+	rm -f *.list
 	rm -f *.img
 
 start.o: start.s

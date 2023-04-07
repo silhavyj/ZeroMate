@@ -123,7 +123,7 @@ namespace zero_mate::arm1176jzf_s
                 return m_cspr.Is_Flag_Set(CCSPR::NFlag::C) && !m_cspr.Is_Flag_Set(CCSPR::NFlag::Z);
 
             case isa::CInstruction::NCondition::LS:
-                return !m_cspr.Is_Flag_Set(CCSPR::NFlag::C) && m_cspr.Is_Flag_Set(CCSPR::NFlag::Z);
+                return !m_cspr.Is_Flag_Set(CCSPR::NFlag::C) || m_cspr.Is_Flag_Set(CCSPR::NFlag::Z);
 
             case isa::CInstruction::NCondition::GE:
                 return m_cspr.Is_Flag_Set(CCSPR::NFlag::N) == m_cspr.Is_Flag_Set(CCSPR::NFlag::V);
@@ -441,7 +441,7 @@ namespace zero_mate::arm1176jzf_s
         const auto number_of_regs = static_cast<std::uint32_t>(std::popcount(register_list));
         const auto base_reg = instruction.Get_Rn();
 
-        auto addr = [&]() -> std::uint32_t {
+        auto addr = [&instruction, this, &base_reg, &number_of_regs]() -> std::uint32_t {
             switch (instruction.Get_Addressing_Mode())
             {
                 case isa::CBlock_Data_Transfer::NAddressing_Mode::IB:

@@ -96,11 +96,16 @@ namespace zero_mate::utils::elf
             const auto labels = Get_Labels(elf_reader);
 
             const auto* const text_section = elf_reader.sections[TEXT_SECTION];
-            const auto number_of_disassembled_instructions = cs_disasm(handle, std::bit_cast<const uint8_t*>(text_section->get_data()), text_section->get_size(), 0, 0, &instructions);
+            const auto number_of_disassembled_instructions = cs_disasm(handle,
+                                                                       std::bit_cast<const uint8_t*>(text_section->get_data()),
+                                                                       text_section->get_size(),
+                                                                       text_section->get_address(),
+                                                                       0,
+                                                                       &instructions);
 
             for (std::size_t i = 0; i < number_of_disassembled_instructions; ++i)
             {
-                const auto address = static_cast<std::uint32_t>(text_section->get_address() + instructions[i].address);
+                const auto address = static_cast<std::uint32_t>(instructions[i].address);
                 const auto instruction_str = std::string(instructions[i].mnemonic) + " " + std::string(instructions[i].op_str);
 
                 const std::uint32_t opcode = (static_cast<std::uint32_t>(instructions[i].bytes[3]) << 24U) |
