@@ -6,7 +6,7 @@
 namespace zero_mate::gui
 {
     CSource_Code_Window::CSource_Code_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
-                                             std::vector<utils::TText_Section_Record>& source_code)
+                                             std::vector<utils::elf::TText_Section_Record>& source_code)
     : m_cpu{ cpu }
     , m_source_code{ source_code }
     {
@@ -32,7 +32,7 @@ namespace zero_mate::gui
 
                     switch (type)
                     {
-                        case utils::NText_Section_Record_Type::Instruction:
+                        case utils::elf::NText_Section_Record_Type::Instruction:
                             ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
                             if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints[addr]))
                             {
@@ -69,7 +69,7 @@ namespace zero_mate::gui
                             }
                             break;
 
-                        case utils::NText_Section_Record_Type::Label:
+                        case utils::elf::NText_Section_Record_Type::Label:
                             ImGui::TableNextRow();
                             ImGui::TableNextColumn();
                             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, 0.0f));

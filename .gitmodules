@@ -30,3 +30,7 @@
 [submodule "external/magic_enum"]
 	path = external/magic_enum
 	url = https://github.com/Neargye/magic_enum.git
+[submodule "external/capstone"]
+	path = external/capstone
+	url = https://github.com/capstone-engine/capstone
+	branch = next

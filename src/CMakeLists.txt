@@ -68,7 +68,8 @@ target_link_libraries(
     PRIVATE glfw
     PRIVATE imgui_glfw
     PRIVATE imgui_file_dialog
-    PRIVATE magic_enum)
+    PRIVATE magic_enum
+    PRIVATE capstone)
 
 if(WIN32)
     target_link_libraries(

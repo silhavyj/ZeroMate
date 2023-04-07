@@ -26,7 +26,8 @@ target_link_libraries(
     PRIVATE fmt
     PRIVATE gtest
     PRIVATE elfio
-    PRIVATE magic_enum)
+    PRIVATE magic_enum
+    PRIVATE capstone)
 
 # Include the download CMake file
 include(GoogleTest)

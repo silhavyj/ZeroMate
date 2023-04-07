@@ -118,9 +118,9 @@ namespace zero_mate::gui
                 }
             }
 
-            ImGui::EndChild(); 
+            ImGui::EndChild();
         }
-    
+
         ImGui::End();
     }
 

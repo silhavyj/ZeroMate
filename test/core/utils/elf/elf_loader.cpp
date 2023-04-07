@@ -13,7 +13,7 @@
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
 
-    const auto [error_code, pc] = zero_mate::utils::elf::Load_Kernel(*bus, filename);
+    const auto [error_code, pc, _] = zero_mate::utils::elf::Load_Kernel(*bus, filename);
     EXPECT_EQ(error_code, zero_mate::utils::elf::NError_Code::OK);
 
     zero_mate::arm1176jzf_s::CCPU_Core cpu{ pc, bus };
@@ -26,13 +26,13 @@
 
 // These tests pass in an IDE. They fail in a CI pipeline
 // due to an incorrect path to the .ELF files.
-//
+
 // TEST(elf_loader, test_01)
 // {
 //    const std::string path = "../../../../test/core/utils/elf/source_files/test_01/kernel.elf";
 //    Run_Test(path.c_str(), 2);
 // }
-// 
+
 // TEST(elf_loader, test_02)
 // {
 //    const std::string path = "../../../../test/core/utils/elf/source_files/test_02/kernel.elf";

@@ -39,7 +39,7 @@ namespace zero_mate::gui
     static auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
     static auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>();
 
-    static std::vector<utils::TText_Section_Record> s_source_code{};
+    static std::vector<utils::elf::TText_Section_Record> s_source_code{};
     static auto s_log_window = std::make_shared<CLog_Window>();
 
     static const std::vector<std::shared_ptr<CGUI_Window>> s_windows = {

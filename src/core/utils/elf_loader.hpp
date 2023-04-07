@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "../peripherals/bus.hpp"
 
 namespace zero_mate::utils::elf
@@ -8,13 +10,30 @@ namespace zero_mate::utils::elf
     {
         OK,
         ELF_64_Not_Supported,
-        Error
+        ELF_Loader_Error,
+        Disassembly_Engine_Error,
+        Disassembly_Error
+    };
+
+    enum class NText_Section_Record_Type
+    {
+        Instruction,
+        Label
+    };
+
+    struct TText_Section_Record
+    {
+        NText_Section_Record_Type type;
+        std::uint32_t addr;
+        std::uint32_t opcode;
+        std::string disassembly;
     };
 
     struct TStatus
     {
         NError_Code error_code;
         std::uint32_t pc;
+        std::vector<TText_Section_Record> disassembly;
     };
 
     [[nodiscard]] TStatus Load_Kernel(CBus& bus, const char* filename);
