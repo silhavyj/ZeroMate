@@ -1,5 +1,3 @@
-#include <fmt/format.h>
-
 #include "log_window.hpp"
 
 namespace zero_mate::gui

@@ -50,6 +50,7 @@ namespace zero_mate::gui
                             case utils::elf::NError_Code::OK:
                                 m_cpu->Set_PC(pc);
                                 m_source_code = disassembly;
+                                m_logging_system.Info(fmt::format("The .ELF file has been loaded successfully. The program starts at 0x{:08X}", pc).c_str());
                                 break;
 
                             case utils::elf::NError_Code::ELF_64_Not_Supported:

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <mutex>
 #include <vector>
 #include <memory>
 #include <cstdint>
@@ -58,5 +59,6 @@ namespace zero_mate::utils
         static std::string_view Extract_Filename(const std::source_location& location);
 
         std::vector<std::shared_ptr<ILogger>> m_loggers;
+        std::mutex m_mtx;
     };
 }

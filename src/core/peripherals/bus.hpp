@@ -2,6 +2,7 @@
 
 #include <bit>
 #include <set>
+#include <mutex>
 #include <limits>
 #include <cstdint>
 #include <memory>
@@ -33,6 +34,8 @@ namespace zero_mate
         template<typename Type>
         void Write(std::uint32_t addr, Type value, bool check_alignment = true)
         {
+            const std::lock_guard<std::mutex> lock(m_mtx);
+
             auto peripheral_iter = Get_Peripheral<Type>(addr, check_alignment);
             const auto relative_addr = addr - peripheral_iter->start_addr;
 
@@ -42,6 +45,8 @@ namespace zero_mate
         template<typename Type>
         [[nodiscard]] Type Read(std::uint32_t addr, bool check_alignment = true)
         {
+            const std::lock_guard<std::mutex> lock(m_mtx);
+
             Type value{};
             auto peripheral_iter = Get_Peripheral<Type>(addr, check_alignment);
             const auto relative_addr = addr - peripheral_iter->start_addr;
@@ -108,5 +113,6 @@ namespace zero_mate
         }
 
         Peripherals_t m_peripherals;
+        std::mutex m_mtx;
     };
 }
