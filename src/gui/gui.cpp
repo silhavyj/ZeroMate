@@ -109,6 +109,7 @@ namespace zero_mate::gui
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 
         GLFWwindow* window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_WEIGHT, WINDOW_TITLE, nullptr, nullptr);
+
         if (window == nullptr)
         {
             s_logging_system.Error("Failed to create a GLFW window");
@@ -206,17 +207,18 @@ namespace zero_mate::gui
             }
 
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
-            ImGui::Begin("DockSpace Demo", &dockspace_open, window_flags);
+            ImGui::Begin("##ZeroMate Dockspace", &dockspace_open, window_flags);
             ImGui::PopStyleVar();
             ImGui::PopStyleVar(2);
 
             if (imgui_io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
             {
-                const ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
+                const ImGuiID dockspace_id = ImGui::GetID("ZeroMateDockspace");
                 ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
             }
 
             zero_mate::gui::Render_GUI();
+
             ImGui::End();
             ImGui::Render();
 

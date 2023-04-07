@@ -33,9 +33,6 @@ target_include_directories(
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog)
 
-# Define the name of the executable
-set(EXECUTABLE_NAME ZeroMate)
-
 # Find all source files making up the core of emulator
 file(GLOB_RECURSE core_source_files "core/*.cpp" "core/*.hpp")
 
@@ -44,14 +41,14 @@ file(GLOB_RECURSE gui_source_files "gui/*.cpp" "gui/*.hpp")
 
 # Define the executable
 add_executable(
-    ${EXECUTABLE_NAME}
+    zero_mate
     main.cpp
     ${core_source_files}
     ${gui_source_files})
 
 # Add system headers, so they build passes all compiler warnings
 target_include_directories(
-    ${EXECUTABLE_NAME}
+    zero_mate
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external
     SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
@@ -62,7 +59,7 @@ target_include_directories(
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
-    ${EXECUTABLE_NAME}
+    zero_mate
     PRIVATE project_warnings
     PRIVATE project_options
     PRIVATE fmt
@@ -75,7 +72,7 @@ target_link_libraries(
 
 if(WIN32)
     target_link_libraries(
-        ${EXECUTABLE_NAME}
+        zero_mate
         PRIVATE $<$<CXX_COMPILER_ID:GNU>:opengl32.a>
         PRIVATE $<$<CXX_COMPILER_ID:MSVC>:opengl32.lib>)
 endif()
