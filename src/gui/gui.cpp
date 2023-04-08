@@ -1,6 +1,6 @@
-#include <memory>
 #include <cassert>
 #include <algorithm>
+#include <filesystem>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -21,8 +21,6 @@
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
-#include "../core/peripherals/gpio.hpp"
-
 // #define SHOW_EXAMPLE_OF_LOG_MESSAGES
 
 namespace zero_mate::gui
@@ -32,6 +30,7 @@ namespace zero_mate::gui
     static inline constexpr std::uint32_t WINDOW_WIDTH = 1240;
     static inline constexpr std::uint32_t WINDOW_WEIGHT = 720;
 
+    static auto logger_stdo = std::make_shared<utils::CLogger_STDO>();
     static auto& s_logging_system = utils::CSingleton<utils::CLogging_System>::Get_Instance();
 
     static auto s_ram = std::make_shared<peripheral::CRAM<>>();
@@ -55,8 +54,8 @@ namespace zero_mate::gui
 
     static void Initialize_Logging_System()
     {
-        auto logger_stdo = std::make_shared<utils::CLogger_STDO>();
         logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
+        s_log_window->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
 
         s_logging_system.Add_Logger(logger_stdo);
         s_logging_system.Add_Logger(s_log_window);
@@ -94,8 +93,10 @@ namespace zero_mate::gui
         std::for_each(s_windows.begin(), s_windows.end(), [](const auto& window) -> void { window->Render(); });
     }
 
-    int Main_GUI(int argc, const char* argv[])
+    int Main_GUI([[maybe_unused]] int argc, [[maybe_unused]]  const char* argv[])
     {
+        Initialize();
+
         glfwSetErrorCallback([](int error_code, const char* description) -> void {
             s_logging_system.Error(fmt::format("Error {} occurred when initializing GLFW: {}", error_code, description).c_str());
             std::terminate();
@@ -149,20 +150,10 @@ namespace zero_mate::gui
         ImGui_ImplGlfw_InitForOpenGL(window, true);
         ImGui_ImplOpenGL3_Init("#version 130");
 
-        if (argc >= 2)
+        if (std::filesystem::exists(FONT_PATH) && std::filesystem::exists(ICONS_PATH))
         {
-            if (imgui_io.Fonts->AddFontFromFileTTF(argv[1], 15.0f) == nullptr)
-            {
-                // TODO
-            }
-        }
-        else
-        {
-            imgui_io.Fonts->AddFontDefault();
-        }
+            imgui_io.Fonts->AddFontFromFileTTF(FONT_PATH, 15.0f);
 
-        if (argc >= 3)
-        {
             const float baseFontSize = 13.0f;
             const float iconFontSize = baseFontSize * 2.0f / 3.0f;
 
@@ -171,13 +162,16 @@ namespace zero_mate::gui
             icons_config.MergeMode = true;
             icons_config.PixelSnapH = true;
             icons_config.GlyphMinAdvanceX = iconFontSize;
-            imgui_io.Fonts->AddFontFromFileTTF(argv[2], iconFontSize, &icons_config, icons_ranges);
+            imgui_io.Fonts->AddFontFromFileTTF(ICONS_PATH, iconFontSize, &icons_config, icons_ranges);
+        }
+        else
+        {
+            s_logging_system.Warning("Failed to load the font and font (using the default one)");
+            imgui_io.Fonts->AddFontDefault();
         }
 
         int display_w{};
         int display_h{};
-
-        Initialize();
 
         while (!glfwWindowShouldClose(window))
         {

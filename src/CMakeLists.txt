@@ -78,4 +78,10 @@ if(WIN32)
         PRIVATE $<$<CXX_COMPILER_ID:MSVC>:opengl32.lib>)
 endif()
 
+# Copy the fonts from misc to the location of the executable
+add_custom_command(
+    TARGET zero_mate POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/misc/fonts $<TARGET_FILE_DIR:zero_mate>/fonts)
+
 # EOF
