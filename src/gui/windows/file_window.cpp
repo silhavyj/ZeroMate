@@ -64,10 +64,6 @@ namespace zero_mate::gui
                             case utils::elf::NError_Code::Disassembly_Engine_Error:
                                 m_logging_system.Error("Failed to initialize a disassembly engine");
                                 break;
-
-                            case utils::elf::NError_Code::Disassembly_Error:
-                                m_logging_system.Error("Failed to disassemble the .ELF file");
-                                break;
                         }
                     }
                 }

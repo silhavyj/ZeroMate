@@ -11,8 +11,7 @@ namespace zero_mate::utils::elf
         OK,
         ELF_64_Not_Supported,
         ELF_Loader_Error,
-        Disassembly_Engine_Error,
-        Disassembly_Error
+        Disassembly_Engine_Error
     };
 
     enum class NText_Section_Record_Type
@@ -35,6 +34,8 @@ namespace zero_mate::utils::elf
         std::uint32_t pc;
         std::vector<TText_Section_Record> disassembly;
     };
+
+    inline static const char* const UNKNOWN_INSTRUCTION_STR = "Unknown instruction";
 
     [[nodiscard]] TStatus Load_Kernel(CBus& bus, const char* filename);
 }

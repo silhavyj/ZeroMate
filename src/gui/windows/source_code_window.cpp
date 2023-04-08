@@ -1,6 +1,8 @@
 #include <imgui/imgui.h>
 #include <fmt/include/fmt/core.h>
 
+#include "../../core/utils/elf_loader.hpp"
+
 #include "source_code_window.hpp"
 
 namespace zero_mate::gui
@@ -60,7 +62,17 @@ namespace zero_mate::gui
                             ImGui::PopStyleColor();
 
                             ImGui::TableNextColumn();
-                            ImGui::Text("%s", disassembly.c_str());
+
+                            if (disassembly == utils::elf::UNKNOWN_INSTRUCTION_STR)
+                            {
+                                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 0.85f));
+                                ImGui::Text("%s", disassembly.c_str());
+                                ImGui::PopStyleColor();
+                            }
+                            else
+                            {
+                                ImGui::Text("%s", disassembly.c_str());
+                            }
 
                             if (addr == m_cpu->m_regs[arm1176jzf_s::CCPU_Core::PC_REG_IDX])
                             {

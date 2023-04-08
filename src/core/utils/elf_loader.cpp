@@ -92,44 +92,65 @@ namespace zero_mate::utils::elf
                 return result;
             }
 
-            cs_insn* instructions{ nullptr };
             const auto labels = Get_Labels(elf_reader);
-
             const auto* const text_section = elf_reader.sections[TEXT_SECTION];
-            const auto number_of_disassembled_instructions = cs_disasm(handle,
-                                                                       std::bit_cast<const uint8_t*>(text_section->get_data()),
-                                                                       text_section->get_size(),
-                                                                       text_section->get_address(),
-                                                                       0,
-                                                                       &instructions);
+            const auto* data = std::bit_cast<const uint8_t*>(text_section->get_data());
 
-            for (std::size_t i = 0; i < number_of_disassembled_instructions; ++i)
+            cs_insn* instructions{ nullptr };
+            bool done{ false };
+            std::size_t remaining_section_size{ text_section->get_size() };
+            std::size_t address_offset{ text_section->get_address() };
+
+            while (!done)
             {
-                const auto address = static_cast<std::uint32_t>(instructions[i].address);
-                const auto instruction_str = std::string(instructions[i].mnemonic) + " " + std::string(instructions[i].op_str);
+                instructions = nullptr;
 
-                const std::uint32_t opcode = (static_cast<std::uint32_t>(instructions[i].bytes[3]) << 24U) |
-                                             (static_cast<std::uint32_t>(instructions[i].bytes[2]) << 16U) |
-                                             (static_cast<std::uint32_t>(instructions[i].bytes[1]) << 8U) |
-                                             (static_cast<std::uint32_t>(instructions[i].bytes[0]) << 0U);
+                const auto count = cs_disasm(handle, data, remaining_section_size, address_offset, 0, &instructions);
 
-                if (labels.contains(address))
+                for (std::size_t i = 0; i < count; ++i)
                 {
-                    result.disassembly.push_back({ NText_Section_Record_Type::Label, {}, {}, labels.at(address) });
+                    const auto address = static_cast<std::uint32_t>(instructions[i].address);
+                    const auto instruction_str = std::string(instructions[i].mnemonic) + " " + std::string(instructions[i].op_str);
+
+                    const std::uint32_t opcode = (static_cast<std::uint32_t>(instructions[i].bytes[3]) << 24U) |
+                                                 (static_cast<std::uint32_t>(instructions[i].bytes[2]) << 16U) |
+                                                 (static_cast<std::uint32_t>(instructions[i].bytes[1]) << 8U) |
+                                                 (static_cast<std::uint32_t>(instructions[i].bytes[0]) << 0U);
+
+                    if (labels.contains(address))
+                    {
+                        result.disassembly.push_back({ NText_Section_Record_Type::Label, {}, {}, labels.at(address) });
+                    }
+
+                    result.disassembly.push_back({ NText_Section_Record_Type::Instruction,
+                                                   address,
+                                                   opcode,
+                                                   instruction_str });
                 }
 
-                result.disassembly.push_back({ NText_Section_Record_Type::Instruction,
-                                               address,
-                                               opcode,
-                                               instruction_str });
+                cs_free(instructions, count);
+
+                data += count * sizeof(std::uint32_t);
+                remaining_section_size -= count * sizeof(std::uint32_t);
+                address_offset += count * sizeof(std::uint32_t);
+
+                if (remaining_section_size == 0)
+                {
+                    done = true;
+                }
+                else
+                {
+                    result.disassembly.push_back({ NText_Section_Record_Type::Instruction,
+                                                   static_cast<std::uint32_t>(address_offset),
+                                                   static_cast<std::uint32_t>(*data),
+                                                   UNKNOWN_INSTRUCTION_STR });
+
+                    data += sizeof(std::uint32_t);
+                    remaining_section_size -= sizeof(std::uint32_t);
+                    address_offset += sizeof(std::uint32_t);
+                }
             }
 
-            if (result.disassembly.empty())
-            {
-                result.status = NError_Code::Disassembly_Error;
-            }
-
-            cs_free(instructions, number_of_disassembled_instructions);
             cs_close(&handle);
 
             return result;
