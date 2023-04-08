@@ -4,6 +4,8 @@
 #include "core/arm1176jzf_s/cpu_core.hpp"
 #include "core/utils/elf_loader.hpp"
 
+// #define ENABLE_ELF_TESTS
+
 [[maybe_unused]] static void Run_Test(const char* filename, std::uint32_t expected_value)
 {
     static constexpr std::uint32_t RAM_SIZE = 1024 * 1024 * 256;
@@ -24,17 +26,21 @@
     EXPECT_EQ(cpu.m_regs[0], expected_value);
 }
 
-// These tests pass in an IDE. They fail in a CI pipeline
-// due to an incorrect path to the .ELF files.
+#ifdef ENABLE_ELF_TESTS
 
-// TEST(elf_loader, test_01)
-// {
-//    const std::string path = "../../../../test/core/utils/elf/source_files/test_01/kernel.elf";
-//    Run_Test(path.c_str(), 2);
-// }
+    // These tests pass in an IDE. They fail in a CI pipeline
+    // due to an incorrect path to the .ELF files.
 
-// TEST(elf_loader, test_02)
-// {
-//    const std::string path = "../../../../test/core/utils/elf/source_files/test_02/kernel.elf";
-//    Run_Test(path.c_str(), 6);
-// }
+    TEST(elf_loader, test_01)
+    {
+        const std::string path = "../../../../test/core/utils/elf/source_files/test_01/kernel.elf";
+        Run_Test(path.c_str(), 2);
+    }
+
+    TEST(elf_loader, test_02)
+    {
+        const std::string path = "../../../../test/core/utils/elf/source_files/test_02/kernel.elf";
+        Run_Test(path.c_str(), 6);
+    }
+
+#endif
