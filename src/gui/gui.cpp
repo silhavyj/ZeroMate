@@ -21,6 +21,7 @@
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
+
 // #define SHOW_EXAMPLE_OF_LOG_MESSAGES
 
 namespace zero_mate::gui

@@ -16,18 +16,20 @@ add_executable(
 # Add system headers, so they build passes all compiler warnings
 target_include_directories(
     unit_tests
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include)
+    SYSTEM PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include)
 
 # Link libraries to the executable
 target_link_libraries(
     unit_tests
-    PRIVATE project_warnings project_options
-    PRIVATE fmt
-    PRIVATE gtest
-    PRIVATE elfio
-    PRIVATE magic_enum
-    PRIVATE capstone)
+    PRIVATE 
+        project_warnings project_options
+        fmt
+        gtest
+        elfio
+        magic_enum
+        capstone)
 
 # Include the download CMake file
 include(GoogleTest)

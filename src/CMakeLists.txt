@@ -13,13 +13,15 @@ add_library(
 
 target_include_directories(
     imgui_glfw
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/backends)
+    SYSTEM PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/backends)
 
 target_link_libraries(
     imgui_glfw
-    PRIVATE libglew_static
-    PRIVATE glfw)
+    PRIVATE 
+        libglew_static
+        glfw)
 
 # Build ImGuiFileDialog sources separately as a static library.
 # Otherwise they would break the build as they do not pass
@@ -30,8 +32,9 @@ add_library(
 
 target_include_directories(
     imgui_file_dialog
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog)
+    SYSTEM PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog)
 
 # Find all source files making up the core of emulator
 file(GLOB_RECURSE core_source_files "core/*.cpp" "core/*.hpp")
@@ -49,33 +52,36 @@ add_executable(
 # Add system headers, so they build passes all compiler warnings
 target_include_directories(
     zero_mate
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/IconFontCppHeaders
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog
-    SYSTEM PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include)
+    SYSTEM PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/IconFontCppHeaders
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
     zero_mate
-    PRIVATE project_warnings
-    PRIVATE project_options
-    PRIVATE fmt
-    PRIVATE elfio
-    PRIVATE libglew_static
-    PRIVATE glfw
-    PRIVATE imgui_glfw
-    PRIVATE imgui_file_dialog
-    PRIVATE magic_enum
-    PRIVATE capstone)
+    PRIVATE 
+        project_warnings
+        project_options
+        fmt
+        elfio
+        libglew_static
+        glfw
+        imgui_glfw
+        imgui_file_dialog
+        magic_enum
+        capstone)
 
 if(WIN32)
     target_link_libraries(
         zero_mate
-        PRIVATE $<$<CXX_COMPILER_ID:GNU>:opengl32.a>
-        PRIVATE $<$<CXX_COMPILER_ID:MSVC>:opengl32.lib>)
+        PRIVATE 
+            $<$<CXX_COMPILER_ID:GNU>:opengl32.a>
+            $<$<CXX_COMPILER_ID:MSVC>:opengl32.lib>)
 endif()
 
 # Copy the fonts from misc and imgui.ini to the location of the executable
