@@ -68,7 +68,6 @@ namespace zero_mate::gui
                                 ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 0.85f));
                                 ImGui::Text("%s", disassembly.c_str());
                                 ImGui::PopStyleColor();
-
                             }
                             else
                             {
@@ -79,6 +78,11 @@ namespace zero_mate::gui
                             {
                                 const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
                                 ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
+
+                                if (!ImGui::IsItemVisible())
+                                {
+                                    ImGui::SetScrollHereY(0.2f);
+                                }
                             }
                             break;
 
