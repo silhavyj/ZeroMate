@@ -1,10 +1,13 @@
 #include <bit>
 #include <unordered_map>
 
+#include <fmt/format.h>
 #include <elfio/elfio.hpp>
 #include <capstone/capstone.h>
 
+#include "singleton.hpp"
 #include "elf_loader.hpp"
+#include "logger/logger.hpp"
 
 namespace zero_mate::utils::elf
 {
@@ -92,6 +95,7 @@ namespace zero_mate::utils::elf
                 return result;
             }
 
+            auto& logging_system = CSingleton<CLogging_System>::Get_Instance();
             const auto labels = Get_Labels(elf_reader);
             const auto* const text_section = elf_reader.sections[TEXT_SECTION];
             const auto* data = std::bit_cast<const uint8_t*>(text_section->get_data());
@@ -144,6 +148,8 @@ namespace zero_mate::utils::elf
                                                    static_cast<std::uint32_t>(address_offset),
                                                    static_cast<std::uint32_t>(*data),
                                                    UNKNOWN_INSTRUCTION_STR });
+
+                    logging_system.Warning(fmt::format("Unknown instruction found at address 0x{:08X} in the .text section of the ELF file", address_offset).c_str());
 
                     data += sizeof(std::uint32_t);
                     remaining_section_size -= sizeof(std::uint32_t);

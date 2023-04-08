@@ -40,7 +40,7 @@ namespace zero_mate::utils
         const std::lock_guard<std::mutex> lock(m_mtx);
 
         const auto filename = Extract_Filename(location);
-        const std::string msg_formatted = fmt::format("{} [{}:{}:{}] {}", DEBUG_MSG_PREFIX, filename, location.line(), location.function_name(), msg);
+        const std::string msg_formatted = fmt::format("{} [{}:{}] {}", DEBUG_MSG_PREFIX, filename, location.line(), msg);
 
         std::for_each(m_loggers.begin(), m_loggers.end(), [&](auto& logger) -> void { logger->Debug(msg_formatted.c_str()); });
     }
@@ -50,7 +50,7 @@ namespace zero_mate::utils
         const std::lock_guard<std::mutex> lock(m_mtx);
 
         const auto filename = Extract_Filename(location);
-        const std::string msg_formatted = fmt::format("{} [{}:{}:{}] {}", INFO_MSG_PREFIX, filename, location.line(), location.function_name(), msg);
+        const std::string msg_formatted = fmt::format("{} [{}:{}] {}", INFO_MSG_PREFIX, filename, location.line(), msg);
 
         std::for_each(m_loggers.begin(), m_loggers.end(), [&](auto& logger) -> void { logger->Info(msg_formatted.c_str()); });
     }
@@ -60,7 +60,7 @@ namespace zero_mate::utils
         const std::lock_guard<std::mutex> lock(m_mtx);
 
         const auto filename = Extract_Filename(location);
-        const std::string msg_formatted = fmt::format("{} [{}:{}:{}] {}", WARNING_MSG_PREFIX, filename, location.line(), location.function_name(), msg);
+        const std::string msg_formatted = fmt::format("{} [{}:{}] {}", WARNING_MSG_PREFIX, filename, location.line(), msg);
 
         std::for_each(m_loggers.begin(), m_loggers.end(), [&](auto& logger) -> void { logger->Warning(msg_formatted.c_str()); });
     }
@@ -70,7 +70,7 @@ namespace zero_mate::utils
         const std::lock_guard<std::mutex> lock(m_mtx);
 
         const auto filename = Extract_Filename(location);
-        const std::string msg_formatted = fmt::format("{} [{}:{}:{}] {}", ERROR_MSG_PREFIX, filename, location.line(), location.function_name(), msg);
+        const std::string msg_formatted = fmt::format("{} [{}:{}] {}", ERROR_MSG_PREFIX, filename, location.line(), msg);
 
         std::for_each(m_loggers.begin(), m_loggers.end(), [&](auto& logger) -> void { logger->Error(msg_formatted.c_str()); });
     }

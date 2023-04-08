@@ -68,6 +68,7 @@ namespace zero_mate::gui
                                 ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 0.85f));
                                 ImGui::Text("%s", disassembly.c_str());
                                 ImGui::PopStyleColor();
+
                             }
                             else
                             {
