@@ -9,7 +9,8 @@ namespace zero_mate::gui
     class CControl_Window final : public CGUI_Window
     {
     public:
-        explicit CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu);
+        explicit CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
+                                 bool& scroll_to_curr_line);
 
         void Render() override;
 
@@ -19,5 +20,6 @@ namespace zero_mate::gui
         static void Render_ImGUI_Demo();
 
         std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;
+        bool& m_scroll_to_curr_line;
     };
 }

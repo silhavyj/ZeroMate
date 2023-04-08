@@ -5,13 +5,17 @@
 
 namespace zero_mate::gui
 {
-    CControl_Window::CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu)
+    CControl_Window::CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
+                                     bool& scroll_to_curr_line)
     : m_cpu{ cpu }
+    , m_scroll_to_curr_line{ scroll_to_curr_line }
     {
     }
 
     void CControl_Window::Render()
     {
+        m_scroll_to_curr_line = false;
+
         if (ImGui::Begin("Control"))
         {
             static bool s_running{ false };
@@ -27,6 +31,7 @@ namespace zero_mate::gui
                 {
                     s_running = false;
                     s_breakpoint = true;
+                    m_scroll_to_curr_line = true;
                 }
             }
         }
@@ -39,6 +44,7 @@ namespace zero_mate::gui
         if (ImGui::Button(ICON_FA_STEP_FORWARD " Step") && !running)
         {
             m_cpu->Step(true);
+            m_scroll_to_curr_line = true;
         }
 
         ImGui::SameLine();
@@ -55,6 +61,7 @@ namespace zero_mate::gui
         if (ImGui::Button(ICON_FA_STOP " Stop"))
         {
             running = false;
+            m_scroll_to_curr_line = true;
         }
     }
 

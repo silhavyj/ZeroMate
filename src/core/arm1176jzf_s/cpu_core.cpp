@@ -74,9 +74,20 @@ namespace zero_mate::arm1176jzf_s
 
     isa::CInstruction CCPU_Core::Fetch_Instruction()
     {
-        const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
-        PC() += REG_SIZE;
-        return instruction;
+        try
+        {
+            const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
+            PC() += REG_SIZE;
+            return instruction;
+        }
+        catch (const exceptions::CData_Abort& ex)
+        {
+            m_logging_system.Error(fmt::format("Data abort exception while fetching an instruction: {}", ex.what()).c_str());
+
+            // TODO reset the cpu
+            PC() = 0;
+            return Fetch_Instruction(); // Assumes the RAM is mapped to the beginning of the address space
+        }
     }
 
     std::uint32_t& CCPU_Core::PC() noexcept

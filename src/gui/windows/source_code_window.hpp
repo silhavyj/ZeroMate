@@ -13,7 +13,8 @@ namespace zero_mate::gui
     {
     public:
         explicit CSource_Code_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
-                                     std::vector<utils::elf::TText_Section_Record>& source_code);
+                                     std::vector<utils::elf::TText_Section_Record>& source_code,
+                                     const bool& scroll_to_curr_line);
 
         void Render() override;
 
@@ -25,5 +26,6 @@ namespace zero_mate::gui
         std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;
         std::vector<utils::elf::TText_Section_Record>& m_source_code;
         std::unordered_map<std::uint32_t, bool> m_breakpoints;
+        const bool& m_scroll_to_curr_line;
     };
 }
