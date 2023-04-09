@@ -9,11 +9,13 @@ namespace zero_mate::gui
 {
     CFile_Window::CFile_Window(std::shared_ptr<CBus> bus,
                                std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
-                               std::vector<utils::elf::TText_Section_Record>& source_code)
+                               std::vector<utils::elf::TText_Section_Record>& source_code,
+                               bool& elf_file_has_been_loaded)
     : m_bus{ bus }
     , m_cpu{ cpu }
     , m_source_code{ source_code }
     , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
     {
     }
 
@@ -51,6 +53,7 @@ namespace zero_mate::gui
                                 m_cpu->Set_PC(pc);
                                 m_source_code = disassembly;
                                 m_logging_system.Info(fmt::format("The .ELF file has been loaded successfully. The program starts at 0x{:08X}", pc).c_str());
+                                m_elf_file_has_been_loaded = true;
                                 break;
 
                             case utils::elf::NError_Code::ELF_64_Not_Supported:

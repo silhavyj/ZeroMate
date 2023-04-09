@@ -1,5 +1,7 @@
 #pragma once
 
+#include <mutex>
+
 #include "logger.hpp"
 
 namespace zero_mate::utils
@@ -14,5 +16,8 @@ namespace zero_mate::utils
         void Info(const char* msg) override;
         void Warning(const char* msg) override;
         void Error(const char* msg) override;
+
+    private:
+        std::mutex m_mtx;
     };
 }

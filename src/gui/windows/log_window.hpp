@@ -1,5 +1,6 @@
 #pragma once
 
+#include <mutex>
 #include <vector>
 
 #include <imgui/imgui.h>
@@ -64,5 +65,6 @@ namespace zero_mate::gui
         ImGuiTextFilter m_filter;
         bool m_auto_scroll;
         CCircular_Log_Buffer<std::string, MAX_LOGS> m_buffer;
+        std::mutex m_mtx;
     };
 }

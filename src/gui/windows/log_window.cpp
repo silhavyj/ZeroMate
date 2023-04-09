@@ -15,6 +15,8 @@ namespace zero_mate::gui
 
     void CLog_Window::Render()
     {
+        const std::lock_guard<std::mutex> lock(m_mtx);
+
         if (ImGui::Begin("Logs"))
         {
             if (ImGui::BeginPopup("Options"))
@@ -140,6 +142,8 @@ namespace zero_mate::gui
 
     void CLog_Window::Debug(const char* msg)
     {
+        const std::lock_guard<std::mutex> lock(m_mtx);
+
         if (m_logging_level <= NLogging_Level::Debug)
         {
             m_buffer.Add(msg);
@@ -148,6 +152,8 @@ namespace zero_mate::gui
 
     void CLog_Window::Info(const char* msg)
     {
+        const std::lock_guard<std::mutex> lock(m_mtx);
+
         if (m_logging_level <= NLogging_Level::Info)
         {
             m_buffer.Add(msg);
@@ -156,6 +162,8 @@ namespace zero_mate::gui
 
     void CLog_Window::Warning(const char* msg)
     {
+        const std::lock_guard<std::mutex> lock(m_mtx);
+
         if (m_logging_level <= NLogging_Level::Warning)
         {
             m_buffer.Add(msg);
@@ -164,6 +172,8 @@ namespace zero_mate::gui
 
     void CLog_Window::Error(const char* msg)
     {
+        const std::lock_guard<std::mutex> lock(m_mtx);
+
         if (m_logging_level <= NLogging_Level::Error)
         {
             m_buffer.Add(msg);
