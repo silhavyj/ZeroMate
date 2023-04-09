@@ -43,17 +43,25 @@ namespace zero_mate::gui
                 s_breakpoint = false;
 
                 std::thread cpu_thread([this]() -> void {
+                    m_logging_system.Info("CPU execution has started");
+
                     while (!s_stop_cpu_thread)
                     {
                         if (!m_cpu->Step())
                         {
-                            s_start_cpu_thread = true;
                             s_breakpoint = true;
+                            s_stop_cpu_thread = true;
+                            m_logging_system.Info("CPU execution has hit a breakpoint");
                         }
                     }
 
                     s_running = false;
                     m_scroll_to_curr_line = true;
+
+                    if (!s_breakpoint)
+                    {
+                        m_logging_system.Info("CPU execution has stopped");
+                    }
                 });
                 cpu_thread.detach();
             }
