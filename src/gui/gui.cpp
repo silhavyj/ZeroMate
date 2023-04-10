@@ -59,7 +59,7 @@ namespace zero_mate::gui
         void Initialize_Logging_System()
         {
             logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
-            s_log_window->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
+            s_log_window->Set_Logging_Level(utils::ILogger::NLogging_Level::Info);
 
             s_logging_system.Add_Logger(logger_stdo);
             s_logging_system.Add_Logger(s_log_window);
@@ -186,7 +186,7 @@ namespace zero_mate::gui
             ImGui_ImplGlfw_NewFrame();
             ImGui::NewFrame();
 
-            static bool dockspace_open = true;
+            [[maybe_unused]] static bool dockspace_open = true;
             static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
 
             ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;

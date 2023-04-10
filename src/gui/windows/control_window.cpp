@@ -18,6 +18,9 @@ namespace zero_mate::gui
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
     , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_cpu_running{ cpu_running }
+    , m_breakpoint_hit{ false }
+    , m_start_cpu_thread{ false }
+    , m_stop_cpu_thread{ false }
     {
     }
 
@@ -25,44 +28,20 @@ namespace zero_mate::gui
     {
         if (ImGui::Begin("Control"))
         {
-            static std::atomic<bool> s_start_cpu_thread{ false };
-            static std::atomic<bool> s_stop_cpu_thread{ false };
 
-            static bool s_breakpoint{ false };
-
-            Render_Control_Buttons(s_start_cpu_thread, s_stop_cpu_thread);
-            Render_CPU_State(s_breakpoint);
+            Render_Control_Buttons();
+            Render_CPU_State();
 
             Render_ImGUI_Demo();
 
-            if (s_start_cpu_thread)
+            if (m_start_cpu_thread)
             {
-                s_start_cpu_thread = false;
-                s_stop_cpu_thread = false;
+                m_start_cpu_thread = false;
+                m_stop_cpu_thread = false;
                 m_cpu_running = true;
-                s_breakpoint = false;
+                m_breakpoint_hit = false;
 
-                std::thread cpu_thread([this]() -> void {
-                    m_logging_system.Info("CPU execution has started");
-
-                    while (!s_stop_cpu_thread)
-                    {
-                        if (!m_cpu->Step())
-                        {
-                            s_breakpoint = true;
-                            s_stop_cpu_thread = true;
-                            m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->m_regs[arm1176jzf_s::CCPU_Core::PC_REG_IDX]).c_str());
-                        }
-                    }
-
-                    m_cpu_running = false;
-                    m_scroll_to_curr_line = true;
-
-                    if (!s_breakpoint)
-                    {
-                        m_logging_system.Info("CPU execution has stopped");
-                    }
-                });
+                std::thread cpu_thread(&CControl_Window::Run, this);
                 cpu_thread.detach();
             }
         }
@@ -70,8 +49,7 @@ namespace zero_mate::gui
         ImGui::End();
     }
 
-    void CControl_Window::Render_Control_Buttons(std::atomic<bool>& start_cpu_thread,
-                                                 std::atomic<bool>& stop_cpu_thread)
+    void CControl_Window::Render_Control_Buttons()
     {
         if (ImGui::Button(ICON_FA_STEP_FORWARD " Step") && !m_cpu_running)
         {
@@ -96,7 +74,7 @@ namespace zero_mate::gui
             }
             else
             {
-                start_cpu_thread = true;
+                m_start_cpu_thread = true;
                 m_cpu->Step(true);
             }
         }
@@ -105,16 +83,16 @@ namespace zero_mate::gui
 
         if (ImGui::Button(ICON_FA_STOP " Stop") && m_cpu_running)
         {
-            stop_cpu_thread = true;
+            m_stop_cpu_thread = true;
         }
     }
 
-    void CControl_Window::Render_CPU_State(bool breakpoint) const
+    void CControl_Window::Render_CPU_State() const
     {
         ImGui::Text("State:");
         ImGui::SameLine();
 
-        if (breakpoint)
+        if (m_breakpoint_hit)
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 0.7f, 1.0f, 1.0f));
             ImGui::Text("breakpoint");
@@ -150,5 +128,28 @@ namespace zero_mate::gui
     inline void CControl_Window::Print_No_ELF_File_Loaded_Error_Msg() const
     {
         m_logging_system.Error("No .ELF file has been loaded");
+    }
+
+    void CControl_Window::Run()
+    {
+        m_logging_system.Info("CPU execution has started");
+
+        while (!m_stop_cpu_thread)
+        {
+            if (!m_cpu->Step())
+            {
+                m_breakpoint_hit = true;
+                m_stop_cpu_thread = true;
+                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->m_regs[arm1176jzf_s::CCPU_Core::PC_REG_IDX]).c_str());
+            }
+        }
+
+        m_cpu_running = false;
+        m_scroll_to_curr_line = true;
+
+        if (!m_breakpoint_hit)
+        {
+            m_logging_system.Info("CPU execution has stopped");
+        }
     }
 }
