@@ -46,12 +46,10 @@ add_subdirectory(external/capstone)
 option(ENABLE_TESTING "Enable Test Builds" ON)
 
 # Add the src folder
-message("Building the source folder..")
 add_subdirectory(src)
 
 # Add tests
 if(ENABLE_TESTING)
-    message("Building tests..")
     enable_testing()
     add_subdirectory(test)
 endif()
