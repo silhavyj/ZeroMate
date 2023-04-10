@@ -40,7 +40,7 @@ namespace zero_mate::gui
                     {
                         case utils::elf::NText_Section_Record_Type::Instruction:
                             ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
-                            if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints[addr]))
+                            if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints[addr]) && !m_cpu_running)
                             {
                                 m_breakpoints[addr] = !m_breakpoints[addr];
                                 if (m_breakpoints[addr])
