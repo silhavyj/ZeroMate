@@ -325,7 +325,9 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CBranch_And_Exchange instruction) noexcept
     {
-        if (instruction.Get_Instruction_Mode() == isa::CBranch_And_Exchange::NCPU_Instruction_Mode::Thumb)
+        const auto rm_reg_value = m_regs[instruction.Get_Rm()];
+
+        if (instruction.Get_Instruction_Mode(rm_reg_value) == isa::CBranch_And_Exchange::NCPU_Instruction_Mode::Thumb)
         {
             m_logging_system.Error("Thumb instructions are not supported by the emulator");
         }
@@ -335,7 +337,7 @@ namespace zero_mate::arm1176jzf_s
             LR() = PC();
         }
 
-        PC() = m_regs[instruction.Get_Rm()] & 0xFFFFFFFEU;
+        PC() = rm_reg_value & 0xFFFFFFFEU;
     }
 
     void CCPU_Core::Execute(isa::CBranch instruction)
