@@ -11,35 +11,35 @@ namespace zero_mate::gui
 {
     CControl_Window::CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
                                      bool& scroll_to_curr_line,
-                                     const bool& elf_file_has_been_loaded)
+                                     const bool& elf_file_has_been_loaded,
+                                     bool& cpu_running)
     : m_cpu{ cpu }
     , m_scroll_to_curr_line{ scroll_to_curr_line }
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
     , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_cpu_running{ cpu_running }
     {
     }
 
     void CControl_Window::Render()
     {
-        m_scroll_to_curr_line = false;
-
         if (ImGui::Begin("Control"))
         {
-            static bool s_running{ false };
             static std::atomic<bool> s_start_cpu_thread{ false };
             static std::atomic<bool> s_stop_cpu_thread{ false };
 
             static bool s_breakpoint{ false };
 
-            Render_Control_Buttons(s_start_cpu_thread, s_stop_cpu_thread, s_running);
-            Render_CPU_State(s_running, s_breakpoint);
+            Render_Control_Buttons(s_start_cpu_thread, s_stop_cpu_thread);
+            Render_CPU_State(s_breakpoint);
+
             Render_ImGUI_Demo();
 
             if (s_start_cpu_thread)
             {
                 s_start_cpu_thread = false;
                 s_stop_cpu_thread = false;
-                s_running = true;
+                m_cpu_running = true;
                 s_breakpoint = false;
 
                 std::thread cpu_thread([this]() -> void {
@@ -51,11 +51,11 @@ namespace zero_mate::gui
                         {
                             s_breakpoint = true;
                             s_stop_cpu_thread = true;
-                            m_logging_system.Info("CPU execution has hit a breakpoint");
+                            m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->m_regs[arm1176jzf_s::CCPU_Core::PC_REG_IDX]).c_str());
                         }
                     }
 
-                    s_running = false;
+                    m_cpu_running = false;
                     m_scroll_to_curr_line = true;
 
                     if (!s_breakpoint)
@@ -71,10 +71,9 @@ namespace zero_mate::gui
     }
 
     void CControl_Window::Render_Control_Buttons(std::atomic<bool>& start_cpu_thread,
-                                                 std::atomic<bool>& stop_cpu_thread,
-                                                 const bool& running)
+                                                 std::atomic<bool>& stop_cpu_thread)
     {
-        if (ImGui::Button(ICON_FA_STEP_FORWARD " Step") && !running)
+        if (ImGui::Button(ICON_FA_STEP_FORWARD " Step") && !m_cpu_running)
         {
             if (!m_elf_file_has_been_loaded)
             {
@@ -89,7 +88,7 @@ namespace zero_mate::gui
 
         ImGui::SameLine();
 
-        if (ImGui::Button(ICON_FA_PLAY_CIRCLE " Run") && !running)
+        if (ImGui::Button(ICON_FA_PLAY_CIRCLE " Run") && !m_cpu_running)
         {
             if (!m_elf_file_has_been_loaded)
             {
@@ -104,13 +103,13 @@ namespace zero_mate::gui
 
         ImGui::SameLine();
 
-        if (ImGui::Button(ICON_FA_STOP " Stop") && running)
+        if (ImGui::Button(ICON_FA_STOP " Stop") && m_cpu_running)
         {
             stop_cpu_thread = true;
         }
     }
 
-    void CControl_Window::Render_CPU_State(const bool& running, bool breakpoint)
+    void CControl_Window::Render_CPU_State(bool breakpoint) const
     {
         ImGui::Text("State:");
         ImGui::SameLine();
@@ -122,7 +121,7 @@ namespace zero_mate::gui
         }
         else
         {
-            if (running)
+            if (m_cpu_running)
             {
                 ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 1.0f, 0.0f, 1.0f));
                 ImGui::Text("running");

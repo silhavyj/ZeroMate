@@ -44,12 +44,13 @@ namespace zero_mate::gui
         auto s_log_window = std::make_shared<CLog_Window>();
         bool s_scroll_to_curr_line{ false };
         bool s_elf_file_has_been_loaded{ false };
+        bool s_cpu_running{ false };
 
         const std::vector<std::shared_ptr<CGUI_Window>> s_windows = {
             std::make_shared<CRegisters_Window>(s_cpu),
             std::make_shared<CRAM_Window>(s_ram),
-            std::make_shared<CControl_Window>(s_cpu, s_scroll_to_curr_line, s_elf_file_has_been_loaded),
-            std::make_shared<CSource_Code_Window>(s_cpu, s_source_code, s_scroll_to_curr_line),
+            std::make_shared<CControl_Window>(s_cpu, s_scroll_to_curr_line, s_elf_file_has_been_loaded, s_cpu_running),
+            std::make_shared<CSource_Code_Window>(s_cpu, s_source_code, s_scroll_to_curr_line, s_cpu_running),
             std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code, s_elf_file_has_been_loaded),
             std::make_shared<CGPIO_Window>(s_gpio),
             s_log_window

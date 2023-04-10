@@ -9,10 +9,12 @@ namespace zero_mate::gui
 {
     CSource_Code_Window::CSource_Code_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
                                              std::vector<utils::elf::TText_Section_Record>& source_code,
-                                             const bool& scroll_to_curr_line)
+                                             bool& scroll_to_curr_line,
+                                             const bool& cpu_running)
     : m_cpu{ cpu }
     , m_source_code{ source_code }
     , m_scroll_to_curr_line{ scroll_to_curr_line }
+    , m_cpu_running{ cpu_running }
     {
     }
 
@@ -76,7 +78,7 @@ namespace zero_mate::gui
                                 ImGui::Text("%s", disassembly.c_str());
                             }
 
-                            if (addr == m_cpu->m_regs[arm1176jzf_s::CCPU_Core::PC_REG_IDX])
+                            if (!m_cpu_running && addr == m_cpu->m_regs[arm1176jzf_s::CCPU_Core::PC_REG_IDX])
                             {
                                 const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
                                 ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
@@ -84,6 +86,7 @@ namespace zero_mate::gui
                                 if (m_scroll_to_curr_line && !ImGui::IsItemVisible())
                                 {
                                     ImGui::SetScrollHereY(0.2f);
+                                    m_scroll_to_curr_line = false;
                                 }
                             }
                             break;

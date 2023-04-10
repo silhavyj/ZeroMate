@@ -14,15 +14,15 @@ namespace zero_mate::gui
     public:
         explicit CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
                                  bool& scroll_to_curr_line,
-                                 const bool& elf_file_has_been_loaded);
+                                 const bool& elf_file_has_been_loaded,
+                                 bool& cpu_running);
 
         void Render() override;
 
     private:
-        static void Render_CPU_State(const bool& running, bool breakpoint);
+        void Render_CPU_State(bool breakpoint) const;
         void Render_Control_Buttons(std::atomic<bool>& start_cpu_thread,
-                                    std::atomic<bool>& stop_cpu_thread,
-                                    const bool& running);
+                                    std::atomic<bool>& stop_cpu_thread);
         static void Render_ImGUI_Demo();
         void Print_No_ELF_File_Loaded_Error_Msg() const;
 
@@ -30,5 +30,6 @@ namespace zero_mate::gui
         bool& m_scroll_to_curr_line;
         const bool& m_elf_file_has_been_loaded;
         utils::CLogging_System& m_logging_system;
+        bool& m_cpu_running;
     };
 }
