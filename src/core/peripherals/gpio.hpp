@@ -42,7 +42,8 @@ namespace zero_mate::peripheral
                 Rising_Edge = 0,
                 Falling_Edge = 1,
                 Low = 2,
-                High = 3
+                High = 3,
+                Undefined = 4
             };
 
             static constexpr std::size_t NUMBER_OF_INTERRUPT_TYPES = 4;
@@ -56,7 +57,7 @@ namespace zero_mate::peripheral
             void Set_Function(NFunction function) noexcept;
             void Add_Interrupt_Type(NInterrupt_Type type);
             void Remove_Interrupt_Type(NInterrupt_Type type);
-            [[nodiscard]] const Interrupts_t& Get_Interrupts() const;
+            [[nodiscard]] bool Is_Interrupt_Enabled(NInterrupt_Type type) const;
 
         private:
             NState m_state;
@@ -115,7 +116,7 @@ namespace zero_mate::peripheral
         [[nodiscard]] std::uint32_t Get_Size() const noexcept override;
         void Write(std::uint32_t addr, const char* data, std::uint32_t size) override;
         void Read(std::uint32_t addr, char* data, std::uint32_t size) override;
-        const std::array<CPin, NUMBER_OF_GPIO_PINS> Get_Pins() const;
+        [[nodiscard]] const CPin Get_Pin(std::size_t idx) const;
 
     private:
         void Update_Pin_Function(std::size_t reg_idx, bool last_reg);

@@ -11,13 +11,8 @@ project(
 # Enable parallel build
 set(CMAKE_BUILD_PARALLEL_LEVEL 4)
 
-# Default version of C++ is set to 20 unless the user has defined it otherwise
-if(NOT DEFINED CXX_STANDARD)
-    set(CMAKE_CXX_STANDARD 20)
-else()
-    set(CMAKE_CXX_STANDARD ${CXX_STANDARD})
-endif()
-message("Using C++ standard ${CMAKE_CXX_STANDARD}")
+# Default version of C++ is set to 20
+set(CMAKE_CXX_STANDARD 20)
 
 # Standard project settings
 include(cmake/standard_project_settings.cmake)
@@ -45,12 +40,13 @@ add_subdirectory(external/elfio)
 add_subdirectory(external/glew)
 add_subdirectory(external/glfw)
 add_subdirectory(external/magic_enum)
-
-# Add the src folder
-add_subdirectory(src)
+add_subdirectory(external/capstone)
 
 # Add an option to enable testing
 option(ENABLE_TESTING "Enable Test Builds" ON)
+
+# Add the src folder
+add_subdirectory(src)
 
 # Add tests
 if(ENABLE_TESTING)

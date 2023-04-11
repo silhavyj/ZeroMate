@@ -73,11 +73,11 @@ namespace zero_mate::arm1176jzf_s
 
             if (instruction.Is_L_Bit_Set())
             {
-                m_regs.at(reg_idx) = m_bus->Read<Type>(addr);
+                m_regs[reg_idx] = m_bus->Read<Type>(addr);
             }
             else
             {
-                m_bus->Write<Type>(addr, static_cast<Type>(m_regs.at(reg_idx)));
+                m_bus->Write<Type>(addr, static_cast<Type>(m_regs[reg_idx]));
             }
         }
 

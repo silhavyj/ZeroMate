@@ -26,12 +26,8 @@ void toggle_LED(int count, int delay)
         write32(GPSET1, 1 << (47 - 32));
         active_sleep(delay);
         write32(GPCLR1, 1 << (47 - 32));
-        if (i != count - 1)
-        {
-            active_sleep(delay);
-        }
+        active_sleep(delay);
     }
-    active_sleep(delay);
 }
 
 void kernel_main()
@@ -45,10 +41,10 @@ void kernel_main()
 
     while(1)
     {
-        toggle_LED(3, 1);
-        toggle_LED(3, 7);
-        toggle_LED(3, 1);
+        toggle_LED(3, 0x7000);
+        toggle_LED(3, 0x14000);
+        toggle_LED(3, 0x7000);
         
-        toggle_LED(0, 30);
+        active_sleep(0x30000);
     }
 }

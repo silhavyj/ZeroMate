@@ -1,5 +1,5 @@
-#include <memory>
-#include <algorithm>
+#include <cassert>
+#include <filesystem>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -20,7 +20,6 @@
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
-#include "../core/peripherals/gpio.hpp"
 
 // #define SHOW_EXAMPLE_OF_LOG_MESSAGES
 
@@ -31,69 +30,78 @@ namespace zero_mate::gui
     static inline constexpr std::uint32_t WINDOW_WIDTH = 1240;
     static inline constexpr std::uint32_t WINDOW_WEIGHT = 720;
 
-    static auto& s_logging_system = utils::CSingleton<utils::CLogging_System>::Get_Instance();
-
-    static auto s_ram = std::make_shared<peripheral::CRAM<>>();
-    static auto s_bus = std::make_shared<CBus>();
-    static auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
-    static auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>();
-
-    static std::vector<utils::TText_Section_Record> s_source_code{};
-    static auto s_log_window = std::make_shared<CLog_Window>();
-
-    static const std::vector<std::shared_ptr<CGUI_Window>> s_windows = {
-        std::make_shared<CRegisters_Window>(s_cpu),
-        std::make_shared<CRAM_Window>(s_ram),
-        std::make_shared<CControl_Window>(s_cpu),
-        std::make_shared<CSource_Code_Window>(s_cpu, s_source_code),
-        std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code),
-        std::make_shared<CGPIO_Window>(s_gpio),
-        s_log_window
-    };
-
-    static void Initialize_Logging_System()
+    namespace
     {
         auto logger_stdo = std::make_shared<utils::CLogger_STDO>();
-        logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
+        auto& s_logging_system = utils::CSingleton<utils::CLogging_System>::Get_Instance();
 
-        s_logging_system.Add_Logger(logger_stdo);
-        s_logging_system.Add_Logger(s_log_window);
+        auto s_ram = std::make_shared<peripheral::CRAM<>>();
+        auto s_bus = std::make_shared<CBus>();
+        auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
+        auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>();
+
+        std::vector<utils::elf::TText_Section_Record> s_source_code{};
+        auto s_log_window = std::make_shared<CLog_Window>();
+        bool s_scroll_to_curr_line{ false };
+        bool s_elf_file_has_been_loaded{ false };
+        bool s_cpu_running{ false };
+
+        const std::vector<std::shared_ptr<CGUI_Window>> s_windows = {
+            std::make_shared<CRegisters_Window>(s_cpu),
+            std::make_shared<CRAM_Window>(s_ram),
+            std::make_shared<CControl_Window>(s_cpu, s_scroll_to_curr_line, s_elf_file_has_been_loaded, s_cpu_running),
+            std::make_shared<CSource_Code_Window>(s_cpu, s_source_code, s_scroll_to_curr_line, s_cpu_running),
+            std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code, s_elf_file_has_been_loaded),
+            std::make_shared<CGPIO_Window>(s_gpio),
+            s_log_window
+        };
+
+        void Initialize_Logging_System()
+        {
+            logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
+            s_log_window->Set_Logging_Level(utils::ILogger::NLogging_Level::Info);
+
+            s_logging_system.Add_Logger(logger_stdo);
+            s_logging_system.Add_Logger(s_log_window);
 
 #ifdef SHOW_EXAMPLE_OF_LOG_MESSAGES
-        s_logging_system.Print("This is just a message");
-        s_logging_system.Debug("This is a debug message");
-        s_logging_system.Info("This is an info message");
-        s_logging_system.Warning("This is a warning message");
-        s_logging_system.Error("This is an error message");
+            s_logging_system.Print("This is just a message");
+            s_logging_system.Debug("This is a debug message");
+            s_logging_system.Info("This is an info message");
+            s_logging_system.Warning("This is a warning message");
+            s_logging_system.Error("This is an error message");
 #endif
-    }
-
-    static void Initialize_Peripherals()
-    {
-        if (s_bus->Attach_Peripheral(config::RAM_MAP_ADDR, s_ram) != 0)
-        {
-            s_logging_system.Error("Failed to attach RAM to the bus");
         }
 
-        if (s_bus->Attach_Peripheral(config::GPIO_MAP_ADDR, s_gpio) != 0)
+        void Initialize_Peripherals()
         {
-            s_logging_system.Error("Failed to attach GPIO to the bus");
+            if (s_bus->Attach_Peripheral(config::RAM_MAP_ADDR, s_ram) != 0)
+            {
+                s_logging_system.Error("Failed to attach RAM to the bus");
+            }
+
+            if (s_bus->Attach_Peripheral(config::GPIO_MAP_ADDR, s_gpio) != 0)
+            {
+                s_logging_system.Error("Failed to attach GPIO to the bus");
+            }
+        }
+
+        void Initialize()
+        {
+            Initialize_Logging_System();
+            Initialize_Peripherals();
+        }
+
+        void Render_GUI()
+        {
+            std::for_each(s_windows.begin(), s_windows.end(), [](const auto& window) -> void { window->Render(); });
         }
     }
 
-    static void Initialize()
+    int Main_GUI([[maybe_unused]] int argc, [[maybe_unused]] const char* argv[])
     {
-        Initialize_Logging_System();
-        Initialize_Peripherals();
-    }
+        Initialize();
 
-    static void Render_GUI()
-    {
-        std::for_each(s_windows.begin(), s_windows.end(), [](const auto& window) -> void { window->Render(); });
-    }
-
-    int Main_GUI(int argc, const char* argv[])
-    {
         glfwSetErrorCallback([](int error_code, const char* description) -> void {
             s_logging_system.Error(fmt::format("Error {} occurred when initializing GLFW: {}", error_code, description).c_str());
             std::terminate();
@@ -109,6 +117,7 @@ namespace zero_mate::gui
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 
         GLFWwindow* window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_WEIGHT, WINDOW_TITLE, nullptr, nullptr);
+
         if (window == nullptr)
         {
             s_logging_system.Error("Failed to create a GLFW window");
@@ -146,20 +155,10 @@ namespace zero_mate::gui
         ImGui_ImplGlfw_InitForOpenGL(window, true);
         ImGui_ImplOpenGL3_Init("#version 130");
 
-        if (argc >= 2)
+        if (std::filesystem::exists(FONT_PATH) && std::filesystem::exists(ICONS_PATH))
         {
-            if (imgui_io.Fonts->AddFontFromFileTTF(argv[1], 15.0f) == nullptr)
-            {
-                // TODO
-            }
-        }
-        else
-        {
-            imgui_io.Fonts->AddFontDefault();
-        }
+            imgui_io.Fonts->AddFontFromFileTTF(FONT_PATH, 15.0f);
 
-        if (argc >= 3)
-        {
             const float baseFontSize = 13.0f;
             const float iconFontSize = baseFontSize * 2.0f / 3.0f;
 
@@ -168,13 +167,16 @@ namespace zero_mate::gui
             icons_config.MergeMode = true;
             icons_config.PixelSnapH = true;
             icons_config.GlyphMinAdvanceX = iconFontSize;
-            imgui_io.Fonts->AddFontFromFileTTF(argv[2], iconFontSize, &icons_config, icons_ranges);
+            imgui_io.Fonts->AddFontFromFileTTF(ICONS_PATH, iconFontSize, &icons_config, icons_ranges);
+        }
+        else
+        {
+            s_logging_system.Warning("Failed to load the font and font (using the default one)");
+            imgui_io.Fonts->AddFontDefault();
         }
 
         int display_w{};
         int display_h{};
-
-        Initialize();
 
         while (!glfwWindowShouldClose(window))
         {
@@ -184,7 +186,7 @@ namespace zero_mate::gui
             ImGui_ImplGlfw_NewFrame();
             ImGui::NewFrame();
 
-            static bool dockspace_open = true;
+            [[maybe_unused]] static bool dockspace_open = true;
             static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
 
             ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
@@ -206,17 +208,18 @@ namespace zero_mate::gui
             }
 
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
-            ImGui::Begin("DockSpace Demo", &dockspace_open, window_flags);
+            assert(ImGui::Begin("##ZeroMate Dockspace", &dockspace_open, window_flags));
             ImGui::PopStyleVar();
             ImGui::PopStyleVar(2);
 
             if (imgui_io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
             {
-                const ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
+                const ImGuiID dockspace_id = ImGui::GetID("ZeroMateDockspace");
                 ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
             }
 
             zero_mate::gui::Render_GUI();
+
             ImGui::End();
             ImGui::Render();
 

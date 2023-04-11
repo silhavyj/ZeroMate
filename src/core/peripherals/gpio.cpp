@@ -37,17 +37,17 @@ namespace zero_mate::peripheral
 
     void CGPIO_Manager::CPin::Add_Interrupt_Type(NInterrupt_Type type)
     {
-        m_enabled_interrupts.at(static_cast<std::size_t>(type)) = true;
+        m_enabled_interrupts[static_cast<std::size_t>(type)] = true;
     }
 
     void CGPIO_Manager::CPin::Remove_Interrupt_Type(NInterrupt_Type type)
     {
-        m_enabled_interrupts.at(static_cast<std::size_t>(type)) = false;
+        m_enabled_interrupts[static_cast<std::size_t>(type)] = false;
     }
 
-    const CGPIO_Manager::CPin::Interrupts_t& CGPIO_Manager::CPin::Get_Interrupts() const
+    bool CGPIO_Manager::CPin::Is_Interrupt_Enabled(NInterrupt_Type type) const
     {
-        return m_enabled_interrupts;
+        return m_enabled_interrupts[static_cast<std::size_t>(type)];
     }
 
     CGPIO_Manager::CGPIO_Manager() noexcept
@@ -71,15 +71,15 @@ namespace zero_mate::peripheral
 
         for (std::uint32_t idx = 0; idx < last_bit_idx; idx += 3)
         {
-            const auto function = static_cast<CPin::NFunction>((m_regs.at(reg_idx) >> idx) & 0b111U);
+            const auto function = static_cast<CPin::NFunction>((m_regs[reg_idx] >> idx) & 0b111U);
             const auto pin_idx = (reg_idx * NUMBER_OF_PINS_IN_SEL_REG) + idx / 3;
 
-            if (m_pins.at(pin_idx).Get_Function() != function)
+            if (m_pins[pin_idx].Get_Function() != function)
             {
                 m_logging_system.Debug(fmt::format("Function of pin {} is set to {}", pin_idx, magic_enum::enum_name(function)).c_str());
             }
 
-            m_pins.at(pin_idx).Set_Function(function);
+            m_pins[pin_idx].Set_Function(function);
         }
     }
 
@@ -89,19 +89,19 @@ namespace zero_mate::peripheral
 
         for (std::uint32_t idx = 0; idx < last_bit_idx; ++idx)
         {
-            const auto set_bit = static_cast<bool>((m_regs.at(reg_idx) >> idx) & 0b1U);
+            const auto set_bit = static_cast<bool>((m_regs[reg_idx] >> idx) & 0b1U);
             const auto pin_idx = last_reg ? (NUMBER_OF_PINS_IN_REG + idx) : idx;
 
             if (set_bit)
             {
-                if (m_pins.at(pin_idx).Get_Function() == CPin::NFunction::Output)
+                if (m_pins[pin_idx].Get_Function() == CPin::NFunction::Output)
                 {
-                    if (m_pins.at(pin_idx).Get_State() != state)
+                    if (m_pins[pin_idx].Get_State() != state)
                     {
                         m_logging_system.Debug(fmt::format("State of pin {} is set to {}", pin_idx, magic_enum::enum_name(state)).c_str());
                     }
 
-                    m_pins.at(pin_idx).Set_State(state);
+                    m_pins[pin_idx].Set_State(state);
                     Reflect_Pin_State_In_GPLEVn(pin_idx, state);
                 }
                 else
@@ -111,7 +111,7 @@ namespace zero_mate::peripheral
             }
         }
 
-        m_regs.at(reg_idx) = 0; // Only the last write sets the state of the PIN (RS flip-flop)
+        m_regs[reg_idx] = 0; // Only the last write sets the state of the PIN (RS flip-flop)
     }
 
     void CGPIO_Manager::Reflect_Pin_State_In_GPLEVn(std::size_t pin_idx, CPin::NState state)
@@ -126,7 +126,7 @@ namespace zero_mate::peripheral
             return static_cast<std::size_t>(NRegister_Type::GPLEV0);
         }();
 
-        auto& GPLEVn_reg = m_regs.at(reg_index);
+        auto& GPLEVn_reg = m_regs[reg_index];
 
         if (state == CPin::NState::High)
         {
@@ -144,17 +144,17 @@ namespace zero_mate::peripheral
 
         for (std::uint32_t idx = 0; idx < last_bit_idx; ++idx)
         {
-            const auto set_bit = static_cast<bool>((m_regs.at(reg_idx) >> idx) & 0b1U);
+            const auto set_bit = static_cast<bool>((m_regs[reg_idx] >> idx) & 0b1U);
             const auto pin_idx = last_reg ? (NUMBER_OF_PINS_IN_REG + idx) : idx;
 
             if (set_bit)
             {
-                m_pins.at(pin_idx).Add_Interrupt_Type(type);
+                m_pins[pin_idx].Add_Interrupt_Type(type);
                 m_logging_system.Debug(fmt::format("Interrupt number {} has been enabled on pin {}", static_cast<std::uint32_t>(type), pin_idx).c_str());
             }
             else
             {
-                m_pins.at(pin_idx).Remove_Interrupt_Type(type);
+                m_pins[pin_idx].Remove_Interrupt_Type(type);
                 m_logging_system.Debug(fmt::format("Interrupt number {} has been disabled on pin {}", static_cast<std::uint32_t>(type), pin_idx).c_str());
             }
         }
@@ -195,7 +195,7 @@ namespace zero_mate::peripheral
                 [[fallthrough]];
             case NRegister_Type::GPLEV1:
                 // These registers reflect the actual state of each PIN
-                // The corresponding bits are set/cleared whenever a changes its state
+                // The corresponding bits are set/cleared whenever a pin changes its state
                 break;
 
             case NRegister_Type::GPEDS0:
@@ -252,11 +252,11 @@ namespace zero_mate::peripheral
     void CGPIO_Manager::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
         const std::size_t reg_idx = addr / sizeof(std::uint32_t);
-        std::copy_n(&m_regs.at(reg_idx), size, data);
+        std::copy_n(&m_regs[reg_idx], size, data);
     }
 
-    const std::array<CGPIO_Manager::CPin, CGPIO_Manager::NUMBER_OF_GPIO_PINS> CGPIO_Manager::Get_Pins() const
+    const CGPIO_Manager::CPin CGPIO_Manager::Get_Pin(std::size_t idx) const
     {
-        return m_pins;
+        return m_pins[idx];
     }
 }

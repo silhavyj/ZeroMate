@@ -183,22 +183,6 @@ namespace zero_mate::utils::math
     }
 
     template<std::unsigned_integral Type>
-    [[nodiscard]] Type Get_Number_Of_Set_Bits(Type value) noexcept
-    {
-        Type count{ 0 };
-
-        for (Type idx = 0; idx < std::numeric_limits<Type>::digits; ++idx)
-        {
-            if (Is_Bit_Set<Type>(value, idx))
-            {
-                ++count;
-            }
-        }
-
-        return count;
-    }
-
-    template<std::unsigned_integral Type>
     [[nodiscard]] std::uint32_t Sign_Extend_Value(Type value) noexcept
     {
         static_assert(std::numeric_limits<Type>::digits < std::numeric_limits<std::uint32_t>::digits);
