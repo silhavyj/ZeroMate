@@ -195,7 +195,7 @@ namespace zero_mate::peripheral
                 [[fallthrough]];
             case NRegister_Type::GPLEV1:
                 // These registers reflect the actual state of each PIN
-                // The corresponding bits are set/cleared whenever a changes its state
+                // The corresponding bits are set/cleared whenever a pin changes its state
                 break;
 
             case NRegister_Type::GPEDS0:
