@@ -1,4 +1,4 @@
-#include <bitset>
+#include <bit>
 #include <algorithm>
 
 #include "../../utils/math.hpp"
@@ -25,8 +25,8 @@ namespace zero_mate::arm1176jzf_s::isa
         std::sort(s_instruction_lookup_table.begin(),
                   s_instruction_lookup_table.end(),
                   [](const auto& record1, const auto& record2) -> bool {
-                      return utils::math::Get_Number_Of_Set_Bits(record1.mask) >
-                             utils::math::Get_Number_Of_Set_Bits(record2.mask);
+                      return std::popcount(record1.mask) >
+                             std::popcount(record2.mask);
                   });
     }
 

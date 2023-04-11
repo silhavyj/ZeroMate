@@ -9,12 +9,11 @@
 #include <algorithm>
 
 #include "peripheral.hpp"
+#include "../config.hpp"
 
 namespace zero_mate::peripheral
 {
-    static constexpr std::uint32_t RAM_SIZE = 256 * 1024 * 1024;
-
-    template<std::uint32_t Size = RAM_SIZE>
+    template<std::uint32_t Size = config::RAM_SIZE>
     class CRAM final : public IPeripheral
     {
     public:
@@ -49,10 +48,6 @@ namespace zero_mate::peripheral
         void Read(std::uint32_t addr, char* data, std::uint32_t size) override
         {
             std::copy_n(&m_data[addr], size, data);
-        }
-
-        void Write_Callback([[maybe_unused]] std::uint32_t addr) override
-        {
         }
 
         [[nodiscard]] char* Get_Raw_Data() const

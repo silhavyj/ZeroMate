@@ -13,6 +13,7 @@
 #include "registers/cspr.hpp"
 #include "../utils/math.hpp"
 #include "../peripherals/bus.hpp"
+#include "../utils/logger/logger.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -72,11 +73,11 @@ namespace zero_mate::arm1176jzf_s
 
             if (instruction.Is_L_Bit_Set())
             {
-                m_regs.at(reg_idx) = m_bus->Read<Type>(addr);
+                m_regs[reg_idx] = m_bus->Read<Type>(addr);
             }
             else
             {
-                m_bus->Write<Type>(addr, static_cast<Type>(m_regs.at(reg_idx)));
+                m_bus->Write<Type>(addr, static_cast<Type>(m_regs[reg_idx]));
             }
         }
 
@@ -88,5 +89,6 @@ namespace zero_mate::arm1176jzf_s
         isa::CISA_Decoder m_instruction_decoder;
         std::shared_ptr<CBus> m_bus;
         std::unordered_set<std::uint32_t> m_breakpoints;
+        utils::CLogging_System& m_logging_system;
     };
 }

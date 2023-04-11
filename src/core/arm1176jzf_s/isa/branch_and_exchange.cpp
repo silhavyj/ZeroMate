@@ -12,9 +12,9 @@ namespace zero_mate::arm1176jzf_s::isa
         return static_cast<bool>((m_value >> 5U) & 0b1U);
     }
 
-    CBranch_And_Exchange::NCPU_Instruction_Mode CBranch_And_Exchange::Get_Instruction_Mode() const noexcept
+    CBranch_And_Exchange::NCPU_Instruction_Mode CBranch_And_Exchange::Get_Instruction_Mode(std::uint32_t rm_reg_value) const noexcept
     {
-        return static_cast<NCPU_Instruction_Mode>(m_value & 0b1U);
+        return static_cast<NCPU_Instruction_Mode>(rm_reg_value & 0b1U);
     }
 
     std::uint32_t CBranch_And_Exchange::Get_Rm() const noexcept
