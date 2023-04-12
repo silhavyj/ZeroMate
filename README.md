@@ -1,4 +1,4 @@
-# ZeroMate
+#  <img src="misc/logo/logo_1.svg" width="25%">
 
 Raspberry Pi Zero Emulator
 
