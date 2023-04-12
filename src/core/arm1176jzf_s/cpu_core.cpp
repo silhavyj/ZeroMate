@@ -223,6 +223,10 @@ namespace zero_mate::arm1176jzf_s
 
                 case isa::CInstruction::NType::Unknown:
                     throw exceptions::CUndefined_Instruction{};
+
+                case isa::CInstruction::NType::Extend:
+                    Execute(isa::CExtend{ instruction });
+                    break;
             }
         }
         catch (const exceptions::CSoftware_Interrupt& ex)
@@ -607,5 +611,57 @@ namespace zero_mate::arm1176jzf_s
     {
         // TODO
         static_cast<void>(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CExtend instruction)
+    {
+        const auto type = instruction.Get_Type();
+        const auto reg_rd = instruction.Get_Rd();
+        const auto reg_rm = instruction.Get_Rm();
+        const auto reg_rn = instruction.Get_Rn();
+        const auto rot = instruction.Get_Rot();
+
+        switch (type)
+        {
+            case isa::CExtend::NType::SXTAB16:
+                break;
+
+            case isa::CExtend::NType::UXTAB16:
+                break;
+
+            case isa::CExtend::NType::SXTB16:
+                break;
+
+            case isa::CExtend::NType::UXTB16:
+                break;
+
+            case isa::CExtend::NType::SXTAB:
+                m_regs[reg_rd] = utils::math::Sign_Extend_Value<std::uint8_t>((m_regs[reg_rm] >> rot) & 0xFFU) + m_regs[reg_rn];
+                break;
+
+            case isa::CExtend::NType::UXTAB:
+                m_regs[reg_rd] = ((m_regs[reg_rm] >> rot) & 0xFFU) + m_regs[reg_rn];
+                break;
+
+            case isa::CExtend::NType::SXTB:
+                m_regs[reg_rd] = utils::math::Sign_Extend_Value<std::uint8_t>((m_regs[reg_rm] >> rot) & 0xFFU);
+                break;
+
+            case isa::CExtend::NType::UXTB:
+                m_regs[reg_rd] = (m_regs[reg_rm] >> rot) & 0xFFU;
+                break;
+
+            case isa::CExtend::NType::SXTAH:
+                break;
+
+            case isa::CExtend::NType::UXTAH:
+                break;
+
+            case isa::CExtend::NType::SXTH:
+                break;
+
+            case isa::CExtend::NType::UXTH:
+                break;
+        }
     }
 }

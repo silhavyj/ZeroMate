@@ -59,7 +59,7 @@ namespace zero_mate::gui
         void Initialize_Logging_System()
         {
             logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
-            s_log_window->Set_Logging_Level(utils::ILogger::NLogging_Level::Info);
+            s_log_window->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
 
             s_logging_system.Add_Logger(logger_stdo);
             s_logging_system.Add_Logger(s_log_window);
