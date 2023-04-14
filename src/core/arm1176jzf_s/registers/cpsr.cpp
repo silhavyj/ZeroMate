@@ -1,5 +1,4 @@
 #include "cpsr.hpp"
-#include "../../utils/math.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -10,44 +9,19 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPSR::Set_Flag(NFlag flag, bool set) noexcept
     {
-        switch (flag)
+        if (set)
         {
-            case NFlag::N:
-                utils::math::Set_Bit(m_value, N_BIT_IDX, set);
-                break;
-
-            case NFlag::Z:
-                utils::math::Set_Bit(m_value, Z_BIT_IDX, set);
-                break;
-
-            case NFlag::C:
-                utils::math::Set_Bit(m_value, C_BIT_IDX, set);
-                break;
-
-            case NFlag::V:
-                utils::math::Set_Bit(m_value, V_BIT_IDX, set);
-                break;
+            m_value |= static_cast<std::uint32_t>(flag);
+        }
+        else
+        {
+            m_value &= ~static_cast<std::uint32_t>(flag);
         }
     }
 
     bool CCPSR::Is_Flag_Set(NFlag flag) const noexcept
     {
-        switch (flag)
-        {
-            case NFlag::N:
-                return utils::math::Is_Bit_Set(m_value, N_BIT_IDX);
-
-            case NFlag::Z:
-                return utils::math::Is_Bit_Set(m_value, Z_BIT_IDX);
-
-            case NFlag::C:
-                return utils::math::Is_Bit_Set(m_value, C_BIT_IDX);
-
-            case NFlag::V:
-                return utils::math::Is_Bit_Set(m_value, V_BIT_IDX);
-        }
-
-        return false;
+        return static_cast<bool>(m_value & static_cast<std::uint32_t>(flag));
     }
 
     void CCPSR::Set_CPU_Mode(NCPU_Mode mode) noexcept

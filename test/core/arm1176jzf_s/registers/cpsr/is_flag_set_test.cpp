@@ -6,7 +6,7 @@ TEST(is_flag_set, test_01)
 {
     using namespace zero_mate::arm1176jzf_s;
 
-    const CCPSR cpsr{ (0b1U << CCPSR::N_BIT_IDX) | (0b1U << CCPSR::Z_BIT_IDX) };
+    const CCPSR cpsr{ static_cast<std::uint32_t>(CCPSR::NFlag::N) | static_cast<std::uint32_t>(CCPSR::NFlag::Z) };
 
     EXPECT_EQ(cpsr.Is_Flag_Set(CCPSR::NFlag::N), true);
     EXPECT_EQ(cpsr.Is_Flag_Set(CCPSR::NFlag::Z), true);
