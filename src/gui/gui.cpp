@@ -5,6 +5,7 @@
 #include <GLFW/glfw3.h>
 #include <imgui/imgui.h>
 #include <magic_enum.hpp>
+#include <inih/cpp/INIReader.h>
 #include <imgui/backends/imgui_impl_glfw.h>
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
@@ -36,7 +37,7 @@ namespace zero_mate::gui
         auto logger_stdo = std::make_shared<utils::CLogger_STDO>();
         auto& s_logging_system = utils::CSingleton<utils::CLogging_System>::Get_Instance();
 
-        auto s_ram = std::make_shared<peripheral::CRAM<>>();
+        std::shared_ptr<peripheral::CRAM> s_ram{ nullptr };
         auto s_bus = std::make_shared<CBus>();
         auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
         auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>();
@@ -47,20 +48,12 @@ namespace zero_mate::gui
         bool s_elf_file_has_been_loaded{ false };
         bool s_cpu_running{ false };
 
-        const std::vector<std::shared_ptr<CGUI_Window>> s_windows = {
-            std::make_shared<CRegisters_Window>(s_cpu),
-            std::make_shared<CRAM_Window>(s_ram),
-            std::make_shared<CControl_Window>(s_cpu, s_scroll_to_curr_line, s_elf_file_has_been_loaded, s_cpu_running),
-            std::make_shared<CSource_Code_Window>(s_cpu, s_source_code, s_scroll_to_curr_line, s_cpu_running),
-            std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code, s_elf_file_has_been_loaded),
-            std::make_shared<CGPIO_Window>(s_gpio),
-            s_log_window
-        };
+        std::vector<std::shared_ptr<CGUI_Window>> s_windows;
 
         void Initialize_Logging_System()
         {
             logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
-            s_log_window->Set_Logging_Level(utils::ILogger::NLogging_Level::Info);
+            s_log_window->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
 
             s_logging_system.Add_Logger(logger_stdo);
             s_logging_system.Add_Logger(s_log_window);
@@ -74,36 +67,69 @@ namespace zero_mate::gui
 #endif
         }
 
-        inline void Attach_RAM_To_Bus()
+        void Initialize_Windows()
         {
-            const auto status = s_bus->Attach_Peripheral(config::RAM_MAP_ADDR, s_ram);
+            s_windows.emplace_back(std::make_shared<CRegisters_Window>(s_cpu));
+            s_windows.push_back(std::make_shared<CRAM_Window>(s_ram));
+            s_windows.emplace_back(std::make_shared<CControl_Window>(s_cpu, s_scroll_to_curr_line, s_elf_file_has_been_loaded, s_cpu_running));
+            s_windows.emplace_back(std::make_shared<CSource_Code_Window>(s_cpu, s_source_code, s_scroll_to_curr_line, s_cpu_running));
+            s_windows.emplace_back(std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code, s_elf_file_has_been_loaded));
+            s_windows.emplace_back(std::make_shared<CGPIO_Window>(s_gpio));
+            s_windows.emplace_back(s_log_window);
+        }
+
+        inline void Init_RAM(std::uint32_t size, std::uint32_t addr)
+        {
+            s_ram = std::make_shared<peripheral::CRAM>(size);
+
+            s_logging_system.Info(fmt::format("Mapping RAM ({} [B]) to the bus address 0x{:08X}...", s_ram->Get_Size(), addr).c_str());
+            const auto status = s_bus->Attach_Peripheral(addr, s_ram);
 
             if (status != CBus::NStatus::OK)
             {
-                s_logging_system.Error(fmt::format("Failed to attach RAM ({} [B]) to the bus address 0x{:08X} (error value = {})", s_ram->Get_Size(), config::RAM_MAP_ADDR, magic_enum::enum_name(status)).c_str());
+                s_logging_system.Error(fmt::format("Failed to attach RAM to the bus (error value = {})", magic_enum::enum_name(status)).c_str());
             }
         }
 
-        inline void Attach_GPIO_To_Bus()
+        inline void Init_GPIO(std::uint32_t addr)
         {
-            const auto status = s_bus->Attach_Peripheral(config::GPIO_MAP_ADDR, s_gpio);
+            s_logging_system.Info(fmt::format("Mapping GPIO ({} [B]) to the bus address 0x{:08X}...", s_gpio->Get_Size(), addr).c_str());
+            const auto status = s_bus->Attach_Peripheral(addr, s_gpio);
 
             if (status != CBus::NStatus::OK)
             {
-                s_logging_system.Error(fmt::format("Failed to attach GPIO ({} [B]) to the bus address 0x{:08X} (error value = {})", s_gpio->Get_Size(), config::GPIO_MAP_ADDR, magic_enum::enum_name(status)).c_str());
+                s_logging_system.Error(fmt::format("Failed to attach GPIO to the bus address (error value = {})", magic_enum::enum_name(status)).c_str());
             }
         }
 
         void Initialize_Peripherals()
         {
-            Attach_RAM_To_Bus();
-            Attach_GPIO_To_Bus();
+            const INIReader ini_reader(config::CONFIG_FILE);
+
+            std::uint32_t ram_size{ config::DEFAULT_RAM_SIZE };
+            std::uint32_t ram_map_addr{ config::DEFAULT_RAM_MAP_ADDR };
+            std::uint32_t gpio_map_addr{ config::DEFAULT_GPIO_MAP_ADDR };
+
+            if (ini_reader.ParseError() < 0)
+            {
+                s_logging_system.Error(fmt::format("Cannot load {}. Using the default mapping", config::CONFIG_FILE).c_str());
+            }
+            else
+            {
+                ram_size = static_cast<std::uint32_t>(ini_reader.GetInteger("ram", "size", config::DEFAULT_RAM_SIZE));
+                ram_map_addr = static_cast<std::uint32_t>(ini_reader.GetInteger("ram", "addr", config::DEFAULT_RAM_MAP_ADDR));
+                gpio_map_addr = static_cast<std::uint32_t>(ini_reader.GetInteger("gpio", "addr", config::DEFAULT_GPIO_MAP_ADDR));
+            }
+
+            Init_RAM(ram_size, ram_map_addr);
+            Init_GPIO(gpio_map_addr);
         }
 
         void Initialize()
         {
             Initialize_Logging_System();
             Initialize_Peripherals();
+            Initialize_Windows();
         }
 
         void Render_GUI()

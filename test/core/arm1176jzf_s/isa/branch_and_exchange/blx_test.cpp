@@ -20,7 +20,7 @@ TEST(blx_instruction, test_01)
         0xe12fff14  // 0000001C bx r4
     };
 
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>(0, ram_content);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);

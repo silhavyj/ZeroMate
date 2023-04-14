@@ -3,66 +3,28 @@
 #include <bit>
 #include <array>
 #include <vector>
+#include <memory>
 #include <cstdint>
-#include <cassert>
-#include <concepts>
-#include <algorithm>
 
 #include "peripheral.hpp"
-#include "../config.hpp"
 
 namespace zero_mate::peripheral
 {
-    template<std::uint32_t Size = config::RAM_SIZE>
     class CRAM final : public IPeripheral
     {
     public:
-        CRAM()
-        {
-            Init_Data();
-        }
+        explicit CRAM(std::uint32_t size);
+        explicit CRAM(std::uint32_t size, std::uint32_t addr, const std::vector<std::uint32_t>& instructions);
 
-        CRAM(std::uint32_t addr, const std::vector<std::uint32_t>& instructions)
-        {
-            assert((instructions.size() / sizeof(std::uint32_t)) < (Size - addr));
-
-            Init_Data();
-
-            for (const auto& instruction : instructions)
-            {
-                Write(addr, std::bit_cast<const char*>(&instruction), sizeof(std::uint32_t));
-                addr += sizeof(std::uint32_t);
-            }
-        }
-
-        [[nodiscard]] std::uint32_t Get_Size() const noexcept override
-        {
-            return Size;
-        }
-
-        void Write(std::uint32_t addr, const char* data, std::uint32_t size) override
-        {
-            std::copy_n(data, size, &m_data[addr]);
-        }
-
-        void Read(std::uint32_t addr, char* data, std::uint32_t size) override
-        {
-            std::copy_n(&m_data[addr], size, data);
-        }
-
-        [[nodiscard]] char* Get_Raw_Data() const
-        {
-            return m_data.get();
-        }
+        [[nodiscard]] std::uint32_t Get_Size() const noexcept override;
+        void Write(std::uint32_t addr, const char* data, std::uint32_t size) override;
+        void Read(std::uint32_t addr, char* data, std::uint32_t size) override;
+        [[nodiscard]] char* Get_Raw_Data() const;
 
     private:
-        void Init_Data()
-        {
-            m_data = std::unique_ptr<char[]>(new (std::nothrow) char[Size]);
-            assert(m_data != nullptr);
-            std::fill_n(m_data.get(), Size, 0);
-        }
+        void Init();
 
+        std::uint32_t m_size;
         std::unique_ptr<char[]> m_data{ nullptr };
     };
 }

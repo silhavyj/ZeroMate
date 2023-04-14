@@ -10,7 +10,7 @@
 {
     static constexpr std::uint32_t RAM_SIZE = 1024 * 1024 * 256;
 
-    auto ram = std::make_shared<zero_mate::peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<zero_mate::peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<zero_mate::CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), zero_mate::CBus::NStatus::OK);

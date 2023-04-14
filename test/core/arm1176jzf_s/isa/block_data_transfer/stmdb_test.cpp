@@ -9,7 +9,7 @@ static constexpr std::uint32_t RAM_SIZE = 1024;
 
 TEST(stmdb_instruction, test_01)
 {
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -39,7 +39,7 @@ TEST(stmdb_instruction, test_01)
 
 TEST(stmdb_instruction, test_02)
 {
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
