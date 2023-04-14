@@ -4,6 +4,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <imgui/imgui.h>
+#include <magic_enum.hpp>
 #include <imgui/backends/imgui_impl_glfw.h>
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
@@ -73,17 +74,30 @@ namespace zero_mate::gui
 #endif
         }
 
+        inline void Attach_RAM_To_Bus()
+        {
+            const auto status = s_bus->Attach_Peripheral(config::RAM_MAP_ADDR, s_ram);
+
+            if (status != CBus::NStatus::OK)
+            {
+                s_logging_system.Error(fmt::format("Failed to attach RAM ({} [B]) to the bus address 0x{:08X} (error value = {})", s_ram->Get_Size(), config::RAM_MAP_ADDR, magic_enum::enum_name(status)).c_str());
+            }
+        }
+
+        inline void Attach_GPIO_To_Bus()
+        {
+            const auto status = s_bus->Attach_Peripheral(config::GPIO_MAP_ADDR, s_gpio);
+
+            if (status != CBus::NStatus::OK)
+            {
+                s_logging_system.Error(fmt::format("Failed to attach GPIO ({} [B]) to the bus address 0x{:08X} (error value = {})", s_gpio->Get_Size(), config::GPIO_MAP_ADDR, magic_enum::enum_name(status)).c_str());
+            }
+        }
+
         void Initialize_Peripherals()
         {
-            if (s_bus->Attach_Peripheral(config::RAM_MAP_ADDR, s_ram) != 0)
-            {
-                s_logging_system.Error("Failed to attach RAM to the bus");
-            }
-
-            if (s_bus->Attach_Peripheral(config::GPIO_MAP_ADDR, s_gpio) != 0)
-            {
-                s_logging_system.Error("Failed to attach GPIO to the bus");
-            }
+            Attach_RAM_To_Bus();
+            Attach_GPIO_To_Bus();
         }
 
         void Initialize()
