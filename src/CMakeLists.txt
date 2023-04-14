@@ -36,6 +36,17 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog)
 
+# Build the inih library
+add_library(
+    ini
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/inih/ini.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/inih/cpp/INIReader.cpp)
+
+target_include_directories(
+    ini
+    SYSTEM PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/ini)
+
 # Find all source files making up the core of emulator
 file(GLOB_RECURSE core_source_files "core/*.cpp" "core/*.hpp")
 
@@ -74,7 +85,8 @@ target_link_libraries(
         imgui_glfw
         imgui_file_dialog
         magic_enum
-        capstone)
+        capstone
+        ini)
 
 if(WIN32)
     target_link_libraries(
@@ -84,10 +96,11 @@ if(WIN32)
             $<$<CXX_COMPILER_ID:MSVC>:opengl32.lib>)
 endif()
 
-# Copy the fonts from misc and imgui.ini to the location of the executable
+# Copy the fonts, imgui.ini, and rpi_zero_config.ini to the location of the executable
 add_custom_command(
     TARGET zero_mate POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/fonts $<TARGET_FILE_DIR:zero_mate>/fonts
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/imgui.ini $<TARGET_FILE_DIR:zero_mate>)
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/imgui.ini $<TARGET_FILE_DIR:zero_mate>
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/rpi_zero_config.ini $<TARGET_FILE_DIR:zero_mate>)
 
 # EOF

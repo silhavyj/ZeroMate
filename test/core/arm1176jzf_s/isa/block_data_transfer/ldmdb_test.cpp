@@ -11,7 +11,7 @@ TEST(ldmdb_instruction, test_01)
 {
     using namespace zero_mate::arm1176jzf_s;
 
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);

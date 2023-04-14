@@ -5,7 +5,7 @@
 
 namespace zero_mate::gui
 {
-    CRAM_Window::CRAM_Window(std::shared_ptr<peripheral::CRAM<>> ram)
+    CRAM_Window::CRAM_Window(std::shared_ptr<peripheral::CRAM> ram)
     : m_ram{ ram }
     {
     }
