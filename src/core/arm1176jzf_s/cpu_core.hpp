@@ -42,7 +42,10 @@ namespace zero_mate::arm1176jzf_s
 
     private:
         [[nodiscard]] std::uint32_t& PC() noexcept;
+        [[nodiscard]] const std::uint32_t& PC() const noexcept;
         [[nodiscard]] std::uint32_t& LR() noexcept;
+        [[nodiscard]] const std::uint32_t& LR() const noexcept;
+
         [[nodiscard]] isa::CInstruction Fetch_Instruction();
 
         [[nodiscard]] bool Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept;
