@@ -7,10 +7,13 @@ namespace zero_mate::arm1176jzf_s
     class CCPSR final
     {
     public:
-        static constexpr std::uint32_t N_BIT_IDX = 31U;
-        static constexpr std::uint32_t Z_BIT_IDX = 30U;
-        static constexpr std::uint32_t C_BIT_IDX = 29U;
-        static constexpr std::uint32_t V_BIT_IDX = 28U;
+        enum class NFlag : std::uint32_t
+        {
+            N = 0b1U << 31U,
+            Z = 0b1U << 30U,
+            C = 0b1U << 29U,
+            V = 0b1U << 28U
+        };
 
         enum class NCPU_Mode : std::uint32_t
         {
@@ -21,14 +24,6 @@ namespace zero_mate::arm1176jzf_s
             ABT = 0b10111, // Abort - Implements virtual memory and/or memory protection
             UND = 0b11011, // Undefined - Supports software emulation of hardware coprocessors
             SYS = 0b11111  // System - Runs privileged operating system tasks (ARMv4 and above)
-        };
-
-        enum class NFlag
-        {
-            N, // Negative result from ALU
-            Z, // Zero result from ALU
-            C, // ALU operation carried out
-            V  // ALU operation overflowed
         };
 
     private:
