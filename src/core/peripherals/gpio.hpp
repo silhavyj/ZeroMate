@@ -12,7 +12,6 @@ namespace zero_mate::peripheral
     class CGPIO_Manager final : public IPeripheral
     {
     public:
-        static constexpr std::size_t NUMBER_OF_REGISTERS = 34;
         static constexpr std::size_t NUMBER_OF_GPIO_PINS = 54;
         static constexpr std::uint32_t NUMBER_OF_PINS_IN_REG = std::numeric_limits<std::uint32_t>::digits;
 
@@ -108,8 +107,11 @@ namespace zero_mate::peripheral
             GPPUDCLK0,
             GPPUDCLK1,
             Reserved_12,
-            Test
+            Test,
+            Count
         };
+
+        static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::size_t>(NRegister_Type::Count);
 
         CGPIO_Manager() noexcept;
 
