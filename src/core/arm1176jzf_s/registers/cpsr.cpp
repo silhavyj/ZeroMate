@@ -1,14 +1,14 @@
-#include "cspr.hpp"
+#include "cpsr.hpp"
 #include "../../utils/math.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
-    CCSPR::CCSPR(uint32_t value) noexcept
+    CCPSR::CCPSR(uint32_t value) noexcept
     : m_value{ value }
     {
     }
 
-    void CCSPR::Set_Flag(NFlag flag, bool set) noexcept
+    void CCPSR::Set_Flag(NFlag flag, bool set) noexcept
     {
         switch (flag)
         {
@@ -30,7 +30,7 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
-    bool CCSPR::Is_Flag_Set(NFlag flag) const noexcept
+    bool CCPSR::Is_Flag_Set(NFlag flag) const noexcept
     {
         switch (flag)
         {
@@ -50,13 +50,13 @@ namespace zero_mate::arm1176jzf_s
         return false;
     }
 
-    void CCSPR::Set_CPU_Mode(NCPU_Mode mode) noexcept
+    void CCPSR::Set_CPU_Mode(NCPU_Mode mode) noexcept
     {
         m_value &= ~(CPU_MODE_MASK);
         m_value |= static_cast<std::uint32_t>(mode);
     }
 
-    CCSPR::NCPU_Mode CCSPR::Get_CPU_Mode() const noexcept
+    CCPSR::NCPU_Mode CCPSR::Get_CPU_Mode() const noexcept
     {
         return static_cast<NCPU_Mode>(m_value & CPU_MODE_MASK);
     }

@@ -4,7 +4,7 @@
 
 namespace zero_mate::arm1176jzf_s
 {
-    class CCSPR final
+    class CCPSR final
     {
     public:
         static constexpr std::uint32_t N_BIT_IDX = 31U;
@@ -35,7 +35,7 @@ namespace zero_mate::arm1176jzf_s
         static constexpr std::uint32_t CPU_MODE_MASK = 0b11111U;
 
     public:
-        explicit CCSPR(uint32_t value) noexcept;
+        explicit CCPSR(uint32_t value) noexcept;
 
         void Set_Flag(NFlag flag, bool set) noexcept;
         [[nodiscard]] bool Is_Flag_Set(NFlag flag) const noexcept;

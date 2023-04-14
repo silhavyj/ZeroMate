@@ -16,7 +16,7 @@ namespace zero_mate::arm1176jzf_s
 
     CCPU_Core::CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept
     : m_regs{}
-    , m_cspr{ 0 }
+    , m_cpsr{ 0 }
     , m_bus{ bus }
     , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
@@ -107,46 +107,46 @@ namespace zero_mate::arm1176jzf_s
         switch (condition)
         {
             case isa::CInstruction::NCondition::EQ:
-                return m_cspr.Is_Flag_Set(CCSPR::NFlag::Z);
+                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z);
 
             case isa::CInstruction::NCondition::NE:
-                return !m_cspr.Is_Flag_Set(CCSPR::NFlag::Z);
+                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z);
 
             case isa::CInstruction::NCondition::HS:
-                return m_cspr.Is_Flag_Set(CCSPR::NFlag::C);
+                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::C);
 
             case isa::CInstruction::NCondition::LO:
-                return !m_cspr.Is_Flag_Set(CCSPR::NFlag::C);
+                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::C);
 
             case isa::CInstruction::NCondition::MI:
-                return m_cspr.Is_Flag_Set(CCSPR::NFlag::N);
+                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::N);
 
             case isa::CInstruction::NCondition::PL:
-                return !m_cspr.Is_Flag_Set(CCSPR::NFlag::N);
+                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::N);
 
             case isa::CInstruction::NCondition::VS:
-                return m_cspr.Is_Flag_Set(CCSPR::NFlag::V);
+                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::V);
 
             case isa::CInstruction::NCondition::VC:
-                return !m_cspr.Is_Flag_Set(CCSPR::NFlag::V);
+                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::V);
 
             case isa::CInstruction::NCondition::HI:
-                return m_cspr.Is_Flag_Set(CCSPR::NFlag::C) && !m_cspr.Is_Flag_Set(CCSPR::NFlag::Z);
+                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::C) && !m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z);
 
             case isa::CInstruction::NCondition::LS:
-                return !m_cspr.Is_Flag_Set(CCSPR::NFlag::C) || m_cspr.Is_Flag_Set(CCSPR::NFlag::Z);
+                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::C) || m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z);
 
             case isa::CInstruction::NCondition::GE:
-                return m_cspr.Is_Flag_Set(CCSPR::NFlag::N) == m_cspr.Is_Flag_Set(CCSPR::NFlag::V);
+                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::N) == m_cpsr.Is_Flag_Set(CCPSR::NFlag::V);
 
             case isa::CInstruction::NCondition::LT:
-                return m_cspr.Is_Flag_Set(CCSPR::NFlag::N) != m_cspr.Is_Flag_Set(CCSPR::NFlag::V);
+                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::N) != m_cpsr.Is_Flag_Set(CCPSR::NFlag::V);
 
             case isa::CInstruction::NCondition::GT:
-                return !m_cspr.Is_Flag_Set(CCSPR::NFlag::Z) && (m_cspr.Is_Flag_Set(CCSPR::NFlag::N) == m_cspr.Is_Flag_Set(CCSPR::NFlag::V));
+                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z) && (m_cpsr.Is_Flag_Set(CCPSR::NFlag::N) == m_cpsr.Is_Flag_Set(CCPSR::NFlag::V));
 
             case isa::CInstruction::NCondition::LE:
-                return m_cspr.Is_Flag_Set(CCSPR::NFlag::Z) || (m_cspr.Is_Flag_Set(CCSPR::NFlag::N) != m_cspr.Is_Flag_Set(CCSPR::NFlag::V));
+                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z) || (m_cpsr.Is_Flag_Set(CCPSR::NFlag::N) != m_cpsr.Is_Flag_Set(CCPSR::NFlag::V));
 
             case isa::CInstruction::NCondition::AL:
                 return true;
@@ -261,7 +261,7 @@ namespace zero_mate::arm1176jzf_s
         const std::uint32_t immediate = instruction.Get_Immediate();
         const std::uint32_t shift_amount = instruction.Get_Rotate() * 2;
 
-        utils::math::TShift_Result<std::uint32_t> second_operand{ m_cspr.Is_Flag_Set(CCSPR::NFlag::C), immediate };
+        utils::math::TShift_Result<std::uint32_t> second_operand{ m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), immediate };
 
         if (shift_amount != 0 && shift_amount != std::numeric_limits<std::uint32_t>::digits)
         {
@@ -276,7 +276,7 @@ namespace zero_mate::arm1176jzf_s
         switch (shift_type)
         {
             case isa::CData_Processing::NShift_Type::LSL:
-                return utils::math::LSL<std::uint32_t>(shift_reg, shift_amount, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
+                return utils::math::LSL<std::uint32_t>(shift_reg, shift_amount, m_cpsr.Is_Flag_Set(CCPSR::NFlag::C));
 
             case isa::CData_Processing::NShift_Type::LSR:
                 return utils::math::LSR<std::uint32_t>(shift_reg, shift_amount);
@@ -285,7 +285,7 @@ namespace zero_mate::arm1176jzf_s
                 return utils::math::ASR<std::uint32_t>(shift_reg, shift_amount);
 
             case isa::CData_Processing::NShift_Type::ROR:
-                return utils::math::ROR<std::uint32_t>(shift_reg, shift_amount, m_cspr.Is_Flag_Set(CCSPR::NFlag::C));
+                return utils::math::ROR<std::uint32_t>(shift_reg, shift_amount, m_cpsr.Is_Flag_Set(CCPSR::NFlag::C));
         }
 
         return {};
@@ -320,10 +320,10 @@ namespace zero_mate::arm1176jzf_s
 
         if (result.set_flags && dest_reg != PC_REG_IDX)
         {
-            m_cspr.Set_Flag(CCSPR::NFlag::N, result.n_flag);
-            m_cspr.Set_Flag(CCSPR::NFlag::Z, result.z_flag);
-            m_cspr.Set_Flag(CCSPR::NFlag::C, result.c_flag);
-            m_cspr.Set_Flag(CCSPR::NFlag::V, result.v_flag);
+            m_cpsr.Set_Flag(CCPSR::NFlag::N, result.n_flag);
+            m_cpsr.Set_Flag(CCPSR::NFlag::Z, result.z_flag);
+            m_cpsr.Set_Flag(CCPSR::NFlag::C, result.c_flag);
+            m_cpsr.Set_Flag(CCPSR::NFlag::V, result.v_flag);
         }
     }
 
@@ -375,8 +375,8 @@ namespace zero_mate::arm1176jzf_s
 
         if (result.set_fags)
         {
-            m_cspr.Set_Flag(CCSPR::NFlag::N, result.n_flag);
-            m_cspr.Set_Flag(CCSPR::NFlag::Z, result.z_flag);
+            m_cpsr.Set_Flag(CCPSR::NFlag::N, result.n_flag);
+            m_cpsr.Set_Flag(CCPSR::NFlag::Z, result.z_flag);
         }
 
         m_regs[instruction.Get_Rd()] = result.value_lo;
@@ -395,8 +395,8 @@ namespace zero_mate::arm1176jzf_s
 
         if (result.set_fags)
         {
-            m_cspr.Set_Flag(CCSPR::NFlag::N, result.n_flag);
-            m_cspr.Set_Flag(CCSPR::NFlag::Z, result.z_flag);
+            m_cpsr.Set_Flag(CCPSR::NFlag::N, result.n_flag);
+            m_cpsr.Set_Flag(CCPSR::NFlag::Z, result.z_flag);
         }
 
         m_regs[reg_rd_lo] = result.value_lo;
