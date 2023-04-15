@@ -10,7 +10,7 @@
 
 #include "isa/isa.hpp"
 #include "isa/isa_decoder.hpp"
-#include "registers/cspr.hpp"
+#include "registers/cpsr.hpp"
 #include "../utils/math.hpp"
 #include "../peripherals/bus.hpp"
 #include "../utils/logger/logger.hpp"
@@ -42,7 +42,10 @@ namespace zero_mate::arm1176jzf_s
 
     private:
         [[nodiscard]] std::uint32_t& PC() noexcept;
+        [[nodiscard]] const std::uint32_t& PC() const noexcept;
         [[nodiscard]] std::uint32_t& LR() noexcept;
+        [[nodiscard]] const std::uint32_t& LR() const noexcept;
+
         [[nodiscard]] isa::CInstruction Fetch_Instruction();
 
         [[nodiscard]] bool Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept;
@@ -83,7 +86,7 @@ namespace zero_mate::arm1176jzf_s
 
     public:
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
-        CCSPR m_cspr;
+        CCPSR m_cpsr;
 
     private:
         isa::CISA_Decoder m_instruction_decoder;

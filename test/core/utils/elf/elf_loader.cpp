@@ -10,10 +10,10 @@
 {
     static constexpr std::uint32_t RAM_SIZE = 1024 * 1024 * 256;
 
-    auto ram = std::make_shared<zero_mate::peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<zero_mate::peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<zero_mate::CBus>();
 
-    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), zero_mate::CBus::NStatus::OK);
 
     const auto [error_code, pc, _] = zero_mate::utils::elf::Load_Kernel(*bus, filename);
     EXPECT_EQ(error_code, zero_mate::utils::elf::NError_Code::OK);
@@ -28,19 +28,19 @@
 
 #ifdef ENABLE_ELF_TESTS
 
-    // These tests pass in an IDE. They fail in a CI pipeline
-    // due to an incorrect path to the .ELF files.
+// These tests pass in an IDE. They fail in a CI pipeline
+// due to an incorrect path to the .ELF files.
 
-    TEST(elf_loader, test_01)
-    {
-        const std::string path = "../../../../test/core/utils/elf/source_files/test_01/kernel.elf";
-        Run_Test(path.c_str(), 2);
-    }
+TEST(elf_loader, test_01)
+{
+    const std::string path = "../../../../test/core/utils/elf/source_files/test_01/kernel.elf";
+    Run_Test(path.c_str(), 2);
+}
 
-    TEST(elf_loader, test_02)
-    {
-        const std::string path = "../../../../test/core/utils/elf/source_files/test_02/kernel.elf";
-        Run_Test(path.c_str(), 6);
-    }
+TEST(elf_loader, test_02)
+{
+    const std::string path = "../../../../test/core/utils/elf/source_files/test_02/kernel.elf";
+    Run_Test(path.c_str(), 6);
+}
 
 #endif

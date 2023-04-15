@@ -9,10 +9,10 @@ static constexpr std::uint32_t RAM_SIZE = 1024;
 
 TEST(ldr_instruction, test_01)
 {
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<CBus>();
 
-    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
@@ -29,10 +29,10 @@ TEST(ldr_instruction, test_01)
 
 TEST(ldr_instruction, test_02)
 {
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<CBus>();
 
-    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
@@ -49,10 +49,10 @@ TEST(ldr_instruction, test_02)
 
 TEST(ldr_instruction, test_04)
 {
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<CBus>();
 
-    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
@@ -74,10 +74,10 @@ TEST(ldr_instruction, test_04)
 
 TEST(ldr_instruction, test_05)
 {
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<CBus>();
 
-    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
@@ -96,10 +96,10 @@ TEST(ldr_instruction, test_05)
 
 TEST(ldr_instruction, test_06)
 {
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<CBus>();
 
-    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
@@ -115,10 +115,10 @@ TEST(ldr_instruction, test_06)
 
 TEST(ldr_instruction, test_07)
 {
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<CBus>();
 
-    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
@@ -136,10 +136,10 @@ TEST(ldr_instruction, test_07)
 
 TEST(ldr_instruction, test_08)
 {
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>();
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
     auto bus = std::make_shared<CBus>();
 
-    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 

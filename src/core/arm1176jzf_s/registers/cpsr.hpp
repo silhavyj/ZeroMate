@@ -4,13 +4,16 @@
 
 namespace zero_mate::arm1176jzf_s
 {
-    class CCSPR final
+    class CCPSR final
     {
     public:
-        static constexpr std::uint32_t N_BIT_IDX = 31U;
-        static constexpr std::uint32_t Z_BIT_IDX = 30U;
-        static constexpr std::uint32_t C_BIT_IDX = 29U;
-        static constexpr std::uint32_t V_BIT_IDX = 28U;
+        enum class NFlag : std::uint32_t
+        {
+            N = 0b1U << 31U,
+            Z = 0b1U << 30U,
+            C = 0b1U << 29U,
+            V = 0b1U << 28U
+        };
 
         enum class NCPU_Mode : std::uint32_t
         {
@@ -23,19 +26,11 @@ namespace zero_mate::arm1176jzf_s
             SYS = 0b11111  // System - Runs privileged operating system tasks (ARMv4 and above)
         };
 
-        enum class NFlag
-        {
-            N, // Negative result from ALU
-            Z, // Zero result from ALU
-            C, // ALU operation carried out
-            V  // ALU operation overflowed
-        };
-
     private:
         static constexpr std::uint32_t CPU_MODE_MASK = 0b11111U;
 
     public:
-        explicit CCSPR(uint32_t value) noexcept;
+        explicit CCPSR(uint32_t value) noexcept;
 
         void Set_Flag(NFlag flag, bool set) noexcept;
         [[nodiscard]] bool Is_Flag_Set(NFlag flag) const noexcept;

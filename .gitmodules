@@ -34,3 +34,6 @@
 	path = external/capstone
 	url = https://github.com/capstone-engine/capstone
 	branch = next
+[submodule "external/inih"]
+	path = external/inih
+	url = https://github.com/benhoyt/inih.git
