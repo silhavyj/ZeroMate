@@ -50,6 +50,13 @@ namespace zero_mate::gui
 
         std::vector<std::shared_ptr<CGUI_Window>> s_windows;
 
+        struct TINI_Config_Values
+        {
+            std::uint32_t ram_size;
+            std::uint32_t ram_map_addr;
+            std::uint32_t gpio_map_addr;
+        };
+
         void Initialize_Logging_System()
         {
             logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
@@ -113,24 +120,26 @@ namespace zero_mate::gui
                 }
                 else
                 {
-                    s_logging_system.Error(fmt::format("Value {} was not found in section {} of the config file ({}). Using default value 0x{:08X} for {} value", value, section, config::CONFIG_FILE, default_value, value).c_str());
+                    s_logging_system.Error(fmt::format("Value {} was not found in section {} of the config file ({}). Using default value 0x{:08X} for the {} value", value, section, config::CONFIG_FILE, default_value, value).c_str());
                     return default_value;
                 }
             }
             else
             {
-                s_logging_system.Error(fmt::format("Section {} was not found in {}. Using default value 0x{:08X} for {} value", section, config::CONFIG_FILE, default_value, value).c_str());
+                s_logging_system.Error(fmt::format("Section {} was not found in {}. Using default value 0x{:08X} for the {} value", section, config::CONFIG_FILE, default_value, value).c_str());
                 return default_value;
             }
         }
 
-        void Initialize_Peripherals()
+        [[nodiscard]] TINI_Config_Values Parse_INI_Config_File()
         {
-            const INIReader ini_reader(config::CONFIG_FILE);
+            TINI_Config_Values config_values{
+                .ram_size = config::DEFAULT_RAM_SIZE,
+                .ram_map_addr = config::DEFAULT_RAM_MAP_ADDR,
+                .gpio_map_addr = config::DEFAULT_GPIO_MAP_ADDR
+            };
 
-            std::uint32_t ram_size{};
-            std::uint32_t ram_map_addr{};
-            std::uint32_t gpio_map_addr{};
+            const INIReader ini_reader(config::CONFIG_FILE);
 
             if (ini_reader.ParseError() < 0)
             {
@@ -138,13 +147,20 @@ namespace zero_mate::gui
             }
             else
             {
-                ram_size = Get_Ini_Value<std::uint32_t>(ini_reader, config::RAM_SECTION, "size", config::DEFAULT_RAM_SIZE);
-                ram_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::RAM_SECTION, "addr", config::DEFAULT_RAM_MAP_ADDR);
-                gpio_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::GPIO_SECTION, "addr", config::DEFAULT_GPIO_MAP_ADDR);
+                config_values.ram_size = Get_Ini_Value<std::uint32_t>(ini_reader, config::RAM_SECTION, "size", config::DEFAULT_RAM_SIZE);
+                config_values.ram_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::RAM_SECTION, "addr", config::DEFAULT_RAM_MAP_ADDR);
+                config_values.gpio_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::GPIO_SECTION, "addr", config::DEFAULT_GPIO_MAP_ADDR);
             }
 
-            Init_RAM(ram_size, ram_map_addr);
-            Init_GPIO(gpio_map_addr);
+            return config_values;
+        }
+
+        void Initialize_Peripherals()
+        {
+            const auto config_values = Parse_INI_Config_File();
+
+            Init_RAM(config_values.ram_size, config_values.ram_map_addr);
+            Init_GPIO(config_values.gpio_map_addr);
         }
 
         void Initialize()
