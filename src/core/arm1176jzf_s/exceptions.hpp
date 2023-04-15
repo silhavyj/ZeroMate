@@ -4,50 +4,62 @@
 
 #include "fmt/format.h"
 
+#include "registers/cpsr.hpp"
+
 namespace zero_mate::arm1176jzf_s::exceptions
 {
-    class CUndefined_Instruction : public std::runtime_error
+    class CCPU_Exception : public std::runtime_error
     {
     public:
-        CUndefined_Instruction()
-        : std::runtime_error{ "Undefined instruction" }
-        {
-        }
+        explicit CCPU_Exception(std::uint32_t exception_vector, CCPSR::NCPU_Mode mode, const char* name);
+
+        [[nodiscard]] std::uint32_t Get_Exception_Vector() const;
+        [[nodiscard]] CCPSR::NCPU_Mode Get_CPU_Mode() const;
+
+    protected:
+        std::uint32_t m_exception_vector;
+        CCPSR::NCPU_Mode m_mode;
     };
 
-    class CSoftware_Interrupt : public std::runtime_error
+    class CReset final : public CCPU_Exception
     {
     public:
-        CSoftware_Interrupt()
-        : std::runtime_error{ "Software interrupt" }
-        {
-        }
+        CReset();
     };
 
-    class CData_Abort : public std::runtime_error
+    class CUndefined_Instruction final : public CCPU_Exception
     {
     public:
-        explicit CData_Abort(const char* error_msg)
-        : std::runtime_error{ error_msg }
-        {
-        }
+        CUndefined_Instruction();
     };
 
-    class CUnaligned_Memory_Access : public CData_Abort
+    class CSoftware_Interrupt : public CCPU_Exception
     {
     public:
-        explicit CUnaligned_Memory_Access(std::uint32_t addr)
-        : CData_Abort{ fmt::format("Unaligned memory access detected at 0x{:08X}", addr).c_str() }
-        {
-        }
+        CSoftware_Interrupt();
     };
 
-    class CInvalid_Peripheral_Access : public CData_Abort
+    class CPrefetch_Abort : public CCPU_Exception
     {
     public:
-        explicit CInvalid_Peripheral_Access(std::uint32_t addr)
-        : CData_Abort{ fmt::format("Invalid peripheral access at 0x{:08X}", addr).c_str() }
-        {
-        }
+        explicit CPrefetch_Abort(std::uint32_t addr);
+    };
+
+    class CData_Abort : public CCPU_Exception
+    {
+    public:
+        explicit CData_Abort(std::uint32_t addr);
+    };
+
+    class CIRQ : public CCPU_Exception
+    {
+    public:
+        CIRQ();
+    };
+
+    class CFIQ : public CCPU_Exception
+    {
+    public:
+        CFIQ();
     };
 }

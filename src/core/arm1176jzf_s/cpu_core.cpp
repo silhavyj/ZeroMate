@@ -80,13 +80,14 @@ namespace zero_mate::arm1176jzf_s
             PC() += REG_SIZE;
             return instruction;
         }
-        catch (const exceptions::CData_Abort& ex)
+        catch (const exceptions::CCPU_Exception& ex)
         {
-            m_logging_system.Error(fmt::format("Data abort exception while fetching an instruction: {}", ex.what()).c_str());
+            const exceptions::CPrefetch_Abort prefetch_ex{ PC() - REG_SIZE };
 
-            // TODO reset the cpu
-            PC() = 0;
-            return Fetch_Instruction(); // Assumes the RAM is mapped to the beginning of the address space
+            m_logging_system.Error(prefetch_ex.what());
+            PC() = prefetch_ex.Get_Exception_Vector();
+
+            return Fetch_Instruction();
         }
     }
 
@@ -239,20 +240,13 @@ namespace zero_mate::arm1176jzf_s
                     break;
             }
         }
-        catch (const exceptions::CSoftware_Interrupt& ex)
+        catch (const exceptions::CCPU_Exception& ex)
         {
-            m_logging_system.Info(fmt::format("SW interrupt exception: {}", ex.what()).c_str());
-            // TODO
-        }
-        catch (const exceptions::CUndefined_Instruction& ex)
-        {
-            m_logging_system.Warning(fmt::format("Undefined instruction exception: {}", ex.what()).c_str());
-            // TODO
-        }
-        catch (const exceptions::CData_Abort& ex)
-        {
-            m_logging_system.Warning(fmt::format("Data abort exception: {}", ex.what()).c_str());
-            // TODO
+            m_logging_system.Warning(ex.what());
+
+            // TODO change the CPU mode, save the PC register, etc.
+
+            PC() = ex.Get_Exception_Vector();
         }
     }
 
@@ -617,10 +611,10 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
-    void CCPU_Core::Execute(isa::CSW_Interrupt instruction)
+    void CCPU_Core::Execute([[maybe_unused]] isa::CSW_Interrupt instruction)
     {
-        // TODO
-        static_cast<void>(instruction);
+        // TODO do something with instruction.Get_Comment_Field()?
+        throw exceptions::CSoftware_Interrupt{};
     }
 
     void CCPU_Core::Execute(isa::CExtend instruction)
@@ -631,7 +625,7 @@ namespace zero_mate::arm1176jzf_s
         const auto reg_rn = instruction.Get_Rn();
         const auto rot = instruction.Get_Rot();
 
-        const auto rotated_value = utils::math::ROR(m_regs[reg_rm], rot);
+        const std::unsigned_integral auto rotated_value = utils::math::ROR(m_regs[reg_rm], rot);
 
         const std::uint16_t sign_extended_lower_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(rotated_value & 0xFFU);
         const std::uint16_t sign_extended_higher_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>((rotated_value & 0xFF0000U) >> 16U);
@@ -639,10 +633,10 @@ namespace zero_mate::arm1176jzf_s
         const std::uint32_t sign_extended_8_to_32 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint32_t>(rotated_value & 0xFFU);
         const std::uint32_t sign_extended_16_to_32 = utils::math::Sign_Extend_Value<std::uint16_t, std::uint32_t>(rotated_value & 0xFFFFU);
 
-        const std::uint16_t lower_16_bits_unsigned = static_cast<std::uint16_t>(rotated_value & 0xFFU) + static_cast<std::uint16_t>(m_regs[reg_rn] & 0xFFFF);
-        const std::uint16_t higher_16_bits_unsigned = static_cast<std::uint16_t>((rotated_value & 0xFF0000U) >> 16U) + static_cast<std::uint16_t>((m_regs[reg_rn] & 0xFFFF0000) >> 16U);
+        const std::uint16_t lower_16_bits_unsigned = static_cast<std::uint16_t>(rotated_value & 0xFFU) + static_cast<std::uint16_t>(m_regs[reg_rn] & 0xFFFFU);
+        const std::uint16_t higher_16_bits_unsigned = static_cast<std::uint16_t>((rotated_value & 0xFF0000U) >> 16U) + static_cast<std::uint16_t>((m_regs[reg_rn] & 0xFFFF0000U) >> 16U);
 
-        const std::uint16_t lower_16_bits_signed = sign_extended_lower_8_to_16 + static_cast<std::uint16_t>(m_regs[reg_rn] & 0xFFFF);
+        const std::uint16_t lower_16_bits_signed = sign_extended_lower_8_to_16 + static_cast<std::uint16_t>(m_regs[reg_rn] & 0xFFFFU);
         const std::uint16_t higher_16_bits_singed = sign_extended_higher_8_to_16 + static_cast<std::uint16_t>((m_regs[reg_rn] & 0xFFFF0000) >> 16U);
 
         switch (type)

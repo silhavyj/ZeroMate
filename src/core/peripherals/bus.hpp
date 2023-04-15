@@ -75,13 +75,13 @@ namespace zero_mate
         {
             if (check_alignment && (addr % sizeof(Type)) != 0)
             {
-                throw arm1176jzf_s::exceptions::CUnaligned_Memory_Access{ addr };
+                throw arm1176jzf_s::exceptions::CData_Abort{ addr };
             }
 
             auto peripheral_iter = Get_Peripheral(addr);
             if (!Is_Peripheral_Accessible(addr, peripheral_iter))
             {
-                throw arm1176jzf_s::exceptions::CInvalid_Peripheral_Access{ addr };
+                throw arm1176jzf_s::exceptions::CData_Abort{ addr };
             }
 
             return peripheral_iter;
