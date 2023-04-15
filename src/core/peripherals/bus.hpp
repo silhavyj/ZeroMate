@@ -38,6 +38,8 @@ namespace zero_mate
     public:
         CBus() = default;
 
+        // NOTE: The bus width size is usually fixed.
+        // The generic type is supported only for emulation purposes (simplifications)
         template<typename Type>
         void Write(std::uint32_t addr, Type value, bool check_alignment = true)
         {
@@ -49,6 +51,8 @@ namespace zero_mate
             peripheral_iter->peripheral->Write(relative_addr, std::bit_cast<const char*>(&value), sizeof(Type));
         }
 
+        // NOTE: The bus width size is usually fixed.
+        // The generic type is supported only for emulation purposes (simplifications)
         template<typename Type>
         [[nodiscard]] Type Read(std::uint32_t addr, bool check_alignment = true)
         {
