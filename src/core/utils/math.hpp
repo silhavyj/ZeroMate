@@ -102,7 +102,7 @@ namespace zero_mate::utils::math
     }
 
     template<std::unsigned_integral Type>
-    [[nodiscard]] TShift_Result<Type> ROR(Type value, Type shift_size, bool carry_flag = false) noexcept
+    [[nodiscard]] TShift_Result<Type> ROR(Type value, Type shift_size, bool carry_flag) noexcept
     {
         bool updated_carry_flag{};
         Type result{};
@@ -122,9 +122,9 @@ namespace zero_mate::utils::math
     }
 
     template<std::unsigned_integral Type>
-    [[nodiscard]] Type ROR_Reg(Type value, Type rot) noexcept
+    [[nodiscard]] Type ROR(Type value, Type rot) noexcept
     {
-        if (rot == 0)
+        if (rot == 0 || rot >= std::numeric_limits<Type>::digits)
         {
             return value;
         }

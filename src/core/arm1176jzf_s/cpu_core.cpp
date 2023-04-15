@@ -275,7 +275,7 @@ namespace zero_mate::arm1176jzf_s
 
         if (shift_amount != 0 && shift_amount != std::numeric_limits<std::uint32_t>::digits)
         {
-            second_operand = utils::math::ROR(immediate, shift_amount);
+            second_operand = utils::math::ROR(immediate, shift_amount, false);
         }
 
         return second_operand;
@@ -631,23 +631,32 @@ namespace zero_mate::arm1176jzf_s
         const auto reg_rn = instruction.Get_Rn();
         const auto rot = instruction.Get_Rot();
 
-        const auto rotated_value = utils::math::ROR_Reg(m_regs[reg_rm], rot);
+        const auto rotated_value = utils::math::ROR(m_regs[reg_rm], rot);
+
+        const std::uint16_t sign_extended_lower_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(rotated_value & 0xFFU);
+        const std::uint16_t sign_extended_higher_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>((rotated_value & 0xFF0000U) >> 16U);
+
+        const std::uint32_t sign_extended_8_to_32 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint32_t>(rotated_value & 0xFFU);
+        const std::uint32_t sign_extended_16_to_32 = utils::math::Sign_Extend_Value<std::uint16_t, std::uint32_t>(rotated_value & 0xFFFFU);
+
+        const std::uint16_t lower_16_bits_unsigned = static_cast<std::uint16_t>(rotated_value & 0xFFU) + static_cast<std::uint16_t>(m_regs[reg_rn] & 0xFFFF);
+        const std::uint16_t higher_16_bits_unsigned = static_cast<std::uint16_t>((rotated_value & 0xFF0000U) >> 16U) + static_cast<std::uint16_t>((m_regs[reg_rn] & 0xFFFF0000) >> 16U);
+
+        const std::uint16_t lower_16_bits_signed = sign_extended_lower_8_to_16 + static_cast<std::uint16_t>(m_regs[reg_rn] & 0xFFFF);
+        const std::uint16_t higher_16_bits_singed = sign_extended_higher_8_to_16 + static_cast<std::uint16_t>((m_regs[reg_rn] & 0xFFFF0000) >> 16U);
 
         switch (type)
         {
             case isa::CExtend::NType::SXTAB16:
-                // m_regs[reg_rd] = (utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(rotated_value & 0xFFU) |
-                //                  static_cast<std::uint32_t>(utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>((rotated_value & 0xFF0000U) >> 16U)) << 16U) + m_regs[reg_rn];
+                m_regs[reg_rd] = static_cast<std::uint32_t>(lower_16_bits_signed) | (static_cast<std::uint32_t>(higher_16_bits_singed) << 16U);
                 break;
 
             case isa::CExtend::NType::UXTAB16:
-                // m_regs[reg_rd] = (((rotated_value & 0xFFU) << 8U) + (m_regs[reg_rn] & 0xFFFF0000U)) + (((rotated_value & 0xFF00U) >> 8U) + (m_regs[reg_rn] & 0xFFFFU));
-                m_regs[reg_rd] = ((rotated_value & 0xFFU) + (rotated_value & 0xFF0000U)) + m_regs[reg_rn];
+                m_regs[reg_rd] = static_cast<std::uint32_t>(lower_16_bits_unsigned) | (static_cast<std::uint32_t>(higher_16_bits_unsigned) << 16U);
                 break;
 
             case isa::CExtend::NType::SXTB16:
-                m_regs[reg_rd] = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(rotated_value & 0xFFU) |
-                                 static_cast<std::uint32_t>(utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>((rotated_value & 0xFF0000U) >> 16U)) << 16U;
+                m_regs[reg_rd] = static_cast<std::uint32_t>(sign_extended_lower_8_to_16) | static_cast<std::uint32_t>(sign_extended_higher_8_to_16) << 16U;
                 break;
 
             case isa::CExtend::NType::UXTB16:
@@ -655,7 +664,7 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CExtend::NType::SXTAB:
-                m_regs[reg_rd] = utils::math::Sign_Extend_Value<std::uint8_t>(rotated_value & 0xFFU) + m_regs[reg_rn];
+                m_regs[reg_rd] = sign_extended_8_to_32 + m_regs[reg_rn];
                 break;
 
             case isa::CExtend::NType::UXTAB:
@@ -663,7 +672,7 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CExtend::NType::SXTB:
-                m_regs[reg_rd] = utils::math::Sign_Extend_Value<std::uint8_t>(rotated_value & 0xFFU);
+                m_regs[reg_rd] = sign_extended_8_to_32;
                 break;
 
             case isa::CExtend::NType::UXTB:
@@ -671,7 +680,7 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CExtend::NType::SXTAH:
-                m_regs[reg_rd] = utils::math::Sign_Extend_Value<std::uint16_t>(rotated_value & 0xFFFFU) + m_regs[reg_rn];
+                m_regs[reg_rd] = sign_extended_16_to_32 + m_regs[reg_rn];
                 break;
 
             case isa::CExtend::NType::UXTAH:
@@ -679,7 +688,7 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CExtend::NType::SXTH:
-                m_regs[reg_rd] = utils::math::Sign_Extend_Value<std::uint16_t>(rotated_value & 0xFFFFU);
+                m_regs[reg_rd] = sign_extended_16_to_32;
                 break;
 
             case isa::CExtend::NType::UXTH:
