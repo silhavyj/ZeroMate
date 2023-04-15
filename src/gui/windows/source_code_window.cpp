@@ -78,7 +78,7 @@ namespace zero_mate::gui
                                 ImGui::Text("%s", disassembly.c_str());
                             }
 
-                            if (!m_cpu_running && addr == m_cpu->m_regs[arm1176jzf_s::CCPU_Core::PC_REG_IDX])
+                            if (!m_cpu_running && addr == m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
                             {
                                 const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
                                 ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);

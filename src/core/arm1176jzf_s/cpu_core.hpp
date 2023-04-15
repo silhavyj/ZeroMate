@@ -8,9 +8,9 @@
 #include <unordered_set>
 #include <initializer_list>
 
+#include "context.hpp"
 #include "isa/isa.hpp"
 #include "isa/isa_decoder.hpp"
-#include "registers/cpsr.hpp"
 #include "../utils/math.hpp"
 #include "../peripherals/bus.hpp"
 #include "../utils/logger/logger.hpp"
@@ -20,15 +20,6 @@ namespace zero_mate::arm1176jzf_s
     class CCPU_Core final
     {
     public:
-        static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
-
-        static constexpr std::size_t NUMBER_OF_REGS = 16;
-        static constexpr std::size_t NUMBER_OF_GENERAL_REGS = 13;
-
-        static constexpr std::size_t PC_REG_IDX = 15;
-        static constexpr std::size_t LR_REG_IDX = 14;
-        static constexpr std::size_t SP_REG_IDX = 13;
-
         CCPU_Core() noexcept;
         CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept;
 
@@ -77,17 +68,16 @@ namespace zero_mate::arm1176jzf_s
 
             if (instruction.Is_L_Bit_Set())
             {
-                m_regs[reg_idx] = m_bus->Read<Type>(addr);
+                m_context[reg_idx] = m_bus->Read<Type>(addr);
             }
             else
             {
-                m_bus->Write<Type>(addr, static_cast<Type>(m_regs[reg_idx]));
+                m_bus->Write<Type>(addr, static_cast<Type>(m_context[reg_idx]));
             }
         }
 
     public:
-        std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
-        CCPSR m_cpsr;
+        CCPU_Context m_context;
 
     private:
         isa::CISA_Decoder m_instruction_decoder;

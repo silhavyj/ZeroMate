@@ -33,7 +33,7 @@ TEST(fibonacci, non_recursive)
     cpu.Add_Breakpoint(0x8);
     cpu.Run();
 
-    EXPECT_EQ(cpu.m_regs[0], -980107325);
+    EXPECT_EQ(cpu.m_context[0], -980107325);
 }
 
 TEST(fibonacci, recursive)
@@ -63,7 +63,7 @@ TEST(fibonacci, recursive)
     cpu.Add_Breakpoint(0x8);
     cpu.Run();
 
-    EXPECT_EQ(cpu.m_regs[0], 55);
+    EXPECT_EQ(cpu.m_context[0], 55);
 }
 
 TEST(fibonacci, dynamic)
@@ -105,5 +105,5 @@ TEST(fibonacci, dynamic)
     cpu.Add_Breakpoint(0x8);
     cpu.Run();
 
-    EXPECT_EQ(cpu.m_regs[0], 670);
+    EXPECT_EQ(cpu.m_context[0], 670);
 }

@@ -15,8 +15,7 @@ namespace zero_mate::arm1176jzf_s
     }
 
     CCPU_Core::CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept
-    : m_regs{}
-    , m_cpsr{ 0 }
+    : m_context{}
     , m_bus{ bus }
     , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
@@ -77,12 +76,12 @@ namespace zero_mate::arm1176jzf_s
         try
         {
             const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
-            PC() += REG_SIZE;
+            PC() += CCPU_Context::REG_SIZE;
             return instruction;
         }
         catch (const exceptions::CCPU_Exception& ex)
         {
-            const exceptions::CPrefetch_Abort prefetch_ex{ PC() - REG_SIZE };
+            const exceptions::CPrefetch_Abort prefetch_ex{ PC() - CCPU_Context::REG_SIZE };
 
             m_logging_system.Error(prefetch_ex.what());
             PC() = prefetch_ex.Get_Exception_Vector();
@@ -93,22 +92,22 @@ namespace zero_mate::arm1176jzf_s
 
     std::uint32_t& CCPU_Core::PC() noexcept
     {
-        return m_regs[PC_REG_IDX];
+        return m_context[CCPU_Context::PC_REG_IDX];
     }
 
     const std::uint32_t& CCPU_Core::PC() const noexcept
     {
-        return m_regs[PC_REG_IDX];
+        return m_context[CCPU_Context::PC_REG_IDX];
     }
 
     std::uint32_t& CCPU_Core::LR() noexcept
     {
-        return m_regs[LR_REG_IDX];
+        return m_context[CCPU_Context::LR_REG_IDX];
     }
 
     const std::uint32_t& CCPU_Core::LR() const noexcept
     {
-        return m_regs[LR_REG_IDX];
+        return m_context[CCPU_Context::LR_REG_IDX];
     }
 
     bool CCPU_Core::Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept
@@ -118,46 +117,46 @@ namespace zero_mate::arm1176jzf_s
         switch (condition)
         {
             case isa::CInstruction::NCondition::EQ:
-                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z);
+                return m_context.Is_Flag_Set(CCPU_Context::NFlag::Z);
 
             case isa::CInstruction::NCondition::NE:
-                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z);
+                return !m_context.Is_Flag_Set(CCPU_Context::NFlag::Z);
 
             case isa::CInstruction::NCondition::HS:
-                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::C);
+                return m_context.Is_Flag_Set(CCPU_Context::NFlag::C);
 
             case isa::CInstruction::NCondition::LO:
-                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::C);
+                return !m_context.Is_Flag_Set(CCPU_Context::NFlag::C);
 
             case isa::CInstruction::NCondition::MI:
-                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::N);
+                return m_context.Is_Flag_Set(CCPU_Context::NFlag::N);
 
             case isa::CInstruction::NCondition::PL:
-                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::N);
+                return !m_context.Is_Flag_Set(CCPU_Context::NFlag::N);
 
             case isa::CInstruction::NCondition::VS:
-                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::V);
+                return m_context.Is_Flag_Set(CCPU_Context::NFlag::V);
 
             case isa::CInstruction::NCondition::VC:
-                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::V);
+                return !m_context.Is_Flag_Set(CCPU_Context::NFlag::V);
 
             case isa::CInstruction::NCondition::HI:
-                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::C) && !m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z);
+                return m_context.Is_Flag_Set(CCPU_Context::NFlag::C) && !m_context.Is_Flag_Set(CCPU_Context::NFlag::Z);
 
             case isa::CInstruction::NCondition::LS:
-                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::C) || m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z);
+                return !m_context.Is_Flag_Set(CCPU_Context::NFlag::C) || m_context.Is_Flag_Set(CCPU_Context::NFlag::Z);
 
             case isa::CInstruction::NCondition::GE:
-                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::N) == m_cpsr.Is_Flag_Set(CCPSR::NFlag::V);
+                return m_context.Is_Flag_Set(CCPU_Context::NFlag::N) == m_context.Is_Flag_Set(CCPU_Context::NFlag::V);
 
             case isa::CInstruction::NCondition::LT:
-                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::N) != m_cpsr.Is_Flag_Set(CCPSR::NFlag::V);
+                return m_context.Is_Flag_Set(CCPU_Context::NFlag::N) != m_context.Is_Flag_Set(CCPU_Context::NFlag::V);
 
             case isa::CInstruction::NCondition::GT:
-                return !m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z) && (m_cpsr.Is_Flag_Set(CCPSR::NFlag::N) == m_cpsr.Is_Flag_Set(CCPSR::NFlag::V));
+                return !m_context.Is_Flag_Set(CCPU_Context::NFlag::Z) && (m_context.Is_Flag_Set(CCPU_Context::NFlag::N) == m_context.Is_Flag_Set(CCPU_Context::NFlag::V));
 
             case isa::CInstruction::NCondition::LE:
-                return m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z) || (m_cpsr.Is_Flag_Set(CCPSR::NFlag::N) != m_cpsr.Is_Flag_Set(CCPSR::NFlag::V));
+                return m_context.Is_Flag_Set(CCPU_Context::NFlag::Z) || (m_context.Is_Flag_Set(CCPU_Context::NFlag::N) != m_context.Is_Flag_Set(CCPU_Context::NFlag::V));
 
             case isa::CInstruction::NCondition::AL:
                 return true;
@@ -257,7 +256,7 @@ namespace zero_mate::arm1176jzf_s
             return instruction.Get_Shift_Amount();
         }
 
-        return m_regs[instruction.Get_Rs()] & 0xFFU;
+        return m_context[instruction.Get_Rs()] & 0xFFU;
     }
 
     utils::math::TShift_Result<std::uint32_t> CCPU_Core::Get_Second_Operand_Imm(isa::CData_Processing instruction) const noexcept
@@ -265,7 +264,7 @@ namespace zero_mate::arm1176jzf_s
         const std::uint32_t immediate = instruction.Get_Immediate();
         const std::uint32_t shift_amount = instruction.Get_Rotate() * 2;
 
-        utils::math::TShift_Result<std::uint32_t> second_operand{ m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), immediate };
+        utils::math::TShift_Result<std::uint32_t> second_operand{ m_context.Is_Flag_Set(CCPU_Context::NFlag::C), immediate };
 
         if (shift_amount != 0 && shift_amount != std::numeric_limits<std::uint32_t>::digits)
         {
@@ -280,7 +279,7 @@ namespace zero_mate::arm1176jzf_s
         switch (shift_type)
         {
             case isa::CData_Processing::NShift_Type::LSL:
-                return utils::math::LSL<std::uint32_t>(shift_reg, shift_amount, m_cpsr.Is_Flag_Set(CCPSR::NFlag::C));
+                return utils::math::LSL<std::uint32_t>(shift_reg, shift_amount, m_context.Is_Flag_Set(CCPU_Context::NFlag::C));
 
             case isa::CData_Processing::NShift_Type::LSR:
                 return utils::math::LSR<std::uint32_t>(shift_reg, shift_amount);
@@ -289,7 +288,7 @@ namespace zero_mate::arm1176jzf_s
                 return utils::math::ASR<std::uint32_t>(shift_reg, shift_amount);
 
             case isa::CData_Processing::NShift_Type::ROR:
-                return utils::math::ROR<std::uint32_t>(shift_reg, shift_amount, m_cpsr.Is_Flag_Set(CCPSR::NFlag::C));
+                return utils::math::ROR<std::uint32_t>(shift_reg, shift_amount, m_context.Is_Flag_Set(CCPU_Context::NFlag::C));
         }
 
         return {};
@@ -304,14 +303,14 @@ namespace zero_mate::arm1176jzf_s
 
         const std::uint32_t shift_amount = Get_Shift_Amount(instruction);
         const auto shift_type = instruction.Get_Shift_Type();
-        const auto shift_reg = m_regs[instruction.Get_Rm()];
+        const auto shift_reg = m_context[instruction.Get_Rm()];
 
         return Perform_Shift(shift_type, shift_amount, shift_reg);
     }
 
     void CCPU_Core::Execute(isa::CData_Processing instruction)
     {
-        const std::uint32_t first_operand = m_regs[instruction.Get_Rn()];
+        const std::uint32_t first_operand = m_context[instruction.Get_Rn()];
         const auto [carry_out, second_operand] = Get_Second_Operand(instruction);
         const std::uint32_t dest_reg = instruction.Get_Rd();
 
@@ -319,21 +318,21 @@ namespace zero_mate::arm1176jzf_s
 
         if (result.write_back)
         {
-            m_regs[dest_reg] = result.value;
+            m_context[dest_reg] = result.value;
         }
 
-        if (result.set_flags && dest_reg != PC_REG_IDX)
+        if (result.set_flags && dest_reg != CCPU_Context::PC_REG_IDX)
         {
-            m_cpsr.Set_Flag(CCPSR::NFlag::N, result.n_flag);
-            m_cpsr.Set_Flag(CCPSR::NFlag::Z, result.z_flag);
-            m_cpsr.Set_Flag(CCPSR::NFlag::C, result.c_flag);
-            m_cpsr.Set_Flag(CCPSR::NFlag::V, result.v_flag);
+            m_context.Set_Flag(CCPU_Context::NFlag::N, result.n_flag);
+            m_context.Set_Flag(CCPU_Context::NFlag::Z, result.z_flag);
+            m_context.Set_Flag(CCPU_Context::NFlag::C, result.c_flag);
+            m_context.Set_Flag(CCPU_Context::NFlag::V, result.v_flag);
         }
     }
 
     void CCPU_Core::Execute(isa::CBranch_And_Exchange instruction) noexcept
     {
-        const auto rm_reg_value = m_regs[instruction.Get_Rm()];
+        const auto rm_reg_value = m_context[instruction.Get_Rm()];
 
         if (instruction.Get_Instruction_Mode(rm_reg_value) == isa::CBranch_And_Exchange::NCPU_Instruction_Mode::Thumb)
         {
@@ -367,23 +366,23 @@ namespace zero_mate::arm1176jzf_s
         }
 
         // PC is already pointing at the next instruction. Hence, +4 and not +8.
-        PC() += REG_SIZE;
+        PC() += CCPU_Context::REG_SIZE;
     }
 
     void CCPU_Core::Execute(isa::CMultiply instruction)
     {
         const auto result = mac::Execute(instruction,
-                                         m_regs[instruction.Get_Rm()],
-                                         m_regs[instruction.Get_Rs()],
-                                         m_regs[instruction.Get_Rn()]);
+                                         m_context[instruction.Get_Rm()],
+                                         m_context[instruction.Get_Rs()],
+                                         m_context[instruction.Get_Rn()]);
 
         if (result.set_fags)
         {
-            m_cpsr.Set_Flag(CCPSR::NFlag::N, result.n_flag);
-            m_cpsr.Set_Flag(CCPSR::NFlag::Z, result.z_flag);
+            m_context.Set_Flag(CCPU_Context::NFlag::N, result.n_flag);
+            m_context.Set_Flag(CCPU_Context::NFlag::Z, result.z_flag);
         }
 
-        m_regs[instruction.Get_Rd()] = result.value_lo;
+        m_context[instruction.Get_Rd()] = result.value_lo;
     }
 
     void CCPU_Core::Execute(isa::CMultiply_Long instruction)
@@ -392,19 +391,19 @@ namespace zero_mate::arm1176jzf_s
         const auto reg_rd_hi = instruction.Get_Rd_Hi();
 
         const auto result = mac::Execute(instruction,
-                                         m_regs[instruction.Get_Rm()],
-                                         m_regs[instruction.Get_Rs()],
-                                         m_regs[reg_rd_lo],
-                                         m_regs[reg_rd_hi]);
+                                         m_context[instruction.Get_Rm()],
+                                         m_context[instruction.Get_Rs()],
+                                         m_context[reg_rd_lo],
+                                         m_context[reg_rd_hi]);
 
         if (result.set_fags)
         {
-            m_cpsr.Set_Flag(CCPSR::NFlag::N, result.n_flag);
-            m_cpsr.Set_Flag(CCPSR::NFlag::Z, result.z_flag);
+            m_context.Set_Flag(CCPU_Context::NFlag::N, result.n_flag);
+            m_context.Set_Flag(CCPU_Context::NFlag::Z, result.z_flag);
         }
 
-        m_regs[reg_rd_lo] = result.value_lo;
-        m_regs[reg_rd_hi] = result.value_hi;
+        m_context[reg_rd_lo] = result.value_lo;
+        m_context[reg_rd_hi] = result.value_hi;
     }
 
     std::int64_t CCPU_Core::Get_Offset(isa::CSingle_Data_Transfer instruction) const noexcept
@@ -419,7 +418,7 @@ namespace zero_mate::arm1176jzf_s
         {
             const auto shift_type = instruction.Get_Shift_Type();
             const auto shift_amount = instruction.Get_Shift_Amount();
-            const auto shift_reg = m_regs[instruction.Get_Rm()];
+            const auto shift_reg = m_context[instruction.Get_Rm()];
 
             offset = static_cast<std::int64_t>(Perform_Shift(shift_type, shift_amount, shift_reg).result);
         }
@@ -434,7 +433,7 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Execute(isa::CSingle_Data_Transfer instruction)
     {
         const auto reg_rn = instruction.Get_Rn();
-        const auto base_addr = reg_rn == PC_REG_IDX ? (PC() + REG_SIZE) : m_regs[reg_rn];
+        const auto base_addr = reg_rn == CCPU_Context::PC_REG_IDX ? (PC() + CCPU_Context::REG_SIZE) : m_context[reg_rn];
         const auto offset = Get_Offset(instruction);
 
         const bool pre_indexed = instruction.Is_P_Bit_Set();
@@ -452,7 +451,7 @@ namespace zero_mate::arm1176jzf_s
 
         if (!pre_indexed || instruction.Is_W_Bit_Set())
         {
-            m_regs[instruction.Get_Rn()] = indexed_addr;
+            m_context[instruction.Get_Rn()] = indexed_addr;
         }
     }
 
@@ -466,16 +465,16 @@ namespace zero_mate::arm1176jzf_s
             switch (instruction.Get_Addressing_Mode())
             {
                 case isa::CBlock_Data_Transfer::NAddressing_Mode::IB:
-                    return m_regs[base_reg] + REG_SIZE;
+                    return m_context[base_reg] + CCPU_Context::REG_SIZE;
 
                 case isa::CBlock_Data_Transfer::NAddressing_Mode::IA:
-                    return m_regs[base_reg];
+                    return m_context[base_reg];
 
                 case isa::CBlock_Data_Transfer::NAddressing_Mode::DB:
-                    return m_regs[base_reg] - (number_of_regs * REG_SIZE);
+                    return m_context[base_reg] - (number_of_regs * CCPU_Context::REG_SIZE);
 
                 case isa::CBlock_Data_Transfer::NAddressing_Mode::DA:
-                    return m_regs[base_reg] - (number_of_regs * REG_SIZE) + REG_SIZE;
+                    return m_context[base_reg] - (number_of_regs * CCPU_Context::REG_SIZE) + CCPU_Context::REG_SIZE;
             }
 
             return {};
@@ -485,34 +484,34 @@ namespace zero_mate::arm1176jzf_s
 
         const bool store_value = !instruction.Is_L_Bit_Set();
 
-        for (std::size_t reg_idx = 0; reg_idx < NUMBER_OF_REGS; ++reg_idx)
+        for (std::uint32_t reg_idx = 0; reg_idx < CCPU_Context::NUMBER_OF_REGS; ++reg_idx)
         {
-            if (utils::math::Is_Bit_Set<std::uint32_t>(register_list, static_cast<std::uint32_t>(reg_idx)))
+            if (utils::math::Is_Bit_Set<std::uint32_t>(register_list, reg_idx))
             {
                 if (store_value)
                 {
-                    m_bus->Write<std::uint32_t>(addr, m_regs[reg_idx]);
+                    m_bus->Write<std::uint32_t>(addr, m_context[reg_idx]);
                 }
                 else
                 {
-                    m_regs[reg_idx] = m_bus->Read<std::uint32_t>(addr);
+                    m_context[reg_idx] = m_bus->Read<std::uint32_t>(addr);
                 }
 
-                addr += REG_SIZE;
+                addr += CCPU_Context::REG_SIZE;
             }
         }
 
         if (instruction.Is_W_Bit_Set())
         {
-            const std::uint32_t total_size_transferred{ REG_SIZE * number_of_regs };
+            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE * number_of_regs };
 
             if (!instruction.Is_U_Bit_Set())
             {
-                m_regs[base_reg] -= total_size_transferred;
+                m_context[base_reg] -= total_size_transferred;
             }
             else
             {
-                m_regs[base_reg] += total_size_transferred;
+                m_context[base_reg] += total_size_transferred;
             }
         }
     }
@@ -527,7 +526,7 @@ namespace zero_mate::arm1176jzf_s
             return (high_4_bits << 4U) | low_4_bits;
         }
 
-        return m_regs[instruction.Get_Rm()];
+        return m_context[instruction.Get_Rm()];
     }
 
     void CCPU_Core::Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t dest_reg)
@@ -541,17 +540,17 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                m_regs[dest_reg] = m_bus->Read<std::uint16_t>(addr);
+                m_context[dest_reg] = m_bus->Read<std::uint16_t>(addr);
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
                 read_value = m_bus->Read<std::uint8_t>(addr);
-                m_regs[dest_reg] = utils::math::Sign_Extend_Value(std::get<std::uint8_t>(read_value));
+                m_context[dest_reg] = utils::math::Sign_Extend_Value(std::get<std::uint8_t>(read_value));
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
                 read_value = m_bus->Read<std::uint16_t>(addr);
-                m_regs[dest_reg] = utils::math::Sign_Extend_Value(std::get<std::uint16_t>(read_value));
+                m_context[dest_reg] = utils::math::Sign_Extend_Value(std::get<std::uint16_t>(read_value));
                 break;
         }
     }
@@ -563,7 +562,7 @@ namespace zero_mate::arm1176jzf_s
         switch (type)
         {
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                value = static_cast<std::uint16_t>(m_regs[src_reg] & 0x0000FFFFU);
+                value = static_cast<std::uint16_t>(m_context[src_reg] & 0x0000FFFFU);
                 m_bus->Write<std::uint16_t>(addr, value);
                 break;
 
@@ -581,7 +580,7 @@ namespace zero_mate::arm1176jzf_s
         const auto offset = Get_Offset(instruction);
         const auto src_dest_reg = instruction.Get_Rd();
         const auto operation_type = instruction.Get_Type();
-        auto base_addr = m_regs[instruction.Get_Rn()];
+        auto base_addr = m_context[instruction.Get_Rn()];
         const bool pre_indexed = instruction.Is_P_Bit_Set();
         std::uint32_t pre_indexed_addr{ base_addr };
 
@@ -607,7 +606,7 @@ namespace zero_mate::arm1176jzf_s
 
         if (!pre_indexed || instruction.Is_W_Bit_Set())
         {
-            m_regs[instruction.Get_Rn()] = pre_indexed_addr;
+            m_context[instruction.Get_Rn()] = pre_indexed_addr;
         }
     }
 
@@ -625,7 +624,7 @@ namespace zero_mate::arm1176jzf_s
         const auto reg_rn = instruction.Get_Rn();
         const auto rot = instruction.Get_Rot();
 
-        const std::unsigned_integral auto rotated_value = utils::math::ROR(m_regs[reg_rm], rot);
+        const std::unsigned_integral auto rotated_value = utils::math::ROR(m_context[reg_rm], rot);
 
         const std::uint16_t sign_extended_lower_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(rotated_value & 0xFFU);
         const std::uint16_t sign_extended_higher_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>((rotated_value & 0xFF0000U) >> 16U);
@@ -633,60 +632,60 @@ namespace zero_mate::arm1176jzf_s
         const std::uint32_t sign_extended_8_to_32 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint32_t>(rotated_value & 0xFFU);
         const std::uint32_t sign_extended_16_to_32 = utils::math::Sign_Extend_Value<std::uint16_t, std::uint32_t>(rotated_value & 0xFFFFU);
 
-        const std::uint16_t lower_16_bits_unsigned = static_cast<std::uint16_t>(rotated_value & 0xFFU) + static_cast<std::uint16_t>(m_regs[reg_rn] & 0xFFFFU);
-        const std::uint16_t higher_16_bits_unsigned = static_cast<std::uint16_t>((rotated_value & 0xFF0000U) >> 16U) + static_cast<std::uint16_t>((m_regs[reg_rn] & 0xFFFF0000U) >> 16U);
+        const std::uint16_t lower_16_bits_unsigned = static_cast<std::uint16_t>(rotated_value & 0xFFU) + static_cast<std::uint16_t>(m_context[reg_rn] & 0xFFFFU);
+        const std::uint16_t higher_16_bits_unsigned = static_cast<std::uint16_t>((rotated_value & 0xFF0000U) >> 16U) + static_cast<std::uint16_t>((m_context[reg_rn] & 0xFFFF0000U) >> 16U);
 
-        const std::uint16_t lower_16_bits_signed = sign_extended_lower_8_to_16 + static_cast<std::uint16_t>(m_regs[reg_rn] & 0xFFFFU);
-        const std::uint16_t higher_16_bits_singed = sign_extended_higher_8_to_16 + static_cast<std::uint16_t>((m_regs[reg_rn] & 0xFFFF0000) >> 16U);
+        const std::uint16_t lower_16_bits_signed = sign_extended_lower_8_to_16 + static_cast<std::uint16_t>(m_context[reg_rn] & 0xFFFFU);
+        const std::uint16_t higher_16_bits_singed = sign_extended_higher_8_to_16 + static_cast<std::uint16_t>((m_context[reg_rn] & 0xFFFF0000) >> 16U);
 
         switch (type)
         {
             case isa::CExtend::NType::SXTAB16:
-                m_regs[reg_rd] = static_cast<std::uint32_t>(lower_16_bits_signed) | (static_cast<std::uint32_t>(higher_16_bits_singed) << 16U);
+                m_context[reg_rd] = static_cast<std::uint32_t>(lower_16_bits_signed) | (static_cast<std::uint32_t>(higher_16_bits_singed) << 16U);
                 break;
 
             case isa::CExtend::NType::UXTAB16:
-                m_regs[reg_rd] = static_cast<std::uint32_t>(lower_16_bits_unsigned) | (static_cast<std::uint32_t>(higher_16_bits_unsigned) << 16U);
+                m_context[reg_rd] = static_cast<std::uint32_t>(lower_16_bits_unsigned) | (static_cast<std::uint32_t>(higher_16_bits_unsigned) << 16U);
                 break;
 
             case isa::CExtend::NType::SXTB16:
-                m_regs[reg_rd] = static_cast<std::uint32_t>(sign_extended_lower_8_to_16) | static_cast<std::uint32_t>(sign_extended_higher_8_to_16) << 16U;
+                m_context[reg_rd] = static_cast<std::uint32_t>(sign_extended_lower_8_to_16) | static_cast<std::uint32_t>(sign_extended_higher_8_to_16) << 16U;
                 break;
 
             case isa::CExtend::NType::UXTB16:
-                m_regs[reg_rd] = (rotated_value & 0xFFU) | (rotated_value & 0xFF0000U);
+                m_context[reg_rd] = (rotated_value & 0xFFU) | (rotated_value & 0xFF0000U);
                 break;
 
             case isa::CExtend::NType::SXTAB:
-                m_regs[reg_rd] = sign_extended_8_to_32 + m_regs[reg_rn];
+                m_context[reg_rd] = sign_extended_8_to_32 + m_context[reg_rn];
                 break;
 
             case isa::CExtend::NType::UXTAB:
-                m_regs[reg_rd] = (rotated_value & 0xFFU) + m_regs[reg_rn];
+                m_context[reg_rd] = (rotated_value & 0xFFU) + m_context[reg_rn];
                 break;
 
             case isa::CExtend::NType::SXTB:
-                m_regs[reg_rd] = sign_extended_8_to_32;
+                m_context[reg_rd] = sign_extended_8_to_32;
                 break;
 
             case isa::CExtend::NType::UXTB:
-                m_regs[reg_rd] = rotated_value & 0xFFU;
+                m_context[reg_rd] = rotated_value & 0xFFU;
                 break;
 
             case isa::CExtend::NType::SXTAH:
-                m_regs[reg_rd] = sign_extended_16_to_32 + m_regs[reg_rn];
+                m_context[reg_rd] = sign_extended_16_to_32 + m_context[reg_rn];
                 break;
 
             case isa::CExtend::NType::UXTAH:
-                m_regs[reg_rd] = (rotated_value & 0xFFFFU) + m_regs[reg_rn];
+                m_context[reg_rd] = (rotated_value & 0xFFFFU) + m_context[reg_rn];
                 break;
 
             case isa::CExtend::NType::SXTH:
-                m_regs[reg_rd] = sign_extended_16_to_32;
+                m_context[reg_rd] = sign_extended_16_to_32;
                 break;
 
             case isa::CExtend::NType::UXTH:
-                m_regs[reg_rd] = rotated_value & 0xFFFFU;
+                m_context[reg_rd] = rotated_value & 0xFFFFU;
                 break;
         }
     }

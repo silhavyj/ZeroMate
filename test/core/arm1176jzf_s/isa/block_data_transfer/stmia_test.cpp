@@ -32,7 +32,7 @@ TEST(stmia_instruction, test_01)
     EXPECT_EQ(bus->Read<std::uint32_t>(212), 4);
     EXPECT_EQ(bus->Read<std::uint32_t>(216), 5);
     EXPECT_EQ(bus->Read<std::uint32_t>(220), 6);
-    EXPECT_EQ(cpu.m_regs[1], 224);
+    EXPECT_EQ(cpu.m_context[1], 224);
 }
 
 TEST(stmia_instruction, test_02)
@@ -62,6 +62,6 @@ TEST(stmia_instruction, test_02)
     EXPECT_EQ(bus->Read<std::uint32_t>(212), 4);
     EXPECT_EQ(bus->Read<std::uint32_t>(216), 5);
     EXPECT_EQ(bus->Read<std::uint32_t>(220), 6);
-    EXPECT_EQ(cpu.m_regs[1], 200);
-    EXPECT_EQ(cpu.m_regs[2], 1);
+    EXPECT_EQ(cpu.m_context[1], 200);
+    EXPECT_EQ(cpu.m_context[2], 1);
 }

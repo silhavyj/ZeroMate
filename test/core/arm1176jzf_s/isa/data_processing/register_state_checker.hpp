@@ -24,7 +24,7 @@ namespace zero_mate::test
 
         [[nodiscard]] bool Is_Any_Other_Register_Modified(const Registers& curr_regs, Changed_registers_t changed_registers) const noexcept
         {
-            for (std::size_t i = 0; i < m_regs.size(); ++i)
+            for (std::uint32_t i = 0; i < arm1176jzf_s::CCPU_Context::NUMBER_OF_REGS; ++i)
             {
                 bool excluded_reg{ false };
 
@@ -34,7 +34,7 @@ namespace zero_mate::test
                 {
                     if (reg.idx == i)
                     {
-                        if (reg.expected_value != curr_regs.at(i))
+                        if (reg.expected_value != curr_regs[i])
                         {
                             return true;
                         }
@@ -42,7 +42,7 @@ namespace zero_mate::test
                     }
                 }
 
-                if (!excluded_reg && m_regs.at(i) != curr_regs.at(i))
+                if (!excluded_reg && m_regs[i] != curr_regs[i])
                 {
                     return true;
                 }

@@ -1,3 +1,4 @@
+#include <magic_enum.hpp>
 #include <fmt/include/fmt/core.h>
 
 #include "registers_window.hpp"
@@ -13,6 +14,9 @@ namespace zero_mate::gui
     {
         if (ImGui::Begin("CPU Registers"))
         {
+            const auto cpu_state = fmt::format("{}", magic_enum::enum_name(m_cpu->m_context.Get_CPU_Mode()));
+            ImGui::Text("CPU Mode: %s", cpu_state.c_str());
+
             if (ImGui::BeginTabBar("##cpu_regs_tabs", ImGuiTabBarFlags_None))
             {
                 if (ImGui::BeginTabItem("HEX"))
@@ -51,32 +55,32 @@ namespace zero_mate::gui
 
             ImGui::TableHeadersRow();
 
-            for (std::uint32_t i = 0; i < arm1176jzf_s::CCPU_Core::NUMBER_OF_GENERAL_REGS; ++i)
+            for (std::uint32_t i = 0; i < arm1176jzf_s::CCPU_Context::NUMBER_OF_GENERAL_REGS; ++i)
             {
                 ImGui::TableNextRow();
                 ImGui::TableNextColumn();
                 ImGui::Text("%s", fmt::format("R{}", i).c_str());
                 ImGui::TableNextColumn();
-                ImGui::InputScalar(fmt::format("##{}{}", i, title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs[i], nullptr, nullptr, format);
+                ImGui::InputScalar(fmt::format("##{}{}", i, title).c_str(), ImGuiDataType_U32, &m_cpu->m_context[i], nullptr, nullptr, format);
             }
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("R13 (LR)");
             ImGui::TableNextColumn();
-            ImGui::InputScalar(fmt::format("##LR{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs[arm1176jzf_s::CCPU_Core::LR_REG_IDX], nullptr, nullptr, format);
+            ImGui::InputScalar(fmt::format("##LR{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_context[arm1176jzf_s::CCPU_Context::LR_REG_IDX], nullptr, nullptr, format);
             ImGui::TableNextRow();
 
             ImGui::TableNextColumn();
             ImGui::Text("R14 (SP)");
             ImGui::TableNextColumn();
-            ImGui::InputScalar(fmt::format("##SP{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs[arm1176jzf_s::CCPU_Core::SP_REG_IDX], nullptr, nullptr, format);
+            ImGui::InputScalar(fmt::format("##SP{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_context[arm1176jzf_s::CCPU_Context::SP_REG_IDX], nullptr, nullptr, format);
             ImGui::TableNextRow();
 
             ImGui::TableNextColumn();
             ImGui::Text("R15 (PC)");
             ImGui::TableNextColumn();
-            ImGui::InputScalar(fmt::format("##PC{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_regs[arm1176jzf_s::CCPU_Core::PC_REG_IDX], nullptr, nullptr, format);
+            ImGui::InputScalar(fmt::format("##PC{}", title).c_str(), ImGuiDataType_U32, &m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX], nullptr, nullptr, format);
             ImGui::TableNextRow();
 
             ImGui::EndTable();
@@ -98,13 +102,13 @@ namespace zero_mate::gui
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
-            ImGui::Text("%d", m_cpu->m_cpsr.Is_Flag_Set(arm1176jzf_s::CCPSR::NFlag::N));
+            ImGui::Text("%d", m_cpu->m_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::N));
             ImGui::TableNextColumn();
-            ImGui::Text("%d", m_cpu->m_cpsr.Is_Flag_Set(arm1176jzf_s::CCPSR::NFlag::Z));
+            ImGui::Text("%d", m_cpu->m_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::Z));
             ImGui::TableNextColumn();
-            ImGui::Text("%d", m_cpu->m_cpsr.Is_Flag_Set(arm1176jzf_s::CCPSR::NFlag::C));
+            ImGui::Text("%d", m_cpu->m_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::C));
             ImGui::TableNextColumn();
-            ImGui::Text("%d", m_cpu->m_cpsr.Is_Flag_Set(arm1176jzf_s::CCPSR::NFlag::V));
+            ImGui::Text("%d", m_cpu->m_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::V));
 
             ImGui::EndTable();
         }

@@ -14,7 +14,7 @@ TEST(uxtab16_instruction, test_01)
     { 0xe6c02071 }  // uxtab16 r2, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0x00FF01FE);
+    EXPECT_EQ(cpu.m_context[2], 0x00FF01FE);
 }
 
 TEST(uxtab16_instruction, test_02)
@@ -29,7 +29,7 @@ TEST(uxtab16_instruction, test_02)
     { 0xe6c02c71 }  // uxtab16 r2, r0, r1, ROR #24
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0x00FF017E);
+    EXPECT_EQ(cpu.m_context[2], 0x00FF017E);
 }
 
 TEST(uxtab16_instruction, test_03)
@@ -44,5 +44,5 @@ TEST(uxtab16_instruction, test_03)
     { 0xe6c02871 }  // uxtab16 r2, r0, r1, ROR #16
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0x00FE00FE);
+    EXPECT_EQ(cpu.m_context[2], 0x00FE00FE);
 }

@@ -23,9 +23,9 @@ TEST(ldrsb_instruction, test_01)
     { 0xe05100d1 }  // ldrsb r0, [r1], #0!
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 0xFFFFFFFB);
-    EXPECT_EQ(cpu.m_regs[1], 0x000000C7);
-    EXPECT_EQ(cpu.m_regs[2], 0xFFFFFFFB);
+    EXPECT_EQ(cpu.m_context[0], 0xFFFFFFFB);
+    EXPECT_EQ(cpu.m_context[1], 0x000000C7);
+    EXPECT_EQ(cpu.m_context[2], 0xFFFFFFFB);
 }
 
 TEST(ldrsb_instruction, test_02)
@@ -47,9 +47,9 @@ TEST(ldrsb_instruction, test_02)
     { 0xe13100d3 }  // ldrsb r0, [r1, -r3]!
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 0xFFFFFFBC);
-    EXPECT_EQ(cpu.m_regs[1], 0x000000C8);
-    EXPECT_EQ(cpu.m_regs[2], 0x000000BC);
+    EXPECT_EQ(cpu.m_context[0], 0xFFFFFFBC);
+    EXPECT_EQ(cpu.m_context[1], 0x000000C8);
+    EXPECT_EQ(cpu.m_context[2], 0x000000BC);
 }
 
 TEST(ldrsb_instruction, test_03)
@@ -70,7 +70,7 @@ TEST(ldrsb_instruction, test_03)
     { 0xe05100d1 }  // ldrsb r0, [r1], #-8!
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 0x0000000C);
-    EXPECT_EQ(cpu.m_regs[1], 0x000000C7);
-    EXPECT_EQ(cpu.m_regs[2], 0x0000000C);
+    EXPECT_EQ(cpu.m_context[0], 0x0000000C);
+    EXPECT_EQ(cpu.m_context[1], 0x000000C7);
+    EXPECT_EQ(cpu.m_context[2], 0x0000000C);
 }

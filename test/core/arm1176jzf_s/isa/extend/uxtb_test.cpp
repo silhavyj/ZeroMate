@@ -13,7 +13,7 @@ TEST(uxtb_instruction, test_01)
     { 0xe6ef3473 }  // uxtb r3, r3, ROR #8
     });
 
-    EXPECT_EQ(cpu.m_regs[3], 4);
+    EXPECT_EQ(cpu.m_context[3], 4);
 }
 
 TEST(uxtb_instruction, test_02)
@@ -27,7 +27,7 @@ TEST(uxtb_instruction, test_02)
     { 0xe6ef3073 }  // uxtb r3, r3
     });
 
-    EXPECT_EQ(cpu.m_regs[3], 0xFF);
+    EXPECT_EQ(cpu.m_context[3], 0xFF);
 }
 
 TEST(uxtb_instruction, test_03)
@@ -41,7 +41,7 @@ TEST(uxtb_instruction, test_03)
     { 0xe6ef3c73 }  // uxtb r3, r3, ROR #24
     });
 
-    EXPECT_EQ(cpu.m_regs[3], 0xFF);
+    EXPECT_EQ(cpu.m_context[3], 0xFF);
 }
 
 TEST(uxtb_instruction, test_04)
@@ -55,5 +55,5 @@ TEST(uxtb_instruction, test_04)
     { 0xe6ef3873 }  // uxtb r3, r3, ROR #16
     });
 
-    EXPECT_EQ(cpu.m_regs[3], 0x7F);
+    EXPECT_EQ(cpu.m_context[3], 0x7F);
 }

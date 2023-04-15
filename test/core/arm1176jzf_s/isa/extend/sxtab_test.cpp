@@ -14,7 +14,7 @@ TEST(sxtab_instruction, test_01)
     { 0xe6a02c71 }  // sxtab r2, r0, r1, ROR #24
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0x7F);
+    EXPECT_EQ(cpu.m_context[2], 0x7F);
 }
 
 TEST(sxtab_instruction, test_02)
@@ -29,7 +29,7 @@ TEST(sxtab_instruction, test_02)
     { 0xe6a02871 }  // sxtab r2, r0, r1, ROR #16
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0xFE);
+    EXPECT_EQ(cpu.m_context[2], 0xFE);
 }
 
 TEST(sxtab_instruction, test_03)
@@ -44,5 +44,5 @@ TEST(sxtab_instruction, test_03)
     { 0xe6a02071 }  // sxtab r2, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0xFFFFFC53);
+    EXPECT_EQ(cpu.m_context[2], 0xFFFFFC53);
 }

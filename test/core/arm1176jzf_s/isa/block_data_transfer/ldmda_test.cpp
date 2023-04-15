@@ -28,11 +28,11 @@ TEST(ldmda_instruction, test_01)
     { 0xe831007c }  // ldmda r1!, {r2-r6}
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 2);
-    EXPECT_EQ(cpu.m_regs[3], 3);
-    EXPECT_EQ(cpu.m_regs[4], 4);
-    EXPECT_EQ(cpu.m_regs[5], 5);
-    EXPECT_EQ(cpu.m_regs[6], 6);
+    EXPECT_EQ(cpu.m_context[2], 2);
+    EXPECT_EQ(cpu.m_context[3], 3);
+    EXPECT_EQ(cpu.m_context[4], 4);
+    EXPECT_EQ(cpu.m_context[5], 5);
+    EXPECT_EQ(cpu.m_context[6], 6);
 
-    EXPECT_EQ(cpu.m_regs[1], 180);
+    EXPECT_EQ(cpu.m_context[1], 180);
 }

@@ -34,8 +34,8 @@ TEST(stmib_instruction, test_01)
     EXPECT_EQ(bus->Read<std::uint32_t>(216), 4);
     EXPECT_EQ(bus->Read<std::uint32_t>(220), 5);
     EXPECT_EQ(bus->Read<std::uint32_t>(224), 6);
-    EXPECT_EQ(cpu.m_regs[1], 224);
-    EXPECT_EQ(cpu.m_regs[2], 6);
+    EXPECT_EQ(cpu.m_context[1], 224);
+    EXPECT_EQ(cpu.m_context[2], 6);
 }
 
 TEST(stmib_instruction, test_02)
@@ -47,9 +47,9 @@ TEST(stmib_instruction, test_02)
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
-    for (std::size_t idx = 1; idx < cpu.NUMBER_OF_REGS; ++idx)
+    for (std::uint32_t idx = 1; idx < arm1176jzf_s::CCPU_Context::NUMBER_OF_REGS; ++idx)
     {
-        cpu.m_regs[idx] = static_cast<std::uint32_t>(42 + idx);
+        cpu.m_context[idx] = 42 + idx;
     }
 
     cpu.Execute({
@@ -57,10 +57,10 @@ TEST(stmib_instruction, test_02)
     { 0xe9a0ffff }  // stmib r0!, {r0-r15}
     });
 
-    for (std::size_t idx = 1; idx < cpu.NUMBER_OF_REGS; ++idx)
+    for (std::size_t idx = 1; idx < arm1176jzf_s::CCPU_Context::NUMBER_OF_REGS; ++idx)
     {
-        EXPECT_EQ(bus->Read<std::uint32_t>(static_cast<std::uint32_t>(200 + (idx * cpu.REG_SIZE) + cpu.REG_SIZE)), 42 + idx);
+        EXPECT_EQ(bus->Read<std::uint32_t>(static_cast<std::uint32_t>(200 + (idx * arm1176jzf_s::CCPU_Context::REG_SIZE) + arm1176jzf_s::CCPU_Context::REG_SIZE)), 42 + idx);
     }
 
-    EXPECT_EQ(cpu.m_regs[0], 200 + (cpu.NUMBER_OF_REGS * cpu.REG_SIZE));
+    EXPECT_EQ(cpu.m_context[0], 200 + (arm1176jzf_s::CCPU_Context::NUMBER_OF_REGS * arm1176jzf_s::CCPU_Context::REG_SIZE));
 }

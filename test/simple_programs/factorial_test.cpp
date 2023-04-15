@@ -36,7 +36,7 @@ TEST(factorial, non_recursive)
     cpu.Add_Breakpoint(0x8);
     cpu.Run();
 
-    EXPECT_EQ(cpu.m_regs[0], -775946240);
+    EXPECT_EQ(cpu.m_context[0], -775946240);
 }
 
 TEST(factorial, recursive)
@@ -66,5 +66,5 @@ TEST(factorial, recursive)
     cpu.Add_Breakpoint(0x8);
     cpu.Run();
 
-    EXPECT_EQ(cpu.m_regs[0], 5040);
+    EXPECT_EQ(cpu.m_context[0], 5040);
 }

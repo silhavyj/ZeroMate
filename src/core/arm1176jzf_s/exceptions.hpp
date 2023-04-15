@@ -4,21 +4,21 @@
 
 #include "fmt/format.h"
 
-#include "registers/cpsr.hpp"
+#include "context.hpp"
 
 namespace zero_mate::arm1176jzf_s::exceptions
 {
     class CCPU_Exception : public std::runtime_error
     {
     public:
-        explicit CCPU_Exception(std::uint32_t exception_vector, CCPSR::NCPU_Mode mode, const char* name);
+        explicit CCPU_Exception(std::uint32_t exception_vector, CCPU_Context::NCPU_Mode mode, const char* name);
 
         [[nodiscard]] std::uint32_t Get_Exception_Vector() const;
-        [[nodiscard]] CCPSR::NCPU_Mode Get_CPU_Mode() const;
+        [[nodiscard]] CCPU_Context::NCPU_Mode Get_CPU_Mode() const;
 
     protected:
         std::uint32_t m_exception_vector;
-        CCPSR::NCPU_Mode m_mode;
+        CCPU_Context::NCPU_Mode m_mode;
     };
 
     class CReset final : public CCPU_Exception

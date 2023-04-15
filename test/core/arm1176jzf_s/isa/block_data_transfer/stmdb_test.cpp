@@ -34,7 +34,7 @@ TEST(stmdb_instruction, test_01)
     EXPECT_EQ(bus->Read<std::uint32_t>(200 - 8), 5);
     EXPECT_EQ(bus->Read<std::uint32_t>(200 - 4), 6);
 
-    EXPECT_EQ(cpu.m_regs[1], 200 - 24);
+    EXPECT_EQ(cpu.m_context[1], 200 - 24);
 }
 
 TEST(stmdb_instruction, test_02)
@@ -64,5 +64,5 @@ TEST(stmdb_instruction, test_02)
     EXPECT_EQ(bus->Read<std::uint32_t>(200 - 8), 5);
     EXPECT_EQ(bus->Read<std::uint32_t>(200 - 4), 6);
 
-    EXPECT_EQ(cpu.m_regs[cpu.SP_REG_IDX], 200 - 24);
+    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 200 - 24);
 }
