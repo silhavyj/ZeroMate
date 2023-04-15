@@ -11,6 +11,9 @@ namespace zero_mate::gui
     {
         inline const char* const CONFIG_FILE = "rpi_zero_config.ini";
 
+        inline const char* const RAM_SECTION = "ram";
+        inline const char* const GPIO_SECTION = "gpio";
+
         inline constexpr std::uint32_t DEFAULT_RAM_SIZE = 256 * 1024 * 1024;
         inline constexpr std::uint32_t DEFAULT_RAM_MAP_ADDR = 0x0;
         inline constexpr std::uint32_t DEFAULT_GPIO_MAP_ADDR = 0x20200000;

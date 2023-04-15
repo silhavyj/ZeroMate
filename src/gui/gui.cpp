@@ -102,23 +102,45 @@ namespace zero_mate::gui
             }
         }
 
+        template<typename Type>
+        Type Get_Ini_Value(const INIReader& ini_reader, const std::string& section, const std::string& value, Type default_value)
+        {
+            if (ini_reader.HasSection(section))
+            {
+                if (ini_reader.HasValue(section, value))
+                {
+                    return static_cast<Type>(ini_reader.GetUnsigned(section, value, default_value));
+                }
+                else
+                {
+                    s_logging_system.Error(fmt::format("Value {} was not found in section {} of the config file ({}). Using default value 0x{:08X} for {} value", value, section, config::CONFIG_FILE, default_value, value).c_str());
+                    return default_value;
+                }
+            }
+            else
+            {
+                s_logging_system.Error(fmt::format("Section {} was not found in {}. Using default value 0x{:08X} for {} value", section, config::CONFIG_FILE, default_value, value).c_str());
+                return default_value;
+            }
+        }
+
         void Initialize_Peripherals()
         {
             const INIReader ini_reader(config::CONFIG_FILE);
 
-            std::uint32_t ram_size{ config::DEFAULT_RAM_SIZE };
-            std::uint32_t ram_map_addr{ config::DEFAULT_RAM_MAP_ADDR };
-            std::uint32_t gpio_map_addr{ config::DEFAULT_GPIO_MAP_ADDR };
+            std::uint32_t ram_size{};
+            std::uint32_t ram_map_addr{};
+            std::uint32_t gpio_map_addr{};
 
             if (ini_reader.ParseError() < 0)
             {
-                s_logging_system.Error(fmt::format("Cannot load {}. Using the default mapping", config::CONFIG_FILE).c_str());
+                s_logging_system.Error(fmt::format("Cannot load {}. Using the default mappings", config::CONFIG_FILE).c_str());
             }
             else
             {
-                ram_size = static_cast<std::uint32_t>(ini_reader.GetInteger("ram", "size", config::DEFAULT_RAM_SIZE));
-                ram_map_addr = static_cast<std::uint32_t>(ini_reader.GetInteger("ram", "addr", config::DEFAULT_RAM_MAP_ADDR));
-                gpio_map_addr = static_cast<std::uint32_t>(ini_reader.GetInteger("gpio", "addr", config::DEFAULT_GPIO_MAP_ADDR));
+                ram_size = Get_Ini_Value<std::uint32_t>(ini_reader, config::RAM_SECTION, "size", config::DEFAULT_RAM_SIZE);
+                ram_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::RAM_SECTION, "addr", config::DEFAULT_RAM_MAP_ADDR);
+                gpio_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::GPIO_SECTION, "addr", config::DEFAULT_GPIO_MAP_ADDR);
             }
 
             Init_RAM(ram_size, ram_map_addr);
