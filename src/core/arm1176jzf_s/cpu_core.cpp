@@ -107,7 +107,7 @@ namespace zero_mate::arm1176jzf_s
 
     const std::uint32_t& CCPU_Core::LR() const noexcept
     {
-        return m_regs[PC_REG_IDX];
+        return m_regs[LR_REG_IDX];
     }
 
     bool CCPU_Core::Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept
