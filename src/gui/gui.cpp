@@ -103,7 +103,7 @@ namespace zero_mate::gui
         }
 
         template<typename Type>
-        Type Get_Ini_Value(const INIReader& ini_reader, const std::string& section, const std::string& value, Type default_value)
+        [[nodiscard]] Type Get_Ini_Value(const INIReader& ini_reader, const std::string& section, const std::string& value, Type default_value)
         {
             if (ini_reader.HasSection(section))
             {
