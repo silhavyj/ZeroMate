@@ -14,10 +14,10 @@ TEST(mvn_instruction, test_01)
 
     EXPECT_EQ(cpu.m_regs[5], 0xFFFFFFFF);
 
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
 }
 
 TEST(mvn_instruction, test_02)
@@ -33,10 +33,10 @@ TEST(mvn_instruction, test_02)
 
     EXPECT_EQ(cpu.m_regs[0], 0b00011111'11111111'11111111'11111111);
 
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
 }
 
 TEST(mvn_instruction, test_03)
@@ -53,10 +53,10 @@ TEST(mvn_instruction, test_03)
 
     EXPECT_EQ(cpu.m_regs[6], 0xFFFFFFFF);
 
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
 }
 
 TEST(mvn_instruction, test_04)
@@ -72,10 +72,10 @@ TEST(mvn_instruction, test_04)
 
     EXPECT_EQ(cpu.m_regs[6], 0b10000000'00000000'00000000'00000001);
 
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
 
     cpu.Execute({
     { 0x21f00004 } // mvnhss r0, r4, ror #0
@@ -83,10 +83,10 @@ TEST(mvn_instruction, test_04)
 
     EXPECT_EQ(cpu.m_regs[0], 0xFFFFFFFC);
 
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
 }
 
 TEST(mvn_instruction, test_05)
@@ -101,10 +101,10 @@ TEST(mvn_instruction, test_05)
 
     EXPECT_EQ(cpu.m_regs[11], 0x0FFFFFF4);
 
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
 }
 
 TEST(mvn_instruction, test_06)
@@ -120,10 +120,10 @@ TEST(mvn_instruction, test_06)
 
     EXPECT_EQ(cpu.m_regs[0], 0x7FFFFFFF);
 
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
 }
 
 TEST(mvn_instruction, test_07)
@@ -140,10 +140,10 @@ TEST(mvn_instruction, test_07)
 
     EXPECT_EQ(cpu.m_regs[0], 0xFFFFFFFF);
 
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
 }
 
 TEST(mvn_instruction, test_08)
@@ -160,8 +160,8 @@ TEST(mvn_instruction, test_08)
 
     EXPECT_EQ(cpu.m_regs[2], 0xFFFFFFFF);
 
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::N), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::C), true);
-    EXPECT_EQ(cpu.m_cspr.Is_Flag_Set(CCSPR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), true);
+    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
 }

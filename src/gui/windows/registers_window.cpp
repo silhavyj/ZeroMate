@@ -98,13 +98,13 @@ namespace zero_mate::gui
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
-            ImGui::Text("%d", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::N));
+            ImGui::Text("%d", m_cpu->m_cpsr.Is_Flag_Set(arm1176jzf_s::CCPSR::NFlag::N));
             ImGui::TableNextColumn();
-            ImGui::Text("%d", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::Z));
+            ImGui::Text("%d", m_cpu->m_cpsr.Is_Flag_Set(arm1176jzf_s::CCPSR::NFlag::Z));
             ImGui::TableNextColumn();
-            ImGui::Text("%d", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::C));
+            ImGui::Text("%d", m_cpu->m_cpsr.Is_Flag_Set(arm1176jzf_s::CCPSR::NFlag::C));
             ImGui::TableNextColumn();
-            ImGui::Text("%d", m_cpu->m_cspr.Is_Flag_Set(arm1176jzf_s::CCSPR::NFlag::V));
+            ImGui::Text("%d", m_cpu->m_cpsr.Is_Flag_Set(arm1176jzf_s::CCPSR::NFlag::V));
 
             ImGui::EndTable();
         }

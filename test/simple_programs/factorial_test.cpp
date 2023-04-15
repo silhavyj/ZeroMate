@@ -26,10 +26,10 @@ TEST(factorial, non_recursive)
         0xe1a03002, 0xe1a00003, 0xe24bd004, 0xe8bd4800, 0xe12fff1e
     };
 
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>(0, ram_content);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
     auto bus = std::make_shared<CBus>();
 
-    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
@@ -56,10 +56,10 @@ TEST(factorial, recursive)
         0xe24bd004, 0xe8bd4800, 0xe12fff1e
     };
 
-    auto ram = std::make_shared<peripheral::CRAM<RAM_SIZE>>(0, ram_content);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
     auto bus = std::make_shared<CBus>();
 
-    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), 0);
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 

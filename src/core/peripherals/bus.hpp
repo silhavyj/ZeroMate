@@ -17,6 +17,13 @@ namespace zero_mate
     public:
         using Peripheral_t = std::shared_ptr<peripheral::IPeripheral>;
 
+        enum class NStatus
+        {
+            OK,
+            Addr_Collision,
+            Out_Of_Addr_Space
+        };
+
     private:
         struct TMapped_Peripheral
         {
@@ -31,6 +38,8 @@ namespace zero_mate
     public:
         CBus() = default;
 
+        // NOTE: The bus width size is usually fixed.
+        // The generic type is supported only for emulation purposes (simplifications)
         template<typename Type>
         void Write(std::uint32_t addr, Type value, bool check_alignment = true)
         {
@@ -42,6 +51,8 @@ namespace zero_mate
             peripheral_iter->peripheral->Write(relative_addr, std::bit_cast<const char*>(&value), sizeof(Type));
         }
 
+        // NOTE: The bus width size is usually fixed.
+        // The generic type is supported only for emulation purposes (simplifications)
         template<typename Type>
         [[nodiscard]] Type Read(std::uint32_t addr, bool check_alignment = true)
         {
@@ -56,7 +67,7 @@ namespace zero_mate
             return value;
         }
 
-        [[nodiscard]] int Attach_Peripheral(std::uint32_t addr, const Peripheral_t& peripheral);
+        [[nodiscard]] NStatus Attach_Peripheral(std::uint32_t addr, const Peripheral_t& peripheral);
 
     private:
         template<typename Type>
