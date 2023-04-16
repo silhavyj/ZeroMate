@@ -1,6 +1,6 @@
 #pragma once
 
-#include "cpu_core.hpp"
+#include "core.hpp"
 #include "isa/data_processing.hpp"
 
 namespace zero_mate::arm1176jzf_s::alu

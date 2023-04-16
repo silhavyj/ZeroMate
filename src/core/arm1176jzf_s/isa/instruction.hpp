@@ -42,7 +42,8 @@ namespace zero_mate::arm1176jzf_s::isa
             Coprocessor_Register_Transfer,
             Software_Interrupt,
             Unknown,
-            Extend
+            Extend,
+            PSR_Transfer
         };
 
         enum class NShift_Type : std::uint32_t

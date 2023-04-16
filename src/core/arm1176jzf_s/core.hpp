@@ -60,6 +60,7 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CHalfword_Data_Transfer instruction);
         void Execute(isa::CSW_Interrupt instruction);
         void Execute(isa::CExtend instruction);
+        void Execute(isa::CPSR_Transfer instruction);
 
         template<std::unsigned_integral Type>
         void Read_Write_Value(isa::CSingle_Data_Transfer instruction, std::uint32_t addr, std::uint32_t reg_idx)
