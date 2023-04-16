@@ -700,6 +700,9 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Execute(isa::CPSR_Transfer instruction)
     {
         const auto reg_rd_idx = instruction.Get_Rd();
+        const auto reg_rm_idx = instruction.Get_Rm();
+        const auto mask = instruction.Get_Mask();
+        std::uint32_t cpsr{};
 
         switch (instruction.Get_Type())
         {
@@ -717,6 +720,20 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CPSR_Transfer::NType::MSR:
+                switch (instruction.Get_Register_Type())
+                {
+                    case isa::CPSR_Transfer::NRegister::CPSR:
+                        cpsr = m_context.Get_CPSR();
+                        cpsr &= ~mask;
+                        cpsr |= (m_context[reg_rm_idx] & mask);
+
+                        m_context.Set_CPSR(cpsr);
+                        break;
+
+                    case isa::CPSR_Transfer::NRegister::SPSR:
+                        // TODO add a member function to return a reference to both CPSR and SPSR
+                        break;
+                }
                 break;
         }
     }

@@ -25,6 +25,12 @@ namespace zero_mate::arm1176jzf_s::isa
         [[nodiscard]] NType Get_Type() const noexcept;
         [[nodiscard]] std::uint32_t Get_Rm() const noexcept;
         [[nodiscard]] std::uint32_t Get_Rd() const noexcept;
-        [[nodiscard]] std::uint32_t Get_Flags() const noexcept;
+        [[nodiscard]] std::uint32_t Get_Mask() const noexcept;
+
+    private:
+        [[nodiscard]] inline bool Is_F_Bit_Set() const noexcept;
+        [[nodiscard]] inline bool Is_S_Bit_Set() const noexcept;
+        [[nodiscard]] inline bool Is_X_Bit_Set() const noexcept;
+        [[nodiscard]] inline bool Is_C_Bit_Set() const noexcept;
     };
 }

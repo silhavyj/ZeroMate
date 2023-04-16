@@ -27,8 +27,47 @@ namespace zero_mate::arm1176jzf_s::isa
         return m_value & 0b1111U;
     }
 
-    std::uint32_t CPSR_Transfer::Get_Flags() const noexcept
+    std::uint32_t CPSR_Transfer::Get_Mask() const noexcept
     {
-        return ((m_value >> 16U) & 0b1111U) << 28U;
+        std::uint32_t mask{ 0 };
+
+        if (Is_F_Bit_Set())
+        {
+            mask |= (0xFFU << 24U);
+        }
+        if (Is_S_Bit_Set())
+        {
+            mask |= (0xFFU << 16U);
+        }
+        if (Is_X_Bit_Set())
+        {
+            mask |= (0xFFU << 8U);
+        }
+        if (Is_C_Bit_Set())
+        {
+            mask |= 0xFFU;
+        }
+
+        return mask;
+    }
+
+    bool CPSR_Transfer::Is_F_Bit_Set() const noexcept
+    {
+        return static_cast<bool>((m_value >> 19U) & 0b1U);
+    }
+
+    bool CPSR_Transfer::Is_S_Bit_Set() const noexcept
+    {
+        return static_cast<bool>((m_value >> 18U) & 0b1U);
+    }
+
+    bool CPSR_Transfer::Is_X_Bit_Set() const noexcept
+    {
+        return static_cast<bool>((m_value >> 17U) & 0b1U);
+    }
+
+    bool CPSR_Transfer::Is_C_Bit_Set() const noexcept
+    {
+        return static_cast<bool>((m_value >> 16U) & 0b1U);
     }
 }

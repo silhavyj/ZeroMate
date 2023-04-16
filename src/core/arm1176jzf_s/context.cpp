@@ -117,10 +117,10 @@ namespace zero_mate::arm1176jzf_s
     {
         Set_CPU_Mode(Get_CPU_Mode(value));
 
-        value &= CPU_MODE_MASK;
+        value &= ~CPU_MODE_MASK;
+        value |= static_cast<std::uint32_t>(Get_CPU_Mode());
 
-        m_cpsr[m_mode] &= ~CPU_MODE_MASK;
-        m_cpsr[m_mode] |= value;
+        m_cpsr[m_mode] = value;
     }
 
     std::uint32_t CCPU_Context::Get_SPSR() const
