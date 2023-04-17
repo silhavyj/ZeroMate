@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <memory>
 #include <cassert>
+#include <optional>
 #include <unordered_set>
 #include <initializer_list>
 
@@ -38,7 +39,7 @@ namespace zero_mate::arm1176jzf_s
         [[nodiscard]] std::uint32_t& LR() noexcept;
         [[nodiscard]] const std::uint32_t& LR() const noexcept;
 
-        [[nodiscard]] isa::CInstruction Fetch_Instruction();
+        [[nodiscard]] std::optional<isa::CInstruction> Fetch_Instruction();
 
         [[nodiscard]] bool Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept;
         [[nodiscard]] std::uint32_t Get_Shift_Amount(isa::CData_Processing instruction) const noexcept;

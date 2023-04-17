@@ -62,28 +62,32 @@ namespace zero_mate::arm1176jzf_s
 
         if (ignore_breakpoint || !m_breakpoints.contains(PC()))
         {
-            const auto instruction = Fetch_Instruction();
-            Execute(instruction);
+            const std::optional<isa::CInstruction> instruction = Fetch_Instruction();
+
+            if (instruction.has_value())
+            {
+                Execute(instruction.value());
+            }
+
             return true;
         }
 
         return false;
     }
 
-    isa::CInstruction CCPU_Core::Fetch_Instruction()
+    std::optional<isa::CInstruction> CCPU_Core::Fetch_Instruction()
     {
         try
         {
             const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
             PC() += CCPU_Context::REG_SIZE;
-            return instruction;
+            return std::optional<isa::CInstruction>{ instruction };
         }
         catch (const exceptions::CCPU_Exception& ex)
         {
             const exceptions::CPrefetch_Abort prefetch_ex{ PC() - CCPU_Context::REG_SIZE };
-
             Execute_Exception(prefetch_ex);
-            return Fetch_Instruction();
+            return std::nullopt;
         }
     }
 
