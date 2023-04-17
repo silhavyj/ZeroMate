@@ -249,10 +249,9 @@ namespace zero_mate::arm1176jzf_s
         {
             m_logging_system.Warning(ex.what());
 
-            // TODO change the CPU mode, save the PC register, etc.
-
-            PC() = ex.Get_Exception_Vector();
             m_context.Set_CPU_Mode(ex.Get_CPU_Mode());
+            m_context[CCPU_Context::LR_REG_IDX] = PC();
+            PC() = ex.Get_Exception_Vector();
         }
     }
 
