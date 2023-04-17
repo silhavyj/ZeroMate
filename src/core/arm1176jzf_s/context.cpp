@@ -130,8 +130,7 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Context::Set_SPSR(std::uint32_t value)
     {
-        // TODO
-        static_cast<void>(value);
+        m_spsr[m_mode] = value;
     }
 
     void CCPU_Context::Set_Flag(NFlag flag, bool set) noexcept
@@ -151,9 +150,7 @@ namespace zero_mate::arm1176jzf_s
             return;
         }
 
-        // TODO ?
-        // m_spsr[m_mode] = m_cpsr[m_mode];
-
+        m_spsr[m_mode] = m_cpsr[m_mode];
         m_mode = mode;
     }
 

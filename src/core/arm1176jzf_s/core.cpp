@@ -266,21 +266,6 @@ namespace zero_mate::arm1176jzf_s
         return m_context[instruction.Get_Rs()] & 0xFFU;
     }
 
-    utils::math::TShift_Result<std::uint32_t> CCPU_Core::Get_Second_Operand_Imm(isa::CData_Processing instruction) const noexcept
-    {
-        const std::uint32_t immediate = instruction.Get_Immediate();
-        const std::uint32_t shift_amount = instruction.Get_Rotate() * 2;
-
-        utils::math::TShift_Result<std::uint32_t> second_operand{ m_context.Is_Flag_Set(CCPU_Context::NFlag::C), immediate };
-
-        if (shift_amount != 0 && shift_amount != std::numeric_limits<std::uint32_t>::digits)
-        {
-            second_operand = utils::math::ROR(immediate, shift_amount, false);
-        }
-
-        return second_operand;
-    }
-
     utils::math::TShift_Result<std::uint32_t> CCPU_Core::Perform_Shift(isa::CInstruction::NShift_Type shift_type, std::uint32_t shift_amount, std::uint32_t shift_reg) const noexcept
     {
         switch (shift_type)
@@ -697,43 +682,55 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
-    void CCPU_Core::Execute(isa::CPSR_Transfer instruction)
+    void CCPU_Core::Execute_MSR(isa::CPSR_Transfer instruction)
+    {
+        const auto mask = instruction.Get_Mask();
+        const auto new_value = instruction.Is_Immediate() ? Get_Second_Operand_Imm(instruction).result : m_context[instruction.Get_Rm()];
+
+        const auto Update_Special_Register = [&mask, &new_value](std::uint32_t reg_value) -> std::uint32_t {
+            reg_value &= ~mask;
+            reg_value |= (new_value & mask);
+            return reg_value;
+        };
+
+        switch (instruction.Get_Register_Type())
+        {
+            case isa::CPSR_Transfer::NRegister::CPSR:
+                m_context.Set_CPSR(Update_Special_Register(m_context.Get_CPSR()));
+                break;
+
+            case isa::CPSR_Transfer::NRegister::SPSR:
+                m_context.Set_SPSR(Update_Special_Register(m_context.Get_SPSR()));
+                break;
+        }
+    }
+
+    void CCPU_Core::Execute_MRS(isa::CPSR_Transfer instruction)
     {
         const auto reg_rd_idx = instruction.Get_Rd();
-        const auto reg_rm_idx = instruction.Get_Rm();
-        const auto mask = instruction.Get_Mask();
-        std::uint32_t cpsr{};
 
+        switch (instruction.Get_Register_Type())
+        {
+            case isa::CPSR_Transfer::NRegister::CPSR:
+                m_context[reg_rd_idx] = m_context.Get_CPSR();
+                break;
+
+            case isa::CPSR_Transfer::NRegister::SPSR:
+                m_context[reg_rd_idx] = m_context.Get_SPSR();
+                break;
+        }
+    }
+
+    void CCPU_Core::Execute(isa::CPSR_Transfer instruction)
+    {
         switch (instruction.Get_Type())
         {
             case isa::CPSR_Transfer::NType::MRS:
-                switch (instruction.Get_Register_Type())
-                {
-                    case isa::CPSR_Transfer::NRegister::CPSR:
-                        m_context[reg_rd_idx] = m_context.Get_CPSR();
-                        break;
-
-                    case isa::CPSR_Transfer::NRegister::SPSR:
-                        m_context[reg_rd_idx] = m_context.Get_SPSR();
-                        break;
-                }
+                Execute_MRS(instruction);
                 break;
 
             case isa::CPSR_Transfer::NType::MSR:
-                switch (instruction.Get_Register_Type())
-                {
-                    case isa::CPSR_Transfer::NRegister::CPSR:
-                        cpsr = m_context.Get_CPSR();
-                        cpsr &= ~mask;
-                        cpsr |= (m_context[reg_rm_idx] & mask);
-
-                        m_context.Set_CPSR(cpsr);
-                        break;
-
-                    case isa::CPSR_Transfer::NRegister::SPSR:
-                        // TODO add a member function to return a reference to both CPSR and SPSR
-                        break;
-                }
+                Execute_MSR(instruction);
                 break;
         }
     }

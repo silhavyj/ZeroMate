@@ -51,6 +51,21 @@ namespace zero_mate::arm1176jzf_s::isa
         return mask;
     }
 
+    bool CPSR_Transfer::Is_Immediate() const noexcept
+    {
+        return static_cast<bool>((m_value >> 25U) & 0b1U);
+    }
+
+    std::uint32_t CPSR_Transfer::Get_Rotate() const noexcept
+    {
+        return (m_value >> 8U) & 0b1111U;
+    }
+
+    std::uint32_t CPSR_Transfer::Get_Immediate() const noexcept
+    {
+        return m_value & 0b1111'1111U;
+    }
+
     bool CPSR_Transfer::Is_F_Bit_Set() const noexcept
     {
         return static_cast<bool>((m_value >> 19U) & 0b1U);

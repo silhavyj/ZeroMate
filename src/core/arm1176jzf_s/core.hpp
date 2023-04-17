@@ -41,13 +41,14 @@ namespace zero_mate::arm1176jzf_s
 
         [[nodiscard]] bool Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept;
         [[nodiscard]] std::uint32_t Get_Shift_Amount(isa::CData_Processing instruction) const noexcept;
-        [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand_Imm(isa::CData_Processing instruction) const noexcept;
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand(isa::CData_Processing instruction) const noexcept;
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Perform_Shift(isa::CInstruction::NShift_Type shift_type, std::uint32_t shift_amount, std::uint32_t shift_reg) const noexcept;
         [[nodiscard]] std::int64_t Get_Offset(isa::CSingle_Data_Transfer instruction) const noexcept;
         [[nodiscard]] std::uint32_t Get_Offset(isa::CHalfword_Data_Transfer instruction) const noexcept;
         void Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t dest_reg);
         void Perform_Halfword_Data_Transfer_Write(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t src_reg);
+        void Execute_MSR(isa::CPSR_Transfer instruction);
+        void Execute_MRS(isa::CPSR_Transfer instruction);
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;
@@ -61,6 +62,22 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CSW_Interrupt instruction);
         void Execute(isa::CExtend instruction);
         void Execute(isa::CPSR_Transfer instruction);
+
+        template<typename Instruction>
+        [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand_Imm(Instruction instruction) const noexcept
+        {
+            const std::uint32_t immediate = instruction.Get_Immediate();
+            const std::uint32_t shift_amount = instruction.Get_Rotate() * 2;
+
+            utils::math::TShift_Result<std::uint32_t> second_operand{ m_context.Is_Flag_Set(CCPU_Context::NFlag::C), immediate };
+
+            if (shift_amount != 0 && shift_amount != std::numeric_limits<std::uint32_t>::digits)
+            {
+                second_operand = utils::math::ROR(immediate, shift_amount, false);
+            }
+
+            return second_operand;
+        }
 
         template<std::unsigned_integral Type>
         void Read_Write_Value(isa::CSingle_Data_Transfer instruction, std::uint32_t addr, std::uint32_t reg_idx)
