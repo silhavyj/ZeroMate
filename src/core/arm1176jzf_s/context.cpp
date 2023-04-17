@@ -150,7 +150,7 @@ namespace zero_mate::arm1176jzf_s
             return;
         }
 
-        m_spsr[m_mode] = m_cpsr[m_mode];
+        m_spsr[mode] = m_cpsr[m_mode];
         m_mode = mode;
     }
 
