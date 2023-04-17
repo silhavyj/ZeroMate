@@ -4,7 +4,6 @@
 #include "alu.hpp"
 #include "mac.hpp"
 #include "core.hpp"
-#include "exceptions.hpp"
 #include "../utils/singleton.hpp"
 
 namespace zero_mate::arm1176jzf_s
@@ -82,12 +81,8 @@ namespace zero_mate::arm1176jzf_s
         catch (const exceptions::CCPU_Exception& ex)
         {
             const exceptions::CPrefetch_Abort prefetch_ex{ PC() - CCPU_Context::REG_SIZE };
-            m_logging_system.Error(prefetch_ex.what());
 
-            // TODO save registers onto the stack?
-            PC() = prefetch_ex.Get_Exception_Vector();
-            m_context.Set_CPU_Mode(prefetch_ex.Get_CPU_Mode());
-
+            Execute_Exception(prefetch_ex);
             return Fetch_Instruction();
         }
     }
@@ -247,12 +242,19 @@ namespace zero_mate::arm1176jzf_s
         }
         catch (const exceptions::CCPU_Exception& ex)
         {
-            m_logging_system.Warning(ex.what());
-
-            m_context.Set_CPU_Mode(ex.Get_CPU_Mode());
-            m_context[CCPU_Context::LR_REG_IDX] = PC();
-            PC() = ex.Get_Exception_Vector();
+            Execute_Exception(ex);
         }
+    }
+
+    void CCPU_Core::Execute_Exception(const exceptions::CCPU_Exception& exception)
+    {
+        m_logging_system.Warning(exception.what());
+
+        m_context.Set_CPU_Mode(exception.Get_CPU_Mode());
+        m_context[CCPU_Context::LR_REG_IDX] = PC();
+        PC() = exception.Get_Exception_Vector();
+
+        // TODO restore the original CPU mode upon return
     }
 
     std::uint32_t CCPU_Core::Get_Shift_Amount(isa::CData_Processing instruction) const noexcept

@@ -10,6 +10,7 @@
 
 #include "context.hpp"
 #include "isa/isa.hpp"
+#include "exceptions.hpp"
 #include "isa/isa_decoder.hpp"
 #include "../utils/math.hpp"
 #include "../peripherals/bus.hpp"
@@ -49,6 +50,7 @@ namespace zero_mate::arm1176jzf_s
         void Perform_Halfword_Data_Transfer_Write(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t src_reg);
         void Execute_MSR(isa::CPSR_Transfer instruction);
         void Execute_MRS(isa::CPSR_Transfer instruction);
+        void Execute_Exception(const exceptions::CCPU_Exception& exception);
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;
