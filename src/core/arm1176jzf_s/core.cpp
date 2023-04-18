@@ -161,7 +161,7 @@ namespace zero_mate::arm1176jzf_s
 
             case isa::CInstruction::NCondition::AL:
                 [[fallthrough]];
-            case isa::CInstruction::NCondition::Not_Conditioned:
+            case isa::CInstruction::NCondition::Unconditioned:
                 return true;
         }
 
