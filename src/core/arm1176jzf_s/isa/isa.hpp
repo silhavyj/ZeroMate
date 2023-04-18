@@ -12,3 +12,4 @@
 #include "sw_interrupt.hpp"
 #include "extend.hpp"
 #include "psr_transfer.hpp"
+#include "cps.hpp"

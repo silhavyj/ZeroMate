@@ -65,6 +65,7 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CSW_Interrupt instruction);
         void Execute(isa::CExtend instruction);
         void Execute(isa::CPSR_Transfer instruction);
+        void Execute(isa::CCPS instruction);
 
         template<typename Instruction>
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand_Imm(Instruction instruction) const noexcept

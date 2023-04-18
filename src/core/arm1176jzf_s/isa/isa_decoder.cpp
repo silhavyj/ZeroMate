@@ -20,7 +20,8 @@ namespace zero_mate::arm1176jzf_s::isa
     { .mask = 0b0000'1111'1000'0000'0000'0011'1111'0000U, .expected = 0b0000'0110'1000'0000'0000'0000'0111'0000U, .type = CInstruction::NType::Extend                  },
     { .mask = 0b0000'1111'1001'1111'0000'1111'1111'1111U, .expected = 0b0000'0001'0000'1111'0000'0000'0000'0000U, .type = CInstruction::NType::PSR_Transfer            },
     { .mask = 0b0000'1111'1001'0000'1111'1111'1111'0000U, .expected = 0b0000'0001'0000'0000'1111'0000'0000'0000U, .type = CInstruction::NType::PSR_Transfer            },
-    { .mask = 0b0000'1111'1011'0000'1111'0000'0000'0000U, .expected = 0b0000'0011'0010'0000'1111'0000'0000'0000U, .type = CInstruction::NType::PSR_Transfer            }
+    { .mask = 0b0000'1111'1011'0000'1111'0000'0000'0000U, .expected = 0b0000'0011'0010'0000'1111'0000'0000'0000U, .type = CInstruction::NType::PSR_Transfer            },
+    { .mask = 0b1111'1111'1111'0001'1111'1110'0010'0000U, .expected = 0b1111'0001'0000'0000'0000'0000'0000'0000U, .type = CInstruction::NType::CPS                     }
     }};
     // clang-format on
 

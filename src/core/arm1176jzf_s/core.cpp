@@ -242,6 +242,10 @@ namespace zero_mate::arm1176jzf_s
                 case isa::CInstruction::NType::PSR_Transfer:
                     Execute(isa::CPSR_Transfer{ instruction });
                     break;
+
+                case isa::CInstruction::NType::CPS:
+                    Execute(isa::CCPS{ instruction });
+                    break;
             }
         }
         catch (const exceptions::CCPU_Exception& ex)
@@ -738,5 +742,24 @@ namespace zero_mate::arm1176jzf_s
                 Execute_MSR(instruction);
                 break;
         }
+    }
+
+    void CCPU_Core::Execute(isa::CCPS instruction)
+    {
+        auto cpsr = m_context.Get_CPSR();
+
+        if (instruction.Is_M_Bit_Set())
+        {
+            cpsr &= ~CCPU_Context::CPU_MODE_MASK;
+            cpsr |= instruction.Get_Mode();
+        }
+
+        // TODO
+        if (instruction.Is_F_Bit_Set())
+        {
+            cpsr &= ~static_cast<std::uint32_t>(CCPU_Context::NFlag::F);
+        }
+
+        m_context.Set_CPSR(cpsr);
     }
 }
