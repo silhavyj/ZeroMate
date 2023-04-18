@@ -2,8 +2,9 @@
 
 #include <array>
 #include <limits>
-#include <cstdint>
+#include <vector>
 #include <memory>
+#include <cstdint>
 #include <cassert>
 #include <optional>
 #include <unordered_set>
@@ -52,6 +53,8 @@ namespace zero_mate::arm1176jzf_s
         void Execute_MSR(isa::CPSR_Transfer instruction);
         void Execute_MRS(isa::CPSR_Transfer instruction);
         void Execute_Exception(const exceptions::CCPU_Exception& exception);
+        [[nodiscard]] static std::uint32_t Set_Interrupt_Mask_Bits(std::uint32_t cpsr, isa::CCPS instruction, bool set);
+        [[nodiscard]] static std::vector<CCPU_Context::NFlag> Get_Interrupt_Mask_Bits_To_Change(isa::CCPS instruction);
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;

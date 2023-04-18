@@ -25,6 +25,7 @@ namespace zero_mate::arm1176jzf_s
             Z = 0b1U << 30U,
             C = 0b1U << 29U,
             V = 0b1U << 28U,
+            A = 0b1U << 8U,
             I = 0b1U << 7U,
             F = 0b1U << 6U
         };

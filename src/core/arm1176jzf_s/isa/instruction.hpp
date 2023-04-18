@@ -9,21 +9,22 @@ namespace zero_mate::arm1176jzf_s::isa
     public:
         enum class NCondition : std::uint32_t
         {
-            EQ = 0b0000, // Z set; equal
-            NE = 0b0001, // Z clear; not equal
-            HS = 0b0010, // C set; unsigned higher or same
-            LO = 0b0011, // C clear; unsigned lower
-            MI = 0b0100, // N set; negative
-            PL = 0b0101, // N clear; positive or zero
-            VS = 0b0110, // V set; overflow
-            VC = 0b0111, // V clear; no overflow
-            HI = 0b1000, // C set and Z clear; unsigned higher
-            LS = 0b1001, // C clear or Z set; unsigned lower or same
-            GE = 0b1010, // N equals V; greater or equal
-            LT = 0b1011, // N not equal to V; less than
-            GT = 0b1100, // Z clear AND (N equals V); greater than
-            LE = 0b1101, // Z set OR (N not equal to V); less than or equal
-            AL = 0b1110, // always
+            EQ = 0b0000,             // Z set; equal
+            NE = 0b0001,             // Z clear; not equal
+            HS = 0b0010,             // C set; unsigned higher or same
+            LO = 0b0011,             // C clear; unsigned lower
+            MI = 0b0100,             // N set; negative
+            PL = 0b0101,             // N clear; positive or zero
+            VS = 0b0110,             // V set; overflow
+            VC = 0b0111,             // V clear; no overflow
+            HI = 0b1000,             // C set and Z clear; unsigned higher
+            LS = 0b1001,             // C clear or Z set; unsigned lower or same
+            GE = 0b1010,             // N equals V; greater or equal
+            LT = 0b1011,             // N not equal to V; less than
+            GT = 0b1100,             // Z clear AND (N equals V); greater than
+            LE = 0b1101,             // Z set OR (N not equal to V); less than or equal
+            AL = 0b1110,             // always
+            Not_Conditioned = 0b1111 // always (condition is not applied)
         };
 
         enum class NType : std::uint32_t

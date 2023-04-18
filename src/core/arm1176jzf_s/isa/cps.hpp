@@ -9,7 +9,6 @@ namespace zero_mate::arm1176jzf_s::isa
     public:
         enum class NType : std::uint32_t
         {
-            CPS = 0b00U,
             CPSIE = 0b10U,
             CPSID = 0b11U
         };

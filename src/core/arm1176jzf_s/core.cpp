@@ -160,6 +160,8 @@ namespace zero_mate::arm1176jzf_s
                 return m_context.Is_Flag_Set(CCPU_Context::NFlag::Z) || (m_context.Is_Flag_Set(CCPU_Context::NFlag::N) != m_context.Is_Flag_Set(CCPU_Context::NFlag::V));
 
             case isa::CInstruction::NCondition::AL:
+                [[fallthrough]];
+            case isa::CInstruction::NCondition::Not_Conditioned:
                 return true;
         }
 
@@ -744,20 +746,66 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
+    std::vector<CCPU_Context::NFlag> CCPU_Core::Get_Interrupt_Mask_Bits_To_Change(isa::CCPS instruction)
+    {
+        std::vector<CCPU_Context::NFlag> mask_bits;
+
+        if (instruction.Is_A_Bit_Set())
+        {
+            mask_bits.push_back(CCPU_Context::NFlag::A);
+        }
+        if (instruction.Is_I_Bit_Set())
+        {
+            mask_bits.push_back(CCPU_Context::NFlag::I);
+        }
+        if (instruction.Is_F_Bit_Set())
+        {
+            mask_bits.push_back(CCPU_Context::NFlag::F);
+        }
+
+        return mask_bits;
+    }
+
+    std::uint32_t CCPU_Core::Set_Interrupt_Mask_Bits(std::uint32_t cpsr, isa::CCPS instruction, bool set)
+    {
+        const auto mask_bits = Get_Interrupt_Mask_Bits_To_Change(instruction);
+
+        for (const auto& mask : mask_bits)
+        {
+            if (set)
+            {
+                cpsr &= ~static_cast<std::uint32_t>(mask);
+            }
+            else
+            {
+                cpsr |= static_cast<std::uint32_t>(mask);
+            }
+        }
+
+        return cpsr;
+    }
+
     void CCPU_Core::Execute(isa::CCPS instruction)
     {
+        // TODO permit this instruction only in privileged SW execution
+
         auto cpsr = m_context.Get_CPSR();
+
+        switch (instruction.Get_Type())
+        {
+            case isa::CCPS::NType::CPSIE:
+                cpsr = Set_Interrupt_Mask_Bits(cpsr, instruction, true);
+                break;
+
+            case isa::CCPS::NType::CPSID:
+                cpsr = Set_Interrupt_Mask_Bits(cpsr, instruction, false);
+                break;
+        }
 
         if (instruction.Is_M_Bit_Set())
         {
             cpsr &= ~CCPU_Context::CPU_MODE_MASK;
             cpsr |= instruction.Get_Mode();
-        }
-
-        // TODO
-        if (instruction.Is_F_Bit_Set())
-        {
-            cpsr &= ~static_cast<std::uint32_t>(CCPU_Context::NFlag::F);
         }
 
         m_context.Set_CPSR(cpsr);
