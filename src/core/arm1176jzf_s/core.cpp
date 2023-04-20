@@ -1,6 +1,8 @@
 #include <bit>
 #include <variant>
 
+#include <magic_enum.hpp>
+
 #include "alu.hpp"
 #include "mac.hpp"
 #include "core.hpp"
@@ -16,9 +18,14 @@ namespace zero_mate::arm1176jzf_s
     CCPU_Core::CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept
     : m_context{}
     , m_bus{ bus }
-    , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
         Set_PC(pc);
+    }
+
+    void CCPU_Core::Reset_Context()
+    {
+        m_context.Reset();
     }
 
     void CCPU_Core::Set_PC(std::uint32_t pc)
@@ -183,6 +190,12 @@ namespace zero_mate::arm1176jzf_s
             return;
         }
 
+        // TODO figure out why it is not interpreted as TEQ
+        if (instruction == isa::CInstruction::NOP_INSTRUCTION)
+        {
+            return;
+        }
+
         const auto type = m_instruction_decoder.Get_Instruction_Type(instruction);
 
         try
@@ -231,8 +244,7 @@ namespace zero_mate::arm1176jzf_s
                     break;
 
                 case isa::CInstruction::NType::Software_Interrupt:
-                    Execute(isa::CSW_Interrupt{ instruction });
-                    break;
+                    throw exceptions::CSoftware_Interrupt{};
 
                 case isa::CInstruction::NType::Unknown:
                     throw exceptions::CUndefined_Instruction{};
@@ -263,8 +275,6 @@ namespace zero_mate::arm1176jzf_s
         m_context.Set_CPU_Mode(exception.Get_CPU_Mode());
         m_context[CCPU_Context::LR_REG_IDX] = PC();
         PC() = exception.Get_Exception_Vector();
-
-        // TODO restore the original CPU mode upon return
     }
 
     std::uint32_t CCPU_Core::Get_Shift_Amount(isa::CData_Processing instruction) const noexcept
@@ -324,12 +334,24 @@ namespace zero_mate::arm1176jzf_s
             m_context[dest_reg] = result.value;
         }
 
-        if (result.set_flags && dest_reg != CCPU_Context::PC_REG_IDX)
+        if (result.set_flags)
         {
-            m_context.Set_Flag(CCPU_Context::NFlag::N, result.n_flag);
-            m_context.Set_Flag(CCPU_Context::NFlag::Z, result.z_flag);
-            m_context.Set_Flag(CCPU_Context::NFlag::C, result.c_flag);
-            m_context.Set_Flag(CCPU_Context::NFlag::V, result.v_flag);
+            if (dest_reg == CCPU_Context::PC_REG_IDX)
+            {
+                if (m_context.Is_Mode_With_No_SPSR(m_context.Get_CPU_Mode()))
+                {
+                    m_logging_system.Error(fmt::format("Attempt to write SPSR to CPSR from a mode where SPSR is not supported ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+                    return;
+                }
+                m_context.Set_CPSR(m_context.Get_SPSR());
+            }
+            else
+            {
+                m_context.Set_Flag(CCPU_Context::NFlag::N, result.n_flag);
+                m_context.Set_Flag(CCPU_Context::NFlag::Z, result.z_flag);
+                m_context.Set_Flag(CCPU_Context::NFlag::C, result.c_flag);
+                m_context.Set_Flag(CCPU_Context::NFlag::V, result.v_flag);
+            }
         }
     }
 
@@ -458,50 +480,80 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
+    CCPU_Context::NCPU_Mode CCPU_Core::Determine_CPU_Mode(isa::CBlock_Data_Transfer instruction) const
+    {
+        const bool store_value = !instruction.Is_L_Bit_Set();
+        const bool s_bit = instruction.Is_S_Bit_Set();
+        const auto register_list = instruction.Get_Register_List();
+        const bool r15_is_listed = utils::math::Is_Bit_Set<std::uint32_t>(register_list, CCPU_Context::PC_REG_IDX);
+
+        if ((!r15_is_listed && s_bit) || (store_value && r15_is_listed && s_bit))
+        {
+            return CCPU_Context::NCPU_Mode::User;
+        }
+
+        return m_context.Get_CPU_Mode();
+    }
+
+    std::uint32_t CCPU_Core::Calculate_Base_Address(isa::CBlock_Data_Transfer instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const
+    {
+        switch (instruction.Get_Addressing_Mode())
+        {
+            case isa::CBlock_Data_Transfer::NAddressing_Mode::IB:
+                return m_context.Get_Register(base_reg_idx, cpu_mode) + CCPU_Context::REG_SIZE;
+
+            case isa::CBlock_Data_Transfer::NAddressing_Mode::IA:
+                return m_context.Get_Register(base_reg_idx, cpu_mode);
+
+            case isa::CBlock_Data_Transfer::NAddressing_Mode::DB:
+                return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE);
+
+            case isa::CBlock_Data_Transfer::NAddressing_Mode::DA:
+                return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE) + CCPU_Context::REG_SIZE;
+        }
+
+        return {};
+    }
+
     void CCPU_Core::Execute(isa::CBlock_Data_Transfer instruction)
     {
         const auto register_list = instruction.Get_Register_List();
         const auto number_of_regs = static_cast<std::uint32_t>(std::popcount(register_list));
         const auto base_reg_idx = instruction.Get_Rn();
 
-        auto addr = [&instruction, this, &base_reg_idx, &number_of_regs]() -> std::uint32_t {
-            switch (instruction.Get_Addressing_Mode())
-            {
-                case isa::CBlock_Data_Transfer::NAddressing_Mode::IB:
-                    return m_context[base_reg_idx] + CCPU_Context::REG_SIZE;
-
-                case isa::CBlock_Data_Transfer::NAddressing_Mode::IA:
-                    return m_context[base_reg_idx];
-
-                case isa::CBlock_Data_Transfer::NAddressing_Mode::DB:
-                    return m_context[base_reg_idx] - (number_of_regs * CCPU_Context::REG_SIZE);
-
-                case isa::CBlock_Data_Transfer::NAddressing_Mode::DA:
-                    return m_context[base_reg_idx] - (number_of_regs * CCPU_Context::REG_SIZE) + CCPU_Context::REG_SIZE;
-            }
-
-            return {};
-        }();
-
-        // TODO handle PSR
-
         const bool store_value = !instruction.Is_L_Bit_Set();
+        const bool s_bit = instruction.Is_S_Bit_Set();
+        const auto cpu_mode = Determine_CPU_Mode(instruction);
+        auto addr = Calculate_Base_Address(instruction, base_reg_idx, cpu_mode, number_of_regs);
 
         for (std::uint32_t reg_idx = 0; reg_idx < CCPU_Context::NUMBER_OF_REGS; ++reg_idx)
         {
-            if (utils::math::Is_Bit_Set<std::uint32_t>(register_list, reg_idx))
+            if (!utils::math::Is_Bit_Set<std::uint32_t>(register_list, reg_idx))
             {
-                if (store_value)
-                {
-                    m_bus->Write<std::uint32_t>(addr, m_context[reg_idx]);
-                }
-                else
-                {
-                    m_context[reg_idx] = m_bus->Read<std::uint32_t>(addr);
-                }
-
-                addr += CCPU_Context::REG_SIZE;
+                continue;
             }
+
+            if (store_value)
+            {
+                m_bus->Write<std::uint32_t>(addr, m_context.Get_Register(reg_idx, cpu_mode));
+            }
+            else
+            {
+                m_context.Get_Register(reg_idx, cpu_mode) = m_bus->Read<std::uint32_t>(addr);
+
+                if (s_bit && reg_idx == CCPU_Context::PC_REG_IDX)
+                {
+                    if (m_context.Is_Mode_With_No_SPSR(m_context.Get_CPU_Mode()))
+                    {
+                        m_logging_system.Error(fmt::format("There is no SPSR register in the {} mode", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+                        throw exceptions::CReset{};
+                    }
+
+                    m_context.Set_CPSR(m_context.Get_SPSR());
+                }
+            }
+
+            addr += CCPU_Context::REG_SIZE;
         }
 
         if (instruction.Is_W_Bit_Set())
@@ -611,12 +663,6 @@ namespace zero_mate::arm1176jzf_s
         {
             m_context[instruction.Get_Rn()] = pre_indexed_addr;
         }
-    }
-
-    void CCPU_Core::Execute([[maybe_unused]] isa::CSW_Interrupt instruction)
-    {
-        // TODO do something with instruction.Get_Comment_Field()?
-        throw exceptions::CSoftware_Interrupt{};
     }
 
     void CCPU_Core::Execute(isa::CExtend instruction)
@@ -746,40 +792,21 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
-    std::vector<CCPU_Context::NFlag> CCPU_Core::Get_Interrupt_Mask_Bits_To_Change(isa::CCPS instruction)
-    {
-        std::vector<CCPU_Context::NFlag> mask_bits;
-
-        if (instruction.Is_A_Bit_Set())
-        {
-            mask_bits.push_back(CCPU_Context::NFlag::A);
-        }
-        if (instruction.Is_I_Bit_Set())
-        {
-            mask_bits.push_back(CCPU_Context::NFlag::I);
-        }
-        if (instruction.Is_F_Bit_Set())
-        {
-            mask_bits.push_back(CCPU_Context::NFlag::F);
-        }
-
-        return mask_bits;
-    }
-
     std::uint32_t CCPU_Core::Set_Interrupt_Mask_Bits(std::uint32_t cpsr, isa::CCPS instruction, bool set)
     {
-        const auto mask_bits = Get_Interrupt_Mask_Bits_To_Change(instruction);
-
-        for (const auto& mask : mask_bits)
+        if (instruction.Is_A_Bit_Set())
         {
-            if (set)
-            {
-                cpsr &= ~static_cast<std::uint32_t>(mask);
-            }
-            else
-            {
-                cpsr |= static_cast<std::uint32_t>(mask);
-            }
+            CCPU_Context::Set_Flag(cpsr, CCPU_Context::NFlag::A, !set);
+        }
+
+        if (instruction.Is_I_Bit_Set())
+        {
+            CCPU_Context::Set_Flag(cpsr, CCPU_Context::NFlag::I, !set);
+        }
+
+        if (instruction.Is_F_Bit_Set())
+        {
+            CCPU_Context::Set_Flag(cpsr, CCPU_Context::NFlag::F, !set);
         }
 
         return cpsr;
@@ -787,7 +814,11 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CCPS instruction)
     {
-        // TODO permit this instruction only in privileged SW execution
+        if (!m_context.Is_In_Privileged_Mode())
+        {
+            m_logging_system.Warning("Attempting to execute instruction CPS in a non-privileged mode");
+            return;
+        }
 
         auto cpsr = m_context.Get_CPSR();
 

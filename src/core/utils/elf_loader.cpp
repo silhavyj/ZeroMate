@@ -95,7 +95,7 @@ namespace zero_mate::utils::elf
                 return result;
             }
 
-            auto& logging_system = CSingleton<CLogging_System>::Get_Instance();
+            auto& logging_system = *CSingleton<CLogging_System>::Get_Instance();
             const auto labels = Get_Labels(elf_reader);
             const auto* const text_section = elf_reader.sections[TEXT_SECTION];
             const auto* data = std::bit_cast<const uint8_t*>(text_section->get_data());

@@ -1,11 +1,20 @@
 #include "context.hpp"
+#include "../utils/singleton.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
     CCPU_Context::CCPU_Context()
     : m_mode{ NCPU_Mode::Supervisor }
     , m_regs{}
+    , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
+        Reset();
+    }
+
+    void CCPU_Context::Reset()
+    {
+        m_mode = NCPU_Mode::Supervisor;
+
         Init_Registers();
 
         Enable_IRQ(false);
@@ -14,6 +23,8 @@ namespace zero_mate::arm1176jzf_s
 
     inline void CCPU_Context::Init_Registers()
     {
+        m_regs.fill(0);
+
         Init_FIQ_Banked_Regs();
         Init_IRQ_Banked_Regs();
         Init_Supervisor_Banked_Regs();
@@ -79,30 +90,38 @@ namespace zero_mate::arm1176jzf_s
 
     inline void CCPU_Context::Init_SPSR()
     {
-        m_spsr[NCPU_Mode::User] = { 0 };
         m_spsr[NCPU_Mode::FIQ] = { 0 };
         m_spsr[NCPU_Mode::IRQ] = { 0 };
         m_spsr[NCPU_Mode::Supervisor] = { 0 };
         m_spsr[NCPU_Mode::Abort] = { 0 };
         m_spsr[NCPU_Mode::Undefined] = { 0 };
-        m_spsr[NCPU_Mode::System] = { 0 };
     }
 
     const std::uint32_t& CCPU_Context::operator[](std::uint32_t idx) const
     {
-        if (m_banked_regs.contains(m_mode) && m_banked_regs.at(m_mode).contains(idx))
+        return Get_Register(idx, m_mode);
+    }
+
+    std::uint32_t& CCPU_Context::operator[](std::uint32_t idx)
+    {
+        return Get_Register(idx, m_mode);
+    }
+
+    const std::uint32_t& CCPU_Context::Get_Register(std::uint32_t idx, NCPU_Mode mode) const
+    {
+        if (m_banked_regs.contains(mode) && m_banked_regs.at(mode).contains(idx))
         {
-            return m_banked_regs.at(m_mode).at(idx);
+            return m_banked_regs.at(mode).at(idx);
         }
 
         return m_regs.at(idx);
     }
 
-    std::uint32_t& CCPU_Context::operator[](std::uint32_t idx)
+    std::uint32_t& CCPU_Context::Get_Register(std::uint32_t idx, NCPU_Mode mode)
     {
-        if (m_banked_regs.contains(m_mode) && m_banked_regs.at(m_mode).contains(idx))
+        if (m_banked_regs.contains(mode) && m_banked_regs.at(mode).contains(idx))
         {
-            return m_banked_regs[m_mode][idx];
+            return m_banked_regs[mode][idx];
         }
 
         return m_regs[idx];
@@ -113,14 +132,30 @@ namespace zero_mate::arm1176jzf_s
         return m_cpsr.at(m_mode);
     }
 
-    void CCPU_Context::Set_CPSR(std::uint32_t value)
+    void CCPU_Context::Set_CPSR(std::uint32_t new_cpsr)
     {
-        Set_CPU_Mode(Get_CPU_Mode(value));
+        if (Invalid_Change_Of_Control_Bits(new_cpsr))
+        {
+            m_logging_system->Error("Attempt to change the control bits in a non-privileged mode (User mode)");
+            return;
+        }
 
-        value &= ~CPU_MODE_MASK;
-        value |= static_cast<std::uint32_t>(Get_CPU_Mode());
+        Set_CPU_Mode(Get_CPU_Mode(new_cpsr));
 
-        m_cpsr[m_mode] = value;
+        new_cpsr &= ~CPU_MODE_MASK;
+        new_cpsr |= static_cast<std::uint32_t>(Get_CPU_Mode());
+
+        m_cpsr[m_mode] = new_cpsr;
+    }
+
+    bool CCPU_Context::Invalid_Change_Of_Control_Bits(std::uint32_t new_cpsr) noexcept
+    {
+        if (m_mode == NCPU_Mode::User)
+        {
+            return (new_cpsr & CPU_CONTROL_BITS_MASK) != (Get_CPSR() & CPU_CONTROL_BITS_MASK);
+        }
+
+        return false;
     }
 
     std::uint32_t CCPU_Context::Get_SPSR() const
@@ -145,12 +180,11 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Context::Set_CPU_Mode(NCPU_Mode mode) noexcept
     {
-        if (m_mode == mode)
+        if (!Is_Mode_With_No_SPSR(mode))
         {
-            return;
+            m_spsr[mode] = m_cpsr[m_mode];
         }
 
-        m_spsr[mode] = m_cpsr[m_mode];
         m_mode = mode;
     }
 
@@ -179,5 +213,17 @@ namespace zero_mate::arm1176jzf_s
     CCPU_Context::NCPU_Mode CCPU_Context::Get_CPU_Mode(std::uint32_t cpsr) noexcept
     {
         return static_cast<NCPU_Mode>(cpsr & 0b11111U);
+    }
+
+    bool CCPU_Context::Is_In_Privileged_Mode() const noexcept
+    {
+        const auto mode = Get_CPU_Mode();
+
+        return mode == NCPU_Mode::Supervisor;
+    }
+
+    bool CCPU_Context::Is_Mode_With_No_SPSR(NCPU_Mode mode) noexcept
+    {
+        return (mode == NCPU_Mode::User) || (mode == NCPU_Mode::System);
     }
 }

@@ -16,7 +16,7 @@ namespace zero_mate::gui
     : m_cpu{ cpu }
     , m_scroll_to_curr_line{ scroll_to_curr_line }
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
-    , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_cpu_running{ cpu_running }
     , m_breakpoint_hit{ false }
     , m_start_cpu_thread{ false }

@@ -4,6 +4,8 @@
 #include <cstdint>
 #include <unordered_map>
 
+#include "../utils/logger/logger.hpp"
+
 namespace zero_mate::arm1176jzf_s
 {
     class CCPU_Context final
@@ -14,6 +16,7 @@ namespace zero_mate::arm1176jzf_s
 
         static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
         static constexpr std::uint32_t CPU_MODE_MASK = 0b11111U;
+        static constexpr std::uint32_t CPU_CONTROL_BITS_MASK = 0xFFU;
 
         static constexpr std::size_t PC_REG_IDX = 15;
         static constexpr std::size_t LR_REG_IDX = 14;
@@ -43,8 +46,13 @@ namespace zero_mate::arm1176jzf_s
 
         CCPU_Context();
 
+        void Reset();
+
         [[nodiscard]] const std::uint32_t& operator[](std::uint32_t idx) const;
         [[nodiscard]] std::uint32_t& operator[](std::uint32_t idx);
+
+        [[nodiscard]] const std::uint32_t& Get_Register(std::uint32_t idx, NCPU_Mode mode) const;
+        [[nodiscard]] std::uint32_t& Get_Register(std::uint32_t idx, NCPU_Mode mode);
 
         [[nodiscard]] std::uint32_t Get_CPSR() const;
         void Set_CPSR(std::uint32_t value);
@@ -52,9 +60,12 @@ namespace zero_mate::arm1176jzf_s
         void Set_SPSR(std::uint32_t value);
 
         void Set_Flag(NFlag flag, bool set) noexcept;
+        static void Set_Flag(std::uint32_t& cpsr, NFlag flag, bool set) noexcept;
         [[nodiscard]] bool Is_Flag_Set(NFlag flag) const noexcept;
         void Set_CPU_Mode(NCPU_Mode mode) noexcept;
         [[nodiscard]] NCPU_Mode Get_CPU_Mode() const noexcept;
+        [[nodiscard]] bool Is_In_Privileged_Mode() const noexcept;
+        [[nodiscard]] static bool Is_Mode_With_No_SPSR(NCPU_Mode mode) noexcept;
 
         void Enable_IRQ(bool set);
         void Enable_FIQ(bool set);
@@ -71,14 +82,15 @@ namespace zero_mate::arm1176jzf_s
         inline void Init_CPSR();
         inline void Init_SPSR();
 
-        static void Set_Flag(std::uint32_t& cpsr, NFlag flag, bool set) noexcept;
         [[nodiscard]] static bool Is_Flag_Set(std::uint32_t cpsr, NFlag flag) noexcept;
-        [[nodiscard]] static NCPU_Mode Get_CPU_Mode(std::uint32_t cpsr) noexcept;
+        [[nodiscard]] static NCPU_Mode Get_CPU_Mode(std::uint32_t new_cpsr) noexcept;
+        [[nodiscard]] bool Invalid_Change_Of_Control_Bits(std::uint32_t new_cpsr) noexcept;
 
         NCPU_Mode m_mode;
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
         std::unordered_map<NCPU_Mode, std::unordered_map<std::uint32_t, std::uint32_t>> m_banked_regs;
         std::unordered_map<NCPU_Mode, std::uint32_t> m_spsr;
         std::unordered_map<NCPU_Mode, std::uint32_t> m_cpsr;
+        utils::CLogging_System* m_logging_system;
     };
 }

@@ -7,6 +7,16 @@ namespace zero_mate::arm1176jzf_s::isa
     {
     }
 
+    bool CInstruction::operator==(const CInstruction& other) const
+    {
+        return m_value == other.m_value;
+    }
+
+    bool CInstruction::operator!=(const CInstruction& other) const
+    {
+        return !(*this == other);
+    }
+
     std::uint32_t CInstruction::Get_Value() const noexcept
     {
         return m_value;

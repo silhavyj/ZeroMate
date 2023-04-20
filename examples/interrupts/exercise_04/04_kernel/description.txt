@@ -1,2 +1,0 @@
-- preruseni, IRQ
-- timer "driver"

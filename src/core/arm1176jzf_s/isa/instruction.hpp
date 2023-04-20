@@ -7,6 +7,8 @@ namespace zero_mate::arm1176jzf_s::isa
     class CInstruction
     {
     public:
+        static constexpr std::uint32_t NOP_INSTRUCTION{ 0xe320f000 };
+
         enum class NCondition : std::uint32_t
         {
             EQ = 0b0000,           // Z set; equal
@@ -57,6 +59,9 @@ namespace zero_mate::arm1176jzf_s::isa
         };
 
         CInstruction(std::uint32_t value) noexcept;
+
+        [[nodiscard]] bool operator==(const CInstruction& other) const;
+        [[nodiscard]] bool operator!=(const CInstruction& other) const;
 
         [[nodiscard]] std::uint32_t Get_Value() const noexcept;
         [[nodiscard]] NCondition Get_Condition() const noexcept;

@@ -54,7 +54,6 @@ TEST(psr_instruction, test_03)
 
     EXPECT_EQ(cpu.m_context.Get_CPU_Mode(), CCPU_Context::NCPU_Mode::User);
     EXPECT_EQ(cpu.m_context.Get_CPSR(), 0xFF0000F0);
-    EXPECT_EQ(cpu.m_context.Get_SPSR(), 0b11010011U);
 }
 
 TEST(psr_instruction, test_04)

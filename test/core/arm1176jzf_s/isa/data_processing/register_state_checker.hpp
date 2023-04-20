@@ -5,7 +5,7 @@
 
 namespace zero_mate::test
 {
-    template<typename Registers>
+    template<typename CPU_Context>
     class CRegister_State_Checker final
     {
     public:
@@ -17,13 +17,32 @@ namespace zero_mate::test
 
         using Changed_registers_t = std::initializer_list<TRegister>;
 
-        void Record_State(const Registers& regs) noexcept
+        void Record_State(const CPU_Context& cpu_context) noexcept
         {
-            m_regs = regs;
+            m_cpu_context = cpu_context;
         }
 
-        [[nodiscard]] bool Is_Any_Other_Register_Modified(const Registers& curr_regs, Changed_registers_t changed_registers) const noexcept
+        [[nodiscard]] bool Is_Any_Other_Register_Modified(const CPU_Context& curr_cpu_context, Changed_registers_t changed_registers) const noexcept
         {
+            const auto mode = m_cpu_context.Get_CPU_Mode();
+            const auto curr_mode = curr_cpu_context.Get_CPU_Mode();
+
+            if (mode != curr_mode)
+            {
+                return true;
+            }
+
+            if (m_cpu_context.Is_Mode_With_No_SPSR(mode) != curr_cpu_context.Is_Mode_With_No_SPSR(curr_mode))
+            {
+                return true;
+            }
+
+            if ((!m_cpu_context.Is_Mode_With_No_SPSR(mode) && !curr_cpu_context.Is_Mode_With_No_SPSR(curr_mode)) &&
+                (m_cpu_context.Get_SPSR() != curr_cpu_context.Get_SPSR()))
+            {
+                return true;
+            }
+
             for (std::uint32_t i = 0; i < arm1176jzf_s::CCPU_Context::NUMBER_OF_REGS; ++i)
             {
                 bool excluded_reg{ false };
@@ -34,7 +53,7 @@ namespace zero_mate::test
                 {
                     if (reg.idx == i)
                     {
-                        if (reg.expected_value != curr_regs[i])
+                        if (reg.expected_value != curr_cpu_context[i])
                         {
                             return true;
                         }
@@ -42,7 +61,7 @@ namespace zero_mate::test
                     }
                 }
 
-                if (!excluded_reg && m_regs[i] != curr_regs[i])
+                if (!excluded_reg && m_cpu_context[i] != curr_cpu_context[i])
                 {
                     return true;
                 }
@@ -52,6 +71,6 @@ namespace zero_mate::test
         }
 
     private:
-        Registers m_regs;
+        CPU_Context m_cpu_context;
     };
 }

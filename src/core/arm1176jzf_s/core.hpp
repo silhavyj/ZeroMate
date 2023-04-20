@@ -2,7 +2,6 @@
 
 #include <array>
 #include <limits>
-#include <vector>
 #include <memory>
 #include <cstdint>
 #include <cassert>
@@ -25,6 +24,8 @@ namespace zero_mate::arm1176jzf_s
     public:
         CCPU_Core() noexcept;
         CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept;
+
+        void Reset_Context();
 
         void Set_PC(std::uint32_t pc);
         void Add_Breakpoint(std::uint32_t addr);
@@ -53,8 +54,9 @@ namespace zero_mate::arm1176jzf_s
         void Execute_MSR(isa::CPSR_Transfer instruction);
         void Execute_MRS(isa::CPSR_Transfer instruction);
         void Execute_Exception(const exceptions::CCPU_Exception& exception);
-        [[nodiscard]] static std::uint32_t Set_Interrupt_Mask_Bits(std::uint32_t cpsr, isa::CCPS instruction, bool set);
-        [[nodiscard]] static std::vector<CCPU_Context::NFlag> Get_Interrupt_Mask_Bits_To_Change(isa::CCPS instruction);
+        [[nodiscard]] static inline std::uint32_t Set_Interrupt_Mask_Bits(std::uint32_t cpsr, isa::CCPS instruction, bool set);
+        [[nodiscard]] CCPU_Context::NCPU_Mode Determine_CPU_Mode(isa::CBlock_Data_Transfer instruction) const;
+        [[nodiscard]] std::uint32_t Calculate_Base_Address(isa::CBlock_Data_Transfer instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const;
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;
@@ -65,7 +67,6 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CSingle_Data_Transfer instruction);
         void Execute(isa::CBlock_Data_Transfer instruction);
         void Execute(isa::CHalfword_Data_Transfer instruction);
-        void Execute(isa::CSW_Interrupt instruction);
         void Execute(isa::CExtend instruction);
         void Execute(isa::CPSR_Transfer instruction);
         void Execute(isa::CCPS instruction);
