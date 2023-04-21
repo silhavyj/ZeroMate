@@ -53,7 +53,7 @@ namespace zero_mate::peripheral
     CGPIO_Manager::CGPIO_Manager() noexcept
     : m_regs{}
     , m_pins{}
-    , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
     }
 

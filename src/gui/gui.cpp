@@ -35,7 +35,7 @@ namespace zero_mate::gui
     namespace
     {
         auto logger_stdo = std::make_shared<utils::CLogger_STDO>();
-        auto& s_logging_system = utils::CSingleton<utils::CLogging_System>::Get_Instance();
+        auto& s_logging_system = *utils::CSingleton<utils::CLogging_System>::Get_Instance();
 
         std::shared_ptr<peripheral::CRAM> s_ram{ nullptr };
         auto s_bus = std::make_shared<CBus>();

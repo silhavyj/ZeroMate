@@ -10,3 +10,6 @@
 #include "block_data_transfer.hpp"
 #include "halfword_data_transfer.hpp"
 #include "sw_interrupt.hpp"
+#include "extend.hpp"
+#include "psr_transfer.hpp"
+#include "cps.hpp"

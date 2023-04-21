@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "core/peripherals/ram.hpp"
-#include "core/arm1176jzf_s/cpu_core.hpp"
+#include "core/arm1176jzf_s/core.hpp"
 
 using namespace zero_mate;
 
@@ -23,8 +23,8 @@ TEST(strh_instruction, test_01)
     { 0xe5b13000 }  // ldr r3, [r1]!
     });
 
-    EXPECT_EQ(cpu.m_regs[1], 0x000000C8);
-    EXPECT_EQ(cpu.m_regs[3], 0x0000FFFB);
+    EXPECT_EQ(cpu.m_context[1], 0x000000C8);
+    EXPECT_EQ(cpu.m_context[3], 0x0000FFFB);
 }
 
 TEST(strh_instruction, test_02)
@@ -43,6 +43,6 @@ TEST(strh_instruction, test_02)
     { 0xe59130fc }  // ldr r3, [r1, #252]
     });
 
-    EXPECT_EQ(cpu.m_regs[1], 0x000000C8);
-    EXPECT_EQ(cpu.m_regs[3], 0x0000FF56);
+    EXPECT_EQ(cpu.m_context[1], 0x000000C8);
+    EXPECT_EQ(cpu.m_context[3], 0x0000FF56);
 }

@@ -4,7 +4,7 @@
 
 #include "../window.hpp"
 
-#include "../../core/arm1176jzf_s/cpu_core.hpp"
+#include "../../core/arm1176jzf_s/core.hpp"
 
 namespace zero_mate::gui
 {

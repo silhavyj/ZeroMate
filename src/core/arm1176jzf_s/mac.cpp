@@ -19,13 +19,13 @@ namespace zero_mate::arm1176jzf_s::mac
         }
     }
 
-    TResult Execute(isa::CMultiply instruction, std::uint32_t reg_rm, std::uint32_t reg_rs, std::uint32_t reg_rn) noexcept
+    TResult Execute(isa::CMultiply instruction, std::uint32_t reg_rm_val, std::uint32_t reg_rs_val, std::uint32_t reg_rn_val) noexcept
     {
         TResult result{};
 
-        const auto reg_rm_64u = static_cast<std::uint64_t>(reg_rm);
-        const auto reg_rs_64u = static_cast<std::uint64_t>(reg_rs);
-        const auto reg_rn_64u = static_cast<std::uint64_t>(reg_rn);
+        const auto reg_rm_64u = static_cast<std::uint64_t>(reg_rm_val);
+        const auto reg_rs_64u = static_cast<std::uint64_t>(reg_rs_val);
+        const auto reg_rn_64u = static_cast<std::uint64_t>(reg_rn_val);
 
         std::uint64_t result_64u = reg_rm_64u * reg_rs_64u;
 
@@ -46,16 +46,16 @@ namespace zero_mate::arm1176jzf_s::mac
         return result;
     }
 
-    TResult Execute(isa::CMultiply_Long instruction, std::uint32_t reg_rm, std::uint32_t reg_rs, std::uint32_t reg_rd_lo, std::uint32_t reg_rd_hi) noexcept
+    TResult Execute(isa::CMultiply_Long instruction, std::uint32_t reg_rm_val, std::uint32_t reg_rs_val, std::uint32_t reg_rd_lo, std::uint32_t reg_rd_hi) noexcept
     {
         TResult result{};
         std::uint64_t result_value_64u{};
 
-        const auto reg_rs_32s = static_cast<std::int32_t>(reg_rs);
-        const auto reg_rm_32s = static_cast<std::int32_t>(reg_rm);
+        const auto reg_rs_32s = static_cast<std::int32_t>(reg_rs_val);
+        const auto reg_rm_32s = static_cast<std::int32_t>(reg_rm_val);
 
-        const auto reg_rs_64u = static_cast<std::uint64_t>(reg_rs);
-        const auto reg_rm_64u = static_cast<std::uint64_t>(reg_rm);
+        const auto reg_rs_64u = static_cast<std::uint64_t>(reg_rs_val);
+        const auto reg_rm_64u = static_cast<std::uint64_t>(reg_rm_val);
 
         const auto reg_rs_64s = static_cast<std::int64_t>(reg_rs_32s);
         const auto reg_rm_64s = static_cast<std::int64_t>(reg_rm_32s);

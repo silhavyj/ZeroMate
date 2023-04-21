@@ -102,7 +102,7 @@ namespace zero_mate::utils::math
     }
 
     template<std::unsigned_integral Type>
-    [[nodiscard]] TShift_Result<Type> ROR(Type value, Type shift_size, bool carry_flag = false) noexcept
+    [[nodiscard]] TShift_Result<Type> ROR(Type value, Type shift_size, bool carry_flag) noexcept
     {
         bool updated_carry_flag{};
         Type result{};
@@ -119,6 +119,17 @@ namespace zero_mate::utils::math
         }
 
         return { updated_carry_flag, result };
+    }
+
+    template<std::unsigned_integral Type>
+    [[nodiscard]] Type ROR(Type value, Type rot) noexcept
+    {
+        if (rot == 0 || rot >= std::numeric_limits<Type>::digits)
+        {
+            return value;
+        }
+
+        return static_cast<Type>(value >> rot) | static_cast<Type>(value << (std::numeric_limits<Type>::digits - rot));
     }
 
     template<std::unsigned_integral Type>
@@ -182,23 +193,23 @@ namespace zero_mate::utils::math
         return Check_Overflow_Addition<Type>(op1, op2);
     }
 
-    template<std::unsigned_integral Type>
-    [[nodiscard]] std::uint32_t Sign_Extend_Value(Type value) noexcept
+    template<std::unsigned_integral Small_Type, std::unsigned_integral Large_Type = std::uint32_t>
+    [[nodiscard]] Large_Type Sign_Extend_Value(Small_Type value) noexcept
     {
-        static_assert(std::numeric_limits<Type>::digits < std::numeric_limits<std::uint32_t>::digits);
+        static_assert(std::numeric_limits<Small_Type>::digits < std::numeric_limits<Large_Type>::digits);
 
-        if (utils::math::Is_Negative<Type>(value))
+        if (utils::math::Is_Negative<Small_Type>(value))
         {
-            auto mask = static_cast<std::uint32_t>(-1);
+            auto mask = static_cast<Large_Type>(-1);
 
-            for (std::size_t i = 0; i < sizeof(Type); ++i)
+            for (std::size_t i = 0; i < sizeof(Small_Type); ++i)
             {
-                mask <<= static_cast<std::uint32_t>(std::numeric_limits<std::uint8_t>::digits);
+                mask = static_cast<Large_Type>(mask << static_cast<Large_Type>(std::numeric_limits<std::uint8_t>::digits));
             }
 
-            return mask | static_cast<std::uint32_t>(value);
+            return static_cast<Large_Type>(mask | static_cast<Large_Type>(value));
         }
 
-        return static_cast<std::uint32_t>(value);
+        return static_cast<Large_Type>(value);
     }
 }

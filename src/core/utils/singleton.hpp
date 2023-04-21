@@ -9,13 +9,13 @@ namespace zero_mate::utils
     class CSingleton
     {
     public:
-        static Type& Get_Instance()
+        static Type* Get_Instance()
         {
             std::call_once(s_init_flag, [=]() -> void {
                 CSingleton<Type>::s_instance = std::make_unique<Type>();
             });
 
-            return *s_instance.get();
+            return s_instance.get();
         }
 
     private:

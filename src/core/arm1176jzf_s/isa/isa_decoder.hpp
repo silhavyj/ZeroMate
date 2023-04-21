@@ -23,9 +23,8 @@ namespace zero_mate::arm1176jzf_s::isa
         [[nodiscard]] static CInstruction::NType Get_Instruction_Type(CInstruction instruction) noexcept;
 
     private:
-        // TODO change this to static constexpr auto NUMBER_OF_INSTRUCTION_TYPES = static_cast<std::size_t>(CInstruction::NType::Count)
-        static constexpr std::size_t NUMBER_OF_INSTRUCTION_TYPES = 9;
+        static constexpr std::size_t NUMBER_OF_INSTRUCTION_MASKS = 14;
 
-        static std::array<TInstruction_Lookup_Record, NUMBER_OF_INSTRUCTION_TYPES> s_instruction_lookup_table;
+        static std::array<TInstruction_Lookup_Record, NUMBER_OF_INSTRUCTION_MASKS> s_instruction_lookup_table;
     };
 }

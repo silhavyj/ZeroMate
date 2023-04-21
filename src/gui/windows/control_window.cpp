@@ -16,7 +16,7 @@ namespace zero_mate::gui
     : m_cpu{ cpu }
     , m_scroll_to_curr_line{ scroll_to_curr_line }
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
-    , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_cpu_running{ cpu_running }
     , m_breakpoint_hit{ false }
     , m_start_cpu_thread{ false }
@@ -140,7 +140,7 @@ namespace zero_mate::gui
             {
                 m_breakpoint_hit = true;
                 m_stop_cpu_thread = true;
-                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->m_regs[arm1176jzf_s::CCPU_Core::PC_REG_IDX]).c_str());
+                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX]).c_str());
             }
         }
 

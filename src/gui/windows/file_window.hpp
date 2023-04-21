@@ -2,7 +2,7 @@
 
 #include "../window.hpp"
 
-#include "../../core/arm1176jzf_s/cpu_core.hpp"
+#include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/peripherals/bus.hpp"
 #include "../../core/utils/elf_loader.hpp"
 #include "../../core/utils/logger/logger.hpp"
