@@ -22,95 +22,115 @@ namespace zero_mate::gui
     {
         if (ImGui::Begin("Source Code Disassembly"))
         {
-            if (ImGui::BeginTable("##source_code_table", 4, TABLE_FLAGS))
+            if (!m_source_code.empty())
             {
-                ImGui::TableSetupColumn("##breakpoint", ImGuiTableColumnFlags_WidthFixed);
-                ImGui::TableSetupColumn("Address", ImGuiTableColumnFlags_WidthFixed);
-                ImGui::TableSetupColumn("Opcode", ImGuiTableColumnFlags_WidthFixed);
-                ImGui::TableSetupColumn("Disassembly", ImGuiTableColumnFlags_WidthStretch);
+                std::size_t idx{ 0 };
+
+                while (idx < m_source_code.size())
+                {
+                    Render_Code_Block(idx);
+                }
+            }
+        }
+
+        ImGui::End();
+    }
+
+    void CSource_Code_Window::Render_Code_Block(std::size_t& idx)
+    {
+        assert(m_source_code[idx].type == utils::elf::NText_Section_Record_Type::Label);
+
+        if (ImGui::CollapsingHeader(m_source_code[idx].disassembly.c_str()))
+        {
+            if (ImGui::BeginTable(fmt::format("##source_code_table{}", m_source_code[idx].disassembly).c_str(), 4, TABLE_FLAGS))
+            {
+                ImGui::TableSetupColumn(fmt::format("##breakpoint{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthFixed);
+                ImGui::TableSetupColumn(fmt::format("Address##{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthFixed);
+                ImGui::TableSetupColumn(fmt::format("Opcode##{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthFixed);
+                ImGui::TableSetupColumn(fmt::format("Disassembly##{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthStretch);
 
                 ImGui::TableHeadersRow();
 
-                for (const auto& [type, addr, opcode, disassembly] : m_source_code)
+                ++idx;
+                while (idx != m_source_code.size())
                 {
                     ImGui::TableNextRow();
                     ImGui::TableNextColumn();
 
-                    switch (type)
+                    if (m_source_code[idx].type == utils::elf::NText_Section_Record_Type::Label)
                     {
-                        case utils::elf::NText_Section_Record_Type::Instruction:
-                            ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
-                            if (ImGui::RadioButton(fmt::format("##{}", addr).c_str(), m_breakpoints[addr]) && !m_cpu_running)
-                            {
-                                m_breakpoints[addr] = !m_breakpoints[addr];
-                                if (m_breakpoints[addr])
-                                {
-                                    m_cpu->Add_Breakpoint(addr);
-                                }
-                                else
-                                {
-                                    m_cpu->Remove_Breakpoint(addr);
-                                }
-                            }
-                            ImGui::PopStyleColor();
-
-                            ImGui::TableNextColumn();
-
-                            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 1.f, 1.f, 0.65f));
-                            ImGui::Text("0x%08X", addr);
-                            ImGui::PopStyleColor();
-
-                            ImGui::TableNextColumn();
-                            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, 0.65f));
-                            ImGui::Text("0x%08X", opcode);
-                            ImGui::PopStyleColor();
-
-                            ImGui::TableNextColumn();
-
-                            if (disassembly == utils::elf::UNKNOWN_INSTRUCTION_STR)
-                            {
-                                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 0.85f));
-                                ImGui::Text("%s", disassembly.c_str());
-                                ImGui::PopStyleColor();
-                            }
-                            else
-                            {
-                                ImGui::Text("%s", disassembly.c_str());
-                            }
-
-                            if (!m_cpu_running && addr == m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
-                            {
-                                const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
-                                ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
-
-                                if (m_scroll_to_curr_line && !ImGui::IsItemVisible())
-                                {
-                                    ImGui::SetScrollHereY(0.2f);
-                                    m_scroll_to_curr_line = false;
-                                }
-                            }
-                            break;
-
-                        case utils::elf::NText_Section_Record_Type::Label:
-                            ImGui::TableNextRow();
-                            ImGui::TableNextColumn();
-                            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, 0.0f));
-                            ImGui::Text("|");
-                            ImGui::PopStyleColor();
-
-                            ImGui::TableNextRow();
-                            ImGui::TableSetColumnIndex(2);
-                            ImGui::Text("%s", disassembly.c_str());
-                            const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(0.11f, 0.18f, 0.29f, 1.0f));
-                            ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
-                            break;
+                        break;
                     }
+
+                    ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
+                    if (ImGui::RadioButton(fmt::format("##{}", m_source_code[idx].addr).c_str(), m_breakpoints[m_source_code[idx].addr]) && !m_cpu_running)
+                    {
+                        m_breakpoints[m_source_code[idx].addr] = !m_breakpoints[m_source_code[idx].addr];
+                        if (m_breakpoints[m_source_code[idx].addr])
+                        {
+                            m_cpu->Add_Breakpoint(m_source_code[idx].addr);
+                        }
+                        else
+                        {
+                            m_cpu->Remove_Breakpoint(m_source_code[idx].addr);
+                        }
+                    }
+                    ImGui::PopStyleColor();
+
+                    ImGui::TableNextColumn();
+
+                    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 1.f, 1.f, 0.65f));
+                    ImGui::Text("0x%08X", m_source_code[idx].addr);
+                    ImGui::PopStyleColor();
+
+                    ImGui::TableNextColumn();
+                    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, 0.65f));
+                    ImGui::Text("0x%08X", m_source_code[idx].opcode);
+                    ImGui::PopStyleColor();
+
+                    ImGui::TableNextColumn();
+
+                    if (m_source_code[idx].disassembly == utils::elf::UNKNOWN_INSTRUCTION_STR)
+                    {
+                        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 0.85f));
+                        ImGui::Text("%s", m_source_code[idx].disassembly.c_str());
+                        ImGui::PopStyleColor();
+                    }
+                    else
+                    {
+                        ImGui::Text("%s", m_source_code[idx].disassembly.c_str());
+                    }
+
+                    if (!m_cpu_running && m_source_code[idx].addr == m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
+                    {
+                        const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
+                        ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
+
+                        if (m_scroll_to_curr_line && !ImGui::IsItemVisible())
+                        {
+                            ImGui::SetScrollHereY(0.2f);
+                            m_scroll_to_curr_line = false;
+                        }
+                    }
+
+                    ++idx;
                 }
 
                 ImGui::EndTable();
             }
         }
+        else
+        {
+            ++idx;
 
-        ImGui::End();
+            while (idx < m_source_code.size())
+            {
+                if (m_source_code[idx].type == utils::elf::NText_Section_Record_Type::Label)
+                {
+                    break;
+                }
+                ++idx;
+            }
+        }
     }
 }

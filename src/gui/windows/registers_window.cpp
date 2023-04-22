@@ -196,7 +196,7 @@ namespace zero_mate::gui
                 ImGui::TableNextColumn();
                 ImGui::Text("SPSR");
                 ImGui::TableNextColumn();
-                Render_Value(m_cpu_context.Get_SPSR(), format);
+                Render_Value(m_cpu_context.Get_SPSR(mode), format);
                 ImGui::TableNextRow();
             }
 
