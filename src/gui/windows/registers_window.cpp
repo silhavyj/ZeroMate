@@ -68,6 +68,7 @@ namespace zero_mate::gui
         if (ImGui::Begin("CPU Registers"))
         {
             ImGui::Text("CPU Mode: %s", fmt::format("{}", magic_enum::enum_name(cpu_state)).c_str());
+            ImGui::Separator();
 
             if (ImGui::BeginTabBar("##cpu_regs_tabs"))
             {

@@ -19,6 +19,7 @@ namespace zero_mate::arm1176jzf_s
     : m_context{}
     , m_bus{ bus }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_entry_point{ DEFAULT_ENTRY_POINT }
     {
         Set_PC(pc);
     }
@@ -26,10 +27,12 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Reset_Context()
     {
         m_context.Reset();
+        Set_PC(m_entry_point);
     }
 
     void CCPU_Core::Set_PC(std::uint32_t pc)
     {
+        m_entry_point = pc;
         PC() = pc;
     }
 
