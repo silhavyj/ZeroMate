@@ -36,12 +36,40 @@ namespace zero_mate::gui
         ImGui::End();
     }
 
+    bool CSource_Code_Window::Highlight_Code_Block(std::size_t idx) const
+    {
+        for (std::size_t i = idx + 1; i < m_source_code.size(); ++i)
+        {
+            if (m_source_code[i].type == utils::elf::NText_Section_Record_Type::Label)
+            {
+                return false;
+            }
+
+            if (!m_cpu_running && m_source_code[i].addr == m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     void CSource_Code_Window::Render_Code_Block(std::size_t& idx)
     {
         assert(m_source_code[idx].type == utils::elf::NText_Section_Record_Type::Label);
 
+        const bool highlight_code_block = Highlight_Code_Block(idx);
+
+        if (highlight_code_block)
+        {
+            ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
+        }
         if (ImGui::CollapsingHeader(m_source_code[idx].disassembly.c_str()))
         {
+            if (highlight_code_block)
+            {
+                ImGui::PopStyleColor();
+            }
             if (ImGui::BeginTable(fmt::format("##source_code_table{}", m_source_code[idx].disassembly).c_str(), 4, TABLE_FLAGS))
             {
                 ImGui::TableSetupColumn(fmt::format("##breakpoint{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthFixed);
@@ -121,6 +149,10 @@ namespace zero_mate::gui
         }
         else
         {
+            if (highlight_code_block)
+            {
+                ImGui::PopStyleColor();
+            }
             ++idx;
 
             while (idx < m_source_code.size())
