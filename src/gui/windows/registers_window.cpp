@@ -170,19 +170,19 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::Text("R13 (LR)");
             ImGui::TableNextColumn();
-            Render_Value(m_cpu_context.Get_Register(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::LR_REG_IDX, mode), mode), format);
+            Render_Value(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::LR_REG_IDX, mode), format);
             ImGui::TableNextRow();
 
             ImGui::TableNextColumn();
             ImGui::Text("R14 (SP)");
             ImGui::TableNextColumn();
-            Render_Value(m_cpu_context.Get_Register(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::SP_REG_IDX, mode), mode), format);
+            Render_Value(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::SP_REG_IDX, mode), format);
             ImGui::TableNextRow();
 
             ImGui::TableNextColumn();
             ImGui::Text("R15 (PC)");
             ImGui::TableNextColumn();
-            Render_Value(m_cpu_context.Get_Register(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::PC_REG_IDX, mode), mode), format);
+            Render_Value(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::PC_REG_IDX, mode), format);
             ImGui::TableNextRow();
 
             ImGui::TableNextColumn();
