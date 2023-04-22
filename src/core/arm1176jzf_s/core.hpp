@@ -22,6 +22,8 @@ namespace zero_mate::arm1176jzf_s
     class CCPU_Core final
     {
     public:
+        static constexpr std::uint32_t DEFAULT_ENTRY_POINT = 0x8000;
+
         CCPU_Core() noexcept;
         CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept;
 
@@ -110,5 +112,6 @@ namespace zero_mate::arm1176jzf_s
         std::shared_ptr<CBus> m_bus;
         std::unordered_set<std::uint32_t> m_breakpoints;
         utils::CLogging_System& m_logging_system;
+        std::uint32_t m_entry_point;
     };
 }

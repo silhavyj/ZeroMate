@@ -85,6 +85,11 @@ namespace zero_mate::gui
         {
             m_stop_cpu_thread = true;
         }
+
+        if (ImGui::Button(ICON_FA_POWER_OFF " Reset") && !m_cpu_running)
+        {
+            m_cpu->Reset_Context();
+        }
     }
 
     void CControl_Window::Render_CPU_State() const

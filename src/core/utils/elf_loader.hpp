@@ -36,6 +36,7 @@ namespace zero_mate::utils::elf
     };
 
     inline static const char* const UNKNOWN_INSTRUCTION_STR = "Unknown instruction";
+    inline static const char* const START_LABEL = "_start";
 
     [[nodiscard]] TStatus Load_Kernel(CBus& bus, const char* filename);
 }

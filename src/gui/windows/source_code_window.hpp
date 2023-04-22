@@ -24,6 +24,9 @@ namespace zero_mate::gui
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 
+        void Render_Code_Block(std::size_t& idx);
+        [[nodiscard]] bool Highlight_Code_Block(std::size_t idx) const;
+
         std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;
         std::vector<utils::elf::TText_Section_Record>& m_source_code;
         std::unordered_map<std::uint32_t, bool> m_breakpoints;
