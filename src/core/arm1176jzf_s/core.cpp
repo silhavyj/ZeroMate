@@ -90,7 +90,7 @@ namespace zero_mate::arm1176jzf_s
             PC() += CCPU_Context::REG_SIZE;
             return std::optional<isa::CInstruction>{ instruction };
         }
-        catch (const exceptions::CCPU_Exception& ex)
+        catch ([[maybe_unused]] const exceptions::CCPU_Exception& ex)
         {
             const exceptions::CPrefetch_Abort prefetch_ex{ PC() - CCPU_Context::REG_SIZE };
             Execute_Exception(prefetch_ex);
@@ -676,7 +676,7 @@ namespace zero_mate::arm1176jzf_s
         const std::unsigned_integral auto rotated_value = utils::math::ROR(m_context[reg_rm_idx], rot);
 
         const std::uint16_t sign_extended_lower_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(rotated_value & 0xFFU);
-        const std::uint16_t sign_extended_higher_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>((rotated_value & 0xFF0000U) >> 16U);
+        const std::uint16_t sign_extended_higher_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(((rotated_value & 0xFF0000U) >> 16U) & 0xFFU);
 
         const std::uint32_t sign_extended_8_to_32 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint32_t>(rotated_value & 0xFFU);
         const std::uint32_t sign_extended_16_to_32 = utils::math::Sign_Extend_Value<std::uint16_t, std::uint32_t>(rotated_value & 0xFFFFU);
