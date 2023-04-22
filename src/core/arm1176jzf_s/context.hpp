@@ -54,9 +54,12 @@ namespace zero_mate::arm1176jzf_s
         [[nodiscard]] const std::uint32_t& Get_Register(std::uint32_t idx, NCPU_Mode mode) const;
         [[nodiscard]] std::uint32_t& Get_Register(std::uint32_t idx, NCPU_Mode mode);
 
-        [[nodiscard]] std::uint32_t Get_CPSR() const;
+        [[nodiscard]] std::uint32_t& Get_CPSR();
+        [[nodiscard]] const std::uint32_t& Get_CPSR() const;
         void Set_CPSR(std::uint32_t value);
         [[nodiscard]] std::uint32_t Get_SPSR() const;
+        [[nodiscard]] std::uint32_t& Get_SPSR(NCPU_Mode mode);
+        [[nodiscard]] const std::uint32_t& Get_SPSR(NCPU_Mode mode) const;
         void Set_SPSR(std::uint32_t value);
 
         void Set_Flag(NFlag flag, bool set) noexcept;

@@ -76,7 +76,7 @@ namespace zero_mate::gui
 
         void Initialize_Windows()
         {
-            s_windows.emplace_back(std::make_shared<CRegisters_Window>(s_cpu));
+            s_windows.emplace_back(std::make_shared<CRegisters_Window>(s_cpu, s_cpu_running));
             s_windows.push_back(std::make_shared<CRAM_Window>(s_ram));
             s_windows.emplace_back(std::make_shared<CControl_Window>(s_cpu, s_scroll_to_curr_line, s_elf_file_has_been_loaded, s_cpu_running));
             s_windows.emplace_back(std::make_shared<CSource_Code_Window>(s_cpu, s_source_code, s_scroll_to_curr_line, s_cpu_running));

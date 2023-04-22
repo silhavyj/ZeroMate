@@ -127,7 +127,12 @@ namespace zero_mate::arm1176jzf_s
         return m_regs[idx];
     }
 
-    std::uint32_t CCPU_Context::Get_CPSR() const
+    std::uint32_t& CCPU_Context::Get_CPSR()
+    {
+        return m_cpsr[m_mode];
+    }
+
+    const std::uint32_t& CCPU_Context::Get_CPSR() const
     {
         return m_cpsr.at(m_mode);
     }
@@ -166,6 +171,16 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Context::Set_SPSR(std::uint32_t value)
     {
         m_spsr[m_mode] = value;
+    }
+
+    std::uint32_t& CCPU_Context::Get_SPSR(NCPU_Mode mode)
+    {
+        return m_spsr[mode];
+    }
+
+    const std::uint32_t& CCPU_Context::Get_SPSR(NCPU_Mode mode) const
+    {
+        return m_spsr.at(mode);
     }
 
     void CCPU_Context::Set_Flag(NFlag flag, bool set) noexcept
