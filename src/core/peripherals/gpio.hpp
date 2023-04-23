@@ -12,6 +12,7 @@ namespace zero_mate::peripheral
     class CGPIO_Manager final : public IPeripheral
     {
     public:
+        static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
         static constexpr std::size_t NUMBER_OF_GPIO_PINS = 54;
         static constexpr std::uint32_t NUMBER_OF_PINS_IN_REG = std::numeric_limits<std::uint32_t>::digits;
 
@@ -64,7 +65,7 @@ namespace zero_mate::peripheral
             Interrupts_t m_enabled_interrupts;
         };
 
-        enum class NRegister_Type : std::uint32_t
+        enum class NRegister : std::uint32_t
         {
             GPFSEL0 = 0,
             GPFSEL1,
@@ -111,14 +112,14 @@ namespace zero_mate::peripheral
             Count
         };
 
-        static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::size_t>(NRegister_Type::Count);
+        static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::size_t>(NRegister::Count);
 
         CGPIO_Manager() noexcept;
 
         [[nodiscard]] std::uint32_t Get_Size() const noexcept override;
         void Write(std::uint32_t addr, const char* data, std::uint32_t size) override;
         void Read(std::uint32_t addr, char* data, std::uint32_t size) override;
-        [[nodiscard]] const CPin Get_Pin(std::size_t idx) const;
+        [[nodiscard]] const CPin& Get_Pin(std::size_t idx) const;
 
     private:
         void Update_Pin_Function(std::size_t reg_idx, bool last_reg);

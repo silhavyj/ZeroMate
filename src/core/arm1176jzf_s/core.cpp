@@ -20,6 +20,7 @@ namespace zero_mate::arm1176jzf_s
     , m_bus{ bus }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_entry_point{ DEFAULT_ENTRY_POINT }
+    , m_interrupt_controller{ nullptr }
     {
         Set_PC(pc);
     }
@@ -34,6 +35,11 @@ namespace zero_mate::arm1176jzf_s
     {
         m_entry_point = pc;
         PC() = pc;
+    }
+
+    void CCPU_Core::Set_Interrupt_Controller(std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller)
+    {
+        m_interrupt_controller = interrupt_controller;
     }
 
     void CCPU_Core::Add_Breakpoint(std::uint32_t addr)
@@ -193,16 +199,17 @@ namespace zero_mate::arm1176jzf_s
             return;
         }
 
-        // TODO figure out why it is not interpreted as TEQ
-        if (instruction == isa::CInstruction::NOP_INSTRUCTION)
-        {
-            return;
-        }
-
         const auto type = m_instruction_decoder.Get_Instruction_Type(instruction);
 
         try
         {
+            // TODO
+            if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_IRQ())
+            {
+                m_interrupt_controller->Clear_Pending_IRQ();
+                throw exceptions::CIRQ{};
+            }
+
             switch (type)
             {
                 case isa::CInstruction::NType::Data_Processing:
@@ -262,6 +269,9 @@ namespace zero_mate::arm1176jzf_s
 
                 case isa::CInstruction::NType::CPS:
                     Execute(isa::CCPS{ instruction });
+                    break;
+
+                case isa::CInstruction::NType::NOP:
                     break;
             }
         }

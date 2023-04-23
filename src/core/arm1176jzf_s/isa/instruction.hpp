@@ -47,7 +47,8 @@ namespace zero_mate::arm1176jzf_s::isa
             Unknown,
             Extend,
             PSR_Transfer,
-            CPS
+            CPS,
+            NOP
         };
 
         enum class NShift_Type : std::uint32_t

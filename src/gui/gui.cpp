@@ -22,8 +22,7 @@
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
-
-// #define SHOW_EXAMPLE_OF_LOG_MESSAGES
+#include "../core/peripherals/interrupt_controller.hpp"
 
 namespace zero_mate::gui
 {
@@ -41,6 +40,7 @@ namespace zero_mate::gui
         auto s_bus = std::make_shared<CBus>();
         auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
         auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>();
+        auto s_interrupt_controller = std::make_shared<peripheral::CInterrupt_Controller>(s_cpu->m_context);
 
         std::vector<utils::elf::TText_Section_Record> s_source_code{};
         auto s_log_window = std::make_shared<CLog_Window>();
@@ -55,6 +55,7 @@ namespace zero_mate::gui
             std::uint32_t ram_size;
             std::uint32_t ram_map_addr;
             std::uint32_t gpio_map_addr;
+            std::uint32_t interrupt_controller_map_addr;
         };
 
         void Initialize_Logging_System()
@@ -64,14 +65,6 @@ namespace zero_mate::gui
 
             s_logging_system.Add_Logger(logger_stdo);
             s_logging_system.Add_Logger(s_log_window);
-
-#ifdef SHOW_EXAMPLE_OF_LOG_MESSAGES
-            s_logging_system.Print("This is just a message");
-            s_logging_system.Debug("This is a debug message");
-            s_logging_system.Info("This is an info message");
-            s_logging_system.Warning("This is a warning message");
-            s_logging_system.Error("This is an error message");
-#endif
         }
 
         void Initialize_Windows()
@@ -89,7 +82,7 @@ namespace zero_mate::gui
         {
             s_ram = std::make_shared<peripheral::CRAM>(size);
 
-            s_logging_system.Info(fmt::format("Mapping RAM ({} [B]) to the bus address 0x{:08X}...", s_ram->Get_Size(), addr).c_str());
+            s_logging_system.Info(fmt::format("Mapping RAM ({} [B]) to the bus address 0x{:08X}", s_ram->Get_Size(), addr).c_str());
             const auto status = s_bus->Attach_Peripheral(addr, s_ram);
 
             if (status != CBus::NStatus::OK)
@@ -100,12 +93,23 @@ namespace zero_mate::gui
 
         inline void Init_GPIO(std::uint32_t addr)
         {
-            s_logging_system.Info(fmt::format("Mapping GPIO ({} [B]) to the bus address 0x{:08X}...", s_gpio->Get_Size(), addr).c_str());
+            s_logging_system.Info(fmt::format("Mapping GPIO ({} [B]) to the bus address 0x{:08X}", s_gpio->Get_Size(), addr).c_str());
             const auto status = s_bus->Attach_Peripheral(addr, s_gpio);
 
             if (status != CBus::NStatus::OK)
             {
                 s_logging_system.Error(fmt::format("Failed to attach GPIO to the bus address (error value = {})", magic_enum::enum_name(status)).c_str());
+            }
+        }
+
+        inline void Init_Interrupt_Controller(std::uint32_t addr)
+        {
+            s_logging_system.Info(fmt::format("Mapping the interrupt controller ({} [B]) to the bus address 0x{:08X}", s_interrupt_controller->Get_Size(), addr).c_str());
+            const auto status = s_bus->Attach_Peripheral(addr, s_interrupt_controller);
+
+            if (status != CBus::NStatus::OK)
+            {
+                s_logging_system.Error(fmt::format("Failed to attach the interrupt controller to the bus address (error value = {})", magic_enum::enum_name(status)).c_str());
             }
         }
 
@@ -136,7 +140,8 @@ namespace zero_mate::gui
             TINI_Config_Values config_values{
                 .ram_size = config::DEFAULT_RAM_SIZE,
                 .ram_map_addr = config::DEFAULT_RAM_MAP_ADDR,
-                .gpio_map_addr = config::DEFAULT_GPIO_MAP_ADDR
+                .gpio_map_addr = config::DEFAULT_GPIO_MAP_ADDR,
+                .interrupt_controller_map_addr = config::DEFAULT_INTERRUPT_CONTROLLER_MAP_ADDR
             };
 
             const INIReader ini_reader(config::CONFIG_FILE);
@@ -150,6 +155,7 @@ namespace zero_mate::gui
                 config_values.ram_size = Get_Ini_Value<std::uint32_t>(ini_reader, config::RAM_SECTION, "size", config::DEFAULT_RAM_SIZE);
                 config_values.ram_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::RAM_SECTION, "addr", config::DEFAULT_RAM_MAP_ADDR);
                 config_values.gpio_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::GPIO_SECTION, "addr", config::DEFAULT_GPIO_MAP_ADDR);
+                config_values.interrupt_controller_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::INTERRUPT_CONTROLLER_SECTION, "addr", config::DEFAULT_INTERRUPT_CONTROLLER_MAP_ADDR);
             }
 
             return config_values;
@@ -160,7 +166,10 @@ namespace zero_mate::gui
             const auto config_values = Parse_INI_Config_File();
 
             Init_RAM(config_values.ram_size, config_values.ram_map_addr);
+            Init_Interrupt_Controller(config_values.interrupt_controller_map_addr);
             Init_GPIO(config_values.gpio_map_addr);
+
+            s_cpu->Set_Interrupt_Controller(s_interrupt_controller);
         }
 
         void Initialize()
