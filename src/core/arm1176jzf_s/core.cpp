@@ -20,6 +20,7 @@ namespace zero_mate::arm1176jzf_s
     , m_bus{ bus }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_entry_point{ DEFAULT_ENTRY_POINT }
+    , m_interrupt_controller{ nullptr }
     {
         Set_PC(pc);
     }
@@ -34,6 +35,11 @@ namespace zero_mate::arm1176jzf_s
     {
         m_entry_point = pc;
         PC() = pc;
+    }
+
+    void CCPU_Core::Set_Interrupt_Controller(std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller)
+    {
+        m_interrupt_controller = interrupt_controller;
     }
 
     void CCPU_Core::Add_Breakpoint(std::uint32_t addr)
@@ -197,6 +203,12 @@ namespace zero_mate::arm1176jzf_s
 
         try
         {
+            // TODO
+            if (m_interrupt_controller != nullptr && m_interrupt_controller->Is_IRQ_Pending())
+            {
+                throw exceptions::CIRQ{};
+            }
+
             switch (type)
             {
                 case isa::CInstruction::NType::Data_Processing:

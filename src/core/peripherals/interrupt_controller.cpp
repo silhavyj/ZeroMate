@@ -114,7 +114,6 @@ namespace zero_mate::peripheral
         m_regs[reg_idx] = 0; // RS flip flop
     }
 
-
     void CInterrupt_Controller::Update_IRQ_Sources(NRegister reg, bool enable)
     {
         const std::size_t reg_idx = static_cast<std::uint32_t>(reg);
@@ -143,7 +142,6 @@ namespace zero_mate::peripheral
         m_regs[reg_idx] = 0; // RS flip flop
     }
 
-
     void CInterrupt_Controller::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
         const std::size_t reg_idx = (addr - FIRST_REG_OFFSET) / REG_SIZE;
@@ -152,8 +150,7 @@ namespace zero_mate::peripheral
 
     void CInterrupt_Controller::Signalize_IRQ(NIRQ_Source source)
     {
-        if (!m_cpu_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::F) ||
-            !m_irq_sources[source].enabled)
+        if (!m_cpu_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::I) || !m_irq_sources[source].enabled)
         {
             return;
         }
@@ -172,8 +169,7 @@ namespace zero_mate::peripheral
 
     void CInterrupt_Controller::Signalize_Basic_IRQ(NIRQ_Basic_Source source)
     {
-        if (!m_cpu_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::F) ||
-            !m_irq_basic_sources[source].enabled)
+        if (!m_cpu_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::I) || !m_irq_basic_sources[source].enabled)
         {
             return;
         }
