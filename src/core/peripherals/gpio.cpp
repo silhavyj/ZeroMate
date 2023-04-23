@@ -1,5 +1,3 @@
-#include <algorithm>
-
 #include <fmt/format.h>
 #include <magic_enum.hpp>
 
@@ -59,7 +57,7 @@ namespace zero_mate::peripheral
 
     std::uint32_t CGPIO_Manager::Get_Size() const noexcept
     {
-        return static_cast<std::uint32_t>(sizeof(m_regs));
+        return static_cast<std::uint32_t>(sizeof(m_regs)) - REG_SIZE;
     }
 
     void CGPIO_Manager::Update_Pin_Function(std::size_t reg_idx, bool last_reg)
@@ -120,10 +118,10 @@ namespace zero_mate::peripheral
             if (pin_idx >= NUMBER_OF_PINS_IN_REG)
             {
                 pin_idx -= NUMBER_OF_PINS_IN_REG;
-                return static_cast<std::size_t>(NRegister_Type::GPLEV1);
+                return static_cast<std::size_t>(NRegister::GPLEV1);
             }
 
-            return static_cast<std::size_t>(NRegister_Type::GPLEV0);
+            return static_cast<std::size_t>(NRegister::GPLEV0);
         }();
 
         auto& GPLEVn_reg = m_regs[reg_index];
@@ -164,83 +162,83 @@ namespace zero_mate::peripheral
     {
         std::copy_n(data, size, &std::bit_cast<char*>(m_regs.data())[addr]);
 
-        const std::size_t reg_idx = addr / sizeof(std::uint32_t);
-        const auto reg_type = static_cast<NRegister_Type>(reg_idx);
+        const std::size_t reg_idx = addr / REG_SIZE;
+        const auto reg_type = static_cast<NRegister>(reg_idx);
 
         switch (reg_type)
         {
-            case NRegister_Type::GPFSEL0:
+            case NRegister::GPFSEL0:
                 [[fallthrough]];
-            case NRegister_Type::GPFSEL1:
-            case NRegister_Type::GPFSEL2:
-            case NRegister_Type::GPFSEL3:
-            case NRegister_Type::GPFSEL4:
-            case NRegister_Type::GPFSEL5:
-                Update_Pin_Function(reg_idx, reg_type == NRegister_Type::GPFSEL5);
+            case NRegister::GPFSEL1:
+            case NRegister::GPFSEL2:
+            case NRegister::GPFSEL3:
+            case NRegister::GPFSEL4:
+            case NRegister::GPFSEL5:
+                Update_Pin_Function(reg_idx, reg_type == NRegister::GPFSEL5);
                 break;
 
-            case NRegister_Type::GPSET0:
+            case NRegister::GPSET0:
                 [[fallthrough]];
-            case NRegister_Type::GPSET1:
-                Update_Pin_State(reg_idx, CPin::NState::High, reg_type == NRegister_Type::GPSET1);
+            case NRegister::GPSET1:
+                Update_Pin_State(reg_idx, CPin::NState::High, reg_type == NRegister::GPSET1);
                 break;
 
-            case NRegister_Type::GPCLR0:
+            case NRegister::GPCLR0:
                 [[fallthrough]];
-            case NRegister_Type::GPCLR1:
-                Update_Pin_State(reg_idx, CPin::NState::Low, reg_type == NRegister_Type::GPCLR1);
+            case NRegister::GPCLR1:
+                Update_Pin_State(reg_idx, CPin::NState::Low, reg_type == NRegister::GPCLR1);
                 break;
 
-            case NRegister_Type::GPLEV0:
+            case NRegister::GPLEV0:
                 [[fallthrough]];
-            case NRegister_Type::GPLEV1:
+            case NRegister::GPLEV1:
                 // These registers reflect the actual state of each PIN
                 // The corresponding bits are set/cleared whenever a pin changes its state
                 break;
 
-            case NRegister_Type::GPEDS0:
+            case NRegister::GPEDS0:
                 [[fallthrough]];
-            case NRegister_Type::GPEDS1:
+            case NRegister::GPEDS1:
                 // TODO
                 break;
 
-            case NRegister_Type::GPREN0:
+            case NRegister::GPREN0:
                 [[fallthrough]];
-            case NRegister_Type::GPREN1:
-                Set_Interrupt(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::Rising_Edge);
+            case NRegister::GPREN1:
+                Set_Interrupt(reg_idx, reg_type == NRegister::GPREN1, CPin::NInterrupt_Type::Rising_Edge);
                 break;
 
-            case NRegister_Type::GPHEN0:
+            case NRegister::GPHEN0:
                 [[fallthrough]];
-            case NRegister_Type::GPHEN1:
-                Set_Interrupt(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::High);
+            case NRegister::GPHEN1:
+                Set_Interrupt(reg_idx, reg_type == NRegister::GPREN1, CPin::NInterrupt_Type::High);
                 break;
 
-            case NRegister_Type::GPLEN0:
+            case NRegister::GPLEN0:
                 [[fallthrough]];
-            case NRegister_Type::GPLEN1:
-                Set_Interrupt(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::Low);
+            case NRegister::GPLEN1:
+                Set_Interrupt(reg_idx, reg_type == NRegister::GPREN1, CPin::NInterrupt_Type::Low);
                 break;
 
-            case NRegister_Type::Reserved_01:
+            case NRegister::Reserved_01:
                 [[fallthrough]];
-            case NRegister_Type::Reserved_02:
-            case NRegister_Type::Reserved_03:
-            case NRegister_Type::Reserved_04:
-            case NRegister_Type::Reserved_05:
-            case NRegister_Type::Reserved_06:
-            case NRegister_Type::Reserved_07:
-            case NRegister_Type::Reserved_08:
-            case NRegister_Type::Reserved_09:
-            case NRegister_Type::Reserved_10:
-            case NRegister_Type::Reserved_11:
-            case NRegister_Type::Reserved_12:
+            case NRegister::Reserved_02:
+            case NRegister::Reserved_03:
+            case NRegister::Reserved_04:
+            case NRegister::Reserved_05:
+            case NRegister::Reserved_06:
+            case NRegister::Reserved_07:
+            case NRegister::Reserved_08:
+            case NRegister::Reserved_09:
+            case NRegister::Reserved_10:
+            case NRegister::Reserved_11:
+            case NRegister::Reserved_12:
                 break;
 
-            case NRegister_Type::GPFEN0:
+            case NRegister::GPFEN0:
                 [[fallthrough]];
-            case NRegister_Type::GPFEN1:
-                Set_Interrupt(reg_idx, reg_type == NRegister_Type::GPREN1, CPin::NInterrupt_Type::Falling_Edge);
+            case NRegister::GPFEN1:
+                Set_Interrupt(reg_idx, reg_type == NRegister::GPREN1, CPin::NInterrupt_Type::Falling_Edge);
                 break;
 
             default:
@@ -251,12 +249,12 @@ namespace zero_mate::peripheral
 
     void CGPIO_Manager::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = addr / sizeof(std::uint32_t);
+        const std::size_t reg_idx = addr / REG_SIZE;
         std::copy_n(&m_regs[reg_idx], size, data);
     }
 
-    const CGPIO_Manager::CPin CGPIO_Manager::Get_Pin(std::size_t idx) const
+    const CGPIO_Manager::CPin& CGPIO_Manager::Get_Pin(std::size_t idx) const
     {
-        return m_pins[idx];
+        return m_pins.at(idx);
     }
 }
