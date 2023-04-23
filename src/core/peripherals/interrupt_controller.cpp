@@ -66,6 +66,7 @@ namespace zero_mate::peripheral
         switch (reg_type)
         {
             case NRegister::IRQ_Basic_Pending:
+                // TODO
                 break;
 
             case NRegister::Enable_Basic_IRQs:
@@ -97,7 +98,7 @@ namespace zero_mate::peripheral
                 // TODO
                 break;
 
-            case NRegister::Count:
+            default:
                 break;
         }
     }
@@ -153,9 +154,22 @@ namespace zero_mate::peripheral
         std::copy_n(&m_regs[reg_idx], size, data);
     }
 
+    bool CInterrupt_Controller::Is_IRQ_Source_Enabled(NIRQ_Source source) const
+    {
+        if (source == NIRQ_Source::GPIO_0 || source == NIRQ_Source::GPIO_1 || source == NIRQ_Source::GPIO_2)
+        {
+            if (m_irq_sources.at(NIRQ_Source::GPIO_3).enabled)
+            {
+                return true;
+            }
+        }
+
+        return m_irq_sources.at(source).enabled;
+    }
+
     void CInterrupt_Controller::Signalize_IRQ(NIRQ_Source source)
     {
-        if (!m_cpu_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::I) || !m_irq_sources[source].enabled)
+        if (!m_cpu_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::I) || !Is_IRQ_Source_Enabled(source))
         {
             return;
         }
@@ -198,5 +212,19 @@ namespace zero_mate::peripheral
     void CInterrupt_Controller::Clear_Pending_IRQ() noexcept
     {
         m_irq_pending = false;
+    }
+
+    CInterrupt_Controller::NIRQ_Source CInterrupt_Controller::Get_IRQ_Source(std::uint32_t pin_idx) noexcept
+    {
+        if (pin_idx <= 27U)
+        {
+            return NIRQ_Source::GPIO_0;
+        }
+        else if (pin_idx <= 45U)
+        {
+            return NIRQ_Source::GPIO_1;
+        }
+
+        return NIRQ_Source::GPIO_2;
     }
 }

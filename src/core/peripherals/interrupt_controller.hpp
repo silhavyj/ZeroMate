@@ -77,10 +77,13 @@ namespace zero_mate::peripheral
         [[nodiscard]] bool Has_Pending_IRQ() const noexcept;
         void Clear_Pending_IRQ() noexcept;
 
+        [[nodiscard]] static NIRQ_Source Get_IRQ_Source(std::uint32_t pin_idx) noexcept;
+
     private:
         inline void Initialize();
         inline void Initialize_IRQ_Basic_Sources();
         inline void Initialize_IRQ_Sources();
+        [[nodiscard]] inline bool Is_IRQ_Source_Enabled(NIRQ_Source source) const;
 
         void Update_IRQ_Basic_Sources(NRegister reg, bool enable);
         void Update_IRQ_Sources(NRegister reg, bool enable);
