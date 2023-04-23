@@ -9,7 +9,7 @@ namespace zero_mate::gui
 
     namespace config
     {
-        inline const char* const CONFIG_FILE = "rpi_zero_config.ini";
+        inline const char* const CONFIG_FILE = "peripherals.ini";
 
         inline const char* const RAM_SECTION = "ram";
         inline const char* const GPIO_SECTION = "gpio";

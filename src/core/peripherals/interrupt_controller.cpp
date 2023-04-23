@@ -1,14 +1,17 @@
-#include <algorithm>
+#include <fmt/format.h>
+#include <magic_enum.hpp>
 
 #include "interrupt_controller.hpp"
 #include "../utils/math.hpp"
+#include "../utils/singleton.hpp"
 
 namespace zero_mate::peripheral
 {
     CInterrupt_Controller::CInterrupt_Controller(const arm1176jzf_s::CCPU_Context& cpu_context)
     : m_cpu_context{ cpu_context }
     , m_regs{}
-    , m_is_irq_pending{ false }
+    , m_irq_pending{ false }
+    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
         Initialize();
     }
@@ -50,12 +53,12 @@ namespace zero_mate::peripheral
 
     std::uint32_t CInterrupt_Controller::Get_Size() const noexcept
     {
-        return static_cast<std::uint32_t>(sizeof(m_regs)) - REG_SIZE + (FIRST_REG_OFFSET / REG_SIZE);
+        return static_cast<std::uint32_t>(sizeof(m_regs));
     }
 
     void CInterrupt_Controller::Write(std::uint32_t addr, const char* data, std::uint32_t size)
     {
-        std::copy_n(data, size, &std::bit_cast<char*>(m_regs.data())[addr - FIRST_REG_OFFSET]);
+        std::copy_n(data, size, &std::bit_cast<char*>(m_regs.data())[addr]);
 
         const std::size_t reg_idx = addr / REG_SIZE;
         const auto reg_type = static_cast<NRegister>(reg_idx);
@@ -101,13 +104,14 @@ namespace zero_mate::peripheral
 
     void CInterrupt_Controller::Update_IRQ_Basic_Sources(NRegister reg, bool enable)
     {
-        const std::size_t reg_idx = static_cast<std::uint32_t>(reg);
+        const auto reg_idx = static_cast<std::size_t>(reg);
 
         for (auto& [source, state] : m_irq_basic_sources)
         {
             if (utils::math::Is_Bit_Set(m_regs[reg_idx], static_cast<std::uint32_t>(source)))
             {
                 state.enabled = enable;
+                m_logging_system.Debug(fmt::format("Basic IRQ source {} has been {}", magic_enum::enum_name(source), enable ? "enabled" : "disabled").c_str());
             }
         }
 
@@ -116,7 +120,7 @@ namespace zero_mate::peripheral
 
     void CInterrupt_Controller::Update_IRQ_Sources(NRegister reg, bool enable)
     {
-        const std::size_t reg_idx = static_cast<std::uint32_t>(reg);
+        const auto reg_idx = static_cast<std::size_t>(reg);
 
         for (auto& [source, state] : m_irq_sources)
         {
@@ -136,6 +140,7 @@ namespace zero_mate::peripheral
             if (utils::math::Is_Bit_Set(m_regs[reg_idx], source_bit_idx))
             {
                 state.enabled = enable;
+                m_logging_system.Debug(fmt::format("IRQ source {} has been {}", magic_enum::enum_name(source), enable ? "enabled" : "disabled").c_str());
             }
         }
 
@@ -144,7 +149,7 @@ namespace zero_mate::peripheral
 
     void CInterrupt_Controller::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = (addr - FIRST_REG_OFFSET) / REG_SIZE;
+        const std::size_t reg_idx = addr / REG_SIZE;
         std::copy_n(&m_regs[reg_idx], size, data);
     }
 
@@ -165,6 +170,8 @@ namespace zero_mate::peripheral
 
         m_regs[reg_idx] |= (1U << source_bit_idx);
         m_irq_sources[source].pending = true;
+
+        m_logging_system.Debug(fmt::format("IRQ {} has been signalized", magic_enum::enum_name(source)).c_str());
     }
 
     void CInterrupt_Controller::Signalize_Basic_IRQ(NIRQ_Basic_Source source)
@@ -179,10 +186,17 @@ namespace zero_mate::peripheral
 
         m_regs[reg_idx] |= (1U << source_bit_idx);
         m_irq_basic_sources[source].pending = true;
+
+        m_logging_system.Debug(fmt::format("Basic IRQ {} has been signalized", magic_enum::enum_name(source)).c_str());
     }
 
-    bool CInterrupt_Controller::Is_IRQ_Pending() const noexcept
+    bool CInterrupt_Controller::Has_Pending_IRQ() const noexcept
     {
-        return m_is_irq_pending;
+        return m_irq_pending;
+    }
+
+    void CInterrupt_Controller::Clear_Pending_IRQ() noexcept
+    {
+        m_irq_pending = false;
     }
 }

@@ -58,7 +58,7 @@ namespace zero_mate::peripheral
 
     std::uint32_t CGPIO_Manager::Get_Size() const noexcept
     {
-        return static_cast<std::uint32_t>(sizeof(m_regs)) - REG_SIZE;
+        return static_cast<std::uint32_t>(sizeof(m_regs));
     }
 
     void CGPIO_Manager::Update_Pin_Function(std::size_t reg_idx, bool last_reg)

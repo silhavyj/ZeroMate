@@ -5,6 +5,7 @@
 
 #include "peripheral.hpp"
 #include "../arm1176jzf_s/context.hpp"
+#include "../utils/logger/logger.hpp"
 
 namespace zero_mate::peripheral
 {
@@ -15,20 +16,16 @@ namespace zero_mate::peripheral
 
         enum class NRegister : std::uint32_t
         {
-            IRQ_Basic_Pending,
+            IRQ_Basic_Pending = 0,
             IRQ_Pending_1,
             IRQ_Pending_2,
-
             FIQ_Control,
-
             Enable_IRQs_1,
             Enable_IRQs_2,
             Enable_Basic_IRQs,
-
             Disable_IRQs_1,
             Disable_IRQs_2,
             Disable_Basic_IRQs,
-
             Count
         };
 
@@ -61,7 +58,6 @@ namespace zero_mate::peripheral
             UART = 57
         };
 
-        static constexpr std::uint32_t FIRST_REG_OFFSET = 0x200;
         static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::uint32_t>(NRegister::Count);
 
         struct TInterrupt_Info
@@ -78,7 +74,8 @@ namespace zero_mate::peripheral
 
         void Signalize_IRQ(NIRQ_Source source);
         void Signalize_Basic_IRQ(NIRQ_Basic_Source source);
-        [[nodiscard]] bool Is_IRQ_Pending() const noexcept;
+        [[nodiscard]] bool Has_Pending_IRQ() const noexcept;
+        void Clear_Pending_IRQ() noexcept;
 
     private:
         inline void Initialize();
@@ -92,6 +89,7 @@ namespace zero_mate::peripheral
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;
         std::unordered_map<NIRQ_Basic_Source, TInterrupt_Info> m_irq_basic_sources;
         std::unordered_map<NIRQ_Source, TInterrupt_Info> m_irq_sources;
-        bool m_is_irq_pending;
+        bool m_irq_pending;
+        utils::CLogging_System& m_logging_system;
     };
 }
