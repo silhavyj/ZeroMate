@@ -193,12 +193,6 @@ namespace zero_mate::arm1176jzf_s
             return;
         }
 
-        // TODO figure out why it is not interpreted as TEQ
-        if (instruction == isa::CInstruction::NOP_INSTRUCTION)
-        {
-            return;
-        }
-
         const auto type = m_instruction_decoder.Get_Instruction_Type(instruction);
 
         try
@@ -262,6 +256,9 @@ namespace zero_mate::arm1176jzf_s
 
                 case isa::CInstruction::NType::CPS:
                     Execute(isa::CCPS{ instruction });
+                    break;
+
+                case isa::CInstruction::NType::NOP:
                     break;
             }
         }
