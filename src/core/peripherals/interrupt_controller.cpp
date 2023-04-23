@@ -156,7 +156,7 @@ namespace zero_mate::peripheral
         }
 
         auto source_bit_idx = static_cast<std::uint32_t>(source);
-        const auto reg_idx = static_cast<std::size_t>(source_bit_idx >= 32U ? NRegister::IRQ_Pending_1 : NRegister::IRQ_Pending_2);
+        const auto reg_idx = static_cast<std::size_t>(source_bit_idx >= 32U ? NRegister::IRQ_Pending_2 : NRegister::IRQ_Pending_1);
 
         if (source_bit_idx >= 32U)
         {

@@ -1,8 +1,9 @@
 #include <fmt/format.h>
 #include <magic_enum.hpp>
 
-#include "../utils/singleton.hpp"
 #include "gpio.hpp"
+#include "../utils/math.hpp"
+#include "../utils/singleton.hpp"
 
 namespace zero_mate::peripheral
 {
@@ -87,10 +88,9 @@ namespace zero_mate::peripheral
 
         for (std::uint32_t idx = 0; idx < last_bit_idx; ++idx)
         {
-            const auto set_bit = static_cast<bool>((m_regs[reg_idx] >> idx) & 0b1U);
             const auto pin_idx = last_reg ? (NUMBER_OF_PINS_IN_REG + idx) : idx;
 
-            if (set_bit)
+            if (utils::math::Is_Bit_Set(m_regs[reg_idx], idx))
             {
                 if (m_pins[pin_idx].Get_Function() == CPin::NFunction::Output)
                 {
@@ -142,10 +142,9 @@ namespace zero_mate::peripheral
 
         for (std::uint32_t idx = 0; idx < last_bit_idx; ++idx)
         {
-            const auto set_bit = static_cast<bool>((m_regs[reg_idx] >> idx) & 0b1U);
             const auto pin_idx = last_reg ? (NUMBER_OF_PINS_IN_REG + idx) : idx;
 
-            if (set_bit)
+            if (utils::math::Is_Bit_Set(m_regs[reg_idx], idx))
             {
                 m_pins[pin_idx].Add_Interrupt_Type(type);
                 m_logging_system.Debug(fmt::format("Interrupt number {} has been enabled on pin {}", static_cast<std::uint32_t>(type), pin_idx).c_str());
