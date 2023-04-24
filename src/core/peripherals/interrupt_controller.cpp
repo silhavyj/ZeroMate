@@ -169,7 +169,7 @@ namespace zero_mate::peripheral
 
     void CInterrupt_Controller::Signalize_IRQ(NIRQ_Source source)
     {
-        if (!m_cpu_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::I) || !Is_IRQ_Source_Enabled(source))
+        if (m_cpu_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::I) || !Is_IRQ_Source_Enabled(source))
         {
             return;
         }
@@ -184,13 +184,14 @@ namespace zero_mate::peripheral
 
         m_regs[reg_idx] |= (1U << source_bit_idx);
         m_irq_sources[source].pending = true;
+        m_irq_pending = true;
 
         m_logging_system.Debug(fmt::format("IRQ {} has been signalized", magic_enum::enum_name(source)).c_str());
     }
 
     void CInterrupt_Controller::Signalize_Basic_IRQ(NIRQ_Basic_Source source)
     {
-        if (!m_cpu_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::I) || !m_irq_basic_sources[source].enabled)
+        if (m_cpu_context.Is_Flag_Set(arm1176jzf_s::CCPU_Context::NFlag::I) || !m_irq_basic_sources[source].enabled)
         {
             return;
         }
@@ -200,6 +201,7 @@ namespace zero_mate::peripheral
 
         m_regs[reg_idx] |= (1U << source_bit_idx);
         m_irq_basic_sources[source].pending = true;
+        m_irq_pending = true;
 
         m_logging_system.Debug(fmt::format("Basic IRQ {} has been signalized", magic_enum::enum_name(source)).c_str());
     }
@@ -214,7 +216,7 @@ namespace zero_mate::peripheral
         m_irq_pending = false;
     }
 
-    CInterrupt_Controller::NIRQ_Source CInterrupt_Controller::Get_IRQ_Source(std::uint32_t pin_idx) noexcept
+    CInterrupt_Controller::NIRQ_Source CInterrupt_Controller::Get_IRQ_Source(std::size_t pin_idx) noexcept
     {
         if (pin_idx <= 27U)
         {

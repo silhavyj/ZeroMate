@@ -39,8 +39,8 @@ namespace zero_mate::arm1176jzf_s::exceptions
     {
     }
 
-    CData_Abort::CData_Abort(std::uint32_t addr)
-    : CCPU_Exception{ 0x10U, CCPU_Context::NCPU_Mode::Abort, fmt::format("Data abort exception at address 0x{:08X}", addr).c_str() }
+    CData_Abort::CData_Abort(std::uint32_t addr, const char* msg)
+    : CCPU_Exception{ 0x10U, CCPU_Context::NCPU_Mode::Abort, fmt::format("Data abort exception at address 0x{:08X} ({})", addr, msg).c_str() }
     {
     }
 

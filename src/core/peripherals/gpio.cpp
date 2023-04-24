@@ -34,12 +34,12 @@ namespace zero_mate::peripheral
         m_state = state;
     }
 
-    void CGPIO_Manager::CPin::Add_Interrupt_Type(NInterrupt_Type type)
+    void CGPIO_Manager::CPin::Enable_Interrupt_Type(NInterrupt_Type type)
     {
         m_enabled_interrupts[static_cast<std::size_t>(type)] = true;
     }
 
-    void CGPIO_Manager::CPin::Remove_Interrupt_Type(NInterrupt_Type type)
+    void CGPIO_Manager::CPin::Disable_Interrupt_Type(NInterrupt_Type type)
     {
         m_enabled_interrupts[static_cast<std::size_t>(type)] = false;
     }
@@ -49,10 +49,33 @@ namespace zero_mate::peripheral
         return m_enabled_interrupts[static_cast<std::size_t>(type)];
     }
 
-    CGPIO_Manager::CGPIO_Manager() noexcept
+    bool CGPIO_Manager::CPin::Interrupt_Detected(NState new_state) const noexcept
+    {
+        if (Is_Interrupt_Enabled(CPin::NInterrupt_Type::Rising_Edge) && Get_State() == CPin::NState::Low && new_state == CPin::NState::High)
+        {
+            return true;
+        }
+        if (Is_Interrupt_Enabled(CPin::NInterrupt_Type::Falling_Edge) && Get_State() == CPin::NState::High && new_state == CPin::NState::Low)
+        {
+            return true;
+        }
+        if (Is_Interrupt_Enabled(CPin::NInterrupt_Type::Low) && new_state == NState::Low)
+        {
+            return true;
+        }
+        if (Is_Interrupt_Enabled(CPin::NInterrupt_Type::High) && new_state == NState::High)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    CGPIO_Manager::CGPIO_Manager(std::shared_ptr<CInterrupt_Controller> interrupt_controller) noexcept
     : m_regs{}
     , m_pins{}
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_interrupt_controller{ interrupt_controller }
     {
     }
 
@@ -112,18 +135,20 @@ namespace zero_mate::peripheral
         m_regs[reg_idx] = 0; // Only the last write sets the state of the PIN (RS flip-flop)
     }
 
+    std::size_t CGPIO_Manager::Get_Register_Index(std::size_t& pin_idx, NRegister reg_0, NRegister reg_1) noexcept
+    {
+        if (pin_idx >= NUMBER_OF_PINS_IN_REG)
+        {
+            pin_idx -= NUMBER_OF_PINS_IN_REG;
+            return static_cast<std::size_t>(reg_1);
+        }
+
+        return static_cast<std::size_t>(reg_0);
+    }
+
     void CGPIO_Manager::Reflect_Pin_State_In_GPLEVn(std::size_t pin_idx, CPin::NState state)
     {
-        const std::size_t reg_index = [&]() -> std::uint32_t {
-            if (pin_idx >= NUMBER_OF_PINS_IN_REG)
-            {
-                pin_idx -= NUMBER_OF_PINS_IN_REG;
-                return static_cast<std::size_t>(NRegister::GPLEV1);
-            }
-
-            return static_cast<std::size_t>(NRegister::GPLEV0);
-        }();
-
+        const auto reg_index = Get_Register_Index(pin_idx, NRegister::GPLEV0, NRegister::GPLEV1);
         auto& GPLEVn_reg = m_regs[reg_index];
 
         if (state == CPin::NState::High)
@@ -146,13 +171,19 @@ namespace zero_mate::peripheral
 
             if (utils::math::Is_Bit_Set(m_regs[reg_idx], idx))
             {
-                m_pins[pin_idx].Add_Interrupt_Type(type);
-                m_logging_system.Debug(fmt::format("Interrupt number {} has been enabled on pin {}", static_cast<std::uint32_t>(type), pin_idx).c_str());
+                if (!m_pins[pin_idx].Is_Interrupt_Enabled(type))
+                {
+                    m_logging_system.Debug(fmt::format("Interrupt {} has been enabled on pin {}", magic_enum::enum_name(type), pin_idx).c_str());
+                }
+                m_pins[pin_idx].Enable_Interrupt_Type(type);
             }
             else
             {
-                m_pins[pin_idx].Remove_Interrupt_Type(type);
-                m_logging_system.Debug(fmt::format("Interrupt number {} has been disabled on pin {}", static_cast<std::uint32_t>(type), pin_idx).c_str());
+                if (m_pins[pin_idx].Is_Interrupt_Enabled(type))
+                {
+                    m_logging_system.Debug(fmt::format("Interrupt {} has been disabled on pin {}", magic_enum::enum_name(type), pin_idx).c_str());
+                }
+                m_pins[pin_idx].Disable_Interrupt_Type(type);
             }
         }
     }
@@ -198,7 +229,7 @@ namespace zero_mate::peripheral
             case NRegister::GPEDS0:
                 [[fallthrough]];
             case NRegister::GPEDS1:
-                // TODO
+                // These registers indicate whether there's been an interrupt detected
                 break;
 
             case NRegister::GPREN0:
@@ -255,5 +286,50 @@ namespace zero_mate::peripheral
     const CGPIO_Manager::CPin& CGPIO_Manager::Get_Pin(std::size_t idx) const
     {
         return m_pins.at(idx);
+    }
+
+    void CGPIO_Manager::Reflect_Interrupt_In_GPEDSn(std::size_t pin_idx)
+    {
+        m_logging_system.Debug(fmt::format("An interrupt occurred on GPIO pin {}", pin_idx).c_str());
+
+        const auto reg_index = Get_Register_Index(pin_idx, NRegister::GPEDS0, NRegister::GPEDS1);
+        auto& GPEDSn_reg = m_regs[reg_index];
+
+        GPEDSn_reg |= (0b1U << pin_idx);
+    }
+
+    CGPIO_Manager::NPin_Set_Status CGPIO_Manager::Set_Pin_State(std::size_t pin_idx, CPin::NState state)
+    {
+        if (pin_idx >= NUMBER_OF_GPIO_PINS)
+        {
+            return NPin_Set_Status::Invalid_Pin_Number;
+        }
+
+        auto& pin = m_pins[pin_idx];
+
+        // TODO there might be exceptions such as the Alt_x functions?
+        if (pin.Get_Function() != CPin::NFunction::Input)
+        {
+            return NPin_Set_Status::Not_Input_Pin;
+        }
+
+        if (pin.Get_State() == state)
+        {
+            return NPin_Set_Status::State_Already_Set;
+        }
+
+        const bool interrupt_detected = pin.Interrupt_Detected(state);
+
+        pin.Set_State(state);
+        Reflect_Pin_State_In_GPLEVn(pin_idx, state);
+
+        if (interrupt_detected)
+        {
+            Reflect_Interrupt_In_GPEDSn(pin_idx);
+            const auto irq_source = CInterrupt_Controller::Get_IRQ_Source(pin_idx);
+            m_interrupt_controller->Signalize_IRQ(irq_source);
+        }
+
+        return NPin_Set_Status::OK;
     }
 }

@@ -48,7 +48,7 @@ namespace zero_mate::arm1176jzf_s::exceptions
     class CData_Abort : public CCPU_Exception
     {
     public:
-        explicit CData_Abort(std::uint32_t addr);
+        explicit CData_Abort(std::uint32_t addr, const char* msg);
     };
 
     class CIRQ : public CCPU_Exception

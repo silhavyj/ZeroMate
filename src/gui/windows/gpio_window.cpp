@@ -20,7 +20,7 @@ namespace zero_mate::gui
             {
                 ImGui::TableSetupColumn("ID", ImGuiTableColumnFlags_WidthFixed);
                 ImGui::TableSetupColumn("Function", ImGuiTableColumnFlags_WidthFixed);
-                ImGui::TableSetupColumn("Int", ImGuiTableColumnFlags_WidthFixed);
+                ImGui::TableSetupColumn("Enabled interrupts", ImGuiTableColumnFlags_WidthFixed);
                 ImGui::TableSetupColumn("State", ImGuiTableColumnFlags_WidthStretch);
 
                 ImGui::TableHeadersRow();

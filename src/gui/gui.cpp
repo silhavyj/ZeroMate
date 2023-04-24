@@ -20,9 +20,10 @@
 #include "windows/log_window.hpp"
 #include "windows/gpio_window.hpp"
 
+#include "windows/external_peripherals/button_window.hpp"
+
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
-#include "../core/peripherals/interrupt_controller.hpp"
 
 namespace zero_mate::gui
 {
@@ -39,8 +40,8 @@ namespace zero_mate::gui
         std::shared_ptr<peripheral::CRAM> s_ram{ nullptr };
         auto s_bus = std::make_shared<CBus>();
         auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
-        auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>();
         auto s_interrupt_controller = std::make_shared<peripheral::CInterrupt_Controller>(s_cpu->m_context);
+        auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>(s_interrupt_controller);
 
         std::vector<utils::elf::TText_Section_Record> s_source_code{};
         auto s_log_window = std::make_shared<CLog_Window>();
@@ -76,6 +77,7 @@ namespace zero_mate::gui
             s_windows.emplace_back(std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code, s_elf_file_has_been_loaded));
             s_windows.emplace_back(std::make_shared<CGPIO_Window>(s_gpio));
             s_windows.emplace_back(s_log_window);
+            s_windows.emplace_back(std::make_shared<external_peripheral::CButton>(s_gpio));
         }
 
         inline void Init_RAM(std::uint32_t size, std::uint32_t addr)
