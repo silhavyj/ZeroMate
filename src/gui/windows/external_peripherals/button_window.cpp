@@ -46,7 +46,7 @@ namespace zero_mate::gui::external_peripheral
     {
         if (ImGui::Button("Press"))
         {
-            const auto status = m_gpio->Set_Pin_State(5, m_state);
+            const auto status = m_gpio->Set_Pin_State(m_pin_idx, m_state);
 
             switch (status)
             {

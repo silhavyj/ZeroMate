@@ -205,6 +205,12 @@ namespace zero_mate::arm1176jzf_s
         {
             if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_Interrupt())
             {
+                // TODO debug
+                // if (PC() != 0x8CAC)
+                // {
+                //    [[maybe_unused]] int x = 10;
+                // }
+
                 throw exceptions::CIRQ{};
             }
 
