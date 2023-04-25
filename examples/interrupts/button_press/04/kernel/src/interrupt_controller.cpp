@@ -12,6 +12,8 @@ extern "C" void __attribute__((interrupt("IRQ"))) irq_handler()
 	static bool status = true;
 	sGPIO.Set_Output(47, status);
 	status = !status;
+
+    sGPIO.Clear_Detected_Event(5);
 }
 
 extern "C" void __attribute__((interrupt("FIQ"))) fast_interrupt_handler()

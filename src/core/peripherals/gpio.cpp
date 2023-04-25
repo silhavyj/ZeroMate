@@ -11,6 +11,7 @@ namespace zero_mate::peripheral
     : m_state{ NState::Low }
     , m_function{ NFunction::Input }
     , m_enabled_interrupts{}
+    , m_pending_irq{ false }
     {
     }
 
@@ -32,6 +33,16 @@ namespace zero_mate::peripheral
     void CGPIO_Manager::CPin::Set_State(NState state) noexcept
     {
         m_state = state;
+    }
+
+    bool CGPIO_Manager::CPin::Has_Pending_IRQ() const noexcept
+    {
+        return m_pending_irq;
+    }
+
+    void CGPIO_Manager::CPin::Set_Pending_IRQ(bool set)
+    {
+        m_pending_irq = set;
     }
 
     void CGPIO_Manager::CPin::Enable_Interrupt_Type(NInterrupt_Type type)
@@ -229,7 +240,7 @@ namespace zero_mate::peripheral
             case NRegister::GPEDS0:
                 [[fallthrough]];
             case NRegister::GPEDS1:
-                // These registers indicate whether there's been an interrupt detected
+                Clear_IRQ(reg_idx, reg_type == NRegister::GPEDS1);
                 break;
 
             case NRegister::GPREN0:
@@ -288,16 +299,6 @@ namespace zero_mate::peripheral
         return m_pins.at(idx);
     }
 
-    void CGPIO_Manager::Reflect_Interrupt_In_GPEDSn(std::size_t pin_idx)
-    {
-        m_logging_system.Debug(fmt::format("An interrupt occurred on GPIO pin {}", pin_idx).c_str());
-
-        const auto reg_index = Get_Register_Index(pin_idx, NRegister::GPEDS0, NRegister::GPEDS1);
-        auto& GPEDSn_reg = m_regs[reg_index];
-
-        GPEDSn_reg |= (0b1U << pin_idx);
-    }
-
     CGPIO_Manager::NPin_Set_Status CGPIO_Manager::Set_Pin_State(std::size_t pin_idx, CPin::NState state)
     {
         if (pin_idx >= NUMBER_OF_GPIO_PINS)
@@ -325,11 +326,33 @@ namespace zero_mate::peripheral
 
         if (interrupt_detected)
         {
-            Reflect_Interrupt_In_GPEDSn(pin_idx);
+            pin.Set_Pending_IRQ(true);
             const auto irq_source = CInterrupt_Controller::Get_IRQ_Source(pin_idx);
             m_interrupt_controller->Signalize_IRQ(irq_source);
         }
 
         return NPin_Set_Status::OK;
+    }
+
+    void CGPIO_Manager::Clear_IRQ(std::size_t reg_idx, bool last_reg)
+    {
+        const std::uint32_t last_bit_idx = last_reg ? (NUMBER_OF_GPIO_PINS - NUMBER_OF_PINS_IN_REG) : NUMBER_OF_PINS_IN_REG;
+
+        for (std::uint32_t idx = 0; idx < last_bit_idx; ++idx)
+        {
+            const auto pin_idx = last_reg ? (NUMBER_OF_PINS_IN_REG + idx) : idx;
+            auto& pin = m_pins[pin_idx];
+
+            if (utils::math::Is_Bit_Set(m_regs[reg_idx], idx) && pin.Has_Pending_IRQ())
+            {
+                pin.Set_Pending_IRQ(false);
+                const auto irq_source = CInterrupt_Controller::Get_IRQ_Source(pin_idx);
+                m_interrupt_controller->Clear_Pending_IRQ(irq_source);
+
+                m_logging_system.Debug(fmt::format("Pending interrupt on GPIO pin {} has been cleared", pin_idx).c_str());
+            }
+        }
+
+        m_regs[reg_idx] = 0;
     }
 }

@@ -47,6 +47,7 @@ class CGPIO_Handler
 		bool Get_GPSET_Location(uint32_t pin, uint32_t& reg, uint32_t& bit_idx) const;
 		// vybira GPLEV registr a pozici bitu pro dany pin
 		bool Get_GPLEV_Location(uint32_t pin, uint32_t& reg, uint32_t& bit_idx) const;
+		bool Get_GPEDS_Location(uint32_t pin, uint32_t& reg, uint32_t& bit_idx) const;
 	
 	public:
 		CGPIO_Handler(unsigned int gpio_base_addr);
@@ -59,10 +60,11 @@ class CGPIO_Handler
 		// nastavi vystupni uroven GPIO pinu
 		void Set_Output(uint32_t pin, bool set);
 
+		void Clear_Detected_Event(uint32_t pin);
+
 		void Enable_Event_Detect(uint32_t pin, NGPIO_Interrupt_Type type);
 		void Disable_Event_Detect(uint32_t pin, NGPIO_Interrupt_Type type);
 		bool Get_GP_IRQ_Detect_Location(uint32_t pin, NGPIO_Interrupt_Type type, uint32_t& reg, uint32_t& bit_idx) const;
-
 };
 
 // globalni instance pro hlavni GPIO port

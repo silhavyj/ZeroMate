@@ -62,11 +62,14 @@ namespace zero_mate::peripheral
             void Enable_Interrupt_Type(NInterrupt_Type type);
             void Disable_Interrupt_Type(NInterrupt_Type type);
             [[nodiscard]] bool Is_Interrupt_Enabled(NInterrupt_Type type) const;
+            [[nodiscard]] bool Has_Pending_IRQ() const noexcept;
+            void Set_Pending_IRQ(bool set);
 
         private:
             NState m_state;
             NFunction m_function;
             Interrupts_t m_enabled_interrupts;
+            bool m_pending_irq;
         };
 
         enum class NRegister : std::uint32_t
@@ -140,8 +143,8 @@ namespace zero_mate::peripheral
         void Update_Pin_Function(std::size_t reg_idx, bool last_reg);
         void Update_Pin_State(std::size_t reg_idx, CPin::NState state, bool last_reg);
         inline void Reflect_Pin_State_In_GPLEVn(std::size_t pin_idx, CPin::NState state);
-        inline void Reflect_Interrupt_In_GPEDSn(std::size_t pin_idx);
         void Set_Interrupt(std::size_t reg_idx, bool last_reg, CPin::NInterrupt_Type type);
+        void Clear_IRQ(std::size_t reg_idx, bool last_reg);
 
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;
         std::array<CPin, NUMBER_OF_GPIO_PINS> m_pins;

@@ -143,3 +143,24 @@ void CGPIO_Handler::Set_Output(uint32_t pin, bool set)
 	
 	mGPIO[reg] = (1 << bit);
 }
+
+bool CGPIO_Handler::Get_GPEDS_Location(uint32_t pin, uint32_t& reg, uint32_t& bit_idx) const
+{
+	if (pin > hal::GPIO_Pin_Count)
+		return false;
+	
+	reg = static_cast<uint32_t>((pin < 32) ? hal::GPIO_Reg::GPEDS0 : hal::GPIO_Reg::GPEDS1);
+	bit_idx = pin % 32;
+	
+	return true;
+}
+
+void CGPIO_Handler::Clear_Detected_Event(uint32_t pin)
+{
+	uint32_t reg, bit;
+	if (!Get_GPEDS_Location(pin, reg, bit))
+		return;
+
+	// BCM2835 manual: "The bit is cleared by writing a '1' to the relevant bit."
+	mGPIO[reg] = 1 << bit;
+}

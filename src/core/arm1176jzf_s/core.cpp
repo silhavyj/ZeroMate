@@ -203,10 +203,8 @@ namespace zero_mate::arm1176jzf_s
 
         try
         {
-            // TODO
-            if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_IRQ())
+            if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_Interrupt())
             {
-                m_interrupt_controller->Clear_Pending_IRQ();
                 throw exceptions::CIRQ{};
             }
 
