@@ -9,9 +9,9 @@ extern "C" void __attribute__((interrupt("SWI"))) software_interrupt_handler()
 
 extern "C" void __attribute__((interrupt("IRQ"))) irq_handler()
 {
-	static bool status = true;
-	sGPIO.Set_Output(47, status);
-	status = !status;
+    static bool status = true;
+    sGPIO.Set_Output(47, status);
+    status = !status;
 
     sGPIO.Clear_Detected_Event(5);
 }
@@ -22,9 +22,8 @@ extern "C" void __attribute__((interrupt("FIQ"))) fast_interrupt_handler()
 
 CInterrupt_Controller sInterruptCtl(hal::Interrupt_Controller_Base);
 
-
 CInterrupt_Controller::CInterrupt_Controller(unsigned long base)
-    : mInterrupt_Regs(reinterpret_cast<unsigned int*>(base))
+: mInterrupt_Regs(reinterpret_cast<unsigned int*>(base))
 {
 }
 

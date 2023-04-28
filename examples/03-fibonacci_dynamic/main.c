@@ -7,21 +7,21 @@ int fib(int n, int* dp)
         dp[n] = n;
         return n;
     }
-    
+
     if (dp[n] != -1)
     {
         return dp[n];
     }
 
     dp[n] = fib(n - 1, dp) + fib(n - 2, dp);
-    
+
     return dp[n];
 }
 
 int kernel_main()
 {
     int arr[N];
-    
+
     for (int i = 0; i < N; ++i)
     {
         arr[i] = -1;

@@ -1,6 +1,6 @@
 #define GPFSEL4 0x20200010
-#define GPSET1  0x20200020
-#define GPCLR1  0x2020002C
+#define GPSET1 0x20200020
+#define GPCLR1 0x2020002C
 
 void write32(unsigned int address, unsigned int val)
 {
@@ -39,12 +39,12 @@ void kernel_main()
     reg |= 1 << 21;
     write32(GPFSEL4, reg);
 
-    while(1)
+    while (1)
     {
         toggle_LED(3, 0x7000);
         toggle_LED(3, 0x14000);
         toggle_LED(3, 0x7000);
-        
+
         active_sleep(0x30000);
     }
 }

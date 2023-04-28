@@ -11,7 +11,7 @@ extern "C" void __attribute__((interrupt("SWI"))) software_interrupt_handler()
 extern "C" void __attribute__((interrupt("IRQ"))) irq_handler()
 {
     static bool pin_48_state{ true };
-    
+
     if (sTimer.Is_Timer_IRQ_Pending())
         sTimer.IRQ_Callback();
     else
@@ -28,9 +28,8 @@ extern "C" void __attribute__((interrupt("FIQ"))) fast_interrupt_handler()
 
 CInterrupt_Controller sInterruptCtl(hal::Interrupt_Controller_Base);
 
-
 CInterrupt_Controller::CInterrupt_Controller(unsigned long base)
-    : mInterrupt_Regs(reinterpret_cast<unsigned int*>(base))
+: mInterrupt_Regs(reinterpret_cast<unsigned int*>(base))
 {
 }
 
