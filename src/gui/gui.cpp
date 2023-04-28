@@ -27,6 +27,8 @@
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
 
+#include "../core/peripherals/arm_timer.hpp"
+
 namespace zero_mate::gui
 {
     static inline constexpr const char* const WINDOW_TITLE = "ZeroMate - Rpi Zero emulator";
@@ -43,6 +45,7 @@ namespace zero_mate::gui
         auto s_bus = std::make_shared<CBus>();
         auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
         auto s_interrupt_controller = std::make_shared<peripheral::CInterrupt_Controller>(s_cpu->m_context);
+        auto s_arm_timer = std::make_shared<peripheral::CARM_Timer>(s_interrupt_controller);
         auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>(s_interrupt_controller);
 
         std::vector<utils::elf::TText_Section_Record> s_source_code{};
@@ -59,6 +62,7 @@ namespace zero_mate::gui
             std::uint32_t ram_map_addr;
             std::uint32_t gpio_map_addr;
             std::uint32_t interrupt_controller_map_addr;
+            std::uint32_t arm_timer_map_addr;
         };
 
         void Initialize_Logging_System()
@@ -119,6 +123,17 @@ namespace zero_mate::gui
             }
         }
 
+        inline void Init_ARM_Timer(std::uint32_t addr)
+        {
+            s_logging_system.Info(fmt::format("Mapping the ARM timer ({} [B]) to the bus address 0x{:08X}", s_arm_timer->Get_Size(), addr).c_str());
+            const auto status = s_bus->Attach_Peripheral(addr, s_arm_timer);
+
+            if (status != CBus::NStatus::OK)
+            {
+                s_logging_system.Error(fmt::format("Failed to attach the ARM timer to the bus address (error value = {})", magic_enum::enum_name(status)).c_str());
+            }
+        }
+
         template<typename Type>
         [[nodiscard]] Type Get_Ini_Value(const INIReader& ini_reader, const std::string& section, const std::string& value, Type default_value)
         {
@@ -147,7 +162,8 @@ namespace zero_mate::gui
                 .ram_size = config::DEFAULT_RAM_SIZE,
                 .ram_map_addr = config::DEFAULT_RAM_MAP_ADDR,
                 .gpio_map_addr = config::DEFAULT_GPIO_MAP_ADDR,
-                .interrupt_controller_map_addr = config::DEFAULT_INTERRUPT_CONTROLLER_MAP_ADDR
+                .interrupt_controller_map_addr = config::DEFAULT_INTERRUPT_CONTROLLER_MAP_ADDR,
+                .arm_timer_map_addr = config::DEFAULT_ARM_TIMER_MAP_ADDR
             };
 
             const INIReader ini_reader(config::CONFIG_FILE);
@@ -162,6 +178,7 @@ namespace zero_mate::gui
                 config_values.ram_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::RAM_SECTION, "addr", config::DEFAULT_RAM_MAP_ADDR);
                 config_values.gpio_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::GPIO_SECTION, "addr", config::DEFAULT_GPIO_MAP_ADDR);
                 config_values.interrupt_controller_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::INTERRUPT_CONTROLLER_SECTION, "addr", config::DEFAULT_INTERRUPT_CONTROLLER_MAP_ADDR);
+                config_values.arm_timer_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::ARM_TIMER_SECTION, "addr", config::DEFAULT_ARM_TIMER_MAP_ADDR);
             }
 
             return config_values;
@@ -174,6 +191,7 @@ namespace zero_mate::gui
             Init_RAM(config_values.ram_size, config_values.ram_map_addr);
             Init_Interrupt_Controller(config_values.interrupt_controller_map_addr);
             Init_GPIO(config_values.gpio_map_addr);
+            Init_ARM_Timer(config_values.arm_timer_map_addr);
 
             s_cpu->Set_Interrupt_Controller(s_interrupt_controller);
         }
