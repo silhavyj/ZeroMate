@@ -283,8 +283,12 @@ namespace zero_mate::arm1176jzf_s
     {
         m_logging_system.Warning(exception.what());
 
-        // TODO
-        PC() += CCPU_Context::REG_SIZE;
+        // TODO do the same for FIQ?
+        if (exception.Get_Type() == exceptions::CCPU_Exception::NType::IRQ)
+        {
+            // The compiler subtract #4 from the LR register, so we need to compensate for that
+            PC() += CCPU_Context::REG_SIZE;
+        }
 
         m_context.Set_CPU_Mode(exception.Get_CPU_Mode());
         m_context[CCPU_Context::LR_REG_IDX] = PC();
