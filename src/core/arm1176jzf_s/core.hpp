@@ -2,6 +2,7 @@
 
 #include <array>
 #include <limits>
+#include <vector>
 #include <memory>
 #include <cstdint>
 #include <cassert>
@@ -17,20 +18,22 @@
 #include "../peripherals/bus.hpp"
 #include "../utils/logger/logger.hpp"
 #include "../peripherals/interrupt_controller.hpp"
-#include "../peripherals/arm_timer.hpp"
+#include "../peripherals/system_clock_listener.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
     class CCPU_Core final
     {
     public:
+        using System_Clock_Listener_t = std::shared_ptr<peripheral::ISystem_Clock_Listener>;
+
         static constexpr std::uint32_t DEFAULT_ENTRY_POINT = 0x8000;
 
         CCPU_Core() noexcept;
         CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept;
 
         void Set_Interrupt_Controller(std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller);
-        void Set_ARM_Timer(std::shared_ptr<peripheral::CARM_Timer> arm_timer);
+        void Add_System_Clock_Listener(const System_Clock_Listener_t& listener);
 
         void Reset_Context();
 
@@ -119,6 +122,6 @@ namespace zero_mate::arm1176jzf_s
         utils::CLogging_System& m_logging_system;
         std::uint32_t m_entry_point;
         std::shared_ptr<peripheral::CInterrupt_Controller> m_interrupt_controller;
-        std::shared_ptr<peripheral::CARM_Timer> m_arm_timer;
+        std::vector<System_Clock_Listener_t> m_system_clock_listeners;
     };
 }

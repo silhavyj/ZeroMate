@@ -5,10 +5,11 @@
 
 #include "peripheral.hpp"
 #include "interrupt_controller.hpp"
+#include "system_clock_listener.hpp"
 
 namespace zero_mate::peripheral
 {
-    class CARM_Timer final : public IPeripheral
+    class CARM_Timer final : public IPeripheral, public ISystem_Clock_Listener
     {
     public:
         enum class NRegister : std::uint32_t
@@ -58,7 +59,8 @@ namespace zero_mate::peripheral
 
         explicit CARM_Timer(std::shared_ptr<CInterrupt_Controller> interrupt_controller);
 
-        void Update(std::uint32_t cycles_passed);
+        void Update(std::uint32_t cycles_passed) override;
+
         [[nodiscard]] std::uint32_t Get_Reg(NRegister reg) const;
         [[nodiscard]] std::uint32_t& Get_Reg(NRegister reg);
         [[nodiscard]] TControl_Register Get_Control_Reg() const;

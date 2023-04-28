@@ -194,7 +194,7 @@ namespace zero_mate::gui
             Init_ARM_Timer(config_values.arm_timer_map_addr);
 
             s_cpu->Set_Interrupt_Controller(s_interrupt_controller);
-            s_cpu->Set_ARM_Timer(s_arm_timer);
+            s_cpu->Add_System_Clock_Listener(s_arm_timer);
         }
 
         void Initialize()
