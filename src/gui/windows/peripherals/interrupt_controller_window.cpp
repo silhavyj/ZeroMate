@@ -11,7 +11,7 @@ namespace zero_mate::gui
 
     void CInterrupt_Controller_Window::Render()
     {
-        if (ImGui::Begin("Interrupt controller"))
+        if (ImGui::Begin("IC"))
         {
             ImGui::Text("Has a pending interrupt: %d", static_cast<int>(m_interrupt_controller->Has_Pending_Interrupt()));
 
