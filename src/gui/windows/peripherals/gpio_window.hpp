@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "../../core/peripherals/gpio.hpp"
-#include "../window.hpp"
+#include "../../../core/peripherals/gpio.hpp"
+#include "../../window.hpp"
 
 namespace zero_mate::gui
 {

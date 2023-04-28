@@ -2,10 +2,10 @@
 
 #include <memory>
 
-#include "../../window.hpp"
+#include "../../../window.hpp"
 
-#include "../../../core/peripherals/gpio.hpp"
-#include "../../../core/utils/logger/logger.hpp"
+#include "../../../../core/peripherals/gpio.hpp"
+#include "../../../../core/utils/logger/logger.hpp"
 
 namespace zero_mate::gui::external_peripheral
 {

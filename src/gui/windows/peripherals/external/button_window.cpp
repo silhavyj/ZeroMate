@@ -1,9 +1,9 @@
 #include <imgui.h>
-#include <fmt/format.h>
+#include <fmt/include/fmt/format.h>
 
 #include "button_window.hpp"
 
-#include "../../../core/utils/singleton.hpp"
+#include "../../../../core/utils/singleton.hpp"
 
 namespace zero_mate::gui::external_peripheral
 {

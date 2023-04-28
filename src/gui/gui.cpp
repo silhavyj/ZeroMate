@@ -13,14 +13,15 @@
 #include "gui.hpp"
 #include "window.hpp"
 #include "windows/registers_window.hpp"
-#include "windows/ram_window.hpp"
 #include "windows/control_window.hpp"
 #include "windows/source_code_window.hpp"
 #include "windows/file_window.hpp"
 #include "windows/log_window.hpp"
-#include "windows/gpio_window.hpp"
 
-#include "windows/external_peripherals/button_window.hpp"
+#include "windows/peripherals/ram_window.hpp"
+#include "windows/peripherals/gpio_window.hpp"
+
+#include "windows/peripherals/external/button_window.hpp"
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
