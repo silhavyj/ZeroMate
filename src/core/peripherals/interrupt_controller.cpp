@@ -234,6 +234,16 @@ namespace zero_mate::peripheral
         m_irq_sources[source].pending = false;
     }
 
+    const std::unordered_map<CInterrupt_Controller::NIRQ_Basic_Source, CInterrupt_Controller::TInterrupt_Info>& CInterrupt_Controller::Get_Basic_IRQs() const
+    {
+        return m_irq_basic_sources;
+    }
+
+    const std::unordered_map<CInterrupt_Controller::NIRQ_Source, CInterrupt_Controller::TInterrupt_Info>& CInterrupt_Controller::Get_IRQs() const
+    {
+        return m_irq_sources;
+    }
+
     CInterrupt_Controller::NIRQ_Source CInterrupt_Controller::Get_IRQ_Source(std::size_t pin_idx) noexcept
     {
         if (pin_idx <= 27U)

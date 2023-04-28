@@ -1,4 +1,3 @@
-#include <imgui.h>
 #include <magic_enum.hpp>
 
 #include "gpio_window.hpp"

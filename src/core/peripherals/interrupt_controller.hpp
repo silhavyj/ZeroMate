@@ -78,6 +78,9 @@ namespace zero_mate::peripheral
         void Clear_Pending_Basic_IRQ(NIRQ_Basic_Source source) noexcept;
         void Clear_Pending_IRQ(NIRQ_Source source) noexcept;
 
+        [[nodiscard]] const std::unordered_map<NIRQ_Basic_Source, TInterrupt_Info>& Get_Basic_IRQs() const;
+        [[nodiscard]] const std::unordered_map<NIRQ_Source, TInterrupt_Info>& Get_IRQs() const;
+
         [[nodiscard]] static NIRQ_Source Get_IRQ_Source(std::size_t pin_idx) noexcept;
 
     private:

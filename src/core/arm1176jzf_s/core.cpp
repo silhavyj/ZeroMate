@@ -286,7 +286,7 @@ namespace zero_mate::arm1176jzf_s
         // TODO do the same for FIQ?
         if (exception.Get_Type() == exceptions::CCPU_Exception::NType::IRQ)
         {
-            // The compiler subtract #4 from the LR register, so we need to compensate for that
+            // The compiler subtracts #4 from the LR register, so we need to compensate for that
             PC() += CCPU_Context::REG_SIZE;
         }
 

@@ -4,15 +4,15 @@
 
 #include <imgui.h>
 
-#include "../../../core/peripherals/gpio.hpp"
 #include "../../window.hpp"
+#include "../../../core/peripherals/interrupt_controller.hpp"
 
 namespace zero_mate::gui
 {
-    class CGPIO_Window final : public CGUI_Window
+    class CInterrupt_Controller_Window final : public CGUI_Window
     {
     public:
-        explicit CGPIO_Window(std::shared_ptr<peripheral::CGPIO_Manager> gpio);
+        explicit CInterrupt_Controller_Window(const std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller);
 
         void Render() override;
 
@@ -21,6 +21,9 @@ namespace zero_mate::gui
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 
-        std::shared_ptr<peripheral::CGPIO_Manager> m_gpio;
+        void Render_Basic_IRQ();
+        void Render_IRQ();
+
+        const std::shared_ptr<peripheral::CInterrupt_Controller> m_interrupt_controller;
     };
 }
