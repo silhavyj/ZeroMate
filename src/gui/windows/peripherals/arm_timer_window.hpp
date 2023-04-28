@@ -5,14 +5,14 @@
 #include <imgui.h>
 
 #include "../../window.hpp"
-#include "../../../core/peripherals/gpio.hpp"
+#include "../../../core/peripherals/arm_timer.hpp"
 
 namespace zero_mate::gui
 {
-    class CGPIO_Window final : public CGUI_Window
+    class CARM_Timer_Window final : public CGUI_Window
     {
     public:
-        explicit CGPIO_Window(std::shared_ptr<peripheral::CGPIO_Manager> gpio);
+        explicit CARM_Timer_Window(const std::shared_ptr<peripheral::CARM_Timer>& arm_timer);
 
         void Render() override;
 
@@ -21,6 +21,9 @@ namespace zero_mate::gui
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 
-        std::shared_ptr<peripheral::CGPIO_Manager> m_gpio;
+        void Render_Registers();
+        void Render_Control_Register();
+
+        const std::shared_ptr<peripheral::CARM_Timer> m_arm_timer;
     };
 }

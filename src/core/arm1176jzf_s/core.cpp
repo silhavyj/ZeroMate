@@ -21,6 +21,7 @@ namespace zero_mate::arm1176jzf_s
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_entry_point{ DEFAULT_ENTRY_POINT }
     , m_interrupt_controller{ nullptr }
+    , m_arm_timer{ nullptr }
     {
         Set_PC(pc);
     }
@@ -40,6 +41,11 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Set_Interrupt_Controller(std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller)
     {
         m_interrupt_controller = interrupt_controller;
+    }
+
+    void CCPU_Core::Set_ARM_Timer(std::shared_ptr<peripheral::CARM_Timer> arm_timer)
+    {
+        m_arm_timer = arm_timer;
     }
 
     void CCPU_Core::Add_Breakpoint(std::uint32_t addr)
@@ -266,6 +272,12 @@ namespace zero_mate::arm1176jzf_s
 
                 case isa::CInstruction::NType::NOP:
                     break;
+            }
+
+            if (m_arm_timer != nullptr)
+            {
+                // TODO
+                m_arm_timer->Update(20U);
             }
 
             if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_Interrupt())

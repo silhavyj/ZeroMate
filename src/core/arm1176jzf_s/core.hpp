@@ -17,6 +17,7 @@
 #include "../peripherals/bus.hpp"
 #include "../utils/logger/logger.hpp"
 #include "../peripherals/interrupt_controller.hpp"
+#include "../peripherals/arm_timer.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -29,6 +30,7 @@ namespace zero_mate::arm1176jzf_s
         CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept;
 
         void Set_Interrupt_Controller(std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller);
+        void Set_ARM_Timer(std::shared_ptr<peripheral::CARM_Timer> arm_timer);
 
         void Reset_Context();
 
@@ -117,5 +119,6 @@ namespace zero_mate::arm1176jzf_s
         utils::CLogging_System& m_logging_system;
         std::uint32_t m_entry_point;
         std::shared_ptr<peripheral::CInterrupt_Controller> m_interrupt_controller;
+        std::shared_ptr<peripheral::CARM_Timer> m_arm_timer;
     };
 }

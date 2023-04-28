@@ -12,7 +12,7 @@ namespace zero_mate::gui
     class CInterrupt_Controller_Window final : public CGUI_Window
     {
     public:
-        explicit CInterrupt_Controller_Window(const std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller);
+        explicit CInterrupt_Controller_Window(const std::shared_ptr<peripheral::CInterrupt_Controller>& interrupt_controller);
 
         void Render() override;
 

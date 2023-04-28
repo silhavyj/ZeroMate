@@ -20,14 +20,13 @@
 
 #include "windows/peripherals/ram_window.hpp"
 #include "windows/peripherals/gpio_window.hpp"
+#include "windows/peripherals/arm_timer_window.hpp"
 #include "windows/peripherals/interrupt_controller_window.hpp"
 
 #include "windows/peripherals/external/button_window.hpp"
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
-
-#include "../core/peripherals/arm_timer.hpp"
 
 namespace zero_mate::gui
 {
@@ -84,6 +83,7 @@ namespace zero_mate::gui
             s_windows.emplace_back(std::make_shared<CGPIO_Window>(s_gpio));
             s_windows.emplace_back(s_log_window);
             s_windows.emplace_back(std::make_shared<CInterrupt_Controller_Window>(s_interrupt_controller));
+            s_windows.emplace_back(std::make_shared<CARM_Timer_Window>(s_arm_timer));
 
             s_windows.emplace_back(std::make_shared<external_peripheral::CButton>(s_gpio));
         }
@@ -194,6 +194,7 @@ namespace zero_mate::gui
             Init_ARM_Timer(config_values.arm_timer_map_addr);
 
             s_cpu->Set_Interrupt_Controller(s_interrupt_controller);
+            s_cpu->Set_ARM_Timer(s_arm_timer);
         }
 
         void Initialize()

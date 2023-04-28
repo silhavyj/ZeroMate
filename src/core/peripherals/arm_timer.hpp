@@ -33,12 +33,6 @@ namespace zero_mate::peripheral
             Prescale_1 = 0b11U
         };
 
-        enum class NPrescal_Values : std::uint32_t
-        {
-            Prescale_16 = 16U,
-            Prescale_256 = 256U,
-        };
-
 #pragma pack(push, 1)
 
         struct TControl_Register
@@ -65,6 +59,9 @@ namespace zero_mate::peripheral
         explicit CARM_Timer(std::shared_ptr<CInterrupt_Controller> interrupt_controller);
 
         void Update(std::uint32_t cycles_passed);
+        [[nodiscard]] std::uint32_t Get_Reg(NRegister reg) const;
+        [[nodiscard]] std::uint32_t& Get_Reg(NRegister reg);
+        [[nodiscard]] TControl_Register Get_Control_Reg() const;
 
         [[nodiscard]] std::uint32_t Get_Size() const noexcept override;
         void Write(std::uint32_t addr, const char* data, std::uint32_t size) override;
@@ -74,6 +71,12 @@ namespace zero_mate::peripheral
         class CPrescaler final
         {
         public:
+            enum class NPrescal_Values : std::uint32_t
+            {
+                Prescale_16 = 16U,
+                Prescale_256 = 256U,
+            };
+
             CPrescaler();
 
             [[nodiscard]] std::uint32_t Prescale_Cycle_Passed(std::uint32_t cycles_passed) noexcept;
@@ -84,9 +87,6 @@ namespace zero_mate::peripheral
             std::uint32_t m_counter;
         };
 
-        [[nodiscard]] inline const std::uint32_t& Get_Reg(NRegister reg) const;
-        [[nodiscard]] inline std::uint32_t& Get_Reg(NRegister reg);
-        inline void Init_Value_Register();
         inline void Clear_Basic_IRQ();
 
         std::shared_ptr<CInterrupt_Controller> m_interrupt_controller;
