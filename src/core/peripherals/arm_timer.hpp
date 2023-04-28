@@ -83,11 +83,14 @@ namespace zero_mate::peripheral
             void Set_Limit(NPrescal_Bits limit);
 
         private:
+            [[nodiscard]] std::uint32_t Update_Counter(std::uint32_t limit_value);
+
             NPrescal_Bits m_limit;
             std::uint32_t m_counter;
         };
 
         inline void Clear_Basic_IRQ();
+        inline void Timer_Has_Reached_Zero(const TControl_Register& control_reg);
 
         std::shared_ptr<CInterrupt_Controller> m_interrupt_controller;
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;

@@ -105,6 +105,7 @@ namespace zero_mate::peripheral
         for (std::uint32_t idx = 0; idx < last_bit_idx; idx += 3)
         {
             const auto function = static_cast<CPin::NFunction>((m_regs[reg_idx] >> idx) & 0b111U);
+
             const auto pin_idx = (reg_idx * NUMBER_OF_PINS_IN_SEL_REG) + idx / 3;
 
             if (m_pins[pin_idx].Get_Function() != function)
@@ -252,13 +253,13 @@ namespace zero_mate::peripheral
             case NRegister::GPHEN0:
                 [[fallthrough]];
             case NRegister::GPHEN1:
-                Set_Interrupt(reg_idx, reg_type == NRegister::GPREN1, CPin::NInterrupt_Type::High);
+                Set_Interrupt(reg_idx, reg_type == NRegister::GPHEN1, CPin::NInterrupt_Type::High);
                 break;
 
             case NRegister::GPLEN0:
                 [[fallthrough]];
             case NRegister::GPLEN1:
-                Set_Interrupt(reg_idx, reg_type == NRegister::GPREN1, CPin::NInterrupt_Type::Low);
+                Set_Interrupt(reg_idx, reg_type == NRegister::GPLEN1, CPin::NInterrupt_Type::Low);
                 break;
 
             case NRegister::Reserved_01:
@@ -279,7 +280,7 @@ namespace zero_mate::peripheral
             case NRegister::GPFEN0:
                 [[fallthrough]];
             case NRegister::GPFEN1:
-                Set_Interrupt(reg_idx, reg_type == NRegister::GPREN1, CPin::NInterrupt_Type::Falling_Edge);
+                Set_Interrupt(reg_idx, reg_type == NRegister::GPFEN1, CPin::NInterrupt_Type::Falling_Edge);
                 break;
 
             default:
@@ -290,8 +291,7 @@ namespace zero_mate::peripheral
 
     void CGPIO_Manager::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = addr / REG_SIZE;
-        std::copy_n(&m_regs[reg_idx], size, data);
+        std::copy_n(&std::bit_cast<char*>(m_regs.data())[addr], size, data);
     }
 
     const CGPIO_Manager::CPin& CGPIO_Manager::Get_Pin(std::size_t idx) const

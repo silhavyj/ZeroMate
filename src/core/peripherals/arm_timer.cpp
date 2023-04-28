@@ -15,21 +15,22 @@ namespace zero_mate::peripheral
         m_limit = limit;
     }
 
+    std::uint32_t CARM_Timer::CPrescaler::Update_Counter(std::uint32_t limit_value)
+    {
+        std::uint32_t prescaled_cycles_passed{};
+
+        if (m_counter >= limit_value)
+        {
+            prescaled_cycles_passed = m_counter / limit_value;
+            m_counter = m_counter % limit_value;
+        }
+
+        return prescaled_cycles_passed;
+    }
+
     uint32_t CARM_Timer::CPrescaler::Prescale_Cycle_Passed(std::uint32_t cycles_passed) noexcept
     {
         m_counter += cycles_passed;
-
-        const auto Update = [this](std::uint32_t limit_value) -> std::uint32_t {
-            std::uint32_t prescaled_cycles_passed{};
-
-            if (m_counter >= limit_value)
-            {
-                prescaled_cycles_passed = m_counter / limit_value;
-                m_counter = m_counter % limit_value;
-            }
-
-            return prescaled_cycles_passed;
-        };
 
         switch (m_limit)
         {
@@ -40,11 +41,11 @@ namespace zero_mate::peripheral
                 break;
 
             case NPrescal_Bits::Prescale_16:
-                cycles_passed = Update(static_cast<std::uint32_t>(NPrescal_Values::Prescale_16));
+                cycles_passed = Update_Counter(static_cast<std::uint32_t>(NPrescal_Values::Prescale_16));
                 break;
 
             case NPrescal_Bits::Prescale_256:
-                cycles_passed = Update(static_cast<std::uint32_t>(NPrescal_Values::Prescale_256));
+                cycles_passed = Update_Counter(static_cast<std::uint32_t>(NPrescal_Values::Prescale_256));
                 break;
         }
 
@@ -74,6 +75,24 @@ namespace zero_mate::peripheral
         // clang-format on
     }
 
+    void CARM_Timer::Timer_Has_Reached_Zero(const TControl_Register& control_reg)
+    {
+        Get_Reg(NRegister::Value) = 0;
+        Get_Reg(NRegister::IRQ_Raw) = 1;
+
+        if (control_reg.Interrupt_Enabled)
+        {
+            Get_Reg(NRegister::IRQ_Masked) = 1;
+            m_interrupt_controller->Signalize_Basic_IRQ(CInterrupt_Controller::NIRQ_Basic_Source::ARM_Timer);
+        }
+
+        if (control_reg.Free_Running)
+        {
+            Get_Reg(NRegister::Value) = Get_Reg(NRegister::Reload);
+            Get_Reg(NRegister::Free_Running) += 1;
+        }
+    }
+
     void CARM_Timer::Update(std::uint32_t cycles_passed)
     {
         const auto control_reg = Get_Control_Reg();
@@ -86,30 +105,19 @@ namespace zero_mate::peripheral
         m_prescaler.Set_Limit(static_cast<NPrescal_Bits>(control_reg.Prescaler));
 
         cycles_passed = m_prescaler.Prescale_Cycle_Passed(cycles_passed);
+
+        // 32b vs 16b mode
         const auto value = control_reg.Counter_32b ? Get_Reg(NRegister::Value) : (Get_Reg(NRegister::Value) & 0xFFFFU);
 
         if (cycles_passed > 0)
         {
             if (cycles_passed >= value)
             {
-                Get_Reg(NRegister::Value) = 0;
-                Get_Reg(NRegister::IRQ_Raw) = 1;
-
-                if (control_reg.Interrupt_Enabled)
-                {
-                    Get_Reg(NRegister::IRQ_Masked) = 1;
-                    m_interrupt_controller->Signalize_Basic_IRQ(CInterrupt_Controller::NIRQ_Basic_Source::ARM_Timer);
-                }
-
-                if (control_reg.Free_Running)
-                {
-                    Get_Reg(NRegister::Value) = Get_Reg(NRegister::Reload);
-                }
+                Timer_Has_Reached_Zero(control_reg);
             }
             else
             {
                 Get_Reg(NRegister::Value) = value - cycles_passed;
-                Get_Reg(NRegister::IRQ_Raw) = 0;
             }
         }
     }
@@ -167,8 +175,7 @@ namespace zero_mate::peripheral
 
     void CARM_Timer::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = addr / REG_SIZE;
-        std::copy_n(&m_regs[reg_idx], size, data);
+        std::copy_n(&std::bit_cast<char*>(m_regs.data())[addr], size, data);
     }
 
     inline void CARM_Timer::Clear_Basic_IRQ()
@@ -176,7 +183,10 @@ namespace zero_mate::peripheral
         if (Get_Reg(NRegister::IRQ_Clear) == 1U)
         {
             m_interrupt_controller->Clear_Pending_Basic_IRQ(CInterrupt_Controller::NIRQ_Basic_Source::ARM_Timer);
+
             Get_Reg(NRegister::IRQ_Clear) = 0;
+            Get_Reg(NRegister::IRQ_Raw) = 0;
+            Get_Reg(NRegister::IRQ_Masked) = 0;
         }
     }
 }
