@@ -20,6 +20,7 @@
 
 #include "windows/peripherals/ram_window.hpp"
 #include "windows/peripherals/gpio_window.hpp"
+#include "windows/peripherals/interrupt_controller_window.hpp"
 
 #include "windows/peripherals/external/button_window.hpp"
 
@@ -78,6 +79,8 @@ namespace zero_mate::gui
             s_windows.emplace_back(std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code, s_elf_file_has_been_loaded));
             s_windows.emplace_back(std::make_shared<CGPIO_Window>(s_gpio));
             s_windows.emplace_back(s_log_window);
+            s_windows.emplace_back(std::make_shared<CInterrupt_Controller_Window>(s_interrupt_controller));
+
             s_windows.emplace_back(std::make_shared<external_peripheral::CButton>(s_gpio));
         }
 
