@@ -16,12 +16,13 @@ namespace zero_mate::gui
         {
             ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(0, 1, 0, 1));
 
-            if (ImGui::BeginTable("##GPIO", 4, TABLE_FLAGS))
+            if (ImGui::BeginTable("##GPIO", 5, TABLE_FLAGS))
             {
                 ImGui::TableSetupColumn("ID", ImGuiTableColumnFlags_WidthFixed);
                 ImGui::TableSetupColumn("Function", ImGuiTableColumnFlags_WidthFixed);
-                ImGui::TableSetupColumn("Int", ImGuiTableColumnFlags_WidthFixed);
-                ImGui::TableSetupColumn("State", ImGuiTableColumnFlags_WidthStretch);
+                ImGui::TableSetupColumn("Enabled IRQ", ImGuiTableColumnFlags_WidthFixed);
+                ImGui::TableSetupColumn("State", ImGuiTableColumnFlags_WidthFixed);
+                ImGui::TableSetupColumn("Pending IRQ", ImGuiTableColumnFlags_WidthStretch);
 
                 ImGui::TableHeadersRow();
 
@@ -46,6 +47,11 @@ namespace zero_mate::gui
                     }
                     ImGui::TableNextColumn();
                     ImGui::RadioButton("", m_gpio->Get_Pin(i).Get_State() == peripheral::CGPIO_Manager::CPin::NState::High);
+                    ImGui::TableNextColumn();
+                    if (m_gpio->Get_Pin(i).Has_Pending_IRQ())
+                    {
+                        ImGui::Text("1");
+                    }
                 }
 
                 ImGui::EndTable();

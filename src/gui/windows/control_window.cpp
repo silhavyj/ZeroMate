@@ -138,6 +138,7 @@ namespace zero_mate::gui
     void CControl_Window::Run()
     {
         m_logging_system.Info("CPU execution has started");
+        std::uint32_t prev_pc{ 0 };
 
         while (!m_stop_cpu_thread)
         {
@@ -147,6 +148,13 @@ namespace zero_mate::gui
                 m_stop_cpu_thread = true;
                 m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX]).c_str());
             }
+
+            const auto curr_pc = m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX];
+            if (prev_pc == curr_pc)
+            {
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            }
+            prev_pc = curr_pc;
         }
 
         m_cpu_running = false;

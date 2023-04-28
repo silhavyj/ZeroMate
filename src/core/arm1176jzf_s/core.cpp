@@ -203,13 +203,6 @@ namespace zero_mate::arm1176jzf_s
 
         try
         {
-            // TODO
-            if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_IRQ())
-            {
-                m_interrupt_controller->Clear_Pending_IRQ();
-                throw exceptions::CIRQ{};
-            }
-
             switch (type)
             {
                 case isa::CInstruction::NType::Data_Processing:
@@ -274,6 +267,11 @@ namespace zero_mate::arm1176jzf_s
                 case isa::CInstruction::NType::NOP:
                     break;
             }
+
+            if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_Interrupt())
+            {
+                throw exceptions::CIRQ{};
+            }
         }
         catch (const exceptions::CCPU_Exception& ex)
         {
@@ -284,6 +282,13 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Execute_Exception(const exceptions::CCPU_Exception& exception)
     {
         m_logging_system.Warning(exception.what());
+
+        // TODO do the same for FIQ?
+        if (exception.Get_Type() == exceptions::CCPU_Exception::NType::IRQ)
+        {
+            // The compiler subtract #4 from the LR register, so we need to compensate for that
+            PC() += CCPU_Context::REG_SIZE;
+        }
 
         m_context.Set_CPU_Mode(exception.Get_CPU_Mode());
         m_context[CCPU_Context::LR_REG_IDX] = PC();
@@ -575,11 +580,11 @@ namespace zero_mate::arm1176jzf_s
 
             if (!instruction.Is_U_Bit_Set())
             {
-                m_context[base_reg_idx] -= total_size_transferred;
+                m_context.Get_Register(base_reg_idx, cpu_mode) -= total_size_transferred;
             }
             else
             {
-                m_context[base_reg_idx] += total_size_transferred;
+                m_context.Get_Register(base_reg_idx, cpu_mode) += total_size_transferred;
             }
         }
     }

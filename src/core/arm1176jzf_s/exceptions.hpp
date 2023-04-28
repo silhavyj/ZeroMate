@@ -11,14 +11,27 @@ namespace zero_mate::arm1176jzf_s::exceptions
     class CCPU_Exception : public std::runtime_error
     {
     public:
-        explicit CCPU_Exception(std::uint32_t exception_vector, CCPU_Context::NCPU_Mode mode, const char* name);
+        enum class NType
+        {
+            Reset,
+            Undefined_Instruction,
+            Software_Interrupt,
+            Prefetch_Abort,
+            Data_Abort,
+            IRQ,
+            FIQ
+        };
+
+        explicit CCPU_Exception(std::uint32_t exception_vector, CCPU_Context::NCPU_Mode mode, const char* name, NType type);
 
         [[nodiscard]] std::uint32_t Get_Exception_Vector() const;
         [[nodiscard]] CCPU_Context::NCPU_Mode Get_CPU_Mode() const;
+        [[nodiscard]] NType Get_Type() const;
 
     protected:
         std::uint32_t m_exception_vector;
         CCPU_Context::NCPU_Mode m_mode;
+        NType m_type;
     };
 
     class CReset final : public CCPU_Exception
@@ -48,7 +61,7 @@ namespace zero_mate::arm1176jzf_s::exceptions
     class CData_Abort : public CCPU_Exception
     {
     public:
-        explicit CData_Abort(std::uint32_t addr);
+        explicit CData_Abort(std::uint32_t addr, const char* msg);
     };
 
     class CIRQ : public CCPU_Exception

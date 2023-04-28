@@ -74,16 +74,19 @@ namespace zero_mate::peripheral
 
         void Signalize_IRQ(NIRQ_Source source);
         void Signalize_Basic_IRQ(NIRQ_Basic_Source source);
-        [[nodiscard]] bool Has_Pending_IRQ() const noexcept;
-        void Clear_Pending_IRQ() noexcept;
+        [[nodiscard]] bool Has_Pending_Interrupt() const noexcept;
+        void Clear_Pending_Basic_IRQ(NIRQ_Basic_Source source) noexcept;
+        void Clear_Pending_IRQ(NIRQ_Source source) noexcept;
 
-        [[nodiscard]] static NIRQ_Source Get_IRQ_Source(std::uint32_t pin_idx) noexcept;
+        [[nodiscard]] static NIRQ_Source Get_IRQ_Source(std::size_t pin_idx) noexcept;
 
     private:
         inline void Initialize();
         inline void Initialize_IRQ_Basic_Sources();
         inline void Initialize_IRQ_Sources();
         [[nodiscard]] inline bool Is_IRQ_Source_Enabled(NIRQ_Source source) const;
+        [[nodiscard]] inline bool Has_Pending_IRQ() const;
+        [[nodiscard]] inline bool Has_Pending_Basic_IRQ() const;
 
         void Update_IRQ_Basic_Sources(NRegister reg, bool enable);
         void Update_IRQ_Sources(NRegister reg, bool enable);
@@ -92,7 +95,6 @@ namespace zero_mate::peripheral
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;
         std::unordered_map<NIRQ_Basic_Source, TInterrupt_Info> m_irq_basic_sources;
         std::unordered_map<NIRQ_Source, TInterrupt_Info> m_irq_sources;
-        bool m_irq_pending;
         utils::CLogging_System& m_logging_system;
     };
 }

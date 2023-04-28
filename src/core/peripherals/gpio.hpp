@@ -1,10 +1,12 @@
 #pragma once
 
 #include <array>
+#include <memory>
 #include <limits>
 #include <functional>
 
 #include "peripheral.hpp"
+#include "interrupt_controller.hpp"
 #include "../utils/logger/logger.hpp"
 
 namespace zero_mate::peripheral
@@ -51,18 +53,23 @@ namespace zero_mate::peripheral
 
             CPin();
 
+            [[nodiscard]] bool Interrupt_Detected(NState new_state) const noexcept;
+
             [[nodiscard]] NState Get_State() const noexcept;
             void Set_State(NState state) noexcept;
             [[nodiscard]] NFunction Get_Function() const noexcept;
             void Set_Function(NFunction function) noexcept;
-            void Add_Interrupt_Type(NInterrupt_Type type);
-            void Remove_Interrupt_Type(NInterrupt_Type type);
+            void Enable_Interrupt_Type(NInterrupt_Type type);
+            void Disable_Interrupt_Type(NInterrupt_Type type);
             [[nodiscard]] bool Is_Interrupt_Enabled(NInterrupt_Type type) const;
+            [[nodiscard]] bool Has_Pending_IRQ() const noexcept;
+            void Set_Pending_IRQ(bool set);
 
         private:
             NState m_state;
             NFunction m_function;
             Interrupts_t m_enabled_interrupts;
+            bool m_pending_irq;
         };
 
         enum class NRegister : std::uint32_t
@@ -114,21 +121,34 @@ namespace zero_mate::peripheral
 
         static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::size_t>(NRegister::Count);
 
-        CGPIO_Manager() noexcept;
+        enum class NPin_Set_Status
+        {
+            OK,
+            Not_Input_Pin,
+            State_Already_Set,
+            Invalid_Pin_Number
+        };
+
+        explicit CGPIO_Manager(std::shared_ptr<CInterrupt_Controller> interrupt_controller) noexcept;
 
         [[nodiscard]] std::uint32_t Get_Size() const noexcept override;
         void Write(std::uint32_t addr, const char* data, std::uint32_t size) override;
         void Read(std::uint32_t addr, char* data, std::uint32_t size) override;
         [[nodiscard]] const CPin& Get_Pin(std::size_t idx) const;
+        [[nodiscard]] NPin_Set_Status Set_Pin_State(std::size_t pin_idx, CPin::NState state);
 
     private:
+        [[nodiscard]] static std::size_t Get_Register_Index(std::size_t& pin_idx, NRegister reg_0, NRegister reg_1) noexcept;
+
         void Update_Pin_Function(std::size_t reg_idx, bool last_reg);
         void Update_Pin_State(std::size_t reg_idx, CPin::NState state, bool last_reg);
-        void Reflect_Pin_State_In_GPLEVn(std::size_t pin_idx, CPin::NState state);
+        inline void Reflect_Pin_State_In_GPLEVn(std::size_t pin_idx, CPin::NState state);
         void Set_Interrupt(std::size_t reg_idx, bool last_reg, CPin::NInterrupt_Type type);
+        void Clear_IRQ(std::size_t reg_idx, bool last_reg);
 
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;
         std::array<CPin, NUMBER_OF_GPIO_PINS> m_pins;
         utils::CLogging_System& m_logging_system;
+        std::shared_ptr<CInterrupt_Controller> m_interrupt_controller;
     };
 }

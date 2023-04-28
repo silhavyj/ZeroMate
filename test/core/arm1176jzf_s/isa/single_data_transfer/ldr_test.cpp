@@ -160,3 +160,25 @@ TEST(ldr_instruction, test_08)
     EXPECT_EQ(cpu.m_context[4], 0x35);
     EXPECT_EQ(cpu.m_context[5], 0xFFFFFF54);
 }
+
+TEST(ldr_instruction, test_09)
+{
+    const std::vector<std::uint32_t> ram_content = {
+        0xe59f3004, // ldr r3, [pc]
+        0xe3a01001, // mov r1, #1
+        0xe3a02002, // mov r2, #2
+        0xe3a02003, // mov r2, #3
+        0xe3a02004  // mov r2, #4
+    };
+
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
+    auto bus = std::make_shared<CBus>();
+
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
+
+    cpu.Step();
+
+    EXPECT_EQ(cpu.m_context[3], 0xe3a02003);
+}
