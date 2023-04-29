@@ -25,6 +25,7 @@ namespace zero_mate::arm1176jzf_s::isa
             UXTH = 11
         };
 
+    public:
         explicit CExtend(CInstruction instruction) noexcept;
 
         [[nodiscard]] NType Get_Type() const noexcept;

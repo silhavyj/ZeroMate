@@ -285,7 +285,7 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Update_Cycle_Listeners()
     {
         std::for_each(m_system_clock_listeners.begin(), m_system_clock_listeners.end(), [](auto& listener) -> void {
-            listener->Increment_Passed_Cycles(20U);
+            listener->Increment_Passed_Cycles(isa::CInstruction::AVERAGE_CPI);
         });
     }
 
