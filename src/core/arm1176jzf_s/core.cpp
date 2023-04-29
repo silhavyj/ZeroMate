@@ -42,6 +42,11 @@ namespace zero_mate::arm1176jzf_s
         m_interrupt_controller = interrupt_controller;
     }
 
+    void CCPU_Core::Add_System_Clock_Listener(const System_Clock_Listener_t& listener)
+    {
+        m_system_clock_listeners.push_back(listener);
+    }
+
     void CCPU_Core::Add_Breakpoint(std::uint32_t addr)
     {
         m_breakpoints.insert(addr);
@@ -268,14 +273,27 @@ namespace zero_mate::arm1176jzf_s
                     break;
             }
 
-            if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_Interrupt())
-            {
-                throw exceptions::CIRQ{};
-            }
+            Update_Cycle_Listeners();
+            Check_For_Pending_IRQ();
         }
         catch (const exceptions::CCPU_Exception& ex)
         {
             Execute_Exception(ex);
+        }
+    }
+
+    void CCPU_Core::Update_Cycle_Listeners()
+    {
+        std::for_each(m_system_clock_listeners.begin(), m_system_clock_listeners.end(), [](auto& listener) -> void {
+            listener->Increment_Passed_Cycles(isa::CInstruction::AVERAGE_CPI);
+        });
+    }
+
+    void CCPU_Core::Check_For_Pending_IRQ()
+    {
+        if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_Interrupt())
+        {
+            throw exceptions::CIRQ{};
         }
     }
 

@@ -13,6 +13,7 @@ namespace zero_mate::arm1176jzf_s::isa
             CPSID = 0b11U
         };
 
+    public:
         explicit CCPS(CInstruction instruction) noexcept;
 
         [[nodiscard]] NType Get_Type() const noexcept;

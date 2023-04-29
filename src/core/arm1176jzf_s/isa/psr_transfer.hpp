@@ -19,6 +19,7 @@ namespace zero_mate::arm1176jzf_s::isa
             MSR = 1
         };
 
+    public:
         explicit CPSR_Transfer(CInstruction instruction) noexcept;
 
         [[nodiscard]] NRegister Get_Register_Type() const noexcept;

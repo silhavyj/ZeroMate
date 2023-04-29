@@ -7,7 +7,7 @@ namespace zero_mate::arm1176jzf_s::isa
     class CInstruction
     {
     public:
-        static constexpr std::uint32_t NOP_INSTRUCTION{ 0xe320f000 };
+        static constexpr std::uint32_t AVERAGE_CPI{ 8 };
 
         enum class NCondition : std::uint32_t
         {
@@ -59,6 +59,7 @@ namespace zero_mate::arm1176jzf_s::isa
             ROR = 0b11  // Rotate right
         };
 
+    public:
         CInstruction(std::uint32_t value) noexcept;
 
         [[nodiscard]] bool operator==(const CInstruction& other) const;

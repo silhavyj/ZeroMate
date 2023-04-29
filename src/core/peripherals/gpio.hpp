@@ -51,6 +51,7 @@ namespace zero_mate::peripheral
             static constexpr std::size_t NUMBER_OF_INTERRUPT_TYPES = 4;
             using Interrupts_t = std::array<bool, NUMBER_OF_INTERRUPT_TYPES>;
 
+        public:
             CPin();
 
             [[nodiscard]] bool Interrupt_Detected(NState new_state) const noexcept;
@@ -129,6 +130,7 @@ namespace zero_mate::peripheral
             Invalid_Pin_Number
         };
 
+    public:
         explicit CGPIO_Manager(std::shared_ptr<CInterrupt_Controller> interrupt_controller) noexcept;
 
         [[nodiscard]] std::uint32_t Get_Size() const noexcept override;
@@ -146,6 +148,7 @@ namespace zero_mate::peripheral
         void Set_Interrupt(std::size_t reg_idx, bool last_reg, CPin::NInterrupt_Type type);
         void Clear_IRQ(std::size_t reg_idx, bool last_reg);
 
+    private:
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;
         std::array<CPin, NUMBER_OF_GPIO_PINS> m_pins;
         utils::CLogging_System& m_logging_system;

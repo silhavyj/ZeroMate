@@ -47,6 +47,7 @@ namespace zero_mate::utils
         static constexpr const char* const WARNING_MSG_PREFIX = "[warning]";
         static constexpr const char* const ERROR_MSG_PREFIX = "[error]";
 
+    public:
         void Add_Logger(std::shared_ptr<ILogger> logger);
 
         void Debug(const char* msg, const std::source_location& location = std::source_location::current());
@@ -58,6 +59,7 @@ namespace zero_mate::utils
     private:
         static std::string_view Extract_Filename(const std::source_location& location);
 
+    private:
         std::vector<std::shared_ptr<ILogger>> m_loggers;
         std::mutex m_mtx;
     };

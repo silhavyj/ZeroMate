@@ -4,8 +4,8 @@
 
 #include <imgui.h>
 
-#include "../../../core/peripherals/gpio.hpp"
 #include "../../window.hpp"
+#include "../../../core/peripherals/gpio.hpp"
 
 namespace zero_mate::gui
 {

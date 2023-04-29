@@ -15,6 +15,7 @@ namespace zero_mate::arm1176jzf_s::isa
             Signed_Halfwords = 0b11
         };
 
+    public:
         explicit CHalfword_Data_Transfer(CInstruction instruction) noexcept;
 
         [[nodiscard]] bool Is_P_Bit_Set() const noexcept;

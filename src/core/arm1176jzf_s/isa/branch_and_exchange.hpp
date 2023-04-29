@@ -13,6 +13,7 @@ namespace zero_mate::arm1176jzf_s::isa
             Thumb = 1
         };
 
+    public:
         explicit CBranch_And_Exchange(CInstruction instruction) noexcept;
 
         [[nodiscard]] bool Is_L_Bit_Set() const noexcept;

@@ -2,6 +2,7 @@
 
 #include <array>
 #include <limits>
+#include <vector>
 #include <memory>
 #include <cstdint>
 #include <cassert>
@@ -17,18 +18,23 @@
 #include "../peripherals/bus.hpp"
 #include "../utils/logger/logger.hpp"
 #include "../peripherals/interrupt_controller.hpp"
+#include "../peripherals/system_clock_listener.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
     class CCPU_Core final
     {
     public:
+        using System_Clock_Listener_t = std::shared_ptr<peripheral::ISystem_Clock_Listener>;
+
         static constexpr std::uint32_t DEFAULT_ENTRY_POINT = 0x8000;
 
+    public:
         CCPU_Core() noexcept;
         CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept;
 
         void Set_Interrupt_Controller(std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller);
+        void Add_System_Clock_Listener(const System_Clock_Listener_t& listener);
 
         void Reset_Context();
 
@@ -62,6 +68,8 @@ namespace zero_mate::arm1176jzf_s
         [[nodiscard]] static inline std::uint32_t Set_Interrupt_Mask_Bits(std::uint32_t cpsr, isa::CCPS instruction, bool set);
         [[nodiscard]] CCPU_Context::NCPU_Mode Determine_CPU_Mode(isa::CBlock_Data_Transfer instruction) const;
         [[nodiscard]] std::uint32_t Calculate_Base_Address(isa::CBlock_Data_Transfer instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const;
+        inline void Update_Cycle_Listeners();
+        inline void Check_For_Pending_IRQ();
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;
@@ -117,5 +125,6 @@ namespace zero_mate::arm1176jzf_s
         utils::CLogging_System& m_logging_system;
         std::uint32_t m_entry_point;
         std::shared_ptr<peripheral::CInterrupt_Controller> m_interrupt_controller;
+        std::vector<System_Clock_Listener_t> m_system_clock_listeners;
     };
 }

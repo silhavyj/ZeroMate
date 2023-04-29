@@ -124,6 +124,7 @@ namespace zero_mate
             return peripheral_iter;
         }
 
+    private:
         Peripherals_t m_peripherals;
         std::mutex m_mtx;
     };

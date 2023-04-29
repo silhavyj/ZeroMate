@@ -66,6 +66,7 @@ namespace zero_mate::peripheral
             bool pending{ false };
         };
 
+    public:
         explicit CInterrupt_Controller(const arm1176jzf_s::CCPU_Context& cpu_context);
 
         [[nodiscard]] std::uint32_t Get_Size() const noexcept override;
@@ -94,6 +95,7 @@ namespace zero_mate::peripheral
         void Update_IRQ_Basic_Sources(NRegister reg, bool enable);
         void Update_IRQ_Sources(NRegister reg, bool enable);
 
+    private:
         const arm1176jzf_s::CCPU_Context& m_cpu_context;
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;
         std::unordered_map<NIRQ_Basic_Source, TInterrupt_Info> m_irq_basic_sources;

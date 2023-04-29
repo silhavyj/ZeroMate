@@ -4,14 +4,14 @@
 
 namespace zero_mate::gui
 {
-    CInterrupt_Controller_Window::CInterrupt_Controller_Window(const std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller)
+    CInterrupt_Controller_Window::CInterrupt_Controller_Window(const std::shared_ptr<peripheral::CInterrupt_Controller>& interrupt_controller)
     : m_interrupt_controller{ interrupt_controller }
     {
     }
 
     void CInterrupt_Controller_Window::Render()
     {
-        if (ImGui::Begin("Interrupt controller"))
+        if (ImGui::Begin("IC"))
         {
             ImGui::Text("Has a pending interrupt: %d", static_cast<int>(m_interrupt_controller->Has_Pending_Interrupt()));
 
@@ -24,6 +24,8 @@ namespace zero_mate::gui
 
     void CInterrupt_Controller_Window::Render_Basic_IRQ()
     {
+        ImGui::Text("Basic IRQ sources");
+
         if (ImGui::BeginTable("##Basic_IRQ", 3, TABLE_FLAGS))
         {
             ImGui::TableSetupColumn("Source", ImGuiTableColumnFlags_WidthFixed);
@@ -58,6 +60,8 @@ namespace zero_mate::gui
 
     void CInterrupt_Controller_Window::Render_IRQ()
     {
+        ImGui::Text("IRQ sources");
+
         if (ImGui::BeginTable("##IRQ", 3, TABLE_FLAGS))
         {
             ImGui::TableSetupColumn("Source", ImGuiTableColumnFlags_WidthFixed);

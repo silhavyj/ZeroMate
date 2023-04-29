@@ -151,8 +151,7 @@ namespace zero_mate::peripheral
 
     void CInterrupt_Controller::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = addr / REG_SIZE;
-        std::copy_n(&m_regs[reg_idx], size, data);
+        std::copy_n(&std::bit_cast<char*>(m_regs.data())[addr], size, data);
     }
 
     bool CInterrupt_Controller::Is_IRQ_Source_Enabled(NIRQ_Source source) const
