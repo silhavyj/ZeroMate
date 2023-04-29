@@ -15,9 +15,9 @@ namespace zero_mate::arm1176jzf_s::isa
             DA = 0b00  // Decrement after
         };
 
+    public:
         explicit CBlock_Data_Transfer(CInstruction instruction) noexcept;
 
-        [[nodiscard]] bool Is_P_Bit_Set() const noexcept;
         [[nodiscard]] bool Is_U_Bit_Set() const noexcept;
         [[nodiscard]] bool Is_S_Bit_Set() const noexcept;
         [[nodiscard]] bool Is_W_Bit_Set() const noexcept;

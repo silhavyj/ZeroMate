@@ -7,11 +7,6 @@ namespace zero_mate::arm1176jzf_s::isa
     {
     }
 
-    bool CBlock_Data_Transfer::Is_P_Bit_Set() const noexcept
-    {
-        return static_cast<bool>((m_value >> 24U) & 0b1U);
-    }
-
     bool CBlock_Data_Transfer::Is_U_Bit_Set() const noexcept
     {
         return static_cast<bool>((m_value >> 23U) & 0b1U);

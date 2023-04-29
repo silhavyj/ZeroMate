@@ -62,6 +62,7 @@ namespace zero_mate::gui
         void Render_Filtered_Log_Messages();
         void Render_All_Log_Messages();
 
+    private:
         ImGuiTextFilter m_filter;
         bool m_auto_scroll;
         CCircular_Log_Buffer<std::string, MAX_LOGS> m_buffer;

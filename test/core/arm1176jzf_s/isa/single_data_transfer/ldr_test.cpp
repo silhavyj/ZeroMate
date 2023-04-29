@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "core/peripherals/ram.hpp"
-#include "core/arm1176jzf_s/cpu_core.hpp"
+#include "core/arm1176jzf_s/core.hpp"
 
 using namespace zero_mate;
 
@@ -24,7 +24,7 @@ TEST(ldr_instruction, test_01)
     { 0xe7950001 }  // ldr r0, [r5, r1]
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 1024);
+    EXPECT_EQ(cpu.m_context[0], 1024);
 }
 
 TEST(ldr_instruction, test_02)
@@ -44,7 +44,7 @@ TEST(ldr_instruction, test_02)
     { 0xe7d50001 }, // ldrb r0, [r5, r1]
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 0x54);
+    EXPECT_EQ(cpu.m_context[0], 0x54);
 }
 
 TEST(ldr_instruction, test_04)
@@ -68,8 +68,8 @@ TEST(ldr_instruction, test_04)
     { 0xe7952081 }  // ldr r2, [r5, r1, LSL #1]
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 0x54);
-    EXPECT_EQ(cpu.m_regs[2], 0x54000000);
+    EXPECT_EQ(cpu.m_context[0], 0x54);
+    EXPECT_EQ(cpu.m_context[2], 0x54000000);
 }
 
 TEST(ldr_instruction, test_05)
@@ -89,9 +89,9 @@ TEST(ldr_instruction, test_05)
     { 0xe6d01002 }  // ldrb r1, [r0], r2
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 516);
-    EXPECT_EQ(cpu.m_regs[1], 0);
-    EXPECT_EQ(cpu.m_regs[2], 0x2);
+    EXPECT_EQ(cpu.m_context[0], 516);
+    EXPECT_EQ(cpu.m_context[1], 0);
+    EXPECT_EQ(cpu.m_context[2], 0x2);
 }
 
 TEST(ldr_instruction, test_06)
@@ -110,7 +110,7 @@ TEST(ldr_instruction, test_06)
     { 0xe7903101 }  // ldr r1, [r0, r1, LSL #2]
     });
 
-    EXPECT_EQ(cpu.m_regs[3], 0xfffffffc);
+    EXPECT_EQ(cpu.m_context[3], 0xfffffffc);
 }
 
 TEST(ldr_instruction, test_07)
@@ -131,7 +131,7 @@ TEST(ldr_instruction, test_07)
     { 0xe5102004 }  // ldr r2, [r0, #-4]
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0x35FFFF54);
+    EXPECT_EQ(cpu.m_context[2], 0x35FFFF54);
 }
 
 TEST(ldr_instruction, test_08)
@@ -155,8 +155,30 @@ TEST(ldr_instruction, test_08)
     { 0xe5105004 }  // ldr r5, [r0, #-4]
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0x00);
-    EXPECT_EQ(cpu.m_regs[3], 0xFF);
-    EXPECT_EQ(cpu.m_regs[4], 0x35);
-    EXPECT_EQ(cpu.m_regs[5], 0xFFFFFF54);
+    EXPECT_EQ(cpu.m_context[2], 0x00);
+    EXPECT_EQ(cpu.m_context[3], 0xFF);
+    EXPECT_EQ(cpu.m_context[4], 0x35);
+    EXPECT_EQ(cpu.m_context[5], 0xFFFFFF54);
+}
+
+TEST(ldr_instruction, test_09)
+{
+    const std::vector<std::uint32_t> ram_content = {
+        0xe59f3004, // ldr r3, [pc]
+        0xe3a01001, // mov r1, #1
+        0xe3a02002, // mov r2, #2
+        0xe3a02003, // mov r2, #3
+        0xe3a02004  // mov r2, #4
+    };
+
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
+    auto bus = std::make_shared<CBus>();
+
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
+
+    cpu.Step();
+
+    EXPECT_EQ(cpu.m_context[3], 0xe3a02003);
 }

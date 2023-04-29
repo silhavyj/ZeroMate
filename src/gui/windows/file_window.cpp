@@ -14,7 +14,7 @@ namespace zero_mate::gui
     : m_bus{ bus }
     , m_cpu{ cpu }
     , m_source_code{ source_code }
-    , m_logging_system{ utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
     {
     }
@@ -50,6 +50,7 @@ namespace zero_mate::gui
                         switch (error_code)
                         {
                             case utils::elf::NError_Code::OK:
+                                m_cpu->Reset_Context();
                                 m_cpu->Set_PC(pc);
                                 m_source_code = disassembly;
                                 m_logging_system.Info(fmt::format("The .ELF file has been loaded successfully. The program starts at 0x{:08X}", pc).c_str());

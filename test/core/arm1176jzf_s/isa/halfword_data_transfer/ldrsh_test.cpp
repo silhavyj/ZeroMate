@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "core/peripherals/ram.hpp"
-#include "core/arm1176jzf_s/cpu_core.hpp"
+#include "core/arm1176jzf_s/core.hpp"
 
 using namespace zero_mate;
 
@@ -23,9 +23,9 @@ TEST(ldrsh_instruction, test_01)
     { 0xe05100f1 }  // ldrsh r0, [r1], #0!
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 0xFFFFFFFB);
-    EXPECT_EQ(cpu.m_regs[1], 0x000000C7);
-    EXPECT_EQ(cpu.m_regs[2], 0xFFFFFFFB);
+    EXPECT_EQ(cpu.m_context[0], 0xFFFFFFFB);
+    EXPECT_EQ(cpu.m_context[1], 0x000000C7);
+    EXPECT_EQ(cpu.m_context[2], 0xFFFFFFFB);
 }
 
 TEST(ldrsh_instruction, test_02)
@@ -44,9 +44,9 @@ TEST(ldrsh_instruction, test_02)
     { 0xe05100f1 }  // ldrsh r0, [r1], #0!
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 0xFFFFFFFB);
-    EXPECT_EQ(cpu.m_regs[1], 0x000000C7);
-    EXPECT_EQ(cpu.m_regs[2], 0xFFFFFFFB);
+    EXPECT_EQ(cpu.m_context[0], 0xFFFFFFFB);
+    EXPECT_EQ(cpu.m_context[1], 0x000000C7);
+    EXPECT_EQ(cpu.m_context[2], 0xFFFFFFFB);
 }
 
 TEST(ldrsh_instruction, test_03)
@@ -70,7 +70,7 @@ TEST(ldrsh_instruction, test_03)
     { 0xe1d100f0 }  // ldrsh r0, [r1]
     });
 
-    EXPECT_EQ(cpu.m_regs[0], 0x00007A7A);
-    EXPECT_EQ(cpu.m_regs[1], 0x000000C6);
-    EXPECT_EQ(cpu.m_regs[2], 0x0000007A);
+    EXPECT_EQ(cpu.m_context[0], 0x00007A7A);
+    EXPECT_EQ(cpu.m_context[1], 0x000000C6);
+    EXPECT_EQ(cpu.m_context[2], 0x0000007A);
 }

@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "core/peripherals/ram.hpp"
-#include "core/arm1176jzf_s/cpu_core.hpp"
+#include "core/arm1176jzf_s/core.hpp"
 
 using namespace zero_mate;
 
@@ -30,14 +30,14 @@ TEST(bl_instruction, test_01)
 
     // Skip the add subroutine (jump to main)
     cpu.Steps(1);
-    EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x0C);
+    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x0C);
 
     // Entered the subroutine
     cpu.Steps(3);
-    EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x04);
+    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x04);
 
     // Returned from the subroutine (r0 should equal to 50)
     cpu.Steps(2);
-    EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x18);
-    EXPECT_EQ(cpu.m_regs[0], 50);
+    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x18);
+    EXPECT_EQ(cpu.m_context[0], 50);
 }

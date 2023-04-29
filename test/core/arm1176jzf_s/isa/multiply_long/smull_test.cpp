@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "core/arm1176jzf_s/cpu_core.hpp"
+#include "core/arm1176jzf_s/core.hpp"
 
 TEST(smull_instruction, test_01)
 {
@@ -14,13 +14,13 @@ TEST(smull_instruction, test_01)
     { 0xe0d32190 }  // smulls r2, r3, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0x00000064);
-    EXPECT_EQ(cpu.m_regs[3], 0x0);
+    EXPECT_EQ(cpu.m_context[2], 0x00000064);
+    EXPECT_EQ(cpu.m_context[3], 0x0);
 
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), false);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), false);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(smull_instruction, test_02)
@@ -35,13 +35,13 @@ TEST(smull_instruction, test_02)
     { 0xe0d32190 }  // smulls r2, r3, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0xFFFFFFFF);
-    EXPECT_EQ(cpu.m_regs[3], 0xFFFFFFFF);
+    EXPECT_EQ(cpu.m_context[2], 0xFFFFFFFF);
+    EXPECT_EQ(cpu.m_context[3], 0xFFFFFFFF);
 
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), true);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), false);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), true);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(smull_instruction, test_03)
@@ -56,13 +56,13 @@ TEST(smull_instruction, test_03)
     { 0xe0d32190 }  // smulls r2, r3, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 512 * 1024);
-    EXPECT_EQ(cpu.m_regs[3], 0);
+    EXPECT_EQ(cpu.m_context[2], 512 * 1024);
+    EXPECT_EQ(cpu.m_context[3], 0);
 
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), false);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), false);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(smull_instruction, test_04)
@@ -77,11 +77,11 @@ TEST(smull_instruction, test_04)
     { 0xe0d32190 }  // smulls r2, r3, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_regs[2], 0);
-    EXPECT_EQ(cpu.m_regs[3], 0);
+    EXPECT_EQ(cpu.m_context[2], 0);
+    EXPECT_EQ(cpu.m_context[3], 0);
 
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::N), false);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::Z), true);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::C), false);
-    EXPECT_EQ(cpu.m_cpsr.Is_Flag_Set(CCPSR::NFlag::V), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), true);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }

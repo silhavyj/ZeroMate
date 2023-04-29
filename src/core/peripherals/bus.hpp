@@ -71,17 +71,18 @@ namespace zero_mate
 
     private:
         template<typename Type>
-        [[nodiscard]] Peripherals_t::iterator Get_Peripheral(std::uint32_t addr, bool check_alignment) const
+        [[nodiscard]] Peripherals_t::iterator Get_Peripheral(std::uint32_t addr, [[maybe_unused]] bool check_alignment) const
         {
-            if (check_alignment && (addr % sizeof(Type)) != 0)
-            {
-                throw arm1176jzf_s::exceptions::CUnaligned_Memory_Access{ addr };
-            }
+            // TODO check when the CPU actually checks for this
+            // if (check_alignment && (addr % sizeof(Type)) != 0)
+            // {
+            //    throw arm1176jzf_s::exceptions::CData_Abort{ addr, "Unaligned memory access" };
+            // }
 
             auto peripheral_iter = Get_Peripheral(addr);
             if (!Is_Peripheral_Accessible(addr, peripheral_iter))
             {
-                throw arm1176jzf_s::exceptions::CInvalid_Peripheral_Access{ addr };
+                throw arm1176jzf_s::exceptions::CData_Abort{ addr, "No peripheral is mapped to this region" };
             }
 
             return peripheral_iter;
@@ -123,6 +124,7 @@ namespace zero_mate
             return peripheral_iter;
         }
 
+    private:
         Peripherals_t m_peripherals;
         std::mutex m_mtx;
     };

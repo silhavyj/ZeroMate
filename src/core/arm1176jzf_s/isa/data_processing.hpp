@@ -27,6 +27,7 @@ namespace zero_mate::arm1176jzf_s::isa
             MVN = 0b1111  // NOT operand2(operand1 is ignored)
         };
 
+    public:
         explicit CData_Processing(CInstruction instruction) noexcept;
 
         [[nodiscard]] bool Is_I_Bit_Set() const noexcept;

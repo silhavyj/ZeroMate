@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "core/peripherals/ram.hpp"
-#include "core/arm1176jzf_s/cpu_core.hpp"
+#include "core/arm1176jzf_s/core.hpp"
 
 using namespace zero_mate;
 
@@ -29,16 +29,16 @@ TEST(blx_instruction, test_01)
 
     // blx r4
     cpu.Steps(3);
-    EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x10);
-    EXPECT_EQ(cpu.m_regs[0], 0);
+    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x10);
+    EXPECT_EQ(cpu.m_context[0], 0);
 
     // bx r4 (first iteration)
     cpu.Steps(4);
-    EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x10);
-    EXPECT_EQ(cpu.m_regs[0], 1);
+    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x10);
+    EXPECT_EQ(cpu.m_context[0], 1);
 
     // 2 more iterations + cmp and mov (r0 should be 3)
     cpu.Steps(10);
-    EXPECT_EQ(cpu.m_regs[cpu.PC_REG_IDX], 0x0C);
-    EXPECT_EQ(cpu.m_regs[0], 3);
+    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x0C);
+    EXPECT_EQ(cpu.m_context[0], 3);
 }

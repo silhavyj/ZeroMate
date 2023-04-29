@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "core/peripherals/ram.hpp"
-#include "core/arm1176jzf_s/cpu_core.hpp"
+#include "core/arm1176jzf_s/core.hpp"
 #include "core/utils/elf_loader.hpp"
 
 // #define ENABLE_ELF_TESTS
@@ -23,7 +23,7 @@
     cpu.Add_Breakpoint(0x1008);
     cpu.Run();
 
-    EXPECT_EQ(cpu.m_regs[0], expected_value);
+    EXPECT_EQ(cpu.m_context[0], expected_value);
 }
 
 #ifdef ENABLE_ELF_TESTS

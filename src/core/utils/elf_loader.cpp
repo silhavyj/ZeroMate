@@ -57,6 +57,7 @@ namespace zero_mate::utils::elf
             static constexpr const char* const SYMBOL_SECTION = ".symtab";
 
             std::unordered_map<std::uint32_t, std::string> labels;
+            labels[static_cast<std::uint32_t>(elf_reader.get_entry())] = START_LABEL;
 
             const ELFIO::symbol_section_accessor symbols(elf_reader, elf_reader.sections[SYMBOL_SECTION]);
             const auto number_of_symbols = symbols.get_symbols_num();
@@ -95,7 +96,7 @@ namespace zero_mate::utils::elf
                 return result;
             }
 
-            auto& logging_system = CSingleton<CLogging_System>::Get_Instance();
+            auto& logging_system = *CSingleton<CLogging_System>::Get_Instance();
             const auto labels = Get_Labels(elf_reader);
             const auto* const text_section = elf_reader.sections[TEXT_SECTION];
             const auto* data = std::bit_cast<const uint8_t*>(text_section->get_data());

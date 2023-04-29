@@ -4,7 +4,7 @@
 
 #include "../window.hpp"
 
-#include "../../core/arm1176jzf_s/cpu_core.hpp"
+#include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/utils/elf_loader.hpp"
 
 namespace zero_mate::gui
@@ -18,6 +18,10 @@ namespace zero_mate::gui
                                      const bool& cpu_running);
 
         void Render() override;
+
+    private:
+        void Render_Code_Block(std::size_t& idx);
+        [[nodiscard]] bool Highlight_Code_Block(std::size_t idx) const;
 
     private:
         static constexpr ImGuiTableFlags TABLE_FLAGS = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
