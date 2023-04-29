@@ -1,5 +1,6 @@
 #include <bit>
 #include <variant>
+#include <algorithm>
 
 #include <magic_enum.hpp>
 
