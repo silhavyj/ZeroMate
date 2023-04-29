@@ -93,7 +93,7 @@ namespace zero_mate::peripheral
         }
     }
 
-    void CARM_Timer::Update(std::uint32_t cycles_passed)
+    void CARM_Timer::Increment_Passed_Cycles(std::uint32_t count)
     {
         const auto control_reg = Get_Control_Reg();
 
@@ -104,20 +104,20 @@ namespace zero_mate::peripheral
 
         m_prescaler.Set_Limit(static_cast<NPrescal_Bits>(control_reg.Prescaler));
 
-        cycles_passed = m_prescaler.Prescale_Cycle_Passed(cycles_passed);
+        count = m_prescaler.Prescale_Cycle_Passed(count);
 
         // 32b vs 16b mode
         const auto value = control_reg.Counter_32b ? Get_Reg(NRegister::Value) : (Get_Reg(NRegister::Value) & 0xFFFFU);
 
-        if (cycles_passed > 0)
+        if (count > 0)
         {
-            if (cycles_passed >= value)
+            if (count >= value)
             {
                 Timer_Has_Reached_Zero(control_reg);
             }
             else
             {
-                Get_Reg(NRegister::Value) = value - cycles_passed;
+                Get_Reg(NRegister::Value) = value - count;
             }
         }
     }

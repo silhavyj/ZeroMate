@@ -15,6 +15,6 @@ namespace zero_mate::peripheral
         ISystem_Clock_Listener(ISystem_Clock_Listener&&) = delete;
         ISystem_Clock_Listener& operator=(ISystem_Clock_Listener&&) = delete;
 
-        virtual void Update(std::uint32_t cycles_passed) = 0;
+        virtual void Increment_Passed_Cycles(std::uint32_t count) = 0;
     };
 }

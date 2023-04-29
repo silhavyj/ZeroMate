@@ -57,9 +57,10 @@ namespace zero_mate::peripheral
         static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::uint32_t>(NRegister::Count);
         static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
 
+    public:
         explicit CARM_Timer(std::shared_ptr<CInterrupt_Controller> interrupt_controller);
 
-        void Update(std::uint32_t cycles_passed) override;
+        void Increment_Passed_Cycles(std::uint32_t count) override;
 
         [[nodiscard]] std::uint32_t Get_Reg(NRegister reg) const;
         [[nodiscard]] std::uint32_t& Get_Reg(NRegister reg);
@@ -79,6 +80,7 @@ namespace zero_mate::peripheral
                 Prescale_256 = 256U,
             };
 
+        public:
             CPrescaler();
 
             [[nodiscard]] std::uint32_t Prescale_Cycle_Passed(std::uint32_t cycles_passed) noexcept;
@@ -87,13 +89,16 @@ namespace zero_mate::peripheral
         private:
             [[nodiscard]] std::uint32_t Update_Counter(std::uint32_t limit_value);
 
+        private:
             NPrescal_Bits m_limit;
             std::uint32_t m_counter;
         };
 
+    private:
         inline void Clear_Basic_IRQ();
         inline void Timer_Has_Reached_Zero(const TControl_Register& control_reg);
 
+    private:
         std::shared_ptr<CInterrupt_Controller> m_interrupt_controller;
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;
         CPrescaler m_prescaler;

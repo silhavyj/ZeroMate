@@ -273,19 +273,27 @@ namespace zero_mate::arm1176jzf_s
                     break;
             }
 
-            // TODO
-            std::for_each(m_system_clock_listeners.begin(), m_system_clock_listeners.end(), [](auto& listener) -> void {
-                listener->Update(20U);
-            });
-
-            if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_Interrupt())
-            {
-                throw exceptions::CIRQ{};
-            }
+            Update_Cycle_Listeners();
+            Check_For_Pending_IRQ();
         }
         catch (const exceptions::CCPU_Exception& ex)
         {
             Execute_Exception(ex);
+        }
+    }
+
+    void CCPU_Core::Update_Cycle_Listeners()
+    {
+        std::for_each(m_system_clock_listeners.begin(), m_system_clock_listeners.end(), [](auto& listener) -> void {
+            listener->Increment_Passed_Cycles(20U);
+        });
+    }
+
+    void CCPU_Core::Check_For_Pending_IRQ()
+    {
+        if (m_interrupt_controller != nullptr && m_interrupt_controller->Has_Pending_Interrupt())
+        {
+            throw exceptions::CIRQ{};
         }
     }
 

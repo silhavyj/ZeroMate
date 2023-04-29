@@ -22,6 +22,7 @@ namespace zero_mate::arm1176jzf_s::exceptions
             FIQ
         };
 
+    public:
         explicit CCPU_Exception(std::uint32_t exception_vector, CCPU_Context::NCPU_Mode mode, const char* name, NType type);
 
         [[nodiscard]] std::uint32_t Get_Exception_Vector() const;

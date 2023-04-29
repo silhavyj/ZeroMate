@@ -44,6 +44,7 @@ namespace zero_mate::arm1176jzf_s
             System = 0b11111,     // System - Runs privileged operating system tasks (ARMv4 and above)
         };
 
+    public:
         CCPU_Context();
 
         void Reset();
@@ -89,6 +90,7 @@ namespace zero_mate::arm1176jzf_s
         [[nodiscard]] static NCPU_Mode Get_CPU_Mode(std::uint32_t new_cpsr) noexcept;
         [[nodiscard]] bool Invalid_Change_Of_Control_Bits(std::uint32_t new_cpsr) noexcept;
 
+    private:
         NCPU_Mode m_mode;
         std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;
         std::unordered_map<NCPU_Mode, std::unordered_map<std::uint32_t, std::uint32_t>> m_banked_regs;

@@ -17,6 +17,7 @@ namespace zero_mate::test
 
         using Changed_registers_t = std::initializer_list<TRegister>;
 
+    public:
         void Record_State(const CPU_Context& cpu_context) noexcept
         {
             m_cpu_context = cpu_context;

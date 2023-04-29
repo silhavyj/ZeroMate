@@ -24,6 +24,7 @@ namespace zero_mate::peripheral
     private:
         void Init();
 
+    private:
         std::uint32_t m_size;
         std::unique_ptr<char[]> m_data{ nullptr };
     };

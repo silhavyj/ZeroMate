@@ -29,6 +29,7 @@ namespace zero_mate::arm1176jzf_s
 
         static constexpr std::uint32_t DEFAULT_ENTRY_POINT = 0x8000;
 
+    public:
         CCPU_Core() noexcept;
         CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept;
 
@@ -67,6 +68,8 @@ namespace zero_mate::arm1176jzf_s
         [[nodiscard]] static inline std::uint32_t Set_Interrupt_Mask_Bits(std::uint32_t cpsr, isa::CCPS instruction, bool set);
         [[nodiscard]] CCPU_Context::NCPU_Mode Determine_CPU_Mode(isa::CBlock_Data_Transfer instruction) const;
         [[nodiscard]] std::uint32_t Calculate_Base_Address(isa::CBlock_Data_Transfer instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const;
+        inline void Update_Cycle_Listeners();
+        inline void Check_For_Pending_IRQ();
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;

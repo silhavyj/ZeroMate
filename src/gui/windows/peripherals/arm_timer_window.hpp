@@ -17,12 +17,13 @@ namespace zero_mate::gui
         void Render() override;
 
     private:
+        void Render_Registers();
+        void Render_Control_Register();
+
+    private:
         static constexpr ImGuiTableFlags TABLE_FLAGS = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
-
-        void Render_Registers();
-        void Render_Control_Register();
 
         const std::shared_ptr<peripheral::CARM_Timer> m_arm_timer;
     };

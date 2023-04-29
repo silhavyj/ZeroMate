@@ -26,6 +26,7 @@ namespace zero_mate::gui
         void Print_No_ELF_File_Loaded_Error_Msg() const;
         void Run();
 
+    private:
         std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;
         bool& m_scroll_to_curr_line;
         const bool& m_elf_file_has_been_loaded;

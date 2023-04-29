@@ -21,6 +21,7 @@ namespace zero_mate::gui::external_peripheral
     private:
         inline void Swap_State();
 
+    private:
         std::shared_ptr<peripheral::CGPIO_Manager> m_gpio;
         utils::CLogging_System& m_logging_system;
         peripheral::CGPIO_Manager::CPin::NState m_state;

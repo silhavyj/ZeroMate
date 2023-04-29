@@ -17,12 +17,13 @@ namespace zero_mate::gui
         void Render() override;
 
     private:
+        void Render_Basic_IRQ();
+        void Render_IRQ();
+
+    private:
         static constexpr ImGuiTableFlags TABLE_FLAGS = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
-
-        void Render_Basic_IRQ();
-        void Render_IRQ();
 
         const std::shared_ptr<peripheral::CInterrupt_Controller> m_interrupt_controller;
     };
