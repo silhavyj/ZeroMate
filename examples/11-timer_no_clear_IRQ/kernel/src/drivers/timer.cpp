@@ -43,7 +43,6 @@ void CTimer::Enable(TTimer_Callback callback, unsigned int delay, NTimer_Prescal
     reg.counter_32b = 1;
     reg.interrupt_enabled = 1;
     reg.timer_enabled = 1;
-    reg.free_running_enable = 1;
     reg.prescaler = static_cast<uint8_t>(prescaler);
 
     Regs(hal::Timer_Reg::Control) = *reinterpret_cast<unsigned int*>(&reg);

@@ -88,9 +88,10 @@ namespace zero_mate::peripheral
 
         if (control_reg.Free_Running)
         {
-            Get_Reg(NRegister::Value) = Get_Reg(NRegister::Reload);
             Get_Reg(NRegister::Free_Running) += 1;
         }
+
+        Get_Reg(NRegister::Value) = Get_Reg(NRegister::Reload);
     }
 
     void CARM_Timer::Increment_Passed_Cycles(std::uint32_t count)
