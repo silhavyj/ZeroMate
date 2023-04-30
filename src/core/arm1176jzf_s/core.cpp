@@ -253,8 +253,11 @@ namespace zero_mate::arm1176jzf_s
                     break;
 
                 case isa::CInstruction::NType::Coprocessor_Data_Transfer:
-                    [[fallthrough]];
+                    Execute(isa::CCoprocessor_Data_Transfer{ instruction });
+                    break;
+
                 case isa::CInstruction::NType::Coprocessor_Data_Operation:
+                    Execute(isa::CCoprocessor_Data_Operation{ instruction });
                     break;
 
                 case isa::CInstruction::NType::Coprocessor_Register_Transfer:
@@ -888,17 +891,36 @@ namespace zero_mate::arm1176jzf_s
         m_context.Set_CPSR(cpsr);
     }
 
-    void CCPU_Core::Execute(isa::CCoprocessor_Reg_Transfer instruction)
+    void CCPU_Core::Check_Coprocessor_Existence(std::uint32_t coprocessor_id)
     {
-        const auto coprocessor_id = instruction.Get_Coprocessor_Number();
-
         if (!m_coprocessors.contains(coprocessor_id))
         {
+            m_logging_system.Error(fmt::format("CP{} is not present", coprocessor_id).c_str());
             throw exceptions::CUndefined_Instruction{};
         }
-        else
-        {
-            m_coprocessors[coprocessor_id]->Perform_Register_Transfer(instruction);
-        }
+    }
+
+    void CCPU_Core::Execute(isa::CCoprocessor_Reg_Transfer instruction)
+    {
+        const auto coprocessor_id = instruction.Get_Coprocessor_ID();
+
+        Check_Coprocessor_Existence(coprocessor_id);
+        m_coprocessors[coprocessor_id]->Perform_Register_Transfer(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CCoprocessor_Data_Transfer instruction)
+    {
+        const auto coprocessor_id = instruction.Get_Coprocessor_ID();
+
+        Check_Coprocessor_Existence(coprocessor_id);
+        m_coprocessors[coprocessor_id]->Perform_Data_Transfer(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CCoprocessor_Data_Operation instruction)
+    {
+        const auto coprocessor_id = instruction.Get_Coprocessor_ID();
+
+        Check_Coprocessor_Existence(coprocessor_id);
+        m_coprocessors[coprocessor_id]->Perform_Data_Operation(instruction);
     }
 }

@@ -75,6 +75,7 @@ namespace zero_mate::arm1176jzf_s
         [[nodiscard]] std::uint32_t Calculate_Base_Address(isa::CBlock_Data_Transfer instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const;
         inline void Update_Cycle_Listeners();
         inline void Check_For_Pending_IRQ();
+        inline void Check_Coprocessor_Existence(std::uint32_t coprocessor_id);
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;
@@ -89,6 +90,8 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CPSR_Transfer instruction);
         void Execute(isa::CCPS instruction);
         void Execute(isa::CCoprocessor_Reg_Transfer instruction);
+        void Execute(isa::CCoprocessor_Data_Transfer instruction);
+        void Execute(isa::CCoprocessor_Data_Operation instruction);
 
         template<typename Instruction>
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand_Imm(Instruction instruction) const noexcept

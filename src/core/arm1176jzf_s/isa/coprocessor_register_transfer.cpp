@@ -17,17 +17,17 @@ namespace zero_mate::arm1176jzf_s::isa
         return static_cast<bool>((m_value >> 20U) & 0b1U);
     }
 
-    std::uint32_t CCoprocessor_Reg_Transfer::Get_Coprocessor_Rd() const noexcept
+    std::uint32_t CCoprocessor_Reg_Transfer::Get_CRd() const noexcept
     {
         return (m_value >> 16U) & 0b1111U;
     }
 
-    std::uint32_t CCoprocessor_Reg_Transfer::Get_ARM_Rd() const noexcept
+    std::uint32_t CCoprocessor_Reg_Transfer::Get_Rd() const noexcept
     {
         return (m_value >> 12U) & 0b1111U;
     }
 
-    std::uint32_t CCoprocessor_Reg_Transfer::Get_Coprocessor_Number() const noexcept
+    std::uint32_t CCoprocessor_Reg_Transfer::Get_Coprocessor_ID() const noexcept
     {
         return (m_value >> 8U) & 0b1111U;
     }
@@ -37,7 +37,7 @@ namespace zero_mate::arm1176jzf_s::isa
         return (m_value >> 5U) & 0b111U;
     }
 
-    std::uint32_t CCoprocessor_Reg_Transfer::Get_Coprocessor_Rm() const noexcept
+    std::uint32_t CCoprocessor_Reg_Transfer::Get_CRm() const noexcept
     {
         return m_value & 0b1111U;
     }

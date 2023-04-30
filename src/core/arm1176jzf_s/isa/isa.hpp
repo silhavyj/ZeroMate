@@ -13,3 +13,5 @@
 #include "psr_transfer.hpp"
 #include "cps.hpp"
 #include "coprocessor_register_transfer.hpp"
+#include "coprocessor_data_transfer.hpp"
+#include "coprocessor_data_operation.hpp"

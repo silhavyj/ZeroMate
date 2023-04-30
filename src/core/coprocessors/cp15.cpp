@@ -12,4 +12,16 @@ namespace zero_mate::coprocessors
         // TODO
         static_cast<void>(instruction);
     }
+
+    void CCP15::Perform_Data_Transfer(arm1176jzf_s::isa::CCoprocessor_Data_Transfer instruction)
+    {
+        // TODO
+        static_cast<void>(instruction);
+    }
+
+    void CCP15::Perform_Data_Operation(arm1176jzf_s::isa::CCoprocessor_Data_Operation instruction)
+    {
+        // TODO
+        static_cast<void>(instruction);
+    }
 }
