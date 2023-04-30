@@ -44,11 +44,11 @@ namespace zero_mate
         // NOTE: The bus width size is usually fixed.
         // The generic type is supported only for emulation purposes (simplifications)
         template<typename Type>
-        void Write(std::uint32_t addr, Type value, bool check_alignment = true)
+        void Write(std::uint32_t addr, Type value)
         {
             const std::lock_guard<std::mutex> lock(m_mtx);
 
-            auto peripheral_iter = Get_Peripheral<Type>(addr, check_alignment);
+            auto peripheral_iter = Get_Peripheral<Type>(addr);
             const auto relative_addr = addr - peripheral_iter->start_addr;
 
             peripheral_iter->peripheral->Write(relative_addr, std::bit_cast<const char*>(&value), sizeof(Type));
@@ -57,12 +57,12 @@ namespace zero_mate
         // NOTE: The bus width size is usually fixed.
         // The generic type is supported only for emulation purposes (simplifications)
         template<typename Type>
-        [[nodiscard]] Type Read(std::uint32_t addr, bool check_alignment = true)
+        [[nodiscard]] Type Read(std::uint32_t addr)
         {
             const std::lock_guard<std::mutex> lock(m_mtx);
 
             Type value{};
-            auto peripheral_iter = Get_Peripheral<Type>(addr, check_alignment);
+            auto peripheral_iter = Get_Peripheral<Type>(addr);
             const auto relative_addr = addr - peripheral_iter->start_addr;
 
             peripheral_iter->peripheral->Read(relative_addr, std::bit_cast<char*>(&value), sizeof(Type));
@@ -80,7 +80,7 @@ namespace zero_mate
         }
 
         template<typename Type>
-        [[nodiscard]] Peripherals_t::iterator Get_Peripheral(std::uint32_t addr, [[maybe_unused]] bool check_alignment) const
+        [[nodiscard]] Peripherals_t::iterator Get_Peripheral(std::uint32_t addr) const
         {
             if (Unaligned_Access_Violation<Type>(addr))
             {

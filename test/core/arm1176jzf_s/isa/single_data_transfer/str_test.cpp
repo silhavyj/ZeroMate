@@ -182,7 +182,7 @@ TEST(str_instruction, test_09)
     EXPECT_EQ(bus->Read<std::uint8_t>(257), 0x35);
     EXPECT_EQ(bus->Read<std::uint8_t>(256), 0x0);
     EXPECT_EQ(bus->Read<std::uint8_t>(255), 0xFF);
-    EXPECT_EQ(bus->Read<std::uint32_t>(254, false), 0x3500FFFF); // Explicitly enable unaligned access
+    EXPECT_EQ(bus->Read<std::uint32_t>(254), 0x3500FFFF);
 }
 
 TEST(str_instruction, test_10)
