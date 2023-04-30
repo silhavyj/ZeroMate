@@ -1,27 +1,58 @@
-#include "cp15.hpp"
+#include <fmt/format.h>
+#include <magic_enum.hpp>
 
-namespace zero_mate::coprocessors
+#include "cp15.hpp"
+#include "../utils/singleton.hpp"
+
+namespace zero_mate::coprocessor
 {
     CCP15::CCP15(arm1176jzf_s::CCPU_Context& cpu_context)
     : ICoprocessor{ cpu_context }
+    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
+        Initialize();
+    }
+
+    void CCP15::Initialize()
+    {
+        m_regs[NPrimary_Register::Control_Register] = std::vector<std::uint32_t>(REGISTER_1_COUNT, 0);
     }
 
     void CCP15::Perform_Register_Transfer(arm1176jzf_s::isa::CCoprocessor_Reg_Transfer instruction)
     {
-        // TODO
-        static_cast<void>(instruction);
+        const auto primary_reg = static_cast<NPrimary_Register>(instruction.Get_CRn());
+
+        if (!m_regs.contains(primary_reg))
+        {
+            m_logging_system.Error(fmt::format("CP15: {} register has not been implemented yet", magic_enum::enum_name(primary_reg)).c_str());
+            return;
+        }
+
+        const auto secondary_reg_idx = instruction.Get_CRm();
+        const auto rd_idx = instruction.Get_Rd();
+
+        if (instruction.Is_L_Bit_Set())
+        {
+            m_cpu_context[rd_idx] = m_regs[primary_reg][secondary_reg_idx];
+        }
+        else
+        {
+            m_regs[primary_reg][secondary_reg_idx] = m_cpu_context[rd_idx];
+        }
     }
 
-    void CCP15::Perform_Data_Transfer(arm1176jzf_s::isa::CCoprocessor_Data_Transfer instruction)
+    bool CCP15::Is_Unaligned_Access_Permitted() const
     {
-        // TODO
-        static_cast<void>(instruction);
+        return static_cast<bool>((m_regs.at(NPrimary_Register::Control_Register)[static_cast<std::uint32_t>(NRegister_1::Control_Register)] >> 22U) & 0b1U);
     }
 
-    void CCP15::Perform_Data_Operation(arm1176jzf_s::isa::CCoprocessor_Data_Operation instruction)
+    void CCP15::Perform_Data_Transfer([[maybe_unused]] arm1176jzf_s::isa::CCoprocessor_Data_Transfer instruction)
     {
-        // TODO
-        static_cast<void>(instruction);
+        m_logging_system.Error("Data transfer operation cannot be applied to CP15");
+    }
+
+    void CCP15::Perform_Data_Operation([[maybe_unused]] arm1176jzf_s::isa::CCoprocessor_Data_Operation instruction)
+    {
+        m_logging_system.Error("Data operation cannot be applied to CP15");
     }
 }

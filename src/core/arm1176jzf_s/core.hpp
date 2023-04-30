@@ -20,7 +20,6 @@
 #include "../utils/logger/logger.hpp"
 #include "../peripherals/interrupt_controller.hpp"
 #include "../peripherals/system_clock_listener.hpp"
-#include "../coprocessors/cp15.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -28,7 +27,7 @@ namespace zero_mate::arm1176jzf_s
     {
     public:
         using System_Clock_Listener_t = std::shared_ptr<peripheral::ISystem_Clock_Listener>;
-        using Coprocessors_t = std::unordered_map<std::uint32_t, std::shared_ptr<coprocessors::ICoprocessor>>;
+        using Coprocessors_t = std::unordered_map<std::uint32_t, std::shared_ptr<coprocessor::ICoprocessor>>;
 
         static constexpr std::uint32_t DEFAULT_ENTRY_POINT = 0x8000;
 
@@ -38,6 +37,7 @@ namespace zero_mate::arm1176jzf_s
 
         void Set_Interrupt_Controller(std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller);
         void Add_System_Clock_Listener(const System_Clock_Listener_t& listener);
+        void Add_Coprocessor(std::uint32_t id, const std::shared_ptr<coprocessor::ICoprocessor>& coprocessor);
 
         void Reset_Context();
 
@@ -50,8 +50,6 @@ namespace zero_mate::arm1176jzf_s
         void Execute(std::initializer_list<isa::CInstruction> instructions);
 
     private:
-        inline void Initialize_Coprocessors();
-
         [[nodiscard]] std::uint32_t& PC() noexcept;
         [[nodiscard]] const std::uint32_t& PC() const noexcept;
         [[nodiscard]] std::uint32_t& LR() noexcept;

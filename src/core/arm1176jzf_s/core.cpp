@@ -24,12 +24,11 @@ namespace zero_mate::arm1176jzf_s
     , m_interrupt_controller{ nullptr }
     {
         Set_PC(pc);
-        Initialize_Coprocessors();
     }
 
-    void CCPU_Core::Initialize_Coprocessors()
+    void CCPU_Core::Add_Coprocessor(std::uint32_t id, const std::shared_ptr<coprocessor::ICoprocessor>& coprocessor)
     {
-        m_coprocessors[15] = std::make_shared<coprocessors::CCP15>(m_context);
+        m_coprocessors[id] = coprocessor;
     }
 
     void CCPU_Core::Reset_Context()
@@ -865,7 +864,7 @@ namespace zero_mate::arm1176jzf_s
     {
         if (!m_context.Is_In_Privileged_Mode())
         {
-            m_logging_system.Warning("Attempting to execute instruction CPS in a non-privileged mode");
+            m_logging_system.Error("Attempt to execute instruction CPS in a non-privileged mode");
             return;
         }
 

@@ -8,7 +8,7 @@
 #include "../arm1176jzf_s/isa/coprocessor_data_transfer.hpp"
 #include "../arm1176jzf_s/isa/coprocessor_data_operation.hpp"
 
-namespace zero_mate::coprocessors
+namespace zero_mate::coprocessor
 {
     class ICoprocessor
     {
