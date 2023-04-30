@@ -24,6 +24,12 @@ namespace zero_mate::arm1176jzf_s
     , m_interrupt_controller{ nullptr }
     {
         Set_PC(pc);
+        Initialize_Coprocessors();
+    }
+
+    void CCPU_Core::Initialize_Coprocessors()
+    {
+        m_coprocessors[15] = std::make_shared<coprocessors::CCP15>(m_context);
     }
 
     void CCPU_Core::Reset_Context()
@@ -249,7 +255,10 @@ namespace zero_mate::arm1176jzf_s
                 case isa::CInstruction::NType::Coprocessor_Data_Transfer:
                     [[fallthrough]];
                 case isa::CInstruction::NType::Coprocessor_Data_Operation:
+                    break;
+
                 case isa::CInstruction::NType::Coprocessor_Register_Transfer:
+                    Execute(isa::CCoprocessor_Reg_Transfer{ instruction });
                     break;
 
                 case isa::CInstruction::NType::Software_Interrupt:
@@ -877,5 +886,19 @@ namespace zero_mate::arm1176jzf_s
         }
 
         m_context.Set_CPSR(cpsr);
+    }
+
+    void CCPU_Core::Execute(isa::CCoprocessor_Reg_Transfer instruction)
+    {
+        const auto coprocessor_id = instruction.Get_Coprocessor_Number();
+
+        if (!m_coprocessors.contains(coprocessor_id))
+        {
+            throw exceptions::CUndefined_Instruction{};
+        }
+        else
+        {
+            m_coprocessors[coprocessor_id]->Perform_Register_Transfer(instruction);
+        }
     }
 }

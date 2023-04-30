@@ -10,6 +10,7 @@
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
 
+#include "../config.hpp"
 #include "gui.hpp"
 #include "window.hpp"
 #include "windows/registers_window.hpp"

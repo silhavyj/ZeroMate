@@ -7,8 +7,8 @@
 #include <cstdint>
 #include <memory>
 
-#include "../arm1176jzf_s/exceptions.hpp"
-#include "peripheral.hpp"
+#include "arm1176jzf_s/exceptions.hpp"
+#include "peripherals/peripheral.hpp"
 
 namespace zero_mate
 {

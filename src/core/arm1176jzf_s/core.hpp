@@ -8,6 +8,7 @@
 #include <cassert>
 #include <optional>
 #include <unordered_set>
+#include <unordered_map>
 #include <initializer_list>
 
 #include "context.hpp"
@@ -15,10 +16,11 @@
 #include "exceptions.hpp"
 #include "isa/isa_decoder.hpp"
 #include "../utils/math.hpp"
-#include "../peripherals/bus.hpp"
+#include "../bus.hpp"
 #include "../utils/logger/logger.hpp"
 #include "../peripherals/interrupt_controller.hpp"
 #include "../peripherals/system_clock_listener.hpp"
+#include "../coprocessors/cp15.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -26,6 +28,7 @@ namespace zero_mate::arm1176jzf_s
     {
     public:
         using System_Clock_Listener_t = std::shared_ptr<peripheral::ISystem_Clock_Listener>;
+        using Coprocessors_t = std::unordered_map<std::uint32_t, std::shared_ptr<coprocessors::ICoprocessor>>;
 
         static constexpr std::uint32_t DEFAULT_ENTRY_POINT = 0x8000;
 
@@ -47,6 +50,8 @@ namespace zero_mate::arm1176jzf_s
         void Execute(std::initializer_list<isa::CInstruction> instructions);
 
     private:
+        inline void Initialize_Coprocessors();
+
         [[nodiscard]] std::uint32_t& PC() noexcept;
         [[nodiscard]] const std::uint32_t& PC() const noexcept;
         [[nodiscard]] std::uint32_t& LR() noexcept;
@@ -83,6 +88,7 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CExtend instruction);
         void Execute(isa::CPSR_Transfer instruction);
         void Execute(isa::CCPS instruction);
+        void Execute(isa::CCoprocessor_Reg_Transfer instruction);
 
         template<typename Instruction>
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand_Imm(Instruction instruction) const noexcept
@@ -126,5 +132,6 @@ namespace zero_mate::arm1176jzf_s
         std::uint32_t m_entry_point;
         std::shared_ptr<peripheral::CInterrupt_Controller> m_interrupt_controller;
         std::vector<System_Clock_Listener_t> m_system_clock_listeners;
+        Coprocessors_t m_coprocessors;
     };
 }
