@@ -1,9 +1,23 @@
 #include <bit>
 
+#include <fmt/format.h>
+#include <magic_enum.hpp>
+
 #include "arm_timer.hpp"
+#include "../utils/singleton.hpp"
 
 namespace zero_mate::peripheral
 {
+    const std::unordered_set<CARM_Timer::NRegister> CARM_Timer::s_read_only_registers = {
+        CARM_Timer::NRegister::Value,
+        CARM_Timer::NRegister::IRQ_Raw,
+        CARM_Timer::NRegister::IRQ_Masked
+    };
+
+    const std::unordered_set<CARM_Timer::NRegister> CARM_Timer::s_write_only_registers = {
+        NRegister::IRQ_Clear
+    };
+
     CARM_Timer::CPrescaler::CPrescaler()
     : m_limit{ NPrescal_Bits::Prescale_None }
     , m_counter{ 0 }
@@ -56,6 +70,7 @@ namespace zero_mate::peripheral
     : m_interrupt_controller{ interrupt_controller }
     , m_regs{}
     , m_prescaler{}
+    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
         // clang-format off
         Get_Reg(NRegister::Control) = std::bit_cast<std::uint32_t>(TControl_Register{
@@ -150,6 +165,12 @@ namespace zero_mate::peripheral
         const std::size_t reg_idx = addr / REG_SIZE;
         const auto reg_type = static_cast<NRegister>(reg_idx);
 
+        if (s_read_only_registers.contains(reg_type))
+        {
+            m_logging_system.Warning(fmt::format("The ARM timer {} register is read-only", magic_enum::enum_name(reg_type)).c_str());
+            return;
+        }
+
         switch (reg_type)
         {
             case NRegister::Load:
@@ -163,9 +184,9 @@ namespace zero_mate::peripheral
 
             case NRegister::Value:
                 [[fallthrough]];
-            case NRegister::Control:
             case NRegister::IRQ_Raw:
             case NRegister::IRQ_Masked:
+            case NRegister::Control:
             case NRegister::Reload:
             case NRegister::Pre_Divider:
             case NRegister::Free_Running:
@@ -176,6 +197,15 @@ namespace zero_mate::peripheral
 
     void CARM_Timer::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
+        const std::size_t reg_idx = addr / REG_SIZE;
+        const auto reg_type = static_cast<NRegister>(reg_idx);
+
+        if (s_write_only_registers.contains(reg_type))
+        {
+            m_logging_system.Warning(fmt::format("The ARM timer {} register is write-only", magic_enum::enum_name(reg_type)).c_str());
+            return;
+        }
+
         std::copy_n(&std::bit_cast<char*>(m_regs.data())[addr], size, data);
     }
 

@@ -2,10 +2,13 @@
 
 #include <array>
 #include <memory>
+#include <unordered_set>
 
 #include "peripheral.hpp"
 #include "interrupt_controller.hpp"
 #include "system_clock_listener.hpp"
+
+#include "../utils/logger/logger.hpp"
 
 namespace zero_mate::peripheral
 {
@@ -25,6 +28,9 @@ namespace zero_mate::peripheral
             Free_Running,
             Count
         };
+
+        static const std::unordered_set<NRegister> s_read_only_registers;
+        static const std::unordered_set<NRegister> s_write_only_registers;
 
         enum class NPrescal_Bits : std::uint32_t
         {
@@ -102,5 +108,6 @@ namespace zero_mate::peripheral
         std::shared_ptr<CInterrupt_Controller> m_interrupt_controller;
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;
         CPrescaler m_prescaler;
+        utils::CLogging_System& m_logging_system;
     };
 }

@@ -4,6 +4,7 @@
 #include <memory>
 #include <limits>
 #include <functional>
+#include <unordered_set>
 
 #include "peripheral.hpp"
 #include "interrupt_controller.hpp"
@@ -119,6 +120,9 @@ namespace zero_mate::peripheral
             Test,
             Count
         };
+
+        static const std::unordered_set<NRegister> s_read_only_registers;
+        static const std::unordered_set<NRegister> s_write_only_registers;
 
         static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::size_t>(NRegister::Count);
 
