@@ -2216,6 +2216,7 @@ Disassembly of section .data:
 Disassembly of section .bss:
 
 00009224 <sGPIO>:
+_bss_start():
     9224:	00000000 	andeq	r0, r0, r0
 
 00009228 <sTimer>:

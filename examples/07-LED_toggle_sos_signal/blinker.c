@@ -41,10 +41,10 @@ void kernel_main()
 
     while (1)
     {
-        toggle_LED(3, 0x7000);
-        toggle_LED(3, 0x14000);
-        toggle_LED(3, 0x7000);
+        toggle_LED(3, 0x3000);
+        toggle_LED(3, 0x7500);
+        toggle_LED(3, 0x3000);
 
-        active_sleep(0x30000);
+        active_sleep(0x15000);
     }
 }

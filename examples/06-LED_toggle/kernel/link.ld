@@ -2,7 +2,7 @@ ENTRY(_start)
 
 MEMORY
 {
-    ram : ORIGIN = 0x8000, LENGTH = 0x1000
+    ram : ORIGIN = 0x8000, LENGTH = 0x10000
 }
 
 SECTIONS
@@ -22,6 +22,8 @@ SECTIONS
 		__data = .;
         *(.data)
     } > ram
+    
+    . = ALIGN(4);
 	
 	_bss_start = .;
 	
@@ -32,4 +34,3 @@ SECTIONS
 	
 	_bss_end = .;
 }
-
