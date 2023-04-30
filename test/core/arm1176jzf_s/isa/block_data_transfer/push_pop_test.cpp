@@ -28,9 +28,9 @@ TEST(push_pop_instruction, test_01)
     { 0xe8bd00e0 }  // pop {r5-r7}
     });
 
-    EXPECT_EQ(cpu.m_context[5], 1);
-    EXPECT_EQ(cpu.m_context[6], 2);
-    EXPECT_EQ(cpu.m_context[7], 3);
+    EXPECT_EQ(cpu.Get_CPU_Context()[5], 1);
+    EXPECT_EQ(cpu.Get_CPU_Context()[6], 2);
+    EXPECT_EQ(cpu.Get_CPU_Context()[7], 3);
 }
 
 TEST(push_pop_instruction, test_02)
@@ -47,14 +47,14 @@ TEST(push_pop_instruction, test_02)
     { 0xe92d581f }  // push { r0, r1, r2, r3, r4, fp, ip, lr }
     });
 
-    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 0xA8);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 0xA8);
 
     cpu.Execute({
-    { 0xe8bd981f }  // ldm sp!, { r0, r1, r2, r3, r4, fp, ip, pc }
+    { 0xe8bd981f } // ldm sp!, { r0, r1, r2, r3, r4, fp, ip, pc }
     });
 
-    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0);
-    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 0xC8);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 0xC8);
 }
 
 TEST(push_pop_instruction, test_03)
@@ -76,6 +76,6 @@ TEST(push_pop_instruction, test_03)
 
     cpu.Steps(5 + 4 * 20);
 
-    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 4);
-    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 200);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 4);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 200);
 }

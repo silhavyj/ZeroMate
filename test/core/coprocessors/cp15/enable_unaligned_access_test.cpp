@@ -9,7 +9,7 @@ using namespace zero_mate;
 TEST(enable_unaligned_access, test_01)
 {
     arm1176jzf_s::CCPU_Core cpu{};
-    const auto cp15 = std::make_shared<coprocessor::CCP15>(cpu.m_context);
+    const auto cp15 = std::make_shared<coprocessor::CCP15>(cpu.Get_CPU_Context());
 
     cpu.Add_Coprocessor(coprocessor::CCP15::ID, cp15);
 

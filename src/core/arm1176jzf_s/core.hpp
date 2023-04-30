@@ -39,8 +39,9 @@ namespace zero_mate::arm1176jzf_s
         void Add_System_Clock_Listener(const System_Clock_Listener_t& listener);
         void Add_Coprocessor(std::uint32_t id, const std::shared_ptr<coprocessor::ICoprocessor>& coprocessor);
 
+        [[nodiscard]] CCPU_Context& Get_CPU_Context();
+        [[nodiscard]] const CCPU_Context& Get_CPU_Context() const;
         void Reset_Context();
-
         void Set_PC(std::uint32_t pc);
         void Add_Breakpoint(std::uint32_t addr);
         void Remove_Breakpoint(std::uint32_t addr);
@@ -122,10 +123,8 @@ namespace zero_mate::arm1176jzf_s
             }
         }
 
-    public:
-        CCPU_Context m_context;
-
     private:
+        CCPU_Context m_context;
         isa::CISA_Decoder m_instruction_decoder;
         std::shared_ptr<CBus> m_bus;
         std::unordered_set<std::uint32_t> m_breakpoints;

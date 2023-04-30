@@ -120,7 +120,7 @@ TEST(str_instruction, test_06)
     });
 
     EXPECT_EQ(bus->Read<std::uint8_t>(512), 169);
-    EXPECT_EQ(cpu.m_context[0], 514);
+    EXPECT_EQ(cpu.Get_CPU_Context()[0], 514);
 }
 
 TEST(str_instruction, test_07)
@@ -200,6 +200,6 @@ TEST(str_instruction, test_10)
     { 0xe52d1004 }  // push {r1}
     });
 
-    EXPECT_EQ(cpu.m_context[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 196);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 196);
     EXPECT_EQ(bus->Read<std::uint32_t>(196), 0xFF);
 }

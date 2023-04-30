@@ -14,7 +14,7 @@ TEST(uxtah_instruction, test_01)
     { 0xe6f02c71 }  // uxtah r2, r0, r1, ROR #24
     });
 
-    EXPECT_EQ(cpu.m_context[2], 0x17F);
+    EXPECT_EQ(cpu.Get_CPU_Context()[2], 0x17F);
 }
 
 TEST(uxtah_instruction, test_02)
@@ -29,7 +29,7 @@ TEST(uxtah_instruction, test_02)
     { 0xe6f02871 }  // uxtah r2, r0, r1, ROR #16
     });
 
-    EXPECT_EQ(cpu.m_context[2], 0x80FE);
+    EXPECT_EQ(cpu.Get_CPU_Context()[2], 0x80FE);
 }
 
 TEST(uxtah_instruction, test_03)
@@ -44,5 +44,5 @@ TEST(uxtah_instruction, test_03)
     { 0xe6f02071 }  // uxtah r2, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_context[2], 0xFB53);
+    EXPECT_EQ(cpu.Get_CPU_Context()[2], 0xFB53);
 }

@@ -14,12 +14,12 @@ TEST(adc_instruction, test_01)
     { 0xe0b01001 }  // adcs r1, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_context[1], 2218);
+    EXPECT_EQ(cpu.Get_CPU_Context()[1], 2218);
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(adc_instruction, test_02)
@@ -34,12 +34,12 @@ TEST(adc_instruction, test_02)
     { 0xe2b2209b }  // adcs r2, r2, #155
     });
 
-    EXPECT_EQ(cpu.m_context[2], 155 + 2 + 1);
+    EXPECT_EQ(cpu.Get_CPU_Context()[2], 155 + 2 + 1);
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(adc_instruction, test_03)
@@ -55,12 +55,12 @@ TEST(adc_instruction, test_03)
     { 0xe0b03001 }  // adcs r3, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_context[3], 0x80000000);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 0x80000000);
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), true);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), true);
 }
 
 TEST(adc_instruction, test_04)
@@ -76,12 +76,12 @@ TEST(adc_instruction, test_04)
     { 0xe0a03001 }  // adc r3, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_context[3], 0x80000000);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 0x80000000);
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(adc_instruction, test_05)
@@ -97,12 +97,12 @@ TEST(adc_instruction, test_05)
     { 0xe0b03001 }  // adcs r0, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_context[3], 0x7FFFFFFF);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 0x7FFFFFFF);
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), true);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(adc_instruction, test_06)
@@ -118,12 +118,12 @@ TEST(adc_instruction, test_06)
     { 0xe0b03001 }  // adcs r0, r0, r1
     });
 
-    EXPECT_EQ(cpu.m_context[3], 0x7FFFFFFE);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 0x7FFFFFFE);
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), true);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(adc_instruction, test_07)
@@ -139,13 +139,13 @@ TEST(adc_instruction, test_07)
     { 0xe0b03fe1 }  // adcs r3, r0, r1, ror #31
     });
 
-    EXPECT_EQ(cpu.m_context[2], 0x80000001);
-    EXPECT_EQ(cpu.m_context[3], 0x3);
+    EXPECT_EQ(cpu.Get_CPU_Context()[2], 0x80000001);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 0x3);
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(adc_instruction, test_08)
@@ -161,11 +161,11 @@ TEST(adc_instruction, test_08)
     { 0xe0b03f81 }  // adcs r3, r0, r1, lsl #31
     });
 
-    EXPECT_EQ(cpu.m_context[2], 0x7FFFFFFF);
-    EXPECT_EQ(cpu.m_context[3], 0x80000000);
+    EXPECT_EQ(cpu.Get_CPU_Context()[2], 0x7FFFFFFF);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 0x80000000);
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), true);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), true);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }

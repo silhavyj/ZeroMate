@@ -28,11 +28,11 @@ TEST(ldmia_instruction, test_01)
     { 0xe8b1007c }  // ldmia r1!, {r2-r6}
     });
 
-    EXPECT_EQ(cpu.m_context[2], 1);
-    EXPECT_EQ(cpu.m_context[3], 2);
-    EXPECT_EQ(cpu.m_context[4], 3);
-    EXPECT_EQ(cpu.m_context[5], 4);
-    EXPECT_EQ(cpu.m_context[6], 5);
+    EXPECT_EQ(cpu.Get_CPU_Context()[2], 1);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 2);
+    EXPECT_EQ(cpu.Get_CPU_Context()[4], 3);
+    EXPECT_EQ(cpu.Get_CPU_Context()[5], 4);
+    EXPECT_EQ(cpu.Get_CPU_Context()[6], 5);
 
-    EXPECT_EQ(cpu.m_context[1], 220);
+    EXPECT_EQ(cpu.Get_CPU_Context()[1], 220);
 }

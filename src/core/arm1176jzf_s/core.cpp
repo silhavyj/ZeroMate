@@ -31,6 +31,16 @@ namespace zero_mate::arm1176jzf_s
         m_coprocessors[id] = coprocessor;
     }
 
+    CCPU_Context& CCPU_Core::Get_CPU_Context()
+    {
+        return m_context;
+    }
+
+    const CCPU_Context& CCPU_Core::Get_CPU_Context() const
+    {
+        return m_context;
+    }
+
     void CCPU_Core::Reset_Context()
     {
         m_context.Reset();

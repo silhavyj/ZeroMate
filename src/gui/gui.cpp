@@ -44,8 +44,8 @@ namespace zero_mate::gui
         std::shared_ptr<peripheral::CRAM> s_ram{ nullptr };
         auto s_bus = std::make_shared<CBus>();
         auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
-        auto s_cp15 = std::make_shared<coprocessor::CCP15>(s_cpu->m_context);
-        auto s_interrupt_controller = std::make_shared<peripheral::CInterrupt_Controller>(s_cpu->m_context);
+        auto s_cp15 = std::make_shared<coprocessor::CCP15>(s_cpu->Get_CPU_Context());
+        auto s_interrupt_controller = std::make_shared<peripheral::CInterrupt_Controller>(s_cpu->Get_CPU_Context());
         auto s_arm_timer = std::make_shared<peripheral::CARM_Timer>(s_interrupt_controller);
         auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>(s_interrupt_controller);
 
