@@ -91,6 +91,8 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CCoprocessor_Reg_Transfer instruction);
         void Execute(isa::CCoprocessor_Data_Transfer instruction);
         void Execute(isa::CCoprocessor_Data_Operation instruction);
+        void Execute(isa::CSRS instruction);
+        void Execute(isa::CRFE instruction);
 
         template<typename Instruction>
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand_Imm(Instruction instruction) const noexcept

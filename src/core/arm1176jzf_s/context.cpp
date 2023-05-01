@@ -234,7 +234,7 @@ namespace zero_mate::arm1176jzf_s
     {
         const auto mode = Get_CPU_Mode();
 
-        return mode == NCPU_Mode::Supervisor;
+        return mode == NCPU_Mode::Supervisor || mode == NCPU_Mode::System;
     }
 
     bool CCPU_Context::Is_Mode_With_No_SPSR(NCPU_Mode mode) noexcept

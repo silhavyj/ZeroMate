@@ -25,7 +25,9 @@ namespace zero_mate::arm1176jzf_s::isa
     { .mask = 0b1111'1111'1111'1111'1111'1111'1111'1111U, .expected = 0b1110'0011'0010'0000'1111'0000'0000'0000U, .type = CInstruction::NType::NOP                           },
     { .mask = 0b0000'1111'0000'0000'0000'0000'0001'0000U, .expected = 0b0000'1110'0000'0000'0000'0000'0001'0000U, .type = CInstruction::NType::Coprocessor_Register_Transfer },
     { .mask = 0b0000'1110'0000'0000'0000'0000'0000'0000U, .expected = 0b0000'1100'0000'0000'0000'0000'0000'0000U, .type = CInstruction::NType::Coprocessor_Data_Transfer     },
-    { .mask = 0b0000'1111'0000'0000'0000'0000'0001'0000U, .expected = 0b0000'1110'0000'0000'0000'0000'0000'0000U, .type = CInstruction::NType::Coprocessor_Data_Operation    }
+    { .mask = 0b0000'1111'0000'0000'0000'0000'0001'0000U, .expected = 0b0000'1110'0000'0000'0000'0000'0000'0000U, .type = CInstruction::NType::Coprocessor_Data_Operation    },
+    { .mask = 0b1111'1110'0101'1111'1111'1111'1110'0000U, .expected = 0b1111'1000'0100'1101'0000'0101'0000'0000U, .type = CInstruction::NType::SRS                           },
+    { .mask = 0b1111'1110'0101'0000'1111'1111'1111'1111U, .expected = 0b1111'1000'0001'0000'0000'1010'0000'0000U, .type = CInstruction::NType::RFE                           }
     }};
     // clang-format on
 

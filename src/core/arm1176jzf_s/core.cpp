@@ -293,6 +293,14 @@ namespace zero_mate::arm1176jzf_s
 
                 case isa::CInstruction::NType::NOP:
                     break;
+
+                case isa::CInstruction::NType::SRS:
+                    Execute(isa::CSRS{ instruction });
+                    break;
+
+                case isa::CInstruction::NType::RFE:
+                    Execute(isa::CRFE{ instruction });
+                    break;
             }
 
             Update_Cycle_Listeners();
@@ -931,5 +939,17 @@ namespace zero_mate::arm1176jzf_s
 
         Check_Coprocessor_Existence(coprocessor_id);
         m_coprocessors[coprocessor_id]->Perform_Data_Operation(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CSRS instruction)
+    {
+        // TODO
+        static_cast<void>(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CRFE instruction)
+    {
+        // TODO
+        static_cast<void>(instruction);
     }
 }
