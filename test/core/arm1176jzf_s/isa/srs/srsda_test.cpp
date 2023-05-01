@@ -31,7 +31,7 @@ TEST(srsda_instruction, test_01)
     EXPECT_EQ(bus->Read<std::uint32_t>(200 - 4), 14);
     EXPECT_EQ(bus->Read<std::uint32_t>(200), 0xFF000054);
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 0xC0);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 192);
     EXPECT_EQ(cpu.Get_CPU_Context()[4], 14);
     EXPECT_EQ(cpu.Get_CPU_Context()[5], 0xFF000054);
 }
@@ -56,5 +56,5 @@ TEST(srsda_instruction, test_02)
     EXPECT_EQ(bus->Read<std::uint32_t>(200 - 4), 14);
     EXPECT_EQ(bus->Read<std::uint32_t>(200), 0xFF000054);
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 0xC8);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 200);
 }

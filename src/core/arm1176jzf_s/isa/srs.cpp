@@ -21,4 +21,11 @@ namespace zero_mate::arm1176jzf_s::isa
     {
         return m_value & 0b11111U;
     }
+
+    bool CSRS::Should_Be_Decremented() const noexcept
+    {
+        const auto addressing_mode = Get_Addressing_Mode();
+
+        return addressing_mode == NAddressing_Mode::DB || addressing_mode == NAddressing_Mode::DA;
+    }
 }

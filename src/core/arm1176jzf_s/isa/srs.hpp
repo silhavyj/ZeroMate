@@ -21,5 +21,6 @@ namespace zero_mate::arm1176jzf_s::isa
         [[nodiscard]] NAddressing_Mode Get_Addressing_Mode() const noexcept;
         [[nodiscard]] bool Is_W_Bit_Set() const noexcept;
         [[nodiscard]] std::uint32_t Get_CPU_Mode() const noexcept;
+        [[nodiscard]] bool Should_Be_Decremented() const noexcept;
     };
 }

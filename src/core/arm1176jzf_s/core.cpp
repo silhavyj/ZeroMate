@@ -934,7 +934,15 @@ namespace zero_mate::arm1176jzf_s
         if (instruction.Is_W_Bit_Set())
         {
             const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE * NUMBER_OF_REGS_TO_TRANSFER };
-            m_context.Get_Register(CCPU_Context::SP_REG_IDX, cpu_mode) -= total_size_transferred;
+
+            if (instruction.Should_Be_Decremented())
+            {
+                m_context.Get_Register(CCPU_Context::SP_REG_IDX, cpu_mode) -= total_size_transferred;
+            }
+            else
+            {
+                m_context.Get_Register(CCPU_Context::SP_REG_IDX, cpu_mode) += total_size_transferred;
+            }
         }
     }
 
