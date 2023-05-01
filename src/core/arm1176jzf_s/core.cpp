@@ -561,26 +561,6 @@ namespace zero_mate::arm1176jzf_s
         return m_context.Get_CPU_Mode();
     }
 
-    std::uint32_t CCPU_Core::Calculate_Base_Address(isa::CBlock_Data_Transfer instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const
-    {
-        switch (instruction.Get_Addressing_Mode())
-        {
-            case isa::CBlock_Data_Transfer::NAddressing_Mode::IB:
-                return m_context.Get_Register(base_reg_idx, cpu_mode) + CCPU_Context::REG_SIZE;
-
-            case isa::CBlock_Data_Transfer::NAddressing_Mode::IA:
-                return m_context.Get_Register(base_reg_idx, cpu_mode);
-
-            case isa::CBlock_Data_Transfer::NAddressing_Mode::DB:
-                return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE);
-
-            case isa::CBlock_Data_Transfer::NAddressing_Mode::DA:
-                return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE) + CCPU_Context::REG_SIZE;
-        }
-
-        return {};
-    }
-
     void CCPU_Core::Execute(isa::CBlock_Data_Transfer instruction)
     {
         const auto register_list = instruction.Get_Register_List();
@@ -943,8 +923,19 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CSRS instruction)
     {
-        // TODO
-        static_cast<void>(instruction);
+        static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
+
+        const auto cpu_mode = static_cast<CCPU_Context::NCPU_Mode>(instruction.Get_CPU_Mode());
+        auto addr = Calculate_Base_Address(instruction, CCPU_Context::SP_REG_IDX, cpu_mode, NUMBER_OF_REGS_TO_TRANSFER);
+
+        m_bus->Write<std::uint32_t>(addr, m_context[CCPU_Context::LR_REG_IDX]);
+        m_bus->Write<std::uint32_t>(addr + CCPU_Context::REG_SIZE, m_context.Get_SPSR());
+
+        if (instruction.Is_W_Bit_Set())
+        {
+            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE * NUMBER_OF_REGS_TO_TRANSFER };
+            m_context.Get_Register(CCPU_Context::SP_REG_IDX, cpu_mode) -= total_size_transferred;
+        }
     }
 
     void CCPU_Core::Execute(isa::CRFE instruction)

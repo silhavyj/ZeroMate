@@ -71,7 +71,6 @@ namespace zero_mate::arm1176jzf_s
         void Execute_Exception(const exceptions::CCPU_Exception& exception);
         [[nodiscard]] static inline std::uint32_t Set_Interrupt_Mask_Bits(std::uint32_t cpsr, isa::CCPS instruction, bool set);
         [[nodiscard]] CCPU_Context::NCPU_Mode Determine_CPU_Mode(isa::CBlock_Data_Transfer instruction) const;
-        [[nodiscard]] std::uint32_t Calculate_Base_Address(isa::CBlock_Data_Transfer instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const;
         inline void Update_Cycle_Listeners();
         inline void Check_For_Pending_IRQ();
         inline void Check_Coprocessor_Existence(std::uint32_t coprocessor_id);
@@ -93,6 +92,27 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CCoprocessor_Data_Operation instruction);
         void Execute(isa::CSRS instruction);
         void Execute(isa::CRFE instruction);
+
+        template<typename Instruction>
+        [[nodiscard]] std::uint32_t Calculate_Base_Address(Instruction instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const
+        {
+            switch (instruction.Get_Addressing_Mode())
+            {
+                case Instruction::NAddressing_Mode::IB:
+                    return m_context.Get_Register(base_reg_idx, cpu_mode) + CCPU_Context::REG_SIZE;
+
+                case Instruction::NAddressing_Mode::IA:
+                    return m_context.Get_Register(base_reg_idx, cpu_mode);
+
+                case Instruction::NAddressing_Mode::DB:
+                    return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE);
+
+                case Instruction::NAddressing_Mode::DA:
+                    return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE) + CCPU_Context::REG_SIZE;
+            }
+
+            return {};
+        }
 
         template<typename Instruction>
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand_Imm(Instruction instruction) const noexcept
