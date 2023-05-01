@@ -29,6 +29,11 @@ namespace zero_mate::coprocessor
 
         static constexpr std::size_t REGISTER_1_COUNT = 3;
 
+        enum class NControl_Register_Flags : std::uint32_t
+        {
+            U = 0b1U << 22U
+        };
+
     public:
         explicit CCP15(arm1176jzf_s::CCPU_Context& cpu_context);
 
@@ -40,6 +45,7 @@ namespace zero_mate::coprocessor
 
     private:
         inline void Initialize();
+        [[nodiscard]] inline bool Is_Control_Flag_Set(NControl_Register_Flags flag) const;
 
     private:
         std::unordered_map<NPrimary_Register, std::vector<std::uint32_t>> m_regs;

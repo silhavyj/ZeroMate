@@ -18,6 +18,11 @@ namespace zero_mate::coprocessor
         m_regs[NPrimary_Register::Control_Register] = std::vector<std::uint32_t>(REGISTER_1_COUNT, 0);
     }
 
+    bool CCP15::Is_Control_Flag_Set(NControl_Register_Flags flag) const
+    {
+        return static_cast<bool>(m_regs.at(NPrimary_Register::Control_Register).at(static_cast<std::uint32_t>(NRegister_1::Control_Register)) & static_cast<std::uint32_t>(flag));
+    }
+
     void CCP15::Perform_Register_Transfer(arm1176jzf_s::isa::CCoprocessor_Reg_Transfer instruction)
     {
         const auto primary_reg = static_cast<NPrimary_Register>(instruction.Get_CRn());
@@ -43,7 +48,7 @@ namespace zero_mate::coprocessor
 
     bool CCP15::Is_Unaligned_Access_Permitted() const
     {
-        return static_cast<bool>((m_regs.at(NPrimary_Register::Control_Register)[static_cast<std::uint32_t>(NRegister_1::Control_Register)] >> 22U) & 0b1U);
+        return Is_Control_Flag_Set(NControl_Register_Flags::U);
     }
 
     void CCP15::Perform_Data_Transfer([[maybe_unused]] arm1176jzf_s::isa::CCoprocessor_Data_Transfer instruction)
