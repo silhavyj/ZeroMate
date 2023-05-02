@@ -925,6 +925,9 @@ namespace zero_mate::arm1176jzf_s
     {
         static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
 
+        // TODO only allow for this if the CPU is an exception mode
+        // TODO make sure the CPU is in a privileged mode?
+
         const auto cpu_mode = static_cast<CCPU_Context::NCPU_Mode>(instruction.Get_CPU_Mode());
         auto addr = Calculate_Base_Address(instruction, CCPU_Context::SP_REG_IDX, cpu_mode, NUMBER_OF_REGS_TO_TRANSFER);
 
@@ -935,7 +938,7 @@ namespace zero_mate::arm1176jzf_s
         {
             const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE * NUMBER_OF_REGS_TO_TRANSFER };
 
-            if (instruction.Should_Be_Decremented())
+            if (instruction.Should_SP_Be_Decremented())
             {
                 m_context.Get_Register(CCPU_Context::SP_REG_IDX, cpu_mode) -= total_size_transferred;
             }
@@ -948,7 +951,36 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CRFE instruction)
     {
-        // TODO
-        static_cast<void>(instruction);
+        static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
+
+        // TODO only allow for this if the CPU is an exception mode
+        // TODO make sure the CPU is in a privileged mode?
+
+        const auto reg_rn_idx = instruction.Get_Rn();
+        const auto cpu_mode = m_context.Get_CPU_Mode();
+
+        auto addr = Calculate_Base_Address(instruction, reg_rn_idx, cpu_mode, NUMBER_OF_REGS_TO_TRANSFER);
+
+        const auto lr = m_bus->Read<std::uint32_t>(addr);
+        const auto spsr = m_bus->Read<std::uint32_t>(addr + CCPU_Context::REG_SIZE);
+
+        if (instruction.Is_W_Bit_Set())
+        {
+            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE * NUMBER_OF_REGS_TO_TRANSFER };
+
+            // TODO make sure Rn gets written back in the correct CPU mode
+
+            if (instruction.Should_Rn_Be_Decremented())
+            {
+                m_context.Get_Register(reg_rn_idx, cpu_mode) -= total_size_transferred;
+            }
+            else
+            {
+                m_context.Get_Register(reg_rn_idx, cpu_mode) += total_size_transferred;
+            }
+        }
+
+        PC() = lr;
+        m_context.Set_CPSR(spsr);
     }
 }
