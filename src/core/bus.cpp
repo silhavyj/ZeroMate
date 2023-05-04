@@ -9,6 +9,16 @@ namespace zero_mate
         return start_addr < other.start_addr;
     }
 
+    CBus::CBus()
+    : m_cp15{ nullptr }
+    {
+    }
+
+    void CBus::Set_CP15(std::shared_ptr<coprocessor::CCP15> cp15)
+    {
+        m_cp15 = cp15;
+    }
+
     CBus::NStatus CBus::Attach_Peripheral(std::uint32_t addr, const Peripheral_t& peripheral)
     {
         const std::uint64_t last_peripheral_address = static_cast<std::uint64_t>(addr) + peripheral->Get_Size();

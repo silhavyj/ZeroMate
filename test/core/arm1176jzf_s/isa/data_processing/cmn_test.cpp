@@ -10,8 +10,8 @@ TEST(cmn_instruction, test_01)
 
     CCPU_Core cpu{};
 
-    CRegister_State_Checker<decltype(cpu.m_context)> register_state_checker{};
-    register_state_checker.Record_State(cpu.m_context);
+    CRegister_State_Checker<CCPU_Context> register_state_checker{};
+    register_state_checker.Record_State(cpu.Get_CPU_Context());
 
     cpu.Execute({
     { 0xe3a000aa }, // mov r0, #170
@@ -21,14 +21,14 @@ TEST(cmn_instruction, test_01)
 
     // clang-format off
     EXPECT_EQ(register_state_checker.Is_Any_Other_Register_Modified(
-              cpu.m_context, { { .idx = 0, .expected_value = 170 },
+              cpu.Get_CPU_Context(), { { .idx = 0, .expected_value = 170 },
                             { .idx = 1, .expected_value = 2048 } }), false);
     // clang-format on
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(cmn_instruction, test_02)
@@ -38,8 +38,8 @@ TEST(cmn_instruction, test_02)
 
     CCPU_Core cpu{};
 
-    CRegister_State_Checker<decltype(cpu.m_context)> register_state_checker{};
-    register_state_checker.Record_State(cpu.m_context);
+    CRegister_State_Checker<CCPU_Context> register_state_checker{};
+    register_state_checker.Record_State(cpu.Get_CPU_Context());
 
     cpu.Execute({
     { 0xe3e00102 }, // mvn r0, #-2147483648
@@ -49,14 +49,14 @@ TEST(cmn_instruction, test_02)
 
     // clang-format off
     EXPECT_EQ(register_state_checker.Is_Any_Other_Register_Modified(
-              cpu.m_context, { { .idx = 0, .expected_value = 0x7FFFFFFF },
+              cpu.Get_CPU_Context(), { { .idx = 0, .expected_value = 0x7FFFFFFF },
                             { .idx = 1, .expected_value = 1 } }), false);
     // clang-format on
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), true);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), true);
 }
 
 TEST(cmn_instruction, test_03)
@@ -66,8 +66,8 @@ TEST(cmn_instruction, test_03)
 
     CCPU_Core cpu{};
 
-    CRegister_State_Checker<decltype(cpu.m_context)> register_state_checker{};
-    register_state_checker.Record_State(cpu.m_context);
+    CRegister_State_Checker<CCPU_Context> register_state_checker{};
+    register_state_checker.Record_State(cpu.Get_CPU_Context());
 
     cpu.Execute({
     { 0xe3a00102 }, // mov r0, #-2147483648
@@ -77,14 +77,14 @@ TEST(cmn_instruction, test_03)
 
     // clang-format off
     EXPECT_EQ(register_state_checker.Is_Any_Other_Register_Modified(
-              cpu.m_context, { { .idx = 0, .expected_value = 0x80000000 },
+              cpu.Get_CPU_Context(), { { .idx = 0, .expected_value = 0x80000000 },
                             { .idx = 1, .expected_value = static_cast<std::uint32_t>(-1) } }), false);
     // clang-format on
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), true);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), true);
 }
 
 TEST(cmn_instruction, test_04)
@@ -94,8 +94,8 @@ TEST(cmn_instruction, test_04)
 
     CCPU_Core cpu{};
 
-    CRegister_State_Checker<decltype(cpu.m_context)> register_state_checker{};
-    register_state_checker.Record_State(cpu.m_context);
+    CRegister_State_Checker<CCPU_Context> register_state_checker{};
+    register_state_checker.Record_State(cpu.Get_CPU_Context());
 
     cpu.Execute({
     { 0xe3a00000 }, // mov r0, #0
@@ -105,14 +105,14 @@ TEST(cmn_instruction, test_04)
 
     // clang-format off
     EXPECT_EQ(register_state_checker.Is_Any_Other_Register_Modified(
-              cpu.m_context, { { .idx = 0, .expected_value = 0 },
+              cpu.Get_CPU_Context(), { { .idx = 0, .expected_value = 0 },
                             { .idx = 1, .expected_value = 0 } }), false);
     // clang-format on
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), true);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), true);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
 
 TEST(cmn_instruction, test_05)
@@ -122,8 +122,8 @@ TEST(cmn_instruction, test_05)
 
     CCPU_Core cpu{};
 
-    CRegister_State_Checker<decltype(cpu.m_context)> register_state_checker{};
-    register_state_checker.Record_State(cpu.m_context);
+    CRegister_State_Checker<CCPU_Context> register_state_checker{};
+    register_state_checker.Record_State(cpu.Get_CPU_Context());
 
     cpu.Execute({
     { 0xe3a0300f }, // mov r3, #15
@@ -134,13 +134,13 @@ TEST(cmn_instruction, test_05)
 
     // clang-format off
     EXPECT_EQ(register_state_checker.Is_Any_Other_Register_Modified(
-              cpu.m_context, { { .idx = 3, .expected_value = 15 },
+              cpu.Get_CPU_Context(), { { .idx = 3, .expected_value = 15 },
                             { .idx = 1, .expected_value = 0  },
                             { .idx = 0, .expected_value = (15U << 5U) } }), false);
     // clang-format on
 
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::N), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::Z), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C), false);
-    EXPECT_EQ(cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }

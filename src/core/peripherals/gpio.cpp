@@ -7,6 +7,18 @@
 
 namespace zero_mate::peripheral
 {
+    const std::unordered_set<CGPIO_Manager::NRegister> CGPIO_Manager::s_read_only_registers = {
+        CGPIO_Manager::NRegister::GPLEV0,
+        CGPIO_Manager::NRegister::GPLEV1
+    };
+
+    const std::unordered_set<CGPIO_Manager::NRegister> CGPIO_Manager::s_write_only_registers = {
+        CGPIO_Manager::NRegister::GPSET0,
+        CGPIO_Manager::NRegister::GPSET1,
+        CGPIO_Manager::NRegister::GPCLR0,
+        CGPIO_Manager::NRegister::GPCLR1
+    };
+
     CGPIO_Manager::CPin::CPin()
     : m_state{ NState::Low }
     , m_function{ NFunction::Input }
@@ -207,6 +219,12 @@ namespace zero_mate::peripheral
         const std::size_t reg_idx = addr / REG_SIZE;
         const auto reg_type = static_cast<NRegister>(reg_idx);
 
+        if (s_read_only_registers.contains(reg_type))
+        {
+            m_logging_system.Warning(fmt::format("The GPIO {} register is read-only", magic_enum::enum_name(reg_type)).c_str());
+            return;
+        }
+
         switch (reg_type)
         {
             case NRegister::GPFSEL0:
@@ -291,6 +309,15 @@ namespace zero_mate::peripheral
 
     void CGPIO_Manager::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
+        const std::size_t reg_idx = addr / REG_SIZE;
+        const auto reg_type = static_cast<NRegister>(reg_idx);
+
+        if (s_write_only_registers.contains(reg_type))
+        {
+            m_logging_system.Warning(fmt::format("The GPIO {} register is write-only", magic_enum::enum_name(reg_type)).c_str());
+            return;
+        }
+
         std::copy_n(&std::bit_cast<char*>(m_regs.data())[addr], size, data);
     }
 

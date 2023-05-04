@@ -34,7 +34,7 @@ namespace zero_mate::arm1176jzf_s::alu
                 result.n_flag = utils::math::Is_Negative<std::uint32_t>(result.value);
                 result.z_flag = result.value == 0;
                 result.c_flag = params.carry_out;
-                result.v_flag = cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::V);
+                result.v_flag = cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V);
             }
 
             return result;
@@ -63,7 +63,7 @@ namespace zero_mate::arm1176jzf_s::alu
         {
             TResult result{};
 
-            const auto c_flag = cpu.m_context.Is_Flag_Set(CCPU_Context::NFlag::C);
+            const auto c_flag = cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C);
 
             const auto op1_64u = static_cast<std::uint64_t>(params.op1);
             const auto op2_64u = static_cast<std::uint64_t>(params.op2);

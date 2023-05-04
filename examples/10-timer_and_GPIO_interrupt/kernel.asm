@@ -2020,7 +2020,7 @@ extern "C" int _c_startup(void)
     90a4:	e28bd000 	add	sp, fp, #0
     90a8:	e49db004 	pop	{fp}		; (ldr fp, [sp], #4)
     90ac:	e12fff1e 	bx	lr
-    90b0:	00009285 	andeq	r9, r0, r5, lsl #5
+    90b0:	00009288 	andeq	r9, r0, r8, lsl #5
     90b4:	000092ac 	andeq	r9, r0, ip, lsr #5
 
 000090b8 <_cpp_startup>:
@@ -2261,6 +2261,7 @@ __DTOR_END__():
 Disassembly of section .bss:
 
 00009288 <sGPIO>:
+_bss_start():
     9288:	00000000 	andeq	r0, r0, r0
 
 0000928c <sTimer>:

@@ -23,7 +23,7 @@
     cpu.Add_Breakpoint(0x1008);
     cpu.Run();
 
-    EXPECT_EQ(cpu.m_context[0], expected_value);
+    EXPECT_EQ(cpu.Get_CPU_Context()[0], expected_value);
 }
 
 #ifdef ENABLE_ELF_TESTS

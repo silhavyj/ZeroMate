@@ -26,6 +26,21 @@ namespace zero_mate::arm1176jzf_s
         Set_PC(pc);
     }
 
+    void CCPU_Core::Add_Coprocessor(std::uint32_t id, const std::shared_ptr<coprocessor::ICoprocessor>& coprocessor)
+    {
+        m_coprocessors[id] = coprocessor;
+    }
+
+    CCPU_Context& CCPU_Core::Get_CPU_Context()
+    {
+        return m_context;
+    }
+
+    const CCPU_Context& CCPU_Core::Get_CPU_Context() const
+    {
+        return m_context;
+    }
+
     void CCPU_Core::Reset_Context()
     {
         m_context.Reset();
@@ -247,9 +262,15 @@ namespace zero_mate::arm1176jzf_s
                     break;
 
                 case isa::CInstruction::NType::Coprocessor_Data_Transfer:
-                    [[fallthrough]];
+                    Execute(isa::CCoprocessor_Data_Transfer{ instruction });
+                    break;
+
                 case isa::CInstruction::NType::Coprocessor_Data_Operation:
+                    Execute(isa::CCoprocessor_Data_Operation{ instruction });
+                    break;
+
                 case isa::CInstruction::NType::Coprocessor_Register_Transfer:
+                    Execute(isa::CCoprocessor_Reg_Transfer{ instruction });
                     break;
 
                 case isa::CInstruction::NType::Software_Interrupt:
@@ -271,6 +292,14 @@ namespace zero_mate::arm1176jzf_s
                     break;
 
                 case isa::CInstruction::NType::NOP:
+                    break;
+
+                case isa::CInstruction::NType::SRS:
+                    Execute(isa::CSRS{ instruction });
+                    break;
+
+                case isa::CInstruction::NType::RFE:
+                    Execute(isa::CRFE{ instruction });
                     break;
             }
 
@@ -530,26 +559,6 @@ namespace zero_mate::arm1176jzf_s
         }
 
         return m_context.Get_CPU_Mode();
-    }
-
-    std::uint32_t CCPU_Core::Calculate_Base_Address(isa::CBlock_Data_Transfer instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const
-    {
-        switch (instruction.Get_Addressing_Mode())
-        {
-            case isa::CBlock_Data_Transfer::NAddressing_Mode::IB:
-                return m_context.Get_Register(base_reg_idx, cpu_mode) + CCPU_Context::REG_SIZE;
-
-            case isa::CBlock_Data_Transfer::NAddressing_Mode::IA:
-                return m_context.Get_Register(base_reg_idx, cpu_mode);
-
-            case isa::CBlock_Data_Transfer::NAddressing_Mode::DB:
-                return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE);
-
-            case isa::CBlock_Data_Transfer::NAddressing_Mode::DA:
-                return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE) + CCPU_Context::REG_SIZE;
-        }
-
-        return {};
     }
 
     void CCPU_Core::Execute(isa::CBlock_Data_Transfer instruction)
@@ -853,7 +862,7 @@ namespace zero_mate::arm1176jzf_s
     {
         if (!m_context.Is_In_Privileged_Mode())
         {
-            m_logging_system.Warning("Attempting to execute instruction CPS in a non-privileged mode");
+            m_logging_system.Error("Attempt to execute instruction CPS in a non-privileged mode");
             return;
         }
 
@@ -877,5 +886,101 @@ namespace zero_mate::arm1176jzf_s
         }
 
         m_context.Set_CPSR(cpsr);
+    }
+
+    void CCPU_Core::Check_Coprocessor_Existence(std::uint32_t coprocessor_id)
+    {
+        if (!m_coprocessors.contains(coprocessor_id))
+        {
+            m_logging_system.Error(fmt::format("CP{} is not present", coprocessor_id).c_str());
+            throw exceptions::CUndefined_Instruction{};
+        }
+    }
+
+    void CCPU_Core::Execute(isa::CCoprocessor_Reg_Transfer instruction)
+    {
+        const auto coprocessor_id = instruction.Get_Coprocessor_ID();
+
+        Check_Coprocessor_Existence(coprocessor_id);
+        m_coprocessors[coprocessor_id]->Perform_Register_Transfer(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CCoprocessor_Data_Transfer instruction)
+    {
+        const auto coprocessor_id = instruction.Get_Coprocessor_ID();
+
+        Check_Coprocessor_Existence(coprocessor_id);
+        m_coprocessors[coprocessor_id]->Perform_Data_Transfer(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CCoprocessor_Data_Operation instruction)
+    {
+        const auto coprocessor_id = instruction.Get_Coprocessor_ID();
+
+        Check_Coprocessor_Existence(coprocessor_id);
+        m_coprocessors[coprocessor_id]->Perform_Data_Operation(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CSRS instruction)
+    {
+        static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
+
+        // TODO only allow for this if the CPU is an exception mode
+        // TODO make sure the CPU is in a privileged mode?
+
+        const auto cpu_mode = static_cast<CCPU_Context::NCPU_Mode>(instruction.Get_CPU_Mode());
+        auto addr = Calculate_Base_Address(instruction, CCPU_Context::SP_REG_IDX, cpu_mode, NUMBER_OF_REGS_TO_TRANSFER);
+
+        m_bus->Write<std::uint32_t>(addr, m_context[CCPU_Context::LR_REG_IDX]);
+        m_bus->Write<std::uint32_t>(addr + CCPU_Context::REG_SIZE, m_context.Get_SPSR());
+
+        if (instruction.Is_W_Bit_Set())
+        {
+            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE * NUMBER_OF_REGS_TO_TRANSFER };
+
+            if (instruction.Should_SP_Be_Decremented())
+            {
+                m_context.Get_Register(CCPU_Context::SP_REG_IDX, cpu_mode) -= total_size_transferred;
+            }
+            else
+            {
+                m_context.Get_Register(CCPU_Context::SP_REG_IDX, cpu_mode) += total_size_transferred;
+            }
+        }
+    }
+
+    void CCPU_Core::Execute(isa::CRFE instruction)
+    {
+        static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
+
+        // TODO only allow for this if the CPU is an exception mode
+        // TODO make sure the CPU is in a privileged mode?
+
+        const auto reg_rn_idx = instruction.Get_Rn();
+        const auto cpu_mode = m_context.Get_CPU_Mode();
+
+        auto addr = Calculate_Base_Address(instruction, reg_rn_idx, cpu_mode, NUMBER_OF_REGS_TO_TRANSFER);
+
+        const auto lr = m_bus->Read<std::uint32_t>(addr);
+        const auto spsr = m_bus->Read<std::uint32_t>(addr + CCPU_Context::REG_SIZE);
+
+        if (instruction.Is_W_Bit_Set())
+        {
+            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE * NUMBER_OF_REGS_TO_TRANSFER };
+
+            // TODO make sure Rn gets written back in the correct CPU mode
+
+            if (instruction.Should_Rn_Be_Decremented())
+            {
+                m_context.Get_Register(reg_rn_idx, cpu_mode) -= total_size_transferred;
+            }
+            else
+            {
+                m_context.Get_Register(reg_rn_idx, cpu_mode) += total_size_transferred;
+            }
+        }
+
+        PC() = lr;
+        m_context.Set_CPSR(spsr);
     }
 }

@@ -8,6 +8,7 @@
 #include <cassert>
 #include <optional>
 #include <unordered_set>
+#include <unordered_map>
 #include <initializer_list>
 
 #include "context.hpp"
@@ -15,7 +16,7 @@
 #include "exceptions.hpp"
 #include "isa/isa_decoder.hpp"
 #include "../utils/math.hpp"
-#include "../peripherals/bus.hpp"
+#include "../bus.hpp"
 #include "../utils/logger/logger.hpp"
 #include "../peripherals/interrupt_controller.hpp"
 #include "../peripherals/system_clock_listener.hpp"
@@ -26,6 +27,7 @@ namespace zero_mate::arm1176jzf_s
     {
     public:
         using System_Clock_Listener_t = std::shared_ptr<peripheral::ISystem_Clock_Listener>;
+        using Coprocessors_t = std::unordered_map<std::uint32_t, std::shared_ptr<coprocessor::ICoprocessor>>;
 
         static constexpr std::uint32_t DEFAULT_ENTRY_POINT = 0x8000;
 
@@ -35,9 +37,11 @@ namespace zero_mate::arm1176jzf_s
 
         void Set_Interrupt_Controller(std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller);
         void Add_System_Clock_Listener(const System_Clock_Listener_t& listener);
+        void Add_Coprocessor(std::uint32_t id, const std::shared_ptr<coprocessor::ICoprocessor>& coprocessor);
 
+        [[nodiscard]] CCPU_Context& Get_CPU_Context();
+        [[nodiscard]] const CCPU_Context& Get_CPU_Context() const;
         void Reset_Context();
-
         void Set_PC(std::uint32_t pc);
         void Add_Breakpoint(std::uint32_t addr);
         void Remove_Breakpoint(std::uint32_t addr);
@@ -67,9 +71,9 @@ namespace zero_mate::arm1176jzf_s
         void Execute_Exception(const exceptions::CCPU_Exception& exception);
         [[nodiscard]] static inline std::uint32_t Set_Interrupt_Mask_Bits(std::uint32_t cpsr, isa::CCPS instruction, bool set);
         [[nodiscard]] CCPU_Context::NCPU_Mode Determine_CPU_Mode(isa::CBlock_Data_Transfer instruction) const;
-        [[nodiscard]] std::uint32_t Calculate_Base_Address(isa::CBlock_Data_Transfer instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const;
         inline void Update_Cycle_Listeners();
         inline void Check_For_Pending_IRQ();
+        inline void Check_Coprocessor_Existence(std::uint32_t coprocessor_id);
 
         void Execute(isa::CInstruction instruction);
         void Execute(isa::CBranch_And_Exchange instruction) noexcept;
@@ -83,6 +87,32 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CExtend instruction);
         void Execute(isa::CPSR_Transfer instruction);
         void Execute(isa::CCPS instruction);
+        void Execute(isa::CCoprocessor_Reg_Transfer instruction);
+        void Execute(isa::CCoprocessor_Data_Transfer instruction);
+        void Execute(isa::CCoprocessor_Data_Operation instruction);
+        void Execute(isa::CSRS instruction);
+        void Execute(isa::CRFE instruction);
+
+        template<typename Instruction>
+        [[nodiscard]] std::uint32_t Calculate_Base_Address(Instruction instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const
+        {
+            switch (instruction.Get_Addressing_Mode())
+            {
+                case Instruction::NAddressing_Mode::IB:
+                    return m_context.Get_Register(base_reg_idx, cpu_mode) + CCPU_Context::REG_SIZE;
+
+                case Instruction::NAddressing_Mode::IA:
+                    return m_context.Get_Register(base_reg_idx, cpu_mode);
+
+                case Instruction::NAddressing_Mode::DB:
+                    return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE);
+
+                case Instruction::NAddressing_Mode::DA:
+                    return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE) + CCPU_Context::REG_SIZE;
+            }
+
+            return {};
+        }
 
         template<typename Instruction>
         [[nodiscard]] utils::math::TShift_Result<std::uint32_t> Get_Second_Operand_Imm(Instruction instruction) const noexcept
@@ -115,10 +145,8 @@ namespace zero_mate::arm1176jzf_s
             }
         }
 
-    public:
-        CCPU_Context m_context;
-
     private:
+        CCPU_Context m_context;
         isa::CISA_Decoder m_instruction_decoder;
         std::shared_ptr<CBus> m_bus;
         std::unordered_set<std::uint32_t> m_breakpoints;
@@ -126,5 +154,6 @@ namespace zero_mate::arm1176jzf_s
         std::uint32_t m_entry_point;
         std::shared_ptr<peripheral::CInterrupt_Controller> m_interrupt_controller;
         std::vector<System_Clock_Listener_t> m_system_clock_listeners;
+        Coprocessors_t m_coprocessors;
     };
 }

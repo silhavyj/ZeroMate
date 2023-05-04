@@ -8,6 +8,8 @@ SECTIONS
     .text : { 
         *(.text*)
     } > ram
+    
+    . = ALIGN(4);
 
     .bss : {
         *(.bss*)

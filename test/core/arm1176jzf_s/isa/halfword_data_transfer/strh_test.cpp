@@ -23,8 +23,8 @@ TEST(strh_instruction, test_01)
     { 0xe5b13000 }  // ldr r3, [r1]!
     });
 
-    EXPECT_EQ(cpu.m_context[1], 0x000000C8);
-    EXPECT_EQ(cpu.m_context[3], 0x0000FFFB);
+    EXPECT_EQ(cpu.Get_CPU_Context()[1], 0x000000C8);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 0x0000FFFB);
 }
 
 TEST(strh_instruction, test_02)
@@ -43,6 +43,6 @@ TEST(strh_instruction, test_02)
     { 0xe59130fc }  // ldr r3, [r1, #252]
     });
 
-    EXPECT_EQ(cpu.m_context[1], 0x000000C8);
-    EXPECT_EQ(cpu.m_context[3], 0x0000FF56);
+    EXPECT_EQ(cpu.Get_CPU_Context()[1], 0x000000C8);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 0x0000FF56);
 }

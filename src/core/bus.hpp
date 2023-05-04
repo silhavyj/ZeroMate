@@ -7,8 +7,9 @@
 #include <cstdint>
 #include <memory>
 
-#include "../arm1176jzf_s/exceptions.hpp"
-#include "peripheral.hpp"
+#include "coprocessors/cp15.hpp"
+#include "peripherals/peripheral.hpp"
+#include "arm1176jzf_s/exceptions.hpp"
 
 namespace zero_mate
 {
@@ -36,16 +37,18 @@ namespace zero_mate
         using Peripherals_t = std::set<TMapped_Peripheral>;
 
     public:
-        CBus() = default;
+        CBus();
+
+        void Set_CP15(std::shared_ptr<coprocessor::CCP15> cp15);
 
         // NOTE: The bus width size is usually fixed.
         // The generic type is supported only for emulation purposes (simplifications)
         template<typename Type>
-        void Write(std::uint32_t addr, Type value, bool check_alignment = true)
+        void Write(std::uint32_t addr, Type value)
         {
             const std::lock_guard<std::mutex> lock(m_mtx);
 
-            auto peripheral_iter = Get_Peripheral<Type>(addr, check_alignment);
+            auto peripheral_iter = Get_Peripheral<Type>(addr);
             const auto relative_addr = addr - peripheral_iter->start_addr;
 
             peripheral_iter->peripheral->Write(relative_addr, std::bit_cast<const char*>(&value), sizeof(Type));
@@ -54,12 +57,12 @@ namespace zero_mate
         // NOTE: The bus width size is usually fixed.
         // The generic type is supported only for emulation purposes (simplifications)
         template<typename Type>
-        [[nodiscard]] Type Read(std::uint32_t addr, bool check_alignment = true)
+        [[nodiscard]] Type Read(std::uint32_t addr)
         {
             const std::lock_guard<std::mutex> lock(m_mtx);
 
             Type value{};
-            auto peripheral_iter = Get_Peripheral<Type>(addr, check_alignment);
+            auto peripheral_iter = Get_Peripheral<Type>(addr);
             const auto relative_addr = addr - peripheral_iter->start_addr;
 
             peripheral_iter->peripheral->Read(relative_addr, std::bit_cast<char*>(&value), sizeof(Type));
@@ -71,13 +74,18 @@ namespace zero_mate
 
     private:
         template<typename Type>
-        [[nodiscard]] Peripherals_t::iterator Get_Peripheral(std::uint32_t addr, [[maybe_unused]] bool check_alignment) const
+        [[nodiscard]] inline bool Unaligned_Access_Violation(std::uint32_t addr) const
         {
-            // TODO check when the CPU actually checks for this
-            // if (check_alignment && (addr % sizeof(Type)) != 0)
-            // {
-            //    throw arm1176jzf_s::exceptions::CData_Abort{ addr, "Unaligned memory access" };
-            // }
+            return m_cp15 != nullptr && !m_cp15->Is_Unaligned_Access_Permitted() && (addr % sizeof(Type)) != 0;
+        }
+
+        template<typename Type>
+        [[nodiscard]] Peripherals_t::iterator Get_Peripheral(std::uint32_t addr) const
+        {
+            if (Unaligned_Access_Violation<Type>(addr))
+            {
+                throw arm1176jzf_s::exceptions::CData_Abort{ addr, "Unaligned memory access" };
+            }
 
             auto peripheral_iter = Get_Peripheral(addr);
             if (!Is_Peripheral_Accessible(addr, peripheral_iter))
@@ -127,5 +135,6 @@ namespace zero_mate
     private:
         Peripherals_t m_peripherals;
         std::mutex m_mtx;
+        std::shared_ptr<coprocessor::CCP15> m_cp15;
     };
 }

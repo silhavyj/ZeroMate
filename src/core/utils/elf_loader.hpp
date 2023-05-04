@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "../peripherals/bus.hpp"
+#include "../bus.hpp"
 
 namespace zero_mate::utils::elf
 {

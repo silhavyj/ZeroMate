@@ -10,6 +10,7 @@
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
 
+#include "../config.hpp"
 #include "gui.hpp"
 #include "window.hpp"
 #include "windows/registers_window.hpp"
@@ -43,7 +44,8 @@ namespace zero_mate::gui
         std::shared_ptr<peripheral::CRAM> s_ram{ nullptr };
         auto s_bus = std::make_shared<CBus>();
         auto s_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, s_bus);
-        auto s_interrupt_controller = std::make_shared<peripheral::CInterrupt_Controller>(s_cpu->m_context);
+        auto s_cp15 = std::make_shared<coprocessor::CCP15>(s_cpu->Get_CPU_Context());
+        auto s_interrupt_controller = std::make_shared<peripheral::CInterrupt_Controller>(s_cpu->Get_CPU_Context());
         auto s_arm_timer = std::make_shared<peripheral::CARM_Timer>(s_interrupt_controller);
         auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>(s_interrupt_controller);
 
@@ -184,6 +186,18 @@ namespace zero_mate::gui
             return config_values;
         }
 
+        void Init_CPU()
+        {
+            s_cpu->Set_Interrupt_Controller(s_interrupt_controller);
+            s_cpu->Add_System_Clock_Listener(s_arm_timer);
+            s_cpu->Add_Coprocessor(coprocessor::CCP15::ID, s_cp15);
+        }
+
+        void Init_BUS()
+        {
+            s_bus->Set_CP15(s_cp15);
+        }
+
         void Initialize_Peripherals()
         {
             const auto config_values = Parse_INI_Config_File();
@@ -192,9 +206,8 @@ namespace zero_mate::gui
             Init_Interrupt_Controller(config_values.interrupt_controller_map_addr);
             Init_GPIO(config_values.gpio_map_addr);
             Init_ARM_Timer(config_values.arm_timer_map_addr);
-
-            s_cpu->Set_Interrupt_Controller(s_interrupt_controller);
-            s_cpu->Add_System_Clock_Listener(s_arm_timer);
+            Init_CPU();
+            Init_BUS();
         }
 
         void Initialize()

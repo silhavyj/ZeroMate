@@ -22,6 +22,8 @@ SECTIONS
 		__data = .;
         *(.data)
     } > ram
+    
+    . = ALIGN(4);
 	
 	_bss_start = .;
 	

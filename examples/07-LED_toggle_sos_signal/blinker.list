@@ -83,25 +83,25 @@ Disassembly of section .text:
     80fc:	e3833602 	orr	r3, r3, #2097152	; 0x200000
     8100:	e5823010 	str	r3, [r2, #16]
     8104:	e24dd00c 	sub	sp, sp, #12
-    8108:	e3a01a07 	mov	r1, #28672	; 0x7000
+    8108:	e3a01a03 	mov	r1, #12288	; 0x3000
     810c:	e3a00003 	mov	r0, #3
     8110:	ebffffcf 	bl	8054 <toggle_LED>
-    8114:	e3a01905 	mov	r1, #81920	; 0x14000
+    8114:	e3a01c75 	mov	r1, #29952	; 0x7500
     8118:	e3a00003 	mov	r0, #3
     811c:	ebffffcc 	bl	8054 <toggle_LED>
-    8120:	e3a01a07 	mov	r1, #28672	; 0x7000
+    8120:	e3a01a03 	mov	r1, #12288	; 0x3000
     8124:	e3a00003 	mov	r0, #3
     8128:	ebffffc9 	bl	8054 <toggle_LED>
     812c:	e3a03000 	mov	r3, #0
     8130:	e58d3004 	str	r3, [sp, #4]
     8134:	e59d3004 	ldr	r3, [sp, #4]
-    8138:	e3530803 	cmp	r3, #196608	; 0x30000
+    8138:	e3530a15 	cmp	r3, #86016	; 0x15000
     813c:	2afffff1 	bcs	8108 <kernel_main+0x1c>
     8140:	e59d3004 	ldr	r3, [sp, #4]
     8144:	e2833001 	add	r3, r3, #1
     8148:	e58d3004 	str	r3, [sp, #4]
     814c:	e59d3004 	ldr	r3, [sp, #4]
-    8150:	e3530803 	cmp	r3, #196608	; 0x30000
+    8150:	e3530a15 	cmp	r3, #86016	; 0x15000
     8154:	3afffff9 	bcc	8140 <kernel_main+0x54>
     8158:	eaffffea 	b	8108 <kernel_main+0x1c>
     815c:	20200000 	eorcs	r0, r0, r0
@@ -124,7 +124,7 @@ Disassembly of section .ARM.attributes:
 Disassembly of section .comment:
 
 00000000 <.comment>:
-   0:	3a434347 	bcc	10d0d24 <kernel_main+0x10c8c38>
+   0:	3a434347 	bcc	10d0d24 <__CTOR_END__+0x10c8bc4>
    4:	35312820 	ldrcc	r2, [r1, #-2080]!	; 0xfffff7e0
    8:	322d393a 	eorcc	r3, sp, #950272	; 0xe8000
    c:	2d393130 	ldfcss	f3, [r9, #-192]!	; 0xffffff40
