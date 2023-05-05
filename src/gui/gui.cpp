@@ -22,6 +22,7 @@
 #include "windows/peripherals/ram_window.hpp"
 #include "windows/peripherals/gpio_window.hpp"
 #include "windows/peripherals/arm_timer_window.hpp"
+#include "windows/peripherals/monitor_window.hpp"
 #include "windows/peripherals/interrupt_controller_window.hpp"
 
 #include "windows/peripherals/external/button_window.hpp"
@@ -48,6 +49,7 @@ namespace zero_mate::gui
         auto s_interrupt_controller = std::make_shared<peripheral::CInterrupt_Controller>(s_cpu->Get_CPU_Context());
         auto s_arm_timer = std::make_shared<peripheral::CARM_Timer>(s_interrupt_controller);
         auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>(s_interrupt_controller);
+        auto s_monitor = std::make_shared<peripheral::CMonitor>();
 
         std::vector<utils::elf::TText_Section_Record> s_source_code{};
         auto s_log_window = std::make_shared<CLog_Window>();
@@ -64,6 +66,7 @@ namespace zero_mate::gui
             std::uint32_t gpio_map_addr;
             std::uint32_t interrupt_controller_map_addr;
             std::uint32_t arm_timer_map_addr;
+            std::uint32_t monitor_map_addr;
         };
 
         void Initialize_Logging_System()
@@ -86,53 +89,20 @@ namespace zero_mate::gui
             s_windows.emplace_back(s_log_window);
             s_windows.emplace_back(std::make_shared<CInterrupt_Controller_Window>(s_interrupt_controller));
             s_windows.emplace_back(std::make_shared<CARM_Timer_Window>(s_arm_timer));
+            s_windows.emplace_back(std::make_shared<CMonitor_Window>(s_monitor));
 
             s_windows.emplace_back(std::make_shared<external_peripheral::CButton>(s_gpio));
         }
 
-        inline void Init_RAM(std::uint32_t size, std::uint32_t addr)
+        template<typename Peripheral>
+        inline void Attach_Peripheral_To_Bus(const char* name, std::uint32_t addr, std::shared_ptr<Peripheral> peripheral)
         {
-            s_ram = std::make_shared<peripheral::CRAM>(size);
-
-            s_logging_system.Info(fmt::format("Mapping RAM ({} [B]) to the bus address 0x{:08X}", s_ram->Get_Size(), addr).c_str());
-            const auto status = s_bus->Attach_Peripheral(addr, s_ram);
+            s_logging_system.Info(fmt::format("Mapping the {} ({} [B]) to the bus address 0x{:08X}", name, peripheral->Get_Size(), addr).c_str());
+            const auto status = s_bus->Attach_Peripheral(addr, peripheral);
 
             if (status != CBus::NStatus::OK)
             {
-                s_logging_system.Error(fmt::format("Failed to attach RAM to the bus (error value = {})", magic_enum::enum_name(status)).c_str());
-            }
-        }
-
-        inline void Init_GPIO(std::uint32_t addr)
-        {
-            s_logging_system.Info(fmt::format("Mapping GPIO ({} [B]) to the bus address 0x{:08X}", s_gpio->Get_Size(), addr).c_str());
-            const auto status = s_bus->Attach_Peripheral(addr, s_gpio);
-
-            if (status != CBus::NStatus::OK)
-            {
-                s_logging_system.Error(fmt::format("Failed to attach GPIO to the bus address (error value = {})", magic_enum::enum_name(status)).c_str());
-            }
-        }
-
-        inline void Init_Interrupt_Controller(std::uint32_t addr)
-        {
-            s_logging_system.Info(fmt::format("Mapping the interrupt controller ({} [B]) to the bus address 0x{:08X}", s_interrupt_controller->Get_Size(), addr).c_str());
-            const auto status = s_bus->Attach_Peripheral(addr, s_interrupt_controller);
-
-            if (status != CBus::NStatus::OK)
-            {
-                s_logging_system.Error(fmt::format("Failed to attach the interrupt controller to the bus address (error value = {})", magic_enum::enum_name(status)).c_str());
-            }
-        }
-
-        inline void Init_ARM_Timer(std::uint32_t addr)
-        {
-            s_logging_system.Info(fmt::format("Mapping the ARM timer ({} [B]) to the bus address 0x{:08X}", s_arm_timer->Get_Size(), addr).c_str());
-            const auto status = s_bus->Attach_Peripheral(addr, s_arm_timer);
-
-            if (status != CBus::NStatus::OK)
-            {
-                s_logging_system.Error(fmt::format("Failed to attach the ARM timer to the bus address (error value = {})", magic_enum::enum_name(status)).c_str());
+                s_logging_system.Error(fmt::format("Failed to attach the {} to the bus address (error value = {})", name, magic_enum::enum_name(status)).c_str());
             }
         }
 
@@ -165,7 +135,8 @@ namespace zero_mate::gui
                 .ram_map_addr = config::DEFAULT_RAM_MAP_ADDR,
                 .gpio_map_addr = config::DEFAULT_GPIO_MAP_ADDR,
                 .interrupt_controller_map_addr = config::DEFAULT_INTERRUPT_CONTROLLER_MAP_ADDR,
-                .arm_timer_map_addr = config::DEFAULT_ARM_TIMER_MAP_ADDR
+                .arm_timer_map_addr = config::DEFAULT_ARM_TIMER_MAP_ADDR,
+                .monitor_map_addr = config::DEFAULT_MONITOR_MAP_ADDR
             };
 
             const INIReader ini_reader(config::CONFIG_FILE);
@@ -181,6 +152,7 @@ namespace zero_mate::gui
                 config_values.gpio_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::GPIO_SECTION, "addr", config::DEFAULT_GPIO_MAP_ADDR);
                 config_values.interrupt_controller_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::INTERRUPT_CONTROLLER_SECTION, "addr", config::DEFAULT_INTERRUPT_CONTROLLER_MAP_ADDR);
                 config_values.arm_timer_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::ARM_TIMER_SECTION, "addr", config::DEFAULT_ARM_TIMER_MAP_ADDR);
+                config_values.monitor_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::MONITOR_SECTION, "addr", config::DEFAULT_MONITOR_MAP_ADDR);
             }
 
             return config_values;
@@ -202,10 +174,14 @@ namespace zero_mate::gui
         {
             const auto config_values = Parse_INI_Config_File();
 
-            Init_RAM(config_values.ram_size, config_values.ram_map_addr);
-            Init_Interrupt_Controller(config_values.interrupt_controller_map_addr);
-            Init_GPIO(config_values.gpio_map_addr);
-            Init_ARM_Timer(config_values.arm_timer_map_addr);
+            s_ram = std::make_shared<peripheral::CRAM>(config_values.ram_size);
+
+            Attach_Peripheral_To_Bus<peripheral::CRAM>("RAM memory", config_values.ram_map_addr, s_ram);
+            Attach_Peripheral_To_Bus<peripheral::CInterrupt_Controller>("interrupt controller", config_values.interrupt_controller_map_addr, s_interrupt_controller);
+            Attach_Peripheral_To_Bus<peripheral::CGPIO_Manager>("GPIO pin registers", config_values.gpio_map_addr, s_gpio);
+            Attach_Peripheral_To_Bus<peripheral::CARM_Timer>("ARM timer", config_values.arm_timer_map_addr, s_arm_timer);
+            Attach_Peripheral_To_Bus<peripheral::CMonitor>("monitor", config_values.monitor_map_addr, s_monitor);
+
             Init_CPU();
             Init_BUS();
         }
