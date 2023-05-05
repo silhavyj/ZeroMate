@@ -20,10 +20,9 @@ namespace zero_mate::peripheral
         std::copy_n(data, size, &std::bit_cast<char*>(m_data.data())[addr]);
     }
 
-    void CMonitor::Read([[maybe_unused]] std::uint32_t addr,
-                        [[maybe_unused]] char* data,
-                        [[maybe_unused]] std::uint32_t size)
+    void CMonitor::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
+        std::copy_n(&std::bit_cast<char*>(m_data.data())[addr], size, data);
     }
 
     const std::string& CMonitor::Get_Data() const
