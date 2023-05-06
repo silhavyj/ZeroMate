@@ -945,8 +945,11 @@ namespace zero_mate::arm1176jzf_s
     {
         static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
 
-        // TODO only allow for this if the CPU is an exception mode
-        // TODO make sure the CPU is in a privileged mode?
+        if (!m_context.Is_In_Privileged_Mode())
+        {
+            m_logging_system.Error(fmt::format("Attempt execute an SRS instruction in a non-privileged mode", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            return;
+        }
 
         const auto cpu_mode = static_cast<CCPU_Context::NCPU_Mode>(instruction.Get_CPU_Mode());
         auto addr = Calculate_Base_Address(instruction, CCPU_Context::SP_REG_IDX, cpu_mode, NUMBER_OF_REGS_TO_TRANSFER);
@@ -973,8 +976,11 @@ namespace zero_mate::arm1176jzf_s
     {
         static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
 
-        // TODO only allow for this if the CPU is an exception mode
-        // TODO make sure the CPU is in a privileged mode?
+        if (!m_context.Is_In_Privileged_Mode())
+        {
+            m_logging_system.Error(fmt::format("Attempt execute an RFE instruction in a non-privileged mode", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            return;
+        }
 
         const auto reg_rn_idx = instruction.Get_Rn();
         const auto cpu_mode = m_context.Get_CPU_Mode();
