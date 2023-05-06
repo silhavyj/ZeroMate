@@ -36,12 +36,12 @@ extern "C" void Process_1()
 
     while (true)
     {
+        for (i = 0; i < 0x200; i++)
+            ;
+        
         disable_irq();
         sMonitor << '1';
         enable_irq();
-
-        for (i = 0; i < 0x200; i++)
-            ;
     }
 }
 
@@ -53,12 +53,12 @@ extern "C" void Process_2()
 
     while (true)
     {
+        for (i = 0; i < 0x200; i++)
+            ;
+        
         disable_irq();
         sMonitor << '2';
         enable_irq();
-
-        for (i = 0; i < 0x200; i++)
-            ;
     }
 }
 
@@ -70,12 +70,12 @@ extern "C" void Process_3()
 
     while (true)
     {
+        for (i = 0; i < 0x200; i++)
+            ;
+        
         disable_irq();
         sMonitor << '3';
         enable_irq();
-
-        for (i = 0; i < 0x200; i++)
-            ;
     }
 }
 
@@ -87,12 +87,12 @@ extern "C" void Process_4()
 
     while (true)
     {
+        for (i = 0; i < 0x200; i++)
+            ;
+        
         disable_irq();
         sMonitor << '4';
         enable_irq();
-
-        for (i = 0; i < 0x200; i++)
-            ;
     }
 }
 
