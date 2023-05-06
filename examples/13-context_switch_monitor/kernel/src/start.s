@@ -60,8 +60,7 @@ _reset:
     stmia r1!,{r2, r3, r4, r5, r6, r7, r8, r9}
 
 	;@ baze pro systemove zasobniky
-	;@ mov r4, #0x80000000
-	mov r4, #0
+	mov r4, #0x0
 
 	;@ nejdrive supervisor mod a jeho stack
     mov r0, #(CPSR_MODE_SVR | CPSR_IRQ_INHIBIT | CPSR_FIQ_INHIBIT)
@@ -84,7 +83,7 @@ _reset:
 	add sp, r4, #0x5000
 
 	;@ zapneme nezarovnany pristup do pameti (nemusi byt zadouci, ale pro nase potreby je to v poradku)
-    mrc p15, #0, r4, c1, c0, #0
+	mrc p15, #0, r4, c1, c0, #0
 	orr r4, #0x400000
 	mcr p15, #0, r4, c1, c0, #0
 
@@ -105,7 +104,7 @@ enable_irq:
     msr cpsr_c, r0		;@ nacteme upraveny general purpose (R0) registr do ridiciho (CPSR)
     cpsie i				;@ povoli preruseni
     bx lr
-    
+
 .global disable_irq
 disable_irq:
     cpsid i

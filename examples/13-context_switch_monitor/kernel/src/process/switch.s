@@ -13,7 +13,7 @@ process_bootstrap:
 context_switch:
 	mrs r12, cpsr           ;@ ulozit CPU state do r12
 	push {r14}              ;@ push LR
-	push {r0}              ;@ push SP
+	push {r0}               ;@ push SP
 	push {r0-r12}           ;@ push registru
 	str sp, [r1, #4]        ;@ ulozit SP stareho procesu
 

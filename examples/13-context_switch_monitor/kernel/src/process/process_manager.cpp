@@ -32,18 +32,21 @@ void CProcess_Manager::Create_Main_Process()
 
     procnode->next = mProcess_List_Head;
     procnode->prev = nullptr;
-    if (mProcess_List_Head == nullptr)
+    if (mProcess_List_Head != nullptr)
+    {
+        mProcess_List_Head->prev = procnode;
+    }
+    else
     {
         mProcess_List_Head = procnode;
     }
-    mProcess_List_Head->prev = procnode;
 
     procnode->task = sKernelMem.Alloc<TTask_Struct>();
 
     auto* task = procnode->task;
 
     task->pid = ++mLast_PID;
-    task->sched_static_priority = 5;
+    task->sched_static_priority = 5;    // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
     task->sched_counter = task->sched_static_priority;
     task->state = NTask_State::Running;
 
@@ -56,46 +59,71 @@ uint32_t CProcess_Manager::Create_Process(unsigned long funcptr)
 
     procnode->next = mProcess_List_Head;
     procnode->prev = nullptr;
-    if (mProcess_List_Head != nullptr)
-    {
-        mProcess_List_Head->prev = procnode;
-        mCurrent_Task_Node = mProcess_List_Head;
-    }
+    mProcess_List_Head->prev = procnode;
     mProcess_List_Head = procnode;
+
+    if (mCurrent_Task_Node == nullptr)
+    {
+        mCurrent_Task_Node = procnode;
+    }
 
     procnode->task = sKernelMem.Alloc<TTask_Struct>();
 
     auto* task = procnode->task;
 
     task->pid = ++mLast_PID;
-    task->sched_static_priority = 5;
+    task->sched_static_priority = 5;    // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
     task->sched_counter = task->sched_static_priority;
     task->state = NTask_State::New;
     
     task->cpu_context.lr = funcptr;
     task->cpu_context.pc = reinterpret_cast<unsigned long>(&process_bootstrap);
     task->cpu_context.sp = static_cast<unsigned long>(sPage_Manager.Alloc_Page()) + mem::PageSize;
-    
-    sMonitor << "0x" << CMonitor::NNumber_Base::HEX << (unsigned int)task->cpu_context.sp << '\n';
 
     return task->pid;
 }
 
 void CProcess_Manager::Schedule()
 {
-    CProcess_List_Node* next = mCurrent_Task_Node != nullptr ? mCurrent_Task_Node->next : mProcess_List_Head;
-    if (next == nullptr)
+    // je nejaky proces naplanovany?
+    if (mCurrent_Task_Node)
     {
-        next = mProcess_List_Head;
+        // snizime citac planovace
+        mCurrent_Task_Node->task->sched_counter--;
+        // pokud je citac vetsi nez 0, zatim nebudeme preplanovavat (a zaroven je proces stale ve stavu Running - nezablokoval se nad necim)
+        if (mCurrent_Task_Node->task->sched_counter > 0 && mCurrent_Task_Node->task->state == NTask_State::Running)
+            return;
     }
 
+    // najdeme dalsi proces na planovani
+
+    // vybereme dalsi proces v rade
+    CProcess_List_Node* next = mCurrent_Task_Node ? mCurrent_Task_Node->next : mProcess_List_Head;
+    if (!next)
+        next = mProcess_List_Head;
+
+    // proces k naplanovani musi bud byt ve stavu runnable (jiz nekdy bezel a muze bezet znovu) nebo running (pak jde o stavajici proces)
+    // a nebo new (novy proces, ktery jeste nebyl planovany)
+    while (next->task->state != NTask_State::Runnable && next->task->state != NTask_State::Running && next->task->state != NTask_State::New)
+    {
+        if (!next)
+        {
+            next = mCurrent_Task_Node;
+            break;
+        }
+        else
+            next = next->next;
+    }
+
+    // stavajici proces je jediny planovatelny - nemusime nic preplanovavat
     if (next == mCurrent_Task_Node)
     {
+        // nastavime mu zase zpatky jeho pridel casovych kvant a vracime se
         mCurrent_Task_Node->task->sched_counter = mCurrent_Task_Node->task->sched_static_priority;
         return;
     }
 
-    // sMonitor << "Next PID = " << next->task->pid << '\n';
+    // sMonitor << "Next = " << mCurrent_Task_Node->task->pid << '\n';
     Switch_To(next);
 }
 
@@ -103,7 +131,6 @@ void CProcess_Manager::Switch_To(CProcess_List_Node* node)
 {
     // pokud je stavajici proces ve stavu Running (muze teoreticky byt jeste Blocked), vratime ho do stavu Runnable
     // Blocked prehazovat nebudeme ze zjevnych duvodu
-    
     if (mCurrent_Task_Node->task->state == NTask_State::Running)
         mCurrent_Task_Node->task->state = NTask_State::Runnable;
 
@@ -120,13 +147,7 @@ void CProcess_Manager::Switch_To(CProcess_List_Node* node)
 
     // pokud je to poprve, co je proces planovany, musime to vzit jeste pres malou odbocku ("bootstrap")
     if (is_first_time)
-    {
-        // sMonitor << "First context switch; pid = " << mCurrent_Task_Node->task->pid << "\n";
         context_switch_first(&node->task->cpu_context, old);
-    }
     else
-    {
-        // sMonitor << "Normal context switch; pid = " << mCurrent_Task_Node->task->pid << "\n";
         context_switch(&node->task->cpu_context, old);
-    }
 }

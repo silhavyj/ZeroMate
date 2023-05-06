@@ -1,5 +1,4 @@
 #include <memory/pages.h>
-#include <drivers/monitor.h>
 
 CPage_Manager sPage_Manager;
 
@@ -67,8 +66,6 @@ uint32_t CPage_Manager::Alloc_Page()
     // to je samozrejme O(n) a pro prakticke pouziti ne uplne dobre, ale k tomuto problemu az jindy
 
     uint32_t i, j;
-    
-    sMonitor << "mem::PageCount = \0" << mem::PageCount << '\n';
 
     // projdeme vsechny stranky
     for (i = 0; i < mem::PageCount; i++)
@@ -79,19 +76,11 @@ uint32_t CPage_Manager::Alloc_Page()
             // projdeme vsechny bity a najdeme ten co je volny
             for (j = 0; j < 8; j++)
             {
-                const uint32_t slot = mPage_Bitmap[i];
-                const uint32_t mask = 1 << j; 
-                
-                if ((slot & mask) == 0)
+                if (((uint32_t)mPage_Bitmap[i] & (1 << j)) == 0)
                 {
                     // oznacime 
                     const uint32_t page_idx = i*8 + j;
-                    sMonitor << "j = \0" << j << '\n';
-                    sMonitor << "mPage_Bitmap[i] = \0" << (unsigned int)mPage_Bitmap[i] << '\n';
-                    sMonitor << (unsigned int)mPage_Bitmap[fast_divide(page_idx, 8)] << '\n';
                     Mark(page_idx, true);
-                    sMonitor << (unsigned int)mPage_Bitmap[fast_divide(page_idx, 8)] << '\n';
-                    
                     return mem::LowMemory + page_idx * mem::PageSize;
                 }
             }
