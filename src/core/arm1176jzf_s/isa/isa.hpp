@@ -17,3 +17,4 @@
 #include "coprocessor_data_operation.hpp"
 #include "srs.hpp"
 #include "rfe.hpp"
+#include "clz.hpp"

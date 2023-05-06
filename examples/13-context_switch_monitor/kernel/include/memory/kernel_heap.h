@@ -15,22 +15,22 @@ struct TKernel_Heap_Chunk_Header
 
 class CKernel_Heap_Manager
 {
-    private:
-        TKernel_Heap_Chunk_Header* mFirst;
+private:
+    TKernel_Heap_Chunk_Header* mFirst;
 
-        TKernel_Heap_Chunk_Header* Alloc_Next_Page();
+    TKernel_Heap_Chunk_Header* Alloc_Next_Page();
 
-    public:
-        CKernel_Heap_Manager();
+public:
+    CKernel_Heap_Manager();
 
-        void* Alloc(uint32_t size);
-        void Free(void* mem);
+    void* Alloc(uint32_t size);
+    void Free(void* mem);
 
-        template<class T>
-        T* Alloc()
-        {
-            return reinterpret_cast<T*>(Alloc(sizeof(T)));
-        }
+    template<class T>
+    T* Alloc()
+    {
+        return reinterpret_cast<T*>(Alloc(sizeof(T)));
+    }
 };
 
 extern CKernel_Heap_Manager sKernelMem;

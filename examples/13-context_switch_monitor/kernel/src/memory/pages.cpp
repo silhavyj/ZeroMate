@@ -2,47 +2,6 @@
 
 CPage_Manager sPage_Manager;
 
-static unsigned fast_divide(unsigned dividend, unsigned divisor) {
-    unsigned quotient = 0;
-    unsigned temp = divisor;
-
-    // Shift the divisor left until it's greater than or equal to the dividend
-    while (temp <= dividend) {
-        temp <<= 1;
-    }
-
-    // Shift the result right and subtract the divisor repeatedly
-    while (divisor <= temp) {
-        quotient <<= 1;
-        if (dividend >= temp) {
-            dividend -= temp;
-            quotient |= 1;
-        }
-        temp >>= 1;
-    }
-
-    return quotient;
-}
-
-unsigned fast_modulus(unsigned dividend, unsigned divisor) {
-    unsigned temp = divisor;
-
-    // Shift the divisor left until it's greater than or equal to the dividend
-    while (temp <= dividend) {
-        temp <<= 1;
-    }
-
-    // Subtract the divisor repeatedly and shift it right until it's less than the original divisor
-    while (divisor <= temp) {
-        if (dividend >= temp) {
-            dividend -= temp;
-        }
-        temp >>= 1;
-    }
-
-    return dividend;
-}
-
 CPage_Manager::CPage_Manager()
 {
     // zadna stranka neni alokovana
@@ -55,9 +14,9 @@ CPage_Manager::CPage_Manager()
 void CPage_Manager::Mark(uint32_t page_idx, bool used)
 {
     if (used)
-        mPage_Bitmap[fast_divide(page_idx, 8)] |= 1 << fast_modulus(page_idx, 8);
+        mPage_Bitmap[page_idx / 8] |= 1 << (page_idx % 8);
     else
-        mPage_Bitmap[fast_divide(page_idx, 8)] &= ~(1 << fast_modulus(page_idx, 8));
+        mPage_Bitmap[page_idx / 8] &= ~(1 << (page_idx % 8));
 }
 
 uint32_t CPage_Manager::Alloc_Page()
@@ -78,8 +37,8 @@ uint32_t CPage_Manager::Alloc_Page()
             {
                 if (((uint32_t)mPage_Bitmap[i] & (1 << j)) == 0)
                 {
-                    // oznacime 
-                    const uint32_t page_idx = i*8 + j;
+                    // oznacime
+                    const uint32_t page_idx = i * 8 + j;
                     Mark(page_idx, true);
                     return mem::LowMemory + page_idx * mem::PageSize;
                 }

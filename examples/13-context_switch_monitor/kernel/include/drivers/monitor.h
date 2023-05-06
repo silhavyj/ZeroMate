@@ -28,9 +28,6 @@ private:
     inline void Reset_Cursor();
     inline void Reset_Number_Base();
 
-    inline unsigned int Divide(unsigned int a, unsigned int b);
-    inline unsigned int Remainder(unsigned int a, unsigned int b);
-
     void Scroll();
 
     void itoa(unsigned int input, char* output, unsigned int base);

@@ -132,56 +132,15 @@ CMonitor& CMonitor::operator<<(bool value)
     return *this;
 }
 
-unsigned int CMonitor::Divide(unsigned int a, unsigned int b)
-{
-    if (b == 0)
-    {
-        // TODO handle divide by zero error
-        return 0;
-    }
-    if (a < b)
-    {
-        return 0;
-    }
-
-    unsigned int quotient = 0;
-
-    while (a >= b)
-    {
-        a -= b;
-        quotient++;
-    }
-
-    return quotient;
-}
-
-unsigned int CMonitor::Remainder(unsigned int a, unsigned int b)
-{
-    if (b == 0)
-    {
-        // TODO handle divide by zero error
-        return 0;
-    }
-    if (a < b)
-    {
-        return a;
-    }
-    while (a >= b)
-    {
-        a -= b;
-    }
-
-    return a;
-}
-
 void CMonitor::itoa(unsigned int input, char* output, unsigned int base)
 {
     int i = 0;
 
     while (input > 0)
     {
-        output[i] = CharConvArr[Remainder(input, base)];
-        input = Divide(input, base);
+        output[i] = CharConvArr[input % base];
+        input /= base;
+
         i++;
     }
 
@@ -194,7 +153,7 @@ void CMonitor::itoa(unsigned int input, char* output, unsigned int base)
     output[i] = '\0';
     i--;
 
-    for (int j = 0; j <= (i >> 1); j++)
+    for (int j = 0; j <= (i / 2); j++)
     {
         char c = output[i - j];
         output[i - j] = output[j];

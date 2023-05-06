@@ -6,17 +6,18 @@
 #include <memory/memmap.h>
 
 // "importovane" funkce z asm
-extern "C"
-{
-    void process_bootstrap();
-    void context_switch(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
-    void context_switch_first(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
+extern "C" {
+void process_bootstrap();
+void context_switch(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
+void context_switch_first(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
 };
 
 CProcess_Manager sProcessMgr;
 
 CProcess_Manager::CProcess_Manager()
-    : mLast_PID(0), mProcess_List_Head(nullptr), mCurrent_Task_Node(nullptr)
+: mLast_PID(0)
+, mProcess_List_Head(nullptr)
+, mCurrent_Task_Node(nullptr)
 {
     //
 }
@@ -46,7 +47,7 @@ void CProcess_Manager::Create_Main_Process()
     auto* task = procnode->task;
 
     task->pid = ++mLast_PID;
-    task->sched_static_priority = 5;    // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
+    task->sched_static_priority = 5; // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
     task->sched_counter = task->sched_static_priority;
     task->state = NTask_State::Running;
 
@@ -72,13 +73,16 @@ uint32_t CProcess_Manager::Create_Process(unsigned long funcptr)
     auto* task = procnode->task;
 
     task->pid = ++mLast_PID;
-    task->sched_static_priority = 5;    // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
+    task->sched_static_priority = 5; // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
     task->sched_counter = task->sched_static_priority;
     task->state = NTask_State::New;
-    
+
     task->cpu_context.lr = funcptr;
     task->cpu_context.pc = reinterpret_cast<unsigned long>(&process_bootstrap);
     task->cpu_context.sp = static_cast<unsigned long>(sPage_Manager.Alloc_Page()) + mem::PageSize;
+
+    sMonitor << "Created process with pid " << (unsigned int)task->pid << " ("
+             << "SP = 0x" << CMonitor::NNumber_Base::HEX << (unsigned int)task->cpu_context.sp << ")\n";
 
     return task->pid;
 }

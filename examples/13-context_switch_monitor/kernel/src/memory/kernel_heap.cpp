@@ -72,9 +72,9 @@ void CKernel_Heap_Manager::Free(void* mem)
     // pokud je dalsi blok volny, spojme tento a dalsi blok do jednoho
     if (chunk->next && chunk->next->is_free)
     {
-        chunk->size += chunk->next->size + sizeof(TKernel_Heap_Chunk_Header);   // zvetsit soucasny
-        chunk->next = chunk->next->next;                                        // navazat nasledujici nasledujiciho jako dalsi
-        chunk->next->prev = chunk;                                              // nasledujicimu nastavit predchozi na sebe
+        chunk->size += chunk->next->size + sizeof(TKernel_Heap_Chunk_Header); // zvetsit soucasny
+        chunk->next = chunk->next->next;                                      // navazat nasledujici nasledujiciho jako dalsi
+        chunk->next->prev = chunk;                                            // nasledujicimu nastavit predchozi na sebe
     }
 
     // pokud je predchozi blok volny, spojme predchozi a tento blok do jednoho

@@ -28,8 +28,8 @@ ADD_EXECUTABLE(kernel ${kernel_src} ${stdlib_src})
 # 2) pro pruzkumne ucely i disassembly vysledne binarky
 # 3) SREC dump pro UART bootloader
 ADD_CUSTOM_COMMAND(
-    TARGET kernel POST_BUILD
-    COMMAND ${CMAKE_OBJCOPY} ./kernel${CMAKE_EXECUTABLE_SUFFIX} -O binary ./kernel.img
-    COMMAND ${CMAKE_OBJDUMP} -l -S -D ./kernel${CMAKE_EXECUTABLE_SUFFIX} > ./kernel.asm
-	COMMAND ${CMAKE_OBJCOPY} --srec-forceS3 ./kernel${CMAKE_EXECUTABLE_SUFFIX} -O srec kernel.srec
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
+        TARGET kernel POST_BUILD
+        COMMAND ${CMAKE_OBJCOPY} ./kernel${CMAKE_EXECUTABLE_SUFFIX} -O binary ./kernel.img
+        COMMAND ${CMAKE_OBJDUMP} -l -S -D ./kernel${CMAKE_EXECUTABLE_SUFFIX} > ./kernel.asm
+        COMMAND ${CMAKE_OBJCOPY} --srec-forceS3 ./kernel${CMAKE_EXECUTABLE_SUFFIX} -O srec kernel.srec
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR})

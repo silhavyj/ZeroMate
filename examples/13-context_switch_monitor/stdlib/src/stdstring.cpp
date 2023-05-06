@@ -7,14 +7,14 @@ namespace
 
 void itoa(unsigned int input, char* output, unsigned int base)
 {
-	int i = 0;
+    int i = 0;
 
-	while (input > 0)
-	{
-		output[i] = CharConvArr[input % base];
-		input /= base;
-		i++;
-	}
+    while (input > 0)
+    {
+        output[i] = CharConvArr[input % base];
+        input /= base;
+        i++;
+    }
 
     if (i == 0)
     {
@@ -22,13 +22,13 @@ void itoa(unsigned int input, char* output, unsigned int base)
         i++;
     }
 
-	output[i] = '\0';
-	i--;
+    output[i] = '\0';
+    i--;
 
-	for (int j = 0; j <= i/2; j++)
-	{
-		char c = output[i - j];
-		output[i - j] = output[j];
-		output[j] = c;
-	}
+    for (int j = 0; j <= i / 2; j++)
+    {
+        char c = output[i - j];
+        output[i - j] = output[j];
+        output[j] = c;
+    }
 }

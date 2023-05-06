@@ -50,7 +50,8 @@ namespace zero_mate::arm1176jzf_s::isa
             CPS,
             NOP,
             SRS,
-            RFE
+            RFE,
+            CLZ
         };
 
         enum class NShift_Type : std::uint32_t

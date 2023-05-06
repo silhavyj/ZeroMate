@@ -3,7 +3,7 @@
 
 CTimer sTimer(hal::Timer_Base);
 
-#pragma pack(push,1)
+#pragma pack(push, 1)
 
 struct TTimer_Ctl_Flags
 {
@@ -24,7 +24,8 @@ struct TTimer_Ctl_Flags
 #pragma pack(pop)
 
 CTimer::CTimer(unsigned long timer_reg_base)
-    : mTimer_Regs(reinterpret_cast<unsigned int*>(timer_reg_base)), mCallback(nullptr)
+: mTimer_Regs(reinterpret_cast<unsigned int*>(timer_reg_base))
+, mCallback(nullptr)
 {
     //
 }
@@ -45,7 +46,7 @@ void CTimer::Enable(TTimer_Callback callback, unsigned int delay, NTimer_Prescal
     reg.prescaler = static_cast<uint8_t>(prescaler);
 
     Regs(hal::Timer_Reg::Control) = *reinterpret_cast<unsigned int*>(&reg);
-   
+
     Regs(hal::Timer_Reg::IRQ_Clear) = 1;
 
     mCallback = callback;

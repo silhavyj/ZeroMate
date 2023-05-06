@@ -31,7 +31,7 @@ extern "C" void __attribute__((interrupt("FIQ"))) fast_interrupt_handler()
 // implementace controlleru
 
 CInterrupt_Controller::CInterrupt_Controller(unsigned long base)
-    : mInterrupt_Regs(reinterpret_cast<unsigned int*>(base))
+: mInterrupt_Regs(reinterpret_cast<unsigned int*>(base))
 {
     //
 }

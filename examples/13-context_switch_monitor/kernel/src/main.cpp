@@ -22,111 +22,111 @@ extern "C" void disable_irq();
 
 extern "C" void Timer_Callback()
 {
-	sProcessMgr.Schedule();
+    sProcessMgr.Schedule();
 
-	sGPIO.Set_Output(ACT_Pin, LED_State);
-	LED_State = !LED_State;
+    sGPIO.Set_Output(ACT_Pin, LED_State);
+    LED_State = !LED_State;
 }
 
 extern "C" void Process_1()
 {
-	volatile int i;
+    volatile int i;
 
-	sMonitor << "Process 1\n";
+    sMonitor << "Process 1\n";
 
-	while (true)
-	{
-		disable_irq();
-		sMonitor << '1';
-		enable_irq();
+    while (true)
+    {
+        disable_irq();
+        sMonitor << '1';
+        enable_irq();
 
-		for (i = 0; i < 0x200; i++)
-			;
-	}
+        for (i = 0; i < 0x200; i++)
+            ;
+    }
 }
 
 extern "C" void Process_2()
 {
-	volatile int i;
+    volatile int i;
 
-	sMonitor << "Process 2\n";
+    sMonitor << "Process 2\n";
 
-	while (true)
-	{
-		disable_irq();
-		sMonitor << '2';
-		enable_irq();
+    while (true)
+    {
+        disable_irq();
+        sMonitor << '2';
+        enable_irq();
 
-		for (i = 0; i < 0x200; i++)
-			;
-	}
+        for (i = 0; i < 0x200; i++)
+            ;
+    }
 }
 
 extern "C" void Process_3()
 {
-	volatile int i;
+    volatile int i;
 
-	sMonitor << "Process 3\n";
+    sMonitor << "Process 3\n";
 
-	while (true)
-	{
-		disable_irq();
-		sMonitor << '3';
-		enable_irq();
+    while (true)
+    {
+        disable_irq();
+        sMonitor << '3';
+        enable_irq();
 
-		for (i = 0; i < 0x200; i++)
-			;
-	}
+        for (i = 0; i < 0x200; i++)
+            ;
+    }
 }
 
 extern "C" void Process_4()
 {
-	volatile int i;
+    volatile int i;
 
-	sMonitor << "Process 4\n";
+    sMonitor << "Process 4\n";
 
-	while (true)
-	{
-		disable_irq();
-		sMonitor << '4';
-		enable_irq();
+    while (true)
+    {
+        disable_irq();
+        sMonitor << '4';
+        enable_irq();
 
-		for (i = 0; i < 0x200; i++)
-			;
-	}
+        for (i = 0; i < 0x200; i++)
+            ;
+    }
 }
 
 extern "C" int _kernel_main(void)
 {
-	// nastavime ACT LED pin na vystupni
-	sGPIO.Set_GPIO_Function(ACT_Pin, NGPIO_Function::Output);
-	sGPIO.Set_Output(ACT_Pin, false);
+    // nastavime ACT LED pin na vystupni
+    sGPIO.Set_GPIO_Function(ACT_Pin, NGPIO_Function::Output);
+    sGPIO.Set_Output(ACT_Pin, false);
 
-	// vypiseme ladici hlasku
-	sMonitor.Clear();
-	sMonitor << "Welcome to KIV/OS RPiOS kernel\n";
+    // vypiseme ladici hlasku
+    sMonitor.Clear();
+    sMonitor << "Welcome to KIV/OS RPiOS kernel\n";
 
-	// sProcessMgr.Create_Main_Process();
+    // sProcessMgr.Create_Main_Process();
 
-	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_1));
-	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_2));
-	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_3));
-	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_4));
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_1));
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_2));
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_3));
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_4));
 
-	// zatim zakazeme IRQ casovace
-	sInterruptCtl.Disable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
+    // zatim zakazeme IRQ casovace
+    sInterruptCtl.Disable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
 
-	// nastavime casovac - v callbacku se provadi planovani procesu
-	sTimer.Enable(Timer_Callback, 0x20, NTimer_Prescaler::Prescaler_256);
+    // nastavime casovac - v callbacku se provadi planovani procesu
+    sTimer.Enable(Timer_Callback, 0x20, NTimer_Prescaler::Prescaler_256);
 
-	// povolime IRQ casovace
-	sInterruptCtl.Enable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
+    // povolime IRQ casovace
+    sInterruptCtl.Enable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
 
-	enable_irq();
+    enable_irq();
 
-	// nekonecna smycka - tadyodsud se CPU uz nedostane jinak, nez treba prerusenim
+    // nekonecna smycka - tadyodsud se CPU uz nedostane jinak, nez treba prerusenim
     while (1)
-		;
-	
-	return 0;
+        ;
+
+    return 0;
 }
