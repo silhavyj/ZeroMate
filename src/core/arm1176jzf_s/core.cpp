@@ -354,7 +354,15 @@ namespace zero_mate::arm1176jzf_s
             return instruction.Get_Shift_Amount();
         }
 
-        return m_context[instruction.Get_Rs()] & 0xFFU;
+        const auto shift_amount_reg_idx = instruction.Get_Rs();
+        auto shift_amount_reg_value = m_context[shift_amount_reg_idx];
+
+        if (shift_amount_reg_idx == CCPU_Context::PC_REG_IDX)
+        {
+            shift_amount_reg_value += CCPU_Context::REG_SIZE;
+        }
+
+        return shift_amount_reg_value & 0xFFU;
     }
 
     utils::math::TShift_Result<std::uint32_t> CCPU_Core::Perform_Shift(isa::CInstruction::NShift_Type shift_type, std::uint32_t shift_amount, std::uint32_t shift_reg) const noexcept
@@ -386,7 +394,7 @@ namespace zero_mate::arm1176jzf_s
 
         const std::uint32_t shift_amount = Get_Shift_Amount(instruction);
         const auto shift_type = instruction.Get_Shift_Type();
-        auto shift_reg = m_context[instruction.Get_Rm()];
+        const auto shift_reg = m_context[instruction.Get_Rm()];
 
         return Perform_Shift(shift_type, shift_amount, shift_reg);
     }
@@ -396,8 +404,6 @@ namespace zero_mate::arm1176jzf_s
         const auto rn_reg_idx = instruction.Get_Rn();
         std::uint32_t first_operand = m_context[rn_reg_idx];
 
-        // TODO make sure this works
-        // TODO add the +12 variant as well
         if (rn_reg_idx == CCPU_Context::PC_REG_IDX)
         {
             // PC is already pointing at the next instruction. Hence, +4 and not +8.

@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <fmt/core.h>
 
 #include "core/bus.hpp"
 #include "core/arm1176jzf_s/core.hpp"
@@ -145,4 +146,46 @@ TEST(add_instruction, test_07)
     cpu.Steps(2);
 
     EXPECT_EQ(cpu.Get_CPU_Context()[CCPU_Context::PC_REG_IDX], 0x200C);
+}
+
+TEST(add_instruction, test_08)
+{
+    using namespace zero_mate::arm1176jzf_s;
+
+    const std::vector<std::uint32_t> ram_content = {
+        0xe3a03002, // mov r3, #2
+        0xe08f0f13  // add r0, pc, r3, lsl pc
+    };
+
+    auto ram = std::make_shared<zero_mate::peripheral::CRAM>(1024, 0, ram_content);
+    auto bus = std::make_shared<zero_mate::CBus>();
+
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), zero_mate::CBus::NStatus::OK);
+
+    CCPU_Core cpu{ 0, bus };
+
+    cpu.Steps(2);
+
+    EXPECT_EQ(cpu.Get_CPU_Context()[0], 0x200C);
+}
+
+TEST(add_instruction, test_09)
+{
+    using namespace zero_mate::arm1176jzf_s;
+
+    const std::vector<std::uint32_t> ram_content = {
+        0xe3a03002, // mov r3, #2
+        0xe0830f13  // add r0, r3, r3, lsl pc
+    };
+
+    auto ram = std::make_shared<zero_mate::peripheral::CRAM>(1024, 0, ram_content);
+    auto bus = std::make_shared<zero_mate::CBus>();
+
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), zero_mate::CBus::NStatus::OK);
+
+    CCPU_Core cpu{ 0, bus };
+
+    cpu.Steps(2);
+
+    EXPECT_EQ(cpu.Get_CPU_Context()[0], 0x2002);
 }
