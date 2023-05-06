@@ -59,7 +59,7 @@ TEST(asr, uint32_test_06)
     const auto [carry_flag, result] = ASR<std::uint32_t>(0b00000000'00000000'00000000'00000010U, 0U);
 
     EXPECT_EQ(carry_flag, false);
-    EXPECT_EQ(result, 0b00000000'00000000'00000000'00000000U);
+    EXPECT_EQ(result, 0b00000000'00000000'00000000'00000010U);
 }
 
 TEST(asr, uint32_test_07)
@@ -69,7 +69,7 @@ TEST(asr, uint32_test_07)
     const auto [carry_flag, result] = ASR<std::uint32_t>(0b01000000'00000000'00000000'00000000U, 0U);
 
     EXPECT_EQ(carry_flag, false);
-    EXPECT_EQ(result, 0b00000000'00000000'00000000'00000000U);
+    EXPECT_EQ(result, 0b01000000'00000000'00000000'00000000U);
 }
 
 TEST(asr, uint32_test_08)
@@ -110,6 +110,16 @@ TEST(asr, uint32_test_11)
 
     EXPECT_EQ(carry_flag, true);
     EXPECT_EQ(result, 0b11111111'11111111'11111111'11111111U);
+}
+
+TEST(asr, uint32_test_12)
+{
+    using namespace zero_mate::utils::math;
+
+    const auto [carry_flag, result] = ASR<std::uint32_t>(1U, 0U);
+
+    EXPECT_EQ(carry_flag, false);
+    EXPECT_EQ(result, 1U);
 }
 
 TEST(asr, uint8_test_01)

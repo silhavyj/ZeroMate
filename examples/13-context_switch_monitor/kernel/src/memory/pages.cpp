@@ -35,7 +35,7 @@ uint32_t CPage_Manager::Alloc_Page()
             // projdeme vsechny bity a najdeme ten co je volny
             for (j = 0; j < 8; j++)
             {
-                if (((uint32_t)mPage_Bitmap[i] & (1 << j)) == 0)
+                if ((mPage_Bitmap[i] & (1 << j)) == 0)
                 {
                     // oznacime
                     const uint32_t page_idx = i * 8 + j;
