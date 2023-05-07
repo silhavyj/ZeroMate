@@ -882,7 +882,7 @@ namespace zero_mate::arm1176jzf_s
     {
         if (!m_context.Is_In_Privileged_Mode())
         {
-            m_logging_system.Error("Attempt to execute instruction CPS in a non-privileged mode");
+            m_logging_system.Error(fmt::format("Attempt to execute a CPS instruction in a non-privileged mode ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
             return;
         }
 
@@ -947,7 +947,7 @@ namespace zero_mate::arm1176jzf_s
 
         if (!m_context.Is_In_Privileged_Mode())
         {
-            m_logging_system.Error(fmt::format("Attempt execute an SRS instruction in a non-privileged mode", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            m_logging_system.Error(fmt::format("Attempt execute an SRS instruction in a non-privileged mode ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
             return;
         }
 
@@ -978,7 +978,7 @@ namespace zero_mate::arm1176jzf_s
 
         if (!m_context.Is_In_Privileged_Mode())
         {
-            m_logging_system.Error(fmt::format("Attempt execute an RFE instruction in a non-privileged mode", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            m_logging_system.Error(fmt::format("Attempt execute an RFE instruction in a non-privileged mode ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
             return;
         }
 

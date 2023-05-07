@@ -161,6 +161,16 @@ namespace zero_mate::gui
                 {
                     break;
                 }
+
+                if (!m_cpu_running && m_source_code[idx].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
+                {
+                    if (m_scroll_to_curr_line && !ImGui::IsItemVisible())
+                    {
+                        ImGui::SetScrollHereY(0.2f);
+                        m_scroll_to_curr_line = false;
+                    }
+                }
+
                 ++idx;
             }
         }
