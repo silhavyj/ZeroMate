@@ -92,6 +92,7 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CCoprocessor_Data_Operation instruction);
         void Execute(isa::CSRS instruction);
         void Execute(isa::CRFE instruction);
+        void Execute(isa::CCLZ instruction);
 
         template<typename Instruction>
         [[nodiscard]] std::uint32_t Calculate_Base_Address(Instruction instruction, std::uint32_t base_reg_idx, CCPU_Context::NCPU_Mode cpu_mode, std::uint32_t number_of_regs) const

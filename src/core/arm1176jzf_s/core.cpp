@@ -301,6 +301,10 @@ namespace zero_mate::arm1176jzf_s
                 case isa::CInstruction::NType::RFE:
                     Execute(isa::CRFE{ instruction });
                     break;
+
+                case isa::CInstruction::NType::CLZ:
+                    Execute(isa::CCLZ{ instruction });
+                    break;
             }
 
             Update_Cycle_Listeners();
@@ -350,7 +354,15 @@ namespace zero_mate::arm1176jzf_s
             return instruction.Get_Shift_Amount();
         }
 
-        return m_context[instruction.Get_Rs()] & 0xFFU;
+        const auto shift_amount_reg_idx = instruction.Get_Rs();
+        auto shift_amount_reg_value = m_context[shift_amount_reg_idx];
+
+        if (shift_amount_reg_idx == CCPU_Context::PC_REG_IDX)
+        {
+            shift_amount_reg_value += CCPU_Context::REG_SIZE;
+        }
+
+        return shift_amount_reg_value & 0xFFU;
     }
 
     utils::math::TShift_Result<std::uint32_t> CCPU_Core::Perform_Shift(isa::CInstruction::NShift_Type shift_type, std::uint32_t shift_amount, std::uint32_t shift_reg) const noexcept
@@ -389,20 +401,28 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CData_Processing instruction)
     {
-        const std::uint32_t first_operand = m_context[instruction.Get_Rn()];
+        const auto rn_reg_idx = instruction.Get_Rn();
+        std::uint32_t first_operand = m_context[rn_reg_idx];
+
+        if (rn_reg_idx == CCPU_Context::PC_REG_IDX)
+        {
+            // PC is already pointing at the next instruction. Hence, +4 and not +8.
+            first_operand += CCPU_Context::REG_SIZE;
+        }
+
         const auto [carry_out, second_operand] = Get_Second_Operand(instruction);
-        const std::uint32_t dest_reg = instruction.Get_Rd();
+        const std::uint32_t dest_reg_idx = instruction.Get_Rd();
 
         const auto result = alu::Execute(*this, instruction, first_operand, second_operand, carry_out);
 
         if (result.write_back)
         {
-            m_context[dest_reg] = result.value;
+            m_context[dest_reg_idx] = result.value;
         }
 
         if (result.set_flags)
         {
-            if (dest_reg == CCPU_Context::PC_REG_IDX)
+            if (dest_reg_idx == CCPU_Context::PC_REG_IDX)
             {
                 if (m_context.Is_Mode_With_No_SPSR(m_context.Get_CPU_Mode()))
                 {
@@ -862,7 +882,7 @@ namespace zero_mate::arm1176jzf_s
     {
         if (!m_context.Is_In_Privileged_Mode())
         {
-            m_logging_system.Error("Attempt to execute instruction CPS in a non-privileged mode");
+            m_logging_system.Error(fmt::format("Attempt to execute a CPS instruction in a non-privileged mode ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
             return;
         }
 
@@ -925,8 +945,11 @@ namespace zero_mate::arm1176jzf_s
     {
         static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
 
-        // TODO only allow for this if the CPU is an exception mode
-        // TODO make sure the CPU is in a privileged mode?
+        if (!m_context.Is_In_Privileged_Mode())
+        {
+            m_logging_system.Error(fmt::format("Attempt execute an SRS instruction in a non-privileged mode ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            return;
+        }
 
         const auto cpu_mode = static_cast<CCPU_Context::NCPU_Mode>(instruction.Get_CPU_Mode());
         auto addr = Calculate_Base_Address(instruction, CCPU_Context::SP_REG_IDX, cpu_mode, NUMBER_OF_REGS_TO_TRANSFER);
@@ -953,8 +976,11 @@ namespace zero_mate::arm1176jzf_s
     {
         static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
 
-        // TODO only allow for this if the CPU is an exception mode
-        // TODO make sure the CPU is in a privileged mode?
+        if (!m_context.Is_In_Privileged_Mode())
+        {
+            m_logging_system.Error(fmt::format("Attempt execute an RFE instruction in a non-privileged mode ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            return;
+        }
 
         const auto reg_rn_idx = instruction.Get_Rn();
         const auto cpu_mode = m_context.Get_CPU_Mode();
@@ -982,5 +1008,23 @@ namespace zero_mate::arm1176jzf_s
 
         PC() = lr;
         m_context.Set_CPSR(spsr);
+    }
+
+    void CCPU_Core::Execute(isa::CCLZ instruction)
+    {
+        const auto rm_reg = m_context[instruction.Get_Rm()];
+        std::uint32_t leading_zeros{ 0 };
+
+        for (std::int32_t i = std::numeric_limits<std::uint32_t>::digits - 1; i >= 0; --i)
+        {
+            if (utils::math::Is_Bit_Set(rm_reg, static_cast<std::uint32_t>(i)))
+            {
+                break;
+            }
+
+            ++leading_zeros;
+        }
+
+        m_context[instruction.Get_Rd()] = leading_zeros;
     }
 }

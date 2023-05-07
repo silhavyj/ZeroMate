@@ -61,7 +61,7 @@ namespace zero_mate::utils::math
         if (shift_size == 0)
         {
             carry_flag = Is_Bit_Set<Type>(value, std::numeric_limits<Type>::digits - 1U);
-            result = 0;
+            result = value;
         }
         else
         {
@@ -89,7 +89,7 @@ namespace zero_mate::utils::math
             }
             else
             {
-                result = 0;
+                result = value;
             }
         }
         else

@@ -1,0 +1,7 @@
+- primitivni page alokator (bitmapa)
+- primitivni kernel heap alokator (blokova bitmapa)
+- zaklad planovace - zakladni time-slicing
+- user program test 1 - periodicke vypisovani na UART znaku '1' (test time-slicing)
+- user program test 2 - periodicke vypisovani na UART znaku '2' (test time-slicing)
+
+(zatim bez init procesu, userspace, izolace procesu, apod.)
