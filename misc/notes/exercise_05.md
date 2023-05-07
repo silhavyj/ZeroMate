@@ -1,2 +1,0 @@
-- Why is there `push {r13}` in `context_switch` in the `switch.s` file? Should not it be `push {r0}` as suggested by the comments?
-- In `start.s` why are the stacks moved up to `#0x80000000`. Is that just a cip select? How do I go about distinguishing in the emulator? Do I just mask it out or something?
