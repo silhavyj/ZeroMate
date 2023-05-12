@@ -1,11 +1,11 @@
-/// ====================================================================================================
+// =====================================================================================================
 /// \file bus.hpp
 /// \date 12. 05. 2023
 /// \author Jakub Silhavy
 /// contact: jakub.silhavy.cz@gmail.com
 ///
 /// \brief This file defines an interface the CPU uses to access different memory-mapped peripherals.
-/// ====================================================================================================
+// =====================================================================================================
 
 #pragma once
 
@@ -22,7 +22,7 @@
 
 namespace zero_mate
 {
-    /// ====================================================================================================
+    // =====================================================================================================
     /// \class CBus
     /// \brief An interface the CPU uses to communicate with different peripherals.
     ///
@@ -30,17 +30,17 @@ namespace zero_mate
     /// When the CPU wants to talk to a peripheral, it must know the address the peripheral
     /// is mapped to. The CBus class then forwards the data to the corresponding peripheral
     /// based on this address.
-    /// ====================================================================================================
+    // =====================================================================================================
     class CBus final
     {
     public:
-        /// This is just a simplification to make the code less wordy
+        /// This is just a simplification to make the code less wordy.
         using Peripheral_t = std::shared_ptr<peripheral::IPeripheral>;
 
-        /// ====================================================================================================
+        // =====================================================================================================
         /// \enum NStatus
         /// \brief Return code (status) of mapping a peripheral to the address space
-        /// ====================================================================================================
+        // =====================================================================================================
         enum class NStatus
         {
             OK,               ///< The peripherals has been mapped successfully
@@ -49,16 +49,16 @@ namespace zero_mate
         };
 
     private:
-        /// ====================================================================================================
+        // =====================================================================================================
         /// \struct TMapped_Peripheral
         /// \brief Representation of a memory-mapped peripheral
-        /// ====================================================================================================
+        // =====================================================================================================
         struct TMapped_Peripheral
         {
             std::uint32_t start_addr; ///< The starting address of the peripheral
             Peripheral_t peripheral;  ///< The peripheral itself
 
-            /// ====================================================================================================
+            // =====================================================================================================
             /// Compares two memory-mapped peripherals by their addresses
             ///
             /// This operator needs to be overloaded, so a binary search can be
@@ -67,7 +67,7 @@ namespace zero_mate
             /// \param other Peripheral this peripheral is being compared to
             /// \return true, if this peripheral is mapped to a lower address than the
             ///         other peripheral. false otherwise.
-            /// ====================================================================================================
+            // =====================================================================================================
             [[nodiscard]] bool operator<(const TMapped_Peripheral& other) const noexcept;
         };
 
@@ -75,31 +75,28 @@ namespace zero_mate
         using Peripherals_t = std::set<TMapped_Peripheral>;
 
     public:
-        /// ====================================================================================================
-        /// \brief Creates an instance of the class
-        /// ====================================================================================================
+        // =====================================================================================================
+        /// \brief Creates an instance of the class.
+        // =====================================================================================================
         CBus();
 
-        /// ====================================================================================================
-        /// \brief Sets a reference to CP15 (coprocessor 15)
+        // =====================================================================================================
+        /// \brief Sets a reference to CP15 (coprocessor 15).
         ///
         /// The bus needs to have access to this coprocessor to determine whether it should check for unaligned
         /// memory accesses or not.
         ///
         /// \param cp15 Instance of CP15
-        /// ====================================================================================================
+        // =====================================================================================================
         void Set_CP15(std::shared_ptr<coprocessor::CCP15> cp15);
 
-        /// ====================================================================================================
+        // =====================================================================================================
         /// \brief Writes data to the given address in the address space.
-        ///
-        /// The bus width size is usually fixed. The generic type is supported only for emulation purposes
-        /// - simplifications.
-        ///
+        /// \note The bus width size is usually fixed. The generic type is supported only for emulation purposes
         /// \tparam Type Data type used when calling the function (determines the number of bytes to be written)
         /// \param addr Address the data will be written to
         /// \param value The data itself
-        /// ====================================================================================================
+        // =====================================================================================================
         template<typename Type>
         void Write(std::uint32_t addr, Type value)
         {
@@ -117,16 +114,13 @@ namespace zero_mate
             peripheral_iter->peripheral->Write(relative_addr, std::bit_cast<const char*>(&value), sizeof(Type));
         }
 
-        /// ====================================================================================================
+        // =====================================================================================================
         /// \brief Reads data from the given address in the address space.
-        ///
-        /// The bus width size is usually fixed. The generic type is supported only for emulation purposes
-        /// - simplifications.
-        ///
+        /// \note The bus width size is usually fixed. The generic type is supported only for emulation purposes
         /// \tparam Type Data type used when calling the function (determines the number of bytes to be read)
         /// \param addr Address the data will be read from
         /// \return Data read from the given address
-        /// ====================================================================================================
+        // =====================================================================================================
         template<typename Type>
         [[nodiscard]] Type Read(std::uint32_t addr)
         {
@@ -144,16 +138,16 @@ namespace zero_mate
             return value;
         }
 
-        /// ====================================================================================================
+        // =====================================================================================================
         /// \brief Attaches a peripheral to the bus.
         /// \param addr Address the peripheral should be mapped to
         /// \param peripheral The peripheral itself
         /// \return \enum NStatus code indication whether the peripheral has been mapped successfully or not
-        /// ====================================================================================================
+        // =====================================================================================================
         [[nodiscard]] NStatus Attach_Peripheral(std::uint32_t addr, const Peripheral_t& peripheral);
 
     private:
-        /// ====================================================================================================
+        // =====================================================================================================
         /// \brief Checks for unaligned memory access.
         ///
         /// If the coprocessor 15 is not present, the function will ignore any unaligned memory access.
@@ -163,14 +157,14 @@ namespace zero_mate
         /// \tparam Type Data type used in the memory access
         /// \param addr Address to be read from or written to
         /// \return true, if unaligned access takes place. false, otherwise.
-        /// ====================================================================================================
+        // =====================================================================================================
         template<typename Type>
         [[nodiscard]] inline bool Unaligned_Access_Violation(std::uint32_t addr) const
         {
             return m_cp15 != nullptr && !m_cp15->Is_Unaligned_Access_Permitted() && (addr % sizeof(Type)) != 0;
         }
 
-        /// ====================================================================================================
+        // =====================================================================================================
         /// \brief Returns the corresponding peripheral based on the given address.
         ///
         /// It searches for a peripheral mapped to the region determined by the given address. It also checks
@@ -181,7 +175,7 @@ namespace zero_mate
         /// \return Corresponding peripheral mapped to the region determined by the given address
         /// \throws CData_Abort if unaligned memory access is detected
         /// \throws CData_Abort if no peripheral was mapped into the given region
-        /// ====================================================================================================
+        // =====================================================================================================
         template<typename Type>
         [[nodiscard]] Peripherals_t::iterator Get_Peripheral(std::uint32_t addr) const
         {
@@ -201,7 +195,7 @@ namespace zero_mate
             return peripheral_iter;
         }
 
-        /// ====================================================================================================
+        // =====================================================================================================
         /// \brief Checks if a peripheral was found and is accessible.
         ///
         /// It checks whether there is a peripheral mapped to the given region in the address space.
@@ -211,7 +205,7 @@ namespace zero_mate
         /// \param addr Relative address used to access the peripheral
         /// \param peripheral_iter Peripheral iterator from a previously applied binary search
         /// \return true if an accessible peripheral was found in the given region. false otherwise.
-        /// ====================================================================================================
+        // =====================================================================================================
         [[nodiscard]] inline bool Is_Peripheral_Accessible(std::uint32_t addr, const Peripherals_t::iterator& peripheral_iter) const
         {
             // Make sure the peripheral exists.
@@ -229,15 +223,15 @@ namespace zero_mate
             return true;
         }
 
-        /// ====================================================================================================
-        /// \brief Binary searches for a peripheral by the given address
+        // =====================================================================================================
+        /// \brief Binary searches for a peripheral by the given address.
         ///
         /// Since peripheral cannot overlap, a binary search can be used to find a peripheral by the given
         /// address.
         ///
         /// \param addr Address in the address space
         /// \return Peripheral that should be mapped to the given address
-        /// ====================================================================================================
+        // =====================================================================================================
         [[nodiscard]] Peripherals_t::iterator Get_Peripheral(std::uint32_t addr) const
         {
             // Apply a binary search.
