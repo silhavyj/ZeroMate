@@ -1,4 +1,16 @@
+// =====================================================================================================
+/// \file bus.cpp
+/// \date 12. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements the interface defined in bus.hpp.
+// =====================================================================================================
+
+// STL imports
+
 #include <algorithm>
+
+// Project file imports
 
 #include "bus.hpp"
 

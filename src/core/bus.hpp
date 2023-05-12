@@ -1,20 +1,23 @@
 // =====================================================================================================
 /// \file bus.hpp
 /// \date 12. 05. 2023
-/// \author Jakub Silhavy
-/// contact: jakub.silhavy.cz@gmail.com
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
 /// \brief This file defines an interface the CPU uses to access different memory-mapped peripherals.
 // =====================================================================================================
 
 #pragma once
 
+// STL imports
+
 #include <bit>
 #include <set>
 #include <mutex>
 #include <limits>
-#include <cstdint>
 #include <memory>
+#include <cstdint>
+
+// Project file imports
 
 #include "coprocessors/cp15.hpp"
 #include "peripherals/peripheral.hpp"
@@ -173,8 +176,8 @@ namespace zero_mate
         /// \tparam Type Data type used when writing or reading from the address space
         /// \param addr Relative address to be read from or written to
         /// \return Corresponding peripheral mapped to the region determined by the given address
-        /// \throws CData_Abort if unaligned memory access is detected
-        /// \throws CData_Abort if no peripheral was mapped into the given region
+        /// \throws CData_Abort if unaligned memory access is detected or no peripheral was mapped into the
+        ///         given region
         // =====================================================================================================
         template<typename Type>
         [[nodiscard]] Peripherals_t::iterator Get_Peripheral(std::uint32_t addr) const
