@@ -45,6 +45,9 @@ add_subdirectory(external/capstone)
 # Add an option to enable testing
 option(ENABLE_TESTING "Enable Test Builds" ON)
 
+# Generate docs
+include(cmake/doxygen.cmake)
+
 # Add the src folder
 add_subdirectory(src)
 

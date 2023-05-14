@@ -73,4 +73,7 @@ namespace zero_mate
 
         return NStatus::OK;
     }
+
 } // namespace zero_mate
+
+// EOF

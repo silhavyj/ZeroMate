@@ -145,7 +145,7 @@ namespace zero_mate
         /// \brief Attaches a peripheral to the bus.
         /// \param addr Address the peripheral should be mapped to
         /// \param peripheral The peripheral itself
-        /// \return \enum NStatus code indication whether the peripheral has been mapped successfully or not
+        /// \return NStatus code indication whether the peripheral has been mapped successfully or not
         // =====================================================================================================
         [[nodiscard]] NStatus Attach_Peripheral(std::uint32_t addr, const Peripheral_t& peripheral);
 
@@ -265,6 +265,7 @@ namespace zero_mate
         std::mutex m_mtx;                           ///< Mutex to make memory accesses thread-safe
         std::shared_ptr<coprocessor::CCP15> m_cp15; ///< Reference to CP15 (coprocessor 15)
     };
+
 } // namespace zero_mate
 
-  // EOF
+// EOF
