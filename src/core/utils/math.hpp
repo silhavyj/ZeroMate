@@ -253,11 +253,12 @@ namespace zero_mate::utils::math
     }
 
     // =================================================================================================================
-    /// \brief
-    /// \tparam Type
-    /// \param op1
-    /// \param op2
-    /// \return
+    /// \brief Checks if performing op1 - op2 would either an overflow or underflow.
+    /// \tparam Type Type of the two operands the function is called with
+    /// \param op1 First operand
+    /// \param op2 Second operand
+    /// \return true, if subtracting the two operands causes an overflow or underflow. false, if it is safe to perform
+    ///         the operation.
     // =================================================================================================================
     template<std::signed_integral Type>
     [[nodiscard]] bool Check_Overflow_Subtraction(Type op1, Type op2) noexcept
@@ -274,6 +275,14 @@ namespace zero_mate::utils::math
         return false;
     }
 
+    // =================================================================================================================
+    /// \brief Checks if performing op1 + op2 would either an overflow or underflow.
+    /// \tparam Type Type of the two operands the function is called with
+    /// \param op1 First operand
+    /// \param op2 Second operand
+    /// \return true, if adding up the two operands causes an overflow or underflow. false, if it is safe to perform
+    ///         the operation.
+    // =================================================================================================================
     template<std::signed_integral Type>
     [[nodiscard]] bool Check_Overflow_Addition(Type op1, Type op2) noexcept
     {
@@ -289,14 +298,25 @@ namespace zero_mate::utils::math
         return false;
     }
 
+    // =================================================================================================================
+    /// \brief Checks if adding or subtracting the two operands (including the carry flag) causes an overflow/underflow.
+    /// \tparam Type Type of the two operands
+    /// \param op1 First operand
+    /// \param op2 Second operand
+    /// \param subtraction Flag indicating whether the operands should be subtracted or added up
+    /// \param carry Carry flag
+    /// \return true, if the operation causes an overflow/underflow. false, otherwise.
+    // =================================================================================================================
     template<std::signed_integral Type>
     [[nodiscard]] bool Check_Overflow(Type op1, Type op2, bool subtraction, Type carry) noexcept
     {
+        // Check if adding the carry bit would cause an overflow.
         if (Check_Overflow_Addition<Type>(op2, carry))
         {
             return true;
         }
 
+        // Add the carry bit.
         op2 += carry;
 
         if (subtraction)
@@ -307,9 +327,21 @@ namespace zero_mate::utils::math
         return Check_Overflow_Addition<Type>(op1, op2);
     }
 
+    // =================================================================================================================
+    /// \brief Sign-extends the given integral value.
+    ///
+    /// If the value is positive, it is simple extended to the large datatype. If the is negative, the final result is
+    /// made up of all 0xF, except for the least significant bits which hold the representation of the given value.
+    ///
+    /// \tparam Small_Type Type of the value passed in as a parameter
+    /// \tparam Large_Type Type to which the value will be sign-extended
+    /// \param value Value to be sign-extended
+    /// \return sign-extended value
+    // =================================================================================================================
     template<std::unsigned_integral Small_Type, std::unsigned_integral Large_Type = std::uint32_t>
     [[nodiscard]] Large_Type Sign_Extend_Value(Small_Type value) noexcept
     {
+        // Make sure Small_Type consists of fewer bits than Large_Type.
         static_assert(std::numeric_limits<Small_Type>::digits < std::numeric_limits<Large_Type>::digits);
 
         if (utils::math::Is_Negative<Small_Type>(value))
@@ -317,17 +349,18 @@ namespace zero_mate::utils::math
             // mask = 0xFFFF...
             auto mask = static_cast<Large_Type>(-1);
 
-            // Create room for the value by shifting the mask to the left (adding zeros)
+            // Create room for the value by shifting the mask to the left by 8 (adding zeros)
             for (std::size_t i = 0; i < sizeof(Small_Type); ++i)
             {
                 mask =
                 static_cast<Large_Type>(mask << static_cast<Large_Type>(std::numeric_limits<std::uint8_t>::digits));
             }
 
-            // Insert the value into the final value.
+            // Insert the value into the final value (modifies the least significant bits).
             return static_cast<Large_Type>(mask | static_cast<Large_Type>(value));
         }
 
+        // If the value is not negative, we can simply cast it.
         return static_cast<Large_Type>(value);
     }
 
