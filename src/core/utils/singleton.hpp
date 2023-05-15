@@ -1,11 +1,10 @@
-// =====================================================================================================
+// =====================================================================================================================
 /// \file singleton.hpp
 /// \date 14. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file defines an implements a generic class that is used to treat other
-///        classes as singletons.
-// =====================================================================================================
+/// \brief This file defines and implements a generic class that is used to treat other classes as singletons.
+// =====================================================================================================================
 
 #pragma once
 
@@ -16,7 +15,7 @@
 
 namespace zero_mate::utils
 {
-    // =====================================================================================================
+    // =================================================================================================================
     /// \class CSingleton
     /// \brief A generic class that allows for treating other classes as singletons.
     ///
@@ -25,30 +24,28 @@ namespace zero_mate::utils
     /// the instance of the class.
     ///
     /// \tparam Type class to be treated as a singleton
-    // =====================================================================================================
+    // =================================================================================================================
     template<typename Type>
     class CSingleton
     {
     public:
-        // =====================================================================================================
+        // =============================================================================================================
         /// \brief Returns the instance of the class
         ///
         /// The class gets instantiated only once.
         ///
         /// \return the instance of the class
-        // =====================================================================================================
+        // =============================================================================================================
         static Type* Get_Instance()
         {
             // Make sure the class gets instantiated only once.
-            std::call_once(s_init_flag, [=]() -> void {
-                CSingleton<Type>::s_instance = std::make_unique<Type>();
-            });
+            std::call_once(s_init_flag, [=]() -> void { CSingleton<Type>::s_instance = std::make_unique<Type>(); });
 
             return s_instance.get();
         }
 
     private:
-        static std::unique_ptr<Type> s_instance; ///< Single instance of the Type within the project
+        static std::unique_ptr<Type> s_instance; ///< Single instance of the Type class within the project
         static std::once_flag s_init_flag;       ///< Flag indicating whether #Get_Instance has already been called
     };
 
@@ -59,5 +56,3 @@ namespace zero_mate::utils
     std::once_flag CSingleton<Type>::s_init_flag{};
 
 } // namespace zero_mate::utils
-
-// EOF

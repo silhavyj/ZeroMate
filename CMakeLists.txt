@@ -42,19 +42,20 @@ add_subdirectory(external/glfw)
 add_subdirectory(external/magic_enum)
 add_subdirectory(external/capstone)
 
-# Add an option to enable testing
-option(ENABLE_TESTING "Enable Test Builds" ON)
-
-# Generate docs
-include(cmake/doxygen.cmake)
-
 # Add the src folder
 add_subdirectory(src)
 
 # Add tests
+option(ENABLE_TESTING "Enable Test Builds" ON)
 if(ENABLE_TESTING)
     enable_testing()
     add_subdirectory(test)
+endif()
+
+# Generate docs
+option(BUILD_DOC "Build Documentation" ON)
+if (BUILD_DOC)
+    include(cmake/doxygen.cmake)
 endif()
 
 # EOF

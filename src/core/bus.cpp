@@ -75,5 +75,3 @@ namespace zero_mate
     }
 
 } // namespace zero_mate
-
-// EOF

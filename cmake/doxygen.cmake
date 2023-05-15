@@ -1,5 +1,3 @@
-option(BUILD_DOC "Build documentation" ON)
-
 # check if Doxygen is installed
 find_package(Doxygen)
 

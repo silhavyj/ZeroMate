@@ -1,4 +1,14 @@
+// =====================================================================================================================
+/// \file math.hpp
+/// \date 14. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file defines and implements a variety of handy helper functions that are used throughout the project.
+// =====================================================================================================================
+
 #pragma once
+
+// STL imports
 
 #include <cstdint>
 #include <limits>
@@ -6,6 +16,13 @@
 
 namespace zero_mate::utils::math
 {
+    // =================================================================================================================
+    /// \brief Sets a bit in the given integral variable.
+    /// \tparam Type Type of the variable the function is called with
+    /// \param value Value whose bit is going to be set
+    /// \param idx Index of the bit to be set
+    /// \param set Indication of whether the bit should be set to a 1 or 0
+    // =================================================================================================================
     template<std::unsigned_integral Type>
     void Set_Bit(Type& value, Type idx, bool set) noexcept
     {
@@ -19,23 +36,48 @@ namespace zero_mate::utils::math
         }
     }
 
+    // =================================================================================================================
+    /// \brief Tests whether a bit is set in the given integral variable.
+    /// \tparam Type Type of the variable the function is called with
+    /// \param value Value whose bit is going to be tested
+    /// \param idx Index of the bit to be tested for a 1
+    /// \return true, if the bit is set to a 1. false, otherwise
+    // =================================================================================================================
     template<std::unsigned_integral Type>
     [[nodiscard]] bool Is_Bit_Set(Type value, Type idx) noexcept
     {
         return static_cast<bool>(static_cast<Type>(value >> idx) & 0b1U);
     }
 
+    // =================================================================================================================
+    /// \struct TShift_Result
+    /// \brief Helper structure to hold the result of the LSL, LSR, ASR, and ROR operations (functions).
+    /// \tparam Type Type of the variable the function is called with
+    // =================================================================================================================
     template<std::unsigned_integral Type>
     struct TShift_Result
     {
-        bool carry_flag{};
-        Type result{};
+        bool carry_flag{}; ///< Indication of whether a carry flag is set
+        Type result{};     ///< Result itself
     };
 
+    // =================================================================================================================
+    /// \brief Performs an LSL (logical shift left) operation on the given integral value.
+    ///
+    /// The following tool can be used to see how these kinds of shifts/rotations work:
+    /// https://onlinetoolz.net/bitshift. Their implementation is also explained in the ARM instruction set manual:
+    /// https://iitd-plos.github.io/col718/ref/arm-instructionset.pdf (section 4.5.2 - Shifts)
+    ///
+    /// \tparam Type Type of the variable the function is called with
+    /// \param value Value used in the operation
+    /// \param shift_size Number of positions the value will be shifted by
+    /// \param carry_flag Carry flag from the CPSR register
+    /// \return TShift_Result, result of the shift operation
+    // =================================================================================================================
     template<std::unsigned_integral Type>
     [[nodiscard]] TShift_Result<Type> LSL(Type value, Type shift_size, bool carry_flag) noexcept
     {
-        bool updated_carry_flag{};
+        bool updated_carry_flag{}; // New value of the carry flag (after the operation)
         Type result{};
 
         if (shift_size == 0)
@@ -52,6 +94,18 @@ namespace zero_mate::utils::math
         return { updated_carry_flag, result };
     }
 
+    // =================================================================================================================
+    /// \brief Performs an LSR (logical shift right) operation on the given integral value.
+    ///
+    /// The following tool can be used to see how these kinds of shifts/rotations work:
+    /// https://onlinetoolz.net/bitshift. Their implementation is also explained in the ARM instruction set manual:
+    /// https://iitd-plos.github.io/col718/ref/arm-instructionset.pdf (section 4.5.2 - Shifts)
+    ///
+    /// \tparam Type Type of the variable the function is called with
+    /// \param value Value used in the operation
+    /// \param shift_size Number of positions the value will be shifted by
+    /// \return TShift_Result, result of the shift operation
+    // =================================================================================================================
     template<std::unsigned_integral Type>
     [[nodiscard]] TShift_Result<Type> LSR(Type value, Type shift_size) noexcept
     {
@@ -60,7 +114,7 @@ namespace zero_mate::utils::math
 
         if (shift_size == 0)
         {
-            carry_flag = Is_Bit_Set<Type>(value, std::numeric_limits<Type>::digits - 1U);
+            carry_flag = Is_Negative<Type>(value);
             result = value;
         }
         else
@@ -72,6 +126,18 @@ namespace zero_mate::utils::math
         return { carry_flag, result };
     }
 
+    // =================================================================================================================
+    /// \brief Performs an ASR (arithmetic shift right) operation on the given integral value.
+    ///
+    /// The following tool can be used to see how these kinds of shifts/rotations work:
+    /// https://onlinetoolz.net/bitshift. Their implementation is also explained in the ARM instruction set manual:
+    /// https://iitd-plos.github.io/col718/ref/arm-instructionset.pdf (section 4.5.2 - Shifts)
+    ///
+    /// \tparam Type Type of the variable the function is called with
+    /// \param value Value used in the operation
+    /// \param shift_size Number of positions the value will be shifted by
+    /// \return TShift_Result, result of the shift operation
+    // =================================================================================================================
     template<std::unsigned_integral Type>
     [[nodiscard]] TShift_Result<Type> ASR(Type value, Type shift_size) noexcept
     {
@@ -101,6 +167,19 @@ namespace zero_mate::utils::math
         return { carry_flag, result };
     }
 
+    // =================================================================================================================
+    /// \brief Performs an ROR (rotate right extended) operation on the given integral value.
+    ///
+    /// The following tool can be used to see how these kinds of shifts/rotations work:
+    /// https://onlinetoolz.net/bitshift. Their implementation is also explained in the ARM instruction set manual:
+    /// https://iitd-plos.github.io/col718/ref/arm-instructionset.pdf (section 4.5.2 - Shifts)
+    ///
+    /// \tparam Type Type of the variable the function is called with
+    /// \param value Value used in the operation
+    /// \param shift_size Number of positions the value will be rotated by
+    /// \param carry_flag Carry flag from the CPSR register
+    /// \return TShift_Result, result of the shift operation
+    // =================================================================================================================
     template<std::unsigned_integral Type>
     [[nodiscard]] TShift_Result<Type> ROR(Type value, Type shift_size, bool carry_flag) noexcept
     {
@@ -110,17 +189,26 @@ namespace zero_mate::utils::math
         if (shift_size == 0)
         {
             updated_carry_flag = Is_Bit_Set<Type>(value, 0);
-            result = static_cast<Type>((static_cast<Type>(carry_flag) << (std::numeric_limits<Type>::digits - 1U))) | (value >> 1U);
+            result = static_cast<Type>((static_cast<Type>(carry_flag) << (std::numeric_limits<Type>::digits - 1U))) |
+                     (value >> 1U);
         }
         else
         {
             updated_carry_flag = Is_Bit_Set<Type>(value, (shift_size - 1));
-            result = static_cast<Type>(value >> shift_size) | static_cast<Type>(value << (std::numeric_limits<Type>::digits - shift_size));
+            result = static_cast<Type>(value >> shift_size) |
+                     static_cast<Type>(value << (std::numeric_limits<Type>::digits - shift_size));
         }
 
         return { updated_carry_flag, result };
     }
 
+    // =================================================================================================================
+    /// \brief Performs a rotate right operation on the given integral value.
+    /// \tparam Type Type of the variable the function is called with
+    /// \param value Value to be rotated
+    /// \param rot Number of positions the value will be rotated by
+    /// \return Result of the rotation
+    // =================================================================================================================
     template<std::unsigned_integral Type>
     [[nodiscard]] Type ROR(Type value, Type rot) noexcept
     {
@@ -132,19 +220,45 @@ namespace zero_mate::utils::math
         return static_cast<Type>(value >> rot) | static_cast<Type>(value << (std::numeric_limits<Type>::digits - rot));
     }
 
+    // =================================================================================================================
+    /// \brief Checks whether the given integral value is negative by examining the MSB
+    /// \tparam Type Type of the variable the function is called with
+    /// \param value Value to be check for being negative
+    /// \return true, if the MSB is set (the value is negative). false, otherwise.
+    // =================================================================================================================
     template<std::unsigned_integral Type>
     [[nodiscard]] bool Is_Negative(Type value) noexcept
     {
         return Is_Bit_Set<Type>(value, std::numeric_limits<Type>::digits - 1U);
     }
 
+    // =================================================================================================================
+    /// \brief Checks if the value is negative or not.
+    ///
+    /// The position of the MSB is determined by Type_Narrower. For example, if Is_Negative<std::uint32_t, std::uint8_t>
+    /// is called, the 7th bit (starting from 0) of the value is treated as the most significant bit (MSB).
+    ///
+    /// \tparam Type Type of the variable the function is called with
+    /// \tparam Type_Narrower This determines the MSB position in the value that is supposed to be of a larger datatype
+    /// \param value Value to be check for being negative
+    /// \return true, if the value is negative. false, otherwise.
+    // =================================================================================================================
     template<std::unsigned_integral Type, std::unsigned_integral Type_Narrower>
     [[nodiscard]] bool Is_Negative(Type value) noexcept
     {
+        // Make sure that Type is made up of more bits than Type_Narrower.
         static_assert(std::numeric_limits<Type_Narrower>::digits <= std::numeric_limits<Type>::digits);
+
         return Is_Bit_Set<Type>(value, std::numeric_limits<Type_Narrower>::digits - 1U);
     }
 
+    // =================================================================================================================
+    /// \brief
+    /// \tparam Type
+    /// \param op1
+    /// \param op2
+    /// \return
+    // =================================================================================================================
     template<std::signed_integral Type>
     [[nodiscard]] bool Check_Overflow_Subtraction(Type op1, Type op2) noexcept
     {
@@ -200,16 +314,21 @@ namespace zero_mate::utils::math
 
         if (utils::math::Is_Negative<Small_Type>(value))
         {
+            // mask = 0xFFFF...
             auto mask = static_cast<Large_Type>(-1);
 
+            // Create room for the value by shifting the mask to the left (adding zeros)
             for (std::size_t i = 0; i < sizeof(Small_Type); ++i)
             {
-                mask = static_cast<Large_Type>(mask << static_cast<Large_Type>(std::numeric_limits<std::uint8_t>::digits));
+                mask =
+                static_cast<Large_Type>(mask << static_cast<Large_Type>(std::numeric_limits<std::uint8_t>::digits));
             }
 
+            // Insert the value into the final value.
             return static_cast<Large_Type>(mask | static_cast<Large_Type>(value));
         }
 
         return static_cast<Large_Type>(value);
     }
-}
+
+} // namespace zero_mate::utils::math
