@@ -58,7 +58,7 @@ namespace zero_mate::arm1176jzf_s
         m_interrupt_controller = interrupt_controller;
     }
 
-    void CCPU_Core::Add_System_Clock_Listener(const System_Clock_Listener_t& listener)
+    void CCPU_Core::Register_System_Clock_Listener(const System_Clock_Listener_t& listener)
     {
         m_system_clock_listeners.push_back(listener);
     }
@@ -191,10 +191,12 @@ namespace zero_mate::arm1176jzf_s
                 return m_context.Is_Flag_Set(CCPU_Context::NFlag::N) != m_context.Is_Flag_Set(CCPU_Context::NFlag::V);
 
             case isa::CInstruction::NCondition::GT:
-                return !m_context.Is_Flag_Set(CCPU_Context::NFlag::Z) && (m_context.Is_Flag_Set(CCPU_Context::NFlag::N) == m_context.Is_Flag_Set(CCPU_Context::NFlag::V));
+                return !m_context.Is_Flag_Set(CCPU_Context::NFlag::Z) &&
+                       (m_context.Is_Flag_Set(CCPU_Context::NFlag::N) == m_context.Is_Flag_Set(CCPU_Context::NFlag::V));
 
             case isa::CInstruction::NCondition::LE:
-                return m_context.Is_Flag_Set(CCPU_Context::NFlag::Z) || (m_context.Is_Flag_Set(CCPU_Context::NFlag::N) != m_context.Is_Flag_Set(CCPU_Context::NFlag::V));
+                return m_context.Is_Flag_Set(CCPU_Context::NFlag::Z) ||
+                       (m_context.Is_Flag_Set(CCPU_Context::NFlag::N) != m_context.Is_Flag_Set(CCPU_Context::NFlag::V));
 
             case isa::CInstruction::NCondition::AL:
                 [[fallthrough]];
@@ -365,27 +367,32 @@ namespace zero_mate::arm1176jzf_s
         return shift_amount_reg_value & 0xFFU;
     }
 
-    utils::math::TShift_Result<std::uint32_t> CCPU_Core::Perform_Shift(isa::CInstruction::NShift_Type shift_type, std::uint32_t shift_amount, std::uint32_t shift_reg) const noexcept
+    utils::math::TShift_Result<std::uint32_t> CCPU_Core::Perform_Shift(isa::CInstruction::NShift_Type shift_type,
+                                                                       std::uint32_t shift_amount,
+                                                                       std::uint32_t value) const noexcept
     {
         switch (shift_type)
         {
             case isa::CData_Processing::NShift_Type::LSL:
-                return utils::math::LSL<std::uint32_t>(shift_reg, shift_amount, m_context.Is_Flag_Set(CCPU_Context::NFlag::C));
+                return utils::math::LSL<std::uint32_t>(
+                value, shift_amount, m_context.Is_Flag_Set(CCPU_Context::NFlag::C));
 
             case isa::CData_Processing::NShift_Type::LSR:
-                return utils::math::LSR<std::uint32_t>(shift_reg, shift_amount);
+                return utils::math::LSR<std::uint32_t>(value, shift_amount);
 
             case isa::CData_Processing::NShift_Type::ASR:
-                return utils::math::ASR<std::uint32_t>(shift_reg, shift_amount);
+                return utils::math::ASR<std::uint32_t>(value, shift_amount);
 
             case isa::CData_Processing::NShift_Type::ROR:
-                return utils::math::ROR<std::uint32_t>(shift_reg, shift_amount, m_context.Is_Flag_Set(CCPU_Context::NFlag::C));
+                return utils::math::ROR<std::uint32_t>(
+                value, shift_amount, m_context.Is_Flag_Set(CCPU_Context::NFlag::C));
         }
 
-        return {};
+        return {}; // Just so the compiler does not gripe about a missing return value
     }
 
-    utils::math::TShift_Result<std::uint32_t> CCPU_Core::Get_Second_Operand(isa::CData_Processing instruction) const noexcept
+    utils::math::TShift_Result<std::uint32_t>
+    CCPU_Core::Get_Second_Operand(isa::CData_Processing instruction) const noexcept
     {
         if (instruction.Is_I_Bit_Set())
         {
@@ -426,7 +433,10 @@ namespace zero_mate::arm1176jzf_s
             {
                 if (m_context.Is_Mode_With_No_SPSR(m_context.Get_CPU_Mode()))
                 {
-                    m_logging_system.Error(fmt::format("Attempt to write SPSR to CPSR from a mode where SPSR is not supported ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+                    m_logging_system.Error(
+                    fmt::format("Attempt to write SPSR to CPSR from a mode where SPSR is not supported ({})",
+                                magic_enum::enum_name(m_context.Get_CPU_Mode()))
+                    .c_str());
                     return;
                 }
                 m_context.Set_CPSR(m_context.Get_SPSR());
@@ -441,7 +451,7 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
-    void CCPU_Core::Execute(isa::CBranch_And_Exchange instruction) noexcept
+    void CCPU_Core::Execute(isa::CBranch_And_Exchange instruction)
     {
         const auto rm_reg_value = m_context[instruction.Get_Rm()];
 
@@ -482,10 +492,8 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CMultiply instruction)
     {
-        const auto result = mac::Execute(instruction,
-                                         m_context[instruction.Get_Rm()],
-                                         m_context[instruction.Get_Rs()],
-                                         m_context[instruction.Get_Rn()]);
+        const auto result = mac::Execute(
+        instruction, m_context[instruction.Get_Rm()], m_context[instruction.Get_Rs()], m_context[instruction.Get_Rn()]);
 
         if (result.set_fags)
         {
@@ -544,7 +552,8 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Execute(isa::CSingle_Data_Transfer instruction)
     {
         const auto reg_rn_idx = instruction.Get_Rn();
-        const auto base_addr = reg_rn_idx == CCPU_Context::PC_REG_IDX ? (PC() + CCPU_Context::REG_SIZE) : m_context[reg_rn_idx];
+        const auto base_addr =
+        reg_rn_idx == CCPU_Context::PC_REG_IDX ? (PC() + CCPU_Context::REG_SIZE) : m_context[reg_rn_idx];
         const auto offset = Get_Offset(instruction);
 
         const bool pre_indexed = instruction.Is_P_Bit_Set();
@@ -611,7 +620,9 @@ namespace zero_mate::arm1176jzf_s
                 {
                     if (m_context.Is_Mode_With_No_SPSR(m_context.Get_CPU_Mode()))
                     {
-                        m_logging_system.Error(fmt::format("There is no SPSR register in the {} mode", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+                        m_logging_system.Error(fmt::format("There is no SPSR register in the {} mode",
+                                                           magic_enum::enum_name(m_context.Get_CPU_Mode()))
+                                               .c_str());
                         throw exceptions::CReset{};
                     }
 
@@ -650,7 +661,9 @@ namespace zero_mate::arm1176jzf_s
         return m_context[instruction.Get_Rm()];
     }
 
-    void CCPU_Core::Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t dest_reg)
+    void CCPU_Core::Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type,
+                                                        std::uint32_t addr,
+                                                        std::uint32_t dest_reg_idx)
     {
         std::variant<std::uint8_t, std::uint16_t> read_value;
 
@@ -661,29 +674,31 @@ namespace zero_mate::arm1176jzf_s
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                m_context[dest_reg] = m_bus->Read<std::uint16_t>(addr);
+                m_context[dest_reg_idx] = m_bus->Read<std::uint16_t>(addr);
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
                 read_value = m_bus->Read<std::uint8_t>(addr);
-                m_context[dest_reg] = utils::math::Sign_Extend_Value(std::get<std::uint8_t>(read_value));
+                m_context[dest_reg_idx] = utils::math::Sign_Extend_Value(std::get<std::uint8_t>(read_value));
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
                 read_value = m_bus->Read<std::uint16_t>(addr);
-                m_context[dest_reg] = utils::math::Sign_Extend_Value(std::get<std::uint16_t>(read_value));
+                m_context[dest_reg_idx] = utils::math::Sign_Extend_Value(std::get<std::uint16_t>(read_value));
                 break;
         }
     }
 
-    void CCPU_Core::Perform_Halfword_Data_Transfer_Write(isa::CHalfword_Data_Transfer::NType type, std::uint32_t addr, std::uint32_t src_reg)
+    void CCPU_Core::Perform_Halfword_Data_Transfer_Write(isa::CHalfword_Data_Transfer::NType type,
+                                                         std::uint32_t addr,
+                                                         std::uint32_t src_reg_idx)
     {
         std::uint16_t value{};
 
         switch (type)
         {
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                value = static_cast<std::uint16_t>(m_context[src_reg] & 0x0000FFFFU);
+                value = static_cast<std::uint16_t>(m_context[src_reg_idx] & 0x0000FFFFU);
                 m_bus->Write<std::uint16_t>(addr, value);
                 break;
 
@@ -691,7 +706,8 @@ namespace zero_mate::arm1176jzf_s
                 [[fallthrough]];
             case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
             case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
-                m_logging_system.Warning("Only unsigned halfwords should be used when performing a halfword data write");
+                m_logging_system.Warning(
+                "Only unsigned halfwords should be used when performing a halfword data write");
                 break;
         }
     }
@@ -741,30 +757,42 @@ namespace zero_mate::arm1176jzf_s
 
         const std::unsigned_integral auto rotated_value = utils::math::ROR(m_context[reg_rm_idx], rot);
 
-        const std::uint16_t sign_extended_lower_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(rotated_value & 0xFFU);
-        const std::uint16_t sign_extended_higher_8_to_16 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(((rotated_value & 0xFF0000U) >> 16U) & 0xFFU);
+        const std::uint16_t sign_extended_lower_8_to_16 =
+        utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(rotated_value & 0xFFU);
+        const std::uint16_t sign_extended_higher_8_to_16 =
+        utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(((rotated_value & 0xFF0000U) >> 16U) & 0xFFU);
 
-        const std::uint32_t sign_extended_8_to_32 = utils::math::Sign_Extend_Value<std::uint8_t, std::uint32_t>(rotated_value & 0xFFU);
-        const std::uint32_t sign_extended_16_to_32 = utils::math::Sign_Extend_Value<std::uint16_t, std::uint32_t>(rotated_value & 0xFFFFU);
+        const std::uint32_t sign_extended_8_to_32 =
+        utils::math::Sign_Extend_Value<std::uint8_t, std::uint32_t>(rotated_value & 0xFFU);
+        const std::uint32_t sign_extended_16_to_32 =
+        utils::math::Sign_Extend_Value<std::uint16_t, std::uint32_t>(rotated_value & 0xFFFFU);
 
-        const std::uint16_t lower_16_bits_unsigned = static_cast<std::uint16_t>(rotated_value & 0xFFU) + static_cast<std::uint16_t>(m_context[reg_rn_idx] & 0xFFFFU);
-        const std::uint16_t higher_16_bits_unsigned = static_cast<std::uint16_t>((rotated_value & 0xFF0000U) >> 16U) + static_cast<std::uint16_t>((m_context[reg_rn_idx] & 0xFFFF0000U) >> 16U);
+        const std::uint16_t lower_16_bits_unsigned =
+        static_cast<std::uint16_t>(rotated_value & 0xFFU) + static_cast<std::uint16_t>(m_context[reg_rn_idx] & 0xFFFFU);
+        const std::uint16_t higher_16_bits_unsigned =
+        static_cast<std::uint16_t>((rotated_value & 0xFF0000U) >> 16U) +
+        static_cast<std::uint16_t>((m_context[reg_rn_idx] & 0xFFFF0000U) >> 16U);
 
-        const std::uint16_t lower_16_bits_signed = sign_extended_lower_8_to_16 + static_cast<std::uint16_t>(m_context[reg_rn_idx] & 0xFFFFU);
-        const std::uint16_t higher_16_bits_singed = sign_extended_higher_8_to_16 + static_cast<std::uint16_t>((m_context[reg_rn_idx] & 0xFFFF0000) >> 16U);
+        const std::uint16_t lower_16_bits_signed =
+        sign_extended_lower_8_to_16 + static_cast<std::uint16_t>(m_context[reg_rn_idx] & 0xFFFFU);
+        const std::uint16_t higher_16_bits_singed =
+        sign_extended_higher_8_to_16 + static_cast<std::uint16_t>((m_context[reg_rn_idx] & 0xFFFF0000) >> 16U);
 
         switch (type)
         {
             case isa::CExtend::NType::SXTAB16:
-                m_context[reg_rd_idx] = static_cast<std::uint32_t>(lower_16_bits_signed) | (static_cast<std::uint32_t>(higher_16_bits_singed) << 16U);
+                m_context[reg_rd_idx] = static_cast<std::uint32_t>(lower_16_bits_signed) |
+                                        (static_cast<std::uint32_t>(higher_16_bits_singed) << 16U);
                 break;
 
             case isa::CExtend::NType::UXTAB16:
-                m_context[reg_rd_idx] = static_cast<std::uint32_t>(lower_16_bits_unsigned) | (static_cast<std::uint32_t>(higher_16_bits_unsigned) << 16U);
+                m_context[reg_rd_idx] = static_cast<std::uint32_t>(lower_16_bits_unsigned) |
+                                        (static_cast<std::uint32_t>(higher_16_bits_unsigned) << 16U);
                 break;
 
             case isa::CExtend::NType::SXTB16:
-                m_context[reg_rd_idx] = static_cast<std::uint32_t>(sign_extended_lower_8_to_16) | static_cast<std::uint32_t>(sign_extended_higher_8_to_16) << 16U;
+                m_context[reg_rd_idx] = static_cast<std::uint32_t>(sign_extended_lower_8_to_16) |
+                                        static_cast<std::uint32_t>(sign_extended_higher_8_to_16) << 16U;
                 break;
 
             case isa::CExtend::NType::UXTB16:
@@ -808,7 +836,8 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Execute_MSR(isa::CPSR_Transfer instruction)
     {
         const auto mask = instruction.Get_Mask();
-        const auto new_value = instruction.Is_Immediate() ? Get_Second_Operand_Imm(instruction).result : m_context[instruction.Get_Rm()];
+        const auto new_value =
+        instruction.Is_Immediate() ? Get_Second_Operand_Imm(instruction).result : m_context[instruction.Get_Rm()];
 
         const auto Update_Special_Register = [&mask, &new_value](std::uint32_t reg_value) -> std::uint32_t {
             reg_value &= ~mask;
@@ -882,7 +911,9 @@ namespace zero_mate::arm1176jzf_s
     {
         if (!m_context.Is_In_Privileged_Mode())
         {
-            m_logging_system.Error(fmt::format("Attempt to execute a CPS instruction in a non-privileged mode ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            m_logging_system.Error(fmt::format("Attempt to execute a CPS instruction in a non-privileged mode ({})",
+                                               magic_enum::enum_name(m_context.Get_CPU_Mode()))
+                                   .c_str());
             return;
         }
 
@@ -947,7 +978,9 @@ namespace zero_mate::arm1176jzf_s
 
         if (!m_context.Is_In_Privileged_Mode())
         {
-            m_logging_system.Error(fmt::format("Attempt execute an SRS instruction in a non-privileged mode ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            m_logging_system.Error(fmt::format("Attempt execute an SRS instruction in a non-privileged mode ({})",
+                                               magic_enum::enum_name(m_context.Get_CPU_Mode()))
+                                   .c_str());
             return;
         }
 
@@ -978,7 +1011,9 @@ namespace zero_mate::arm1176jzf_s
 
         if (!m_context.Is_In_Privileged_Mode())
         {
-            m_logging_system.Error(fmt::format("Attempt execute an RFE instruction in a non-privileged mode ({})", magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            m_logging_system.Error(fmt::format("Attempt execute an RFE instruction in a non-privileged mode ({})",
+                                               magic_enum::enum_name(m_context.Get_CPU_Mode()))
+                                   .c_str());
             return;
         }
 

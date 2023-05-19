@@ -9,13 +9,14 @@
 #pragma once
 
 // STL imports
-
+/// \cond
 #include <bit>
 #include <set>
 #include <mutex>
 #include <limits>
 #include <memory>
 #include <cstdint>
+/// \endcond
 
 // Project file imports
 

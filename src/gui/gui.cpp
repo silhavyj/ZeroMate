@@ -161,7 +161,7 @@ namespace zero_mate::gui
         void Init_CPU()
         {
             s_cpu->Set_Interrupt_Controller(s_interrupt_controller);
-            s_cpu->Add_System_Clock_Listener(s_arm_timer);
+            s_cpu->Register_System_Clock_Listener(s_arm_timer);
             s_cpu->Add_Coprocessor(coprocessor::CCP15::ID, s_cp15);
         }
 

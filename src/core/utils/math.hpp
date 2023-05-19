@@ -9,10 +9,11 @@
 #pragma once
 
 // STL imports
-
+/// \cond
 #include <cstdint>
 #include <limits>
 #include <concepts>
+/// \endcond
 
 namespace zero_mate::utils::math
 {

@@ -38,3 +38,5 @@ IndentRequires: false
 AllowShortFunctionsOnASingleLine: false
 QualifierAlignment: Left
 AlwaysBreakTemplateDeclarations: true
+BinPackArguments: false
+BinPackParameters: false

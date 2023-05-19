@@ -9,10 +9,10 @@
 #pragma once
 
 // STL imports
-
+/// \cond
 #include <mutex>
 #include <memory>
-
+/// \endcond
 namespace zero_mate::utils
 {
     // =================================================================================================================
