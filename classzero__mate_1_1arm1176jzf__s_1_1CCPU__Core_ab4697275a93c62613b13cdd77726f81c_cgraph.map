@@ -1,0 +1,10 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute">
+<area shape="rect" id="node1" title="Executes a single data transfer instruction." alt="" coords="5,239,181,280"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab8055407426b0f25544d2b33a89b22a7" title="Calculates the offset from the base address in a single data transfer instruction." alt="" coords="229,5,424,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html#ae1e6db1cdc189dab1777b4de9719e107" title=" " alt="" coords="240,71,413,127"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html#ad788aeba680123d742a3b2efc2ddf8ef" title=" " alt="" coords="240,151,413,207"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html#ab2bd06becd608f8810e8da5fe41b031c" title=" " alt="" coords="240,231,413,287"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html#a4adfebcac49e96096806ede7e5fbeb81" title=" " alt="" coords="240,311,413,367"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html#ae92a645b6f504daf95c0a09085f79139" title=" " alt="" coords="240,391,413,447"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a423eacd01e574e782a2b7cf51f28c56c" title="Returns a reference to the PC register (r15)" alt="" coords="240,472,413,513"/>
+</map>

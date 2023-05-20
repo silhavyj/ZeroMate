@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Core::LR" name="zero_mate::arm1176jzf_s::CCPU_Core::LR">
+<area shape="rect" id="node1" title="Returns a reference to the LR register (r14 = link register)" alt="" coords="229,5,403,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa6f6225bcc321564fe4ce5e3f98155bb" title="Executes a branch and exchange instruction." alt="" coords="5,5,181,47"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Core::Determine_CPU_Mode" name="zero_mate::arm1176jzf_s::CCPU_Core::Determine_CPU_Mode">
+<area shape="rect" id="node1" title="Determines the mode of the CPU that should be used in a block data transfer instruction." alt="" coords="5,125,200,181"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa740f9219bb413d707ac72f373e60d3a" title=" " alt="" coords="263,5,436,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a13942f150d4adefab57c5c34aef1a104" title=" " alt="" coords="248,85,451,141"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#aa2342ef2d946e48ad5f19e6fd04d9a3f" title=" " alt="" coords="263,165,436,221"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1a3153bfc2aa11e2c86d55eea07e4c5a" title=" " alt="" coords="263,245,436,301"/>
+</map>

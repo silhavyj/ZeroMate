@@ -1,0 +1,11 @@
+<map id="src/gui/windows/peripherals/ram_window.hpp" name="src/gui/windows/peripherals/ram_window.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="48,5,251,47"/>
+<area shape="rect" id="node2" href="$window_8hpp.html" title=" " alt="" coords="5,102,128,129"/>
+<area shape="rect" id="node4" href="$ram_8hpp.html" title=" " alt="" coords="152,95,315,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="28,184,105,211"/>
+<area shape="rect" id="node5" title=" " alt="" coords="130,184,169,211"/>
+<area shape="rect" id="node6" title=" " alt="" coords="193,184,249,211"/>
+<area shape="rect" id="node7" title=" " alt="" coords="274,184,337,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="389,259,456,285"/>
+<area shape="rect" id="node9" href="$peripheral_8hpp.html" title=" " alt="" coords="413,184,529,211"/>
+</map>

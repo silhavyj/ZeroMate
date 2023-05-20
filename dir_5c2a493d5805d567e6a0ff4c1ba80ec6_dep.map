@@ -1,0 +1,13 @@
+<map id="src/core/arm1176jzf_s" name="src/core/arm1176jzf_s">
+<area shape="rect" id="node1" href="dir_34794bca92a793a1e58b77dac439fbe4.html" title="peripherals" alt="" coords="171,159,266,207"/>
+<area shape="rect" id="node2" href="dir_a8053b3d69cfefb2b2e6ec7bf9dd5c1a.html" title="utils" alt="" coords="183,255,255,303"/>
+<area shape="rect" id="edge6-headlabel" href="dir_000005_000006.html" title="8" alt="" coords="222,229,232,244"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000005_000002.html" title="1" alt="" coords="137,121,147,135"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000002_000005.html" title="2" alt="" coords="166,134,175,149"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000002_000006.html" title="8" alt="" coords="264,241,274,255"/>
+<area shape="rect" id="node4" href="dir_18d97c789d65c625ba9fe3de5ae3d420.html" title="isa" alt="" coords="65,159,137,207"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000002_000003.html" title="5" alt="" coords="102,132,111,147"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000003_000006.html" title="2" alt="" coords="176,229,185,244"/>
+<area shape="rect" id="clust2" href="dir_5c2a493d5805d567e6a0ff4c1ba80ec6.html" alt="" coords="27,52,160,217"/>
+<area shape="rect" id="clust1" href="dir_aebb8dcc11953d78e620bbef0b9e2183.html" title="core" alt="" coords="16,16,304,313"/>
+</map>

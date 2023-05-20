@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Core::Read_Write_Value" name="zero_mate::arm1176jzf_s::CCPU_Core::Read_Write_Value">
+<area shape="rect" id="node1" title="Reads/writes data to the BUS." alt="" coords="5,13,248,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html#aaca2c8a6c643bdc3d892aa18a63e0b04" title=" " alt="" coords="296,5,469,61"/>
+</map>

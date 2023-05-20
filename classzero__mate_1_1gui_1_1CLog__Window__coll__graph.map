@@ -1,0 +1,6 @@
+<map id="zero_mate::gui::CLog_Window" name="zero_mate::gui::CLog_Window">
+<area shape="rect" id="node1" title=" " alt="" coords="303,57,461,98"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1ILogger.html" title=" " alt="" coords="7,5,190,32"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CGUI__Window.html" title=" " alt="" coords="19,57,179,98"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html" title=" " alt="" coords="5,123,192,179"/>
+</map>

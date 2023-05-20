@@ -1,0 +1,5 @@
+<map id="zero_mate::utils::math::Sign_Extend_Value" name="zero_mate::utils::math::Sign_Extend_Value">
+<area shape="rect" id="node1" title="Sign&#45;extends the given integral value." alt="" coords="501,13,671,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a066aca0627655bc1e068b181fb0964bd" title="Performs a halfword data read from a given address." alt="" coords="229,5,453,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae5fc1112d78d8c344841fd94d1356635" title="Executes a halfword data transfer instruction." alt="" coords="5,13,181,54"/>
+</map>

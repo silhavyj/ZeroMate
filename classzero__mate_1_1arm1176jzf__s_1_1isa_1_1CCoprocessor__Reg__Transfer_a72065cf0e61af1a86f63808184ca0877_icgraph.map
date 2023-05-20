@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::isa::CCoprocessor_Reg_Transfer::Get_Coprocessor_ID" name="zero_mate::arm1176jzf_s::isa::CCoprocessor_Reg_Transfer::Get_Coprocessor_ID">
+<area shape="rect" id="node1" title=" " alt="" coords="229,5,481,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae54c96b9b4395337b22c4ce3686d7862" title="Executes a coprocessor register transfer instruction (coprocessor instruction (1))." alt="" coords="5,13,181,54"/>
+</map>

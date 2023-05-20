@@ -1,0 +1,10 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Context::Get_CPSR" name="zero_mate::arm1176jzf_s::CCPU_Context::Get_CPSR">
+<area shape="rect" id="node1" title=" " alt="" coords="820,104,1031,145"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acd8902811a86afabf464f121d58628ee" title="Executes a CPS instruction." alt="" coords="563,5,739,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a82f0fa55ec787c7a39bac81b7437aec2" title="Executes an MRS instruction (move data from CPSR/SPSR to an ARM register)." alt="" coords="545,71,757,112"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#abe7461d09a52f28f99037717f61975c6" title="Executes an MSR instruction (move data to CPSR/SPSR from an ARM register)." alt="" coords="545,136,757,177"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html#ad3bf490925aef83d99eda63e054f7c43" title=" " alt="" coords="529,201,772,243"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a3a90c040b3cbe4545a9acc5e35acdd45" title="Executes a PSR transfer instruction." alt="" coords="278,104,454,145"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html#acd9fc32fa1db2adfa6de67fdcd47035c" title=" " alt="" coords="251,201,481,243"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html#a12beb19205052a340193be90b32e5717" title=" " alt="" coords="5,201,203,243"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Core::Perform_Halfword_Data_Transfer_Read" name="zero_mate::arm1176jzf_s::CCPU_Core::Perform_Halfword_Data_Transfer_Read">
+<area shape="rect" id="node1" title="Performs a halfword data read from a given address." alt="" coords="5,5,229,61"/>
+<area shape="rect" id="node2" href="$namespacezero__mate_1_1utils_1_1math.html#afda20fa50949a9cd3a80f811b0085221" title="Sign&#45;extends the given integral value." alt="" coords="277,13,447,54"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="zero_mate::CBus::Is_Peripheral_Accessible" name="zero_mate::CBus::Is_Peripheral_Accessible">
+<area shape="rect" id="node1" title="Checks if a peripheral was found and is accessible." alt="" coords="447,5,617,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1CBus.html#a016eb46a0e573ea1e37e5c51643ca69f" title="Returns the corresponding peripheral based on the given address." alt="" coords="236,5,399,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1CBus.html#a73e2222c5c3a5474f46a9011a50c1c7f" title="Attaches a peripheral to the bus." alt="" coords="5,5,188,47"/>
+</map>

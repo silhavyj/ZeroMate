@@ -1,0 +1,22 @@
+<map id="src/gui/windows/peripherals/arm_timer_window.cpp" name="src/gui/windows/peripherals/arm_timer_window.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="65,5,268,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="33,95,138,121"/>
+<area shape="rect" id="node3" href="$arm__timer__window_8hpp.html" title=" " alt="" coords="162,95,337,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="84,483,161,509"/>
+<area shape="rect" id="node5" title=" " alt="" coords="454,177,525,203"/>
+<area shape="rect" id="node6" href="$window_8hpp.html" title=" " alt="" coords="43,333,165,360"/>
+<area shape="rect" id="node7" href="$arm__timer_8hpp.html" title=" " alt="" coords="267,169,429,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="631,408,687,435"/>
+<area shape="rect" id="node9" title=" " alt="" coords="291,259,405,285"/>
+<area shape="rect" id="node10" href="$peripheral_8hpp.html" title=" " alt="" coords="721,333,837,360"/>
+<area shape="rect" id="node12" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="430,259,605,285"/>
+<area shape="rect" id="node15" href="$logger_8hpp.html" title=" " alt="" coords="228,408,407,435"/>
+<area shape="rect" id="node20" href="$system__clock__listener_8hpp.html" title=" " alt="" coords="775,259,969,285"/>
+<area shape="rect" id="node11" title=" " alt="" coords="680,483,747,509"/>
+<area shape="rect" id="node13" title=" " alt="" coords="431,408,555,435"/>
+<area shape="rect" id="node14" href="$context_8hpp.html" title=" " alt="" coords="392,333,595,360"/>
+<area shape="rect" id="node16" title=" " alt="" coords="193,483,257,509"/>
+<area shape="rect" id="node17" title=" " alt="" coords="282,483,345,509"/>
+<area shape="rect" id="node18" title=" " alt="" coords="369,483,466,509"/>
+<area shape="rect" id="node19" title=" " alt="" coords="490,483,614,509"/>
+</map>
