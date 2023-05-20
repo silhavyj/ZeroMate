@@ -1,17 +1,28 @@
 name: Doxygen
 
+# Define the rules when this workflow should be applied
 on:
   push:
     branches:
-      - '**'
+      - '**' # TODO change this to main
+  workflow_dispatch:
 
 jobs:
   deploy:
+    # Specify the type of the machine
     runs-on: ubuntu-latest
+
+
+    # Deploy docs
     steps:
+      - name: Install Doxygen
+        run: /bin/bash .github/scripts/install_doxygen.sh
+
       - uses: DenverCoder1/doxygen-github-pages-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: docs/doxygen/html
           config_file: Doxyfile
+
+# EOF
