@@ -1,0 +1,11 @@
+digraph "zero_mate::gui::CARM_Timer_Window::Render_Registers"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="zero_mate::gui::CARM\l_Timer_Window::Render\l_Registers",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="zero_mate::gui::CARM\l_Timer_Window::Render",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aaf519012bb20d98b58690c86ce7f2009",tooltip=" "];
+}

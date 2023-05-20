@@ -1,0 +1,13 @@
+digraph "zero_mate::gui::CLog_Window::CLog_Window"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="zero_mate::gui::CLog\l_Window::CLog_Window",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="zero_mate::gui::CLog\l_Window::Clear",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1gui_1_1CLog__Window.html#aab3c1c25eedfe7230d905ae5355265c0",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="zero_mate::gui::CCircular\l_Log_Buffer::Clear",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#af165b3edecdde5d0ea7a10957849921b",tooltip=" "];
+}

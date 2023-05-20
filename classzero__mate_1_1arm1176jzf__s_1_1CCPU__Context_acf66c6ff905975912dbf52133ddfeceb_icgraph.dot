@@ -1,0 +1,24 @@
+digraph "zero_mate::arm1176jzf_s::CCPU_Context::Get_CPSR"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="zero_mate::arm1176jzf\l_s::CCPU_Context::Get_CPSR",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="zero_mate::arm1176jzf\l_s::CCPU_Core::Execute",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acd8902811a86afabf464f121d58628ee",tooltip="Executes a CPS instruction."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="zero_mate::arm1176jzf\l_s::CCPU_Core::Execute_MRS",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a82f0fa55ec787c7a39bac81b7437aec2",tooltip="Executes an MRS instruction (move data from CPSR/SPSR to an ARM register)."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="zero_mate::arm1176jzf\l_s::CCPU_Core::Execute",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a3a90c040b3cbe4545a9acc5e35acdd45",tooltip="Executes a PSR transfer instruction."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="zero_mate::arm1176jzf\l_s::CCPU_Core::Execute_MSR",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#abe7461d09a52f28f99037717f61975c6",tooltip="Executes an MSR instruction (move data to CPSR/SPSR from an ARM register)."];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="zero_mate::gui::CRegisters\l_Window::Render_Registers_Table",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1gui_1_1CRegisters__Window.html#ad3bf490925aef83d99eda63e054f7c43",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="zero_mate::gui::CRegisters\l_Window::Render_Register_Tabs",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1gui_1_1CRegisters__Window.html#acd9fc32fa1db2adfa6de67fdcd47035c",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="zero_mate::gui::CRegisters\l_Window::Render",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1gui_1_1CRegisters__Window.html#a12beb19205052a340193be90b32e5717",tooltip=" "];
+}

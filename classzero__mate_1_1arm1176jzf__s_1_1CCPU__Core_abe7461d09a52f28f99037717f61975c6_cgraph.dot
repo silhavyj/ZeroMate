@@ -1,0 +1,49 @@
+digraph "zero_mate::arm1176jzf_s::CCPU_Core::Execute_MSR"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="zero_mate::arm1176jzf\l_s::CCPU_Core::Execute_MSR",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Executes an MSR instruction (move data to CPSR/SPSR from an ARM register)."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="zero_mate::arm1176jzf\l_s::CCPU_Context::Get_CPSR",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf66c6ff905975912dbf52133ddfeceb",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="zero_mate::arm1176jzf\l_s::isa::CPSR_Transfer\l::Get_Mask",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a01a26a3a6acf88a634a319d0a8a49daa",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="zero_mate::arm1176jzf\l_s::isa::CPSR_Transfer\l::Is_C_Bit_Set",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a57095b246ae459c4135f5d5d9f6cbc85",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="zero_mate::arm1176jzf\l_s::isa::CPSR_Transfer\l::Is_F_Bit_Set",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#aa2fa7591782207b606ca5542f57622cb",tooltip=" "];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="zero_mate::arm1176jzf\l_s::isa::CPSR_Transfer\l::Is_S_Bit_Set",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a6a0b2b90bc8fa9d50266f4416f2b5a0d",tooltip=" "];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="zero_mate::arm1176jzf\l_s::isa::CPSR_Transfer\l::Is_X_Bit_Set",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ad7c504ddc0bf7e0d391e49993b6159ef",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="zero_mate::arm1176jzf\l_s::isa::CPSR_Transfer\l::Get_Register_Type",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ada397b14e5cf27991a1b575c95f945bc",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="zero_mate::arm1176jzf\l_s::isa::CPSR_Transfer\l::Get_Rm",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#aad8286360247014777a9f9784af744fd",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="zero_mate::arm1176jzf\l_s::CCPU_Core::Get_Second\l_Operand_Imm",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac0b5e216097f56e428a5c67eb63a08d9",tooltip="Calculates the second immediate operand of a given instruction."];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="zero_mate::arm1176jzf\l_s::CCPU_Context::Is\l_Flag_Set",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef",tooltip=" "];
+  Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="zero_mate::utils::math::ROR",height=0.2,width=0.4,color="black",URL="$namespacezero__mate_1_1utils_1_1math.html#a9cdc39df63ef0d6d33123bac4fffb89b",tooltip="Performs an ROR (rotate right extended) operation on the given integral value."];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="zero_mate::arm1176jzf\l_s::CCPU_Context::Get_SPSR",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ae00681efcbc4adfcfde001a67c5baeca",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="zero_mate::arm1176jzf\l_s::isa::CPSR_Transfer\l::Is_Immediate",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ae211666723c56b5f5ea617c8fe51619f",tooltip=" "];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="zero_mate::arm1176jzf\l_s::CCPU_Context::Set_CPSR",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a53765299c790cc790e15deb2c701bd2a",tooltip=" "];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="zero_mate::utils::CLogging\l_System::Error",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15",tooltip=" "];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="zero_mate::utils::CLogging\l_System::Extract_Filename",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd",tooltip=" "];
+  Node15 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="zero_mate::arm1176jzf\l_s::CCPU_Context::Get\l_CPU_Mode",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa740f9219bb413d707ac72f373e60d3a",tooltip=" "];
+  Node15 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="zero_mate::arm1176jzf\l_s::CCPU_Context::Invalid\l_Change_Of_Control_Bits",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa53dae8f0dd16d916a852e572dfa95ba",tooltip=" "];
+  Node15 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="zero_mate::arm1176jzf\l_s::CCPU_Context::Set\l_CPU_Mode",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5",tooltip=" "];
+  Node1 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="zero_mate::arm1176jzf\l_s::CCPU_Context::Set_SPSR",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a1b322131a1168763d2b8083c17a1079b",tooltip=" "];
+}

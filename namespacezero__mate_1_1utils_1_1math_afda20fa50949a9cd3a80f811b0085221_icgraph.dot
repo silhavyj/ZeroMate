@@ -1,0 +1,13 @@
+digraph "zero_mate::utils::math::Sign_Extend_Value"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="zero_mate::utils::math\l::Sign_Extend_Value",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Sign-extends the given integral value."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="zero_mate::arm1176jzf\l_s::CCPU_Core::Perform\l_Halfword_Data_Transfer_Read",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a066aca0627655bc1e068b181fb0964bd",tooltip="Performs a halfword data read from a given address."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="zero_mate::arm1176jzf\l_s::CCPU_Core::Execute",height=0.2,width=0.4,color="black",URL="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae5fc1112d78d8c344841fd94d1356635",tooltip="Executes a halfword data transfer instruction."];
+}
