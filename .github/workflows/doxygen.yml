@@ -12,9 +12,12 @@ jobs:
     # Specify the type of the machine
     runs-on: ubuntu-latest
 
-
     # Deploy docs
     steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
       - name: Install Doxygen
         run: /bin/bash .github/scripts/install_doxygen.sh
 
