@@ -8,7 +8,7 @@
 
 #pragma once
 
-// STL imports
+// STL imports (excluded from Doxygen)
 /// \cond
 #include <array>
 #include <limits>
@@ -491,7 +491,7 @@ namespace zero_mate::arm1176jzf_s
                            CCPU_Context::REG_SIZE;
             }
 
-            return {}; // Just so the compiler does not gripe about a missing return value
+            return {}; // Just so the compiler does not gripe about a missing return value.
         }
 
         // =============================================================================================================
@@ -524,7 +524,7 @@ namespace zero_mate::arm1176jzf_s
 
         // =============================================================================================================
         /// \brief Reads/writes data to the BUS.
-        /// \note The bus width size is usually fixed. The generic type is supported only for emulation purposes
+        /// \note The bus width is usually a fixed size. The generic type is supported only for emulation purposes
         /// \tparam Type Data type to be read/written to the BUS
         /// \param instruction Instruction that is being executed
         /// \param addr Address to read or written to

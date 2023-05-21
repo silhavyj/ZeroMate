@@ -40,3 +40,4 @@ QualifierAlignment: Left
 AlwaysBreakTemplateDeclarations: true
 BinPackArguments: false
 BinPackParameters: false
+AllowAllArgumentsOnNextLine: false

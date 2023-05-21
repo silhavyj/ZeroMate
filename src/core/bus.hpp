@@ -8,7 +8,7 @@
 
 #pragma once
 
-// STL imports
+// STL imports (excluded from Doxygen)
 /// \cond
 #include <bit>
 #include <set>
@@ -96,7 +96,7 @@ namespace zero_mate
 
         // =============================================================================================================
         /// \brief Writes data to the given address in the address space.
-        /// \note The bus width size is usually fixed. The generic type is supported only for emulation purposes
+        /// \note The bus width is usually a fixed size. The generic type is supported only for emulation purposes
         /// \tparam Type Data type used when calling the function (determines the number of bytes to be written)
         /// \param addr Address the data will be written to
         /// \param value The data itself
@@ -120,7 +120,7 @@ namespace zero_mate
 
         // =============================================================================================================
         /// \brief Reads data from the given address in the address space.
-        /// \note The bus width size is usually fixed. The generic type is supported only for emulation purposes
+        /// \note The bus width is usually a fixed size. The generic type is supported only for emulation purposes
         /// \tparam Type Data type used when calling the function (determines the number of bytes to be read)
         /// \param addr Address the data will be read from
         /// \return Data read from the given address

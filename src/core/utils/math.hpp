@@ -8,7 +8,7 @@
 
 #pragma once
 
-// STL imports
+// STL imports (excluded from Doxygen)
 /// \cond
 #include <cstdint>
 #include <limits>

@@ -1,12 +1,28 @@
+// =====================================================================================================================
+/// \file core.cpp
+/// \date 20. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements the CCPU_Core class as defined in core.hpp
+// =====================================================================================================================
+
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <bit>
 #include <variant>
 #include <algorithm>
+/// \endcond
+
+// 3rd party library includes
 
 #include <magic_enum.hpp>
+
+// Project file imports
 
 #include "alu.hpp"
 #include "mac.hpp"
 #include "core.hpp"
+
 #include "../utils/singleton.hpp"
 
 namespace zero_mate::arm1176jzf_s
@@ -116,12 +132,17 @@ namespace zero_mate::arm1176jzf_s
     {
         try
         {
+            // Reading from the BUS may throw an exception (e.g. when there is an error
+            // in the code and the PC register is set to a nonsense value).
             const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
+
             PC() += CCPU_Context::REG_SIZE;
+
             return std::optional<isa::CInstruction>{ instruction };
         }
         catch ([[maybe_unused]] const exceptions::CCPU_Exception& ex)
         {
+            // "Convert" the exception caused by reading data from the bus into a prefetch abort exception.
             const exceptions::CPrefetch_Abort prefetch_ex{ PC() - CCPU_Context::REG_SIZE };
             Execute_Exception(prefetch_ex);
             return std::nullopt;
@@ -217,16 +238,16 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CInstruction instruction)
     {
+        // Check the flags to determine whether the instruction should be executed or not.
         if (!Is_Instruction_Condition_Met(instruction))
         {
             return;
         }
 
-        const auto type = m_instruction_decoder.Get_Instruction_Type(instruction);
-
         try
         {
-            switch (type)
+            // Execute the instruction based on its type.
+            switch (m_instruction_decoder.Get_Instruction_Type(instruction))
             {
                 case isa::CInstruction::NType::Data_Processing:
                     Execute(isa::CData_Processing{ instruction });
@@ -309,7 +330,10 @@ namespace zero_mate::arm1176jzf_s
                     break;
             }
 
+            // Update all system clock listeners about how many clock cycles it took to execute the instruction.
             Update_Cycle_Listeners();
+
+            // Check if there is a pending IRQ.
             Check_For_Pending_IRQ();
         }
         catch (const exceptions::CCPU_Exception& ex)
@@ -340,12 +364,17 @@ namespace zero_mate::arm1176jzf_s
         // TODO do the same for FIQ?
         if (exception.Get_Type() == exceptions::CCPU_Exception::NType::IRQ)
         {
-            // The compiler subtracts #4 from the LR register, so we need to compensate for that
+            // The compiler subtracts #4 from the LR register, so we need to compensate for that.
             PC() += CCPU_Context::REG_SIZE;
         }
 
+        // Set the mode of the CPU based on the thrown exception.
         m_context.Set_CPU_Mode(exception.Get_CPU_Mode());
+
+        // LR = PC
         m_context[CCPU_Context::LR_REG_IDX] = PC();
+
+        // PC = &exception_handler
         PC() = exception.Get_Exception_Vector();
     }
 
@@ -364,6 +393,7 @@ namespace zero_mate::arm1176jzf_s
             shift_amount_reg_value += CCPU_Context::REG_SIZE;
         }
 
+        // Only the lowest 8 bits represent the shift amount.
         return shift_amount_reg_value & 0xFFU;
     }
 
@@ -373,22 +403,28 @@ namespace zero_mate::arm1176jzf_s
     {
         switch (shift_type)
         {
+            // Logical shift left
             case isa::CData_Processing::NShift_Type::LSL:
-                return utils::math::LSL<std::uint32_t>(
-                value, shift_amount, m_context.Is_Flag_Set(CCPU_Context::NFlag::C));
+                return utils::math::LSL<std::uint32_t>(value,
+                                                       shift_amount,
+                                                       m_context.Is_Flag_Set(CCPU_Context::NFlag::C));
 
+            // Logical shift right
             case isa::CData_Processing::NShift_Type::LSR:
                 return utils::math::LSR<std::uint32_t>(value, shift_amount);
 
+            // Arithmetic shift right
             case isa::CData_Processing::NShift_Type::ASR:
                 return utils::math::ASR<std::uint32_t>(value, shift_amount);
 
+            // Rotate right extended
             case isa::CData_Processing::NShift_Type::ROR:
-                return utils::math::ROR<std::uint32_t>(
-                value, shift_amount, m_context.Is_Flag_Set(CCPU_Context::NFlag::C));
+                return utils::math::ROR<std::uint32_t>(value,
+                                                       shift_amount,
+                                                       m_context.Is_Flag_Set(CCPU_Context::NFlag::C));
         }
 
-        return {}; // Just so the compiler does not gripe about a missing return value
+        return {}; // Just so the compiler does not gripe about a missing return value.
     }
 
     utils::math::TShift_Result<std::uint32_t>
@@ -420,6 +456,7 @@ namespace zero_mate::arm1176jzf_s
         const auto [carry_out, second_operand] = Get_Second_Operand(instruction);
         const std::uint32_t dest_reg_idx = instruction.Get_Rd();
 
+        // Execute the operation using the ALU
         const auto result = alu::Execute(*this, instruction, first_operand, second_operand, carry_out);
 
         if (result.write_back)
@@ -465,6 +502,7 @@ namespace zero_mate::arm1176jzf_s
             LR() = PC();
         }
 
+        // Ignore the LSB (if the LSB == 1, the CPU switches off to a thumb mode).
         PC() = rm_reg_value & 0xFFFFFFFEU;
     }
 
@@ -492,8 +530,10 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CMultiply instruction)
     {
-        const auto result = mac::Execute(
-        instruction, m_context[instruction.Get_Rm()], m_context[instruction.Get_Rs()], m_context[instruction.Get_Rn()]);
+        const auto result = mac::Execute(instruction,
+                                         m_context[instruction.Get_Rm()],
+                                         m_context[instruction.Get_Rs()],
+                                         m_context[instruction.Get_Rn()]);
 
         if (result.set_fags)
         {
