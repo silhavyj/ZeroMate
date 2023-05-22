@@ -523,9 +523,9 @@ namespace zero_mate::arm1176jzf_s
         }
 
         // =============================================================================================================
-        /// \brief Reads/writes data to the BUS.
+        /// \brief Reads/writes data to the bus.
         /// \note The bus width is usually a fixed size. The generic type is supported only for emulation purposes
-        /// \tparam Type Data type to be read/written to the BUS
+        /// \tparam Type Data type to be read/written to the bus
         /// \param instruction Instruction that is being executed
         /// \param addr Address to read or written to
         /// \param reg_idx Index of the register used in the instruction
@@ -533,7 +533,7 @@ namespace zero_mate::arm1176jzf_s
         template<std::unsigned_integral Type>
         void Read_Write_Value(isa::CSingle_Data_Transfer instruction, std::uint32_t addr, std::uint32_t reg_idx)
         {
-            // Make sure the CPU is connected to the BUS, so we can read/write to it.
+            // Make sure the CPU is connected to the bus, so we can read/write to it.
             assert(m_bus != nullptr);
 
             if (instruction.Is_L_Bit_Set())

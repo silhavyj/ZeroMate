@@ -7,6 +7,8 @@ namespace zero_mate::arm1176jzf_s::isa
     class CRFE final : CInstruction
     {
     public:
+        static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
+
         enum class NAddressing_Mode : std::uint32_t
         {
             IB = 0b11, // Increment before

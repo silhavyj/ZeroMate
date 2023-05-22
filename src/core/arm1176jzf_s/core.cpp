@@ -132,7 +132,7 @@ namespace zero_mate::arm1176jzf_s
     {
         try
         {
-            // Reading from the BUS may throw an exception (e.g. when there is an error
+            // Reading from the bus may throw an exception (e.g. when there is an error
             // in the code and the PC register is set to a nonsense value).
             const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
 
@@ -344,6 +344,7 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Update_Cycle_Listeners()
     {
+        // TODO calculate how many CPU cycles it actually took to execute the instruction
         std::for_each(m_system_clock_listeners.begin(), m_system_clock_listeners.end(), [](auto& listener) -> void {
             listener->Increment_Passed_Cycles(isa::CInstruction::AVERAGE_CPI);
         });
@@ -390,6 +391,7 @@ namespace zero_mate::arm1176jzf_s
 
         if (shift_amount_reg_idx == CCPU_Context::PC_REG_IDX)
         {
+            // PC is already pointing at the next instruction. Hence, +4 and not +8.
             shift_amount_reg_value += CCPU_Context::REG_SIZE;
         }
 
@@ -466,14 +468,17 @@ namespace zero_mate::arm1176jzf_s
 
         if (result.set_flags)
         {
+            //  R15 (PC) is used as the destination register.
             if (dest_reg_idx == CCPU_Context::PC_REG_IDX)
             {
                 if (m_context.Is_Mode_With_No_SPSR(m_context.Get_CPU_Mode()))
                 {
-                    m_logging_system.Error(
-                    fmt::format("Attempt to write SPSR to CPSR from a mode where SPSR is not supported ({})",
-                                magic_enum::enum_name(m_context.Get_CPU_Mode()))
-                    .c_str());
+                    // clang-format off
+                    m_logging_system.Error(fmt::format("Attempt to write SPSR to CPSR from a "
+                                                       "mode where SPSR is not supported ({})",
+                                                       magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+                    // clang-format on
+
                     return;
                 }
                 m_context.Set_CPSR(m_context.Get_SPSR());
@@ -530,6 +535,7 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CMultiply instruction)
     {
+        // Execute the operation on the MAC.
         const auto result = mac::Execute(instruction,
                                          m_context[instruction.Get_Rm()],
                                          m_context[instruction.Get_Rs()],
@@ -549,6 +555,7 @@ namespace zero_mate::arm1176jzf_s
         const auto reg_rd_lo = instruction.Get_Rd_Lo();
         const auto reg_rd_hi = instruction.Get_Rd_Hi();
 
+        // Execute the operation on the MAC.
         const auto result = mac::Execute(instruction,
                                          m_context[instruction.Get_Rm()],
                                          m_context[instruction.Get_Rs()],
@@ -602,13 +609,16 @@ namespace zero_mate::arm1176jzf_s
 
         if (instruction.Is_B_Bit_Set())
         {
+            // 8-bit data transfer
             Read_Write_Value<std::uint8_t>(instruction, addr, instruction.Get_Rd());
         }
         else
         {
+            // 32-bit data transfer
             Read_Write_Value<std::uint32_t>(instruction, addr, instruction.Get_Rd());
         }
 
+        // Update the Rn register.
         if (!pre_indexed || instruction.Is_W_Bit_Set())
         {
             m_context[instruction.Get_Rn()] = indexed_addr;
@@ -624,9 +634,11 @@ namespace zero_mate::arm1176jzf_s
 
         if ((!r15_is_listed && s_bit) || (store_value && r15_is_listed && s_bit))
         {
+            // Use the USER mode.
             return CCPU_Context::NCPU_Mode::User;
         }
 
+        // Use whatever mode the CPU is currently in.
         return m_context.Get_CPU_Mode();
     }
 
@@ -641,8 +653,10 @@ namespace zero_mate::arm1176jzf_s
         const auto cpu_mode = Determine_CPU_Mode(instruction);
         auto addr = Calculate_Base_Address(instruction, base_reg_idx, cpu_mode, number_of_regs);
 
+        // Iterate over all registers and check whether they are on the list.
         for (std::uint32_t reg_idx = 0; reg_idx < CCPU_Context::NUMBER_OF_REGS; ++reg_idx)
         {
+            // Skip the current register if it is not on the list.
             if (!utils::math::Is_Bit_Set<std::uint32_t>(register_list, reg_idx))
             {
                 continue;
@@ -650,19 +664,24 @@ namespace zero_mate::arm1176jzf_s
 
             if (store_value)
             {
+                // Write data to the bus.
                 m_bus->Write<std::uint32_t>(addr, m_context.Get_Register(reg_idx, cpu_mode));
             }
             else
             {
+                // Read data from the bus.
                 m_context.Get_Register(reg_idx, cpu_mode) = m_bus->Read<std::uint32_t>(addr);
 
                 if (s_bit && reg_idx == CCPU_Context::PC_REG_IDX)
                 {
                     if (m_context.Is_Mode_With_No_SPSR(m_context.Get_CPU_Mode()))
                     {
+                        // clang-format off
                         m_logging_system.Error(fmt::format("There is no SPSR register in the {} mode",
-                                                           magic_enum::enum_name(m_context.Get_CPU_Mode()))
-                                               .c_str());
+                                                           magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+                        // clang-format on
+
+                        // Reset the CPU
                         throw exceptions::CReset{};
                     }
 
@@ -670,6 +689,7 @@ namespace zero_mate::arm1176jzf_s
                 }
             }
 
+            // Move on to the next address (+4B).
             addr += CCPU_Context::REG_SIZE;
         }
 
@@ -746,8 +766,11 @@ namespace zero_mate::arm1176jzf_s
                 [[fallthrough]];
             case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
             case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
-                m_logging_system.Warning(
-                "Only unsigned halfwords should be used when performing a halfword data write");
+                // Something went wrong if the execution gets here.
+                // clang-format off
+                m_logging_system.Warning("Only unsigned halfwords should be used "
+"                                         when performing a halfword data write");
+                // clang-format on
                 break;
         }
     }
@@ -797,27 +820,34 @@ namespace zero_mate::arm1176jzf_s
 
         const std::unsigned_integral auto rotated_value = utils::math::ROR(m_context[reg_rm_idx], rot);
 
+        // Sign-extend the value from 8 to 16 bits (lower 8 and higher 8).
         const std::uint16_t sign_extended_lower_8_to_16 =
         utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(rotated_value & 0xFFU);
         const std::uint16_t sign_extended_higher_8_to_16 =
         utils::math::Sign_Extend_Value<std::uint8_t, std::uint16_t>(((rotated_value & 0xFF0000U) >> 16U) & 0xFFU);
 
+        // Sign-extend the value from 8 to 32 bits.
         const std::uint32_t sign_extended_8_to_32 =
         utils::math::Sign_Extend_Value<std::uint8_t, std::uint32_t>(rotated_value & 0xFFU);
+
+        // Sign-extend the value from 16 to 32 bits.
         const std::uint32_t sign_extended_16_to_32 =
         utils::math::Sign_Extend_Value<std::uint16_t, std::uint32_t>(rotated_value & 0xFFFFU);
 
+        // Calculate the result lower and higher 16 bits (unsigned)
         const std::uint16_t lower_16_bits_unsigned =
         static_cast<std::uint16_t>(rotated_value & 0xFFU) + static_cast<std::uint16_t>(m_context[reg_rn_idx] & 0xFFFFU);
         const std::uint16_t higher_16_bits_unsigned =
         static_cast<std::uint16_t>((rotated_value & 0xFF0000U) >> 16U) +
         static_cast<std::uint16_t>((m_context[reg_rn_idx] & 0xFFFF0000U) >> 16U);
 
+        // Calculate the result lower and higher 16 bits (signed)
         const std::uint16_t lower_16_bits_signed =
         sign_extended_lower_8_to_16 + static_cast<std::uint16_t>(m_context[reg_rn_idx] & 0xFFFFU);
         const std::uint16_t higher_16_bits_singed =
         sign_extended_higher_8_to_16 + static_cast<std::uint16_t>((m_context[reg_rn_idx] & 0xFFFF0000) >> 16U);
 
+        // Execute the instruction based on its type.
         switch (type)
         {
             case isa::CExtend::NType::SXTAB16:
@@ -879,9 +909,12 @@ namespace zero_mate::arm1176jzf_s
         const auto new_value =
         instruction.Is_Immediate() ? Get_Second_Operand_Imm(instruction).result : m_context[instruction.Get_Rm()];
 
+        // Update the special register in regard to the given mask - some parts (flag bits,
+        // status bits, extension bits, control bits) might be protected, so they remain unchanged.
         const auto Update_Special_Register = [&mask, &new_value](std::uint32_t reg_value) -> std::uint32_t {
             reg_value &= ~mask;
             reg_value |= (new_value & mask);
+
             return reg_value;
         };
 
@@ -929,16 +962,19 @@ namespace zero_mate::arm1176jzf_s
 
     std::uint32_t CCPU_Core::Set_Interrupt_Mask_Bits(std::uint32_t cpsr, isa::CCPS instruction, bool set)
     {
+        // Imprecise abort
         if (instruction.Is_A_Bit_Set())
         {
             CCPU_Context::Set_Flag(cpsr, CCPU_Context::NFlag::A, !set);
         }
 
+        // Interrupts
         if (instruction.Is_I_Bit_Set())
         {
             CCPU_Context::Set_Flag(cpsr, CCPU_Context::NFlag::I, !set);
         }
 
+        // Fast interrupts
         if (instruction.Is_F_Bit_Set())
         {
             CCPU_Context::Set_Flag(cpsr, CCPU_Context::NFlag::F, !set);
@@ -951,9 +987,11 @@ namespace zero_mate::arm1176jzf_s
     {
         if (!m_context.Is_In_Privileged_Mode())
         {
+            // clang-format off
             m_logging_system.Error(fmt::format("Attempt to execute a CPS instruction in a non-privileged mode ({})",
-                                               magic_enum::enum_name(m_context.Get_CPU_Mode()))
-                                   .c_str());
+                                               magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            // clang-format on
+
             return;
         }
 
@@ -984,6 +1022,9 @@ namespace zero_mate::arm1176jzf_s
         if (!m_coprocessors.contains(coprocessor_id))
         {
             m_logging_system.Error(fmt::format("CP{} is not present", coprocessor_id).c_str());
+
+            // The CPU will throw an exception if there is an attempt
+            // to make use of a coprocessor which is not present.
             throw exceptions::CUndefined_Instruction{};
         }
     }
@@ -1014,25 +1055,32 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CSRS instruction)
     {
-        static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
-
         if (!m_context.Is_In_Privileged_Mode())
         {
+            // clang-format off
             m_logging_system.Error(fmt::format("Attempt execute an SRS instruction in a non-privileged mode ({})",
-                                               magic_enum::enum_name(m_context.Get_CPU_Mode()))
-                                   .c_str());
+                                               magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            // clang-format on
+
             return;
         }
 
         const auto cpu_mode = static_cast<CCPU_Context::NCPU_Mode>(instruction.Get_CPU_Mode());
-        auto addr = Calculate_Base_Address(instruction, CCPU_Context::SP_REG_IDX, cpu_mode, NUMBER_OF_REGS_TO_TRANSFER);
+
+        // clang-format off
+        const auto addr = Calculate_Base_Address(instruction,
+                                                 CCPU_Context::SP_REG_IDX,
+                                                 cpu_mode,
+                                                 isa::CSRS::NUMBER_OF_REGS_TO_TRANSFER);
+        // clang-format on
 
         m_bus->Write<std::uint32_t>(addr, m_context[CCPU_Context::LR_REG_IDX]);
         m_bus->Write<std::uint32_t>(addr + CCPU_Context::REG_SIZE, m_context.Get_SPSR());
 
         if (instruction.Is_W_Bit_Set())
         {
-            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE * NUMBER_OF_REGS_TO_TRANSFER };
+            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE *
+                                                        isa::CSRS::NUMBER_OF_REGS_TO_TRANSFER };
 
             if (instruction.Should_SP_Be_Decremented())
             {
@@ -1047,27 +1095,28 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CRFE instruction)
     {
-        static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
-
         if (!m_context.Is_In_Privileged_Mode())
         {
+            // clang-format off
             m_logging_system.Error(fmt::format("Attempt execute an RFE instruction in a non-privileged mode ({})",
-                                               magic_enum::enum_name(m_context.Get_CPU_Mode()))
-                                   .c_str());
+                                               magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
+            // clang-format on
+
             return;
         }
 
         const auto reg_rn_idx = instruction.Get_Rn();
         const auto cpu_mode = m_context.Get_CPU_Mode();
 
-        auto addr = Calculate_Base_Address(instruction, reg_rn_idx, cpu_mode, NUMBER_OF_REGS_TO_TRANSFER);
+        auto addr = Calculate_Base_Address(instruction, reg_rn_idx, cpu_mode, isa::CRFE::NUMBER_OF_REGS_TO_TRANSFER);
 
         const auto lr = m_bus->Read<std::uint32_t>(addr);
         const auto spsr = m_bus->Read<std::uint32_t>(addr + CCPU_Context::REG_SIZE);
 
         if (instruction.Is_W_Bit_Set())
         {
-            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE * NUMBER_OF_REGS_TO_TRANSFER };
+            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE *
+                                                        isa::CRFE::NUMBER_OF_REGS_TO_TRANSFER };
 
             // TODO make sure Rn gets written back in the correct CPU mode
 
@@ -1090,6 +1139,7 @@ namespace zero_mate::arm1176jzf_s
         const auto rm_reg = m_context[instruction.Get_Rm()];
         std::uint32_t leading_zeros{ 0 };
 
+        // Calculate the number of leading zeros.
         for (std::int32_t i = std::numeric_limits<std::uint32_t>::digits - 1; i >= 0; --i)
         {
             if (utils::math::Is_Bit_Set(rm_reg, static_cast<std::uint32_t>(i)))
