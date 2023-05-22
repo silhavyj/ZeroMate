@@ -43,7 +43,7 @@ namespace zero_mate
 
         // =============================================================================================================
         /// \enum NStatus
-        /// \brief Return code (status) of mapping a peripheral to the address space
+        /// \brief Return code (status) of mapping a peripheral to the address space.
         // =============================================================================================================
         enum class NStatus
         {
@@ -55,7 +55,7 @@ namespace zero_mate
     private:
         // =============================================================================================================
         /// \struct TMapped_Peripheral
-        /// \brief Representation of a memory-mapped peripheral
+        /// \brief Representation of a memory-mapped peripheral.
         // =============================================================================================================
         struct TMapped_Peripheral
         {
