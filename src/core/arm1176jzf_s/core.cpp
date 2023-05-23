@@ -459,7 +459,12 @@ namespace zero_mate::arm1176jzf_s
         const std::uint32_t dest_reg_idx = instruction.Get_Rd();
 
         // Execute the operation using the ALU
-        const auto result = alu::Execute(*this, instruction, first_operand, second_operand, carry_out);
+        const auto result = alu::Execute(instruction,
+                                         first_operand,
+                                         second_operand,
+                                         carry_out,
+                                         m_context.Is_Flag_Set(CCPU_Context::NFlag::C),
+                                         m_context.Is_Flag_Set(CCPU_Context::NFlag::V));
 
         if (result.write_back)
         {
