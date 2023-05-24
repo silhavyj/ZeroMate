@@ -121,7 +121,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ab18a4a4b6a54029ccf141784cfe9c737" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ab18a4a4b6a54029ccf141784cfe9c737" target="_top" xlink:title="Returns the mode into which the CPU will switch when the exception is thrown.">
 <polygon fill="none" stroke="black" points="668,-242 668,-283 819,-283 819,-242 668,-242"/>
 <text text-anchor="start" x="676" y="-271" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="676" y="-260" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CCPU</text>
@@ -138,7 +138,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ae87c33c76ed6571b2408fd293710b6c4" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ae87c33c76ed6571b2408fd293710b6c4" target="_top" xlink:title="Returns the address of the handler of the exception.">
 <polygon fill="none" stroke="black" points="670.5,-170.5 670.5,-222.5 816.5,-222.5 816.5,-170.5 670.5,-170.5"/>
 <text text-anchor="start" x="678.5" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="678.5" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CCPU</text>
@@ -156,7 +156,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aabb81de8a3e09534245ef3851a31c3c0" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aabb81de8a3e09534245ef3851a31c3c0" target="_top" xlink:title="Returns the type of the exception.">
 <polygon fill="none" stroke="black" points="678.5,-110 678.5,-151 808.5,-151 808.5,-110 678.5,-110"/>
 <text text-anchor="start" x="686.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="686.5" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CCPU</text>
@@ -173,7 +173,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5" target="_top" xlink:title="Sets the mode of the CPU.">
 <polygon fill="none" stroke="black" points="678.5,-50 678.5,-91 808.5,-91 808.5,-50 678.5,-50"/>
 <text text-anchor="start" x="686.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="686.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Set</text>

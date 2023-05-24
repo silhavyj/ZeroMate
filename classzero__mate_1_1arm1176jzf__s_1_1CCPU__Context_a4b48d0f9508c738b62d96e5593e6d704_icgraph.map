@@ -1,0 +1,6 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Context::Enable_IRQ" name="zero_mate::arm1176jzf_s::CCPU_Context::Enable_IRQ">
+<area shape="rect" id="node1" title="Globally enables/disables IRQ (interrupts)" alt="" coords="467,53,687,94"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a286edf7ca93bc920f9896b5b777b4b8b" title="Resets the context of the CPU." alt="" coords="236,53,419,94"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#afb2bc49ac16284a27b81cec3322f8898" title="Constructor of the class." alt="" coords="5,5,188,61"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acb9dcca2bec495d4424c6183c6ac7064" title="Resets the CPU context." alt="" coords="10,85,183,141"/>
+</map>

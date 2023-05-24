@@ -4,9 +4,9 @@ var indexSectionsWithContent =
   1: "cit",
   2: "z",
   3: "abcdefghilmprsw",
-  4: "acdefghilmoprstuw~",
+  4: "acdefghilmoprstuvw~",
   5: "acdefghilmnoprstuvwz",
-  6: "cips",
+  6: "bcips",
   7: "n",
   8: "abcdefghilmnoprstuvwz"
 };

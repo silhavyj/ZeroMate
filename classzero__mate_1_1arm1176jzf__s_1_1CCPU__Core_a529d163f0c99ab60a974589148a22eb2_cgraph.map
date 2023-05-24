@@ -1,8 +1,5 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute">
-<area shape="rect" id="node1" title="Executes a branch instruction." alt="" coords="5,130,181,171"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html#a802cd5fadc7952225e152142ab047b0f" title=" " alt="" coords="229,5,403,61"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html#a5ab4f86fc2f299cc21e711211a80441b" title=" " alt="" coords="229,85,403,141"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae4ef4e8216220eacc525799066321ce9" title="Returns a reference to the LR register (r14 = link register)" alt="" coords="229,166,403,207"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a423eacd01e574e782a2b7cf51f28c56c" title="Returns a reference to the PC register (r15)" alt="" coords="229,231,403,273"/>
-<area shape="rect" id="node3" href="$namespacezero__mate_1_1utils_1_1math.html#af7d93c996dab2ff1b91c5a399dcfe29f" title="Tests whether a bit is set in the given integral variable." alt="" coords="451,13,620,54"/>
+<area shape="rect" id="node1" title="Executes a branch instruction." alt="" coords="5,39,181,80"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae4ef4e8216220eacc525799066321ce9" title="Returns a reference to the LR register (r14 = link register)" alt="" coords="229,5,403,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a423eacd01e574e782a2b7cf51f28c56c" title="Returns a reference to the PC register (r15)" alt="" coords="229,71,403,112"/>
 </map>

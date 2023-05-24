@@ -95,19 +95,19 @@ $(document).ready(function(){initNavTree('namespacezero__mate_1_1arm1176jzf__s_1
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TALU__Settings.html">TALU_Settings</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html">TResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result of an ALU operation.  <a href="structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a95c11d8dc8e4ebc2c1dc6ca22403c871"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html">TResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a95c11d8dc8e4ebc2c1dc6ca22403c871">Execute</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">CCPU_Core</a> &amp;cpu, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html">isa::CData_Processing</a> instruction, std::uint32_t first_operand, std::uint32_t second_operand, bool carry_out) noexcept</td></tr>
-<tr class="separator:a95c11d8dc8e4ebc2c1dc6ca22403c871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ff714734ac2e53a9374d1f2b9877d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html">TResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a73ff714734ac2e53a9374d1f2b9877d6">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html">isa::CData_Processing</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, std::uint32_t first_operand, std::uint32_t second_operand, bool <a class="el" href="alu_8cpp.html#a7b4618dfdbe7cb9d5e6cc6d442bf0c02">carry_out</a>, bool cpu_c_flag, bool cpu_v_flag) noexcept</td></tr>
+<tr class="memdesc:a73ff714734ac2e53a9374d1f2b9877d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an ALU operation.  <a href="namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a73ff714734ac2e53a9374d1f2b9877d6">More...</a><br /></td></tr>
+<tr class="separator:a73ff714734ac2e53a9374d1f2b9877d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a95c11d8dc8e4ebc2c1dc6ca22403c871"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95c11d8dc8e4ebc2c1dc6ca22403c871">&#9670;&nbsp;</a></span>Execute()</h2>
+<a id="a73ff714734ac2e53a9374d1f2b9877d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ff714734ac2e53a9374d1f2b9877d6">&#9670;&nbsp;</a></span>Execute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,12 +118,6 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html">TResult</a> zero_mate::arm1176jzf_s::alu::Execute </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">CCPU_Core</a> &amp;&#160;</td>
-          <td class="paramname"><em>cpu</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html">isa::CData_Processing</a>&#160;</td>
           <td class="paramname"><em>instruction</em>, </td>
         </tr>
@@ -143,7 +137,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>carry_out</em>&#160;</td>
+          <td class="paramname"><em>carry_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cpu_c_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cpu_v_flag</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -157,10 +163,24 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Performs an ALU operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>Data processing instruction (holds information about the type of the operation) </td></tr>
+    <tr><td class="paramname">first_operand</td><td>First operand </td></tr>
+    <tr><td class="paramname">second_operand</td><td>Second operand </td></tr>
+    <tr><td class="paramname">carry_out</td><td>Carry out from the previous operation (calculation of the second operand) </td></tr>
+    <tr><td class="paramname">cpu_c_flag</td><td>Current value of the C flag (carry) in the CPSR register </td></tr>
+    <tr><td class="paramname">cpu_v_flag</td><td>Current value of the V flag (overflow) in the CPSR register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result of the operation </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacezero__mate_1_1arm1176jzf__s_1_1alu_a95c11d8dc8e4ebc2c1dc6ca22403c871_icgraph.svg" width="408" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacezero__mate_1_1arm1176jzf__s_1_1alu_a73ff714734ac2e53a9374d1f2b9877d6_icgraph.svg" width="408" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

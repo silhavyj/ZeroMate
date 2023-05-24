@@ -1,17 +1,17 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Reset_Context" name="zero_mate::arm1176jzf_s::CCPU_Core::Reset_Context">
 <area shape="rect" id="node1" title="Resets the CPU context." alt="" coords="5,199,179,255"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a286edf7ca93bc920f9896b5b777b4b8b" title=" " alt="" coords="227,169,409,211"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a286edf7ca93bc920f9896b5b777b4b8b" title="Resets the context of the CPU." alt="" coords="227,169,409,211"/>
 <area shape="rect" id="node14" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae2c9e5f272fa5814e386bc2a93d79e6f" title="Sets the PC register (r15)." alt="" coords="231,239,405,280"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4789016607700ae260a623eadfb3c9c1" title=" " alt="" coords="458,27,677,68"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ad4e826047d6896ca87837039aa1f7f7c" title=" " alt="" coords="457,112,677,153"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2f550e28044af7ff0ddb866527a95356" title=" " alt="" coords="481,218,654,274"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54" title=" " alt="" coords="728,5,931,47"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aacfb4cc6e44ca967a9e258ba583f588b" title=" " alt="" coords="743,71,916,127"/>
-<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a68f089f1b45e6f22295a7339eeeade33" title=" " alt="" coords="725,152,933,193"/>
-<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a651a92dac2106063a9988c63fb80fcdd" title=" " alt="" coords="743,218,916,274"/>
-<area shape="rect" id="node10" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a38524842c1e4f158af18c1e2cafd14ed" title=" " alt="" coords="743,298,916,354"/>
-<area shape="rect" id="node11" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af24fe774c931e6fe4c0abe70956463de" title=" " alt="" coords="726,379,933,420"/>
-<area shape="rect" id="node12" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a945204938f4a5e92be738c48711218c2" title=" " alt="" coords="733,445,925,501"/>
-<area shape="rect" id="node13" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6eb0ee94a81e166d7b02a78f45b4d028" title=" " alt="" coords="735,525,924,581"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2dd5a3a65e28cce65d01bdef2746cf1a" title="Globally enables/disables FIQ (fast interrupts)" alt="" coords="458,27,677,68"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4b48d0f9508c738b62d96e5593e6d704" title="Globally enables/disables IRQ (interrupts)" alt="" coords="457,112,677,153"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2f550e28044af7ff0ddb866527a95356" title="Initializes (resets) all CPU registers." alt="" coords="481,218,654,274"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54" title="Sets/resets a flag in the CPSR register of the current CPU mode." alt="" coords="728,5,931,47"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aacfb4cc6e44ca967a9e258ba583f588b" title="Resets the banked registers of the Abort mode to 0." alt="" coords="743,71,916,127"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a68f089f1b45e6f22295a7339eeeade33" title="Resets the CPSR register in all CPU modes." alt="" coords="725,152,933,193"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a651a92dac2106063a9988c63fb80fcdd" title="Resets the banked registers of the FIQ mode to 0." alt="" coords="743,218,916,274"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a38524842c1e4f158af18c1e2cafd14ed" title="Resets the banked registers of the IRQ mode to 0." alt="" coords="743,298,916,354"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af24fe774c931e6fe4c0abe70956463de" title="Resets all SPSR registers (in all CPU modes) to 0." alt="" coords="726,379,933,420"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a945204938f4a5e92be738c48711218c2" title="Resets the banked registers of the Supervisor mode to 0." alt="" coords="733,445,925,501"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6eb0ee94a81e166d7b02a78f45b4d028" title="Resets the banked registers of the Undefined mode to 0." alt="" coords="735,525,924,581"/>
 <area shape="rect" id="node15" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a423eacd01e574e782a2b7cf51f28c56c" title="Returns a reference to the PC register (r15)" alt="" coords="481,299,654,340"/>
 </map>

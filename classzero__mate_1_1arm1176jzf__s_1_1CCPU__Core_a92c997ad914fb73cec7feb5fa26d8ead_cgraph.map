@@ -1,16 +1,19 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute">
-<area shape="rect" id="node1" title="Executes a data processing instruction." alt="" coords="5,309,181,351"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="487,5,681,47"/>
-<area shape="rect" id="node4" href="$namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a95c11d8dc8e4ebc2c1dc6ca22403c871" title=" " alt="" coords="247,196,421,237"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa740f9219bb413d707ac72f373e60d3a" title=" " alt="" coords="497,71,671,127"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#abab3b1a6c85f524936f52e2891d88cd1" title=" " alt="" coords="240,262,428,318"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a4be853e364e5cc801c6f3922727220c3" title=" " alt="" coords="240,342,428,398"/>
-<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa5b55276e454abfced2b5714b936e98d" title="Calculates the second operand of a data processing instruction." alt="" coords="233,422,435,478"/>
-<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ae00681efcbc4adfcfde001a67c5baeca" title=" " alt="" coords="229,503,439,544"/>
-<area shape="rect" id="node10" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6fc387fa0b0dd040c4e2463606d933e4" title=" " alt="" coords="247,569,421,625"/>
-<area shape="rect" id="node11" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a53765299c790cc790e15deb2c701bd2a" title=" " alt="" coords="230,131,438,172"/>
-<area shape="rect" id="node14" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54" title=" " alt="" coords="233,649,435,691"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="729,5,928,47"/>
-<area shape="rect" id="node12" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa53dae8f0dd16d916a852e572dfa95ba" title=" " alt="" coords="489,151,679,207"/>
-<area shape="rect" id="node13" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5" title=" " alt="" coords="497,231,671,287"/>
+<area shape="rect" id="node1" title="Executes a data processing instruction." alt="" coords="5,386,181,428"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="725,386,920,428"/>
+<area shape="rect" id="node4" href="$namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a73ff714734ac2e53a9374d1f2b9877d6" title="Performs an ALU operation." alt="" coords="247,168,421,209"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa740f9219bb413d707ac72f373e60d3a" title="Returns the current mode of the CPU." alt="" coords="495,314,669,370"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa5b55276e454abfced2b5714b936e98d" title="Calculates the second operand of a data processing instruction." alt="" coords="233,234,435,290"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ae00681efcbc4adfcfde001a67c5baeca" title="Returns the value of the SPSR register of the current CPU mode." alt="" coords="229,452,439,493"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6fc387fa0b0dd040c4e2463606d933e4" title="Checks if the CPU mode passed in as a parameter supports the SPSR register or not." alt="" coords="736,636,909,692"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef" title="Checks whether a given flag is set in the CPSR register of the current CPU mode." alt="" coords="247,518,421,574"/>
+<area shape="rect" id="node14" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a53765299c790cc790e15deb2c701bd2a" title="Sets a new value to the CPSR register." alt="" coords="230,386,438,428"/>
+<area shape="rect" id="node17" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54" title="Sets/resets a flag in the CPSR register of the current CPU mode." alt="" coords="233,736,435,777"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="968,386,1167,428"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ab5b35b6db4af2c5605ec6caac5a4e1dd" title=" " alt="" coords="488,154,676,210"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae43548d291eecc463c519086e7527ff2" title=" " alt="" coords="488,234,676,290"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a1dc73c441b156452b1467eaa5cab46f5" title=" " alt="" coords="488,74,676,130"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a050dada520ca82a21874045815c596a8" title=" " alt="" coords="491,604,673,660"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa53dae8f0dd16d916a852e572dfa95ba" title="Checks if there is an invalid attempt to change the control bits of the CPSR register." alt="" coords="487,524,677,580"/>
+<area shape="rect" id="node16" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5" title="Sets the mode of the CPU." alt="" coords="495,444,669,500"/>
 </map>

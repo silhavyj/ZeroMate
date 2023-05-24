@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1CC
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents the context (registers) of the CPU.  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="context_8hpp_source.html">context.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for zero_mate::arm1176jzf_s::CCPU_Context:</div>
@@ -120,6 +123,7 @@ Public Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a391d3ef35a11316f2d9690ddae7bd8e7a800618943025315f869e4e1f09471012">F</a> = 0b1U &lt;&lt; 6U
 <br />
  }</td></tr>
+<tr class="memdesc:a391d3ef35a11316f2d9690ddae7bd8e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration lists out different flags in the CPSR register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a391d3ef35a11316f2d9690ddae7bd8e7">More...</a><br /></td></tr>
 <tr class="separator:a391d3ef35a11316f2d9690ddae7bd8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80df62c0bceb498b0a6cc65d54c8352b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a> : std::uint32_t { <br />
 &#160;&#160;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352ba8f9bfe9d1345237cb3b2b205864da075">User</a> = 0b10000
@@ -132,120 +136,192 @@ Public Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352baa45da96d0bf6575970f2d27af22be28a">System</a> = 0b11111
 <br />
  }</td></tr>
+<tr class="memdesc:a80df62c0bceb498b0a6cc65d54c8352b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration represents different modes of the CPU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">More...</a><br /></td></tr>
 <tr class="separator:a80df62c0bceb498b0a6cc65d54c8352b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110b4d2a333fb510bb627a3fc109c35f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a110b4d2a333fb510bb627a3fc109c35f">Banked_Registers_t</a> = std::unordered_map&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>, std::unordered_map&lt; std::uint32_t, std::uint32_t &gt; &gt;</td></tr>
+<tr class="memdesc:a110b4d2a333fb510bb627a3fc109c35f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the CPU banked registers (just to make the code less wordy)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a110b4d2a333fb510bb627a3fc109c35f">More...</a><br /></td></tr>
+<tr class="separator:a110b4d2a333fb510bb627a3fc109c35f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afb2bc49ac16284a27b81cec3322f8898"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#afb2bc49ac16284a27b81cec3322f8898">CCPU_Context</a> ()</td></tr>
+<tr class="memdesc:afb2bc49ac16284a27b81cec3322f8898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#afb2bc49ac16284a27b81cec3322f8898">More...</a><br /></td></tr>
 <tr class="separator:afb2bc49ac16284a27b81cec3322f8898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a286edf7ca93bc920f9896b5b777b4b8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a286edf7ca93bc920f9896b5b777b4b8b">Reset</a> ()</td></tr>
+<tr class="memdesc:a286edf7ca93bc920f9896b5b777b4b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the context of the CPU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a286edf7ca93bc920f9896b5b777b4b8b">More...</a><br /></td></tr>
 <tr class="separator:a286edf7ca93bc920f9896b5b777b4b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a509b98ecf06c3100d69232f696d50150"><td class="memItemLeft" align="right" valign="top">const std::uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a509b98ecf06c3100d69232f696d50150">operator[]</a> (std::uint32_t idx) const</td></tr>
+<tr class="memdesc:a509b98ecf06c3100d69232f696d50150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to a register of the current CPU mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a509b98ecf06c3100d69232f696d50150">More...</a><br /></td></tr>
 <tr class="separator:a509b98ecf06c3100d69232f696d50150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bafb3630715a269d6f808379e1e8707"><td class="memItemLeft" align="right" valign="top">std::uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a8bafb3630715a269d6f808379e1e8707">operator[]</a> (std::uint32_t idx)</td></tr>
+<tr class="memdesc:a8bafb3630715a269d6f808379e1e8707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to a register of the current CPU mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a8bafb3630715a269d6f808379e1e8707">More...</a><br /></td></tr>
 <tr class="separator:a8bafb3630715a269d6f808379e1e8707"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22efcb34f3c1bd9f46f1f75771103ef9"><td class="memItemLeft" align="right" valign="top">const std::uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a22efcb34f3c1bd9f46f1f75771103ef9">Get_Register</a> (std::uint32_t idx, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a> mode) const</td></tr>
+<tr class="memdesc:a22efcb34f3c1bd9f46f1f75771103ef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to a register of a particular CPU mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a22efcb34f3c1bd9f46f1f75771103ef9">More...</a><br /></td></tr>
 <tr class="separator:a22efcb34f3c1bd9f46f1f75771103ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adefbd0ac92d4ce6a3b8a31ceaa89ba72"><td class="memItemLeft" align="right" valign="top">std::uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#adefbd0ac92d4ce6a3b8a31ceaa89ba72">Get_Register</a> (std::uint32_t idx, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a> mode)</td></tr>
+<tr class="memdesc:adefbd0ac92d4ce6a3b8a31ceaa89ba72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to a register of a particular CPU mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#adefbd0ac92d4ce6a3b8a31ceaa89ba72">More...</a><br /></td></tr>
 <tr class="separator:adefbd0ac92d4ce6a3b8a31ceaa89ba72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf66c6ff905975912dbf52133ddfeceb"><td class="memItemLeft" align="right" valign="top">std::uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf66c6ff905975912dbf52133ddfeceb">Get_CPSR</a> ()</td></tr>
+<tr class="memdesc:acf66c6ff905975912dbf52133ddfeceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference the CPSR register of the current CPU mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf66c6ff905975912dbf52133ddfeceb">More...</a><br /></td></tr>
 <tr class="separator:acf66c6ff905975912dbf52133ddfeceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad193ff04925ee955e75b64a7785652d8"><td class="memItemLeft" align="right" valign="top">const std::uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ad193ff04925ee955e75b64a7785652d8">Get_CPSR</a> () const</td></tr>
+<tr class="memdesc:ad193ff04925ee955e75b64a7785652d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference the CPSR register of the current CPU mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ad193ff04925ee955e75b64a7785652d8">More...</a><br /></td></tr>
 <tr class="separator:ad193ff04925ee955e75b64a7785652d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53765299c790cc790e15deb2c701bd2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a53765299c790cc790e15deb2c701bd2a">Set_CPSR</a> (std::uint32_t value)</td></tr>
+<tr class="memdesc:a53765299c790cc790e15deb2c701bd2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new value to the CPSR register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a53765299c790cc790e15deb2c701bd2a">More...</a><br /></td></tr>
 <tr class="separator:a53765299c790cc790e15deb2c701bd2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae00681efcbc4adfcfde001a67c5baeca"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ae00681efcbc4adfcfde001a67c5baeca">Get_SPSR</a> () const</td></tr>
+<tr class="memdesc:ae00681efcbc4adfcfde001a67c5baeca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the SPSR register of the current CPU mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ae00681efcbc4adfcfde001a67c5baeca">More...</a><br /></td></tr>
 <tr class="separator:ae00681efcbc4adfcfde001a67c5baeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8640117a5d7886b324a368c9dc41288d"><td class="memItemLeft" align="right" valign="top">std::uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a8640117a5d7886b324a368c9dc41288d">Get_SPSR</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a> mode)</td></tr>
+<tr class="memdesc:a8640117a5d7886b324a368c9dc41288d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the SPSR register of the CPU mode passed in as a parameter.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a8640117a5d7886b324a368c9dc41288d">More...</a><br /></td></tr>
 <tr class="separator:a8640117a5d7886b324a368c9dc41288d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1723b9f6993f17c2d293bd5a5e4d3440"><td class="memItemLeft" align="right" valign="top">const std::uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a1723b9f6993f17c2d293bd5a5e4d3440">Get_SPSR</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a> mode) const</td></tr>
+<tr class="memdesc:a1723b9f6993f17c2d293bd5a5e4d3440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to the SPSR register of the CPU mode passed in as a parameter.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a1723b9f6993f17c2d293bd5a5e4d3440">More...</a><br /></td></tr>
 <tr class="separator:a1723b9f6993f17c2d293bd5a5e4d3440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b322131a1168763d2b8083c17a1079b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a1b322131a1168763d2b8083c17a1079b">Set_SPSR</a> (std::uint32_t value)</td></tr>
+<tr class="memdesc:a1b322131a1168763d2b8083c17a1079b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of the SPSR register in the CPU mode passed in as a parameter.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a1b322131a1168763d2b8083c17a1079b">More...</a><br /></td></tr>
 <tr class="separator:a1b322131a1168763d2b8083c17a1079b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a984bace2773aca71cf04701aa0ce9c54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54">Set_Flag</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a391d3ef35a11316f2d9690ddae7bd8e7">NFlag</a> flag, bool set) noexcept</td></tr>
+<tr class="memdesc:a984bace2773aca71cf04701aa0ce9c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets/resets a flag in the CPSR register of the current CPU mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54">More...</a><br /></td></tr>
 <tr class="separator:a984bace2773aca71cf04701aa0ce9c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0013811c3eef6d91ddfd2423a08889ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef">Is_Flag_Set</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a391d3ef35a11316f2d9690ddae7bd8e7">NFlag</a> flag) const noexcept</td></tr>
+<tr class="memdesc:a0013811c3eef6d91ddfd2423a08889ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a given flag is set in the CPSR register of the current CPU mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef">More...</a><br /></td></tr>
 <tr class="separator:a0013811c3eef6d91ddfd2423a08889ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7efff674f8141eab73cb69099220f0d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5">Set_CPU_Mode</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a> mode) noexcept</td></tr>
+<tr class="memdesc:a7efff674f8141eab73cb69099220f0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the mode of the CPU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5">More...</a><br /></td></tr>
 <tr class="separator:a7efff674f8141eab73cb69099220f0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa740f9219bb413d707ac72f373e60d3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa740f9219bb413d707ac72f373e60d3a">Get_CPU_Mode</a> () const noexcept</td></tr>
+<tr class="memdesc:aa740f9219bb413d707ac72f373e60d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current mode of the CPU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa740f9219bb413d707ac72f373e60d3a">More...</a><br /></td></tr>
 <tr class="separator:aa740f9219bb413d707ac72f373e60d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a573470217091c27cf30f1411ea453e5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a573470217091c27cf30f1411ea453e5d">Is_In_Privileged_Mode</a> () const noexcept</td></tr>
+<tr class="memdesc:a573470217091c27cf30f1411ea453e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the CPU is in a privileged mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a573470217091c27cf30f1411ea453e5d">More...</a><br /></td></tr>
 <tr class="separator:a573470217091c27cf30f1411ea453e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4e826047d6896ca87837039aa1f7f7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ad4e826047d6896ca87837039aa1f7f7c">Enable_IRQ</a> (bool set)</td></tr>
-<tr class="separator:ad4e826047d6896ca87837039aa1f7f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4789016607700ae260a623eadfb3c9c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4789016607700ae260a623eadfb3c9c1">Enable_FIQ</a> (bool set)</td></tr>
-<tr class="separator:a4789016607700ae260a623eadfb3c9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b48d0f9508c738b62d96e5593e6d704"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4b48d0f9508c738b62d96e5593e6d704">Enable_IRQ</a> (bool enable)</td></tr>
+<tr class="memdesc:a4b48d0f9508c738b62d96e5593e6d704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globally enables/disables IRQ (interrupts)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4b48d0f9508c738b62d96e5593e6d704">More...</a><br /></td></tr>
+<tr class="separator:a4b48d0f9508c738b62d96e5593e6d704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd5a3a65e28cce65d01bdef2746cf1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2dd5a3a65e28cce65d01bdef2746cf1a">Enable_FIQ</a> (bool enable)</td></tr>
+<tr class="memdesc:a2dd5a3a65e28cce65d01bdef2746cf1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globally enables/disables FIQ (fast interrupts)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2dd5a3a65e28cce65d01bdef2746cf1a">More...</a><br /></td></tr>
+<tr class="separator:a2dd5a3a65e28cce65d01bdef2746cf1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a69d28e44b76eef2b0a6c0cd2a36f65ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a69d28e44b76eef2b0a6c0cd2a36f65ae">Set_Flag</a> (std::uint32_t &amp;cpsr, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a391d3ef35a11316f2d9690ddae7bd8e7">NFlag</a> flag, bool set) noexcept</td></tr>
+<tr class="memdesc:a69d28e44b76eef2b0a6c0cd2a36f65ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets/resets a flag in the given value which is treated as if it was the CPSR register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a69d28e44b76eef2b0a6c0cd2a36f65ae">More...</a><br /></td></tr>
 <tr class="separator:a69d28e44b76eef2b0a6c0cd2a36f65ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fc387fa0b0dd040c4e2463606d933e4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6fc387fa0b0dd040c4e2463606d933e4">Is_Mode_With_No_SPSR</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a> mode) noexcept</td></tr>
+<tr class="memdesc:a6fc387fa0b0dd040c4e2463606d933e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the CPU mode passed in as a parameter supports the SPSR register or not.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6fc387fa0b0dd040c4e2463606d933e4">More...</a><br /></td></tr>
 <tr class="separator:a6fc387fa0b0dd040c4e2463606d933e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ac4948fa820e156f7505bbf3014ba3733"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac4948fa820e156f7505bbf3014ba3733">NUMBER_OF_REGS</a> = 16</td></tr>
+<tr class="memdesc:ac4948fa820e156f7505bbf3014ba3733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of CPU registers.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac4948fa820e156f7505bbf3014ba3733">More...</a><br /></td></tr>
 <tr class="separator:ac4948fa820e156f7505bbf3014ba3733"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0947821872bfe58acdc42f4df8bd86ad"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0947821872bfe58acdc42f4df8bd86ad">NUMBER_OF_GENERAL_REGS</a> = 13</td></tr>
+<tr class="memdesc:a0947821872bfe58acdc42f4df8bd86ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of general-purpose registers (LR, SP, PC are considered to be special registers)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0947821872bfe58acdc42f4df8bd86ad">More...</a><br /></td></tr>
 <tr class="separator:a0947821872bfe58acdc42f4df8bd86ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4da96711ed542bed76f292525c40d8ce"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4da96711ed542bed76f292525c40d8ce">REG_SIZE</a> = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td></tr>
+<tr class="memdesc:a4da96711ed542bed76f292525c40d8ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register size (4B)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4da96711ed542bed76f292525c40d8ce">More...</a><br /></td></tr>
 <tr class="separator:a4da96711ed542bed76f292525c40d8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a053ed9b34d5aa41c59432d7bb4ad7e09"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a053ed9b34d5aa41c59432d7bb4ad7e09">CPU_MODE_MASK</a> = 0b11111U</td></tr>
+<tr class="memdesc:a053ed9b34d5aa41c59432d7bb4ad7e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">The least significant 5 bits in the CPS register represent the mode of the CPU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a053ed9b34d5aa41c59432d7bb4ad7e09">More...</a><br /></td></tr>
 <tr class="separator:a053ed9b34d5aa41c59432d7bb4ad7e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e4cf80c6456e949aec471c292e42378"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a3e4cf80c6456e949aec471c292e42378">CPU_CONTROL_BITS_MASK</a> = 0xFFU</td></tr>
+<tr class="memdesc:a3e4cf80c6456e949aec471c292e42378"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lowest 8 bits of CPSR are called control bits.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a3e4cf80c6456e949aec471c292e42378">More...</a><br /></td></tr>
 <tr class="separator:a3e4cf80c6456e949aec471c292e42378"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a359cbf5c6efb754156cb3b046db2acbd"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a359cbf5c6efb754156cb3b046db2acbd">PC_REG_IDX</a> = 15</td></tr>
+<tr class="memdesc:a359cbf5c6efb754156cb3b046db2acbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the PC (program counter) register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a359cbf5c6efb754156cb3b046db2acbd">More...</a><br /></td></tr>
 <tr class="separator:a359cbf5c6efb754156cb3b046db2acbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cc06e6d24db355ceafb1017459922a8"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7cc06e6d24db355ceafb1017459922a8">LR_REG_IDX</a> = 14</td></tr>
+<tr class="memdesc:a7cc06e6d24db355ceafb1017459922a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the LR (link register) register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7cc06e6d24db355ceafb1017459922a8">More...</a><br /></td></tr>
 <tr class="separator:a7cc06e6d24db355ceafb1017459922a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89a9a0aa8e0bf3e321d04f8eb14c70ab"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a89a9a0aa8e0bf3e321d04f8eb14c70ab">SP_REG_IDX</a> = 13</td></tr>
+<tr class="memdesc:a89a9a0aa8e0bf3e321d04f8eb14c70ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the SP (stack pointer) register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a89a9a0aa8e0bf3e321d04f8eb14c70ab">More...</a><br /></td></tr>
 <tr class="separator:a89a9a0aa8e0bf3e321d04f8eb14c70ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a2f550e28044af7ff0ddb866527a95356"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2f550e28044af7ff0ddb866527a95356">Init_Registers</a> ()</td></tr>
+<tr class="memdesc:a2f550e28044af7ff0ddb866527a95356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes (resets) all CPU registers.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2f550e28044af7ff0ddb866527a95356">More...</a><br /></td></tr>
 <tr class="separator:a2f550e28044af7ff0ddb866527a95356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a651a92dac2106063a9988c63fb80fcdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a651a92dac2106063a9988c63fb80fcdd">Init_FIQ_Banked_Regs</a> ()</td></tr>
+<tr class="memdesc:a651a92dac2106063a9988c63fb80fcdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the banked registers of the FIQ mode to 0.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a651a92dac2106063a9988c63fb80fcdd">More...</a><br /></td></tr>
 <tr class="separator:a651a92dac2106063a9988c63fb80fcdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38524842c1e4f158af18c1e2cafd14ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a38524842c1e4f158af18c1e2cafd14ed">Init_IRQ_Banked_Regs</a> ()</td></tr>
+<tr class="memdesc:a38524842c1e4f158af18c1e2cafd14ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the banked registers of the IRQ mode to 0.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a38524842c1e4f158af18c1e2cafd14ed">More...</a><br /></td></tr>
 <tr class="separator:a38524842c1e4f158af18c1e2cafd14ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a945204938f4a5e92be738c48711218c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a945204938f4a5e92be738c48711218c2">Init_Supervisor_Banked_Regs</a> ()</td></tr>
+<tr class="memdesc:a945204938f4a5e92be738c48711218c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the banked registers of the Supervisor mode to 0.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a945204938f4a5e92be738c48711218c2">More...</a><br /></td></tr>
 <tr class="separator:a945204938f4a5e92be738c48711218c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6eb0ee94a81e166d7b02a78f45b4d028"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6eb0ee94a81e166d7b02a78f45b4d028">Init_Undefined_Banked_Regs</a> ()</td></tr>
+<tr class="memdesc:a6eb0ee94a81e166d7b02a78f45b4d028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the banked registers of the Undefined mode to 0.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6eb0ee94a81e166d7b02a78f45b4d028">More...</a><br /></td></tr>
 <tr class="separator:a6eb0ee94a81e166d7b02a78f45b4d028"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacfb4cc6e44ca967a9e258ba583f588b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aacfb4cc6e44ca967a9e258ba583f588b">Init_Abort_Banked_Regs</a> ()</td></tr>
+<tr class="memdesc:aacfb4cc6e44ca967a9e258ba583f588b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the banked registers of the Abort mode to 0.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aacfb4cc6e44ca967a9e258ba583f588b">More...</a><br /></td></tr>
 <tr class="separator:aacfb4cc6e44ca967a9e258ba583f588b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68f089f1b45e6f22295a7339eeeade33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a68f089f1b45e6f22295a7339eeeade33">Init_CPSR</a> ()</td></tr>
+<tr class="memdesc:a68f089f1b45e6f22295a7339eeeade33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the CPSR register in all CPU modes.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a68f089f1b45e6f22295a7339eeeade33">More...</a><br /></td></tr>
 <tr class="separator:a68f089f1b45e6f22295a7339eeeade33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af24fe774c931e6fe4c0abe70956463de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af24fe774c931e6fe4c0abe70956463de">Init_SPSR</a> ()</td></tr>
+<tr class="memdesc:af24fe774c931e6fe4c0abe70956463de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all SPSR registers (in all CPU modes) to 0.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af24fe774c931e6fe4c0abe70956463de">More...</a><br /></td></tr>
 <tr class="separator:af24fe774c931e6fe4c0abe70956463de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a050dada520ca82a21874045815c596a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a050dada520ca82a21874045815c596a8">Verify_SPSR_Accessibility</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a> mode) const</td></tr>
+<tr class="separator:a050dada520ca82a21874045815c596a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa53dae8f0dd16d916a852e572dfa95ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa53dae8f0dd16d916a852e572dfa95ba">Invalid_Change_Of_Control_Bits</a> (std::uint32_t new_cpsr) noexcept</td></tr>
+<tr class="memdesc:aa53dae8f0dd16d916a852e572dfa95ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if there is an invalid attempt to change the control bits of the CPSR register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa53dae8f0dd16d916a852e572dfa95ba">More...</a><br /></td></tr>
 <tr class="separator:aa53dae8f0dd16d916a852e572dfa95ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:acad75ebcf81bf46a5b787a08b8b4bb6a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acad75ebcf81bf46a5b787a08b8b4bb6a">Is_Flag_Set</a> (std::uint32_t cpsr, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a391d3ef35a11316f2d9690ddae7bd8e7">NFlag</a> flag) noexcept</td></tr>
+<tr class="memdesc:acad75ebcf81bf46a5b787a08b8b4bb6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a flag is set in the given value which is treated as the CPSR register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acad75ebcf81bf46a5b787a08b8b4bb6a">More...</a><br /></td></tr>
 <tr class="separator:acad75ebcf81bf46a5b787a08b8b4bb6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68f1b4de2c38c3bad7d4a7ed04ccb08e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a68f1b4de2c38c3bad7d4a7ed04ccb08e">Get_CPU_Mode</a> (std::uint32_t new_cpsr) noexcept</td></tr>
-<tr class="separator:a68f1b4de2c38c3bad7d4a7ed04ccb08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9ae286bf3d1f39cfbe944054d6f5688"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af9ae286bf3d1f39cfbe944054d6f5688">Get_CPU_Mode</a> (std::uint32_t cpsr) noexcept</td></tr>
+<tr class="memdesc:af9ae286bf3d1f39cfbe944054d6f5688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the mode of the CPU from the value given as a parameter.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af9ae286bf3d1f39cfbe944054d6f5688">More...</a><br /></td></tr>
+<tr class="separator:af9ae286bf3d1f39cfbe944054d6f5688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:acf71b6238b5cb0b9c0c2235bf296fdca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf71b6238b5cb0b9c0c2235bf296fdca">m_mode</a></td></tr>
+<tr class="memdesc:acf71b6238b5cb0b9c0c2235bf296fdca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current mode of the CPU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf71b6238b5cb0b9c0c2235bf296fdca">More...</a><br /></td></tr>
 <tr class="separator:acf71b6238b5cb0b9c0c2235bf296fdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8e26506e2bb7f5413531be9d7bdb183"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::uint32_t, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac4948fa820e156f7505bbf3014ba3733">NUMBER_OF_REGS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac8e26506e2bb7f5413531be9d7bdb183">m_regs</a></td></tr>
+<tr class="memdesc:ac8e26506e2bb7f5413531be9d7bdb183"><td class="mdescLeft">&#160;</td><td class="mdescRight">USR and SYS mode registers.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac8e26506e2bb7f5413531be9d7bdb183">More...</a><br /></td></tr>
 <tr class="separator:ac8e26506e2bb7f5413531be9d7bdb183"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0d402f533ad4800020304b04dc6628c"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>, std::unordered_map&lt; std::uint32_t, std::uint32_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ae0d402f533ad4800020304b04dc6628c">m_banked_regs</a></td></tr>
-<tr class="separator:ae0d402f533ad4800020304b04dc6628c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dcb0bac27ee95ddb44ba376ac7c268d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a110b4d2a333fb510bb627a3fc109c35f">Banked_Registers_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a3dcb0bac27ee95ddb44ba376ac7c268d">m_banked_regs</a></td></tr>
+<tr class="memdesc:a3dcb0bac27ee95ddb44ba376ac7c268d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Banked registers.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a3dcb0bac27ee95ddb44ba376ac7c268d">More...</a><br /></td></tr>
+<tr class="separator:a3dcb0bac27ee95ddb44ba376ac7c268d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b8f9cf97fb52ce2b6eec7cb1ed5ae6"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>, std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a43b8f9cf97fb52ce2b6eec7cb1ed5ae6">m_spsr</a></td></tr>
+<tr class="memdesc:a43b8f9cf97fb52ce2b6eec7cb1ed5ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPSR registers (for different CPU modes)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a43b8f9cf97fb52ce2b6eec7cb1ed5ae6">More...</a><br /></td></tr>
 <tr class="separator:a43b8f9cf97fb52ce2b6eec7cb1ed5ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6763c648704a19923a5aae4fb314a31f"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>, std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6763c648704a19923a5aae4fb314a31f">m_cpsr</a></td></tr>
+<tr class="memdesc:a6763c648704a19923a5aae4fb314a31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPSR registers (for different CPU modes)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6763c648704a19923a5aae4fb314a31f">More...</a><br /></td></tr>
 <tr class="separator:a6763c648704a19923a5aae4fb314a31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3064b2b4039870158575655cfce8e41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af3064b2b4039870158575655cfce8e41">m_logging_system</a></td></tr>
+<tr class="memdesc:af3064b2b4039870158575655cfce8e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging system.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af3064b2b4039870158575655cfce8e41">More...</a><br /></td></tr>
 <tr class="separator:af3064b2b4039870158575655cfce8e41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents the context (registers) of the CPU. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a110b4d2a333fb510bb627a3fc109c35f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a110b4d2a333fb510bb627a3fc109c35f">&#9670;&nbsp;</a></span>Banked_Registers_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a110b4d2a333fb510bb627a3fc109c35f">zero_mate::arm1176jzf_s::CCPU_Context::Banked_Registers_t</a> =  std::unordered_map&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>, std::unordered_map&lt;std::uint32_t, std::uint32_t&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for the CPU banked registers (just to make the code less wordy) </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a80df62c0bceb498b0a6cc65d54c8352b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80df62c0bceb498b0a6cc65d54c8352b">&#9670;&nbsp;</a></span>NCPU_Mode</h2>
@@ -266,14 +342,23 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration represents different modes of the CPU. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352ba8f9bfe9d1345237cb3b2b205864da075"></a>User&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352ba515b9a5d45581087efc00a8dbacb13ca"></a>FIQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352ba19d751dff27aea339cf66284e97e1d5e"></a>IRQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352ba18eba6bb36aa9078c38ff2fe5a9f0d0d"></a>Supervisor&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352ba727b63583e01fa2b3952dab580c84dc2"></a>Abort&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352baec0fc0100c4fc1ce4eea230c3dc10360"></a>Undefined&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352baa45da96d0bf6575970f2d27af22be28a"></a>System&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352ba8f9bfe9d1345237cb3b2b205864da075"></a>User&#160;</td><td class="fielddoc"><p>User (normal program execution mode) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352ba515b9a5d45581087efc00a8dbacb13ca"></a>FIQ&#160;</td><td class="fielddoc"><p>FIQ (supports a high-speed data transfer or channel process) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352ba19d751dff27aea339cf66284e97e1d5e"></a>IRQ&#160;</td><td class="fielddoc"><p>IRQ (used for general-purpose interrupt handling) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352ba18eba6bb36aa9078c38ff2fe5a9f0d0d"></a>Supervisor&#160;</td><td class="fielddoc"><p>Supervisor (protected mode for the operating system) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352ba727b63583e01fa2b3952dab580c84dc2"></a>Abort&#160;</td><td class="fielddoc"><p>Abort (implements virtual memory and/or memory protection) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352baec0fc0100c4fc1ce4eea230c3dc10360"></a>Undefined&#160;</td><td class="fielddoc"><p>Undefined (supports software emulation of hardware coprocessors) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a80df62c0bceb498b0a6cc65d54c8352baa45da96d0bf6575970f2d27af22be28a"></a>System&#160;</td><td class="fielddoc"><p>System (runs privileged operating system tasks (ARMv4 and above)) </p>
+</td></tr>
 </table>
 
 </div>
@@ -297,14 +382,23 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration lists out different flags in the CPSR register. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a8d9c307cb7f3c4a32822a51922d1ceaa"></a>N&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a21c2e59531c8710156d34a3c30ac81d5"></a>Z&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a0d61f8370cad1d412f80b84d143e1257"></a>C&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a5206560a306a2e085a437fd258eb57ce"></a>V&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a7fc56270e7a70fa81a5935b72eacbe29"></a>A&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7add7536794b63bf90eccfd37f9b147d7f"></a>I&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a800618943025315f869e4e1f09471012"></a>F&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a8d9c307cb7f3c4a32822a51922d1ceaa"></a>N&#160;</td><td class="fielddoc"><p>Negative flag. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a21c2e59531c8710156d34a3c30ac81d5"></a>Z&#160;</td><td class="fielddoc"><p>Zero flag. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a0d61f8370cad1d412f80b84d143e1257"></a>C&#160;</td><td class="fielddoc"><p>Carry flag. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a5206560a306a2e085a437fd258eb57ce"></a>V&#160;</td><td class="fielddoc"><p>Overflow flag. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a7fc56270e7a70fa81a5935b72eacbe29"></a>A&#160;</td><td class="fielddoc"><p>Imprecise abort (not used) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7add7536794b63bf90eccfd37f9b147d7f"></a>I&#160;</td><td class="fielddoc"><p>Disable interrupts flag. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a391d3ef35a11316f2d9690ddae7bd8e7a800618943025315f869e4e1f09471012"></a>F&#160;</td><td class="fielddoc"><p>Disable fast interrupts flag. </p>
+</td></tr>
 </table>
 
 </div>
@@ -324,6 +418,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor of the class. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -334,8 +430,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4789016607700ae260a623eadfb3c9c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4789016607700ae260a623eadfb3c9c1">&#9670;&nbsp;</a></span>Enable_FIQ()</h2>
+<a id="a2dd5a3a65e28cce65d01bdef2746cf1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd5a3a65e28cce65d01bdef2746cf1a">&#9670;&nbsp;</a></span>Enable_FIQ()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -344,28 +440,36 @@ Here is the call graph for this function:</div>
           <td class="memname">void zero_mate::arm1176jzf_s::CCPU_Context::Enable_FIQ </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>set</em></td><td>)</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Globally enables/disables FIQ (fast interrupts) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>Indication of whether interrupts should be enabled (true means fast interrupts will be enabled) </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a4789016607700ae260a623eadfb3c9c1_cgraph.svg" width="480" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a2dd5a3a65e28cce65d01bdef2746cf1a_cgraph.svg" width="480" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a4789016607700ae260a623eadfb3c9c1_icgraph.svg" width="691" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a2dd5a3a65e28cce65d01bdef2746cf1a_icgraph.svg" width="691" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="ad4e826047d6896ca87837039aa1f7f7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4e826047d6896ca87837039aa1f7f7c">&#9670;&nbsp;</a></span>Enable_IRQ()</h2>
+<a id="a4b48d0f9508c738b62d96e5593e6d704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b48d0f9508c738b62d96e5593e6d704">&#9670;&nbsp;</a></span>Enable_IRQ()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -374,21 +478,29 @@ Here is the caller graph for this function:</div>
           <td class="memname">void zero_mate::arm1176jzf_s::CCPU_Context::Enable_IRQ </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>set</em></td><td>)</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Globally enables/disables IRQ (interrupts) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>Indication of whether interrupts should be enabled (true means interrupts will be enabled) </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_ad4e826047d6896ca87837039aa1f7f7c_cgraph.svg" width="482" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a4b48d0f9508c738b62d96e5593e6d704_cgraph.svg" width="482" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_ad4e826047d6896ca87837039aa1f7f7c_icgraph.svg" width="692" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a4b48d0f9508c738b62d96e5593e6d704_icgraph.svg" width="692" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -408,6 +520,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a reference the CPSR register of the current CPU mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the CPSR register </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -431,6 +546,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a const reference the CPSR register of the current CPU mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the CPSR register </dd></dl>
 
 </div>
 </div>
@@ -456,6 +574,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the current mode of the CPU. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current mode of the CPU </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -465,8 +586,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a68f1b4de2c38c3bad7d4a7ed04ccb08e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68f1b4de2c38c3bad7d4a7ed04ccb08e">&#9670;&nbsp;</a></span>Get_CPU_Mode() <span class="overload">[2/2]</span></h2>
+<a id="af9ae286bf3d1f39cfbe944054d6f5688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9ae286bf3d1f39cfbe944054d6f5688">&#9670;&nbsp;</a></span>Get_CPU_Mode() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -478,7 +599,7 @@ Here is the caller graph for this function:</div>
           <td class="memname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">CCPU_Context::NCPU_Mode</a> zero_mate::arm1176jzf_s::CCPU_Context::Get_CPU_Mode </td>
           <td>(</td>
           <td class="paramtype">std::uint32_t&#160;</td>
-          <td class="paramname"><em>new_cpsr</em></td><td>)</td>
+          <td class="paramname"><em>cpsr</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -488,6 +609,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the mode of the CPU from the value given as a parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpsr</td><td>Value to be treated as the CPSR register. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Mode of the CPU retrieved from the given value </dd></dl>
 
 </div>
 </div>
@@ -517,6 +647,16 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a reference to a register of a particular CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>Index of the register to be returned (0 - 15) </td></tr>
+    <tr><td class="paramname">mode</td><td>Mode of the CPU used to retrieve the register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the register </dd></dl>
+
 </div>
 </div>
 <a id="a22efcb34f3c1bd9f46f1f75771103ef9"></a>
@@ -544,6 +684,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a const reference to a register of a particular CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>Index of the register to be returned (0 - 15) </td></tr>
+    <tr><td class="paramname">mode</td><td>Mode of the CPU used to retrieve the register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the register </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -567,6 +717,21 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the SPSR register of the current CPU mode. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CReset.html" title="This class represents the reset exception.">exceptions::CReset</a></td><td>if the CPU is in a mode where the SPSR register is not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Value of the SPSR register of the current CPU mode </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_ae00681efcbc4adfcfde001a67c5baeca_cgraph.svg" width="940" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -592,6 +757,27 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a reference to the SPSR register of the CPU mode passed in as a parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>Mode of the CPU </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CReset.html" title="This class represents the reset exception.">exceptions::CReset</a></td><td>if the provided CPU does not support the SPSR register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the SPSR register </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a8640117a5d7886b324a368c9dc41288d_cgraph.svg" width="940" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a1723b9f6993f17c2d293bd5a5e4d3440"></a>
@@ -609,6 +795,27 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a const reference to the SPSR register of the CPU mode passed in as a parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>Mode of the CPU </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CReset.html" title="This class represents the reset exception.">exceptions::CReset</a></td><td>if the provided CPU does not support the SPSR register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the SPSR register </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a1723b9f6993f17c2d293bd5a5e4d3440_cgraph.svg" width="940" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -634,6 +841,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Resets the banked registers of the Abort mode to 0. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -665,6 +874,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Resets the CPSR register in all CPU modes. </p>
+<p>The registers are reset to 0, except for their 5 least significant bits as they hold information about the mode itself. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -696,6 +908,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Resets the banked registers of the FIQ mode to 0. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -727,6 +941,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Resets the banked registers of the IRQ mode to 0. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -758,6 +974,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initializes (resets) all CPU registers. </p>
+<p>Registers r0-r15 in all CPU modes are set to 0. The CPSR registers of all modes hold only info about their corresponding mode (least significant 5 bits). The SPSR registers are cleared out to 0. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -795,6 +1014,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Resets all SPSR registers (in all CPU modes) to 0. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -826,6 +1047,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Resets the banked registers of the Supervisor mode to 0. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -857,6 +1080,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Resets the banked registers of the Undefined mode to 0. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -889,6 +1114,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if there is an invalid attempt to change the control bits of the CPSR register. </p>
+<p>The control bits of the CPSR register can be changed only from a privileged mode. If the CPU is in the User mode, it is not allowed the change the least significant byte of CPSR (control bits).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_cpsr</td><td>New value of the CPSR register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true, if an invalid attempt takes place. false, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -921,10 +1156,19 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks whether a given flag is set in the CPSR register of the current CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>Type of flag to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true, if the flag is set. false, otherwise </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a0013811c3eef6d91ddfd2423a08889ef_icgraph.svg" width="959" height="374"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a0013811c3eef6d91ddfd2423a08889ef_icgraph.svg" width="959" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -964,6 +1208,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Checks if a flag is set in the given value which is treated as the CPSR register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpsr</td><td>Value treated as the CPSR register </td></tr>
+    <tr><td class="paramname">flag</td><td>Flag to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true, if the given flag is set (1). false, otherwise </dd></dl>
+
 </div>
 </div>
 <a id="a573470217091c27cf30f1411ea453e5d"></a>
@@ -988,6 +1242,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if the CPU is in a privileged mode. </p>
+<p>Privileged modes are considered to all CPU modes except for the User mode.</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the CPU is currently in a privileged mode. false, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1026,10 +1284,20 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if the CPU mode passed in as a parameter supports the SPSR register or not. </p>
+<p>The SPSR register is supported (is accessible) in all modes except for the User and System mode.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>CPU mode to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true, if the mode does support the SPSR register. false, otherwise </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a6fc387fa0b0dd040c4e2463606d933e4_icgraph.svg" width="999" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a6fc387fa0b0dd040c4e2463606d933e4_icgraph.svg" width="1487" height="248"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1050,6 +1318,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a reference to a register of the current CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>Index of the register to be returned (0 - 15) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the register </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1074,6 +1351,15 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a const reference to a register of the current CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>Index of the register to be returned (0 - 15) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Const Reference to the register </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1097,6 +1383,9 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Resets the context of the CPU. </p>
+<p>It sets all registers to 0, disables FIQ and RIQ, and sets the CPU mode to Supervisor. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1127,6 +1416,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets a new value to the CPSR register. </p>
+<p>If the new value is supposed to change the current mode of the CPU, the function is only allowed to be called from a privileged mode. Otherwise, no effect will take place.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>New value of the CPSR register. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1165,6 +1463,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets the mode of the CPU. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>New mode of the CPU </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1207,6 +1513,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets/resets a flag in the CPSR register of the current CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>Flag to be set/reset </td></tr>
+    <tr><td class="paramname">set</td><td>Indication of whether the flag should be set to 1 (set) or 0 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1256,6 +1571,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Sets/resets a flag in the given value which is treated as if it was the CPSR register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpsr</td><td>Value to be treated as the CPSR register. </td></tr>
+    <tr><td class="paramname">flag</td><td>Flag to be set/reset </td></tr>
+    <tr><td class="paramname">set</td><td>Indication of whether the flag should be set to 1 (set) or 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a1b322131a1168763d2b8083c17a1079b"></a>
@@ -1273,10 +1598,80 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the value of the SPSR register in the CPU mode passed in as a parameter. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CReset.html" title="This class represents the reset exception.">exceptions::CReset</a></td><td>if the provided CPU does not support the SPSR register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>New value of the SPSR register </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a1b322131a1168763d2b8083c17a1079b_cgraph.svg" width="938" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a1b322131a1168763d2b8083c17a1079b_icgraph.svg" width="702" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a050dada520ca82a21874045815c596a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a050dada520ca82a21874045815c596a8">&#9670;&nbsp;</a></span>Verify_SPSR_Accessibility()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::arm1176jzf_s::CCPU_Context::Verify_SPSR_Accessibility </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Makes sure the SPSR register is accessible from the given mode of the CPU (helper function). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>CPU mode to be checked if it supports the SPSR register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CReset.html" title="This class represents the reset exception.">exceptions::CReset</a></td><td>if the mode does not support the SPSR register </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a050dada520ca82a21874045815c596a8_cgraph.svg" width="683" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a050dada520ca82a21874045815c596a8_icgraph.svg" width="1266" height="248"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1303,6 +1698,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>The lowest 8 bits of CPSR are called control bits. </p>
+
 </div>
 </div>
 <a id="a053ed9b34d5aa41c59432d7bb4ad7e09"></a>
@@ -1324,6 +1721,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The least significant 5 bits in the CPS register represent the mode of the CPU. </p>
 
 </div>
 </div>
@@ -1347,10 +1746,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Index of the LR (link register) register. </p>
+
 </div>
 </div>
-<a id="ae0d402f533ad4800020304b04dc6628c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0d402f533ad4800020304b04dc6628c">&#9670;&nbsp;</a></span>m_banked_regs</h2>
+<a id="a3dcb0bac27ee95ddb44ba376ac7c268d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dcb0bac27ee95ddb44ba376ac7c268d">&#9670;&nbsp;</a></span>m_banked_regs</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1359,7 +1760,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>, std::unordered_map&lt;std::uint32_t, std::uint32_t&gt; &gt; zero_mate::arm1176jzf_s::CCPU_Context::m_banked_regs</td>
+          <td class="memname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a110b4d2a333fb510bb627a3fc109c35f">Banked_Registers_t</a> zero_mate::arm1176jzf_s::CCPU_Context::m_banked_regs</td>
         </tr>
       </table>
   </td>
@@ -1368,6 +1769,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Banked registers. </p>
 
 </div>
 </div>
@@ -1391,6 +1794,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>CPSR registers (for different CPU modes) </p>
+
 </div>
 </div>
 <a id="af3064b2b4039870158575655cfce8e41"></a>
@@ -1412,6 +1817,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Logging system. </p>
 
 </div>
 </div>
@@ -1435,6 +1842,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Current mode of the CPU. </p>
+
 </div>
 </div>
 <a id="ac8e26506e2bb7f5413531be9d7bdb183"></a>
@@ -1456,6 +1865,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>USR and SYS mode registers. </p>
 
 </div>
 </div>
@@ -1479,6 +1890,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>SPSR registers (for different CPU modes) </p>
+
 </div>
 </div>
 <a id="a0947821872bfe58acdc42f4df8bd86ad"></a>
@@ -1500,6 +1913,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Number of general-purpose registers (LR, SP, PC are considered to be special registers) </p>
 
 </div>
 </div>
@@ -1523,6 +1938,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Total number of CPU registers. </p>
+
 </div>
 </div>
 <a id="a359cbf5c6efb754156cb3b046db2acbd"></a>
@@ -1544,6 +1961,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Index of the PC (program counter) register. </p>
 
 </div>
 </div>
@@ -1567,6 +1986,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Register size (4B) </p>
+
 </div>
 </div>
 <a id="a89a9a0aa8e0bf3e321d04f8eb14c70ab"></a>
@@ -1588,6 +2009,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Index of the SP (stack pointer) register. </p>
 
 </div>
 </div>

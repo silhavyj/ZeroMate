@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1ex
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a parent class for all the CPU exceptions.  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="exceptions_8hpp_source.html">exceptions.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::arm1176jzf_s::exceptions::CCPU_Exception:</div>
@@ -122,29 +125,39 @@ Public Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fa515b9a5d45581087efc00a8dbacb13ca">FIQ</a>
 <br />
  }</td></tr>
+<tr class="memdesc:aebc1815b9ac3d21d9e264c322670bd1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the exception.  <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1f">More...</a><br /></td></tr>
 <tr class="separator:aebc1815b9ac3d21d9e264c322670bd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9d347ce47437036db83c6270b9b80d09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#a9d347ce47437036db83c6270b9b80d09">CCPU_Exception</a> (std::uint32_t exception_vector, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">CCPU_Context::NCPU_Mode</a> mode, const char *name, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1f">NType</a> type)</td></tr>
+<tr class="memdesc:a9d347ce47437036db83c6270b9b80d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#a9d347ce47437036db83c6270b9b80d09">More...</a><br /></td></tr>
 <tr class="separator:a9d347ce47437036db83c6270b9b80d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae87c33c76ed6571b2408fd293710b6c4"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ae87c33c76ed6571b2408fd293710b6c4">Get_Exception_Vector</a> () const</td></tr>
+<tr class="memdesc:ae87c33c76ed6571b2408fd293710b6c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the address of the handler of the exception.  <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ae87c33c76ed6571b2408fd293710b6c4">More...</a><br /></td></tr>
 <tr class="separator:ae87c33c76ed6571b2408fd293710b6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab18a4a4b6a54029ccf141784cfe9c737"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">CCPU_Context::NCPU_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ab18a4a4b6a54029ccf141784cfe9c737">Get_CPU_Mode</a> () const</td></tr>
+<tr class="memdesc:ab18a4a4b6a54029ccf141784cfe9c737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the mode into which the CPU will switch when the exception is thrown.  <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ab18a4a4b6a54029ccf141784cfe9c737">More...</a><br /></td></tr>
 <tr class="separator:ab18a4a4b6a54029ccf141784cfe9c737"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabb81de8a3e09534245ef3851a31c3c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1f">NType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aabb81de8a3e09534245ef3851a31c3c0">Get_Type</a> () const</td></tr>
+<tr class="memdesc:aabb81de8a3e09534245ef3851a31c3c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the exception.  <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aabb81de8a3e09534245ef3851a31c3c0">More...</a><br /></td></tr>
 <tr class="separator:aabb81de8a3e09534245ef3851a31c3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a1c84ad9c11e14653fbf5ac38a1f5d9d8"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#a1c84ad9c11e14653fbf5ac38a1f5d9d8">m_exception_vector</a></td></tr>
+<tr class="memdesc:a1c84ad9c11e14653fbf5ac38a1f5d9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Address of the exception handler (IVT = interrupt vector table)  <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#a1c84ad9c11e14653fbf5ac38a1f5d9d8">More...</a><br /></td></tr>
 <tr class="separator:a1c84ad9c11e14653fbf5ac38a1f5d9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76e92b89deb4dfe3ab2a62154675b30f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">CCPU_Context::NCPU_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#a76e92b89deb4dfe3ab2a62154675b30f">m_mode</a></td></tr>
+<tr class="memdesc:a76e92b89deb4dfe3ab2a62154675b30f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode into which the CPU will switch when the exception is thrown.  <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#a76e92b89deb4dfe3ab2a62154675b30f">More...</a><br /></td></tr>
 <tr class="separator:a76e92b89deb4dfe3ab2a62154675b30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a658f07afe105602f8413acc6e1cc14bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1f">NType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#a658f07afe105602f8413acc6e1cc14bb">m_type</a></td></tr>
+<tr class="memdesc:a658f07afe105602f8413acc6e1cc14bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the exception.  <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#a658f07afe105602f8413acc6e1cc14bb">More...</a><br /></td></tr>
 <tr class="separator:a658f07afe105602f8413acc6e1cc14bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a parent class for all the CPU exceptions. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="aebc1815b9ac3d21d9e264c322670bd1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aebc1815b9ac3d21d9e264c322670bd1f">&#9670;&nbsp;</a></span>NType</h2>
 
@@ -164,14 +177,23 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Type of the exception. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fa526d688f37a86d3c3f27d0c5016eb71d"></a>Reset&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1faa481adb3b002c4c014c64128a4f706df"></a>Undefined_Instruction&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fad80cf7913f5f7e250f7a38397b573bfe"></a>Software_Interrupt&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fa3014392235f3266413d0c17efd64c67b"></a>Prefetch_Abort&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fab712d6dcbb60c5d0e0fe4c084d4d258d"></a>Data_Abort&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fa19d751dff27aea339cf66284e97e1d5e"></a>IRQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fa515b9a5d45581087efc00a8dbacb13ca"></a>FIQ&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fa526d688f37a86d3c3f27d0c5016eb71d"></a>Reset&#160;</td><td class="fielddoc"><p>Reset the CPU. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1faa481adb3b002c4c014c64128a4f706df"></a>Undefined_Instruction&#160;</td><td class="fielddoc"><p>Undefined instruction. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fad80cf7913f5f7e250f7a38397b573bfe"></a>Software_Interrupt&#160;</td><td class="fielddoc"><p>SWI (software interrupt; used for syscalls) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fa3014392235f3266413d0c17efd64c67b"></a>Prefetch_Abort&#160;</td><td class="fielddoc"><p>Prefetch abort (the CPU failed to fetch the next instruction) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fab712d6dcbb60c5d0e0fe4c084d4d258d"></a>Data_Abort&#160;</td><td class="fielddoc"><p>Data abort when reading/writing to the bus. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fa19d751dff27aea339cf66284e97e1d5e"></a>IRQ&#160;</td><td class="fielddoc"><p>Interrupt. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aebc1815b9ac3d21d9e264c322670bd1fa515b9a5d45581087efc00a8dbacb13ca"></a>FIQ&#160;</td><td class="fielddoc"><p>Fast interrupt. </p>
+</td></tr>
 </table>
 
 </div>
@@ -223,6 +245,17 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exception_vector</td><td>Address of the handler of the exception (IVT = interrupt vector table) </td></tr>
+    <tr><td class="paramname">mode</td><td>Mode into which the CPU will switch when the exception is thrown </td></tr>
+    <tr><td class="paramname">name</td><td>Description of the exception for logging purposes </td></tr>
+    <tr><td class="paramname">type</td><td>Type of the exception </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -240,6 +273,9 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the mode into which the CPU will switch when the exception is thrown. </p>
+<dl class="section return"><dt>Returns</dt><dd>Mode of the exception. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -263,6 +299,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the address of the handler of the exception. </p>
+<dl class="section return"><dt>Returns</dt><dd>Address of the handler (IVT = interrupt vector table) </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -286,6 +325,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the type of the exception. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exception type </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -316,6 +358,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Address of the exception handler (IVT = interrupt vector table) </p>
+
 </div>
 </div>
 <a id="a76e92b89deb4dfe3ab2a62154675b30f"></a>
@@ -338,6 +382,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Mode into which the CPU will switch when the exception is thrown. </p>
+
 </div>
 </div>
 <a id="a658f07afe105602f8413acc6e1cc14bb"></a>
@@ -359,6 +405,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Type of the exception. </p>
 
 </div>
 </div>

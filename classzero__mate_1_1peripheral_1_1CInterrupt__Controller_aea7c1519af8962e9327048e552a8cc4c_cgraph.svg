@@ -56,7 +56,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef" target="_top" xlink:title="Checks whether a given flag is set in the CPSR register of the current CPU mode.">
 <polygon fill="none" stroke="black" points="174,-0.5 174,-41.5 304,-41.5 304,-0.5 174,-0.5"/>
 <text text-anchor="start" x="182" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="182" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Is</text>

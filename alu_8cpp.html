@@ -86,27 +86,24 @@ $(document).ready(function(){initNavTree('alu_8cpp.html',''); initResizable(); }
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">alu.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;functional&gt;</code><br />
-<code>#include &quot;<a class="el" href="alu_8hpp_source.html">alu.hpp</a>&quot;</code><br />
+
+<p>This file implements the functionality of the arithmetic logic unit (ALU).  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="alu_8hpp_source.html">alu.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math_8hpp_source.html">../utils/math.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for alu.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="alu_8cpp__incl.svg" width="4011" height="694"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="alu_8cpp__incl.svg" width="288" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TALU__Settings.html">zero_mate::arm1176jzf_s::alu::TALU_Settings</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacezero__mate"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate.html">zero_mate</a></td></tr>
@@ -118,9 +115,191 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a95c11d8dc8e4ebc2c1dc6ca22403c871"><td class="memItemLeft" align="right" valign="top">TResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a95c11d8dc8e4ebc2c1dc6ca22403c871">zero_mate::arm1176jzf_s::alu::Execute</a> (const CCPU_Core &amp;cpu, isa::CData_Processing instruction, std::uint32_t first_operand, std::uint32_t second_operand, bool carry_out) noexcept</td></tr>
-<tr class="separator:a95c11d8dc8e4ebc2c1dc6ca22403c871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ff714734ac2e53a9374d1f2b9877d6"><td class="memItemLeft" align="right" valign="top">TResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a73ff714734ac2e53a9374d1f2b9877d6">zero_mate::arm1176jzf_s::alu::Execute</a> (isa::CData_Processing <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, std::uint32_t first_operand, std::uint32_t second_operand, bool <a class="el" href="alu_8cpp.html#a7b4618dfdbe7cb9d5e6cc6d442bf0c02">carry_out</a>, bool cpu_c_flag, bool cpu_v_flag) noexcept</td></tr>
+<tr class="memdesc:a73ff714734ac2e53a9374d1f2b9877d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an ALU operation.  <a href="namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a73ff714734ac2e53a9374d1f2b9877d6">More...</a><br /></td></tr>
+<tr class="separator:a73ff714734ac2e53a9374d1f2b9877d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file implements the functionality of the arithmetic logic unit (ALU). </p>
+<dl class="section date"><dt>Date</dt><dd>22. 05. 2023 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Jakub Silhavy (<a href="#" onclick="location.href='mai'+'lto:'+'jak'+'ub'+'.si'+'lh'+'avy'+'.c'+'z@g'+'ma'+'il.'+'co'+'m'; return false;">jakub<span style="display: none;">.nosp@m.</span>.sil<span style="display: none;">.nosp@m.</span>havy.<span style="display: none;">.nosp@m.</span>cz@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a>) </dd></dl>
+</div><h2 class="groupheader">Variable Documentation</h2>
+<a id="a1701b0b833058b24239bcf19684b427f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1701b0b833058b24239bcf19684b427f">&#9670;&nbsp;</a></span>account_for_carry</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool account_for_carry { false }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Should the ALU account for the carry flag. </p>
+
+</div>
+</div>
+<a id="a7c5cc0e88cdb03a8a29c016dc5525d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c5cc0e88cdb03a8a29c016dc5525d2e">&#9670;&nbsp;</a></span>arithmetic_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Arithmetical_Operation arithmetic_op {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Arithmetical operation. </p>
+
+</div>
+</div>
+<a id="a7b4618dfdbe7cb9d5e6cc6d442bf0c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b4618dfdbe7cb9d5e6cc6d442bf0c02">&#9670;&nbsp;</a></span>carry_out</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool carry_out {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carry out used in a logical operation. </p>
+
+</div>
+</div>
+<a id="a20b51f9ca9dc1a79dba89e3c66d7a648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20b51f9ca9dc1a79dba89e3c66d7a648">&#9670;&nbsp;</a></span>instruction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">isa::CData_Processing instruction { 0 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Data processing instruction. </p>
+
+</div>
+</div>
+<a id="a243d0ccab3a017442f01f93281b68a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a243d0ccab3a017442f01f93281b68a52">&#9670;&nbsp;</a></span>is_logical_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_logical_op { true }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Distinction between the two type of operation. </p>
+
+</div>
+</div>
+<a id="a2f237169ddf53800413cfa3bbbffa335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f237169ddf53800413cfa3bbbffa335">&#9670;&nbsp;</a></span>logical_op</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Logical_Operation logical_op {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Logical operation. </p>
+
+</div>
+</div>
+<a id="a80badebd2dc78607ff61f66476d1fc49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80badebd2dc78607ff61f66476d1fc49">&#9670;&nbsp;</a></span>op1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::uint32_t op1 {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>First operand. </p>
+
+</div>
+</div>
+<a id="af3792125376f52ba7ccfc21dbdab6cc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3792125376f52ba7ccfc21dbdab6cc3">&#9670;&nbsp;</a></span>op2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::uint32_t op2 {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Second operand. </p>
+
+</div>
+</div>
+<a id="a38a565f35f51a44e10bbbcb6c2e4663e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a565f35f51a44e10bbbcb6c2e4663e">&#9670;&nbsp;</a></span>reversed_operands</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool reversed_operands { false }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Should the ALU swap the operands? </p>
+
+</div>
+</div>
+<a id="abfdc8b2e0f21af195c33a2221a87373c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfdc8b2e0f21af195c33a2221a87373c">&#9670;&nbsp;</a></span>subtraction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool subtraction { false }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Is the operation a subtraction? (inverted carry) </p>
+
+</div>
+</div>
+<a id="ac0a7ad2f7b4ec3687df4861604f69589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0a7ad2f7b4ec3687df4861604f69589">&#9670;&nbsp;</a></span>write_back</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool write_back { true }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Should the result be written back? </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

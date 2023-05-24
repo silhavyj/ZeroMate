@@ -1,9 +1,5 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute">
-<area shape="rect" id="node1" title="Executes a multiply instruction." alt="" coords="5,169,181,211"/>
-<area shape="rect" id="node2" href="$namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ae0004fe8005cb2c044afa26992a8f42a" title=" " alt="" coords="244,5,417,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html#ac38ab98cc4727130bd58a4512eefa132" title=" " alt="" coords="237,71,424,112"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html#a56ec52a35f5aef145fb547a57c7a228a" title=" " alt="" coords="235,136,427,177"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html#a0d23cea043b23a1cc08cbcf48c4c0764" title=" " alt="" coords="237,201,424,243"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html#a52a03bf2551e48ea8bbe4b0006afee48" title=" " alt="" coords="237,267,424,308"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54" title=" " alt="" coords="229,332,432,373"/>
+<area shape="rect" id="node1" title="Executes a multiply instruction." alt="" coords="5,39,181,80"/>
+<area shape="rect" id="node2" href="$namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ae0004fe8005cb2c044afa26992a8f42a" title="Multiples two 32&#45;bit values (the result it treated as a 32&#45;value as well)." alt="" coords="244,5,417,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54" title="Sets/resets a flag in the CPSR register of the current CPU mode." alt="" coords="229,71,432,112"/>
 </map>

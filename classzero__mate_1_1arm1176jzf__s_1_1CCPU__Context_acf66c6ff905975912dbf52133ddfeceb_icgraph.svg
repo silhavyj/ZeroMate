@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Returns a reference the CPSR register of the current CPU mode.">
 <polygon fill="#bfbfbf" stroke="black" points="611,-73.5 611,-103.5 769,-103.5 769,-73.5 611,-73.5"/>
 <text text-anchor="start" x="619" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="690" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Get_CPSR</text>

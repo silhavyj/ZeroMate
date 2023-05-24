@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Sets the value of the SPSR register in the CPU mode passed in as a parameter.">
 <polygon fill="#bfbfbf" stroke="black" points="363,-0.5 363,-30.5 518,-30.5 518,-0.5 363,-0.5"/>
 <text text-anchor="start" x="371" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="440.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Set_SPSR</text>

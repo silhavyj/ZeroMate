@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Returns the current mode of the CPU.">
 <polygon fill="#bfbfbf" stroke="black" points="555,-88 555,-129 685,-129 685,-88 555,-88"/>
 <text text-anchor="start" x="563" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="563" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Get</text>
@@ -55,7 +55,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a573470217091c27cf30f1411ea453e5d" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a573470217091c27cf30f1411ea453e5d" target="_top" xlink:title="Checks if the CPU is in a privileged mode.">
 <polygon fill="none" stroke="black" points="376,-137 376,-178 506,-178 506,-137 376,-137"/>
 <text text-anchor="start" x="384" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="384" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Is</text>
@@ -88,7 +88,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a53765299c790cc790e15deb2c701bd2a" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a53765299c790cc790e15deb2c701bd2a" target="_top" xlink:title="Sets a new value to the CPSR register.">
 <polygon fill="none" stroke="black" points="363,-0.5 363,-30.5 519,-30.5 519,-0.5 363,-0.5"/>
 <text text-anchor="start" x="371" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="441" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Set_CPSR</text>

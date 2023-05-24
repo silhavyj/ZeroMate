@@ -1,7 +1,9 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute_MRS" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute_MRS">
-<area shape="rect" id="node1" title="Executes an MRS instruction (move data from CPSR/SPSR to an ARM register)." alt="" coords="5,119,217,160"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf66c6ff905975912dbf52133ddfeceb" title=" " alt="" coords="265,5,476,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a00b5bba41731bc7acf875645d64a88a6" title=" " alt="" coords="284,71,457,127"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ada397b14e5cf27991a1b575c95f945bc" title=" " alt="" coords="284,151,457,207"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ae00681efcbc4adfcfde001a67c5baeca" title=" " alt="" coords="266,232,475,273"/>
+<area shape="rect" id="node1" title="Executes an MRS instruction (move data from CPSR/SPSR to an ARM register)." alt="" coords="5,39,217,80"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf66c6ff905975912dbf52133ddfeceb" title="Returns a reference the CPSR register of the current CPU mode." alt="" coords="265,5,476,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ae00681efcbc4adfcfde001a67c5baeca" title="Returns the value of the SPSR register of the current CPU mode." alt="" coords="266,71,475,112"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a050dada520ca82a21874045815c596a8" title=" " alt="" coords="524,63,707,119"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="755,33,949,75"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6fc387fa0b0dd040c4e2463606d933e4" title="Checks if the CPU mode passed in as a parameter supports the SPSR register or not." alt="" coords="765,99,939,155"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="997,33,1196,75"/>
 </map>

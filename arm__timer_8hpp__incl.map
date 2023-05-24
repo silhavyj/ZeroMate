@@ -1,17 +1,17 @@
 <map id="src/core/peripherals/arm_timer.hpp" name="src/core/peripherals/arm_timer.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="637,5,787,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="247,244,303,271"/>
-<area shape="rect" id="node3" title=" " alt="" coords="876,319,953,345"/>
-<area shape="rect" id="node4" title=" " alt="" coords="896,95,1011,121"/>
-<area shape="rect" id="node5" href="$peripheral_8hpp.html" title=" " alt="" coords="654,169,770,196"/>
-<area shape="rect" id="node7" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="489,95,663,121"/>
-<area shape="rect" id="node10" href="$logger_8hpp.html" title=" " alt="" coords="577,244,756,271"/>
-<area shape="rect" id="node15" href="$system__clock__listener_8hpp.html" title=" " alt="" coords="5,169,200,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="329,319,396,345"/>
-<area shape="rect" id="node8" title=" " alt="" coords="378,244,502,271"/>
-<area shape="rect" id="node9" href="$context_8hpp.html" title=" " alt="" coords="325,169,528,196"/>
-<area shape="rect" id="node11" title=" " alt="" coords="431,319,495,345"/>
-<area shape="rect" id="node12" title=" " alt="" coords="519,319,582,345"/>
-<area shape="rect" id="node13" title=" " alt="" coords="606,319,703,345"/>
-<area shape="rect" id="node14" title=" " alt="" coords="727,319,851,345"/>
+<area shape="rect" id="node1" title=" " alt="" coords="214,5,365,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="113,169,169,196"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,319,83,345"/>
+<area shape="rect" id="node4" title=" " alt="" coords="137,95,252,121"/>
+<area shape="rect" id="node5" href="$peripheral_8hpp.html" title=" " alt="" coords="621,169,737,196"/>
+<area shape="rect" id="node7" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="350,95,525,121"/>
+<area shape="rect" id="node10" href="$logger_8hpp.html" title=" " alt="" coords="205,244,384,271"/>
+<area shape="rect" id="node15" href="$system__clock__listener_8hpp.html" title=" " alt="" coords="677,244,872,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="607,319,673,345"/>
+<area shape="rect" id="node8" title=" " alt="" coords="421,169,545,196"/>
+<area shape="rect" id="node9" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="193,169,396,196"/>
+<area shape="rect" id="node11" title=" " alt="" coords="143,319,207,345"/>
+<area shape="rect" id="node12" title=" " alt="" coords="231,319,294,345"/>
+<area shape="rect" id="node13" title=" " alt="" coords="318,319,415,345"/>
+<area shape="rect" id="node14" title=" " alt="" coords="439,319,563,345"/>
 </map>

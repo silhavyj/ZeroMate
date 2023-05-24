@@ -2,18 +2,18 @@
 <area shape="rect" id="node1" title=" " alt="" coords="38,5,273,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,102,140,129"/>
 <area shape="rect" id="node3" href="$interrupt__controller__window_8hpp.html" title=" " alt="" coords="165,95,311,136"/>
-<area shape="rect" id="node4" title=" " alt="" coords="63,423,141,449"/>
-<area shape="rect" id="node5" title=" " alt="" coords="420,191,491,218"/>
-<area shape="rect" id="node6" href="$window_8hpp.html" title=" " alt="" coords="11,273,134,300"/>
-<area shape="rect" id="node7" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="217,184,395,225"/>
-<area shape="rect" id="node8" title=" " alt="" coords="209,348,265,375"/>
-<area shape="rect" id="node9" title=" " alt="" coords="543,348,667,375"/>
-<area shape="rect" id="node10" href="$peripheral_8hpp.html" title=" " alt="" coords="637,273,753,300"/>
-<area shape="rect" id="node12" href="$context_8hpp.html" title=" " alt="" coords="343,273,546,300"/>
-<area shape="rect" id="node13" href="$logger_8hpp.html" title=" " alt="" coords="289,348,467,375"/>
-<area shape="rect" id="node11" title=" " alt="" coords="611,423,678,449"/>
-<area shape="rect" id="node14" title=" " alt="" coords="435,423,499,449"/>
-<area shape="rect" id="node15" title=" " alt="" coords="524,423,587,449"/>
-<area shape="rect" id="node16" title=" " alt="" coords="165,423,263,449"/>
-<area shape="rect" id="node17" title=" " alt="" coords="287,423,411,449"/>
+<area shape="rect" id="node4" title=" " alt="" coords="70,423,147,449"/>
+<area shape="rect" id="node5" title=" " alt="" coords="499,191,569,218"/>
+<area shape="rect" id="node6" href="$window_8hpp.html" title=" " alt="" coords="63,348,186,375"/>
+<area shape="rect" id="node7" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="295,184,474,225"/>
+<area shape="rect" id="node8" title=" " alt="" coords="357,273,413,300"/>
+<area shape="rect" id="node9" title=" " alt="" coords="437,273,561,300"/>
+<area shape="rect" id="node10" href="$peripheral_8hpp.html" title=" " alt="" coords="592,348,708,375"/>
+<area shape="rect" id="node12" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="130,273,333,300"/>
+<area shape="rect" id="node13" href="$logger_8hpp.html" title=" " alt="" coords="286,348,465,375"/>
+<area shape="rect" id="node11" title=" " alt="" coords="617,423,683,449"/>
+<area shape="rect" id="node14" title=" " alt="" coords="529,423,593,449"/>
+<area shape="rect" id="node15" title=" " alt="" coords="172,423,235,449"/>
+<area shape="rect" id="node16" title=" " alt="" coords="259,423,356,449"/>
+<area shape="rect" id="node17" title=" " alt="" coords="380,423,504,449"/>
 </map>

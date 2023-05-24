@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="CPU core of Raspberry Pi Zero.">
+<g id="a_node1"><a xlink:title="Raspberry Pi Zero CPU core (arm1176jzf_s).">
 <polygon fill="#bfbfbf" stroke="black" points="559,-49.5 559,-79.5 689,-79.5 689,-49.5 559,-49.5"/>
 <text text-anchor="start" x="567" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="624" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Core</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" target="_top" xlink:title="This class represents the context (registers) of the CPU.">
 <polygon fill="none" stroke="black" points="278,-49.5 278,-79.5 408,-79.5 408,-49.5 278,-49.5"/>
 <text text-anchor="start" x="286" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="343" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context</text>

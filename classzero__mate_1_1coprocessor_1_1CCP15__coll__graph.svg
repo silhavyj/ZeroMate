@@ -37,7 +37,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" target="_top" xlink:title="This class represents the context (registers) of the CPU.">
 <polygon fill="none" stroke="black" points="98,-146.5 98,-176.5 228,-176.5 228,-146.5 98,-146.5"/>
 <text text-anchor="start" x="106" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="163" y="-153.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context</text>

@@ -1,11 +1,11 @@
 <map id="zero_mate::arm1176jzf_s::exceptions::CCPU_Exception" name="zero_mate::arm1176jzf_s::exceptions::CCPU_Exception">
-<area shape="rect" id="node1" title=" " alt="" coords="192,194,365,250"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CData__Abort.html" title=" " alt="" coords="425,5,630,47"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CFIQ.html" title=" " alt="" coords="441,71,614,112"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CIRQ.html" title=" " alt="" coords="441,136,614,177"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CPrefetch__Abort.html" title=" " alt="" coords="413,201,641,243"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CReset.html" title=" " alt="" coords="441,267,614,308"/>
-<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CSoftware__Interrupt.html" title=" " alt="" coords="433,333,622,389"/>
-<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CUndefined__Instruction.html" title=" " alt="" coords="428,413,627,469"/>
+<area shape="rect" id="node1" title="This class represents a parent class for all the CPU exceptions." alt="" coords="192,194,365,250"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CData__Abort.html" title="This class represents the data abort exception." alt="" coords="425,5,630,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CFIQ.html" title="This class represents the FIQ (fast interrupt) exception." alt="" coords="441,71,614,112"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CIRQ.html" title="This class represents the IRQ (interrupt) exception." alt="" coords="441,136,614,177"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CPrefetch__Abort.html" title="This class represents the prefetch abort exception." alt="" coords="413,201,641,243"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CReset.html" title="This class represents the reset exception." alt="" coords="441,267,614,308"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CSoftware__Interrupt.html" title="This class represents the software interrupt (SWI) exception." alt="" coords="433,333,622,389"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CUndefined__Instruction.html" title="This class represents the undefined instruction exception." alt="" coords="428,413,627,469"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,209,144,235"/>
 </map>

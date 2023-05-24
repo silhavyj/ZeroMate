@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Returns the address of the handler of the exception.">
 <polygon fill="#bfbfbf" stroke="black" points="668,-40.5 668,-92.5 814,-92.5 814,-40.5 668,-40.5"/>
 <text text-anchor="start" x="676" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="676" y="-69.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CCPU</text>

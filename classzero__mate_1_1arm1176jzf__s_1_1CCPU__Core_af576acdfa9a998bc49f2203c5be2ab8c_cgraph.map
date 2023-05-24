@@ -1,6 +1,4 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute">
-<area shape="rect" id="node1" title="Executes a CLZ instruction." alt="" coords="5,71,181,112"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html#a0bae37b50316a28f1ea722685c700976" title=" " alt="" coords="229,5,403,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html#af1803f07a2f91594dc082e93ba140100" title=" " alt="" coords="229,71,403,112"/>
-<area shape="rect" id="node4" href="$namespacezero__mate_1_1utils_1_1math.html#af7d93c996dab2ff1b91c5a399dcfe29f" title="Tests whether a bit is set in the given integral variable." alt="" coords="231,136,401,177"/>
+<area shape="rect" id="node1" title="Executes a CLZ instruction." alt="" coords="5,5,181,47"/>
+<area shape="rect" id="node2" href="$namespacezero__mate_1_1utils_1_1math.html#af7d93c996dab2ff1b91c5a399dcfe29f" title="Tests whether a bit is set in the given integral variable." alt="" coords="229,5,399,47"/>
 </map>

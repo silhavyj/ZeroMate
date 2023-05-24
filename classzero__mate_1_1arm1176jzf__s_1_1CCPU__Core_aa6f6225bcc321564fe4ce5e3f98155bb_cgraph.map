@@ -1,10 +1,7 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute">
-<area shape="rect" id="node1" title="Executes a branch and exchange instruction." alt="" coords="5,199,181,240"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="253,5,448,47"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#a14962904052af58aaa297b25d1223150" title=" " alt="" coords="229,71,472,127"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#affbe28cb77bad59867c2a8ee097c50df" title=" " alt="" coords="264,151,437,207"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aeb730772253321c35b39e8af3a36552d" title=" " alt="" coords="261,231,440,287"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae4ef4e8216220eacc525799066321ce9" title="Returns a reference to the LR register (r14 = link register)" alt="" coords="264,312,437,353"/>
-<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a423eacd01e574e782a2b7cf51f28c56c" title="Returns a reference to the PC register (r15)" alt="" coords="264,377,437,419"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="520,5,719,47"/>
+<area shape="rect" id="node1" title="Executes a branch and exchange instruction." alt="" coords="5,71,181,112"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="229,5,424,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae4ef4e8216220eacc525799066321ce9" title="Returns a reference to the LR register (r14 = link register)" alt="" coords="240,71,413,112"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a423eacd01e574e782a2b7cf51f28c56c" title="Returns a reference to the PC register (r15)" alt="" coords="240,136,413,177"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="472,5,671,47"/>
 </map>

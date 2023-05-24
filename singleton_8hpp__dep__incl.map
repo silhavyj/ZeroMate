@@ -1,7 +1,7 @@
 <map id="src/core/utils/singleton.hpp" name="src/core/utils/singleton.hpp">
 <area shape="rect" id="node1" title="This file defines and implements a generic class that is used to treat other classes as singletons." alt="" coords="882,5,1079,32"/>
-<area shape="rect" id="node2" href="$context_8cpp.html" title=" " alt="" coords="5,80,156,121"/>
-<area shape="rect" id="node3" href="$core_8cpp.html" title=" " alt="" coords="180,80,331,121"/>
+<area shape="rect" id="node2" href="$context_8cpp.html" title="This file implements the context (registers) of the CPU." alt="" coords="5,80,156,121"/>
+<area shape="rect" id="node3" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="180,80,331,121"/>
 <area shape="rect" id="node4" href="$cp15_8cpp.html" title=" " alt="" coords="355,80,518,121"/>
 <area shape="rect" id="node5" href="$arm__timer_8cpp.html" title=" " alt="" coords="543,80,693,121"/>
 <area shape="rect" id="node6" href="$gpio_8cpp.html" title=" " alt="" coords="717,80,868,121"/>

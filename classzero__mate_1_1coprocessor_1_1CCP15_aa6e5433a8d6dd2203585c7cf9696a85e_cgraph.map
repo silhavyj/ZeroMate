@@ -1,9 +1,5 @@
 <map id="zero_mate::coprocessor::CCP15::Perform_Register_Transfer" name="zero_mate::coprocessor::CCP15::Perform_Register_Transfer">
-<area shape="rect" id="node1" title=" " alt="" coords="5,151,199,207"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="249,5,443,47"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#af66cc6bb6d562c9f377ebf7087e0864c" title=" " alt="" coords="255,71,437,127"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#ae56fa7db820c5c22541a6e82e2197408" title=" " alt="" coords="257,151,435,207"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#af6fa216c06c56056b72d64c760b455eb" title=" " alt="" coords="259,231,433,287"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a2bd3930c87b21d348a296d5b159a94c3" title=" " alt="" coords="247,311,445,367"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="493,5,692,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,199,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="247,13,441,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="489,13,688,54"/>
 </map>

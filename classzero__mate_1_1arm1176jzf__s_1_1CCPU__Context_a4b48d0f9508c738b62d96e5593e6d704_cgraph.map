@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Context::Enable_IRQ" name="zero_mate::arm1176jzf_s::CCPU_Context::Enable_IRQ">
+<area shape="rect" id="node1" title="Globally enables/disables IRQ (interrupts)" alt="" coords="5,5,225,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54" title="Sets/resets a flag in the CPSR register of the current CPU mode." alt="" coords="273,5,476,47"/>
+</map>

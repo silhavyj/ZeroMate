@@ -1,46 +1,45 @@
 <map id="src/gui/windows/registers_window.hpp" name="src/gui/windows/registers_window.hpp">
 <area shape="rect" id="node1" title=" " alt="" coords="61,5,248,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,102,117,129"/>
-<area shape="rect" id="node3" href="$window_8hpp.html" title=" " alt="" coords="21,273,131,300"/>
-<area shape="rect" id="node5" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="629,95,781,136"/>
-<area shape="rect" id="node4" title=" " alt="" coords="123,601,200,628"/>
-<area shape="rect" id="node6" href="$context_8hpp.html" title=" " alt="" coords="495,445,593,471"/>
-<area shape="rect" id="node10" href="$logger_8hpp.html" title=" " alt="" coords="540,527,719,553"/>
-<area shape="rect" id="node15" href="$exceptions_8hpp.html" title=" " alt="" coords="495,273,617,300"/>
-<area shape="rect" id="node18" href="$isa_8hpp.html" title=" " alt="" coords="2451,355,2543,382"/>
-<area shape="rect" id="node37" href="$isa__decoder_8hpp.html" title=" " alt="" coords="1063,445,1214,471"/>
-<area shape="rect" id="node38" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="713,191,799,218"/>
-<area shape="rect" id="node42" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="1113,191,1241,218"/>
-<area shape="rect" id="node43" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="107,348,274,389"/>
-<area shape="rect" id="node44" href="$system__clock__listener_8hpp.html" title=" " alt="" coords="862,184,1021,225"/>
-<area shape="rect" id="node7" title=" " alt="" coords="460,527,516,553"/>
-<area shape="rect" id="node8" title=" " alt="" coords="992,601,1059,628"/>
-<area shape="rect" id="node9" title=" " alt="" coords="129,527,253,553"/>
-<area shape="rect" id="node11" title=" " alt="" coords="367,601,431,628"/>
-<area shape="rect" id="node12" title=" " alt="" coords="725,601,787,628"/>
-<area shape="rect" id="node13" title=" " alt="" coords="455,601,553,628"/>
-<area shape="rect" id="node14" title=" " alt="" coords="577,601,701,628"/>
-<area shape="rect" id="node16" title=" " alt="" coords="350,355,437,382"/>
-<area shape="rect" id="node17" title=" " alt="" coords="461,355,566,382"/>
-<area shape="rect" id="node19" href="$instruction_8hpp.html" title=" " alt="" coords="2370,527,2489,553"/>
-<area shape="rect" id="node20" href="$branch__and__exchange_8hpp.html" title=" " alt="" coords="2400,445,2595,471"/>
-<area shape="rect" id="node21" href="$branch_8hpp.html" title=" " alt="" coords="2619,445,2714,471"/>
-<area shape="rect" id="node22" href="$data__processing_8hpp.html" title=" " alt="" coords="2738,445,2894,471"/>
-<area shape="rect" id="node23" href="$multiply_8hpp.html" title=" " alt="" coords="2918,445,3021,471"/>
-<area shape="rect" id="node24" href="$multiply__long_8hpp.html" title=" " alt="" coords="3045,445,3184,471"/>
-<area shape="rect" id="node25" href="$single__data__transfer_8hpp.html" title=" " alt="" coords="3209,445,3391,471"/>
-<area shape="rect" id="node26" href="$block__data__transfer_8hpp.html" title=" " alt="" coords="3416,445,3595,471"/>
-<area shape="rect" id="node27" href="$halfword__data__transfer_8hpp.html" title=" " alt="" coords="3619,445,3818,471"/>
-<area shape="rect" id="node28" href="$extend_8hpp.html" title=" " alt="" coords="3842,445,3937,471"/>
-<area shape="rect" id="node29" href="$psr__transfer_8hpp.html" title=" " alt="" coords="3961,445,4087,471"/>
-<area shape="rect" id="node30" href="$cps_8hpp.html" title=" " alt="" coords="1975,445,2047,471"/>
-<area shape="rect" id="node31" href="$coprocessor__register__transfer_8hpp.html" title=" " alt="" coords="1289,437,1447,479"/>
-<area shape="rect" id="node32" href="$coprocessor__data__transfer_8hpp.html" title=" " alt="" coords="1471,445,1692,471"/>
-<area shape="rect" id="node33" href="$coprocessor__data__operation_8hpp.html" title=" " alt="" coords="1717,445,1950,471"/>
-<area shape="rect" id="node34" href="$srs_8hpp.html" title=" " alt="" coords="2071,445,2140,471"/>
-<area shape="rect" id="node35" href="$rfe_8hpp.html" title=" " alt="" coords="2165,445,2233,471"/>
-<area shape="rect" id="node36" href="$clz_8hpp.html" title=" " alt="" coords="2257,445,2325,471"/>
-<area shape="rect" id="node39" href="$cp15_8hpp.html" title=" " alt="" coords="692,273,863,300"/>
-<area shape="rect" id="node41" href="$peripheral_8hpp.html" title=" " alt="" coords="794,445,987,471"/>
-<area shape="rect" id="node40" href="$coprocessor_8hpp.html" title=" " alt="" coords="1247,355,1374,382"/>
+<area shape="rect" id="node3" href="$window_8hpp.html" title=" " alt="" coords="78,259,189,285"/>
+<area shape="rect" id="node5" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="601,95,753,136"/>
+<area shape="rect" id="node4" title=" " alt="" coords="95,601,172,628"/>
+<area shape="rect" id="node6" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="407,430,505,457"/>
+<area shape="rect" id="node7" href="$logger_8hpp.html" title=" " alt="" coords="303,519,481,546"/>
+<area shape="rect" id="node13" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="299,259,421,285"/>
+<area shape="rect" id="node15" href="$isa_8hpp.html" title=" " alt="" coords="2849,341,2941,367"/>
+<area shape="rect" id="node34" href="$isa__decoder_8hpp.html" title=" " alt="" coords="985,341,1135,367"/>
+<area shape="rect" id="node36" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="573,184,659,211"/>
+<area shape="rect" id="node41" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="755,184,883,211"/>
+<area shape="rect" id="node42" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="658,333,825,375"/>
+<area shape="rect" id="node43" href="$system__clock__listener_8hpp.html" title=" " alt="" coords="3482,512,3641,553"/>
+<area shape="rect" id="node8" title=" " alt="" coords="196,601,260,628"/>
+<area shape="rect" id="node9" title=" " alt="" coords="554,601,617,628"/>
+<area shape="rect" id="node10" title=" " alt="" coords="1109,601,1176,628"/>
+<area shape="rect" id="node11" title=" " alt="" coords="285,601,382,628"/>
+<area shape="rect" id="node12" title=" " alt="" coords="406,601,530,628"/>
+<area shape="rect" id="node14" title=" " alt="" coords="315,341,421,367"/>
+<area shape="rect" id="node16" href="$instruction_8hpp.html" title=" " alt="" coords="2767,519,2886,546"/>
+<area shape="rect" id="node17" href="$branch__and__exchange_8hpp.html" title=" " alt="" coords="3408,430,3603,457"/>
+<area shape="rect" id="node18" href="$branch_8hpp.html" title=" " alt="" coords="3627,430,3722,457"/>
+<area shape="rect" id="node19" href="$data__processing_8hpp.html" title=" " alt="" coords="3746,430,3902,457"/>
+<area shape="rect" id="node20" href="$multiply_8hpp.html" title=" " alt="" coords="3926,430,4029,457"/>
+<area shape="rect" id="node21" href="$multiply__long_8hpp.html" title=" " alt="" coords="1916,430,2055,457"/>
+<area shape="rect" id="node22" href="$single__data__transfer_8hpp.html" title=" " alt="" coords="2079,430,2262,457"/>
+<area shape="rect" id="node23" href="$block__data__transfer_8hpp.html" title=" " alt="" coords="2287,430,2465,457"/>
+<area shape="rect" id="node24" href="$halfword__data__transfer_8hpp.html" title=" " alt="" coords="2490,430,2689,457"/>
+<area shape="rect" id="node25" href="$extend_8hpp.html" title=" " alt="" coords="2713,430,2807,457"/>
+<area shape="rect" id="node26" href="$psr__transfer_8hpp.html" title=" " alt="" coords="2831,430,2958,457"/>
+<area shape="rect" id="node27" href="$cps_8hpp.html" title=" " alt="" coords="2983,430,3055,457"/>
+<area shape="rect" id="node28" href="$coprocessor__register__transfer_8hpp.html" title=" " alt="" coords="1489,423,1647,464"/>
+<area shape="rect" id="node29" href="$coprocessor__data__transfer_8hpp.html" title=" " alt="" coords="1671,430,1892,457"/>
+<area shape="rect" id="node30" href="$coprocessor__data__operation_8hpp.html" title=" " alt="" coords="1231,430,1465,457"/>
+<area shape="rect" id="node31" href="$srs_8hpp.html" title=" " alt="" coords="3079,430,3148,457"/>
+<area shape="rect" id="node32" href="$rfe_8hpp.html" title=" " alt="" coords="3173,430,3241,457"/>
+<area shape="rect" id="node33" href="$clz_8hpp.html" title=" " alt="" coords="3265,430,3333,457"/>
+<area shape="rect" id="node35" title=" " alt="" coords="999,430,1055,457"/>
+<area shape="rect" id="node37" href="$cp15_8hpp.html" title=" " alt="" coords="509,259,680,285"/>
+<area shape="rect" id="node40" href="$peripheral_8hpp.html" title=" " alt="" coords="781,430,974,457"/>
+<area shape="rect" id="node38" title=" " alt="" coords="581,430,705,457"/>
+<area shape="rect" id="node39" href="$coprocessor_8hpp.html" title=" " alt="" coords="1222,341,1349,367"/>
 </map>

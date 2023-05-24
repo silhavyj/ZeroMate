@@ -93,12 +93,14 @@ $(document).ready(function(){initNavTree('alu_8hpp.html',''); initResizable(); }
 <div class="title">alu.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="core_8hpp_source.html">core.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="data__processing_8hpp_source.html">isa/data_processing.hpp</a>&quot;</code><br />
+
+<p>This file defines the functionality of the arithmetic logic unit (ALU).  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="data__processing_8hpp_source.html">isa/data_processing.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for alu.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="alu_8hpp__incl.svg" width="4011" height="619"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="alu_8hpp__incl.svg" width="190" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -113,6 +115,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html">zero_mate::arm1176jzf_s::alu::TResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result of an ALU operation.  <a href="structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -126,10 +129,15 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a95c11d8dc8e4ebc2c1dc6ca22403c871"><td class="memItemLeft" align="right" valign="top">TResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a95c11d8dc8e4ebc2c1dc6ca22403c871">zero_mate::arm1176jzf_s::alu::Execute</a> (const CCPU_Core &amp;cpu, isa::CData_Processing instruction, std::uint32_t first_operand, std::uint32_t second_operand, bool carry_out) noexcept</td></tr>
-<tr class="separator:a95c11d8dc8e4ebc2c1dc6ca22403c871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ff714734ac2e53a9374d1f2b9877d6"><td class="memItemLeft" align="right" valign="top">TResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a73ff714734ac2e53a9374d1f2b9877d6">zero_mate::arm1176jzf_s::alu::Execute</a> (isa::CData_Processing <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, std::uint32_t first_operand, std::uint32_t second_operand, bool <a class="el" href="alu_8cpp.html#a7b4618dfdbe7cb9d5e6cc6d442bf0c02">carry_out</a>, bool cpu_c_flag, bool cpu_v_flag) noexcept</td></tr>
+<tr class="memdesc:a73ff714734ac2e53a9374d1f2b9877d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an ALU operation.  <a href="namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a73ff714734ac2e53a9374d1f2b9877d6">More...</a><br /></td></tr>
+<tr class="separator:a73ff714734ac2e53a9374d1f2b9877d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file defines the functionality of the arithmetic logic unit (ALU). </p>
+<dl class="section date"><dt>Date</dt><dd>22. 05. 2023 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Jakub Silhavy (<a href="#" onclick="location.href='mai'+'lto:'+'jak'+'ub'+'.si'+'lh'+'avy'+'.c'+'z@g'+'ma'+'il.'+'co'+'m'; return false;">jakub<span style="display: none;">.nosp@m.</span>.sil<span style="display: none;">.nosp@m.</span>havy.<span style="display: none;">.nosp@m.</span>cz@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a>) </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

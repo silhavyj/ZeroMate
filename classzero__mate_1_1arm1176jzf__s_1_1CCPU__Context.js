@@ -1,5 +1,6 @@
 var classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context =
 [
+    [ "Banked_Registers_t", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a110b4d2a333fb510bb627a3fc109c35f", null ],
     [ "NCPU_Mode", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b", [
       [ "User", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352ba8f9bfe9d1345237cb3b2b205864da075", null ],
       [ "FIQ", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352ba515b9a5d45581087efc00a8dbacb13ca", null ],
@@ -19,8 +20,8 @@ var classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context =
       [ "F", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a391d3ef35a11316f2d9690ddae7bd8e7a800618943025315f869e4e1f09471012", null ]
     ] ],
     [ "CCPU_Context", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#afb2bc49ac16284a27b81cec3322f8898", null ],
-    [ "Enable_FIQ", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4789016607700ae260a623eadfb3c9c1", null ],
-    [ "Enable_IRQ", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ad4e826047d6896ca87837039aa1f7f7c", null ],
+    [ "Enable_FIQ", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2dd5a3a65e28cce65d01bdef2746cf1a", null ],
+    [ "Enable_IRQ", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4b48d0f9508c738b62d96e5593e6d704", null ],
     [ "Get_CPSR", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf66c6ff905975912dbf52133ddfeceb", null ],
     [ "Get_CPSR", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ad193ff04925ee955e75b64a7785652d8", null ],
     [ "Get_CPU_Mode", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa740f9219bb413d707ac72f373e60d3a", null ],
@@ -47,7 +48,8 @@ var classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context =
     [ "Set_CPU_Mode", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5", null ],
     [ "Set_Flag", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54", null ],
     [ "Set_SPSR", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a1b322131a1168763d2b8083c17a1079b", null ],
-    [ "m_banked_regs", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ae0d402f533ad4800020304b04dc6628c", null ],
+    [ "Verify_SPSR_Accessibility", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a050dada520ca82a21874045815c596a8", null ],
+    [ "m_banked_regs", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a3dcb0bac27ee95ddb44ba376ac7c268d", null ],
     [ "m_cpsr", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6763c648704a19923a5aae4fb314a31f", null ],
     [ "m_logging_system", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af3064b2b4039870158575655cfce8e41", null ],
     [ "m_mode", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf71b6238b5cb0b9c0c2235bf296fdca", null ],

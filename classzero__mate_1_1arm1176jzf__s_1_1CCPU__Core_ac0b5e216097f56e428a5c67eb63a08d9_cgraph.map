@@ -1,5 +1,5 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Get_Second_Operand_Imm" name="zero_mate::arm1176jzf_s::CCPU_Core::Get_Second_Operand_Imm">
 <area shape="rect" id="node1" title="Calculates the second immediate operand of a given instruction." alt="" coords="5,39,208,95"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef" title=" " alt="" coords="272,5,445,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef" title="Checks whether a given flag is set in the CPSR register of the current CPU mode." alt="" coords="272,5,445,61"/>
 <area shape="rect" id="node3" href="$namespacezero__mate_1_1utils_1_1math.html#a9cdc39df63ef0d6d33123bac4fffb89b" title="Performs an ROR (rotate right extended) operation on the given integral value." alt="" coords="256,85,461,112"/>
 </map>

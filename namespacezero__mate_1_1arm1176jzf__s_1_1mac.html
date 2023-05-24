@@ -96,13 +96,16 @@ $(document).ready(function(){initNavTree('namespacezero__mate_1_1arm1176jzf__s_1
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html">TResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result of a multiplication operation.  <a href="structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae0004fe8005cb2c044afa26992a8f42a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html">TResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ae0004fe8005cb2c044afa26992a8f42a">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html">isa::CMultiply</a> instruction, std::uint32_t reg_rm_val, std::uint32_t reg_rs_val, std::uint32_t reg_rn_val) noexcept</td></tr>
+<tr class="memitem:ae0004fe8005cb2c044afa26992a8f42a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html">TResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ae0004fe8005cb2c044afa26992a8f42a">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html">isa::CMultiply</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, std::uint32_t reg_rm_val, std::uint32_t reg_rs_val, std::uint32_t reg_rn_val) noexcept</td></tr>
+<tr class="memdesc:ae0004fe8005cb2c044afa26992a8f42a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiples two 32-bit values (the result it treated as a 32-value as well).  <a href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ae0004fe8005cb2c044afa26992a8f42a">More...</a><br /></td></tr>
 <tr class="separator:ae0004fe8005cb2c044afa26992a8f42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1a830ce062246c13527c96c13b3b6d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html">TResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ab1a830ce062246c13527c96c13b3b6d2">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html">isa::CMultiply_Long</a> instruction, std::uint32_t reg_rm_val, std::uint32_t reg_rs_val, std::uint32_t reg_rd_lo, std::uint32_t reg_rd_hi) noexcept</td></tr>
+<tr class="memitem:ab1a830ce062246c13527c96c13b3b6d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html">TResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ab1a830ce062246c13527c96c13b3b6d2">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html">isa::CMultiply_Long</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, std::uint32_t reg_rm_val, std::uint32_t reg_rs_val, std::uint32_t reg_rd_lo, std::uint32_t reg_rd_hi) noexcept</td></tr>
+<tr class="memdesc:ab1a830ce062246c13527c96c13b3b6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiples two 32-bit values (the result is a 64-bit value split up into two 32-bit values).  <a href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ab1a830ce062246c13527c96c13b3b6d2">More...</a><br /></td></tr>
 <tr class="separator:ab1a830ce062246c13527c96c13b3b6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -151,6 +154,19 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Multiples two 32-bit values (the result it treated as a 32-value as well). </p>
+<p>If the A bit is set in the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html">isa::CMultiply</a> instruction. It adds the <code>reg_rn_val</code> value to the result of <code>reg_rm_val</code> * <code>reg_rs_val</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>Multiply instruction (32 bits) </td></tr>
+    <tr><td class="paramname">reg_rm_val</td><td>First operand </td></tr>
+    <tr><td class="paramname">reg_rs_val</td><td>Second operand </td></tr>
+    <tr><td class="paramname">reg_rn_val</td><td>Value to be added to the result if the A bit is set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>reg_rm_val</code> * <code>reg_rs_val</code>, if the A bit is NOT set. Otherwise, it returns (<code>reg_rm_val</code> * <code>reg_rs_val</code>) + <code>reg_rn_val</code>. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -211,6 +227,20 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Multiples two 32-bit values (the result is a 64-bit value split up into two 32-bit values). </p>
+<p>if the A bit is set in the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html">isa::CMultiply_Long</a> instruction, ((<code>reg_rd_hi</code> &lt;&lt; 32U) | <code>reg_rd_lo</code>) is added to the final result of the multiplication (<code>reg_rm_val</code> * <code>reg_rs_val</code>). The result is treated as a 64-bit value split up into two 32-bit values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>Multiply long instruction </td></tr>
+    <tr><td class="paramname">reg_rm_val</td><td>First operand </td></tr>
+    <tr><td class="paramname">reg_rs_val</td><td>Second operand </td></tr>
+    <tr><td class="paramname">reg_rd_lo</td><td>Lower 32 bits of the accumulate value </td></tr>
+    <tr><td class="paramname">reg_rd_hi</td><td>Higher 32 bits of the accumulate value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>reg_rm_val</code> * <code>reg_rs_val</code> is the A bit is not set. Otherwise, it returns (<code>reg_rm_val</code> * <code>reg_rs_val</code>) + ((<code>reg_rd_hi</code> &lt;&lt; 32U) | <code>reg_rd_lo</code>). </dd></dl>
 
 </div>
 </div>

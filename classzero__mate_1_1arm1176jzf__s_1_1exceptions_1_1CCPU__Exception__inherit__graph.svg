@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This class represents a parent class for all the CPU exceptions.">
 <polygon fill="#bfbfbf" stroke="black" points="140,-164.5 140,-205.5 270,-205.5 270,-164.5 140,-164.5"/>
 <text text-anchor="start" x="148" y="-193.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="148" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CCPU</text>
@@ -22,7 +22,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CData__Abort.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CData__Abort.html" target="_top" xlink:title="This class represents the data abort exception.">
 <polygon fill="none" stroke="black" points="314.5,-317 314.5,-347 468.5,-347 468.5,-317 314.5,-317"/>
 <text text-anchor="start" x="322.5" y="-335" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="391.5" y="-324" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CData_Abort</text>
@@ -38,7 +38,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CFIQ.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CFIQ.html" target="_top" xlink:title="This class represents the FIQ (fast interrupt) exception.">
 <polygon fill="none" stroke="black" points="326.5,-268 326.5,-298 456.5,-298 456.5,-268 326.5,-268"/>
 <text text-anchor="start" x="334.5" y="-286" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="391.5" y="-275" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CFIQ</text>
@@ -54,7 +54,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CIRQ.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CIRQ.html" target="_top" xlink:title="This class represents the IRQ (interrupt) exception.">
 <polygon fill="none" stroke="black" points="326.5,-219 326.5,-249 456.5,-249 456.5,-219 326.5,-219"/>
 <text text-anchor="start" x="334.5" y="-237" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="391.5" y="-226" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CIRQ</text>
@@ -70,7 +70,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CPrefetch__Abort.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CPrefetch__Abort.html" target="_top" xlink:title="This class represents the prefetch abort exception.">
 <polygon fill="none" stroke="black" points="306,-170 306,-200 477,-200 477,-170 306,-170"/>
 <text text-anchor="start" x="314" y="-188" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="391.5" y="-177" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CPrefetch_Abort</text>
@@ -86,7 +86,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CReset.html" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CReset.html" target="_top" xlink:title="This class represents the reset exception.">
 <polygon fill="none" stroke="black" points="326.5,-121 326.5,-151 456.5,-151 456.5,-121 326.5,-121"/>
 <text text-anchor="start" x="334.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="391.5" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CReset</text>
@@ -102,7 +102,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CSoftware__Interrupt.html" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CSoftware__Interrupt.html" target="_top" xlink:title="This class represents the software interrupt (SWI) exception.">
 <polygon fill="none" stroke="black" points="320.5,-60.5 320.5,-101.5 462.5,-101.5 462.5,-60.5 320.5,-60.5"/>
 <text text-anchor="start" x="328.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="328.5" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CSoftware</text>
@@ -119,7 +119,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CUndefined__Instruction.html" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CUndefined__Instruction.html" target="_top" xlink:title="This class represents the undefined instruction exception.">
 <polygon fill="none" stroke="black" points="317,-0.5 317,-41.5 466,-41.5 466,-0.5 317,-0.5"/>
 <text text-anchor="start" x="325" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="325" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::exceptions::CUndefined</text>

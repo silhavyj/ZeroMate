@@ -1,7 +1,7 @@
 <map id="src/core/peripherals" name="src/core/peripherals">
 <area shape="rect" id="node1" href="dir_5c2a493d5805d567e6a0ff4c1ba80ec6.html" title="arm1176jzf_s" alt="" coords="38,52,149,100"/>
 <area shape="rect" id="node2" href="dir_a8053b3d69cfefb2b2e6ec7bf9dd5c1a.html" title="utils" alt="" coords="45,244,117,292"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000002_000006.html" title="8" alt="" coords="57,217,67,231"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000002_000006.html" title="9" alt="" coords="57,217,67,231"/>
 <area shape="rect" id="node3" href="dir_34794bca92a793a1e58b77dac439fbe4.html" title="peripherals" alt="" coords="54,148,149,196"/>
 <area shape="rect" id="edge1-headlabel" href="dir_000002_000005.html" title="2" alt="" coords="92,121,102,136"/>
 <area shape="rect" id="edge3-headlabel" href="dir_000005_000002.html" title="1" alt="" coords="93,112,102,127"/>

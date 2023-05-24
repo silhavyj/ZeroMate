@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a286edf7ca93bc920f9896b5b777b4b8b" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a286edf7ca93bc920f9896b5b777b4b8b" target="_top" xlink:title="Resets the context of the CPU.">
 <polygon fill="none" stroke="black" points="166,-278 166,-308 303,-308 303,-278 166,-278"/>
 <text text-anchor="start" x="174" y="-296" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="234.5" y="-285" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Reset</text>
@@ -54,7 +54,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4789016607700ae260a623eadfb3c9c1" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2dd5a3a65e28cce65d01bdef2746cf1a" target="_top" xlink:title="Globally enables/disables FIQ (fast interrupts)">
 <polygon fill="none" stroke="black" points="339.5,-385 339.5,-415 503.5,-415 503.5,-385 339.5,-385"/>
 <text text-anchor="start" x="347.5" y="-403" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="421.5" y="-392" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Enable_FIQ</text>
@@ -70,7 +70,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ad4e826047d6896ca87837039aa1f7f7c" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4b48d0f9508c738b62d96e5593e6d704" target="_top" xlink:title="Globally enables/disables IRQ (interrupts)">
 <polygon fill="none" stroke="black" points="339,-321 339,-351 504,-351 504,-321 339,-321"/>
 <text text-anchor="start" x="347" y="-339" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="421.5" y="-328" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Enable_IRQ</text>
@@ -86,7 +86,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2f550e28044af7ff0ddb866527a95356" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2f550e28044af7ff0ddb866527a95356" target="_top" xlink:title="Initializes (resets) all CPU registers.">
 <polygon fill="none" stroke="black" points="356.5,-230.5 356.5,-271.5 486.5,-271.5 486.5,-230.5 356.5,-230.5"/>
 <text text-anchor="start" x="364.5" y="-259.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="364.5" y="-248.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Init</text>
@@ -103,7 +103,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54" target="_top" xlink:title="Sets/resets a flag in the CPSR register of the current CPU mode.">
 <polygon fill="none" stroke="black" points="542,-401 542,-431 694,-431 694,-401 542,-401"/>
 <text text-anchor="start" x="550" y="-419" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="618" y="-408" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Set_Flag</text>
@@ -125,7 +125,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aacfb4cc6e44ca967a9e258ba583f588b" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aacfb4cc6e44ca967a9e258ba583f588b" target="_top" xlink:title="Resets the banked registers of the Abort mode to 0.">
 <polygon fill="none" stroke="black" points="553,-340.5 553,-381.5 683,-381.5 683,-340.5 553,-340.5"/>
 <text text-anchor="start" x="561" y="-369.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="561" y="-358.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Init</text>
@@ -142,7 +142,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a68f089f1b45e6f22295a7339eeeade33" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a68f089f1b45e6f22295a7339eeeade33" target="_top" xlink:title="Resets the CPSR register in all CPU modes.">
 <polygon fill="none" stroke="black" points="540,-291 540,-321 696,-321 696,-291 540,-291"/>
 <text text-anchor="start" x="548" y="-309" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="618" y="-298" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Init_CPSR</text>
@@ -158,7 +158,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a651a92dac2106063a9988c63fb80fcdd" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a651a92dac2106063a9988c63fb80fcdd" target="_top" xlink:title="Resets the banked registers of the FIQ mode to 0.">
 <polygon fill="none" stroke="black" points="553,-230.5 553,-271.5 683,-271.5 683,-230.5 553,-230.5"/>
 <text text-anchor="start" x="561" y="-259.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="561" y="-248.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Init</text>
@@ -175,7 +175,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a38524842c1e4f158af18c1e2cafd14ed" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a38524842c1e4f158af18c1e2cafd14ed" target="_top" xlink:title="Resets the banked registers of the IRQ mode to 0.">
 <polygon fill="none" stroke="black" points="553,-170.5 553,-211.5 683,-211.5 683,-170.5 553,-170.5"/>
 <text text-anchor="start" x="561" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="561" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Init</text>
@@ -192,7 +192,7 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af24fe774c931e6fe4c0abe70956463de" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af24fe774c931e6fe4c0abe70956463de" target="_top" xlink:title="Resets all SPSR registers (in all CPU modes) to 0.">
 <polygon fill="none" stroke="black" points="540.5,-121 540.5,-151 695.5,-151 695.5,-121 540.5,-121"/>
 <text text-anchor="start" x="548.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="618" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Init_SPSR</text>
@@ -208,7 +208,7 @@
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a945204938f4a5e92be738c48711218c2" target="_top" xlink:title=" ">
+<g id="a_node12"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a945204938f4a5e92be738c48711218c2" target="_top" xlink:title="Resets the banked registers of the Supervisor mode to 0.">
 <polygon fill="none" stroke="black" points="546,-60.5 546,-101.5 690,-101.5 690,-60.5 546,-60.5"/>
 <text text-anchor="start" x="554" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="554" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Init</text>
@@ -225,7 +225,7 @@
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6eb0ee94a81e166d7b02a78f45b4d028" target="_top" xlink:title=" ">
+<g id="a_node13"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6eb0ee94a81e166d7b02a78f45b4d028" target="_top" xlink:title="Resets the banked registers of the Undefined mode to 0.">
 <polygon fill="none" stroke="black" points="547,-0.5 547,-41.5 689,-41.5 689,-0.5 547,-0.5"/>
 <text text-anchor="start" x="555" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="555" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Context::Init</text>

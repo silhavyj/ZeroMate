@@ -92,6 +92,9 @@ $(document).ready(function(){initNavTree('mac_8cpp.html',''); initResizable(); }
 <div class="title">mac.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This file implements the functionality of the CPU multiplier (MAC unit).  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="mac_8hpp_source.html">mac.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="math_8hpp_source.html">../utils/math.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -112,12 +115,18 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae0004fe8005cb2c044afa26992a8f42a"><td class="memItemLeft" align="right" valign="top">TResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ae0004fe8005cb2c044afa26992a8f42a">zero_mate::arm1176jzf_s::mac::Execute</a> (isa::CMultiply instruction, std::uint32_t reg_rm_val, std::uint32_t reg_rs_val, std::uint32_t reg_rn_val) noexcept</td></tr>
+<tr class="memitem:ae0004fe8005cb2c044afa26992a8f42a"><td class="memItemLeft" align="right" valign="top">TResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ae0004fe8005cb2c044afa26992a8f42a">zero_mate::arm1176jzf_s::mac::Execute</a> (isa::CMultiply <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, std::uint32_t reg_rm_val, std::uint32_t reg_rs_val, std::uint32_t reg_rn_val) noexcept</td></tr>
+<tr class="memdesc:ae0004fe8005cb2c044afa26992a8f42a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiples two 32-bit values (the result it treated as a 32-value as well).  <a href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ae0004fe8005cb2c044afa26992a8f42a">More...</a><br /></td></tr>
 <tr class="separator:ae0004fe8005cb2c044afa26992a8f42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1a830ce062246c13527c96c13b3b6d2"><td class="memItemLeft" align="right" valign="top">TResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ab1a830ce062246c13527c96c13b3b6d2">zero_mate::arm1176jzf_s::mac::Execute</a> (isa::CMultiply_Long instruction, std::uint32_t reg_rm_val, std::uint32_t reg_rs_val, std::uint32_t reg_rd_lo, std::uint32_t reg_rd_hi) noexcept</td></tr>
+<tr class="memitem:ab1a830ce062246c13527c96c13b3b6d2"><td class="memItemLeft" align="right" valign="top">TResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ab1a830ce062246c13527c96c13b3b6d2">zero_mate::arm1176jzf_s::mac::Execute</a> (isa::CMultiply_Long <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, std::uint32_t reg_rm_val, std::uint32_t reg_rs_val, std::uint32_t reg_rd_lo, std::uint32_t reg_rd_hi) noexcept</td></tr>
+<tr class="memdesc:ab1a830ce062246c13527c96c13b3b6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiples two 32-bit values (the result is a 64-bit value split up into two 32-bit values).  <a href="namespacezero__mate_1_1arm1176jzf__s_1_1mac.html#ab1a830ce062246c13527c96c13b3b6d2">More...</a><br /></td></tr>
 <tr class="separator:ab1a830ce062246c13527c96c13b3b6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file implements the functionality of the CPU multiplier (MAC unit). </p>
+<dl class="section date"><dt>Date</dt><dd>22. 05. 2023 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Jakub Silhavy (<a href="#" onclick="location.href='mai'+'lto:'+'jak'+'ub'+'.si'+'lh'+'avy'+'.c'+'z@g'+'ma'+'il.'+'co'+'m'; return false;">jakub<span style="display: none;">.nosp@m.</span>.sil<span style="display: none;">.nosp@m.</span>havy.<span style="display: none;">.nosp@m.</span>cz@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a>) </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

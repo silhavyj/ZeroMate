@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1CC
 </div><!--header-->
 <div class="contents">
 
-<p>CPU core of Raspberry Pi Zero.  
+<p>Raspberry Pi Zero CPU core (<a class="el" href="namespacezero__mate_1_1arm1176jzf__s.html">arm1176jzf_s</a>).  
  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="core_8hpp_source.html">core.hpp</a>&gt;</code></p>
@@ -187,22 +187,22 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aa327755c4c57c01f03e16fb3d1195f6a"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">isa::CInstruction</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa327755c4c57c01f03e16fb3d1195f6a">Fetch_Instruction</a> ()</td></tr>
 <tr class="memdesc:aa327755c4c57c01f03e16fb3d1195f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the next instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa327755c4c57c01f03e16fb3d1195f6a">More...</a><br /></td></tr>
 <tr class="separator:aa327755c4c57c01f03e16fb3d1195f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae71d278b2aa5b43c174c50ee2d7aa281"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae71d278b2aa5b43c174c50ee2d7aa281">Is_Instruction_Condition_Met</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">isa::CInstruction</a> instruction) const noexcept</td></tr>
+<tr class="memitem:ae71d278b2aa5b43c174c50ee2d7aa281"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae71d278b2aa5b43c174c50ee2d7aa281">Is_Instruction_Condition_Met</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">isa::CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) const noexcept</td></tr>
 <tr class="memdesc:ae71d278b2aa5b43c174c50ee2d7aa281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a given instruction should be executed or skipped based on its condition field.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae71d278b2aa5b43c174c50ee2d7aa281">More...</a><br /></td></tr>
 <tr class="separator:ae71d278b2aa5b43c174c50ee2d7aa281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0478a8424dae644c2370128633e973f3"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0478a8424dae644c2370128633e973f3">Get_Shift_Amount</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html">isa::CData_Processing</a> instruction) const noexcept</td></tr>
+<tr class="memitem:a0478a8424dae644c2370128633e973f3"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0478a8424dae644c2370128633e973f3">Get_Shift_Amount</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html">isa::CData_Processing</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) const noexcept</td></tr>
 <tr class="memdesc:a0478a8424dae644c2370128633e973f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the shift amount of a data processing instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0478a8424dae644c2370128633e973f3">More...</a><br /></td></tr>
 <tr class="separator:a0478a8424dae644c2370128633e973f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5b55276e454abfced2b5714b936e98d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1math_1_1TShift__Result.html">utils::math::TShift_Result</a>&lt; std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa5b55276e454abfced2b5714b936e98d">Get_Second_Operand</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html">isa::CData_Processing</a> instruction) const noexcept</td></tr>
+<tr class="memitem:aa5b55276e454abfced2b5714b936e98d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1math_1_1TShift__Result.html">utils::math::TShift_Result</a>&lt; std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa5b55276e454abfced2b5714b936e98d">Get_Second_Operand</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html">isa::CData_Processing</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) const noexcept</td></tr>
 <tr class="memdesc:aa5b55276e454abfced2b5714b936e98d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the second operand of a data processing instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa5b55276e454abfced2b5714b936e98d">More...</a><br /></td></tr>
 <tr class="separator:aa5b55276e454abfced2b5714b936e98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeea0a05cdda26114d6e03102f2d3a78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1math_1_1TShift__Result.html">utils::math::TShift_Result</a>&lt; std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#afeea0a05cdda26114d6e03102f2d3a78">Perform_Shift</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#a6106283c614f3eb52d26814aba2f1ff0">isa::CInstruction::NShift_Type</a> shift_type, std::uint32_t shift_amount, std::uint32_t value) const noexcept</td></tr>
 <tr class="memdesc:afeea0a05cdda26114d6e03102f2d3a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a shift on the given value.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#afeea0a05cdda26114d6e03102f2d3a78">More...</a><br /></td></tr>
 <tr class="separator:afeea0a05cdda26114d6e03102f2d3a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8055407426b0f25544d2b33a89b22a7"><td class="memItemLeft" align="right" valign="top">std::int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab8055407426b0f25544d2b33a89b22a7">Get_Offset</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html">isa::CSingle_Data_Transfer</a> instruction) const noexcept</td></tr>
+<tr class="memitem:ab8055407426b0f25544d2b33a89b22a7"><td class="memItemLeft" align="right" valign="top">std::int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab8055407426b0f25544d2b33a89b22a7">Get_Offset</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html">isa::CSingle_Data_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) const noexcept</td></tr>
 <tr class="memdesc:ab8055407426b0f25544d2b33a89b22a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the offset from the base address in a single data transfer instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab8055407426b0f25544d2b33a89b22a7">More...</a><br /></td></tr>
 <tr class="separator:ab8055407426b0f25544d2b33a89b22a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85e27faf1eee6c2ef6fc2cfae3fe2b87"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e27faf1eee6c2ef6fc2cfae3fe2b87">Get_Offset</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html">isa::CHalfword_Data_Transfer</a> instruction) const noexcept</td></tr>
+<tr class="memitem:a85e27faf1eee6c2ef6fc2cfae3fe2b87"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e27faf1eee6c2ef6fc2cfae3fe2b87">Get_Offset</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html">isa::CHalfword_Data_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) const noexcept</td></tr>
 <tr class="memdesc:a85e27faf1eee6c2ef6fc2cfae3fe2b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the offset from the base address in a halfword data transfer instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e27faf1eee6c2ef6fc2cfae3fe2b87">More...</a><br /></td></tr>
 <tr class="separator:a85e27faf1eee6c2ef6fc2cfae3fe2b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a066aca0627655bc1e068b181fb0964bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a066aca0627655bc1e068b181fb0964bd">Perform_Halfword_Data_Transfer_Read</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3638a3a690aca9ec4b755b2d5148e4ea">isa::CHalfword_Data_Transfer::NType</a> type, std::uint32_t addr, std::uint32_t dest_reg_idx)</td></tr>
@@ -211,97 +211,97 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a00f4cf1169d774a50886f60f5f166f8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a00f4cf1169d774a50886f60f5f166f8b">Perform_Halfword_Data_Transfer_Write</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3638a3a690aca9ec4b755b2d5148e4ea">isa::CHalfword_Data_Transfer::NType</a> type, std::uint32_t addr, std::uint32_t src_reg_idx)</td></tr>
 <tr class="memdesc:a00f4cf1169d774a50886f60f5f166f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a halfword data write to a given address.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a00f4cf1169d774a50886f60f5f166f8b">More...</a><br /></td></tr>
 <tr class="separator:a00f4cf1169d774a50886f60f5f166f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe7461d09a52f28f99037717f61975c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#abe7461d09a52f28f99037717f61975c6">Execute_MSR</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html">isa::CPSR_Transfer</a> instruction)</td></tr>
+<tr class="memitem:abe7461d09a52f28f99037717f61975c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#abe7461d09a52f28f99037717f61975c6">Execute_MSR</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html">isa::CPSR_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:abe7461d09a52f28f99037717f61975c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes an MSR instruction (move data to CPSR/SPSR from an ARM register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#abe7461d09a52f28f99037717f61975c6">More...</a><br /></td></tr>
 <tr class="separator:abe7461d09a52f28f99037717f61975c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82f0fa55ec787c7a39bac81b7437aec2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a82f0fa55ec787c7a39bac81b7437aec2">Execute_MRS</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html">isa::CPSR_Transfer</a> instruction)</td></tr>
+<tr class="memitem:a82f0fa55ec787c7a39bac81b7437aec2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a82f0fa55ec787c7a39bac81b7437aec2">Execute_MRS</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html">isa::CPSR_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a82f0fa55ec787c7a39bac81b7437aec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes an MRS instruction (move data from CPSR/SPSR to an ARM register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a82f0fa55ec787c7a39bac81b7437aec2">More...</a><br /></td></tr>
 <tr class="separator:a82f0fa55ec787c7a39bac81b7437aec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e6ef006a36e1adb56abd3ecc6481be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e6ef006a36e1adb56abd3ecc6481be">Execute_Exception</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html">exceptions::CCPU_Exception</a> &amp;exception)</td></tr>
 <tr class="memdesc:a85e6ef006a36e1adb56abd3ecc6481be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a CPU exception.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e6ef006a36e1adb56abd3ecc6481be">More...</a><br /></td></tr>
 <tr class="separator:a85e6ef006a36e1adb56abd3ecc6481be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78980460ec7632099c51e96226a08f31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">CCPU_Context::NCPU_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a78980460ec7632099c51e96226a08f31">Determine_CPU_Mode</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html">isa::CBlock_Data_Transfer</a> instruction) const</td></tr>
+<tr class="memitem:a78980460ec7632099c51e96226a08f31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">CCPU_Context::NCPU_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a78980460ec7632099c51e96226a08f31">Determine_CPU_Mode</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html">isa::CBlock_Data_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) const</td></tr>
 <tr class="memdesc:a78980460ec7632099c51e96226a08f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the mode of the CPU that should be used in a block data transfer instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a78980460ec7632099c51e96226a08f31">More...</a><br /></td></tr>
 <tr class="separator:a78980460ec7632099c51e96226a08f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae73e94e5c041f3d0f32d405a326fcf77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae73e94e5c041f3d0f32d405a326fcf77">Update_Cycle_Listeners</a> ()</td></tr>
 <tr class="memdesc:ae73e94e5c041f3d0f32d405a326fcf77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all CPU cycle listeners.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae73e94e5c041f3d0f32d405a326fcf77">More...</a><br /></td></tr>
 <tr class="separator:ae73e94e5c041f3d0f32d405a326fcf77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1274541dc5225c51feceb54dd709f0e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a1274541dc5225c51feceb54dd709f0e4">Check_For_Pending_IRQ</a> ()</td></tr>
-<tr class="memdesc:a1274541dc5225c51feceb54dd709f0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">If there are any pending interrupts, it throws the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CIRQ.html">exceptions::CIRQ</a> exception.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a1274541dc5225c51feceb54dd709f0e4">More...</a><br /></td></tr>
+<tr class="memdesc:a1274541dc5225c51feceb54dd709f0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">If there are any pending interrupts, it throws the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CIRQ.html" title="This class represents the IRQ (interrupt) exception.">exceptions::CIRQ</a> exception.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a1274541dc5225c51feceb54dd709f0e4">More...</a><br /></td></tr>
 <tr class="separator:a1274541dc5225c51feceb54dd709f0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2c251aa49f9dc14f692a986ef3a090b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad2c251aa49f9dc14f692a986ef3a090b">Check_Coprocessor_Existence</a> (std::uint32_t coprocessor_id)</td></tr>
 <tr class="memdesc:ad2c251aa49f9dc14f692a986ef3a090b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a coprocessor of a given id is present of not.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad2c251aa49f9dc14f692a986ef3a090b">More...</a><br /></td></tr>
 <tr class="separator:ad2c251aa49f9dc14f692a986ef3a090b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac81ae05305c6916b7eda83abff602dcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac81ae05305c6916b7eda83abff602dcf">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">isa::CInstruction</a> instruction)</td></tr>
+<tr class="memitem:ac81ae05305c6916b7eda83abff602dcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac81ae05305c6916b7eda83abff602dcf">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">isa::CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:ac81ae05305c6916b7eda83abff602dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a single instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac81ae05305c6916b7eda83abff602dcf">More...</a><br /></td></tr>
 <tr class="separator:ac81ae05305c6916b7eda83abff602dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6f6225bcc321564fe4ce5e3f98155bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa6f6225bcc321564fe4ce5e3f98155bb">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html">isa::CBranch_And_Exchange</a> instruction)</td></tr>
+<tr class="memitem:aa6f6225bcc321564fe4ce5e3f98155bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa6f6225bcc321564fe4ce5e3f98155bb">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html">isa::CBranch_And_Exchange</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:aa6f6225bcc321564fe4ce5e3f98155bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a branch and exchange instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa6f6225bcc321564fe4ce5e3f98155bb">More...</a><br /></td></tr>
 <tr class="separator:aa6f6225bcc321564fe4ce5e3f98155bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a529d163f0c99ab60a974589148a22eb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a529d163f0c99ab60a974589148a22eb2">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html">isa::CBranch</a> instruction)</td></tr>
+<tr class="memitem:a529d163f0c99ab60a974589148a22eb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a529d163f0c99ab60a974589148a22eb2">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html">isa::CBranch</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a529d163f0c99ab60a974589148a22eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a branch instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a529d163f0c99ab60a974589148a22eb2">More...</a><br /></td></tr>
 <tr class="separator:a529d163f0c99ab60a974589148a22eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92c997ad914fb73cec7feb5fa26d8ead"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a92c997ad914fb73cec7feb5fa26d8ead">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html">isa::CData_Processing</a> instruction)</td></tr>
+<tr class="memitem:a92c997ad914fb73cec7feb5fa26d8ead"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a92c997ad914fb73cec7feb5fa26d8ead">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html">isa::CData_Processing</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a92c997ad914fb73cec7feb5fa26d8ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a data processing instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a92c997ad914fb73cec7feb5fa26d8ead">More...</a><br /></td></tr>
 <tr class="separator:a92c997ad914fb73cec7feb5fa26d8ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a576d9777886ed0e80a7bac6366848911"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a576d9777886ed0e80a7bac6366848911">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html">isa::CMultiply</a> instruction)</td></tr>
+<tr class="memitem:a576d9777886ed0e80a7bac6366848911"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a576d9777886ed0e80a7bac6366848911">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html">isa::CMultiply</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a576d9777886ed0e80a7bac6366848911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a multiply instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a576d9777886ed0e80a7bac6366848911">More...</a><br /></td></tr>
 <tr class="separator:a576d9777886ed0e80a7bac6366848911"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c7c210cc765ad53ae40a557a1097eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a6c7c210cc765ad53ae40a557a1097eac">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html">isa::CMultiply_Long</a> instruction)</td></tr>
+<tr class="memitem:a6c7c210cc765ad53ae40a557a1097eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a6c7c210cc765ad53ae40a557a1097eac">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html">isa::CMultiply_Long</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a6c7c210cc765ad53ae40a557a1097eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a multiply long instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a6c7c210cc765ad53ae40a557a1097eac">More...</a><br /></td></tr>
 <tr class="separator:a6c7c210cc765ad53ae40a557a1097eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4697275a93c62613b13cdd77726f81c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab4697275a93c62613b13cdd77726f81c">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html">isa::CSingle_Data_Transfer</a> instruction)</td></tr>
+<tr class="memitem:ab4697275a93c62613b13cdd77726f81c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab4697275a93c62613b13cdd77726f81c">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html">isa::CSingle_Data_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:ab4697275a93c62613b13cdd77726f81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a single data transfer instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab4697275a93c62613b13cdd77726f81c">More...</a><br /></td></tr>
 <tr class="separator:ab4697275a93c62613b13cdd77726f81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a524d4d2622a78e1c416bf4528700bc00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a524d4d2622a78e1c416bf4528700bc00">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html">isa::CBlock_Data_Transfer</a> instruction)</td></tr>
+<tr class="memitem:a524d4d2622a78e1c416bf4528700bc00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a524d4d2622a78e1c416bf4528700bc00">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html">isa::CBlock_Data_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a524d4d2622a78e1c416bf4528700bc00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a block data transfer instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a524d4d2622a78e1c416bf4528700bc00">More...</a><br /></td></tr>
 <tr class="separator:a524d4d2622a78e1c416bf4528700bc00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5fc1112d78d8c344841fd94d1356635"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae5fc1112d78d8c344841fd94d1356635">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html">isa::CHalfword_Data_Transfer</a> instruction)</td></tr>
+<tr class="memitem:ae5fc1112d78d8c344841fd94d1356635"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae5fc1112d78d8c344841fd94d1356635">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html">isa::CHalfword_Data_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:ae5fc1112d78d8c344841fd94d1356635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a halfword data transfer instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae5fc1112d78d8c344841fd94d1356635">More...</a><br /></td></tr>
 <tr class="separator:ae5fc1112d78d8c344841fd94d1356635"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f3ef80bb3c9fbf866338e7d78270bf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a6f3ef80bb3c9fbf866338e7d78270bf1">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html">isa::CExtend</a> instruction)</td></tr>
+<tr class="memitem:a6f3ef80bb3c9fbf866338e7d78270bf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a6f3ef80bb3c9fbf866338e7d78270bf1">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html">isa::CExtend</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a6f3ef80bb3c9fbf866338e7d78270bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes an extend instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a6f3ef80bb3c9fbf866338e7d78270bf1">More...</a><br /></td></tr>
 <tr class="separator:a6f3ef80bb3c9fbf866338e7d78270bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a90c040b3cbe4545a9acc5e35acdd45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a3a90c040b3cbe4545a9acc5e35acdd45">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html">isa::CPSR_Transfer</a> instruction)</td></tr>
+<tr class="memitem:a3a90c040b3cbe4545a9acc5e35acdd45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a3a90c040b3cbe4545a9acc5e35acdd45">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html">isa::CPSR_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a3a90c040b3cbe4545a9acc5e35acdd45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a PSR transfer instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a3a90c040b3cbe4545a9acc5e35acdd45">More...</a><br /></td></tr>
 <tr class="separator:a3a90c040b3cbe4545a9acc5e35acdd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd8902811a86afabf464f121d58628ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acd8902811a86afabf464f121d58628ee">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html">isa::CCPS</a> instruction)</td></tr>
+<tr class="memitem:acd8902811a86afabf464f121d58628ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acd8902811a86afabf464f121d58628ee">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html">isa::CCPS</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:acd8902811a86afabf464f121d58628ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a CPS instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acd8902811a86afabf464f121d58628ee">More...</a><br /></td></tr>
 <tr class="separator:acd8902811a86afabf464f121d58628ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae54c96b9b4395337b22c4ce3686d7862"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae54c96b9b4395337b22c4ce3686d7862">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html">isa::CCoprocessor_Reg_Transfer</a> instruction)</td></tr>
+<tr class="memitem:ae54c96b9b4395337b22c4ce3686d7862"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae54c96b9b4395337b22c4ce3686d7862">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html">isa::CCoprocessor_Reg_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:ae54c96b9b4395337b22c4ce3686d7862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a coprocessor register transfer instruction (coprocessor instruction (1)).  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae54c96b9b4395337b22c4ce3686d7862">More...</a><br /></td></tr>
 <tr class="separator:ae54c96b9b4395337b22c4ce3686d7862"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fb15d5c9802a6971560ff8ef2a0f9dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a8fb15d5c9802a6971560ff8ef2a0f9dc">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Data__Transfer.html">isa::CCoprocessor_Data_Transfer</a> instruction)</td></tr>
+<tr class="memitem:a8fb15d5c9802a6971560ff8ef2a0f9dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a8fb15d5c9802a6971560ff8ef2a0f9dc">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Data__Transfer.html">isa::CCoprocessor_Data_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a8fb15d5c9802a6971560ff8ef2a0f9dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a coprocessor data transfer instruction (coprocessor instruction (2)).  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a8fb15d5c9802a6971560ff8ef2a0f9dc">More...</a><br /></td></tr>
 <tr class="separator:a8fb15d5c9802a6971560ff8ef2a0f9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13f003234822a261f628d8339fbff25c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a13f003234822a261f628d8339fbff25c">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Data__Operation.html">isa::CCoprocessor_Data_Operation</a> instruction)</td></tr>
+<tr class="memitem:a13f003234822a261f628d8339fbff25c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a13f003234822a261f628d8339fbff25c">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Data__Operation.html">isa::CCoprocessor_Data_Operation</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a13f003234822a261f628d8339fbff25c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a coprocessor data operation instruction (coprocessor instruction (3)).  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a13f003234822a261f628d8339fbff25c">More...</a><br /></td></tr>
 <tr class="separator:a13f003234822a261f628d8339fbff25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa96f69190ff05fe80c310e85b4d1002c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa96f69190ff05fe80c310e85b4d1002c">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html">isa::CSRS</a> instruction)</td></tr>
+<tr class="memitem:aa96f69190ff05fe80c310e85b4d1002c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa96f69190ff05fe80c310e85b4d1002c">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html">isa::CSRS</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:aa96f69190ff05fe80c310e85b4d1002c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes an SRS instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa96f69190ff05fe80c310e85b4d1002c">More...</a><br /></td></tr>
 <tr class="separator:aa96f69190ff05fe80c310e85b4d1002c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28607032a48bea557d81eec0460f4aa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a28607032a48bea557d81eec0460f4aa6">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html">isa::CRFE</a> instruction)</td></tr>
+<tr class="memitem:a28607032a48bea557d81eec0460f4aa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a28607032a48bea557d81eec0460f4aa6">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html">isa::CRFE</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:a28607032a48bea557d81eec0460f4aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes an RFE instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a28607032a48bea557d81eec0460f4aa6">More...</a><br /></td></tr>
 <tr class="separator:a28607032a48bea557d81eec0460f4aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af576acdfa9a998bc49f2203c5be2ab8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#af576acdfa9a998bc49f2203c5be2ab8c">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html">isa::CCLZ</a> instruction)</td></tr>
+<tr class="memitem:af576acdfa9a998bc49f2203c5be2ab8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#af576acdfa9a998bc49f2203c5be2ab8c">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html">isa::CCLZ</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:af576acdfa9a998bc49f2203c5be2ab8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a CLZ instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#af576acdfa9a998bc49f2203c5be2ab8c">More...</a><br /></td></tr>
 <tr class="separator:af576acdfa9a998bc49f2203c5be2ab8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65fef8be920aaccdf3cfea5b0e3d0cee"><td class="memTemplParams" colspan="2">template&lt;typename Instruction &gt; </td></tr>
-<tr class="memitem:a65fef8be920aaccdf3cfea5b0e3d0cee"><td class="memTemplItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a65fef8be920aaccdf3cfea5b0e3d0cee">Calculate_Base_Address</a> (Instruction instruction, std::uint32_t base_reg_idx, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">CCPU_Context::NCPU_Mode</a> cpu_mode, std::uint32_t number_of_regs) const</td></tr>
+<tr class="memitem:a65fef8be920aaccdf3cfea5b0e3d0cee"><td class="memTemplItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a65fef8be920aaccdf3cfea5b0e3d0cee">Calculate_Base_Address</a> (Instruction <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, std::uint32_t base_reg_idx, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">CCPU_Context::NCPU_Mode</a> cpu_mode, std::uint32_t number_of_regs) const</td></tr>
 <tr class="memdesc:a65fef8be920aaccdf3cfea5b0e3d0cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the base address of a data transfer instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a65fef8be920aaccdf3cfea5b0e3d0cee">More...</a><br /></td></tr>
 <tr class="separator:a65fef8be920aaccdf3cfea5b0e3d0cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0b5e216097f56e428a5c67eb63a08d9"><td class="memTemplParams" colspan="2">template&lt;typename Instruction &gt; </td></tr>
-<tr class="memitem:ac0b5e216097f56e428a5c67eb63a08d9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1math_1_1TShift__Result.html">utils::math::TShift_Result</a>&lt; std::uint32_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac0b5e216097f56e428a5c67eb63a08d9">Get_Second_Operand_Imm</a> (Instruction instruction) const noexcept</td></tr>
+<tr class="memitem:ac0b5e216097f56e428a5c67eb63a08d9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1math_1_1TShift__Result.html">utils::math::TShift_Result</a>&lt; std::uint32_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac0b5e216097f56e428a5c67eb63a08d9">Get_Second_Operand_Imm</a> (Instruction <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) const noexcept</td></tr>
 <tr class="memdesc:ac0b5e216097f56e428a5c67eb63a08d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the second immediate operand of a given instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac0b5e216097f56e428a5c67eb63a08d9">More...</a><br /></td></tr>
 <tr class="separator:ac0b5e216097f56e428a5c67eb63a08d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad76c17017f43dc3276790d0f94d82cd6"><td class="memTemplParams" colspan="2">template&lt;std::unsigned_integral Type&gt; </td></tr>
-<tr class="memitem:ad76c17017f43dc3276790d0f94d82cd6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad76c17017f43dc3276790d0f94d82cd6">Read_Write_Value</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html">isa::CSingle_Data_Transfer</a> instruction, std::uint32_t addr, std::uint32_t reg_idx)</td></tr>
-<tr class="memdesc:ad76c17017f43dc3276790d0f94d82cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads/writes data to the BUS.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad76c17017f43dc3276790d0f94d82cd6">More...</a><br /></td></tr>
+<tr class="memitem:ad76c17017f43dc3276790d0f94d82cd6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad76c17017f43dc3276790d0f94d82cd6">Read_Write_Value</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html">isa::CSingle_Data_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, std::uint32_t addr, std::uint32_t reg_idx)</td></tr>
+<tr class="memdesc:ad76c17017f43dc3276790d0f94d82cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads/writes data to the bus.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad76c17017f43dc3276790d0f94d82cd6">More...</a><br /></td></tr>
 <tr class="separator:ad76c17017f43dc3276790d0f94d82cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a568509274f1d8ed69a2b263a7a0ec00f"><td class="memItemLeft" align="right" valign="top">static std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a568509274f1d8ed69a2b263a7a0ec00f">Set_Interrupt_Mask_Bits</a> (std::uint32_t cpsr, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html">isa::CCPS</a> instruction, bool set)</td></tr>
+<tr class="memitem:a568509274f1d8ed69a2b263a7a0ec00f"><td class="memItemLeft" align="right" valign="top">static std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a568509274f1d8ed69a2b263a7a0ec00f">Set_Interrupt_Mask_Bits</a> (std::uint32_t cpsr, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html">isa::CCPS</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, bool set)</td></tr>
 <tr class="memdesc:a568509274f1d8ed69a2b263a7a0ec00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets interrupt mask bits (A, I, and F) in the given value that is treated as the new value of the CPSR register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a568509274f1d8ed69a2b263a7a0ec00f">More...</a><br /></td></tr>
 <tr class="separator:a568509274f1d8ed69a2b263a7a0ec00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -336,7 +336,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a8f27671dcc6c73c898159f8522d0881a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>CPU core of Raspberry Pi Zero. </p>
+<div class="textblock"><p>Raspberry Pi Zero CPU core (<a class="el" href="namespacezero__mate_1_1arm1176jzf__s.html">arm1176jzf_s</a>). </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aab345b997e1d12a5de1c8517bb1b3f7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab345b997e1d12a5de1c8517bb1b3f7d">&#9670;&nbsp;</a></span>Coprocessors_t</h2>
@@ -634,7 +634,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CUndefined__Instruction.html">exceptions::CUndefined_Instruction</a></td><td>if the coprocessor is not present </td></tr>
+    <tr><td class="paramname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CUndefined__Instruction.html" title="This class represents the undefined instruction exception.">exceptions::CUndefined_Instruction</a></td><td>if the coprocessor is not present </td></tr>
   </table>
   </dd>
 </dl>
@@ -676,7 +676,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>If there are any pending interrupts, it throws the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CIRQ.html">exceptions::CIRQ</a> exception. </p>
+<p>If there are any pending interrupts, it throws the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CIRQ.html" title="This class represents the IRQ (interrupt) exception.">exceptions::CIRQ</a> exception. </p>
 <p>It is done by checking whether there is a pending interrupt in <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#af93fa8d4f0445a90dc978465b10951cb" title="Interrupt controller.">m_interrupt_controller</a>. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -723,7 +723,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a78980460ec7632099c51e96226a08f31_cgraph.svg" width="456" height="307"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a78980460ec7632099c51e96226a08f31_cgraph.svg" width="427" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -769,7 +769,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a524d4d2622a78e1c416bf4528700bc00_cgraph.svg" width="942" height="956"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a524d4d2622a78e1c416bf4528700bc00_cgraph.svg" width="1172" height="615"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -809,7 +809,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a529d163f0c99ab60a974589148a22eb2_cgraph.svg" width="626" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a529d163f0c99ab60a974589148a22eb2_cgraph.svg" width="408" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -849,7 +849,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_aa6f6225bcc321564fe4ce5e3f98155bb_cgraph.svg" width="724" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_aa6f6225bcc321564fe4ce5e3f98155bb_cgraph.svg" width="676" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -889,7 +889,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_af576acdfa9a998bc49f2203c5be2ab8c_cgraph.svg" width="408" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_af576acdfa9a998bc49f2203c5be2ab8c_cgraph.svg" width="404" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -929,7 +929,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a13f003234822a261f628d8339fbff25c_cgraph.svg" width="995" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a13f003234822a261f628d8339fbff25c_cgraph.svg" width="903" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -969,7 +969,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a8fb15d5c9802a6971560ff8ef2a0f9dc_cgraph.svg" width="983" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a8fb15d5c9802a6971560ff8ef2a0f9dc_cgraph.svg" width="903" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1009,7 +1009,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ae54c96b9b4395337b22c4ce3686d7862_cgraph.svg" width="976" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ae54c96b9b4395337b22c4ce3686d7862_cgraph.svg" width="903" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1049,7 +1049,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_acd8902811a86afabf464f121d58628ee_cgraph.svg" width="943" height="666"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_acd8902811a86afabf464f121d58628ee_cgraph.svg" width="943" height="376"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1089,7 +1089,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a92c997ad914fb73cec7feb5fa26d8ead_cgraph.svg" width="934" height="696"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a92c997ad914fb73cec7feb5fa26d8ead_cgraph.svg" width="1172" height="783"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1129,7 +1129,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a6f3ef80bb3c9fbf866338e7d78270bf1_cgraph.svg" width="668" height="352"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a6f3ef80bb3c9fbf866338e7d78270bf1_cgraph.svg" width="440" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1169,7 +1169,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ae5fc1112d78d8c344841fd94d1356635_cgraph.svg" width="951" height="774"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ae5fc1112d78d8c344841fd94d1356635_cgraph.svg" width="951" height="452"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1209,7 +1209,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ac81ae05305c6916b7eda83abff602dcf_cgraph.svg" width="943" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ac81ae05305c6916b7eda83abff602dcf_cgraph.svg" width="943" height="556"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1249,7 +1249,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a576d9777886ed0e80a7bac6366848911_cgraph.svg" width="438" height="379"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a576d9777886ed0e80a7bac6366848911_cgraph.svg" width="438" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1289,7 +1289,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a6c7c210cc765ad53ae40a557a1097eac_cgraph.svg" width="438" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a6c7c210cc765ad53ae40a557a1097eac_cgraph.svg" width="438" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1329,7 +1329,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a3a90c040b3cbe4545a9acc5e35acdd45_cgraph.svg" width="1206" height="866"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a3a90c040b3cbe4545a9acc5e35acdd45_cgraph.svg" width="1448" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1369,7 +1369,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a28607032a48bea557d81eec0460f4aa6_cgraph.svg" width="996" height="636"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a28607032a48bea557d81eec0460f4aa6_cgraph.svg" width="932" height="502"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1409,7 +1409,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ab4697275a93c62613b13cdd77726f81c_cgraph.svg" width="430" height="519"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ab4697275a93c62613b13cdd77726f81c_cgraph.svg" width="666" height="307"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1449,7 +1449,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_aa96f69190ff05fe80c310e85b4d1002c_cgraph.svg" width="755" height="594"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_aa96f69190ff05fe80c310e85b4d1002c_cgraph.svg" width="1164" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1568,7 +1568,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a82f0fa55ec787c7a39bac81b7437aec2_cgraph.svg" width="482" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a82f0fa55ec787c7a39bac81b7437aec2_cgraph.svg" width="1202" height="162"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -1614,7 +1614,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_abe7461d09a52f28f99037717f61975c6_cgraph.svg" width="982" height="775"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_abe7461d09a52f28f99037717f61975c6_cgraph.svg" width="1224" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -1740,6 +1740,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Offset that will be added to the base address in case pre-indexing is enabled (P bit = 1) </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a85e27faf1eee6c2ef6fc2cfae3fe2b87_cgraph.svg" width="442" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -1775,6 +1781,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Offset that will be added to the base address be the data transfer is performed </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ab8055407426b0f25544d2b33a89b22a7_cgraph.svg" width="442" height="307"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1816,6 +1828,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Second operand involved in the operation </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_aa5b55276e454abfced2b5714b936e98d_cgraph.svg" width="450" height="227"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1912,6 +1930,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Calculated shift amount </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a0478a8424dae644c2370128633e973f3_cgraph.svg" width="431" height="227"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -1948,6 +1972,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true, if the instruction should be executed. false, otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ae71d278b2aa5b43c174c50ee2d7aa281_cgraph.svg" width="444" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2304,11 +2334,11 @@ template&lt;std::unsigned_integral Type&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reads/writes data to the BUS. </p>
-<dl class="section note"><dt>Note</dt><dd>The bus width size is usually fixed. The generic type is supported only for emulation purposes </dd></dl>
+<p>Reads/writes data to the bus. </p>
+<dl class="section note"><dt>Note</dt><dd>The bus width is usually a fixed size. The generic type is supported only for emulation purposes </dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Type</td><td>Data type to be read/written to the BUS </td></tr>
+    <tr><td class="paramname">Type</td><td>Data type to be read/written to the bus </td></tr>
   </table>
   </dd>
 </dl>
@@ -2320,12 +2350,6 @@ template&lt;std::unsigned_integral Type&gt; </div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ad76c17017f43dc3276790d0f94d82cd6_cgraph.svg" width="475" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -2513,7 +2537,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a568509274f1d8ed69a2b263a7a0ec00f_cgraph.svg" width="471" height="248"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a568509274f1d8ed69a2b263a7a0ec00f_cgraph.svg" width="471" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">

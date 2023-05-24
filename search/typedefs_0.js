@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coprocessors_5ft_1418',['Coprocessors_t',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aab345b997e1d12a5de1c8517bb1b3f7d',1,'zero_mate::arm1176jzf_s::CCPU_Core']]]
+  ['banked_5fregisters_5ft_1421',['Banked_Registers_t',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a110b4d2a333fb510bb627a3fc109c35f',1,'zero_mate::arm1176jzf_s::CCPU_Context']]]
 ];

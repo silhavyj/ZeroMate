@@ -1,5 +1,5 @@
 <map id="zero_mate::arm1176jzf_s::exceptions::CCPU_Exception::Get_Type" name="zero_mate::arm1176jzf_s::exceptions::CCPU_Exception::Get_Type">
-<area shape="rect" id="node1" title=" " alt="" coords="896,35,1069,91"/>
+<area shape="rect" id="node1" title="Returns the type of the exception." alt="" coords="896,35,1069,91"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e6ef006a36e1adb56abd3ecc6481be" title="Executes a CPU exception." alt="" coords="672,35,848,91"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac81ae05305c6916b7eda83abff602dcf" title="Executes a single instruction." alt="" coords="448,5,624,47"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa327755c4c57c01f03e16fb3d1195f6a" title="Fetches the next instruction." alt="" coords="449,71,623,127"/>

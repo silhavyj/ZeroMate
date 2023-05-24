@@ -3,7 +3,6 @@ var annotated_dup =
     [ "zero_mate", "namespacezero__mate.html", [
       [ "arm1176jzf_s", "namespacezero__mate_1_1arm1176jzf__s.html", [
         [ "alu", "namespacezero__mate_1_1arm1176jzf__s_1_1alu.html", [
-          [ "TALU_Settings", "structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TALU__Settings.html", "structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TALU__Settings" ],
           [ "TResult", "structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html", "structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult" ]
         ] ],
         [ "exceptions", "namespacezero__mate_1_1arm1176jzf__s_1_1exceptions.html", [
