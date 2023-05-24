@@ -1,4 +1,4 @@
-name: Ubuntu
+name: ubuntu
 
 # Define the rules when this workflow should be applied
 on:

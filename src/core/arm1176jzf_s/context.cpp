@@ -1,4 +1,20 @@
+// =====================================================================================================================
+/// \file context.cpp
+/// \date 24. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements the context (registers) of the CPU.
+// =====================================================================================================================
+
+// 3rd party library includes
+
+#include <magic_enum.hpp>
+
+// Project file imports
+
 #include "context.hpp"
+#include "exceptions.hpp"
+
 #include "../utils/singleton.hpp"
 
 namespace zero_mate::arm1176jzf_s
@@ -163,24 +179,41 @@ namespace zero_mate::arm1176jzf_s
         return false;
     }
 
-    std::uint32_t CCPU_Context::Get_SPSR() const
+    void CCPU_Context::Verify_SPSR_Accessibility(NCPU_Mode mode) const
     {
-        return m_spsr.at(m_mode);
+        if (Is_Mode_With_No_SPSR(mode))
+        {
+            // clang-format off
+            m_logging_system->Error(fmt::format("Invalid access to the SPSR register (it is not supported in "
+                                                "the {} mode)", magic_enum::enum_name(mode)).c_str());
+            // clang-format on
+
+            throw exceptions::CReset{};
+        }
     }
 
-    void CCPU_Context::Set_SPSR(std::uint32_t value)
+    std::uint32_t CCPU_Context::Get_SPSR() const
     {
-        m_spsr[m_mode] = value;
+        Verify_SPSR_Accessibility(m_mode);
+        return m_spsr.at(m_mode);
     }
 
     std::uint32_t& CCPU_Context::Get_SPSR(NCPU_Mode mode)
     {
+        Verify_SPSR_Accessibility(mode);
         return m_spsr[mode];
     }
 
     const std::uint32_t& CCPU_Context::Get_SPSR(NCPU_Mode mode) const
     {
+        Verify_SPSR_Accessibility(mode);
         return m_spsr.at(mode);
+    }
+
+    void CCPU_Context::Set_SPSR(std::uint32_t value)
+    {
+        Verify_SPSR_Accessibility(m_mode);
+        m_spsr[m_mode] = value;
     }
 
     void CCPU_Context::Set_Flag(NFlag flag, bool set) noexcept
@@ -241,4 +274,5 @@ namespace zero_mate::arm1176jzf_s
     {
         return (mode == NCPU_Mode::User) || (mode == NCPU_Mode::System);
     }
-}
+
+} // namespace zero_mate::arm1176jzf_s

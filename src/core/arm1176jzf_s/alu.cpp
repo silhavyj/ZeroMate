@@ -1,10 +1,10 @@
-// =====================================================================================================================
+// ---------------------------------------------------------------------------------------------------------------------
 /// \file alu.cpp
 /// \date 22. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
 /// \brief This file implements the functionality of the arithmetic logic unit (ALU).
-// =====================================================================================================================
+// ---------------------------------------------------------------------------------------------------------------------
 
 // STL imports (excluded from Doxygen)
 /// \cond
@@ -27,10 +27,10 @@ namespace zero_mate::arm1176jzf_s::alu
         /// Alias for a logical operation (just to make the code less wordy)
         using Logical_Operation = std::function<std::uint32_t(std::uint32_t, std::uint32_t)>;
 
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         /// \struct TALU_Settings
         /// \brief ALU settings (alternative to passing everything as a parameter)
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         struct TALU_Settings
         {
             isa::CData_Processing instruction{ 0 }; ///< Data processing instruction
@@ -46,7 +46,7 @@ namespace zero_mate::arm1176jzf_s::alu
             Arithmetical_Operation arithmetic_op{}; ///< Arithmetical operation
         };
 
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Performs a logical operation.
         ///
         /// The following instructions are classified as logical operations:
@@ -55,7 +55,7 @@ namespace zero_mate::arm1176jzf_s::alu
         /// \param params ALU parameters (settings)
         /// \param cpu_v_flag Current value of the V flag (overflow) in the CPSR register
         /// \return Result of he logical operations
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] TResult Execute_Logical_Operation(const TALU_Settings& params, bool cpu_v_flag) noexcept
         {
             TResult result{};
@@ -78,7 +78,7 @@ namespace zero_mate::arm1176jzf_s::alu
             return result;
         }
 
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Calculates the carry bit.
         ///
         /// If the operation to be performed by the ALU is subtraction, it returns the opposite value to whatever the
@@ -87,7 +87,7 @@ namespace zero_mate::arm1176jzf_s::alu
         /// \param params ALU parameters (settings)
         /// \param cpu_c_flag Current value of the C flag (carry) in the CPSR register
         /// \return Calculated carry bit
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] std::int32_t Get_Carry(const TALU_Settings& params, bool cpu_c_flag) noexcept
         {
             std::int32_t carry{ 0 };
@@ -109,7 +109,7 @@ namespace zero_mate::arm1176jzf_s::alu
             return carry;
         }
 
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Performs an arithmetic operation.
         ///
         /// The following instructions are classified as arithmetic operations:
@@ -118,7 +118,7 @@ namespace zero_mate::arm1176jzf_s::alu
         /// \param cpu_c_flag Current value of the C flag (carry) in the CPSR register
         /// \param params ALU parameters (settings)
         /// \return Result of the operation
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] TResult Execute_Arithmetic_Operation(const TALU_Settings& params, bool cpu_c_flag) noexcept
         {
             TResult result{};
@@ -163,7 +163,7 @@ namespace zero_mate::arm1176jzf_s::alu
             return result;
         }
 
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Performs an ALU operations.
         ///
         /// The exact type of the operation (logical/arithmetic) is determined by the ALU settings passed in as a
@@ -173,7 +173,7 @@ namespace zero_mate::arm1176jzf_s::alu
         /// \param cpu_v_flag Current value of the V flag (overflow) in the CPSR register
         /// \param params ALU parameters (settings)
         /// \return Result of the operation
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] TResult Execute(bool cpu_c_flag, bool cpu_v_flag, const TALU_Settings& params) noexcept
         {
             if (params.is_logical_op)

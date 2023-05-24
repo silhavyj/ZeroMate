@@ -1,4 +1,4 @@
-name: Doxygen
+name: doxygen
 
 # Define the rules when this workflow should be applied
 on:
@@ -31,6 +31,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: docs/doxygen/html
-          config_file: Doxyfile
 
 # EOF

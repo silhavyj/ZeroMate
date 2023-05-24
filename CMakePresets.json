@@ -2,41 +2,38 @@
     "version":2,
     "configurePresets":[
        {
-          "name":"unix_base",
-          "description":"Build using Unix Makefiles generator",
+          "name":"unix_release",
           "generator":"Unix Makefiles",
-          "binaryDir":"${sourceDir}/build/unix_makefiles",
+          "description":"Release build using Unix Makefiles generator",
+          "binaryDir":"${sourceDir}/build/unix_makefiles/release",
           "cacheVariables":{
+             "CMAKE_BUILD_TYPE":"Release",
+             "ENABLE_TESTING":"OFF",
+             "CMAKE_C_COMPILER":"gcc",
+             "CMAKE_CXX_COMPILER":"g++"
+          }
+       },
+       {
+          "name":"unix_debug",
+          "generator":"Unix Makefiles",
+          "description":"Debug build using Unix Makefiles generator",
+          "binaryDir":"${sourceDir}/build/unix_makefiles/debug",
+          "cacheVariables":{
+             "CMAKE_BUILD_TYPE":"Debug",
              "ENABLE_TESTING":"ON",
              "CMAKE_C_COMPILER":"gcc",
              "CMAKE_CXX_COMPILER":"g++"
           }
        },
        {
-          "name":"unix_release",
-          "description":"Release build using Unix Makefiles generator",
-          "inherits":"unix_base",
-          "binaryDir":"${sourceDir}/build/unix_makefiles/release",
-          "cacheVariables":{
-             "CMAKE_BUILD_TYPE":"Release"
-          }
-       },
-       {
-          "name":"unix_debug",
-          "description":"Debug build using Unix Makefiles generator",
-          "inherits":"unix_base",
-          "binaryDir":"${sourceDir}/build/unix_makefiles/debug",
-          "cacheVariables":{
-             "CMAKE_BUILD_TYPE":"Debug"
-          }
-       },
-       {
           "name":"unix_code_coverage",
+          "generator":"Unix Makefiles",
           "description":"Code coverage build using Unix Makefiles generator",
-          "inherits":"unix_base",
           "binaryDir":"${sourceDir}/build/unix_makefiles/code_coverage",
           "cacheVariables":{
-             "ENABLE_COVERAGE":"ON"
+             "ENABLE_COVERAGE":"ON",
+             "CMAKE_C_COMPILER":"gcc",
+             "CMAKE_CXX_COMPILER":"g++"
           }
        },
        {

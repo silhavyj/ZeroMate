@@ -1,10 +1,10 @@
-// =====================================================================================================================
+// ---------------------------------------------------------------------------------------------------------------------
 /// \file mac.cpp
 /// \date 22. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
 /// \brief This file implements the functionality of the CPU multiplier (MAC unit).
-// =====================================================================================================================
+// ---------------------------------------------------------------------------------------------------------------------
 
 // Project file imports
 
@@ -16,7 +16,7 @@ namespace zero_mate::arm1176jzf_s::mac
     // Anonymous namespace to make its content visible only to this translation unit.
     namespace
     {
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Multiples two given values.
         /// \tparam Type Datatype used in the operation
         /// \param value1 First operand
@@ -24,7 +24,7 @@ namespace zero_mate::arm1176jzf_s::mac
         /// \param acc_value Value to be added to the result
         /// \param accumulate Indication of whether it is a multiply or multiply-add operations.
         /// \return \p value1 * \p value2. If \p accumulate, \p acc_value is added to the result
-        // =============================================================================================================
+        // -------------------------------------------------------------------------------------------------------------
         template<typename Type>
         [[nodiscard]] std::uint64_t Multiply_Acc(Type value1, Type value2, Type acc_value, bool accumulate) noexcept
         {
