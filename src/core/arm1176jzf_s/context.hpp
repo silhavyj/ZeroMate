@@ -181,80 +181,150 @@ namespace zero_mate::arm1176jzf_s
         void Set_SPSR(std::uint32_t value);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param flag
-        /// \param set
+        /// \brief Sets/resets a flag in the CPSR register of the current CPU mode.
+        /// \param flag Flag to be set/reset
+        /// \param set Indication of whether the flag should be set to 1 (set) or 0
         // -------------------------------------------------------------------------------------------------------------
         void Set_Flag(NFlag flag, bool set) noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param cpsr
-        /// \param flag
-        /// \param set
+        /// \brief Sets/resets a flag in the given value which is treated as if it was the CPSR register.
+        /// \param cpsr Value to be treated as the CPSR register.
+        /// \param flag Flag to be set/reset
+        /// \param set Indication of whether the flag should be set to 1 (set) or 0
         // -------------------------------------------------------------------------------------------------------------
         static void Set_Flag(std::uint32_t& cpsr, NFlag flag, bool set) noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param flag
-        /// \return
+        /// \brief Checks whether a given flag is set in the CPSR register of the current CPU mode.
+        /// \param flag Type of flag to be checked
+        /// \return true, if the flag is set. false, otherwise
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] bool Is_Flag_Set(NFlag flag) const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param mode
+        /// \brief Sets the mode of the CPU.
+        /// \param mode New mode of the CPU
         // -------------------------------------------------------------------------------------------------------------
         void Set_CPU_Mode(NCPU_Mode mode) noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \return
+        /// \brief Returns the current mode of the CPU.
+        /// \return Current mode of the CPU
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] NCPU_Mode Get_CPU_Mode() const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \return
+        /// \brief Checks if the CPU is in a privileged mode.
+        ///
+        /// Privileged modes are considered to all CPU modes except for the User mode.
+        ///
+        /// \return true, if the CPU is currently in a privileged mode. false, otherwise.
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] bool Is_In_Privileged_Mode() const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param mode
-        /// \return
+        /// \brief Checks if the CPU mode passed in as a parameter supports the SPSR register or not.
+        ///
+        /// The SPSR register is supported (is accessible) in all modes except for the User and System mode.
+        ///
+        /// \param mode CPU mode to be checked
+        /// \return true, if the mode does support the SPSR register. false, otherwise
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] static bool Is_Mode_With_No_SPSR(NCPU_Mode mode) noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param set
+        /// \brief Globally enables/disables IRQ (interrupts)
+        /// \param enable Indication of whether interrupts should be enabled
+        ///               (true means interrupts will be enabled)
         // -------------------------------------------------------------------------------------------------------------
-        void Enable_IRQ(bool set);
+        void Enable_IRQ(bool enable);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param set
+        /// \brief Globally enables/disables FIQ (fast interrupts)
+        /// \param enable Indication of whether interrupts should be enabled
+        ///               (true means fast interrupts will be enabled)
         // -------------------------------------------------------------------------------------------------------------
-        void Enable_FIQ(bool set);
+        void Enable_FIQ(bool enable);
 
     private:
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Initializes (resets) all CPU registers.
+        ///
+        /// Registers r0-r15 in all CPU modes are set to 0. The CPSR registers of all modes hold only info about their
+        /// corresponding mode (least significant 5 bits). The SPSR registers are cleared out to 0.
+        // -------------------------------------------------------------------------------------------------------------
         inline void Init_Registers();
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets the banked registers of the FIQ mode to 0.
+        // -------------------------------------------------------------------------------------------------------------
         inline void Init_FIQ_Banked_Regs();
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets the banked registers of the IRQ mode to 0.
+        // -------------------------------------------------------------------------------------------------------------
         inline void Init_IRQ_Banked_Regs();
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets the banked registers of the Supervisor mode to 0.
+        // -------------------------------------------------------------------------------------------------------------
         inline void Init_Supervisor_Banked_Regs();
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets the banked registers of the Undefined mode to 0.
+        // -------------------------------------------------------------------------------------------------------------
         inline void Init_Undefined_Banked_Regs();
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets the banked registers of the Abort mode to 0.
+        // -------------------------------------------------------------------------------------------------------------
         inline void Init_Abort_Banked_Regs();
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets the CPSR register in all CPU modes.
+        ///
+        /// The registers are reset to 0, except for their 5 least significant bits as they hold information about the
+        /// mode itself.
+        // -------------------------------------------------------------------------------------------------------------
         inline void Init_CPSR();
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets all SPSR registers (in all CPU modes) to 0.
+        // -------------------------------------------------------------------------------------------------------------
         inline void Init_SPSR();
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// Makes sure the SPSR register is accessible from the given mode of the CPU (helper function).
+        /// \param mode CPU mode to be checked if it supports the SPSR register
+        /// \throws exceptions::CReset if the mode does not support the SPSR register
+        // -------------------------------------------------------------------------------------------------------------
         inline void Verify_SPSR_Accessibility(NCPU_Mode mode) const;
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks if a flag is set in the given value which is treated as the CPSR register.
+        /// \param cpsr Value treated as the CPSR register
+        /// \param flag Flag to be checked
+        /// \return true, if the given flag is set (1). false, otherwise
+        // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] static bool Is_Flag_Set(std::uint32_t cpsr, NFlag flag) noexcept;
-        [[nodiscard]] static NCPU_Mode Get_CPU_Mode(std::uint32_t new_cpsr) noexcept;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Returns the mode of the CPU from the value given as a parameter.
+        /// \param cpsr Value to be treated as the CPSR register.
+        /// \return Mode of the CPU retrieved from the given value
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] static NCPU_Mode Get_CPU_Mode(std::uint32_t cpsr) noexcept;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks if there is an invalid attempt to change the control bits of the CPSR register.
+        ///
+        /// The control bits of the CPSR register can be changed only from a privileged mode. If the CPU is in the
+        /// User mode, it is not allowed the change the least significant byte of CPSR (control bits).
+        ///
+        /// \param new_cpsr New value of the CPSR register
+        /// \return true, if an invalid attempt takes place. false, otherwise.
+        // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] bool Invalid_Change_Of_Control_Bits(std::uint32_t new_cpsr) noexcept;
 
     private:
