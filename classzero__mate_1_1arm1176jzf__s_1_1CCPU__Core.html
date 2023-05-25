@@ -1651,7 +1651,7 @@ Here is the caller graph for this function:</div>
 
 <p>Fetches the next instruction. </p>
 <p>It attempts to read 4B (one word) from the address stored in the PC register. If it fails to do so, it will throw a prefetch abort exception which sets the value of the PC register to 0xC. If the next instruction is successfully fetched, the value of the PC register is incremented by 4B.</p>
-<dl class="section return"><dt>Returns</dt><dd>std::nullopt, if the fetching process failed (PC = 0xC). <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">isa::CInstruction</a>, otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::nullopt, if the fetching process failed (PC = 0xC). <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator.">isa::CInstruction</a>, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

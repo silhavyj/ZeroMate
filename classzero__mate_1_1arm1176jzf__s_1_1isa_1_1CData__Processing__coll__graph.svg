@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" target="_top" xlink:title="This class represents a parent class for all ARM instructions used in the emulator.">
 <polygon fill="none" stroke="black" points="5.5,-67.5 5.5,-97.5 135.5,-97.5 135.5,-67.5 5.5,-67.5"/>
 <text text-anchor="start" x="13.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="70.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CInstruction</text>

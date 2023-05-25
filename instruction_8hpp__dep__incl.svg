@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines the interface of a general ARM instruction.">
 <polygon fill="#bfbfbf" stroke="black" points="1685.5,-290.5 1685.5,-320.5 1805.5,-320.5 1805.5,-290.5 1685.5,-290.5"/>
 <text text-anchor="start" x="1693.5" y="-308.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1745.5" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/instruction.hpp</text>
@@ -217,7 +217,7 @@
 <!-- Node46 -->
 <g id="node35" class="node">
 <title>Node46</title>
-<g id="a_node35"><a xlink:href="instruction_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node35"><a xlink:href="instruction_8cpp.html" target="_top" xlink:title="This file implements the interface of a general ARM instruction defined in instruction....">
 <polygon fill="none" stroke="black" points="2016,-218 2016,-248 2135,-248 2135,-218 2016,-218"/>
 <text text-anchor="start" x="2024" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="2075.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/instruction.cpp</text>

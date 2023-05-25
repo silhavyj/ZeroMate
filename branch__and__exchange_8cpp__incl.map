@@ -1,6 +1,5 @@
 <map id="src/core/arm1176jzf_s/isa/branch_and_exchange.cpp" name="src/core/arm1176jzf_s/isa/branch_and_exchange.cpp">
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,240,47"/>
 <area shape="rect" id="node2" href="$branch__and__exchange_8hpp.html" title=" " alt="" coords="25,95,220,121"/>
-<area shape="rect" id="node3" href="$instruction_8hpp.html" title=" " alt="" coords="63,169,182,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="89,244,156,271"/>
+<area shape="rect" id="node3" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="63,169,182,196"/>
 </map>

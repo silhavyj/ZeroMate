@@ -1,15 +1,15 @@
 <map id="src/core/coprocessors/coprocessor.hpp" name="src/core/coprocessors/coprocessor.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="251,5,414,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="299,273,366,300"/>
-<area shape="rect" id="node3" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="730,109,932,136"/>
-<area shape="rect" id="node10" href="$coprocessor__register__transfer_8hpp.html" title=" " alt="" coords="34,95,196,151"/>
-<area shape="rect" id="node12" href="$coprocessor__data__transfer_8hpp.html" title=" " alt="" coords="220,102,445,143"/>
-<area shape="rect" id="node13" href="$coprocessor__data__operation_8hpp.html" title=" " alt="" coords="468,102,706,143"/>
-<area shape="rect" id="node4" href="$logger_8hpp.html" title=" " alt="" coords="628,199,807,225"/>
-<area shape="rect" id="node5" title=" " alt="" coords="503,273,567,300"/>
-<area shape="rect" id="node6" title=" " alt="" coords="592,273,654,300"/>
-<area shape="rect" id="node7" title=" " alt="" coords="679,273,756,300"/>
-<area shape="rect" id="node8" title=" " alt="" coords="781,273,878,300"/>
-<area shape="rect" id="node9" title=" " alt="" coords="902,273,1026,300"/>
-<area shape="rect" id="node11" href="$instruction_8hpp.html" title=" " alt="" coords="273,199,392,225"/>
+<area shape="rect" id="node1" title=" " alt="" coords="331,5,493,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,273,72,300"/>
+<area shape="rect" id="node3" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="104,109,307,136"/>
+<area shape="rect" id="node10" href="$coprocessor__register__transfer_8hpp.html" title=" " alt="" coords="331,95,493,151"/>
+<area shape="rect" id="node12" href="$coprocessor__data__transfer_8hpp.html" title=" " alt="" coords="517,102,742,143"/>
+<area shape="rect" id="node13" href="$coprocessor__data__operation_8hpp.html" title=" " alt="" coords="765,102,1003,143"/>
+<area shape="rect" id="node4" href="$logger_8hpp.html" title=" " alt="" coords="127,199,305,225"/>
+<area shape="rect" id="node5" title=" " alt="" coords="96,273,160,300"/>
+<area shape="rect" id="node6" title=" " alt="" coords="185,273,247,300"/>
+<area shape="rect" id="node7" title=" " alt="" coords="272,273,349,300"/>
+<area shape="rect" id="node8" title=" " alt="" coords="374,273,471,300"/>
+<area shape="rect" id="node9" title=" " alt="" coords="495,273,619,300"/>
+<area shape="rect" id="node11" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="570,199,689,225"/>
 </map>

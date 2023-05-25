@@ -4,7 +4,7 @@
 <area shape="rect" id="node3" title=" " alt="" coords="69,95,154,121"/>
 <area shape="rect" id="node4" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="179,95,319,121"/>
 <area shape="rect" id="node5" href="$isa__decoder_8hpp.html" title=" " alt="" coords="343,95,469,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="313,169,369,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="421,244,487,271"/>
-<area shape="rect" id="node8" href="$instruction_8hpp.html" title=" " alt="" coords="444,169,563,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="293,169,349,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="373,169,439,196"/>
+<area shape="rect" id="node8" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="464,169,583,196"/>
 </map>

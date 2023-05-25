@@ -1,4 +1,4 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Is_Instruction_Condition_Met" name="zero_mate::arm1176jzf_s::CCPU_Core::Is_Instruction_Condition_Met">
 <area shape="rect" id="node1" title="Checks whether a given instruction should be executed or skipped based on its condition field." alt="" coords="5,5,217,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#aedbef9330e0e59007d0b05841a626d21" title=" " alt="" coords="265,5,439,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#aedbef9330e0e59007d0b05841a626d21" title="Returns the condition field of the instruction." alt="" coords="265,5,439,61"/>
 </map>

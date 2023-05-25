@@ -38,14 +38,14 @@ var classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction =
       [ "Coprocessor_Data_Operation", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbacc672100b2c0daeed019b6df309672c5", null ],
       [ "Coprocessor_Register_Transfer", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba88bcd68d0b974bd41ba451f1677014f7", null ],
       [ "Software_Interrupt", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbad80cf7913f5f7e250f7a38397b573bfe", null ],
-      [ "Unknown", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba88183b946cc5f0e8c96b2e66e1c74a7e", null ],
       [ "Extend", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba3bc026b815790a05493fa56fc4b8d8bd", null ],
       [ "PSR_Transfer", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba991ca6bda9a5fbbf705f4c183f773d87", null ],
       [ "CPS", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbaad26b36ed4daec9b20ee600e0876f367", null ],
       [ "NOP", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba1a004f5abe2b334db21328be1ea6b593", null ],
       [ "SRS", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba01e286717a0e2b926dd55314ec263883", null ],
       [ "RFE", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbab343befc76d20be6b994a4f728d96a78", null ],
-      [ "CLZ", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba923009aed29c885c8df27915d76e15ed", null ]
+      [ "CLZ", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba923009aed29c885c8df27915d76e15ed", null ],
+      [ "Unknown", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba88183b946cc5f0e8c96b2e66e1c74a7e", null ]
     ] ],
     [ "CInstruction", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af0813b890400084720f720a1cfb6a683", null ],
     [ "Get_Condition", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#aedbef9330e0e59007d0b05841a626d21", null ],

@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title=" " alt="" coords="5,605,179,646"/>
+<area shape="rect" id="node1" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator." alt="" coords="5,605,179,646"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html" title=" " alt="" coords="234,5,407,61"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html" title=" " alt="" coords="234,86,407,127"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html" title=" " alt="" coords="234,152,407,208"/>
