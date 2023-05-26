@@ -500,7 +500,7 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CBranch_And_Exchange instruction)
     {
-        const auto rm_reg_value = m_context[instruction.Get_Rm()];
+        const auto rm_reg_value = m_context[instruction.Get_Rm_Idx()];
 
         // Make sure the CPU will not switch to the Thumb mode.
         if (instruction.Get_Instruction_Mode(rm_reg_value) == isa::CBranch_And_Exchange::NCPU_Instruction_Mode::Thumb)
@@ -656,7 +656,7 @@ namespace zero_mate::arm1176jzf_s
     {
         const auto register_list = instruction.Get_Register_List();
         const auto number_of_regs = static_cast<std::uint32_t>(std::popcount(register_list));
-        const auto base_reg_idx = instruction.Get_Rn();
+        const auto base_reg_idx = instruction.Get_Rn_Idx();
 
         const bool store_value = !instruction.Is_L_Bit_Set();
         const bool s_bit = instruction.Is_S_Bit_Set();
@@ -1043,25 +1043,37 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CCoprocessor_Reg_Transfer instruction)
     {
+        // Get the coprocessor ID.
         const auto coprocessor_id = instruction.Get_Coprocessor_ID();
 
+        // Make sure the coprocessor is present.
         Check_Coprocessor_Existence(coprocessor_id);
+
+        // Pass the instruction to the coprocessor.
         m_coprocessors[coprocessor_id]->Perform_Register_Transfer(instruction);
     }
 
     void CCPU_Core::Execute(isa::CCoprocessor_Data_Transfer instruction)
     {
+        // Get the coprocessor ID.
         const auto coprocessor_id = instruction.Get_Coprocessor_ID();
 
+        // Make sure the coprocessor is present.
         Check_Coprocessor_Existence(coprocessor_id);
+
+        // Pass the instruction to the coprocessor.
         m_coprocessors[coprocessor_id]->Perform_Data_Transfer(instruction);
     }
 
     void CCPU_Core::Execute(isa::CCoprocessor_Data_Operation instruction)
     {
+        // Get the coprocessor ID.
         const auto coprocessor_id = instruction.Get_Coprocessor_ID();
 
+        // Make sure the coprocessor is present.
         Check_Coprocessor_Existence(coprocessor_id);
+
+        // Pass the instruction to the coprocessor.
         m_coprocessors[coprocessor_id]->Perform_Data_Operation(instruction);
     }
 
@@ -1148,7 +1160,7 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CCLZ instruction)
     {
-        const auto rm_reg = m_context[instruction.Get_Rm()];
+        const auto rm_reg = m_context[instruction.Get_Rm_Idx()];
         std::uint32_t leading_zeros{ 0 };
 
         // Calculate the number of leading zeros.
@@ -1164,6 +1176,6 @@ namespace zero_mate::arm1176jzf_s
         }
 
         // Store the result in the Rd register.
-        m_context[instruction.Get_Rd()] = leading_zeros;
+        m_context[instruction.Get_Rd_Idx()] = leading_zeros;
     }
 }

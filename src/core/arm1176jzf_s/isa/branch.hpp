@@ -19,7 +19,7 @@ namespace zero_mate::arm1176jzf_s::isa
 {
     // -----------------------------------------------------------------------------------------------------------------
     /// \class CBranch
-    /// \brief This class represents a branch instruction (it is inherited from the CInstruction class).
+    /// \brief This class represents a branch instruction.
     // -----------------------------------------------------------------------------------------------------------------
     class CBranch final : public CInstruction
     {

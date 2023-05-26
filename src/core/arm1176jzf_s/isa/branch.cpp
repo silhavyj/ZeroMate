@@ -3,7 +3,7 @@
 /// \date 25. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file implements a branch instruction (B, BL).
+/// \brief This file implements a branch instruction (B, BL) as defined in branch.hpp.
 ///
 /// To find more information about this instruction, please visit
 /// https://developer.arm.com/documentation/dui0068/b/CIHFDDAF

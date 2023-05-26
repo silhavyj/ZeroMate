@@ -19,7 +19,7 @@ namespace zero_mate::arm1176jzf_s::isa
 {
     // -----------------------------------------------------------------------------------------------------------------
     /// \class CBranch_And_Exchange
-    /// \brief This class represents a branch and exchange instruction (it is inherited from the CInstruction class).
+    /// \brief This class represents a branch and exchange instruction.
     // -----------------------------------------------------------------------------------------------------------------
     class CBranch_And_Exchange final : public CInstruction
     {
@@ -67,7 +67,7 @@ namespace zero_mate::arm1176jzf_s::isa
         /// \brief Returns the index of the Rm register holding the value of the destination address.
         /// \return Index of the Rm register
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] std::uint32_t Get_Rm() const noexcept;
+        [[nodiscard]] std::uint32_t Get_Rm_Idx() const noexcept;
     };
 
 } // namespace zero_mate::arm1176jzf_s::isa

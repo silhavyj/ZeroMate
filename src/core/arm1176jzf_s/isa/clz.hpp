@@ -11,13 +11,15 @@
 
 #pragma once
 
+// Project file imports
+
 #include "instruction.hpp"
 
 namespace zero_mate::arm1176jzf_s::isa
 {
     // -----------------------------------------------------------------------------------------------------------------
     /// \class CCLZ
-    /// \brief This class represents a count leading zeros instruction (it is inherited from the CInstruction class).
+    /// \brief This class represents a count leading zeros instruction.
     // -----------------------------------------------------------------------------------------------------------------
     class CCLZ final : public CInstruction
     {
@@ -32,13 +34,13 @@ namespace zero_mate::arm1176jzf_s::isa
         /// \brief Returns the index of the destination register (Rd) where the result will be stored.
         /// \return Index of the destination register
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] std::uint32_t Get_Rd() const noexcept;
+        [[nodiscard]] std::uint32_t Get_Rd_Idx() const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns the index of the Rm register involved in the calculation of the number of leasing zeros.
         /// \return Index of the Rm register
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] std::uint32_t Get_Rm() const noexcept;
+        [[nodiscard]] std::uint32_t Get_Rm_Idx() const noexcept;
     };
 
 } // namespace zero_mate::arm1176jzf_s::isa

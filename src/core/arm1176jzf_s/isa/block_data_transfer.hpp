@@ -20,7 +20,7 @@ namespace zero_mate::arm1176jzf_s::isa
 {
     // -----------------------------------------------------------------------------------------------------------------
     /// \class CBlock_Data_Transfer
-    /// \brief This class represents a data block transfer instruction (it is inherited from the CInstruction class).
+    /// \brief This class represents a data block transfer instruction.
     // -----------------------------------------------------------------------------------------------------------------
     class CBlock_Data_Transfer final : CInstruction
     {
@@ -94,7 +94,7 @@ namespace zero_mate::arm1176jzf_s::isa
         /// \brief Returns the index of the Rn register (base register).
         /// \return Index of the base register
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] std::uint32_t Get_Rn() const noexcept;
+        [[nodiscard]] std::uint32_t Get_Rn_Idx() const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns a list of registers to be transferred.

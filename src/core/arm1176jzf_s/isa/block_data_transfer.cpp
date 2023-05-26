@@ -3,7 +3,7 @@
 /// \date 25. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file implements a block data transfer instruction (LDM, STM).
+/// \brief This file implements a block data transfer instruction (LDM, STM) as defined in block_data_transfer.hpp.
 ///
 /// To find more information about this instruction, please visit
 /// https://developer.arm.com/documentation/dui0473/m/arm-and-thumb-instructions/ldm,
@@ -44,7 +44,7 @@ namespace zero_mate::arm1176jzf_s::isa
         return static_cast<NAddressing_Mode>((m_value >> 23U) & 0b11U);
     }
 
-    std::uint32_t CBlock_Data_Transfer::Get_Rn() const noexcept
+    std::uint32_t CBlock_Data_Transfer::Get_Rn_Idx() const noexcept
     {
         return (m_value >> 16U) & 0b1111U;
     }
