@@ -94,6 +94,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1is
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a change processor state instruction.  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="cps_8hpp_source.html">cps.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::arm1176jzf_s::isa::CCPS:</div>
@@ -113,6 +116,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:aff38b505647a985943b5014dec855e51"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aff38b505647a985943b5014dec855e51">NType</a> : std::uint32_t { <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aff38b505647a985943b5014dec855e51aa8f08eb5693b817f6ba65930ede29087">CPSIE</a> = 0b10U
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aff38b505647a985943b5014dec855e51acecd803f185347b283a46e7cfabf016b">CPSID</a> = 0b11U
  }</td></tr>
+<tr class="memdesc:aff38b505647a985943b5014dec855e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines the type of the instruction (operation it performs)  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aff38b505647a985943b5014dec855e51">More...</a><br /></td></tr>
 <tr class="separator:aff38b505647a985943b5014dec855e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:a110957aeccf83857a9f32afefa6b7803 inherit pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#a110957aeccf83857a9f32afefa6b7803">NCondition</a> : std::uint32_t { <br />
@@ -181,18 +185,25 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a75cce5bda8c70e413d7f1f88e9323249"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a75cce5bda8c70e413d7f1f88e9323249">CCPS</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) noexcept</td></tr>
+<tr class="memdesc:a75cce5bda8c70e413d7f1f88e9323249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a75cce5bda8c70e413d7f1f88e9323249">More...</a><br /></td></tr>
 <tr class="separator:a75cce5bda8c70e413d7f1f88e9323249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a924538a26c7127ace3c4794dc2f4eda0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aff38b505647a985943b5014dec855e51">NType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a924538a26c7127ace3c4794dc2f4eda0">Get_Type</a> () const noexcept</td></tr>
+<tr class="memdesc:a924538a26c7127ace3c4794dc2f4eda0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the operation (see NType).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a924538a26c7127ace3c4794dc2f4eda0">More...</a><br /></td></tr>
 <tr class="separator:a924538a26c7127ace3c4794dc2f4eda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af283796069a3c9f3d68d4737a4e4875f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#af283796069a3c9f3d68d4737a4e4875f">Is_M_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:af283796069a3c9f3d68d4737a4e4875f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the M bit (bit 17).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#af283796069a3c9f3d68d4737a4e4875f">More...</a><br /></td></tr>
 <tr class="separator:af283796069a3c9f3d68d4737a4e4875f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2583ff5d99f44afe2424ac8d38d3a5d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a2583ff5d99f44afe2424ac8d38d3a5d1">Is_A_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:a2583ff5d99f44afe2424ac8d38d3a5d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the A bit (bit 8).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a2583ff5d99f44afe2424ac8d38d3a5d1">More...</a><br /></td></tr>
 <tr class="separator:a2583ff5d99f44afe2424ac8d38d3a5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f2533a907e445e2650ca948c8739128"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a9f2533a907e445e2650ca948c8739128">Is_I_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:a9f2533a907e445e2650ca948c8739128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the I bit (bit 7 = interrupts).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a9f2533a907e445e2650ca948c8739128">More...</a><br /></td></tr>
 <tr class="separator:a9f2533a907e445e2650ca948c8739128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaed737a2ad540dcf7953556e5fac32be"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aaed737a2ad540dcf7953556e5fac32be">Is_F_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:aaed737a2ad540dcf7953556e5fac32be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the F bit (bit 6 = i nterrupts).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aaed737a2ad540dcf7953556e5fac32be">More...</a><br /></td></tr>
 <tr class="separator:aaed737a2ad540dcf7953556e5fac32be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a140653f57b2a5e64305e52028b2176fa"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a140653f57b2a5e64305e52028b2176fa">Get_Mode</a> () const noexcept</td></tr>
+<tr class="memdesc:a140653f57b2a5e64305e52028b2176fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the new mode of the CPU (5 bits).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a140653f57b2a5e64305e52028b2176fa">More...</a><br /></td></tr>
 <tr class="separator:a140653f57b2a5e64305e52028b2176fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:af0813b890400084720f720a1cfb6a683 inherit pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af0813b890400084720f720a1cfb6a683">CInstruction</a> (std::uint32_t value) noexcept</td></tr>
@@ -222,7 +233,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Machine code encoding of the instruction (32-bit value)  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ac8cd077b7574ab7d94cf34114a9234fa">More...</a><br /></td></tr>
 <tr class="separator:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a change processor state instruction. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="aff38b505647a985943b5014dec855e51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aff38b505647a985943b5014dec855e51">&#9670;&nbsp;</a></span>NType</h2>
 
@@ -242,9 +255,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration defines the type of the instruction (operation it performs) </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aff38b505647a985943b5014dec855e51aa8f08eb5693b817f6ba65930ede29087"></a>CPSIE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aff38b505647a985943b5014dec855e51acecd803f185347b283a46e7cfabf016b"></a>CPSID&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aff38b505647a985943b5014dec855e51aa8f08eb5693b817f6ba65930ede29087"></a>CPSIE&#160;</td><td class="fielddoc"><p>Interrupt of abort enable. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aff38b505647a985943b5014dec855e51acecd803f185347b283a46e7cfabf016b"></a>CPSID&#160;</td><td class="fielddoc"><p>Interrupt of abort disable. </p>
+</td></tr>
 </table>
 
 </div>
@@ -274,6 +291,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>General instruction (32-bit value) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -300,6 +325,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the new mode of the CPU (5 bits). </p>
+<p>If the M bit is set (see <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#af283796069a3c9f3d68d4737a4e4875f" title="Returns the value of the M bit (bit 17).">Is_M_Bit_Set</a>), the value returned from this function will be the new mode of the CPU.</p>
+<dl class="section return"><dt>Returns</dt><dd>New mode of the CPU </dd></dl>
+
 </div>
 </div>
 <a id="a924538a26c7127ace3c4794dc2f4eda0"></a>
@@ -324,6 +353,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the type of the operation (see NType). </p>
+<dl class="section return"><dt>Returns</dt><dd>Type of the operation performed by the instruction. </dd></dl>
 
 </div>
 </div>
@@ -350,6 +382,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the value of the A bit (bit 8). </p>
+<p>If the A bit is set, the A flag in the CPSR register will be either enabled/disabled based on <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aff38b505647a985943b5014dec855e51" title="This enumeration defines the type of the instruction (operation it performs)">CCPS::NType</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the A bit is set. false, otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="aaed737a2ad540dcf7953556e5fac32be"></a>
@@ -374,6 +410,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the F bit (bit 6 = i nterrupts). </p>
+<p>If the I bit is set, fast interrupts (F flag in CPSR) will be either enabled/disabled based on <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aff38b505647a985943b5014dec855e51" title="This enumeration defines the type of the instruction (operation it performs)">CCPS::NType</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the F bit is set. false, otherwise. </dd></dl>
 
 </div>
 </div>
@@ -400,6 +440,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the value of the I bit (bit 7 = interrupts). </p>
+<p>If the I bit is set, interrupts (I flag in CPSR) will be either enabled/disabled based on <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aff38b505647a985943b5014dec855e51" title="This enumeration defines the type of the instruction (operation it performs)">CCPS::NType</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the I bit is set. false, otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="af283796069a3c9f3d68d4737a4e4875f"></a>
@@ -424,6 +468,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the M bit (bit 17). </p>
+<p>If the M bit is set, the mode of the CPU will be changed to the value stored in the least significant 5 bits of the instruction (see <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a140653f57b2a5e64305e52028b2176fa" title="Returns the new mode of the CPU (5 bits).">Get_Mode</a>).</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the M bit is set. false, otherwise. </dd></dl>
 
 </div>
 </div>

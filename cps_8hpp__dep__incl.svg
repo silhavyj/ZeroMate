@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines a change processor state instruction (CPS).">
 <polygon fill="#bfbfbf" stroke="black" points="210,-268.5 210,-298.5 323,-298.5 323,-268.5 210,-268.5"/>
 <text text-anchor="start" x="218" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="266.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/cps.hpp</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="cps_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="cps_8cpp.html" target="_top" xlink:title="This file defines a change processor state instruction (CPS) as defined in cps.hpp.">
 <polygon fill="none" stroke="black" points="145,-201.5 145,-231.5 258,-231.5 258,-201.5 145,-201.5"/>
 <text text-anchor="start" x="153" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="201.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/cps.cpp</text>
@@ -37,7 +37,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="isa_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="isa_8hpp.html" target="_top" xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="none" stroke="black" points="276,-201.5 276,-231.5 389,-231.5 389,-201.5 276,-201.5"/>
 <text text-anchor="start" x="284" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="332.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa.hpp</text>

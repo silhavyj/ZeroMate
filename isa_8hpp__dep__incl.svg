@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="#bfbfbf" stroke="black" points="276,-201.5 276,-231.5 389,-231.5 389,-201.5 276,-201.5"/>
 <text text-anchor="start" x="284" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="332.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa.hpp</text>

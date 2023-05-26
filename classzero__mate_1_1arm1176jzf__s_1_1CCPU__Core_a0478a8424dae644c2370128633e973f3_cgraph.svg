@@ -22,11 +22,11 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a3916c98bc269c3856c47187f7a50d43a" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a19ae05a248372734571f9013f1cbcca1" target="_top" xlink:title="Returns the index of the shift register (Rs).">
 <polygon fill="none" stroke="black" points="174,-120.5 174,-161.5 315,-161.5 315,-120.5 174,-120.5"/>
 <text text-anchor="start" x="182" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="182" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CData_Processing</text>
-<text text-anchor="middle" x="244.5" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Get_Rs</text>
+<text text-anchor="middle" x="244.5" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Get_Rs_Idx</text>
 </a>
 </g>
 </g>
@@ -39,7 +39,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae851afadd74822ec9363797ab332f45a" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae851afadd74822ec9363797ab332f45a" target="_top" xlink:title="Returns the shift amount used when constructing the second operand (immediate second operand).">
 <polygon fill="none" stroke="black" points="174,-60.5 174,-101.5 315,-101.5 315,-60.5 174,-60.5"/>
 <text text-anchor="start" x="182" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="182" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CData_Processing</text>
@@ -56,7 +56,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a6984b9f9491dc809a9fe85e62d98d3a9" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a6984b9f9491dc809a9fe85e62d98d3a9" target="_top" xlink:title="Returns information about whether or not an immediate shift should be applied (bit 4).">
 <polygon fill="none" stroke="black" points="174,-0.5 174,-41.5 315,-41.5 315,-0.5 174,-0.5"/>
 <text text-anchor="start" x="182" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="182" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CData_Processing</text>

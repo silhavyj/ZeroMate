@@ -1,13 +1,12 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute">
-<area shape="rect" id="node1" title="Executes a halfword data transfer instruction." alt="" coords="5,318,181,359"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab8055407426b0f25544d2b33a89b22a7" title="Calculates the offset from the base address in a single data transfer instruction." alt="" coords="245,173,440,214"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a066aca0627655bc1e068b181fb0964bd" title="Performs a halfword data read from a given address." alt="" coords="231,311,455,367"/>
-<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a00f4cf1169d774a50886f60f5f166f8b" title="Performs a halfword data write to a given address." alt="" coords="229,391,456,447"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ab5b35b6db4af2c5605ec6caac5a4e1dd" title=" " alt="" coords="507,5,695,61"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae851afadd74822ec9363797ab332f45a" title=" " alt="" coords="507,85,695,141"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae43548d291eecc463c519086e7527ff2" title=" " alt="" coords="507,165,695,221"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a1dc73c441b156452b1467eaa5cab46f5" title=" " alt="" coords="507,245,695,301"/>
-<area shape="rect" id="node8" href="$namespacezero__mate_1_1utils_1_1math.html#afda20fa50949a9cd3a80f811b0085221" title="Sign&#45;extends the given integral value." alt="" coords="517,326,686,367"/>
-<area shape="rect" id="node10" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title=" " alt="" coords="504,398,699,439"/>
-<area shape="rect" id="node11" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="747,398,945,439"/>
+<area shape="rect" id="node1" title="Executes a halfword data transfer instruction." alt="" coords="5,238,181,279"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab8055407426b0f25544d2b33a89b22a7" title="Calculates the offset from the base address in a single data transfer instruction." alt="" coords="245,133,440,174"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a066aca0627655bc1e068b181fb0964bd" title="Performs a halfword data read from a given address." alt="" coords="231,231,455,287"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a00f4cf1169d774a50886f60f5f166f8b" title="Performs a halfword data write to a given address." alt="" coords="229,311,456,367"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae851afadd74822ec9363797ab332f45a" title="Returns the shift amount used when constructing the second operand (immediate second operand)." alt="" coords="507,5,695,61"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae43548d291eecc463c519086e7527ff2" title="Returns the shift type used when constructing the second operand." alt="" coords="507,85,695,141"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a1dc73c441b156452b1467eaa5cab46f5" title="Returns the value of the I bit (bit 25 = immediate second operand)." alt="" coords="507,165,695,221"/>
+<area shape="rect" id="node7" href="$namespacezero__mate_1_1utils_1_1math.html#afda20fa50949a9cd3a80f811b0085221" title="Sign&#45;extends the given integral value." alt="" coords="517,246,686,287"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title=" " alt="" coords="504,318,699,359"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="747,318,945,359"/>
 </map>

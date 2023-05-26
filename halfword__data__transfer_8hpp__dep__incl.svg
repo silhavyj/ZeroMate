@@ -39,7 +39,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="isa_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="isa_8hpp.html" target="_top" xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="none" stroke="black" points="276,-207 276,-237 389,-237 389,-207 276,-207"/>
 <text text-anchor="start" x="284" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="332.5" y="-214" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa.hpp</text>

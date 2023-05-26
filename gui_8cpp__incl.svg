@@ -531,7 +531,7 @@
 <!-- Node27 -->
 <g id="node25" class="node">
 <title>Node27</title>
-<g id="a_node25"><a xlink:href="isa_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node25"><a xlink:href="isa_8hpp.html" target="_top" xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="none" stroke="red" points="1385.5,-263 1385.5,-282 1454.5,-282 1454.5,-263 1385.5,-263"/>
 <text text-anchor="middle" x="1420" y="-270" font-family="Helvetica,sans-Serif" font-size="10.00">isa/isa.hpp</text>
 </a>

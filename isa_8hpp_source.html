@@ -89,35 +89,43 @@ $(document).ready(function(){initNavTree('isa_8hpp_source.html',''); initResizab
 <div class="title">isa.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="isa_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="instruction_8hpp.html">instruction.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="branch__and__exchange_8hpp.html">branch_and_exchange.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="branch_8hpp.html">branch.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="data__processing_8hpp.html">data_processing.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multiply_8hpp.html">multiply.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multiply__long_8hpp.html">multiply_long.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="single__data__transfer_8hpp.html">single_data_transfer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="block__data__transfer_8hpp.html">block_data_transfer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="halfword__data__transfer_8hpp.html">halfword_data_transfer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="extend_8hpp.html">extend.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="psr__transfer_8hpp.html">psr_transfer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cps_8hpp.html">cps.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="coprocessor__register__transfer_8hpp.html">coprocessor_register_transfer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="coprocessor__data__transfer_8hpp.html">coprocessor_data_transfer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="coprocessor__data__operation_8hpp.html">coprocessor_data_operation.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="srs_8hpp.html">srs.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rfe_8hpp.html">rfe.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="clz_8hpp.html">clz.hpp</a>&quot;</span></div>
+<a href="isa_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/// \file isa.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// \date 25. 05. 2023</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/// \brief This file is just a helper file for including all ARM instructions supported by the emulator.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span><span class="comment">// ---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="instruction_8hpp.html">instruction.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="branch__and__exchange_8hpp.html">branch_and_exchange.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="branch_8hpp.html">branch.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="data__processing_8hpp.html">data_processing.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multiply_8hpp.html">multiply.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multiply__long_8hpp.html">multiply_long.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="single__data__transfer_8hpp.html">single_data_transfer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="block__data__transfer_8hpp.html">block_data_transfer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="halfword__data__transfer_8hpp.html">halfword_data_transfer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="extend_8hpp.html">extend.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="psr__transfer_8hpp.html">psr_transfer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cps_8hpp.html">cps.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="coprocessor__register__transfer_8hpp.html">coprocessor_register_transfer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="coprocessor__data__transfer_8hpp.html">coprocessor_data_transfer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="coprocessor__data__operation_8hpp.html">coprocessor_data_operation.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="srs_8hpp.html">srs.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="rfe_8hpp.html">rfe.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="clz_8hpp.html">clz.hpp</a>&quot;</span></div>
 <div class="ttc" id="ablock__data__transfer_8hpp_html"><div class="ttname"><a href="block__data__transfer_8hpp.html">block_data_transfer.hpp</a></div><div class="ttdoc">This file defines a block data transfer instruction (LDM, STM).</div></div>
 <div class="ttc" id="abranch_8hpp_html"><div class="ttname"><a href="branch_8hpp.html">branch.hpp</a></div><div class="ttdoc">This file defines a branch instruction (B, BL).</div></div>
 <div class="ttc" id="abranch__and__exchange_8hpp_html"><div class="ttname"><a href="branch__and__exchange_8hpp.html">branch_and_exchange.hpp</a></div><div class="ttdoc">This file defines a branch and exchange instruction (BX).</div></div>
 <div class="ttc" id="aclz_8hpp_html"><div class="ttname"><a href="clz_8hpp.html">clz.hpp</a></div><div class="ttdoc">This file defines a count leading zeros instruction (CLZ).</div></div>
 <div class="ttc" id="acoprocessor__data__operation_8hpp_html"><div class="ttname"><a href="coprocessor__data__operation_8hpp.html">coprocessor_data_operation.hpp</a></div><div class="ttdoc">This file defines a coprocessor data operation (CDP).</div></div>
 <div class="ttc" id="acoprocessor__data__transfer_8hpp_html"><div class="ttname"><a href="coprocessor__data__transfer_8hpp.html">coprocessor_data_transfer.hpp</a></div><div class="ttdoc">This file defines a coprocessor data transfer (LDC, STC).</div></div>
-<div class="ttc" id="acoprocessor__register__transfer_8hpp_html"><div class="ttname"><a href="coprocessor__register__transfer_8hpp.html">coprocessor_register_transfer.hpp</a></div></div>
-<div class="ttc" id="acps_8hpp_html"><div class="ttname"><a href="cps_8hpp.html">cps.hpp</a></div></div>
-<div class="ttc" id="adata__processing_8hpp_html"><div class="ttname"><a href="data__processing_8hpp.html">data_processing.hpp</a></div></div>
+<div class="ttc" id="acoprocessor__register__transfer_8hpp_html"><div class="ttname"><a href="coprocessor__register__transfer_8hpp.html">coprocessor_register_transfer.hpp</a></div><div class="ttdoc">This file defines a coprocessor register transfer (MRC, MCR).</div></div>
+<div class="ttc" id="acps_8hpp_html"><div class="ttname"><a href="cps_8hpp.html">cps.hpp</a></div><div class="ttdoc">This file defines a change processor state instruction (CPS).</div></div>
+<div class="ttc" id="adata__processing_8hpp_html"><div class="ttname"><a href="data__processing_8hpp.html">data_processing.hpp</a></div><div class="ttdoc">This file defines a data processing instruction.</div></div>
 <div class="ttc" id="aextend_8hpp_html"><div class="ttname"><a href="extend_8hpp.html">extend.hpp</a></div></div>
 <div class="ttc" id="ahalfword__data__transfer_8hpp_html"><div class="ttname"><a href="halfword__data__transfer_8hpp.html">halfword_data_transfer.hpp</a></div></div>
 <div class="ttc" id="ainstruction_8hpp_html"><div class="ttname"><a href="instruction_8hpp.html">instruction.hpp</a></div><div class="ttdoc">This file defines the interface of a general ARM instruction.</div></div>

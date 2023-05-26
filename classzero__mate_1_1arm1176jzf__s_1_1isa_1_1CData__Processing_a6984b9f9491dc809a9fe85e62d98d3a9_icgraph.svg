@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Returns information about whether or not an immediate shift should be applied (bit 4).">
 <polygon fill="#bfbfbf" stroke="black" points="174,-0.5 174,-41.5 315,-41.5 315,-0.5 174,-0.5"/>
 <text text-anchor="start" x="182" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="182" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CData_Processing</text>

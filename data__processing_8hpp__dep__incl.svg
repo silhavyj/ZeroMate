@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines a data processing instruction.">
 <polygon fill="#bfbfbf" stroke="black" points="246.5,-268.5 246.5,-298.5 394.5,-298.5 394.5,-268.5 246.5,-268.5"/>
 <text text-anchor="start" x="254.5" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="320.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/data_processing.hpp</text>
@@ -37,7 +37,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="data__processing_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="data__processing_8cpp.html" target="_top" xlink:title="This file implements a data processing instruction as defined in data_processing.hpp.">
 <polygon fill="none" stroke="black" points="395,-201.5 395,-231.5 542,-231.5 542,-201.5 395,-201.5"/>
 <text text-anchor="start" x="403" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="468.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/data_processing.cpp</text>
@@ -53,7 +53,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="isa_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="isa_8hpp.html" target="_top" xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="none" stroke="black" points="264,-201.5 264,-231.5 377,-231.5 377,-201.5 264,-201.5"/>
 <text text-anchor="start" x="272" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="320.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa.hpp</text>

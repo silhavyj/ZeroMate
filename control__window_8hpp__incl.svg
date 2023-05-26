@@ -215,7 +215,7 @@
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="isa_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node15"><a xlink:href="isa_8hpp.html" target="_top" xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="none" stroke="black" points="1873.5,-196 1873.5,-215 1942.5,-215 1942.5,-196 1873.5,-196"/>
 <text text-anchor="middle" x="1908" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">isa/isa.hpp</text>
 </a>
@@ -379,7 +379,7 @@
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="data__processing_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node19"><a xlink:href="data__processing_8hpp.html" target="_top" xlink:title="This file defines a data processing instruction.">
 <polygon fill="none" stroke="black" points="2189.5,-129 2189.5,-148 2306.5,-148 2306.5,-129 2189.5,-129"/>
 <text text-anchor="middle" x="2248" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">data_processing.hpp</text>
 </a>
@@ -499,7 +499,7 @@
 <!-- Node27 -->
 <g id="node27" class="node">
 <title>Node27</title>
-<g id="a_node27"><a xlink:href="cps_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node27"><a xlink:href="cps_8hpp.html" target="_top" xlink:title="This file defines a change processor state instruction (CPS).">
 <polygon fill="none" stroke="black" points="1617,-129 1617,-148 1671,-148 1671,-129 1617,-129"/>
 <text text-anchor="middle" x="1644" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">cps.hpp</text>
 </a>
@@ -514,7 +514,7 @@
 <!-- Node28 -->
 <g id="node28" class="node">
 <title>Node28</title>
-<g id="a_node28"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node28"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title="This file defines a coprocessor register transfer (MRC, MCR).">
 <polygon fill="none" stroke="black" points="1183,-123.5 1183,-153.5 1301,-153.5 1301,-123.5 1183,-123.5"/>
 <text text-anchor="start" x="1191" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">coprocessor_register</text>
 <text text-anchor="middle" x="1242" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">_transfer.hpp</text>

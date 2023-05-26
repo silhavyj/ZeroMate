@@ -238,7 +238,7 @@
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node17"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title="This file defines a coprocessor register transfer (MRC, MCR).">
 <polygon fill="none" stroke="black" points="1231.5,-112.5 1231.5,-153.5 1352.5,-153.5 1352.5,-112.5 1231.5,-112.5"/>
 <text text-anchor="start" x="1239.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">../arm1176jzf_s/isa</text>
 <text text-anchor="start" x="1239.5" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/coprocessor_register</text>
@@ -492,7 +492,7 @@
 <!-- Node27 -->
 <g id="node27" class="node">
 <title>Node27</title>
-<g id="a_node27"><a xlink:href="isa_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node27"><a xlink:href="isa_8hpp.html" target="_top" xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="none" stroke="black" points="2123.5,-190.5 2123.5,-209.5 2192.5,-209.5 2192.5,-190.5 2123.5,-190.5"/>
 <text text-anchor="middle" x="2158" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">isa/isa.hpp</text>
 </a>
@@ -623,7 +623,7 @@
 <!-- Node30 -->
 <g id="node30" class="node">
 <title>Node30</title>
-<g id="a_node30"><a xlink:href="data__processing_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node30"><a xlink:href="data__processing_8hpp.html" target="_top" xlink:title="This file defines a data processing instruction.">
 <polygon fill="none" stroke="black" points="2439.5,-123.5 2439.5,-142.5 2556.5,-142.5 2556.5,-123.5 2439.5,-123.5"/>
 <text text-anchor="middle" x="2498" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">data_processing.hpp</text>
 </a>
@@ -743,7 +743,7 @@
 <!-- Node38 -->
 <g id="node38" class="node">
 <title>Node38</title>
-<g id="a_node38"><a xlink:href="cps_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node38"><a xlink:href="cps_8hpp.html" target="_top" xlink:title="This file defines a change processor state instruction (CPS).">
 <polygon fill="none" stroke="black" points="1867,-123.5 1867,-142.5 1921,-142.5 1921,-123.5 1867,-123.5"/>
 <text text-anchor="middle" x="1894" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">cps.hpp</text>
 </a>

@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::isa::CData_Processing::Get_Rs_Idx" name="zero_mate::arm1176jzf_s::isa::CData_Processing::Get_Rs_Idx">
+<area shape="rect" id="node1" title="Returns the index of the shift register (Rs)." alt="" coords="237,5,425,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0478a8424dae644c2370128633e973f3" title="Calculates the shift amount of a data processing instruction." alt="" coords="5,5,189,61"/>
+</map>

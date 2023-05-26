@@ -32,7 +32,7 @@
 <area shape="rect" id="node19" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="2100,459,2199,486"/>
 <area shape="rect" id="node20" href="$logger_8hpp.html" title=" " alt="" coords="2248,549,2427,575"/>
 <area shape="rect" id="node24" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="1823,370,1945,397"/>
-<area shape="rect" id="node25" href="$isa_8hpp.html" title=" " alt="" coords="1853,281,1945,307"/>
+<area shape="rect" id="node25" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="1853,281,1945,307"/>
 <area shape="rect" id="node26" href="$isa__decoder_8hpp.html" title=" " alt="" coords="1490,459,1641,486"/>
 <area shape="rect" id="node27" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="1641,281,1727,307"/>
 <area shape="rect" id="node28" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="1969,281,2097,307"/>

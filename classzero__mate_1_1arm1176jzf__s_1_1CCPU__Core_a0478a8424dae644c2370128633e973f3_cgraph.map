@@ -1,6 +1,6 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Get_Shift_Amount" name="zero_mate::arm1176jzf_s::CCPU_Core::Get_Shift_Amount">
 <area shape="rect" id="node1" title="Calculates the shift amount of a data processing instruction." alt="" coords="5,85,189,141"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a3916c98bc269c3856c47187f7a50d43a" title=" " alt="" coords="237,5,425,61"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae851afadd74822ec9363797ab332f45a" title=" " alt="" coords="237,85,425,141"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a6984b9f9491dc809a9fe85e62d98d3a9" title=" " alt="" coords="237,165,425,221"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a19ae05a248372734571f9013f1cbcca1" title="Returns the index of the shift register (Rs)." alt="" coords="237,5,425,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae851afadd74822ec9363797ab332f45a" title="Returns the shift amount used when constructing the second operand (immediate second operand)." alt="" coords="237,85,425,141"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a6984b9f9491dc809a9fe85e62d98d3a9" title="Returns information about whether or not an immediate shift should be applied (bit 4)." alt="" coords="237,165,425,221"/>
 </map>

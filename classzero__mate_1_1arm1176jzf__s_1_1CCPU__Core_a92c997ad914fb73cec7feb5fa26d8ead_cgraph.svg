@@ -185,11 +185,11 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ab5b35b6db4af2c5605ec6caac5a4e1dd" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a73d5c3a98f3fe036a1348d4d7485d0e9" target="_top" xlink:title="Returns the index of the second operand register (Rm).">
 <polygon fill="none" stroke="black" points="362,-426 362,-467 503,-467 503,-426 362,-426"/>
 <text text-anchor="start" x="370" y="-455" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="370" y="-444" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CData_Processing</text>
-<text text-anchor="middle" x="432.5" y="-433" font-family="Helvetica,sans-Serif" font-size="10.00">::Get_Rm</text>
+<text text-anchor="middle" x="432.5" y="-433" font-family="Helvetica,sans-Serif" font-size="10.00">::Get_Rm_Idx</text>
 </a>
 </g>
 </g>
@@ -202,7 +202,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae43548d291eecc463c519086e7527ff2" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae43548d291eecc463c519086e7527ff2" target="_top" xlink:title="Returns the shift type used when constructing the second operand.">
 <polygon fill="none" stroke="black" points="362,-366 362,-407 503,-407 503,-366 362,-366"/>
 <text text-anchor="start" x="370" y="-395" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="370" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CData_Processing</text>
@@ -219,7 +219,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a1dc73c441b156452b1467eaa5cab46f5" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a1dc73c441b156452b1467eaa5cab46f5" target="_top" xlink:title="Returns the value of the I bit (bit 25 = immediate second operand).">
 <polygon fill="none" stroke="black" points="362,-486 362,-527 503,-527 503,-486 362,-486"/>
 <text text-anchor="start" x="370" y="-515" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="370" y="-504" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CData_Processing</text>

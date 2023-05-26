@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="#bfbfbf" stroke="black" points="1012.64,-123.5 1012.64,-153.5 1125.64,-153.5 1125.64,-123.5 1012.64,-123.5"/>
 <text text-anchor="start" x="1020.64" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1069.14" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa.hpp</text>
@@ -66,7 +66,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="data__processing_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="data__processing_8hpp.html" target="_top" xlink:title="This file defines a data processing instruction.">
 <polygon fill="none" stroke="black" points="269.64,-62 269.64,-81 386.64,-81 386.64,-62 269.64,-62"/>
 <text text-anchor="middle" x="328.14" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">data_processing.hpp</text>
 </a>
@@ -186,7 +186,7 @@
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="cps_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node13"><a xlink:href="cps_8hpp.html" target="_top" xlink:title="This file defines a change processor state instruction (CPS).">
 <polygon fill="none" stroke="black" points="1300.14,-62 1300.14,-81 1354.14,-81 1354.14,-62 1300.14,-62"/>
 <text text-anchor="middle" x="1327.14" y="-69" font-family="Helvetica,sans-Serif" font-size="10.00">cps.hpp</text>
 </a>
@@ -201,7 +201,7 @@
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node14"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title="This file defines a coprocessor register transfer (MRC, MCR).">
 <polygon fill="none" stroke="black" points="1372.14,-56.5 1372.14,-86.5 1490.14,-86.5 1490.14,-56.5 1372.14,-56.5"/>
 <text text-anchor="start" x="1380.14" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">coprocessor_register</text>
 <text text-anchor="middle" x="1431.14" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">_transfer.hpp</text>

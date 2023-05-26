@@ -93,6 +93,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1is
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a coprocessor register transfer instruction.  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="coprocessor__register__transfer_8hpp_source.html">coprocessor_register_transfer.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::arm1176jzf_s::isa::CCoprocessor_Reg_Transfer:</div>
@@ -110,21 +113,29 @@ Collaboration diagram for zero_mate::arm1176jzf_s::isa::CCoprocessor_Reg_Transfe
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa942a180ba6032a44e3e654948b46782"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#aa942a180ba6032a44e3e654948b46782">CCoprocessor_Reg_Transfer</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) noexcept</td></tr>
+<tr class="memdesc:aa942a180ba6032a44e3e654948b46782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#aa942a180ba6032a44e3e654948b46782">More...</a><br /></td></tr>
 <tr class="separator:aa942a180ba6032a44e3e654948b46782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a611847694c67c0747e1206a96a437999"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a611847694c67c0747e1206a96a437999">Get_Opcode1</a> () const noexcept</td></tr>
+<tr class="memdesc:a611847694c67c0747e1206a96a437999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the coprocessor operation mode (3-bit coprocessor-specific code).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a611847694c67c0747e1206a96a437999">More...</a><br /></td></tr>
 <tr class="separator:a611847694c67c0747e1206a96a437999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bd3930c87b21d348a296d5b159a94c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a2bd3930c87b21d348a296d5b159a94c3">Is_L_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:a2bd3930c87b21d348a296d5b159a94c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the L bit (bit 20 = load/store bit).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a2bd3930c87b21d348a296d5b159a94c3">More...</a><br /></td></tr>
 <tr class="separator:a2bd3930c87b21d348a296d5b159a94c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae56fa7db820c5c22541a6e82e2197408"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#ae56fa7db820c5c22541a6e82e2197408">Get_CRn</a> () const noexcept</td></tr>
-<tr class="separator:ae56fa7db820c5c22541a6e82e2197408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6fa216c06c56056b72d64c760b455eb"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#af6fa216c06c56056b72d64c760b455eb">Get_Rd</a> () const noexcept</td></tr>
-<tr class="separator:af6fa216c06c56056b72d64c760b455eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523d9b910668a4481ec2d3cbbd7e560d"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a523d9b910668a4481ec2d3cbbd7e560d">Get_CRn_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:a523d9b910668a4481ec2d3cbbd7e560d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the CRn register (coprocessor source/destination register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a523d9b910668a4481ec2d3cbbd7e560d">More...</a><br /></td></tr>
+<tr class="separator:a523d9b910668a4481ec2d3cbbd7e560d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5ea32da1bfb88a572071a5a755ec383"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#af5ea32da1bfb88a572071a5a755ec383">Get_Rd_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:af5ea32da1bfb88a572071a5a755ec383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rd register (ARM source/destination register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#af5ea32da1bfb88a572071a5a755ec383">More...</a><br /></td></tr>
+<tr class="separator:af5ea32da1bfb88a572071a5a755ec383"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72065cf0e61af1a86f63808184ca0877"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a72065cf0e61af1a86f63808184ca0877">Get_Coprocessor_ID</a> () const noexcept</td></tr>
+<tr class="memdesc:a72065cf0e61af1a86f63808184ca0877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the coprocessor number (ID of the coprocessor involved in the register transfer).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a72065cf0e61af1a86f63808184ca0877">More...</a><br /></td></tr>
 <tr class="separator:a72065cf0e61af1a86f63808184ca0877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a683b96d75f2dcaba17b0c39cdabdece3"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a683b96d75f2dcaba17b0c39cdabdece3">Get_Opcode2</a> () const noexcept</td></tr>
+<tr class="memdesc:a683b96d75f2dcaba17b0c39cdabdece3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns coprocessor information (optional 3-bit coprocessor-specific opcode).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a683b96d75f2dcaba17b0c39cdabdece3">More...</a><br /></td></tr>
 <tr class="separator:a683b96d75f2dcaba17b0c39cdabdece3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af66cc6bb6d562c9f377ebf7087e0864c"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#af66cc6bb6d562c9f377ebf7087e0864c">Get_CRm</a> () const noexcept</td></tr>
-<tr class="separator:af66cc6bb6d562c9f377ebf7087e0864c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a317eb3b00455b9a098c875240d533a64"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a317eb3b00455b9a098c875240d533a64">Get_CRm_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:a317eb3b00455b9a098c875240d533a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the CRm register (coprocessor operand register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html#a317eb3b00455b9a098c875240d533a64">More...</a><br /></td></tr>
+<tr class="separator:a317eb3b00455b9a098c875240d533a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:af0813b890400084720f720a1cfb6a683 inherit pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af0813b890400084720f720a1cfb6a683">CInstruction</a> (std::uint32_t value) noexcept</td></tr>
 <tr class="memdesc:af0813b890400084720f720a1cfb6a683 inherit pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af0813b890400084720f720a1cfb6a683">More...</a><br /></td></tr>
@@ -216,7 +227,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Machine code encoding of the instruction (32-bit value)  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ac8cd077b7574ab7d94cf34114a9234fa">More...</a><br /></td></tr>
 <tr class="separator:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a coprocessor register transfer instruction. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa942a180ba6032a44e3e654948b46782"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa942a180ba6032a44e3e654948b46782">&#9670;&nbsp;</a></span>CCoprocessor_Reg_Transfer()</h2>
 
@@ -240,6 +253,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>General instruction (32-bit value) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -267,10 +288,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the coprocessor number (ID of the coprocessor involved in the register transfer). </p>
+<dl class="section return"><dt>Returns</dt><dd>Coprocessor ID </dd></dl>
+
 </div>
 </div>
-<a id="af66cc6bb6d562c9f377ebf7087e0864c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af66cc6bb6d562c9f377ebf7087e0864c">&#9670;&nbsp;</a></span>Get_CRm()</h2>
+<a id="a317eb3b00455b9a098c875240d533a64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a317eb3b00455b9a098c875240d533a64">&#9670;&nbsp;</a></span>Get_CRm_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,7 +303,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CCoprocessor_Reg_Transfer::Get_CRm </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CCoprocessor_Reg_Transfer::Get_CRm_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -292,10 +316,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the index of the CRm register (coprocessor operand register). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the CRm register </dd></dl>
+
 </div>
 </div>
-<a id="ae56fa7db820c5c22541a6e82e2197408"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae56fa7db820c5c22541a6e82e2197408">&#9670;&nbsp;</a></span>Get_CRn()</h2>
+<a id="a523d9b910668a4481ec2d3cbbd7e560d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a523d9b910668a4481ec2d3cbbd7e560d">&#9670;&nbsp;</a></span>Get_CRn_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,7 +331,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CCoprocessor_Reg_Transfer::Get_CRn </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CCoprocessor_Reg_Transfer::Get_CRn_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -316,6 +343,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the index of the CRn register (coprocessor source/destination register). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the CRn register </dd></dl>
 
 </div>
 </div>
@@ -342,6 +372,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the coprocessor operation mode (3-bit coprocessor-specific code). </p>
+<dl class="section return"><dt>Returns</dt><dd>Coprocessor operation mode </dd></dl>
+
 </div>
 </div>
 <a id="a683b96d75f2dcaba17b0c39cdabdece3"></a>
@@ -367,10 +400,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns coprocessor information (optional 3-bit coprocessor-specific opcode). </p>
+<dl class="section return"><dt>Returns</dt><dd>Coprocessor information (opcode 2) </dd></dl>
+
 </div>
 </div>
-<a id="af6fa216c06c56056b72d64c760b455eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6fa216c06c56056b72d64c760b455eb">&#9670;&nbsp;</a></span>Get_Rd()</h2>
+<a id="af5ea32da1bfb88a572071a5a755ec383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5ea32da1bfb88a572071a5a755ec383">&#9670;&nbsp;</a></span>Get_Rd_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -379,7 +415,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CCoprocessor_Reg_Transfer::Get_Rd </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CCoprocessor_Reg_Transfer::Get_Rd_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -391,6 +427,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the index of the Rd register (ARM source/destination register). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rd register </dd></dl>
 
 </div>
 </div>
@@ -416,6 +455,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the L bit (bit 20 = load/store bit). </p>
+<p>0 = Store to Co-Processor; 1 = Load from Co-Processor</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the L bit is set. false, otherwise. </dd></dl>
 
 </div>
 </div>

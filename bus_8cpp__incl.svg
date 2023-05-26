@@ -185,7 +185,7 @@
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node15"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title="This file defines a coprocessor register transfer (MRC, MCR).">
 <polygon fill="none" stroke="black" points="399.22,-112.5 399.22,-153.5 520.22,-153.5 520.22,-112.5 399.22,-112.5"/>
 <text text-anchor="start" x="407.22" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">../arm1176jzf_s/isa</text>
 <text text-anchor="start" x="407.22" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">/coprocessor_register</text>

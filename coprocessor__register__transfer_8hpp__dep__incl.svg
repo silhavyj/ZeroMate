@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines a coprocessor register transfer (MRC, MCR).">
 <polygon fill="#bfbfbf" stroke="black" points="306,-413.5 306,-454.5 455,-454.5 455,-413.5 306,-413.5"/>
 <text text-anchor="start" x="314" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="start" x="314" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/coprocessor_register</text>
@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="coprocessor__register__transfer_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="coprocessor__register__transfer_8cpp.html" target="_top" xlink:title="This file implements a coprocessor register transfer as defined in coprocessor_register_transfer....">
 <polygon fill="none" stroke="black" points="204,-335.5 204,-376.5 353,-376.5 353,-335.5 204,-335.5"/>
 <text text-anchor="start" x="212" y="-364.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="start" x="212" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/coprocessor_register</text>
@@ -39,7 +39,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="isa_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="isa_8hpp.html" target="_top" xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="none" stroke="black" points="301,-268.5 301,-298.5 414,-298.5 414,-268.5 301,-268.5"/>
 <text text-anchor="start" x="309" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="357.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa.hpp</text>

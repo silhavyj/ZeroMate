@@ -11,7 +11,7 @@
 <area shape="rect" id="node10" href="$logger_8hpp.html" title=" " alt="" coords="786,408,965,435"/>
 <area shape="rect" id="node8" title=" " alt="" coords="546,483,613,509"/>
 <area shape="rect" id="node9" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="774,319,977,345"/>
-<area shape="rect" id="node15" href="$coprocessor__register__transfer_8hpp.html" title=" " alt="" coords="538,304,699,360"/>
+<area shape="rect" id="node15" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="538,304,699,360"/>
 <area shape="rect" id="node17" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="28,311,254,353"/>
 <area shape="rect" id="node18" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="277,311,514,353"/>
 <area shape="rect" id="node11" title=" " alt="" coords="637,483,701,509"/>

@@ -87,7 +87,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html" target="_top" xlink:title="This class represents a change processor state instruction.">
 <polygon fill="none" stroke="black" points="171.5,-646 171.5,-676 301.5,-676 301.5,-646 171.5,-646"/>
 <text text-anchor="start" x="179.5" y="-664" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="236.5" y="-653" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CCPS</text>
@@ -137,7 +137,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html" target="_top" xlink:title="This class represents a coprocessor register transfer instruction.">
 <polygon fill="none" stroke="black" points="171.5,-465.5 171.5,-506.5 301.5,-506.5 301.5,-465.5 171.5,-465.5"/>
 <text text-anchor="start" x="179.5" y="-494.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="179.5" y="-483.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CCoprocessor</text>
@@ -154,7 +154,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html" target="_top" xlink:title="This class represents a data processing instruction.">
 <polygon fill="none" stroke="black" points="166,-416 166,-446 307,-446 307,-416 166,-416"/>
 <text text-anchor="start" x="174" y="-434" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="236.5" y="-423" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CData_Processing</text>

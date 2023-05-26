@@ -17,7 +17,7 @@
 <area shape="rect" id="node14" title=" " alt="" coords="706,691,830,717"/>
 <area shape="rect" id="node16" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="1344,519,1443,546"/>
 <area shape="rect" id="node17" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="678,348,799,375"/>
-<area shape="rect" id="node19" href="$isa_8hpp.html" title=" " alt="" coords="2870,430,2962,457"/>
+<area shape="rect" id="node19" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="2870,430,2962,457"/>
 <area shape="rect" id="node38" href="$isa__decoder_8hpp.html" title=" " alt="" coords="1363,430,1514,457"/>
 <area shape="rect" id="node40" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="936,273,1021,300"/>
 <area shape="rect" id="node45" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="1387,273,1515,300"/>
@@ -27,7 +27,7 @@
 <area shape="rect" id="node20" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="2857,609,2975,635"/>
 <area shape="rect" id="node21" href="$branch__and__exchange_8hpp.html" title="This file defines a branch and exchange instruction (BX)." alt="" coords="2953,519,3148,546"/>
 <area shape="rect" id="node22" href="$branch_8hpp.html" title="This file defines a branch instruction (B, BL)." alt="" coords="3173,519,3267,546"/>
-<area shape="rect" id="node23" href="$data__processing_8hpp.html" title=" " alt="" coords="3291,519,3447,546"/>
+<area shape="rect" id="node23" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="3291,519,3447,546"/>
 <area shape="rect" id="node24" href="$multiply_8hpp.html" title=" " alt="" coords="3471,519,3574,546"/>
 <area shape="rect" id="node25" href="$multiply__long_8hpp.html" title=" " alt="" coords="3599,519,3737,546"/>
 <area shape="rect" id="node26" href="$single__data__transfer_8hpp.html" title=" " alt="" coords="3762,519,3945,546"/>
@@ -35,8 +35,8 @@
 <area shape="rect" id="node28" href="$halfword__data__transfer_8hpp.html" title=" " alt="" coords="4173,519,4371,546"/>
 <area shape="rect" id="node29" href="$extend_8hpp.html" title=" " alt="" coords="4395,519,4490,546"/>
 <area shape="rect" id="node30" href="$psr__transfer_8hpp.html" title=" " alt="" coords="2377,519,2503,546"/>
-<area shape="rect" id="node31" href="$cps_8hpp.html" title=" " alt="" coords="2528,519,2600,546"/>
-<area shape="rect" id="node32" href="$coprocessor__register__transfer_8hpp.html" title=" " alt="" coords="1949,512,2107,553"/>
+<area shape="rect" id="node31" href="$cps_8hpp.html" title="This file defines a change processor state instruction (CPS)." alt="" coords="2528,519,2600,546"/>
+<area shape="rect" id="node32" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="1949,512,2107,553"/>
 <area shape="rect" id="node33" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="2131,519,2352,546"/>
 <area shape="rect" id="node34" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="1691,519,1925,546"/>
 <area shape="rect" id="node35" href="$srs_8hpp.html" title=" " alt="" coords="2624,519,2693,546"/>

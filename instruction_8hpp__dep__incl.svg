@@ -37,7 +37,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="isa_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="isa_8hpp.html" target="_top" xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="none" stroke="black" points="1677,-140 1677,-170 1790,-170 1790,-140 1677,-140"/>
 <text text-anchor="start" x="1685" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1733.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa.hpp</text>
@@ -135,7 +135,7 @@
 <!-- Node34 -->
 <g id="node23" class="node">
 <title>Node34</title>
-<g id="a_node23"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node23"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title="This file defines a coprocessor register transfer (MRC, MCR).">
 <polygon fill="none" stroke="black" points="557,-212.5 557,-253.5 706,-253.5 706,-212.5 557,-212.5"/>
 <text text-anchor="start" x="565" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="start" x="565" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/coprocessor_register</text>
@@ -152,7 +152,7 @@
 <!-- Node36 -->
 <g id="node25" class="node">
 <title>Node36</title>
-<g id="a_node25"><a xlink:href="cps_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node25"><a xlink:href="cps_8hpp.html" target="_top" xlink:title="This file defines a change processor state instruction (CPS).">
 <polygon fill="none" stroke="black" points="1562,-218 1562,-248 1675,-248 1675,-218 1562,-218"/>
 <text text-anchor="start" x="1570" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1618.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/cps.hpp</text>
@@ -168,7 +168,7 @@
 <!-- Node38 -->
 <g id="node27" class="node">
 <title>Node38</title>
-<g id="a_node27"><a xlink:href="data__processing_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node27"><a xlink:href="data__processing_8hpp.html" target="_top" xlink:title="This file defines a data processing instruction.">
 <polygon fill="none" stroke="black" points="740.5,-218 740.5,-248 888.5,-248 888.5,-218 740.5,-218"/>
 <text text-anchor="start" x="748.5" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="814.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/data_processing.hpp</text>
@@ -625,7 +625,7 @@
 <!-- Node35 -->
 <g id="node24" class="node">
 <title>Node35</title>
-<g id="a_node24"><a xlink:href="coprocessor__register__transfer_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node24"><a xlink:href="coprocessor__register__transfer_8cpp.html" target="_top" xlink:title="This file implements a coprocessor register transfer as defined in coprocessor_register_transfer....">
 <polygon fill="none" stroke="black" points="443,-134.5 443,-175.5 592,-175.5 592,-134.5 443,-134.5"/>
 <text text-anchor="start" x="451" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="start" x="451" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/coprocessor_register</text>
@@ -648,7 +648,7 @@
 <!-- Node37 -->
 <g id="node26" class="node">
 <title>Node37</title>
-<g id="a_node26"><a xlink:href="cps_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node26"><a xlink:href="cps_8cpp.html" target="_top" xlink:title="This file defines a change processor state instruction (CPS) as defined in cps.hpp.">
 <polygon fill="none" stroke="black" points="1546,-140 1546,-170 1659,-170 1659,-140 1546,-140"/>
 <text text-anchor="start" x="1554" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1602.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/cps.cpp</text>
@@ -686,7 +686,7 @@
 <!-- Node41 -->
 <g id="node30" class="node">
 <title>Node41</title>
-<g id="a_node30"><a xlink:href="data__processing_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node30"><a xlink:href="data__processing_8cpp.html" target="_top" xlink:title="This file implements a data processing instruction as defined in data_processing.hpp.">
 <polygon fill="none" stroke="black" points="741,-140 741,-170 888,-170 888,-140 741,-140"/>
 <text text-anchor="start" x="749" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="814.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/data_processing.cpp</text>

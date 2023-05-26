@@ -1,5 +1,5 @@
 <map id="zero_mate::arm1176jzf_s::isa::CData_Processing::Get_Shift_Type" name="zero_mate::arm1176jzf_s::isa::CData_Processing::Get_Shift_Type">
-<area shape="rect" id="node1" title=" " alt="" coords="480,35,668,91"/>
+<area shape="rect" id="node1" title="Returns the shift type used when constructing the second operand." alt="" coords="480,35,668,91"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab8055407426b0f25544d2b33a89b22a7" title="Calculates the offset from the base address in a single data transfer instruction." alt="" coords="233,5,428,47"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa5b55276e454abfced2b5714b936e98d" title="Calculates the second operand of a data processing instruction." alt="" coords="229,71,432,127"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab4697275a93c62613b13cdd77726f81c" title="Executes a single data transfer instruction." alt="" coords="5,5,181,47"/>
