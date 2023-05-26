@@ -358,7 +358,7 @@
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="branch__and__exchange_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node17"><a xlink:href="branch__and__exchange_8hpp.html" target="_top" xlink:title="This file defines a branch and exchange instruction (BX).">
 <polygon fill="none" stroke="black" points="462.78,-118 462.78,-137 608.78,-137 608.78,-118 462.78,-118"/>
 <text text-anchor="middle" x="535.78" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">branch_and_exchange.hpp</text>
 </a>
@@ -373,7 +373,7 @@
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="branch_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node18"><a xlink:href="branch_8hpp.html" target="_top" xlink:title="This file defines a branch instruction (B, BL).">
 <polygon fill="none" stroke="black" points="627.28,-118 627.28,-137 698.28,-137 698.28,-118 627.28,-118"/>
 <text text-anchor="middle" x="662.78" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">branch.hpp</text>
 </a>
@@ -448,7 +448,7 @@
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="block__data__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node23"><a xlink:href="block__data__transfer_8hpp.html" target="_top" xlink:title="This file defines a block data transfer instruction (LDM, STM).">
 <polygon fill="none" stroke="black" points="1224.78,-118 1224.78,-137 1358.78,-137 1358.78,-118 1224.78,-118"/>
 <text text-anchor="middle" x="1291.78" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">block_data_transfer.hpp</text>
 </a>
@@ -599,7 +599,7 @@
 <!-- Node33 -->
 <g id="node33" class="node">
 <title>Node33</title>
-<g id="a_node33"><a xlink:href="clz_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node33"><a xlink:href="clz_8hpp.html" target="_top" xlink:title="This file defines a count leading zeros instruction (CLZ).">
 <polygon fill="none" stroke="black" points="355.28,-118 355.28,-137 406.28,-137 406.28,-118 355.28,-118"/>
 <text text-anchor="middle" x="380.78" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">clz.hpp</text>
 </a>

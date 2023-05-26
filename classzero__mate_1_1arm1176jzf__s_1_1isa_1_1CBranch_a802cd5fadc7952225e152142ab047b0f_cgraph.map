@@ -1,4 +1,4 @@
 <map id="zero_mate::arm1176jzf_s::isa::CBranch::Get_Offset" name="zero_mate::arm1176jzf_s::isa::CBranch::Get_Offset">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,179,61"/>
+<area shape="rect" id="node1" title="Returns the offset of the branch instruction." alt="" coords="5,5,179,61"/>
 <area shape="rect" id="node2" href="$namespacezero__mate_1_1utils_1_1math.html#af7d93c996dab2ff1b91c5a399dcfe29f" title="Tests whether a bit is set in the given integral variable." alt="" coords="227,13,396,54"/>
 </map>

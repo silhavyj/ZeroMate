@@ -94,6 +94,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1is
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a data block transfer instruction (it is inherited from the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator.">CInstruction</a> class).  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="block__data__transfer_8hpp_source.html">block_data_transfer.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::arm1176jzf_s::isa::CBlock_Data_Transfer:</div>
@@ -115,25 +118,34 @@ Public Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#afc073c4eebe574287cdcc74da9abb7e3a0a5a4d7386065c6c6ac19c303768c7e1">DB</a> = 0b10
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#afc073c4eebe574287cdcc74da9abb7e3a03895f91b58717b678dd94bd941d7a72">DA</a> = 0b00
  }</td></tr>
+<tr class="memdesc:afc073c4eebe574287cdcc74da9abb7e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addressing mode used in the block data transfer instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#afc073c4eebe574287cdcc74da9abb7e3">More...</a><br /></td></tr>
 <tr class="separator:afc073c4eebe574287cdcc74da9abb7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac6cb358f08a87becb57bb6a081abce4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#ac6cb358f08a87becb57bb6a081abce4a">CBlock_Data_Transfer</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) noexcept</td></tr>
+<tr class="memdesc:ac6cb358f08a87becb57bb6a081abce4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#ac6cb358f08a87becb57bb6a081abce4a">More...</a><br /></td></tr>
 <tr class="separator:ac6cb358f08a87becb57bb6a081abce4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af725efd9a9efe7249009b389bb41f0fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#af725efd9a9efe7249009b389bb41f0fc">Is_U_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:af725efd9a9efe7249009b389bb41f0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the U bit (bit 23).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#af725efd9a9efe7249009b389bb41f0fc">More...</a><br /></td></tr>
 <tr class="separator:af725efd9a9efe7249009b389bb41f0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a3153bfc2aa11e2c86d55eea07e4c5a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1a3153bfc2aa11e2c86d55eea07e4c5a">Is_S_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:a1a3153bfc2aa11e2c86d55eea07e4c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the S bit (bit 22).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1a3153bfc2aa11e2c86d55eea07e4c5a">More...</a><br /></td></tr>
 <tr class="separator:a1a3153bfc2aa11e2c86d55eea07e4c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1ba54ca4e582db5d0a89b24d22a96fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#af1ba54ca4e582db5d0a89b24d22a96fd">Is_W_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:af1ba54ca4e582db5d0a89b24d22a96fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the W bit (bit 21).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#af1ba54ca4e582db5d0a89b24d22a96fd">More...</a><br /></td></tr>
 <tr class="separator:af1ba54ca4e582db5d0a89b24d22a96fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2342ef2d946e48ad5f19e6fd04d9a3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#aa2342ef2d946e48ad5f19e6fd04d9a3f">Is_L_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:aa2342ef2d946e48ad5f19e6fd04d9a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the L bit (bit 20).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#aa2342ef2d946e48ad5f19e6fd04d9a3f">More...</a><br /></td></tr>
 <tr class="separator:aa2342ef2d946e48ad5f19e6fd04d9a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac72fabd15664b2653b8abe2e57465190"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#afc073c4eebe574287cdcc74da9abb7e3">NAddressing_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#ac72fabd15664b2653b8abe2e57465190">Get_Addressing_Mode</a> () const noexcept</td></tr>
+<tr class="memdesc:ac72fabd15664b2653b8abe2e57465190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the addressing mode used in the instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#ac72fabd15664b2653b8abe2e57465190">More...</a><br /></td></tr>
 <tr class="separator:ac72fabd15664b2653b8abe2e57465190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b462c43b44d87d20c13fbd7f45c2d2e"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1b462c43b44d87d20c13fbd7f45c2d2e">Get_Rn</a> () const noexcept</td></tr>
+<tr class="memdesc:a1b462c43b44d87d20c13fbd7f45c2d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rn register (base register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1b462c43b44d87d20c13fbd7f45c2d2e">More...</a><br /></td></tr>
 <tr class="separator:a1b462c43b44d87d20c13fbd7f45c2d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13942f150d4adefab57c5c34aef1a104"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a13942f150d4adefab57c5c34aef1a104">Get_Register_List</a> () const noexcept</td></tr>
+<tr class="memdesc:a13942f150d4adefab57c5c34aef1a104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of registers to be transferred.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a13942f150d4adefab57c5c34aef1a104">More...</a><br /></td></tr>
 <tr class="separator:a13942f150d4adefab57c5c34aef1a104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -226,7 +238,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:aacc09a69d69c590f4664d0a09a395561 inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average number of cycles it takes the CPU to execute an instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#aacc09a69d69c590f4664d0a09a395561">More...</a><br /></td></tr>
 <tr class="separator:aacc09a69d69c590f4664d0a09a395561 inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a data block transfer instruction (it is inherited from the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator.">CInstruction</a> class). </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="afc073c4eebe574287cdcc74da9abb7e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc073c4eebe574287cdcc74da9abb7e3">&#9670;&nbsp;</a></span>NAddressing_Mode</h2>
 
@@ -246,11 +260,17 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Addressing mode used in the block data transfer instruction. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afc073c4eebe574287cdcc74da9abb7e3afa2452c388ed1c0da4d2fcf91ac4c8c6"></a>IB&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afc073c4eebe574287cdcc74da9abb7e3ab97267fa7855e04401fb12fa8a4c516f"></a>IA&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afc073c4eebe574287cdcc74da9abb7e3a0a5a4d7386065c6c6ac19c303768c7e1"></a>DB&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afc073c4eebe574287cdcc74da9abb7e3a03895f91b58717b678dd94bd941d7a72"></a>DA&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afc073c4eebe574287cdcc74da9abb7e3afa2452c388ed1c0da4d2fcf91ac4c8c6"></a>IB&#160;</td><td class="fielddoc"><p>Increment before. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afc073c4eebe574287cdcc74da9abb7e3ab97267fa7855e04401fb12fa8a4c516f"></a>IA&#160;</td><td class="fielddoc"><p>Increment after. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afc073c4eebe574287cdcc74da9abb7e3a0a5a4d7386065c6c6ac19c303768c7e1"></a>DB&#160;</td><td class="fielddoc"><p>Decrement before. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afc073c4eebe574287cdcc74da9abb7e3a03895f91b58717b678dd94bd941d7a72"></a>DA&#160;</td><td class="fielddoc"><p>Decrement after. </p>
+</td></tr>
 </table>
 
 </div>
@@ -280,6 +300,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>General instruction (32-bit value) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -306,6 +334,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the addressing mode used in the instruction. </p>
+<dl class="section return"><dt>Returns</dt><dd>Addressing mode </dd></dl>
+
 </div>
 </div>
 <a id="a13942f150d4adefab57c5c34aef1a104"></a>
@@ -330,6 +361,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns a list of registers to be transferred. </p>
+<p>Each bits represents a register index. If the bit is set to a 1, the corresponding register will be transferred. Otherwise, the register will be skipped.</p>
+<dl class="section return"><dt>Returns</dt><dd>List of registers to be transferred </dd></dl>
 
 </div>
 </div>
@@ -356,6 +391,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the index of the Rn register (base register). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the base register </dd></dl>
+
 </div>
 </div>
 <a id="aa2342ef2d946e48ad5f19e6fd04d9a3f"></a>
@@ -380,6 +418,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the L bit (bit 20). </p>
+<p>0 = Store to memory; 1 = Load from memory</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the L bit is set. false, otherwise. </dd></dl>
 
 </div>
 </div>
@@ -406,6 +448,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the value of the S bit (bit 22). </p>
+<p>0 = do not load PSR or force user mode; 1 = load PSR or force user mode</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the S bit is set. false, otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="af725efd9a9efe7249009b389bb41f0fc"></a>
@@ -431,6 +477,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the value of the U bit (bit 23). </p>
+<p>0 = down (subtract offset from base); 1 = up (add offset to base)</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the U bit is set. false, otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="af1ba54ca4e582db5d0a89b24d22a96fd"></a>
@@ -455,6 +505,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the W bit (bit 21). </p>
+<p>0 = no write-back; 1 = write address into base</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the W bit is set. false, otherwise. </dd></dl>
 
 </div>
 </div>

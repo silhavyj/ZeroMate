@@ -53,7 +53,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html#a802cd5fadc7952225e152142ab047b0f" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html#a802cd5fadc7952225e152142ab047b0f" target="_top" xlink:title="Returns the offset of the branch instruction.">
 <polygon fill="none" stroke="black" points="182.5,-240.5 182.5,-281.5 312.5,-281.5 312.5,-240.5 182.5,-240.5"/>
 <text text-anchor="start" x="190.5" y="-269.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="190.5" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CBranch::Get</text>

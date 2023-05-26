@@ -446,7 +446,7 @@
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="branch__and__exchange_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node21"><a xlink:href="branch__and__exchange_8hpp.html" target="_top" xlink:title="This file defines a branch and exchange instruction (BX).">
 <polygon fill="none" stroke="black" points="1527,-129 1527,-148 1673,-148 1673,-129 1527,-129"/>
 <text text-anchor="middle" x="1600" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">branch_and_exchange.hpp</text>
 </a>
@@ -461,7 +461,7 @@
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="branch_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node22"><a xlink:href="branch_8hpp.html" target="_top" xlink:title="This file defines a branch instruction (B, BL).">
 <polygon fill="none" stroke="black" points="1691.5,-129 1691.5,-148 1762.5,-148 1762.5,-129 1691.5,-129"/>
 <text text-anchor="middle" x="1727" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">branch.hpp</text>
 </a>
@@ -491,7 +491,7 @@
 <!-- Node24 -->
 <g id="node24" class="node">
 <title>Node24</title>
-<g id="a_node24"><a xlink:href="block__data__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node24"><a xlink:href="block__data__transfer_8hpp.html" target="_top" xlink:title="This file defines a block data transfer instruction (LDM, STM).">
 <polygon fill="none" stroke="black" points="1936,-129 1936,-148 2070,-148 2070,-129 1936,-129"/>
 <text text-anchor="middle" x="2003" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">block_data_transfer.hpp</text>
 </a>
@@ -642,7 +642,7 @@
 <!-- Node34 -->
 <g id="node34" class="node">
 <title>Node34</title>
-<g id="a_node34"><a xlink:href="clz_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node34"><a xlink:href="clz_8hpp.html" target="_top" xlink:title="This file defines a count leading zeros instruction (CLZ).">
 <polygon fill="none" stroke="black" points="1419.5,-129 1419.5,-148 1470.5,-148 1470.5,-129 1419.5,-129"/>
 <text text-anchor="middle" x="1445" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">clz.hpp</text>
 </a>

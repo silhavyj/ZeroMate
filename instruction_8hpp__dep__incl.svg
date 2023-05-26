@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="block__data__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="block__data__transfer_8hpp.html" target="_top" xlink:title="This file defines a block data transfer instruction (LDM, STM).">
 <polygon fill="none" stroke="black" points="922.5,-218 922.5,-248 1086.5,-248 1086.5,-218 922.5,-218"/>
 <text text-anchor="start" x="930.5" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1004.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/block_data_transfer.hpp</text>
@@ -53,7 +53,7 @@
 <!-- Node16 -->
 <g id="node10" class="node">
 <title>Node16</title>
-<g id="a_node10"><a xlink:href="branch_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="branch_8hpp.html" target="_top" xlink:title="This file defines a branch instruction (B, BL).">
 <polygon fill="none" stroke="black" points="1105,-218 1105,-248 1218,-248 1218,-218 1105,-218"/>
 <text text-anchor="start" x="1113" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1161.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/branch.hpp</text>
@@ -69,7 +69,7 @@
 <!-- Node18 -->
 <g id="node12" class="node">
 <title>Node18</title>
-<g id="a_node12"><a xlink:href="branch__and__exchange_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node12"><a xlink:href="branch__and__exchange_8hpp.html" target="_top" xlink:title="This file defines a branch and exchange instruction (BX).">
 <polygon fill="none" stroke="black" points="1236,-218 1236,-248 1413,-248 1413,-218 1236,-218"/>
 <text text-anchor="start" x="1244" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1324.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/branch_and_exchange.hpp</text>
@@ -85,7 +85,7 @@
 <!-- Node20 -->
 <g id="node14" class="node">
 <title>Node20</title>
-<g id="a_node14"><a xlink:href="clz_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node14"><a xlink:href="clz_8hpp.html" target="_top" xlink:title="This file defines a count leading zeros instruction (CLZ).">
 <polygon fill="none" stroke="black" points="1431,-218 1431,-248 1544,-248 1544,-218 1431,-218"/>
 <text text-anchor="start" x="1439" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1487.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/clz.hpp</text>
@@ -345,7 +345,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="block__data__transfer_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="block__data__transfer_8cpp.html" target="_top" xlink:title="This file implements a block data transfer instruction (LDM, STM).">
 <polygon fill="none" stroke="black" points="906.5,-140 906.5,-170 1070.5,-170 1070.5,-140 906.5,-140"/>
 <text text-anchor="start" x="914.5" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="988.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/block_data_transfer.cpp</text>
@@ -453,7 +453,7 @@
 <!-- Node17 -->
 <g id="node11" class="node">
 <title>Node17</title>
-<g id="a_node11"><a xlink:href="branch_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="branch_8cpp.html" target="_top" xlink:title="This file implements a branch instruction (B, BL).">
 <polygon fill="none" stroke="black" points="1089,-140 1089,-170 1202,-170 1202,-140 1089,-140"/>
 <text text-anchor="start" x="1097" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1145.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/branch.cpp</text>
@@ -475,7 +475,7 @@
 <!-- Node19 -->
 <g id="node13" class="node">
 <title>Node19</title>
-<g id="a_node13"><a xlink:href="branch__and__exchange_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node13"><a xlink:href="branch__and__exchange_8cpp.html" target="_top" xlink:title="This file implements a branch and exchange instruction (BX).">
 <polygon fill="none" stroke="black" points="1220.5,-140 1220.5,-170 1396.5,-170 1396.5,-140 1220.5,-140"/>
 <text text-anchor="start" x="1228.5" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1308.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/branch_and_exchange.cpp</text>
@@ -497,7 +497,7 @@
 <!-- Node21 -->
 <g id="node15" class="node">
 <title>Node21</title>
-<g id="a_node15"><a xlink:href="clz_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node15"><a xlink:href="clz_8cpp.html" target="_top" xlink:title="This file implements a count leading zeros instruction (CLZ).">
 <polygon fill="none" stroke="black" points="1415,-140 1415,-170 1528,-170 1528,-140 1415,-140"/>
 <text text-anchor="start" x="1423" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1471.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/clz.cpp</text>

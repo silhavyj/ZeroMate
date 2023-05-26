@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html" target="_top" xlink:title="This class represents a data block transfer instruction (it is inherited from the CInstruction class)...">
 <polygon fill="none" stroke="black" points="171.5,-854.5 171.5,-895.5 301.5,-895.5 301.5,-854.5 171.5,-854.5"/>
 <text text-anchor="start" x="179.5" y="-883.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="179.5" y="-872.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CBlock_Data</text>
@@ -38,7 +38,7 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html" target="_top" xlink:title="This class represents a branch instruction (it is inherited from the CInstruction class).">
 <polygon fill="none" stroke="black" points="171.5,-805 171.5,-835 301.5,-835 301.5,-805 171.5,-805"/>
 <text text-anchor="start" x="179.5" y="-823" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="236.5" y="-812" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CBranch</text>
@@ -54,7 +54,7 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html" target="_top" xlink:title="This class represents a branch and exchange instruction (it is inherited from the CInstruction class)...">
 <polygon fill="none" stroke="black" points="171.5,-744.5 171.5,-785.5 301.5,-785.5 301.5,-744.5 171.5,-744.5"/>
 <text text-anchor="start" x="179.5" y="-773.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="179.5" y="-762.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CBranch_And</text>
@@ -71,7 +71,7 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
-<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html" target="_top" xlink:title="This class represents a count leading zeros instruction (it is inherited from the CInstruction class)...">
 <polygon fill="none" stroke="black" points="171.5,-695 171.5,-725 301.5,-725 301.5,-695 171.5,-695"/>
 <text text-anchor="start" x="179.5" y="-713" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="236.5" y="-702" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CCLZ</text>

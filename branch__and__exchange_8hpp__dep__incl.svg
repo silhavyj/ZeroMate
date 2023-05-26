@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines a branch and exchange instruction (BX).">
 <polygon fill="#bfbfbf" stroke="black" points="162,-268.5 162,-298.5 339,-298.5 339,-268.5 162,-268.5"/>
 <text text-anchor="start" x="170" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="250.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/branch_and_exchange.hpp</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="branch__and__exchange_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="branch__and__exchange_8cpp.html" target="_top" xlink:title="This file implements a branch and exchange instruction (BX).">
 <polygon fill="none" stroke="black" points="81.5,-201.5 81.5,-231.5 257.5,-231.5 257.5,-201.5 81.5,-201.5"/>
 <text text-anchor="start" x="89.5" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="169.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/branch_and_exchange.cpp</text>

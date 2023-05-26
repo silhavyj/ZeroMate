@@ -93,6 +93,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1is
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a count leading zeros instruction (it is inherited from the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator.">CInstruction</a> class).  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="clz_8hpp_source.html">clz.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::arm1176jzf_s::isa::CCLZ:</div>
@@ -110,10 +113,13 @@ Collaboration diagram for zero_mate::arm1176jzf_s::isa::CCLZ:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a46df676c42d4f7f3513ee9f7af32c0a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html#a46df676c42d4f7f3513ee9f7af32c0a5">CCLZ</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) noexcept</td></tr>
+<tr class="memdesc:a46df676c42d4f7f3513ee9f7af32c0a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html#a46df676c42d4f7f3513ee9f7af32c0a5">More...</a><br /></td></tr>
 <tr class="separator:a46df676c42d4f7f3513ee9f7af32c0a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bae37b50316a28f1ea722685c700976"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html#a0bae37b50316a28f1ea722685c700976">Get_Rd</a> () const noexcept</td></tr>
+<tr class="memdesc:a0bae37b50316a28f1ea722685c700976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the destination register (Rd) where the result will be stored.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html#a0bae37b50316a28f1ea722685c700976">More...</a><br /></td></tr>
 <tr class="separator:a0bae37b50316a28f1ea722685c700976"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1803f07a2f91594dc082e93ba140100"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html#af1803f07a2f91594dc082e93ba140100">Get_Rm</a> () const noexcept</td></tr>
+<tr class="memdesc:af1803f07a2f91594dc082e93ba140100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rm register involved in the calculation of the number of leasing zeros.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html#af1803f07a2f91594dc082e93ba140100">More...</a><br /></td></tr>
 <tr class="separator:af1803f07a2f91594dc082e93ba140100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:af0813b890400084720f720a1cfb6a683 inherit pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af0813b890400084720f720a1cfb6a683">CInstruction</a> (std::uint32_t value) noexcept</td></tr>
@@ -206,7 +212,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Machine code encoding of the instruction (32-bit value)  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ac8cd077b7574ab7d94cf34114a9234fa">More...</a><br /></td></tr>
 <tr class="separator:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a count leading zeros instruction (it is inherited from the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator.">CInstruction</a> class). </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a46df676c42d4f7f3513ee9f7af32c0a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a46df676c42d4f7f3513ee9f7af32c0a5">&#9670;&nbsp;</a></span>CCLZ()</h2>
 
@@ -230,6 +238,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>General instruction (32-bit value) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -257,6 +273,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the index of the destination register (Rd) where the result will be stored. </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the destination register </dd></dl>
+
 </div>
 </div>
 <a id="af1803f07a2f91594dc082e93ba140100"></a>
@@ -281,6 +300,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the index of the Rm register involved in the calculation of the number of leasing zeros. </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rm register </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 <map id="zero_mate::arm1176jzf_s::isa::CBranch_And_Exchange" name="zero_mate::arm1176jzf_s::isa::CBranch_And_Exchange">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,179,151"/>
+<area shape="rect" id="node1" title="This class represents a branch and exchange instruction (it is inherited from the CInstruction class)..." alt="" coords="5,95,179,151"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator." alt="" coords="5,5,179,47"/>
 </map>

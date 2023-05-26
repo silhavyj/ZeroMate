@@ -25,13 +25,13 @@
 <area shape="rect" id="node47" href="$system__clock__listener_8hpp.html" title=" " alt="" coords="1457,601,1615,643"/>
 <area shape="rect" id="node18" title=" " alt="" coords="615,430,721,457"/>
 <area shape="rect" id="node20" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="2857,609,2975,635"/>
-<area shape="rect" id="node21" href="$branch__and__exchange_8hpp.html" title=" " alt="" coords="2953,519,3148,546"/>
-<area shape="rect" id="node22" href="$branch_8hpp.html" title=" " alt="" coords="3173,519,3267,546"/>
+<area shape="rect" id="node21" href="$branch__and__exchange_8hpp.html" title="This file defines a branch and exchange instruction (BX)." alt="" coords="2953,519,3148,546"/>
+<area shape="rect" id="node22" href="$branch_8hpp.html" title="This file defines a branch instruction (B, BL)." alt="" coords="3173,519,3267,546"/>
 <area shape="rect" id="node23" href="$data__processing_8hpp.html" title=" " alt="" coords="3291,519,3447,546"/>
 <area shape="rect" id="node24" href="$multiply_8hpp.html" title=" " alt="" coords="3471,519,3574,546"/>
 <area shape="rect" id="node25" href="$multiply__long_8hpp.html" title=" " alt="" coords="3599,519,3737,546"/>
 <area shape="rect" id="node26" href="$single__data__transfer_8hpp.html" title=" " alt="" coords="3762,519,3945,546"/>
-<area shape="rect" id="node27" href="$block__data__transfer_8hpp.html" title=" " alt="" coords="3969,519,4148,546"/>
+<area shape="rect" id="node27" href="$block__data__transfer_8hpp.html" title="This file defines a block data transfer instruction (LDM, STM)." alt="" coords="3969,519,4148,546"/>
 <area shape="rect" id="node28" href="$halfword__data__transfer_8hpp.html" title=" " alt="" coords="4173,519,4371,546"/>
 <area shape="rect" id="node29" href="$extend_8hpp.html" title=" " alt="" coords="4395,519,4490,546"/>
 <area shape="rect" id="node30" href="$psr__transfer_8hpp.html" title=" " alt="" coords="2377,519,2503,546"/>
@@ -41,7 +41,7 @@
 <area shape="rect" id="node34" href="$coprocessor__data__operation_8hpp.html" title=" " alt="" coords="1691,519,1925,546"/>
 <area shape="rect" id="node35" href="$srs_8hpp.html" title=" " alt="" coords="2624,519,2693,546"/>
 <area shape="rect" id="node36" href="$rfe_8hpp.html" title=" " alt="" coords="2718,519,2786,546"/>
-<area shape="rect" id="node37" href="$clz_8hpp.html" title=" " alt="" coords="2810,519,2878,546"/>
+<area shape="rect" id="node37" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="2810,519,2878,546"/>
 <area shape="rect" id="node39" title=" " alt="" coords="1264,519,1320,546"/>
 <area shape="rect" id="node41" href="$cp15_8hpp.html" title=" " alt="" coords="824,348,995,375"/>
 <area shape="rect" id="node44" href="$peripheral_8hpp.html" title=" " alt="" coords="995,519,1189,546"/>

@@ -1,9 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator." alt="" coords="5,605,179,646"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html" title=" " alt="" coords="234,5,407,61"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html" title=" " alt="" coords="234,86,407,127"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html" title=" " alt="" coords="234,152,407,208"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html" title=" " alt="" coords="234,233,407,274"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html" title="This class represents a data block transfer instruction (it is inherited from the CInstruction class)..." alt="" coords="234,5,407,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html" title="This class represents a branch instruction (it is inherited from the CInstruction class)." alt="" coords="234,86,407,127"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html" title="This class represents a branch and exchange instruction (it is inherited from the CInstruction class)..." alt="" coords="234,152,407,208"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html" title="This class represents a count leading zeros instruction (it is inherited from the CInstruction class)..." alt="" coords="234,233,407,274"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html" title=" " alt="" coords="234,298,407,339"/>
 <area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Data__Operation.html" title=" " alt="" coords="234,364,407,420"/>
 <area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Data__Transfer.html" title=" " alt="" coords="234,444,407,500"/>

@@ -94,6 +94,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1is
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a branch and exchange instruction (it is inherited from the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator.">CInstruction</a> class).  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="branch__and__exchange_8hpp_source.html">branch_and_exchange.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::arm1176jzf_s::isa::CBranch_And_Exchange:</div>
@@ -113,6 +116,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:aa7a55040bfd0951207cf4e71adacb01c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aa7a55040bfd0951207cf4e71adacb01c">NCPU_Instruction_Mode</a> : std::uint8_t { <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aa7a55040bfd0951207cf4e71adacb01ca47f45e65244c17ec9fa8771a5c6d60e1">ARM</a> = 0
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aa7a55040bfd0951207cf4e71adacb01ca8807c97721e343cdc1fa2444cc00415b">Thumb</a> = 1
  }</td></tr>
+<tr class="memdesc:aa7a55040bfd0951207cf4e71adacb01c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration represents different instruction sets an ARM CPU can use.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aa7a55040bfd0951207cf4e71adacb01c">More...</a><br /></td></tr>
 <tr class="separator:aa7a55040bfd0951207cf4e71adacb01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:a110957aeccf83857a9f32afefa6b7803 inherit pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#a110957aeccf83857a9f32afefa6b7803">NCondition</a> : std::uint32_t { <br />
@@ -181,12 +185,16 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aad700400022da84663d96606fffc90c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aad700400022da84663d96606fffc90c3">CBranch_And_Exchange</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) noexcept</td></tr>
+<tr class="memdesc:aad700400022da84663d96606fffc90c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aad700400022da84663d96606fffc90c3">More...</a><br /></td></tr>
 <tr class="separator:aad700400022da84663d96606fffc90c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb730772253321c35b39e8af3a36552d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aeb730772253321c35b39e8af3a36552d">Is_L_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:aeb730772253321c35b39e8af3a36552d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the L bit (bit 5).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aeb730772253321c35b39e8af3a36552d">More...</a><br /></td></tr>
 <tr class="separator:aeb730772253321c35b39e8af3a36552d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14962904052af58aaa297b25d1223150"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aa7a55040bfd0951207cf4e71adacb01c">NCPU_Instruction_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#a14962904052af58aaa297b25d1223150">Get_Instruction_Mode</a> (std::uint32_t rm_reg_value) const noexcept</td></tr>
+<tr class="memdesc:a14962904052af58aaa297b25d1223150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the mode the CPU will switch to after executing this instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#a14962904052af58aaa297b25d1223150">More...</a><br /></td></tr>
 <tr class="separator:a14962904052af58aaa297b25d1223150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affbe28cb77bad59867c2a8ee097c50df"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#affbe28cb77bad59867c2a8ee097c50df">Get_Rm</a> () const noexcept</td></tr>
+<tr class="memdesc:affbe28cb77bad59867c2a8ee097c50df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rm register holding the value of the destination address.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#affbe28cb77bad59867c2a8ee097c50df">More...</a><br /></td></tr>
 <tr class="separator:affbe28cb77bad59867c2a8ee097c50df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:af0813b890400084720f720a1cfb6a683 inherit pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af0813b890400084720f720a1cfb6a683">CInstruction</a> (std::uint32_t value) noexcept</td></tr>
@@ -216,7 +224,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Machine code encoding of the instruction (32-bit value)  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ac8cd077b7574ab7d94cf34114a9234fa">More...</a><br /></td></tr>
 <tr class="separator:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a branch and exchange instruction (it is inherited from the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator.">CInstruction</a> class). </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="aa7a55040bfd0951207cf4e71adacb01c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7a55040bfd0951207cf4e71adacb01c">&#9670;&nbsp;</a></span>NCPU_Instruction_Mode</h2>
 
@@ -236,9 +246,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration represents different instruction sets an ARM CPU can use. </p>
+<dl class="section note"><dt>Note</dt><dd>The Thumb instruction set is not supported by the emulator </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa7a55040bfd0951207cf4e71adacb01ca47f45e65244c17ec9fa8771a5c6d60e1"></a>ARM&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aa7a55040bfd0951207cf4e71adacb01ca8807c97721e343cdc1fa2444cc00415b"></a>Thumb&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa7a55040bfd0951207cf4e71adacb01ca47f45e65244c17ec9fa8771a5c6d60e1"></a>ARM&#160;</td><td class="fielddoc"><p>ARM instruction set (32-bit encoding) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa7a55040bfd0951207cf4e71adacb01ca8807c97721e343cdc1fa2444cc00415b"></a>Thumb&#160;</td><td class="fielddoc"><p>Thumb instruction set (16-bit encoding; not supported by the emulator) </p>
+</td></tr>
 </table>
 
 </div>
@@ -268,6 +283,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>General instruction (32-bit value) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -295,6 +318,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the mode the CPU will switch to after executing this instruction. </p>
+<p>If the least significant bit of the Rm register is set to 1, the CPU will switch to the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aa7a55040bfd0951207cf4e71adacb01ca8807c97721e343cdc1fa2444cc00415b" title="Thumb instruction set (16-bit encoding; not supported by the emulator)">NCPU_Instruction_Mode::Thumb</a> mode. Otherwise, the CPU will remain in the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aa7a55040bfd0951207cf4e71adacb01ca47f45e65244c17ec9fa8771a5c6d60e1" title="ARM instruction set (32-bit encoding)">NCPU_Instruction_Mode::ARM</a> mode.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rm_reg_value</td><td>Value of the Rm register (destination address) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Mode of the CPU </dd></dl>
+
 </div>
 </div>
 <a id="affbe28cb77bad59867c2a8ee097c50df"></a>
@@ -320,6 +353,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the index of the Rm register holding the value of the destination address. </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rm register </dd></dl>
+
 </div>
 </div>
 <a id="aeb730772253321c35b39e8af3a36552d"></a>
@@ -344,6 +380,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the L bit (bit 5). </p>
+<p>0 = Branch; 1 = Branch with Link</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the L bit is set. false, otherwise. </dd></dl>
 
 </div>
 </div>

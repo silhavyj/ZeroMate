@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file implements a branch instruction (B, BL).">
 <polygon fill="#bfbfbf" stroke="black" points="41,-112.5 41,-142.5 154,-142.5 154,-112.5 41,-112.5"/>
 <text text-anchor="start" x="49" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="97.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/branch.cpp</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="branch_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="branch_8hpp.html" target="_top" xlink:title="This file defines a branch instruction (B, BL).">
 <polygon fill="none" stroke="black" points="9,-56.5 9,-75.5 80,-75.5 80,-56.5 9,-56.5"/>
 <text text-anchor="middle" x="44.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">branch.hpp</text>
 </a>

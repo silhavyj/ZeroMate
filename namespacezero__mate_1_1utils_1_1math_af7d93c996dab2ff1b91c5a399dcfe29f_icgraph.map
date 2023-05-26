@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="Tests whether a bit is set in the given integral variable." alt="" coords="487,224,656,265"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" title=" " alt="" coords="232,5,439,47"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#af576acdfa9a998bc49f2203c5be2ab8c" title="Executes a CLZ instruction." alt="" coords="247,71,423,112"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html#a802cd5fadc7952225e152142ab047b0f" title=" " alt="" coords="249,137,422,193"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html#a802cd5fadc7952225e152142ab047b0f" title="Returns the offset of the branch instruction." alt="" coords="249,137,422,193"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d" title=" " alt="" coords="253,217,418,273"/>
 <area shape="rect" id="node7" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a6f074a301f17ac293e1cd4555067461f" title=" " alt="" coords="232,377,439,433"/>
 <area shape="rect" id="node9" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae94d5f5a394ae360ab5e57ee4caa97f5" title=" " alt="" coords="252,457,419,513"/>
