@@ -33,8 +33,8 @@
 <area shape="rect" id="node26" href="$psr__transfer_8hpp.html" title=" " alt="" coords="46,445,172,471"/>
 <area shape="rect" id="node27" href="$cps_8hpp.html" title=" " alt="" coords="197,445,269,471"/>
 <area shape="rect" id="node28" href="$coprocessor__register__transfer_8hpp.html" title=" " alt="" coords="2493,437,2650,479"/>
-<area shape="rect" id="node29" href="$coprocessor__data__transfer_8hpp.html" title=" " alt="" coords="2674,445,2896,471"/>
-<area shape="rect" id="node30" href="$coprocessor__data__operation_8hpp.html" title=" " alt="" coords="2235,445,2468,471"/>
+<area shape="rect" id="node29" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="2674,445,2896,471"/>
+<area shape="rect" id="node30" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="2235,445,2468,471"/>
 <area shape="rect" id="node31" href="$srs_8hpp.html" title=" " alt="" coords="293,445,362,471"/>
 <area shape="rect" id="node32" href="$rfe_8hpp.html" title=" " alt="" coords="387,445,455,471"/>
 <area shape="rect" id="node33" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="479,445,547,471"/>

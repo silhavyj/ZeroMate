@@ -6,6 +6,6 @@ var classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange =
     ] ],
     [ "CBranch_And_Exchange", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aad700400022da84663d96606fffc90c3", null ],
     [ "Get_Instruction_Mode", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#a14962904052af58aaa297b25d1223150", null ],
-    [ "Get_Rm", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#affbe28cb77bad59867c2a8ee097c50df", null ],
+    [ "Get_Rm_Idx", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aa82aea6a1b0990b803ad1af92d6a2dfa", null ],
     [ "Is_L_Bit_Set", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html#aeb730772253321c35b39e8af3a36552d", null ]
 ];

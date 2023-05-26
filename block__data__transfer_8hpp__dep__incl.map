@@ -1,6 +1,6 @@
 <map id="src/core/arm1176jzf_s/isa/block_data_transfer.hpp" name="src/core/arm1176jzf_s/isa/block_data_transfer.hpp">
 <area shape="rect" id="node1" title="This file defines a block data transfer instruction (LDM, STM)." alt="" coords="234,5,453,47"/>
-<area shape="rect" id="node2" href="$block__data__transfer_8cpp.html" title="This file implements a block data transfer instruction (LDM, STM)." alt="" coords="130,95,349,136"/>
+<area shape="rect" id="node2" href="$block__data__transfer_8cpp.html" title="This file implements a block data transfer instruction (LDM, STM) as defined in block_data_transfer...." alt="" coords="130,95,349,136"/>
 <area shape="rect" id="node3" href="$isa_8hpp.html" title=" " alt="" coords="373,95,524,136"/>
 <area shape="rect" id="node4" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="373,184,524,225"/>
 <area shape="rect" id="node5" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="5,273,156,315"/>

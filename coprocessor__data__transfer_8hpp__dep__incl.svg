@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines a coprocessor data transfer (LDC, STC).">
 <polygon fill="#bfbfbf" stroke="black" points="314,-413.5 314,-454.5 447,-454.5 447,-413.5 314,-413.5"/>
 <text text-anchor="start" x="322" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="start" x="322" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/coprocessor_data</text>
@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="coprocessor__data__transfer_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="coprocessor__data__transfer_8cpp.html" target="_top" xlink:title="This file implements a coprocessor data transfer (LDC, STC) as defined in coprocessor_data_transfer....">
 <polygon fill="none" stroke="black" points="219,-335.5 219,-376.5 352,-376.5 352,-335.5 219,-335.5"/>
 <text text-anchor="start" x="227" y="-364.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="start" x="227" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/coprocessor_data</text>

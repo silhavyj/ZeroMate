@@ -568,7 +568,7 @@
 <!-- Node32 -->
 <g id="node32" class="node">
 <title>Node32</title>
-<g id="a_node32"><a xlink:href="coprocessor__data__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node32"><a xlink:href="coprocessor__data__transfer_8hpp.html" target="_top" xlink:title="This file defines a coprocessor data transfer (LDC, STC).">
 <polygon fill="none" stroke="black" points="1428.5,-129 1428.5,-148 1594.5,-148 1594.5,-129 1428.5,-129"/>
 <text text-anchor="middle" x="1511.5" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">coprocessor_data_transfer.hpp</text>
 </a>
@@ -583,7 +583,7 @@
 <!-- Node33 -->
 <g id="node33" class="node">
 <title>Node33</title>
-<g id="a_node33"><a xlink:href="coprocessor__data__operation_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node33"><a xlink:href="coprocessor__data__operation_8hpp.html" target="_top" xlink:title="This file defines a coprocessor data operation (CDP).">
 <polygon fill="none" stroke="black" points="1099,-129 1099,-148 1274,-148 1274,-129 1099,-129"/>
 <text text-anchor="middle" x="1186.5" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">coprocessor_data_operation.hpp</text>
 </a>

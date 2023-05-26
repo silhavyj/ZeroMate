@@ -9,7 +9,7 @@ var classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer =
     [ "CBlock_Data_Transfer", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#ac6cb358f08a87becb57bb6a081abce4a", null ],
     [ "Get_Addressing_Mode", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#ac72fabd15664b2653b8abe2e57465190", null ],
     [ "Get_Register_List", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a13942f150d4adefab57c5c34aef1a104", null ],
-    [ "Get_Rn", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1b462c43b44d87d20c13fbd7f45c2d2e", null ],
+    [ "Get_Rn_Idx", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a4f93656e66d7848161a0f56a763fdc36", null ],
     [ "Is_L_Bit_Set", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#aa2342ef2d946e48ad5f19e6fd04d9a3f", null ],
     [ "Is_S_Bit_Set", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1a3153bfc2aa11e2c86d55eea07e4c5a", null ],
     [ "Is_U_Bit_Set", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#af725efd9a9efe7249009b389bb41f0fc", null ],

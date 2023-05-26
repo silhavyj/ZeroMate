@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1is
 </div><!--header-->
 <div class="contents">
 
-<p>This class represents a data block transfer instruction (it is inherited from the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator.">CInstruction</a> class).  
+<p>This class represents a data block transfer instruction.  
  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="block__data__transfer_8hpp_source.html">block_data_transfer.hpp</a>&gt;</code></p>
@@ -141,9 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac72fabd15664b2653b8abe2e57465190"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#afc073c4eebe574287cdcc74da9abb7e3">NAddressing_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#ac72fabd15664b2653b8abe2e57465190">Get_Addressing_Mode</a> () const noexcept</td></tr>
 <tr class="memdesc:ac72fabd15664b2653b8abe2e57465190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the addressing mode used in the instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#ac72fabd15664b2653b8abe2e57465190">More...</a><br /></td></tr>
 <tr class="separator:ac72fabd15664b2653b8abe2e57465190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b462c43b44d87d20c13fbd7f45c2d2e"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1b462c43b44d87d20c13fbd7f45c2d2e">Get_Rn</a> () const noexcept</td></tr>
-<tr class="memdesc:a1b462c43b44d87d20c13fbd7f45c2d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rn register (base register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1b462c43b44d87d20c13fbd7f45c2d2e">More...</a><br /></td></tr>
-<tr class="separator:a1b462c43b44d87d20c13fbd7f45c2d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f93656e66d7848161a0f56a763fdc36"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a4f93656e66d7848161a0f56a763fdc36">Get_Rn_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:a4f93656e66d7848161a0f56a763fdc36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rn register (base register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a4f93656e66d7848161a0f56a763fdc36">More...</a><br /></td></tr>
+<tr class="separator:a4f93656e66d7848161a0f56a763fdc36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13942f150d4adefab57c5c34aef1a104"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a13942f150d4adefab57c5c34aef1a104">Get_Register_List</a> () const noexcept</td></tr>
 <tr class="memdesc:a13942f150d4adefab57c5c34aef1a104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of registers to be transferred.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a13942f150d4adefab57c5c34aef1a104">More...</a><br /></td></tr>
 <tr class="separator:a13942f150d4adefab57c5c34aef1a104"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,7 +239,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aacc09a69d69c590f4664d0a09a395561 inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class represents a data block transfer instruction (it is inherited from the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html" title="This class represents a parent class for all ARM instructions used in the emulator.">CInstruction</a> class). </p>
+<div class="textblock"><p>This class represents a data block transfer instruction. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="afc073c4eebe574287cdcc74da9abb7e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc073c4eebe574287cdcc74da9abb7e3">&#9670;&nbsp;</a></span>NAddressing_Mode</h2>
@@ -368,8 +368,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a1b462c43b44d87d20c13fbd7f45c2d2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b462c43b44d87d20c13fbd7f45c2d2e">&#9670;&nbsp;</a></span>Get_Rn()</h2>
+<a id="a4f93656e66d7848161a0f56a763fdc36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f93656e66d7848161a0f56a763fdc36">&#9670;&nbsp;</a></span>Get_Rn_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -378,7 +378,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CBlock_Data_Transfer::Get_Rn </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CBlock_Data_Transfer::Get_Rn_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

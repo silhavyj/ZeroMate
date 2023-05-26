@@ -52,7 +52,7 @@
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="branch_8cpp.html" target="_top" xlink:title="This file implements a branch instruction (B, BL).">
+<g id="a_node14"><a xlink:href="branch_8cpp.html" target="_top" xlink:title="This file implements a branch instruction (B, BL) as defined in branch.hpp.">
 <polygon fill="none" stroke="black" points="407,-134.5 407,-164.5 520,-164.5 520,-134.5 407,-134.5"/>
 <text text-anchor="start" x="415" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="463.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/branch.cpp</text>

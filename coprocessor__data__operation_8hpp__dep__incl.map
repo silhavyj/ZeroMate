@@ -1,6 +1,6 @@
 <map id="src/core/arm1176jzf_s/isa/coprocessor_data_operation.hpp" name="src/core/arm1176jzf_s/isa/coprocessor_data_operation.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="424,5,601,61"/>
-<area shape="rect" id="node2" href="$coprocessor__data__operation_8cpp.html" title=" " alt="" coords="297,109,475,165"/>
+<area shape="rect" id="node1" title="This file defines a coprocessor data operation (CDP)." alt="" coords="424,5,601,61"/>
+<area shape="rect" id="node2" href="$coprocessor__data__operation_8cpp.html" title="This file implements a coprocessor data operation (CDP) as defined in coprocessor_data_operation...." alt="" coords="297,109,475,165"/>
 <area shape="rect" id="node3" href="$isa_8hpp.html" title=" " alt="" coords="407,213,557,255"/>
 <area shape="rect" id="node15" href="$coprocessor_8hpp.html" title=" " alt="" coords="582,117,745,158"/>
 <area shape="rect" id="node4" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="407,392,557,433"/>

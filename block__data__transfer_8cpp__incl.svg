@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="This file implements a block data transfer instruction (LDM, STM).">
+<g id="a_node1"><a xlink:title="This file implements a block data transfer instruction (LDM, STM) as defined in block_data_transfer....">
 <polygon fill="#bfbfbf" stroke="black" points="0,-112.5 0,-142.5 164,-142.5 164,-112.5 0,-112.5"/>
 <text text-anchor="start" x="8" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="82" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/block_data_transfer.cpp</text>

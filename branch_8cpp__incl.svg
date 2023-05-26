@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="This file implements a branch instruction (B, BL).">
+<g id="a_node1"><a xlink:title="This file implements a branch instruction (B, BL) as defined in branch.hpp.">
 <polygon fill="#bfbfbf" stroke="black" points="41,-112.5 41,-142.5 154,-142.5 154,-112.5 41,-112.5"/>
 <text text-anchor="start" x="49" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="97.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/branch.cpp</text>

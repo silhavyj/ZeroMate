@@ -188,7 +188,7 @@
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="coprocessor__data__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node17"><a xlink:href="coprocessor__data__transfer_8hpp.html" target="_top" xlink:title="This file defines a coprocessor data transfer (LDC, STC).">
 <polygon fill="none" stroke="black" points="356.83,-118 356.83,-148 525.83,-148 525.83,-118 356.83,-118"/>
 <text text-anchor="start" x="364.83" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">../arm1176jzf_s/isa</text>
 <text text-anchor="middle" x="441.33" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">/coprocessor_data_transfer.hpp</text>
@@ -204,7 +204,7 @@
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="coprocessor__data__operation_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node18"><a xlink:href="coprocessor__data__operation_8hpp.html" target="_top" xlink:title="This file defines a coprocessor data operation (CDP).">
 <polygon fill="none" stroke="black" points="22.33,-118 22.33,-148 200.33,-148 200.33,-118 22.33,-118"/>
 <text text-anchor="start" x="30.33" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">../arm1176jzf_s/isa</text>
 <text text-anchor="middle" x="111.33" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">/coprocessor_data_operation.hpp</text>
