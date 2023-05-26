@@ -502,11 +502,13 @@ namespace zero_mate::arm1176jzf_s
     {
         const auto rm_reg_value = m_context[instruction.Get_Rm()];
 
+        // Make sure the CPU will not switch to the Thumb mode.
         if (instruction.Get_Instruction_Mode(rm_reg_value) == isa::CBranch_And_Exchange::NCPU_Instruction_Mode::Thumb)
         {
             m_logging_system.Error("Thumb instructions are not supported by the emulator");
         }
 
+        // Check if we should branch with link.
         if (instruction.Is_L_Bit_Set())
         {
             LR() = PC();
@@ -518,13 +520,16 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CBranch instruction)
     {
+        // Check if we should branch with link.
         if (instruction.Is_L_Bit_Set())
         {
             LR() = PC();
         }
 
+        // Get the offset to be added to the PC register.
         const auto offset = instruction.Get_Offset();
 
+        // Calculate the destination address.
         if (offset < 0)
         {
             PC() -= static_cast<std::uint32_t>(-offset);
@@ -656,6 +661,8 @@ namespace zero_mate::arm1176jzf_s
         const bool store_value = !instruction.Is_L_Bit_Set();
         const bool s_bit = instruction.Is_S_Bit_Set();
         const auto cpu_mode = Determine_CPU_Mode(instruction);
+
+        // Calculate the base address.
         auto addr = Calculate_Base_Address(instruction, base_reg_idx, cpu_mode, number_of_regs);
 
         // Iterate over all registers and check whether they are on the list.
@@ -686,7 +693,7 @@ namespace zero_mate::arm1176jzf_s
                                                            magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
                         // clang-format on
 
-                        // Reset the CPU
+                        // Reset the CPU (SPSR is not supported in the current CPU mode).
                         throw exceptions::CReset{};
                     }
 
@@ -1147,6 +1154,7 @@ namespace zero_mate::arm1176jzf_s
         // Calculate the number of leading zeros.
         for (std::int32_t i = std::numeric_limits<std::uint32_t>::digits - 1; i >= 0; --i)
         {
+            // Check if the current bit is set to a 1.
             if (utils::math::Is_Bit_Set(rm_reg, static_cast<std::uint32_t>(i)))
             {
                 break;
@@ -1155,6 +1163,7 @@ namespace zero_mate::arm1176jzf_s
             ++leading_zeros;
         }
 
+        // Store the result in the Rd register.
         m_context[instruction.Get_Rd()] = leading_zeros;
     }
 }

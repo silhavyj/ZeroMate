@@ -1,3 +1,15 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file block_data_transfer.cpp
+/// \date 25. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements a block data transfer instruction (LDM, STM).
+///
+/// To find more information about this instruction, please visit
+/// https://developer.arm.com/documentation/dui0473/m/arm-and-thumb-instructions/ldm,
+/// https://developer.arm.com/documentation/dui0473/m/arm-and-thumb-instructions/stm
+// ---------------------------------------------------------------------------------------------------------------------
+
 #include "block_data_transfer.hpp"
 
 namespace zero_mate::arm1176jzf_s::isa
@@ -41,4 +53,5 @@ namespace zero_mate::arm1176jzf_s::isa
     {
         return m_value & 0b1111'1111'1111'1111U;
     }
-}
+
+} // namespace zero_mate::arm1176jzf_s::isa
