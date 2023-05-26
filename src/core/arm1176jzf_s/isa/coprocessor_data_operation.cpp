@@ -20,7 +20,7 @@ namespace zero_mate::arm1176jzf_s::isa
     {
     }
 
-    std::uint32_t CCoprocessor_Data_Operation::Get_CP_OP_Code() const noexcept
+    std::uint32_t CCoprocessor_Data_Operation::Get_Opcode1() const noexcept
     {
         return (m_value >> 20U) & 0b1111U;
     }
@@ -40,7 +40,7 @@ namespace zero_mate::arm1176jzf_s::isa
         return (m_value >> 8U) & 0b1111U;
     }
 
-    std::uint32_t CCoprocessor_Data_Operation::Get_Coprocessor_Information() const noexcept
+    std::uint32_t CCoprocessor_Data_Operation::Get_Opcode2() const noexcept
     {
         return (m_value >> 5U) & 0b111U;
     }

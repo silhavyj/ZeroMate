@@ -1,3 +1,16 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file data_processing.cpp
+/// \date 26. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements a data processing instruction as defined in data_processing.hpp.
+///
+/// To find more information about this instruction, please visit
+/// https://iitd-plos.github.io/col718/ref/arm-instructionset.pdf (chapter 4.5)
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Project file imports
+
 #include "data_processing.hpp"
 
 namespace zero_mate::arm1176jzf_s::isa
@@ -22,12 +35,12 @@ namespace zero_mate::arm1176jzf_s::isa
         return static_cast<bool>((m_value >> 20U) & 0b1U);
     }
 
-    std::uint32_t CData_Processing::Get_Rn() const noexcept
+    std::uint32_t CData_Processing::Get_Rn_Idx() const noexcept
     {
         return (m_value >> 16U) & 0b1111U;
     }
 
-    std::uint32_t CData_Processing::Get_Rd() const noexcept
+    std::uint32_t CData_Processing::Get_Rd_Idx() const noexcept
     {
         return (m_value >> 12U) & 0b1111U;
     }
@@ -47,12 +60,12 @@ namespace zero_mate::arm1176jzf_s::isa
         return !static_cast<bool>((m_value >> 4U) & 0b1U);
     }
 
-    std::uint32_t CData_Processing::Get_Rs() const noexcept
+    std::uint32_t CData_Processing::Get_Rs_Idx() const noexcept
     {
         return (m_value >> 8U) & 0b1111U;
     }
 
-    std::uint32_t CData_Processing::Get_Rm() const noexcept
+    std::uint32_t CData_Processing::Get_Rm_Idx() const noexcept
     {
         return m_value & 0b1111U;
     }
@@ -66,4 +79,5 @@ namespace zero_mate::arm1176jzf_s::isa
     {
         return m_value & 0b11111111U;
     }
-}
+
+} // namespace zero_mate::arm1176jzf_s::isa

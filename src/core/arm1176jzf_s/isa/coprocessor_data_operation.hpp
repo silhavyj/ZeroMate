@@ -34,7 +34,7 @@ namespace zero_mate::arm1176jzf_s::isa
         /// \brief Returns the coprocessor operation code (4-bit coprocessor specific code).
         /// \return Coprocessor operation code
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] std::uint32_t Get_CP_OP_Code() const noexcept;
+        [[nodiscard]] std::uint32_t Get_Opcode1() const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns the index of the CRn register (coprocessor operand register).
@@ -56,9 +56,9 @@ namespace zero_mate::arm1176jzf_s::isa
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns coprocessor information (optional 3-bit coprocessor-specific opcode).
-        /// \return Coprocessor information
+        /// \return Coprocessor information (opcode 2)
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] std::uint32_t Get_Coprocessor_Information() const noexcept;
+        [[nodiscard]] std::uint32_t Get_Opcode2() const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns the index of the CRm register (coprocessor operand register).

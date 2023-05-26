@@ -97,6 +97,7 @@ namespace zero_mate::arm1176jzf_s::isa
     public:
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Creates an instance of the class.
+        /// \note Implicit conversion is intentional (testing purposes)
         /// \param value 32-bit encoding of the instruction
         // -------------------------------------------------------------------------------------------------------------
         CInstruction(std::uint32_t value) noexcept;

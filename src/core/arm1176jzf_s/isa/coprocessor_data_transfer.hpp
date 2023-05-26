@@ -90,7 +90,7 @@ namespace zero_mate::arm1176jzf_s::isa
         [[nodiscard]] std::uint32_t Get_CRd_Idx() const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Returns the coprocessor number (ID of the coprocessor involved in the register transfer).
+        /// \brief Returns the coprocessor number (ID of the coprocessor involved in the data transfer).
         /// \return Coprocessor ID
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] std::uint32_t Get_Coprocessor_ID() const noexcept;

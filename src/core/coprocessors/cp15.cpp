@@ -25,7 +25,7 @@ namespace zero_mate::coprocessor
 
     void CCP15::Perform_Register_Transfer(arm1176jzf_s::isa::CCoprocessor_Reg_Transfer instruction)
     {
-        const auto primary_reg = static_cast<NPrimary_Register>(instruction.Get_CRn());
+        const auto primary_reg = static_cast<NPrimary_Register>(instruction.Get_CRn_Idx());
 
         if (!m_regs.contains(primary_reg))
         {
@@ -33,8 +33,8 @@ namespace zero_mate::coprocessor
             return;
         }
 
-        const auto secondary_reg_idx = instruction.Get_CRm();
-        const auto rd_idx = instruction.Get_Rd();
+        const auto secondary_reg_idx = instruction.Get_CRm_Idx();
+        const auto rd_idx = instruction.Get_Rd_Idx();
 
         if (instruction.Is_L_Bit_Set())
         {

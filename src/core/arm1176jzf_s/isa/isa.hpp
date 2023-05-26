@@ -1,3 +1,11 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file isa.hpp
+/// \date 25. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file is just a helper file for including all ARM instructions supported by the emulator.
+// ---------------------------------------------------------------------------------------------------------------------
+
 #pragma once
 
 #include "instruction.hpp"

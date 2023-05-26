@@ -94,6 +94,7 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Run()
     {
+        // Keep executing instructions until you hit a breakpoint.
         while (!m_breakpoints.contains(PC()))
         {
             Step();
@@ -111,12 +112,15 @@ namespace zero_mate::arm1176jzf_s
 
     bool CCPU_Core::Step(bool ignore_breakpoint)
     {
+        // Make sure the CPU is connected to the bus.
         assert(m_bus != nullptr);
 
         if (ignore_breakpoint || !m_breakpoints.contains(PC()))
         {
+            // Attempt to fetch the next instruction.
             const std::optional<isa::CInstruction> instruction = Fetch_Instruction();
 
+            // If the instruction has been successfully fetched, execute it.
             if (instruction.has_value())
             {
                 Execute(instruction.value());
@@ -125,7 +129,7 @@ namespace zero_mate::arm1176jzf_s
             return true;
         }
 
-        return false;
+        return false; // Breakpoint hit.
     }
 
     std::optional<isa::CInstruction> CCPU_Core::Fetch_Instruction()
@@ -225,7 +229,7 @@ namespace zero_mate::arm1176jzf_s
                 return true;
         }
 
-        return false;
+        return false; // Just so the compiler does not gripe about a missing return value.
     }
 
     void CCPU_Core::Execute(std::initializer_list<isa::CInstruction> instructions)
@@ -386,7 +390,7 @@ namespace zero_mate::arm1176jzf_s
             return instruction.Get_Shift_Amount();
         }
 
-        const auto shift_amount_reg_idx = instruction.Get_Rs();
+        const auto shift_amount_reg_idx = instruction.Get_Rs_Idx();
         auto shift_amount_reg_value = m_context[shift_amount_reg_idx];
 
         if (shift_amount_reg_idx == CCPU_Context::PC_REG_IDX)
@@ -439,14 +443,14 @@ namespace zero_mate::arm1176jzf_s
 
         const std::uint32_t shift_amount = Get_Shift_Amount(instruction);
         const auto shift_type = instruction.Get_Shift_Type();
-        const auto shift_reg = m_context[instruction.Get_Rm()];
+        const auto shift_reg = m_context[instruction.Get_Rm_Idx()];
 
         return Perform_Shift(shift_type, shift_amount, shift_reg);
     }
 
     void CCPU_Core::Execute(isa::CData_Processing instruction)
     {
-        const auto rn_reg_idx = instruction.Get_Rn();
+        const auto rn_reg_idx = instruction.Get_Rn_Idx();
         std::uint32_t first_operand = m_context[rn_reg_idx];
 
         if (rn_reg_idx == CCPU_Context::PC_REG_IDX)
@@ -456,7 +460,7 @@ namespace zero_mate::arm1176jzf_s
         }
 
         const auto [carry_out, second_operand] = Get_Second_Operand(instruction);
-        const std::uint32_t dest_reg_idx = instruction.Get_Rd();
+        const std::uint32_t dest_reg_idx = instruction.Get_Rd_Idx();
 
         // Execute the operation using the ALU
         const auto result = alu::Execute(instruction,
@@ -997,6 +1001,7 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CCPS instruction)
     {
+        // The CPU has to be in a privileged mode to be able to modify the CPSR register.
         if (!m_context.Is_In_Privileged_Mode())
         {
             // clang-format off
@@ -1007,8 +1012,10 @@ namespace zero_mate::arm1176jzf_s
             return;
         }
 
+        // Retrieve the current value of the CPSR register.
         auto cpsr = m_context.Get_CPSR();
 
+        // Set the control flags based on the instruction type.
         switch (instruction.Get_Type())
         {
             case isa::CCPS::NType::CPSIE:
@@ -1020,12 +1027,14 @@ namespace zero_mate::arm1176jzf_s
                 break;
         }
 
+        // Check if the mode of the CPU should be changed.
         if (instruction.Is_M_Bit_Set())
         {
             cpsr &= ~CCPU_Context::CPU_MODE_MASK;
             cpsr |= instruction.Get_Mode();
         }
 
+        // Apply the changes to the CPSR register.
         m_context.Set_CPSR(cpsr);
     }
 
