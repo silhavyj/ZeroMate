@@ -3,7 +3,7 @@
 /// \date 27. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file defines a multiplication (long) instruction as defined in multiply_long.hpp.
+/// \brief This file implements a multiplication (long) instruction as defined in multiply_long.hpp.
 ///
 /// The following instructions are considered to be multiplication long instructions:
 /// UMULL, UMLAL, SMULL, and SMLAL.

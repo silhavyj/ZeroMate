@@ -943,9 +943,12 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute_MSR(isa::CPSR_Transfer instruction)
     {
+        // Get the mask (protection of different parts of the special register).
         const auto mask = instruction.Get_Mask();
+
+        // Value to be moved to the special register (immediate or register).
         const auto new_value =
-        instruction.Is_Immediate() ? Get_Second_Operand_Imm(instruction).result : m_context[instruction.Get_Rm()];
+        instruction.Is_Immediate() ? Get_Second_Operand_Imm(instruction).result : m_context[instruction.Get_Rm_Idx()];
 
         // Update the special register in regard to the given mask - some parts (flag bits,
         // status bits, extension bits, control bits) might be protected, so they remain unchanged.
@@ -958,10 +961,12 @@ namespace zero_mate::arm1176jzf_s
 
         switch (instruction.Get_Register_Type())
         {
+            // Update the CPSR register.
             case isa::CPSR_Transfer::NRegister::CPSR:
                 m_context.Set_CPSR(Update_Special_Register(m_context.Get_CPSR()));
                 break;
 
+            // Update the SPSR register.
             case isa::CPSR_Transfer::NRegister::SPSR:
                 m_context.Set_SPSR(Update_Special_Register(m_context.Get_SPSR()));
                 break;
@@ -970,14 +975,17 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute_MRS(isa::CPSR_Transfer instruction)
     {
-        const auto reg_rd_idx = instruction.Get_Rd();
+        // Get the index of the destination register.
+        const auto reg_rd_idx = instruction.Get_Rd_Idx();
 
         switch (instruction.Get_Register_Type())
         {
+            // Store the current value of CPSR into Rd.
             case isa::CPSR_Transfer::NRegister::CPSR:
                 m_context[reg_rd_idx] = m_context.Get_CPSR();
                 break;
 
+            // Store the current value of SPSR into Rd.
             case isa::CPSR_Transfer::NRegister::SPSR:
                 m_context[reg_rd_idx] = m_context.Get_SPSR();
                 break;
@@ -988,10 +996,12 @@ namespace zero_mate::arm1176jzf_s
     {
         switch (instruction.Get_Type())
         {
+            // Transfer PSR contents to an ARM register.
             case isa::CPSR_Transfer::NType::MRS:
                 Execute_MRS(instruction);
                 break;
 
+            // Transfer the content of an ARM register to PSR.
             case isa::CPSR_Transfer::NType::MSR:
                 Execute_MSR(instruction);
                 break;
@@ -1150,6 +1160,7 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CRFE instruction)
     {
+        // This instruction must be executed in a privileged mode.
         if (!m_context.Is_In_Privileged_Mode())
         {
             // clang-format off
@@ -1160,18 +1171,22 @@ namespace zero_mate::arm1176jzf_s
             return;
         }
 
-        const auto reg_rn_idx = instruction.Get_Rn();
+        const auto reg_rn_idx = instruction.Get_Rn_Idx();
         const auto cpu_mode = m_context.Get_CPU_Mode();
 
+        // Calculate the base address, taking into account the base address register as well as the addressing mode.
         auto addr = Calculate_Base_Address(instruction, reg_rn_idx, cpu_mode, isa::CRFE::NUMBER_OF_REGS_TO_TRANSFER);
 
+        // Read LR and SPSR off the stack.
         const auto lr = m_bus->Read<std::uint32_t>(addr);
         const auto spsr = m_bus->Read<std::uint32_t>(addr + CCPU_Context::REG_SIZE);
 
+        // Write the final address back to Rn.
         if (instruction.Is_W_Bit_Set())
         {
-            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE *
-                                                        isa::CRFE::NUMBER_OF_REGS_TO_TRANSFER };
+            // Total size that has been transferred.
+            static constexpr std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE *
+                                                                   isa::CRFE::NUMBER_OF_REGS_TO_TRANSFER };
 
             // TODO make sure Rn gets written back in the correct CPU mode
 
@@ -1185,6 +1200,7 @@ namespace zero_mate::arm1176jzf_s
             }
         }
 
+        // Update the PC and CPSR register.
         PC() = lr;
         m_context.Set_CPSR(spsr);
     }
