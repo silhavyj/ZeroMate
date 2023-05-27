@@ -124,12 +124,14 @@ namespace zero_mate::peripheral
     void CARM_Timer::Timer_Has_Reached_Zero(const TControl_Register& control_reg)
     {
         // Set the IRQ_Raw to a 1 regardless of interrupts being enabled or disabled.
+        // It gets cleared when a 1 is written to IRQ_Clear.
         Get_Reg(NRegister::IRQ_Raw) = 1;
 
         // Check if the interrupts are enabled.
         if (control_reg.Interrupt_Enabled)
         {
             // Notify the interrupt controller about a pending IRQ.
+            // It gets cleared when a 1 is written to IRQ_Clear.
             Get_Reg(NRegister::IRQ_Masked) = 1;
             m_interrupt_controller->Signalize_Basic_IRQ(CInterrupt_Controller::NIRQ_Basic_Source::ARM_Timer);
         }
