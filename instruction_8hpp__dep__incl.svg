@@ -313,7 +313,7 @@
 <!-- Node59 -->
 <g id="node47" class="node">
 <title>Node59</title>
-<g id="a_node47"><a xlink:href="single__data__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node47"><a xlink:href="single__data__transfer_8hpp.html" target="_top" xlink:title="This file defines single data transfer instruction (LDR, STR).">
 <polygon fill="none" stroke="black" points="2694,-218 2694,-248 2861,-248 2861,-218 2694,-218"/>
 <text text-anchor="start" x="2702" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="2777.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/single_data_transfer.hpp</text>
@@ -329,7 +329,7 @@
 <!-- Node61 -->
 <g id="node49" class="node">
 <title>Node61</title>
-<g id="a_node49"><a xlink:href="srs_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node49"><a xlink:href="srs_8hpp.html" target="_top" xlink:title="This file defines an SRS instruction (store return state onto a stack).">
 <polygon fill="none" stroke="black" points="2879,-218 2879,-248 2992,-248 2992,-218 2879,-218"/>
 <text text-anchor="start" x="2887" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="2935.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/srs.hpp</text>
@@ -383,7 +383,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="core_8cpp.html" target="_top" xlink:title="This file implements the CCPU_Core class as defined in core.hpp.">
+<g id="a_node6"><a xlink:href="core_8cpp.html" target="_top" xlink:title="This file implements the CCPU_Core class defined in core.hpp.">
 <polygon fill="none" stroke="black" points="1667,-0.5 1667,-30.5 1780,-30.5 1780,-0.5 1667,-0.5"/>
 <text text-anchor="start" x="1675" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1723.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/core.cpp</text>
@@ -913,7 +913,7 @@
 <!-- Node60 -->
 <g id="node48" class="node">
 <title>Node60</title>
-<g id="a_node48"><a xlink:href="single__data__transfer_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node48"><a xlink:href="single__data__transfer_8cpp.html" target="_top" xlink:title="This file implements single data transfer instruction (LDR, STR) as defined in single_data_transfer....">
 <polygon fill="none" stroke="black" points="2763,-140 2763,-170 2930,-170 2930,-140 2763,-140"/>
 <text text-anchor="start" x="2771" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="2846.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/single_data_transfer.cpp</text>
@@ -935,7 +935,7 @@
 <!-- Node62 -->
 <g id="node50" class="node">
 <title>Node62</title>
-<g id="a_node50"><a xlink:href="srs_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node50"><a xlink:href="srs_8cpp.html" target="_top" xlink:title="This file implements an SRS instruction (store return state onto a stack) as defined in srs....">
 <polygon fill="none" stroke="black" points="2948,-140 2948,-170 3061,-170 3061,-140 2948,-140"/>
 <text text-anchor="start" x="2956" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="3004.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/srs.cpp</text>

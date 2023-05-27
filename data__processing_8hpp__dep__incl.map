@@ -4,7 +4,7 @@
 <area shape="rect" id="node5" href="$data__processing_8cpp.html" title="This file implements a data processing instruction as defined in data_processing.hpp." alt="" coords="532,95,728,136"/>
 <area shape="rect" id="node6" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="357,95,508,136"/>
 <area shape="rect" id="node3" href="$alu_8cpp.html" title="This file implements the functionality of the arithmetic logic unit (ALU)." alt="" coords="183,184,333,225"/>
-<area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="5,273,156,315"/>
+<area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,273,156,315"/>
 <area shape="rect" id="node7" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="368,184,519,225"/>
 <area shape="rect" id="node8" href="$control__window_8hpp.html" title=" " alt="" coords="180,273,355,315"/>
 <area shape="rect" id="node11" href="$file__window_8hpp.html" title=" " alt="" coords="379,273,529,315"/>

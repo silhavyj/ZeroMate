@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="This file implements the CCPU_Core class as defined in core.hpp.">
+<g id="a_node1"><a xlink:title="This file implements the CCPU_Core class defined in core.hpp.">
 <polygon fill="#bfbfbf" stroke="black" points="2514.5,-425.5 2514.5,-455.5 2627.5,-455.5 2627.5,-425.5 2514.5,-425.5"/>
 <text text-anchor="start" x="2522.5" y="-443.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="2571" y="-432.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/core.cpp</text>
@@ -476,7 +476,7 @@
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="single__data__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node23"><a xlink:href="single__data__transfer_8hpp.html" target="_top" xlink:title="This file defines single data transfer instruction (LDR, STR).">
 <polygon fill="none" stroke="black" points="2028.5,-129 2028.5,-148 2165.5,-148 2165.5,-129 2028.5,-129"/>
 <text text-anchor="middle" x="2097" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">single_data_transfer.hpp</text>
 </a>
@@ -612,7 +612,7 @@
 <!-- Node32 -->
 <g id="node32" class="node">
 <title>Node32</title>
-<g id="a_node32"><a xlink:href="srs_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node32"><a xlink:href="srs_8hpp.html" target="_top" xlink:title="This file defines an SRS instruction (store return state onto a stack).">
 <polygon fill="none" stroke="black" points="1528,-129 1528,-148 1580,-148 1580,-129 1528,-129"/>
 <text text-anchor="middle" x="1554" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">srs.hpp</text>
 </a>

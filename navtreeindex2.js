@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classzero__mate_1_1coprocessor_1_1CCP15.html#ad7244764b0f8b3cb030da4950c5e6f4b":[1,0,0,1,1,5],
 "classzero__mate_1_1coprocessor_1_1CCP15.html#ad77826237c15f2dae64384f0615cf139":[1,0,0,1,1,7],
 "classzero__mate_1_1coprocessor_1_1ICoprocessor.html":[1,0,0,1,0],
 "classzero__mate_1_1coprocessor_1_1ICoprocessor.html#a35e9d168418d30aefc0b21f1d5a8ddf8":[1,0,0,1,0,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a4ca0071bafb6078e80f91643854f0c77":[1,0,0,3,1,0,13],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a6189094fde73b5ce4d0e9f8678069163":[1,0,0,3,1,0,10],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72":[1,0,0,3,1,0,2],
-"classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72a28d0edd045e05cf5af64e35ae0c4c6ef":[1,0,0,3,1,0,2,2]
+"classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72a28d0edd045e05cf5af64e35ae0c4c6ef":[1,0,0,3,1,0,2,2],
+"classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72a655d20c1ca69519ca647684edbb2db35":[1,0,0,3,1,0,2,3]
 };

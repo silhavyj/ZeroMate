@@ -18,11 +18,11 @@
 <area shape="rect" id="node41" href="$multiply__long_8hpp.html" title="This file defines a multiplication (long) instruction." alt="" coords="2489,102,2669,143"/>
 <area shape="rect" id="node43" href="$psr__transfer_8hpp.html" title="This file defines a PSR instruction (MRS, MSR)." alt="" coords="3230,102,3398,143"/>
 <area shape="rect" id="node45" href="$rfe_8hpp.html" title="This file defines an RFE instruction (return from exception)." alt="" coords="3423,102,3573,143"/>
-<area shape="rect" id="node47" href="$single__data__transfer_8hpp.html" title=" " alt="" coords="3597,102,3820,143"/>
-<area shape="rect" id="node49" href="$srs_8hpp.html" title=" " alt="" coords="3844,102,3995,143"/>
+<area shape="rect" id="node47" href="$single__data__transfer_8hpp.html" title="This file defines single data transfer instruction (LDR, STR)." alt="" coords="3597,102,3820,143"/>
+<area shape="rect" id="node49" href="$srs_8hpp.html" title="This file defines an SRS instruction (store return state onto a stack)." alt="" coords="3844,102,3995,143"/>
 <area shape="rect" id="node3" href="$block__data__transfer_8cpp.html" title="This file implements a block data transfer instruction (LDM, STM) as defined in block_data_transfer...." alt="" coords="1214,206,1433,247"/>
 <area shape="rect" id="node5" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="2524,303,2675,344"/>
-<area shape="rect" id="node6" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="2228,392,2379,433"/>
+<area shape="rect" id="node6" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="2228,392,2379,433"/>
 <area shape="rect" id="node7" href="$control__window_8hpp.html" title=" " alt="" coords="2403,392,2577,433"/>
 <area shape="rect" id="node8" href="$file__window_8hpp.html" title=" " alt="" coords="2601,392,2752,433"/>
 <area shape="rect" id="node9" href="$registers__window_8hpp.html" title=" " alt="" coords="2777,392,2963,433"/>
@@ -47,6 +47,6 @@
 <area shape="rect" id="node42" href="$multiply__long_8cpp.html" title="This file implements a multiplication (long) instruction as defined in multiply_long...." alt="" coords="2766,206,2945,247"/>
 <area shape="rect" id="node44" href="$psr__transfer_8cpp.html" title="This file implements a PSR instruction (MRS, MSR) as defined in psr_transfer.hpp." alt="" coords="3324,206,3491,247"/>
 <area shape="rect" id="node46" href="$rfe_8cpp.html" title="This file implements an RFE instruction (return from exception) as defined in rfe...." alt="" coords="3515,206,3665,247"/>
-<area shape="rect" id="node48" href="$single__data__transfer_8cpp.html" title=" " alt="" coords="3689,206,3912,247"/>
-<area shape="rect" id="node50" href="$srs_8cpp.html" title=" " alt="" coords="3936,206,4087,247"/>
+<area shape="rect" id="node48" href="$single__data__transfer_8cpp.html" title="This file implements single data transfer instruction (LDR, STR) as defined in single_data_transfer...." alt="" coords="3689,206,3912,247"/>
+<area shape="rect" id="node50" href="$srs_8cpp.html" title="This file implements an SRS instruction (store return state onto a stack) as defined in srs...." alt="" coords="3936,206,4087,247"/>
 </map>

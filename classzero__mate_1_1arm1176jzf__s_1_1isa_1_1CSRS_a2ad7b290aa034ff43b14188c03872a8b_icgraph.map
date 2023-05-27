@@ -1,4 +1,4 @@
 <map id="zero_mate::arm1176jzf_s::isa::CSRS::Get_Addressing_Mode" name="zero_mate::arm1176jzf_s::isa::CSRS::Get_Addressing_Mode">
-<area shape="rect" id="node1" title=" " alt="" coords="227,13,485,54"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html#aab25e735beb79ce5aab47d69d2171cd6" title=" " alt="" coords="5,5,179,61"/>
+<area shape="rect" id="node1" title="Returns the addressing mode used in the instruction." alt="" coords="227,13,485,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html#aab25e735beb79ce5aab47d69d2171cd6" title="Returns whether the Rn register should be decremented or not (helper function)." alt="" coords="5,5,179,61"/>
 </map>

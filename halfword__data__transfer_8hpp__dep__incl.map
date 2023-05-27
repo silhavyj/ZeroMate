@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" href="$halfword__data__transfer_8cpp.html" title="This file implements a Halfword data transfer instruction as defined in halfword_data_transfer...." alt="" coords="194,109,349,165"/>
 <area shape="rect" id="node3" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="373,117,524,158"/>
 <area shape="rect" id="node4" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="373,213,524,255"/>
-<area shape="rect" id="node5" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="5,303,156,344"/>
+<area shape="rect" id="node5" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,303,156,344"/>
 <area shape="rect" id="node6" href="$control__window_8hpp.html" title=" " alt="" coords="764,303,939,344"/>
 <area shape="rect" id="node9" href="$file__window_8hpp.html" title=" " alt="" coords="180,303,331,344"/>
 <area shape="rect" id="node11" href="$registers__window_8hpp.html" title=" " alt="" coords="355,303,542,344"/>

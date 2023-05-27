@@ -4,7 +4,7 @@
 <area shape="rect" id="node14" href="$multiply__long_8cpp.html" title="This file implements a multiplication (long) instruction as defined in multiply_long...." alt="" coords="907,95,1085,136"/>
 <area shape="rect" id="node15" href="$mac_8hpp.html" title="This file defines the functionality of the CPU multiplier (MAC unit)." alt="" coords="731,95,882,136"/>
 <area shape="rect" id="node3" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="483,184,634,225"/>
-<area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="858,273,1009,315"/>
+<area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="858,273,1009,315"/>
 <area shape="rect" id="node5" href="$control__window_8hpp.html" title=" " alt="" coords="273,273,447,315"/>
 <area shape="rect" id="node8" href="$file__window_8hpp.html" title=" " alt="" coords="471,273,622,315"/>
 <area shape="rect" id="node10" href="$registers__window_8hpp.html" title=" " alt="" coords="647,273,833,315"/>

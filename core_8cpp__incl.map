@@ -1,5 +1,5 @@
 <map id="src/core/arm1176jzf_s/core.cpp" name="src/core/arm1176jzf_s/core.cpp">
-<area shape="rect" id="node1" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="3358,5,3509,47"/>
+<area shape="rect" id="node1" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="3358,5,3509,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="535,95,670,121"/>
 <area shape="rect" id="node3" href="$alu_8hpp.html" title="This file defines the functionality of the arithmetic logic unit (ALU)." alt="" coords="3398,251,3469,278"/>
 <area shape="rect" id="node6" href="$mac_8hpp.html" title="This file defines the functionality of the CPU multiplier (MAC unit)." alt="" coords="3738,333,3817,360"/>
@@ -27,7 +27,7 @@
 <area shape="rect" id="node19" title=" " alt="" coords="145,333,250,360"/>
 <area shape="rect" id="node21" href="$branch__and__exchange_8hpp.html" title="This file defines a branch and exchange instruction (BX)." alt="" coords="2372,415,2567,442"/>
 <area shape="rect" id="node22" href="$branch_8hpp.html" title="This file defines a branch instruction (B, BL)." alt="" coords="2591,415,2686,442"/>
-<area shape="rect" id="node23" href="$single__data__transfer_8hpp.html" title=" " alt="" coords="2710,415,2893,442"/>
+<area shape="rect" id="node23" href="$single__data__transfer_8hpp.html" title="This file defines single data transfer instruction (LDR, STR)." alt="" coords="2710,415,2893,442"/>
 <area shape="rect" id="node24" href="$block__data__transfer_8hpp.html" title="This file defines a block data transfer instruction (LDM, STM)." alt="" coords="2917,415,3096,442"/>
 <area shape="rect" id="node25" href="$halfword__data__transfer_8hpp.html" title="This file defines a Halfword data transfer instruction." alt="" coords="3121,415,3319,442"/>
 <area shape="rect" id="node26" href="$extend_8hpp.html" title="This file defines an extend instruction." alt="" coords="1677,415,1771,442"/>
@@ -36,7 +36,7 @@
 <area shape="rect" id="node29" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="1249,408,1407,449"/>
 <area shape="rect" id="node30" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="1431,415,1652,442"/>
 <area shape="rect" id="node31" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="991,415,1225,442"/>
-<area shape="rect" id="node32" href="$srs_8hpp.html" title=" " alt="" coords="2043,415,2112,442"/>
+<area shape="rect" id="node32" href="$srs_8hpp.html" title="This file defines an SRS instruction (store return state onto a stack)." alt="" coords="2043,415,2112,442"/>
 <area shape="rect" id="node33" href="$rfe_8hpp.html" title="This file defines an RFE instruction (return from exception)." alt="" coords="2137,415,2205,442"/>
 <area shape="rect" id="node34" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="2229,415,2297,442"/>
 <area shape="rect" id="node37" href="$cp15_8hpp.html" title=" " alt="" coords="583,251,753,278"/>

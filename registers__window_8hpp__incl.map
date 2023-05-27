@@ -25,7 +25,7 @@
 <area shape="rect" id="node19" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="3653,445,3809,471"/>
 <area shape="rect" id="node20" href="$multiply_8hpp.html" title="This file defines a multiplication instruction (MUL, MLA)." alt="" coords="3833,445,3935,471"/>
 <area shape="rect" id="node21" href="$multiply__long_8hpp.html" title="This file defines a multiplication (long) instruction." alt="" coords="1823,445,1961,471"/>
-<area shape="rect" id="node22" href="$single__data__transfer_8hpp.html" title=" " alt="" coords="1986,445,2169,471"/>
+<area shape="rect" id="node22" href="$single__data__transfer_8hpp.html" title="This file defines single data transfer instruction (LDR, STR)." alt="" coords="1986,445,2169,471"/>
 <area shape="rect" id="node23" href="$block__data__transfer_8hpp.html" title="This file defines a block data transfer instruction (LDM, STM)." alt="" coords="2193,445,2372,471"/>
 <area shape="rect" id="node24" href="$halfword__data__transfer_8hpp.html" title="This file defines a Halfword data transfer instruction." alt="" coords="2397,445,2595,471"/>
 <area shape="rect" id="node25" href="$extend_8hpp.html" title="This file defines an extend instruction." alt="" coords="2619,445,2714,471"/>
@@ -34,7 +34,7 @@
 <area shape="rect" id="node28" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="1396,437,1553,479"/>
 <area shape="rect" id="node29" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="1577,445,1799,471"/>
 <area shape="rect" id="node30" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="1138,445,1371,471"/>
-<area shape="rect" id="node31" href="$srs_8hpp.html" title=" " alt="" coords="2985,445,3055,471"/>
+<area shape="rect" id="node31" href="$srs_8hpp.html" title="This file defines an SRS instruction (store return state onto a stack)." alt="" coords="2985,445,3055,471"/>
 <area shape="rect" id="node32" href="$rfe_8hpp.html" title="This file defines an RFE instruction (return from exception)." alt="" coords="3079,445,3147,471"/>
 <area shape="rect" id="node33" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="3171,445,3239,471"/>
 <area shape="rect" id="node36" href="$cp15_8hpp.html" title=" " alt="" coords="733,281,904,307"/>

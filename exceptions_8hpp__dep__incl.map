@@ -4,7 +4,7 @@
 <area shape="rect" id="node3" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="499,184,649,225"/>
 <area shape="rect" id="node14" href="$exceptions_8cpp.html" title="This file implements all exceptions that can be thrown by the CPU during execution." alt="" coords="776,95,927,136"/>
 <area shape="rect" id="node15" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="623,102,751,129"/>
-<area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="5,273,156,315"/>
+<area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,273,156,315"/>
 <area shape="rect" id="node5" href="$control__window_8hpp.html" title=" " alt="" coords="392,273,567,315"/>
 <area shape="rect" id="node8" href="$file__window_8hpp.html" title=" " alt="" coords="591,273,741,315"/>
 <area shape="rect" id="node10" href="$registers__window_8hpp.html" title=" " alt="" coords="181,273,367,315"/>

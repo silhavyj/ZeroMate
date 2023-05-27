@@ -1,6 +1,7 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Get_Offset" name="zero_mate::arm1176jzf_s::CCPU_Core::Get_Offset">
-<area shape="rect" id="node1" title="Calculates the offset from the base address in a single data transfer instruction." alt="" coords="5,93,200,134"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae851afadd74822ec9363797ab332f45a" title="Returns the shift amount used when constructing the second operand (immediate second operand)." alt="" coords="248,5,436,61"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae43548d291eecc463c519086e7527ff2" title="Returns the shift type used when constructing the second operand." alt="" coords="248,85,436,141"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a1dc73c441b156452b1467eaa5cab46f5" title="Returns the value of the I bit (bit 25 = immediate second operand)." alt="" coords="248,165,436,221"/>
+<area shape="rect" id="node1" title="Calculates the offset from the base address in a single data transfer instruction." alt="" coords="5,133,200,174"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a73d5c3a98f3fe036a1348d4d7485d0e9" title="Returns the index of the second operand register (Rm)." alt="" coords="248,5,436,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae851afadd74822ec9363797ab332f45a" title="Returns the shift amount used when constructing the second operand (immediate second operand)." alt="" coords="248,85,436,141"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae43548d291eecc463c519086e7527ff2" title="Returns the shift type used when constructing the second operand." alt="" coords="248,165,436,221"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a1dc73c441b156452b1467eaa5cab46f5" title="Returns the value of the I bit (bit 25 = immediate second operand)." alt="" coords="248,245,436,301"/>
 </map>

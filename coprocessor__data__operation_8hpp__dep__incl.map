@@ -4,7 +4,7 @@
 <area shape="rect" id="node3" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="407,213,557,255"/>
 <area shape="rect" id="node15" href="$coprocessor_8hpp.html" title=" " alt="" coords="582,117,745,158"/>
 <area shape="rect" id="node4" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="407,392,557,433"/>
-<area shape="rect" id="node5" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="5,481,156,523"/>
+<area shape="rect" id="node5" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,481,156,523"/>
 <area shape="rect" id="node6" href="$control__window_8hpp.html" title=" " alt="" coords="392,481,567,523"/>
 <area shape="rect" id="node9" href="$file__window_8hpp.html" title=" " alt="" coords="591,481,741,523"/>
 <area shape="rect" id="node11" href="$registers__window_8hpp.html" title=" " alt="" coords="181,481,367,523"/>

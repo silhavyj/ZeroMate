@@ -1,6 +1,6 @@
 <map id="src/core/arm1176jzf_s/core.hpp" name="src/core/arm1176jzf_s/core.hpp">
 <area shape="rect" id="node1" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="373,5,524,47"/>
-<area shape="rect" id="node2" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="5,95,156,136"/>
+<area shape="rect" id="node2" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,95,156,136"/>
 <area shape="rect" id="node3" href="$control__window_8hpp.html" title=" " alt="" coords="764,95,939,136"/>
 <area shape="rect" id="node6" href="$file__window_8hpp.html" title=" " alt="" coords="180,95,331,136"/>
 <area shape="rect" id="node8" href="$registers__window_8hpp.html" title=" " alt="" coords="355,95,542,136"/>

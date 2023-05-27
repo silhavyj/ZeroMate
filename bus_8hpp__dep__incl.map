@@ -4,7 +4,7 @@
 <area shape="rect" id="node7" href="$file__window_8hpp.html" title=" " alt="" coords="591,169,741,211"/>
 <area shape="rect" id="node13" href="$bus_8cpp.html" title="This file implements the interface defined in bus.hpp." alt="" coords="919,87,1045,114"/>
 <area shape="rect" id="node14" href="$elf__loader_8hpp.html" title=" " alt="" coords="768,80,895,121"/>
-<area shape="rect" id="node3" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="5,169,156,211"/>
+<area shape="rect" id="node3" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,169,156,211"/>
 <area shape="rect" id="node4" href="$control__window_8hpp.html" title=" " alt="" coords="392,169,567,211"/>
 <area shape="rect" id="node9" href="$registers__window_8hpp.html" title=" " alt="" coords="181,169,367,211"/>
 <area shape="rect" id="node11" href="$source__code__window_8hpp.html" title=" " alt="" coords="766,169,939,211"/>

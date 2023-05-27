@@ -462,7 +462,7 @@
 <!-- Node25 -->
 <g id="node25" class="node">
 <title>Node25</title>
-<g id="a_node25"><a xlink:href="single__data__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node25"><a xlink:href="single__data__transfer_8hpp.html" target="_top" xlink:title="This file defines single data transfer instruction (LDR, STR).">
 <polygon fill="none" stroke="black" points="1697,-118 1697,-137 1834,-137 1834,-118 1697,-118"/>
 <text text-anchor="middle" x="1765.5" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">single_data_transfer.hpp</text>
 </a>
@@ -598,7 +598,7 @@
 <!-- Node34 -->
 <g id="node34" class="node">
 <title>Node34</title>
-<g id="a_node34"><a xlink:href="srs_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node34"><a xlink:href="srs_8hpp.html" target="_top" xlink:title="This file defines an SRS instruction (store return state onto a stack).">
 <polygon fill="none" stroke="black" points="2446.5,-118 2446.5,-137 2498.5,-137 2498.5,-118 2446.5,-118"/>
 <text text-anchor="middle" x="2472.5" y="-125" font-family="Helvetica,sans-Serif" font-size="10.00">srs.hpp</text>
 </a>

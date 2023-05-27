@@ -1,5 +1,5 @@
 <map id="src/core/arm1176jzf_s/mac.hpp" name="src/core/arm1176jzf_s/mac.hpp">
 <area shape="rect" id="node1" title="This file defines the functionality of the CPU multiplier (MAC unit)." alt="" coords="92,5,243,47"/>
-<area shape="rect" id="node2" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="5,95,156,136"/>
+<area shape="rect" id="node2" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,95,156,136"/>
 <area shape="rect" id="node3" href="$mac_8cpp.html" title="This file implements the functionality of the CPU multiplier (MAC unit)." alt="" coords="180,95,331,136"/>
 </map>

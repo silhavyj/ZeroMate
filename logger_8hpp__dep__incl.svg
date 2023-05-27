@@ -289,7 +289,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="core_8cpp.html" target="_top" xlink:title="This file implements the CCPU_Core class as defined in core.hpp.">
+<g id="a_node5"><a xlink:href="core_8cpp.html" target="_top" xlink:title="This file implements the CCPU_Core class defined in core.hpp.">
 <polygon fill="none" stroke="black" points="210.5,-67.5 210.5,-97.5 323.5,-97.5 323.5,-67.5 210.5,-67.5"/>
 <text text-anchor="start" x="218.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="267" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/core.cpp</text>

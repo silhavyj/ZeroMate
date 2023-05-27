@@ -35,13 +35,13 @@
 <area shape="rect" id="node30" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="2961,527,3117,553"/>
 <area shape="rect" id="node31" href="$multiply_8hpp.html" title="This file defines a multiplication instruction (MUL, MLA)." alt="" coords="3141,527,3243,553"/>
 <area shape="rect" id="node32" href="$multiply__long_8hpp.html" title="This file defines a multiplication (long) instruction." alt="" coords="3268,527,3407,553"/>
-<area shape="rect" id="node33" href="$single__data__transfer_8hpp.html" title=" " alt="" coords="3431,527,3614,553"/>
+<area shape="rect" id="node33" href="$single__data__transfer_8hpp.html" title="This file defines single data transfer instruction (LDR, STR)." alt="" coords="3431,527,3614,553"/>
 <area shape="rect" id="node34" href="$block__data__transfer_8hpp.html" title="This file defines a block data transfer instruction (LDM, STM)." alt="" coords="3639,527,3817,553"/>
 <area shape="rect" id="node35" href="$halfword__data__transfer_8hpp.html" title="This file defines a Halfword data transfer instruction." alt="" coords="3842,527,4041,553"/>
 <area shape="rect" id="node36" href="$extend_8hpp.html" title="This file defines an extend instruction." alt="" coords="4065,527,4159,553"/>
 <area shape="rect" id="node37" href="$psr__transfer_8hpp.html" title="This file defines a PSR instruction (MRS, MSR)." alt="" coords="2046,527,2173,553"/>
 <area shape="rect" id="node38" href="$cps_8hpp.html" title="This file defines a change processor state instruction (CPS)." alt="" coords="2197,527,2269,553"/>
-<area shape="rect" id="node39" href="$srs_8hpp.html" title=" " alt="" coords="2293,527,2363,553"/>
+<area shape="rect" id="node39" href="$srs_8hpp.html" title="This file defines an SRS instruction (store return state onto a stack)." alt="" coords="2293,527,2363,553"/>
 <area shape="rect" id="node40" href="$rfe_8hpp.html" title="This file defines an RFE instruction (return from exception)." alt="" coords="2387,527,2455,553"/>
 <area shape="rect" id="node41" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="2479,527,2547,553"/>
 <area shape="rect" id="node45" title=" " alt="" coords="1157,437,1213,464"/>

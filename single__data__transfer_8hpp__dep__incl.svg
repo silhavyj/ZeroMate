@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines single data transfer instruction (LDR, STR).">
 <polygon fill="#bfbfbf" stroke="black" points="328,-268.5 328,-298.5 495,-298.5 495,-268.5 328,-268.5"/>
 <text text-anchor="start" x="336" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="411.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/single_data_transfer.hpp</text>
@@ -37,7 +37,7 @@
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="single__data__transfer_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node14"><a xlink:href="single__data__transfer_8cpp.html" target="_top" xlink:title="This file implements single data transfer instruction (LDR, STR) as defined in single_data_transfer....">
 <polygon fill="none" stroke="black" points="407,-201.5 407,-231.5 574,-231.5 574,-201.5 407,-201.5"/>
 <text text-anchor="start" x="415" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="490.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/single_data_transfer.cpp</text>
@@ -69,7 +69,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="core_8cpp.html" target="_top" xlink:title="This file implements the CCPU_Core class as defined in core.hpp.">
+<g id="a_node4"><a xlink:href="core_8cpp.html" target="_top" xlink:title="This file implements the CCPU_Core class defined in core.hpp.">
 <polygon fill="none" stroke="black" points="0,-67.5 0,-97.5 113,-97.5 113,-67.5 0,-67.5"/>
 <text text-anchor="start" x="8" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="56.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/core.cpp</text>
