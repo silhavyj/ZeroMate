@@ -43,17 +43,17 @@ namespace zero_mate::arm1176jzf_s::isa
 
             // Category (1)
 
-            SXTAB = 4,   ///< Sign extend Byte with Add, to extend an 8-bit value to a 32-bit value
-            UXTAB = 5,   ///< Zero extend Byte and Add
-            SXTB = 6,    ///< Sign extend Byte, to extend an 8-bit value to a 32-bit value
-            UXTB = 7,    ///< Zero extend Byte
+            SXTAB = 4, ///< Sign extend Byte with Add, to extend an 8-bit value to a 32-bit value
+            UXTAB = 5, ///< Zero extend Byte and Add
+            SXTB = 6,  ///< Sign extend Byte, to extend an 8-bit value to a 32-bit value
+            UXTB = 7,  ///< Zero extend Byte
 
             // Category (2)
 
-            SXTAH = 8,   ///< Sign extend Halfword with Add, to extend a 16-bit value to a 32-bit value
-            UXTAH = 9,   ///< Zero extend Halfword and Add
-            SXTH = 10,   ///< Sign extend Halfword
-            UXTH = 11    ///< Zero extend Halfword
+            SXTAH = 8, ///< Sign extend Halfword with Add, to extend a 16-bit value to a 32-bit value
+            UXTAH = 9, ///< Zero extend Halfword and Add
+            SXTH = 10, ///< Sign extend Halfword
+            UXTH = 11  ///< Zero extend Halfword
         };
 
     public:
