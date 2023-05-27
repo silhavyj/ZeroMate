@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1IPeripheral.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1IPeripheral.html" target="_top" xlink:title="This class represents a general interface of a memory&#45;mapped peripheral.">
 <polygon fill="none" stroke="black" points="281,-97.5 281,-127.5 405,-127.5 405,-97.5 281,-97.5"/>
 <text text-anchor="start" x="289" y="-115.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="343" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">::IPeripheral</text>

@@ -236,7 +236,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" target="_top" xlink:title="Writes data to the peripheral.">
 <polygon fill="none" stroke="black" points="622.5,-700.5 622.5,-730.5 756.5,-730.5 756.5,-700.5 622.5,-700.5"/>
 <text text-anchor="start" x="630.5" y="-718.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="689.5" y="-707.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Write</text>
@@ -274,7 +274,7 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3" target="_top" xlink:title="Writes data to the peripheral.">
 <polygon fill="none" stroke="black" points="627,-965 627,-1006 752,-1006 752,-965 627,-965"/>
 <text text-anchor="start" x="635" y="-994" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="635" y="-983" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>
@@ -756,7 +756,7 @@
 <!-- Node48 -->
 <g id="node48" class="node">
 <title>Node48</title>
-<g id="a_node48"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9" target="_top" xlink:title=" ">
+<g id="a_node48"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9" target="_top" xlink:title="Reads data from the peripheral.">
 <polygon fill="none" stroke="black" points="835,-1093.5 835,-1123.5 967,-1123.5 967,-1093.5 835,-1093.5"/>
 <text text-anchor="start" x="843" y="-1111.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="901" y="-1100.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Read</text>

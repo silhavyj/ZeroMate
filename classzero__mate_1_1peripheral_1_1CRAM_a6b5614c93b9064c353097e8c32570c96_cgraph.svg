@@ -37,7 +37,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CRAM.html#ae61301f586d6e9c233951576d9005c17" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CRAM.html#ae61301f586d6e9c233951576d9005c17" target="_top" xlink:title="Writes data to the peripheral.">
 <polygon fill="none" stroke="black" points="160,-0.5 160,-30.5 284,-30.5 284,-0.5 160,-0.5"/>
 <text text-anchor="start" x="168" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="222" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CRAM::Write</text>

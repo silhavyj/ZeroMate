@@ -1,5 +1,5 @@
 <map id="src/core/peripherals/system_clock_listener.hpp" name="src/core/peripherals/system_clock_listener.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="659,5,857,47"/>
+<area shape="rect" id="node1" title="This file defines an interface for a CPU clock listener." alt="" coords="659,5,857,47"/>
 <area shape="rect" id="node2" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="503,95,653,136"/>
 <area shape="rect" id="node13" href="$arm__timer_8hpp.html" title="This file defines the ARM timer used BCM2835." alt="" coords="963,95,1113,136"/>
 <area shape="rect" id="node3" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="788,184,939,225"/>

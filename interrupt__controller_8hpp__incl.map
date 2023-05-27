@@ -1,14 +1,14 @@
 <map id="src/core/peripherals/interrupt_controller.hpp" name="src/core/peripherals/interrupt_controller.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="159,5,337,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="203,5,381,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,61,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="86,95,210,121"/>
-<area shape="rect" id="node4" href="$peripheral_8hpp.html" title=" " alt="" coords="190,169,306,196"/>
-<area shape="rect" id="node6" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="285,95,488,121"/>
-<area shape="rect" id="node7" href="$logger_8hpp.html" title=" " alt="" coords="383,169,561,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="215,244,281,271"/>
-<area shape="rect" id="node8" title=" " alt="" coords="305,244,369,271"/>
-<area shape="rect" id="node9" title=" " alt="" coords="394,244,457,271"/>
-<area shape="rect" id="node10" title=" " alt="" coords="481,244,559,271"/>
-<area shape="rect" id="node11" title=" " alt="" coords="583,244,681,271"/>
-<area shape="rect" id="node12" title=" " alt="" coords="705,244,829,271"/>
+<area shape="rect" id="node4" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="234,95,350,121"/>
+<area shape="rect" id="node5" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="375,95,577,121"/>
+<area shape="rect" id="node6" href="$logger_8hpp.html" title=" " alt="" coords="456,169,635,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="283,244,347,271"/>
+<area shape="rect" id="node8" title=" " alt="" coords="371,244,434,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="459,244,536,271"/>
+<area shape="rect" id="node10" title=" " alt="" coords="560,244,627,271"/>
+<area shape="rect" id="node11" title=" " alt="" coords="651,244,749,271"/>
+<area shape="rect" id="node12" title=" " alt="" coords="773,244,897,271"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="zero_mate::peripheral::CInterrupt_Controller" name="zero_mate::peripheral::CInterrupt_Controller">
 <area shape="rect" id="node1" title=" " alt="" coords="701,65,868,107"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1IPeripheral.html" title=" " alt="" coords="380,5,545,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory&#45;mapped peripheral." alt="" coords="380,5,545,47"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" title="This class represents the context (registers) of the CPU." alt="" coords="376,135,549,176"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title=" " alt="" coords="5,100,200,141"/>
 </map>

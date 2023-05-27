@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="classzero__mate_1_1peripheral_1_1IPeripheral.html" target="_top" xlink:title=" ">
+<g id="a_node1"><a xlink:href="classzero__mate_1_1peripheral_1_1IPeripheral.html" target="_top" xlink:title="This class represents a general interface of a memory&#45;mapped peripheral.">
 <polygon fill="none" stroke="black" points="7.5,-98.5 7.5,-128.5 131.5,-128.5 131.5,-98.5 7.5,-98.5"/>
 <text text-anchor="start" x="15.5" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="69.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">::IPeripheral</text>
@@ -101,7 +101,7 @@
 <!-- Node51 -->
 <g id="node7" class="node">
 <title>Node51</title>
-<g id="a_node7"><a xlink:href="classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html" target="_top" xlink:title="This class represents a general interface for a CPU clock listener.">
 <polygon fill="none" stroke="black" points="0,-196.5 0,-226.5 139,-226.5 139,-196.5 0,-196.5"/>
 <text text-anchor="start" x="8" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="69.5" y="-203.5" font-family="Helvetica,sans-Serif" font-size="10.00">::ISystem_Clock_Listener</text>

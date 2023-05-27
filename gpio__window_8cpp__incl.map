@@ -1,23 +1,23 @@
 <map id="src/gui/windows/peripherals/gpio_window.cpp" name="src/gui/windows/peripherals/gpio_window.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="50,5,253,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,140,121"/>
-<area shape="rect" id="node3" href="$gpio__window_8hpp.html" title=" " alt="" coords="164,95,299,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="118,483,195,509"/>
-<area shape="rect" id="node5" title=" " alt="" coords="447,177,517,203"/>
-<area shape="rect" id="node6" href="$window_8hpp.html" title=" " alt="" coords="46,408,169,435"/>
-<area shape="rect" id="node7" href="$gpio_8hpp.html" title=" " alt="" coords="259,169,422,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="310,333,366,360"/>
-<area shape="rect" id="node9" title=" " alt="" coords="345,259,403,285"/>
-<area shape="rect" id="node10" title=" " alt="" coords="428,259,515,285"/>
-<area shape="rect" id="node11" title=" " alt="" coords="539,259,654,285"/>
-<area shape="rect" id="node12" href="$peripheral_8hpp.html" title=" " alt="" coords="833,333,949,360"/>
-<area shape="rect" id="node14" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="679,259,853,285"/>
-<area shape="rect" id="node17" href="$logger_8hpp.html" title=" " alt="" coords="479,408,658,435"/>
-<area shape="rect" id="node13" title=" " alt="" coords="786,483,853,509"/>
-<area shape="rect" id="node15" title=" " alt="" coords="407,333,531,360"/>
-<area shape="rect" id="node16" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="606,333,809,360"/>
-<area shape="rect" id="node18" title=" " alt="" coords="538,483,602,509"/>
-<area shape="rect" id="node19" title=" " alt="" coords="627,483,689,509"/>
-<area shape="rect" id="node20" title=" " alt="" coords="268,483,365,509"/>
-<area shape="rect" id="node21" title=" " alt="" coords="389,483,513,509"/>
+<area shape="rect" id="node1" title=" " alt="" coords="711,5,914,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="667,95,801,121"/>
+<area shape="rect" id="node3" href="$gpio__window_8hpp.html" title=" " alt="" coords="825,95,960,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="754,483,831,509"/>
+<area shape="rect" id="node5" title=" " alt="" coords="968,177,1039,203"/>
+<area shape="rect" id="node6" href="$window_8hpp.html" title=" " alt="" coords="770,408,893,435"/>
+<area shape="rect" id="node7" href="$gpio_8hpp.html" title=" " alt="" coords="423,169,586,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="589,333,645,360"/>
+<area shape="rect" id="node9" title=" " alt="" coords="83,259,142,285"/>
+<area shape="rect" id="node10" title=" " alt="" coords="167,259,253,285"/>
+<area shape="rect" id="node11" title=" " alt="" coords="278,259,393,285"/>
+<area shape="rect" id="node12" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="5,333,121,360"/>
+<area shape="rect" id="node13" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="417,259,592,285"/>
+<area shape="rect" id="node16" href="$logger_8hpp.html" title=" " alt="" coords="353,408,531,435"/>
+<area shape="rect" id="node14" title=" " alt="" coords="440,333,564,360"/>
+<area shape="rect" id="node15" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="162,333,365,360"/>
+<area shape="rect" id="node17" title=" " alt="" coords="410,483,474,509"/>
+<area shape="rect" id="node18" title=" " alt="" coords="499,483,561,509"/>
+<area shape="rect" id="node19" title=" " alt="" coords="586,483,653,509"/>
+<area shape="rect" id="node20" title=" " alt="" coords="140,483,237,509"/>
+<area shape="rect" id="node21" title=" " alt="" coords="261,483,385,509"/>
 </map>

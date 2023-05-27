@@ -1,5 +1,5 @@
 <map id="zero_mate::peripheral::CGPIO_Manager::Write" name="zero_mate::peripheral::CGPIO_Manager::Write">
-<area shape="rect" id="node1" title=" " alt="" coords="5,151,184,192"/>
+<area shape="rect" id="node1" title="Writes data to the peripheral." alt="" coords="5,151,184,192"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" title=" " alt="" coords="232,304,439,345"/>
 <area shape="rect" id="node7" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d" title=" " alt="" coords="253,143,418,199"/>
 <area shape="rect" id="node8" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad7c6aa486cf3b116ffae9f16eec64064" title=" " alt="" coords="240,223,431,279"/>

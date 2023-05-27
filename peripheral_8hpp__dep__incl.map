@@ -1,5 +1,5 @@
 <map id="src/core/peripherals/peripheral.hpp" name="src/core/peripherals/peripheral.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="1705,5,1856,47"/>
+<area shape="rect" id="node1" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="1705,5,1856,47"/>
 <area shape="rect" id="node2" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="417,102,545,129"/>
 <area shape="rect" id="node17" href="$arm__timer_8hpp.html" title="This file defines the ARM timer used BCM2835." alt="" coords="1292,184,1443,225"/>
 <area shape="rect" id="node21" href="$gpio_8hpp.html" title=" " alt="" coords="2155,184,2305,225"/>

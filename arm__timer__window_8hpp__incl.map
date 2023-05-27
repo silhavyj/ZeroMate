@@ -1,19 +1,19 @@
 <map id="src/gui/windows/peripherals/arm_timer_window.hpp" name="src/gui/windows/peripherals/arm_timer_window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="37,5,240,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="61,408,139,435"/>
-<area shape="rect" id="node3" title=" " alt="" coords="365,102,435,129"/>
-<area shape="rect" id="node4" href="$window_8hpp.html" title=" " alt="" coords="43,333,165,360"/>
-<area shape="rect" id="node5" href="$arm__timer_8hpp.html" title="This file defines the ARM timer used BCM2835." alt="" coords="177,95,340,136"/>
-<area shape="rect" id="node6" href="$peripheral_8hpp.html" title=" " alt="" coords="674,259,790,285"/>
-<area shape="rect" id="node8" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="263,184,438,211"/>
-<area shape="rect" id="node12" href="$logger_8hpp.html" title=" " alt="" coords="193,333,372,360"/>
-<area shape="rect" id="node17" href="$system__clock__listener_8hpp.html" title=" " alt="" coords="699,184,893,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="699,408,765,435"/>
-<area shape="rect" id="node9" title=" " alt="" coords="445,259,501,285"/>
-<area shape="rect" id="node10" title=" " alt="" coords="526,259,650,285"/>
-<area shape="rect" id="node11" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="219,259,421,285"/>
-<area shape="rect" id="node13" title=" " alt="" coords="163,408,227,435"/>
-<area shape="rect" id="node14" title=" " alt="" coords="251,408,314,435"/>
-<area shape="rect" id="node15" title=" " alt="" coords="338,408,435,435"/>
-<area shape="rect" id="node16" title=" " alt="" coords="459,408,583,435"/>
+<area shape="rect" id="node1" title=" " alt="" coords="13,5,216,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="113,408,191,435"/>
+<area shape="rect" id="node3" title=" " alt="" coords="43,102,114,129"/>
+<area shape="rect" id="node4" href="$window_8hpp.html" title=" " alt="" coords="91,333,213,360"/>
+<area shape="rect" id="node5" href="$arm__timer_8hpp.html" title="This file defines the ARM timer used BCM2835." alt="" coords="392,95,555,136"/>
+<area shape="rect" id="node6" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="190,259,306,285"/>
+<area shape="rect" id="node7" href="$interrupt__controller_8hpp.html" title=" " alt="" coords="386,184,561,211"/>
+<area shape="rect" id="node11" href="$logger_8hpp.html" title=" " alt="" coords="641,333,820,360"/>
+<area shape="rect" id="node17" href="$system__clock__listener_8hpp.html" title="This file defines an interface for a CPU clock listener." alt="" coords="888,184,1083,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="331,259,387,285"/>
+<area shape="rect" id="node9" title=" " alt="" coords="411,259,535,285"/>
+<area shape="rect" id="node10" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="560,259,763,285"/>
+<area shape="rect" id="node12" title=" " alt="" coords="521,408,585,435"/>
+<area shape="rect" id="node13" title=" " alt="" coords="610,408,673,435"/>
+<area shape="rect" id="node14" title=" " alt="" coords="697,408,764,435"/>
+<area shape="rect" id="node15" title=" " alt="" coords="789,408,886,435"/>
+<area shape="rect" id="node16" title=" " alt="" coords="910,408,1034,435"/>
 </map>

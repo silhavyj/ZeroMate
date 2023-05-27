@@ -172,7 +172,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" target="_top" xlink:title="Writes data to the peripheral.">
 <polygon fill="none" stroke="black" points="11.5,-276 11.5,-306 145.5,-306 145.5,-276 11.5,-276"/>
 <text text-anchor="start" x="19.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="78.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Write</text>
@@ -210,7 +210,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3" target="_top" xlink:title="Writes data to the peripheral.">
 <polygon fill="none" stroke="black" points="16,-30.5 16,-71.5 141,-71.5 141,-30.5 16,-30.5"/>
 <text text-anchor="start" x="24" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="24" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>
