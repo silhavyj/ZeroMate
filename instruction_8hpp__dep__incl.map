@@ -10,7 +10,7 @@
 <area shape="rect" id="node23" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="748,95,947,151"/>
 <area shape="rect" id="node25" href="$cps_8hpp.html" title="This file defines a change processor state instruction (CPS)." alt="" coords="2088,102,2239,143"/>
 <area shape="rect" id="node27" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="993,102,1190,143"/>
-<area shape="rect" id="node31" href="$extend_8hpp.html" title=" " alt="" coords="2876,102,3027,143"/>
+<area shape="rect" id="node31" href="$extend_8hpp.html" title="This file defines an extend instruction." alt="" coords="2876,102,3027,143"/>
 <area shape="rect" id="node33" href="$halfword__data__transfer_8hpp.html" title=" " alt="" coords="3051,95,3206,151"/>
 <area shape="rect" id="node35" href="$instruction_8cpp.html" title="This file implements the interface of a general ARM instruction defined in instruction...." alt="" coords="2693,102,2852,143"/>
 <area shape="rect" id="node36" href="$isa__decoder_8hpp.html" title=" " alt="" coords="4041,102,4209,143"/>
@@ -39,7 +39,7 @@
 <area shape="rect" id="node28" href="$alu_8hpp.html" title="This file defines the functionality of the arithmetic logic unit (ALU)." alt="" coords="819,206,969,247"/>
 <area shape="rect" id="node30" href="$data__processing_8cpp.html" title="This file implements a data processing instruction as defined in data_processing.hpp." alt="" coords="993,206,1189,247"/>
 <area shape="rect" id="node29" href="$alu_8cpp.html" title="This file implements the functionality of the arithmetic logic unit (ALU)." alt="" coords="819,303,969,344"/>
-<area shape="rect" id="node32" href="$extend_8cpp.html" title=" " alt="" coords="2969,206,3120,247"/>
+<area shape="rect" id="node32" href="$extend_8cpp.html" title="This file defines an extend instruction as defined in extend.hpp." alt="" coords="2969,206,3120,247"/>
 <area shape="rect" id="node34" href="$halfword__data__transfer_8cpp.html" title=" " alt="" coords="3145,199,3299,255"/>
 <area shape="rect" id="node37" href="$isa__decoder_8cpp.html" title=" " alt="" coords="4163,206,4329,247"/>
 <area shape="rect" id="node39" href="$multiply_8cpp.html" title=" " alt="" coords="2416,206,2567,247"/>

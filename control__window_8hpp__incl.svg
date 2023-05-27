@@ -469,7 +469,7 @@
 <!-- Node25 -->
 <g id="node25" class="node">
 <title>Node25</title>
-<g id="a_node25"><a xlink:href="extend_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node25"><a xlink:href="extend_8hpp.html" target="_top" xlink:title="This file defines an extend instruction.">
 <polygon fill="none" stroke="black" points="3017.5,-129 3017.5,-148 3088.5,-148 3088.5,-129 3017.5,-129"/>
 <text text-anchor="middle" x="3053" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">extend.hpp</text>
 </a>

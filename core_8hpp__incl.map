@@ -25,7 +25,7 @@
 <area shape="rect" id="node19" href="$single__data__transfer_8hpp.html" title=" " alt="" coords="1509,355,1692,382"/>
 <area shape="rect" id="node20" href="$block__data__transfer_8hpp.html" title="This file defines a block data transfer instruction (LDM, STM)." alt="" coords="1717,355,1895,382"/>
 <area shape="rect" id="node21" href="$halfword__data__transfer_8hpp.html" title=" " alt="" coords="1920,355,2119,382"/>
-<area shape="rect" id="node22" href="$extend_8hpp.html" title=" " alt="" coords="5,355,100,382"/>
+<area shape="rect" id="node22" href="$extend_8hpp.html" title="This file defines an extend instruction." alt="" coords="5,355,100,382"/>
 <area shape="rect" id="node23" href="$psr__transfer_8hpp.html" title=" " alt="" coords="124,355,251,382"/>
 <area shape="rect" id="node24" href="$cps_8hpp.html" title="This file defines a change processor state instruction (CPS)." alt="" coords="275,355,347,382"/>
 <area shape="rect" id="node25" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="2401,348,2558,389"/>

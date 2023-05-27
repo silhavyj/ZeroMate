@@ -23,9 +23,9 @@ var classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend =
       [ "UXTH", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a1c8e810820925f5389e240599a9717d6a77022b9556258b259da07efa32c40bf3", null ]
     ] ],
     [ "CExtend", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a012f2053c4d67990dac614de38ad3e25", null ],
-    [ "Get_Rd", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a16cf6a0e312385cb515dfde5745d6293", null ],
-    [ "Get_Rm", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#aea08e3b564687c8ada21b96dcd4589af", null ],
-    [ "Get_Rn", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a4d4d6e40658e19004f8cd2cd10f8bfd9", null ],
+    [ "Get_Rd_Idx", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a557135d964e61493b34422536698febc", null ],
+    [ "Get_Rm_Idx", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#ae063ae0ffd70e56c8f1cf3caacb5373e", null ],
+    [ "Get_Rn_Idx", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a61f03feb353e36a2c66127fa8f65eb5a", null ],
     [ "Get_Rot", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a7844fdb8b766d4e82d32a6559b46550c", null ],
     [ "Get_Type", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a34b87c39cfa38be1803f20311f9a14dd", null ]
 ];

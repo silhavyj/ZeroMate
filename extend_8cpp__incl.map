@@ -1,6 +1,5 @@
 <map id="src/core/arm1176jzf_s/isa/extend.cpp" name="src/core/arm1176jzf_s/isa/extend.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="59,5,209,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,129,121"/>
-<area shape="rect" id="node3" href="$extend_8hpp.html" title=" " alt="" coords="153,95,248,121"/>
-<area shape="rect" id="node4" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="141,169,260,196"/>
+<area shape="rect" id="node1" title="This file defines an extend instruction as defined in extend.hpp." alt="" coords="5,5,156,47"/>
+<area shape="rect" id="node2" href="$extend_8hpp.html" title="This file defines an extend instruction." alt="" coords="33,95,128,121"/>
+<area shape="rect" id="node3" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="21,169,140,196"/>
 </map>

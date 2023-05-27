@@ -184,7 +184,7 @@
 <!-- Node42 -->
 <g id="node31" class="node">
 <title>Node42</title>
-<g id="a_node31"><a xlink:href="extend_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node31"><a xlink:href="extend_8hpp.html" target="_top" xlink:title="This file defines an extend instruction.">
 <polygon fill="none" stroke="black" points="2153,-218 2153,-248 2266,-248 2266,-218 2153,-218"/>
 <text text-anchor="start" x="2161" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="2209.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/extend.hpp</text>
@@ -730,7 +730,7 @@
 <!-- Node43 -->
 <g id="node32" class="node">
 <title>Node43</title>
-<g id="a_node32"><a xlink:href="extend_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node32"><a xlink:href="extend_8cpp.html" target="_top" xlink:title="This file defines an extend instruction as defined in extend.hpp.">
 <polygon fill="none" stroke="black" points="2223,-140 2223,-170 2336,-170 2336,-140 2223,-140"/>
 <text text-anchor="start" x="2231" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="2279.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/extend.cpp</text>

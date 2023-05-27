@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::isa::CExtend::Get_Rn_Idx" name="zero_mate::arm1176jzf_s::isa::CExtend::Get_Rn_Idx">
+<area shape="rect" id="node1" title="Returns the index of the Rn register (value to be added to the result)." alt="" coords="247,5,420,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a34b87c39cfa38be1803f20311f9a14dd" title="Returns the type of the extend instruction (what operation shall be performed)." alt="" coords="5,13,199,54"/>
+</map>

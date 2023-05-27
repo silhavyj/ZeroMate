@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1is
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents an extend instruction.  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="extend_8hpp_source.html">extend.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::arm1176jzf_s::isa::CExtend:</div>
@@ -128,22 +131,29 @@ Public Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a1c8e810820925f5389e240599a9717d6a77022b9556258b259da07efa32c40bf3">UXTH</a> = 11
 <br />
  }</td></tr>
+<tr class="memdesc:a1c8e810820925f5389e240599a9717d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration represents different types of the extend instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a1c8e810820925f5389e240599a9717d6">More...</a><br /></td></tr>
 <tr class="separator:a1c8e810820925f5389e240599a9717d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a012f2053c4d67990dac614de38ad3e25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a012f2053c4d67990dac614de38ad3e25">CExtend</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) noexcept</td></tr>
+<tr class="memdesc:a012f2053c4d67990dac614de38ad3e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a012f2053c4d67990dac614de38ad3e25">More...</a><br /></td></tr>
 <tr class="separator:a012f2053c4d67990dac614de38ad3e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34b87c39cfa38be1803f20311f9a14dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a1c8e810820925f5389e240599a9717d6">NType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a34b87c39cfa38be1803f20311f9a14dd">Get_Type</a> () const noexcept</td></tr>
+<tr class="memdesc:a34b87c39cfa38be1803f20311f9a14dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the extend instruction (what operation shall be performed).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a34b87c39cfa38be1803f20311f9a14dd">More...</a><br /></td></tr>
 <tr class="separator:a34b87c39cfa38be1803f20311f9a14dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d4d6e40658e19004f8cd2cd10f8bfd9"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a4d4d6e40658e19004f8cd2cd10f8bfd9">Get_Rn</a> () const noexcept</td></tr>
-<tr class="separator:a4d4d6e40658e19004f8cd2cd10f8bfd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16cf6a0e312385cb515dfde5745d6293"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a16cf6a0e312385cb515dfde5745d6293">Get_Rd</a> () const noexcept</td></tr>
-<tr class="separator:a16cf6a0e312385cb515dfde5745d6293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61f03feb353e36a2c66127fa8f65eb5a"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a61f03feb353e36a2c66127fa8f65eb5a">Get_Rn_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:a61f03feb353e36a2c66127fa8f65eb5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rn register (value to be added to the result).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a61f03feb353e36a2c66127fa8f65eb5a">More...</a><br /></td></tr>
+<tr class="separator:a61f03feb353e36a2c66127fa8f65eb5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a557135d964e61493b34422536698febc"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a557135d964e61493b34422536698febc">Get_Rd_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:a557135d964e61493b34422536698febc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the index of the Rd register (destination register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a557135d964e61493b34422536698febc">More...</a><br /></td></tr>
+<tr class="separator:a557135d964e61493b34422536698febc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7844fdb8b766d4e82d32a6559b46550c"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a7844fdb8b766d4e82d32a6559b46550c">Get_Rot</a> () const noexcept</td></tr>
+<tr class="memdesc:a7844fdb8b766d4e82d32a6559b46550c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value by which the Rm register (see <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#ae063ae0ffd70e56c8f1cf3caacb5373e" title="Returns the index of the Rm register (register to be rotated).">Get_Rm_Idx</a>) will be right-roted (ROR).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a7844fdb8b766d4e82d32a6559b46550c">More...</a><br /></td></tr>
 <tr class="separator:a7844fdb8b766d4e82d32a6559b46550c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea08e3b564687c8ada21b96dcd4589af"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#aea08e3b564687c8ada21b96dcd4589af">Get_Rm</a> () const noexcept</td></tr>
-<tr class="separator:aea08e3b564687c8ada21b96dcd4589af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae063ae0ffd70e56c8f1cf3caacb5373e"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#ae063ae0ffd70e56c8f1cf3caacb5373e">Get_Rm_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:ae063ae0ffd70e56c8f1cf3caacb5373e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rm register (register to be rotated).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#ae063ae0ffd70e56c8f1cf3caacb5373e">More...</a><br /></td></tr>
+<tr class="separator:ae063ae0ffd70e56c8f1cf3caacb5373e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -157,6 +167,7 @@ Private Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a83eca2d609f9bc462ff85362e974a97da284f278249e6783ab61d99043e74a165">Category_2_1</a> = 0b111
 <br />
  }</td></tr>
+<tr class="memdesc:a83eca2d609f9bc462ff85362e974a97d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration is used to determine the type of the extend instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#a83eca2d609f9bc462ff85362e974a97d">More...</a><br /></td></tr>
 <tr class="separator:a83eca2d609f9bc462ff85362e974a97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Private Types inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:a110957aeccf83857a9f32afefa6b7803 inherit pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#a110957aeccf83857a9f32afefa6b7803">NCondition</a> : std::uint32_t { <br />
@@ -249,7 +260,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:aacc09a69d69c590f4664d0a09a395561 inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average number of cycles it takes the CPU to execute an instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#aacc09a69d69c590f4664d0a09a395561">More...</a><br /></td></tr>
 <tr class="separator:aacc09a69d69c590f4664d0a09a395561 inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents an extend instruction. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a83eca2d609f9bc462ff85362e974a97d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83eca2d609f9bc462ff85362e974a97d">&#9670;&nbsp;</a></span>NCategory_Mask</h2>
 
@@ -269,13 +282,22 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration is used to determine the type of the extend instruction. </p>
+<p>It is a helper technique to figure out the type using different bit masks (bits 22, 21, and 20). Category_1_1 means the first type in category (1). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97daeaa800b2797deb19466534f52f2739c9"></a>Category_0_0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97dae215ae5b69415b6ab6809119936f396a"></a>Category_0_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97da37c721cf7b39941d068e3434e43c2256"></a>Category_1_0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97da3fa2fe22a885cfe8b4db367cd53a3676"></a>Category_1_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97da03371fa681a515465215ff193d8f2109"></a>Category_2_0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97da284f278249e6783ab61d99043e74a165"></a>Category_2_1&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97daeaa800b2797deb19466534f52f2739c9"></a>Category_0_0&#160;</td><td class="fielddoc"><p>Category 0, item 0 (SXTAB16) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97dae215ae5b69415b6ab6809119936f396a"></a>Category_0_1&#160;</td><td class="fielddoc"><p>Category 0, item 1 (UXTAB16) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97da37c721cf7b39941d068e3434e43c2256"></a>Category_1_0&#160;</td><td class="fielddoc"><p>Category 1, item 0 (SXTAB) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97da3fa2fe22a885cfe8b4db367cd53a3676"></a>Category_1_1&#160;</td><td class="fielddoc"><p>Category 1, item 1 (UXTAB) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97da03371fa681a515465215ff193d8f2109"></a>Category_2_0&#160;</td><td class="fielddoc"><p>Category 2, item 0 (SXTAH) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a83eca2d609f9bc462ff85362e974a97da284f278249e6783ab61d99043e74a165"></a>Category_2_1&#160;</td><td class="fielddoc"><p>Category 2, item 1 (UXTAH) </p>
+</td></tr>
 </table>
 
 </div>
@@ -299,19 +321,33 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration represents different types of the extend instruction. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a40435a0e8a5230a2b0c09ba33579fe80"></a>SXTAB16&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6aa001424dba50be462595bf814fa8cf8d"></a>UXTAB16&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a8b49e65d1fab1b23e0fa5179ed32e1a4"></a>SXTB16&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a956593854e28676c4dae81b59a6e092b"></a>UXTB16&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a9b375e0754a9ac67cd2d450496d2690a"></a>SXTAB&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a03c9b589529b85b11f6107b91fb4262d"></a>UXTAB&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6aad52095a7d015ada58c86e42f7a13608"></a>SXTB&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6abf95caf0f062697eb5141fbb30d0038f"></a>UXTB&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6ab1c38c50a4cb6d9d46b9181db42f0e68"></a>SXTAH&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a83e24444fb1f28b3c0504b9eecd7ceec"></a>UXTAH&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6ac792379297cd8de024156f0209e4f909"></a>SXTH&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a77022b9556258b259da07efa32c40bf3"></a>UXTH&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a40435a0e8a5230a2b0c09ba33579fe80"></a>SXTAB16&#160;</td><td class="fielddoc"><p>Sign extend two Bytes with Add, to extend two 8-bit values to two 16-bit values. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6aa001424dba50be462595bf814fa8cf8d"></a>UXTAB16&#160;</td><td class="fielddoc"><p>Zero extend two Bytes and Add. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a8b49e65d1fab1b23e0fa5179ed32e1a4"></a>SXTB16&#160;</td><td class="fielddoc"><p>Sign extend two bytes. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a956593854e28676c4dae81b59a6e092b"></a>UXTB16&#160;</td><td class="fielddoc"><p>Zero extend two Bytes. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a9b375e0754a9ac67cd2d450496d2690a"></a>SXTAB&#160;</td><td class="fielddoc"><p>Sign extend Byte with Add, to extend an 8-bit value to a 32-bit value. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a03c9b589529b85b11f6107b91fb4262d"></a>UXTAB&#160;</td><td class="fielddoc"><p>Zero extend Byte and Add. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6aad52095a7d015ada58c86e42f7a13608"></a>SXTB&#160;</td><td class="fielddoc"><p>Sign extend Byte, to extend an 8-bit value to a 32-bit value. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6abf95caf0f062697eb5141fbb30d0038f"></a>UXTB&#160;</td><td class="fielddoc"><p>Zero extend Byte. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6ab1c38c50a4cb6d9d46b9181db42f0e68"></a>SXTAH&#160;</td><td class="fielddoc"><p>Sign extend Halfword with Add, to extend a 16-bit value to a 32-bit value. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a83e24444fb1f28b3c0504b9eecd7ceec"></a>UXTAH&#160;</td><td class="fielddoc"><p>Zero extend Halfword and Add. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6ac792379297cd8de024156f0209e4f909"></a>SXTH&#160;</td><td class="fielddoc"><p>Sign extend Halfword. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1c8e810820925f5389e240599a9717d6a77022b9556258b259da07efa32c40bf3"></a>UXTH&#160;</td><td class="fielddoc"><p>Zero extend Halfword. </p>
+</td></tr>
 </table>
 
 </div>
@@ -341,11 +377,19 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>General instruction (32-bit value) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a16cf6a0e312385cb515dfde5745d6293"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16cf6a0e312385cb515dfde5745d6293">&#9670;&nbsp;</a></span>Get_Rd()</h2>
+<a id="a557135d964e61493b34422536698febc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557135d964e61493b34422536698febc">&#9670;&nbsp;</a></span>Get_Rd_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,7 +398,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CExtend::Get_Rd </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CExtend::Get_Rd_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -367,10 +411,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return the index of the Rd register (destination register). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rd register </dd></dl>
+
 </div>
 </div>
-<a id="aea08e3b564687c8ada21b96dcd4589af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea08e3b564687c8ada21b96dcd4589af">&#9670;&nbsp;</a></span>Get_Rm()</h2>
+<a id="ae063ae0ffd70e56c8f1cf3caacb5373e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae063ae0ffd70e56c8f1cf3caacb5373e">&#9670;&nbsp;</a></span>Get_Rm_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -379,7 +426,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CExtend::Get_Rm </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CExtend::Get_Rm_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -392,10 +439,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the index of the Rm register (register to be rotated). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rm register </dd></dl>
+
 </div>
 </div>
-<a id="a4d4d6e40658e19004f8cd2cd10f8bfd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d4d6e40658e19004f8cd2cd10f8bfd9">&#9670;&nbsp;</a></span>Get_Rn()</h2>
+<a id="a61f03feb353e36a2c66127fa8f65eb5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61f03feb353e36a2c66127fa8f65eb5a">&#9670;&nbsp;</a></span>Get_Rn_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -404,7 +454,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CExtend::Get_Rn </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CExtend::Get_Rn_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -416,10 +466,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the index of the Rn register (value to be added to the result). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rn register </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend_a4d4d6e40658e19004f8cd2cd10f8bfd9_icgraph.svg" width="432" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend_a61f03feb353e36a2c66127fa8f65eb5a_icgraph.svg" width="426" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -448,6 +501,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Value by which the Rm register (see <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend.html#ae063ae0ffd70e56c8f1cf3caacb5373e" title="Returns the index of the Rm register (register to be rotated).">Get_Rm_Idx</a>) will be right-roted (ROR). </p>
+<p>ROR #8 (value from Rm is rotated right 8 bits); ROR #16 (value from Rm is rotated right 16 bits); ROR #24 (value from Rm is rotated right 24 bits)</p>
+<dl class="section return"><dt>Returns</dt><dd>Value (amount) used to rotate the contents of the Rm register </dd></dl>
+
 </div>
 </div>
 <a id="a34b87c39cfa38be1803f20311f9a14dd"></a>
@@ -472,10 +529,13 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the type of the extend instruction (what operation shall be performed). </p>
+<dl class="section return"><dt>Returns</dt><dd>Type of the extend instruction </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend_a34b87c39cfa38be1803f20311f9a14dd_cgraph.svg" width="432" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CExtend_a34b87c39cfa38be1803f20311f9a14dd_cgraph.svg" width="426" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
