@@ -1,7 +1,7 @@
 <map id="zero_mate::peripheral::CARM_Timer::Write" name="zero_mate::peripheral::CARM_Timer::Write">
-<area shape="rect" id="node1" title=" " alt="" coords="5,64,171,105"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9f2ae98d766d97f06f4b153a99bafcaa" title=" " alt="" coords="219,5,447,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a8aa88bde21b52e4ae5132f8e2a5fb73a" title=" " alt="" coords="505,32,683,73"/>
+<area shape="rect" id="node1" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,64,171,105"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9f2ae98d766d97f06f4b153a99bafcaa" title="Clear a pending interrupt (helper function)." alt="" coords="219,5,447,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a8aa88bde21b52e4ae5132f8e2a5fb73a" title="Returns the current content of a register." alt="" coords="505,32,683,73"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title=" " alt="" coords="235,123,430,164"/>
 <area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="495,123,693,164"/>
 </map>

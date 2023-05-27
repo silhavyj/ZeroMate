@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Clear a pending interrupt (helper function).">
 <polygon fill="#bfbfbf" stroke="black" points="160,-0.5 160,-30.5 331,-30.5 331,-0.5 160,-0.5"/>
 <text text-anchor="start" x="168" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="245.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Clear_Basic_IRQ</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34" target="_top" xlink:title="Writes data to the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-30.5 124,-30.5 124,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="62" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Write</text>

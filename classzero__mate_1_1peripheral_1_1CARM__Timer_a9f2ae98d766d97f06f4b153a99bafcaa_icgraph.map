@@ -1,4 +1,4 @@
 <map id="zero_mate::peripheral::CARM_Timer::Clear_Basic_IRQ" name="zero_mate::peripheral::CARM_Timer::Clear_Basic_IRQ">
-<area shape="rect" id="node1" title=" " alt="" coords="219,5,447,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34" title=" " alt="" coords="5,5,171,47"/>
+<area shape="rect" id="node1" title="Clear a pending interrupt (helper function)." alt="" coords="219,5,447,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,5,171,47"/>
 </map>

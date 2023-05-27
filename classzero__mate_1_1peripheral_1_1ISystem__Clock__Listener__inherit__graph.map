@@ -1,4 +1,4 @@
 <map id="zero_mate::peripheral::ISystem_Clock_Listener" name="zero_mate::peripheral::ISystem_Clock_Listener">
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,191,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html" title=" " alt="" coords="15,95,181,136"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html" title="This class represents the ARM timer used in BCM2835." alt="" coords="15,95,181,136"/>
 </map>

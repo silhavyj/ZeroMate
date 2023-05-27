@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Returns the current content of a register.">
 <polygon fill="#bfbfbf" stroke="black" points="386,-121 386,-151 519,-151 519,-121 386,-121"/>
 <text text-anchor="start" x="394" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="452.5" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Get_Reg</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a6e04a50b8de25f632bd3fd6f0650ca89" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a6e04a50b8de25f632bd3fd6f0650ca89" target="_top" xlink:title="Creates an instance of the class.">
 <polygon fill="none" stroke="black" points="186,-236 186,-266 341,-266 341,-236 186,-236"/>
 <text text-anchor="start" x="194" y="-254" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="263.5" y="-243" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::CARM_Timer</text>
@@ -37,7 +37,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9f2ae98d766d97f06f4b153a99bafcaa" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9f2ae98d766d97f06f4b153a99bafcaa" target="_top" xlink:title="Clear a pending interrupt (helper function).">
 <polygon fill="none" stroke="black" points="178,-187 178,-217 349,-217 349,-187 178,-187"/>
 <text text-anchor="start" x="186" y="-205" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="263.5" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Clear_Basic_IRQ</text>
@@ -53,7 +53,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34" target="_top" xlink:title="Writes data to the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="8.5,-165 8.5,-195 132.5,-195 132.5,-165 8.5,-165"/>
 <text text-anchor="start" x="16.5" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="70.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Write</text>
@@ -69,7 +69,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a6f089d92275345a7f7a363c942bc8692" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a6f089d92275345a7f7a363c942bc8692" target="_top" xlink:title="Returns the current content of the control register.">
 <polygon fill="none" stroke="black" points="177,-99 177,-129 350,-129 350,-99 177,-99"/>
 <text text-anchor="start" x="185" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="263.5" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Get_Control_Reg</text>
@@ -85,7 +85,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#afc4c9659823762252dd1ea58b8a76e1e" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#afc4c9659823762252dd1ea58b8a76e1e" target="_top" xlink:title="Updates the timer (ISystem_Clock_Listener interface).">
 <polygon fill="none" stroke="black" points="0,-49.5 0,-90.5 141,-90.5 141,-49.5 0,-49.5"/>
 <text text-anchor="start" x="8" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="8" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Increment</text>
@@ -102,7 +102,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9abc7d434c8ec8120e49e2add79e7346" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9abc7d434c8ec8120e49e2add79e7346" target="_top" xlink:title="This procedure is called whenever the timer reaches 0 (helper function).">
 <polygon fill="none" stroke="black" points="191.5,-0.5 191.5,-41.5 335.5,-41.5 335.5,-0.5 191.5,-0.5"/>
 <text text-anchor="start" x="199.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="199.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Timer_Has</text>

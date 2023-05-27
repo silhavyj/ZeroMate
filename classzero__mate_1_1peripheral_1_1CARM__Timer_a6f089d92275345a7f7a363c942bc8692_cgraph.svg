@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Returns the current content of the control register.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-30.5 173,-30.5 173,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="86.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Get_Control_Reg</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a8aa88bde21b52e4ae5132f8e2a5fb73a" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a8aa88bde21b52e4ae5132f8e2a5fb73a" target="_top" xlink:title="Returns the current content of a register.">
 <polygon fill="none" stroke="black" points="209,-0.5 209,-30.5 342,-30.5 342,-0.5 209,-0.5"/>
 <text text-anchor="start" x="217" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="275.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Get_Reg</text>

@@ -95,36 +95,49 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1peripheral_1_1CARM_
 <div class="title">zero_mate::peripheral::CARM_Timer::CPrescaler Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class represents a prescaler of the ARM timer.  
+ <a href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a977c6c6df65cf3781caa89afb8b5a19c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a977c6c6df65cf3781caa89afb8b5a19c">NPrescal_Values</a> : std::uint32_t { <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a977c6c6df65cf3781caa89afb8b5a19caecc4ac5778a61c5d5031246a760da9ee">Prescale_16</a> = 16U
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a977c6c6df65cf3781caa89afb8b5a19ca92599d7b31a84cf6efbf57e127f7eb9b">Prescale_256</a> = 256U
  }</td></tr>
+<tr class="memdesc:a977c6c6df65cf3781caa89afb8b5a19c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This represents the threshold the total number of CPU cycles must reach so the counter is increm.  <a href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a977c6c6df65cf3781caa89afb8b5a19c">More...</a><br /></td></tr>
 <tr class="separator:a977c6c6df65cf3781caa89afb8b5a19c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a440710dcce7be4e7dd1940bda5de1f0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a440710dcce7be4e7dd1940bda5de1f0e">CPrescaler</a> ()</td></tr>
+<tr class="memdesc:a440710dcce7be4e7dd1940bda5de1f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a440710dcce7be4e7dd1940bda5de1f0e">More...</a><br /></td></tr>
 <tr class="separator:a440710dcce7be4e7dd1940bda5de1f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e0c606ec657b298b2d5c6db851e9ecf"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a4e0c606ec657b298b2d5c6db851e9ecf">Prescale_Cycle_Passed</a> (std::uint32_t cycles_passed) noexcept</td></tr>
+<tr class="memdesc:a4e0c606ec657b298b2d5c6db851e9ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the prescaler.  <a href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a4e0c606ec657b298b2d5c6db851e9ecf">More...</a><br /></td></tr>
 <tr class="separator:a4e0c606ec657b298b2d5c6db851e9ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a781c1f391f64fd775d32b65dee2ba98d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a781c1f391f64fd775d32b65dee2ba98d">Set_Limit</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#ab9946eafcbd53c7569e55cdc4eb6c7b0">NPrescal_Bits</a> limit)</td></tr>
+<tr class="memdesc:a781c1f391f64fd775d32b65dee2ba98d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new limit of the prescaler.  <a href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a781c1f391f64fd775d32b65dee2ba98d">More...</a><br /></td></tr>
 <tr class="separator:a781c1f391f64fd775d32b65dee2ba98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a4d59e407ab56764fc2088ad6efc3f378"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a4d59e407ab56764fc2088ad6efc3f378">Update_Counter</a> (std::uint32_t limit_value)</td></tr>
+<tr class="memdesc:a4d59e407ab56764fc2088ad6efc3f378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the internal prescaler counter (helper function).  <a href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a4d59e407ab56764fc2088ad6efc3f378">More...</a><br /></td></tr>
 <tr class="separator:a4d59e407ab56764fc2088ad6efc3f378"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a034177821cde375408b6d8bb82df996c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#ab9946eafcbd53c7569e55cdc4eb6c7b0">NPrescal_Bits</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a034177821cde375408b6d8bb82df996c">m_limit</a></td></tr>
+<tr class="memdesc:a034177821cde375408b6d8bb82df996c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prescaler settings.  <a href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a034177821cde375408b6d8bb82df996c">More...</a><br /></td></tr>
 <tr class="separator:a034177821cde375408b6d8bb82df996c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8d6a61f81cd3dfe0c1738e4acae2fc5"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#ab8d6a61f81cd3dfe0c1738e4acae2fc5">m_counter</a></td></tr>
+<tr class="memdesc:ab8d6a61f81cd3dfe0c1738e4acae2fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal counter to keep track of the number of CPU cycles.  <a href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#ab8d6a61f81cd3dfe0c1738e4acae2fc5">More...</a><br /></td></tr>
 <tr class="separator:ab8d6a61f81cd3dfe0c1738e4acae2fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a prescaler of the ARM timer. </p>
+<p>It works as wrapper counter around the number of cycles passed in whenever an instruction is executed. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a977c6c6df65cf3781caa89afb8b5a19c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a977c6c6df65cf3781caa89afb8b5a19c">&#9670;&nbsp;</a></span>NPrescal_Values</h2>
 
@@ -144,9 +157,13 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This represents the threshold the total number of CPU cycles must reach so the counter is increm. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a977c6c6df65cf3781caa89afb8b5a19caecc4ac5778a61c5d5031246a760da9ee"></a>Prescale_16&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a977c6c6df65cf3781caa89afb8b5a19ca92599d7b31a84cf6efbf57e127f7eb9b"></a>Prescale_256&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a977c6c6df65cf3781caa89afb8b5a19caecc4ac5778a61c5d5031246a760da9ee"></a>Prescale_16&#160;</td><td class="fielddoc"><p>16 (the prescaler counts up to 16) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a977c6c6df65cf3781caa89afb8b5a19ca92599d7b31a84cf6efbf57e127f7eb9b"></a>Prescale_256&#160;</td><td class="fielddoc"><p>256 (the prescaler counts up to 256) </p>
+</td></tr>
 </table>
 
 </div>
@@ -166,6 +183,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates an instance of the class. </p>
+<p>The default limit is set to <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#ab9946eafcbd53c7569e55cdc4eb6c7b0aa7e6f5a72ec02d46b9f3db25b68ee84e" title="No prescaler is present.">NPrescal_Bits::Prescale_None</a>. </p>
 
 </div>
 </div>
@@ -193,6 +213,16 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Updates the prescaler. </p>
+<p>The prescaler adds this value to its own counter and checks whether the threshold has been reached.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cycles_passed</td><td>Number of CPU cycles it took to execute the last instruction </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Updated (prescaled) number CPU cycles it took to execute the last instruction </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -217,6 +247,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets a new limit of the prescaler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">limit</td><td>New prescaler value </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -250,6 +288,15 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Updates the internal prescaler counter (helper function). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">limit_value</td><td>Threshold the internal counter counts up to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of prescaled cycles </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -273,6 +320,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Internal counter to keep track of the number of CPU cycles. </p>
+
 </div>
 </div>
 <a id="a034177821cde375408b6d8bb82df996c"></a>
@@ -294,6 +343,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Prescaler settings. </p>
 
 </div>
 </div>

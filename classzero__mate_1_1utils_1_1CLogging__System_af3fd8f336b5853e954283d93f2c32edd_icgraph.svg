@@ -740,7 +740,7 @@
 <!-- Node47 -->
 <g id="node47" class="node">
 <title>Node47</title>
-<g id="a_node47"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9c9fd268222fa96e4a81d65f7340235c" target="_top" xlink:title=" ">
+<g id="a_node47"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9c9fd268222fa96e4a81d65f7340235c" target="_top" xlink:title="Reads data from the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="839,-1142.5 839,-1172.5 963,-1172.5 963,-1142.5 839,-1142.5"/>
 <text text-anchor="start" x="847" y="-1160.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="901" y="-1149.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Read</text>
@@ -772,7 +772,7 @@
 <!-- Node49 -->
 <g id="node49" class="node">
 <title>Node49</title>
-<g id="a_node49"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34" target="_top" xlink:title=" ">
+<g id="a_node49"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34" target="_top" xlink:title="Writes data to the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="839,-1312.5 839,-1342.5 963,-1342.5 963,-1312.5 839,-1312.5"/>
 <text text-anchor="start" x="847" y="-1330.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="901" y="-1319.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Write</text>

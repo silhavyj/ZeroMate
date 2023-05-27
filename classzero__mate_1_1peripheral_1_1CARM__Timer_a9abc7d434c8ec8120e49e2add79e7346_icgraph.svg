@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This procedure is called whenever the timer reaches 0 (helper function).">
 <polygon fill="#bfbfbf" stroke="black" points="177,-0.5 177,-41.5 321,-41.5 321,-0.5 177,-0.5"/>
 <text text-anchor="start" x="185" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="185" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Timer_Has</text>
@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#afc4c9659823762252dd1ea58b8a76e1e" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#afc4c9659823762252dd1ea58b8a76e1e" target="_top" xlink:title="Updates the timer (ISystem_Clock_Listener interface).">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-41.5 141,-41.5 141,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CARM_Timer::Increment</text>

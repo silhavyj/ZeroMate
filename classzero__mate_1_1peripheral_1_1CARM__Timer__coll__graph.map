@@ -1,7 +1,7 @@
 <map id="zero_mate::peripheral::CARM_Timer" name="zero_mate::peripheral::CARM_Timer">
-<area shape="rect" id="node1" title=" " alt="" coords="376,104,541,145"/>
+<area shape="rect" id="node1" title="This class represents the ARM timer used in BCM2835." alt="" coords="376,104,541,145"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1IPeripheral.html" title=" " alt="" coords="20,5,185,47"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html" title=" " alt="" coords="10,71,195,112"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title=" " alt="" coords="5,136,200,177"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html" title=" " alt="" coords="7,201,198,243"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html" title="This class represents a prescaler of the ARM timer." alt="" coords="7,201,198,243"/>
 </map>
