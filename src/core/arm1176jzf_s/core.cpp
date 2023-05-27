@@ -3,7 +3,7 @@
 /// \date 20. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file implements the CCPU_Core class as defined in core.hpp
+/// \brief This file implements the CCPU_Core class defined in core.hpp
 // ---------------------------------------------------------------------------------------------------------------------
 
 // STL imports (excluded from Doxygen)
@@ -598,18 +598,22 @@ namespace zero_mate::arm1176jzf_s
     {
         std::int64_t offset{};
 
+        // Immediate offset?
         if (!instruction.Is_I_Bit_Set())
         {
             offset = static_cast<std::int64_t>(instruction.Get_Immediate_Offset());
         }
         else
         {
-            const auto shift_type = instruction.Get_Shift_Type();
-            const auto shift_amount = instruction.Get_Shift_Amount();
-            const auto shift_reg = m_context[instruction.Get_Rm()];
-
-            offset = static_cast<std::int64_t>(Perform_Shift(shift_type, shift_amount, shift_reg).result);
+            // Apply a shift operation to the Rm register.
+            // clang-format off
+            offset = static_cast<std::int64_t>(Perform_Shift(instruction.Get_Shift_Type(),
+                                                             instruction.Get_Shift_Amount(),
+                                                             m_context[instruction.Get_Rm_Idx()]).result);
+            // clang-format on
         }
+
+        // Check whether the offset should be added or subtracted from the base register.
         if (!instruction.Is_U_Bit_Set())
         {
             return -offset;
@@ -620,30 +624,33 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CSingle_Data_Transfer instruction)
     {
-        const auto reg_rn_idx = instruction.Get_Rn();
+        const bool pre_indexed = instruction.Is_P_Bit_Set();
+        const auto reg_rn_idx = instruction.Get_Rn_Idx();
         const auto base_addr =
         reg_rn_idx == CCPU_Context::PC_REG_IDX ? (PC() + CCPU_Context::REG_SIZE) : m_context[reg_rn_idx];
-        const auto offset = Get_Offset(instruction);
 
-        const bool pre_indexed = instruction.Is_P_Bit_Set();
+        // Calculate the offset to be added to the base register.
+        const auto offset = Get_Offset(instruction);
         const auto indexed_addr = static_cast<std::uint32_t>(static_cast<std::int64_t>(base_addr) + offset);
+
+        // Calculate the base address based on the pre/post indexing bit.
         const auto addr = pre_indexed ? indexed_addr : base_addr;
 
         if (instruction.Is_B_Bit_Set())
         {
             // 8-bit data transfer
-            Read_Write_Value<std::uint8_t>(instruction, addr, instruction.Get_Rd());
+            Read_Write_Value<std::uint8_t>(instruction, addr, instruction.Get_Rd_Idx());
         }
         else
         {
             // 32-bit data transfer
-            Read_Write_Value<std::uint32_t>(instruction, addr, instruction.Get_Rd());
+            Read_Write_Value<std::uint32_t>(instruction, addr, instruction.Get_Rd_Idx());
         }
 
         // Update the Rn register.
         if (!pre_indexed || instruction.Is_W_Bit_Set())
         {
-            m_context[instruction.Get_Rn()] = indexed_addr;
+            m_context[instruction.Get_Rn_Idx()] = indexed_addr;
         }
     }
 
@@ -1120,6 +1127,7 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CSRS instruction)
     {
+        // This instruction must be executed in a privileged mode.
         if (!m_context.Is_In_Privileged_Mode())
         {
             // clang-format off
@@ -1130,22 +1138,27 @@ namespace zero_mate::arm1176jzf_s
             return;
         }
 
+        // Get the CPU mode used in the instruction.
         const auto cpu_mode = static_cast<CCPU_Context::NCPU_Mode>(instruction.Get_CPU_Mode());
 
         // clang-format off
+        // Calculate the base address (where PC and SPSR should be stored).
         const auto addr = Calculate_Base_Address(instruction,
                                                  CCPU_Context::SP_REG_IDX,
                                                  cpu_mode,
                                                  isa::CSRS::NUMBER_OF_REGS_TO_TRANSFER);
         // clang-format on
 
+        // Store the registers of the current mode onto the stack.
         m_bus->Write<std::uint32_t>(addr, m_context[CCPU_Context::LR_REG_IDX]);
         m_bus->Write<std::uint32_t>(addr + CCPU_Context::REG_SIZE, m_context.Get_SPSR());
 
+        // Write the final address back to SP of the mode defined in the instruction.
         if (instruction.Is_W_Bit_Set())
         {
-            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE *
-                                                        isa::CSRS::NUMBER_OF_REGS_TO_TRANSFER };
+            // Total size that has been transferred.
+            static constexpr std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE *
+                                                                   isa::CSRS::NUMBER_OF_REGS_TO_TRANSFER };
 
             if (instruction.Should_SP_Be_Decremented())
             {
