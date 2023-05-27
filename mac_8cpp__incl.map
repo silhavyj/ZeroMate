@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="This file implements the functionality of the CPU multiplier (MAC unit)." alt="" coords="141,5,291,47"/>
 <area shape="rect" id="node2" href="$mac_8hpp.html" title="This file defines the functionality of the CPU multiplier (MAC unit)." alt="" coords="113,95,191,121"/>
 <area shape="rect" id="node6" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="216,95,344,121"/>
-<area shape="rect" id="node3" href="$multiply_8hpp.html" title=" " alt="" coords="5,169,131,196"/>
-<area shape="rect" id="node5" href="$multiply__long_8hpp.html" title=" " alt="" coords="155,169,317,196"/>
+<area shape="rect" id="node3" href="$multiply_8hpp.html" title="This file defines a multiplication instruction (MUL, MLA)." alt="" coords="5,169,131,196"/>
+<area shape="rect" id="node5" href="$multiply__long_8hpp.html" title="This file defines a multiplication (long) instruction." alt="" coords="155,169,317,196"/>
 <area shape="rect" id="node4" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="93,244,211,271"/>
 </map>

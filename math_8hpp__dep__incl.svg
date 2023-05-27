@@ -68,7 +68,7 @@
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="isa__decoder_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node15"><a xlink:href="isa__decoder_8cpp.html" target="_top" xlink:title="This file implements an instruction decoder defined in isa_decoder.hpp.">
 <polygon fill="none" stroke="black" points="538,-134.5 538,-164.5 663,-164.5 663,-134.5 538,-134.5"/>
 <text text-anchor="start" x="546" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="600.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa_decoder.cpp</text>

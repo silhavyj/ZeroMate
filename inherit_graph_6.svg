@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html" target="_top" xlink:title=" ">
+<g id="a_node1"><a xlink:href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html" target="_top" xlink:title="This structure represents a single row in the instruction look&#45;up table.">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-52.5 130,-52.5 130,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CISA_Decoder</text>

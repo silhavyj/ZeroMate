@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines an instruction decoder.">
 <polygon fill="#bfbfbf" stroke="black" points="337.5,-201.5 337.5,-231.5 463.5,-231.5 463.5,-201.5 337.5,-201.5"/>
 <text text-anchor="start" x="345.5" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="400.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa_decoder.hpp</text>
@@ -37,7 +37,7 @@
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="isa__decoder_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node13"><a xlink:href="isa__decoder_8cpp.html" target="_top" xlink:title="This file implements an instruction decoder defined in isa_decoder.hpp.">
 <polygon fill="none" stroke="black" points="407,-134.5 407,-164.5 532,-164.5 532,-134.5 407,-134.5"/>
 <text text-anchor="start" x="415" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="469.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa_decoder.cpp</text>

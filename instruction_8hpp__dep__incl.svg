@@ -200,7 +200,7 @@
 <!-- Node44 -->
 <g id="node33" class="node">
 <title>Node44</title>
-<g id="a_node33"><a xlink:href="halfword__data__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node33"><a xlink:href="halfword__data__transfer_8hpp.html" target="_top" xlink:title="This file defines a Halfword data transfer instruction.">
 <polygon fill="none" stroke="black" points="2284.5,-212.5 2284.5,-253.5 2400.5,-253.5 2400.5,-212.5 2284.5,-212.5"/>
 <text text-anchor="start" x="2292.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="start" x="2292.5" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/halfword_data</text>
@@ -233,7 +233,7 @@
 <!-- Node47 -->
 <g id="node36" class="node">
 <title>Node47</title>
-<g id="a_node36"><a xlink:href="isa__decoder_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node36"><a xlink:href="isa__decoder_8hpp.html" target="_top" xlink:title="This file defines an instruction decoder.">
 <polygon fill="none" stroke="black" points="3026.5,-218 3026.5,-248 3152.5,-248 3152.5,-218 3026.5,-218"/>
 <text text-anchor="start" x="3034.5" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="3089.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa_decoder.hpp</text>
@@ -249,7 +249,7 @@
 <!-- Node49 -->
 <g id="node38" class="node">
 <title>Node49</title>
-<g id="a_node38"><a xlink:href="multiply_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node38"><a xlink:href="multiply_8hpp.html" target="_top" xlink:title="This file defines a multiplication instruction (MUL, MLA).">
 <polygon fill="none" stroke="black" points="1732,-218 1732,-248 1845,-248 1845,-218 1732,-218"/>
 <text text-anchor="start" x="1740" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1788.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/multiply.hpp</text>
@@ -265,7 +265,7 @@
 <!-- Node53 -->
 <g id="node41" class="node">
 <title>Node53</title>
-<g id="a_node41"><a xlink:href="multiply__long_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node41"><a xlink:href="multiply__long_8hpp.html" target="_top" xlink:title="This file defines a multiplication (long) instruction.">
 <polygon fill="none" stroke="black" points="1863,-218 1863,-248 1998,-248 1998,-218 1863,-218"/>
 <text text-anchor="start" x="1871" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1930.5" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/multiply_long.hpp</text>
@@ -730,7 +730,7 @@
 <!-- Node43 -->
 <g id="node32" class="node">
 <title>Node43</title>
-<g id="a_node32"><a xlink:href="extend_8cpp.html" target="_top" xlink:title="This file defines an extend instruction as defined in extend.hpp.">
+<g id="a_node32"><a xlink:href="extend_8cpp.html" target="_top" xlink:title="This file implements an extend instruction as defined in extend.hpp.">
 <polygon fill="none" stroke="black" points="2223,-140 2223,-170 2336,-170 2336,-140 2223,-140"/>
 <text text-anchor="start" x="2231" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="2279.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/extend.cpp</text>
@@ -752,7 +752,7 @@
 <!-- Node45 -->
 <g id="node34" class="node">
 <title>Node45</title>
-<g id="a_node34"><a xlink:href="halfword__data__transfer_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node34"><a xlink:href="halfword__data__transfer_8cpp.html" target="_top" xlink:title="This file implements a Halfword data transfer instruction as defined in halfword_data_transfer....">
 <polygon fill="none" stroke="black" points="2354.5,-134.5 2354.5,-175.5 2470.5,-175.5 2470.5,-134.5 2354.5,-134.5"/>
 <text text-anchor="start" x="2362.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="start" x="2362.5" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/halfword_data</text>
@@ -775,7 +775,7 @@
 <!-- Node48 -->
 <g id="node37" class="node">
 <title>Node48</title>
-<g id="a_node37"><a xlink:href="isa__decoder_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node37"><a xlink:href="isa__decoder_8cpp.html" target="_top" xlink:title="This file implements an instruction decoder defined in isa_decoder.hpp.">
 <polygon fill="none" stroke="black" points="3118,-140 3118,-170 3243,-170 3243,-140 3118,-140"/>
 <text text-anchor="start" x="3126" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="3180.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa_decoder.cpp</text>
@@ -797,7 +797,7 @@
 <!-- Node50 -->
 <g id="node39" class="node">
 <title>Node50</title>
-<g id="a_node39"><a xlink:href="multiply_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node39"><a xlink:href="multiply_8cpp.html" target="_top" xlink:title="This file implements a multiplication instruction (MUL, MLA) as defined in multiply....">
 <polygon fill="none" stroke="black" points="1808,-140 1808,-170 1921,-170 1921,-140 1808,-140"/>
 <text text-anchor="start" x="1816" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1864.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/multiply.cpp</text>
@@ -847,7 +847,7 @@
 <!-- Node54 -->
 <g id="node42" class="node">
 <title>Node54</title>
-<g id="a_node42"><a xlink:href="multiply__long_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node42"><a xlink:href="multiply__long_8cpp.html" target="_top" xlink:title="This file defines a multiplication (long) instruction as defined in multiply_long....">
 <polygon fill="none" stroke="black" points="2070.5,-140 2070.5,-170 2204.5,-170 2204.5,-140 2070.5,-140"/>
 <text text-anchor="start" x="2078.5" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="2137.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/multiply_long.cpp</text>

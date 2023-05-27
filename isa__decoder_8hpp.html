@@ -92,13 +92,14 @@ $(document).ready(function(){initNavTree('isa__decoder_8hpp.html',''); initResiz
 <div class="title">isa_decoder.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;array&gt;</code><br />
-<code>#include &lt;cstdint&gt;</code><br />
-<code>#include &quot;<a class="el" href="instruction_8hpp_source.html">instruction.hpp</a>&quot;</code><br />
+
+<p>This file defines an instruction decoder.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="instruction_8hpp_source.html">instruction.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for isa_decoder.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="isa__decoder_8hpp__incl.svg" width="302" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="isa__decoder_8hpp__incl.svg" width="179" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -113,8 +114,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html">zero_mate::arm1176jzf_s::isa::CISA_Decoder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents an instruction decoder.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html">zero_mate::arm1176jzf_s::isa::CISA_Decoder::TInstruction_Lookup_Record</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure represents a single row in the instruction look-up table.  <a href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -126,7 +129,12 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacezero__mate_1_1arm1176jzf__s_1_1isa"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1arm1176jzf__s_1_1isa.html">zero_mate::arm1176jzf_s::isa</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file defines an instruction decoder. </p>
+<dl class="section date"><dt>Date</dt><dd>27. 05. 2023 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Jakub Silhavy (<a href="#" onclick="location.href='mai'+'lto:'+'jak'+'ub'+'.si'+'lh'+'avy'+'.c'+'z@g'+'ma'+'il.'+'co'+'m'; return false;">jakub<span style="display: none;">.nosp@m.</span>.sil<span style="display: none;">.nosp@m.</span>havy.<span style="display: none;">.nosp@m.</span>cz@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a>)</dd></dl>
+<p>It takes a 32-bit value and returns an instruction type that matches the value. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

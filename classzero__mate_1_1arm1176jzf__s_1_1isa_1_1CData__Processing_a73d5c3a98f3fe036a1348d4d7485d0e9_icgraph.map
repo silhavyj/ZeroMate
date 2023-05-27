@@ -1,5 +1,6 @@
 <map id="zero_mate::arm1176jzf_s::isa::CData_Processing::Get_Rm_Idx" name="zero_mate::arm1176jzf_s::isa::CData_Processing::Get_Rm_Idx">
-<area shape="rect" id="node1" title="Returns the index of the second operand register (Rm)." alt="" coords="480,5,668,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa5b55276e454abfced2b5714b936e98d" title="Calculates the second operand of a data processing instruction." alt="" coords="229,5,432,61"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a92c997ad914fb73cec7feb5fa26d8ead" title="Executes a data processing instruction." alt="" coords="5,13,181,54"/>
+<area shape="rect" id="node1" title="Returns the index of the second operand register (Rm)." alt="" coords="480,35,668,91"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e27faf1eee6c2ef6fc2cfae3fe2b87" title="Calculates the offset from the base address in a halfword data transfer instruction." alt="" coords="233,5,428,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa5b55276e454abfced2b5714b936e98d" title="Calculates the second operand of a data processing instruction." alt="" coords="229,71,432,127"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a92c997ad914fb73cec7feb5fa26d8ead" title="Executes a data processing instruction." alt="" coords="5,79,181,120"/>
 </map>

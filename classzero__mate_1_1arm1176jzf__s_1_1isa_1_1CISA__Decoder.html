@@ -96,31 +96,42 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1is
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents an instruction decoder.  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="isa__decoder_8hpp_source.html">isa_decoder.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html">TInstruction_Lookup_Record</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure represents a single row in the instruction look-up table.  <a href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a814bc7b3c6127d0a67fb084a1f1657bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#a814bc7b3c6127d0a67fb084a1f1657bc">CISA_Decoder</a> () noexcept</td></tr>
+<tr class="memdesc:a814bc7b3c6127d0a67fb084a1f1657bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#a814bc7b3c6127d0a67fb084a1f1657bc">More...</a><br /></td></tr>
 <tr class="separator:a814bc7b3c6127d0a67fb084a1f1657bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ace4e1013614b87601866df1679a42e6e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14db">CInstruction::NType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#ace4e1013614b87601866df1679a42e6e">Get_Instruction_Type</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) noexcept</td></tr>
+<tr class="memdesc:ace4e1013614b87601866df1679a42e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up an instruction type in the instruction look-up table.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#ace4e1013614b87601866df1679a42e6e">More...</a><br /></td></tr>
 <tr class="separator:ace4e1013614b87601866df1679a42e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a6ed488887e5ba5751401b19b8e4e57e6"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#a6ed488887e5ba5751401b19b8e4e57e6">NUMBER_OF_INSTRUCTION_MASKS</a> = 21</td></tr>
+<tr class="memdesc:a6ed488887e5ba5751401b19b8e4e57e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of rows in the look-up table (number of different instruction masks).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#a6ed488887e5ba5751401b19b8e4e57e6">More...</a><br /></td></tr>
 <tr class="separator:a6ed488887e5ba5751401b19b8e4e57e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab317130bad0a9f2bee282ac619ed4706"><td class="memItemLeft" align="right" valign="top">static std::array&lt; <a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html">TInstruction_Lookup_Record</a>, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#a6ed488887e5ba5751401b19b8e4e57e6">NUMBER_OF_INSTRUCTION_MASKS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#ab317130bad0a9f2bee282ac619ed4706">s_instruction_lookup_table</a></td></tr>
+<tr class="memdesc:ab317130bad0a9f2bee282ac619ed4706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instruction look-up table made up of <a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html" title="This structure represents a single row in the instruction look-up table.">CISA_Decoder::TInstruction_Lookup_Record</a>.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#ab317130bad0a9f2bee282ac619ed4706">More...</a><br /></td></tr>
 <tr class="separator:ab317130bad0a9f2bee282ac619ed4706"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents an instruction decoder. </p>
+<p>It is used in <a class="el" href="core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp.">core.cpp</a> to decode individual instructions as they are fetched from the memory. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a814bc7b3c6127d0a67fb084a1f1657bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a814bc7b3c6127d0a67fb084a1f1657bc">&#9670;&nbsp;</a></span>CISA_Decoder()</h2>
 
@@ -143,6 +154,9 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates an instance of the class. </p>
+<p>Upon construction, it sorts out the look-up table from the most restrictive mask to the least restrictive masks. </p>
 
 </div>
 </div>
@@ -170,6 +184,16 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Looks up an instruction type in the instruction look-up table. </p>
+<p>The look-up time of this function is O(n) as it iterates row by row through the look-up table.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>32-bit value representing an encoded instruction </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Corresponding instruction type </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -199,6 +223,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Total number of rows in the look-up table (number of different instruction masks). </p>
 
 </div>
 </div>
@@ -264,6 +290,9 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclasszero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction_html_ae72b3268f36601933581ecf9851c14dbae257376d913f3b53cbb4a9b19d770648"><div class="ttname"><a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbae257376d913f3b53cbb4a9b19d770648">zero_mate::arm1176jzf_s::isa::CInstruction::NType::Multiply</a></div><div class="ttdeci">@ Multiply</div><div class="ttdoc">Multiply instruction.</div></div>
 <div class="ttc" id="aclasszero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction_html_ae72b3268f36601933581ecf9851c14dbaee256467c03492fa8bedd6642cb38e94"><div class="ttname"><a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbaee256467c03492fa8bedd6642cb38e94">zero_mate::arm1176jzf_s::isa::CInstruction::NType::Halfword_Data_Transfer</a></div><div class="ttdeci">@ Halfword_Data_Transfer</div><div class="ttdoc">Halfoword data transfer instruction.</div></div>
 </div><!-- fragment -->
+<p>Instruction look-up table made up of <a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html" title="This structure represents a single row in the instruction look-up table.">CISA_Decoder::TInstruction_Lookup_Record</a>. </p>
+<dl class="section note"><dt>Note</dt><dd>The table is not cost on purpose as it gets sorted in the constructor. </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

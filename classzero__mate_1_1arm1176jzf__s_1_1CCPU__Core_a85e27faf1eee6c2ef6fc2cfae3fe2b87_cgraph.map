@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Core::Get_Offset" name="zero_mate::arm1176jzf_s::CCPU_Core::Get_Offset">
+<area shape="rect" id="node1" title="Calculates the offset from the base address in a halfword data transfer instruction." alt="" coords="5,13,200,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a73d5c3a98f3fe036a1348d4d7485d0e9" title="Returns the index of the second operand register (Rm)." alt="" coords="248,5,436,61"/>
+</map>

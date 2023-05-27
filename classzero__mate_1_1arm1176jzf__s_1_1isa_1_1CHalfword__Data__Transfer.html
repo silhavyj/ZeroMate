@@ -94,6 +94,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1is
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a Halfword data transfer instruction.  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="halfword__data__transfer_8hpp_source.html">halfword_data_transfer.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer:</div>
@@ -115,6 +118,7 @@ Public Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3638a3a690aca9ec4b755b2d5148e4eaa0a9bda713473b26a3c46f266c3e1cd40">Signed_Byte</a> = 0b10
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3638a3a690aca9ec4b755b2d5148e4eaa5a12c9f6581827140817ebfb705e5a70">Signed_Halfwords</a> = 0b11
  }</td></tr>
+<tr class="memdesc:a3638a3a690aca9ec4b755b2d5148e4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different types of the instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3638a3a690aca9ec4b755b2d5148e4ea">More...</a><br /></td></tr>
 <tr class="separator:a3638a3a690aca9ec4b755b2d5148e4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:a110957aeccf83857a9f32afefa6b7803 inherit pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#a110957aeccf83857a9f32afefa6b7803">NCondition</a> : std::uint32_t { <br />
@@ -183,32 +187,40 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa1b7aabeade3143b665e1cb02baac9af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#aa1b7aabeade3143b665e1cb02baac9af">CHalfword_Data_Transfer</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) noexcept</td></tr>
+<tr class="memdesc:aa1b7aabeade3143b665e1cb02baac9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#aa1b7aabeade3143b665e1cb02baac9af">More...</a><br /></td></tr>
 <tr class="separator:aa1b7aabeade3143b665e1cb02baac9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32b2f3064b2ccb34f59fd8152ef0364d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a32b2f3064b2ccb34f59fd8152ef0364d">Is_P_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:a32b2f3064b2ccb34f59fd8152ef0364d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the P bit (pre/post indexing).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a32b2f3064b2ccb34f59fd8152ef0364d">More...</a><br /></td></tr>
 <tr class="separator:a32b2f3064b2ccb34f59fd8152ef0364d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3290a4a9fb19ae4937df9d57114383b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3290a4a9fb19ae4937df9d57114383b3">Is_U_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:a3290a4a9fb19ae4937df9d57114383b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the U bit (up/down).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3290a4a9fb19ae4937df9d57114383b3">More...</a><br /></td></tr>
 <tr class="separator:a3290a4a9fb19ae4937df9d57114383b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af106a150b9b20090928f31e500ec7a8e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#af106a150b9b20090928f31e500ec7a8e">Is_Immediate_Offset</a> () const noexcept</td></tr>
+<tr class="memdesc:af106a150b9b20090928f31e500ec7a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether or not the instruction uses an immediate value.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#af106a150b9b20090928f31e500ec7a8e">More...</a><br /></td></tr>
 <tr class="separator:af106a150b9b20090928f31e500ec7a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0ba5db572b9290835e0f439d714e784"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#af0ba5db572b9290835e0f439d714e784">Is_W_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:af0ba5db572b9290835e0f439d714e784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the W bit (write-back).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#af0ba5db572b9290835e0f439d714e784">More...</a><br /></td></tr>
 <tr class="separator:af0ba5db572b9290835e0f439d714e784"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a569fdaa4b67119837d03e8741fa42f40"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a569fdaa4b67119837d03e8741fa42f40">Is_L_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:a569fdaa4b67119837d03e8741fa42f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the L bit (Load/Store).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a569fdaa4b67119837d03e8741fa42f40">More...</a><br /></td></tr>
 <tr class="separator:a569fdaa4b67119837d03e8741fa42f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cb11d4931d973d3f5bd85f748cda453"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3cb11d4931d973d3f5bd85f748cda453">Get_Rn</a> () const noexcept</td></tr>
-<tr class="separator:a3cb11d4931d973d3f5bd85f748cda453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e5f7ff898d1a8e3a976ac650277c50f"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a9e5f7ff898d1a8e3a976ac650277c50f">Get_Rd</a> () const noexcept</td></tr>
-<tr class="separator:a9e5f7ff898d1a8e3a976ac650277c50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08503062b92e75452972fcc4df9c66ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a08503062b92e75452972fcc4df9c66ad">Is_S_Bit_Set</a> () const noexcept</td></tr>
-<tr class="separator:a08503062b92e75452972fcc4df9c66ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4e84c072d8408e4bd27b5747de31980"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#ac4e84c072d8408e4bd27b5747de31980">Is_H_Bit_Set</a> () const noexcept</td></tr>
-<tr class="separator:ac4e84c072d8408e4bd27b5747de31980"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e34b9d0498b48f44132a497e5981ef8"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a8e34b9d0498b48f44132a497e5981ef8">Get_Rm</a> () const noexcept</td></tr>
-<tr class="separator:a8e34b9d0498b48f44132a497e5981ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49a787e52930ad0873fb5d81ba87cc5"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#ae49a787e52930ad0873fb5d81ba87cc5">Get_Rn_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:ae49a787e52930ad0873fb5d81ba87cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rn register (base register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#ae49a787e52930ad0873fb5d81ba87cc5">More...</a><br /></td></tr>
+<tr class="separator:ae49a787e52930ad0873fb5d81ba87cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af87ec379c25f8b2ea217141c735a730b"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#af87ec379c25f8b2ea217141c735a730b">Get_Rd_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:af87ec379c25f8b2ea217141c735a730b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rd register (source/destination register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#af87ec379c25f8b2ea217141c735a730b">More...</a><br /></td></tr>
+<tr class="separator:af87ec379c25f8b2ea217141c735a730b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d78f8ef6beac40c4d7489086aa27df"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a90d78f8ef6beac40c4d7489086aa27df">Get_Rm_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:a90d78f8ef6beac40c4d7489086aa27df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rm register (offset register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a90d78f8ef6beac40c4d7489086aa27df">More...</a><br /></td></tr>
+<tr class="separator:a90d78f8ef6beac40c4d7489086aa27df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40fc09239d9595e3f5664fa4ab1037a9"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a40fc09239d9595e3f5664fa4ab1037a9">Get_Immediate_Offset_High</a> () const noexcept</td></tr>
+<tr class="memdesc:a40fc09239d9595e3f5664fa4ab1037a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns immediate offset high (high nibble).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a40fc09239d9595e3f5664fa4ab1037a9">More...</a><br /></td></tr>
 <tr class="separator:a40fc09239d9595e3f5664fa4ab1037a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6701994f0d9ae357b539a48485b43673"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a6701994f0d9ae357b539a48485b43673">Get_Immediate_Offset_Low</a> () const noexcept</td></tr>
+<tr class="memdesc:a6701994f0d9ae357b539a48485b43673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns immediate offset low (low nibble).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a6701994f0d9ae357b539a48485b43673">More...</a><br /></td></tr>
 <tr class="separator:a6701994f0d9ae357b539a48485b43673"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a061453b61ce7b4b3e32aa3f44a897384"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3638a3a690aca9ec4b755b2d5148e4ea">NType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a061453b61ce7b4b3e32aa3f44a897384">Get_Type</a> () const noexcept</td></tr>
+<tr class="memdesc:a061453b61ce7b4b3e32aa3f44a897384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the instruction (see <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3638a3a690aca9ec4b755b2d5148e4ea" title="This enumeration defines different types of the instruction.">CHalfword_Data_Transfer::NType</a>).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a061453b61ce7b4b3e32aa3f44a897384">More...</a><br /></td></tr>
 <tr class="separator:a061453b61ce7b4b3e32aa3f44a897384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:af0813b890400084720f720a1cfb6a683 inherit pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af0813b890400084720f720a1cfb6a683">CInstruction</a> (std::uint32_t value) noexcept</td></tr>
@@ -238,7 +250,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Machine code encoding of the instruction (32-bit value)  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ac8cd077b7574ab7d94cf34114a9234fa">More...</a><br /></td></tr>
 <tr class="separator:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a Halfword data transfer instruction. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a3638a3a690aca9ec4b755b2d5148e4ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3638a3a690aca9ec4b755b2d5148e4ea">&#9670;&nbsp;</a></span>NType</h2>
 
@@ -258,11 +272,18 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration defines different types of the instruction. </p>
+<dl class="section note"><dt>Note</dt><dd>Signed Halfwords shall not be stored </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3638a3a690aca9ec4b755b2d5148e4eaabf25a2c5bd5a104d12787b840b79f43d"></a>SWP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3638a3a690aca9ec4b755b2d5148e4eaaebd46e14fa2bc348bb1d1b095e0f073e"></a>Unsigned_Halfwords&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3638a3a690aca9ec4b755b2d5148e4eaa0a9bda713473b26a3c46f266c3e1cd40"></a>Signed_Byte&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3638a3a690aca9ec4b755b2d5148e4eaa5a12c9f6581827140817ebfb705e5a70"></a>Signed_Halfwords&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3638a3a690aca9ec4b755b2d5148e4eaabf25a2c5bd5a104d12787b840b79f43d"></a>SWP&#160;</td><td class="fielddoc"><p>SWP instruction // TODO this is not used in ARMv6? </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3638a3a690aca9ec4b755b2d5148e4eaaebd46e14fa2bc348bb1d1b095e0f073e"></a>Unsigned_Halfwords&#160;</td><td class="fielddoc"><p>Unsigned halfwords (LDRH, STRH) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3638a3a690aca9ec4b755b2d5148e4eaa0a9bda713473b26a3c46f266c3e1cd40"></a>Signed_Byte&#160;</td><td class="fielddoc"><p>Signed byte (LDRSB) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3638a3a690aca9ec4b755b2d5148e4eaa5a12c9f6581827140817ebfb705e5a70"></a>Signed_Halfwords&#160;</td><td class="fielddoc"><p>Signed halfwords (LDRSH) </p>
+</td></tr>
 </table>
 
 </div>
@@ -292,6 +313,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>General instruction (32-bit value) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -318,6 +347,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns immediate offset high (high nibble). </p>
+<dl class="section return"><dt>Returns</dt><dd>Immediate offset high </dd></dl>
+
 </div>
 </div>
 <a id="a6701994f0d9ae357b539a48485b43673"></a>
@@ -343,10 +375,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns immediate offset low (low nibble). </p>
+<dl class="section return"><dt>Returns</dt><dd>Immediate offset low </dd></dl>
+
 </div>
 </div>
-<a id="a9e5f7ff898d1a8e3a976ac650277c50f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e5f7ff898d1a8e3a976ac650277c50f">&#9670;&nbsp;</a></span>Get_Rd()</h2>
+<a id="af87ec379c25f8b2ea217141c735a730b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af87ec379c25f8b2ea217141c735a730b">&#9670;&nbsp;</a></span>Get_Rd_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,7 +390,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer::Get_Rd </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer::Get_Rd_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -368,10 +403,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the index of the Rd register (source/destination register). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rd register </dd></dl>
+
 </div>
 </div>
-<a id="a8e34b9d0498b48f44132a497e5981ef8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e34b9d0498b48f44132a497e5981ef8">&#9670;&nbsp;</a></span>Get_Rm()</h2>
+<a id="a90d78f8ef6beac40c4d7489086aa27df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d78f8ef6beac40c4d7489086aa27df">&#9670;&nbsp;</a></span>Get_Rm_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,7 +418,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer::Get_Rm </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer::Get_Rm_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -393,10 +431,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the index of the Rm register (offset register). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rm register </dd></dl>
+
 </div>
 </div>
-<a id="a3cb11d4931d973d3f5bd85f748cda453"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cb11d4931d973d3f5bd85f748cda453">&#9670;&nbsp;</a></span>Get_Rn()</h2>
+<a id="ae49a787e52930ad0873fb5d81ba87cc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae49a787e52930ad0873fb5d81ba87cc5">&#9670;&nbsp;</a></span>Get_Rn_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,7 +446,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer::Get_Rn </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer::Get_Rn_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -417,6 +458,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the index of the Rn register (base register). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rn register </dd></dl>
 
 </div>
 </div>
@@ -443,30 +487,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ac4e84c072d8408e4bd27b5747de31980"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4e84c072d8408e4bd27b5747de31980">&#9670;&nbsp;</a></span>Is_H_Bit_Set()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer::Is_H_Bit_Set </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Returns the type of the instruction (see <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3638a3a690aca9ec4b755b2d5148e4ea" title="This enumeration defines different types of the instruction.">CHalfword_Data_Transfer::NType</a>). </p>
+<dl class="section return"><dt>Returns</dt><dd>Type of the instruction </dd></dl>
 
 </div>
 </div>
@@ -493,6 +515,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns whether or not the instruction uses an immediate value. </p>
+<dl class="section return"><dt>Returns</dt><dd>true, if an immediate value is used. false, otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="a569fdaa4b67119837d03e8741fa42f40"></a>
@@ -517,6 +542,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the L bit (Load/Store). </p>
+<p>0 = store to memory; 1 = load from memory</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the L bit is set. false, otherwise. </dd></dl>
 
 </div>
 </div>
@@ -543,30 +572,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a08503062b92e75452972fcc4df9c66ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08503062b92e75452972fcc4df9c66ad">&#9670;&nbsp;</a></span>Is_S_Bit_Set()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer::Is_S_Bit_Set </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Returns the value of the P bit (pre/post indexing). </p>
+<p>0 = post: add/subtract offset after transfer; 1 = pre: add/subtract offset before transfer</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the P bit is set. false, otherwise. </dd></dl>
 
 </div>
 </div>
@@ -593,6 +601,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the value of the U bit (up/down). </p>
+<p>0 = down: subtract offset from base; 1 = up: add offset to base</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the U bit is set. false, otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="af0ba5db572b9290835e0f439d714e784"></a>
@@ -617,6 +629,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the W bit (write-back). </p>
+<p>0 = no write-back; 1 = write address into base</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the W bit is set. false, otherwise. </dd></dl>
 
 </div>
 </div>

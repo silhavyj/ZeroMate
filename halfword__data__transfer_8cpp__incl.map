@@ -1,5 +1,5 @@
 <map id="src/core/arm1176jzf_s/isa/halfword_data_transfer.cpp" name="src/core/arm1176jzf_s/isa/halfword_data_transfer.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="27,5,182,61"/>
-<area shape="rect" id="node2" href="$halfword__data__transfer_8hpp.html" title=" " alt="" coords="5,109,204,136"/>
+<area shape="rect" id="node1" title="This file implements a Halfword data transfer instruction as defined in halfword_data_transfer...." alt="" coords="27,5,182,61"/>
+<area shape="rect" id="node2" href="$halfword__data__transfer_8hpp.html" title="This file defines a Halfword data transfer instruction." alt="" coords="5,109,204,136"/>
 <area shape="rect" id="node3" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="45,184,164,211"/>
 </map>
