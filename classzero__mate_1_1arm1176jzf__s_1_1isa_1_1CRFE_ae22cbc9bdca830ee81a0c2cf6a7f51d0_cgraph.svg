@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Returns whether the Rn register should be decremented or not (helper function).">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-41.5 130,-41.5 130,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CRFE::Should</text>
@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html#a2243a3d6d44676a02dcc6e17031414ee" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html#a2243a3d6d44676a02dcc6e17031414ee" target="_top" xlink:title="Returns the addressing mode used in the instruction.">
 <polygon fill="none" stroke="black" points="166,-6 166,-36 360,-36 360,-6 166,-6"/>
 <text text-anchor="start" x="174" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="263" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CRFE::Get_Addressing_Mode</text>

@@ -1,7 +1,7 @@
 <map id="zero_mate::arm1176jzf_s::isa::CPSR_Transfer::Get_Mask" name="zero_mate::arm1176jzf_s::isa::CPSR_Transfer::Get_Mask">
-<area shape="rect" id="node1" title=" " alt="" coords="5,125,179,181"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a57095b246ae459c4135f5d5d9f6cbc85" title=" " alt="" coords="227,5,400,61"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#aa2fa7591782207b606ca5542f57622cb" title=" " alt="" coords="227,85,400,141"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a6a0b2b90bc8fa9d50266f4416f2b5a0d" title=" " alt="" coords="227,165,400,221"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ad7c504ddc0bf7e0d391e49993b6159ef" title=" " alt="" coords="227,245,400,301"/>
+<area shape="rect" id="node1" title="Returns a mask that protects different part of the special register." alt="" coords="5,125,179,181"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a57095b246ae459c4135f5d5d9f6cbc85" title="Returns the value of the C bit (helper function)." alt="" coords="227,5,400,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#aa2fa7591782207b606ca5542f57622cb" title="Returns the value of the F bit (helper function)." alt="" coords="227,85,400,141"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a6a0b2b90bc8fa9d50266f4416f2b5a0d" title="Returns the value of the S bit (helper function)." alt="" coords="227,165,400,221"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ad7c504ddc0bf7e0d391e49993b6159ef" title="Returns the value of the X bit (helper function)." alt="" coords="227,245,400,301"/>
 </map>

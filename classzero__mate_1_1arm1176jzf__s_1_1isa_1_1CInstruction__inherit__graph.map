@@ -13,8 +13,8 @@
 <area shape="rect" id="node12" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html" title="This class represents a Halfword data transfer instruction." alt="" coords="233,736,409,792"/>
 <area shape="rect" id="node13" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html" title="This class represents a multiplication instruction." alt="" coords="234,817,407,858"/>
 <area shape="rect" id="node14" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html" title="This class represents a multiplication long instruction." alt="" coords="234,882,407,923"/>
-<area shape="rect" id="node15" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html" title=" " alt="" coords="234,947,407,989"/>
-<area shape="rect" id="node16" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html" title=" " alt="" coords="234,1013,407,1054"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html" title="This class represents a PSR instruction." alt="" coords="234,947,407,989"/>
+<area shape="rect" id="node16" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html" title="This class represents an RFE instruction (return from exception)." alt="" coords="234,1013,407,1054"/>
 <area shape="rect" id="node17" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html" title=" " alt="" coords="234,1078,407,1119"/>
 <area shape="rect" id="node18" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html" title=" " alt="" coords="234,1144,407,1200"/>
 </map>

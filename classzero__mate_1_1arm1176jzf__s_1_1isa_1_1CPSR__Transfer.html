@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1is
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a PSR instruction.  
+ <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="psr__transfer_8hpp_source.html">psr_transfer.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::arm1176jzf_s::isa::CPSR_Transfer:</div>
@@ -114,10 +117,12 @@ Public Types</h2></td></tr>
 <tr class="memitem:a7e693b08d055faed4f1947dca3b70016"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a7e693b08d055faed4f1947dca3b70016">NRegister</a> : std::uint32_t { <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a7e693b08d055faed4f1947dca3b70016a2e2fa97e0798296d2e54ebc690640419">CPSR</a> = 0
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a7e693b08d055faed4f1947dca3b70016a4c975ba987e8f5ebda3b148c3011e881">SPSR</a> = 1
  }</td></tr>
+<tr class="memdesc:a7e693b08d055faed4f1947dca3b70016"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration represents the special registers that can be involved in the operation.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a7e693b08d055faed4f1947dca3b70016">More...</a><br /></td></tr>
 <tr class="separator:a7e693b08d055faed4f1947dca3b70016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a218575788eca2cd4f2c44037c003ca2f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a218575788eca2cd4f2c44037c003ca2f">NType</a> : std::uint32_t { <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a218575788eca2cd4f2c44037c003ca2fa1553efac04c2b29d8bb61a0a4552a34e">MRS</a> = 0
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a218575788eca2cd4f2c44037c003ca2fa88c3927325f37f64ba93991bb88caf8a">MSR</a> = 1
  }</td></tr>
+<tr class="memdesc:a218575788eca2cd4f2c44037c003ca2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration represents the type of operation to be performed.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a218575788eca2cd4f2c44037c003ca2f">More...</a><br /></td></tr>
 <tr class="separator:a218575788eca2cd4f2c44037c003ca2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:a110957aeccf83857a9f32afefa6b7803 inherit pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#a110957aeccf83857a9f32afefa6b7803">NCondition</a> : std::uint32_t { <br />
@@ -186,22 +191,31 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac8d8328d9bc45e281c062a7ea8e3bdfc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ac8d8328d9bc45e281c062a7ea8e3bdfc">CPSR_Transfer</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) noexcept</td></tr>
+<tr class="memdesc:ac8d8328d9bc45e281c062a7ea8e3bdfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ac8d8328d9bc45e281c062a7ea8e3bdfc">More...</a><br /></td></tr>
 <tr class="separator:ac8d8328d9bc45e281c062a7ea8e3bdfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada397b14e5cf27991a1b575c95f945bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a7e693b08d055faed4f1947dca3b70016">NRegister</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ada397b14e5cf27991a1b575c95f945bc">Get_Register_Type</a> () const noexcept</td></tr>
+<tr class="memdesc:ada397b14e5cf27991a1b575c95f945bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the special register involved in the operation.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ada397b14e5cf27991a1b575c95f945bc">More...</a><br /></td></tr>
 <tr class="separator:ada397b14e5cf27991a1b575c95f945bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19fb927b60d403cb72f1a9702815beb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14db">NType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a19fb927b60d403cb72f1a9702815beb8">Get_Type</a> () const noexcept</td></tr>
+<tr class="memdesc:a19fb927b60d403cb72f1a9702815beb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the operation to be performed.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a19fb927b60d403cb72f1a9702815beb8">More...</a><br /></td></tr>
 <tr class="separator:a19fb927b60d403cb72f1a9702815beb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad8286360247014777a9f9784af744fd"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#aad8286360247014777a9f9784af744fd">Get_Rm</a> () const noexcept</td></tr>
-<tr class="separator:aad8286360247014777a9f9784af744fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00b5bba41731bc7acf875645d64a88a6"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a00b5bba41731bc7acf875645d64a88a6">Get_Rd</a> () const noexcept</td></tr>
-<tr class="separator:a00b5bba41731bc7acf875645d64a88a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b16ce34a4591e78de88f812105b58b"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a65b16ce34a4591e78de88f812105b58b">Get_Rm_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:a65b16ce34a4591e78de88f812105b58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rm register (source register; see <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ae211666723c56b5f5ea617c8fe51619f" title="Returns the value of the I bit.">Is_Immediate</a>).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a65b16ce34a4591e78de88f812105b58b">More...</a><br /></td></tr>
+<tr class="separator:a65b16ce34a4591e78de88f812105b58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af308ac81949119ead199cd39aa8bf7d0"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#af308ac81949119ead199cd39aa8bf7d0">Get_Rd_Idx</a> () const noexcept</td></tr>
+<tr class="memdesc:af308ac81949119ead199cd39aa8bf7d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the Rd register (destination register).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#af308ac81949119ead199cd39aa8bf7d0">More...</a><br /></td></tr>
+<tr class="separator:af308ac81949119ead199cd39aa8bf7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01a26a3a6acf88a634a319d0a8a49daa"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a01a26a3a6acf88a634a319d0a8a49daa">Get_Mask</a> () const noexcept</td></tr>
+<tr class="memdesc:a01a26a3a6acf88a634a319d0a8a49daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a mask that protects different part of the special register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a01a26a3a6acf88a634a319d0a8a49daa">More...</a><br /></td></tr>
 <tr class="separator:a01a26a3a6acf88a634a319d0a8a49daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae211666723c56b5f5ea617c8fe51619f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ae211666723c56b5f5ea617c8fe51619f">Is_Immediate</a> () const noexcept</td></tr>
+<tr class="memdesc:ae211666723c56b5f5ea617c8fe51619f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the I bit.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ae211666723c56b5f5ea617c8fe51619f">More...</a><br /></td></tr>
 <tr class="separator:ae211666723c56b5f5ea617c8fe51619f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfdf2a9b316a180edc1e39a6254ba157"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#adfdf2a9b316a180edc1e39a6254ba157">Get_Rotate</a> () const noexcept</td></tr>
+<tr class="memdesc:adfdf2a9b316a180edc1e39a6254ba157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the shift amount to be applied to the immediate value.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#adfdf2a9b316a180edc1e39a6254ba157">More...</a><br /></td></tr>
 <tr class="separator:adfdf2a9b316a180edc1e39a6254ba157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c53a8ed393e0e284b5953a2a2d7cf7d"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a3c53a8ed393e0e284b5953a2a2d7cf7d">Get_Immediate</a> () const noexcept</td></tr>
+<tr class="memdesc:a3c53a8ed393e0e284b5953a2a2d7cf7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the immediate value (source value; see <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ae211666723c56b5f5ea617c8fe51619f" title="Returns the value of the I bit.">Is_Immediate</a>).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a3c53a8ed393e0e284b5953a2a2d7cf7d">More...</a><br /></td></tr>
 <tr class="separator:a3c53a8ed393e0e284b5953a2a2d7cf7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:af0813b890400084720f720a1cfb6a683 inherit pub_methods_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af0813b890400084720f720a1cfb6a683">CInstruction</a> (std::uint32_t value) noexcept</td></tr>
@@ -223,12 +237,16 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aa2fa7591782207b606ca5542f57622cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#aa2fa7591782207b606ca5542f57622cb">Is_F_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:aa2fa7591782207b606ca5542f57622cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the F bit (helper function).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#aa2fa7591782207b606ca5542f57622cb">More...</a><br /></td></tr>
 <tr class="separator:aa2fa7591782207b606ca5542f57622cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a0b2b90bc8fa9d50266f4416f2b5a0d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a6a0b2b90bc8fa9d50266f4416f2b5a0d">Is_S_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:a6a0b2b90bc8fa9d50266f4416f2b5a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the S bit (helper function).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a6a0b2b90bc8fa9d50266f4416f2b5a0d">More...</a><br /></td></tr>
 <tr class="separator:a6a0b2b90bc8fa9d50266f4416f2b5a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7c504ddc0bf7e0d391e49993b6159ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ad7c504ddc0bf7e0d391e49993b6159ef">Is_X_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:ad7c504ddc0bf7e0d391e49993b6159ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the X bit (helper function).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ad7c504ddc0bf7e0d391e49993b6159ef">More...</a><br /></td></tr>
 <tr class="separator:ad7c504ddc0bf7e0d391e49993b6159ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57095b246ae459c4135f5d5d9f6cbc85"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a57095b246ae459c4135f5d5d9f6cbc85">Is_C_Bit_Set</a> () const noexcept</td></tr>
+<tr class="memdesc:a57095b246ae459c4135f5d5d9f6cbc85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the C bit (helper function).  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a57095b246ae459c4135f5d5d9f6cbc85">More...</a><br /></td></tr>
 <tr class="separator:a57095b246ae459c4135f5d5d9f6cbc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -242,7 +260,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Machine code encoding of the instruction (32-bit value)  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ac8cd077b7574ab7d94cf34114a9234fa">More...</a><br /></td></tr>
 <tr class="separator:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a PSR instruction. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a7e693b08d055faed4f1947dca3b70016"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e693b08d055faed4f1947dca3b70016">&#9670;&nbsp;</a></span>NRegister</h2>
 
@@ -262,9 +282,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration represents the special registers that can be involved in the operation. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7e693b08d055faed4f1947dca3b70016a2e2fa97e0798296d2e54ebc690640419"></a>CPSR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7e693b08d055faed4f1947dca3b70016a4c975ba987e8f5ebda3b148c3011e881"></a>SPSR&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7e693b08d055faed4f1947dca3b70016a2e2fa97e0798296d2e54ebc690640419"></a>CPSR&#160;</td><td class="fielddoc"><p>CPSR register (current processor state register) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7e693b08d055faed4f1947dca3b70016a4c975ba987e8f5ebda3b148c3011e881"></a>SPSR&#160;</td><td class="fielddoc"><p>SPSR register (saved processor state register) </p>
+</td></tr>
 </table>
 
 </div>
@@ -288,9 +312,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration represents the type of operation to be performed. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a218575788eca2cd4f2c44037c003ca2fa1553efac04c2b29d8bb61a0a4552a34e"></a>MRS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a218575788eca2cd4f2c44037c003ca2fa88c3927325f37f64ba93991bb88caf8a"></a>MSR&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a218575788eca2cd4f2c44037c003ca2fa1553efac04c2b29d8bb61a0a4552a34e"></a>MRS&#160;</td><td class="fielddoc"><p>Transfer PSR contents to an ARM register. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a218575788eca2cd4f2c44037c003ca2fa88c3927325f37f64ba93991bb88caf8a"></a>MSR&#160;</td><td class="fielddoc"><p>Transfer the content of an ARM register to PSR. </p>
+</td></tr>
 </table>
 
 </div>
@@ -320,6 +348,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instruction</td><td>General instruction (32-bit value) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -346,6 +382,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the immediate value (source value; see <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ae211666723c56b5f5ea617c8fe51619f" title="Returns the value of the I bit.">Is_Immediate</a>). </p>
+<dl class="section return"><dt>Returns</dt><dd>Immediate value </dd></dl>
+
 </div>
 </div>
 <a id="a01a26a3a6acf88a634a319d0a8a49daa"></a>
@@ -370,6 +409,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns a mask that protects different part of the special register. </p>
+<p>The special register is divided up to 4 parts: flag bits, status bits, extension bits, and control bits (see <a href="https://www.ques10.com/p/54453/explain-functions-of-different-registers-availab-1/">https://www.ques10.com/p/54453/explain-functions-of-different-registers-availab-1/</a>).</p>
+<dl class="section return"><dt>Returns</dt><dd>Mask to protect different parts of the special register when setting a new value to it </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -379,8 +422,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a00b5bba41731bc7acf875645d64a88a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00b5bba41731bc7acf875645d64a88a6">&#9670;&nbsp;</a></span>Get_Rd()</h2>
+<a id="af308ac81949119ead199cd39aa8bf7d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af308ac81949119ead199cd39aa8bf7d0">&#9670;&nbsp;</a></span>Get_Rd_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -389,7 +432,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CPSR_Transfer::Get_Rd </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CPSR_Transfer::Get_Rd_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -401,6 +444,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the index of the Rd register (destination register). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rd register </dd></dl>
 
 </div>
 </div>
@@ -427,10 +473,13 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the type of the special register involved in the operation. </p>
+<dl class="section return"><dt>Returns</dt><dd>Type of the special register </dd></dl>
+
 </div>
 </div>
-<a id="aad8286360247014777a9f9784af744fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad8286360247014777a9f9784af744fd">&#9670;&nbsp;</a></span>Get_Rm()</h2>
+<a id="a65b16ce34a4591e78de88f812105b58b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b16ce34a4591e78de88f812105b58b">&#9670;&nbsp;</a></span>Get_Rm_Idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -439,7 +488,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CPSR_Transfer::Get_Rm </td>
+          <td class="memname">std::uint32_t zero_mate::arm1176jzf_s::isa::CPSR_Transfer::Get_Rm_Idx </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -451,6 +500,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the index of the Rm register (source register; see <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ae211666723c56b5f5ea617c8fe51619f" title="Returns the value of the I bit.">Is_Immediate</a>). </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the Rm register </dd></dl>
 
 </div>
 </div>
@@ -477,6 +529,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the shift amount to be applied to the immediate value. </p>
+<dl class="section return"><dt>Returns</dt><dd>Value the immediate value will be rotated by </dd></dl>
+
 </div>
 </div>
 <a id="a19fb927b60d403cb72f1a9702815beb8"></a>
@@ -502,6 +557,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the type of the operation to be performed. </p>
+<dl class="section return"><dt>Returns</dt><dd>Type of the operation </dd></dl>
+
 </div>
 </div>
 <a id="a57095b246ae459c4135f5d5d9f6cbc85"></a>
@@ -526,6 +584,10 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the C bit (helper function). </p>
+<p>If the C bit is set, the control bits of the special register will remain unaffected.</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the C bit is set. false, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -557,6 +619,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the F bit (helper function). </p>
+<p>If the F bit is set, the flag bits of the special register will remain unaffected.</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the F bit is set. false, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -589,6 +655,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the value of the I bit. </p>
+<p>0 = source operand is a register; 1 = source operand is an immediate value</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the I bit is set. false, otherwise </dd></dl>
+
 </div>
 </div>
 <a id="a6a0b2b90bc8fa9d50266f4416f2b5a0d"></a>
@@ -613,6 +683,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the S bit (helper function). </p>
+<p>If the S bit is set, the status bits of the special register will remain unaffected.</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the S bit is set. false, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -644,6 +718,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value of the X bit (helper function). </p>
+<p>If the X bit is set, the extension bits of the special register will remain unaffected.</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the X bit is set. false, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

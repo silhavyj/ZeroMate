@@ -1,5 +1,5 @@
 <map id="src/core/arm1176jzf_s/isa/psr_transfer.cpp" name="src/core/arm1176jzf_s/isa/psr_transfer.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,172,47"/>
-<area shape="rect" id="node2" href="$psr__transfer_8hpp.html" title=" " alt="" coords="25,95,152,121"/>
+<area shape="rect" id="node1" title="This file implements a PSR instruction (MRS, MSR) as defined in psr_transfer.hpp." alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node2" href="$psr__transfer_8hpp.html" title="This file defines a PSR instruction (MRS, MSR)." alt="" coords="25,95,152,121"/>
 <area shape="rect" id="node3" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="29,169,148,196"/>
 </map>

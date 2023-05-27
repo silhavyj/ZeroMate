@@ -1,4 +1,4 @@
 <map id="zero_mate::arm1176jzf_s::isa::CPSR_Transfer::Is_F_Bit_Set" name="zero_mate::arm1176jzf_s::isa::CPSR_Transfer::Is_F_Bit_Set">
-<area shape="rect" id="node1" title=" " alt="" coords="227,5,400,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a01a26a3a6acf88a634a319d0a8a49daa" title=" " alt="" coords="5,5,179,61"/>
+<area shape="rect" id="node1" title="Returns the value of the F bit (helper function)." alt="" coords="227,5,400,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a01a26a3a6acf88a634a319d0a8a49daa" title="Returns a mask that protects different part of the special register." alt="" coords="5,5,179,61"/>
 </map>

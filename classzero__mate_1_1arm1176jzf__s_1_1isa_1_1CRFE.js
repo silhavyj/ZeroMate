@@ -8,7 +8,7 @@ var classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE =
     ] ],
     [ "CRFE", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html#a79c52e00518e3bf50f5815499e709e32", null ],
     [ "Get_Addressing_Mode", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html#a2243a3d6d44676a02dcc6e17031414ee", null ],
-    [ "Get_Rn", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html#ac751a236ccd8b3f541358d91c4f51474", null ],
+    [ "Get_Rn_Idx", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html#aac382e9e8d096c16007809ffe28f4c82", null ],
     [ "Is_W_Bit_Set", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html#af6c44e56c0e4206e173ad866e3b1628d", null ],
     [ "Should_Rn_Be_Decremented", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html#ae22cbc9bdca830ee81a0c2cf6a7f51d0", null ]
 ];

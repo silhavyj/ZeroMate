@@ -728,7 +728,7 @@
 <!-- Node37 -->
 <g id="node37" class="node">
 <title>Node37</title>
-<g id="a_node37"><a xlink:href="psr__transfer_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node37"><a xlink:href="psr__transfer_8hpp.html" target="_top" xlink:title="This file defines a PSR instruction (MRS, MSR).">
 <polygon fill="none" stroke="black" points="1530.5,-123.5 1530.5,-142.5 1625.5,-142.5 1625.5,-123.5 1530.5,-123.5"/>
 <text text-anchor="middle" x="1578" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">psr_transfer.hpp</text>
 </a>
@@ -773,7 +773,7 @@
 <!-- Node40 -->
 <g id="node40" class="node">
 <title>Node40</title>
-<g id="a_node40"><a xlink:href="rfe_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node40"><a xlink:href="rfe_8hpp.html" target="_top" xlink:title="This file defines an RFE instruction (return from exception).">
 <polygon fill="none" stroke="black" points="1786.5,-123.5 1786.5,-142.5 1837.5,-142.5 1837.5,-123.5 1786.5,-123.5"/>
 <text text-anchor="middle" x="1812" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">rfe.hpp</text>
 </a>

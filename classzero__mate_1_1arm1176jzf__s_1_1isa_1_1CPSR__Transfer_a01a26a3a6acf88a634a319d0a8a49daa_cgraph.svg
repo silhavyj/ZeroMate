@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Returns a mask that protects different part of the special register.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-90.5 0,-131.5 130,-131.5 130,-90.5 0,-90.5"/>
 <text text-anchor="start" x="8" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="8" y="-108.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CPSR_Transfer</text>
@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a57095b246ae459c4135f5d5d9f6cbc85" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a57095b246ae459c4135f5d5d9f6cbc85" target="_top" xlink:title="Returns the value of the C bit (helper function).">
 <polygon fill="none" stroke="black" points="166,-180.5 166,-221.5 296,-221.5 296,-180.5 166,-180.5"/>
 <text text-anchor="start" x="174" y="-209.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="174" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CPSR_Transfer</text>
@@ -39,7 +39,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#aa2fa7591782207b606ca5542f57622cb" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#aa2fa7591782207b606ca5542f57622cb" target="_top" xlink:title="Returns the value of the F bit (helper function).">
 <polygon fill="none" stroke="black" points="166,-120.5 166,-161.5 296,-161.5 296,-120.5 166,-120.5"/>
 <text text-anchor="start" x="174" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="174" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CPSR_Transfer</text>
@@ -56,7 +56,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a6a0b2b90bc8fa9d50266f4416f2b5a0d" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a6a0b2b90bc8fa9d50266f4416f2b5a0d" target="_top" xlink:title="Returns the value of the S bit (helper function).">
 <polygon fill="none" stroke="black" points="166,-60.5 166,-101.5 296,-101.5 296,-60.5 166,-60.5"/>
 <text text-anchor="start" x="174" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="174" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CPSR_Transfer</text>
@@ -73,7 +73,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ad7c504ddc0bf7e0d391e49993b6159ef" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ad7c504ddc0bf7e0d391e49993b6159ef" target="_top" xlink:title="Returns the value of the X bit (helper function).">
 <polygon fill="none" stroke="black" points="166,-0.5 166,-41.5 296,-41.5 296,-0.5 166,-0.5"/>
 <text text-anchor="start" x="174" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="174" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CPSR_Transfer</text>

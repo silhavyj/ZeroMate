@@ -32,13 +32,13 @@
 <area shape="rect" id="node26" href="$block__data__transfer_8hpp.html" title="This file defines a block data transfer instruction (LDM, STM)." alt="" coords="2475,519,2654,546"/>
 <area shape="rect" id="node27" href="$halfword__data__transfer_8hpp.html" title="This file defines a Halfword data transfer instruction." alt="" coords="2679,519,2877,546"/>
 <area shape="rect" id="node28" href="$extend_8hpp.html" title="This file defines an extend instruction." alt="" coords="2901,519,2996,546"/>
-<area shape="rect" id="node29" href="$psr__transfer_8hpp.html" title=" " alt="" coords="3020,519,3147,546"/>
+<area shape="rect" id="node29" href="$psr__transfer_8hpp.html" title="This file defines a PSR instruction (MRS, MSR)." alt="" coords="3020,519,3147,546"/>
 <area shape="rect" id="node30" href="$cps_8hpp.html" title="This file defines a change processor state instruction (CPS)." alt="" coords="3171,519,3243,546"/>
 <area shape="rect" id="node31" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="1678,512,1835,553"/>
 <area shape="rect" id="node32" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="1859,519,2081,546"/>
 <area shape="rect" id="node33" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="1420,519,1653,546"/>
 <area shape="rect" id="node34" href="$srs_8hpp.html" title=" " alt="" coords="3267,519,3337,546"/>
-<area shape="rect" id="node35" href="$rfe_8hpp.html" title=" " alt="" coords="3361,519,3429,546"/>
+<area shape="rect" id="node35" href="$rfe_8hpp.html" title="This file defines an RFE instruction (return from exception)." alt="" coords="3361,519,3429,546"/>
 <area shape="rect" id="node36" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="3453,519,3521,546"/>
 <area shape="rect" id="node39" href="$cp15_8hpp.html" title=" " alt="" coords="1015,355,1186,382"/>
 <area shape="rect" id="node42" href="$peripheral_8hpp.html" title=" " alt="" coords="1189,437,1383,464"/>

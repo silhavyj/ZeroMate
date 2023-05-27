@@ -235,7 +235,7 @@
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html" target="_top" xlink:title=" ">
+<g id="a_node15"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html" target="_top" xlink:title="This class represents a PSR instruction.">
 <polygon fill="none" stroke="black" points="171.5,-159 171.5,-189 301.5,-189 301.5,-159 171.5,-159"/>
 <text text-anchor="start" x="179.5" y="-177" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="236.5" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CPSR_Transfer</text>
@@ -251,7 +251,7 @@
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html" target="_top" xlink:title=" ">
+<g id="a_node16"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html" target="_top" xlink:title="This class represents an RFE instruction (return from exception).">
 <polygon fill="none" stroke="black" points="171.5,-110 171.5,-140 301.5,-140 301.5,-110 171.5,-110"/>
 <text text-anchor="start" x="179.5" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="middle" x="236.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">_s::isa::CRFE</text>

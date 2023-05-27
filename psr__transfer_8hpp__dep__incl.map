@@ -1,7 +1,7 @@
 <map id="src/core/arm1176jzf_s/isa/psr_transfer.hpp" name="src/core/arm1176jzf_s/isa/psr_transfer.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="455,5,623,47"/>
+<area shape="rect" id="node1" title="This file defines a PSR instruction (MRS, MSR)." alt="" coords="455,5,623,47"/>
 <area shape="rect" id="node2" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="373,95,524,136"/>
-<area shape="rect" id="node14" href="$psr__transfer_8cpp.html" title=" " alt="" coords="548,95,715,136"/>
+<area shape="rect" id="node14" href="$psr__transfer_8cpp.html" title="This file implements a PSR instruction (MRS, MSR) as defined in psr_transfer.hpp." alt="" coords="548,95,715,136"/>
 <area shape="rect" id="node3" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="373,184,524,225"/>
 <area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class as defined in core.hpp." alt="" coords="5,273,156,315"/>
 <area shape="rect" id="node5" href="$control__window_8hpp.html" title=" " alt="" coords="764,273,939,315"/>

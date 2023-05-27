@@ -1,4 +1,4 @@
 <map id="src/core/arm1176jzf_s/isa/psr_transfer.hpp" name="src/core/arm1176jzf_s/isa/psr_transfer.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,173,47"/>
+<area shape="rect" id="node1" title="This file defines a PSR instruction (MRS, MSR)." alt="" coords="5,5,173,47"/>
 <area shape="rect" id="node2" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="30,95,149,121"/>
 </map>
