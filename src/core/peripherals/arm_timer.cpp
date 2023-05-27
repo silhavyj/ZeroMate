@@ -49,25 +49,7 @@ namespace zero_mate::peripheral
         m_limit = limit;
     }
 
-    std::uint32_t CARM_Timer::CPrescaler::Update_Counter(std::uint32_t limit_value)
-    {
-        std::uint32_t prescaled_cycles_passed{};
-
-        // The threshold has been reached.
-        if (m_counter >= limit_value)
-        {
-            // Check how many times the threshold has been reached.
-            prescaled_cycles_passed = m_counter / limit_value;
-
-            // Update the internal counter.
-            m_counter = m_counter % limit_value;
-        }
-
-        // Return the number of prescaled cycles.
-        return prescaled_cycles_passed;
-    }
-
-    uint32_t CARM_Timer::CPrescaler::Prescale_Cycle_Passed(std::uint32_t cycles_passed) noexcept
+    std::uint32_t CARM_Timer::CPrescaler::operator()(std::uint32_t cycles_passed) noexcept
     {
         // Increment the internal counter.
         m_counter += cycles_passed;
@@ -94,6 +76,24 @@ namespace zero_mate::peripheral
 
         // Return the number of prescaled cycles.
         return cycles_passed;
+    }
+
+    std::uint32_t CARM_Timer::CPrescaler::Update_Counter(std::uint32_t limit_value)
+    {
+        std::uint32_t prescaled_cycles_passed{};
+
+        // The threshold has been reached.
+        if (m_counter >= limit_value)
+        {
+            // Check how many times the threshold has been reached.
+            prescaled_cycles_passed = m_counter / limit_value;
+
+            // Update the internal counter.
+            m_counter = m_counter % limit_value;
+        }
+
+        // Return the number of prescaled cycles.
+        return prescaled_cycles_passed;
     }
 
     CARM_Timer::CARM_Timer(std::shared_ptr<CInterrupt_Controller> interrupt_controller)
@@ -155,7 +155,7 @@ namespace zero_mate::peripheral
         }
 
         // Prescale the number of passed CPU cycles.
-        count = m_prescaler.Prescale_Cycle_Passed(count);
+        count = m_prescaler(count);
 
         // Set the threshold of the prescaler.
         m_prescaler.Set_Limit(static_cast<NPrescal_Bits>(control_reg.Prescaler));

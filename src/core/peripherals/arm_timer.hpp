@@ -195,7 +195,7 @@ namespace zero_mate::peripheral
             /// \param cycles_passed Number of CPU cycles it took to execute the last instruction
             /// \return Updated (prescaled) number CPU cycles it took to execute the last instruction
             // ---------------------------------------------------------------------------------------------------------
-            [[nodiscard]] std::uint32_t Prescale_Cycle_Passed(std::uint32_t cycles_passed) noexcept;
+            std::uint32_t operator()(std::uint32_t cycles_passed) noexcept;
 
             // ---------------------------------------------------------------------------------------------------------
             /// \brief Sets a new limit of the prescaler.
