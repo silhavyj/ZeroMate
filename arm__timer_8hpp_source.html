@@ -286,7 +286,7 @@ $(document).ready(function(){initNavTree('arm__timer_8hpp_source.html',''); init
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">            /// \param cycles_passed Number of CPU cycles it took to execute the last instruction</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">            /// \return Updated (prescaled) number CPU cycles it took to execute the last instruction</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment"></span>            <span class="comment">// ---------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            [[nodiscard]] std::uint32_t Prescale_Cycle_Passed(std::uint32_t cycles_passed) noexcept;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            std::uint32_t operator()(std::uint32_t cycles_passed) noexcept;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="comment">// ---------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">            /// \brief Sets a new limit of the prescaler.</span></div>

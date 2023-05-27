@@ -1,8 +1,7 @@
 <map id="zero_mate::peripheral::CARM_Timer::Increment_Passed_Cycles" name="zero_mate::peripheral::CARM_Timer::Increment_Passed_Cycles">
-<area shape="rect" id="node1" title="Updates the timer (ISystem_Clock_Listener interface)." alt="" coords="5,122,193,178"/>
+<area shape="rect" id="node1" title="Updates the timer (ISystem_Clock_Listener interface)." alt="" coords="5,90,193,146"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a6f089d92275345a7f7a363c942bc8692" title="Returns the current content of the control register." alt="" coords="241,5,472,47"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a8aa88bde21b52e4ae5132f8e2a5fb73a" title="Returns the current content of a register." alt="" coords="520,64,697,105"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a4e0c606ec657b298b2d5c6db851e9ecf" title="Updates the prescaler." alt="" coords="261,122,452,178"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a781c1f391f64fd775d32b65dee2ba98d" title="Sets a new limit of the prescaler." alt="" coords="261,202,452,258"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9abc7d434c8ec8120e49e2add79e7346" title="This procedure is called whenever the timer reaches 0 (helper function)." alt="" coords="261,282,453,338"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a781c1f391f64fd775d32b65dee2ba98d" title="Sets a new limit of the prescaler." alt="" coords="261,122,452,178"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9abc7d434c8ec8120e49e2add79e7346" title="This procedure is called whenever the timer reaches 0 (helper function)." alt="" coords="261,202,453,258"/>
 </map>
