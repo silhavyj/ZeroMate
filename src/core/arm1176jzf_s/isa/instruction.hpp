@@ -11,6 +11,7 @@
 // STL imports (excluded from Doxygen)
 /// \cond
 #include <cstdint>
+#include <cstddef>
 /// \endcond
 
 namespace zero_mate::arm1176jzf_s::isa
