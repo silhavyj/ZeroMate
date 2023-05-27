@@ -3,7 +3,7 @@
 /// \date 26. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file defines a data processing instruction
+/// \brief This file defines a data processing instruction.
 ///
 /// The following instructions are considered to be data processing instructions:
 /// AND, EOR, SUB, RSB, ADD, ADC, SBS, RSC, TST, TEQ, CMP, CMN, ORR, MOV, BIC, and MVN.

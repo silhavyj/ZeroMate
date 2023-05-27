@@ -385,6 +385,7 @@ namespace zero_mate::arm1176jzf_s
 
     std::uint32_t CCPU_Core::Get_Shift_Amount(isa::CData_Processing instruction) const noexcept
     {
+        // If it is an immediate shift and not a shift by a register.
         if (instruction.Is_Immediate_Shift())
         {
             return instruction.Get_Shift_Amount();
@@ -393,6 +394,7 @@ namespace zero_mate::arm1176jzf_s
         const auto shift_amount_reg_idx = instruction.Get_Rs_Idx();
         auto shift_amount_reg_value = m_context[shift_amount_reg_idx];
 
+        // R15 (PC) is used as the Rs register.
         if (shift_amount_reg_idx == CCPU_Context::PC_REG_IDX)
         {
             // PC is already pointing at the next instruction. Hence, +4 and not +8.
@@ -436,16 +438,16 @@ namespace zero_mate::arm1176jzf_s
     utils::math::TShift_Result<std::uint32_t>
     CCPU_Core::Get_Second_Operand(isa::CData_Processing instruction) const noexcept
     {
+        // Is the second operand immediate operand?
         if (instruction.Is_I_Bit_Set())
         {
             return Get_Second_Operand_Imm(instruction);
         }
 
-        const std::uint32_t shift_amount = Get_Shift_Amount(instruction);
-        const auto shift_type = instruction.Get_Shift_Type();
-        const auto shift_reg = m_context[instruction.Get_Rm_Idx()];
-
-        return Perform_Shift(shift_type, shift_amount, shift_reg);
+        // Perform a shift operation on the Rm register.
+        return Perform_Shift(instruction.Get_Shift_Type(),
+                             Get_Shift_Amount(instruction),
+                             m_context[instruction.Get_Rm_Idx()]);
     }
 
     void CCPU_Core::Execute(isa::CData_Processing instruction)
@@ -470,6 +472,7 @@ namespace zero_mate::arm1176jzf_s
                                          m_context.Is_Flag_Set(CCPU_Context::NFlag::C),
                                          m_context.Is_Flag_Set(CCPU_Context::NFlag::V));
 
+        // Write the result back to the destination register.
         if (result.write_back)
         {
             m_context[dest_reg_idx] = result.value;
@@ -494,6 +497,7 @@ namespace zero_mate::arm1176jzf_s
             }
             else
             {
+                // Set the flags set by the operation to the CPSR register.
                 m_context.Set_Flag(CCPU_Context::NFlag::N, result.n_flag);
                 m_context.Set_Flag(CCPU_Context::NFlag::Z, result.z_flag);
                 m_context.Set_Flag(CCPU_Context::NFlag::C, result.c_flag);
@@ -828,13 +832,16 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CExtend instruction)
     {
-        const auto type = instruction.Get_Type();
-        const auto reg_rd_idx = instruction.Get_Rd();
-        const auto reg_rm_idx = instruction.Get_Rm();
-        const auto reg_rn_idx = instruction.Get_Rn();
-        const auto rot = instruction.Get_Rot();
+        // Register indexes.
+        const auto reg_rd_idx = instruction.Get_Rd_Idx();
+        const auto reg_rm_idx = instruction.Get_Rm_Idx();
+        const auto reg_rn_idx = instruction.Get_Rn_Idx();
 
-        const std::unsigned_integral auto rotated_value = utils::math::ROR(m_context[reg_rm_idx], rot);
+        // Perform ROR (right rotation) on the Rm register.
+        // clang-format off
+        const std::unsigned_integral auto rotated_value = utils::math::ROR(m_context[reg_rm_idx],
+                                                                           instruction.Get_Rot());
+        // clang-format on
 
         // Sign-extend the value from 8 to 16 bits (lower 8 and higher 8).
         const std::uint16_t sign_extended_lower_8_to_16 =
@@ -864,7 +871,7 @@ namespace zero_mate::arm1176jzf_s
         sign_extended_higher_8_to_16 + static_cast<std::uint16_t>((m_context[reg_rn_idx] & 0xFFFF0000) >> 16U);
 
         // Execute the instruction based on its type.
-        switch (type)
+        switch (instruction.Get_Type())
         {
             case isa::CExtend::NType::SXTAB16:
                 m_context[reg_rd_idx] = static_cast<std::uint32_t>(lower_16_bits_signed) |
