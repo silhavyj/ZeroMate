@@ -12,8 +12,8 @@
 
 // ---------------------------------------------------------------------------------------------------------------------
 /// \brief Entry point of the application.
-/// \param argc Total number of arguments passed in the command line
-/// \param argv Arguments passed in the command line
+/// \param argc Total number of arguments passed in from the command line
+/// \param argv Arguments passed in from the command line
 /// \return Exit code of the application
 // ---------------------------------------------------------------------------------------------------------------------
 int main(int argc, const char* argv[])

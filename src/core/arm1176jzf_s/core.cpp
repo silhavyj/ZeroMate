@@ -555,39 +555,43 @@ namespace zero_mate::arm1176jzf_s
     {
         // Execute the operation on the MAC.
         const auto result = mac::Execute(instruction,
-                                         m_context[instruction.Get_Rm()],
-                                         m_context[instruction.Get_Rs()],
-                                         m_context[instruction.Get_Rn()]);
+                                         m_context[instruction.Get_Rm_Idx()],
+                                         m_context[instruction.Get_Rs_Idx()],
+                                         m_context[instruction.Get_Rn_Idx()]);
 
+        // Set the flags in the CPSR register.
         if (result.set_fags)
         {
             m_context.Set_Flag(CCPU_Context::NFlag::N, result.n_flag);
             m_context.Set_Flag(CCPU_Context::NFlag::Z, result.z_flag);
         }
 
-        m_context[instruction.Get_Rd()] = result.value_lo;
+        // Store the result of the multiplication to the destination register.
+        m_context[instruction.Get_Rd_Idx()] = result.value_lo;
     }
 
     void CCPU_Core::Execute(isa::CMultiply_Long instruction)
     {
-        const auto reg_rd_lo = instruction.Get_Rd_Lo();
-        const auto reg_rd_hi = instruction.Get_Rd_Hi();
+        const auto reg_rd_lo = instruction.Get_Rd_Lo_Idx();
+        const auto reg_rd_hi = instruction.Get_Rd_Hi_Idx();
 
         // Execute the operation on the MAC.
         const auto result = mac::Execute(instruction,
-                                         m_context[instruction.Get_Rm()],
-                                         m_context[instruction.Get_Rs()],
+                                         m_context[instruction.Get_Rm_Idx()],
+                                         m_context[instruction.Get_Rs_Idx()],
                                          m_context[reg_rd_lo],
                                          m_context[reg_rd_hi]);
 
+        // Set the flags in the CPSR register.
         if (result.set_fags)
         {
             m_context.Set_Flag(CCPU_Context::NFlag::N, result.n_flag);
             m_context.Set_Flag(CCPU_Context::NFlag::Z, result.z_flag);
         }
 
-        m_context[reg_rd_lo] = result.value_lo;
-        m_context[reg_rd_hi] = result.value_hi;
+        // Store the result of the multiplication to the destination registers.
+        m_context[reg_rd_lo] = result.value_lo; // lower 32-bits
+        m_context[reg_rd_hi] = result.value_hi; // upper 32-bits
     }
 
     std::int64_t CCPU_Core::Get_Offset(isa::CSingle_Data_Transfer instruction) const noexcept
@@ -730,6 +734,7 @@ namespace zero_mate::arm1176jzf_s
 
     std::uint32_t CCPU_Core::Get_Offset(isa::CHalfword_Data_Transfer instruction) const noexcept
     {
+        // Is it an immediate offset (4 + 4 bits)?
         if (instruction.Is_Immediate_Offset())
         {
             const auto high_4_bits = instruction.Get_Immediate_Offset_High();
@@ -738,30 +743,35 @@ namespace zero_mate::arm1176jzf_s
             return (high_4_bits << 4U) | low_4_bits;
         }
 
-        return m_context[instruction.Get_Rm()];
+        // Return the contents of the Rm register.
+        return m_context[instruction.Get_Rm_Idx()];
     }
 
     void CCPU_Core::Perform_Halfword_Data_Transfer_Read(isa::CHalfword_Data_Transfer::NType type,
                                                         std::uint32_t addr,
                                                         std::uint32_t dest_reg_idx)
     {
+        // Value read from the bus (either 8 or 16 bits).
         std::variant<std::uint8_t, std::uint16_t> read_value;
 
         switch (type)
         {
             case isa::CHalfword_Data_Transfer::NType::SWP:
-                // TODO what does this do?
+                // TODO what does this do - it is not be supported in ARMv6?
                 break;
 
+            // Read an unsigned 16-bit value from the bus.
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
                 m_context[dest_reg_idx] = m_bus->Read<std::uint16_t>(addr);
                 break;
 
+            // Read a signed 8-bit value from the bus.
             case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
                 read_value = m_bus->Read<std::uint8_t>(addr);
                 m_context[dest_reg_idx] = utils::math::Sign_Extend_Value(std::get<std::uint8_t>(read_value));
                 break;
 
+            // Read a signed 16-bit value from the bus.
             case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
                 read_value = m_bus->Read<std::uint16_t>(addr);
                 m_context[dest_reg_idx] = utils::math::Sign_Extend_Value(std::get<std::uint16_t>(read_value));
@@ -773,13 +783,12 @@ namespace zero_mate::arm1176jzf_s
                                                          std::uint32_t addr,
                                                          std::uint32_t src_reg_idx)
     {
-        std::uint16_t value{};
-
         switch (type)
         {
+            // TODO verify this
+            // Only Unsigned_Halfwords can be written to the bus.
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                value = static_cast<std::uint16_t>(m_context[src_reg_idx] & 0x0000FFFFU);
-                m_bus->Write<std::uint16_t>(addr, value);
+                m_bus->Write<std::uint16_t>(addr, static_cast<std::uint16_t>(m_context[src_reg_idx] & 0x0000FFFFU));
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::SWP:
@@ -798,12 +807,14 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Execute(isa::CHalfword_Data_Transfer instruction)
     {
         const auto offset = Get_Offset(instruction);
-        const auto src_dest_reg = instruction.Get_Rd();
+        const auto src_dest_reg_idx = instruction.Get_Rd_Idx();
         const auto operation_type = instruction.Get_Type();
-        auto base_addr = m_context[instruction.Get_Rn()];
         const bool pre_indexed = instruction.Is_P_Bit_Set();
+
+        auto base_addr = m_context[instruction.Get_Rn_Idx()];
         std::uint32_t pre_indexed_addr{ base_addr };
 
+        // Add the offset to the base address.
         if (instruction.Is_U_Bit_Set())
         {
             pre_indexed_addr += offset;
@@ -813,20 +824,24 @@ namespace zero_mate::arm1176jzf_s
             pre_indexed_addr -= offset;
         }
 
+        // Determine what base should be used (pre-index or not?)
         const auto addr = pre_indexed ? pre_indexed_addr : base_addr;
 
         if (instruction.Is_L_Bit_Set())
         {
-            Perform_Halfword_Data_Transfer_Read(operation_type, addr, src_dest_reg);
+            // Read data from the bus.
+            Perform_Halfword_Data_Transfer_Read(operation_type, addr, src_dest_reg_idx);
         }
         else
         {
-            Perform_Halfword_Data_Transfer_Write(operation_type, addr, src_dest_reg);
+            // Write data to the bus.
+            Perform_Halfword_Data_Transfer_Write(operation_type, addr, src_dest_reg_idx);
         }
 
+        // Write the base address back to the Rn register.
         if (!pre_indexed || instruction.Is_W_Bit_Set())
         {
-            m_context[instruction.Get_Rn()] = pre_indexed_addr;
+            m_context[instruction.Get_Rn_Idx()] = pre_indexed_addr;
         }
     }
 

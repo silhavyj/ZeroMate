@@ -5,8 +5,8 @@
 ///
 /// \brief This file defines an extend instruction.
 ///
-/// The following instructions are considered to extend instructions:
-/// SXTAB16, UXTAB16, SXTB16, UXTB16, SXTAB, UXTAB, SXTB, UXTB, SXTAH, UXTAH, SXTH, and UXTH
+/// The following instructions are considered to be extend instructions:
+/// SXTAB16, UXTAB16, SXTB16, UXTB16, SXTAB, UXTAB, SXTB, UXTB, SXTAH, UXTAH, SXTH, and UXTH.
 ///
 /// To find more information about this instruction, please visit
 /// https://developer.arm.com/documentation/dui0473/m/arm-and-thumb-instructions/sxtab16 (the other instruction types
