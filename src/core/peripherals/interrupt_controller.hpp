@@ -3,9 +3,9 @@
 /// \date 27. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file defines the interrupt controller used BCM2835.
+/// \brief This file defines the interrupt controller used in BCM2835.
 ///
-/// To find more information about this instruction, please visit
+/// To find more information about this peripheral, please visit
 /// https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf (chapter 7)
 // ---------------------------------------------------------------------------------------------------------------------
 

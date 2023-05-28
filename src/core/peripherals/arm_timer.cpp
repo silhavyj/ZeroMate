@@ -3,9 +3,9 @@
 /// \date 27. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file implements the ARM timer used BCM2835 as defined in arm_timer.hpp.
+/// \brief This file implements the ARM timer used in BCM2835 as defined in arm_timer.hpp.
 ///
-/// To find more information about this instruction, please visit
+/// To find more information about this peripheral, please visit
 /// https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf (chapter 14)
 // ---------------------------------------------------------------------------------------------------------------------
 
