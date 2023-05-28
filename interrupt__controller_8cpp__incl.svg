@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="This file implements the interrupt controller used BCM2835 (defined in interrupt_controller....">
+<g id="a_node1"><a xlink:title="This file implements the interrupt controller used in BCM2835 (defined in interrupt_controller....">
 <polygon fill="#bfbfbf" stroke="black" points="215,-168.5 215,-198.5 348,-198.5 348,-168.5 215,-168.5"/>
 <text text-anchor="start" x="223" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="281.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">/interrupt_controller.cpp</text>
@@ -51,7 +51,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used BCM2835.">
+<g id="a_node4"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used in BCM2835.">
 <polygon fill="none" stroke="black" points="216,-112.5 216,-131.5 347,-131.5 347,-112.5 216,-112.5"/>
 <text text-anchor="middle" x="281.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">interrupt_controller.hpp</text>
 </a>

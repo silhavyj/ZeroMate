@@ -1,4 +1,4 @@
 <map id="zero_mate::peripheral::CGPIO_Manager::Update_Pin_State" name="zero_mate::peripheral::CGPIO_Manager::Update_Pin_State">
-<area shape="rect" id="node1" title=" " alt="" coords="232,5,423,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" title="Writes data to the peripheral." alt="" coords="5,13,184,54"/>
+<area shape="rect" id="node1" title="Updates the state of all pins within a given register." alt="" coords="232,5,423,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,13,184,54"/>
 </map>

@@ -1,12 +1,12 @@
 <map id="zero_mate::utils::math::Is_Bit_Set" name="zero_mate::utils::math::Is_Bit_Set">
 <area shape="rect" id="node1" title="Tests whether a bit is set in the given integral variable." alt="" coords="487,231,656,273"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" title=" " alt="" coords="232,166,439,207"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" title="Clears a pending interrupt by writing a 1 to the GPEDS register." alt="" coords="232,166,439,207"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa731c1d6e73a4db1087a803ca5fe5557" title="Enables/disables interrupts from a basic IRQ source." alt="" coords="233,5,437,61"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ac3c9423e443ca2389cef743f32713cca" title="Enables/disables interrupts from an IRQ source." alt="" coords="252,85,419,141"/>
 <area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#af576acdfa9a998bc49f2203c5be2ab8c" title="Executes a CLZ instruction." alt="" coords="247,231,423,273"/>
 <area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html#a802cd5fadc7952225e152142ab047b0f" title="Returns the offset of the branch instruction." alt="" coords="249,297,422,353"/>
-<area shape="rect" id="node9" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d" title=" " alt="" coords="253,377,418,433"/>
-<area shape="rect" id="node10" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae93785da50eefb8a8cc21c1c59a32726" title=" " alt="" coords="240,457,431,513"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" title="Writes data to the peripheral." alt="" coords="5,385,184,426"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d" title="Enables/disables an interrupt for all pins within a given register." alt="" coords="253,377,418,433"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae93785da50eefb8a8cc21c1c59a32726" title="Updates the state of all pins within a given register." alt="" coords="240,457,431,513"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,385,184,426"/>
 <area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="11,45,178,101"/>
 </map>

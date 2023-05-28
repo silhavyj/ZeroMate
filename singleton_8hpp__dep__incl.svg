@@ -68,7 +68,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="arm__timer_8cpp.html" target="_top" xlink:title="This file implements the ARM timer used BCM2835 as defined in arm_timer.hpp.">
+<g id="a_node5"><a xlink:href="arm__timer_8cpp.html" target="_top" xlink:title="This file implements the ARM timer used in BCM2835 as defined in arm_timer.hpp.">
 <polygon fill="none" stroke="black" points="403,-0.5 403,-30.5 516,-30.5 516,-0.5 403,-0.5"/>
 <text text-anchor="start" x="411" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="459.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/arm_timer.cpp</text>
@@ -84,7 +84,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="gpio_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="gpio_8cpp.html" target="_top" xlink:title="This file implements teh GPIO controller used in BCM2835 (defined in gpio.hpp).">
 <polygon fill="none" stroke="black" points="534,-0.5 534,-30.5 647,-30.5 647,-0.5 534,-0.5"/>
 <text text-anchor="start" x="542" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="590.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/gpio.cpp</text>
@@ -100,7 +100,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="interrupt__controller_8cpp.html" target="_top" xlink:title="This file implements the interrupt controller used BCM2835 (defined in interrupt_controller....">
+<g id="a_node7"><a xlink:href="interrupt__controller_8cpp.html" target="_top" xlink:title="This file implements the interrupt controller used in BCM2835 (defined in interrupt_controller....">
 <polygon fill="none" stroke="black" points="665,-0.5 665,-30.5 798,-30.5 798,-0.5 665,-0.5"/>
 <text text-anchor="start" x="673" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="731.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/interrupt_controller.cpp</text>

@@ -2,9 +2,9 @@
 <area shape="rect" id="node1" title=" " alt="" coords="121,5,332,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,184,83,211"/>
 <area shape="rect" id="node3" href="$window_8hpp.html" title=" " alt="" coords="70,102,205,129"/>
-<area shape="rect" id="node4" href="$gpio_8hpp.html" title=" " alt="" coords="229,95,403,136"/>
+<area shape="rect" id="node4" href="$gpio_8hpp.html" title="This file defines teh GPIO controller used in BCM2835." alt="" coords="229,95,403,136"/>
 <area shape="rect" id="node8" href="$logger_8hpp.html" title=" " alt="" coords="355,333,533,360"/>
 <area shape="rect" id="node5" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="38,259,154,285"/>
-<area shape="rect" id="node6" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used BCM2835." alt="" coords="210,184,385,211"/>
+<area shape="rect" id="node6" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="210,184,385,211"/>
 <area shape="rect" id="node7" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="179,259,381,285"/>
 </map>

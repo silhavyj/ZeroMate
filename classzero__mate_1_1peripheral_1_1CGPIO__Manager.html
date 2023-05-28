@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1peripheral_1_1CGPIO
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a GPIO (general-purpose I/O) manager.  
+ <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="gpio_8hpp_source.html">gpio.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::peripheral::CGPIO_Manager:</div>
@@ -116,6 +119,7 @@ Collaboration diagram for zero_mate::peripheral::CGPIO_Manager:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html">CPin</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents a single pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -176,30 +180,35 @@ Public Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698ae93f994f01c537c4e2f7d8528c3eb5e9">Count</a>
 <br />
  }</td></tr>
+<tr class="memdesc:a19409e7e50658ff0ca681e3cbb504698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of different registers which are used to interact with the GPIO pins.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698">More...</a><br /></td></tr>
 <tr class="separator:a19409e7e50658ff0ca681e3cbb504698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7babe4ce0aef0ec79b8a76bce0cd5e35"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35">NPin_Set_Status</a> { <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35ae0aa021e21dddbd6d8cecec71e9cf564">OK</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35ad08288f57995b4de10bc2b53fa9472b2">Not_Input_Pin</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35aae8f448ad9b574b0a848dca75093e517">State_Already_Set</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35a129d0df4d73b91437e13633546b87cce">Invalid_Pin_Number</a>
  }</td></tr>
+<tr class="memdesc:a7babe4ce0aef0ec79b8a76bce0cd5e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines return values when setting a new state of pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35">More...</a><br /></td></tr>
 <tr class="separator:a7babe4ce0aef0ec79b8a76bce0cd5e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ecaa919171ea326f918ffd329cf4892"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9ecaa919171ea326f918ffd329cf4892">CGPIO_Manager</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html">CInterrupt_Controller</a> &gt; interrupt_controller) noexcept</td></tr>
+<tr class="memdesc:a9ecaa919171ea326f918ffd329cf4892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9ecaa919171ea326f918ffd329cf4892">More...</a><br /></td></tr>
 <tr class="separator:a9ecaa919171ea326f918ffd329cf4892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d659010e4b36a13162587514cdb09da"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a3d659010e4b36a13162587514cdb09da">Get_Size</a> () const noexcept override</td></tr>
-<tr class="memdesc:a3d659010e4b36a13162587514cdb09da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a3d659010e4b36a13162587514cdb09da">More...</a><br /></td></tr>
+<tr class="memdesc:a3d659010e4b36a13162587514cdb09da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a3d659010e4b36a13162587514cdb09da">More...</a><br /></td></tr>
 <tr class="separator:a3d659010e4b36a13162587514cdb09da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26aa957dbb7682447e4ebf9aa078c00c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c">Write</a> (std::uint32_t addr, const char *data, std::uint32_t size) override</td></tr>
-<tr class="memdesc:a26aa957dbb7682447e4ebf9aa078c00c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data to the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c">More...</a><br /></td></tr>
+<tr class="memdesc:a26aa957dbb7682447e4ebf9aa078c00c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data to the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c">More...</a><br /></td></tr>
 <tr class="separator:a26aa957dbb7682447e4ebf9aa078c00c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3edf689b30c39f2406fa6308fdeb2e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9">Read</a> (std::uint32_t addr, char *data, std::uint32_t size) override</td></tr>
-<tr class="memdesc:ac3edf689b30c39f2406fa6308fdeb2e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9">More...</a><br /></td></tr>
+<tr class="memdesc:ac3edf689b30c39f2406fa6308fdeb2e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9">More...</a><br /></td></tr>
 <tr class="separator:ac3edf689b30c39f2406fa6308fdeb2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a116ef53e902c5521278e011f527a4027"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html">CPin</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a116ef53e902c5521278e011f527a4027">Get_Pin</a> (std::size_t idx) const</td></tr>
+<tr class="memdesc:a116ef53e902c5521278e011f527a4027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to a pin (visualization purposes).  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a116ef53e902c5521278e011f527a4027">More...</a><br /></td></tr>
 <tr class="separator:a116ef53e902c5521278e011f527a4027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d695b8f3fc211eaaf4c15a982d3f504"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35">NPin_Set_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504">Set_Pin_State</a> (std::size_t pin_idx, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">CPin::NState</a> state)</td></tr>
+<tr class="memdesc:a9d695b8f3fc211eaaf4c15a982d3f504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new state of a given pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504">More...</a><br /></td></tr>
 <tr class="separator:a9d695b8f3fc211eaaf4c15a982d3f504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1peripheral_1_1IPeripheral"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1peripheral_1_1IPeripheral')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">zero_mate::peripheral::IPeripheral</a></td></tr>
 <tr class="memitem:a802de3443970ca57fd356ccfe9d45415 inherit pub_methods_classzero__mate_1_1peripheral_1_1IPeripheral"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a802de3443970ca57fd356ccfe9d45415">IPeripheral</a> ()=default</td></tr>
@@ -224,48 +233,66 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a8487914af5e11dfb40c672bc2b30c185"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8487914af5e11dfb40c672bc2b30c185">REG_SIZE</a> = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td></tr>
+<tr class="memdesc:a8487914af5e11dfb40c672bc2b30c185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of a single register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8487914af5e11dfb40c672bc2b30c185">More...</a><br /></td></tr>
 <tr class="separator:a8487914af5e11dfb40c672bc2b30c185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2b60cdee74ffb1d92516bb55a7ca441"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa2b60cdee74ffb1d92516bb55a7ca441">NUMBER_OF_GPIO_PINS</a> = 54</td></tr>
+<tr class="memdesc:aa2b60cdee74ffb1d92516bb55a7ca441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of GPIO pins.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa2b60cdee74ffb1d92516bb55a7ca441">More...</a><br /></td></tr>
 <tr class="separator:aa2b60cdee74ffb1d92516bb55a7ca441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa28dd9d8831088ea75d0c7672ff4d9d5"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa28dd9d8831088ea75d0c7672ff4d9d5">NUMBER_OF_PINS_IN_REG</a> = std::numeric_limits&lt;std::uint32_t&gt;::digits</td></tr>
+<tr class="memdesc:aa28dd9d8831088ea75d0c7672ff4d9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of pins encapsulated in a single register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa28dd9d8831088ea75d0c7672ff4d9d5">More...</a><br /></td></tr>
 <tr class="separator:aa28dd9d8831088ea75d0c7672ff4d9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ad41543dc93d652b60500382196721c"><td class="memItemLeft" align="right" valign="top">static const std::unordered_set&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698">NRegister</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2ad41543dc93d652b60500382196721c">s_read_only_registers</a></td></tr>
+<tr class="memdesc:a2ad41543dc93d652b60500382196721c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of read-only registers (access control)  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2ad41543dc93d652b60500382196721c">More...</a><br /></td></tr>
 <tr class="separator:a2ad41543dc93d652b60500382196721c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad97a66fe9d76238cccffb6afea1133c"><td class="memItemLeft" align="right" valign="top">static const std::unordered_set&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698">NRegister</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aad97a66fe9d76238cccffb6afea1133c">s_write_only_registers</a></td></tr>
+<tr class="memdesc:aad97a66fe9d76238cccffb6afea1133c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of write-only registers (access control)  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aad97a66fe9d76238cccffb6afea1133c">More...</a><br /></td></tr>
 <tr class="separator:aad97a66fe9d76238cccffb6afea1133c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4a9bcbbae95588dfffd9cefca437499"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa4a9bcbbae95588dfffd9cefca437499">NUMBER_OF_REGISTERS</a> = static_cast&lt;std::size_t&gt;(<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698ae93f994f01c537c4e2f7d8528c3eb5e9">NRegister::Count</a>)</td></tr>
+<tr class="memdesc:aa4a9bcbbae95588dfffd9cefca437499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of GPIO registers.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa4a9bcbbae95588dfffd9cefca437499">More...</a><br /></td></tr>
 <tr class="separator:aa4a9bcbbae95588dfffd9cefca437499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ad7c6aa486cf3b116ffae9f16eec64064"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad7c6aa486cf3b116ffae9f16eec64064">Update_Pin_Function</a> (std::size_t reg_idx, bool last_reg)</td></tr>
+<tr class="memdesc:ad7c6aa486cf3b116ffae9f16eec64064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the function of all pins within a given register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad7c6aa486cf3b116ffae9f16eec64064">More...</a><br /></td></tr>
 <tr class="separator:ad7c6aa486cf3b116ffae9f16eec64064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae93785da50eefb8a8cc21c1c59a32726"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae93785da50eefb8a8cc21c1c59a32726">Update_Pin_State</a> (std::size_t reg_idx, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">CPin::NState</a> state, bool last_reg)</td></tr>
+<tr class="memdesc:ae93785da50eefb8a8cc21c1c59a32726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the state of all pins within a given register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae93785da50eefb8a8cc21c1c59a32726">More...</a><br /></td></tr>
 <tr class="separator:ae93785da50eefb8a8cc21c1c59a32726"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace77f20004c7db6f9aacb7f9695dd04f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ace77f20004c7db6f9aacb7f9695dd04f">Reflect_Pin_State_In_GPLEVn</a> (std::size_t pin_idx, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">CPin::NState</a> state)</td></tr>
-<tr class="separator:ace77f20004c7db6f9aacb7f9695dd04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb4a55159afdaa47cd3640dfd1e0106b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b">Mirror_Pin_State_In_GPLEVn</a> (std::size_t pin_idx, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">CPin::NState</a> state)</td></tr>
+<tr class="memdesc:afb4a55159afdaa47cd3640dfd1e0106b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mirrors the state of a given in in the GPLEV register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b">More...</a><br /></td></tr>
+<tr class="separator:afb4a55159afdaa47cd3640dfd1e0106b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad29d57528b73baef90b0ca885a297e4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d">Set_Interrupt</a> (std::size_t reg_idx, bool last_reg, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72">CPin::NInterrupt_Type</a> type)</td></tr>
+<tr class="memdesc:ad29d57528b73baef90b0ca885a297e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables/disables an interrupt for all pins within a given register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d">More...</a><br /></td></tr>
 <tr class="separator:ad29d57528b73baef90b0ca885a297e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a4e9cf470ed6f7dbfb3ada75d35e47c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c">Clear_IRQ</a> (std::size_t reg_idx, bool last_reg)</td></tr>
+<tr class="memdesc:a4a4e9cf470ed6f7dbfb3ada75d35e47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears a pending interrupt by writing a 1 to the GPEDS register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c">More...</a><br /></td></tr>
 <tr class="separator:a4a4e9cf470ed6f7dbfb3ada75d35e47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:aa6b0515a8e4fecb78bebfbb79a13994b"><td class="memItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa6b0515a8e4fecb78bebfbb79a13994b">Get_Register_Index</a> (std::size_t &amp;pin_idx, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698">NRegister</a> reg_0, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698">NRegister</a> reg_1) noexcept</td></tr>
+<tr class="memdesc:aa6b0515a8e4fecb78bebfbb79a13994b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the register (out of the two alternatives) based on the pin index.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa6b0515a8e4fecb78bebfbb79a13994b">More...</a><br /></td></tr>
 <tr class="separator:aa6b0515a8e4fecb78bebfbb79a13994b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:acea8e786d9b86118342a18f247d9adc0"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::uint32_t, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa4a9bcbbae95588dfffd9cefca437499">NUMBER_OF_REGISTERS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acea8e786d9b86118342a18f247d9adc0">m_regs</a></td></tr>
+<tr class="memdesc:acea8e786d9b86118342a18f247d9adc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO registers.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acea8e786d9b86118342a18f247d9adc0">More...</a><br /></td></tr>
 <tr class="separator:acea8e786d9b86118342a18f247d9adc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8ba793b863bba20c5e3cf153f3665dd"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html">CPin</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa2b60cdee74ffb1d92516bb55a7ca441">NUMBER_OF_GPIO_PINS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ab8ba793b863bba20c5e3cf153f3665dd">m_pins</a></td></tr>
+<tr class="memdesc:ab8ba793b863bba20c5e3cf153f3665dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pins.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ab8ba793b863bba20c5e3cf153f3665dd">More...</a><br /></td></tr>
 <tr class="separator:ab8ba793b863bba20c5e3cf153f3665dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a6c1effcbe75ccf50c7d9dedfe9b623b7">m_logging_system</a></td></tr>
+<tr class="memdesc:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging system.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a6c1effcbe75ccf50c7d9dedfe9b623b7">More...</a><br /></td></tr>
 <tr class="separator:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43ed044330df6283b46136be4ea6d001"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html">CInterrupt_Controller</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a43ed044330df6283b46136be4ea6d001">m_interrupt_controller</a></td></tr>
+<tr class="memdesc:a43ed044330df6283b46136be4ea6d001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt controller.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a43ed044330df6283b46136be4ea6d001">More...</a><br /></td></tr>
 <tr class="separator:a43ed044330df6283b46136be4ea6d001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a GPIO (general-purpose I/O) manager. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a7babe4ce0aef0ec79b8a76bce0cd5e35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7babe4ce0aef0ec79b8a76bce0cd5e35">&#9670;&nbsp;</a></span>NPin_Set_Status</h2>
 
@@ -285,11 +312,17 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration defines return values when setting a new state of pin. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35ae0aa021e21dddbd6d8cecec71e9cf564"></a>OK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35ad08288f57995b4de10bc2b53fa9472b2"></a>Not_Input_Pin&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35aae8f448ad9b574b0a848dca75093e517"></a>State_Already_Set&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35a129d0df4d73b91437e13633546b87cce"></a>Invalid_Pin_Number&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35ae0aa021e21dddbd6d8cecec71e9cf564"></a>OK&#160;</td><td class="fielddoc"><p>The new state has been set successfully. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35ad08288f57995b4de10bc2b53fa9472b2"></a>Not_Input_Pin&#160;</td><td class="fielddoc"><p>The function of the pin must be set to Input (TODO there might be exceptions?) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35aae8f448ad9b574b0a848dca75093e517"></a>State_Already_Set&#160;</td><td class="fielddoc"><p>The pin is already in the desired state. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35a129d0df4d73b91437e13633546b87cce"></a>Invalid_Pin_Number&#160;</td><td class="fielddoc"><p>Invalid pin number (Rpi Zero has 54 GPIO pins) </p>
+</td></tr>
 </table>
 
 </div>
@@ -313,50 +346,95 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Enumeration of different registers which are used to interact with the GPIO pins. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a0de08677ff40caa561160dd11e3d69c4"></a>GPFSEL0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a52fd5d715a3e55d05585303d17f66fa6"></a>GPFSEL1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698acef558ee7aa35ab5791616742b307997"></a>GPFSEL2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a8675599affaf87f9f985419b2e58429c"></a>GPFSEL3&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698ab7843c984b28bc9559fe5e79a949c9dd"></a>GPFSEL4&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698ab6773d7de967acdea12519f49be459ef"></a>GPFSEL5&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a0ed116b892d36912bdb3bcb3335676e6"></a>Reserved_01&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a346758cf4a638c155b54b0032d1f3fd8"></a>GPSET0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698abc4037f12d0eb4fd672653b5f97ef4ea"></a>GPSET1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a409b8550eb001372db61ff851b16802e"></a>Reserved_02&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698aca74cf7cec66da76c547fe73784e478c"></a>GPCLR0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698ab81f5b59dc309dacae47990fa74c15eb"></a>GPCLR1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a1307e014a1f13cfe7edebf21900d5557"></a>Reserved_03&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a9d21be766f8e94de861732fbc81ed426"></a>GPLEV0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698aba86fd419b66f29afacd0d364bb51c39"></a>GPLEV1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a68c5fef0c834cb29283967361e8ee4ec"></a>Reserved_04&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a05ba3efeaf493bc0a659e8bca2aa5b41"></a>GPEDS0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a545e2c6cefea3593bbb8ca300fe883ea"></a>GPEDS1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a760135a5f5e39f610fb732f57ab23349"></a>Reserved_05&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a61b5ae901c3eba1b06b4bd240f2241fe"></a>GPREN0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a677ac55ec82d92ecac3633914523f39e"></a>GPREN1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a7d6b9dac1a15d8bfe86881f7d530d8c2"></a>Reserved_06&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698af7519cc57bea1e03c6a640b27e8e9143"></a>GPFEN0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a2d981319239f42e6c553fa4d01e5e123"></a>GPFEN1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a43018ee5e0c66979239da97c842d301b"></a>Reserved_07&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a546fd3b7eba195482f96183073c5ce7d"></a>GPHEN0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a938be6418a367023f4290070ea221704"></a>GPHEN1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698aba7c96e2a1ff2fe931411c1ccc79a82c"></a>Reserved_08&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a74931e7b6b3abd349107e5124e837d14"></a>GPLEN0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a2d0fa5fbf10371c227fa8bfe7492658a"></a>GPLEN1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a6834d649ca5d2e39a3850d902dc31bd6"></a>Reserved_09&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a6e6397eaa8cb59a36d348e8c442cc1ce"></a>GPAREN0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a74742b61db68dc59000796b9972125bd"></a>GPAREN1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a9e60a37843ce34f4bfcdbb26e3535762"></a>Reserved_10&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a8d3ed904dac0d33c05692d1df032b7f1"></a>GPAFEN0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698ae74b191f5e0b1ff4d98c875404a9d229"></a>GPAFEN1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a1cb965ed8d8cb47f5f08e2f297ad25f7"></a>Reserved_11&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a4849dde4a3ae9788631f7079a64984c6"></a>GPPUD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a0ae24e1c5a95101df5d356ac642421fd"></a>GPPUDCLK0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698aa09a9c12ca3304403510aa665361ebf5"></a>GPPUDCLK1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a313df80bde24a301934c5e32baf16886"></a>Reserved_12&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a0cbc6611f5540bd0809a388dc95a615b"></a>Test&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698ae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a0de08677ff40caa561160dd11e3d69c4"></a>GPFSEL0&#160;</td><td class="fielddoc"><p>Function of GPIO pins 0-9 (3 bits per pin) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a52fd5d715a3e55d05585303d17f66fa6"></a>GPFSEL1&#160;</td><td class="fielddoc"><p>Function of GPIO pins 10-19 (3 bits per pin) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698acef558ee7aa35ab5791616742b307997"></a>GPFSEL2&#160;</td><td class="fielddoc"><p>Function of GPIO pins 02-29 (3 bits per pin) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a8675599affaf87f9f985419b2e58429c"></a>GPFSEL3&#160;</td><td class="fielddoc"><p>Function of GPIO pins 30-39 (3 bits per pin) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698ab7843c984b28bc9559fe5e79a949c9dd"></a>GPFSEL4&#160;</td><td class="fielddoc"><p>Function of GPIO pins 40-49 (3 bits per pin) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698ab6773d7de967acdea12519f49be459ef"></a>GPFSEL5&#160;</td><td class="fielddoc"><p>Function of GPIO pins 50-23 (3 bits per pin) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a0ed116b892d36912bdb3bcb3335676e6"></a>Reserved_01&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a346758cf4a638c155b54b0032d1f3fd8"></a>GPSET0&#160;</td><td class="fielddoc"><p>Sets the value of a GPIO pin (pins 0-31) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698abc4037f12d0eb4fd672653b5f97ef4ea"></a>GPSET1&#160;</td><td class="fielddoc"><p>Sets the value of a GPIO pin (pins 32-53) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a409b8550eb001372db61ff851b16802e"></a>Reserved_02&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698aca74cf7cec66da76c547fe73784e478c"></a>GPCLR0&#160;</td><td class="fielddoc"><p>Clears the value of a GPIO pin (pins 0-31) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698ab81f5b59dc309dacae47990fa74c15eb"></a>GPCLR1&#160;</td><td class="fielddoc"><p>Clears the value of a GPIO pin (pins 32-53) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a1307e014a1f13cfe7edebf21900d5557"></a>Reserved_03&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a9d21be766f8e94de861732fbc81ed426"></a>GPLEV0&#160;</td><td class="fielddoc"><p>Actual value of the pin (pins 0-31) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698aba86fd419b66f29afacd0d364bb51c39"></a>GPLEV1&#160;</td><td class="fielddoc"><p>Actual value of the pin (pins 32-53) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a68c5fef0c834cb29283967361e8ee4ec"></a>Reserved_04&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a05ba3efeaf493bc0a659e8bca2aa5b41"></a>GPEDS0&#160;</td><td class="fielddoc"><p>GPIO Pin Event Detect Status 0 (pins 0-31) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a545e2c6cefea3593bbb8ca300fe883ea"></a>GPEDS1&#160;</td><td class="fielddoc"><p>GPIO Pin Event Detect Status 1 (pins 32-53) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a760135a5f5e39f610fb732f57ab23349"></a>Reserved_05&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a61b5ae901c3eba1b06b4bd240f2241fe"></a>GPREN0&#160;</td><td class="fielddoc"><p>Enables/disables the rising edge interrupt for pins 0-31. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a677ac55ec82d92ecac3633914523f39e"></a>GPREN1&#160;</td><td class="fielddoc"><p>Enables/disables the rising edge interrupt for pins 32-53. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a7d6b9dac1a15d8bfe86881f7d530d8c2"></a>Reserved_06&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698af7519cc57bea1e03c6a640b27e8e9143"></a>GPFEN0&#160;</td><td class="fielddoc"><p>Enables/disables the falling edge interrupt for pins 0-31. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a2d981319239f42e6c553fa4d01e5e123"></a>GPFEN1&#160;</td><td class="fielddoc"><p>Enables/disables the falling edge interrupt for pins 32-53. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a43018ee5e0c66979239da97c842d301b"></a>Reserved_07&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a546fd3b7eba195482f96183073c5ce7d"></a>GPHEN0&#160;</td><td class="fielddoc"><p>Enables/disables the high value interrupt for pins 0-31. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a938be6418a367023f4290070ea221704"></a>GPHEN1&#160;</td><td class="fielddoc"><p>Enables/disables the high value interrupt for pins 32-53. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698aba7c96e2a1ff2fe931411c1ccc79a82c"></a>Reserved_08&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a74931e7b6b3abd349107e5124e837d14"></a>GPLEN0&#160;</td><td class="fielddoc"><p>Enables/disables the low value interrupt for pins 0-31. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a2d0fa5fbf10371c227fa8bfe7492658a"></a>GPLEN1&#160;</td><td class="fielddoc"><p>Enables/disables the low value interrupt for pins 32-53. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a6834d649ca5d2e39a3850d902dc31bd6"></a>Reserved_09&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a6e6397eaa8cb59a36d348e8c442cc1ce"></a>GPAREN0&#160;</td><td class="fielddoc"><p>Enables/disables the asynchronous rising edge interrupt for pins 0-31. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a74742b61db68dc59000796b9972125bd"></a>GPAREN1&#160;</td><td class="fielddoc"><p>Enables/disables the asynchronous rising edge interrupt for pins 32-53. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a9e60a37843ce34f4bfcdbb26e3535762"></a>Reserved_10&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a8d3ed904dac0d33c05692d1df032b7f1"></a>GPAFEN0&#160;</td><td class="fielddoc"><p>Enables/disables the asynchronous falling edge interrupt for pins 0-31. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698ae74b191f5e0b1ff4d98c875404a9d229"></a>GPAFEN1&#160;</td><td class="fielddoc"><p>Enables/disables the asynchronous falling edge interrupt for pins 32-53. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a1cb965ed8d8cb47f5f08e2f297ad25f7"></a>Reserved_11&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a4849dde4a3ae9788631f7079a64984c6"></a>GPPUD&#160;</td><td class="fielddoc"><p>Pull-up/down register controls. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a0ae24e1c5a95101df5d356ac642421fd"></a>GPPUDCLK0&#160;</td><td class="fielddoc"><p>Pull-up/down clock register 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698aa09a9c12ca3304403510aa665361ebf5"></a>GPPUDCLK1&#160;</td><td class="fielddoc"><p>Pull-up/down clock register 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a313df80bde24a301934c5e32baf16886"></a>Reserved_12&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698a0cbc6611f5540bd0809a388dc95a615b"></a>Test&#160;</td><td class="fielddoc"><p>Test. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19409e7e50658ff0ca681e3cbb504698ae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"><p>Total number of registers (helper enum record) </p>
+</td></tr>
 </table>
 
 </div>
@@ -385,6 +463,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interrupt_controller</td><td>Reference to the interrupt controller, so it can notify it when an interrupt occurs </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -422,6 +508,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Clears a pending interrupt by writing a 1 to the GPEDS register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg_idx</td><td>Index of the register to be used </td></tr>
+    <tr><td class="paramname">last_reg</td><td>Indication of whether it is the last register (not all bits are being used) </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -452,6 +547,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a const reference to a pin (visualization purposes). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>Index of the pin to be returned </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to a pin </dd></dl>
 
 </div>
 </div>
@@ -494,10 +598,22 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the index of the register (out of the two alternatives) based on the pin index. </p>
+<p>If the index of the pin is greater than 31, the second register is returned and the index gets modified, so it is relative to the register.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_idx</td><td>Index of the pin </td></tr>
+    <tr><td class="paramname">reg_0</td><td>First register (e.g. GPSET0) </td></tr>
+    <tr><td class="paramname">reg_1</td><td>Second register (e.g. GPSET1) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Index of the register to be used </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_aa6b0515a8e4fecb78bebfbb79a13994b_icgraph.svg" width="879" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_aa6b0515a8e4fecb78bebfbb79a13994b_icgraph.svg" width="874" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -526,11 +642,67 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the size of the peripheral. </p>
-<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function.</p>
+<p>Returns the size of the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
 <dl class="section return"><dt>Returns</dt><dd>number of register * register size </dd></dl>
 
 <p>Implements <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#abe4a3756bd97bd4eb4db1c9aad6f5a1b">zero_mate::peripheral::IPeripheral</a>.</p>
+
+</div>
+</div>
+<a id="afb4a55159afdaa47cd3640dfd1e0106b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb4a55159afdaa47cd3640dfd1e0106b">&#9670;&nbsp;</a></span>Mirror_Pin_State_In_GPLEVn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::peripheral::CGPIO_Manager::Mirror_Pin_State_In_GPLEVn </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>pin_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">CPin::NState</a>&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mirrors the state of a given in in the GPLEV register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_idx</td><td>Index of the pin </td></tr>
+    <tr><td class="paramname">state</td><td>Current state of the pin </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_afb4a55159afdaa47cd3640dfd1e0106b_cgraph.svg" width="408" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_afb4a55159afdaa47cd3640dfd1e0106b_icgraph.svg" width="659" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -574,8 +746,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reads data from the peripheral. </p>
-<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function.</p>
+<p>Reads data from the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">addr</td><td>Relative address (from the peripheral's perspective) from which the data will be read </td></tr>
@@ -590,54 +761,6 @@ Here is the caller graph for this function:</div>
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ac3edf689b30c39f2406fa6308fdeb2e9_cgraph.svg" width="676" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ace77f20004c7db6f9aacb7f9695dd04f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace77f20004c7db6f9aacb7f9695dd04f">&#9670;&nbsp;</a></span>Reflect_Pin_State_In_GPLEVn()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void zero_mate::peripheral::CGPIO_Manager::Reflect_Pin_State_In_GPLEVn </td>
-          <td>(</td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>pin_idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">CPin::NState</a>&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ace77f20004c7db6f9aacb7f9695dd04f_cgraph.svg" width="414" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ace77f20004c7db6f9aacb7f9695dd04f_icgraph.svg" width="664" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -682,6 +805,17 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Enables/disables an interrupt for all pins within a given register. </p>
+<p>If a bit is set to a 0, the interrupt type will be disabled. If a bit set to a 1, the interrupt type will be enabled.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg_idx</td><td>Index of the register (GPREN, GPHEN, GPLEN, or GPFEN) </td></tr>
+    <tr><td class="paramname">last_reg</td><td>Indication of whether it is the last register (not all bits are being used) </td></tr>
+    <tr><td class="paramname">type</td><td>Type of the interrupt to be enabled/disabled </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -722,10 +856,21 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets a new state of a given pin. </p>
+<p>This function is called from the outer world.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_idx</td><td>Index of the pin whose state will be changed </td></tr>
+    <tr><td class="paramname">state</td><td>New state of the pin </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Information about whether the state has been changed successfully or not </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a9d695b8f3fc211eaaf4c15a982d3f504_cgraph.svg" width="627" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a9d695b8f3fc211eaaf4c15a982d3f504_cgraph.svg" width="622" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -764,6 +909,15 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Updates the function of all pins within a given register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg_idx</td><td>Index of an GPFSEL register </td></tr>
+    <tr><td class="paramname">last_reg</td><td>Indication of whether it is the last register (not all bits are being used) </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -818,6 +972,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Updates the state of all pins within a given register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg_idx</td><td>Index of an GPSET/GPCLR register </td></tr>
+    <tr><td class="paramname">state</td><td>Indication of whether the state of the corresponding pins should be set to a 1 or 0 </td></tr>
+    <tr><td class="paramname">last_reg</td><td>Indication of whether it is the last register (not all bits are being used) </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -873,8 +1037,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Writes data to the peripheral. </p>
-<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function.</p>
+<p>Writes data to the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">addr</td><td>Relative address (from the peripheral's perspective) where the data will be written </td></tr>
@@ -915,6 +1078,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Interrupt controller. </p>
+
 </div>
 </div>
 <a id="a6c1effcbe75ccf50c7d9dedfe9b623b7"></a>
@@ -936,6 +1101,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Logging system. </p>
 
 </div>
 </div>
@@ -959,6 +1126,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>GPIO pins. </p>
+
 </div>
 </div>
 <a id="acea8e786d9b86118342a18f247d9adc0"></a>
@@ -980,6 +1149,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>GPIO registers. </p>
 
 </div>
 </div>
@@ -1003,6 +1174,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Total number of GPIO pins. </p>
+
 </div>
 </div>
 <a id="aa28dd9d8831088ea75d0c7672ff4d9d5"></a>
@@ -1024,6 +1197,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Number of pins encapsulated in a single register. </p>
 
 </div>
 </div>
@@ -1047,6 +1222,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Total number of GPIO registers. </p>
+
 </div>
 </div>
 <a id="a8487914af5e11dfb40c672bc2b30c185"></a>
@@ -1068,6 +1245,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Size of a single register. </p>
 
 </div>
 </div>
@@ -1094,9 +1273,11 @@ Here is the call graph for this function:</div>
 <div class="line">        <a class="code" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698a9d21be766f8e94de861732fbc81ed426">CGPIO_Manager::NRegister::GPLEV0</a>,</div>
 <div class="line">        <a class="code" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698aba86fd419b66f29afacd0d364bb51c39">CGPIO_Manager::NRegister::GPLEV1</a></div>
 <div class="line">    }</div>
-<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698a9d21be766f8e94de861732fbc81ed426"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698a9d21be766f8e94de861732fbc81ed426">zero_mate::peripheral::CGPIO_Manager::NRegister::GPLEV0</a></div><div class="ttdeci">@ GPLEV0</div></div>
-<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698aba86fd419b66f29afacd0d364bb51c39"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698aba86fd419b66f29afacd0d364bb51c39">zero_mate::peripheral::CGPIO_Manager::NRegister::GPLEV1</a></div><div class="ttdeci">@ GPLEV1</div></div>
+<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698a9d21be766f8e94de861732fbc81ed426"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698a9d21be766f8e94de861732fbc81ed426">zero_mate::peripheral::CGPIO_Manager::NRegister::GPLEV0</a></div><div class="ttdeci">@ GPLEV0</div><div class="ttdoc">Actual value of the pin (pins 0-31)</div></div>
+<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698aba86fd419b66f29afacd0d364bb51c39"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698aba86fd419b66f29afacd0d364bb51c39">zero_mate::peripheral::CGPIO_Manager::NRegister::GPLEV1</a></div><div class="ttdeci">@ GPLEV1</div><div class="ttdoc">Actual value of the pin (pins 32-53)</div></div>
 </div><!-- fragment -->
+<p>Collection of read-only registers (access control) </p>
+
 </div>
 </div>
 <a id="aad97a66fe9d76238cccffb6afea1133c"></a>
@@ -1124,11 +1305,13 @@ Here is the call graph for this function:</div>
 <div class="line">        <a class="code" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698aca74cf7cec66da76c547fe73784e478c">CGPIO_Manager::NRegister::GPCLR0</a>,</div>
 <div class="line">        <a class="code" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698ab81f5b59dc309dacae47990fa74c15eb">CGPIO_Manager::NRegister::GPCLR1</a></div>
 <div class="line">    }</div>
-<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698a346758cf4a638c155b54b0032d1f3fd8"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698a346758cf4a638c155b54b0032d1f3fd8">zero_mate::peripheral::CGPIO_Manager::NRegister::GPSET0</a></div><div class="ttdeci">@ GPSET0</div></div>
-<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698ab81f5b59dc309dacae47990fa74c15eb"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698ab81f5b59dc309dacae47990fa74c15eb">zero_mate::peripheral::CGPIO_Manager::NRegister::GPCLR1</a></div><div class="ttdeci">@ GPCLR1</div></div>
-<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698abc4037f12d0eb4fd672653b5f97ef4ea"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698abc4037f12d0eb4fd672653b5f97ef4ea">zero_mate::peripheral::CGPIO_Manager::NRegister::GPSET1</a></div><div class="ttdeci">@ GPSET1</div></div>
-<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698aca74cf7cec66da76c547fe73784e478c"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698aca74cf7cec66da76c547fe73784e478c">zero_mate::peripheral::CGPIO_Manager::NRegister::GPCLR0</a></div><div class="ttdeci">@ GPCLR0</div></div>
+<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698a346758cf4a638c155b54b0032d1f3fd8"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698a346758cf4a638c155b54b0032d1f3fd8">zero_mate::peripheral::CGPIO_Manager::NRegister::GPSET0</a></div><div class="ttdeci">@ GPSET0</div><div class="ttdoc">Sets the value of a GPIO pin (pins 0-31)</div></div>
+<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698ab81f5b59dc309dacae47990fa74c15eb"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698ab81f5b59dc309dacae47990fa74c15eb">zero_mate::peripheral::CGPIO_Manager::NRegister::GPCLR1</a></div><div class="ttdeci">@ GPCLR1</div><div class="ttdoc">Clears the value of a GPIO pin (pins 32-53)</div></div>
+<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698abc4037f12d0eb4fd672653b5f97ef4ea"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698abc4037f12d0eb4fd672653b5f97ef4ea">zero_mate::peripheral::CGPIO_Manager::NRegister::GPSET1</a></div><div class="ttdeci">@ GPSET1</div><div class="ttdoc">Sets the value of a GPIO pin (pins 32-53)</div></div>
+<div class="ttc" id="aclasszero__mate_1_1peripheral_1_1CGPIO__Manager_html_a19409e7e50658ff0ca681e3cbb504698aca74cf7cec66da76c547fe73784e478c"><div class="ttname"><a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698aca74cf7cec66da76c547fe73784e478c">zero_mate::peripheral::CGPIO_Manager::NRegister::GPCLR0</a></div><div class="ttdeci">@ GPCLR0</div><div class="ttdoc">Clears the value of a GPIO pin (pins 0-31)</div></div>
 </div><!-- fragment -->
+<p>Collection of write-only registers (access control) </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

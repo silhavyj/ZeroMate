@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" target="_top" xlink:title="Clears a pending interrupt by writing a 1 to the GPEDS register.">
 <polygon fill="none" stroke="black" points="170,-230 170,-260 325,-260 325,-230 170,-230"/>
 <text text-anchor="start" x="178" y="-248" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="247.5" y="-237" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Clear_IRQ</text>
@@ -104,7 +104,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d" target="_top" xlink:title="Enables/disables an interrupt for all pins within a given register.">
 <polygon fill="none" stroke="black" points="185.5,-60.5 185.5,-101.5 309.5,-101.5 309.5,-60.5 185.5,-60.5"/>
 <text text-anchor="start" x="193.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="193.5" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Set</text>
@@ -121,7 +121,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae93785da50eefb8a8cc21c1c59a32726" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae93785da50eefb8a8cc21c1c59a32726" target="_top" xlink:title="Updates the state of all pins within a given register.">
 <polygon fill="none" stroke="black" points="176,-0.5 176,-41.5 319,-41.5 319,-0.5 176,-0.5"/>
 <text text-anchor="start" x="184" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="184" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Update</text>
@@ -138,7 +138,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" target="_top" xlink:title="Writes data to the peripheral.">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" target="_top" xlink:title="Writes data to the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="0,-66 0,-96 134,-96 134,-66 0,-66"/>
 <text text-anchor="start" x="8" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="67" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Write</text>

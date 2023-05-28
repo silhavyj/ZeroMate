@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Updates the state of all pins within a given register.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-79.5 0,-120.5 143,-120.5 143,-79.5 0,-79.5"/>
 <text text-anchor="start" x="8" y="-108.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="8" y="-97.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Update</text>
@@ -54,10 +54,10 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ace77f20004c7db6f9aacb7f9695dd04f" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="181.5,-0.5 181.5,-41.5 322.5,-41.5 322.5,-0.5 181.5,-0.5"/>
-<text text-anchor="start" x="189.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="189.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Reflect</text>
+<g id="a_node5"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b" target="_top" xlink:title="Mirrors the state of a given in in the GPLEV register.">
+<polygon fill="none" stroke="black" points="183.5,-0.5 183.5,-41.5 320.5,-41.5 320.5,-0.5 183.5,-0.5"/>
+<text text-anchor="start" x="191.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="191.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Mirror</text>
 <text text-anchor="middle" x="252" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Pin_State_In_GPLEVn</text>
 </a>
 </g>
@@ -103,7 +103,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa6b0515a8e4fecb78bebfbb79a13994b" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa6b0515a8e4fecb78bebfbb79a13994b" target="_top" xlink:title="Returns the index of the register (out of the two alternatives) based on the pin index.">
 <polygon fill="none" stroke="black" points="373,-0.5 373,-41.5 498,-41.5 498,-0.5 373,-0.5"/>
 <text text-anchor="start" x="381" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="381" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Get</text>
@@ -114,8 +114,8 @@
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M322.65,-21C335.67,-21 349.3,-21 362.39,-21"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="362.74,-24.5 372.74,-21 362.74,-17.5 362.74,-24.5"/>
+<path fill="none" stroke="midnightblue" d="M320.58,-21C334.37,-21 348.92,-21 362.85,-21"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="362.85,-24.5 372.85,-21 362.85,-17.5 362.85,-24.5"/>
 </g>
 <!-- Node7&#45;&gt;Node3 -->
 <g id="edge7" class="edge">

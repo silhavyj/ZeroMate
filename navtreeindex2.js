@@ -222,12 +222,12 @@ var NAVTREEINDEX2 =
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504":[1,0,0,3,1,10],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9ecaa919171ea326f918ffd329cf4892":[1,0,0,3,1,3],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ab8ba793b863bba20c5e3cf153f3665dd":[1,0,0,3,1,16],
-"classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9":[1,0,0,3,1,7],
-"classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ace77f20004c7db6f9aacb7f9695dd04f":[1,0,0,3,1,8],
+"classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9":[1,0,0,3,1,8],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acea8e786d9b86118342a18f247d9adc0":[1,0,0,3,1,17],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d":[1,0,0,3,1,9],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad7c6aa486cf3b116ffae9f16eec64064":[1,0,0,3,1,11],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae93785da50eefb8a8cc21c1c59a32726":[1,0,0,3,1,12],
+"classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b":[1,0,0,3,1,7],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html":[1,0,0,3,1,0],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a02a389daf4aa498ad859e06ff6736605":[1,0,0,3,1,0,15],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a0536631c62e1aa7a96404501768f31a6":[1,0,0,3,1,0,9],
@@ -246,8 +246,8 @@ var NAVTREEINDEX2 =
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca28d0edd045e05cf5af64e35ae0c4c6ef":[1,0,0,3,1,0,3,0],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca655d20c1ca69519ca647684edbb2db35":[1,0,0,3,1,0,3,1],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a4ca0071bafb6078e80f91643854f0c77":[1,0,0,3,1,0,13],
-"classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a6189094fde73b5ce4d0e9f8678069163":[1,0,0,3,1,0,10],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72":[1,0,0,3,1,0,2],
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72a28d0edd045e05cf5af64e35ae0c4c6ef":[1,0,0,3,1,0,2,2],
-"classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72a655d20c1ca69519ca647684edbb2db35":[1,0,0,3,1,0,2,3]
+"classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72a655d20c1ca69519ca647684edbb2db35":[1,0,0,3,1,0,2,3],
+"classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72aa764f908a94fb07a9981eed875809962":[1,0,0,3,1,0,2,1]
 };

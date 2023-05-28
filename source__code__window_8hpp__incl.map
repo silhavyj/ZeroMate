@@ -12,7 +12,7 @@
 <area shape="rect" id="node29" href="$isa__decoder_8hpp.html" title="This file defines an instruction decoder." alt="" coords="2521,273,2671,300"/>
 <area shape="rect" id="node30" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="400,191,485,218"/>
 <area shape="rect" id="node34" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="755,191,883,218"/>
-<area shape="rect" id="node35" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used BCM2835." alt="" coords="107,184,274,225"/>
+<area shape="rect" id="node35" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="107,184,274,225"/>
 <area shape="rect" id="node36" href="$system__clock__listener_8hpp.html" title="This file defines an interface for a CPU clock listener." alt="" coords="907,184,1066,225"/>
 <area shape="rect" id="node9" title=" " alt="" coords="519,348,625,375"/>
 <area shape="rect" id="node11" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="2094,512,2213,539"/>

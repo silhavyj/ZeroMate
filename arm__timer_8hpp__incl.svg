@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="This file defines the ARM timer used BCM2835.">
+<g id="a_node1"><a xlink:title="This file defines the ARM timer used in BCM2835.">
 <polygon fill="#bfbfbf" stroke="black" points="220,-168.5 220,-198.5 333,-198.5 333,-168.5 220,-168.5"/>
 <text text-anchor="start" x="228" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="276.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">/arm_timer.hpp</text>
@@ -36,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used BCM2835.">
+<g id="a_node3"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used in BCM2835.">
 <polygon fill="none" stroke="black" points="140,-112.5 140,-131.5 271,-131.5 271,-112.5 140,-112.5"/>
 <text text-anchor="middle" x="205.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">interrupt_controller.hpp</text>
 </a>

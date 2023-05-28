@@ -273,7 +273,7 @@
 <!-- Node35 -->
 <g id="node35" class="node">
 <title>Node35</title>
-<g id="a_node35"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used BCM2835.">
+<g id="a_node35"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used in BCM2835.">
 <polygon fill="none" stroke="black" points="109.5,-235.5 109.5,-265.5 234.5,-265.5 234.5,-235.5 109.5,-235.5"/>
 <text text-anchor="start" x="117.5" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">../peripherals/interrupt</text>
 <text text-anchor="middle" x="172" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">_controller.hpp</text>

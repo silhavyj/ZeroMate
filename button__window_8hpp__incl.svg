@@ -51,7 +51,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="gpio_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="gpio_8hpp.html" target="_top" xlink:title="This file defines teh GPIO controller used in BCM2835.">
 <polygon fill="none" stroke="black" points="167.5,-168.5 167.5,-198.5 298.5,-198.5 298.5,-168.5 167.5,-168.5"/>
 <text text-anchor="start" x="175.5" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../../../core/peripherals</text>
 <text text-anchor="middle" x="233" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">/gpio.hpp</text>
@@ -103,7 +103,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used BCM2835.">
+<g id="a_node6"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used in BCM2835.">
 <polygon fill="none" stroke="black" points="153.5,-112.5 153.5,-131.5 284.5,-131.5 284.5,-112.5 153.5,-112.5"/>
 <text text-anchor="middle" x="219" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">interrupt_controller.hpp</text>
 </a>

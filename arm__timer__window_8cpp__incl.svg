@@ -96,7 +96,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="arm__timer_8hpp.html" target="_top" xlink:title="This file defines the ARM timer used BCM2835.">
+<g id="a_node7"><a xlink:href="arm__timer_8hpp.html" target="_top" xlink:title="This file defines the ARM timer used in BCM2835.">
 <polygon fill="none" stroke="black" points="272.5,-168.5 272.5,-198.5 394.5,-198.5 394.5,-168.5 272.5,-168.5"/>
 <text text-anchor="start" x="280.5" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../../core/peripherals</text>
 <text text-anchor="middle" x="333.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">/arm_timer.hpp</text>
@@ -133,7 +133,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used BCM2835.">
+<g id="a_node9"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used in BCM2835.">
 <polygon fill="none" stroke="black" points="253,-112.5 253,-131.5 384,-131.5 384,-112.5 253,-112.5"/>
 <text text-anchor="middle" x="318.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">interrupt_controller.hpp</text>
 </a>

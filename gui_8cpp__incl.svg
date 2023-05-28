@@ -591,7 +591,7 @@
 <!-- Node48 -->
 <g id="node27" class="node">
 <title>Node48</title>
-<g id="a_node27"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used BCM2835.">
+<g id="a_node27"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used in BCM2835.">
 <polygon fill="none" stroke="red" points="2083.5,-179.5 2083.5,-209.5 2208.5,-209.5 2208.5,-179.5 2083.5,-179.5"/>
 <text text-anchor="start" x="2091.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">../peripherals/interrupt</text>
 <text text-anchor="middle" x="2146" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">_controller.hpp</text>
@@ -883,7 +883,7 @@
 <!-- Node63 -->
 <g id="node42" class="node">
 <title>Node63</title>
-<g id="a_node42"><a xlink:href="gpio_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node42"><a xlink:href="gpio_8hpp.html" target="_top" xlink:title="This file defines teh GPIO controller used in BCM2835.">
 <polygon fill="none" stroke="red" points="2634,-246.5 2634,-276.5 2756,-276.5 2756,-246.5 2634,-246.5"/>
 <text text-anchor="start" x="2642" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../../core/peripherals</text>
 <text text-anchor="middle" x="2695" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">/gpio.hpp</text>
@@ -929,7 +929,7 @@
 <!-- Node65 -->
 <g id="node44" class="node">
 <title>Node65</title>
-<g id="a_node44"><a xlink:href="arm__timer_8hpp.html" target="_top" xlink:title="This file defines the ARM timer used BCM2835.">
+<g id="a_node44"><a xlink:href="arm__timer_8hpp.html" target="_top" xlink:title="This file defines the ARM timer used in BCM2835.">
 <polygon fill="none" stroke="red" points="2308,-246.5 2308,-276.5 2430,-276.5 2430,-246.5 2308,-246.5"/>
 <text text-anchor="start" x="2316" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../../core/peripherals</text>
 <text text-anchor="middle" x="2369" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">/arm_timer.hpp</text>

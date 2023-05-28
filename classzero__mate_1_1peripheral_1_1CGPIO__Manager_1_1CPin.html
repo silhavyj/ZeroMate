@@ -96,6 +96,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1peripheral_1_1CGPIO
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a single pin.  
+ <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="gpio_8hpp_source.html">gpio.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -112,10 +115,12 @@ Public Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a08eacac474c38044fd85dd1898194cf6a7c9ba5620b0557b09339203930d7fd02">Alt_5</a> = 0b010
 <br />
  }</td></tr>
+<tr class="memdesc:a08eacac474c38044fd85dd1898194cf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different functions a pin can be assigned.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a08eacac474c38044fd85dd1898194cf6">More...</a><br /></td></tr>
 <tr class="separator:a08eacac474c38044fd85dd1898194cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46b8c45d0e9efd77504774a2cc19376c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">NState</a> : std::uint8_t { <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca28d0edd045e05cf5af64e35ae0c4c6ef">Low</a> = 0
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca655d20c1ca69519ca647684edbb2db35">High</a> = 1
  }</td></tr>
+<tr class="memdesc:a46b8c45d0e9efd77504774a2cc19376c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines states of a pin (only digital pins are supported).  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">More...</a><br /></td></tr>
 <tr class="separator:a46b8c45d0e9efd77504774a2cc19376c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7262b1ac5b25b5b2d13ba7ef1be53d72"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72">NInterrupt_Type</a> : std::uint8_t { <br />
 &#160;&#160;<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72ae483c60a9167c000531ea7f5a3e3f1e3">Rising_Edge</a> = 0
@@ -126,33 +131,46 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72aec0fc0100c4fc1ce4eea230c3dc10360">Undefined</a> = 4
 <br />
  }</td></tr>
+<tr class="memdesc:a7262b1ac5b25b5b2d13ba7ef1be53d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different interrupt types that can be assigned to a pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72">More...</a><br /></td></tr>
 <tr class="separator:a7262b1ac5b25b5b2d13ba7ef1be53d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a748f20b14a94db3ae600c9fc3faea789"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a748f20b14a94db3ae600c9fc3faea789">Interrupts_t</a> = std::array&lt; bool, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a336f00e6e392387f559b0f30eb8e5c15">NUMBER_OF_INTERRUPT_TYPES</a> &gt;</td></tr>
+<tr class="memdesc:a748f20b14a94db3ae600c9fc3faea789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for an array of interrupts (just to make the code less wordy)  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a748f20b14a94db3ae600c9fc3faea789">More...</a><br /></td></tr>
 <tr class="separator:a748f20b14a94db3ae600c9fc3faea789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae3b8370c026dc9200ff528b82c00a389"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ae3b8370c026dc9200ff528b82c00a389">CPin</a> ()</td></tr>
+<tr class="memdesc:ae3b8370c026dc9200ff528b82c00a389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ae3b8370c026dc9200ff528b82c00a389">More...</a><br /></td></tr>
 <tr class="separator:ae3b8370c026dc9200ff528b82c00a389"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6189094fde73b5ce4d0e9f8678069163"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a6189094fde73b5ce4d0e9f8678069163">Interrupt_Detected</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">NState</a> new_state) const noexcept</td></tr>
-<tr class="separator:a6189094fde73b5ce4d0e9f8678069163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f6a241b95b22f2f577b6047b8c6f02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ac7f6a241b95b22f2f577b6047b8c6f02">Is_Interrupt_Detected</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">NState</a> new_state) const noexcept</td></tr>
+<tr class="memdesc:ac7f6a241b95b22f2f577b6047b8c6f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks information about whether an interrupt has occurred or not.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ac7f6a241b95b22f2f577b6047b8c6f02">More...</a><br /></td></tr>
+<tr class="separator:ac7f6a241b95b22f2f577b6047b8c6f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab910baeb4caa3129739eccf087d06dd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">NState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ab910baeb4caa3129739eccf087d06dd4">Get_State</a> () const noexcept</td></tr>
+<tr class="memdesc:ab910baeb4caa3129739eccf087d06dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current state of the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ab910baeb4caa3129739eccf087d06dd4">More...</a><br /></td></tr>
 <tr class="separator:ab910baeb4caa3129739eccf087d06dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7764fcc57371d4c867603b32176f8414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7764fcc57371d4c867603b32176f8414">Set_State</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">NState</a> state) noexcept</td></tr>
+<tr class="memdesc:a7764fcc57371d4c867603b32176f8414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current state of the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7764fcc57371d4c867603b32176f8414">More...</a><br /></td></tr>
 <tr class="separator:a7764fcc57371d4c867603b32176f8414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf6b92ed8408ada497c28c405af395d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a08eacac474c38044fd85dd1898194cf6">NFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#acf6b92ed8408ada497c28c405af395d6">Get_Function</a> () const noexcept</td></tr>
+<tr class="memdesc:acf6b92ed8408ada497c28c405af395d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current function of the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#acf6b92ed8408ada497c28c405af395d6">More...</a><br /></td></tr>
 <tr class="separator:acf6b92ed8408ada497c28c405af395d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c45c24454ccabf427a78111533cf88e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a0c45c24454ccabf427a78111533cf88e">Set_Function</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a08eacac474c38044fd85dd1898194cf6">NFunction</a> function) noexcept</td></tr>
+<tr class="memdesc:a0c45c24454ccabf427a78111533cf88e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current function of the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a0c45c24454ccabf427a78111533cf88e">More...</a><br /></td></tr>
 <tr class="separator:a0c45c24454ccabf427a78111533cf88e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9a993da2c9f3871c1d26a647b2d539f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ae9a993da2c9f3871c1d26a647b2d539f">Enable_Interrupt_Type</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72">NInterrupt_Type</a> type)</td></tr>
+<tr class="memdesc:ae9a993da2c9f3871c1d26a647b2d539f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables an interrupt on the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ae9a993da2c9f3871c1d26a647b2d539f">More...</a><br /></td></tr>
 <tr class="separator:ae9a993da2c9f3871c1d26a647b2d539f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40845e8d5614360afc9585ae235ff6ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a40845e8d5614360afc9585ae235ff6ed">Disable_Interrupt_Type</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72">NInterrupt_Type</a> type)</td></tr>
+<tr class="memdesc:a40845e8d5614360afc9585ae235ff6ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disabled an interrupt on the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a40845e8d5614360afc9585ae235ff6ed">More...</a><br /></td></tr>
 <tr class="separator:a40845e8d5614360afc9585ae235ff6ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9330f754330cb20d555969ec55c0a679"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a9330f754330cb20d555969ec55c0a679">Is_Interrupt_Enabled</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72">NInterrupt_Type</a> type) const</td></tr>
+<tr class="memdesc:a9330f754330cb20d555969ec55c0a679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether or not an interrupt is enabled on the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a9330f754330cb20d555969ec55c0a679">More...</a><br /></td></tr>
 <tr class="separator:a9330f754330cb20d555969ec55c0a679"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0536631c62e1aa7a96404501768f31a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a0536631c62e1aa7a96404501768f31a6">Has_Pending_IRQ</a> () const noexcept</td></tr>
+<tr class="memdesc:a0536631c62e1aa7a96404501768f31a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if there is a pending interrupt on the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a0536631c62e1aa7a96404501768f31a6">More...</a><br /></td></tr>
 <tr class="separator:a0536631c62e1aa7a96404501768f31a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ca0071bafb6078e80f91643854f0c77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a4ca0071bafb6078e80f91643854f0c77">Set_Pending_IRQ</a> (bool set)</td></tr>
+<tr class="memdesc:a4ca0071bafb6078e80f91643854f0c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pending interrupt.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a4ca0071bafb6078e80f91643854f0c77">More...</a><br /></td></tr>
 <tr class="separator:a4ca0071bafb6078e80f91643854f0c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -163,15 +181,21 @@ Static Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aa65e82669c1ab1a449f475d8789a8f7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">NState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#aa65e82669c1ab1a449f475d8789a8f7a">m_state</a></td></tr>
+<tr class="memdesc:aa65e82669c1ab1a449f475d8789a8f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current state of the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#aa65e82669c1ab1a449f475d8789a8f7a">More...</a><br /></td></tr>
 <tr class="separator:aa65e82669c1ab1a449f475d8789a8f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac08be66ece8e412c20834bb2e02fa37e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a08eacac474c38044fd85dd1898194cf6">NFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ac08be66ece8e412c20834bb2e02fa37e">m_function</a></td></tr>
+<tr class="memdesc:ac08be66ece8e412c20834bb2e02fa37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function of the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ac08be66ece8e412c20834bb2e02fa37e">More...</a><br /></td></tr>
 <tr class="separator:ac08be66ece8e412c20834bb2e02fa37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02a389daf4aa498ad859e06ff6736605"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a748f20b14a94db3ae600c9fc3faea789">Interrupts_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a02a389daf4aa498ad859e06ff6736605">m_enabled_interrupts</a></td></tr>
+<tr class="memdesc:a02a389daf4aa498ad859e06ff6736605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array or interrupts (which are enabled/disabled)  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a02a389daf4aa498ad859e06ff6736605">More...</a><br /></td></tr>
 <tr class="separator:a02a389daf4aa498ad859e06ff6736605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab507b45ae7873a4b7de376e93a8f75e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ab507b45ae7873a4b7de376e93a8f75e4">m_pending_irq</a></td></tr>
+<tr class="memdesc:ab507b45ae7873a4b7de376e93a8f75e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag if there is a pending interrupt on the pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ab507b45ae7873a4b7de376e93a8f75e4">More...</a><br /></td></tr>
 <tr class="separator:ab507b45ae7873a4b7de376e93a8f75e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a single pin. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a748f20b14a94db3ae600c9fc3faea789"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a748f20b14a94db3ae600c9fc3faea789">&#9670;&nbsp;</a></span>Interrupts_t</h2>
 
@@ -183,6 +207,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Alias for an array of interrupts (just to make the code less wordy) </p>
 
 </div>
 </div>
@@ -206,15 +232,25 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration defines different functions a pin can be assigned. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6a324118a6721dd6b8a9b9f4e327df2bf5"></a>Input&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6a29c2c02a361c9d7028472e5d92cd4a54"></a>Output&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6a44d6ce732770afbebbfcb330fbfc6909"></a>Alt_0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6adcc31466f4995f5aa6c27ae0067f2ff1"></a>Alt_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6ae1b44761f208c803bf7ffdfb89b5818b"></a>Alt_2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6aa6065b48f2920111bda5901533f58bf6"></a>Alt_3&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6a1bd34a052a39a4e4ef480f0c61777975"></a>Alt_4&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6a7c9ba5620b0557b09339203930d7fd02"></a>Alt_5&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6a324118a6721dd6b8a9b9f4e327df2bf5"></a>Input&#160;</td><td class="fielddoc"><p>Input pin. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6a29c2c02a361c9d7028472e5d92cd4a54"></a>Output&#160;</td><td class="fielddoc"><p>Output pin. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6a44d6ce732770afbebbfcb330fbfc6909"></a>Alt_0&#160;</td><td class="fielddoc"><p>Alternative function 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6adcc31466f4995f5aa6c27ae0067f2ff1"></a>Alt_1&#160;</td><td class="fielddoc"><p>Alternative function 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6ae1b44761f208c803bf7ffdfb89b5818b"></a>Alt_2&#160;</td><td class="fielddoc"><p>Alternative function 2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6aa6065b48f2920111bda5901533f58bf6"></a>Alt_3&#160;</td><td class="fielddoc"><p>Alternative function 3. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6a1bd34a052a39a4e4ef480f0c61777975"></a>Alt_4&#160;</td><td class="fielddoc"><p>Alternative function 4. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a08eacac474c38044fd85dd1898194cf6a7c9ba5620b0557b09339203930d7fd02"></a>Alt_5&#160;</td><td class="fielddoc"><p>Alternative function 5. </p>
+</td></tr>
 </table>
 
 </div>
@@ -238,12 +274,19 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration defines different interrupt types that can be assigned to a pin. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7262b1ac5b25b5b2d13ba7ef1be53d72ae483c60a9167c000531ea7f5a3e3f1e3"></a>Rising_Edge&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7262b1ac5b25b5b2d13ba7ef1be53d72aa764f908a94fb07a9981eed875809962"></a>Falling_Edge&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7262b1ac5b25b5b2d13ba7ef1be53d72a28d0edd045e05cf5af64e35ae0c4c6ef"></a>Low&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7262b1ac5b25b5b2d13ba7ef1be53d72a655d20c1ca69519ca647684edbb2db35"></a>High&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7262b1ac5b25b5b2d13ba7ef1be53d72aec0fc0100c4fc1ce4eea230c3dc10360"></a>Undefined&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7262b1ac5b25b5b2d13ba7ef1be53d72ae483c60a9167c000531ea7f5a3e3f1e3"></a>Rising_Edge&#160;</td><td class="fielddoc"><p>Change from <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca28d0edd045e05cf5af64e35ae0c4c6ef" title="Low voltage (0V)">NState::Low</a> to <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca655d20c1ca69519ca647684edbb2db35" title="High voltage (+5V)">NState::High</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7262b1ac5b25b5b2d13ba7ef1be53d72aa764f908a94fb07a9981eed875809962"></a>Falling_Edge&#160;</td><td class="fielddoc"><p>Change from <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca655d20c1ca69519ca647684edbb2db35" title="High voltage (+5V)">NState::High</a> to <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca28d0edd045e05cf5af64e35ae0c4c6ef" title="Low voltage (0V)">NState::Low</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7262b1ac5b25b5b2d13ba7ef1be53d72a28d0edd045e05cf5af64e35ae0c4c6ef"></a>Low&#160;</td><td class="fielddoc"><p><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca28d0edd045e05cf5af64e35ae0c4c6ef" title="Low voltage (0V)">NState::Low</a> detected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7262b1ac5b25b5b2d13ba7ef1be53d72a655d20c1ca69519ca647684edbb2db35"></a>High&#160;</td><td class="fielddoc"><p><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca655d20c1ca69519ca647684edbb2db35" title="High voltage (+5V)">NState::High</a> detected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7262b1ac5b25b5b2d13ba7ef1be53d72aec0fc0100c4fc1ce4eea230c3dc10360"></a>Undefined&#160;</td><td class="fielddoc"><p>Undefined (helper enum record) </p>
+</td></tr>
 </table>
 
 </div>
@@ -267,9 +310,13 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration defines states of a pin (only digital pins are supported). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a46b8c45d0e9efd77504774a2cc19376ca28d0edd045e05cf5af64e35ae0c4c6ef"></a>Low&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a46b8c45d0e9efd77504774a2cc19376ca655d20c1ca69519ca647684edbb2db35"></a>High&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a46b8c45d0e9efd77504774a2cc19376ca28d0edd045e05cf5af64e35ae0c4c6ef"></a>Low&#160;</td><td class="fielddoc"><p>Low voltage (0V) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a46b8c45d0e9efd77504774a2cc19376ca655d20c1ca69519ca647684edbb2db35"></a>High&#160;</td><td class="fielddoc"><p>High voltage (+5V) </p>
+</td></tr>
 </table>
 
 </div>
@@ -290,6 +337,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates an instance of the class. </p>
+<p>The default state of the pin is set to <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376ca28d0edd045e05cf5af64e35ae0c4c6ef" title="Low voltage (0V)">NState::Low</a> and its function is set to <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a08eacac474c38044fd85dd1898194cf6a324118a6721dd6b8a9b9f4e327df2bf5" title="Input pin.">NFunction::Input</a>. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -309,6 +359,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Disabled an interrupt on the pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Interrupt type to be disabled </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ae9a993da2c9f3871c1d26a647b2d539f"></a>
@@ -326,6 +384,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enables an interrupt on the pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Interrupt type to be enabled </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -352,6 +418,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the current function of the pin. </p>
+<dl class="section return"><dt>Returns</dt><dd>Function of the pin </dd></dl>
+
 </div>
 </div>
 <a id="ab910baeb4caa3129739eccf087d06dd4"></a>
@@ -376,6 +445,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the current state of the pin. </p>
+<dl class="section return"><dt>Returns</dt><dd>State of the pin </dd></dl>
 
 </div>
 </div>
@@ -402,10 +474,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Checks if there is a pending interrupt on the pin. </p>
+<dl class="section return"><dt>Returns</dt><dd>true, if there is a pending interrupt. false, otherwise. </dd></dl>
+
 </div>
 </div>
-<a id="a6189094fde73b5ce4d0e9f8678069163"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6189094fde73b5ce4d0e9f8678069163">&#9670;&nbsp;</a></span>Interrupt_Detected()</h2>
+<a id="ac7f6a241b95b22f2f577b6047b8c6f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f6a241b95b22f2f577b6047b8c6f02">&#9670;&nbsp;</a></span>Is_Interrupt_Detected()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,7 +489,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool zero_mate::peripheral::CGPIO_Manager::CPin::Interrupt_Detected </td>
+          <td class="memname">bool zero_mate::peripheral::CGPIO_Manager::CPin::Is_Interrupt_Detected </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a46b8c45d0e9efd77504774a2cc19376c">NState</a>&#160;</td>
           <td class="paramname"><em>new_state</em></td><td>)</td>
@@ -427,6 +502,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks information about whether an interrupt has occurred or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_state</td><td>State the pin is transitioning into </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true, if the transition triggers an interrupt. false, otherwise. </dd></dl>
 
 </div>
 </div>
@@ -445,6 +529,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks whether or not an interrupt is enabled on the pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Interrupt type to be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true, if the given interrupt type is enabled. false, otherwise. </dd></dl>
 
 </div>
 </div>
@@ -472,6 +565,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the current function of the pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>New function of the pin </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a4ca0071bafb6078e80f91643854f0c77"></a>
@@ -489,6 +590,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets a pending interrupt. </p>
+<p>This function is called from <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html" title="This class represents a GPIO (general-purpose I/O) manager.">CGPIO_Manager</a> when clearing interrupts as well as when setting a new state of the pin which triggers an interrupt.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">set</td><td>New value of the pending interrupt on the pin </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -516,6 +626,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the current state of the pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>New state of the pin </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -539,6 +657,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Array or interrupts (which are enabled/disabled) </p>
+
 </div>
 </div>
 <a id="ac08be66ece8e412c20834bb2e02fa37e"></a>
@@ -560,6 +680,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Function of the pin. </p>
 
 </div>
 </div>
@@ -583,6 +705,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Flag if there is a pending interrupt on the pin. </p>
+
 </div>
 </div>
 <a id="aa65e82669c1ab1a449f475d8789a8f7a"></a>
@@ -605,6 +729,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Current state of the pin. </p>
+
 </div>
 </div>
 <a id="a336f00e6e392387f559b0f30eb8e5c15"></a>
@@ -626,6 +752,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Total number of interrupt types TODO add count to NInterrupt_Type </p>
 
 </div>
 </div>

@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['pc_569',['PC',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a423eacd01e574e782a2b7cf51f28c56c',1,'zero_mate::arm1176jzf_s::CCPU_Core']]],
-  ['pc_570',['pc',['../structzero__mate_1_1utils_1_1elf_1_1TStatus.html#a047ba516ab263d2cf6b466c117e377dd',1,'zero_mate::utils::elf::TStatus']]],
-  ['pc_571',['PC',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae47489e31483fffd78a3c152ed15f52d',1,'zero_mate::arm1176jzf_s::CCPU_Core']]],
+  ['pc_570',['PC',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae47489e31483fffd78a3c152ed15f52d',1,'zero_mate::arm1176jzf_s::CCPU_Core::PC() const noexcept'],['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a423eacd01e574e782a2b7cf51f28c56c',1,'zero_mate::arm1176jzf_s::CCPU_Core::PC() noexcept']]],
+  ['pc_571',['pc',['../structzero__mate_1_1utils_1_1elf_1_1TStatus.html#a047ba516ab263d2cf6b466c117e377dd',1,'zero_mate::utils::elf::TStatus']]],
   ['pc_5freg_5fidx_572',['PC_REG_IDX',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a359cbf5c6efb754156cb3b046db2acbd',1,'zero_mate::arm1176jzf_s::CCPU_Context']]],
   ['pcm_573',['PCM',['../classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711a1088fbc901dc88b6c18085220cc33de9',1,'zero_mate::peripheral::CInterrupt_Controller']]],
   ['pending_574',['pending',['../structzero__mate_1_1peripheral_1_1CInterrupt__Controller_1_1TInterrupt__Info.html#a98b5bc9614b72bdcf2978a03f73b4111',1,'zero_mate::peripheral::CInterrupt_Controller::TInterrupt_Info']]],

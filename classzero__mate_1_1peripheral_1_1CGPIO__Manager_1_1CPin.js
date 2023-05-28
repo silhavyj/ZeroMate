@@ -28,7 +28,7 @@ var classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin =
     [ "Get_Function", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#acf6b92ed8408ada497c28c405af395d6", null ],
     [ "Get_State", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ab910baeb4caa3129739eccf087d06dd4", null ],
     [ "Has_Pending_IRQ", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a0536631c62e1aa7a96404501768f31a6", null ],
-    [ "Interrupt_Detected", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a6189094fde73b5ce4d0e9f8678069163", null ],
+    [ "Is_Interrupt_Detected", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ac7f6a241b95b22f2f577b6047b8c6f02", null ],
     [ "Is_Interrupt_Enabled", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a9330f754330cb20d555969ec55c0a679", null ],
     [ "Set_Function", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a0c45c24454ccabf427a78111533cf88e", null ],
     [ "Set_Pending_IRQ", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a4ca0071bafb6078e80f91643854f0c77", null ],

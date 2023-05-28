@@ -11,7 +11,7 @@
 <area shape="rect" id="node9" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="2080,348,2172,375"/>
 <area shape="rect" id="node28" href="$isa__decoder_8hpp.html" title="This file defines an instruction decoder." alt="" coords="3012,273,3163,300"/>
 <area shape="rect" id="node33" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="795,191,923,218"/>
-<area shape="rect" id="node34" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used BCM2835." alt="" coords="249,184,416,225"/>
+<area shape="rect" id="node34" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="249,184,416,225"/>
 <area shape="rect" id="node35" href="$system__clock__listener_8hpp.html" title="This file defines an interface for a CPU clock listener." alt="" coords="948,184,1107,225"/>
 <area shape="rect" id="node8" title=" " alt="" coords="719,348,824,375"/>
 <area shape="rect" id="node10" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="2139,512,2257,539"/>

@@ -1,6 +1,6 @@
 <map id="zero_mate::peripheral::CInterrupt_Controller::Get_IRQ_Source" name="zero_mate::peripheral::CInterrupt_Controller::Get_IRQ_Source">
 <area shape="rect" id="node1" title="Returns the corresponding IRQ source for a given GPIO pin." alt="" coords="487,35,653,91"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" title=" " alt="" coords="232,5,439,47"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504" title=" " alt="" coords="253,71,418,127"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" title="Writes data to the peripheral." alt="" coords="5,5,184,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" title="Clears a pending interrupt by writing a 1 to the GPEDS register." alt="" coords="232,5,439,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504" title="Sets a new state of a given pin." alt="" coords="253,71,418,127"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,5,184,47"/>
 </map>

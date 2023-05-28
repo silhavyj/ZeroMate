@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" target="_top" xlink:title="Clears a pending interrupt by writing a 1 to the GPEDS register.">
 <polygon fill="none" stroke="black" points="170,-61 170,-91 325,-91 325,-61 170,-61"/>
 <text text-anchor="start" x="178" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="247.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Clear_IRQ</text>
@@ -38,7 +38,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504" target="_top" xlink:title="Sets a new state of a given pin.">
 <polygon fill="none" stroke="black" points="185.5,-0.5 185.5,-41.5 309.5,-41.5 309.5,-0.5 185.5,-0.5"/>
 <text text-anchor="start" x="193.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="193.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Set</text>
@@ -55,7 +55,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" target="_top" xlink:title="Writes data to the peripheral.">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" target="_top" xlink:title="Writes data to the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="0,-61 0,-91 134,-91 134,-61 0,-61"/>
 <text text-anchor="start" x="8" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="67" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">::CGPIO_Manager::Write</text>
