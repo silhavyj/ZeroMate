@@ -1,7 +1,8 @@
 <map id="zero_mate::peripheral::IPeripheral" name="zero_mate::peripheral::IPeripheral">
-<area shape="rect" id="node1" title="This class represents a general interface of a memory&#45;mapped peripheral." alt="" coords="5,104,171,145"/>
+<area shape="rect" id="node1" title="This class represents a general interface of a memory&#45;mapped peripheral." alt="" coords="5,136,171,177"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html" title="This class represents the ARM timer used in BCM2835." alt="" coords="219,5,385,47"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html" title="This class represents a GPIO (general&#45;purpose I/O) manager." alt="" coords="219,71,385,112"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html" title="This class represents the interrupt controller used in BCM2835." alt="" coords="219,136,385,177"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CMonitor.html" title=" " alt="" coords="219,201,385,243"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CMonitor.html" title="This class represents a memory&#45;mapped monitor used to print out debug messages." alt="" coords="219,201,385,243"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CRAM.html" title="This class represents the RAM used in BCM2835." alt="" coords="219,267,385,308"/>
 </map>

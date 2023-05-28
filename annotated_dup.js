@@ -69,6 +69,7 @@ var annotated_dup =
         [ "CInterrupt_Controller", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller" ],
         [ "CMonitor", "classzero__mate_1_1peripheral_1_1CMonitor.html", "classzero__mate_1_1peripheral_1_1CMonitor" ],
         [ "IPeripheral", "classzero__mate_1_1peripheral_1_1IPeripheral.html", "classzero__mate_1_1peripheral_1_1IPeripheral" ],
+        [ "CRAM", "classzero__mate_1_1peripheral_1_1CRAM.html", "classzero__mate_1_1peripheral_1_1CRAM" ],
         [ "ISystem_Clock_Listener", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener" ]
       ] ],
       [ "utils", "namespacezero__mate_1_1utils.html", [

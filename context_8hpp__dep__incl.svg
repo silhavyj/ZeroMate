@@ -474,7 +474,7 @@
 <!-- Node29 -->
 <g id="node29" class="node">
 <title>Node29</title>
-<g id="a_node29"><a xlink:href="gpio_8hpp.html" target="_top" xlink:title="This file defines teh GPIO controller used in BCM2835.">
+<g id="a_node29"><a xlink:href="gpio_8hpp.html" target="_top" xlink:title="This file defines the GPIO controller used in BCM2835.">
 <polygon fill="none" stroke="black" points="1403.39,-134.5 1403.39,-164.5 1516.39,-164.5 1516.39,-134.5 1403.39,-134.5"/>
 <text text-anchor="start" x="1411.39" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="1459.89" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/gpio.hpp</text>
@@ -576,7 +576,7 @@
 <!-- Node30 -->
 <g id="node30" class="node">
 <title>Node30</title>
-<g id="a_node30"><a xlink:href="gpio_8cpp.html" target="_top" xlink:title="This file implements teh GPIO controller used in BCM2835 (defined in gpio.hpp).">
+<g id="a_node30"><a xlink:href="gpio_8cpp.html" target="_top" xlink:title="This file implements the GPIO controller used in BCM2835 (defined in gpio.hpp).">
 <polygon fill="none" stroke="black" points="1727.39,-67.5 1727.39,-97.5 1840.39,-97.5 1840.39,-67.5 1727.39,-67.5"/>
 <text text-anchor="start" x="1735.39" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="1783.89" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/gpio.cpp</text>

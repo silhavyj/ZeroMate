@@ -84,7 +84,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="gpio_8cpp.html" target="_top" xlink:title="This file implements teh GPIO controller used in BCM2835 (defined in gpio.hpp).">
+<g id="a_node6"><a xlink:href="gpio_8cpp.html" target="_top" xlink:title="This file implements the GPIO controller used in BCM2835 (defined in gpio.hpp).">
 <polygon fill="none" stroke="black" points="534,-0.5 534,-30.5 647,-30.5 647,-0.5 534,-0.5"/>
 <text text-anchor="start" x="542" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="590.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/gpio.cpp</text>

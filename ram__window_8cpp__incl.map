@@ -4,6 +4,7 @@
 <area shape="rect" id="node3" title=" " alt="" coords="141,95,323,136"/>
 <area shape="rect" id="node4" href="$ram__window_8hpp.html" title=" " alt="" coords="347,102,479,129"/>
 <area shape="rect" id="node5" href="$window_8hpp.html" title=" " alt="" coords="268,191,391,218"/>
-<area shape="rect" id="node7" href="$ram_8hpp.html" title=" " alt="" coords="415,184,577,225"/>
+<area shape="rect" id="node7" href="$ram_8hpp.html" title="This file defines the RAM (random access memory) used in BCM2835." alt="" coords="415,184,577,225"/>
 <area shape="rect" id="node6" title=" " alt="" coords="291,273,368,300"/>
+<area shape="rect" id="node8" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="438,273,554,300"/>
 </map>

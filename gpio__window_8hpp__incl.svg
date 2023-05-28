@@ -66,7 +66,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="gpio_8hpp.html" target="_top" xlink:title="This file defines teh GPIO controller used in BCM2835.">
+<g id="a_node5"><a xlink:href="gpio_8hpp.html" target="_top" xlink:title="This file defines the GPIO controller used in BCM2835.">
 <polygon fill="none" stroke="black" points="195.59,-168.5 195.59,-198.5 317.59,-198.5 317.59,-168.5 195.59,-168.5"/>
 <text text-anchor="start" x="203.59" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../../core/peripherals</text>
 <text text-anchor="middle" x="256.59" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">/gpio.hpp</text>

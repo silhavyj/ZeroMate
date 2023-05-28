@@ -53,7 +53,8 @@ var hierarchy =
       [ "zero_mate::peripheral::CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", null ],
       [ "zero_mate::peripheral::CGPIO_Manager", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html", null ],
       [ "zero_mate::peripheral::CInterrupt_Controller", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html", null ],
-      [ "zero_mate::peripheral::CMonitor", "classzero__mate_1_1peripheral_1_1CMonitor.html", null ]
+      [ "zero_mate::peripheral::CMonitor", "classzero__mate_1_1peripheral_1_1CMonitor.html", null ],
+      [ "zero_mate::peripheral::CRAM", "classzero__mate_1_1peripheral_1_1CRAM.html", null ]
     ] ],
     [ "zero_mate::peripheral::ISystem_Clock_Listener", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html", [
       [ "zero_mate::peripheral::CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", null ]

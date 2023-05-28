@@ -36,7 +36,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="ram_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="ram_8hpp.html" target="_top" xlink:title="This file defines the RAM (random access memory) used in BCM2835.">
 <polygon fill="none" stroke="black" points="110,-56.5 110,-86.5 232,-86.5 232,-56.5 110,-56.5"/>
 <text text-anchor="start" x="118" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../../core/peripherals</text>
 <text text-anchor="middle" x="171" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ram.hpp</text>
@@ -63,6 +63,21 @@
 <title>Node2&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M46,-61.98C46,-53.58 46,-40.48 46,-29.66"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="49.5,-29.51 46,-19.51 42.5,-29.51 49.5,-29.51"/>
+</g>
+<!-- Node5 -->
+<g id="node5" class="node">
+<title>Node5</title>
+<g id="a_node5"><a xlink:href="peripheral_8hpp.html" target="_top" xlink:title="This file defines an interface for a memory&#45;mapped peripheral.">
+<polygon fill="none" stroke="black" points="127.5,-0.5 127.5,-19.5 214.5,-19.5 214.5,-0.5 127.5,-0.5"/>
+<text text-anchor="middle" x="171" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">peripheral.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge4" class="edge">
+<title>Node4&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M171,-56.4C171,-48.47 171,-38.46 171,-29.86"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="174.5,-29.66 171,-19.66 167.5,-29.66 174.5,-29.66"/>
 </g>
 </g>
 </svg>

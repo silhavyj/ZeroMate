@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines an 80x25 8&#45;bit memory&#45;mapped monitor which is used as a debug output.">
 <polygon fill="#bfbfbf" stroke="black" points="75,-134.5 75,-164.5 188,-164.5 188,-134.5 75,-134.5"/>
 <text text-anchor="start" x="83" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="131.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/monitor.hpp</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="monitor_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="monitor_8cpp.html" target="_top" xlink:title="This file implements an 80x25 8&#45;bit memory&#45;mapped monitor which is used as a debug output.">
 <polygon fill="none" stroke="black" points="0,-67.5 0,-97.5 113,-97.5 113,-67.5 0,-67.5"/>
 <text text-anchor="start" x="8" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="56.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/monitor.cpp</text>

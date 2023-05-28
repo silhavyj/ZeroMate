@@ -840,8 +840,8 @@
 <!-- Node60 -->
 <g id="node39" class="node">
 <title>Node60</title>
-<g id="a_node39"><a xlink:href="ram_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="2038,-246.5 2038,-276.5 2160,-276.5 2160,-246.5 2038,-246.5"/>
+<g id="a_node39"><a xlink:href="ram_8hpp.html" target="_top" xlink:title="This file defines the RAM (random access memory) used in BCM2835.">
+<polygon fill="none" stroke="red" points="2038,-246.5 2038,-276.5 2160,-276.5 2160,-246.5 2038,-246.5"/>
 <text text-anchor="start" x="2046" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../../core/peripherals</text>
 <text text-anchor="middle" x="2099" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ram.hpp</text>
 </a>
@@ -883,7 +883,7 @@
 <!-- Node63 -->
 <g id="node42" class="node">
 <title>Node63</title>
-<g id="a_node42"><a xlink:href="gpio_8hpp.html" target="_top" xlink:title="This file defines teh GPIO controller used in BCM2835.">
+<g id="a_node42"><a xlink:href="gpio_8hpp.html" target="_top" xlink:title="This file defines the GPIO controller used in BCM2835.">
 <polygon fill="none" stroke="red" points="2634,-246.5 2634,-276.5 2756,-276.5 2756,-246.5 2634,-246.5"/>
 <text text-anchor="start" x="2642" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../../core/peripherals</text>
 <text text-anchor="middle" x="2695" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">/gpio.hpp</text>
@@ -975,7 +975,7 @@
 <!-- Node67 -->
 <g id="node46" class="node">
 <title>Node67</title>
-<g id="a_node46"><a xlink:href="monitor_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node46"><a xlink:href="monitor_8hpp.html" target="_top" xlink:title="This file defines an 80x25 8&#45;bit memory&#45;mapped monitor which is used as a debug output.">
 <polygon fill="none" stroke="red" points="2888,-246.5 2888,-276.5 3010,-276.5 3010,-246.5 2888,-246.5"/>
 <text text-anchor="start" x="2896" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../../core/peripherals</text>
 <text text-anchor="middle" x="2949" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">/monitor.hpp</text>

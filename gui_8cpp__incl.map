@@ -44,9 +44,9 @@
 <area shape="rect" id="node33" href="$elf__loader_8hpp.html" title=" " alt="" coords="2243,184,2370,225"/>
 <area shape="rect" id="node36" title=" " alt="" coords="2496,191,2560,218"/>
 <area shape="rect" id="node37" title=" " alt="" coords="2585,191,2647,218"/>
-<area shape="rect" id="node39" href="$ram_8hpp.html" title=" " alt="" coords="2723,184,2885,225"/>
+<area shape="rect" id="node39" href="$ram_8hpp.html" title="This file defines the RAM (random access memory) used in BCM2835." alt="" coords="2723,184,2885,225"/>
 <area shape="rect" id="node41" title=" " alt="" coords="3371,191,3442,218"/>
-<area shape="rect" id="node42" href="$gpio_8hpp.html" title="This file defines teh GPIO controller used in BCM2835." alt="" coords="3517,184,3680,225"/>
+<area shape="rect" id="node42" href="$gpio_8hpp.html" title="This file defines the GPIO controller used in BCM2835." alt="" coords="3517,184,3680,225"/>
 <area shape="rect" id="node44" href="$arm__timer_8hpp.html" title="This file defines the ARM timer used in BCM2835." alt="" coords="3083,184,3245,225"/>
-<area shape="rect" id="node46" href="$monitor_8hpp.html" title=" " alt="" coords="3856,184,4019,225"/>
+<area shape="rect" id="node46" href="$monitor_8hpp.html" title="This file defines an 80x25 8&#45;bit memory&#45;mapped monitor which is used as a debug output." alt="" coords="3856,184,4019,225"/>
 </map>

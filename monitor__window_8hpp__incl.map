@@ -2,6 +2,6 @@
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,208,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="19,184,96,211"/>
 <area shape="rect" id="node3" href="$window_8hpp.html" title=" " alt="" coords="45,102,168,129"/>
-<area shape="rect" id="node4" href="$monitor_8hpp.html" title=" " alt="" coords="192,95,355,136"/>
+<area shape="rect" id="node4" href="$monitor_8hpp.html" title="This file defines an 80x25 8&#45;bit memory&#45;mapped monitor which is used as a debug output." alt="" coords="192,95,355,136"/>
 <area shape="rect" id="node5" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="215,184,331,211"/>
 </map>
