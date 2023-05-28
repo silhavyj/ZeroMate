@@ -3,7 +3,7 @@
 /// \date 28. 05. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file implements teh GPIO controller used in BCM2835 (defined in gpio.hpp).
+/// \brief This file implements the GPIO controller used in BCM2835 (defined in gpio.hpp).
 ///
 /// To find more information about this peripheral, please visit
 /// https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf (chapter 6)
