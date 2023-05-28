@@ -241,7 +241,7 @@ namespace zero_mate::peripheral
             case NRegister::Pre_Divider:
             case NRegister::Free_Running:
 
-            default: // Not all register are currently being used.
+            default: // Not all register are currently being used (count).
                 break;
         }
     }
