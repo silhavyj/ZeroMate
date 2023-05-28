@@ -1,7 +1,10 @@
 #pragma once
 
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <vector>
 #include <unordered_map>
+/// \endcond
 
 #include "coprocessor.hpp"
 

@@ -1,5 +1,8 @@
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <ranges>
 #include <algorithm>
+/// \endcond
 
 #include <fmt/format.h>
 

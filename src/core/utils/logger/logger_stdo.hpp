@@ -1,6 +1,9 @@
 #pragma once
 
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <mutex>
+/// \endcond
 
 #include "logger.hpp"
 

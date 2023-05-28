@@ -1,11 +1,14 @@
 #pragma once
 
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <mutex>
 #include <vector>
 #include <memory>
 #include <cstdint>
 #include <string_view>
 #include <source_location>
+/// \endcond
 
 namespace zero_mate::utils
 {

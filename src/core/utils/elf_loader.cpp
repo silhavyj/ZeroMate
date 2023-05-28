@@ -1,5 +1,8 @@
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <bit>
 #include <unordered_map>
+/// \endcond
 
 #include <fmt/format.h>
 #include <elfio/elfio.hpp>

@@ -1,5 +1,8 @@
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <cassert>
 #include <algorithm>
+/// \endcond
 
 #include "ram.hpp"
 

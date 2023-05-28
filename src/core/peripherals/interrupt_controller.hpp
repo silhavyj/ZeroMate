@@ -112,7 +112,7 @@ namespace zero_mate::peripheral
     public:
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Creates an instance of the class.
-        /// \param cpu_context
+        /// \param cpu_context CPU context (the IC needs to check if interrupts are globally enabled/disabled)
         // -------------------------------------------------------------------------------------------------------------
         explicit CInterrupt_Controller(const arm1176jzf_s::CCPU_Context& cpu_context);
 

@@ -1,6 +1,9 @@
 #pragma once
 
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <cstdint>
+/// \endcond
 
 #include "../arm1176jzf_s/context.hpp"
 

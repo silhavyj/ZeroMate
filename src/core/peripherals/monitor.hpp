@@ -1,6 +1,9 @@
 #pragma once
 
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <string>
+/// \endcond
 
 #include "peripheral.hpp"
 

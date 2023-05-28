@@ -1,10 +1,13 @@
 #pragma once
 
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <array>
 #include <memory>
 #include <limits>
 #include <functional>
 #include <unordered_set>
+/// \endcond
 
 #include "peripheral.hpp"
 #include "interrupt_controller.hpp"

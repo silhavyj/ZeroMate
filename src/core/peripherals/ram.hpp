@@ -1,5 +1,7 @@
 #pragma once
 
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <bit>
 #include <array>
 #include <vector>
