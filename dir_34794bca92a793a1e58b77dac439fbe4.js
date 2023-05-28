@@ -24,9 +24,7 @@ var dir_34794bca92a793a1e58b77dac439fbe4 =
       [ "IPeripheral", "classzero__mate_1_1peripheral_1_1IPeripheral.html", "classzero__mate_1_1peripheral_1_1IPeripheral" ]
     ] ],
     [ "ram.cpp", "ram_8cpp.html", null ],
-    [ "ram.hpp", "ram_8hpp.html", [
-      [ "CRAM", "classzero__mate_1_1peripheral_1_1CRAM.html", "classzero__mate_1_1peripheral_1_1CRAM" ]
-    ] ],
+    [ "ram.hpp", "ram_8hpp.html", null ],
     [ "system_clock_listener.hpp", "system__clock__listener_8hpp.html", [
       [ "ISystem_Clock_Listener", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener" ]
     ] ]

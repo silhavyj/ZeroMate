@@ -3,15 +3,9 @@
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,111,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="135,95,269,121"/>
 <area shape="rect" id="node4" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used BCM2835." alt="" coords="293,95,468,121"/>
-<area shape="rect" id="node14" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="493,95,621,121"/>
-<area shape="rect" id="node15" href="$singleton_8hpp.html" title="This file defines and implements a generic class that is used to treat other classes as singletons." alt="" coords="645,95,799,121"/>
+<area shape="rect" id="node8" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="493,95,621,121"/>
+<area shape="rect" id="node9" href="$singleton_8hpp.html" title="This file defines and implements a generic class that is used to treat other classes as singletons." alt="" coords="645,95,799,121"/>
 <area shape="rect" id="node5" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="139,169,255,196"/>
 <area shape="rect" id="node6" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="279,169,482,196"/>
 <area shape="rect" id="node7" href="$logger_8hpp.html" title=" " alt="" coords="361,244,539,271"/>
-<area shape="rect" id="node8" title=" " alt="" coords="187,319,251,345"/>
-<area shape="rect" id="node9" title=" " alt="" coords="276,319,339,345"/>
-<area shape="rect" id="node10" title=" " alt="" coords="363,319,441,345"/>
-<area shape="rect" id="node11" title=" " alt="" coords="465,319,531,345"/>
-<area shape="rect" id="node12" title=" " alt="" coords="556,319,653,345"/>
-<area shape="rect" id="node13" title=" " alt="" coords="677,319,801,345"/>
 </map>

@@ -1,9 +1,0 @@
-<map id="src/core/peripherals/ram.hpp" name="src/core/peripherals/ram.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="152,5,303,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,44,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="69,95,125,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="149,95,212,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="237,95,314,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="338,95,405,121"/>
-<area shape="rect" id="node7" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="429,95,545,121"/>
-</map>

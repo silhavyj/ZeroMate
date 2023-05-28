@@ -1,5 +1,4 @@
 <map id="src/core/peripherals/monitor.hpp" name="src/core/peripherals/monitor.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="15,5,166,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,64,121"/>
-<area shape="rect" id="node3" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="89,95,205,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,156,47"/>
+<area shape="rect" id="node2" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="23,95,139,121"/>
 </map>

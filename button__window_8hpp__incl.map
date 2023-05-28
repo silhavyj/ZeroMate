@@ -1,19 +1,10 @@
 <map id="src/gui/windows/peripherals/external/button_window.hpp" name="src/gui/windows/peripherals/external/button_window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="207,5,418,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="126,408,203,435"/>
-<area shape="rect" id="node3" href="$window_8hpp.html" title=" " alt="" coords="44,333,178,360"/>
-<area shape="rect" id="node4" href="$gpio_8hpp.html" title=" " alt="" coords="373,95,548,136"/>
-<area shape="rect" id="node12" href="$logger_8hpp.html" title=" " alt="" coords="791,333,970,360"/>
-<area shape="rect" id="node5" title=" " alt="" coords="254,184,310,211"/>
-<area shape="rect" id="node6" title=" " alt="" coords="334,184,392,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="417,184,504,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="528,184,643,211"/>
-<area shape="rect" id="node9" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="500,259,616,285"/>
-<area shape="rect" id="node10" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used BCM2835." alt="" coords="718,184,893,211"/>
-<area shape="rect" id="node11" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="640,259,843,285"/>
-<area shape="rect" id="node13" title=" " alt="" coords="671,408,735,435"/>
-<area shape="rect" id="node14" title=" " alt="" coords="760,408,822,435"/>
-<area shape="rect" id="node15" title=" " alt="" coords="847,408,914,435"/>
-<area shape="rect" id="node16" title=" " alt="" coords="938,408,1036,435"/>
-<area shape="rect" id="node17" title=" " alt="" coords="1060,408,1184,435"/>
+<area shape="rect" id="node1" title=" " alt="" coords="121,5,332,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,184,83,211"/>
+<area shape="rect" id="node3" href="$window_8hpp.html" title=" " alt="" coords="70,102,205,129"/>
+<area shape="rect" id="node4" href="$gpio_8hpp.html" title=" " alt="" coords="229,95,403,136"/>
+<area shape="rect" id="node8" href="$logger_8hpp.html" title=" " alt="" coords="355,333,533,360"/>
+<area shape="rect" id="node5" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="38,259,154,285"/>
+<area shape="rect" id="node6" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used BCM2835." alt="" coords="210,184,385,211"/>
+<area shape="rect" id="node7" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="179,259,381,285"/>
 </map>

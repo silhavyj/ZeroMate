@@ -1,13 +1,7 @@
 <map id="src/core/arm1176jzf_s/exceptions.cpp" name="src/core/arm1176jzf_s/exceptions.cpp">
-<area shape="rect" id="node1" title="This file implements all exceptions that can be thrown by the CPU during execution." alt="" coords="129,5,279,47"/>
-<area shape="rect" id="node2" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="143,95,265,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="89,169,194,196"/>
-<area shape="rect" id="node4" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="219,169,317,196"/>
-<area shape="rect" id="node5" href="$logger_8hpp.html" title=" " alt="" coords="179,244,357,271"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,319,69,345"/>
-<area shape="rect" id="node7" title=" " alt="" coords="94,319,157,345"/>
-<area shape="rect" id="node8" title=" " alt="" coords="181,319,259,345"/>
-<area shape="rect" id="node9" title=" " alt="" coords="283,319,349,345"/>
-<area shape="rect" id="node10" title=" " alt="" coords="374,319,471,345"/>
-<area shape="rect" id="node11" title=" " alt="" coords="495,319,619,345"/>
+<area shape="rect" id="node1" title="This file implements all exceptions that can be thrown by the CPU during execution." alt="" coords="45,5,196,47"/>
+<area shape="rect" id="node2" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="60,95,181,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,111,196"/>
+<area shape="rect" id="node4" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="135,169,234,196"/>
+<area shape="rect" id="node5" href="$logger_8hpp.html" title=" " alt="" coords="95,244,274,271"/>
 </map>
