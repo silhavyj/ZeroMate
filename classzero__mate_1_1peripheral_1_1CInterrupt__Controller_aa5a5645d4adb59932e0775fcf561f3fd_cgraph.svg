@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Initializes the interrupt controller.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-33.5 0,-74.5 125,-74.5 125,-33.5 0,-33.5"/>
 <text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>
@@ -22,11 +22,11 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a567c6f40a47f528fa70e30fc1ecdf385" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9f4f351805d9081a77d7949c494fd29b" target="_top" xlink:title="Initializes the collection of basic IRQ sources.">
 <polygon fill="none" stroke="black" points="164,-61 164,-113 289,-113 289,-61 164,-61"/>
 <text text-anchor="start" x="172" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="172" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>
-<text text-anchor="start" x="172" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">::Initialize_IRQ_Basic</text>
+<text text-anchor="start" x="172" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">::Initialize_Basic_IRQ</text>
 <text text-anchor="middle" x="226.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">_Sources</text>
 </a>
 </g>
@@ -40,7 +40,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a888a57d7926bd4900a70fb25ef1e1a1c" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a888a57d7926bd4900a70fb25ef1e1a1c" target="_top" xlink:title="Initializes the collection of IRQ sources.">
 <polygon fill="none" stroke="black" points="161,-0.5 161,-41.5 292,-41.5 292,-0.5 161,-0.5"/>
 <text text-anchor="start" x="169" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="169" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>

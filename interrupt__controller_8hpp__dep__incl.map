@@ -1,9 +1,9 @@
 <map id="src/core/peripherals/interrupt_controller.hpp" name="src/core/peripherals/interrupt_controller.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="1406,5,1585,47"/>
+<area shape="rect" id="node1" title="This file defines the interrupt controller used BCM2835." alt="" coords="1406,5,1585,47"/>
 <area shape="rect" id="node2" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="503,95,653,136"/>
 <area shape="rect" id="node13" href="$arm__timer_8hpp.html" title="This file defines the ARM timer used BCM2835." alt="" coords="1164,95,1315,136"/>
 <area shape="rect" id="node17" href="$gpio_8hpp.html" title=" " alt="" coords="1704,95,1855,136"/>
-<area shape="rect" id="node23" href="$interrupt__controller_8cpp.html" title=" " alt="" coords="1879,95,2056,136"/>
+<area shape="rect" id="node23" href="$interrupt__controller_8cpp.html" title="This file implements the interrupt controller used BCM2835 (defined in interrupt_controller...." alt="" coords="1879,95,2056,136"/>
 <area shape="rect" id="node24" href="$interrupt__controller__window_8hpp.html" title=" " alt="" coords="1378,95,1613,136"/>
 <area shape="rect" id="node3" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="788,184,939,225"/>
 <area shape="rect" id="node4" href="$control__window_8hpp.html" title=" " alt="" coords="589,184,764,225"/>

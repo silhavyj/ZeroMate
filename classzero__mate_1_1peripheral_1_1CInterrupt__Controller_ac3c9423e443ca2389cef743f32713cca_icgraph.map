@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CInterrupt_Controller::Enable_IRQ_Sources" name="zero_mate::peripheral::CInterrupt_Controller::Enable_IRQ_Sources">
+<area shape="rect" id="node1" title="Enables/disables interrupts from an IRQ source." alt="" coords="220,5,387,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,5,172,61"/>
+</map>

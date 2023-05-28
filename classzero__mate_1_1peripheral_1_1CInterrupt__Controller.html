@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1peripheral_1_1CInte
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents the interrupt controller used in BCM2835.  
+ <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="interrupt__controller_8hpp_source.html">interrupt_controller.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::peripheral::CInterrupt_Controller:</div>
@@ -116,6 +119,7 @@ Collaboration diagram for zero_mate::peripheral::CInterrupt_Controller:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1peripheral_1_1CInterrupt__Controller_1_1TInterrupt__Info.html">TInterrupt_Info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure holds information about each IRQ/Basic IRQ source.  <a href="structzero__mate_1_1peripheral_1_1CInterrupt__Controller_1_1TInterrupt__Info.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -136,6 +140,7 @@ Public Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7ae93f994f01c537c4e2f7d8528c3eb5e9">Count</a>
 <br />
  }</td></tr>
+<tr class="memdesc:aced8bea23d34109204febfe822497bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration lists out all interrupt control registers.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7">More...</a><br /></td></tr>
 <tr class="separator:aced8bea23d34109204febfe822497bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a914ba371614fd541d94ef4275826a4e6"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a914ba371614fd541d94ef4275826a4e6">NIRQ_Basic_Source</a> : std::uint32_t { <br />
 &#160;&#160;<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a914ba371614fd541d94ef4275826a4e6acf95fdad58ff7ee7648ded19e83ea39c">ARM_Timer</a> = 0
@@ -149,6 +154,7 @@ Public Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a914ba371614fd541d94ef4275826a4e6ace781d2332ce99762f66caf44d051228">Illegal_Access_Type_0</a> = 7
 <br />
  }</td></tr>
+<tr class="memdesc:a914ba371614fd541d94ef4275826a4e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different IRQ basic source that can trigger an interrupt.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a914ba371614fd541d94ef4275826a4e6">More...</a><br /></td></tr>
 <tr class="separator:a914ba371614fd541d94ef4275826a4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9db75b3b07d35b57fdf2195405ead711"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711">NIRQ_Source</a> { <br />
 &#160;&#160;<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711ad22b2d6890a5e46ef1adfd9a5b631097">AUX</a> = 29
@@ -169,34 +175,43 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711acec5769b01fb096efaf0d6186823c78f">UART</a> = 57
 <br />
  }</td></tr>
+<tr class="memdesc:a9db75b3b07d35b57fdf2195405ead711"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different IRQ source that can trigger an interrupt.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711">More...</a><br /></td></tr>
 <tr class="separator:a9db75b3b07d35b57fdf2195405ead711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afa2b9bbd779dc5d6958c5fba99b5b72f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#afa2b9bbd779dc5d6958c5fba99b5b72f">CInterrupt_Controller</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;cpu_context)</td></tr>
+<tr class="memdesc:afa2b9bbd779dc5d6958c5fba99b5b72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#afa2b9bbd779dc5d6958c5fba99b5b72f">More...</a><br /></td></tr>
 <tr class="separator:afa2b9bbd779dc5d6958c5fba99b5b72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ef9316f86fe269ba10a15d9dbbc8e85"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a5ef9316f86fe269ba10a15d9dbbc8e85">Get_Size</a> () const noexcept override</td></tr>
-<tr class="memdesc:a5ef9316f86fe269ba10a15d9dbbc8e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a5ef9316f86fe269ba10a15d9dbbc8e85">More...</a><br /></td></tr>
+<tr class="memdesc:a5ef9316f86fe269ba10a15d9dbbc8e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a5ef9316f86fe269ba10a15d9dbbc8e85">More...</a><br /></td></tr>
 <tr class="separator:a5ef9316f86fe269ba10a15d9dbbc8e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab37428109c8e5f862b528417048903f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3">Write</a> (std::uint32_t addr, const char *data, std::uint32_t size) override</td></tr>
-<tr class="memdesc:ab37428109c8e5f862b528417048903f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data to the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3">More...</a><br /></td></tr>
+<tr class="memdesc:ab37428109c8e5f862b528417048903f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data to the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3">More...</a><br /></td></tr>
 <tr class="separator:ab37428109c8e5f862b528417048903f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae60524d985cd3824ed4a4e1ab0ec6f85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae60524d985cd3824ed4a4e1ab0ec6f85">Read</a> (std::uint32_t addr, char *data, std::uint32_t size) override</td></tr>
-<tr class="memdesc:ae60524d985cd3824ed4a4e1ab0ec6f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae60524d985cd3824ed4a4e1ab0ec6f85">More...</a><br /></td></tr>
+<tr class="memdesc:ae60524d985cd3824ed4a4e1ab0ec6f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae60524d985cd3824ed4a4e1ab0ec6f85">More...</a><br /></td></tr>
 <tr class="separator:ae60524d985cd3824ed4a4e1ab0ec6f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa559a3a604ae1877cbbe749724d8a399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa559a3a604ae1877cbbe749724d8a399">Signalize_IRQ</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711">NIRQ_Source</a> source)</td></tr>
+<tr class="memdesc:aa559a3a604ae1877cbbe749724d8a399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the interrupt controller about a pending interrupt triggered by an IRQ source.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa559a3a604ae1877cbbe749724d8a399">More...</a><br /></td></tr>
 <tr class="separator:aa559a3a604ae1877cbbe749724d8a399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32373b931bb37ef8ee92f95a3f833284"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a32373b931bb37ef8ee92f95a3f833284">Signalize_Basic_IRQ</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a914ba371614fd541d94ef4275826a4e6">NIRQ_Basic_Source</a> source)</td></tr>
+<tr class="memdesc:a32373b931bb37ef8ee92f95a3f833284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the interrupt controller about a pending interrupt triggered by a basic IRQ source.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a32373b931bb37ef8ee92f95a3f833284">More...</a><br /></td></tr>
 <tr class="separator:a32373b931bb37ef8ee92f95a3f833284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea7c1519af8962e9327048e552a8cc4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aea7c1519af8962e9327048e552a8cc4c">Has_Pending_Interrupt</a> () const noexcept</td></tr>
+<tr class="memdesc:aea7c1519af8962e9327048e552a8cc4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns information about whether there is a pending IRQ.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aea7c1519af8962e9327048e552a8cc4c">More...</a><br /></td></tr>
 <tr class="separator:aea7c1519af8962e9327048e552a8cc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24a9ad6b03c4385ccd013b78d627fb5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a24a9ad6b03c4385ccd013b78d627fb5a">Clear_Pending_Basic_IRQ</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a914ba371614fd541d94ef4275826a4e6">NIRQ_Basic_Source</a> source) noexcept</td></tr>
+<tr class="memdesc:a24a9ad6b03c4385ccd013b78d627fb5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears a pending basic IRQ.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a24a9ad6b03c4385ccd013b78d627fb5a">More...</a><br /></td></tr>
 <tr class="separator:a24a9ad6b03c4385ccd013b78d627fb5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22a75a69e29e42afaf2e37332602cd6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a22a75a69e29e42afaf2e37332602cd6e">Clear_Pending_IRQ</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711">NIRQ_Source</a> source) noexcept</td></tr>
+<tr class="memdesc:a22a75a69e29e42afaf2e37332602cd6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears a pending IRQ.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a22a75a69e29e42afaf2e37332602cd6e">More...</a><br /></td></tr>
 <tr class="separator:a22a75a69e29e42afaf2e37332602cd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4508394c9bddd67f514410ad427325a"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a914ba371614fd541d94ef4275826a4e6">NIRQ_Basic_Source</a>, <a class="el" href="structzero__mate_1_1peripheral_1_1CInterrupt__Controller_1_1TInterrupt__Info.html">TInterrupt_Info</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa4508394c9bddd67f514410ad427325a">Get_Basic_IRQs</a> () const</td></tr>
+<tr class="memdesc:aa4508394c9bddd67f514410ad427325a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a collection of basic IRQs (visualization purposes).  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa4508394c9bddd67f514410ad427325a">More...</a><br /></td></tr>
 <tr class="separator:aa4508394c9bddd67f514410ad427325a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c0ac5183c20a4955f29c2954a18ff29"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711">NIRQ_Source</a>, <a class="el" href="structzero__mate_1_1peripheral_1_1CInterrupt__Controller_1_1TInterrupt__Info.html">TInterrupt_Info</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a8c0ac5183c20a4955f29c2954a18ff29">Get_IRQs</a> () const</td></tr>
+<tr class="memdesc:a8c0ac5183c20a4955f29c2954a18ff29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a collection of IRQs (visualization purposes).  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a8c0ac5183c20a4955f29c2954a18ff29">More...</a><br /></td></tr>
 <tr class="separator:a8c0ac5183c20a4955f29c2954a18ff29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1peripheral_1_1IPeripheral"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1peripheral_1_1IPeripheral')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">zero_mate::peripheral::IPeripheral</a></td></tr>
 <tr class="memitem:a802de3443970ca57fd356ccfe9d45415 inherit pub_methods_classzero__mate_1_1peripheral_1_1IPeripheral"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a802de3443970ca57fd356ccfe9d45415">IPeripheral</a> ()=default</td></tr>
@@ -221,48 +236,66 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a35b97d4871edb1ee3a0fbda305c58b95"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711">NIRQ_Source</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a35b97d4871edb1ee3a0fbda305c58b95">Get_IRQ_Source</a> (std::size_t pin_idx) noexcept</td></tr>
+<tr class="memdesc:a35b97d4871edb1ee3a0fbda305c58b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the corresponding IRQ source for a given GPIO pin.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a35b97d4871edb1ee3a0fbda305c58b95">More...</a><br /></td></tr>
 <tr class="separator:a35b97d4871edb1ee3a0fbda305c58b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ad9e91f30ae6ed64ac5ccc75052d7f949"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ad9e91f30ae6ed64ac5ccc75052d7f949">REG_SIZE</a> = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td></tr>
-<tr class="separator:ad9e91f30ae6ed64ac5ccc75052d7f949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46b8bf4d78c10d6f152b2c6dfdcb5c82"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a46b8bf4d78c10d6f152b2c6dfdcb5c82">NUMBER_OF_REGISTERS</a> = static_cast&lt;std::uint32_t&gt;(<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7ae93f994f01c537c4e2f7d8528c3eb5e9">NRegister::Count</a>)</td></tr>
+<tr class="memdesc:a46b8bf4d78c10d6f152b2c6dfdcb5c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of registers associated with the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a46b8bf4d78c10d6f152b2c6dfdcb5c82">More...</a><br /></td></tr>
 <tr class="separator:a46b8bf4d78c10d6f152b2c6dfdcb5c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9e91f30ae6ed64ac5ccc75052d7f949"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ad9e91f30ae6ed64ac5ccc75052d7f949">REG_SIZE</a> = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td></tr>
+<tr class="memdesc:ad9e91f30ae6ed64ac5ccc75052d7f949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of a single register.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ad9e91f30ae6ed64ac5ccc75052d7f949">More...</a><br /></td></tr>
+<tr class="separator:ad9e91f30ae6ed64ac5ccc75052d7f949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aa5a5645d4adb59932e0775fcf561f3fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa5a5645d4adb59932e0775fcf561f3fd">Initialize</a> ()</td></tr>
+<tr class="memdesc:aa5a5645d4adb59932e0775fcf561f3fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the interrupt controller.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa5a5645d4adb59932e0775fcf561f3fd">More...</a><br /></td></tr>
 <tr class="separator:aa5a5645d4adb59932e0775fcf561f3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a567c6f40a47f528fa70e30fc1ecdf385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a567c6f40a47f528fa70e30fc1ecdf385">Initialize_IRQ_Basic_Sources</a> ()</td></tr>
-<tr class="separator:a567c6f40a47f528fa70e30fc1ecdf385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f4f351805d9081a77d7949c494fd29b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9f4f351805d9081a77d7949c494fd29b">Initialize_Basic_IRQ_Sources</a> ()</td></tr>
+<tr class="memdesc:a9f4f351805d9081a77d7949c494fd29b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the collection of basic IRQ sources.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9f4f351805d9081a77d7949c494fd29b">More...</a><br /></td></tr>
+<tr class="separator:a9f4f351805d9081a77d7949c494fd29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a888a57d7926bd4900a70fb25ef1e1a1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a888a57d7926bd4900a70fb25ef1e1a1c">Initialize_IRQ_Sources</a> ()</td></tr>
+<tr class="memdesc:a888a57d7926bd4900a70fb25ef1e1a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the collection of IRQ sources.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a888a57d7926bd4900a70fb25ef1e1a1c">More...</a><br /></td></tr>
 <tr class="separator:a888a57d7926bd4900a70fb25ef1e1a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7cf0c917cceee8c39d16e833fc9a879"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#af7cf0c917cceee8c39d16e833fc9a879">Is_IRQ_Source_Enabled</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711">NIRQ_Source</a> source) const</td></tr>
+<tr class="memdesc:af7cf0c917cceee8c39d16e833fc9a879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether an IRQ source is enabled or not.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#af7cf0c917cceee8c39d16e833fc9a879">More...</a><br /></td></tr>
 <tr class="separator:af7cf0c917cceee8c39d16e833fc9a879"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5349977a212878a237592e8cd6814e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a0f5349977a212878a237592e8cd6814e">Has_Pending_IRQ</a> () const</td></tr>
+<tr class="memdesc:a0f5349977a212878a237592e8cd6814e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether there is a pending interrupt triggered by an IRQ source.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a0f5349977a212878a237592e8cd6814e">More...</a><br /></td></tr>
 <tr class="separator:a0f5349977a212878a237592e8cd6814e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa09dff3e17f2c9de14f69a95a91d660c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa09dff3e17f2c9de14f69a95a91d660c">Has_Pending_Basic_IRQ</a> () const</td></tr>
+<tr class="memdesc:aa09dff3e17f2c9de14f69a95a91d660c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether there is a pending interrupt triggered by a basic IRQ source.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa09dff3e17f2c9de14f69a95a91d660c">More...</a><br /></td></tr>
 <tr class="separator:aa09dff3e17f2c9de14f69a95a91d660c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f074a301f17ac293e1cd4555067461f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a6f074a301f17ac293e1cd4555067461f">Update_IRQ_Basic_Sources</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7">NRegister</a> reg, bool enable)</td></tr>
-<tr class="separator:a6f074a301f17ac293e1cd4555067461f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae94d5f5a394ae360ab5e57ee4caa97f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae94d5f5a394ae360ab5e57ee4caa97f5">Update_IRQ_Sources</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7">NRegister</a> reg, bool enable)</td></tr>
-<tr class="separator:ae94d5f5a394ae360ab5e57ee4caa97f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa731c1d6e73a4db1087a803ca5fe5557"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa731c1d6e73a4db1087a803ca5fe5557">Enable_IRQ_Basic_Sources</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7">NRegister</a> reg, bool enable)</td></tr>
+<tr class="memdesc:aa731c1d6e73a4db1087a803ca5fe5557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables/disables interrupts from a basic IRQ source.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa731c1d6e73a4db1087a803ca5fe5557">More...</a><br /></td></tr>
+<tr class="separator:aa731c1d6e73a4db1087a803ca5fe5557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c9423e443ca2389cef743f32713cca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ac3c9423e443ca2389cef743f32713cca">Enable_IRQ_Sources</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7">NRegister</a> reg, bool enable)</td></tr>
+<tr class="memdesc:ac3c9423e443ca2389cef743f32713cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables/disables interrupts from an IRQ source.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ac3c9423e443ca2389cef743f32713cca">More...</a><br /></td></tr>
+<tr class="separator:ac3c9423e443ca2389cef743f32713cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a62a144bfbe4faee4c59e92e3292bc4a4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a62a144bfbe4faee4c59e92e3292bc4a4">m_cpu_context</a></td></tr>
+<tr class="memdesc:a62a144bfbe4faee4c59e92e3292bc4a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU context.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a62a144bfbe4faee4c59e92e3292bc4a4">More...</a><br /></td></tr>
 <tr class="separator:a62a144bfbe4faee4c59e92e3292bc4a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb56cd427552f341b42d04c029c15394"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::uint32_t, <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a46b8bf4d78c10d6f152b2c6dfdcb5c82">NUMBER_OF_REGISTERS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aeb56cd427552f341b42d04c029c15394">m_regs</a></td></tr>
+<tr class="memdesc:aeb56cd427552f341b42d04c029c15394"><td class="mdescLeft">&#160;</td><td class="mdescRight">IC registers.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aeb56cd427552f341b42d04c029c15394">More...</a><br /></td></tr>
 <tr class="separator:aeb56cd427552f341b42d04c029c15394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00fee42e842471e2881f0c61eca6f20f"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a914ba371614fd541d94ef4275826a4e6">NIRQ_Basic_Source</a>, <a class="el" href="structzero__mate_1_1peripheral_1_1CInterrupt__Controller_1_1TInterrupt__Info.html">TInterrupt_Info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a00fee42e842471e2881f0c61eca6f20f">m_irq_basic_sources</a></td></tr>
+<tr class="memdesc:a00fee42e842471e2881f0c61eca6f20f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of IRQ basic sources.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a00fee42e842471e2881f0c61eca6f20f">More...</a><br /></td></tr>
 <tr class="separator:a00fee42e842471e2881f0c61eca6f20f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a1b6d62d8f74456f3bd50cf94aa4124"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711">NIRQ_Source</a>, <a class="el" href="structzero__mate_1_1peripheral_1_1CInterrupt__Controller_1_1TInterrupt__Info.html">TInterrupt_Info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a2a1b6d62d8f74456f3bd50cf94aa4124">m_irq_sources</a></td></tr>
+<tr class="memdesc:a2a1b6d62d8f74456f3bd50cf94aa4124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of IRQ sources.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a2a1b6d62d8f74456f3bd50cf94aa4124">More...</a><br /></td></tr>
 <tr class="separator:a2a1b6d62d8f74456f3bd50cf94aa4124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae133fbf6ad5f9c78df063dd153a56f60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae133fbf6ad5f9c78df063dd153a56f60">m_logging_system</a></td></tr>
+<tr class="memdesc:ae133fbf6ad5f9c78df063dd153a56f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging system.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae133fbf6ad5f9c78df063dd153a56f60">More...</a><br /></td></tr>
 <tr class="separator:ae133fbf6ad5f9c78df063dd153a56f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents the interrupt controller used in BCM2835. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a914ba371614fd541d94ef4275826a4e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a914ba371614fd541d94ef4275826a4e6">&#9670;&nbsp;</a></span>NIRQ_Basic_Source</h2>
 
@@ -282,15 +315,26 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration defines different IRQ basic source that can trigger an interrupt. </p>
+<p>Each value represents a bit position in the corresponding enable/disable register. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6acf95fdad58ff7ee7648ded19e83ea39c"></a>ARM_Timer&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6aec89f201cc727de712e276aecccb00e2"></a>ARM_Mailbox&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6a37ddc8a987e3a0c6ee19163b2c007955"></a>ARM_Doorbell_0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6a8f20868593ef54b94e8f1b531a5b7bc1"></a>ARM_Doorbell_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6aa0eda1e06fc00dac0ac45fd0a3cd93f0"></a>GPU_0_Halted&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6a40aedbe062190d591a7becb088391a93"></a>GPU_1_Halted&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6a230cb8a5564eb2ebbbd14a24f6b69335"></a>Illegal_Access_Type_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6ace781d2332ce99762f66caf44d051228"></a>Illegal_Access_Type_0&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6acf95fdad58ff7ee7648ded19e83ea39c"></a>ARM_Timer&#160;</td><td class="fielddoc"><p>ARM timer. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6aec89f201cc727de712e276aecccb00e2"></a>ARM_Mailbox&#160;</td><td class="fielddoc"><p>Mailbox. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6a37ddc8a987e3a0c6ee19163b2c007955"></a>ARM_Doorbell_0&#160;</td><td class="fielddoc"><p>Doorbell 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6a8f20868593ef54b94e8f1b531a5b7bc1"></a>ARM_Doorbell_1&#160;</td><td class="fielddoc"><p>Doorbell 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6aa0eda1e06fc00dac0ac45fd0a3cd93f0"></a>GPU_0_Halted&#160;</td><td class="fielddoc"><p>GPU halted 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6a40aedbe062190d591a7becb088391a93"></a>GPU_1_Halted&#160;</td><td class="fielddoc"><p>GPU halted 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6a230cb8a5564eb2ebbbd14a24f6b69335"></a>Illegal_Access_Type_1&#160;</td><td class="fielddoc"><p>Illegal access type 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a914ba371614fd541d94ef4275826a4e6ace781d2332ce99762f66caf44d051228"></a>Illegal_Access_Type_0&#160;</td><td class="fielddoc"><p>Illegal access type 0. </p>
+</td></tr>
 </table>
 
 </div>
@@ -314,20 +358,36 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration defines different IRQ source that can trigger an interrupt. </p>
+<p>Each value represents a bit position in the corresponding enable/disable register. If the position is greater than 31, register (2) is used. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711ad22b2d6890a5e46ef1adfd9a5b631097"></a>AUX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a2a7ca41780a43ce6d0c9550292e3b132"></a>I2C_SPI_SLV&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a427e35c8b765ecf7ca86250d6a48abe8"></a>PWA_0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a141aa4628289cfa3892d4fc1b6db25e2"></a>PWA_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711abc3835430012507ef13af2a2d1452dde"></a>SMI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711af2264e36652be982540b733553412512"></a>GPIO_0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711ab194974c5b97f28a3cfde54bf285fde3"></a>GPIO_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a3e4bed05a2e4e069bb52d131ae37ed2b"></a>GPIO_2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711acf55ad0f6139228d122be42bb79810c3"></a>GPIO_3&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711afb87bf1fc88386ca21395991f90fff95"></a>I2C&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a33dc5312b091968f5a120c2484d40df8"></a>SPI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a1088fbc901dc88b6c18085220cc33de9"></a>PCM&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711acec5769b01fb096efaf0d6186823c78f"></a>UART&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711ad22b2d6890a5e46ef1adfd9a5b631097"></a>AUX&#160;</td><td class="fielddoc"><p>Auxiliary interrupt. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a2a7ca41780a43ce6d0c9550292e3b132"></a>I2C_SPI_SLV&#160;</td><td class="fielddoc"><p>I2C or SPI slave. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a427e35c8b765ecf7ca86250d6a48abe8"></a>PWA_0&#160;</td><td class="fielddoc"><p>PWA 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a141aa4628289cfa3892d4fc1b6db25e2"></a>PWA_1&#160;</td><td class="fielddoc"><p>PWA 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711abc3835430012507ef13af2a2d1452dde"></a>SMI&#160;</td><td class="fielddoc"><p>SMI. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711af2264e36652be982540b733553412512"></a>GPIO_0&#160;</td><td class="fielddoc"><p>BANK 0 GPIO pins 0-27. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711ab194974c5b97f28a3cfde54bf285fde3"></a>GPIO_1&#160;</td><td class="fielddoc"><p>BANK 1 GPIO pins 28-45. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a3e4bed05a2e4e069bb52d131ae37ed2b"></a>GPIO_2&#160;</td><td class="fielddoc"><p>BANK 2 GPIO pins 46-53. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711acf55ad0f6139228d122be42bb79810c3"></a>GPIO_3&#160;</td><td class="fielddoc"><p>All GPIO pins. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711afb87bf1fc88386ca21395991f90fff95"></a>I2C&#160;</td><td class="fielddoc"><p>I2C (master?) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a33dc5312b091968f5a120c2484d40df8"></a>SPI&#160;</td><td class="fielddoc"><p>SPI (master?) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711a1088fbc901dc88b6c18085220cc33de9"></a>PCM&#160;</td><td class="fielddoc"><p>PCM. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9db75b3b07d35b57fdf2195405ead711acec5769b01fb096efaf0d6186823c78f"></a>UART&#160;</td><td class="fielddoc"><p>UART. </p>
+</td></tr>
 </table>
 
 </div>
@@ -351,18 +411,31 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration lists out all interrupt control registers. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7adf9ab02c75a228eaf7cfeb11cd63f460"></a>IRQ_Basic_Pending&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7a1236682212f7558235a5253fedc8876c"></a>IRQ_Pending_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7ac4270f74054cc55ff9109fd3a6ff73d7"></a>IRQ_Pending_2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7a9276ca4ceb924a8491b970242d70d57e"></a>FIQ_Control&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7ab3c1019ab924ee14c4e749e7f767133e"></a>Enable_IRQs_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7a473ce2bfaa26aa96fccf51b2b0b9d11c"></a>Enable_IRQs_2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7abf03b75eaea2e8283462840d423fa2a9"></a>Enable_Basic_IRQs&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7a2334f4ebf63d2bbff71e4ed519235c56"></a>Disable_IRQs_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7adf8dae00044c65c2d9dc156b6eab6d88"></a>Disable_IRQs_2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7a291a6aed3ecc0cff080df730c88635f7"></a>Disable_Basic_IRQs&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7ae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7adf9ab02c75a228eaf7cfeb11cd63f460"></a>IRQ_Basic_Pending&#160;</td><td class="fielddoc"><p>Bitmask of pending basic IRQs. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7a1236682212f7558235a5253fedc8876c"></a>IRQ_Pending_1&#160;</td><td class="fielddoc"><p>Bitmask of pending shared IRQs 0-31. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7ac4270f74054cc55ff9109fd3a6ff73d7"></a>IRQ_Pending_2&#160;</td><td class="fielddoc"><p>Bitmask of pending shared IRQs 32-63. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7a9276ca4ceb924a8491b970242d70d57e"></a>FIQ_Control&#160;</td><td class="fielddoc"><p>Fast interrupt control. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7ab3c1019ab924ee14c4e749e7f767133e"></a>Enable_IRQs_1&#160;</td><td class="fielddoc"><p>Write 1 to the corresponding bit(s) to enable one or more IRQs (0-31) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7a473ce2bfaa26aa96fccf51b2b0b9d11c"></a>Enable_IRQs_2&#160;</td><td class="fielddoc"><p>Write 1 to the corresponding bit(s) to enable one or more IRQs (32-63) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7abf03b75eaea2e8283462840d423fa2a9"></a>Enable_Basic_IRQs&#160;</td><td class="fielddoc"><p>Write 1 to the corresponding bit(s) to enable one or more ARM-specific IRQs. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7a2334f4ebf63d2bbff71e4ed519235c56"></a>Disable_IRQs_1&#160;</td><td class="fielddoc"><p>Write 1 to the corresponding bit(s) to disable one or more IRQs (0-31) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7adf8dae00044c65c2d9dc156b6eab6d88"></a>Disable_IRQs_2&#160;</td><td class="fielddoc"><p>Write 1 to the corresponding bit(s) to disable one or more IRQs (32-63) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7a291a6aed3ecc0cff080df730c88635f7"></a>Disable_Basic_IRQs&#160;</td><td class="fielddoc"><p>Write 1 to the corresponding bit(s) to disable one or more ARM-specific IRQs. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aced8bea23d34109204febfe822497bd7ae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"><p>Total number of register (helper enum record) </p>
+</td></tr>
 </table>
 
 </div>
@@ -391,6 +464,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu_context</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -425,6 +506,15 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Clears a pending basic IRQ. </p>
+<p>This function is called from the corresponding peripheral whenever it gets cleared of a pending interrupt by writing a 1 to its clear register.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>Basic IRQ source that has a pending interrupt. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a22a75a69e29e42afaf2e37332602cd6e"></a>
@@ -451,6 +541,129 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Clears a pending IRQ. </p>
+<p>This function is called from the corresponding peripheral whenever it gets cleared of a pending interrupt by writing a 1 to its clear register.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>IRQ source that has a pending interrupt. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa731c1d6e73a4db1087a803ca5fe5557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa731c1d6e73a4db1087a803ca5fe5557">&#9670;&nbsp;</a></span>Enable_IRQ_Basic_Sources()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::peripheral::CInterrupt_Controller::Enable_IRQ_Basic_Sources </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7">NRegister</a>&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables/disables interrupts from a basic IRQ source. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>Register containing information about what basic IRQ source are enabled/disabled </td></tr>
+    <tr><td class="paramname">enable</td><td>Indication of whether the register is an enable or disable register </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_aa731c1d6e73a4db1087a803ca5fe5557_cgraph.svg" width="704" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_aa731c1d6e73a4db1087a803ca5fe5557_icgraph.svg" width="430" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac3c9423e443ca2389cef743f32713cca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c9423e443ca2389cef743f32713cca">&#9670;&nbsp;</a></span>Enable_IRQ_Sources()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::peripheral::CInterrupt_Controller::Enable_IRQ_Sources </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7">NRegister</a>&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables/disables interrupts from an IRQ source. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>Register containing information about what IRQ source are enabled/disabled </td></tr>
+    <tr><td class="paramname">enable</td><td>Indication of whether the register is an enable or disable register </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_ac3c9423e443ca2389cef743f32713cca_cgraph.svg" width="667" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_ac3c9423e443ca2389cef743f32713cca_icgraph.svg" width="392" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="aa4508394c9bddd67f514410ad427325a"></a>
@@ -467,6 +680,9 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a collection of basic IRQs (visualization purposes). </p>
+<dl class="section return"><dt>Returns</dt><dd>Collection of basic IRQs </dd></dl>
 
 </div>
 </div>
@@ -493,6 +709,21 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the corresponding IRQ source for a given GPIO pin. </p>
+<ul>
+<li>gpio_int[0] for BANK0 (pins 0-27)</li>
+<li>gpio_int[1] for BANK1 (pins 28-45)</li>
+<li>gpio_int[2] for BANK2 (pins 46-53)</li>
+<li>gpio_int[3] for all the pins; visit <a href="https://raspberrypi.stackexchange.com/questions/51737/use-of-gpio-interrupt-2-rather-than-interrupt-3">https://raspberrypi.stackexchange.com/questions/51737/use-of-gpio-interrupt-2-rather-than-interrupt-3</a>.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_idx</td><td>Index of the GPIO pin </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Corresponding IRQ source (GPIO_0-3) </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -516,6 +747,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a collection of IRQs (visualization purposes). </p>
+<dl class="section return"><dt>Returns</dt><dd>Collection of IRQs </dd></dl>
 
 </div>
 </div>
@@ -542,8 +776,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the size of the peripheral. </p>
-<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function.</p>
+<p>Returns the size of the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
 <dl class="section return"><dt>Returns</dt><dd>number of register * register size </dd></dl>
 
 <p>Implements <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#abe4a3756bd97bd4eb4db1c9aad6f5a1b">zero_mate::peripheral::IPeripheral</a>.</p>
@@ -572,6 +805,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks whether there is a pending interrupt triggered by a basic IRQ source. </p>
+<dl class="section return"><dt>Returns</dt><dd>true, if there is a pending interrupt (basic IRQ source). false, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -603,6 +839,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns information about whether there is a pending IRQ. </p>
+<p>For this function to return true, all interrupts must be globally enabled in the CPSR register. Additionally, there must be a basic IRQ pending or an IRQ pending (see <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a0f5349977a212878a237592e8cd6814e" title="Checks whether there is a pending interrupt triggered by an IRQ source.">Has_Pending_IRQ</a>, and <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa09dff3e17f2c9de14f69a95a91d660c" title="Checks whether there is a pending interrupt triggered by a basic IRQ source.">Has_Pending_Basic_IRQ</a>).</p>
+<dl class="section return"><dt>Returns</dt><dd>true, if there is an pending interrupt. false, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -634,6 +874,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks whether there is a pending interrupt triggered by an IRQ source. </p>
+<dl class="section return"><dt>Returns</dt><dd>true, if there is a pending interrupt (IRQ source). false, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -665,6 +908,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initializes the interrupt controller. </p>
+<p>It calls <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9f4f351805d9081a77d7949c494fd29b" title="Initializes the collection of basic IRQ sources.">Initialize_Basic_IRQ_Sources</a> and <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a888a57d7926bd4900a70fb25ef1e1a1c" title="Initializes the collection of IRQ sources.">Initialize_IRQ_Sources</a>. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -680,8 +926,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a567c6f40a47f528fa70e30fc1ecdf385"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a567c6f40a47f528fa70e30fc1ecdf385">&#9670;&nbsp;</a></span>Initialize_IRQ_Basic_Sources()</h2>
+<a id="a9f4f351805d9081a77d7949c494fd29b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f4f351805d9081a77d7949c494fd29b">&#9670;&nbsp;</a></span>Initialize_Basic_IRQ_Sources()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -690,7 +936,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void zero_mate::peripheral::CInterrupt_Controller::Initialize_IRQ_Basic_Sources </td>
+          <td class="memname">void zero_mate::peripheral::CInterrupt_Controller::Initialize_Basic_IRQ_Sources </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -702,10 +948,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initializes the collection of basic IRQ sources. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_a567c6f40a47f528fa70e30fc1ecdf385_icgraph.svg" width="607" height="82"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_a9f4f351805d9081a77d7949c494fd29b_icgraph.svg" width="607" height="82"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -733,6 +981,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initializes the collection of IRQ sources. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -765,6 +1015,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks whether an IRQ source is enabled or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>IRQ source to be examined </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true, if the IRQ source is enabled. false, otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -814,8 +1073,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reads data from the peripheral. </p>
-<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function.</p>
+<p>Reads data from the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">addr</td><td>Relative address (from the peripheral's perspective) from which the data will be read </td></tr>
@@ -844,6 +1102,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Notifies the interrupt controller about a pending interrupt triggered by a basic IRQ source. </p>
+<p>The interrupt controller may ignore this notification if the source is not enabled or all interrupts have been globally disabled in the CPSR register.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>Basic IRQ source that has triggered the interrupt </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -868,106 +1135,19 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Notifies the interrupt controller about a pending interrupt triggered by an IRQ source. </p>
+<p>The interrupt controller may ignore this notification if the source is not enabled or all interrupts have been globally disabled in the CPSR register.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>IRQ source that has triggered the interrupt </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_aa559a3a604ae1877cbbe749724d8a399_cgraph.svg" width="667" height="214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a6f074a301f17ac293e1cd4555067461f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f074a301f17ac293e1cd4555067461f">&#9670;&nbsp;</a></span>Update_IRQ_Basic_Sources()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void zero_mate::peripheral::CInterrupt_Controller::Update_IRQ_Basic_Sources </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7">NRegister</a>&#160;</td>
-          <td class="paramname"><em>reg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enable</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_a6f074a301f17ac293e1cd4555067461f_cgraph.svg" width="707" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_a6f074a301f17ac293e1cd4555067461f_icgraph.svg" width="432" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ae94d5f5a394ae360ab5e57ee4caa97f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae94d5f5a394ae360ab5e57ee4caa97f5">&#9670;&nbsp;</a></span>Update_IRQ_Sources()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void zero_mate::peripheral::CInterrupt_Controller::Update_IRQ_Sources </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7">NRegister</a>&#160;</td>
-          <td class="paramname"><em>reg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enable</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_ae94d5f5a394ae360ab5e57ee4caa97f5_cgraph.svg" width="667" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_ae94d5f5a394ae360ab5e57ee4caa97f5_icgraph.svg" width="392" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1013,8 +1193,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Writes data to the peripheral. </p>
-<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function.</p>
+<p>Writes data to the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">addr</td><td>Relative address (from the peripheral's perspective) where the data will be written </td></tr>
@@ -1028,7 +1207,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_ab37428109c8e5f862b528417048903f3_cgraph.svg" width="922" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_ab37428109c8e5f862b528417048903f3_cgraph.svg" width="919" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1055,6 +1234,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>CPU context. </p>
+
 </div>
 </div>
 <a id="a00fee42e842471e2881f0c61eca6f20f"></a>
@@ -1076,6 +1257,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Collection of IRQ basic sources. </p>
 
 </div>
 </div>
@@ -1099,6 +1282,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Collection of IRQ sources. </p>
+
 </div>
 </div>
 <a id="ae133fbf6ad5f9c78df063dd153a56f60"></a>
@@ -1120,6 +1305,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Logging system. </p>
 
 </div>
 </div>
@@ -1143,6 +1330,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>IC registers. </p>
+
 </div>
 </div>
 <a id="a46b8bf4d78c10d6f152b2c6dfdcb5c82"></a>
@@ -1165,6 +1354,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Total number of registers associated with the peripheral. </p>
+
 </div>
 </div>
 <a id="ad9e91f30ae6ed64ac5ccc75052d7f949"></a>
@@ -1186,6 +1377,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Size of a single register. </p>
 
 </div>
 </div>

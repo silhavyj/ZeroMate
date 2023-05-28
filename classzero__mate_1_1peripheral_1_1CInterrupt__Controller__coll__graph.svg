@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This class represents the interrupt controller used in BCM2835.">
 <polygon fill="#bfbfbf" stroke="black" points="522,-52.5 522,-82.5 647,-82.5 647,-52.5 522,-52.5"/>
 <text text-anchor="start" x="530" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="584.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>

@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Returns information about whether there is a pending IRQ.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-60.5 0,-101.5 133,-101.5 133,-60.5 0,-60.5"/>
 <text text-anchor="start" x="8" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="8" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>
@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa09dff3e17f2c9de14f69a95a91d660c" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa09dff3e17f2c9de14f69a95a91d660c" target="_top" xlink:title="Checks whether there is a pending interrupt triggered by a basic IRQ source.">
 <polygon fill="none" stroke="black" points="169,-120.5 169,-161.5 309,-161.5 309,-120.5 169,-120.5"/>
 <text text-anchor="start" x="177" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="177" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>
@@ -39,7 +39,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a0f5349977a212878a237592e8cd6814e" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a0f5349977a212878a237592e8cd6814e" target="_top" xlink:title="Checks whether there is a pending interrupt triggered by an IRQ source.">
 <polygon fill="none" stroke="black" points="176.5,-60.5 176.5,-101.5 301.5,-101.5 301.5,-60.5 176.5,-60.5"/>
 <text text-anchor="start" x="184.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="184.5" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>

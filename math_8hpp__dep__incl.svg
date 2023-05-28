@@ -116,7 +116,7 @@
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="interrupt__controller_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node18"><a xlink:href="interrupt__controller_8cpp.html" target="_top" xlink:title="This file implements the interrupt controller used BCM2835 (defined in interrupt_controller....">
 <polygon fill="none" stroke="black" points="943,-134.5 943,-164.5 1076,-164.5 1076,-134.5 943,-134.5"/>
 <text text-anchor="start" x="951" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="1009.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/interrupt_controller.cpp</text>

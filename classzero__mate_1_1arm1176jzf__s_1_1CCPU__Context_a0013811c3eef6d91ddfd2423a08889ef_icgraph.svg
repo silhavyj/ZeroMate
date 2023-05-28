@@ -55,7 +55,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aea7c1519af8962e9327048e552a8cc4c" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aea7c1519af8962e9327048e552a8cc4c" target="_top" xlink:title="Returns information about whether there is a pending IRQ.">
 <polygon fill="none" stroke="black" points="402.5,-170.5 402.5,-211.5 535.5,-211.5 535.5,-170.5 402.5,-170.5"/>
 <text text-anchor="start" x="410.5" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="410.5" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>
@@ -88,7 +88,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a32373b931bb37ef8ee92f95a3f833284" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a32373b931bb37ef8ee92f95a3f833284" target="_top" xlink:title="Notifies the interrupt controller about a pending interrupt triggered by a basic IRQ source.">
 <polygon fill="none" stroke="black" points="406.5,-60.5 406.5,-101.5 531.5,-101.5 531.5,-60.5 406.5,-60.5"/>
 <text text-anchor="start" x="414.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="414.5" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>
@@ -105,7 +105,7 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa559a3a604ae1877cbbe749724d8a399" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa559a3a604ae1877cbbe749724d8a399" target="_top" xlink:title="Notifies the interrupt controller about a pending interrupt triggered by an IRQ source.">
 <polygon fill="none" stroke="black" points="406.5,-0.5 406.5,-41.5 531.5,-41.5 531.5,-0.5 406.5,-0.5"/>
 <text text-anchor="start" x="414.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="414.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>

@@ -53,7 +53,7 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html" target="_top" xlink:title="This class represents the interrupt controller used in BCM2835.">
 <polygon fill="none" stroke="black" points="175,-98.5 175,-128.5 300,-128.5 300,-98.5 175,-98.5"/>
 <text text-anchor="start" x="183" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="237.5" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CInterrupt_Controller</text>

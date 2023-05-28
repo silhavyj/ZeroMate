@@ -68,7 +68,7 @@
 <!-- Node27 -->
 <g id="node27" class="node">
 <title>Node27</title>
-<g id="a_node27"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node27"><a xlink:href="interrupt__controller_8hpp.html" target="_top" xlink:title="This file defines the interrupt controller used BCM2835.">
 <polygon fill="none" stroke="black" points="1129.5,-201.5 1129.5,-231.5 1263.5,-231.5 1263.5,-201.5 1129.5,-201.5"/>
 <text text-anchor="start" x="1137.5" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="1196.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">/interrupt_controller.hpp</text>
@@ -544,7 +544,7 @@
 <!-- Node28 -->
 <g id="node28" class="node">
 <title>Node28</title>
-<g id="a_node28"><a xlink:href="interrupt__controller_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node28"><a xlink:href="interrupt__controller_8cpp.html" target="_top" xlink:title="This file implements the interrupt controller used BCM2835 (defined in interrupt_controller....">
 <polygon fill="none" stroke="black" points="1096,-134.5 1096,-164.5 1229,-164.5 1229,-134.5 1096,-134.5"/>
 <text text-anchor="start" x="1104" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="1162.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/interrupt_controller.cpp</text>
