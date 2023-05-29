@@ -27,8 +27,8 @@ namespace zero_mate::utils::elf
     {
         OK,                      ///< All went well
         ELF_64_Not_Supported,    ///< 64-bit ELF format is not supported by the emulator
-        ELF_Loader_Error,        ///<
-        Disassembly_Engine_Error ///<
+        ELF_Loader_Error,        ///< Failed to load an ELF file
+        Disassembly_Engine_Error ///< Failed to initialize the engine disassembly engine (capstone library)
     };
 
     // -----------------------------------------------------------------------------------------------------------------
