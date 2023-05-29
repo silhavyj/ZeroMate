@@ -32,7 +32,7 @@
 <area shape="rect" id="node26" href="$srs_8hpp.html" title="This file defines an SRS instruction (store return state onto a stack)." alt="" coords="1835,430,1904,457"/>
 <area shape="rect" id="node27" href="$rfe_8hpp.html" title="This file defines an RFE instruction (return from exception)." alt="" coords="1929,430,1997,457"/>
 <area shape="rect" id="node28" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="2021,430,2089,457"/>
-<area shape="rect" id="node31" href="$cp15_8hpp.html" title=" " alt="" coords="800,273,971,300"/>
+<area shape="rect" id="node31" href="$cp15_8hpp.html" title="This file defines CP15 (system control coprocessor)." alt="" coords="800,273,971,300"/>
 <area shape="rect" id="node33" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="531,273,725,300"/>
 <area shape="rect" id="node32" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="955,348,1082,375"/>
 </map>

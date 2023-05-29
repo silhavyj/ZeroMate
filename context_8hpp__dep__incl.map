@@ -21,8 +21,8 @@
 <area shape="rect" id="node18" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="239,363,366,404"/>
 <area shape="rect" id="node19" href="$elf__loader_8cpp.html" title="This file implements the functionality of an ELF loader defined in elf_loader.hpp." alt="" coords="26,452,153,493"/>
 <area shape="rect" id="node21" href="$coprocessor_8cpp.html" title="This file implements the common functionality of a general interface of a coprocessor." alt="" coords="876,184,1039,225"/>
-<area shape="rect" id="node22" href="$cp15_8hpp.html" title=" " alt="" coords="689,184,852,225"/>
-<area shape="rect" id="node23" href="$cp15_8cpp.html" title=" " alt="" coords="689,273,852,315"/>
+<area shape="rect" id="node22" href="$cp15_8hpp.html" title="This file defines CP15 (system control coprocessor)." alt="" coords="689,184,852,225"/>
+<area shape="rect" id="node23" href="$cp15_8cpp.html" title="This file implements CP15 (system control coprocessor) as defined in cp15.hpp." alt="" coords="689,273,852,315"/>
 <area shape="rect" id="node25" href="$arm__timer_8hpp.html" title="This file defines the ARM timer used in BCM2835." alt="" coords="1193,363,1343,404"/>
 <area shape="rect" id="node29" href="$gpio_8hpp.html" title="This file defines the GPIO controller used in BCM2835." alt="" coords="1877,363,2027,404"/>
 <area shape="rect" id="node35" href="$interrupt__controller_8cpp.html" title="This file implements the interrupt controller used in BCM2835 (defined in interrupt_controller...." alt="" coords="2051,363,2229,404"/>

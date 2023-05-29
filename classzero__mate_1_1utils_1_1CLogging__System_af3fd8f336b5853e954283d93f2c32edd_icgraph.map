@@ -18,9 +18,9 @@
 <area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html#aac3d95dcbf1b19e892a6a1b3f035631c" title=" " alt="" coords="820,504,1029,545"/>
 <area shape="rect" id="node16" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad2c251aa49f9dc14f692a986ef3a090b" title="Checks if a coprocessor of a given id is present of not." alt="" coords="1117,1554,1296,1610"/>
 <area shape="rect" id="node18" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a92c997ad914fb73cec7feb5fa26d8ead" title="Executes a data processing instruction." alt="" coords="563,1619,739,1660"/>
-<area shape="rect" id="node19" href="$classzero__mate_1_1coprocessor_1_1CCP15.html#ad77826237c15f2dae64384f0615cf139" title="Performs a coprocessor data operation instruction." alt="" coords="1118,1735,1295,1791"/>
-<area shape="rect" id="node20" href="$classzero__mate_1_1coprocessor_1_1CCP15.html#a945c53f9e128ebfe380e96e02988d3f0" title="Performs a coprocessor data transfer instruction." alt="" coords="1118,1815,1295,1871"/>
-<area shape="rect" id="node21" href="$classzero__mate_1_1coprocessor_1_1CCP15.html#aa6e5433a8d6dd2203585c7cf9696a85e" title="Performs a coprocessor register transfer instruction." alt="" coords="1110,1394,1303,1450"/>
+<area shape="rect" id="node19" href="$classzero__mate_1_1coprocessor_1_1CCP15.html#ad77826237c15f2dae64384f0615cf139" title="Performs a coprocessor data operation instruction (ICoprocessor interface)." alt="" coords="1118,1735,1295,1791"/>
+<area shape="rect" id="node20" href="$classzero__mate_1_1coprocessor_1_1CCP15.html#a945c53f9e128ebfe380e96e02988d3f0" title="Performs a coprocessor data transfer instruction (ICoprocessor interface)." alt="" coords="1118,1815,1295,1871"/>
+<area shape="rect" id="node21" href="$classzero__mate_1_1coprocessor_1_1CCP15.html#aa6e5433a8d6dd2203585c7cf9696a85e" title="Performs a coprocessor register transfer instruction (ICoprocessor interface)." alt="" coords="1110,1394,1303,1450"/>
 <area shape="rect" id="node22" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a46cc1dd042f93990abb7b0b68f566a2d" title=" " alt="" coords="1105,1314,1308,1370"/>
 <area shape="rect" id="node25" href="$classzero__mate_1_1gui_1_1CFile__Window.html#affaac4b63e2d16566e84c333a0f48468" title=" " alt="" coords="1127,1248,1286,1289"/>
 <area shape="rect" id="node26" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a53765299c790cc790e15deb2c701bd2a" title="Sets a new value to the CPSR register." alt="" coords="821,1619,1029,1660"/>

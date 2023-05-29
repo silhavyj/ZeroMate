@@ -644,7 +644,7 @@
 <!-- Node30 -->
 <g id="node30" class="node">
 <title>Node30</title>
-<g id="a_node30"><a xlink:href="cp15_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node30"><a xlink:href="cp15_8hpp.html" target="_top" xlink:title="This file defines CP15 (system control coprocessor).">
 <polygon fill="none" stroke="black" points="379.5,-179.5 379.5,-198.5 507.5,-198.5 507.5,-179.5 379.5,-179.5"/>
 <text text-anchor="middle" x="443.5" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">coprocessors/cp15.hpp</text>
 </a>

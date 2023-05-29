@@ -568,7 +568,7 @@
 <!-- Node26 -->
 <g id="node20" class="node">
 <title>Node26</title>
-<g id="a_node20"><a xlink:href="cp15_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node20"><a xlink:href="cp15_8hpp.html" target="_top" xlink:title="This file defines CP15 (system control coprocessor).">
 <polygon fill="none" stroke="red" points="221.5,-67.5 221.5,-97.5 343.5,-97.5 343.5,-67.5 221.5,-67.5"/>
 <text text-anchor="start" x="229.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/coprocessors</text>
 <text text-anchor="middle" x="282.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/cp15.hpp</text>

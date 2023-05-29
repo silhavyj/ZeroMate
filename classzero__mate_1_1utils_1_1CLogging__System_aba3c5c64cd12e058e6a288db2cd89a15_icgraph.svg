@@ -54,7 +54,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classzero__mate_1_1coprocessor_1_1CCP15.html#ad77826237c15f2dae64384f0615cf139" target="_top" xlink:title="Performs a coprocessor data operation instruction.">
+<g id="a_node5"><a xlink:href="classzero__mate_1_1coprocessor_1_1CCP15.html#ad77826237c15f2dae64384f0615cf139" target="_top" xlink:title="Performs a coprocessor data operation instruction (ICoprocessor interface).">
 <polygon fill="none" stroke="black" points="813.5,-230 813.5,-271 946.5,-271 946.5,-230 813.5,-230"/>
 <text text-anchor="start" x="821.5" y="-259" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::coprocessor</text>
 <text text-anchor="start" x="821.5" y="-248" font-family="Helvetica,sans-Serif" font-size="10.00">::CCP15::Perform_Data</text>
@@ -71,7 +71,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classzero__mate_1_1coprocessor_1_1CCP15.html#a945c53f9e128ebfe380e96e02988d3f0" target="_top" xlink:title="Performs a coprocessor data transfer instruction.">
+<g id="a_node6"><a xlink:href="classzero__mate_1_1coprocessor_1_1CCP15.html#a945c53f9e128ebfe380e96e02988d3f0" target="_top" xlink:title="Performs a coprocessor data transfer instruction (ICoprocessor interface).">
 <polygon fill="none" stroke="black" points="813.5,-170 813.5,-211 946.5,-211 946.5,-170 813.5,-170"/>
 <text text-anchor="start" x="821.5" y="-199" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::coprocessor</text>
 <text text-anchor="start" x="821.5" y="-188" font-family="Helvetica,sans-Serif" font-size="10.00">::CCP15::Perform_Data</text>
@@ -88,7 +88,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classzero__mate_1_1coprocessor_1_1CCP15.html#aa6e5433a8d6dd2203585c7cf9696a85e" target="_top" xlink:title="Performs a coprocessor register transfer instruction.">
+<g id="a_node7"><a xlink:href="classzero__mate_1_1coprocessor_1_1CCP15.html#aa6e5433a8d6dd2203585c7cf9696a85e" target="_top" xlink:title="Performs a coprocessor register transfer instruction (ICoprocessor interface).">
 <polygon fill="none" stroke="black" points="807.5,-110 807.5,-151 952.5,-151 952.5,-110 807.5,-110"/>
 <text text-anchor="start" x="815.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::coprocessor</text>
 <text text-anchor="start" x="815.5" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">::CCP15::Perform_Register</text>

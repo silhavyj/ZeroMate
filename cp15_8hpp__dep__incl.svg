@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines CP15 (system control coprocessor).">
 <polygon fill="#bfbfbf" stroke="black" points="551.5,-268.5 551.5,-298.5 673.5,-298.5 673.5,-268.5 551.5,-268.5"/>
 <text text-anchor="start" x="559.5" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/coprocessors</text>
 <text text-anchor="middle" x="612.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">/cp15.hpp</text>
@@ -36,7 +36,7 @@
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="cp15_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node17"><a xlink:href="cp15_8cpp.html" target="_top" xlink:title="This file implements CP15 (system control coprocessor) as defined in cp15.hpp.">
 <polygon fill="none" stroke="black" points="615.5,-201.5 615.5,-231.5 737.5,-231.5 737.5,-201.5 615.5,-201.5"/>
 <text text-anchor="start" x="623.5" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/coprocessors</text>
 <text text-anchor="middle" x="676.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">/cp15.cpp</text>

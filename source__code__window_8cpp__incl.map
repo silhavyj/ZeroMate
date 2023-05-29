@@ -5,7 +5,7 @@
 <area shape="rect" id="node4" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="315,169,442,211"/>
 <area shape="rect" id="node17" href="$source__code__window_8hpp.html" title=" " alt="" coords="449,95,636,121"/>
 <area shape="rect" id="node5" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="268,266,353,293"/>
-<area shape="rect" id="node6" href="$cp15_8hpp.html" title=" " alt="" coords="569,348,740,375"/>
+<area shape="rect" id="node6" href="$cp15_8hpp.html" title="This file defines CP15 (system control coprocessor)." alt="" coords="569,348,740,375"/>
 <area shape="rect" id="node14" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="114,348,307,375"/>
 <area shape="rect" id="node15" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="332,348,545,375"/>
 <area shape="rect" id="node7" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="673,423,799,449"/>

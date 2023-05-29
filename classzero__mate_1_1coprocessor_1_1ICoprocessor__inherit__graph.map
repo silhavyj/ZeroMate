@@ -1,4 +1,4 @@
 <map id="zero_mate::coprocessor::ICoprocessor" name="zero_mate::coprocessor::ICoprocessor">
 <area shape="rect" id="node1" title="This class represents an interface of a coprocessor." alt="" coords="5,5,183,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1CCP15.html" title=" " alt="" coords="5,95,183,136"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1CCP15.html" title="This class represents the system control coprocessor." alt="" coords="5,95,183,136"/>
 </map>
