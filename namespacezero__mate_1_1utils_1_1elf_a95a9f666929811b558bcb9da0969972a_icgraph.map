@@ -1,4 +1,4 @@
 <map id="zero_mate::utils::elf::Load_Kernel" name="zero_mate::utils::elf::Load_Kernel">
-<area shape="rect" id="node1" title=" " alt="" coords="212,5,364,47"/>
+<area shape="rect" id="node1" title="Loads a given ELF file (kernel) into the memory." alt="" coords="212,5,364,47"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CFile__Window.html#affaac4b63e2d16566e84c333a0f48468" title=" " alt="" coords="5,5,164,47"/>
 </map>

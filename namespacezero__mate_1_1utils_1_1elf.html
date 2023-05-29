@@ -97,8 +97,10 @@ $(document).ready(function(){initNavTree('namespacezero__mate_1_1utils_1_1elf.ht
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html">TText_Section_Record</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure represents a single record (line) within an ELF file.  <a href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html">TStatus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure represents the return value of <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory.">Load_Kernel</a>.  <a href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -108,15 +110,18 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696a7b3655191e25bd671e35caf4f5b23a7e">ELF_Loader_Error</a>
 , <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696abf878a4226d73b21fb754598f64da06f">Disassembly_Engine_Error</a>
  }</td></tr>
+<tr class="memdesc:a168db2218bf676ff9e0baa59f6fd6696"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different error codes that can be returned from #Load_Kernel.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696">More...</a><br /></td></tr>
 <tr class="separator:a168db2218bf676ff9e0baa59f6fd6696"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b229f39af9362fb4bf340499656012d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012d">NText_Section_Record_Type</a> { <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012dac742c5a36b6307267bb709355feb2c41">Instruction</a>
 , <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012dab021df6aac4654c454f46c77646e745f">Label</a>
  }</td></tr>
+<tr class="memdesc:a7b229f39af9362fb4bf340499656012d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different record types within an ELF file.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012d">More...</a><br /></td></tr>
 <tr class="separator:a7b229f39af9362fb4bf340499656012d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a95a9f666929811b558bcb9da0969972a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html">TStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">Load_Kernel</a> (<a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &amp;bus, const char *filename)</td></tr>
+<tr class="memdesc:a95a9f666929811b558bcb9da0969972a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a given ELF file (kernel) into the memory.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">More...</a><br /></td></tr>
 <tr class="separator:a95a9f666929811b558bcb9da0969972a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -139,9 +144,13 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration defines different error codes that can be returned from <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory.">Load_Kernel</a>. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a168db2218bf676ff9e0baa59f6fd6696ae0aa021e21dddbd6d8cecec71e9cf564"></a>OK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a168db2218bf676ff9e0baa59f6fd6696a9b64051abf8575a988ee45fbecdd6bd1"></a>ELF_64_Not_Supported&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a168db2218bf676ff9e0baa59f6fd6696ae0aa021e21dddbd6d8cecec71e9cf564"></a>OK&#160;</td><td class="fielddoc"><p>All went well. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a168db2218bf676ff9e0baa59f6fd6696a9b64051abf8575a988ee45fbecdd6bd1"></a>ELF_64_Not_Supported&#160;</td><td class="fielddoc"><p>64-bit ELF format is not supported by the emulator </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a168db2218bf676ff9e0baa59f6fd6696a7b3655191e25bd671e35caf4f5b23a7e"></a>ELF_Loader_Error&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a168db2218bf676ff9e0baa59f6fd6696abf878a4226d73b21fb754598f64da06f"></a>Disassembly_Engine_Error&#160;</td><td class="fielddoc"></td></tr>
 </table>
@@ -167,9 +176,13 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This enumeration defines different record types within an ELF file. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7b229f39af9362fb4bf340499656012dac742c5a36b6307267bb709355feb2c41"></a>Instruction&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b229f39af9362fb4bf340499656012dab021df6aac4654c454f46c77646e745f"></a>Label&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7b229f39af9362fb4bf340499656012dac742c5a36b6307267bb709355feb2c41"></a>Instruction&#160;</td><td class="fielddoc"><p>The record represents an instruction. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7b229f39af9362fb4bf340499656012dab021df6aac4654c454f46c77646e745f"></a>Label&#160;</td><td class="fielddoc"><p>The record represents a label. </p>
+</td></tr>
 </table>
 
 </div>
@@ -200,6 +213,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Loads a given ELF file (kernel) into the memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bus</td><td>Reference to a bus via which the memory is accessed </td></tr>
+    <tr><td class="paramname">filename</td><td>Path to the ELF file (kernel) on the user's machine </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Packed structure containing disassembled instructions as well as a status code </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

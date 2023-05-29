@@ -9,7 +9,7 @@
 <area shape="rect" id="node8" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="829,184,981,225"/>
 <area shape="rect" id="node10" href="$logger_8hpp.html" title=" " alt="" coords="283,601,461,628"/>
 <area shape="rect" id="node33" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="671,281,756,307"/>
-<area shape="rect" id="node40" href="$elf__loader_8hpp.html" title=" " alt="" coords="650,184,777,225"/>
+<area shape="rect" id="node40" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="650,184,777,225"/>
 <area shape="rect" id="node7" title=" " alt="" coords="139,281,216,307"/>
 <area shape="rect" id="node9" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="748,519,847,546"/>
 <area shape="rect" id="node11" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="823,363,945,389"/>
@@ -39,5 +39,5 @@
 <area shape="rect" id="node31" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="2209,519,2277,546"/>
 <area shape="rect" id="node34" href="$cp15_8hpp.html" title=" " alt="" coords="628,363,799,389"/>
 <area shape="rect" id="node36" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="410,363,603,389"/>
-<area shape="rect" id="node35" href="$coprocessor_8hpp.html" title=" " alt="" coords="1071,437,1198,464"/>
+<area shape="rect" id="node35" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="1071,437,1198,464"/>
 </map>

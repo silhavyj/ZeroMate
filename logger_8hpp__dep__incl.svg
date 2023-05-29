@@ -85,7 +85,7 @@
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="elf__loader_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node20"><a xlink:href="elf__loader_8cpp.html" target="_top" xlink:title="This file implements the functionality of an ELF loader defined in elf_loader.hpp.">
 <polygon fill="none" stroke="black" points="817.5,-67.5 817.5,-97.5 912.5,-97.5 912.5,-67.5 817.5,-67.5"/>
 <text text-anchor="start" x="825.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/utils/elf</text>
 <text text-anchor="middle" x="865" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_loader.cpp</text>
@@ -267,7 +267,7 @@
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node21"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title="This file defines a general interface of a coprocessor.">
 <polygon fill="none" stroke="black" points="444,-335.5 444,-365.5 566,-365.5 566,-335.5 444,-335.5"/>
 <text text-anchor="start" x="452" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/coprocessors</text>
 <text text-anchor="middle" x="505" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">/coprocessor.hpp</text>
@@ -516,7 +516,7 @@
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="elf__loader_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node19"><a xlink:href="elf__loader_8hpp.html" target="_top" xlink:title="This file defines the functionality of an ELF loader.">
 <polygon fill="none" stroke="black" points="610.5,-134.5 610.5,-164.5 705.5,-164.5 705.5,-134.5 610.5,-134.5"/>
 <text text-anchor="start" x="618.5" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/utils/elf</text>
 <text text-anchor="middle" x="658" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_loader.hpp</text>
@@ -556,7 +556,7 @@
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="coprocessor_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node22"><a xlink:href="coprocessor_8cpp.html" target="_top" xlink:title="This file implements the common functionality of a general interface of a coprocessor.">
 <polygon fill="none" stroke="black" points="444,-268.5 444,-298.5 566,-298.5 566,-268.5 444,-268.5"/>
 <text text-anchor="start" x="452" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/coprocessors</text>
 <text text-anchor="middle" x="505" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">/coprocessor.cpp</text>

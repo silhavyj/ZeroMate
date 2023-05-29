@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" href="$context_8cpp.html" title="This file implements the context (registers) of the CPU." alt="" coords="237,184,387,225"/>
 <area shape="rect" id="node3" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="577,363,727,404"/>
 <area shape="rect" id="node14" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="463,95,614,136"/>
-<area shape="rect" id="node20" href="$coprocessor_8hpp.html" title=" " alt="" coords="783,95,945,136"/>
+<area shape="rect" id="node20" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="783,95,945,136"/>
 <area shape="rect" id="node24" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="1236,273,1415,315"/>
 <area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="961,452,1111,493"/>
 <area shape="rect" id="node5" href="$control__window_8hpp.html" title=" " alt="" coords="550,452,725,493"/>
@@ -18,9 +18,9 @@
 <area shape="rect" id="node15" href="$exceptions_8cpp.html" title="This file implements all exceptions that can be thrown by the CPU during execution." alt="" coords="463,184,614,225"/>
 <area shape="rect" id="node16" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="365,281,493,307"/>
 <area shape="rect" id="node17" href="$bus_8cpp.html" title="This file implements the interface defined in bus.hpp." alt="" coords="89,370,215,397"/>
-<area shape="rect" id="node18" href="$elf__loader_8hpp.html" title=" " alt="" coords="239,363,366,404"/>
-<area shape="rect" id="node19" href="$elf__loader_8cpp.html" title=" " alt="" coords="26,452,153,493"/>
-<area shape="rect" id="node21" href="$coprocessor_8cpp.html" title=" " alt="" coords="876,184,1039,225"/>
+<area shape="rect" id="node18" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="239,363,366,404"/>
+<area shape="rect" id="node19" href="$elf__loader_8cpp.html" title="This file implements the functionality of an ELF loader defined in elf_loader.hpp." alt="" coords="26,452,153,493"/>
+<area shape="rect" id="node21" href="$coprocessor_8cpp.html" title="This file implements the common functionality of a general interface of a coprocessor." alt="" coords="876,184,1039,225"/>
 <area shape="rect" id="node22" href="$cp15_8hpp.html" title=" " alt="" coords="689,184,852,225"/>
 <area shape="rect" id="node23" href="$cp15_8cpp.html" title=" " alt="" coords="689,273,852,315"/>
 <area shape="rect" id="node25" href="$arm__timer_8hpp.html" title="This file defines the ARM timer used in BCM2835." alt="" coords="1193,363,1343,404"/>

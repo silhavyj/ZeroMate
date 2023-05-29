@@ -734,7 +734,7 @@
 <!-- Node54 -->
 <g id="node33" class="node">
 <title>Node54</title>
-<g id="a_node33"><a xlink:href="elf__loader_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node33"><a xlink:href="elf__loader_8hpp.html" target="_top" xlink:title="This file defines the functionality of an ELF loader.">
 <polygon fill="none" stroke="black" points="1678.5,-246.5 1678.5,-276.5 1773.5,-276.5 1773.5,-246.5 1678.5,-246.5"/>
 <text text-anchor="start" x="1686.5" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../core/utils/elf</text>
 <text text-anchor="middle" x="1726" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">_loader.hpp</text>

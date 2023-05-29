@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file implements the common functionality of a general interface of a coprocessor.">
 <polygon fill="#bfbfbf" stroke="black" points="251,-190.5 251,-220.5 373,-220.5 373,-190.5 251,-190.5"/>
 <text text-anchor="start" x="259" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/coprocessors</text>
 <text text-anchor="middle" x="312" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">/coprocessor.cpp</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title="This file defines a general interface of a coprocessor.">
 <polygon fill="none" stroke="black" points="264.5,-134.5 264.5,-153.5 359.5,-153.5 359.5,-134.5 264.5,-134.5"/>
 <text text-anchor="middle" x="312" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">coprocessor.hpp</text>
 </a>

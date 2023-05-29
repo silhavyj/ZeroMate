@@ -712,7 +712,7 @@
 <!-- Node35 -->
 <g id="node35" class="node">
 <title>Node35</title>
-<g id="a_node35"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node35"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title="This file defines a general interface of a coprocessor.">
 <polygon fill="none" stroke="black" points="801,-123.5 801,-142.5 896,-142.5 896,-123.5 801,-123.5"/>
 <text text-anchor="middle" x="848.5" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">coprocessor.hpp</text>
 </a>

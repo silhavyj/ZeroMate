@@ -53,7 +53,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" target="_top" xlink:title="Loads a given ELF file (kernel) into the memory.">
 <polygon fill="none" stroke="black" points="171,-0.5 171,-30.5 285,-30.5 285,-0.5 171,-0.5"/>
 <text text-anchor="start" x="179" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::elf</text>
 <text text-anchor="middle" x="228" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Load_Kernel</text>

@@ -94,6 +94,9 @@ $(document).ready(function(){initNavTree('elf__loader_8hpp.html',''); initResiza
 <div class="title">elf_loader.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This file defines the functionality of an ELF loader.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="bus_8hpp_source.html">../bus.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for elf_loader.hpp:</div>
@@ -113,8 +116,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html">zero_mate::utils::elf::TText_Section_Record</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure represents a single record (line) within an ELF file.  <a href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html">zero_mate::utils::elf::TStatus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure represents the return value of <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory.">Load_Kernel</a>.  <a href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -133,18 +138,25 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696a7b3655191e25bd671e35caf4f5b23a7e">zero_mate::utils::elf::ELF_Loader_Error</a>
 , <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696abf878a4226d73b21fb754598f64da06f">zero_mate::utils::elf::Disassembly_Engine_Error</a>
  }</td></tr>
+<tr class="memdesc:a168db2218bf676ff9e0baa59f6fd6696"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different error codes that can be returned from #Load_Kernel.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696">More...</a><br /></td></tr>
 <tr class="separator:a168db2218bf676ff9e0baa59f6fd6696"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b229f39af9362fb4bf340499656012d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012d">zero_mate::utils::elf::NText_Section_Record_Type</a> { <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012dac742c5a36b6307267bb709355feb2c41">zero_mate::utils::elf::Instruction</a>
 , <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012dab021df6aac4654c454f46c77646e745f">zero_mate::utils::elf::Label</a>
  }</td></tr>
+<tr class="memdesc:a7b229f39af9362fb4bf340499656012d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different record types within an ELF file.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012d">More...</a><br /></td></tr>
 <tr class="separator:a7b229f39af9362fb4bf340499656012d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a95a9f666929811b558bcb9da0969972a"><td class="memItemLeft" align="right" valign="top">TStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">zero_mate::utils::elf::Load_Kernel</a> (CBus &amp;bus, const char *filename)</td></tr>
+<tr class="memdesc:a95a9f666929811b558bcb9da0969972a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a given ELF file (kernel) into the memory.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">More...</a><br /></td></tr>
 <tr class="separator:a95a9f666929811b558bcb9da0969972a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file defines the functionality of an ELF loader. </p>
+<dl class="section date"><dt>Date</dt><dd>29. 05. 2023 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Jakub Silhavy (<a href="#" onclick="location.href='mai'+'lto:'+'jak'+'ub'+'.si'+'lh'+'avy'+'.c'+'z@g'+'ma'+'il.'+'co'+'m'; return false;">jakub<span style="display: none;">.nosp@m.</span>.sil<span style="display: none;">.nosp@m.</span>havy.<span style="display: none;">.nosp@m.</span>cz@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a>) </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

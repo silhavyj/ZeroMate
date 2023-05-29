@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Loads a given ELF file (kernel) into the memory.">
 <polygon fill="#bfbfbf" stroke="black" points="155,-0.5 155,-30.5 269,-30.5 269,-0.5 155,-0.5"/>
 <text text-anchor="start" x="163" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::elf</text>
 <text text-anchor="middle" x="212" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::Load_Kernel</text>

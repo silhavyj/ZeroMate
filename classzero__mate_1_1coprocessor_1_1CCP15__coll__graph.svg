@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html" target="_top" xlink:title="This class represents an interface of a coprocessor.">
 <polygon fill="none" stroke="black" points="97.5,-68.5 97.5,-98.5 230.5,-98.5 230.5,-68.5 97.5,-68.5"/>
 <text text-anchor="start" x="105.5" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::coprocessor</text>
 <text text-anchor="middle" x="164" y="-75.5" font-family="Helvetica,sans-Serif" font-size="10.00">::ICoprocessor</text>

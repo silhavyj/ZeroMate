@@ -93,20 +93,29 @@ $(document).ready(function(){initNavTree('structzero__mate_1_1utils_1_1elf_1_1TT
 </div><!--header-->
 <div class="contents">
 
+<p>This structure represents a single record (line) within an ELF file.  
+ <a href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="elf__loader_8hpp_source.html">elf_loader.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a25e5f399a8f23ee8ffc26d230ee3b6c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012d">NText_Section_Record_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#a25e5f399a8f23ee8ffc26d230ee3b6c1">type</a></td></tr>
+<tr class="memdesc:a25e5f399a8f23ee8ffc26d230ee3b6c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the type (record type)  <a href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#a25e5f399a8f23ee8ffc26d230ee3b6c1">More...</a><br /></td></tr>
 <tr class="separator:a25e5f399a8f23ee8ffc26d230ee3b6c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dacdfebaf0d02657376ad5894261ca7"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#a4dacdfebaf0d02657376ad5894261ca7">addr</a></td></tr>
+<tr class="memdesc:a4dacdfebaf0d02657376ad5894261ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Address of the instruction.  <a href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#a4dacdfebaf0d02657376ad5894261ca7">More...</a><br /></td></tr>
 <tr class="separator:a4dacdfebaf0d02657376ad5894261ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd9bef27e671ab880df1156c823c75a0"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#afd9bef27e671ab880df1156c823c75a0">opcode</a></td></tr>
+<tr class="memdesc:afd9bef27e671ab880df1156c823c75a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opcode of the instruction (32-bit encoding)  <a href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#afd9bef27e671ab880df1156c823c75a0">More...</a><br /></td></tr>
 <tr class="separator:afd9bef27e671ab880df1156c823c75a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa53766eaf2b978f40e8b1df6e16ace26"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#aa53766eaf2b978f40e8b1df6e16ace26">disassembly</a></td></tr>
+<tr class="memdesc:aa53766eaf2b978f40e8b1df6e16ace26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disassembly (description) of the instruction.  <a href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#aa53766eaf2b978f40e8b1df6e16ace26">More...</a><br /></td></tr>
 <tr class="separator:aa53766eaf2b978f40e8b1df6e16ace26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This structure represents a single record (line) within an ELF file. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a4dacdfebaf0d02657376ad5894261ca7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4dacdfebaf0d02657376ad5894261ca7">&#9670;&nbsp;</a></span>addr</h2>
 
@@ -118,6 +127,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Address of the instruction. </p>
 
 </div>
 </div>
@@ -133,6 +144,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Disassembly (description) of the instruction. </p>
+
 </div>
 </div>
 <a id="afd9bef27e671ab880df1156c823c75a0"></a>
@@ -147,6 +160,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Opcode of the instruction (32-bit encoding) </p>
+
 </div>
 </div>
 <a id="a25e5f399a8f23ee8ffc26d230ee3b6c1"></a>
@@ -160,6 +175,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Type of the type (record type) </p>
 
 </div>
 </div>

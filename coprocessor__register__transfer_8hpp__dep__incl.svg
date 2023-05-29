@@ -55,7 +55,7 @@
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node15"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title="This file defines a general interface of a coprocessor.">
 <polygon fill="none" stroke="black" points="432.5,-341 432.5,-371 554.5,-371 554.5,-341 432.5,-341"/>
 <text text-anchor="start" x="440.5" y="-359" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/coprocessors</text>
 <text text-anchor="middle" x="493.5" y="-348" font-family="Helvetica,sans-Serif" font-size="10.00">/coprocessor.hpp</text>
@@ -264,7 +264,7 @@
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="coprocessor_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node16"><a xlink:href="coprocessor_8cpp.html" target="_top" xlink:title="This file implements the common functionality of a general interface of a coprocessor.">
 <polygon fill="none" stroke="black" points="432.5,-268.5 432.5,-298.5 554.5,-298.5 554.5,-268.5 432.5,-268.5"/>
 <text text-anchor="start" x="440.5" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/coprocessors</text>
 <text text-anchor="middle" x="493.5" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">/coprocessor.cpp</text>
@@ -354,7 +354,7 @@
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="elf__loader_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node20"><a xlink:href="elf__loader_8hpp.html" target="_top" xlink:title="This file defines the functionality of an ELF loader.">
 <polygon fill="none" stroke="black" points="587,-134.5 587,-164.5 682,-164.5 682,-134.5 587,-134.5"/>
 <text text-anchor="start" x="595" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/utils/elf</text>
 <text text-anchor="middle" x="634.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_loader.hpp</text>
@@ -388,7 +388,7 @@
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="elf__loader_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node21"><a xlink:href="elf__loader_8cpp.html" target="_top" xlink:title="This file implements the functionality of an ELF loader defined in elf_loader.hpp.">
 <polygon fill="none" stroke="black" points="757,-67.5 757,-97.5 852,-97.5 852,-67.5 757,-67.5"/>
 <text text-anchor="start" x="765" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/utils/elf</text>
 <text text-anchor="middle" x="804.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_loader.cpp</text>

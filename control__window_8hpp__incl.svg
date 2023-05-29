@@ -674,7 +674,7 @@
 <!-- Node32 -->
 <g id="node32" class="node">
 <title>Node32</title>
-<g id="a_node32"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node32"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title="This file defines a general interface of a coprocessor.">
 <polygon fill="none" stroke="black" points="712.5,-134.5 712.5,-153.5 807.5,-153.5 807.5,-134.5 712.5,-134.5"/>
 <text text-anchor="middle" x="760" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">coprocessor.hpp</text>
 </a>

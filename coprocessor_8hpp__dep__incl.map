@@ -1,13 +1,13 @@
 <map id="src/core/coprocessors/coprocessor.hpp" name="src/core/coprocessors/coprocessor.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="647,5,810,47"/>
-<area shape="rect" id="node2" href="$coprocessor_8cpp.html" title=" " alt="" coords="554,95,717,136"/>
+<area shape="rect" id="node1" title="This file defines a general interface of a coprocessor." alt="" coords="647,5,810,47"/>
+<area shape="rect" id="node2" href="$coprocessor_8cpp.html" title="This file implements the common functionality of a general interface of a coprocessor." alt="" coords="554,95,717,136"/>
 <area shape="rect" id="node3" href="$cp15_8hpp.html" title=" " alt="" coords="741,95,903,136"/>
 <area shape="rect" id="node4" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="674,191,802,218"/>
 <area shape="rect" id="node19" href="$cp15_8cpp.html" title=" " alt="" coords="826,184,989,225"/>
 <area shape="rect" id="node5" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="463,273,613,315"/>
 <area shape="rect" id="node10" href="$file__window_8hpp.html" title=" " alt="" coords="591,363,741,404"/>
 <area shape="rect" id="node16" href="$bus_8cpp.html" title="This file implements the interface defined in bus.hpp." alt="" coords="919,281,1045,307"/>
-<area shape="rect" id="node17" href="$elf__loader_8hpp.html" title=" " alt="" coords="768,273,895,315"/>
+<area shape="rect" id="node17" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="768,273,895,315"/>
 <area shape="rect" id="node6" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,363,156,404"/>
 <area shape="rect" id="node7" href="$control__window_8hpp.html" title=" " alt="" coords="392,363,567,404"/>
 <area shape="rect" id="node12" href="$registers__window_8hpp.html" title=" " alt="" coords="181,363,367,404"/>
@@ -17,5 +17,5 @@
 <area shape="rect" id="node11" href="$file__window_8cpp.html" title=" " alt="" coords="731,452,881,493"/>
 <area shape="rect" id="node13" href="$registers__window_8cpp.html" title=" " alt="" coords="181,452,367,493"/>
 <area shape="rect" id="node15" href="$source__code__window_8cpp.html" title=" " alt="" coords="974,452,1147,493"/>
-<area shape="rect" id="node18" href="$elf__loader_8cpp.html" title=" " alt="" coords="964,363,1091,404"/>
+<area shape="rect" id="node18" href="$elf__loader_8cpp.html" title="This file implements the functionality of an ELF loader defined in elf_loader.hpp." alt="" coords="964,363,1091,404"/>
 </map>

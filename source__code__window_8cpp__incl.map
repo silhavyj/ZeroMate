@@ -2,13 +2,13 @@
 <area shape="rect" id="node1" title=" " alt="" coords="247,5,420,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="55,95,167,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="190,95,357,121"/>
-<area shape="rect" id="node4" href="$elf__loader_8hpp.html" title=" " alt="" coords="315,169,442,211"/>
+<area shape="rect" id="node4" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="315,169,442,211"/>
 <area shape="rect" id="node17" href="$source__code__window_8hpp.html" title=" " alt="" coords="449,95,636,121"/>
 <area shape="rect" id="node5" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="268,266,353,293"/>
 <area shape="rect" id="node6" href="$cp15_8hpp.html" title=" " alt="" coords="569,348,740,375"/>
 <area shape="rect" id="node14" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="114,348,307,375"/>
 <area shape="rect" id="node15" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="332,348,545,375"/>
-<area shape="rect" id="node7" href="$coprocessor_8hpp.html" title=" " alt="" coords="673,423,799,449"/>
+<area shape="rect" id="node7" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="673,423,799,449"/>
 <area shape="rect" id="node9" href="$logger_8hpp.html" title=" " alt="" coords="349,601,528,628"/>
 <area shape="rect" id="node8" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="247,512,449,539"/>
 <area shape="rect" id="node10" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="878,497,1039,553"/>

@@ -1,5 +1,5 @@
 <map id="src/core/coprocessors/coprocessor.hpp" name="src/core/coprocessors/coprocessor.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="340,5,503,47"/>
+<area shape="rect" id="node1" title="This file defines a general interface of a coprocessor." alt="" coords="340,5,503,47"/>
 <area shape="rect" id="node2" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="5,109,208,136"/>
 <area shape="rect" id="node4" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="233,95,394,151"/>
 <area shape="rect" id="node6" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="418,102,643,143"/>

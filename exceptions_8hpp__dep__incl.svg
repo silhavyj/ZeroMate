@@ -288,7 +288,7 @@
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="elf__loader_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node17"><a xlink:href="elf__loader_8hpp.html" target="_top" xlink:title="This file defines the functionality of an ELF loader.">
 <polygon fill="none" stroke="black" points="572,-134.5 572,-164.5 667,-164.5 667,-134.5 572,-134.5"/>
 <text text-anchor="start" x="580" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/utils/elf</text>
 <text text-anchor="middle" x="619.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_loader.hpp</text>
@@ -322,7 +322,7 @@
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="elf__loader_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node18"><a xlink:href="elf__loader_8cpp.html" target="_top" xlink:title="This file implements the functionality of an ELF loader defined in elf_loader.hpp.">
 <polygon fill="none" stroke="black" points="757,-67.5 757,-97.5 852,-97.5 852,-67.5 757,-67.5"/>
 <text text-anchor="start" x="765" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/utils/elf</text>
 <text text-anchor="middle" x="804.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_loader.cpp</text>

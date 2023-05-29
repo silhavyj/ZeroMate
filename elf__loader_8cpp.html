@@ -92,6 +92,9 @@ $(document).ready(function(){initNavTree('elf__loader_8cpp.html',''); initResiza
 <div class="title">elf_loader.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This file implements the functionality of an ELF loader defined in <a class="el" href="elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader.">elf_loader.hpp</a>.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;fmt/format.h&gt;</code><br />
 <code>#include &lt;elfio/elfio.hpp&gt;</code><br />
 <code>#include &lt;capstone/capstone.h&gt;</code><br />
@@ -117,9 +120,14 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a95a9f666929811b558bcb9da0969972a"><td class="memItemLeft" align="right" valign="top">TStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">zero_mate::utils::elf::Load_Kernel</a> (CBus &amp;bus, const char *filename)</td></tr>
+<tr class="memdesc:a95a9f666929811b558bcb9da0969972a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a given ELF file (kernel) into the memory.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">More...</a><br /></td></tr>
 <tr class="separator:a95a9f666929811b558bcb9da0969972a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file implements the functionality of an ELF loader defined in <a class="el" href="elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader.">elf_loader.hpp</a>. </p>
+<dl class="section date"><dt>Date</dt><dd>29. 05. 2023 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Jakub Silhavy (<a href="#" onclick="location.href='mai'+'lto:'+'jak'+'ub'+'.si'+'lh'+'avy'+'.c'+'z@g'+'ma'+'il.'+'co'+'m'; return false;">jakub<span style="display: none;">.nosp@m.</span>.sil<span style="display: none;">.nosp@m.</span>havy.<span style="display: none;">.nosp@m.</span>cz@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a>) </dd></dl>
+</div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a227503a960ba5d15cd2fb9041382684f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a227503a960ba5d15cd2fb9041382684f">&#9670;&nbsp;</a></span>disassembly</h2>
 
@@ -131,6 +139,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Disassembled instructions. </p>
 
 </div>
 </div>
@@ -145,6 +155,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Status code. </p>
 
 </div>
 </div>

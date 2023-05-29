@@ -41,7 +41,7 @@
 <area shape="rect" id="node25" href="$cp15_8hpp.html" title=" " alt="" coords="2411,363,2581,389"/>
 <area shape="rect" id="node30" title=" " alt="" coords="1527,191,1593,218"/>
 <area shape="rect" id="node32" title=" " alt="" coords="2095,191,2219,218"/>
-<area shape="rect" id="node33" href="$elf__loader_8hpp.html" title=" " alt="" coords="2243,184,2370,225"/>
+<area shape="rect" id="node33" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="2243,184,2370,225"/>
 <area shape="rect" id="node36" title=" " alt="" coords="2496,191,2560,218"/>
 <area shape="rect" id="node37" title=" " alt="" coords="2585,191,2647,218"/>
 <area shape="rect" id="node39" href="$ram_8hpp.html" title="This file defines the RAM (random access memory) used in BCM2835." alt="" coords="2723,184,2885,225"/>

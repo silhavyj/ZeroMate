@@ -37,5 +37,5 @@
 <area shape="rect" id="node31" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="2961,505,3029,531"/>
 <area shape="rect" id="node34" href="$cp15_8hpp.html" title=" " alt="" coords="827,348,998,375"/>
 <area shape="rect" id="node36" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="460,348,653,375"/>
-<area shape="rect" id="node35" href="$coprocessor_8hpp.html" title=" " alt="" coords="1073,423,1200,449"/>
+<area shape="rect" id="node35" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="1073,423,1200,449"/>
 </map>

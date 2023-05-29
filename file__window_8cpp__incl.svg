@@ -158,7 +158,7 @@
 <!-- Node40 -->
 <g id="node40" class="node">
 <title>Node40</title>
-<g id="a_node40"><a xlink:href="elf__loader_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node40"><a xlink:href="elf__loader_8hpp.html" target="_top" xlink:title="This file defines the functionality of an ELF loader.">
 <polygon fill="none" stroke="black" points="483.5,-302.5 483.5,-332.5 578.5,-332.5 578.5,-302.5 483.5,-302.5"/>
 <text text-anchor="start" x="491.5" y="-320.5" font-family="Helvetica,sans-Serif" font-size="10.00">../../core/utils/elf</text>
 <text text-anchor="middle" x="531" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">_loader.hpp</text>
@@ -756,7 +756,7 @@
 <!-- Node35 -->
 <g id="node35" class="node">
 <title>Node35</title>
-<g id="a_node35"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node35"><a xlink:href="coprocessor_8hpp.html" target="_top" xlink:title="This file defines a general interface of a coprocessor.">
 <polygon fill="none" stroke="black" points="799.5,-123.5 799.5,-142.5 894.5,-142.5 894.5,-123.5 799.5,-123.5"/>
 <text text-anchor="middle" x="847" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">coprocessor.hpp</text>
 </a>
