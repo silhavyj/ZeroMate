@@ -31,9 +31,17 @@ namespace zero_mate::coprocessor
 
     void CCP15::Initialize()
     {
-        // Initialize the C1 primary register.
-        // TODO set default values such as disabling memory access alignment checks
+        Initialize_C1();
+    }
+
+    void CCP15::Initialize_C1()
+    {
+        // Create the C1 primary register.
         m_regs[NPrimary_Register::C1] = std::vector<std::uint32_t>(static_cast<std::size_t>(NC1_Register::Count), 0);
+
+        // Permit unaligned memory access.
+        m_regs[NPrimary_Register::C1][static_cast<std::uint32_t>(NC1_Register::Control)] |=
+        static_cast<std::uint32_t>(NC1_Control_Flags::U);
     }
 
     bool CCP15::Is_C1_Control_Flag_Set(NC1_Control_Flags flag) const

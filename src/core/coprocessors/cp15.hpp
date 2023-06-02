@@ -103,6 +103,11 @@ namespace zero_mate::coprocessor
         inline void Initialize();
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Initializes C1 primary register.
+        // -------------------------------------------------------------------------------------------------------------
+        inline void Initialize_C1();
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Checks if a flag in the C1 control register is set or not.
         /// \param flag Flag to be checked
         /// \return true, if the flag is set. false, otherwise.
