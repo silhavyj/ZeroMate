@@ -1,3 +1,5 @@
+#include <functional>
+
 #include <imgui/imgui.h>
 #include <fmt/include/fmt/core.h>
 
@@ -54,21 +56,63 @@ namespace zero_mate::gui
         return false;
     }
 
+    std::string CSource_Code_Window::Extract_Class_Name(std::string label)
+    {
+        const auto end_pos = label.find("::");
+
+        if (end_pos == std::string::npos)
+        {
+            return {};
+        }
+
+        label = label.substr(0, end_pos);
+        const auto start_pos = label.rfind(' ');
+
+        if (start_pos != std::string::npos)
+        {
+            label = label.substr(start_pos + 1);
+        }
+
+        return label;
+    }
+
+    CSource_Code_Window::TRGB_Color CSource_Code_Window::Pick_Color(const std::string& str)
+    {
+        const std::size_t hash_value = std::hash<std::string>()(str);
+
+        float r = static_cast<float>((hash_value & 0xFF0000U) >> 16U) / 255.0f;
+        float g = static_cast<float>((hash_value & 0x00FF00U) >> 8U) / 255.0f;
+        float b = static_cast<float>(hash_value & 0x0000FFU) / 255.0f;
+
+        return { r, g, b };
+    }
+
     void CSource_Code_Window::Render_Code_Block(std::size_t& idx)
     {
         assert(m_source_code[idx].type == utils::elf::NText_Section_Record_Type::Label);
 
         const bool highlight_code_block = Highlight_Code_Block(idx);
+        const auto class_name = Extract_Class_Name(m_source_code[idx].disassembly);
+        const bool is_class_member = !class_name.empty();
 
         if (highlight_code_block)
         {
             ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
+            ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(1.0f, 1.0f, 0.0f, 0.5f));
         }
+        else if (is_class_member)
+        {
+            const auto color = Pick_Color(class_name);
+
+            ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(color.r, color.g, color.b, 0.3f));
+            ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(color.r, color.g, color.b, 0.5f));
+        }
+
         if (ImGui::CollapsingHeader(m_source_code[idx].disassembly.c_str()))
         {
-            if (highlight_code_block)
+            if (highlight_code_block || is_class_member)
             {
-                ImGui::PopStyleColor();
+                ImGui::PopStyleColor(2);
             }
             if (ImGui::BeginTable(fmt::format("##source_code_table{}", m_source_code[idx].disassembly).c_str(), 4, TABLE_FLAGS))
             {
@@ -149,9 +193,9 @@ namespace zero_mate::gui
         }
         else
         {
-            if (highlight_code_block)
+            if (highlight_code_block || is_class_member)
             {
-                ImGui::PopStyleColor();
+                ImGui::PopStyleColor(2);
             }
             ++idx;
 

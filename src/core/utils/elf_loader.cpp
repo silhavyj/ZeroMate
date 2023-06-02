@@ -144,7 +144,7 @@ namespace zero_mate::utils::elf
         {
             // Attempt to demangle the given label.
             int status{};
-            char* demangled = abi::__cxa_demangle(label.c_str(), 0, 0, &status);
+            char* demangled = abi::__cxa_demangle(label.c_str(), nullptr, nullptr, &status);
 
             // If we fail to demangle the name, we will return the original name.
             std::string demangled_name{ label };
