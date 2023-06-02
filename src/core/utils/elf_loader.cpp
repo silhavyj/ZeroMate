@@ -9,6 +9,8 @@
 // STL imports (excluded from Doxygen)
 /// \cond
 #include <bit>
+#include <cstdlib>
+#include <cxxabi.h>
 #include <unordered_map>
 /// \endcond
 
@@ -134,6 +136,32 @@ namespace zero_mate::utils::elf
         }
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Demangles the name of a given label using abi::__cxa_demangle.
+        /// \param label Name of the label to be demangled
+        /// \return Demangled name (if it fails to demangle the name, it returns the original one)
+        // -------------------------------------------------------------------------------------------------------------
+        inline std::string Demangle_Label_Name(const std::string& label)
+        {
+            // Attempt to demangle the given label.
+            int status{};
+            char* demangled = abi::__cxa_demangle(label.c_str(), 0, 0, &status);
+
+            // If we fail to demangle the name, we will return the original name.
+            std::string demangled_name{ label };
+
+            // The label was successfully demangled.
+            if (status == 0)
+            {
+                demangled_name = demangled;
+            }
+
+            // We were given an ownership of the object and therefore must clean it.
+            std::free(demangled);
+
+            return demangled_name;
+        }
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Disassembles an ELF file.
         /// \param elf_reader Reference to an ELF reader (ELF parser)
         /// \return Result of the disassembly process
@@ -193,7 +221,8 @@ namespace zero_mate::utils::elf
                     if (labels.contains(address))
                     {
                         // Push_back the label first before you push_back the instruction itself.
-                        result.disassembly.push_back({ NText_Section_Record_Type::Label, {}, {}, labels.at(address) });
+                        const auto demangled_label = Demangle_Label_Name(labels.at(address));
+                        result.disassembly.push_back({ NText_Section_Record_Type::Label, {}, {}, demangled_label });
                     }
 
                     // Add the instruction to the result.
