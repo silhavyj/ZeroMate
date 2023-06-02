@@ -1,3 +1,16 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file srs.cpp
+/// \date 27. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements an SRS instruction (store return state onto a stack) as defined in srs.hpp.
+///
+/// To find more information about this instruction, please visit
+/// https://developer.arm.com/documentation/dui0489/i/arm-and-thumb-instructions/srs
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Project file imports
+
 #include "srs.hpp"
 
 namespace zero_mate::arm1176jzf_s::isa
@@ -28,4 +41,5 @@ namespace zero_mate::arm1176jzf_s::isa
 
         return addressing_mode == NAddressing_Mode::DB || addressing_mode == NAddressing_Mode::DA;
     }
-}
+
+} // namespace zero_mate::arm1176jzf_s::isa

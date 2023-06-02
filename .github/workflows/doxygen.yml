@@ -1,0 +1,35 @@
+name: doxygen
+
+# Define the rules when this workflow should be applied
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    # Specify the type of the machine
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repo
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      # Install Doxygen (doxygen-github-pages-action@v1 does not seem to add dot into the PATH)
+      - name: Install Doxygen
+        run: /bin/bash .github/scripts/install_doxygen.sh
+
+      # Deploy docs
+      - uses: DenverCoder1/doxygen-github-pages-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/doxygen/html
+
+# EOF

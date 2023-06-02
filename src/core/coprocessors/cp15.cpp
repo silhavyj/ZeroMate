@@ -1,5 +1,20 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file cp15.cpp
+/// \date 29. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements CP15 (system control coprocessor) as defined in cp15.hpp.
+///
+/// To find more information about the coprocessor, please visit
+/// https://developer.arm.com/documentation/ddi0290/g/system-control-coprocessor/about-control-coprocessor-cp15
+// ---------------------------------------------------------------------------------------------------------------------
+
+// 3rd party library includes
+
 #include <fmt/format.h>
 #include <magic_enum.hpp>
+
+// Project file imports
 
 #include "cp15.hpp"
 #include "../utils/singleton.hpp"
@@ -10,45 +25,64 @@ namespace zero_mate::coprocessor
     : ICoprocessor{ cpu_context }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
+        // Initialize the coprocessor.
         Initialize();
     }
 
     void CCP15::Initialize()
     {
-        m_regs[NPrimary_Register::Control_Register] = std::vector<std::uint32_t>(REGISTER_1_COUNT, 0);
+        // Initialize the C1 primary register.
+        // TODO set default values such as disabling memory access alignment checks
+        m_regs[NPrimary_Register::C1] = std::vector<std::uint32_t>(static_cast<std::size_t>(NC1_Register::Count), 0);
     }
 
-    bool CCP15::Is_Control_Flag_Set(NControl_Register_Flags flag) const
+    bool CCP15::Is_C1_Control_Flag_Set(NC1_Control_Flags flag) const
     {
-        return static_cast<bool>(m_regs.at(NPrimary_Register::Control_Register).at(static_cast<std::uint32_t>(NRegister_1::Control_Register)) & static_cast<std::uint32_t>(flag));
+        // clang-format off
+        return static_cast<bool>(
+            m_regs.at(NPrimary_Register::C1).at(static_cast<std::uint32_t>(NC1_Register::Control)) &
+            static_cast<std::uint32_t>(flag)
+        );
+        // clang-format on
     }
 
     void CCP15::Perform_Register_Transfer(arm1176jzf_s::isa::CCoprocessor_Reg_Transfer instruction)
     {
-        const auto primary_reg = static_cast<NPrimary_Register>(instruction.Get_CRn());
+        // Retrieve the index of the primary register
+        const auto primary_reg = static_cast<NPrimary_Register>(instruction.Get_CRn_Idx());
 
+        // Make sure the index is value (primary register exists).
         if (!m_regs.contains(primary_reg))
         {
-            m_logging_system.Error(fmt::format("CP15: {} register has not been implemented yet", magic_enum::enum_name(primary_reg)).c_str());
+            // clang-format off
+            m_logging_system.Error(fmt::format("CP15: {} register has not been implemented yet",
+                                               magic_enum::enum_name(primary_reg)).c_str());
+            // clang-format on
+
             return;
         }
 
-        const auto secondary_reg_idx = instruction.Get_CRm();
-        const auto rd_idx = instruction.Get_Rd();
+        // Retrieve the secondary register associated with the primary register.
+        const auto secondary_reg_idx = instruction.Get_CRm_Idx();
+
+        // Source/destination CPU register.
+        const auto rd_idx = instruction.Get_Rd_Idx();
 
         if (instruction.Is_L_Bit_Set())
         {
+            // Coprocessor -> CPU
             m_cpu_context[rd_idx] = m_regs[primary_reg][secondary_reg_idx];
         }
         else
         {
+            //  Coprocessor <- CPU
             m_regs[primary_reg][secondary_reg_idx] = m_cpu_context[rd_idx];
         }
     }
 
     bool CCP15::Is_Unaligned_Access_Permitted() const
     {
-        return Is_Control_Flag_Set(NControl_Register_Flags::U);
+        return Is_C1_Control_Flag_Set(NC1_Control_Flags::U);
     }
 
     void CCP15::Perform_Data_Transfer([[maybe_unused]] arm1176jzf_s::isa::CCoprocessor_Data_Transfer instruction)
@@ -60,4 +94,5 @@ namespace zero_mate::coprocessor
     {
         m_logging_system.Error("Data operation cannot be applied to CP15");
     }
-}
+
+} // namespace zero_mate::coprocessor

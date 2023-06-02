@@ -1,5 +1,20 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file isa_decoder.cpp
+/// \date 27. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements an instruction decoder defined in isa_decoder.hpp.
+///
+/// It takes a 32-bit value and returns an instruction type that matches the value.
+// ---------------------------------------------------------------------------------------------------------------------
+
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <bit>
 #include <algorithm>
+/// \endcond
+
+// Project file imports
 
 #include "../../utils/math.hpp"
 #include "isa_decoder.hpp"
@@ -34,11 +49,11 @@ namespace zero_mate::arm1176jzf_s::isa
 
     CISA_Decoder::CISA_Decoder() noexcept
     {
+        // Sort out the look-up table by the mask restrictiveness (from the most to the least restrictive mask).
         std::sort(s_instruction_lookup_table.begin(),
                   s_instruction_lookup_table.end(),
                   [](const auto& record1, const auto& record2) -> bool {
-                      return std::popcount(record1.mask) >
-                             std::popcount(record2.mask);
+                      return std::popcount(record1.mask) > std::popcount(record2.mask);
                   });
     }
 
@@ -46,6 +61,7 @@ namespace zero_mate::arm1176jzf_s::isa
     {
         for (const auto& [mask, expected, type] : s_instruction_lookup_table)
         {
+            // Apply the mask to the instruction (32-bit value) and check if it matches the expected value.
             if ((instruction.Get_Value() & mask) == expected)
             {
                 return type;
@@ -54,4 +70,5 @@ namespace zero_mate::arm1176jzf_s::isa
 
         return CInstruction::NType::Unknown;
     }
-}
+
+} // namespace zero_mate::arm1176jzf_s::isa

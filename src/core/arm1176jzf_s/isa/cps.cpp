@@ -1,3 +1,16 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file cps.cpp
+/// \date 26. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file defines a change processor state instruction (CPS) as defined in cps.hpp.
+///
+/// To find more information about this instruction, please visit
+/// https://developer.arm.com/documentation/dui0489/c/arm-and-thumb-instructions/miscellaneous-instructions/cps
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Project file imports
+
 #include "cps.hpp"
 
 namespace zero_mate::arm1176jzf_s::isa
@@ -36,4 +49,5 @@ namespace zero_mate::arm1176jzf_s::isa
     {
         return m_value & 0b11111U;
     }
-}
+
+} // namespace zero_mate::arm1176jzf_s::isa
