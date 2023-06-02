@@ -78,13 +78,13 @@ namespace zero_mate::gui
 
     CSource_Code_Window::TRGB_Color CSource_Code_Window::Pick_Color(const std::string& str)
     {
-        const std::size_t hash_value = std::hash<std::string>()(str);
+        const std::size_t hash_value = std::hash<std::string>()(str) % 0xFFFFFFU;
 
-        float r = static_cast<float>((hash_value & 0xFF0000U) >> 16U) / 255.0f;
-        float g = static_cast<float>((hash_value & 0x00FF00U) >> 8U) / 255.0f;
-        float b = static_cast<float>(hash_value & 0x0000FFU) / 255.0f;
-
-        return { r, g, b };
+        return {
+            static_cast<float>((hash_value & 0xFF0000U) >> 16U) / 255.0f,
+            static_cast<float>((hash_value & 0x00FF00U) >> 8U) / 255.0f,
+            static_cast<float>(hash_value & 0x0000FFU) / 255.0f
+        };
     }
 
     void CSource_Code_Window::Render_Code_Block(std::size_t& idx)

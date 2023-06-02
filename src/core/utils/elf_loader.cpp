@@ -9,8 +9,8 @@
 // STL imports (excluded from Doxygen)
 /// \cond
 #include <bit>
+#include <memory>
 #include <cstdlib>
-#include <cxxabi.h>
 #include <unordered_map>
 /// \endcond
 
@@ -19,6 +19,7 @@
 #include <fmt/format.h>
 #include <elfio/elfio.hpp>
 #include <capstone/capstone.h>
+#include <llvm/Demangle/Demangle.h>
 
 // Project file imports
 
@@ -136,29 +137,28 @@ namespace zero_mate::utils::elf
         }
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Demangles the name of a given label using abi::__cxa_demangle.
+        /// \brief Demangles the name of a given label.
         /// \param label Name of the label to be demangled
         /// \return Demangled name (if it fails to demangle the name, it returns the original one)
         // -------------------------------------------------------------------------------------------------------------
         inline std::string Demangle_Label_Name(const std::string& label)
         {
-            // Attempt to demangle the given label.
-            int status{};
-            char* demangled = abi::__cxa_demangle(label.c_str(), nullptr, nullptr, &status);
+            // clang-format off
+            // RAII, so we do not have to manually manage the buffer.
+            const std::unique_ptr<char, void (*)(void*)> demangled_label(
+                llvm::itaniumDemangle(label.c_str(), nullptr, nullptr, nullptr),
+                std::free
+            );
+            // clang-format on
 
-            // If we fail to demangle the name, we will return the original name.
-            std::string demangled_name{ label };
-
-            // The label was successfully demangled.
-            if (status == 0)
+            // Check if demangling was successful
+            if (demangled_label != nullptr)
             {
-                demangled_name = demangled;
+                return demangled_label.get();
             }
 
-            // We were given an ownership of the object and therefore must clean it.
-            std::free(demangled);
-
-            return demangled_name;
+            // If it was not, return the original label.
+            return label;
         }
 
         // -------------------------------------------------------------------------------------------------------------

@@ -121,13 +121,13 @@ namespace zero_mate::gui
 
     void CControl_Window::Render_ImGUI_Demo()
     {
-        static bool s_show_demo_window{ false };
-
-        ImGui::Checkbox("Show demo window", &s_show_demo_window);
-        if (s_show_demo_window)
-        {
-            ImGui::ShowDemoWindow();
-        }
+        // static bool s_show_demo_window{ false };
+        //
+        // ImGui::Checkbox("Show demo window", &s_show_demo_window);
+        // if (s_show_demo_window)
+        // {
+        //    ImGui::ShowDemoWindow();
+        // }
     }
 
     inline void CControl_Window::Print_No_ELF_File_Loaded_Error_Msg() const
