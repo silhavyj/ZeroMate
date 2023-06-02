@@ -45,10 +45,10 @@ namespace zero_mate::coprocessor
         };
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \enum NC0_Register
-        /// \brief This enumeration represents registers of the C0 primary register.
+        /// \enum NC1_Register
+        /// \brief This enumeration represents registers of the C1 primary register.
         // -------------------------------------------------------------------------------------------------------------
-        enum class NC0_Register : std::uint32_t
+        enum class NC1_Register : std::uint32_t
         {
             Control = 0,                ///< Opcode_2 = 0 (control register)
             Auxiliary_Control,          ///< Opcode_2 = 1 (auxiliary register)
@@ -57,10 +57,10 @@ namespace zero_mate::coprocessor
         };
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \enum NC0_Control_Flags
-        /// \brief This enumeration defines different flags in the C0 Control register.
+        /// \enum NC1_Control_Flags
+        /// \brief This enumeration defines different flags in the C1 Control register.
         // -------------------------------------------------------------------------------------------------------------
-        enum class NC0_Control_Flags : std::uint32_t
+        enum class NC1_Control_Flags : std::uint32_t
         {
             U = 0b1U << 22U ///< Enable/disable unaligned memory access
         };
@@ -103,11 +103,11 @@ namespace zero_mate::coprocessor
         inline void Initialize();
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Checks if a flag in the C0 control register is set or not.
+        /// \brief Checks if a flag in the C1 control register is set or not.
         /// \param flag Flag to be checked
         /// \return true, if the flag is set. false, otherwise.
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] inline bool Is_C0_Control_Flag_Set(NC0_Control_Flags flag) const;
+        [[nodiscard]] inline bool Is_C1_Control_Flag_Set(NC1_Control_Flags flag) const;
 
     private:
         std::unordered_map<NPrimary_Register, std::vector<std::uint32_t>> m_regs; ///< Coprocessor registers

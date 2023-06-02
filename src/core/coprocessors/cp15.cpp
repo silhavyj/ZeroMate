@@ -31,16 +31,16 @@ namespace zero_mate::coprocessor
 
     void CCP15::Initialize()
     {
-        // Initialize the C0 primary register.
+        // Initialize the C1 primary register.
         // TODO set default values such as disabling memory access alignment checks
-        m_regs[NPrimary_Register::C1] = std::vector<std::uint32_t>(static_cast<std::size_t>(NC0_Register::Count), 0);
+        m_regs[NPrimary_Register::C1] = std::vector<std::uint32_t>(static_cast<std::size_t>(NC1_Register::Count), 0);
     }
 
-    bool CCP15::Is_C0_Control_Flag_Set(NC0_Control_Flags flag) const
+    bool CCP15::Is_C1_Control_Flag_Set(NC1_Control_Flags flag) const
     {
         // clang-format off
         return static_cast<bool>(
-            m_regs.at(NPrimary_Register::C1).at(static_cast<std::uint32_t>(NC0_Register::Control)) &
+            m_regs.at(NPrimary_Register::C1).at(static_cast<std::uint32_t>(NC1_Register::Control)) &
             static_cast<std::uint32_t>(flag)
         );
         // clang-format on
@@ -75,14 +75,14 @@ namespace zero_mate::coprocessor
         }
         else
         {
-            // CPU -> coprocessor
+            //  Coprocessor <- CPU
             m_regs[primary_reg][secondary_reg_idx] = m_cpu_context[rd_idx];
         }
     }
 
     bool CCP15::Is_Unaligned_Access_Permitted() const
     {
-        return Is_C0_Control_Flag_Set(NC0_Control_Flags::U);
+        return Is_C1_Control_Flag_Set(NC1_Control_Flags::U);
     }
 
     void CCP15::Perform_Data_Transfer([[maybe_unused]] arm1176jzf_s::isa::CCoprocessor_Data_Transfer instruction)
