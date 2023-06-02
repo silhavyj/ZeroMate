@@ -4,10 +4,10 @@ name: doxygen
 on:
   push:
     branches:
-      - '**' # TODO change this to main
+      - main
   pull_request:
     branches:
-      - '**' # TODO change this to main
+      - main
   workflow_dispatch:
 
 jobs:
