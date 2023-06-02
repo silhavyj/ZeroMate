@@ -155,7 +155,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" target="_top" xlink:title="Logs a warning message via all registered loggers.">
 <polygon fill="none" stroke="black" points="374,-6 374,-36 520,-36 520,-6 374,-6"/>
 <text text-anchor="start" x="382" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="447" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Warning</text>
@@ -171,7 +171,7 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" target="_top" xlink:title="Extract the filename from a given location within the source files.">
 <polygon fill="none" stroke="black" points="556,-6 556,-36 705,-36 705,-6 556,-6"/>
 <text text-anchor="start" x="564" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="630.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Extract_Filename</text>

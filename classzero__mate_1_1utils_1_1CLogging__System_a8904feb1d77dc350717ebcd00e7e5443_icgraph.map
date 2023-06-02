@@ -1,5 +1,5 @@
 <map id="zero_mate::utils::CLogging_System::Warning" name="zero_mate::utils::CLogging_System::Warning">
-<area shape="rect" id="node1" title=" " alt="" coords="949,293,1144,335"/>
+<area shape="rect" id="node1" title="Logs a warning message via all registered loggers." alt="" coords="949,293,1144,335"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e6ef006a36e1adb56abd3ecc6481be" title="Executes a CPU exception." alt="" coords="700,67,876,123"/>
 <area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a00f4cf1169d774a50886f60f5f166f8b" title="Performs a halfword data write to a given address." alt="" coords="675,147,901,203"/>
 <area shape="rect" id="node10" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9c9fd268222fa96e4a81d65f7340235c" title="Reads data from the peripheral (IPeripheral interface)." alt="" coords="705,228,871,269"/>

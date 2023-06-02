@@ -1,5 +1,5 @@
 <map id="zero_mate::utils::CLogging_System::Debug" name="zero_mate::utils::CLogging_System::Debug">
-<area shape="rect" id="node1" title=" " alt="" coords="569,319,764,361"/>
+<area shape="rect" id="node1" title="Logs a debug message via all registered loggers." alt="" coords="569,319,764,361"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" title="Clears a pending interrupt by writing a 1 to the GPEDS register." alt="" coords="289,246,495,287"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa731c1d6e73a4db1087a803ca5fe5557" title="Enables/disables interrupts from a basic IRQ source." alt="" coords="290,85,494,141"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ac3c9423e443ca2389cef743f32713cca" title="Enables/disables interrupts from an IRQ source." alt="" coords="309,5,475,61"/>

@@ -1,6 +1,6 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute">
 <area shape="rect" id="node1" title="Executes a data processing instruction." alt="" coords="5,386,181,428"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="725,386,920,428"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="725,386,920,428"/>
 <area shape="rect" id="node4" href="$namespacezero__mate_1_1arm1176jzf__s_1_1alu.html#a73ff714734ac2e53a9374d1f2b9877d6" title="Performs an ALU operation." alt="" coords="247,168,421,209"/>
 <area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aa740f9219bb413d707ac72f373e60d3a" title="Returns the current mode of the CPU." alt="" coords="495,314,669,370"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa5b55276e454abfced2b5714b936e98d" title="Calculates the second operand of a data processing instruction." alt="" coords="233,234,435,290"/>
@@ -9,7 +9,7 @@
 <area shape="rect" id="node13" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef" title="Checks whether a given flag is set in the CPSR register of the current CPU mode." alt="" coords="247,518,421,574"/>
 <area shape="rect" id="node14" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a53765299c790cc790e15deb2c701bd2a" title="Sets a new value to the CPSR register." alt="" coords="230,386,438,428"/>
 <area shape="rect" id="node17" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54" title="Sets/resets a flag in the CPSR register of the current CPU mode." alt="" coords="233,736,435,777"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="968,386,1167,428"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title="Extract the filename from a given location within the source files." alt="" coords="968,386,1167,428"/>
 <area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a73d5c3a98f3fe036a1348d4d7485d0e9" title="Returns the index of the second operand register (Rm)." alt="" coords="488,154,676,210"/>
 <area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae43548d291eecc463c519086e7527ff2" title="Returns the shift type used when constructing the second operand." alt="" coords="488,234,676,290"/>
 <area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a1dc73c441b156452b1467eaa5cab46f5" title="Returns the value of the I bit (bit 25 = immediate second operand)." alt="" coords="488,74,676,130"/>

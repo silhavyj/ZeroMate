@@ -22,10 +22,10 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1coprocessor_1_1CCP15.html#ad928d7049fa8b724580f00cb0410c447" target="_top" xlink:title="Checks if a flag in the C0 control register is set or not.">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1coprocessor_1_1CCP15.html#aadbc3a0eb23a067ccbe74f6144d51e4a" target="_top" xlink:title="Checks if a flag in the C1 control register is set or not.">
 <polygon fill="none" stroke="black" points="169,-0.5 169,-41.5 302,-41.5 302,-0.5 169,-0.5"/>
 <text text-anchor="start" x="177" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::coprocessor</text>
-<text text-anchor="start" x="177" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CCP15::Is_C0_Control</text>
+<text text-anchor="start" x="177" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CCP15::Is_C1_Control</text>
 <text text-anchor="middle" x="235.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Flag_Set</text>
 </a>
 </g>

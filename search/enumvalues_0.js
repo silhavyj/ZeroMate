@@ -20,5 +20,5 @@ var searchData=
   ['arm_5ftimer_1464',['ARM_Timer',['../classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a914ba371614fd541d94ef4275826a4e6acf95fdad58ff7ee7648ded19e83ea39c',1,'zero_mate::peripheral::CInterrupt_Controller']]],
   ['asr_1465',['ASR',['../classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#a6106283c614f3eb52d26814aba2f1ff0a1a3cf7bfb644cba9516cc28e2cb360ca',1,'zero_mate::arm1176jzf_s::isa::CInstruction']]],
   ['aux_1466',['AUX',['../classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711ad22b2d6890a5e46ef1adfd9a5b631097',1,'zero_mate::peripheral::CInterrupt_Controller']]],
-  ['auxiliary_5fcontrol_1467',['Auxiliary_Control',['../classzero__mate_1_1coprocessor_1_1CCP15.html#ac4d2ea5135ad4e0c688a3de4fd185329a0c98cebd61f0bdfa81c51592972857a6',1,'zero_mate::coprocessor::CCP15']]]
+  ['auxiliary_5fcontrol_1467',['Auxiliary_Control',['../classzero__mate_1_1coprocessor_1_1CCP15.html#ac5bc2c82866affdafa405bdcb121aaada0c98cebd61f0bdfa81c51592972857a6',1,'zero_mate::coprocessor::CCP15']]]
 ];

@@ -96,47 +96,66 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1utils_1_1CLogging__
 </div><!--header-->
 <div class="contents">
 
+<p>This class defines a logging system that is used throughout the project.  
+ <a href="classzero__mate_1_1utils_1_1CLogging__System.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="logger_8hpp_source.html">logger.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adf892e1c0a68ca439ede00464128c563"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#adf892e1c0a68ca439ede00464128c563">Add_Logger</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html">ILogger</a> &gt; logger)</td></tr>
+<tr class="memdesc:adf892e1c0a68ca439ede00464128c563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a logger to the logging system.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#adf892e1c0a68ca439ede00464128c563">More...</a><br /></td></tr>
 <tr class="separator:adf892e1c0a68ca439ede00464128c563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a365eaf1db85bd115fe69c5d9f93b81ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee">Debug</a> (const char *msg, const std::source_location &amp;location=std::source_location::current())</td></tr>
+<tr class="memdesc:a365eaf1db85bd115fe69c5d9f93b81ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a debug message via all registered loggers.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee">More...</a><br /></td></tr>
 <tr class="separator:a365eaf1db85bd115fe69c5d9f93b81ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee146ee8db11fa8f184757f980d35c02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02">Info</a> (const char *msg, const std::source_location &amp;location=std::source_location::current())</td></tr>
+<tr class="memdesc:aee146ee8db11fa8f184757f980d35c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs an info message via all registered loggers.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02">More...</a><br /></td></tr>
 <tr class="separator:aee146ee8db11fa8f184757f980d35c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8904feb1d77dc350717ebcd00e7e5443"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443">Warning</a> (const char *msg, const std::source_location &amp;location=std::source_location::current())</td></tr>
+<tr class="memdesc:a8904feb1d77dc350717ebcd00e7e5443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a warning message via all registered loggers.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443">More...</a><br /></td></tr>
 <tr class="separator:a8904feb1d77dc350717ebcd00e7e5443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba3c5c64cd12e058e6a288db2cd89a15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15">Error</a> (const char *msg, const std::source_location &amp;location=std::source_location::current())</td></tr>
+<tr class="memdesc:aba3c5c64cd12e058e6a288db2cd89a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs an error message via all registered loggers.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15">More...</a><br /></td></tr>
 <tr class="separator:aba3c5c64cd12e058e6a288db2cd89a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a939c6ce644f1bfadd9fdef83390c0717"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#a939c6ce644f1bfadd9fdef83390c0717">Print</a> (const char *msg)</td></tr>
+<tr class="memdesc:a939c6ce644f1bfadd9fdef83390c0717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a plain text message (without any formatting) via all registered loggers.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#a939c6ce644f1bfadd9fdef83390c0717">More...</a><br /></td></tr>
 <tr class="separator:a939c6ce644f1bfadd9fdef83390c0717"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:adfec014c4855deac6c5a4dee5a937c9f"><td class="memItemLeft" align="right" valign="top">static constexpr const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#adfec014c4855deac6c5a4dee5a937c9f">DEBUG_MSG_PREFIX</a> = &quot;[debug]&quot;</td></tr>
+<tr class="memdesc:adfec014c4855deac6c5a4dee5a937c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug message prefix.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#adfec014c4855deac6c5a4dee5a937c9f">More...</a><br /></td></tr>
 <tr class="separator:adfec014c4855deac6c5a4dee5a937c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a891f0f966937c304abb17531d63c2185"><td class="memItemLeft" align="right" valign="top">static constexpr const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#a891f0f966937c304abb17531d63c2185">INFO_MSG_PREFIX</a> = &quot;[info]&quot;</td></tr>
+<tr class="memdesc:a891f0f966937c304abb17531d63c2185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Info message prefix.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#a891f0f966937c304abb17531d63c2185">More...</a><br /></td></tr>
 <tr class="separator:a891f0f966937c304abb17531d63c2185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23558dddf700b59b659431ab280b8302"><td class="memItemLeft" align="right" valign="top">static constexpr const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#a23558dddf700b59b659431ab280b8302">WARNING_MSG_PREFIX</a> = &quot;[warning]&quot;</td></tr>
+<tr class="memdesc:a23558dddf700b59b659431ab280b8302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning message prefix.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#a23558dddf700b59b659431ab280b8302">More...</a><br /></td></tr>
 <tr class="separator:a23558dddf700b59b659431ab280b8302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87525b2bc9e48189eb60b9bd98915d01"><td class="memItemLeft" align="right" valign="top">static constexpr const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#a87525b2bc9e48189eb60b9bd98915d01">ERROR_MSG_PREFIX</a> = &quot;[error]&quot;</td></tr>
+<tr class="memdesc:a87525b2bc9e48189eb60b9bd98915d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error message prefix.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#a87525b2bc9e48189eb60b9bd98915d01">More...</a><br /></td></tr>
 <tr class="separator:a87525b2bc9e48189eb60b9bd98915d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:af3fd8f336b5853e954283d93f2c32edd"><td class="memItemLeft" align="right" valign="top">static std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd">Extract_Filename</a> (const std::source_location &amp;location)</td></tr>
+<tr class="memdesc:af3fd8f336b5853e954283d93f2c32edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the filename from a given location within the source files.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd">More...</a><br /></td></tr>
 <tr class="separator:af3fd8f336b5853e954283d93f2c32edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a6057e6104e495bfff4a7ea92c888167e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html">ILogger</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#a6057e6104e495bfff4a7ea92c888167e">m_loggers</a></td></tr>
+<tr class="memdesc:a6057e6104e495bfff4a7ea92c888167e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of all registered loggers.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#a6057e6104e495bfff4a7ea92c888167e">More...</a><br /></td></tr>
 <tr class="separator:a6057e6104e495bfff4a7ea92c888167e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab34cdac2d54d708d16e73b09cc1aec8c"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#ab34cdac2d54d708d16e73b09cc1aec8c">m_mtx</a></td></tr>
+<tr class="memdesc:ab34cdac2d54d708d16e73b09cc1aec8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex for making logging thread-safe.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#ab34cdac2d54d708d16e73b09cc1aec8c">More...</a><br /></td></tr>
 <tr class="separator:ab34cdac2d54d708d16e73b09cc1aec8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class defines a logging system that is used throughout the project. </p>
+<p>It holds a collection of loggers that are registered to the logging system. When a message is being logged, the logging system forwards the message to all its registers loggers. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="adf892e1c0a68ca439ede00464128c563"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf892e1c0a68ca439ede00464128c563">&#9670;&nbsp;</a></span>Add_Logger()</h2>
 
@@ -152,6 +171,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Registers a logger to the logging system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>Logger to be registered </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -180,6 +207,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Logs a debug message via all registered loggers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Debug message to be logged </td></tr>
+    <tr><td class="paramname">location</td><td>Location within the source code this function was called from </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -220,6 +256,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Logs an error message via all registered loggers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Error message to be logged </td></tr>
+    <tr><td class="paramname">location</td><td>Location within the source code this function was called from </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -258,6 +303,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Extract the filename from a given location within the source files. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>Location within the project (source file) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Stripped filename of the source file </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -292,6 +346,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Logs an info message via all registered loggers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Info message to be logged </td></tr>
+    <tr><td class="paramname">location</td><td>Location within the source code this function was called from </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -323,6 +386,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Logs a plain text message (without any formatting) via all registered loggers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Plain text message to be logged </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a8904feb1d77dc350717ebcd00e7e5443"></a>
@@ -350,6 +421,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Logs a warning message via all registered loggers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Warning message to be logged </td></tr>
+    <tr><td class="paramname">location</td><td>Location within the source code this function was called from </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -386,6 +466,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Debug message prefix. </p>
+
 </div>
 </div>
 <a id="a87525b2bc9e48189eb60b9bd98915d01"></a>
@@ -407,6 +489,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Error message prefix. </p>
 
 </div>
 </div>
@@ -430,6 +514,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Info message prefix. </p>
+
 </div>
 </div>
 <a id="a6057e6104e495bfff4a7ea92c888167e"></a>
@@ -451,6 +537,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Collection of all registered loggers. </p>
 
 </div>
 </div>
@@ -474,6 +562,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Mutex for making logging thread-safe. </p>
+
 </div>
 </div>
 <a id="a23558dddf700b59b659431ab280b8302"></a>
@@ -495,6 +585,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Warning message prefix. </p>
 
 </div>
 </div>

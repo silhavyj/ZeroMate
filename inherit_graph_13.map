@@ -11,6 +11,6 @@
 <area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html" title=" " alt="" coords="253,463,450,504"/>
 <area shape="rect" id="node11" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html" title=" " alt="" coords="261,528,441,569"/>
 <area shape="rect" id="node12" href="$classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html" title=" " alt="" coords="261,593,442,635"/>
-<area shape="rect" id="node13" href="$classzero__mate_1_1utils_1_1ILogger.html" title=" " alt="" coords="5,695,188,722"/>
-<area shape="rect" id="node14" href="$classzero__mate_1_1utils_1_1CLogger__STDO.html" title=" " alt="" coords="236,725,467,751"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logger interface." alt="" coords="5,695,188,722"/>
+<area shape="rect" id="node14" href="$classzero__mate_1_1utils_1_1CLogger__STDO.html" title="This class represents a logger that logs messages to the standard output (STDO)." alt="" coords="236,725,467,751"/>
 </map>

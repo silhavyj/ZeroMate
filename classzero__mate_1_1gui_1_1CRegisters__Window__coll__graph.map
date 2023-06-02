@@ -2,5 +2,5 @@
 <area shape="rect" id="node1" title=" " alt="" coords="45,213,243,255"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CGUI__Window.html" title=" " alt="" coords="5,109,165,151"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" title="This class represents the context (registers) of the CPU." alt="" coords="189,109,363,151"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title=" " alt="" coords="179,5,373,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title="This class defines a logging system that is used throughout the project." alt="" coords="179,5,373,47"/>
 </map>

@@ -36,6 +36,6 @@ var searchData=
   ['asr_33',['ASR',['../namespacezero__mate_1_1utils_1_1math.html#a68141550583056ded49ff399b4315992',1,'zero_mate::utils::math::ASR()'],['../classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#a6106283c614f3eb52d26814aba2f1ff0a1a3cf7bfb644cba9516cc28e2cb360ca',1,'zero_mate::arm1176jzf_s::isa::CInstruction::ASR()']]],
   ['attach_5fperipheral_34',['Attach_Peripheral',['../classzero__mate_1_1CBus.html#a73e2222c5c3a5474f46a9011a50c1c7f',1,'zero_mate::CBus']]],
   ['aux_35',['AUX',['../classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9db75b3b07d35b57fdf2195405ead711ad22b2d6890a5e46ef1adfd9a5b631097',1,'zero_mate::peripheral::CInterrupt_Controller']]],
-  ['auxiliary_5fcontrol_36',['Auxiliary_Control',['../classzero__mate_1_1coprocessor_1_1CCP15.html#ac4d2ea5135ad4e0c688a3de4fd185329a0c98cebd61f0bdfa81c51592972857a6',1,'zero_mate::coprocessor::CCP15']]],
+  ['auxiliary_5fcontrol_36',['Auxiliary_Control',['../classzero__mate_1_1coprocessor_1_1CCP15.html#ac5bc2c82866affdafa405bdcb121aaada0c98cebd61f0bdfa81c51592972857a6',1,'zero_mate::coprocessor::CCP15']]],
   ['average_5fcpi_37',['AVERAGE_CPI',['../classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#aacc09a69d69c590f4664d0a09a395561',1,'zero_mate::arm1176jzf_s::isa::CInstruction']]]
 ];

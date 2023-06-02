@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title=" " alt="" coords="420,5,571,47"/>
 <area shape="rect" id="node2" href="$window_8hpp.html" title=" " alt="" coords="5,102,116,129"/>
 <area shape="rect" id="node4" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="713,95,865,136"/>
-<area shape="rect" id="node6" href="$logger_8hpp.html" title=" " alt="" coords="166,512,345,539"/>
+<area shape="rect" id="node6" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="166,512,345,539"/>
 <area shape="rect" id="node29" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="554,191,639,218"/>
 <area shape="rect" id="node36" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="533,95,660,136"/>
 <area shape="rect" id="node3" title=" " alt="" coords="22,191,99,218"/>

@@ -1,5 +1,5 @@
 <map id="zero_mate::coprocessor::CCP15::Perform_Data_Transfer" name="zero_mate::coprocessor::CCP15::Perform_Data_Transfer">
 <area shape="rect" id="node1" title="Performs a coprocessor data transfer instruction (ICoprocessor interface)." alt="" coords="5,5,183,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="231,13,425,54"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="473,13,672,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="231,13,425,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title="Extract the filename from a given location within the source files." alt="" coords="473,13,672,54"/>
 </map>

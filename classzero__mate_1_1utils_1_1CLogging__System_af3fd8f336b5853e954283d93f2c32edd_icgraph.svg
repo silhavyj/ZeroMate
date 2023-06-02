@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Extract the filename from a given location within the source files.">
 <polygon fill="#bfbfbf" stroke="black" points="1216,-590 1216,-620 1365,-620 1365,-590 1216,-590"/>
 <text text-anchor="start" x="1224" y="-608" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="1290.5" y="-597" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Extract_Filename</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" target="_top" xlink:title="Logs a debug message via all registered loggers.">
 <polygon fill="none" stroke="black" points="1034,-730 1034,-760 1180,-760 1180,-730 1034,-730"/>
 <text text-anchor="start" x="1042" y="-748" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="1107" y="-737" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Debug</text>
@@ -37,7 +37,7 @@
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" target="_top" xlink:title=" ">
+<g id="a_node15"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" target="_top" xlink:title="Logs an error message via all registered loggers.">
 <polygon fill="none" stroke="black" points="1034,-232 1034,-262 1180,-262 1180,-232 1034,-232"/>
 <text text-anchor="start" x="1042" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="1107" y="-239" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Error</text>
@@ -53,7 +53,7 @@
 <!-- Node36 -->
 <g id="node36" class="node">
 <title>Node36</title>
-<g id="a_node36"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02" target="_top" xlink:title=" ">
+<g id="a_node36"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02" target="_top" xlink:title="Logs an info message via all registered loggers.">
 <polygon fill="none" stroke="black" points="1034,-481 1034,-511 1180,-511 1180,-481 1034,-481"/>
 <text text-anchor="start" x="1042" y="-499" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="1107" y="-488" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Info</text>
@@ -69,7 +69,7 @@
 <!-- Node38 -->
 <g id="node38" class="node">
 <title>Node38</title>
-<g id="a_node38"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" target="_top" xlink:title=" ">
+<g id="a_node38"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" target="_top" xlink:title="Logs a warning message via all registered loggers.">
 <polygon fill="none" stroke="black" points="1034,-1107 1034,-1137 1180,-1137 1180,-1107 1034,-1107"/>
 <text text-anchor="start" x="1042" y="-1125" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="1107" y="-1114" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Warning</text>

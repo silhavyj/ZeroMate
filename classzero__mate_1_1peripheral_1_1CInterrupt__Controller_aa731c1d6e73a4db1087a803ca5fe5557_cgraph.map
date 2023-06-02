@@ -1,6 +1,6 @@
 <map id="zero_mate::peripheral::CInterrupt_Controller::Enable_IRQ_Basic_Sources" name="zero_mate::peripheral::CInterrupt_Controller::Enable_IRQ_Basic_Sources">
 <area shape="rect" id="node1" title="Enables/disables interrupts from a basic IRQ source." alt="" coords="5,31,209,87"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" title=" " alt="" coords="257,5,452,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" title="Logs a debug message via all registered loggers." alt="" coords="257,5,452,47"/>
 <area shape="rect" id="node4" href="$namespacezero__mate_1_1utils_1_1math.html#af7d93c996dab2ff1b91c5a399dcfe29f" title="Tests whether a bit is set in the given integral variable." alt="" coords="270,71,439,112"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="500,5,699,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title="Extract the filename from a given location within the source files." alt="" coords="500,5,699,47"/>
 </map>

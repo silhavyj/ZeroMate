@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Logs an info message via all registered loggers.">
 <polygon fill="#bfbfbf" stroke="black" points="346,-24.5 346,-54.5 492,-54.5 492,-24.5 346,-24.5"/>
 <text text-anchor="start" x="354" y="-42.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="419" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Info</text>

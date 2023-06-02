@@ -1,5 +1,5 @@
 <map id="zero_mate::peripheral::CGPIO_Manager::Read" name="zero_mate::peripheral::CGPIO_Manager::Read">
 <area shape="rect" id="node1" title="Reads data from the peripheral (IPeripheral interface)." alt="" coords="5,5,181,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title=" " alt="" coords="229,5,424,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="472,5,671,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title="Logs a warning message via all registered loggers." alt="" coords="229,5,424,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title="Extract the filename from a given location within the source files." alt="" coords="472,5,671,47"/>
 </map>

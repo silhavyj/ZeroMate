@@ -5,7 +5,7 @@
 <area shape="rect" id="node5" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="493,95,645,136"/>
 <area shape="rect" id="node4" title=" " alt="" coords="27,191,104,218"/>
 <area shape="rect" id="node6" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="471,430,569,457"/>
-<area shape="rect" id="node7" href="$logger_8hpp.html" title=" " alt="" coords="277,512,456,539"/>
+<area shape="rect" id="node7" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="277,512,456,539"/>
 <area shape="rect" id="node8" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="522,273,643,300"/>
 <area shape="rect" id="node10" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="2255,348,2347,375"/>
 <area shape="rect" id="node29" href="$isa__decoder_8hpp.html" title="This file defines an instruction decoder." alt="" coords="2530,273,2681,300"/>

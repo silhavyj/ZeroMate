@@ -61,7 +61,7 @@ var NAVTREEINDEX =
 [
 "alu_8cpp.html",
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#aff38b505647a985943b5014dec855e51aa8f08eb5693b817f6ba65930ede29087",
-"classzero__mate_1_1coprocessor_1_1CCP15.html#af2e59f19c089c0a73eb590fbb66843be",
+"classzero__mate_1_1coprocessor_1_1CCP15.html#ac5bc2c82866affdafa405bdcb121aaadae93f994f01c537c4e2f7d8528c3eb5e9",
 "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72aa764f908a94fb07a9981eed875809962",
 "functions_func_p.html",
 "structzero__mate_1_1utils_1_1math_1_1TShift__Result.html#ac6ac64cb2f41db4d0490156839ff2469"

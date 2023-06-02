@@ -1,4 +1,0 @@
-<map id="zero_mate::coprocessor::CCP15::Is_C0_Control_Flag_Set" name="zero_mate::coprocessor::CCP15::Is_C0_Control_Flag_Set">
-<area shape="rect" id="node1" title="Checks if a flag in the C0 control register is set or not." alt="" coords="231,5,408,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1CCP15.html#a0ce61f2b1aab4fdbb75929b2bf59a0f7" title="Returns information whether or not the CPU should permit unaligned memory access." alt="" coords="5,5,183,61"/>
-</map>

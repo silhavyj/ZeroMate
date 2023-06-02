@@ -11,7 +11,7 @@ var searchData=
   ['set_5finterrupt_5fmask_5fbits_1233',['Set_Interrupt_Mask_Bits',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a568509274f1d8ed69a2b263a7a0ec00f',1,'zero_mate::arm1176jzf_s::CCPU_Core']]],
   ['set_5flimit_1234',['Set_Limit',['../classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a781c1f391f64fd775d32b65dee2ba98d',1,'zero_mate::peripheral::CARM_Timer::CPrescaler']]],
   ['set_5flog_5fmessage_5fcolor_1235',['Set_Log_Message_Color',['../classzero__mate_1_1gui_1_1CLog__Window.html#acd4c871dccefcf04fb9b3bb8973086c0',1,'zero_mate::gui::CLog_Window']]],
-  ['set_5flogging_5flevel_1236',['Set_Logging_Level',['../classzero__mate_1_1utils_1_1ILogger.html#a6d7e8f9460ccafa50f22e9d78ee15c7a',1,'zero_mate::utils::ILogger']]],
+  ['set_5flogging_5flevel_1236',['Set_Logging_Level',['../classzero__mate_1_1utils_1_1ILogger.html#a6ce90b624374b73bedcd20b799f1196b',1,'zero_mate::utils::ILogger']]],
   ['set_5fpc_1237',['Set_PC',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae2c9e5f272fa5814e386bc2a93d79e6f',1,'zero_mate::arm1176jzf_s::CCPU_Core']]],
   ['set_5fpending_5firq_1238',['Set_Pending_IRQ',['../classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a4ca0071bafb6078e80f91643854f0c77',1,'zero_mate::peripheral::CGPIO_Manager::CPin']]],
   ['set_5fpin_5fstate_1239',['Set_Pin_State',['../classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504',1,'zero_mate::peripheral::CGPIO_Manager']]],

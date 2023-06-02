@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" target="_top" xlink:title="Logs a debug message via all registered loggers.">
 <polygon fill="none" stroke="black" points="179,-159 179,-189 325,-189 325,-159 179,-159"/>
 <text text-anchor="start" x="187" y="-177" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="252" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Debug</text>
@@ -71,7 +71,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" target="_top" xlink:title="Logs a warning message via all registered loggers.">
 <polygon fill="none" stroke="black" points="179,-61 179,-91 325,-91 325,-61 179,-61"/>
 <text text-anchor="start" x="187" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="252" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Warning</text>
@@ -87,7 +87,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" target="_top" xlink:title="Extract the filename from a given location within the source files.">
 <polygon fill="none" stroke="black" points="361,-110 361,-140 510,-140 510,-110 361,-110"/>
 <text text-anchor="start" x="369" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="435.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Extract_Filename</text>

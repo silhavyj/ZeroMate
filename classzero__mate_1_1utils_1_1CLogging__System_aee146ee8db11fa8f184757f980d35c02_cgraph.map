@@ -1,4 +1,4 @@
 <map id="zero_mate::utils::CLogging_System::Info" name="zero_mate::utils::CLogging_System::Info">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,200,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="248,5,447,47"/>
+<area shape="rect" id="node1" title="Logs an info message via all registered loggers." alt="" coords="5,5,200,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title="Extract the filename from a given location within the source files." alt="" coords="248,5,447,47"/>
 </map>

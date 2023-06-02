@@ -6,7 +6,7 @@
 <area shape="rect" id="node37" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="379,95,506,136"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,191,83,218"/>
 <area shape="rect" id="node6" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="432,430,531,457"/>
-<area shape="rect" id="node7" href="$logger_8hpp.html" title=" " alt="" coords="181,512,360,539"/>
+<area shape="rect" id="node7" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="181,512,360,539"/>
 <area shape="rect" id="node8" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="507,273,629,300"/>
 <area shape="rect" id="node10" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="2015,348,2107,375"/>
 <area shape="rect" id="node29" href="$isa__decoder_8hpp.html" title="This file defines an instruction decoder." alt="" coords="2521,273,2671,300"/>

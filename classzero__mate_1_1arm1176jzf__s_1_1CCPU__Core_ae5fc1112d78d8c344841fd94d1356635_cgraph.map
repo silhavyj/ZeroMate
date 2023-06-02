@@ -8,6 +8,6 @@
 <area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#ae43548d291eecc463c519086e7527ff2" title="Returns the shift type used when constructing the second operand." alt="" coords="507,165,695,221"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html#a1dc73c441b156452b1467eaa5cab46f5" title="Returns the value of the I bit (bit 25 = immediate second operand)." alt="" coords="507,245,695,301"/>
 <area shape="rect" id="node8" href="$namespacezero__mate_1_1utils_1_1math.html#afda20fa50949a9cd3a80f811b0085221" title="Sign&#45;extends the given integral value." alt="" coords="517,326,686,367"/>
-<area shape="rect" id="node10" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title=" " alt="" coords="504,398,699,439"/>
-<area shape="rect" id="node11" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="747,398,945,439"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title="Logs a warning message via all registered loggers." alt="" coords="504,398,699,439"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title="Extract the filename from a given location within the source files." alt="" coords="747,398,945,439"/>
 </map>

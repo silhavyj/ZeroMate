@@ -1,7 +1,7 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Context::Get_SPSR" name="zero_mate::arm1176jzf_s::CCPU_Context::Get_SPSR">
 <area shape="rect" id="node1" title="Returns a const reference to the SPSR register of the CPU mode passed in as a parameter." alt="" coords="5,43,215,84"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a050dada520ca82a21874045815c596a8" title=" " alt="" coords="263,35,445,91"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="493,5,688,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="493,5,688,47"/>
 <area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6fc387fa0b0dd040c4e2463606d933e4" title="Checks if the CPU mode passed in as a parameter supports the SPSR register or not." alt="" coords="504,71,677,127"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title=" " alt="" coords="736,5,935,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title="Extract the filename from a given location within the source files." alt="" coords="736,5,935,47"/>
 </map>

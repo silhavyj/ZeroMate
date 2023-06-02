@@ -2,5 +2,5 @@
 <area shape="rect" id="node1" title="This class represents the system control coprocessor." alt="" coords="37,304,214,345"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1ICoprocessor.html" title="This class represents an interface of a coprocessor." alt="" coords="135,213,313,255"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" title="This class represents the context (registers) of the CPU." alt="" coords="136,109,309,151"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title=" " alt="" coords="5,5,200,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title="This class defines a logging system that is used throughout the project." alt="" coords="5,5,200,47"/>
 </map>

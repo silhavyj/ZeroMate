@@ -16,7 +16,7 @@ var classzero__mate_1_1utils_1_1ILogger =
     [ "operator=", "classzero__mate_1_1utils_1_1ILogger.html#aa6dce55a2ec4d9aae63124596a68dbe9", null ],
     [ "operator=", "classzero__mate_1_1utils_1_1ILogger.html#a8e746a21e5c05081d932eeb7de542b08", null ],
     [ "Print", "classzero__mate_1_1utils_1_1ILogger.html#adc8ba800a01938f0ebf1d0c78ad66722", null ],
-    [ "Set_Logging_Level", "classzero__mate_1_1utils_1_1ILogger.html#a6d7e8f9460ccafa50f22e9d78ee15c7a", null ],
+    [ "Set_Logging_Level", "classzero__mate_1_1utils_1_1ILogger.html#a6ce90b624374b73bedcd20b799f1196b", null ],
     [ "Warning", "classzero__mate_1_1utils_1_1ILogger.html#a480bb3a45da1a4b4de84a5764e0c007c", null ],
     [ "m_logging_level", "classzero__mate_1_1utils_1_1ILogger.html#aae923e5cdee3e0f28937be3aa4b06213", null ]
 ];

@@ -1,9 +1,9 @@
 <map id="zero_mate::utils::CLogging_System::Extract_Filename" name="zero_mate::utils::CLogging_System::Extract_Filename">
-<area shape="rect" id="node1" title=" " alt="" coords="1627,1044,1825,1085"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" title=" " alt="" coords="1384,857,1579,899"/>
-<area shape="rect" id="node15" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title=" " alt="" coords="1384,1521,1579,1563"/>
-<area shape="rect" id="node36" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02" title=" " alt="" coords="1384,1189,1579,1231"/>
-<area shape="rect" id="node38" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title=" " alt="" coords="1384,355,1579,396"/>
+<area shape="rect" id="node1" title="Extract the filename from a given location within the source files." alt="" coords="1627,1044,1825,1085"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" title="Logs a debug message via all registered loggers." alt="" coords="1384,857,1579,899"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="1384,1521,1579,1563"/>
+<area shape="rect" id="node36" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02" title="Logs an info message via all registered loggers." alt="" coords="1384,1189,1579,1231"/>
+<area shape="rect" id="node38" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title="Logs a warning message via all registered loggers." alt="" coords="1384,355,1579,396"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" title="Clears a pending interrupt by writing a 1 to the GPEDS register." alt="" coords="1103,971,1310,1012"/>
 <area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa731c1d6e73a4db1087a803ca5fe5557" title="Enables/disables interrupts from a basic IRQ source." alt="" coords="1105,570,1309,626"/>
 <area shape="rect" id="node7" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ac3c9423e443ca2389cef743f32713cca" title="Enables/disables interrupts from an IRQ source." alt="" coords="1123,650,1290,706"/>

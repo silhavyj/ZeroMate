@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file defines a general logger interface as well as a logging system that is used in the project.">
 <polygon fill="#bfbfbf" stroke="black" points="934.5,-469.5 934.5,-499.5 1047.5,-499.5 1047.5,-469.5 934.5,-469.5"/>
 <text text-anchor="start" x="942.5" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/utils/logger</text>
 <text text-anchor="middle" x="991" y="-476.5" font-family="Helvetica,sans-Serif" font-size="10.00">/logger.hpp</text>
@@ -181,7 +181,7 @@
 <!-- Node39 -->
 <g id="node39" class="node">
 <title>Node39</title>
-<g id="a_node39"><a xlink:href="logger_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node39"><a xlink:href="logger_8cpp.html" target="_top" xlink:title="This file implements a general logger interface as well as a logging system that is used in the proje...">
 <polygon fill="none" stroke="black" points="1906.5,-402.5 1906.5,-432.5 2019.5,-432.5 2019.5,-402.5 1906.5,-402.5"/>
 <text text-anchor="start" x="1914.5" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/utils/logger</text>
 <text text-anchor="middle" x="1963" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">/logger.cpp</text>
@@ -197,7 +197,7 @@
 <!-- Node40 -->
 <g id="node40" class="node">
 <title>Node40</title>
-<g id="a_node40"><a xlink:href="logger__stdo_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node40"><a xlink:href="logger__stdo_8hpp.html" target="_top" xlink:title="This file defines a standard output logger (STDO).">
 <polygon fill="none" stroke="black" points="1625.5,-402.5 1625.5,-432.5 1738.5,-432.5 1738.5,-402.5 1625.5,-402.5"/>
 <text text-anchor="start" x="1633.5" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/utils/logger</text>
 <text text-anchor="middle" x="1682" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">/logger_stdo.hpp</text>
@@ -814,7 +814,7 @@
 <!-- Node41 -->
 <g id="node41" class="node">
 <title>Node41</title>
-<g id="a_node41"><a xlink:href="logger__stdo_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node41"><a xlink:href="logger__stdo_8cpp.html" target="_top" xlink:title="This file defines a standard output logger (STDO) as defined in logger_stdo.hpp.">
 <polygon fill="none" stroke="black" points="1625.5,-335.5 1625.5,-365.5 1738.5,-365.5 1738.5,-335.5 1625.5,-335.5"/>
 <text text-anchor="start" x="1633.5" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/utils/logger</text>
 <text text-anchor="middle" x="1682" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">/logger_stdo.cpp</text>

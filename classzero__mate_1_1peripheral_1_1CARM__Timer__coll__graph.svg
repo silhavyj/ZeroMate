@@ -53,7 +53,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html" target="_top" xlink:title="This class defines a logging system that is used throughout the project.">
 <polygon fill="none" stroke="black" points="0,-49.5 0,-79.5 146,-79.5 146,-49.5 0,-49.5"/>
 <text text-anchor="start" x="8" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="73" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">_System</text>
