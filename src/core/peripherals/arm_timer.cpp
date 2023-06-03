@@ -12,6 +12,7 @@
 // STL imports (excluded from Doxygen)
 /// \cond
 #include <bit>
+#include <algorithm>
 /// \endcond
 
 // 3rd party library includes
@@ -39,9 +40,14 @@ namespace zero_mate::peripheral
     // clang-format on
 
     CARM_Timer::CPrescaler::CPrescaler()
-    : m_limit{ NPrescal_Bits::Prescale_None }
-    , m_counter{ 0 }
     {
+        Reset();
+    }
+
+    void CARM_Timer::CPrescaler::Reset() noexcept
+    {
+        m_counter = 0;
+        m_limit = NPrescal_Bits::Prescale_None;
     }
 
     void CARM_Timer::CPrescaler::Set_Limit(zero_mate::peripheral::CARM_Timer::NPrescal_Bits limit)
@@ -98,27 +104,10 @@ namespace zero_mate::peripheral
 
     CARM_Timer::CARM_Timer(std::shared_ptr<CInterrupt_Controller> interrupt_controller)
     : m_interrupt_controller{ interrupt_controller }
-    , m_regs{}
     , m_prescaler{}
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
-        // Set up default settings of the timer.
-        // clang-format off
-        Get_Reg(NRegister::Control) = std::bit_cast<std::uint32_t>(TControl_Register{
-            .Unused_0               = 0b0U,
-            .Counter_32b            = 0b1U, // 32-bit mode
-            .Prescaler              = 0b00,
-            .Unused_1               = 0b0U,
-            .Interrupt_Enabled      = 0b0U,
-            .Unused_2               = 0b0U,
-            .Timer_Enabled          = 0b0U,
-            .Halt_In_Debug_Break    = 0b0U,
-            .Free_Running           = 0b0U,
-            .Unused_3               = 0b000000U,
-            .Free_Running_Prescaler = 0b0000'0000U,
-            .Unused_4               = 0b0000'0000U
-        });
-        // clang-format on
+        Reset();
     }
 
     void CARM_Timer::Timer_Has_Reached_Zero(const TControl_Register& control_reg)
@@ -200,6 +189,30 @@ namespace zero_mate::peripheral
     std::uint32_t CARM_Timer::Get_Size() const noexcept
     {
         return static_cast<std::uint32_t>(sizeof(m_regs));
+    }
+
+    void CARM_Timer::Reset() noexcept
+    {
+        m_prescaler.Reset();
+        std::fill(m_regs.begin(), m_regs.end(), 0);
+
+        // Set up default settings of the timer.
+        // clang-format off
+        Get_Reg(NRegister::Control) = std::bit_cast<std::uint32_t>(TControl_Register{
+            .Unused_0               = 0b0U,
+            .Counter_32b            = 0b1U, // 32-bit mode
+            .Prescaler              = 0b00,
+            .Unused_1               = 0b0U,
+            .Interrupt_Enabled      = 0b0U,
+            .Unused_2               = 0b0U,
+            .Timer_Enabled          = 0b0U,
+            .Halt_In_Debug_Break    = 0b0U,
+            .Free_Running           = 0b0U,
+            .Unused_3               = 0b000000U,
+            .Free_Running_Prescaler = 0b0000'0000U,
+            .Unused_4               = 0b0000'0000U
+        });
+        // clang-format on
     }
 
     void CARM_Timer::Write(std::uint32_t addr, const char* data, std::uint32_t size)

@@ -32,11 +32,14 @@ namespace zero_mate::peripheral
     , m_regs{}
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
-        Initialize();
+        Reset();
     }
 
-    void CInterrupt_Controller::Initialize()
+    void CInterrupt_Controller::Reset() noexcept
     {
+        // Clear the contents of the registers.
+        std::fill(m_regs.begin(), m_regs.end(), 0);
+
         Initialize_Basic_IRQ_Sources();
         Initialize_IRQ_Sources();
     }

@@ -259,6 +259,11 @@ namespace zero_mate::peripheral
         explicit CGPIO_Manager(std::shared_ptr<CInterrupt_Controller> interrupt_controller) noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets/re-initializes the GPIO manager (IPeripheral interface).
+        // -------------------------------------------------------------------------------------------------------------
+        void Reset() noexcept override;
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns the size of the peripheral (IPeripheral interface).
         /// \return number of register * register size
         // -------------------------------------------------------------------------------------------------------------

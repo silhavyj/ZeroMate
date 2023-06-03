@@ -52,6 +52,11 @@ namespace zero_mate::peripheral
         explicit CRAM(std::uint32_t size, std::uint32_t addr, const std::vector<std::uint32_t>& instructions);
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets/re-initializes the RAM (IPeripheral interface).
+        // -------------------------------------------------------------------------------------------------------------
+        void Reset() noexcept override;
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns the size of the peripheral (IPeripheral interface).
         /// \return Size of the RAM
         // -------------------------------------------------------------------------------------------------------------

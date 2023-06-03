@@ -57,6 +57,7 @@ namespace zero_mate::gui
         bool s_elf_file_has_been_loaded{ false };
         bool s_cpu_running{ false };
 
+        std::vector<std::shared_ptr<peripheral::IPeripheral>> s_peripherals;
         std::vector<std::shared_ptr<CGUI_Window>> s_windows;
 
         struct TINI_Config_Values
@@ -82,9 +83,9 @@ namespace zero_mate::gui
         {
             s_windows.emplace_back(std::make_shared<CRegisters_Window>(s_cpu, s_cpu_running));
             s_windows.push_back(std::make_shared<CRAM_Window>(s_ram));
-            s_windows.emplace_back(std::make_shared<CControl_Window>(s_cpu, s_scroll_to_curr_line, s_elf_file_has_been_loaded, s_cpu_running));
+            s_windows.emplace_back(std::make_shared<CControl_Window>(s_cpu, s_scroll_to_curr_line, s_elf_file_has_been_loaded, s_cpu_running, s_peripherals));
             s_windows.emplace_back(std::make_shared<CSource_Code_Window>(s_cpu, s_source_code, s_scroll_to_curr_line, s_cpu_running));
-            s_windows.emplace_back(std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code, s_elf_file_has_been_loaded));
+            s_windows.emplace_back(std::make_shared<CFile_Window>(s_bus, s_cpu, s_source_code, s_elf_file_has_been_loaded, s_peripherals));
             s_windows.emplace_back(std::make_shared<CGPIO_Window>(s_gpio));
             s_windows.emplace_back(s_log_window);
             s_windows.emplace_back(std::make_shared<CInterrupt_Controller_Window>(s_interrupt_controller));
@@ -104,6 +105,10 @@ namespace zero_mate::gui
             if (status != CBus::NStatus::OK)
             {
                 s_logging_system.Error(fmt::format("Failed to attach the {} to the bus address (error value = {})", name, magic_enum::enum_name(status)).c_str());
+            }
+            else
+            {
+                s_peripherals.emplace_back(peripheral);
             }
         }
 

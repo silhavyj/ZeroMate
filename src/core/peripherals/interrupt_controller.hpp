@@ -117,6 +117,11 @@ namespace zero_mate::peripheral
         explicit CInterrupt_Controller(const arm1176jzf_s::CCPU_Context& cpu_context);
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets/re-initializes the interrupt controller (IPeripheral interface).
+        // -------------------------------------------------------------------------------------------------------------
+        void Reset() noexcept override;
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns the size of the peripheral (IPeripheral interface).
         /// \return number of register * register size
         // -------------------------------------------------------------------------------------------------------------
@@ -216,13 +221,6 @@ namespace zero_mate::peripheral
         [[nodiscard]] static NIRQ_Source Get_IRQ_Source(std::size_t pin_idx) noexcept;
 
     private:
-        // -------------------------------------------------------------------------------------------------------------
-        /// \brief Initializes the interrupt controller.
-        ///
-        /// It calls #Initialize_Basic_IRQ_Sources and #Initialize_IRQ_Sources.
-        // -------------------------------------------------------------------------------------------------------------
-        inline void Initialize();
-
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Initializes the collection of basic IRQ sources.
         // -------------------------------------------------------------------------------------------------------------

@@ -1,4 +1,5 @@
 #include <thread>
+#include <algorithm>
 
 #include <imgui/imgui.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
@@ -12,7 +13,8 @@ namespace zero_mate::gui
     CControl_Window::CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
                                      bool& scroll_to_curr_line,
                                      const bool& elf_file_has_been_loaded,
-                                     bool& cpu_running)
+                                     bool& cpu_running,
+                                     std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals)
     : m_cpu{ cpu }
     , m_scroll_to_curr_line{ scroll_to_curr_line }
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
@@ -21,6 +23,7 @@ namespace zero_mate::gui
     , m_breakpoint_hit{ false }
     , m_start_cpu_thread{ false }
     , m_stop_cpu_thread{ false }
+    , m_peripherals{ peripherals }
     {
     }
 
@@ -89,6 +92,10 @@ namespace zero_mate::gui
         if (ImGui::Button(ICON_FA_POWER_OFF " Reset") && !m_cpu_running)
         {
             m_cpu->Reset_Context();
+
+            std::for_each(m_peripherals.begin(), m_peripherals.end(), [](auto& peripheral) -> void {
+                peripheral->Reset();
+            });
         }
     }
 

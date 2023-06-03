@@ -42,6 +42,11 @@ namespace zero_mate::peripheral
         }
     }
 
+    void CRAM::Reset() noexcept
+    {
+        // If the RAM was to be reset, the kernel would have to be loaded again.
+    }
+
     std::uint32_t CRAM::Get_Size() const noexcept
     {
         return m_size;

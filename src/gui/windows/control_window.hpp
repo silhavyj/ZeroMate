@@ -1,11 +1,14 @@
 #pragma once
 
 #include <atomic>
+#include <vector>
+#include <memory>
 
 #include "../window.hpp"
 
 #include "../../core/utils/logger/logger.hpp"
 #include "../../core/arm1176jzf_s/core.hpp"
+#include "../../core/peripherals/peripheral.hpp"
 
 namespace zero_mate::gui
 {
@@ -15,7 +18,8 @@ namespace zero_mate::gui
         explicit CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
                                  bool& scroll_to_curr_line,
                                  const bool& elf_file_has_been_loaded,
-                                 bool& cpu_running);
+                                 bool& cpu_running,
+                                 std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals);
 
         void Render() override;
 
@@ -35,5 +39,6 @@ namespace zero_mate::gui
         bool m_breakpoint_hit;
         std::atomic<bool> m_start_cpu_thread;
         std::atomic<bool> m_stop_cpu_thread;
+        std::vector<std::shared_ptr<peripheral::IPeripheral>>& m_peripherals;
     };
 }
