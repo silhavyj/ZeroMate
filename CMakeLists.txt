@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.21)
 # General info about the project
 project(
     ZeroMate
-    VERSION 0.0.1
+    VERSION 0.3.0
     DESCRIPTION "Raspberry Pi Zero emulator"
     HOMEPAGE_URL "https://github.com/silhavyj/ZeroMate"
     LANGUAGES C CXX)
@@ -29,6 +29,12 @@ set_project_warnings(project_warnings)
 # Add sanitizer options if supported by the compiler
 include(cmake/sanitizers.cmake)
 enable_sanitizers(project_options)
+
+# Turn on compiler optimizations for the Release build
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    include(cmake/compiler_optimizations.cmake)
+    set_project_optimizations(project_warnings)
+endif()
 
 # Allow for static analysis option
 include(cmake/static_analyzers.cmake)

@@ -9,6 +9,8 @@
 // STL imports (excluded from Doxygen)
 /// \cond
 #include <bit>
+#include <memory>
+#include <cstdlib>
 #include <unordered_map>
 /// \endcond
 
@@ -17,6 +19,7 @@
 #include <fmt/format.h>
 #include <elfio/elfio.hpp>
 #include <capstone/capstone.h>
+#include <llvm/Demangle/Demangle.h>
 
 // Project file imports
 
@@ -134,6 +137,31 @@ namespace zero_mate::utils::elf
         }
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Demangles the name of a given label.
+        /// \param label Name of the label to be demangled
+        /// \return Demangled name (if it fails to demangle the name, it returns the original one)
+        // -------------------------------------------------------------------------------------------------------------
+        inline std::string Demangle_Label_Name(const std::string& label)
+        {
+            // clang-format off
+            // RAII, so we do not have to manually manage the buffer.
+            const std::unique_ptr<char, void (*)(void*)> demangled_label(
+                llvm::itaniumDemangle(label.c_str(), nullptr, nullptr, nullptr),
+                std::free
+            );
+            // clang-format on
+
+            // Check if demangling was successful
+            if (demangled_label != nullptr)
+            {
+                return demangled_label.get();
+            }
+
+            // If it was not, return the original label.
+            return label;
+        }
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Disassembles an ELF file.
         /// \param elf_reader Reference to an ELF reader (ELF parser)
         /// \return Result of the disassembly process
@@ -193,7 +221,8 @@ namespace zero_mate::utils::elf
                     if (labels.contains(address))
                     {
                         // Push_back the label first before you push_back the instruction itself.
-                        result.disassembly.push_back({ NText_Section_Record_Type::Label, {}, {}, labels.at(address) });
+                        const auto demangled_label = Demangle_Label_Name(labels.at(address));
+                        result.disassembly.push_back({ NText_Section_Record_Type::Label, {}, {}, demangled_label });
                     }
 
                     // Add the instruction to the result.
