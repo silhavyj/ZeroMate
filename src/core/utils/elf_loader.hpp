@@ -80,4 +80,14 @@ namespace zero_mate::utils::elf
     // -----------------------------------------------------------------------------------------------------------------
     [[nodiscard]] TStatus Load_Kernel(CBus& bus, const char* filename);
 
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Reloads the same kernel that was loaded using the #Load_Kernel function.
+    ///
+    /// #Load_Kernel keeps track of what kernel was loaded - the same path is used in this function.
+    ///
+    /// \param bus  Reference to a bus via which the memory is accessed
+    /// \return Packed structure containing disassembled instructions as well as a status code
+    // -----------------------------------------------------------------------------------------------------------------
+    [[nodiscard]] TStatus Reload_Kernel(CBus& bus);
+
 } // namespace zero_mate::utils::elf

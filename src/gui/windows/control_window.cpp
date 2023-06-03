@@ -7,6 +7,7 @@
 #include "control_window.hpp"
 
 #include "../../core/utils/singleton.hpp"
+#include "../../core/utils/elf_loader.hpp"
 
 namespace zero_mate::gui
 {
@@ -14,7 +15,8 @@ namespace zero_mate::gui
                                      bool& scroll_to_curr_line,
                                      const bool& elf_file_has_been_loaded,
                                      bool& cpu_running,
-                                     std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals)
+                                     std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals,
+                                     std::shared_ptr<CBus> bus)
     : m_cpu{ cpu }
     , m_scroll_to_curr_line{ scroll_to_curr_line }
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
@@ -24,6 +26,7 @@ namespace zero_mate::gui
     , m_start_cpu_thread{ false }
     , m_stop_cpu_thread{ false }
     , m_peripherals{ peripherals }
+    , m_bus{ bus }
     {
     }
 
@@ -91,11 +94,36 @@ namespace zero_mate::gui
 
         if (ImGui::Button(ICON_FA_POWER_OFF " Reset") && !m_cpu_running)
         {
-            m_cpu->Reset_Context();
+            Reset_Emulator();
+        }
+    }
 
-            std::for_each(m_peripherals.begin(), m_peripherals.end(), [](auto& peripheral) -> void {
-                peripheral->Reset();
-            });
+    void CControl_Window::Reset_Emulator()
+    {
+        m_cpu->Reset_Context();
+        std::for_each(m_peripherals.begin(), m_peripherals.end(), [](auto& peripheral) -> void {
+            peripheral->Reset();
+        });
+
+        const auto [error_code, pc, disassembly] = utils::elf::Reload_Kernel(*m_bus);
+
+        switch (error_code)
+        {
+            case utils::elf::NError_Code::OK:
+                m_logging_system.Info(fmt::format("The .ELF file has been loaded successfully. The program starts at 0x{:08X}", pc).c_str());
+                break;
+
+            case utils::elf::NError_Code::ELF_64_Not_Supported:
+                m_logging_system.Error("64 bit ELF format is not supported by the emulator");
+                break;
+
+            case utils::elf::NError_Code::ELF_Loader_Error:
+                m_logging_system.Error("Failed to load the ELF file. Make sure you entered a valid path to a valid ELF file");
+                break;
+
+            case utils::elf::NError_Code::Disassembly_Engine_Error:
+                m_logging_system.Error("Failed to initialize a disassembly engine");
+                break;
         }
     }
 

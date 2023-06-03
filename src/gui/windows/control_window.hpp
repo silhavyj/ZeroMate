@@ -19,7 +19,8 @@ namespace zero_mate::gui
                                  bool& scroll_to_curr_line,
                                  const bool& elf_file_has_been_loaded,
                                  bool& cpu_running,
-                                 std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals);
+                                 std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals,
+                                 std::shared_ptr<CBus> bus);
 
         void Render() override;
 
@@ -29,6 +30,7 @@ namespace zero_mate::gui
         static void Render_ImGUI_Demo();
         void Print_No_ELF_File_Loaded_Error_Msg() const;
         void Run();
+        void Reset_Emulator();
 
     private:
         std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;
@@ -40,5 +42,6 @@ namespace zero_mate::gui
         std::atomic<bool> m_start_cpu_thread;
         std::atomic<bool> m_stop_cpu_thread;
         std::vector<std::shared_ptr<peripheral::IPeripheral>>& m_peripherals;
+        std::shared_ptr<CBus> m_bus;
     };
 }

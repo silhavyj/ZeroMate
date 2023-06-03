@@ -32,6 +32,8 @@ namespace zero_mate::utils::elf
     // Anonymous namespace to make its content visible only to this translation unit.
     namespace
     {
+        std::string s_last_filename_loaded{""};
+
         // -------------------------------------------------------------------------------------------------------------
         /// \struct TDisassembly_Result
         /// \brief This structure represents the return value of the #Disassemble_Instructions function.
@@ -275,6 +277,7 @@ namespace zero_mate::utils::elf
     TStatus Load_Kernel(CBus& bus, const char* filename)
     {
         ELFIO::elfio elf_reader;
+        s_last_filename_loaded = filename;
 
         // Load the kernel using the elfio library.
         if (!elf_reader.load(filename, true))
@@ -299,6 +302,11 @@ namespace zero_mate::utils::elf
             static_cast<std::uint32_t>(elf_reader.get_entry()), // Address of the first instruction
             disassembly_result.disassembly                      // Disassembled instructions
         };
+    }
+
+    TStatus Reload_Kernel(CBus& bus)
+    {
+        return Load_Kernel(bus, s_last_filename_loaded.c_str());
     }
 
 } // namespace zero_mate::utils::elf
