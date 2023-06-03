@@ -21,9 +21,6 @@ namespace zero_mate::gui
         void Render() override;
 
     private:
-        void Reset_Emulator(std::uint32_t pc);
-
-    private:
         std::shared_ptr<CBus> m_bus;
         std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;
         std::vector<utils::elf::TText_Section_Record>& m_source_code;

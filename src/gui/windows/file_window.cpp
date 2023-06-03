@@ -21,15 +21,6 @@ namespace zero_mate::gui
     {
     }
 
-    void CFile_Window::Reset_Emulator(std::uint32_t pc)
-    {
-        m_cpu->Reset_Context();
-        m_cpu->Set_PC(pc);
-        std::for_each(m_peripherals.begin(), m_peripherals.end(), [](auto& peripheral) -> void {
-            peripheral->Reset();
-        });
-    }
-
     void CFile_Window::Render()
     {
         if (ImGui::Begin("File"))
@@ -56,12 +47,19 @@ namespace zero_mate::gui
                     if (s_open_elf)
                     {
                         s_elf_filename = ImGuiFileDialog::Instance()->GetFilePathName();
+
+                        // Reset peripherals.
+                        std::for_each(m_peripherals.begin(), m_peripherals.end(), [](auto& peripheral) -> void {
+                            peripheral->Reset();
+                        });
+
                         const auto [error_code, pc, disassembly] = utils::elf::Load_Kernel(*m_bus, s_elf_filename.c_str());
 
                         switch (error_code)
                         {
                             case utils::elf::NError_Code::OK:
-                                Reset_Emulator(pc);
+                                m_cpu->Reset_Context();
+                                m_cpu->Set_PC(pc);
                                 m_source_code = disassembly;
                                 m_logging_system.Info(fmt::format("The .ELF file has been loaded successfully. The program starts at 0x{:08X}", pc).c_str());
                                 m_elf_file_has_been_loaded = true;

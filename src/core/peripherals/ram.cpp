@@ -10,6 +10,7 @@
 /// \cond
 #include <cassert>
 #include <algorithm>
+#include <execution>
 /// \endcond
 
 // Project file imports
@@ -44,7 +45,8 @@ namespace zero_mate::peripheral
 
     void CRAM::Reset() noexcept
     {
-        // If the RAM was to be reset, the kernel would have to be loaded again.
+        // Clear out the content of the RAM.
+        std::fill_n(std::execution::par, m_data.get(), m_size, 0);
     }
 
     std::uint32_t CRAM::Get_Size() const noexcept
@@ -77,8 +79,7 @@ namespace zero_mate::peripheral
         // Make sure the allocation did not fail.
         assert(m_data != nullptr);
 
-        // Clear out the content of the RAM.
-        std::fill_n(m_data.get(), m_size, 0);
+        Reset();
     }
 
 } // namespace zero_mate::peripheral
