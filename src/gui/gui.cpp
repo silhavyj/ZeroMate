@@ -1,4 +1,3 @@
-#include <cassert>
 #include <filesystem>
 
 #include <GL/glew.h>
@@ -19,6 +18,7 @@
 #include "windows/file_window.hpp"
 #include "windows/log_window.hpp"
 
+#include "windows/cp15_window.hpp"
 #include "windows/peripherals/ram_window.hpp"
 #include "windows/peripherals/gpio_window.hpp"
 #include "windows/peripherals/arm_timer_window.hpp"
@@ -90,6 +90,7 @@ namespace zero_mate::gui
             s_windows.emplace_back(std::make_shared<CInterrupt_Controller_Window>(s_interrupt_controller));
             s_windows.emplace_back(std::make_shared<CARM_Timer_Window>(s_arm_timer));
             s_windows.emplace_back(std::make_shared<CMonitor_Window>(s_monitor));
+            s_windows.emplace_back(std::make_shared<CCP15_Window>(s_cp15));
 
             s_windows.emplace_back(std::make_shared<external_peripheral::CButton>(s_gpio));
         }
