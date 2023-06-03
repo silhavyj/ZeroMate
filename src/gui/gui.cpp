@@ -309,7 +309,7 @@ namespace zero_mate::gui
             }
 
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
-            assert(ImGui::Begin("##ZeroMate Dockspace", &dockspace_open, window_flags));
+            ImGui::Begin("##ZeroMate Dockspace", &dockspace_open, window_flags);
             ImGui::PopStyleVar();
             ImGui::PopStyleVar(2);
 
