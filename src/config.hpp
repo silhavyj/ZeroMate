@@ -1,10 +1,16 @@
 #pragma once
 
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <cstdint>
+/// \endcond
 
 namespace zero_mate::config
 {
     inline const char* const CONFIG_FILE = "peripherals.ini";
+
+    inline const char* const FONT_PATH = "fonts/Cousine-Regular.ttf";
+    inline const char* const ICONS_PATH = "icons/fa-solid-900.ttf";
 
     // TODO group these up into a structure?
     inline const char* const RAM_SECTION = "ram";
@@ -20,4 +26,5 @@ namespace zero_mate::config
     inline constexpr std::uint32_t DEFAULT_INTERRUPT_CONTROLLER_MAP_ADDR = 0x2020B000;
     inline constexpr std::uint32_t DEFAULT_ARM_TIMER_MAP_ADDR = 0x2000B400;
     inline constexpr std::uint32_t DEFAULT_MONITOR_MAP_ADDR = 0x30000000;
-}
+
+} // namespace zero_mate::config

@@ -115,6 +115,7 @@ endif()
 add_custom_command(
     TARGET zero_mate POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/fonts $<TARGET_FILE_DIR:zero_mate>/fonts
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/icons $<TARGET_FILE_DIR:zero_mate>/icons
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/imgui.ini $<TARGET_FILE_DIR:zero_mate>
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/peripherals.ini $<TARGET_FILE_DIR:zero_mate>)
 

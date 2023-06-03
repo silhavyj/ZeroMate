@@ -262,9 +262,9 @@ namespace zero_mate::gui
         ImGui_ImplGlfw_InitForOpenGL(window, true);
         ImGui_ImplOpenGL3_Init("#version 130");
 
-        if (std::filesystem::exists(FONT_PATH) && std::filesystem::exists(ICONS_PATH))
+        if (std::filesystem::exists(config::FONT_PATH) && std::filesystem::exists(config::ICONS_PATH))
         {
-            imgui_io.Fonts->AddFontFromFileTTF(FONT_PATH, 15.0f);
+            imgui_io.Fonts->AddFontFromFileTTF(config::FONT_PATH, 15.0f);
 
             const float baseFontSize = 13.0f;
             const float iconFontSize = baseFontSize * 2.0f / 3.0f;
@@ -274,7 +274,7 @@ namespace zero_mate::gui
             icons_config.MergeMode = true;
             icons_config.PixelSnapH = true;
             icons_config.GlyphMinAdvanceX = iconFontSize;
-            imgui_io.Fonts->AddFontFromFileTTF(ICONS_PATH, iconFontSize, &icons_config, icons_ranges);
+            imgui_io.Fonts->AddFontFromFileTTF(config::ICONS_PATH, iconFontSize, &icons_config, icons_ranges);
         }
         else
         {
