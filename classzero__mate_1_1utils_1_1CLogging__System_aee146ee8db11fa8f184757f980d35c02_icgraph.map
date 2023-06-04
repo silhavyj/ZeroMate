@@ -1,6 +1,8 @@
 <map id="zero_mate::utils::CLogging_System::Info" name="zero_mate::utils::CLogging_System::Info">
-<area shape="rect" id="node1" title="Logs an info message via all registered loggers." alt="" coords="467,39,661,80"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CFile__Window.html#affaac4b63e2d16566e84c333a0f48468" title=" " alt="" coords="248,5,407,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CControl__Window.html#ad83b2651e1d6bf8ed72e3553526f17ca" title=" " alt="" coords="236,71,419,112"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a" title=" " alt="" coords="5,71,188,112"/>
+<area shape="rect" id="node1" title="Logs an info message via all registered loggers." alt="" coords="711,71,905,112"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CFile__Window.html#affaac4b63e2d16566e84c333a0f48468" title=" " alt="" coords="488,5,647,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a37a3c37d6d92c239742abf75b3aebec9" title=" " alt="" coords="472,71,663,112"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CControl__Window.html#ad83b2651e1d6bf8ed72e3553526f17ca" title=" " alt="" coords="239,140,421,181"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a9be0d8c611ece954a13f3763744b074f" title=" " alt="" coords="236,59,424,115"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a" title=" " alt="" coords="5,104,188,145"/>
 </map>

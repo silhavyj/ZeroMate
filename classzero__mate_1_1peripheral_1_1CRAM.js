@@ -6,6 +6,7 @@ var classzero__mate_1_1peripheral_1_1CRAM =
     [ "Get_Size", "classzero__mate_1_1peripheral_1_1CRAM.html#a6ed6eb56a2ff8535a1db140be66c4f5e", null ],
     [ "Init", "classzero__mate_1_1peripheral_1_1CRAM.html#ab231821e251900b34a6a8beddb6b90a5", null ],
     [ "Read", "classzero__mate_1_1peripheral_1_1CRAM.html#a96af986ac0df7c1246dce8795233f95a", null ],
+    [ "Reset", "classzero__mate_1_1peripheral_1_1CRAM.html#a945ad7d05b3e0dcfc3f09dd66b819c4f", null ],
     [ "Write", "classzero__mate_1_1peripheral_1_1CRAM.html#ae61301f586d6e9c233951576d9005c17", null ],
     [ "m_data", "classzero__mate_1_1peripheral_1_1CRAM.html#af666b03d57d54bc912e36616d431d568", null ],
     [ "m_size", "classzero__mate_1_1peripheral_1_1CRAM.html#ab37eff04eecd29945c3e92fb1fc322c5", null ]

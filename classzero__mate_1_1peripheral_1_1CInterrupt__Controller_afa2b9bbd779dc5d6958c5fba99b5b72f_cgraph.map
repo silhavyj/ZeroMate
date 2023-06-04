@@ -1,6 +1,6 @@
 <map id="zero_mate::peripheral::CInterrupt_Controller::CInterrupt_Controller" name="zero_mate::peripheral::CInterrupt_Controller::CInterrupt_Controller">
 <area shape="rect" id="node1" title="Creates an instance of the class." alt="" coords="5,57,172,113"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa5a5645d4adb59932e0775fcf561f3fd" title="Initializes the interrupt controller." alt="" coords="220,57,387,113"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae7fe10265670800403226ebc23a96179" title="Resets/re&#45;initializes the interrupt controller (IPeripheral interface)." alt="" coords="220,57,387,113"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9f4f351805d9081a77d7949c494fd29b" title="Initializes the collection of basic IRQ sources." alt="" coords="439,5,605,76"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a888a57d7926bd4900a70fb25ef1e1a1c" title="Initializes the collection of IRQ sources." alt="" coords="435,101,609,157"/>
 </map>

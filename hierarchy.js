@@ -7,6 +7,7 @@ var hierarchy =
     [ "zero_mate::arm1176jzf_s::CCPU_Core", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html", null ],
     [ "zero_mate::gui::CGUI_Window", "classzero__mate_1_1gui_1_1CGUI__Window.html", [
       [ "zero_mate::gui::CARM_Timer_Window", "classzero__mate_1_1gui_1_1CARM__Timer__Window.html", null ],
+      [ "zero_mate::gui::CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", null ],
       [ "zero_mate::gui::CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", null ],
       [ "zero_mate::gui::CFile_Window", "classzero__mate_1_1gui_1_1CFile__Window.html", null ],
       [ "zero_mate::gui::CGPIO_Window", "classzero__mate_1_1gui_1_1CGPIO__Window.html", null ],
@@ -76,6 +77,7 @@ var hierarchy =
     [ "zero_mate::CBus::TMapped_Peripheral", "structzero__mate_1_1CBus_1_1TMapped__Peripheral.html", null ],
     [ "zero_mate::arm1176jzf_s::alu::TResult", "structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html", null ],
     [ "zero_mate::arm1176jzf_s::mac::TResult", "structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html", null ],
+    [ "zero_mate::gui::CSource_Code_Window::TRGB_Color", "structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color.html", null ],
     [ "zero_mate::utils::math::TShift_Result< Type >", "structzero__mate_1_1utils_1_1math_1_1TShift__Result.html", null ],
     [ "zero_mate::utils::elf::TStatus", "structzero__mate_1_1utils_1_1elf_1_1TStatus.html", null ],
     [ "zero_mate::utils::elf::TText_Section_Record", "structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html", null ]

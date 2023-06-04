@@ -117,6 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a52c8a1be92a9db647fa95710400efad7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CMonitor.html#a52c8a1be92a9db647fa95710400efad7">CMonitor</a> ()</td></tr>
 <tr class="memdesc:a52c8a1be92a9db647fa95710400efad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1peripheral_1_1CMonitor.html#a52c8a1be92a9db647fa95710400efad7">More...</a><br /></td></tr>
 <tr class="separator:a52c8a1be92a9db647fa95710400efad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c4e663850daef1aff87cd8b7c159fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CMonitor.html#ab1c4e663850daef1aff87cd8b7c159fa">Reset</a> () noexcept override</td></tr>
+<tr class="memdesc:ab1c4e663850daef1aff87cd8b7c159fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets/re-initializes the monitor (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CMonitor.html#ab1c4e663850daef1aff87cd8b7c159fa">More...</a><br /></td></tr>
+<tr class="separator:ab1c4e663850daef1aff87cd8b7c159fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a363e9162d7b343f92a05eb7c3d7b4d18"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CMonitor.html#a363e9162d7b343f92a05eb7c3d7b4d18">Get_Size</a> () const noexcept override</td></tr>
 <tr class="memdesc:a363e9162d7b343f92a05eb7c3d7b4d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CMonitor.html#a363e9162d7b343f92a05eb7c3d7b4d18">More...</a><br /></td></tr>
 <tr class="separator:a363e9162d7b343f92a05eb7c3d7b4d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,6 +193,12 @@ Private Attributes</h2></td></tr>
 
 <p>Creates an instance of the class. </p>
 <p>It uses <a class="el" href="classzero__mate_1_1peripheral_1_1CMonitor.html#aa2ecbe2d1727b9312d93b887dbbada06" title="Default character used to fill out the monitor with.">DEFAULT_CHARACTER</a> as the default character (the user is supposed to initially clear the monitor). </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CMonitor_a52c8a1be92a9db647fa95710400efad7_cgraph.svg" width="390" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -295,6 +304,41 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a627a2ceb458041ac41e2de52484c918f">zero_mate::peripheral::IPeripheral</a>.</p>
+
+</div>
+</div>
+<a id="ab1c4e663850daef1aff87cd8b7c159fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c4e663850daef1aff87cd8b7c159fa">&#9670;&nbsp;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::peripheral::CMonitor::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets/re-initializes the monitor (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
+
+<p>Implements <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#ad51da04a4d143152f96290bfe1c7fcd0">zero_mate::peripheral::IPeripheral</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CMonitor_ab1c4e663850daef1aff87cd8b7c159fa_icgraph.svg" width="390" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>

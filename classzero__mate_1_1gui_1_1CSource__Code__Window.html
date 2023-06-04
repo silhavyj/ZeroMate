@@ -86,8 +86,10 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1gui_1_1CSource__Cod
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classzero__mate_1_1gui_1_1CSource__Code__Window-members.html">List of all members</a>  </div>
@@ -110,6 +112,11 @@ Collaboration diagram for zero_mate::gui::CSource_Code_Window:</div>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color.html">TRGB_Color</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ed2a9cefe8346252d56c994d2eefe8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CSource__Code__Window.html#a2ed2a9cefe8346252d56c994d2eefe8c">CSource_Code_Window</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt; cpu, std::vector&lt; <a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html">utils::elf::TText_Section_Record</a> &gt; &amp;source_code, bool &amp;scroll_to_curr_line, const bool &amp;cpu_running)</td></tr>
@@ -136,6 +143,13 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:acdb10e47501c4cf6af2c50383388cc4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f6a5501665b1b3c3883c88660873d09"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CSource__Code__Window.html#a9f6a5501665b1b3c3883c88660873d09">Highlight_Code_Block</a> (std::size_t idx) const</td></tr>
 <tr class="separator:a9f6a5501665b1b3c3883c88660873d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a8ab01667cca3406c621027962c2d22bd"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CSource__Code__Window.html#a8ab01667cca3406c621027962c2d22bd">Extract_Class_Name</a> (std::string label)</td></tr>
+<tr class="separator:a8ab01667cca3406c621027962c2d22bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afefe1191e405b0ad44c81b54ff63ad97"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color.html">TRGB_Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CSource__Code__Window.html#afefe1191e405b0ad44c81b54ff63ad97">Pick_Color</a> (const std::string &amp;str)</td></tr>
+<tr class="separator:afefe1191e405b0ad44c81b54ff63ad97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -205,6 +219,38 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8ab01667cca3406c621027962c2d22bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab01667cca3406c621027962c2d22bd">&#9670;&nbsp;</a></span>Extract_Class_Name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string zero_mate::gui::CSource_Code_Window::Extract_Class_Name </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CSource__Code__Window_a8ab01667cca3406c621027962c2d22bd_icgraph.svg" width="724" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a9f6a5501665b1b3c3883c88660873d09"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f6a5501665b1b3c3883c88660873d09">&#9670;&nbsp;</a></span>Highlight_Code_Block()</h2>
 
@@ -237,6 +283,38 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="afefe1191e405b0ad44c81b54ff63ad97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefe1191e405b0ad44c81b54ff63ad97">&#9670;&nbsp;</a></span>Pick_Color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color.html">CSource_Code_Window::TRGB_Color</a> zero_mate::gui::CSource_Code_Window::Pick_Color </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CSource__Code__Window_afefe1191e405b0ad44c81b54ff63ad97_icgraph.svg" width="740" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a24d4560bdcaf8c4fb0611de1b55ac687"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24d4560bdcaf8c4fb0611de1b55ac687">&#9670;&nbsp;</a></span>Render()</h2>
 
@@ -264,7 +342,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CSource__Code__Window_a24d4560bdcaf8c4fb0611de1b55ac687_cgraph.svg" width="731" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CSource__Code__Window_a24d4560bdcaf8c4fb0611de1b55ac687_cgraph.svg" width="740" height="214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -296,7 +374,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CSource__Code__Window_acdb10e47501c4cf6af2c50383388cc4a_cgraph.svg" width="503" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CSource__Code__Window_acdb10e47501c4cf6af2c50383388cc4a_cgraph.svg" width="512" height="214"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">

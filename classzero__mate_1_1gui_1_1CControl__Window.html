@@ -112,8 +112,8 @@ Collaboration diagram for zero_mate::gui::CControl_Window:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a61b15dcc9028fb1aa076edbf2beb2f3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a61b15dcc9028fb1aa076edbf2beb2f3e">CControl_Window</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt; cpu, bool &amp;scroll_to_curr_line, const bool &amp;elf_file_has_been_loaded, bool &amp;cpu_running)</td></tr>
-<tr class="separator:a61b15dcc9028fb1aa076edbf2beb2f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0967b07810895c005a3e00b72e82bbff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a0967b07810895c005a3e00b72e82bbff">CControl_Window</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt; cpu, bool &amp;scroll_to_curr_line, const bool &amp;elf_file_has_been_loaded, bool &amp;cpu_running, std::vector&lt; std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">peripheral::IPeripheral</a> &gt;&gt; &amp;peripherals, std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &gt; bus)</td></tr>
+<tr class="separator:a0967b07810895c005a3e00b72e82bbff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabafaf7d45b7c4516719dce03772ee5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a">Render</a> () override</td></tr>
 <tr class="separator:aabafaf7d45b7c4516719dce03772ee5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1gui_1_1CGUI__Window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1gui_1_1CGUI__Window')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1gui_1_1CGUI__Window.html">zero_mate::gui::CGUI_Window</a></td></tr>
@@ -140,6 +140,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a46cc1dd042f93990abb7b0b68f566a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad83b2651e1d6bf8ed72e3553526f17ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#ad83b2651e1d6bf8ed72e3553526f17ca">Run</a> ()</td></tr>
 <tr class="separator:ad83b2651e1d6bf8ed72e3553526f17ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37a3c37d6d92c239742abf75b3aebec9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a37a3c37d6d92c239742abf75b3aebec9">Reset_Emulator</a> ()</td></tr>
+<tr class="separator:a37a3c37d6d92c239742abf75b3aebec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -164,10 +166,14 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3b04476428b65b6aea546e3ad4622d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7b8cf3ac2d39f52e39698bb5592430d"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#ae7b8cf3ac2d39f52e39698bb5592430d">m_stop_cpu_thread</a></td></tr>
 <tr class="separator:ae7b8cf3ac2d39f52e39698bb5592430d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60db6216b1c8f1c1e08bbe522c15a7fa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">peripheral::IPeripheral</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a60db6216b1c8f1c1e08bbe522c15a7fa">m_peripherals</a></td></tr>
+<tr class="separator:a60db6216b1c8f1c1e08bbe522c15a7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea1f26406943d8deb652ee792a002cd9"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#aea1f26406943d8deb652ee792a002cd9">m_bus</a></td></tr>
+<tr class="separator:aea1f26406943d8deb652ee792a002cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a61b15dcc9028fb1aa076edbf2beb2f3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61b15dcc9028fb1aa076edbf2beb2f3e">&#9670;&nbsp;</a></span>CControl_Window()</h2>
+<a id="a0967b07810895c005a3e00b72e82bbff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0967b07810895c005a3e00b72e82bbff">&#9670;&nbsp;</a></span>CControl_Window()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,7 +203,19 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>cpu_running</em>&#160;</td>
+          <td class="paramname"><em>cpu_running</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">peripheral::IPeripheral</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>peripherals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &gt;&#160;</td>
+          <td class="paramname"><em>bus</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -279,7 +297,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CControl__Window_aabafaf7d45b7c4516719dce03772ee5a_cgraph.svg" width="1210" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CControl__Window_aabafaf7d45b7c4516719dce03772ee5a_cgraph.svg" width="1210" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -310,7 +328,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CControl__Window_a9be0d8c611ece954a13f3763744b074f_cgraph.svg" width="939" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CControl__Window_a9be0d8c611ece954a13f3763744b074f_cgraph.svg" width="939" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -384,6 +402,43 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a37a3c37d6d92c239742abf75b3aebec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a3c37d6d92c239742abf75b3aebec9">&#9670;&nbsp;</a></span>Reset_Emulator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CControl_Window::Reset_Emulator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CControl__Window_a37a3c37d6d92c239742abf75b3aebec9_cgraph.svg" width="691" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CControl__Window_a37a3c37d6d92c239742abf75b3aebec9_icgraph.svg" width="668" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="ad83b2651e1d6bf8ed72e3553526f17ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad83b2651e1d6bf8ed72e3553526f17ca">&#9670;&nbsp;</a></span>Run()</h2>
 
@@ -433,6 +488,28 @@ Here is the caller graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">bool zero_mate::gui::CControl_Window::m_breakpoint_hit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea1f26406943d8deb652ee792a002cd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea1f26406943d8deb652ee792a002cd9">&#9670;&nbsp;</a></span>m_bus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1CBus.html">CBus</a>&gt; zero_mate::gui::CControl_Window::m_bus</td>
         </tr>
       </table>
   </td>
@@ -521,6 +598,28 @@ Here is the caller graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a>&amp; zero_mate::gui::CControl_Window::m_logging_system</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60db6216b1c8f1c1e08bbe522c15a7fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60db6216b1c8f1c1e08bbe522c15a7fa">&#9670;&nbsp;</a></span>m_peripherals</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">peripheral::IPeripheral</a>&gt; &gt;&amp; zero_mate::gui::CControl_Window::m_peripherals</td>
         </tr>
       </table>
   </td>

@@ -1,5 +1,6 @@
 var classzero__mate_1_1gui_1_1CSource__Code__Window =
 [
+    [ "TRGB_Color", "structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color.html", "structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color" ],
     [ "CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html#a2ed2a9cefe8346252d56c994d2eefe8c", null ],
     [ "Highlight_Code_Block", "classzero__mate_1_1gui_1_1CSource__Code__Window.html#a9f6a5501665b1b3c3883c88660873d09", null ],
     [ "Render", "classzero__mate_1_1gui_1_1CSource__Code__Window.html#a24d4560bdcaf8c4fb0611de1b55ac687", null ],

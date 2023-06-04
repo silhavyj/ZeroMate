@@ -12,5 +12,6 @@ var elf__loader_8hpp =
       [ "Instruction", "elf__loader_8hpp.html#a7b229f39af9362fb4bf340499656012dac742c5a36b6307267bb709355feb2c41", null ],
       [ "Label", "elf__loader_8hpp.html#a7b229f39af9362fb4bf340499656012dab021df6aac4654c454f46c77646e745f", null ]
     ] ],
-    [ "Load_Kernel", "elf__loader_8hpp.html#a95a9f666929811b558bcb9da0969972a", null ]
+    [ "Load_Kernel", "elf__loader_8hpp.html#a95a9f666929811b558bcb9da0969972a", null ],
+    [ "Reload_Kernel", "elf__loader_8hpp.html#a7af51862dcfbf3eda33e79e06f610595", null ]
 ];

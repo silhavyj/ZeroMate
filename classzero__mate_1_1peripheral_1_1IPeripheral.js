@@ -8,5 +8,6 @@ var classzero__mate_1_1peripheral_1_1IPeripheral =
     [ "operator=", "classzero__mate_1_1peripheral_1_1IPeripheral.html#a63b3fc9848f91ba65783d7f228bd996f", null ],
     [ "operator=", "classzero__mate_1_1peripheral_1_1IPeripheral.html#a2bfe10409504ddd268659229a7ba0261", null ],
     [ "Read", "classzero__mate_1_1peripheral_1_1IPeripheral.html#a627a2ceb458041ac41e2de52484c918f", null ],
+    [ "Reset", "classzero__mate_1_1peripheral_1_1IPeripheral.html#ad51da04a4d143152f96290bfe1c7fcd0", null ],
     [ "Write", "classzero__mate_1_1peripheral_1_1IPeripheral.html#aee1e0ced5d3a5a4081ebedb711552eaf", null ]
 ];

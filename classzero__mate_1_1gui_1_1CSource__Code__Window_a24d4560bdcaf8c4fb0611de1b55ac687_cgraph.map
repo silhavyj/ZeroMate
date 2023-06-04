@@ -1,5 +1,7 @@
 <map id="zero_mate::gui::CSource_Code_Window::Render" name="zero_mate::gui::CSource_Code_Window::Render">
-<area shape="rect" id="node1" title=" " alt="" coords="5,13,185,54"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#acdb10e47501c4cf6af2c50383388cc4a" title=" " alt="" coords="233,13,491,54"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a9f6a5501665b1b3c3883c88660873d09" title=" " alt="" coords="539,5,725,61"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,93,185,134"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#acdb10e47501c4cf6af2c50383388cc4a" title=" " alt="" coords="233,93,491,134"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a8ab01667cca3406c621027962c2d22bd" title=" " alt="" coords="547,5,727,61"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a9f6a5501665b1b3c3883c88660873d09" title=" " alt="" coords="543,85,730,141"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#afefe1191e405b0ad44c81b54ff63ad97" title=" " alt="" coords="539,166,735,207"/>
 </map>

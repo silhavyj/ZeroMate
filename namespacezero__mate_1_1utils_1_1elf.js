@@ -12,5 +12,6 @@ var namespacezero__mate_1_1utils_1_1elf =
       [ "Instruction", "namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012dac742c5a36b6307267bb709355feb2c41", null ],
       [ "Label", "namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012dab021df6aac4654c454f46c77646e745f", null ]
     ] ],
-    [ "Load_Kernel", "namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a", null ]
+    [ "Load_Kernel", "namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a", null ],
+    [ "Reload_Kernel", "namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595", null ]
 ];

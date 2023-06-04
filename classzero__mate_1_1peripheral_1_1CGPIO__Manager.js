@@ -58,6 +58,7 @@ var classzero__mate_1_1peripheral_1_1CGPIO__Manager =
     [ "Get_Size", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a3d659010e4b36a13162587514cdb09da", null ],
     [ "Mirror_Pin_State_In_GPLEVn", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b", null ],
     [ "Read", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9", null ],
+    [ "Reset", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a12e1c9bae2ee8c9bb99afbf7828b7baf", null ],
     [ "Set_Interrupt", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d", null ],
     [ "Set_Pin_State", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504", null ],
     [ "Update_Pin_Function", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad7c6aa486cf3b116ffae9f16eec64064", null ],

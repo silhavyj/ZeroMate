@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['s_5finit_5fflag_1386',['s_init_flag',['../classzero__mate_1_1utils_1_1CSingleton.html#a3540206ab4b86345236facac58f46317',1,'zero_mate::utils::CSingleton']]],
-  ['s_5finstance_1387',['s_instance',['../classzero__mate_1_1utils_1_1CSingleton.html#a428653b24f195a873206406e15bfd342',1,'zero_mate::utils::CSingleton']]],
-  ['s_5finstruction_5flookup_5ftable_1388',['s_instruction_lookup_table',['../classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#ab317130bad0a9f2bee282ac619ed4706',1,'zero_mate::arm1176jzf_s::isa::CISA_Decoder']]],
-  ['s_5fread_5fonly_5fregisters_1389',['s_read_only_registers',['../classzero__mate_1_1peripheral_1_1CARM__Timer.html#a1efbc54b9381f07bb9ff343ced910a72',1,'zero_mate::peripheral::CARM_Timer::s_read_only_registers()'],['../classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2ad41543dc93d652b60500382196721c',1,'zero_mate::peripheral::CGPIO_Manager::s_read_only_registers()']]],
-  ['s_5fwrite_5fonly_5fregisters_1390',['s_write_only_registers',['../classzero__mate_1_1peripheral_1_1CARM__Timer.html#a204d0006ea9b472cf176b78b416005fe',1,'zero_mate::peripheral::CARM_Timer::s_write_only_registers()'],['../classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aad97a66fe9d76238cccffb6afea1133c',1,'zero_mate::peripheral::CGPIO_Manager::s_write_only_registers()']]],
-  ['set_5ffags_1391',['set_fags',['../structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html#a6105af5c312c696c7e5b4025b5119d63',1,'zero_mate::arm1176jzf_s::mac::TResult']]],
-  ['set_5fflags_1392',['set_flags',['../structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html#a90b6f58b7d522706fe7178f085820671',1,'zero_mate::arm1176jzf_s::alu::TResult']]],
-  ['size_1393',['SIZE',['../classzero__mate_1_1peripheral_1_1CMonitor.html#ab7c44f01fe8bf3ea3f408b5ad5707bb8',1,'zero_mate::peripheral::CMonitor']]],
-  ['sp_5freg_5fidx_1394',['SP_REG_IDX',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a89a9a0aa8e0bf3e321d04f8eb14c70ab',1,'zero_mate::arm1176jzf_s::CCPU_Context']]],
-  ['start_5faddr_1395',['start_addr',['../structzero__mate_1_1CBus_1_1TMapped__Peripheral.html#a7d250ab1b689606ca6966d9f9efa8bdf',1,'zero_mate::CBus::TMapped_Peripheral']]],
-  ['status_1396',['status',['../elf__loader_8cpp.html#aacf8c4b54645cc63356e75a8a44bde14',1,'elf_loader.cpp']]],
-  ['subtraction_1397',['subtraction',['../alu_8cpp.html#abfdc8b2e0f21af195c33a2221a87373c',1,'alu.cpp']]]
+  ['r_1406',['r',['../structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color.html#a62ed4fd476d4d66b5c87fbb56e898f8e',1,'zero_mate::gui::CSource_Code_Window::TRGB_Color']]],
+  ['ram_5fmap_5faddr_1407',['ram_map_addr',['../gui_8cpp.html#a92476e727f623fe6fa359cc4ba73a24d',1,'gui.cpp']]],
+  ['ram_5fsection_1408',['RAM_SECTION',['../namespacezero__mate_1_1config.html#a81956099dfb9a23bcfa5cee20cee82d0',1,'zero_mate::config']]],
+  ['ram_5fsize_1409',['ram_size',['../gui_8cpp.html#af8d49c17feb18d9d4057ad4f0489e747',1,'gui.cpp']]],
+  ['reg_5fsize_1410',['REG_SIZE',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4da96711ed542bed76f292525c40d8ce',1,'zero_mate::arm1176jzf_s::CCPU_Context::REG_SIZE()'],['../classzero__mate_1_1peripheral_1_1CARM__Timer.html#aa1a0c343466313f0298b1b948e1e18d8',1,'zero_mate::peripheral::CARM_Timer::REG_SIZE()'],['../classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8487914af5e11dfb40c672bc2b30c185',1,'zero_mate::peripheral::CGPIO_Manager::REG_SIZE()'],['../classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ad9e91f30ae6ed64ac5ccc75052d7f949',1,'zero_mate::peripheral::CInterrupt_Controller::REG_SIZE()']]],
+  ['result_1411',['result',['../structzero__mate_1_1utils_1_1math_1_1TShift__Result.html#ac6ac64cb2f41db4d0490156839ff2469',1,'zero_mate::utils::math::TShift_Result']]],
+  ['reversed_5foperands_1412',['reversed_operands',['../alu_8cpp.html#a38a565f35f51a44e10bbbcb6c2e4663e',1,'alu.cpp']]]
 ];

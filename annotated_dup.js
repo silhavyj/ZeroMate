@@ -52,6 +52,7 @@ var annotated_dup =
         ] ],
         [ "CGUI_Window", "classzero__mate_1_1gui_1_1CGUI__Window.html", "classzero__mate_1_1gui_1_1CGUI__Window" ],
         [ "CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", "classzero__mate_1_1gui_1_1CControl__Window" ],
+        [ "CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", "classzero__mate_1_1gui_1_1CCP15__Window" ],
         [ "CFile_Window", "classzero__mate_1_1gui_1_1CFile__Window.html", "classzero__mate_1_1gui_1_1CFile__Window" ],
         [ "CCircular_Log_Buffer", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer" ],
         [ "CLog_Window", "classzero__mate_1_1gui_1_1CLog__Window.html", "classzero__mate_1_1gui_1_1CLog__Window" ],

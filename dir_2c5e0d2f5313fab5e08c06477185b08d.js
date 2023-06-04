@@ -5,6 +5,10 @@ var dir_2c5e0d2f5313fab5e08c06477185b08d =
     [ "control_window.hpp", "control__window_8hpp.html", [
       [ "CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", "classzero__mate_1_1gui_1_1CControl__Window" ]
     ] ],
+    [ "cp15_window.cpp", "cp15__window_8cpp.html", null ],
+    [ "cp15_window.hpp", "cp15__window_8hpp.html", [
+      [ "CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", "classzero__mate_1_1gui_1_1CCP15__Window" ]
+    ] ],
     [ "file_window.cpp", "file__window_8cpp.html", null ],
     [ "file_window.hpp", "file__window_8hpp.html", [
       [ "CFile_Window", "classzero__mate_1_1gui_1_1CFile__Window.html", "classzero__mate_1_1gui_1_1CFile__Window" ]
@@ -20,6 +24,7 @@ var dir_2c5e0d2f5313fab5e08c06477185b08d =
     ] ],
     [ "source_code_window.cpp", "source__code__window_8cpp.html", null ],
     [ "source_code_window.hpp", "source__code__window_8hpp.html", [
-      [ "CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html", "classzero__mate_1_1gui_1_1CSource__Code__Window" ]
+      [ "CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html", "classzero__mate_1_1gui_1_1CSource__Code__Window" ],
+      [ "TRGB_Color", "structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color.html", "structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color" ]
     ] ]
 ];

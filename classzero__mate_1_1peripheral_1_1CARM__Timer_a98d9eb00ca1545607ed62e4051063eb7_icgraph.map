@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CARM_Timer::Reset" name="zero_mate::peripheral::CARM_Timer::Reset">
+<area shape="rect" id="node1" title="Resets/re&#45;initializes the ARM timer (IPeripheral interface)." alt="" coords="260,5,425,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a6e04a50b8de25f632bd3fd6f0650ca89" title="Creates an instance of the class." alt="" coords="5,5,212,47"/>
+</map>

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['v_5fflag_1406',['v_flag',['../structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html#ac6eaa70ac94386f358131178be7c49fa',1,'zero_mate::arm1176jzf_s::alu::TResult']]],
-  ['value_1407',['value',['../structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html#af45738637305a97cff945eafeb2684d8',1,'zero_mate::arm1176jzf_s::alu::TResult']]],
-  ['value_5fhi_1408',['value_hi',['../structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html#a1888216e1bbef0aaa37790f310605119',1,'zero_mate::arm1176jzf_s::mac::TResult']]],
-  ['value_5flo_1409',['value_lo',['../structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html#a4c028a20c542c582fa28ff8910c7b6c1',1,'zero_mate::arm1176jzf_s::mac::TResult']]]
+  ['unused_5f0_1428',['Unused_0',['../structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html#a8a6168637cd2c4b6f3630d1c26c45bc7',1,'zero_mate::peripheral::CARM_Timer::TControl_Register']]],
+  ['unused_5f1_1429',['Unused_1',['../structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html#a8e79e20cb2d0977b2fbdf71f695b77e0',1,'zero_mate::peripheral::CARM_Timer::TControl_Register']]],
+  ['unused_5f2_1430',['Unused_2',['../structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html#a483e659a85a5c02c31f8165d8c491333',1,'zero_mate::peripheral::CARM_Timer::TControl_Register']]],
+  ['unused_5f3_1431',['Unused_3',['../structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html#abe143e39e072b2648e7d4625152fc620',1,'zero_mate::peripheral::CARM_Timer::TControl_Register']]],
+  ['unused_5f4_1432',['Unused_4',['../structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html#a883f49b7328a21341bbda952a237fbb7',1,'zero_mate::peripheral::CARM_Timer::TControl_Register']]]
 ];

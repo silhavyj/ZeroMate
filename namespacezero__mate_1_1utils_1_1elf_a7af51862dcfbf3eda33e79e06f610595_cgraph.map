@@ -1,0 +1,4 @@
+<map id="zero_mate::utils::elf::Reload_Kernel" name="zero_mate::utils::elf::Reload_Kernel">
+<area shape="rect" id="node1" title="Reloads the same kernel that was loaded using the Load_Kernel function." alt="" coords="5,5,157,47"/>
+<area shape="rect" id="node2" href="$namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory." alt="" coords="205,5,357,47"/>
+</map>

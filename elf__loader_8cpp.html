@@ -98,13 +98,14 @@ $(document).ready(function(){initNavTree('elf__loader_8cpp.html',''); initResiza
 <div class="textblock"><code>#include &lt;fmt/format.h&gt;</code><br />
 <code>#include &lt;elfio/elfio.hpp&gt;</code><br />
 <code>#include &lt;capstone/capstone.h&gt;</code><br />
+<code>#include &lt;llvm/Demangle/Demangle.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="singleton_8hpp_source.html">singleton.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="elf__loader_8hpp_source.html">elf_loader.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger_8hpp_source.html">logger/logger.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for elf_loader.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="elf__loader_8cpp__incl.svg" width="1064" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="elf__loader_8cpp__incl.svg" width="1154" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -122,6 +123,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a95a9f666929811b558bcb9da0969972a"><td class="memItemLeft" align="right" valign="top">TStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">zero_mate::utils::elf::Load_Kernel</a> (CBus &amp;bus, const char *filename)</td></tr>
 <tr class="memdesc:a95a9f666929811b558bcb9da0969972a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a given ELF file (kernel) into the memory.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">More...</a><br /></td></tr>
 <tr class="separator:a95a9f666929811b558bcb9da0969972a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af51862dcfbf3eda33e79e06f610595"><td class="memItemLeft" align="right" valign="top">TStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595">zero_mate::utils::elf::Reload_Kernel</a> (CBus &amp;bus)</td></tr>
+<tr class="memdesc:a7af51862dcfbf3eda33e79e06f610595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reloads the same kernel that was loaded using the <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory.">Load_Kernel</a> function.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595">More...</a><br /></td></tr>
+<tr class="separator:a7af51862dcfbf3eda33e79e06f610595"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file implements the functionality of an ELF loader defined in <a class="el" href="elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader.">elf_loader.hpp</a>. </p>

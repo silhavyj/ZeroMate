@@ -1,4 +1,5 @@
 <map id="zero_mate::coprocessor::CCP15::CCP15" name="zero_mate::coprocessor::CCP15::CCP15">
 <area shape="rect" id="node1" title="Creates an instance of the class." alt="" coords="5,5,183,47"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1CCP15.html#a964db4f6c5176544f25e130de1a809e3" title="Initializes the coprocessor (sets default settings)." alt="" coords="231,5,408,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1coprocessor_1_1CCP15.html#a56b9da0b3f10b4cf089e58803089ad3e" title="Initializes C1 primary register." alt="" coords="456,5,633,47"/>
 </map>

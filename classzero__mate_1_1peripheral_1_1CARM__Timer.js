@@ -28,6 +28,7 @@ var classzero__mate_1_1peripheral_1_1CARM__Timer =
     [ "Get_Size", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#a921256b8ced4f1129732297a4663ee1d", null ],
     [ "Increment_Passed_Cycles", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#afc4c9659823762252dd1ea58b8a76e1e", null ],
     [ "Read", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9c9fd268222fa96e4a81d65f7340235c", null ],
+    [ "Reset", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#a98d9eb00ca1545607ed62e4051063eb7", null ],
     [ "Timer_Has_Reached_Zero", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9abc7d434c8ec8120e49e2add79e7346", null ],
     [ "Write", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34", null ],
     [ "m_interrupt_controller", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#ae9d99292933a35e828e6859cb8ba01d0", null ],

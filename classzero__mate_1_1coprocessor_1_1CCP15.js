@@ -15,6 +15,7 @@ var classzero__mate_1_1coprocessor_1_1CCP15 =
     ] ],
     [ "CCP15", "classzero__mate_1_1coprocessor_1_1CCP15.html#a574d08c407b09b98d6db7e373ca1fdf0", null ],
     [ "Initialize", "classzero__mate_1_1coprocessor_1_1CCP15.html#a964db4f6c5176544f25e130de1a809e3", null ],
+    [ "Initialize_C1", "classzero__mate_1_1coprocessor_1_1CCP15.html#a56b9da0b3f10b4cf089e58803089ad3e", null ],
     [ "Is_C1_Control_Flag_Set", "classzero__mate_1_1coprocessor_1_1CCP15.html#aadbc3a0eb23a067ccbe74f6144d51e4a", null ],
     [ "Is_Unaligned_Access_Permitted", "classzero__mate_1_1coprocessor_1_1CCP15.html#a0ce61f2b1aab4fdbb75929b2bf59a0f7", null ],
     [ "Perform_Data_Operation", "classzero__mate_1_1coprocessor_1_1CCP15.html#ad77826237c15f2dae64384f0615cf139", null ],

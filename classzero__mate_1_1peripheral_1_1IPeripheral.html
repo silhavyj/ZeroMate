@@ -124,6 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2bfe10409504ddd268659229a7ba0261"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">IPeripheral</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a2bfe10409504ddd268659229a7ba0261">operator=</a> (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">IPeripheral</a> &amp;&amp;)=delete</td></tr>
 <tr class="memdesc:a2bfe10409504ddd268659229a7ba0261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted assignment operator with an r-value reference (rule of five).  <a href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a2bfe10409504ddd268659229a7ba0261">More...</a><br /></td></tr>
 <tr class="separator:a2bfe10409504ddd268659229a7ba0261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad51da04a4d143152f96290bfe1c7fcd0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#ad51da04a4d143152f96290bfe1c7fcd0">Reset</a> () noexcept=0</td></tr>
+<tr class="memdesc:ad51da04a4d143152f96290bfe1c7fcd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the peripheral.  <a href="classzero__mate_1_1peripheral_1_1IPeripheral.html#ad51da04a4d143152f96290bfe1c7fcd0">More...</a><br /></td></tr>
+<tr class="separator:ad51da04a4d143152f96290bfe1c7fcd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe4a3756bd97bd4eb4db1c9aad6f5a1b"><td class="memItemLeft" align="right" valign="top">virtual std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#abe4a3756bd97bd4eb4db1c9aad6f5a1b">Get_Size</a> () const noexcept=0</td></tr>
 <tr class="memdesc:abe4a3756bd97bd4eb4db1c9aad6f5a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the peripheral.  <a href="classzero__mate_1_1peripheral_1_1IPeripheral.html#abe4a3756bd97bd4eb4db1c9aad6f5a1b">More...</a><br /></td></tr>
 <tr class="separator:abe4a3756bd97bd4eb4db1c9aad6f5a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -389,6 +392,36 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p>Implemented in <a class="el" href="classzero__mate_1_1peripheral_1_1CRAM.html#a96af986ac0df7c1246dce8795233f95a">zero_mate::peripheral::CRAM</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CMonitor.html#ac2fb4c7f4c59079d8b2b1c6b8691c783">zero_mate::peripheral::CMonitor</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae60524d985cd3824ed4a4e1ab0ec6f85">zero_mate::peripheral::CInterrupt_Controller</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9">zero_mate::peripheral::CGPIO_Manager</a>, and <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9c9fd268222fa96e4a81d65f7340235c">zero_mate::peripheral::CARM_Timer</a>.</p>
+
+</div>
+</div>
+<a id="ad51da04a4d143152f96290bfe1c7fcd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad51da04a4d143152f96290bfe1c7fcd0">&#9670;&nbsp;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void zero_mate::peripheral::IPeripheral::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets the peripheral. </p>
+<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function. </p>
+
+<p>Implemented in <a class="el" href="classzero__mate_1_1peripheral_1_1CRAM.html#a945ad7d05b3e0dcfc3f09dd66b819c4f">zero_mate::peripheral::CRAM</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CMonitor.html#ab1c4e663850daef1aff87cd8b7c159fa">zero_mate::peripheral::CMonitor</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae7fe10265670800403226ebc23a96179">zero_mate::peripheral::CInterrupt_Controller</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a12e1c9bae2ee8c9bb99afbf7828b7baf">zero_mate::peripheral::CGPIO_Manager</a>, and <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a98d9eb00ca1545607ed62e4051063eb7">zero_mate::peripheral::CARM_Timer</a>.</p>
 
 </div>
 </div>

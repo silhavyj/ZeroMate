@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['gpio_5fmap_5faddr_1294',['gpio_map_addr',['../gui_8cpp.html#a28ed9cf56c1f8eda5c8c0b851b1f1b72',1,'gui.cpp']]],
-  ['gpio_5fsection_1295',['GPIO_SECTION',['../namespacezero__mate_1_1config.html#a7ec5248f914f6675fed78af86ebed03f',1,'zero_mate::config']]]
+  ['font_5fpath_1316',['FONT_PATH',['../namespacezero__mate_1_1config.html#a3e133fb0f40e27816810f95b9be380b1',1,'zero_mate::config']]],
+  ['free_5frunning_1317',['Free_Running',['../structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html#a4916616ffb8fa93a8099b6ee1135e446',1,'zero_mate::peripheral::CARM_Timer::TControl_Register']]],
+  ['free_5frunning_5fprescaler_1318',['Free_Running_Prescaler',['../structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html#a9d4f5901095da4ba458760edb0f558b6',1,'zero_mate::peripheral::CARM_Timer::TControl_Register']]]
 ];

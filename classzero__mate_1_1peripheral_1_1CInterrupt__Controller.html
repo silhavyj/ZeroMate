@@ -183,6 +183,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afa2b9bbd779dc5d6958c5fba99b5b72f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#afa2b9bbd779dc5d6958c5fba99b5b72f">CInterrupt_Controller</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;cpu_context)</td></tr>
 <tr class="memdesc:afa2b9bbd779dc5d6958c5fba99b5b72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#afa2b9bbd779dc5d6958c5fba99b5b72f">More...</a><br /></td></tr>
 <tr class="separator:afa2b9bbd779dc5d6958c5fba99b5b72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7fe10265670800403226ebc23a96179"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae7fe10265670800403226ebc23a96179">Reset</a> () noexcept override</td></tr>
+<tr class="memdesc:ae7fe10265670800403226ebc23a96179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets/re-initializes the interrupt controller (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae7fe10265670800403226ebc23a96179">More...</a><br /></td></tr>
+<tr class="separator:ae7fe10265670800403226ebc23a96179"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ef9316f86fe269ba10a15d9dbbc8e85"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a5ef9316f86fe269ba10a15d9dbbc8e85">Get_Size</a> () const noexcept override</td></tr>
 <tr class="memdesc:a5ef9316f86fe269ba10a15d9dbbc8e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a5ef9316f86fe269ba10a15d9dbbc8e85">More...</a><br /></td></tr>
 <tr class="separator:a5ef9316f86fe269ba10a15d9dbbc8e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -250,9 +253,6 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aa5a5645d4adb59932e0775fcf561f3fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa5a5645d4adb59932e0775fcf561f3fd">Initialize</a> ()</td></tr>
-<tr class="memdesc:aa5a5645d4adb59932e0775fcf561f3fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the interrupt controller.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa5a5645d4adb59932e0775fcf561f3fd">More...</a><br /></td></tr>
-<tr class="separator:aa5a5645d4adb59932e0775fcf561f3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f4f351805d9081a77d7949c494fd29b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9f4f351805d9081a77d7949c494fd29b">Initialize_Basic_IRQ_Sources</a> ()</td></tr>
 <tr class="memdesc:a9f4f351805d9081a77d7949c494fd29b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the collection of basic IRQ sources.  <a href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9f4f351805d9081a77d7949c494fd29b">More...</a><br /></td></tr>
 <tr class="separator:a9f4f351805d9081a77d7949c494fd29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -886,46 +886,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aa5a5645d4adb59932e0775fcf561f3fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5a5645d4adb59932e0775fcf561f3fd">&#9670;&nbsp;</a></span>Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void zero_mate::peripheral::CInterrupt_Controller::Initialize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initializes the interrupt controller. </p>
-<p>It calls <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a9f4f351805d9081a77d7949c494fd29b" title="Initializes the collection of basic IRQ sources.">Initialize_Basic_IRQ_Sources</a> and <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a888a57d7926bd4900a70fb25ef1e1a1c" title="Initializes the collection of IRQ sources.">Initialize_IRQ_Sources</a>. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_aa5a5645d4adb59932e0775fcf561f3fd_cgraph.svg" width="400" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_aa5a5645d4adb59932e0775fcf561f3fd_icgraph.svg" width="392" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
 <a id="a9f4f351805d9081a77d7949c494fd29b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f4f351805d9081a77d7949c494fd29b">&#9670;&nbsp;</a></span>Initialize_Basic_IRQ_Sources()</h2>
 
@@ -1084,6 +1044,47 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p>Implements <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a627a2ceb458041ac41e2de52484c918f">zero_mate::peripheral::IPeripheral</a>.</p>
+
+</div>
+</div>
+<a id="ae7fe10265670800403226ebc23a96179"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7fe10265670800403226ebc23a96179">&#9670;&nbsp;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::peripheral::CInterrupt_Controller::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets/re-initializes the interrupt controller (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
+
+<p>Implements <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#ad51da04a4d143152f96290bfe1c7fcd0">zero_mate::peripheral::IPeripheral</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_ae7fe10265670800403226ebc23a96179_cgraph.svg" width="400" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CInterrupt__Controller_ae7fe10265670800403226ebc23a96179_icgraph.svg" width="392" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>

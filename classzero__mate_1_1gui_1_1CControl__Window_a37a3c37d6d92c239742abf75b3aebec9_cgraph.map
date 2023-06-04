@@ -1,0 +1,8 @@
+<map id="zero_mate::gui::CControl_Window::Reset_Emulator" name="zero_mate::gui::CControl_Window::Reset_Emulator">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,196,112"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="244,5,439,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02" title="Logs an info message via all registered loggers." alt="" coords="244,71,439,112"/>
+<area shape="rect" id="node5" href="$namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595" title="Reloads the same kernel that was loaded using the Load_Kernel function." alt="" coords="265,136,417,177"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title="Extract the filename from a given location within the source files." alt="" coords="487,39,685,80"/>
+<area shape="rect" id="node6" href="$namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory." alt="" coords="510,136,662,177"/>
+</map>

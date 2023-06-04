@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CRAM::Init" name="zero_mate::peripheral::CRAM::Init">
+<area shape="rect" id="node1" title="Initializes the RAM." alt="" coords="5,5,171,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CRAM.html#a945ad7d05b3e0dcfc3f09dd66b819c4f" title="Resets/re&#45;initializes the RAM (IPeripheral interface)." alt="" coords="219,5,384,47"/>
+</map>
