@@ -18,7 +18,8 @@ target_include_directories(
     unit_tests
     SYSTEM PRIVATE 
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/
-        ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include)
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include)
 
 # Link libraries to the executable
 target_link_libraries(
@@ -29,7 +30,8 @@ target_link_libraries(
         gtest
         elfio
         magic_enum
-        capstone)
+        capstone
+        demangle)
 
 # Include the download CMake file
 include(GoogleTest)
