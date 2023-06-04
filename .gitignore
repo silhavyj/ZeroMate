@@ -2,3 +2,6 @@
 /.idea
 /.vs
 /build
+/docs/doxygen
+doxygen-warnings.log
+doxygen.tag

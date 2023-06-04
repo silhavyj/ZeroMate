@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.21)
 # General info about the project
 project(
     ZeroMate
-    VERSION 0.0.1
+    VERSION 0.3.0
     DESCRIPTION "Raspberry Pi Zero emulator"
     HOMEPAGE_URL "https://github.com/silhavyj/ZeroMate"
     LANGUAGES C CXX)
@@ -30,6 +30,12 @@ set_project_warnings(project_warnings)
 include(cmake/sanitizers.cmake)
 enable_sanitizers(project_options)
 
+# Turn on compiler optimizations for the Release build
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    include(cmake/compiler_optimizations.cmake)
+    set_project_optimizations(project_warnings)
+endif()
+
 # Allow for static analysis option
 include(cmake/static_analyzers.cmake)
 
@@ -42,16 +48,20 @@ add_subdirectory(external/glfw)
 add_subdirectory(external/magic_enum)
 add_subdirectory(external/capstone)
 
-# Add an option to enable testing
-option(ENABLE_TESTING "Enable Test Builds" ON)
-
 # Add the src folder
 add_subdirectory(src)
 
 # Add tests
+option(ENABLE_TESTING "Enable Test Builds" ON)
 if(ENABLE_TESTING)
     enable_testing()
     add_subdirectory(test)
+endif()
+
+# Generate docs
+option(BUILD_DOC "Build Documentation" ON)
+if (BUILD_DOC)
+    include(cmake/doxygen.cmake)
 endif()
 
 # EOF

@@ -7,16 +7,16 @@ namespace zero_mate::gui
 {
     CRegisters_Window::CRegisters_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu, const bool& cpu_running)
     : m_cpu{ cpu }
-    , m_cpu_context{ cpu->m_context }
+    , m_cpu_context{ cpu->Get_CPU_Context() }
     , m_cpu_running{ cpu_running }
     {
     }
 
     void CRegisters_Window::Render()
     {
-        if (!m_cpu_running && m_cpu_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX] != m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
+        if (!m_cpu_running && m_cpu_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX] != m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
         {
-            m_cpu_context = m_cpu->m_context;
+            m_cpu_context = m_cpu->Get_CPU_Context();
         }
 
         static bool first_time{ true };

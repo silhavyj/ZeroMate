@@ -1,3 +1,16 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file psr_transfer.cpp
+/// \date 27. 05. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements a PSR instruction (MRS, MSR) as defined in psr_transfer.hpp.
+///
+/// To find more information about this instruction, please visit
+/// https://iitd-plos.github.io/col718/ref/arm-instructionset.pdf (chapter 4.6)
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Project file imports
+
 #include "psr_transfer.hpp"
 
 namespace zero_mate::arm1176jzf_s::isa
@@ -17,12 +30,12 @@ namespace zero_mate::arm1176jzf_s::isa
         return static_cast<NType>((m_value >> 21U) & 0b1U);
     }
 
-    std::uint32_t CPSR_Transfer::Get_Rd() const noexcept
+    std::uint32_t CPSR_Transfer::Get_Rd_Idx() const noexcept
     {
         return (m_value >> 12U) & 0b1111U;
     }
 
-    std::uint32_t CPSR_Transfer::Get_Rm() const noexcept
+    std::uint32_t CPSR_Transfer::Get_Rm_Idx() const noexcept
     {
         return m_value & 0b1111U;
     }
@@ -31,18 +44,25 @@ namespace zero_mate::arm1176jzf_s::isa
     {
         std::uint32_t mask{ 0 };
 
+        // Protect flag bits.
         if (Is_F_Bit_Set())
         {
             mask |= (0xFFU << 24U);
         }
+
+        // Protect status bits.
         if (Is_S_Bit_Set())
         {
             mask |= (0xFFU << 16U);
         }
+
+        // Protect extension bits.
         if (Is_X_Bit_Set())
         {
             mask |= (0xFFU << 8U);
         }
+
+        // Protect control bits.
         if (Is_C_Bit_Set())
         {
             mask |= 0xFFU;
@@ -85,4 +105,5 @@ namespace zero_mate::arm1176jzf_s::isa
     {
         return static_cast<bool>((m_value >> 16U) & 0b1U);
     }
-}
+
+} // namespace zero_mate::arm1176jzf_s::isa

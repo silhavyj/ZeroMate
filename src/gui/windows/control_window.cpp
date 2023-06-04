@@ -1,4 +1,5 @@
 #include <thread>
+#include <algorithm>
 
 #include <imgui/imgui.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
@@ -6,13 +7,16 @@
 #include "control_window.hpp"
 
 #include "../../core/utils/singleton.hpp"
+#include "../../core/utils/elf_loader.hpp"
 
 namespace zero_mate::gui
 {
     CControl_Window::CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
                                      bool& scroll_to_curr_line,
                                      const bool& elf_file_has_been_loaded,
-                                     bool& cpu_running)
+                                     bool& cpu_running,
+                                     std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals,
+                                     std::shared_ptr<CBus> bus)
     : m_cpu{ cpu }
     , m_scroll_to_curr_line{ scroll_to_curr_line }
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
@@ -21,6 +25,8 @@ namespace zero_mate::gui
     , m_breakpoint_hit{ false }
     , m_start_cpu_thread{ false }
     , m_stop_cpu_thread{ false }
+    , m_peripherals{ peripherals }
+    , m_bus{ bus }
     {
     }
 
@@ -88,7 +94,36 @@ namespace zero_mate::gui
 
         if (ImGui::Button(ICON_FA_POWER_OFF " Reset") && !m_cpu_running)
         {
-            m_cpu->Reset_Context();
+            Reset_Emulator();
+        }
+    }
+
+    void CControl_Window::Reset_Emulator()
+    {
+        m_cpu->Reset_Context();
+        std::for_each(m_peripherals.begin(), m_peripherals.end(), [](auto& peripheral) -> void {
+            peripheral->Reset();
+        });
+
+        const auto [error_code, pc, disassembly] = utils::elf::Reload_Kernel(*m_bus);
+
+        switch (error_code)
+        {
+            case utils::elf::NError_Code::OK:
+                m_logging_system.Info(fmt::format("The .ELF file has been loaded successfully. The program starts at 0x{:08X}", pc).c_str());
+                break;
+
+            case utils::elf::NError_Code::ELF_64_Not_Supported:
+                m_logging_system.Error("64 bit ELF format is not supported by the emulator");
+                break;
+
+            case utils::elf::NError_Code::ELF_Loader_Error:
+                m_logging_system.Error("Failed to load the ELF file. Make sure you entered a valid path to a valid ELF file");
+                break;
+
+            case utils::elf::NError_Code::Disassembly_Engine_Error:
+                m_logging_system.Error("Failed to initialize a disassembly engine");
+                break;
         }
     }
 
@@ -121,13 +156,13 @@ namespace zero_mate::gui
 
     void CControl_Window::Render_ImGUI_Demo()
     {
-        static bool s_show_demo_window{ false };
-
-        ImGui::Checkbox("Show demo window", &s_show_demo_window);
-        if (s_show_demo_window)
-        {
-            ImGui::ShowDemoWindow();
-        }
+        // static bool s_show_demo_window{ false };
+        //
+        // ImGui::Checkbox("Show demo window", &s_show_demo_window);
+        // if (s_show_demo_window)
+        // {
+        //    ImGui::ShowDemoWindow();
+        // }
     }
 
     inline void CControl_Window::Print_No_ELF_File_Loaded_Error_Msg() const
@@ -146,10 +181,10 @@ namespace zero_mate::gui
             {
                 m_breakpoint_hit = true;
                 m_stop_cpu_thread = true;
-                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX]).c_str());
+                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX]).c_str());
             }
 
-            const auto curr_pc = m_cpu->m_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX];
+            const auto curr_pc = m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX];
             if (prev_pc == curr_pc)
             {
                 std::this_thread::sleep_for(std::chrono::milliseconds(1));

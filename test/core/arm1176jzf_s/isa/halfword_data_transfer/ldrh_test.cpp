@@ -25,9 +25,9 @@ TEST(ldrh_instruction, test_01)
     { 0xe05100b1 }  // ldrh r0, [r1], #-8!
     });
 
-    EXPECT_EQ(cpu.m_context[0], 0x0000108C);
-    EXPECT_EQ(cpu.m_context[1], 0x000000C7);
-    EXPECT_EQ(cpu.m_context[2], 0x0000008C);
+    EXPECT_EQ(cpu.Get_CPU_Context()[0], 0x0000108C);
+    EXPECT_EQ(cpu.Get_CPU_Context()[1], 0x000000C7);
+    EXPECT_EQ(cpu.Get_CPU_Context()[2], 0x0000008C);
 }
 
 TEST(ldrh_instruction, test_02)
@@ -47,6 +47,6 @@ TEST(ldrh_instruction, test_02)
     { 0xe1b100b2 }  // ldrh r0, [r1, r2]!
     });
 
-    EXPECT_EQ(cpu.m_context[0], 0x0000FFFF);
-    EXPECT_EQ(cpu.m_context[1], 0x000000CA);
+    EXPECT_EQ(cpu.Get_CPU_Context()[0], 0x0000FFFF);
+    EXPECT_EQ(cpu.Get_CPU_Context()[1], 0x000000CA);
 }

@@ -23,7 +23,7 @@ SortIncludes: Never
 SpaceBeforeCpp11BracedList: false
 UseTab: Never
 BreakConstructorInitializersBeforeComma: true
-ColumnLimit: 0
+ColumnLimit: 120
 ConstructorInitializerIndentWidth: 0
 ContinuationIndentWidth: 0
 FixNamespaceComments: false
@@ -37,3 +37,8 @@ Standard: c++20
 IndentRequires: false
 AllowShortFunctionsOnASingleLine: false
 QualifierAlignment: Left
+AlwaysBreakTemplateDeclarations: true
+BinPackArguments: false
+BinPackParameters: false
+AllowAllArgumentsOnNextLine: false
+IndentPPDirectives: BeforeHash

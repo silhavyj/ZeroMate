@@ -1,0 +1,149 @@
+
+blinker.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00008000 <_start>:
+    8000:	e3a0d902 	mov	sp, #32768	; 0x8000
+    8004:	eb000038 	bl	80ec <kernel_main>
+
+00008008 <hang>:
+    8008:	eafffffe 	b	8008 <hang>
+
+0000800c <write32>:
+    800c:	e5801000 	str	r1, [r0]
+    8010:	e12fff1e 	bx	lr
+
+00008014 <read32>:
+    8014:	e5900000 	ldr	r0, [r0]
+    8018:	e12fff1e 	bx	lr
+
+0000801c <active_sleep>:
+    801c:	e3a03000 	mov	r3, #0
+    8020:	e24dd008 	sub	sp, sp, #8
+    8024:	e58d3004 	str	r3, [sp, #4]
+    8028:	e59d3004 	ldr	r3, [sp, #4]
+    802c:	e1500003 	cmp	r0, r3
+    8030:	9a000005 	bls	804c <active_sleep+0x30>
+    8034:	e59d3004 	ldr	r3, [sp, #4]
+    8038:	e2833001 	add	r3, r3, #1
+    803c:	e58d3004 	str	r3, [sp, #4]
+    8040:	e59d3004 	ldr	r3, [sp, #4]
+    8044:	e1530000 	cmp	r3, r0
+    8048:	3afffff9 	bcc	8034 <active_sleep+0x18>
+    804c:	e28dd008 	add	sp, sp, #8
+    8050:	e12fff1e 	bx	lr
+
+00008054 <toggle_LED>:
+    8054:	e92d4030 	push	{r4, r5, lr}
+    8058:	e250e000 	subs	lr, r0, #0
+    805c:	e24dd00c 	sub	sp, sp, #12
+    8060:	da00001d 	ble	80dc <toggle_LED+0x88>
+    8064:	e3a02000 	mov	r2, #0
+    8068:	e3a04902 	mov	r4, #32768	; 0x8000
+    806c:	e1a0c002 	mov	ip, r2
+    8070:	e1a05004 	mov	r5, r4
+    8074:	e59f006c 	ldr	r0, [pc, #108]	; 80e8 <toggle_LED+0x94>
+    8078:	e5805020 	str	r5, [r0, #32]
+    807c:	e58dc004 	str	ip, [sp, #4]
+    8080:	e59d3004 	ldr	r3, [sp, #4]
+    8084:	e1510003 	cmp	r1, r3
+    8088:	9a000005 	bls	80a4 <toggle_LED+0x50>
+    808c:	e59d3004 	ldr	r3, [sp, #4]
+    8090:	e2833001 	add	r3, r3, #1
+    8094:	e58d3004 	str	r3, [sp, #4]
+    8098:	e59d3004 	ldr	r3, [sp, #4]
+    809c:	e1510003 	cmp	r1, r3
+    80a0:	8afffff9 	bhi	808c <toggle_LED+0x38>
+    80a4:	e580402c 	str	r4, [r0, #44]	; 0x2c
+    80a8:	e58dc000 	str	ip, [sp]
+    80ac:	e59d3000 	ldr	r3, [sp]
+    80b0:	e1510003 	cmp	r1, r3
+    80b4:	9a000005 	bls	80d0 <toggle_LED+0x7c>
+    80b8:	e59d3000 	ldr	r3, [sp]
+    80bc:	e2833001 	add	r3, r3, #1
+    80c0:	e58d3000 	str	r3, [sp]
+    80c4:	e59d3000 	ldr	r3, [sp]
+    80c8:	e1510003 	cmp	r1, r3
+    80cc:	8afffff9 	bhi	80b8 <toggle_LED+0x64>
+    80d0:	e2822001 	add	r2, r2, #1
+    80d4:	e15e0002 	cmp	lr, r2
+    80d8:	1affffe6 	bne	8078 <toggle_LED+0x24>
+    80dc:	e28dd00c 	add	sp, sp, #12
+    80e0:	e8bd4030 	pop	{r4, r5, lr}
+    80e4:	e12fff1e 	bx	lr
+    80e8:	20200000 	eorcs	r0, r0, r0
+
+000080ec <kernel_main>:
+    80ec:	e59f2068 	ldr	r2, [pc, #104]	; 815c <kernel_main+0x70>
+    80f0:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+    80f4:	e5923010 	ldr	r3, [r2, #16]
+    80f8:	e3c3360e 	bic	r3, r3, #14680064	; 0xe00000
+    80fc:	e3833602 	orr	r3, r3, #2097152	; 0x200000
+    8100:	e5823010 	str	r3, [r2, #16]
+    8104:	e24dd00c 	sub	sp, sp, #12
+    8108:	e3a01a03 	mov	r1, #12288	; 0x3000
+    810c:	e3a00003 	mov	r0, #3
+    8110:	ebffffcf 	bl	8054 <toggle_LED>
+    8114:	e3a01c75 	mov	r1, #29952	; 0x7500
+    8118:	e3a00003 	mov	r0, #3
+    811c:	ebffffcc 	bl	8054 <toggle_LED>
+    8120:	e3a01a03 	mov	r1, #12288	; 0x3000
+    8124:	e3a00003 	mov	r0, #3
+    8128:	ebffffc9 	bl	8054 <toggle_LED>
+    812c:	e3a03000 	mov	r3, #0
+    8130:	e58d3004 	str	r3, [sp, #4]
+    8134:	e59d3004 	ldr	r3, [sp, #4]
+    8138:	e3530a15 	cmp	r3, #86016	; 0x15000
+    813c:	2afffff1 	bcs	8108 <kernel_main+0x1c>
+    8140:	e59d3004 	ldr	r3, [sp, #4]
+    8144:	e2833001 	add	r3, r3, #1
+    8148:	e58d3004 	str	r3, [sp, #4]
+    814c:	e59d3004 	ldr	r3, [sp, #4]
+    8150:	e3530a15 	cmp	r3, #86016	; 0x15000
+    8154:	3afffff9 	bcc	8140 <kernel_main+0x54>
+    8158:	eaffffea 	b	8108 <kernel_main+0x1c>
+    815c:	20200000 	eorcs	r0, r0, r0
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00002541 	andeq	r2, r0, r1, asr #10
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	0000001b 	andeq	r0, r0, fp, lsl r0
+  10:	00543405 	subseq	r3, r4, r5, lsl #8
+  14:	01080206 	tsteq	r8, r6, lsl #4
+  18:	04120109 	ldreq	r0, [r2], #-265	; 0xfffffef7
+  1c:	01150114 	tsteq	r5, r4, lsl r1
+  20:	01180317 	tsteq	r8, r7, lsl r3
+  24:	Address 0x0000000000000024 is out of bounds.
+
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347 	bcc	10d0d24 <__CTOR_END__+0x10c8bc4>
+   4:	35312820 	ldrcc	r2, [r1, #-2080]!	; 0xfffff7e0
+   8:	322d393a 	eorcc	r3, sp, #950272	; 0xe8000
+   c:	2d393130 	ldfcss	f3, [r9, #-192]!	; 0xffffff40
+  10:	302d3471 	eorcc	r3, sp, r1, ror r4
+  14:	6e756275 	mrcvs	2, 3, r6, cr5, cr5, {3}
+  18:	29317574 	ldmdbcs	r1!, {r2, r4, r5, r6, r8, sl, ip, sp, lr}
+  1c:	322e3920 	eorcc	r3, lr, #32, 18	; 0x80000
+  20:	3220312e 	eorcc	r3, r0, #-2147483637	; 0x8000000b
+  24:	31393130 	teqcc	r9, r0, lsr r1
+  28:	20353230 	eorscs	r3, r5, r0, lsr r2
+  2c:	6c657228 	sfmvs	f7, 2, [r5], #-160	; 0xffffff60
+  30:	65736165 	ldrbvs	r6, [r3, #-357]!	; 0xfffffe9b
+  34:	415b2029 	cmpmi	fp, r9, lsr #32
+  38:	612f4d52 			; <UNDEFINED> instruction: 0x612f4d52
+  3c:	392d6d72 	pushcc	{r1, r4, r5, r6, r8, sl, fp, sp, lr}
+  40:	6172622d 	cmnvs	r2, sp, lsr #4
+  44:	2068636e 	rsbcs	r6, r8, lr, ror #6
+  48:	69766572 	ldmdbvs	r6!, {r1, r4, r5, r6, r8, sl, sp, lr}^
+  4c:	6e6f6973 			; <UNDEFINED> instruction: 0x6e6f6973
+  50:	37373220 	ldrcc	r3, [r7, -r0, lsr #4]!
+  54:	5d393935 			; <UNDEFINED> instruction: 0x5d393935
+	...

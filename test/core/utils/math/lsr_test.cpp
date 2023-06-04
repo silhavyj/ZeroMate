@@ -49,7 +49,7 @@ TEST(lsr, uint32_test_05)
     const auto [carry_flag, result] = LSR<std::uint32_t>(271U, 0U);
 
     EXPECT_EQ(carry_flag, false);
-    EXPECT_EQ(result, 0U);
+    EXPECT_EQ(result, 271U);
 }
 
 TEST(lsr, uint32_test_06)
@@ -59,7 +59,7 @@ TEST(lsr, uint32_test_06)
     const auto [carry_flag, result] = LSR<std::uint32_t>(0b10000000'00000000'00000000'00000000U, 0U);
 
     EXPECT_EQ(carry_flag, true);
-    EXPECT_EQ(result, 0U);
+    EXPECT_EQ(result, 0b10000000'00000000'00000000'00000000U);
 }
 
 TEST(lsr, uint32_test_07)
@@ -69,7 +69,7 @@ TEST(lsr, uint32_test_07)
     const auto [carry_flag, result] = LSR<std::uint32_t>(0b01000000'00000000'00000000'00000000U, 0U);
 
     EXPECT_EQ(carry_flag, false);
-    EXPECT_EQ(result, 0U);
+    EXPECT_EQ(result, 0b01000000'00000000'00000000'00000000U);
 }
 
 TEST(lsr, uint8_test_01)
@@ -79,7 +79,7 @@ TEST(lsr, uint8_test_01)
     const auto [carry_flag, result] = LSR<std::uint8_t>(0b01000000, 0U);
 
     EXPECT_EQ(carry_flag, false);
-    EXPECT_EQ(result, 0U);
+    EXPECT_EQ(result, 0b01000000);
 }
 
 TEST(lsr, uint8_test_02)
@@ -89,7 +89,7 @@ TEST(lsr, uint8_test_02)
     const auto [carry_flag, result] = LSR<std::uint8_t>(0b10000000, 0U);
 
     EXPECT_EQ(carry_flag, true);
-    EXPECT_EQ(result, 0U);
+    EXPECT_EQ(result, 0b10000000);
 }
 
 TEST(lsr, uint8_test_03)

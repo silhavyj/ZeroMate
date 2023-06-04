@@ -13,7 +13,7 @@ TEST(sxtb_instruction, test_01)
     { 0xe6af3873 }  // sxtb r3, r3, ROR #16
     });
 
-    EXPECT_EQ(cpu.m_context[3], 0xFFFFFFFF);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 0xFFFFFFFF);
 }
 
 TEST(sxtb_instruction, test_02)
@@ -27,7 +27,7 @@ TEST(sxtb_instruction, test_02)
     { 0xe6af3073 }  // sxtb r3, r3
     });
 
-    EXPECT_EQ(cpu.m_context[3], 0xFFFFFFFF);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 0xFFFFFFFF);
 }
 
 TEST(sxtb_instruction, test_03)
@@ -41,5 +41,5 @@ TEST(sxtb_instruction, test_03)
     { 0xe6af3073 }  // sxtb r3, r3
     });
 
-    EXPECT_EQ(cpu.m_context[3], 1);
+    EXPECT_EQ(cpu.Get_CPU_Context()[3], 1);
 }

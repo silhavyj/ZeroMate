@@ -47,6 +47,19 @@ target_include_directories(
     SYSTEM PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/ini)
 
+# Build Demangle as a library (LLVM)
+file(GLOB_RECURSE demangle_source_files
+    "${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/lib/Demangle/*.cpp")
+
+add_library(
+    demangle
+    ${demangle_source_files})
+
+target_include_directories(
+    demangle
+    SYSTEM PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include)
+
 # Find all source files making up the core of emulator
 file(GLOB_RECURSE core_source_files "core/*.cpp" "core/*.hpp")
 
@@ -70,7 +83,8 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/IconFontCppHeaders
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog
-        ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include)
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
@@ -86,7 +100,8 @@ target_link_libraries(
         imgui_file_dialog
         magic_enum
         capstone
-        ini)
+        ini
+        demangle)
 
 if(WIN32)
     target_link_libraries(
@@ -100,6 +115,7 @@ endif()
 add_custom_command(
     TARGET zero_mate POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/fonts $<TARGET_FILE_DIR:zero_mate>/fonts
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/icons $<TARGET_FILE_DIR:zero_mate>/icons
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/imgui.ini $<TARGET_FILE_DIR:zero_mate>
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/peripherals.ini $<TARGET_FILE_DIR:zero_mate>)
 
