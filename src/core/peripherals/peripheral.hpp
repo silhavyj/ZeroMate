@@ -55,6 +55,13 @@ namespace zero_mate::peripheral
         IPeripheral& operator=(IPeripheral&&) = delete;
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets the peripheral.
+        ///
+        /// Every class/struct that inherits from the IPeripheral class must implement this function.
+        // -------------------------------------------------------------------------------------------------------------
+        virtual void Reset() noexcept = 0;
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns the size of the peripheral.
         ///
         /// Every class/struct that inherits from the IPeripheral class must implement this function.

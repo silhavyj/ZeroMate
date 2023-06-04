@@ -10,12 +10,14 @@ namespace zero_mate::gui
     CFile_Window::CFile_Window(std::shared_ptr<CBus> bus,
                                std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
                                std::vector<utils::elf::TText_Section_Record>& source_code,
-                               bool& elf_file_has_been_loaded)
+                               bool& elf_file_has_been_loaded,
+                               std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals)
     : m_bus{ bus }
     , m_cpu{ cpu }
     , m_source_code{ source_code }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
+    , m_peripherals{ peripherals }
     {
     }
 
@@ -45,6 +47,12 @@ namespace zero_mate::gui
                     if (s_open_elf)
                     {
                         s_elf_filename = ImGuiFileDialog::Instance()->GetFilePathName();
+
+                        // Reset peripherals.
+                        std::for_each(m_peripherals.begin(), m_peripherals.end(), [](auto& peripheral) -> void {
+                            peripheral->Reset();
+                        });
+
                         const auto [error_code, pc, disassembly] = utils::elf::Load_Kernel(*m_bus, s_elf_filename.c_str());
 
                         switch (error_code)

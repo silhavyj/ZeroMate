@@ -9,6 +9,11 @@
 /// https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf (chapter 6)
 // ---------------------------------------------------------------------------------------------------------------------
 
+// STL imports (excluded from Doxygen)
+/// \cond
+#include <algorithm>
+/// \endcond
+
 // 3rd party library includes
 
 #include <fmt/format.h>
@@ -121,11 +126,16 @@ namespace zero_mate::peripheral
     }
 
     CGPIO_Manager::CGPIO_Manager(std::shared_ptr<CInterrupt_Controller> interrupt_controller) noexcept
-    : m_regs{}
-    , m_pins{}
-    , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
+    : m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_interrupt_controller{ interrupt_controller }
     {
+        Reset();
+    }
+
+    void CGPIO_Manager::Reset() noexcept
+    {
+        std::fill(m_regs.begin(), m_regs.end(), 0);
+        std::fill(m_pins.begin(), m_pins.end(), CPin());
     }
 
     std::uint32_t CGPIO_Manager::Get_Size() const noexcept

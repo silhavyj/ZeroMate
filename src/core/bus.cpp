@@ -6,9 +6,10 @@
 /// \brief This file implements the interface defined in bus.hpp.
 // ---------------------------------------------------------------------------------------------------------------------
 
-// STL imports
-
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <algorithm>
+/// \endcond
 
 // Project file imports
 

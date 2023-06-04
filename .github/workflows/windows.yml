@@ -1,4 +1,4 @@
-name: windows
+name: Windows
 
 # Define the rules when this workflow should be applied
 on:
