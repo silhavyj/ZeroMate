@@ -48,6 +48,7 @@ extern "C" int _kernel_main(void)
 	// sProcessMgr.Create_Main_Process();
 
 	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_1));
+	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_2));
 	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_3));
 	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_4));
 

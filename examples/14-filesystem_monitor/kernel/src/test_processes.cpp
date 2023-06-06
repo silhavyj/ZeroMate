@@ -38,7 +38,7 @@ void Process_2()
 
 	const char* msg = "Hello!\n";
 
-	uint32_t f = open("DEV:uart/0", NFile_Open_Mode::Read_Write);
+	uint32_t f = open("DEV:monitor/0", NFile_Open_Mode::Read_Write);
 
 	disable_irq();
 	sMonitor << "process 2 file descriptor = " << f << "\n";

@@ -1,4 +1,5 @@
 #include <fs/filesystem.h>
+#include <drivers/monitor.h>
 
 #include <memory/kernel_heap.h>
 
@@ -56,6 +57,8 @@ CFilesystem::TFS_Tree_Node* CFilesystem::TFS_Tree_Node::Find_Child(const char* n
 
 void CFilesystem::Initialize()
 {
+    sMonitor << "Initializing the FS\n";
+
     char tmpName[MaxFilenameLength];
     const char* mpPtr;
 
@@ -66,6 +69,8 @@ void CFilesystem::Initialize()
         const TFS_Driver* ptr = &gFS_Drivers[i];
 
         mpPtr = ptr->mountPoint;
+
+        sMonitor << "mount point = " << mpPtr << "\n";
 
         TFS_Tree_Node* node = &mRoot, *tmpNode = nullptr;
 
@@ -82,10 +87,15 @@ void CFilesystem::Initialize()
             tmpName[j] = '\0';
             mpPtr += j + 1;
 
+            sMonitor << "finding child = " << tmpName << '\n'; 
+
             tmpNode = node->Find_Child(tmpName);
             // uzel jsme nasli - pouzijeme ho pro dalsi prohledavani
-            if (tmpNode)
+            if (tmpNode) 
+            {
                 node = tmpNode;
+                sMonitor << "child " << tmpName << " was found\n";
+            }
             // uzel jsme nenasli - vytvorime ho a pouzijeme ho pro dalsi prohledavani
             else
             {
@@ -99,6 +109,9 @@ void CFilesystem::Initialize()
                 node->children = tmpNode;
 
                 node = tmpNode;
+
+                sMonitor << "child was not found\n";
+                sMonitor << "creating: " << node->name << "\n";
             }
         }
 
@@ -113,12 +126,15 @@ void CFilesystem::Initialize()
         // dame driveru vedet, ze jsme ho zaregistrovali
         ptr->driver->On_Register();
     }
+
+    sMonitor << "Finished FS initialization\n\n";
 }
 
 IFile* CFilesystem::Open(const char* path, NFile_Open_Mode mode)
 {
     char tmpName[MaxFilenameLength];
     const char* mpPtr;
+    sMonitor << "opening file: " << path << "\n";
 
     int j;
 
@@ -144,10 +160,14 @@ IFile* CFilesystem::Open(const char* path, NFile_Open_Mode mode)
             node = tmpNode;
 
         if (tmpNode->driver_idx != NoFilesystemDriver)
+        {
             return gFS_Drivers[tmpNode->driver_idx].driver->Open_File(mpPtr, mode);
+        }
         else if (!tmpNode->isDirectory)
             break;
     }
+
+    sMonitor << "failed to open: " << path << "\n";
 
     // zadny filesystem se tohoto uzlu "neujal" -> soubor neexistuje
     return nullptr;
