@@ -85,7 +85,12 @@ void CFilesystem::Initialize()
             }
 
             tmpName[j] = '\0';
-            mpPtr += j + 1;
+
+            mpPtr += j;
+            if (mpPtr[0] != '\0')
+            {
+                mpPtr += 1;
+            }
 
             sMonitor << "finding child = " << tmpName << '\n'; 
 
@@ -153,7 +158,12 @@ IFile* CFilesystem::Open(const char* path, NFile_Open_Mode mode)
         }
 
         tmpName[j] = '\0';
-        mpPtr += j + 1;
+
+        mpPtr += j;
+        if (mpPtr[0] != '\0')
+        {
+            mpPtr += 1;
+        }
 
         tmpNode = node->Find_Child(tmpName);
         if (tmpNode)
