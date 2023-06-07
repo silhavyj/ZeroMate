@@ -43,7 +43,7 @@ namespace zero_mate::utils
         // Use std::filesystem::path to extract the filename from the path.
         const std::filesystem::path full_path{ location.file_name() };
 
-        return full_path.filename();
+        return full_path.filename().string();
     }
 
     void CLogging_System::Print(const char* msg)
