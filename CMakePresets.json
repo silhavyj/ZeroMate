@@ -22,7 +22,10 @@
              "CMAKE_BUILD_TYPE":"Debug",
              "ENABLE_TESTING":"ON",
              "CMAKE_C_COMPILER":"gcc",
-             "CMAKE_CXX_COMPILER":"g++"
+             "CMAKE_CXX_COMPILER":"g++",
+             "ENABLE_SANITIZER_ADDRESS":"ON",
+             "ENABLE_SANITIZER_LEAK":"ON",
+             "ENABLE_SANITIZER_UNDEFINED_BEHAVIOR":"ON"
           }
        },
        {

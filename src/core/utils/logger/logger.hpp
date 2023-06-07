@@ -190,7 +190,7 @@ namespace zero_mate::utils
         /// \param location Location within the project (source file)
         /// \return Stripped filename of the source file
         // -------------------------------------------------------------------------------------------------------------
-        static std::string_view Extract_Filename(const std::source_location& location);
+        static std::string Extract_Filename(const std::source_location& location);
 
     private:
         std::vector<std::shared_ptr<ILogger>> m_loggers; ///< Collection of all registered loggers

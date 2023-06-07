@@ -10,6 +10,7 @@
 /// \cond
 #include <ranges>
 #include <algorithm>
+#include <filesystem>
 /// \endcond
 
 // 3rd party library includes
@@ -37,13 +38,12 @@ namespace zero_mate::utils
         m_loggers.push_back(logger);
     }
 
-    std::string_view CLogging_System::Extract_Filename(const std::source_location& location)
+    std::string CLogging_System::Extract_Filename(const std::source_location& location)
     {
-        // Get the path of the source file.
-        const std::string_view full_filename = location.file_name();
+        // Use std::filesystem::path to extract the filename from the path.
+        const std::filesystem::path full_path{ location.file_name() };
 
-        // Strip out the filename from the path.
-        return full_filename.substr(full_filename.find_last_of('/') + 1);
+        return full_path.filename().string();
     }
 
     void CLogging_System::Print(const char* msg)
