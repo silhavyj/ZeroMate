@@ -25,6 +25,7 @@
 #include "peripheral.hpp"
 #include "interrupt_controller.hpp"
 #include "../utils/logger/logger.hpp"
+#include "external_peripheral.hpp"
 
 namespace zero_mate::peripheral
 {
@@ -43,6 +44,9 @@ namespace zero_mate::peripheral
 
         /// Number of pins encapsulated in a single register
         static constexpr std::uint32_t NUMBER_OF_PINS_IN_REG = std::numeric_limits<std::uint32_t>::digits;
+
+        // Alias for external peripherals to make the code less wordy
+        using External_Peripherals_t = std::vector<std::shared_ptr<IExternal_Peripheral>>;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \class CPin
@@ -286,11 +290,24 @@ namespace zero_mate::peripheral
         void Read(std::uint32_t addr, char* data, std::uint32_t size) override;
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Hooks up an external peripheral to the GPIO manager.
+        /// \param peripheral Instance of an external peripheral
+        // -------------------------------------------------------------------------------------------------------------
+        void Add_External_Peripheral(std::shared_ptr<IExternal_Peripheral> peripheral);
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns a const reference to a pin (visualization purposes).
         /// \param idx Index of the pin to be returned
         /// \return Const reference to a pin
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] const CPin& Get_Pin(std::size_t idx) const;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Returns the current state of a given pin.
+        /// \param idx Index of the pin whose state will be returned
+        /// \return Current state of the given pin
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] CPin::NState Read_GPIO_Pin(std::size_t idx) const;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Sets a new state of a given pin.
@@ -359,11 +376,18 @@ namespace zero_mate::peripheral
         // -------------------------------------------------------------------------------------------------------------
         void Clear_IRQ(std::size_t reg_idx, bool last_reg);
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Notifies external peripherals that subscribe to the given pin about the change of its state.
+        /// \param pin_idx Index of the pin whose state has changed
+        // -------------------------------------------------------------------------------------------------------------
+        void Notify_External_Peripherals(std::uint32_t pin_idx);
+
     private:
         std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;         ///< GPIO registers
         std::array<CPin, NUMBER_OF_GPIO_PINS> m_pins;                  ///< GPIO pins
         utils::CLogging_System& m_logging_system;                      ///< Logging system
         std::shared_ptr<CInterrupt_Controller> m_interrupt_controller; ///< Interrupt controller
+        External_Peripherals_t m_external_peripherals;                 ///< Collection of external peripherals
     };
 
 } // namespace zero_mate::peripheral

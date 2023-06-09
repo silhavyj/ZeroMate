@@ -1,0 +1,5 @@
+- filesystem, FS drivery
+- soubory - pro teď GPIO a UART
+- GPIO vyhrazení - drivery si můžou "zamknout" piny pro sebe, např. UART si zamkne TX/RX piny
+- syscally - open, read, write, close, getpid, ioctl
+- stdlib - fopen, fread, fwrite, fclose
