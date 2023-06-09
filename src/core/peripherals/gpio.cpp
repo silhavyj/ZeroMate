@@ -208,6 +208,9 @@ namespace zero_mate::peripheral
                         m_pins[pin_idx].Set_State(state);
                         Mirror_Pin_State_In_GPLEVn(pin_idx, state);
                     }
+
+                    // Notify all external peripherals subscribing to the pin
+                    Notify_External_Peripherals(pin_idx);
                 }
                 else
                 {
@@ -223,6 +226,16 @@ namespace zero_mate::peripheral
 
         // RS latch - only the last write defines the state of the pin (SW emulation).
         m_regs[reg_idx] = 0;
+    }
+
+    void CGPIO_Manager::Notify_External_Peripherals(std::uint32_t pin_idx)
+    {
+        std::for_each(m_external_peripherals.begin(), m_external_peripherals.end(), [pin_idx](const auto& peripheral) {
+            if (peripheral->Get_GPIO_Subscription().contains(pin_idx))
+            {
+                peripheral->GPIO_Subscription_Callback(pin_idx);
+            }
+        });
     }
 
     std::size_t CGPIO_Manager::Get_Register_Index(std::size_t& pin_idx, NRegister reg_0, NRegister reg_1) noexcept
@@ -407,6 +420,11 @@ namespace zero_mate::peripheral
         }
     }
 
+    void CGPIO_Manager::Add_External_Peripheral(std::shared_ptr<IExternal_Peripheral> peripheral)
+    {
+        m_external_peripherals.emplace_back(peripheral);
+    }
+
     void CGPIO_Manager::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
         const std::size_t reg_idx = addr / REG_SIZE;
@@ -430,6 +448,11 @@ namespace zero_mate::peripheral
     const CGPIO_Manager::CPin& CGPIO_Manager::Get_Pin(std::size_t idx) const
     {
         return m_pins.at(idx);
+    }
+
+    CGPIO_Manager::CPin::NState CGPIO_Manager::Read_GPIO_Pin(std::size_t idx) const
+    {
+        return m_pins.at(idx).Get_State();
     }
 
     CGPIO_Manager::NPin_Set_Status CGPIO_Manager::Set_Pin_State(std::size_t pin_idx, CPin::NState state)

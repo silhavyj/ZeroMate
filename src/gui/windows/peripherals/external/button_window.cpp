@@ -32,7 +32,7 @@ namespace zero_mate::gui::external_peripheral
         {
             for (std::size_t i = 0; i < peripheral::CGPIO_Manager::NUMBER_OF_GPIO_PINS; ++i)
             {
-                if (ImGui::Selectable(fmt::format("ping {}", i).c_str()) && m_pin_idx != i)
+                if (ImGui::Selectable(fmt::format("pin {}", i).c_str()) && m_pin_idx != i)
                 {
                     m_pin_idx = i;
                     m_state = peripheral::CGPIO_Manager::CPin::NState::High;

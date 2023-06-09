@@ -10,6 +10,7 @@
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
 
 #include "../config.hpp"
+
 #include "gui.hpp"
 #include "window.hpp"
 #include "windows/registers_window.hpp"
@@ -26,6 +27,7 @@
 #include "windows/peripherals/interrupt_controller_window.hpp"
 
 #include "windows/peripherals/external/button_window.hpp"
+#include "windows/peripherals/external/seven_segment_display.hpp"
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
@@ -50,6 +52,7 @@ namespace zero_mate::gui
         auto s_arm_timer = std::make_shared<peripheral::CARM_Timer>(s_interrupt_controller);
         auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>(s_interrupt_controller);
         auto s_monitor = std::make_shared<peripheral::CMonitor>();
+        auto s_shift_register = std::make_shared<peripheral::external::CShift_Register<>>(s_gpio, 2, 3, 4);
 
         std::vector<utils::elf::TText_Section_Record> s_source_code{};
         auto s_log_window = std::make_shared<CLog_Window>();
@@ -94,6 +97,7 @@ namespace zero_mate::gui
             s_windows.emplace_back(std::make_shared<CCP15_Window>(s_cp15));
 
             s_windows.emplace_back(std::make_shared<external_peripheral::CButton>(s_gpio));
+            s_windows.emplace_back(std::make_shared<external_peripheral::CSeven_Segment_Display>(s_shift_register));
         }
 
         template<typename Peripheral>
@@ -190,6 +194,8 @@ namespace zero_mate::gui
 
             Init_CPU();
             Init_BUS();
+
+            s_gpio->Add_External_Peripheral(s_shift_register);
         }
 
         void Initialize()
