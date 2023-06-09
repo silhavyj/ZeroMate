@@ -4,27 +4,21 @@
 
 #include "../../../window.hpp"
 
-#include "../../../../core/peripherals/gpio.hpp"
+#include "../../../../core/peripherals/external/button.hpp"
 #include "../../../../core/utils/logger/logger.hpp"
 
 namespace zero_mate::gui::external_peripheral
 {
-    class CButton final : public CGUI_Window
+    class CButton_Window final : public CGUI_Window
     {
     public:
-        explicit CButton(std::shared_ptr<peripheral::CGPIO_Manager> gpio);
+        explicit CButton_Window(std::shared_ptr<peripheral::external::CButton> button);
 
         void Render() override;
         void Render_Combobox();
         void Render_Button();
 
     private:
-        inline void Swap_State();
-
-    private:
-        std::shared_ptr<peripheral::CGPIO_Manager> m_gpio;
-        utils::CLogging_System& m_logging_system;
-        peripheral::CGPIO_Manager::CPin::NState m_state;
-        std::size_t m_pin_idx;
+        std::shared_ptr<peripheral::external::CButton> m_button;
     };
 }

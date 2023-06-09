@@ -52,7 +52,9 @@ namespace zero_mate::gui
         auto s_arm_timer = std::make_shared<peripheral::CARM_Timer>(s_interrupt_controller);
         auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>(s_interrupt_controller);
         auto s_monitor = std::make_shared<peripheral::CMonitor>();
+
         auto s_shift_register = std::make_shared<peripheral::external::CShift_Register<>>(s_gpio, 2, 3, 4);
+        auto s_button = std::make_shared<peripheral::external::CButton>(s_gpio, 5);
 
         std::vector<utils::elf::TText_Section_Record> s_source_code{};
         auto s_log_window = std::make_shared<CLog_Window>();
@@ -96,7 +98,7 @@ namespace zero_mate::gui
             s_windows.emplace_back(std::make_shared<CMonitor_Window>(s_monitor));
             s_windows.emplace_back(std::make_shared<CCP15_Window>(s_cp15));
 
-            s_windows.emplace_back(std::make_shared<external_peripheral::CButton>(s_gpio));
+            s_windows.emplace_back(std::make_shared<external_peripheral::CButton_Window>(s_button));
             s_windows.emplace_back(std::make_shared<external_peripheral::CSeven_Segment_Display>(s_shift_register));
         }
 

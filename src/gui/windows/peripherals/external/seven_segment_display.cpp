@@ -13,7 +13,7 @@ namespace zero_mate::gui::external_peripheral
 
     void CSeven_Segment_Display::Render()
     {
-        if (ImGui::Begin("Seven segment display"))
+        if (ImGui::Begin("7-segment display"))
         {
             Render_Shift_Register();
             Render_Seven_Segment_Display();

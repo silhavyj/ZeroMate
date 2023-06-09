@@ -39,10 +39,10 @@ namespace zero_mate::peripheral::external
         /// \param clock_pin_idx Index of the clock pin of the shift register
         /// \param latch_pin_idx Index of the latch pin (output enabled)
         // -------------------------------------------------------------------------------------------------------------
-        CShift_Register(std::shared_ptr<CGPIO_Manager> gpio_manager,
-                        std::uint32_t latch_pin_idx,
-                        std::uint32_t data_pin_idx,
-                        std::uint32_t clock_pin_idx)
+        explicit CShift_Register(std::shared_ptr<CGPIO_Manager> gpio_manager,
+                                 std::uint32_t latch_pin_idx,
+                                 std::uint32_t data_pin_idx,
+                                 std::uint32_t clock_pin_idx)
         : m_gpio_manager{ gpio_manager }
         , m_last_input_value{ 0 }
         , m_value{ 0 }
