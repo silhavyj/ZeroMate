@@ -16,10 +16,6 @@
 #include <numeric>
 /// \endcond
 
-// 3rd party library includes
-
-#include <fmt/format.h>
-
 // Project file imports
 
 #include "../gpio.hpp"
