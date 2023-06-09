@@ -1,7 +1,7 @@
 #include <imgui.h>
 #include <fmt/format.h>
 
-#include "seven_segment_display.hpp"
+#include "seven_segment_display_window.hpp"
 #include "../../../../core/utils/math.hpp"
 
 namespace zero_mate::gui::external_peripheral

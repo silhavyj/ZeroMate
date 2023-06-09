@@ -27,7 +27,7 @@
 #include "windows/peripherals/interrupt_controller_window.hpp"
 
 #include "windows/peripherals/external/button_window.hpp"
-#include "windows/peripherals/external/seven_segment_display.hpp"
+#include "windows/peripherals/external/seven_segment_display_window.hpp"
 
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
