@@ -22,7 +22,8 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include)
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 # Link project_warnings, project_options, and libraries
 target_link_libraries(
