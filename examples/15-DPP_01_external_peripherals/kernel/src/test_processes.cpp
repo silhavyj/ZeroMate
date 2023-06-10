@@ -39,20 +39,31 @@ void Process_2()
 	const char* msg = "Hello!\n";
 
 	uint32_t f = open("DEV:monitor/0", NFile_Open_Mode::Read_Write);
+	uint32_t rndf = open("DEV:trng", NFile_Open_Mode::Read_Only);
 
 	disable_irq();
-	sMonitor << "process 2 file descriptor = " << f << "\n";
+	sMonitor << "process 2 file descriptor (f) = " << f << "\n";
+	sMonitor << "process 2 file descriptor (rndf)= " << rndf << "\n";
 	enable_irq();
+
+	uint32_t rdbuf;
+    char numbuf[16];
 
 	while (true)
 	{
-		write(f, msg, strlen(msg));
+		read(rndf, reinterpret_cast<char*>(&rdbuf), 4);
+
+		bzero(numbuf, 16);
+        itoa(rdbuf, numbuf, 10);
+
+        write(f, numbuf, strlen(numbuf));
 
 		for (i = 0; i < 0x800; i++)
 			;
 	}
 
 	close(f);
+	close(rndf);
 }
 
 void Process_3()

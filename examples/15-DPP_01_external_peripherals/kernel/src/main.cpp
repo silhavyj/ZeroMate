@@ -1,4 +1,5 @@
 #include <drivers/gpio.h>
+#include <drivers/trng.h>
 #include <drivers/timer.h>
 #include <drivers/segmentdisplay.h>
 #include <drivers/monitor.h>
