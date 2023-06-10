@@ -29,6 +29,8 @@
 #include "windows/peripherals/external/button_window.hpp"
 #include "windows/peripherals/external/seven_segment_display_window.hpp"
 
+#include "../core/peripherals/trng.hpp"
+
 #include "../core/utils/singleton.hpp"
 #include "../core/utils/logger/logger_stdo.hpp"
 
@@ -52,6 +54,7 @@ namespace zero_mate::gui
         auto s_arm_timer = std::make_shared<peripheral::CARM_Timer>(s_interrupt_controller);
         auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>(s_interrupt_controller);
         auto s_monitor = std::make_shared<peripheral::CMonitor>();
+        auto s_trng = std::make_shared<peripheral::CTRNG>();
 
         auto s_shift_register = std::make_shared<peripheral::external::CShift_Register<>>(s_gpio, 2, 3, 4);
         auto s_button = std::make_shared<peripheral::external::CButton>(s_gpio, 5);
@@ -73,6 +76,7 @@ namespace zero_mate::gui
             std::uint32_t interrupt_controller_map_addr;
             std::uint32_t arm_timer_map_addr;
             std::uint32_t monitor_map_addr;
+            std::uint32_t trng_map_addr;
         };
 
         void Initialize_Logging_System()
@@ -148,7 +152,8 @@ namespace zero_mate::gui
                 .gpio_map_addr = config::DEFAULT_GPIO_MAP_ADDR,
                 .interrupt_controller_map_addr = config::DEFAULT_INTERRUPT_CONTROLLER_MAP_ADDR,
                 .arm_timer_map_addr = config::DEFAULT_ARM_TIMER_MAP_ADDR,
-                .monitor_map_addr = config::DEFAULT_MONITOR_MAP_ADDR
+                .monitor_map_addr = config::DEFAULT_MONITOR_MAP_ADDR,
+                .trng_map_addr = config::DEFAULT_TRNG_MAP_ADDR
             };
 
             const INIReader ini_reader(config::CONFIG_FILE);
@@ -165,6 +170,7 @@ namespace zero_mate::gui
                 config_values.interrupt_controller_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::INTERRUPT_CONTROLLER_SECTION, "addr", config::DEFAULT_INTERRUPT_CONTROLLER_MAP_ADDR);
                 config_values.arm_timer_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::ARM_TIMER_SECTION, "addr", config::DEFAULT_ARM_TIMER_MAP_ADDR);
                 config_values.monitor_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::MONITOR_SECTION, "addr", config::DEFAULT_MONITOR_MAP_ADDR);
+                config_values.trng_map_addr = Get_Ini_Value<std::uint32_t>(ini_reader, config::TRNG_SECTION, "addr", config::DEFAULT_TRNG_MAP_ADDR);
             }
 
             return config_values;
@@ -193,6 +199,7 @@ namespace zero_mate::gui
             Attach_Peripheral_To_Bus<peripheral::CGPIO_Manager>("GPIO pin registers", config_values.gpio_map_addr, s_gpio);
             Attach_Peripheral_To_Bus<peripheral::CARM_Timer>("ARM timer", config_values.arm_timer_map_addr, s_arm_timer);
             Attach_Peripheral_To_Bus<peripheral::CMonitor>("monitor", config_values.monitor_map_addr, s_monitor);
+            Attach_Peripheral_To_Bus<peripheral::CTRNG>("trng", config_values.trng_map_addr, s_trng);
 
             Init_CPU();
             Init_BUS();
