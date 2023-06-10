@@ -1,1 +1,2 @@
 add_subdirectory(button)
+add_subdirectory(shift_register)

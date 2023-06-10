@@ -57,6 +57,8 @@ extern "C"
 {
     EXTERNAL_PERIPHERAL_API
     int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
+                          const std::string& name,
                           const std::vector<std::uint32_t>& gpio_pins,
-                          zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin);
+                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
+                          [[maybe_unused]] [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin);
 }

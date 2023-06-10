@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.21)
 
-add_library(button SHARED)
+add_library(shift_register SHARED)
 
 target_include_directories(
-    button
+    shift_register
     PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../../include>
@@ -12,7 +12,7 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 target_sources(
-    button
+    shift_register
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/button.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/button.cpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/shift_register.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/shift_register.cpp)
