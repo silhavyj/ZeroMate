@@ -1,0 +1,9 @@
+<map id="src/core/peripherals/external/button.hpp" name="src/core/peripherals/external/button.hpp">
+<area shape="rect" id="node1" title="This file defines an external button that can be hooked up to the system." alt="" coords="486,5,641,47"/>
+<area shape="rect" id="node2" href="$gpio_8hpp.html" title="This file defines the GPIO controller used in BCM2835." alt="" coords="391,95,482,121"/>
+<area shape="rect" id="node6" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="322,319,501,345"/>
+<area shape="rect" id="node7" href="$external__peripheral_8hpp.html" title="This file defines an interface for external peripheral that can been hooked up to the system (Rpi Zer..." alt="" coords="475,169,652,196"/>
+<area shape="rect" id="node3" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="5,244,121,271"/>
+<area shape="rect" id="node4" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="192,169,367,196"/>
+<area shape="rect" id="node5" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="146,244,349,271"/>
+</map>

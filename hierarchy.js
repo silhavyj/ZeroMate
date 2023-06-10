@@ -17,7 +17,8 @@ var hierarchy =
       [ "zero_mate::gui::CRAM_Window", "classzero__mate_1_1gui_1_1CRAM__Window.html", null ],
       [ "zero_mate::gui::CRegisters_Window", "classzero__mate_1_1gui_1_1CRegisters__Window.html", null ],
       [ "zero_mate::gui::CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html", null ],
-      [ "zero_mate::gui::external_peripheral::CButton", "classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html", null ]
+      [ "zero_mate::gui::external_peripheral::CButton_Window", "classzero__mate_1_1gui_1_1external__peripheral_1_1CButton__Window.html", null ],
+      [ "zero_mate::gui::external_peripheral::CSeven_Segment_Display", "classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display.html", null ]
     ] ],
     [ "zero_mate::arm1176jzf_s::isa::CInstruction", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html", [
       [ "zero_mate::arm1176jzf_s::isa::CBlock_Data_Transfer", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html", null ],
@@ -46,6 +47,10 @@ var hierarchy =
     [ "zero_mate::coprocessor::ICoprocessor", "classzero__mate_1_1coprocessor_1_1ICoprocessor.html", [
       [ "zero_mate::coprocessor::CCP15", "classzero__mate_1_1coprocessor_1_1CCP15.html", null ]
     ] ],
+    [ "zero_mate::peripheral::IExternal_Peripheral", "classzero__mate_1_1peripheral_1_1IExternal__Peripheral.html", [
+      [ "zero_mate::peripheral::external::CButton", "classzero__mate_1_1peripheral_1_1external_1_1CButton.html", null ],
+      [ "zero_mate::peripheral::external::CShift_Register< Register >", "classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html", null ]
+    ] ],
     [ "zero_mate::utils::ILogger", "classzero__mate_1_1utils_1_1ILogger.html", [
       [ "zero_mate::gui::CLog_Window", "classzero__mate_1_1gui_1_1CLog__Window.html", null ],
       [ "zero_mate::utils::CLogger_STDO", "classzero__mate_1_1utils_1_1CLogger__STDO.html", null ]
@@ -55,7 +60,8 @@ var hierarchy =
       [ "zero_mate::peripheral::CGPIO_Manager", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html", null ],
       [ "zero_mate::peripheral::CInterrupt_Controller", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html", null ],
       [ "zero_mate::peripheral::CMonitor", "classzero__mate_1_1peripheral_1_1CMonitor.html", null ],
-      [ "zero_mate::peripheral::CRAM", "classzero__mate_1_1peripheral_1_1CRAM.html", null ]
+      [ "zero_mate::peripheral::CRAM", "classzero__mate_1_1peripheral_1_1CRAM.html", null ],
+      [ "zero_mate::peripheral::CTRNG", "classzero__mate_1_1peripheral_1_1CTRNG.html", null ]
     ] ],
     [ "zero_mate::peripheral::ISystem_Clock_Listener", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html", [
       [ "zero_mate::peripheral::CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", null ]

@@ -1,0 +1,6 @@
+<map id="zero_mate::peripheral::external::CButton::Toggle" name="zero_mate::peripheral::external::CButton::Toggle">
+<area shape="rect" id="node1" title="Toggles the button." alt="" coords="5,5,171,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1external_1_1CButton.html#ad7960043a2404cc20757275d215bfca7" title="Presses/Release the button based on the stated passed in as a parameter." alt="" coords="219,5,384,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" title="Logs a debug message via all registered loggers." alt="" coords="432,13,627,54"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="675,13,873,54"/>
+</map>

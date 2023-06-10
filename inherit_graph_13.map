@@ -1,17 +1,18 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classzero__mate_1_1gui_1_1CGUI__Window.html" title=" " alt="" coords="17,365,177,407"/>
+<area shape="rect" id="node1" href="$classzero__mate_1_1gui_1_1CGUI__Window.html" title=" " alt="" coords="17,397,177,439"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CARM__Timer__Window.html" title=" " alt="" coords="268,5,435,47"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CCP15__Window.html" title=" " alt="" coords="267,71,436,112"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CControl__Window.html" title=" " alt="" coords="260,136,443,177"/>
 <area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CFile__Window.html" title=" " alt="" coords="272,201,431,243"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CGPIO__Window.html" title=" " alt="" coords="267,267,435,308"/>
 <area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CInterrupt__Controller__Window.html" title=" " alt="" coords="255,332,447,373"/>
-<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CLog__Window.html" title=" " alt="" coords="272,724,431,765"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CLog__Window.html" title=" " alt="" coords="272,805,431,847"/>
 <area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1CMonitor__Window.html" title=" " alt="" coords="258,397,445,439"/>
 <area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CRAM__Window.html" title=" " alt="" coords="268,463,435,504"/>
 <area shape="rect" id="node11" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html" title=" " alt="" coords="253,528,450,569"/>
 <area shape="rect" id="node12" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html" title=" " alt="" coords="261,593,441,635"/>
-<area shape="rect" id="node13" href="$classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html" title=" " alt="" coords="261,659,442,700"/>
-<area shape="rect" id="node14" href="$classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logger interface." alt="" coords="5,761,188,787"/>
-<area shape="rect" id="node15" href="$classzero__mate_1_1utils_1_1CLogger__STDO.html" title="This class represents a logger that logs messages to the standard output (STDO)." alt="" coords="236,790,467,817"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1gui_1_1external__peripheral_1_1CButton__Window.html" title=" " alt="" coords="244,659,459,700"/>
+<area shape="rect" id="node14" href="$classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display.html" title=" " alt="" coords="243,725,460,781"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logger interface." alt="" coords="5,842,188,869"/>
+<area shape="rect" id="node16" href="$classzero__mate_1_1utils_1_1CLogger__STDO.html" title="This class represents a logger that logs messages to the standard output (STDO)." alt="" coords="236,871,467,898"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="zero_mate::peripheral::external::CShift_Register::Init_GPIO_Subscription" name="zero_mate::peripheral::external::CShift_Register::Init_GPIO_Subscription">
+<area shape="rect" id="node1" title="Initializes GPIO pin subscription." alt="" coords="244,125,435,181"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#a5b99519bb6e39ac86d182fd96c56e8bd" title="Creates an instance of the class." alt="" coords="5,5,196,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#a401660c426ed9ea36a33df8911708a1a" title="Hooks up the clock pin to a different GPIO pin." alt="" coords="5,85,196,141"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#abd3a01ed2995009982757df19a219995" title="Hooks up the data pin to a different GPIO pin." alt="" coords="5,165,196,221"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#a6befe8e15678fd2b01aa1b1f364ea82e" title="Hooks up the latch pin to a different GPIO pin." alt="" coords="5,245,196,301"/>
+</map>

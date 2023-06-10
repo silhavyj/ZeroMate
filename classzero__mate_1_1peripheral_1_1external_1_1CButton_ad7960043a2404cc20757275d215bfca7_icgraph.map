@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::external::CButton::Set_Output" name="zero_mate::peripheral::external::CButton::Set_Output">
+<area shape="rect" id="node1" title="Presses/Release the button based on the stated passed in as a parameter." alt="" coords="219,5,384,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1external_1_1CButton.html#a17cf51247a37038de86b10089c9b339f" title="Toggles the button." alt="" coords="5,5,171,61"/>
+</map>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['system_5fclock_5flistener_5ft_1447',['System_Clock_Listener_t',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a89a1a7cea70ce64266d50387d19fcb05',1,'zero_mate::arm1176jzf_s::CCPU_Core']]]
+  ['peripheral_5ft_1569',['Peripheral_t',['../classzero__mate_1_1CBus.html#a6d35256fc0205e260516148a1780d0dc',1,'zero_mate::CBus']]],
+  ['peripherals_5ft_1570',['Peripherals_t',['../classzero__mate_1_1CBus.html#a5b389ea9950ca078a7d07c5425f60f12',1,'zero_mate::CBus']]]
 ];

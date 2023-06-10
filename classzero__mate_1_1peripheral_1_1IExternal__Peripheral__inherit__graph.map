@@ -1,0 +1,5 @@
+<map id="zero_mate::peripheral::IExternal_Peripheral" name="zero_mate::peripheral::IExternal_Peripheral">
+<area shape="rect" id="node1" title="This class represents an interface for external peripheral that are connected to GPIO pins." alt="" coords="5,43,171,84"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1external_1_1CButton.html" title="This class represents an external button." alt="" coords="231,5,397,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html" title="This class represents a shift register (external peripheral)" alt="" coords="219,71,409,127"/>
+</map>

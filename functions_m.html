@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v0.3.0</span>
+   &#160;<span id="projectnumber">v0.5.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -112,6 +112,18 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#aea1f26406943d8deb652ee792a002cd9">zero_mate::gui::CControl_Window</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CFile__Window.html#aee055f0ff74ca407f5946c5ac7a3c2ee">zero_mate::gui::CFile_Window</a>
 </li>
+<li>m_button
+: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton__Window.html#a4e3bbf8cb75a853c8d179e649e9d7e88">zero_mate::gui::external_peripheral::CButton_Window</a>
+</li>
+<li>m_clock_pin_idx
+: <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#aae6594d911943ec5957237576fb27ff2">zero_mate::peripheral::external::CShift_Register&lt; Register &gt;</a>
+</li>
+<li>m_clock_state
+: <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#a0cb2505aabcd231e244106df03d38b81">zero_mate::peripheral::external::CShift_Register&lt; Register &gt;</a>
+</li>
+<li>m_clock_state_prev
+: <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#a7dc0835d3f2e1f0edf8c6df8197dea34">zero_mate::peripheral::external::CShift_Register&lt; Register &gt;</a>
+</li>
 <li>m_context
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aff5ac0a3677ca4045ed43805f6126508">zero_mate::arm1176jzf_s::CCPU_Core</a>
 </li>
@@ -149,6 +161,9 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CMonitor.html#a9c81860a6046eee304189b991a6542ea">zero_mate::peripheral::CMonitor</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CRAM.html#af666b03d57d54bc912e36616d431d568">zero_mate::peripheral::CRAM</a>
 </li>
+<li>m_data_pin_idx
+: <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#a78d8889140998c1560e5b37ed610ab48">zero_mate::peripheral::external::CShift_Register&lt; Register &gt;</a>
+</li>
 <li>m_elf_file_has_been_loaded
 : <a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a6fa5dff2436bd03edb514219a1731b75">zero_mate::gui::CControl_Window</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CFile__Window.html#aa0f39af2ebe51823e71eadd7b2a273eb">zero_mate::gui::CFile_Window</a>
@@ -162,6 +177,9 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 <li>m_exception_vector
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#a1c84ad9c11e14653fbf5ac38a1f5d9d8">zero_mate::arm1176jzf_s::exceptions::CCPU_Exception</a>
 </li>
+<li>m_external_peripherals
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa8f0cb0b2beb927f78b0728b842f1265">zero_mate::peripheral::CGPIO_Manager</a>
+</li>
 <li>m_filter
 : <a class="el" href="classzero__mate_1_1gui_1_1CLog__Window.html#a8c40a3640e74e3ce2cef96228b24f94f">zero_mate::gui::CLog_Window</a>
 </li>
@@ -170,7 +188,13 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 </li>
 <li>m_gpio
 : <a class="el" href="classzero__mate_1_1gui_1_1CGPIO__Window.html#af577ddbc6b1f0d14988fdae716a0b5b4">zero_mate::gui::CGPIO_Window</a>
-, <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html#a84b4b95a5bab5f5c0cc3fad43614a253">zero_mate::gui::external_peripheral::CButton</a>
+</li>
+<li>m_gpio_manager
+: <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CButton.html#ac69dbae744991bbfab459defb298b17d">zero_mate::peripheral::external::CButton</a>
+, <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#aa1bc977628fc17532ef2d72ec34854f0">zero_mate::peripheral::external::CShift_Register&lt; Register &gt;</a>
+</li>
+<li>m_gpio_subscription
+: <a class="el" href="classzero__mate_1_1peripheral_1_1IExternal__Peripheral.html#a373022062a179e6bb6177ddeba7e779d">zero_mate::peripheral::IExternal_Peripheral</a>
 </li>
 <li>m_instruction_decoder
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a2045f9d216ca0725c78876377040826e">zero_mate::arm1176jzf_s::CCPU_Core</a>
@@ -187,6 +211,12 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 <li>m_irq_sources
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a2a1b6d62d8f74456f3bd50cf94aa4124">zero_mate::peripheral::CInterrupt_Controller</a>
 </li>
+<li>m_last_input_value
+: <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#a512eb4d57a712ee017bf110238520bb8">zero_mate::peripheral::external::CShift_Register&lt; Register &gt;</a>
+</li>
+<li>m_latch_pin_idx
+: <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#aa5d71ec7f74cf67b13e9a29239265714">zero_mate::peripheral::external::CShift_Register&lt; Register &gt;</a>
+</li>
 <li>m_limit
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#a034177821cde375408b6d8bb82df996c">zero_mate::peripheral::CARM_Timer::CPrescaler</a>
 </li>
@@ -202,10 +232,10 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html#a15391c677d853ca52dc6918056ae029c">zero_mate::coprocessor::CCP15</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a9ab3fe7792d02d893c3a1d5cd002bf95">zero_mate::gui::CControl_Window</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CFile__Window.html#a3a9ad29df1578d5623a5ca3ac22eefa6">zero_mate::gui::CFile_Window</a>
-, <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html#af11c79243cc1f6cb2bc9062fa8e35581">zero_mate::gui::external_peripheral::CButton</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a118de07e05f4e8b04798bcd0e9219d51">zero_mate::peripheral::CARM_Timer</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a6c1effcbe75ccf50c7d9dedfe9b623b7">zero_mate::peripheral::CGPIO_Manager</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae133fbf6ad5f9c78df063dd153a56f60">zero_mate::peripheral::CInterrupt_Controller</a>
+, <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CButton.html#aec9224025277baf4edaea90743bd39cd">zero_mate::peripheral::external::CButton</a>
 </li>
 <li>m_mode
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf71b6238b5cb0b9c0c2235bf296fdca">zero_mate::arm1176jzf_s::CCPU_Context</a>
@@ -220,6 +250,9 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1utils_1_1CLogger__STDO.html#a5c74b21eef228653f89636bf09919f89">zero_mate::utils::CLogger_STDO</a>
 , <a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#ab34cdac2d54d708d16e73b09cc1aec8c">zero_mate::utils::CLogging_System</a>
 </li>
+<li>m_output_value
+: <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#a8947f7b59848ecb234e1f0f60099678f">zero_mate::peripheral::external::CShift_Register&lt; Register &gt;</a>
+</li>
 <li>m_pending_irq
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ab507b45ae7873a4b7de376e93a8f75e4">zero_mate::peripheral::CGPIO_Manager::CPin</a>
 </li>
@@ -229,7 +262,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1gui_1_1CFile__Window.html#ac72c9748be55d711ef4cdffa0f8d9f9f">zero_mate::gui::CFile_Window</a>
 </li>
 <li>m_pin_idx
-: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html#a1406896cf5ed46a4f334713b62f6fb17">zero_mate::gui::external_peripheral::CButton</a>
+: <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CButton.html#af2d101f51f1a44b0a23a7f954b8a737c">zero_mate::peripheral::external::CButton</a>
 </li>
 <li>m_pins
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ab8ba793b863bba20c5e3cf153f3665dd">zero_mate::peripheral::CGPIO_Manager</a>
@@ -240,16 +273,23 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 <li>m_ram
 : <a class="el" href="classzero__mate_1_1gui_1_1CRAM__Window.html#a27937a5afcd16fdfe4d01008cca42c78">zero_mate::gui::CRAM_Window</a>
 </li>
+<li>m_rand_dev
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#ade019118ea7442af87e1eb00604c9b60">zero_mate::peripheral::CTRNG</a>
+</li>
 <li>m_regs
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac8e26506e2bb7f5413531be9d7bdb183">zero_mate::arm1176jzf_s::CCPU_Context</a>
 , <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html#a3f2dfba8250a422de11f5aeb8c4f9d0a">zero_mate::coprocessor::CCP15</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a97587f8e011bf334151f699f983aca66">zero_mate::peripheral::CARM_Timer</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acea8e786d9b86118342a18f247d9adc0">zero_mate::peripheral::CGPIO_Manager</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aeb56cd427552f341b42d04c029c15394">zero_mate::peripheral::CInterrupt_Controller</a>
+, <a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#a44778e614572111e7cc59a7363f620eb">zero_mate::peripheral::CTRNG</a>
 </li>
 <li>m_scroll_to_curr_line
 : <a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a1138f2932ee8cc127bb484f1c036c82b">zero_mate::gui::CControl_Window</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CSource__Code__Window.html#aef3912bdb839d271d7694356a6e9a82b">zero_mate::gui::CSource_Code_Window</a>
+</li>
+<li>m_shift_register
+: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display.html#aa843ba0dcfb354f46ea897c5bec100fe">zero_mate::gui::external_peripheral::CSeven_Segment_Display</a>
 </li>
 <li>m_size
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CRAM.html#ab37eff04eecd29945c3e92fb1fc322c5">zero_mate::peripheral::CRAM</a>
@@ -265,8 +305,8 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a3b04476428b65b6aea546e3ad4622d4c">zero_mate::gui::CControl_Window</a>
 </li>
 <li>m_state
-: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html#a64ac0ddf4aba105daf89270b4903e1d8">zero_mate::gui::external_peripheral::CButton</a>
-, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#aa65e82669c1ab1a449f475d8789a8f7a">zero_mate::peripheral::CGPIO_Manager::CPin</a>
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#aa65e82669c1ab1a449f475d8789a8f7a">zero_mate::peripheral::CGPIO_Manager::CPin</a>
+, <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CButton.html#abbb4bffc3337db6a8559a73c779bf08e">zero_mate::peripheral::external::CButton</a>
 </li>
 <li>m_stop_cpu_thread
 : <a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#ae7b8cf3ac2d39f52e39698bb5592430d">zero_mate::gui::CControl_Window</a>
@@ -277,8 +317,12 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 <li>m_type
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#a658f07afe105602f8413acc6e1cc14bb">zero_mate::arm1176jzf_s::exceptions::CCPU_Exception</a>
 </li>
+<li>m_uniform_dist
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#a012a9bb5690d5b6edada3550d5f96c25">zero_mate::peripheral::CTRNG</a>
+</li>
 <li>m_value
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ac8cd077b7574ab7d94cf34114a9234fa">zero_mate::arm1176jzf_s::isa::CInstruction</a>
+, <a class="el" href="classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#a67a08f396da727317de40b9b1acb833c">zero_mate::peripheral::external::CShift_Register&lt; Register &gt;</a>
 </li>
 <li>mask
 : <a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html#abba07380ebe24c1823ad69b7d4356a6d">zero_mate::arm1176jzf_s::isa::CISA_Decoder::TInstruction_Lookup_Record</a>

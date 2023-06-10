@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CTRNG::Reset" name="zero_mate::peripheral::CTRNG::Reset">
+<area shape="rect" id="node1" title="Resets/re&#45;initializes the random number generator (IPeripheral interface)." alt="" coords="219,5,384,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CTRNG.html#a6c12bc995cd92a9a21af0eab1709f168" title="Creates an instance of the class." alt="" coords="5,5,171,47"/>
+</map>

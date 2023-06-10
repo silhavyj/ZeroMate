@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v0.3.0</span>
+   &#160;<span id="projectnumber">v0.5.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -98,7 +98,11 @@ $(document).ready(function(){initNavTree('functions_r.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae60524d985cd3824ed4a4e1ab0ec6f85">zero_mate::peripheral::CInterrupt_Controller</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CMonitor.html#ac2fb4c7f4c59079d8b2b1c6b8691c783">zero_mate::peripheral::CMonitor</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CRAM.html#a96af986ac0df7c1246dce8795233f95a">zero_mate::peripheral::CRAM</a>
+, <a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#a095899f3e801669d288974fc96553902">zero_mate::peripheral::CTRNG</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a627a2ceb458041ac41e2de52484c918f">zero_mate::peripheral::IPeripheral</a>
+</li>
+<li>Read_GPIO_Pin()
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8ff64f4f3cdf0a19f5922ae80423a476">zero_mate::peripheral::CGPIO_Manager</a>
 </li>
 <li>Read_Write_Value()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad76c17017f43dc3276790d0f94d82cd6">zero_mate::arm1176jzf_s::CCPU_Core</a>
@@ -108,6 +112,7 @@ $(document).ready(function(){initNavTree('functions_r.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#aa1a0c343466313f0298b1b948e1e18d8">zero_mate::peripheral::CARM_Timer</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8487914af5e11dfb40c672bc2b30c185">zero_mate::peripheral::CGPIO_Manager</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ad9e91f30ae6ed64ac5ccc75052d7f949">zero_mate::peripheral::CInterrupt_Controller</a>
+, <a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#ac404c5a74de8bf3603947556f9ddcee4">zero_mate::peripheral::CTRNG</a>
 </li>
 <li>Register_System_Clock_Listener()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#adea9e22ac4f8a04dfe8009afdb55cf37">zero_mate::arm1176jzf_s::CCPU_Core</a>
@@ -128,7 +133,8 @@ $(document).ready(function(){initNavTree('functions_r.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1gui_1_1CRAM__Window.html#a0504905feb6d270f9f7f9ece1014060c">zero_mate::gui::CRAM_Window</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a12beb19205052a340193be90b32e5717">zero_mate::gui::CRegisters_Window</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CSource__Code__Window.html#a24d4560bdcaf8c4fb0611de1b55ac687">zero_mate::gui::CSource_Code_Window</a>
-, <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html#aac3d95dcbf1b19e892a6a1b3f035631c">zero_mate::gui::external_peripheral::CButton</a>
+, <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton__Window.html#a93a3dda0aa07d9b188f7ee9528bcd3dd">zero_mate::gui::external_peripheral::CButton_Window</a>
+, <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display.html#a04cbbafac0dc921f2964ab50543d9dc2">zero_mate::gui::external_peripheral::CSeven_Segment_Display</a>
 </li>
 <li>Render_All_Log_Messages()
 : <a class="el" href="classzero__mate_1_1gui_1_1CLog__Window.html#a67b875f7111438d9100d927992e27c4f">zero_mate::gui::CLog_Window</a>
@@ -137,13 +143,16 @@ $(document).ready(function(){initNavTree('functions_r.html',''); initResizable()
 : <a class="el" href="classzero__mate_1_1gui_1_1CInterrupt__Controller__Window.html#a6eee7d9bfe0c0de70a7d6de4930f5c24">zero_mate::gui::CInterrupt_Controller_Window</a>
 </li>
 <li>Render_Button()
-: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html#a2bb2c24120ea7126337ece50fe599b09">zero_mate::gui::external_peripheral::CButton</a>
+: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton__Window.html#a1fc3554a8cb25e0784ddc85966a2e18b">zero_mate::gui::external_peripheral::CButton_Window</a>
+</li>
+<li>Render_Clock_Combobox()
+: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display.html#a31c38aef585c8d1bfbb9ba8495f74990">zero_mate::gui::external_peripheral::CSeven_Segment_Display</a>
 </li>
 <li>Render_Code_Block()
 : <a class="el" href="classzero__mate_1_1gui_1_1CSource__Code__Window.html#acdb10e47501c4cf6af2c50383388cc4a">zero_mate::gui::CSource_Code_Window</a>
 </li>
 <li>Render_Combobox()
-: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html#a0e0533bf8d084738a6d261df7e84a5a2">zero_mate::gui::external_peripheral::CButton</a>
+: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CButton__Window.html#a7fbbc6bc84388b48cb967dfdd6119d64">zero_mate::gui::external_peripheral::CButton_Window</a>
 </li>
 <li>Render_Control_Buttons()
 : <a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a9be0d8c611ece954a13f3763744b074f">zero_mate::gui::CControl_Window</a>
@@ -153,6 +162,9 @@ $(document).ready(function(){initNavTree('functions_r.html',''); initResizable()
 </li>
 <li>Render_CPU_State()
 : <a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a2b7970947b3c184bdddece580ba6d4f8">zero_mate::gui::CControl_Window</a>
+</li>
+<li>Render_Data_Combobox()
+: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display.html#a67c5b65dcfe3f0720214b95df0fa4677">zero_mate::gui::external_peripheral::CSeven_Segment_Display</a>
 </li>
 <li>Render_Filtered_Log_Messages()
 : <a class="el" href="classzero__mate_1_1gui_1_1CLog__Window.html#adb7453fd69db4264b631251e48b68201">zero_mate::gui::CLog_Window</a>
@@ -166,6 +178,9 @@ $(document).ready(function(){initNavTree('functions_r.html',''); initResizable()
 <li>Render_IRQ()
 : <a class="el" href="classzero__mate_1_1gui_1_1CInterrupt__Controller__Window.html#ad8c78e644d2c44df8c676d1c33afdd39">zero_mate::gui::CInterrupt_Controller_Window</a>
 </li>
+<li>Render_Latch_Combobox()
+: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display.html#a8d40266b4b661d7543d44fefd8630b81">zero_mate::gui::external_peripheral::CSeven_Segment_Display</a>
+</li>
 <li>Render_Primary_Register_C1()
 : <a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#a27304ba7d10bb901f8fe474ccb61f57f">zero_mate::gui::CCP15_Window</a>
 </li>
@@ -178,6 +193,12 @@ $(document).ready(function(){initNavTree('functions_r.html',''); initResizable()
 <li>Render_Registers_Table()
 : <a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#ad3bf490925aef83d99eda63e054f7c43">zero_mate::gui::CRegisters_Window</a>
 </li>
+<li>Render_Seven_Segment_Display()
+: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display.html#ae278b7c08c0bc7204e380657b5e5a8d8">zero_mate::gui::external_peripheral::CSeven_Segment_Display</a>
+</li>
+<li>Render_Shift_Register()
+: <a class="el" href="classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display.html#ab573aa6d5494ede9b1c9d6b608de6349">zero_mate::gui::external_peripheral::CSeven_Segment_Display</a>
+</li>
 <li>Render_Value()
 : <a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a01300a0700c4a72bda627efb62154b87">zero_mate::gui::CRegisters_Window</a>
 </li>
@@ -189,6 +210,7 @@ $(document).ready(function(){initNavTree('functions_r.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae7fe10265670800403226ebc23a96179">zero_mate::peripheral::CInterrupt_Controller</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CMonitor.html#ab1c4e663850daef1aff87cd8b7c159fa">zero_mate::peripheral::CMonitor</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CRAM.html#a945ad7d05b3e0dcfc3f09dd66b819c4f">zero_mate::peripheral::CRAM</a>
+, <a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#a3a5abd59d64cb3ff975e85b829a83665">zero_mate::peripheral::CTRNG</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#ad51da04a4d143152f96290bfe1c7fcd0">zero_mate::peripheral::IPeripheral</a>
 </li>
 <li>Reset_Context()

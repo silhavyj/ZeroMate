@@ -60,7 +60,7 @@
 <g id="node4" class="node">
 <title>dir_34794bca92a793a1e58b77dac439fbe4</title>
 <g id="a_node4"><a xlink:href="dir_34794bca92a793a1e58b77dac439fbe4.html" target="_top" xlink:title="peripherals">
-<polygon fill="white" stroke="black" points="95.5,-132 24.5,-132 24.5,-96 95.5,-96 95.5,-132"/>
+<polygon fill="white" stroke="red" points="95.5,-132 24.5,-132 24.5,-96 95.5,-96 95.5,-132"/>
 <text text-anchor="middle" x="60" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">peripherals</text>
 </a>
 </g>
@@ -89,7 +89,7 @@
 <title>dir_5c2a493d5805d567e6a0ff4c1ba80ec6&#45;&gt;dir_a8053b3d69cfefb2b2e6ec7bf9dd5c1a</title>
 <path fill="none" stroke="black" d="M84.95,-167.63C92.43,-157.84 100.77,-145 105,-132 111.48,-112.05 112.22,-88.26 111.48,-70.3"/>
 <polygon fill="black" stroke="black" points="114.97,-69.99 110.89,-60.21 107.98,-70.4 114.97,-69.99"/>
-<g id="a_edge2&#45;headlabel"><a xlink:href="dir_000002_000006.html" target="_top" xlink:title="9">
+<g id="a_edge2&#45;headlabel"><a xlink:href="dir_000002_000007.html" target="_top" xlink:title="9">
 <text text-anchor="middle" x="118.01" y="-70.91" font-family="Helvetica,sans-Serif" font-size="10.00">9</text>
 </a>
 </g>
@@ -109,7 +109,7 @@
 <title>dir_523ec841fd74605300afe43d91402cb4&#45;&gt;dir_a8053b3d69cfefb2b2e6ec7bf9dd5c1a</title>
 <path fill="none" stroke="black" d="M99.46,-239.92C107.65,-230.22 116.7,-217.37 121,-204 135.55,-158.73 125.55,-102.76 117.14,-70.15"/>
 <polygon fill="black" stroke="black" points="120.5,-69.16 114.5,-60.43 113.75,-70.99 120.5,-69.16"/>
-<g id="a_edge4&#45;headlabel"><a xlink:href="dir_000004_000006.html" target="_top" xlink:title="2">
+<g id="a_edge4&#45;headlabel"><a xlink:href="dir_000004_000007.html" target="_top" xlink:title="2">
 <text text-anchor="middle" x="124.18" y="-69.38" font-family="Helvetica,sans-Serif" font-size="10.00">2</text>
 </a>
 </g>
@@ -129,8 +129,8 @@
 <title>dir_34794bca92a793a1e58b77dac439fbe4&#45;&gt;dir_a8053b3d69cfefb2b2e6ec7bf9dd5c1a</title>
 <path fill="none" stroke="black" d="M72.11,-95.7C77.87,-87.47 84.86,-77.48 91.21,-68.42"/>
 <polygon fill="black" stroke="black" points="94.16,-70.3 97.03,-60.1 88.42,-66.29 94.16,-70.3"/>
-<g id="a_edge7&#45;headlabel"><a xlink:href="dir_000005_000006.html" target="_top" xlink:title="8">
-<text text-anchor="middle" x="94.42" y="-72.38" font-family="Helvetica,sans-Serif" font-size="10.00">8</text>
+<g id="a_edge7&#45;headlabel"><a xlink:href="dir_000005_000007.html" target="_top" xlink:title="10">
+<text text-anchor="middle" x="94.42" y="-72.38" font-family="Helvetica,sans-Serif" font-size="10.00">10</text>
 </a>
 </g>
 </g>

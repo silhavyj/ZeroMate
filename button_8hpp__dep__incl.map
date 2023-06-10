@@ -1,0 +1,7 @@
+<map id="src/core/peripherals/external/button.hpp" name="src/core/peripherals/external/button.hpp">
+<area shape="rect" id="node1" title="This file defines an external button that can be hooked up to the system." alt="" coords="107,5,262,47"/>
+<area shape="rect" id="node2" href="$button_8cpp.html" title="This file implements an external button that can be hooked up to the system as define in button...." alt="" coords="5,95,159,136"/>
+<area shape="rect" id="node3" href="$button__window_8hpp.html" title=" " alt="" coords="183,95,394,136"/>
+<area shape="rect" id="node4" href="$gui_8cpp.html" title=" " alt="" coords="137,191,253,218"/>
+<area shape="rect" id="node5" href="$button__window_8cpp.html" title=" " alt="" coords="277,184,487,225"/>
+</map>

@@ -1,6 +1,0 @@
-<map id="zero_mate::gui::external_peripheral::CButton::Render_Button" name="zero_mate::gui::external_peripheral::CButton::Render_Button">
-<area shape="rect" id="node1" title=" " alt="" coords="5,39,264,80"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" title="Logs a debug message via all registered loggers." alt="" coords="334,5,529,47"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html#a16c7a60ea9272ed2957eca4ee979e73f" title=" " alt="" coords="312,71,551,112"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#af3fd8f336b5853e954283d93f2c32edd" title="Extract the filename from a given location within the source files." alt="" coords="599,5,797,47"/>
-</map>

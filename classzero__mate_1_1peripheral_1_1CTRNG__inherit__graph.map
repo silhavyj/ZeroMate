@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CTRNG" name="zero_mate::peripheral::CTRNG">
+<area shape="rect" id="node1" title="This class represents a TRNG (random number generator)." alt="" coords="5,95,171,136"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory&#45;mapped peripheral." alt="" coords="5,5,171,47"/>
+</map>

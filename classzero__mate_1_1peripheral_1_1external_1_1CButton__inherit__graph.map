@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::external::CButton" name="zero_mate::peripheral::external::CButton">
+<area shape="rect" id="node1" title="This class represents an external button." alt="" coords="5,95,171,136"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1IExternal__Peripheral.html" title="This class represents an interface for external peripheral that are connected to GPIO pins." alt="" coords="5,5,171,47"/>
+</map>

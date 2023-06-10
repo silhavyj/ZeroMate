@@ -1,0 +1,15 @@
+<map id="src/core/peripherals/external_peripheral.hpp" name="src/core/peripherals/external_peripheral.hpp">
+<area shape="rect" id="node1" title="This file defines an interface for external peripheral that can been hooked up to the system (Rpi Zer..." alt="" coords="411,5,592,47"/>
+<area shape="rect" id="node2" href="$button_8hpp.html" title="This file defines an external button that can be hooked up to the system." alt="" coords="151,184,305,225"/>
+<area shape="rect" id="node7" href="$shift__register_8hpp.html" title="This file defines a shift register that is located on the KIV&#45;DPP&#45;01 external board." alt="" coords="731,184,927,225"/>
+<area shape="rect" id="node10" href="$gpio_8hpp.html" title="This file defines the GPIO controller used in BCM2835." alt="" coords="426,95,577,136"/>
+<area shape="rect" id="node3" href="$button_8cpp.html" title="This file implements an external button that can be hooked up to the system as define in button...." alt="" coords="239,281,393,322"/>
+<area shape="rect" id="node4" href="$button__window_8hpp.html" title=" " alt="" coords="5,281,216,322"/>
+<area shape="rect" id="node5" href="$gui_8cpp.html" title=" " alt="" coords="373,392,489,419"/>
+<area shape="rect" id="node6" href="$button__window_8cpp.html" title=" " alt="" coords="6,385,215,426"/>
+<area shape="rect" id="node8" href="$seven__segment__display__window_8hpp.html" title=" " alt="" coords="712,273,915,329"/>
+<area shape="rect" id="node9" href="$seven__segment__display__window_8cpp.html" title=" " alt="" coords="712,377,915,433"/>
+<area shape="rect" id="node11" href="$gpio_8cpp.html" title="This file implements the GPIO controller used in BCM2835 (defined in gpio.hpp)." alt="" coords="557,184,707,225"/>
+<area shape="rect" id="node12" href="$gpio__window_8hpp.html" title=" " alt="" coords="329,184,532,225"/>
+<area shape="rect" id="node13" href="$gpio__window_8cpp.html" title=" " alt="" coords="468,281,671,322"/>
+</map>

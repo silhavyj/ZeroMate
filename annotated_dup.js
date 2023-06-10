@@ -48,7 +48,8 @@ var annotated_dup =
       ] ],
       [ "gui", "namespacezero__mate_1_1gui.html", [
         [ "external_peripheral", "namespacezero__mate_1_1gui_1_1external__peripheral.html", [
-          [ "CButton", "classzero__mate_1_1gui_1_1external__peripheral_1_1CButton.html", "classzero__mate_1_1gui_1_1external__peripheral_1_1CButton" ]
+          [ "CButton_Window", "classzero__mate_1_1gui_1_1external__peripheral_1_1CButton__Window.html", "classzero__mate_1_1gui_1_1external__peripheral_1_1CButton__Window" ],
+          [ "CSeven_Segment_Display", "classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display.html", "classzero__mate_1_1gui_1_1external__peripheral_1_1CSeven__Segment__Display" ]
         ] ],
         [ "CGUI_Window", "classzero__mate_1_1gui_1_1CGUI__Window.html", "classzero__mate_1_1gui_1_1CGUI__Window" ],
         [ "CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", "classzero__mate_1_1gui_1_1CControl__Window" ],
@@ -65,13 +66,19 @@ var annotated_dup =
         [ "CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html", "classzero__mate_1_1gui_1_1CSource__Code__Window" ]
       ] ],
       [ "peripheral", "namespacezero__mate_1_1peripheral.html", [
+        [ "external", "namespacezero__mate_1_1peripheral_1_1external.html", [
+          [ "CButton", "classzero__mate_1_1peripheral_1_1external_1_1CButton.html", "classzero__mate_1_1peripheral_1_1external_1_1CButton" ],
+          [ "CShift_Register", "classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html", "classzero__mate_1_1peripheral_1_1external_1_1CShift__Register" ]
+        ] ],
         [ "CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", "classzero__mate_1_1peripheral_1_1CARM__Timer" ],
+        [ "IExternal_Peripheral", "classzero__mate_1_1peripheral_1_1IExternal__Peripheral.html", "classzero__mate_1_1peripheral_1_1IExternal__Peripheral" ],
         [ "CGPIO_Manager", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html", "classzero__mate_1_1peripheral_1_1CGPIO__Manager" ],
         [ "CInterrupt_Controller", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller" ],
         [ "CMonitor", "classzero__mate_1_1peripheral_1_1CMonitor.html", "classzero__mate_1_1peripheral_1_1CMonitor" ],
         [ "IPeripheral", "classzero__mate_1_1peripheral_1_1IPeripheral.html", "classzero__mate_1_1peripheral_1_1IPeripheral" ],
         [ "CRAM", "classzero__mate_1_1peripheral_1_1CRAM.html", "classzero__mate_1_1peripheral_1_1CRAM" ],
-        [ "ISystem_Clock_Listener", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener" ]
+        [ "ISystem_Clock_Listener", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener" ],
+        [ "CTRNG", "classzero__mate_1_1peripheral_1_1CTRNG.html", "classzero__mate_1_1peripheral_1_1CTRNG" ]
       ] ],
       [ "utils", "namespacezero__mate_1_1utils.html", [
         [ "elf", "namespacezero__mate_1_1utils_1_1elf.html", [
