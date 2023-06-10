@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../window.hpp"
+#include <zero_mate/gui_window.hpp>
 
 #include "../../core/coprocessors/cp15.hpp"
 
 namespace zero_mate::gui
 {
-    class CCP15_Window final : public CGUI_Window
+    class CCP15_Window final : public IGUI_Window
     {
     public:
         explicit CCP15_Window(std::shared_ptr<coprocessor::CCP15> cp15);

@@ -2,14 +2,14 @@
 
 #include <unordered_map>
 
-#include "../window.hpp"
+#include <zero_mate/gui_window.hpp>
 
 #include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/utils/elf_loader.hpp"
 
 namespace zero_mate::gui
 {
-    class CSource_Code_Window final : public CGUI_Window
+    class CSource_Code_Window final : public IGUI_Window
     {
     public:
         explicit CSource_Code_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,

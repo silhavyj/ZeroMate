@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../window.hpp"
+#include <zero_mate/gui_window.hpp>
 
 #include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/bus.hpp"
@@ -9,7 +9,7 @@
 
 namespace zero_mate::gui
 {
-    class CFile_Window final : public CGUI_Window
+    class CFile_Window final : public IGUI_Window
     {
     public:
         explicit CFile_Window(std::shared_ptr<CBus> bus,

@@ -1,3 +1,5 @@
+#include <imgui.h>
+
 #include "button.hpp"
 
 CButton::CButton(const std::string& name,
@@ -8,6 +10,41 @@ CButton::CButton(const std::string& name,
 , m_set_pin{ set_pin }
 , m_output{ false }
 {
+}
+
+void CButton::Render()
+{
+    if (ImGui::Begin(m_name.c_str()))
+    {
+        Render_Pin_Idx();
+        Render_Button();
+    }
+
+    ImGui::End();
+}
+
+void CButton::Render_Pin_Idx()
+{
+    ImGui::Text("GPIO pin: %d", m_pin_idx);
+}
+
+void CButton::Render_Button()
+{
+    if (ImGui::Button("Press"))
+    {
+        Toggle();
+    }
+}
+
+bool CButton::Implements_GUI() const noexcept
+{
+    return true;
+}
+
+void CButton::Toggle()
+{
+    m_set_pin(m_pin_idx, !m_output);
+    m_output = !m_output;
 }
 
 extern "C"

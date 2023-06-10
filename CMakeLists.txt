@@ -48,6 +48,9 @@ add_subdirectory(external/glfw)
 add_subdirectory(external/magic_enum)
 add_subdirectory(external/capstone)
 
+# Add the external subdirectory (manual build from the source)
+add_subdirectory(external)
+
 # Add the lib subdirectory
 add_subdirectory(lib)
 

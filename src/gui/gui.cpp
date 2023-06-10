@@ -1,5 +1,6 @@
 #include <filesystem>
 
+#include <dylib.hpp>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <imgui/imgui.h>
@@ -9,10 +10,12 @@
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
 
+#include <zero_mate/external_peripheral.hpp>
+
 #include "../config.hpp"
 
 #include "gui.hpp"
-#include "window.hpp"
+#include <zero_mate/gui_window.hpp>
 #include "windows/registers_window.hpp"
 #include "windows/control_window.hpp"
 #include "windows/source_code_window.hpp"
@@ -43,6 +46,9 @@ namespace zero_mate::gui
 
     namespace
     {
+        IExternal_Peripheral *button_peripheral{ nullptr };
+        const dylib button_dl{"/home/silhavyj/School/ZeroMate/build/unix_makefiles/debug/lib/button/", "button"};
+
         auto logger_stdo = std::make_shared<utils::CLogger_STDO>();
         auto& s_logging_system = *utils::CSingleton<utils::CLogging_System>::Get_Instance();
 
@@ -66,7 +72,8 @@ namespace zero_mate::gui
         bool s_cpu_running{ false };
 
         std::vector<std::shared_ptr<peripheral::IPeripheral>> s_peripherals;
-        std::vector<std::shared_ptr<CGUI_Window>> s_windows;
+        std::vector<std::shared_ptr<IGUI_Window>> s_windows;
+        std::vector<IGUI_Window *> s_external_windows;
 
         struct TINI_Config_Values
         {
@@ -78,6 +85,34 @@ namespace zero_mate::gui
             std::uint32_t monitor_map_addr;
             std::uint32_t trng_map_addr;
         };
+
+        [[nodiscard]] bool Read_Pin(std::uint32_t pin_idx)
+        {
+            return s_gpio->Read_GPIO_Pin(pin_idx) == peripheral::CGPIO_Manager::CPin::NState::High;
+        }
+
+        void Set_Pin(std::uint32_t pin_idx, bool set)
+        {
+            const auto status = s_gpio->Set_Pin_State(pin_idx, static_cast<peripheral::CGPIO_Manager::CPin::NState>(set));
+
+            switch (status)
+            {
+                case peripheral::CGPIO_Manager::NPin_Set_Status::OK:
+                    break;
+
+                case peripheral::CGPIO_Manager::NPin_Set_Status::Not_Input_Pin:
+                    s_logging_system.Debug("The pin has not been set as INPUT");
+                    break;
+
+                case peripheral::CGPIO_Manager::NPin_Set_Status::Invalid_Pin_Number:
+                    s_logging_system.Debug("Invalid pin number");
+                    break;
+
+                case peripheral::CGPIO_Manager::NPin_Set_Status::State_Already_Set:
+                    s_logging_system.Debug("Pin state is already set the desired value");
+                    break;
+            }
+        }
 
         void Initialize_Logging_System()
         {
@@ -104,6 +139,18 @@ namespace zero_mate::gui
 
             s_windows.emplace_back(std::make_shared<external_peripheral::CButton_Window>(s_button));
             s_windows.emplace_back(std::make_shared<external_peripheral::CSeven_Segment_Display>(s_shift_register));
+
+            // TODO
+            // typedef int (*Create_Peripheral_Ptr)(IExternal_Peripheral**, const std::string&, const std::vector<std::uint32_t>&, std::function<void(int, bool)>, std::function<bool(int)>);
+
+            const std::vector<std::uint32_t> pin{ 5 };
+            auto create_peripheral = button_dl.get_function<int(IExternal_Peripheral**, const std::string&, const std::vector<std::uint32_t>&, std::function<void(int, bool)>, std::function<bool(int)>)>("Create_Peripheral");
+            [[maybe_unused]] int status = create_peripheral(&button_peripheral, "My_Button", pin, Set_Pin, Read_Pin);
+
+            if (button_peripheral != nullptr && button_peripheral->Implements_GUI())
+            {
+                //s_external_windows.push_back((IGUI_Window *)button_peripheral);
+            }
         }
 
         template<typename Peripheral>
@@ -217,6 +264,7 @@ namespace zero_mate::gui
         void Render_GUI()
         {
             std::for_each(s_windows.begin(), s_windows.end(), [](const auto& window) -> void { window->Render(); });
+            std::for_each(s_external_windows.begin(), s_external_windows.end(), [](const auto& window) -> void { window->Render(); });
         }
     }
 

@@ -2,12 +2,12 @@
 
 #include <memory>
 
-#include "../../window.hpp"
+#include <zero_mate/gui_window.hpp>
 #include "../../../core/peripherals/monitor.hpp"
 
 namespace zero_mate::gui
 {
-    class CMonitor_Window final : public CGUI_Window
+    class CMonitor_Window final : public IGUI_Window
     {
     public:
         explicit CMonitor_Window(const std::shared_ptr<peripheral::CMonitor>& monitor);

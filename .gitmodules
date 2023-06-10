@@ -43,3 +43,6 @@
 [submodule "external/demumble"]
 	path = external/demumble
 	url = https://github.com/nico/demumble.git
+[submodule "external/dylib"]
+	path = external/dylib
+	url = https://github.com/martin-olivier/dylib.git

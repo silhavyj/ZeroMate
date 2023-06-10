@@ -1,9 +1,5 @@
 #pragma once
 
-#include <vector>
-#include <cstdint>
-#include <functional>
-
 // Define the macro to handle symbol visibility
 #ifdef _WIN32
     #ifdef EXTERNAL_PERIPHERAL_EXPORTS
@@ -18,8 +14,10 @@
     #define EXTERNAL_PERIPHERAL_API
 #endif
 
+
 #include <cstdint>
 #include <memory>
+#include <functional>
 #include <unordered_set>
 
 namespace zero_mate
@@ -46,6 +44,11 @@ namespace zero_mate
 
         [[maybe_unused]] virtual void GPIO_Subscription_Callback([[maybe_unused]] std::uint32_t pin_idx)
         {
+        }
+
+        [[nodiscard]] virtual bool Implements_GUI() const noexcept
+        {
+            return false;
         }
 
     protected:

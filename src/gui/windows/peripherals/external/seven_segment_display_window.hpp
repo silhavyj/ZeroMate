@@ -2,12 +2,12 @@
 
 #include <memory>
 
-#include "../../../window.hpp"
+#include <zero_mate/gui_window.hpp>
 #include "../../../../core/peripherals/external/shift_register.hpp"
 
 namespace zero_mate::gui::external_peripheral
 {
-    class CSeven_Segment_Display final : public CGUI_Window
+    class CSeven_Segment_Display final : public IGUI_Window
     {
     public:
         explicit CSeven_Segment_Display(std::shared_ptr<peripheral::external::CShift_Register<>> shift_register);

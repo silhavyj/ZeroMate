@@ -4,12 +4,12 @@
 
 #include <imgui.h>
 
-#include "../../window.hpp"
+#include <zero_mate/gui_window.hpp>
 #include "../../../core/peripherals/interrupt_controller.hpp"
 
 namespace zero_mate::gui
 {
-    class CInterrupt_Controller_Window final : public CGUI_Window
+    class CInterrupt_Controller_Window final : public IGUI_Window
     {
     public:
         explicit CInterrupt_Controller_Window(const std::shared_ptr<peripheral::CInterrupt_Controller>& interrupt_controller);

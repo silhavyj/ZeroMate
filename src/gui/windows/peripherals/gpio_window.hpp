@@ -4,12 +4,12 @@
 
 #include <imgui.h>
 
-#include "../../window.hpp"
+#include <zero_mate/gui_window.hpp>
 #include "../../../core/peripherals/gpio.hpp"
 
 namespace zero_mate::gui
 {
-    class CGPIO_Window final : public CGUI_Window
+    class CGPIO_Window final : public IGUI_Window
     {
     public:
         explicit CGPIO_Window(std::shared_ptr<peripheral::CGPIO_Manager> gpio);

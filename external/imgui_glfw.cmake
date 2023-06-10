@@ -1,5 +1,5 @@
 add_library(
-    imgui_glfw
+    imgui_glfw SHARED
     ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui_tables.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui_widgets.cpp

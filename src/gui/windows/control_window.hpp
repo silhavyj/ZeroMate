@@ -4,7 +4,7 @@
 #include <vector>
 #include <memory>
 
-#include "../window.hpp"
+#include <zero_mate/gui_window.hpp>
 
 #include "../../core/utils/logger/logger.hpp"
 #include "../../core/arm1176jzf_s/core.hpp"
@@ -12,7 +12,7 @@
 
 namespace zero_mate::gui
 {
-    class CControl_Window final : public CGUI_Window
+    class CControl_Window final : public IGUI_Window
     {
     public:
         explicit CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
