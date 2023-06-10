@@ -2,7 +2,7 @@
 
 #include <unordered_map>
 
-#include <zero_mate/gui_window.hpp>
+#include "../window.hpp"
 
 #include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/utils/elf_loader.hpp"

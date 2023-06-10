@@ -1,9 +1,9 @@
 #pragma once
 
-#include <zero_mate/gui_window.hpp>
+#include "../../../src/gui/window.hpp"
 #include <zero_mate/external_peripheral.hpp>
 
-class CButton final : public zero_mate::IExternal_Peripheral, zero_mate::IGUI_Window
+class CButton final : public zero_mate::IExternal_Peripheral
 {
 public:
     explicit CButton(const std::string& name,
@@ -11,7 +11,6 @@ public:
                      zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin);
 
     void Render() override;
-    [[nodiscard]] bool Implements_GUI() const noexcept override;
 
 private:
     void Toggle();

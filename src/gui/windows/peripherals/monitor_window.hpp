@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include <zero_mate/gui_window.hpp>
+#include "../../window.hpp"
 #include "../../../core/peripherals/monitor.hpp"
 
 namespace zero_mate::gui

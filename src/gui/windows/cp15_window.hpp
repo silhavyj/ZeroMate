@@ -1,6 +1,6 @@
 #pragma once
 
-#include <zero_mate/gui_window.hpp>
+#include "../window.hpp"
 
 #include "../../core/coprocessors/cp15.hpp"
 

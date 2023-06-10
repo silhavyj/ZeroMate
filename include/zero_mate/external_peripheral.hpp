@@ -14,7 +14,6 @@
     #define EXTERNAL_PERIPHERAL_API
 #endif
 
-
 #include <cstdint>
 #include <memory>
 #include <functional>
@@ -46,9 +45,8 @@ namespace zero_mate
         {
         }
 
-        [[nodiscard]] virtual bool Implements_GUI() const noexcept
+        virtual void Render()
         {
-            return false;
         }
 
     protected:
@@ -63,5 +61,5 @@ extern "C"
                           const std::string& name,
                           const std::vector<std::uint32_t>& gpio_pins,
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                          [[maybe_unused]] [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin);
+                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin);
 }

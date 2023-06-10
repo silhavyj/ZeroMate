@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include <zero_mate/gui_window.hpp>
+#include "../../../window.hpp"
 
 #include "../../../../core/peripherals/external/button.hpp"
 #include "../../../../core/utils/logger/logger.hpp"

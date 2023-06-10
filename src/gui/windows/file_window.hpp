@@ -1,6 +1,6 @@
 #pragma once
 
-#include <zero_mate/gui_window.hpp>
+#include "../window.hpp"
 
 #include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/bus.hpp"

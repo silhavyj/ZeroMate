@@ -36,11 +36,6 @@ void CButton::Render_Button()
     }
 }
 
-bool CButton::Implements_GUI() const noexcept
-{
-    return true;
-}
-
 void CButton::Toggle()
 {
     m_set_pin(m_pin_idx, !m_output);

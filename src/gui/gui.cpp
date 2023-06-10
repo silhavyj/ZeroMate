@@ -15,7 +15,7 @@
 #include "../config.hpp"
 
 #include "gui.hpp"
-#include <zero_mate/gui_window.hpp>
+#include "window.hpp"
 #include "windows/registers_window.hpp"
 #include "windows/control_window.hpp"
 #include "windows/source_code_window.hpp"
@@ -73,7 +73,7 @@ namespace zero_mate::gui
 
         std::vector<std::shared_ptr<peripheral::IPeripheral>> s_peripherals;
         std::vector<std::shared_ptr<IGUI_Window>> s_windows;
-        std::vector<IGUI_Window *> s_external_windows;
+        std::vector<IExternal_Peripheral *> s_external_windows;
 
         struct TINI_Config_Values
         {
@@ -137,7 +137,7 @@ namespace zero_mate::gui
             s_windows.emplace_back(std::make_shared<CMonitor_Window>(s_monitor));
             s_windows.emplace_back(std::make_shared<CCP15_Window>(s_cp15));
 
-            s_windows.emplace_back(std::make_shared<external_peripheral::CButton_Window>(s_button));
+            //s_windows.emplace_back(std::make_shared<external_peripheral::CButton_Window>(s_button));
             s_windows.emplace_back(std::make_shared<external_peripheral::CSeven_Segment_Display>(s_shift_register));
 
             // TODO
@@ -147,9 +147,9 @@ namespace zero_mate::gui
             auto create_peripheral = button_dl.get_function<int(IExternal_Peripheral**, const std::string&, const std::vector<std::uint32_t>&, std::function<void(int, bool)>, std::function<bool(int)>)>("Create_Peripheral");
             [[maybe_unused]] int status = create_peripheral(&button_peripheral, "My_Button", pin, Set_Pin, Read_Pin);
 
-            if (button_peripheral != nullptr && button_peripheral->Implements_GUI())
+            if (button_peripheral != nullptr)
             {
-                //s_external_windows.push_back((IGUI_Window *)button_peripheral);
+                s_external_windows.push_back(button_peripheral);
             }
         }
 
