@@ -96,3 +96,12 @@ void bzero(void* memory, int length)
 	for (int i = 0; i < length; i++)
 		mem[i] = 0;
 }
+
+void memcpy(const void* src, void* dst, int num)
+{
+	const char* memsrc = reinterpret_cast<const char*>(src);
+	char* memdst = reinterpret_cast<char*>(dst);
+
+	for (int i = 0; i < num; i++)
+		memdst[i] = memsrc[i];
+}
