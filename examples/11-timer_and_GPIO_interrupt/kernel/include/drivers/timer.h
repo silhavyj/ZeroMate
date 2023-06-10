@@ -30,7 +30,8 @@ public:
     CTimer(unsigned long timer_reg_base);
 
     // povoli casovac se zadanou frekvenci, prescalerem a callback funkci; frekvence = prescaler / Takt_Jadra * delay
-    void Enable(TTimer_Callback callback, unsigned int delay, NTimer_Prescaler prescaler = NTimer_Prescaler::Prescaler_256);
+    void
+    Enable(TTimer_Callback callback, unsigned int delay, NTimer_Prescaler prescaler = NTimer_Prescaler::Prescaler_256);
     // zakaze povoleny casovac
     void Disable();
 

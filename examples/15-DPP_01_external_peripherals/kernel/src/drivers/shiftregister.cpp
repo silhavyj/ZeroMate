@@ -1,10 +1,13 @@
 #include <drivers/shiftregister.h>
 
-// na tvrdo definujeme, ze jsme shift registr pripojili sem - volitelne muzeme pak oddelit do nejake HAL vrstvy pro dany header
+// na tvrdo definujeme, ze jsme shift registr pripojili sem - volitelne muzeme pak oddelit do nejake HAL vrstvy pro dany
+// header
 CShift_Register sShift_Register(2, 3, 4);
 
 CShift_Register::CShift_Register(uint32_t latchPin, uint32_t dataPin, uint32_t clockPin)
-    : mLatch_Pin(latchPin), mData_Pin(dataPin), mClock_Pin(clockPin)
+: mLatch_Pin(latchPin)
+, mData_Pin(dataPin)
+, mClock_Pin(clockPin)
 {
     //
 }
@@ -108,9 +111,9 @@ void CShift_Register::Shift_In(uint8_t byte)
     // nasuneme bity od nejvyssiho po nejnizsi (aby na vystupu byly v poradi)
     for (int j = 7; j >= 0; j--)
     {
-        sGPIO.Set_Output(mData_Pin, ((byte >> j) & 0x1) );
+        sGPIO.Set_Output(mData_Pin, ((byte >> j) & 0x1));
         sGPIO.Set_Output(mClock_Pin, true);
-        
+
         for (i = 0; i < 0x10; i++)
             ;
 

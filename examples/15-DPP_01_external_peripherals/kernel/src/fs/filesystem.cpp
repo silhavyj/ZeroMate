@@ -72,7 +72,7 @@ void CFilesystem::Initialize()
 
         sMonitor << "mount point = " << mpPtr << "\n";
 
-        TFS_Tree_Node* node = &mRoot, *tmpNode = nullptr;
+        TFS_Tree_Node *node = &mRoot, *tmpNode = nullptr;
 
         while (mpPtr[0] != '\0')
         {
@@ -92,11 +92,11 @@ void CFilesystem::Initialize()
                 mpPtr += 1;
             }
 
-            sMonitor << "finding child = " << tmpName << '\n'; 
+            sMonitor << "finding child = " << tmpName << '\n';
 
             tmpNode = node->Find_Child(tmpName);
             // uzel jsme nasli - pouzijeme ho pro dalsi prohledavani
-            if (tmpNode) 
+            if (tmpNode)
             {
                 node = tmpNode;
                 sMonitor << "child " << tmpName << " was found\n";
@@ -145,7 +145,7 @@ IFile* CFilesystem::Open(const char* path, NFile_Open_Mode mode)
 
     mpPtr = path;
 
-    TFS_Tree_Node* node = &mRoot, *tmpNode = nullptr;
+    TFS_Tree_Node *node = &mRoot, *tmpNode = nullptr;
 
     while (mpPtr[0] != '\0')
     {

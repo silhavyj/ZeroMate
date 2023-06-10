@@ -9,7 +9,8 @@ namespace mem
     // na nejblizsi vyssi nasobek velikosti stranky (4kB, popr. co si zvolime dle dostupnych moznosti)
     constexpr uint32_t LowMemory = 0x20000;
 
-    // adresa do ktere je mozne alokovat (na tehle adrese uz muze zacinat nejaky mapovany region, napr. memory mapped I/O)
+    // adresa do ktere je mozne alokovat (na tehle adrese uz muze zacinat nejaky mapovany region, napr. memory mapped
+    // I/O)
     constexpr uint32_t HighMemory = hal::Peripheral_Base;
 
     // velikost jedne stranky (4kB)

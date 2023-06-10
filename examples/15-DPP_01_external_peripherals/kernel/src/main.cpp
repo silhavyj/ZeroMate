@@ -20,7 +20,7 @@ extern "C" void enable_irq();
 
 extern "C" void Timer_Callback()
 {
-	sProcessMgr.Schedule();
+    sProcessMgr.Schedule();
 }
 
 // "main" procesu 1
@@ -32,45 +32,45 @@ extern void Process_5();
 
 extern "C" int _kernel_main(void)
 {
-	// debug output, kdyz budeme neco ladit; jinak vyzadujeme, aby si proces UART otevrel a spravoval
-	/*
-	sUART0.Open();
-	sUART0.Set_Baud_Rate(NUART_Baud_Rate::BR_115200);
-	sUART0.Set_Char_Length(NUART_Char_Length::Char_8);
+    // debug output, kdyz budeme neco ladit; jinak vyzadujeme, aby si proces UART otevrel a spravoval
+    /*
+    sUART0.Open();
+    sUART0.Set_Baud_Rate(NUART_Baud_Rate::BR_115200);
+    sUART0.Set_Char_Length(NUART_Char_Length::Char_8);
 
-	sUART0.Write("Welcome to KIV/OS RPiOS kernel\r\n");
-	sUART0.Close();
-	*/
+    sUART0.Write("Welcome to KIV/OS RPiOS kernel\r\n");
+    sUART0.Close();
+    */
 
-	sMonitor.Clear();
+    sMonitor.Clear();
 
-	// inicializace souboroveho systemu
-	sFilesystem.Initialize();
+    // inicializace souboroveho systemu
+    sFilesystem.Initialize();
 
-	// vytvoreni hlavniho procesu
-	// sProcessMgr.Create_Main_Process();
+    // vytvoreni hlavniho procesu
+    // sProcessMgr.Create_Main_Process();
 
-	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_1));
-	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_2));
-	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_3));
-	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_4));
-	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_5));
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_1));
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_2));
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_3));
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_4));
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_5));
 
-	// zatim zakazeme IRQ casovace
-	sInterruptCtl.Disable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
+    // zatim zakazeme IRQ casovace
+    sInterruptCtl.Disable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
 
-	// nastavime casovac - v callbacku se provadi planovani procesu
-	sTimer.Enable(Timer_Callback, 0x20, NTimer_Prescaler::Prescaler_256);
+    // nastavime casovac - v callbacku se provadi planovani procesu
+    sTimer.Enable(Timer_Callback, 0x20, NTimer_Prescaler::Prescaler_256);
 
-	// povolime IRQ casovace
-	sInterruptCtl.Enable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
+    // povolime IRQ casovace
+    sInterruptCtl.Enable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
 
-	// povolime IRQ a od tohoto momentu je vse v rukou planovace
-	enable_irq();
+    // povolime IRQ a od tohoto momentu je vse v rukou planovace
+    enable_irq();
 
-	// nekonecna smycka - tadyodsud se CPU uz nedostane jinak, nez treba prerusenim
+    // nekonecna smycka - tadyodsud se CPU uz nedostane jinak, nez treba prerusenim
     while (1)
-		;
+        ;
 
-	return 0;
+    return 0;
 }

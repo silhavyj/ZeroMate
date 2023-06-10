@@ -35,7 +35,8 @@ public:
     // vytvori proces, ktery bude vykonavat zadanou funkci, vraci jeho PID
     uint32_t Create_Process(unsigned long funcptr);
 
-    // metoda, kterou se explicitne spusti planovac - muze byt volana z IRQ handleru casovace, nebo treba i ze SW preruseni (kdyz se proces zablokuje)
+    // metoda, kterou se explicitne spusti planovac - muze byt volana z IRQ handleru casovace, nebo treba i ze SW
+    // preruseni (kdyz se proces zablokuje)
     void Schedule();
 
     // vrati strukturu procesu, ktery je v tento moment naplanovan

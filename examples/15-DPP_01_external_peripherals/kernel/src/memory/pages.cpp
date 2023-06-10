@@ -37,8 +37,8 @@ uint32_t CPage_Manager::Alloc_Page()
             {
                 if ((mPage_Bitmap[i] & (1 << j)) == 0)
                 {
-                    // oznacime 
-                    const uint32_t page_idx = i*8 + j;
+                    // oznacime
+                    const uint32_t page_idx = i * 8 + j;
                     Mark(page_idx, true);
                     return mem::LowMemory + page_idx * mem::PageSize;
                 }

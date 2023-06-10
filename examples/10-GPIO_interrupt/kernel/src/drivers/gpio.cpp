@@ -107,7 +107,10 @@ void CGPIO_Handler::Enable_Event_Detect(uint32_t pin, NGPIO_Interrupt_Type type)
     // sInterruptCtl.Enable_IRQ(hal::IRQ_Source::GPIO_3);
 }
 
-bool CGPIO_Handler::Get_GP_IRQ_Detect_Location(uint32_t pin, NGPIO_Interrupt_Type type, uint32_t& reg, uint32_t& bit_idx) const
+bool CGPIO_Handler::Get_GP_IRQ_Detect_Location(uint32_t pin,
+                                               NGPIO_Interrupt_Type type,
+                                               uint32_t& reg,
+                                               uint32_t& bit_idx) const
 {
     if (pin > hal::GPIO_Pin_Count)
         return false;

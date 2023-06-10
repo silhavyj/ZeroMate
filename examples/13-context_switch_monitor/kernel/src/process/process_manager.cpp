@@ -47,7 +47,8 @@ void CProcess_Manager::Create_Main_Process()
     auto* task = procnode->task;
 
     task->pid = ++mLast_PID;
-    task->sched_static_priority = 5; // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
+    task->sched_static_priority =
+    5; // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
     task->sched_counter = task->sched_static_priority;
     task->state = NTask_State::Running;
 
@@ -73,7 +74,8 @@ uint32_t CProcess_Manager::Create_Process(unsigned long funcptr)
     auto* task = procnode->task;
 
     task->pid = ++mLast_PID;
-    task->sched_static_priority = 5; // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
+    task->sched_static_priority =
+    5; // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
     task->sched_counter = task->sched_static_priority;
     task->state = NTask_State::New;
 
@@ -94,7 +96,8 @@ void CProcess_Manager::Schedule()
     {
         // snizime citac planovace
         mCurrent_Task_Node->task->sched_counter--;
-        // pokud je citac vetsi nez 0, zatim nebudeme preplanovavat (a zaroven je proces stale ve stavu Running - nezablokoval se nad necim)
+        // pokud je citac vetsi nez 0, zatim nebudeme preplanovavat (a zaroven je proces stale ve stavu Running -
+        // nezablokoval se nad necim)
         if (mCurrent_Task_Node->task->sched_counter > 0 && mCurrent_Task_Node->task->state == NTask_State::Running)
             return;
     }
@@ -106,9 +109,10 @@ void CProcess_Manager::Schedule()
     if (!next)
         next = mProcess_List_Head;
 
-    // proces k naplanovani musi bud byt ve stavu runnable (jiz nekdy bezel a muze bezet znovu) nebo running (pak jde o stavajici proces)
-    // a nebo new (novy proces, ktery jeste nebyl planovany)
-    while (next->task->state != NTask_State::Runnable && next->task->state != NTask_State::Running && next->task->state != NTask_State::New)
+    // proces k naplanovani musi bud byt ve stavu runnable (jiz nekdy bezel a muze bezet znovu) nebo running (pak jde o
+    // stavajici proces) a nebo new (novy proces, ktery jeste nebyl planovany)
+    while (next->task->state != NTask_State::Runnable && next->task->state != NTask_State::Running &&
+           next->task->state != NTask_State::New)
     {
         if (!next)
         {

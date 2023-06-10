@@ -8,17 +8,18 @@
 #include <fs/filesystem.h>
 
 // "importovane" funkce z asm
-extern "C"
-{
-    void process_bootstrap();
-    void context_switch(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
-    void context_switch_first(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
+extern "C" {
+void process_bootstrap();
+void context_switch(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
+void context_switch_first(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
 };
 
 CProcess_Manager sProcessMgr;
 
 CProcess_Manager::CProcess_Manager()
-    : mLast_PID(0), mProcess_List_Head(nullptr), mCurrent_Task_Node(nullptr)
+: mLast_PID(0)
+, mProcess_List_Head(nullptr)
+, mCurrent_Task_Node(nullptr)
 {
     //
 }
@@ -41,7 +42,8 @@ void CProcess_Manager::Create_Main_Process()
     auto* task = procnode->task;
 
     task->pid = ++mLast_PID;
-    task->sched_static_priority = 5;    // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
+    task->sched_static_priority =
+    5; // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
     task->sched_counter = task->sched_static_priority;
     task->state = NTask_State::Running;
 
@@ -70,10 +72,11 @@ uint32_t CProcess_Manager::Create_Process(unsigned long funcptr)
     auto* task = procnode->task;
 
     task->pid = ++mLast_PID;
-    task->sched_static_priority = 5;    // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
+    task->sched_static_priority =
+    5; // TODO: pro ted je to jen hardcoded hodnota, do budoucna urcite bude nutne dovolit specifikovat
     task->sched_counter = task->sched_static_priority;
     task->state = NTask_State::New;
-    
+
     task->cpu_context.lr = funcptr;
     task->cpu_context.pc = reinterpret_cast<unsigned long>(&process_bootstrap);
     task->cpu_context.sp = static_cast<unsigned long>(sPage_Manager.Alloc_Page()) + mem::PageSize;
@@ -82,7 +85,7 @@ uint32_t CProcess_Manager::Create_Process(unsigned long funcptr)
         task->opened_files[i] = nullptr;
 
     sMonitor << "Created process with pid " << (unsigned int)task->pid << " ("
-            << "SP = 0x" << CMonitor::NNumber_Base::HEX << (unsigned int)task->cpu_context.sp << ")\n";
+             << "SP = 0x" << CMonitor::NNumber_Base::HEX << (unsigned int)task->cpu_context.sp << ")\n";
 
     return task->pid;
 }
@@ -94,7 +97,8 @@ void CProcess_Manager::Schedule()
     {
         // snizime citac planovace
         mCurrent_Task_Node->task->sched_counter--;
-        // pokud je citac vetsi nez 0, zatim nebudeme preplanovavat (a zaroven je proces stale ve stavu Running - nezablokoval se nad necim)
+        // pokud je citac vetsi nez 0, zatim nebudeme preplanovavat (a zaroven je proces stale ve stavu Running -
+        // nezablokoval se nad necim)
         if (mCurrent_Task_Node->task->sched_counter > 0 && mCurrent_Task_Node->task->state == NTask_State::Running)
             return;
     }
@@ -106,9 +110,10 @@ void CProcess_Manager::Schedule()
     if (!next)
         next = mProcess_List_Head;
 
-    // proces k naplanovani musi bud byt ve stavu runnable (jiz nekdy bezel a muze bezet znovu) nebo running (pak jde o stavajici proces)
-    // a nebo new (novy proces, ktery jeste nebyl planovany)
-    while (next->task->state != NTask_State::Runnable && next->task->state != NTask_State::Running && next->task->state != NTask_State::New)
+    // proces k naplanovani musi bud byt ve stavu runnable (jiz nekdy bezel a muze bezet znovu) nebo running (pak jde o
+    // stavajici proces) a nebo new (novy proces, ktery jeste nebyl planovany)
+    while (next->task->state != NTask_State::Runnable && next->task->state != NTask_State::Running &&
+           next->task->state != NTask_State::New)
     {
         if (!next)
         {
@@ -191,7 +196,8 @@ bool CProcess_Manager::Unmap_File_Current(uint32_t handle)
     return true;
 }
 
-void CProcess_Manager::Handle_Process_SWI(NSWI_Process_Service svc_idx, uint32_t r0, uint32_t r1, uint32_t r2, TSWI_Result& target)
+void CProcess_Manager::Handle_Process_SWI(
+NSWI_Process_Service svc_idx, uint32_t r0, uint32_t r1, uint32_t r2, TSWI_Result& target)
 {
     // TODO: signalizace chyby
     if (!mCurrent_Task_Node)
@@ -205,7 +211,8 @@ void CProcess_Manager::Handle_Process_SWI(NSWI_Process_Service svc_idx, uint32_t
     }
 }
 
-void CProcess_Manager::Handle_Filesystem_SWI(NSWI_Filesystem_Service svc_idx, uint32_t r0, uint32_t r1, uint32_t r2, TSWI_Result& target)
+void CProcess_Manager::Handle_Filesystem_SWI(
+NSWI_Filesystem_Service svc_idx, uint32_t r0, uint32_t r1, uint32_t r2, TSWI_Result& target)
 {
     // TODO: signalizace chyby
     if (!mCurrent_Task_Node)
@@ -213,8 +220,7 @@ void CProcess_Manager::Handle_Filesystem_SWI(NSWI_Filesystem_Service svc_idx, ui
 
     switch (svc_idx)
     {
-        case NSWI_Filesystem_Service::Open:
-        {
+        case NSWI_Filesystem_Service::Open: {
             target.r0 = Invalid_Handle;
 
             IFile* f = sFilesystem.Open(reinterpret_cast<const char*>(r0), static_cast<NFile_Open_Mode>(r1));
@@ -231,8 +237,7 @@ void CProcess_Manager::Handle_Filesystem_SWI(NSWI_Filesystem_Service svc_idx, ui
             }
             break;
         }
-        case NSWI_Filesystem_Service::Read:
-        {
+        case NSWI_Filesystem_Service::Read: {
             target.r0 = 0;
 
             if (r0 > Max_Process_Opened_Files || !mCurrent_Task_Node->task->opened_files[r0])
@@ -241,8 +246,7 @@ void CProcess_Manager::Handle_Filesystem_SWI(NSWI_Filesystem_Service svc_idx, ui
             target.r0 = mCurrent_Task_Node->task->opened_files[r0]->Read(reinterpret_cast<char*>(r1), r2);
             break;
         }
-        case NSWI_Filesystem_Service::Write:
-        {
+        case NSWI_Filesystem_Service::Write: {
             target.r0 = 0;
 
             if (r0 > Max_Process_Opened_Files || !mCurrent_Task_Node->task->opened_files[r0])
@@ -251,8 +255,7 @@ void CProcess_Manager::Handle_Filesystem_SWI(NSWI_Filesystem_Service svc_idx, ui
             target.r0 = mCurrent_Task_Node->task->opened_files[r0]->Write(reinterpret_cast<const char*>(r1), r2);
             break;
         }
-        case NSWI_Filesystem_Service::Close:
-        {
+        case NSWI_Filesystem_Service::Close: {
             if (r0 > Max_Process_Opened_Files || !mCurrent_Task_Node->task->opened_files[r0])
                 return;
 
@@ -261,12 +264,12 @@ void CProcess_Manager::Handle_Filesystem_SWI(NSWI_Filesystem_Service svc_idx, ui
 
             break;
         }
-        case NSWI_Filesystem_Service::IOCtl:
-        {
+        case NSWI_Filesystem_Service::IOCtl: {
             if (r0 > Max_Process_Opened_Files || !mCurrent_Task_Node->task->opened_files[r0])
                 return;
 
-            target.r0 = mCurrent_Task_Node->task->opened_files[r0]->IOCtl(static_cast<NIOCtl_Operation>(r1), reinterpret_cast<void*>(r2));
+            target.r0 = mCurrent_Task_Node->task->opened_files[r0]->IOCtl(static_cast<NIOCtl_Operation>(r1),
+                                                                          reinterpret_cast<void*>(r2));
             break;
         }
     }

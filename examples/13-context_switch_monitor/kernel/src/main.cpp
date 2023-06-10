@@ -38,7 +38,7 @@ extern "C" void Process_1()
     {
         for (i = 0; i < 0x200; i++)
             ;
-        
+
         disable_irq();
         sMonitor << '1';
         enable_irq();
@@ -55,7 +55,7 @@ extern "C" void Process_2()
     {
         for (i = 0; i < 0x200; i++)
             ;
-        
+
         disable_irq();
         sMonitor << '2';
         enable_irq();
@@ -72,7 +72,7 @@ extern "C" void Process_3()
     {
         for (i = 0; i < 0x200; i++)
             ;
-        
+
         disable_irq();
         sMonitor << '3';
         enable_irq();
@@ -89,7 +89,7 @@ extern "C" void Process_4()
     {
         for (i = 0; i < 0x200; i++)
             ;
-        
+
         disable_irq();
         sMonitor << '4';
         enable_irq();
