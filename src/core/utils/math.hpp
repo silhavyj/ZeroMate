@@ -10,6 +10,7 @@
 
 // STL imports (excluded from Doxygen)
 /// \cond
+#include <cassert>
 #include <cstdint>
 #include <limits>
 #include <concepts>
@@ -47,6 +48,11 @@ namespace zero_mate::utils::math
     template<std::unsigned_integral Type>
     [[nodiscard]] bool Is_Bit_Set(Type value, Type idx) noexcept
     {
+        if (idx >= std::numeric_limits<Type>::digits)
+        {
+            return false;
+        }
+
         return static_cast<bool>(static_cast<Type>(value >> idx) & 0b1U);
     }
 
@@ -78,8 +84,8 @@ namespace zero_mate::utils::math
     template<std::unsigned_integral Type>
     [[nodiscard]] TShift_Result<Type> LSL(Type value, Type shift_size, bool carry_flag) noexcept
     {
-        bool updated_carry_flag{}; // New value of the carry flag (after the operation)
-        Type result{};
+        bool updated_carry_flag{ false }; // New value of the carry flag (after the operation)
+        Type result{ 0 };
 
         if (shift_size == 0)
         {
@@ -89,7 +95,12 @@ namespace zero_mate::utils::math
         else
         {
             updated_carry_flag = Is_Bit_Set<Type>(value, (std::numeric_limits<Type>::digits - shift_size));
-            result = static_cast<Type>(value << shift_size);
+
+            // Make sure it is safe to perform the shift.
+            if (shift_size < std::numeric_limits<Type>::digits)
+            {
+                result = static_cast<Type>(value << shift_size);
+            }
         }
 
         return { updated_carry_flag, result };
@@ -110,8 +121,8 @@ namespace zero_mate::utils::math
     template<std::unsigned_integral Type>
     [[nodiscard]] TShift_Result<Type> LSR(Type value, Type shift_size) noexcept
     {
-        bool carry_flag{};
-        Type result{};
+        bool carry_flag{ false };
+        Type result{ 0 };
 
         if (shift_size == 0)
         {
@@ -121,7 +132,12 @@ namespace zero_mate::utils::math
         else
         {
             carry_flag = Is_Bit_Set<Type>(value, (shift_size - 1));
-            result = static_cast<Type>(value >> shift_size);
+
+            // Make sure it is safe to perform the shift.
+            if (shift_size < std::numeric_limits<Type>::digits)
+            {
+                result = static_cast<Type>(value >> shift_size);
+            }
         }
 
         return { carry_flag, result };
@@ -142,8 +158,8 @@ namespace zero_mate::utils::math
     template<std::unsigned_integral Type>
     [[nodiscard]] TShift_Result<Type> ASR(Type value, Type shift_size) noexcept
     {
-        bool carry_flag{};
-        Type result{};
+        bool carry_flag{ false };
+        Type result{ 0 };
 
         if (shift_size == 0)
         {
@@ -162,7 +178,12 @@ namespace zero_mate::utils::math
         else
         {
             carry_flag = Is_Bit_Set<Type>(value, (shift_size - 1));
-            result = static_cast<Type>(static_cast<std::make_signed<Type>::type>(value) >> shift_size);
+
+            // Make sure it is safe to perform the shift.
+            if (shift_size < std::numeric_limits<Type>::digits)
+            {
+                result = static_cast<Type>(static_cast<std::make_signed<Type>::type>(value) >> shift_size);
+            }
         }
 
         return { carry_flag, result };
@@ -184,8 +205,8 @@ namespace zero_mate::utils::math
     template<std::unsigned_integral Type>
     [[nodiscard]] TShift_Result<Type> ROR(Type value, Type shift_size, bool carry_flag) noexcept
     {
-        bool updated_carry_flag{};
-        Type result{};
+        bool updated_carry_flag{ false };
+        Type result{ 0 };
 
         if (shift_size == 0)
         {
@@ -196,6 +217,7 @@ namespace zero_mate::utils::math
         else
         {
             updated_carry_flag = Is_Bit_Set<Type>(value, (shift_size - 1));
+
             result = static_cast<Type>(value >> shift_size) |
                      static_cast<Type>(value << (std::numeric_limits<Type>::digits - shift_size));
         }

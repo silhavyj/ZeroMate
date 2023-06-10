@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.21)
 # General info about the project
 project(
     ZeroMate
-    VERSION 0.3.0
+    VERSION 0.5.0
     DESCRIPTION "Raspberry Pi Zero emulator"
     HOMEPAGE_URL "https://github.com/silhavyj/ZeroMate"
     LANGUAGES C CXX)
@@ -47,6 +47,9 @@ add_subdirectory(external/glew)
 add_subdirectory(external/glfw)
 add_subdirectory(external/magic_enum)
 add_subdirectory(external/capstone)
+
+# Add the lib subdirectory
+add_subdirectory(lib)
 
 # Add the src folder
 add_subdirectory(src)

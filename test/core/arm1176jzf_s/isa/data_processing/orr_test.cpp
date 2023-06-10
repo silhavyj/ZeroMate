@@ -101,3 +101,24 @@ TEST(orr_instruction, test_05)
     EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), true);
     EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
 }
+
+TEST(orr_instruction, test_06)
+{
+    using namespace zero_mate::arm1176jzf_s;
+
+    CCPU_Core cpu{};
+
+    cpu.Execute({
+    { 0xe3e0e00b }, // mov lr, #0xFFFFFFF4
+    { 0xe3a05000 }, // mov r5, #0
+    { 0xe3a02001 }, // mov r2, #1
+    { 0xe1855e12 }  // orr r5, r5, r2, lsl lr
+    });
+
+    EXPECT_EQ(cpu.Get_CPU_Context()[5], 0x0);
+
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::Z), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::C), false);
+    EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::V), false);
+}

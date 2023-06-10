@@ -52,12 +52,14 @@ void CInterrupt_Controller::Enable_IRQ(hal::IRQ_Source source_idx)
 {
     const unsigned int idx_base = static_cast<unsigned int>(source_idx);
 
-    Regs(idx_base < 32 ? hal::Interrupt_Controller_Reg::IRQ_Enable_1 : hal::Interrupt_Controller_Reg::IRQ_Enable_2) = (1 << (idx_base % 32));
+    Regs(idx_base < 32 ? hal::Interrupt_Controller_Reg::IRQ_Enable_1 : hal::Interrupt_Controller_Reg::IRQ_Enable_2) =
+    (1 << (idx_base % 32));
 }
 
 void CInterrupt_Controller::Disable_IRQ(hal::IRQ_Source source_idx)
 {
     const unsigned int idx_base = static_cast<unsigned int>(source_idx);
 
-    Regs(idx_base < 32 ? hal::Interrupt_Controller_Reg::IRQ_Disable_1 : hal::Interrupt_Controller_Reg::IRQ_Disable_2) = (1 << (idx_base % 32));
+    Regs(idx_base < 32 ? hal::Interrupt_Controller_Reg::IRQ_Disable_1 : hal::Interrupt_Controller_Reg::IRQ_Disable_2) =
+    (1 << (idx_base % 32));
 }
