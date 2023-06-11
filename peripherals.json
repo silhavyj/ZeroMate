@@ -1,0 +1,16 @@
+{
+  "peripherals": [
+    {
+      "name" : "7-segment display",
+      "pins" : [ 2, 3, 4 ],
+      "lib_path" : "/home/silhavyj/School/ZeroMate/build/unix_makefiles/release/lib/seven_seg_display",
+      "lib_name" : "seven_seg_display"
+    },
+    {
+      "name" : "Button",
+      "pins" : [ 5 ],
+      "lib_path" : "/home/silhavyj/School/ZeroMate/build/unix_makefiles/release/lib/button",
+      "lib_name" : "button"
+    }
+  ]
+}

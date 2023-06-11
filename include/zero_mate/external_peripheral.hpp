@@ -11,8 +11,8 @@ namespace zero_mate
     class IExternal_Peripheral
     {
     public:
-        using Set_GPIO_Pin_t = std::function<void(int, bool)>;
-        using Read_GPIO_Pin_t = std::function<bool(int)>;
+        using Set_GPIO_Pin_t = std::function<int(std::uint32_t , bool)>;
+        using Read_GPIO_Pin_t = std::function<bool(std::uint32_t)>;
 
     public:
         IExternal_Peripheral() = default;

@@ -1,3 +1,5 @@
+find_package(OpenGL REQUIRED)
+
 # Find all source files making up the core of emulator
 file(GLOB_RECURSE core_source_files "core/*.cpp" "core/*.hpp")
 
@@ -8,6 +10,8 @@ file(GLOB_RECURSE gui_source_files "gui/*.cpp" "gui/*.hpp")
 add_executable(
     zero_mate
     main.cpp
+        soc.hpp
+        soc.cpp
     ${core_source_files}
     ${gui_source_files})
 
@@ -24,6 +28,7 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/dylib/include/
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/json/include/
         ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 # Link project_warnings, project_options, and libraries
@@ -40,15 +45,14 @@ target_link_libraries(
         imgui_file_dialog
         magic_enum
         capstone
-        ini
         demangle)
 
 if(WIN32)
     target_link_libraries(
         zero_mate
         PRIVATE 
-            $<$<CXX_COMPILER_ID:GNU>:opengl32.a>
-            $<$<CXX_COMPILER_ID:MSVC>:opengl32.lib>)
+            $<$<CXX_COMPILER_ID:GNU>:opengl32.so>
+            $<$<CXX_COMPILER_ID:MSVC>:opengl32.dll>)
 endif()
 
 # Copy the fonts, imgui.ini, and rpi_zero_config.ini to the location of the executable
@@ -57,6 +61,6 @@ add_custom_command(
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/fonts $<TARGET_FILE_DIR:zero_mate>/fonts
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/icons $<TARGET_FILE_DIR:zero_mate>/icons
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/imgui.ini $<TARGET_FILE_DIR:zero_mate>
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/peripherals.ini $<TARGET_FILE_DIR:zero_mate>)
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/peripherals.json $<TARGET_FILE_DIR:zero_mate>)
 
 # EOF
