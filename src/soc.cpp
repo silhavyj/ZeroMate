@@ -117,7 +117,7 @@ namespace zero_mate::soc
 
             try
             {
-                const std::pair<std::string, std::string> lib_id = { lib_path, lib_name };
+                const std::pair<std::string, std::string> lib_id{ lib_path, lib_name };
 
                 if (!s_shared_libs.contains(lib_id))
                 {
