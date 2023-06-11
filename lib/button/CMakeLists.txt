@@ -12,6 +12,12 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external/imgui)
 
+set_target_properties(
+    button 
+    PROPERTIES
+    WINDOWS_EXPORT_ALL_SYMBOLS ON
+    IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/button.lib)
+
 target_sources(
     button
     PRIVATE

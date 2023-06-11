@@ -42,7 +42,7 @@
        {
           "name":"msvc",
           "description":"Build using Visual Studio 17 2022 generator",
-          "generator":"Visual Studio 17 2022 Win64",
+          "generator":"Visual Studio 17 2022",
           "binaryDir":"${sourceDir}/build/msvc",
           "cacheVariables":{
             "ENABLE_TESTING":"ON"

@@ -1,19 +1,6 @@
 #pragma once
 
-// Define the macro to handle symbol visibility
-#ifdef _WIN32
-    #ifdef EXTERNAL_PERIPHERAL_EXPORTS
-        // If building the library on Windows
-        #define EXTERNAL_PERIPHERAL_API __declspec(dllexport)
-    #else
-        // If consuming the library on Windows
-        #define EXTERNAL_PERIPHERAL_API __declspec(dllimport)
-    #endif
-#else
-    // If building or consuming the library on Linux or other platforms
-    #define EXTERNAL_PERIPHERAL_API
-#endif
-
+#include <string>
 #include <cstdint>
 #include <memory>
 #include <functional>
@@ -21,7 +8,7 @@
 
 namespace zero_mate
 {
-    class EXTERNAL_PERIPHERAL_API IExternal_Peripheral
+    class IExternal_Peripheral
     {
     public:
         using Set_GPIO_Pin_t = std::function<void(int, bool)>;
@@ -56,7 +43,6 @@ namespace zero_mate
 
 extern "C"
 {
-    EXTERNAL_PERIPHERAL_API
     int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
                           const std::string& name,
                           const std::vector<std::uint32_t>& gpio_pins,

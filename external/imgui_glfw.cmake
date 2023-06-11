@@ -1,20 +1,22 @@
 add_library(
     imgui_glfw SHARED
-    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui_tables.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui_widgets.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui_draw.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/imgui_demo.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/backends/imgui_impl_glfw.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/backends/imgui_impl_opengl3.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui_tables.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui_widgets.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui_draw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui_demo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imgui/backends/imgui_impl_glfw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/imgui/backends/imgui_impl_opengl3.cpp)
 
-set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+set_target_properties(imgui_glfw PROPERTIES
+    WINDOWS_EXPORT_ALL_SYMBOLS ON
+    IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/imgui_glfw.lib)
 
 target_include_directories(
     imgui_glfw
-    SYSTEM PRIVATE 
-        ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
-        ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui/backends)
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/imgui
+        ${CMAKE_CURRENT_SOURCE_DIR}/imgui/backends)
 
 target_link_libraries(
     imgui_glfw

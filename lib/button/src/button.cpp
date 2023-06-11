@@ -44,7 +44,6 @@ void CButton::Toggle()
 
 extern "C"
 {
-    EXTERNAL_PERIPHERAL_API
     int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
                           const std::string& name,
                           const std::vector<std::uint32_t>& gpio_pins,
