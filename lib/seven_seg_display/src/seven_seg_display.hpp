@@ -1,5 +1,6 @@
 #pragma once
 
+#include <bitset>
 #include <numeric>
 
 #include <imgui.h>
@@ -54,7 +55,8 @@ public:
 private:
     inline void Render_Shift_Register()
     {
-        ImGui::Text("shift register: %d", Get_Value());
+        const std::bitset<8> binaryBits(Get_Value());
+        ImGui::Text("shift register: %s", binaryBits.to_string().c_str());
         ImGui::Separator();
     }
 
