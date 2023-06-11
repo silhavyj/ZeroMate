@@ -25,7 +25,8 @@
 #include "peripheral.hpp"
 #include "interrupt_controller.hpp"
 #include "../utils/logger/logger.hpp"
-#include "external_peripheral.hpp"
+
+#include <zero_mate/external_peripheral.hpp>
 
 namespace zero_mate::peripheral
 {
@@ -44,9 +45,6 @@ namespace zero_mate::peripheral
 
         /// Number of pins encapsulated in a single register
         static constexpr std::uint32_t NUMBER_OF_PINS_IN_REG = std::numeric_limits<std::uint32_t>::digits;
-
-        // Alias for external peripherals to make the code less wordy
-        using External_Peripherals_t = std::vector<std::shared_ptr<IExternal_Peripheral>>;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \class CPin
@@ -293,7 +291,7 @@ namespace zero_mate::peripheral
         /// \brief Hooks up an external peripheral to the GPIO manager.
         /// \param peripheral Instance of an external peripheral
         // -------------------------------------------------------------------------------------------------------------
-        void Add_External_Peripheral(std::shared_ptr<IExternal_Peripheral> peripheral);
+        void Add_External_Peripheral(IExternal_Peripheral* peripheral);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns a const reference to a pin (visualization purposes).
@@ -387,7 +385,7 @@ namespace zero_mate::peripheral
         std::array<CPin, NUMBER_OF_GPIO_PINS> m_pins;                  ///< GPIO pins
         utils::CLogging_System& m_logging_system;                      ///< Logging system
         std::shared_ptr<CInterrupt_Controller> m_interrupt_controller; ///< Interrupt controller
-        External_Peripherals_t m_external_peripherals;                 ///< Collection of external peripherals
+        std::vector<IExternal_Peripheral*> m_external_peripherals;     ///< Collection of external peripherals
     };
 
 } // namespace zero_mate::peripheral

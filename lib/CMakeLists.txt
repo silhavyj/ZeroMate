@@ -1,2 +1,2 @@
 add_subdirectory(button)
-add_subdirectory(shift_register)
+add_subdirectory(seven_seg_display)

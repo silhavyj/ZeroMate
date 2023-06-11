@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../../src/gui/window.hpp"
 #include <zero_mate/external_peripheral.hpp>
 
 class CButton final : public zero_mate::IExternal_Peripheral

@@ -29,9 +29,6 @@
 #include "windows/peripherals/monitor_window.hpp"
 #include "windows/peripherals/interrupt_controller_window.hpp"
 
-#include "windows/peripherals/external/button_window.hpp"
-#include "windows/peripherals/external/seven_segment_display_window.hpp"
-
 #include "../core/peripherals/trng.hpp"
 
 #include "../core/utils/singleton.hpp"
@@ -47,7 +44,10 @@ namespace zero_mate::gui
     namespace
     {
         IExternal_Peripheral *button_peripheral{ nullptr };
-        const dylib button_dl{"/home/silhavyj/School/ZeroMate/build/unix_makefiles/debug/lib/button/", "button"};
+        IExternal_Peripheral *seven_seg_display{ nullptr };
+
+        const dylib button_dl{"/home/silhavyj/School/ZeroMate/build/unix_makefiles/release/lib/button/", "button"};
+        const dylib seven_seg_dsiplay_dl{"/home/silhavyj/School/ZeroMate/build/unix_makefiles/release/lib/seven_seg_display/", "seven_seg_display"};
 
         auto logger_stdo = std::make_shared<utils::CLogger_STDO>();
         auto& s_logging_system = *utils::CSingleton<utils::CLogging_System>::Get_Instance();
@@ -61,9 +61,6 @@ namespace zero_mate::gui
         auto s_gpio = std::make_shared<peripheral::CGPIO_Manager>(s_interrupt_controller);
         auto s_monitor = std::make_shared<peripheral::CMonitor>();
         auto s_trng = std::make_shared<peripheral::CTRNG>();
-
-        auto s_shift_register = std::make_shared<peripheral::external::CShift_Register<>>(s_gpio, 2, 3, 4);
-        auto s_button = std::make_shared<peripheral::external::CButton>(s_gpio, 5);
 
         std::vector<utils::elf::TText_Section_Record> s_source_code{};
         auto s_log_window = std::make_shared<CLog_Window>();
@@ -137,19 +134,28 @@ namespace zero_mate::gui
             s_windows.emplace_back(std::make_shared<CMonitor_Window>(s_monitor));
             s_windows.emplace_back(std::make_shared<CCP15_Window>(s_cp15));
 
-            //s_windows.emplace_back(std::make_shared<external_peripheral::CButton_Window>(s_button));
-            s_windows.emplace_back(std::make_shared<external_peripheral::CSeven_Segment_Display>(s_shift_register));
+            // TODO
+            // s_windows.emplace_back(std::make_shared<external_peripheral::CButton_Window>(s_button));
+            // s_windows.emplace_back(std::make_shared<external_peripheral::CSeven_Segment_Display>(s_shift_register));
 
             // TODO
-            // typedef int (*Create_Peripheral_Ptr)(IExternal_Peripheral**, const std::string&, const std::vector<std::uint32_t>&, std::function<void(int, bool)>, std::function<bool(int)>);
-
             const std::vector<std::uint32_t> pin{ 5 };
             auto create_peripheral = button_dl.get_function<int(IExternal_Peripheral**, const std::string&, const std::vector<std::uint32_t>&, std::function<void(int, bool)>, std::function<bool(int)>)>("Create_Peripheral");
-            [[maybe_unused]] int status = create_peripheral(&button_peripheral, "My_Button", pin, Set_Pin, Read_Pin);
+            [[maybe_unused]] const int status = create_peripheral(&button_peripheral, "Button", pin, Set_Pin, Read_Pin);
 
             if (button_peripheral != nullptr)
             {
                 s_external_windows.push_back(button_peripheral);
+            }
+
+            const std::vector<std::uint32_t> pins{ 2, 3, 4 };
+            create_peripheral = seven_seg_dsiplay_dl.get_function<int(IExternal_Peripheral**, const std::string&, const std::vector<std::uint32_t>&, std::function<void(int, bool)>, std::function<bool(int)>)>("Create_Peripheral");
+            [[maybe_unused]] const int status2 = create_peripheral(&seven_seg_display, "7-segment display", pins, Set_Pin, Read_Pin);
+
+            if (seven_seg_display != nullptr)
+            {
+                s_external_windows.push_back(seven_seg_display);
+                s_gpio->Add_External_Peripheral(seven_seg_display);
             }
         }
 
@@ -250,8 +256,6 @@ namespace zero_mate::gui
 
             Init_CPU();
             Init_BUS();
-
-            s_gpio->Add_External_Peripheral(s_shift_register);
         }
 
         void Initialize()
