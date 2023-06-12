@@ -4,6 +4,8 @@
 #include <numeric>
 
 #include <imgui.h>
+
+#define WIN_EXPORT
 #include <zero_mate/external_peripheral.hpp>
 
 template<std::unsigned_integral Register = std::uint8_t>

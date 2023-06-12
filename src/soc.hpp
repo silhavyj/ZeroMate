@@ -56,9 +56,6 @@ namespace zero_mate::soc
     extern bool g_elf_file_has_been_loaded;
     extern bool g_cpu_running;
 
-    [[nodiscard]] bool Read_GPIO_Pin(std::uint32_t pin_idx);
-    [[nodiscard]] int Set_GPIO_Pin(std::uint32_t pin_idx, bool set);
-
     void Init();
 
 } // namespace zero_mate::soc

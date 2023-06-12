@@ -6,9 +6,19 @@
 #include <functional>
 #include <unordered_set>
 
+#ifdef _WIN32
+    #ifdef WIN_EXPORT
+        #define EXPORTED  __declspec( dllexport )
+    #else
+        #define EXPORTED  __declspec( dllimport )
+    #endif
+#else
+    #define EXPORTED
+#endif
+
 namespace zero_mate
 {
-    class IExternal_Peripheral
+    class EXPORTED IExternal_Peripheral
     {
     public:
         using Set_GPIO_Pin_t = std::function<int(std::uint32_t , bool)>;
@@ -43,9 +53,9 @@ namespace zero_mate
 
 extern "C"
 {
-    int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
-                          const std::string& name,
-                          const std::vector<std::uint32_t>& gpio_pins,
-                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin);
+    EXPORTED int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
+                                   const std::string& name,
+                                   const std::vector<std::uint32_t>& gpio_pins,
+                                   [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
+                                   [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin);
 }

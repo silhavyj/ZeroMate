@@ -39,6 +39,17 @@ namespace zero_mate::soc
         auto s_logger_stdo = std::make_shared<utils::CLogger_STDO>();
         std::map<std::pair<std::string, std::string>, std::shared_ptr<dylib>> s_shared_libs;
 
+        [[nodiscard]] bool Read_GPIO_Pin(std::uint32_t pin_idx)
+        {
+            return g_gpio->Read_GPIO_Pin(pin_idx) == peripheral::CGPIO_Manager::CPin::NState::High;
+        }
+
+        [[nodiscard]] int Set_GPIO_Pin(std::uint32_t pin_idx, bool set)
+        {
+            const auto status = g_gpio->Set_Pin_State(pin_idx, static_cast<peripheral::CGPIO_Manager::CPin::NState>(set));
+            return static_cast<int>(status);
+        }
+
         void Initialize_Logging_System()
         {
             s_logger_stdo->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
@@ -136,20 +147,9 @@ namespace zero_mate::soc
 
             } catch (const std::exception &)
             {
-                g_logging_system.Error(fmt::format("Failed to {} ", lib_name).c_str());
+                g_logging_system.Error(fmt::format("Failed to load a shared library: path = {}; name = {} ", lib_path, lib_name).c_str());
             }
         }
-    }
-
-    [[nodiscard]] bool Read_GPIO_Pin(std::uint32_t pin_idx)
-    {
-        return g_gpio->Read_GPIO_Pin(pin_idx) == peripheral::CGPIO_Manager::CPin::NState::High;
-    }
-
-    [[nodiscard]] int Set_GPIO_Pin(std::uint32_t pin_idx, bool set)
-    {
-        const auto status = g_gpio->Set_Pin_State(pin_idx, static_cast<peripheral::CGPIO_Manager::CPin::NState>(set));
-        return static_cast<int>(status);
     }
 
     void Init()
