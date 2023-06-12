@@ -44,11 +44,11 @@ void CButton::Toggle()
 
 extern "C"
 {
-    EXPORTED int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
-                                   const std::string& name,
-                                   const std::vector<std::uint32_t>& gpio_pins,
-                                   zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                                   [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin)
+    int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
+                          const std::string& name,
+                          const std::vector<std::uint32_t>& gpio_pins,
+                          zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
+                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin)
     {
         *peripheral = new (std::nothrow) CButton(name, gpio_pins[0], set_pin);
 

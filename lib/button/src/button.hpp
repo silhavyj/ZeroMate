@@ -1,6 +1,5 @@
 #pragma once
 
-#define WIN_EXPORT
 #include <zero_mate/external_peripheral.hpp>
 
 class CButton final : public zero_mate::IExternal_Peripheral
