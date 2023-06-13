@@ -30,10 +30,6 @@ namespace zero_mate::soc
 
     std::vector<utils::elf::TText_Section_Record> g_source_code{};
 
-    bool g_scroll_to_curr_line{ false };
-    bool g_elf_file_has_been_loaded{ false };
-    bool g_cpu_running{ false };
-
     namespace
     {
         auto s_logger_stdo = std::make_shared<utils::CLogger_STDO>();

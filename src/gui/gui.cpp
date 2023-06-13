@@ -39,16 +39,20 @@ namespace zero_mate::gui
         auto s_log_window = std::make_shared<CLog_Window>();
         std::vector<std::shared_ptr<IGUI_Window>> s_windows;
 
+        bool s_scroll_to_curr_line{ false };
+        bool s_elf_file_has_been_loaded{ false };
+        bool s_cpu_running{ false };
+
         void Initialize_Windows()
         {
             s_log_window->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
             soc::g_logging_system.Add_Logger(s_log_window);
 
-            s_windows.emplace_back(std::make_shared<CRegisters_Window>(soc::g_cpu, soc::g_cpu_running));
+            s_windows.emplace_back(std::make_shared<CRegisters_Window>(soc::g_cpu, s_cpu_running));
             s_windows.push_back(std::make_shared<CRAM_Window>(soc::g_ram));
-            s_windows.emplace_back(std::make_shared<CControl_Window>(soc::g_cpu, soc::g_scroll_to_curr_line, soc::g_elf_file_has_been_loaded, soc::g_cpu_running, soc::g_peripherals, soc::g_bus));
-            s_windows.emplace_back(std::make_shared<CSource_Code_Window>(soc::g_cpu, soc::g_source_code, soc::g_scroll_to_curr_line, soc::g_cpu_running));
-            s_windows.emplace_back(std::make_shared<CFile_Window>(soc::g_bus, soc::g_cpu, soc::g_source_code, soc::g_elf_file_has_been_loaded, soc::g_peripherals));
+            s_windows.emplace_back(std::make_shared<CControl_Window>(soc::g_cpu, s_scroll_to_curr_line, s_elf_file_has_been_loaded, s_cpu_running, soc::g_peripherals, soc::g_bus));
+            s_windows.emplace_back(std::make_shared<CSource_Code_Window>(soc::g_cpu, soc::g_source_code, s_scroll_to_curr_line, s_cpu_running));
+            s_windows.emplace_back(std::make_shared<CFile_Window>(soc::g_bus, soc::g_cpu, soc::g_source_code, s_elf_file_has_been_loaded, soc::g_peripherals));
             s_windows.emplace_back(std::make_shared<CGPIO_Window>(soc::g_gpio));
             s_windows.emplace_back(s_log_window);
             s_windows.emplace_back(std::make_shared<CInterrupt_Controller_Window>(soc::g_ic));

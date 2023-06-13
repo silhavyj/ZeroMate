@@ -52,10 +52,6 @@ namespace zero_mate::soc
 
     extern std::vector<utils::elf::TText_Section_Record> g_source_code;
 
-    extern bool g_scroll_to_curr_line;
-    extern bool g_elf_file_has_been_loaded;
-    extern bool g_cpu_running;
-
     void Init();
 
 } // namespace zero_mate::soc
