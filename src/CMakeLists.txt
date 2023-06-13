@@ -37,8 +37,6 @@ target_link_libraries(
         project_options
         fmt
         elfio
-        libglew_static
-        glfw
         imgui_glfw
         magic_enum
         capstone

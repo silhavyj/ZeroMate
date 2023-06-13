@@ -27,7 +27,6 @@ target_sources(
 target_link_libraries(
     button
     PRIVATE
-        glfw
         imgui_glfw)
 
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)

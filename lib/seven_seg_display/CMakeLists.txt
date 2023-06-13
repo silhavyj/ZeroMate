@@ -27,7 +27,6 @@ target_sources(
 target_link_libraries(
     seven_seg_display
     PRIVATE
-        glfw
         imgui_glfw)
 
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)

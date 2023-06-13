@@ -24,18 +24,10 @@ target_include_directories(
 
 target_link_libraries(
     imgui_glfw
-    PRIVATE 
+    PUBLIC 
         libglew_static
         glfw
-	OpenGL::GL)
-
-#if(WIN32)
-#    target_link_libraries(
-#        imgui_glfw
-#        PRIVATE 
-#            $<$<CXX_COMPILER_ID:GNU>:opengl32.so>
-#            $<$<CXX_COMPILER_ID:MSVC>:opengl32.dll>)
-#endif()
+	    OpenGL::GL)
 
 set(output_directory ${PROJECT_SOURCE_DIR}/output)
 
