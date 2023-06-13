@@ -27,7 +27,7 @@ target_link_libraries(
     PUBLIC 
         libglew_static
         glfw
-	    OpenGL::GL)
+	OpenGL::GL)
 
 set(output_directory ${PROJECT_SOURCE_DIR}/output)
 

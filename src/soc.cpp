@@ -109,9 +109,9 @@ namespace zero_mate::soc
 
         for (const auto& peripheral : peripherals)
         {
-            if (!peripheral.contains("name") || !peripheral.contains("pins") || !peripheral.contains("lib_name") || !peripheral.contains("lib_path"))
+            if (!peripheral.contains("name") || !peripheral.contains("pins") || !peripheral.contains("lib_name") || !peripheral.contains("lib_dir"))
             {
-                g_logging_system.Error(fmt::format("At least one of the following sections is missing in the {} file: name, pins, lib_name, or lib_path", config::External_Peripherals_Config_File).c_str());
+                g_logging_system.Error(fmt::format("At least one of the following sections is missing in the {} file: name, pins, lib_name, or lib_dir", config::External_Peripherals_Config_File).c_str());
                 return;
             }
 
@@ -120,15 +120,15 @@ namespace zero_mate::soc
             const auto name = peripheral["name"].template get<std::string>();
             const std::vector<std::uint32_t> pins = peripheral["pins"].template get<std::vector<std::uint32_t>>();
             const auto lib_name = peripheral["lib_name"].template get<std::string>();
-            const auto lib_path = peripheral["lib_path"].template get<std::string>();
+            const auto lib_dir = peripheral["lib_dir"].template get<std::string>();
 
             try
             {
-                const std::pair<std::string, std::string> lib_id{ lib_path, lib_name };
+                const std::pair<std::string, std::string> lib_id{ lib_dir, lib_name };
 
                 if (!s_shared_libs.contains(lib_id))
                 {
-                    s_shared_libs[lib_id] = std::make_shared<dylib>(lib_path, lib_name);
+                    s_shared_libs[lib_id] = std::make_shared<dylib>(lib_dir, lib_name);
                 }
 
                 const auto& lib = s_shared_libs.at(lib_id);
@@ -143,7 +143,7 @@ namespace zero_mate::soc
 
             } catch (const std::exception &)
             {
-                g_logging_system.Error(fmt::format("Failed to load a shared library: path = {}; name = {} ", lib_path, lib_name).c_str());
+                g_logging_system.Error(fmt::format("Failed to load a shared library: path = {}; name = {} ", lib_dir, lib_name).c_str());
             }
         }
     }
