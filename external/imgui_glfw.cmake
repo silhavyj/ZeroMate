@@ -23,3 +23,11 @@ target_link_libraries(
     PRIVATE 
         libglew_static
         glfw)
+
+set(output_directory ${PROJECT_SOURCE_DIR}/output)
+
+file(MAKE_DIRECTORY ${output_directory})
+
+add_custom_command(
+    TARGET imgui_glfw POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:imgui_glfw> ${output_directory})

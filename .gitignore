@@ -2,6 +2,7 @@
 /.idea
 /.vs
 /build
+/output
 /docs/doxygen
 doxygen-warnings.log
 doxygen.tag

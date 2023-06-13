@@ -29,3 +29,11 @@ target_link_libraries(
     PRIVATE
         glfw
         imgui_glfw)
+
+set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)
+
+file(MAKE_DIRECTORY ${output_directory})
+
+add_custom_command(
+    TARGET seven_seg_display POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:seven_seg_display> ${output_directory})

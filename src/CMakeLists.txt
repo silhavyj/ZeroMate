@@ -10,8 +10,8 @@ file(GLOB_RECURSE gui_source_files "gui/*.cpp" "gui/*.hpp")
 add_executable(
     zero_mate
     main.cpp
-        soc.hpp
-        soc.cpp
+    soc.hpp
+    soc.cpp
     ${core_source_files}
     ${gui_source_files})
 
@@ -55,12 +55,19 @@ if(WIN32)
             $<$<CXX_COMPILER_ID:MSVC>:opengl32.dll>)
 endif()
 
-# Copy the fonts, imgui.ini, and rpi_zero_config.ini to the location of the executable
+# Set the output directory
+set(output_directory ${PROJECT_SOURCE_DIR}/output)
+
+# Create the output directory if it does not exist
+file(MAKE_DIRECTORY ${output_directory})
+
+# Copy the output file into the output directory
 add_custom_command(
     TARGET zero_mate POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/fonts $<TARGET_FILE_DIR:zero_mate>/fonts
-    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/icons $<TARGET_FILE_DIR:zero_mate>/icons
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/imgui.ini $<TARGET_FILE_DIR:zero_mate>
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/peripherals.json $<TARGET_FILE_DIR:zero_mate>)
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:zero_mate> ${output_directory}
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/fonts ${output_directory}/fonts
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/icons ${output_directory}/icons
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/imgui.ini ${output_directory}
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/peripherals.json ${output_directory})
 
 # EOF
