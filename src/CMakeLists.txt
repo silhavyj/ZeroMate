@@ -1,5 +1,3 @@
-find_package(OpenGL REQUIRED)
-
 # Find all source files making up the core of emulator
 file(GLOB_RECURSE core_source_files "core/*.cpp" "core/*.hpp")
 
@@ -42,18 +40,9 @@ target_link_libraries(
         libglew_static
         glfw
         imgui_glfw
-        imgui_file_dialog
         magic_enum
         capstone
         demangle)
-
-if(WIN32)
-    target_link_libraries(
-        zero_mate
-        PRIVATE 
-            $<$<CXX_COMPILER_ID:GNU>:opengl32.so>
-            $<$<CXX_COMPILER_ID:MSVC>:opengl32.dll>)
-endif()
 
 # Set the output directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output)

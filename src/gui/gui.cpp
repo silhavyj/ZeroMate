@@ -77,7 +77,7 @@ namespace zero_mate::gui
             std::terminate();
         });
 
-        if (GLFW_TRUE != glfwInit())
+        if (glfwInit() != GLFW_TRUE)
         {
             soc::g_logging_system.Error("Failed to initialize GLFW");
             return 1;
