@@ -31,12 +31,7 @@ target_link_libraries(
         glfw
         OpenGL::GL)
 
-if (MSVC)
-    set_target_properties(
-        imgui_glfw PROPERTIES
-        WINDOWS_EXPORT_ALL_SYMBOLS ON
-        IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/imgui_glfw.lib)
-
+if (NOT MSVC)
     set(output_directory ${PROJECT_SOURCE_DIR}/output)
     add_custom_command(
         TARGET imgui_glfw POST_BUILD
