@@ -1,6 +1,6 @@
 find_package(OpenGL REQUIRED)
 
-if (MSVC)
+if (WIN32)
     set(LIB_TYPE STATIC)
 else()
     set(LIB_TYPE SHARED)
@@ -31,7 +31,7 @@ target_link_libraries(
         glfw
         OpenGL::GL)
 
-if (NOT MSVC)
+if (NOT WIN32)
     set(output_directory ${PROJECT_SOURCE_DIR}/output)
     add_custom_command(
         TARGET imgui_glfw POST_BUILD
