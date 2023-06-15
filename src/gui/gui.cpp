@@ -66,6 +66,11 @@ namespace zero_mate::gui
             std::for_each(s_windows.begin(), s_windows.end(), [](const auto& window) -> void { window->Render(); });
             std::for_each(soc::g_external_peripherals.begin(), soc::g_external_peripherals.end(), [](const auto& window) -> void { window->Render(); });
         }
+
+        void Init_External_GUIs(ImGuiContext* context)
+        {
+            std::for_each(soc::g_external_peripherals.begin(), soc::g_external_peripherals.end(), [&](const auto& window) -> void { window->Set_ImGUI_Context(context); });
+        }
     }
 
     int Main_GUI([[maybe_unused]] int argc, [[maybe_unused]] const char* argv[])
@@ -104,7 +109,7 @@ namespace zero_mate::gui
         }
 
         IMGUI_CHECKVERSION();
-        ImGui::CreateContext();
+        ImGuiContext* context = ImGui::CreateContext();
 
         ImGuiIO& imgui_io = ImGui::GetIO();
 
@@ -148,6 +153,8 @@ namespace zero_mate::gui
         int display_w{};
         int display_h{};
 
+        Init_External_GUIs(context);
+
         while (!glfwWindowShouldClose(window))
         {
             glfwPollEvents();
@@ -155,6 +162,7 @@ namespace zero_mate::gui
             ImGui_ImplOpenGL3_NewFrame();
             ImGui_ImplGlfw_NewFrame();
             ImGui::NewFrame();
+            ImGui::SetCurrentContext(context);
 
             [[maybe_unused]] static bool dockspace_open = true;
             static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <bitset>
+#include <cassert>
 #include <numeric>
 
 #include <imgui.h>
@@ -26,8 +27,14 @@ public:
     , m_clock_pin_idx{ clock_pin_idx }
     , m_clock_state{ false }
     , m_clock_state_prev{ false }
+    , m_context{ nullptr }
     {
         Init_GPIO_Subscription();
+    }
+
+    void Set_ImGUI_Context(void* context) override
+    {
+        m_context = static_cast<ImGuiContext*>(context);
     }
 
     void GPIO_Subscription_Callback(std::uint32_t pin_idx) override
@@ -44,6 +51,9 @@ public:
 
     void Render() override
     {
+        assert(m_context != nullptr);
+        ImGui::SetCurrentContext(m_context);
+
         if (ImGui::Begin(m_name.c_str()))
         {
             Render_Shift_Register();
@@ -166,4 +176,5 @@ private:
     std::uint32_t m_clock_pin_idx;
     bool m_clock_state;
     bool m_clock_state_prev;
+    ImGuiContext* m_context;
 };

@@ -1,7 +1,7 @@
 find_package(OpenGL REQUIRED)
 
 add_library(
-    imgui_glfw SHARED
+    imgui_glfw STATIC
     ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui_tables.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui_widgets.cpp

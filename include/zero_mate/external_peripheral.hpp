@@ -36,6 +36,10 @@ namespace zero_mate
         {
         }
 
+        virtual void Set_ImGUI_Context(void *context)
+        {
+        }        
+
     protected:
         std::unordered_set<std::uint32_t> m_gpio_subscription{};
     };

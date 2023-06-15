@@ -1,3 +1,5 @@
+#include <cassert>
+
 #include <imgui.h>
 
 #include "button.hpp"
@@ -9,11 +11,20 @@ CButton::CButton(const std::string& name,
 , m_pin_idx{ pin_idx }
 , m_set_pin{ set_pin }
 , m_output{ false }
+, m_context{ nullptr }
 {
+}
+
+void CButton::Set_ImGUI_Context(void *context) 
+{
+    m_context = static_cast<ImGuiContext*>(context);
 }
 
 void CButton::Render()
 {
+    assert(m_context != nullptr);
+    ImGui::SetCurrentContext(m_context);
+    
     if (ImGui::Begin(m_name.c_str()))
     {
         Render_Pin_Idx();
