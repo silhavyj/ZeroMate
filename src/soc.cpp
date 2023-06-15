@@ -1,6 +1,7 @@
 #include <map>
 #include <fstream>
 #include <utility>
+#include <unordered_set>
 
 #include <dylib.hpp>
 #include <fmt/format.h>
@@ -34,6 +35,7 @@ namespace zero_mate::soc
     {
         auto s_logger_stdo = std::make_shared<utils::CLogger_STDO>();
         std::map<std::pair<std::string, std::string>, std::shared_ptr<dylib>> s_shared_libs;
+        std::unordered_set<std::string> s_external_peripheral_names;
 
         [[nodiscard]] bool Read_GPIO_Pin(std::uint32_t pin_idx)
         {
@@ -122,6 +124,12 @@ namespace zero_mate::soc
             const auto lib_name = peripheral["lib_name"].template get<std::string>();
             const auto lib_dir = peripheral["lib_dir"].template get<std::string>();
 
+            if (s_external_peripheral_names.contains(name))
+            {
+                g_logging_system.Error(fmt::format("External peripheral named {} already exists", name).c_str());
+                continue;
+            }
+
             try
             {
                 const std::pair<std::string, std::string> lib_id{ lib_dir, lib_name };
@@ -140,6 +148,7 @@ namespace zero_mate::soc
                 // TODO
                 [[maybe_unused]] const int status = create_peripheral(&g_external_peripherals.back(), name, pins, Set_GPIO_Pin, Read_GPIO_Pin);
                 g_gpio->Add_External_Peripheral(g_external_peripherals.back());
+                s_external_peripheral_names.insert(name);
 
             } catch (const std::exception &)
             {
