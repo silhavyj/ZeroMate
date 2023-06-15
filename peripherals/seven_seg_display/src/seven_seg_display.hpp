@@ -57,6 +57,7 @@ public:
         if (ImGui::Begin(m_name.c_str()))
         {
             Render_Shift_Register();
+            Render_Pin_Indexes();
             Render_Seven_Segment_Display();
         }
 
@@ -64,6 +65,14 @@ public:
     }
 
 private:
+    inline void Render_Pin_Indexes()
+    {
+        ImGui::Text("Latch pin: %d", m_latch_pin_idx);
+        ImGui::Text("Data pin: %d", m_data_pin_idx);
+        ImGui::Text("Clock pin: %d", m_clock_pin_idx);
+        ImGui::Separator();
+    }
+
     inline void Render_Shift_Register()
     {
         const std::bitset<8> binaryBits(Get_Value());
@@ -77,7 +86,7 @@ private:
 
         ImVec2 v_min = ImGui::GetWindowContentRegionMin();
 
-        static constexpr int OFFSET_Y = 30;
+        static constexpr int OFFSET_Y = 90;
         static constexpr int SIZE = 25;
         static constexpr int THICKNESS = 5;
 
