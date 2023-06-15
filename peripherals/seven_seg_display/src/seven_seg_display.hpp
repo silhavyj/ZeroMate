@@ -32,7 +32,7 @@ public:
         Init_GPIO_Subscription();
     }
 
-    void Set_ImGUI_Context(void* context) override
+    void Set_ImGui_Context(void* context) override
     {
         m_context = static_cast<ImGuiContext*>(context);
     }

@@ -15,7 +15,7 @@ CButton::CButton(const std::string& name,
 {
 }
 
-void CButton::Set_ImGUI_Context(void *context) 
+void CButton::Set_ImGui_Context(void *context)
 {
     m_context = static_cast<ImGuiContext*>(context);
 }

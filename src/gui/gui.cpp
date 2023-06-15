@@ -63,13 +63,20 @@ namespace zero_mate::gui
         
         void Render_GUI()
         {
-            std::for_each(s_windows.begin(), s_windows.end(), [](const auto& window) -> void { window->Render(); });
-            std::for_each(soc::g_external_peripherals.begin(), soc::g_external_peripherals.end(), [](const auto& window) -> void { window->Render(); });
+            std::for_each(s_windows.begin(),
+                          s_windows.end(),
+                          [](const auto& window) -> void { window->Render(); });
+
+            std::for_each(soc::g_external_peripherals.begin(),
+                          soc::g_external_peripherals.end(),
+                          [](const auto& window) -> void { window->Render(); });
         }
 
         void Init_External_GUIs(ImGuiContext* context)
         {
-            std::for_each(soc::g_external_peripherals.begin(), soc::g_external_peripherals.end(), [&](const auto& window) -> void { window->Set_ImGUI_Context(context); });
+            std::for_each(soc::g_external_peripherals.begin(),
+                          soc::g_external_peripherals.end(),
+                          [&](const auto& window) -> void { window->Set_ImGui_Context(context); });
         }
     }
 

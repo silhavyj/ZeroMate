@@ -10,7 +10,7 @@ public:
                      zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin);
 
     void Render() override;
-    void Set_ImGUI_Context(void *context) override;
+    void Set_ImGui_Context(void *context) override;
 
 private:
     void Toggle();
