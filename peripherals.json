@@ -12,6 +12,12 @@
       "pins" : [ 5 ],
       "lib_dir" : "peripherals",
       "lib_name" : "button"
+    },
+    {
+      "name" : "LED",
+      "pins" : [ 47 ],
+      "lib_dir" : "peripherals",
+      "lib_name" : "led"
     }
   ]
 }

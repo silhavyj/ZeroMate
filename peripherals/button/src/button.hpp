@@ -1,5 +1,6 @@
 #pragma once
 
+#include <imgui.h>
 #include <zero_mate/external_peripheral.hpp>
 
 class CButton final : public zero_mate::IExternal_Peripheral
@@ -13,9 +14,9 @@ public:
     void Set_ImGui_Context(void *context) override;
 
 private:
-    void Toggle();
-    void Render_Pin_Idx();
-    void Render_Button();
+    inline void Toggle();
+    inline void Render_Pin_Idx() const;
+    inline void Render_Button();
 
 private:
     std::string m_name;

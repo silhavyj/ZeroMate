@@ -1,7 +1,5 @@
 #include <cassert>
 
-#include <imgui.h>
-
 #include "button.hpp"
 
 CButton::CButton(const std::string& name,
@@ -34,7 +32,7 @@ void CButton::Render()
     ImGui::End();
 }
 
-void CButton::Render_Pin_Idx()
+void CButton::Render_Pin_Idx() const
 {
     ImGui::Text("GPIO pin: %d", m_pin_idx);
 }
