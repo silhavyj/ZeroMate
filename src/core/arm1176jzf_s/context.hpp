@@ -17,7 +17,7 @@
 
 // Project file imports
 
-#include "../utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {

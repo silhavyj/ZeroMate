@@ -40,7 +40,8 @@ target_link_libraries(
         imgui_glfw
         magic_enum
         capstone
-        demangle)
+        demangle
+        logger)
 
 # Set the output directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output)

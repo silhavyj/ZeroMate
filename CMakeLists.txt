@@ -51,6 +51,9 @@ add_subdirectory(external/capstone)
 # Add the external subdirectory (manual build from the source)
 add_subdirectory(external)
 
+# Add the project libraries folder
+add_subdirectory(lib)
+
 # Add the peripherals subdirectory
 add_subdirectory(peripherals)
 

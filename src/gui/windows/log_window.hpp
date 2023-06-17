@@ -6,7 +6,7 @@
 #include <imgui/imgui.h>
 
 #include "../window.hpp"
-#include "../../core/utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::gui
 {

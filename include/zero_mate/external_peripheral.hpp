@@ -18,6 +18,8 @@
 #include <unordered_set>
 /// \endcond
 
+#include "zero_mate/utils/logger.hpp"
+
 namespace zero_mate
 {
     // -----------------------------------------------------------------------------------------------------------------
@@ -128,11 +130,13 @@ extern "C"
     /// \param gpio_pins Collection of GPIO pins the peripherals is hooked up to
     /// \param set_pin Reference to a function the peripheral can use to set GPIO pins
     /// \param read_pin Reference to a function the peripheral can use to read values of GPIO pins
+    /// \param logging_system Reference to the logging system that is used throughout the project
     /// \return 0, if all goes well and the peripheral is created successfully. 1, otherwise.
     // -----------------------------------------------------------------------------------------------------------------
     int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
                           const std::string& name,
                           const std::vector<std::uint32_t>& gpio_pins,
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin);
+                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
+                          [[maybe_unused]] zero_mate::utils::CLogging_System& logging_system);
 }

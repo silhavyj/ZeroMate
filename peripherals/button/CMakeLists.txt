@@ -27,7 +27,8 @@ target_sources(
 target_link_libraries(
     button
     PRIVATE
-        imgui_glfw)
+        imgui_glfw
+        logger)
 
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)
 add_custom_command(

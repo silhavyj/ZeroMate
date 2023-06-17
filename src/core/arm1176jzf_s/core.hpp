@@ -33,7 +33,7 @@
 #include "../bus.hpp"
 
 #include "../utils/math.hpp"
-#include "../utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 #include "../peripherals/interrupt_controller.hpp"
 #include "../peripherals/system_clock_listener.hpp"

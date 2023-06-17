@@ -25,7 +25,7 @@
 
 #include "singleton.hpp"
 #include "elf_loader.hpp"
-#include "logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::utils::elf
 {

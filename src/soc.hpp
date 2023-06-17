@@ -32,7 +32,7 @@
 #include "core/peripherals/trng.hpp"
 #include "core/peripherals/gpio.hpp"
 
-#include "core/utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::soc
 {

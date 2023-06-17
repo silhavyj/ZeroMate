@@ -21,7 +21,7 @@
 
 #include "peripheral.hpp"
 #include "../arm1176jzf_s/context.hpp"
-#include "../utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::peripheral
 {
