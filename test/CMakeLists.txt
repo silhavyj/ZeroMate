@@ -19,7 +19,8 @@ target_include_directories(
     SYSTEM PRIVATE 
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include)
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 # Link libraries to the executable
 target_link_libraries(

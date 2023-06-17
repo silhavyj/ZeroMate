@@ -9,6 +9,7 @@
 // Project file imports
 
 #include "gui/gui.hpp"
+#include "soc.hpp"
 
 // ---------------------------------------------------------------------------------------------------------------------
 /// \brief Entry point of the application.
@@ -18,5 +19,9 @@
 // ---------------------------------------------------------------------------------------------------------------------
 int main(int argc, const char* argv[])
 {
+    // Init the system (create & connect peripherals).
+    zero_mate::soc::Init();
+
+    // Run the GUI.
     return zero_mate::gui::Main_GUI(argc, argv);
 }

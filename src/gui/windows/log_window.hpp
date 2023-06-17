@@ -40,7 +40,7 @@ namespace zero_mate::gui
         std::vector<Type> m_data;
     };
 
-    class CLog_Window final : public utils::ILogger, public CGUI_Window
+    class CLog_Window final : public utils::ILogger, public IGUI_Window
     {
     public:
         static constexpr std::size_t MAX_LOGS = 80;

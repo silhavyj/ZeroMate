@@ -6,7 +6,7 @@
 
 namespace zero_mate::gui
 {
-    class CCP15_Window final : public CGUI_Window
+    class CCP15_Window final : public IGUI_Window
     {
     public:
         explicit CCP15_Window(std::shared_ptr<coprocessor::CCP15> cp15);

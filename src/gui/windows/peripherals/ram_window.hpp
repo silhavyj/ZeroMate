@@ -6,7 +6,7 @@
 
 namespace zero_mate::gui
 {
-    class CRAM_Window final : public CGUI_Window
+    class CRAM_Window final : public IGUI_Window
     {
     public:
         explicit CRAM_Window(std::shared_ptr<peripheral::CRAM> ram);

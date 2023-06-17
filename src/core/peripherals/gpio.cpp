@@ -231,7 +231,9 @@ namespace zero_mate::peripheral
     void CGPIO_Manager::Notify_External_Peripherals(std::uint32_t pin_idx)
     {
         std::for_each(m_external_peripherals.begin(), m_external_peripherals.end(), [pin_idx](const auto& peripheral) {
-            if (peripheral->Get_GPIO_Subscription().contains(pin_idx))
+            const auto subscription = peripheral->Get_GPIO_Subscription();
+
+            if (subscription.contains(pin_idx))
             {
                 peripheral->GPIO_Subscription_Callback(pin_idx);
             }
@@ -420,7 +422,7 @@ namespace zero_mate::peripheral
         }
     }
 
-    void CGPIO_Manager::Add_External_Peripheral(std::shared_ptr<IExternal_Peripheral> peripheral)
+    void CGPIO_Manager::Add_External_Peripheral(IExternal_Peripheral* peripheral)
     {
         m_external_peripherals.emplace_back(peripheral);
     }

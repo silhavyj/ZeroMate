@@ -13,10 +13,6 @@
 [submodule "external/glfw"]
 	path = external/glfw
 	url = https://github.com/glfw/glfw
-[submodule "external/imgui"]
-	path = external/imgui
-	url = https://github.com/ocornut/imgui.git
-	branch = docking
 [submodule "external/imgui_club"]
 	path = external/imgui_club
 	url = https://github.com/ocornut/imgui_club.git
@@ -34,12 +30,19 @@
 	path = external/capstone
 	url = https://github.com/capstone-engine/capstone
 	branch = next
-[submodule "external/inih"]
-	path = external/inih
-	url = https://github.com/benhoyt/inih.git
 [submodule "external/doxygen-awesome-css"]
 	path = external/doxygen-awesome-css
 	url = https://github.com/jothepro/doxygen-awesome-css.git
 [submodule "external/demumble"]
 	path = external/demumble
 	url = https://github.com/nico/demumble.git
+[submodule "external/dylib"]
+	path = external/dylib
+	url = https://github.com/martin-olivier/dylib.git
+[submodule "external/json"]
+	path = external/json
+	url = https://github.com/nlohmann/json.git
+[submodule "external/imgui"]
+	path = external/imgui
+	url = https://github.com/ocornut/imgui.git
+	branch = docking

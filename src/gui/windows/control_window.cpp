@@ -161,7 +161,7 @@ namespace zero_mate::gui
         // ImGui::Checkbox("Show demo window", &s_show_demo_window);
         // if (s_show_demo_window)
         // {
-        //    ImGui::ShowDemoWindow();
+        //     ImGui::ShowDemoWindow();
         // }
     }
 

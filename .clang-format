@@ -12,6 +12,7 @@ BraceWrapping:
   BeforeElse: true
   AfterEnum: true
   BeforeCatch: true
+  AfterExternBlock: true
 BreakBeforeBinaryOperators: None
 BreakBeforeBraces: Custom
 BreakConstructorInitializers: BeforeColon
@@ -42,3 +43,4 @@ BinPackArguments: false
 BinPackParameters: false
 AllowAllArgumentsOnNextLine: false
 IndentPPDirectives: BeforeHash
+IndentExternBlock: Indent

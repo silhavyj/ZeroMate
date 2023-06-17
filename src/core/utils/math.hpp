@@ -8,6 +8,11 @@
 
 #pragma once
 
+// Undef the max macro if it is defined (msvc) - it would mess up for example std::max()
+#ifdef max
+    #undef max
+#endif
+
 // STL imports (excluded from Doxygen)
 /// \cond
 #include <cassert>

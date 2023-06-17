@@ -9,7 +9,7 @@
 
 namespace zero_mate::gui
 {
-    class CARM_Timer_Window final : public CGUI_Window
+    class CARM_Timer_Window final : public IGUI_Window
     {
     public:
         explicit CARM_Timer_Window(const std::shared_ptr<peripheral::CARM_Timer>& arm_timer);
