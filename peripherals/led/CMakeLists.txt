@@ -19,7 +19,7 @@ set_target_properties(
     IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/led.lib)
 
 target_sources(
-        led
+    led
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/led.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/led.cpp)
