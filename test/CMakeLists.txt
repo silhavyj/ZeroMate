@@ -45,6 +45,14 @@ target_link_libraries(
         demangle
         logger)
 
+# If we are no Windows, copy the library (.dll) to the output directory
+if (WIN32)
+    set(output_directory ${PROJECT_SOURCE_DIR}/output)
+    add_custom_command(
+        TARGET unit_tests POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy ${output_directory}/logger.dll $<TARGET_FILE_DIR:unit_tests>)
+endif()
+
 # Include the download CMake file
 include(GoogleTest)
 
