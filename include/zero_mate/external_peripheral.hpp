@@ -30,7 +30,7 @@ namespace zero_mate
     {
     public:
         /// Alias for a function that sets the value of a GPIO pin
-        using Set_GPIO_Pin_t = std::function<int(std::uint32_t , bool)>;
+        using Set_GPIO_Pin_t = std::function<int(std::uint32_t, bool)>;
 
         /// Alias for a function that reads the value of a GPIO pin
         using Read_GPIO_Pin_t = std::function<bool(std::uint32_t)>;
@@ -107,9 +107,9 @@ namespace zero_mate
         /// which is used as a GUI library in the main executable (emulator).
         /// \param context Pointer to an ImGuiContext
         // -------------------------------------------------------------------------------------------------------------
-        [[maybe_unused]] virtual void Set_ImGui_Context([[maybe_unused]] void *context)
+        [[maybe_unused]] virtual void Set_ImGui_Context([[maybe_unused]] void* context)
         {
-        }        
+        }
 
     protected:
         std::unordered_set<std::uint32_t> m_gpio_subscription{}; ///< Collection of GPIO the peripheral subscribes to

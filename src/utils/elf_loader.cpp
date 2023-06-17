@@ -32,7 +32,7 @@ namespace zero_mate::utils::elf
     // Anonymous namespace to make its content visible only to this translation unit.
     namespace
     {
-        std::string s_last_filename_loaded{""};
+        std::string s_last_filename_loaded{ "" };
 
         // -------------------------------------------------------------------------------------------------------------
         /// \struct TDisassembly_Result
