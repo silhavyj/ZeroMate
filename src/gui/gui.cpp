@@ -25,7 +25,7 @@
 #include "windows/peripherals/monitor_window.hpp"
 #include "windows/peripherals/interrupt_controller_window.hpp"
 
-#include "../core/utils/logger/logger_stdo.hpp"
+#include "../utils/logger/logger_stdo.hpp"
 
 namespace zero_mate::gui
 {

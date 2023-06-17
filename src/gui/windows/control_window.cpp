@@ -6,8 +6,8 @@
 
 #include "control_window.hpp"
 
-#include "../../core/utils/singleton.hpp"
-#include "../../core/utils/elf_loader.hpp"
+#include "zero_mate/utils/singleton.hpp"
+#include "../../utils/elf_loader.hpp"
 
 namespace zero_mate::gui
 {

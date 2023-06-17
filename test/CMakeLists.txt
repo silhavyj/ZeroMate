@@ -2,7 +2,11 @@
 include_directories(../src)
 
 # Find all source files to be compiled with the unit tests
-file(GLOB_RECURSE core_source_files "../src/core/*.cpp" "../src/core/*.hpp")
+file(GLOB_RECURSE core_source_files
+    "../src/core/*.cpp"
+    "../src/core/*.hpp"
+    "../src/utils/*.hpp"
+    "../src/utils/*.cpp")
 
 # Find all unit test source files
 file(GLOB_RECURSE test_source_files "./*.cpp" "./*.hpp")
@@ -32,7 +36,8 @@ target_link_libraries(
         elfio
         magic_enum
         capstone
-        demangle)
+        demangle
+        logger)
 
 # Include the download CMake file
 include(GoogleTest)

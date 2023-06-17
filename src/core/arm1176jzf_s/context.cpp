@@ -15,7 +15,7 @@
 #include "context.hpp"
 #include "exceptions.hpp"
 
-#include "../utils/singleton.hpp"
+#include "zero_mate/utils/singleton.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {

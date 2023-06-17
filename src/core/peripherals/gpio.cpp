@@ -22,8 +22,8 @@
 // Project file imports
 
 #include "gpio.hpp"
-#include "../utils/math.hpp"
-#include "../utils/singleton.hpp"
+#include "zero_mate/utils/math.hpp"
+#include "zero_mate/utils/singleton.hpp"
 
 namespace zero_mate::peripheral
 {

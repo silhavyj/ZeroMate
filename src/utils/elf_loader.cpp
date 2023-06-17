@@ -23,7 +23,7 @@
 
 // Project file imports
 
-#include "singleton.hpp"
+#include "zero_mate/utils/singleton.hpp"
 #include "elf_loader.hpp"
 #include "zero_mate/utils/logger.hpp"
 

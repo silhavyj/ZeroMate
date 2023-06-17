@@ -27,8 +27,8 @@
 // Project file imports
 
 #include "soc.hpp"
-#include "core/utils/singleton.hpp"
-#include "core/utils/logger/logger_stdo.hpp"
+#include "zero_mate/utils/singleton.hpp"
+#include "utils/logger/logger_stdo.hpp"
 
 namespace zero_mate::soc
 {

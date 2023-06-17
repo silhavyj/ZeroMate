@@ -32,7 +32,7 @@
 
 #include "../bus.hpp"
 
-#include "../utils/math.hpp"
+#include "zero_mate/utils/math.hpp"
 #include "zero_mate/utils/logger.hpp"
 
 #include "../peripherals/interrupt_controller.hpp"

@@ -3,7 +3,7 @@
 #include <imgui/imgui.h>
 #include <fmt/include/fmt/core.h>
 
-#include "../../core/utils/elf_loader.hpp"
+#include "../../utils/elf_loader.hpp"
 
 #include "source_code_window.hpp"
 

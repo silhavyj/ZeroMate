@@ -23,7 +23,7 @@
 // Project file imports
 
 #include "arm_timer.hpp"
-#include "../utils/singleton.hpp"
+#include "zero_mate/utils/singleton.hpp"
 
 namespace zero_mate::peripheral
 {

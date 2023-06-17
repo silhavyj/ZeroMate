@@ -3,7 +3,7 @@
 #include <fmt/include/fmt/core.h>
 
 #include "file_window.hpp"
-#include "../../core/utils/singleton.hpp"
+#include "zero_mate/utils/singleton.hpp"
 
 namespace zero_mate::gui
 {
