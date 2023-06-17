@@ -22,17 +22,17 @@
 
 #include <zero_mate/external_peripheral.hpp>
 
-#include "core/bus.hpp"
-#include "core/arm1176jzf_s/core.hpp"
-#include "core/coprocessors/cp15.hpp"
-#include "core/peripherals/ram.hpp"
-#include "core/peripherals/interrupt_controller.hpp"
-#include "core/peripherals/arm_timer.hpp"
-#include "core/peripherals/monitor.hpp"
-#include "core/peripherals/trng.hpp"
-#include "core/peripherals/gpio.hpp"
+#include "bus.hpp"
+#include "arm1176jzf_s/core.hpp"
+#include "coprocessors/cp15.hpp"
+#include "peripherals/ram.hpp"
+#include "peripherals/interrupt_controller.hpp"
+#include "peripherals/arm_timer.hpp"
+#include "peripherals/monitor.hpp"
+#include "peripherals/trng.hpp"
+#include "peripherals/gpio.hpp"
 
-#include "core/utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::soc
 {

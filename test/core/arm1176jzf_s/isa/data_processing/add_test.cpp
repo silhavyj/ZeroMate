@@ -124,7 +124,7 @@ TEST(add_instruction, test_06)
 
     cpu.Steps(2);
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[CCPU_Context::PC_REG_IDX], 0x18);
+    EXPECT_EQ(cpu.Get_CPU_Context()[CCPU_Context::PC_Reg_Idx], 0x18);
 }
 
 TEST(add_instruction, test_07)
@@ -145,7 +145,7 @@ TEST(add_instruction, test_07)
 
     cpu.Steps(2);
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[CCPU_Context::PC_REG_IDX], 0x200C);
+    EXPECT_EQ(cpu.Get_CPU_Context()[CCPU_Context::PC_Reg_Idx], 0x200C);
 }
 
 TEST(add_instruction, test_08)

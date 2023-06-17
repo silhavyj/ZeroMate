@@ -15,7 +15,7 @@
 
 // Project file imports
 
-#include "logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::utils
 {

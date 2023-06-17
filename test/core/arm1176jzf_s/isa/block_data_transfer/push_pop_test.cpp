@@ -5,11 +5,11 @@
 
 using namespace zero_mate;
 
-static constexpr std::uint32_t RAM_SIZE = 1024;
+static constexpr std::uint32_t RAM_Size = 1024;
 
 TEST(push_pop_instruction, test_01)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -35,7 +35,7 @@ TEST(push_pop_instruction, test_01)
 
 TEST(push_pop_instruction, test_02)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -47,14 +47,14 @@ TEST(push_pop_instruction, test_02)
     { 0xe92d581f }  // push { r0, r1, r2, r3, r4, fp, ip, lr }
     });
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 0xA8);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_Reg_Idx], 0xA8);
 
     cpu.Execute({
     { 0xe8bd981f } // ldm sp!, { r0, r1, r2, r3, r4, fp, ip, pc }
     });
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 0xC8);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_Reg_Idx], 0xC8);
 }
 
 TEST(push_pop_instruction, test_03)
@@ -67,7 +67,7 @@ TEST(push_pop_instruction, test_03)
         0xe8bd981f  // ldm sp!, { r0, r1, r2, r3, r4, fp, ip, pc }
     };
 
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size, 0, ram_content);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -76,6 +76,6 @@ TEST(push_pop_instruction, test_03)
 
     cpu.Steps(5 + 4 * 20);
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 4);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 200);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 4);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_Reg_Idx], 200);
 }

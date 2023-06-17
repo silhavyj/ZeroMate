@@ -1,7 +1,10 @@
+# Specify the minimum required version of CMake
 cmake_minimum_required(VERSION 3.21)
 
+# Add the led peripheral as a shared library
 add_library(led SHARED)
 
+# Specify the public and private include directories
 target_include_directories(
     led
     PUBLIC
@@ -12,23 +15,29 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external/imgui)
 
+# Export all symbols on Windows and create a led.lib file
 set_target_properties(
     led
     PROPERTIES
     WINDOWS_EXPORT_ALL_SYMBOLS ON
     IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/led.lib)
 
+# Specify the source file making up the led peripheral
 target_sources(
     led
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/led.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/led.cpp)
 
+# Link imgui_glfw and logger to the led library so the peripheral can
+# render itself and log messages to the logging system
 target_link_libraries(
     led
     PRIVATE
-        imgui_glfw)
+        imgui_glfw
+        logger)
 
+# Copy the shared library into the output/peripherals directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)
 add_custom_command(
     TARGET led POST_BUILD

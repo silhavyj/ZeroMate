@@ -5,11 +5,11 @@
 
 using namespace zero_mate;
 
-static constexpr std::uint32_t RAM_SIZE = 1024;
+static constexpr std::uint32_t RAM_Size = 1024;
 
 TEST(srsia_instruction, test_01)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -31,14 +31,14 @@ TEST(srsia_instruction, test_01)
     EXPECT_EQ(bus->Read<std::uint32_t>(200), 14);
     EXPECT_EQ(bus->Read<std::uint32_t>(200 + 4), 0xFF000054);
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 208);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_Reg_Idx], 208);
     EXPECT_EQ(cpu.Get_CPU_Context()[4], 14);
     EXPECT_EQ(cpu.Get_CPU_Context()[5], 0xFF000054);
 }
 
 TEST(srsia_instruction, test_02)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -56,5 +56,5 @@ TEST(srsia_instruction, test_02)
     EXPECT_EQ(bus->Read<std::uint32_t>(200), 14);
     EXPECT_EQ(bus->Read<std::uint32_t>(200 + 4), 0xFF000054);
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 200);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_Reg_Idx], 200);
 }

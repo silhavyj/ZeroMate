@@ -9,7 +9,7 @@
 // Project file imports
 
 #include "mac.hpp"
-#include "../utils/math.hpp"
+#include "zero_mate/utils/math.hpp"
 
 namespace zero_mate::arm1176jzf_s::mac
 {

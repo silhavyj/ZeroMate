@@ -6,7 +6,7 @@
 
 #include "../window.hpp"
 
-#include "../../core/utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 #include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/peripherals/peripheral.hpp"
 

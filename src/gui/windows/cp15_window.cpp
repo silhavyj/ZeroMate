@@ -25,7 +25,7 @@ namespace zero_mate::gui
     {
         ImGui::Text("Primary register C1");
 
-        if (ImGui::BeginTable("C1", 2, TABLE_FLAGS))
+        if (ImGui::BeginTable("C1", 2, Table_Flags))
         {
             ImGui::TableSetupColumn("Field", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn("Value", ImGuiTableColumnFlags_WidthStretch);

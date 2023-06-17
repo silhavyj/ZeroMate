@@ -72,7 +72,4 @@ function(set_project_warnings project_name)
 
     # Add compile options to the interface
     target_compile_options(${project_name} INTERFACE ${PROJECT_WARNINGS})
-
 endfunction()
-
-# EOF

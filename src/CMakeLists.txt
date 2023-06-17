@@ -1,15 +1,26 @@
+# Find all source files in the utils folder
+file(
+    GLOB_RECURSE utils_source_files
+    "utils/*.cpp"
+    "utils/*.hpp")
+
 # Find all source files making up the core of emulator
-file(GLOB_RECURSE core_source_files "core/*.cpp" "core/*.hpp")
+file(
+    GLOB_RECURSE core_source_files
+    "core/*.cpp"
+    "core/*.hpp")
 
 # Find all source files making up the GUI of emulator
-file(GLOB_RECURSE gui_source_files "gui/*.cpp" "gui/*.hpp")
+file(
+    GLOB_RECURSE gui_source_files
+    "gui/*.cpp"
+    "gui/*.hpp")
 
-# Define the executable
+# Define the main executable
 add_executable(
     zero_mate
     main.cpp
-    soc.hpp
-    soc.cpp
+    ${utils_source_files}
     ${core_source_files}
     ${gui_source_files})
 
@@ -40,21 +51,18 @@ target_link_libraries(
         imgui_glfw
         magic_enum
         capstone
-        demangle)
+        demangle
+        logger)
 
 # Set the output directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output)
 
-# Create the output directory if it does not exist
-file(MAKE_DIRECTORY ${output_directory})
-
 # Copy the output file into the output directory
 add_custom_command(
     TARGET zero_mate POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory ${output_directory}
     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:zero_mate> ${output_directory}
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/fonts ${output_directory}/fonts
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/icons ${output_directory}/icons
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/imgui.ini ${output_directory}
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/peripherals.json ${output_directory})
-
-# EOF

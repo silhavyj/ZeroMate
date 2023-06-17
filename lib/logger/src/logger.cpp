@@ -13,13 +13,9 @@
 #include <filesystem>
 /// \endcond
 
-// 3rd party library includes
-
-#include <fmt/format.h>
-
 // Project file imports
 
-#include "logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::utils
 {
@@ -64,8 +60,9 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // clang-format off
-        const std::string msg_formatted = fmt::format("{} [{}:{}] {}",
-                                                      DEBUG_MSG_PREFIX, filename, location.line(), msg);
+        const std::string msg_formatted = std::string(Debug_Msg_Prefix) +
+                                          "[" + filename + ":" + std::to_string(location.line())  + "] "
+                                          + msg;
         // clang-format on
 
         // Forward the log message to all registered loggers.
@@ -83,8 +80,9 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // clang-format off
-        const std::string msg_formatted = fmt::format("{} [{}:{}] {}",
-                                                      INFO_MSG_PREFIX, filename, location.line(), msg);
+        const std::string msg_formatted = std::string(Info_Msg_Prefix) +
+                                          "[" + filename + ":" + std::to_string(location.line())  + "] "
+                                          + msg;
         // clang-format on
 
         // Forward the log message to all registered loggers.
@@ -102,8 +100,9 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // clang-format off
-        const std::string msg_formatted = fmt::format("{} [{}:{}] {}",
-                                                      WARNING_MSG_PREFIX, filename, location.line(), msg);
+        const std::string msg_formatted = std::string(Warning_Msg_Prefix) +
+                                          "[" + filename + ":" + std::to_string(location.line())  + "] "
+                                          + msg;
         // clang-format on
 
         // Forward the log message to all registered loggers.
@@ -121,8 +120,9 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // clang-format off
-        const std::string msg_formatted = fmt::format("{} [{}:{}] {}",
-                                                      ERROR_MSG_PREFIX, filename, location.line(), msg);
+        const std::string msg_formatted = std::string(Error_Msg_Prefix) +
+                                          "[" + filename + ":" + std::to_string(location.line())  + "] "
+                                          + msg;
         // clang-format on
 
         // Forward the log message to all registered loggers.

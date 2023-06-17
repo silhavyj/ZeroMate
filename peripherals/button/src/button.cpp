@@ -4,12 +4,14 @@
 
 CButton::CButton(const std::string& name,
                  std::uint32_t pin_idx,
-                 zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin)
+                 zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
+                 zero_mate::utils::CLogging_System& logging_system)
 : m_name{ name }
 , m_pin_idx{ pin_idx }
 , m_set_pin{ set_pin }
 , m_output{ false }
 , m_context{ nullptr }
+, m_logging_system{ logging_system }
 {
 }
 
@@ -41,6 +43,7 @@ void CButton::Render_Button()
 {
     if (ImGui::Button("Press"))
     {
+        m_logging_system.Info("Button has been pressed");
         Toggle();
     }
 }
@@ -57,9 +60,10 @@ extern "C"
                           const std::string& name,
                           const std::vector<std::uint32_t>& gpio_pins,
                           zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin)
+                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
+                          zero_mate::utils::CLogging_System& logging_system)
     {
-        *peripheral = new (std::nothrow) CButton(name, gpio_pins[0], set_pin);
+        *peripheral = new (std::nothrow) CButton(name, gpio_pins[0], set_pin, logging_system);
 
         if (*peripheral == nullptr)
         {

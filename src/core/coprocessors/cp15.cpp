@@ -17,7 +17,7 @@
 // Project file imports
 
 #include "cp15.hpp"
-#include "../utils/singleton.hpp"
+#include "zero_mate/utils/singleton.hpp"
 
 namespace zero_mate::coprocessor
 {

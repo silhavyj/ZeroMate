@@ -20,7 +20,7 @@
 // Project file imports
 
 #include "coprocessor.hpp"
-#include "../utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::coprocessor
 {

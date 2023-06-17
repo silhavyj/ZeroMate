@@ -14,7 +14,7 @@
 // Project file imports
 
 #include "alu.hpp"
-#include "../utils/math.hpp"
+#include "zero_mate/utils/math.hpp"
 
 namespace zero_mate::arm1176jzf_s::alu
 {

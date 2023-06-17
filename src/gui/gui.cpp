@@ -8,7 +8,7 @@
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
 
-#include "../soc.hpp"
+#include "../core/soc.hpp"
 
 #include "gui.hpp"
 #include "window.hpp"
@@ -25,14 +25,14 @@
 #include "windows/peripherals/monitor_window.hpp"
 #include "windows/peripherals/interrupt_controller_window.hpp"
 
-#include "../core/utils/logger/logger_stdo.hpp"
+#include "../utils/logger/logger_stdo.hpp"
 
 namespace zero_mate::gui
 {
-    static inline constexpr const char* const WINDOW_TITLE = "ZeroMate - Rpi Zero emulator";
+    static inline constexpr const char* const Window_Title = "ZeroMate - Rpi Zero emulator";
 
-    static inline constexpr std::uint32_t WINDOW_WIDTH = 1240;
-    static inline constexpr std::uint32_t WINDOW_WEIGHT = 720;
+    static inline constexpr std::uint32_t Window_Width = 1240;
+    static inline constexpr std::uint32_t Window_Height = 720;
 
     namespace
     {
@@ -99,7 +99,7 @@ namespace zero_mate::gui
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 
-        GLFWwindow* window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_WEIGHT, WINDOW_TITLE, nullptr, nullptr);
+        GLFWwindow* window = glfwCreateWindow(Window_Width, Window_Height, Window_Title, nullptr, nullptr);
 
         if (window == nullptr)
         {

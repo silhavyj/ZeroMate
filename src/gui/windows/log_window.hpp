@@ -6,7 +6,7 @@
 #include <imgui/imgui.h>
 
 #include "../window.hpp"
-#include "../../core/utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::gui
 {
@@ -43,7 +43,7 @@ namespace zero_mate::gui
     class CLog_Window final : public utils::ILogger, public IGUI_Window
     {
     public:
-        static constexpr std::size_t MAX_LOGS = 80;
+        static constexpr std::size_t Max_Logs = 80;
 
         CLog_Window();
 
@@ -65,7 +65,7 @@ namespace zero_mate::gui
     private:
         ImGuiTextFilter m_filter;
         bool m_auto_scroll;
-        CCircular_Log_Buffer<std::string, MAX_LOGS> m_buffer;
+        CCircular_Log_Buffer<std::string, Max_Logs> m_buffer;
         std::mutex m_mtx;
     };
 }

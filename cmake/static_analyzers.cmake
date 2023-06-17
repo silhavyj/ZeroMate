@@ -40,5 +40,3 @@ if(ENABLE_INCLUDE_WHAT_YOU_USE)
         message(SEND_ERROR "include-what-you-use requested but executable not found")
     endif()
 endif()
-
-# EOF

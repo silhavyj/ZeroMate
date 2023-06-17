@@ -18,6 +18,8 @@
 #include <unordered_set>
 /// \endcond
 
+#include "zero_mate/utils/logger.hpp"
+
 namespace zero_mate
 {
     // -----------------------------------------------------------------------------------------------------------------
@@ -28,7 +30,7 @@ namespace zero_mate
     {
     public:
         /// Alias for a function that sets the value of a GPIO pin
-        using Set_GPIO_Pin_t = std::function<int(std::uint32_t , bool)>;
+        using Set_GPIO_Pin_t = std::function<int(std::uint32_t, bool)>;
 
         /// Alias for a function that reads the value of a GPIO pin
         using Read_GPIO_Pin_t = std::function<bool(std::uint32_t)>;
@@ -105,9 +107,9 @@ namespace zero_mate
         /// which is used as a GUI library in the main executable (emulator).
         /// \param context Pointer to an ImGuiContext
         // -------------------------------------------------------------------------------------------------------------
-        [[maybe_unused]] virtual void Set_ImGui_Context([[maybe_unused]] void *context)
+        [[maybe_unused]] virtual void Set_ImGui_Context([[maybe_unused]] void* context)
         {
-        }        
+        }
 
     protected:
         std::unordered_set<std::uint32_t> m_gpio_subscription{}; ///< Collection of GPIO the peripheral subscribes to
@@ -128,11 +130,13 @@ extern "C"
     /// \param gpio_pins Collection of GPIO pins the peripherals is hooked up to
     /// \param set_pin Reference to a function the peripheral can use to set GPIO pins
     /// \param read_pin Reference to a function the peripheral can use to read values of GPIO pins
+    /// \param logging_system Reference to the logging system that is used throughout the project
     /// \return 0, if all goes well and the peripheral is created successfully. 1, otherwise.
     // -----------------------------------------------------------------------------------------------------------------
     int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
                           const std::string& name,
                           const std::vector<std::uint32_t>& gpio_pins,
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin);
+                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
+                          [[maybe_unused]] zero_mate::utils::CLogging_System& logging_system);
 }

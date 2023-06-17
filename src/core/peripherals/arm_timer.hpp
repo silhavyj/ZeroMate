@@ -24,7 +24,7 @@
 #include "interrupt_controller.hpp"
 #include "system_clock_listener.hpp"
 
-#include "../utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::peripheral
 {
@@ -98,10 +98,10 @@ namespace zero_mate::peripheral
 #pragma pack(pop)
 
         /// Total number of registers associated with the peripheral
-        static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::uint32_t>(NRegister::Count);
+        static constexpr auto Number_Of_Registers = static_cast<std::uint32_t>(NRegister::Count);
 
         /// Size of a single register
-        static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
+        static constexpr auto Reg_Size = static_cast<std::uint32_t>(sizeof(std::uint32_t));
 
     public:
         // -------------------------------------------------------------------------------------------------------------
@@ -248,7 +248,7 @@ namespace zero_mate::peripheral
 
     private:
         std::shared_ptr<CInterrupt_Controller> m_interrupt_controller; ///< Interrupt controller
-        std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;         ///< Timer registers
+        std::array<std::uint32_t, Number_Of_Registers> m_regs;         ///< Timer registers
         CPrescaler m_prescaler;                                        ///< Prescaler
         utils::CLogging_System& m_logging_system;                      ///< Logging system
     };

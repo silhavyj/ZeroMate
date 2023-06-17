@@ -94,7 +94,8 @@ extern "C"
                           const std::string& name,
                           const std::vector<std::uint32_t>& gpio_pins,
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                          zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin)
+                          zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
+                          [[maybe_unused]] zero_mate::utils::CLogging_System& logging_system)
     {
         *peripheral = new (std::nothrow) CLED(name, gpio_pins[0], read_pin);
 

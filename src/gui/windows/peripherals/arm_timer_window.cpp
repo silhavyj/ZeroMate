@@ -22,7 +22,7 @@ namespace zero_mate::gui
 
     void CARM_Timer_Window::Render_Registers()
     {
-        if (ImGui::BeginTable("##ARM_timer_registers", 2, TABLE_FLAGS))
+        if (ImGui::BeginTable("##ARM_timer_registers", 2, Table_Flags))
         {
             ImGui::TableSetupColumn("Register", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn("Value", ImGuiTableColumnFlags_WidthStretch);
@@ -80,7 +80,7 @@ namespace zero_mate::gui
         const auto control_reg = m_arm_timer->Get_Control_Reg();
         ImGui::Text("Control register");
 
-        if (ImGui::BeginTable("##ARM_timer_control_register", 2, TABLE_FLAGS))
+        if (ImGui::BeginTable("##ARM_timer_control_register", 2, Table_Flags))
         {
             ImGui::TableSetupColumn("Field", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn("Value", ImGuiTableColumnFlags_WidthStretch);

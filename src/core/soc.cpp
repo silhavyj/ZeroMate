@@ -27,8 +27,8 @@
 // Project file imports
 
 #include "soc.hpp"
-#include "core/utils/singleton.hpp"
-#include "core/utils/logger/logger_stdo.hpp"
+#include "zero_mate/utils/singleton.hpp"
+#include "../utils/logger/logger_stdo.hpp"
 
 namespace zero_mate::soc
 {
@@ -290,7 +290,8 @@ namespace zero_mate::soc
                                                                const std::string&,
                                                                const std::vector<std::uint32_t>&,
                                                                std::function<void(int, bool)>,
-                                                               std::function<bool(int)>)>("Create_Peripheral");
+                                                               std::function<bool(int)>,
+                                                               utils::CLogging_System&)>("Create_Peripheral");
 
                 // Create room for the new external peripheral in the collection of all external peripherals
                 g_external_peripherals.emplace_back();
@@ -300,7 +301,8 @@ namespace zero_mate::soc
                                                      config.name,
                                                      config.pins,
                                                      Set_GPIO_Pin,
-                                                     Read_GPIO_Pin);
+                                                     Read_GPIO_Pin,
+                                                     g_logging_system);
 
                 if (status != 0)
                 {

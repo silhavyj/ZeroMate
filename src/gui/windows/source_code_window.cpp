@@ -3,7 +3,7 @@
 #include <imgui/imgui.h>
 #include <fmt/include/fmt/core.h>
 
-#include "../../core/utils/elf_loader.hpp"
+#include "../../utils/elf_loader.hpp"
 
 #include "source_code_window.hpp"
 
@@ -47,7 +47,7 @@ namespace zero_mate::gui
                 return false;
             }
 
-            if (!m_cpu_running && m_source_code[i].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
+            if (!m_cpu_running && m_source_code[i].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
             {
                 return true;
             }
@@ -114,7 +114,8 @@ namespace zero_mate::gui
             {
                 ImGui::PopStyleColor(2);
             }
-            if (ImGui::BeginTable(fmt::format("##source_code_table{}", m_source_code[idx].disassembly).c_str(), 4, TABLE_FLAGS))
+            if (ImGui::BeginTable(fmt::format("##source_code_table{}", m_source_code[idx].disassembly).c_str(), 4,
+                                  Table_Flags))
             {
                 ImGui::TableSetupColumn(fmt::format("##breakpoint{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthFixed);
                 ImGui::TableSetupColumn(fmt::format("Address##{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthFixed);
@@ -173,7 +174,7 @@ namespace zero_mate::gui
                         ImGui::Text("%s", m_source_code[idx].disassembly.c_str());
                     }
 
-                    if (!m_cpu_running && m_source_code[idx].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
+                    if (!m_cpu_running && m_source_code[idx].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
                     {
                         const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
                         ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
@@ -206,7 +207,7 @@ namespace zero_mate::gui
                     break;
                 }
 
-                if (!m_cpu_running && m_source_code[idx].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
+                if (!m_cpu_running && m_source_code[idx].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
                 {
                     if (m_scroll_to_curr_line && !ImGui::IsItemVisible())
                     {

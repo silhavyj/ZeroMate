@@ -46,7 +46,7 @@ namespace zero_mate::peripheral
 
     void CTRNG::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = addr / REG_SIZE;
+        const std::size_t reg_idx = addr / Reg_Size;
         const auto reg_type = static_cast<NRegister>(reg_idx);
 
         // If the user reads from the data register, insert there a random number

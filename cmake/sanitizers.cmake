@@ -1,5 +1,4 @@
 function(enable_sanitizers project_name)
-
     # This is only set up for gcc and clang compilers
     if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
 
@@ -8,9 +7,6 @@ function(enable_sanitizers project_name)
         if(ENABLE_COVERAGE)
             target_compile_options(${project_name} INTERFACE --coverage -O0 -g)
             target_link_libraries(${project_name} INTERFACE --coverage)
-        else()
-            # -O3 is not enabled for debugging reasons (optimized out)
-            # target_compile_options(${project_name} INTERFACE -O3)
         endif()
 
         # List out different sanitizer options
@@ -65,7 +61,4 @@ function(enable_sanitizers project_name)
             target_link_options(${project_name} INTERFACE -fsanitize=${LIST_OF_SANITIZERS})
         endif()
     endif()
-
 endfunction()
-
-# EOF

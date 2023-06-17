@@ -23,7 +23,7 @@
 // Project file imports
 
 #include "arm_timer.hpp"
-#include "../utils/singleton.hpp"
+#include "zero_mate/utils/singleton.hpp"
 
 namespace zero_mate::peripheral
 {
@@ -217,7 +217,7 @@ namespace zero_mate::peripheral
 
     void CARM_Timer::Write(std::uint32_t addr, const char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = addr / REG_SIZE;
+        const std::size_t reg_idx = addr / Reg_Size;
         const auto reg_type = static_cast<NRegister>(reg_idx);
 
         // An attempt to write to a read-only register
@@ -261,7 +261,7 @@ namespace zero_mate::peripheral
 
     void CARM_Timer::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = addr / REG_SIZE;
+        const std::size_t reg_idx = addr / Reg_Size;
         const auto reg_type = static_cast<NRegister>(reg_idx);
 
         // An attempt to read from a write-only register.

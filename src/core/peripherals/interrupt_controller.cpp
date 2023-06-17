@@ -22,8 +22,8 @@
 // Project file imports
 
 #include "interrupt_controller.hpp"
-#include "../utils/math.hpp"
-#include "../utils/singleton.hpp"
+#include "zero_mate/utils/math.hpp"
+#include "zero_mate/utils/singleton.hpp"
 
 namespace zero_mate::peripheral
 {
@@ -85,7 +85,7 @@ namespace zero_mate::peripheral
         // Write data into the peripheral's register.
         std::copy_n(data, size, &std::bit_cast<char*>(m_regs.data())[addr]);
 
-        const std::size_t reg_idx = addr / REG_SIZE;
+        const std::size_t reg_idx = addr / Reg_Size;
         const auto reg_type = static_cast<NRegister>(reg_idx);
 
         switch (reg_type)
