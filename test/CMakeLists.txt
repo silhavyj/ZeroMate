@@ -2,14 +2,18 @@
 include_directories(../src)
 
 # Find all source files to be compiled with the unit tests
-file(GLOB_RECURSE core_source_files
+file(
+    GLOB_RECURSE core_source_files
     "../src/core/*.cpp"
     "../src/core/*.hpp"
     "../src/utils/*.hpp"
     "../src/utils/*.cpp")
 
 # Find all unit test source files
-file(GLOB_RECURSE test_source_files "./*.cpp" "./*.hpp")
+file(
+    GLOB_RECURSE test_source_files
+    "./*.cpp"
+    "./*.hpp")
 
 # Build unit tests
 add_executable(
@@ -44,5 +48,3 @@ include(GoogleTest)
 
 # Discover all tests
 gtest_discover_tests(unit_tests)
-
-# EOF

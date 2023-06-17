@@ -20,7 +20,4 @@ function(set_project_optimizations project_name)
 
     # Add compile options to the interface
     target_compile_options(${project_name} INTERFACE ${PROJECT_OPTIMIZATIONS})
-
 endfunction()
-
-# EOF

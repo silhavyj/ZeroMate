@@ -1,7 +1,10 @@
+# Specify the minimum required version of CMake
 cmake_minimum_required(VERSION 3.21)
 
+# Add the logger as a shared library
 add_library(logger SHARED)
 
+# Specify the public include directories
 target_include_directories(
     logger
     PUBLIC
@@ -9,17 +12,20 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>)
 
+# Export all symbols on Windows and create a logger.lib file
 set_target_properties(
     logger
     PROPERTIES
     WINDOWS_EXPORT_ALL_SYMBOLS ON
     IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/logger.lib)
 
+# Specify the source file making up the logger library
 target_sources(
     logger
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/logger.cpp)
 
+# If we are no Windows, copy the library (.dll) to the output directory
 if (WIN32)
     set(output_directory ${PROJECT_SOURCE_DIR}/output)
     add_custom_command(

@@ -28,7 +28,7 @@
 
 #include "soc.hpp"
 #include "zero_mate/utils/singleton.hpp"
-#include "utils/logger/logger_stdo.hpp"
+#include "../utils/logger/logger_stdo.hpp"
 
 namespace zero_mate::soc
 {

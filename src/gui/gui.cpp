@@ -8,7 +8,7 @@
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
 
-#include "../soc.hpp"
+#include "../core/soc.hpp"
 
 #include "gui.hpp"
 #include "window.hpp"

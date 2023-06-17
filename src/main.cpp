@@ -9,7 +9,7 @@
 // Project file imports
 
 #include "gui/gui.hpp"
-#include "soc.hpp"
+#include "core/soc.hpp"
 
 // ---------------------------------------------------------------------------------------------------------------------
 /// \brief Entry point of the application.
