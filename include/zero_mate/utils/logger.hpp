@@ -138,10 +138,10 @@ namespace zero_mate::utils
     class CLogging_System final
     {
     public:
-        static constexpr const char* const DEBUG_MSG_PREFIX = "[debug]";     ///< Debug message prefix
-        static constexpr const char* const INFO_MSG_PREFIX = "[info]";       ///< Info message prefix
-        static constexpr const char* const WARNING_MSG_PREFIX = "[warning]"; ///< Warning message prefix
-        static constexpr const char* const ERROR_MSG_PREFIX = "[error]";     ///< Error message prefix
+        static constexpr const char* const Debug_Msg_Prefix = "[debug]";     ///< Debug message prefix
+        static constexpr const char* const Info_Msg_Prefix = "[info]";       ///< Info message prefix
+        static constexpr const char* const Warning_Msg_Prefix = "[warning]"; ///< Warning message prefix
+        static constexpr const char* const Error_Msg_Prefix = "[error]";     ///< Error message prefix
 
     public:
         // -------------------------------------------------------------------------------------------------------------

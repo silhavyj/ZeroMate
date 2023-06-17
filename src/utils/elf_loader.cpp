@@ -103,7 +103,7 @@ namespace zero_mate::utils::elf
         inline std::unordered_map<std::uint32_t, std::string> Get_Labels(const ELFIO::elfio& elf_reader)
         {
             // Section with all labels.
-            static constexpr const char* const SYMBOL_SECTION = ".symtab";
+            static constexpr const char* const Symbol_Section = ".symtab";
 
             std::unordered_map<std::uint32_t, std::string> labels;
 
@@ -111,7 +111,7 @@ namespace zero_mate::utils::elf
             labels[static_cast<std::uint32_t>(elf_reader.get_entry())] = START_LABEL;
 
             // Retrieve all symbols.
-            const ELFIO::symbol_section_accessor symbols(elf_reader, elf_reader.sections[SYMBOL_SECTION]);
+            const ELFIO::symbol_section_accessor symbols(elf_reader, elf_reader.sections[Symbol_Section]);
 
             // Datatype returned from the get_symbol function (we are only interested in the address and name).
             ELFIO::Elf64_Addr addr{};
@@ -171,7 +171,7 @@ namespace zero_mate::utils::elf
         inline TDisassembly_Result Disassemble_Instructions(const ELFIO::elfio& elf_reader)
         {
             // Code section
-            static constexpr const char* const TEXT_SECTION = ".text";
+            static constexpr const char* const Text_Section = ".text";
 
             csh handle{};
             TDisassembly_Result result{};
@@ -188,7 +188,7 @@ namespace zero_mate::utils::elf
             const auto labels = Get_Labels(elf_reader);
 
             // Get the .text section and the data stored in it.
-            const auto* const text_section = elf_reader.sections[TEXT_SECTION];
+            const auto* const text_section = elf_reader.sections[Text_Section];
             const auto* data = std::bit_cast<const uint8_t*>(text_section->get_data());
 
             cs_insn* instructions{ nullptr };                               // Disassembled instructions

@@ -36,7 +36,7 @@ namespace zero_mate::arm1176jzf_s
     : m_context{}
     , m_bus{ bus }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
-    , m_entry_point{ DEFAULT_ENTRY_POINT }
+    , m_entry_point{ Default_Entry_Point_Addr }
     , m_interrupt_controller{ nullptr }
     {
         Set_PC(pc);
@@ -140,14 +140,14 @@ namespace zero_mate::arm1176jzf_s
             // in the code and the PC register is set to a nonsense value).
             const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
 
-            PC() += CCPU_Context::REG_SIZE;
+            PC() += CCPU_Context::Reg_Size;
 
             return std::optional<isa::CInstruction>{ instruction };
         }
         catch ([[maybe_unused]] const exceptions::CCPU_Exception& ex)
         {
             // "Convert" the exception caused by reading data from the bus into a prefetch abort exception.
-            const exceptions::CPrefetch_Abort prefetch_ex{ PC() - CCPU_Context::REG_SIZE };
+            const exceptions::CPrefetch_Abort prefetch_ex{ PC() - CCPU_Context::Reg_Size };
             Execute_Exception(prefetch_ex);
             return std::nullopt;
         }
@@ -155,22 +155,22 @@ namespace zero_mate::arm1176jzf_s
 
     std::uint32_t& CCPU_Core::PC() noexcept
     {
-        return m_context[CCPU_Context::PC_REG_IDX];
+        return m_context[CCPU_Context::PC_Reg_Idx];
     }
 
     const std::uint32_t& CCPU_Core::PC() const noexcept
     {
-        return m_context[CCPU_Context::PC_REG_IDX];
+        return m_context[CCPU_Context::PC_Reg_Idx];
     }
 
     std::uint32_t& CCPU_Core::LR() noexcept
     {
-        return m_context[CCPU_Context::LR_REG_IDX];
+        return m_context[CCPU_Context::LR_Reg_Idx];
     }
 
     const std::uint32_t& CCPU_Core::LR() const noexcept
     {
-        return m_context[CCPU_Context::LR_REG_IDX];
+        return m_context[CCPU_Context::LR_Reg_Idx];
     }
 
     bool CCPU_Core::Is_Instruction_Condition_Met(isa::CInstruction instruction) const noexcept
@@ -350,7 +350,7 @@ namespace zero_mate::arm1176jzf_s
     {
         // TODO calculate how many CPU cycles it actually took to execute the instruction
         std::for_each(m_system_clock_listeners.begin(), m_system_clock_listeners.end(), [](auto& listener) -> void {
-            listener->Increment_Passed_Cycles(isa::CInstruction::AVERAGE_CPI);
+            listener->Increment_Passed_Cycles(isa::CInstruction::Average_CPI);
         });
     }
 
@@ -370,14 +370,14 @@ namespace zero_mate::arm1176jzf_s
         if (exception.Get_Type() == exceptions::CCPU_Exception::NType::IRQ)
         {
             // The compiler subtracts #4 from the LR register, so we need to compensate for that.
-            PC() += CCPU_Context::REG_SIZE;
+            PC() += CCPU_Context::Reg_Size;
         }
 
         // Set the mode of the CPU based on the thrown exception.
         m_context.Set_CPU_Mode(exception.Get_CPU_Mode());
 
         // LR = PC
-        m_context[CCPU_Context::LR_REG_IDX] = PC();
+        m_context[CCPU_Context::LR_Reg_Idx] = PC();
 
         // PC = &exception_handler
         PC() = exception.Get_Exception_Vector();
@@ -395,10 +395,10 @@ namespace zero_mate::arm1176jzf_s
         auto shift_amount_reg_value = m_context[shift_amount_reg_idx];
 
         // R15 (PC) is used as the Rs register.
-        if (shift_amount_reg_idx == CCPU_Context::PC_REG_IDX)
+        if (shift_amount_reg_idx == CCPU_Context::PC_Reg_Idx)
         {
             // PC is already pointing at the next instruction. Hence, +4 and not +8.
-            shift_amount_reg_value += CCPU_Context::REG_SIZE;
+            shift_amount_reg_value += CCPU_Context::Reg_Size;
         }
 
         // Only the lowest 8 bits represent the shift amount.
@@ -455,10 +455,10 @@ namespace zero_mate::arm1176jzf_s
         const auto rn_reg_idx = instruction.Get_Rn_Idx();
         std::uint32_t first_operand = m_context[rn_reg_idx];
 
-        if (rn_reg_idx == CCPU_Context::PC_REG_IDX)
+        if (rn_reg_idx == CCPU_Context::PC_Reg_Idx)
         {
             // PC is already pointing at the next instruction. Hence, +4 and not +8.
-            first_operand += CCPU_Context::REG_SIZE;
+            first_operand += CCPU_Context::Reg_Size;
         }
 
         const auto [carry_out, second_operand] = Get_Second_Operand(instruction);
@@ -481,7 +481,7 @@ namespace zero_mate::arm1176jzf_s
         if (result.set_flags)
         {
             //  R15 (PC) is used as the destination register.
-            if (dest_reg_idx == CCPU_Context::PC_REG_IDX)
+            if (dest_reg_idx == CCPU_Context::PC_Reg_Idx)
             {
                 if (m_context.Is_Mode_With_No_SPSR(m_context.Get_CPU_Mode()))
                 {
@@ -548,7 +548,7 @@ namespace zero_mate::arm1176jzf_s
         }
 
         // PC is already pointing at the next instruction. Hence, +4 and not +8.
-        PC() += CCPU_Context::REG_SIZE;
+        PC() += CCPU_Context::Reg_Size;
     }
 
     void CCPU_Core::Execute(isa::CMultiply instruction)
@@ -627,7 +627,7 @@ namespace zero_mate::arm1176jzf_s
         const bool pre_indexed = instruction.Is_P_Bit_Set();
         const auto reg_rn_idx = instruction.Get_Rn_Idx();
         const auto base_addr =
-        reg_rn_idx == CCPU_Context::PC_REG_IDX ? (PC() + CCPU_Context::REG_SIZE) : m_context[reg_rn_idx];
+        reg_rn_idx == CCPU_Context::PC_Reg_Idx ? (PC() + CCPU_Context::Reg_Size) : m_context[reg_rn_idx];
 
         // Calculate the offset to be added to the base register.
         const auto offset = Get_Offset(instruction);
@@ -659,7 +659,7 @@ namespace zero_mate::arm1176jzf_s
         const bool store_value = !instruction.Is_L_Bit_Set();
         const bool s_bit = instruction.Is_S_Bit_Set();
         const auto register_list = instruction.Get_Register_List();
-        const bool r15_is_listed = utils::math::Is_Bit_Set<std::uint32_t>(register_list, CCPU_Context::PC_REG_IDX);
+        const bool r15_is_listed = utils::math::Is_Bit_Set<std::uint32_t>(register_list, CCPU_Context::PC_Reg_Idx);
 
         if ((!r15_is_listed && s_bit) || (store_value && r15_is_listed && s_bit))
         {
@@ -685,7 +685,7 @@ namespace zero_mate::arm1176jzf_s
         auto addr = Calculate_Base_Address(instruction, base_reg_idx, cpu_mode, number_of_regs);
 
         // Iterate over all registers and check whether they are on the list.
-        for (std::uint32_t reg_idx = 0; reg_idx < CCPU_Context::NUMBER_OF_REGS; ++reg_idx)
+        for (std::uint32_t reg_idx = 0; reg_idx < CCPU_Context::Number_Of_Regs; ++reg_idx)
         {
             // Skip the current register if it is not on the list.
             if (!utils::math::Is_Bit_Set<std::uint32_t>(register_list, reg_idx))
@@ -703,7 +703,7 @@ namespace zero_mate::arm1176jzf_s
                 // Read data from the bus.
                 m_context.Get_Register(reg_idx, cpu_mode) = m_bus->Read<std::uint32_t>(addr);
 
-                if (s_bit && reg_idx == CCPU_Context::PC_REG_IDX)
+                if (s_bit && reg_idx == CCPU_Context::PC_Reg_Idx)
                 {
                     if (m_context.Is_Mode_With_No_SPSR(m_context.Get_CPU_Mode()))
                     {
@@ -721,12 +721,12 @@ namespace zero_mate::arm1176jzf_s
             }
 
             // Move on to the next address (+4B).
-            addr += CCPU_Context::REG_SIZE;
+            addr += CCPU_Context::Reg_Size;
         }
 
         if (instruction.Is_W_Bit_Set())
         {
-            const std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE * number_of_regs };
+            const std::uint32_t total_size_transferred{ CCPU_Context::Reg_Size * number_of_regs };
 
             if (!instruction.Is_U_Bit_Set())
             {
@@ -1069,7 +1069,7 @@ namespace zero_mate::arm1176jzf_s
         // Check if the mode of the CPU should be changed.
         if (instruction.Is_M_Bit_Set())
         {
-            cpsr &= ~CCPU_Context::CPU_MODE_MASK;
+            cpsr &= ~CCPU_Context::CPU_Mode_Mask;
             cpsr |= instruction.Get_Mode();
         }
 
@@ -1144,29 +1144,29 @@ namespace zero_mate::arm1176jzf_s
         // clang-format off
         // Calculate the base address (where PC and SPSR should be stored).
         const auto addr = Calculate_Base_Address(instruction,
-                                                 CCPU_Context::SP_REG_IDX,
+                                                 CCPU_Context::SP_Reg_Idx,
                                                  cpu_mode,
-                                                 isa::CSRS::NUMBER_OF_REGS_TO_TRANSFER);
+                                                 isa::CSRS::Number_Of_Regs_To_Transfer);
         // clang-format on
 
         // Store the registers of the current mode onto the stack.
-        m_bus->Write<std::uint32_t>(addr, m_context[CCPU_Context::LR_REG_IDX]);
-        m_bus->Write<std::uint32_t>(addr + CCPU_Context::REG_SIZE, m_context.Get_SPSR());
+        m_bus->Write<std::uint32_t>(addr, m_context[CCPU_Context::LR_Reg_Idx]);
+        m_bus->Write<std::uint32_t>(addr + CCPU_Context::Reg_Size, m_context.Get_SPSR());
 
         // Write the final address back to SP of the mode defined in the instruction.
         if (instruction.Is_W_Bit_Set())
         {
             // Total size that has been transferred.
-            static constexpr std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE *
-                                                                   isa::CSRS::NUMBER_OF_REGS_TO_TRANSFER };
+            static constexpr std::uint32_t total_size_transferred{ CCPU_Context::Reg_Size *
+                                                                   isa::CSRS::Number_Of_Regs_To_Transfer };
 
             if (instruction.Should_SP_Be_Decremented())
             {
-                m_context.Get_Register(CCPU_Context::SP_REG_IDX, cpu_mode) -= total_size_transferred;
+                m_context.Get_Register(CCPU_Context::SP_Reg_Idx, cpu_mode) -= total_size_transferred;
             }
             else
             {
-                m_context.Get_Register(CCPU_Context::SP_REG_IDX, cpu_mode) += total_size_transferred;
+                m_context.Get_Register(CCPU_Context::SP_Reg_Idx, cpu_mode) += total_size_transferred;
             }
         }
     }
@@ -1188,18 +1188,18 @@ namespace zero_mate::arm1176jzf_s
         const auto cpu_mode = m_context.Get_CPU_Mode();
 
         // Calculate the base address, taking into account the base address register as well as the addressing mode.
-        auto addr = Calculate_Base_Address(instruction, reg_rn_idx, cpu_mode, isa::CRFE::NUMBER_OF_REGS_TO_TRANSFER);
+        auto addr = Calculate_Base_Address(instruction, reg_rn_idx, cpu_mode, isa::CRFE::Number_Of_Regs_To_Transfer);
 
         // Read LR and SPSR off the stack.
         const auto lr = m_bus->Read<std::uint32_t>(addr);
-        const auto spsr = m_bus->Read<std::uint32_t>(addr + CCPU_Context::REG_SIZE);
+        const auto spsr = m_bus->Read<std::uint32_t>(addr + CCPU_Context::Reg_Size);
 
         // Write the final address back to Rn.
         if (instruction.Is_W_Bit_Set())
         {
             // Total size that has been transferred.
-            static constexpr std::uint32_t total_size_transferred{ CCPU_Context::REG_SIZE *
-                                                                   isa::CRFE::NUMBER_OF_REGS_TO_TRANSFER };
+            static constexpr std::uint32_t total_size_transferred{ CCPU_Context::Reg_Size *
+                                                                   isa::CRFE::Number_Of_Regs_To_Transfer };
 
             // TODO make sure Rn gets written back in the correct CPU mode
 

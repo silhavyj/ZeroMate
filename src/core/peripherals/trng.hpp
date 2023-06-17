@@ -31,7 +31,7 @@ namespace zero_mate::peripheral
     {
     public:
         /// Size of a single register
-        static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
+        static constexpr auto Reg_Size = static_cast<std::uint32_t>(sizeof(std::uint32_t));
 
         // -------------------------------------------------------------------------------------------------------------
         /// \enum NRegister
@@ -48,7 +48,7 @@ namespace zero_mate::peripheral
         };
 
         /// Total number of TRNG registers
-        static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::uint32_t>(NRegister::Count);
+        static constexpr auto Number_Of_Registers = static_cast<std::uint32_t>(NRegister::Count);
 
     public:
         // -------------------------------------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ namespace zero_mate::peripheral
         [[nodiscard]] bool Is_Enabled() const;
 
     private:
-        std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;       ///< Peripheral's registers
+        std::array<std::uint32_t, Number_Of_Registers> m_regs;       ///< Peripheral's registers
         std::random_device m_rand_dev;                               ///< Random device used to generate rnd numbers
         std::uniform_int_distribution<std::uint32_t> m_uniform_dist; ///< Uniform std::uint32_t distribution
     };

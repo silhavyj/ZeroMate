@@ -60,7 +60,7 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // clang-format off
-        const std::string msg_formatted = std::string(DEBUG_MSG_PREFIX) +
+        const std::string msg_formatted = std::string(Debug_Msg_Prefix) +
                                           "[" + filename + ":" + std::to_string(location.line())  + "] "
                                           + msg;
         // clang-format on
@@ -80,7 +80,7 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // clang-format off
-        const std::string msg_formatted = std::string(INFO_MSG_PREFIX) +
+        const std::string msg_formatted = std::string(Info_Msg_Prefix) +
                                           "[" + filename + ":" + std::to_string(location.line())  + "] "
                                           + msg;
         // clang-format on
@@ -100,7 +100,7 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // clang-format off
-        const std::string msg_formatted = std::string(WARNING_MSG_PREFIX) +
+        const std::string msg_formatted = std::string(Warning_Msg_Prefix) +
                                           "[" + filename + ":" + std::to_string(location.line())  + "] "
                                           + msg;
         // clang-format on
@@ -120,7 +120,7 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // clang-format off
-        const std::string msg_formatted = std::string(ERROR_MSG_PREFIX) +
+        const std::string msg_formatted = std::string(Error_Msg_Prefix) +
                                           "[" + filename + ":" + std::to_string(location.line())  + "] "
                                           + msg;
         // clang-format on

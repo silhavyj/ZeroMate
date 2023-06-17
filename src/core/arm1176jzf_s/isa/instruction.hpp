@@ -25,7 +25,7 @@ namespace zero_mate::arm1176jzf_s::isa
     public:
         // TODO do this better
         /// Average number of cycles it takes the CPU to execute an instruction.
-        static constexpr std::uint32_t AVERAGE_CPI{ 8 };
+        static constexpr std::uint32_t Average_CPI{ 8 };
 
         // -------------------------------------------------------------------------------------------------------------
         /// \enum NCondition

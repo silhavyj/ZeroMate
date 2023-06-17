@@ -26,17 +26,17 @@ namespace zero_mate::arm1176jzf_s::isa
 
     std::int32_t CBranch::Get_Offset() const noexcept
     {
-        static constexpr std::uint32_t MASK_28_BITS = 0xFFFFFFFU;
-        static constexpr std::uint32_t MASK_24_BITS = 0xFFFFFFU;
+        static constexpr std::uint32_t Mask_28_Bits = 0xFFFFFFFU;
+        static constexpr std::uint32_t Mask_24_Bits = 0xFFFFFFU;
 
         // Check if the offset is negative.
         if (utils::math::Is_Bit_Set(m_value, 23U))
         {
-            const std::uint32_t twos_compliment = ((~(m_value & MASK_28_BITS) + 1) & MASK_24_BITS);
+            const std::uint32_t twos_compliment = ((~(m_value & Mask_28_Bits) + 1) & Mask_24_Bits);
             return -static_cast<std::int32_t>(twos_compliment << 2U);
         }
 
-        return static_cast<std::int32_t>((m_value & MASK_24_BITS) << 2U);
+        return static_cast<std::int32_t>((m_value & Mask_24_Bits) << 2U);
     }
 
 } // namespace zero_mate::arm1176jzf_s::isa

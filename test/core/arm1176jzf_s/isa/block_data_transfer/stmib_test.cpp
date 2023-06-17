@@ -5,11 +5,11 @@
 
 using namespace zero_mate;
 
-static constexpr std::uint32_t RAM_SIZE = 1024;
+static constexpr std::uint32_t RAM_Size = 1024;
 
 TEST(stmib_instruction, test_01)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -40,14 +40,14 @@ TEST(stmib_instruction, test_01)
 
 TEST(stmib_instruction, test_02)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
 
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
-    for (std::uint32_t idx = 1; idx < arm1176jzf_s::CCPU_Context::NUMBER_OF_REGS; ++idx)
+    for (std::uint32_t idx = 1; idx < arm1176jzf_s::CCPU_Context::Number_Of_Regs; ++idx)
     {
         cpu.Get_CPU_Context()[idx] = 42 + idx;
     }
@@ -57,10 +57,10 @@ TEST(stmib_instruction, test_02)
     { 0xe9a0ffff }  // stmib r0!, {r0-r15}
     });
 
-    for (std::size_t idx = 1; idx < arm1176jzf_s::CCPU_Context::NUMBER_OF_REGS; ++idx)
+    for (std::size_t idx = 1; idx < arm1176jzf_s::CCPU_Context::Number_Of_Regs; ++idx)
     {
-        EXPECT_EQ(bus->Read<std::uint32_t>(static_cast<std::uint32_t>(200 + (idx * arm1176jzf_s::CCPU_Context::REG_SIZE) + arm1176jzf_s::CCPU_Context::REG_SIZE)), 42 + idx);
+        EXPECT_EQ(bus->Read<std::uint32_t>(static_cast<std::uint32_t>(200 + (idx * arm1176jzf_s::CCPU_Context::Reg_Size) + arm1176jzf_s::CCPU_Context::Reg_Size)), 42 + idx);
     }
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[0], 200 + (arm1176jzf_s::CCPU_Context::NUMBER_OF_REGS * arm1176jzf_s::CCPU_Context::REG_SIZE));
+    EXPECT_EQ(cpu.Get_CPU_Context()[0], 200 + (arm1176jzf_s::CCPU_Context::Number_Of_Regs * arm1176jzf_s::CCPU_Context::Reg_Size));
 }

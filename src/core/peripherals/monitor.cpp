@@ -26,12 +26,12 @@ namespace zero_mate::peripheral
 
     std::uint32_t CMonitor::Get_Size() const noexcept
     {
-        return SIZE;
+        return Size;
     }
 
     void CMonitor::Reset() noexcept
     {
-        m_data = std::string(SIZE, DEFAULT_CHARACTER);
+        m_data = std::string(Size, Default_Character);
     }
 
     void CMonitor::Write(std::uint32_t addr, const char* data, std::uint32_t size)

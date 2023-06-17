@@ -63,11 +63,11 @@ namespace zero_mate::arm1176jzf_s::isa
 
     private:
         /// \brief Total number of rows in the look-up table (number of different instruction masks).
-        static constexpr std::size_t NUMBER_OF_INSTRUCTION_MASKS = 21;
+        static constexpr std::size_t Instruction_Masks_Count = 21;
 
         /// \brief Instruction look-up table made up of CISA_Decoder::TInstruction_Lookup_Record.
         /// \note The table is not cost on purpose as it gets sorted in the constructor.
-        static std::array<TInstruction_Lookup_Record, NUMBER_OF_INSTRUCTION_MASKS> s_instruction_lookup_table;
+        static std::array<TInstruction_Lookup_Record, Instruction_Masks_Count> s_instruction_lookup_table;
     };
 
 } // namespace zero_mate::arm1176jzf_s::isa

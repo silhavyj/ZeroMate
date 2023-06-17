@@ -146,14 +146,14 @@ namespace zero_mate::peripheral
     void CGPIO_Manager::Update_Pin_Function(std::size_t reg_idx, bool last_reg)
     {
         // Number of pings in a GPFSEL register (3 bits per function).
-        static constexpr std::size_t NUMBER_OF_PINS_IN_SEL_REG = 10;
+        static constexpr std::size_t Number_Of_Pins_In_SEL_Reg = 10;
 
         // Last bit index considering there is 3 bits per function
-        static constexpr std::size_t LAST_BIT_INDEX =
-        (NUMBER_OF_PINS_IN_REG / NUMBER_OF_PINS_IN_SEL_REG) * NUMBER_OF_PINS_IN_SEL_REG;
+        static constexpr std::size_t Last_Bit_Idx =
+        (Number_Of_Pins_In_Reg / Number_Of_Pins_In_SEL_Reg) * Number_Of_Pins_In_SEL_Reg;
 
         // Calculate the last bit index (the last register only uses 12 bits).
-        const std::uint32_t last_bit_idx = last_reg ? 12U : LAST_BIT_INDEX;
+        const std::uint32_t last_bit_idx = last_reg ? 12U : Last_Bit_Idx;
 
         // Iterate through the bits of the GPFSEL register (3 bits per pin function)
         for (std::uint32_t idx = 0; idx < last_bit_idx; idx += 3U)
@@ -162,7 +162,7 @@ namespace zero_mate::peripheral
             const auto function = static_cast<CPin::NFunction>((m_regs[reg_idx] >> idx) & 0b111U);
 
             // Calculate the pin index the function corresponds to.
-            const auto pin_idx = (reg_idx * NUMBER_OF_PINS_IN_SEL_REG) + idx / 3;
+            const auto pin_idx = (reg_idx * Number_Of_Pins_In_SEL_Reg) + idx / 3;
 
             // Check if the function is already assigned to the corresponds pin.
             if (m_pins[pin_idx].Get_Function() != function)
@@ -182,13 +182,13 @@ namespace zero_mate::peripheral
     {
         // Calculate the index of the last bit as there is only 54 GPIO pins.
         const std::uint32_t last_bit_idx =
-        last_reg ? (NUMBER_OF_GPIO_PINS - NUMBER_OF_PINS_IN_REG) : NUMBER_OF_PINS_IN_REG;
+        last_reg ? (Number_of_GPIO_Pins - Number_Of_Pins_In_Reg) : Number_Of_Pins_In_Reg;
 
         // Iterate through the pins of the register.
         for (std::uint32_t idx = 0; idx < last_bit_idx; ++idx)
         {
             // Calculate the pin index.
-            const auto pin_idx = last_reg ? (NUMBER_OF_PINS_IN_REG + idx) : idx;
+            const auto pin_idx = last_reg ? (Number_Of_Pins_In_Reg + idx) : idx;
 
             // Check if the bit is set.
             if (utils::math::Is_Bit_Set(m_regs[reg_idx], idx))
@@ -242,10 +242,10 @@ namespace zero_mate::peripheral
 
     std::size_t CGPIO_Manager::Get_Register_Index(std::size_t& pin_idx, NRegister reg_0, NRegister reg_1) noexcept
     {
-        if (pin_idx >= NUMBER_OF_PINS_IN_REG)
+        if (pin_idx >= Number_Of_Pins_In_Reg)
         {
             // Recalculate the pin index, so it is relative to the register.
-            pin_idx -= NUMBER_OF_PINS_IN_REG;
+            pin_idx -= Number_Of_Pins_In_Reg;
 
             return static_cast<std::size_t>(reg_1);
         }
@@ -274,13 +274,13 @@ namespace zero_mate::peripheral
     {
         // Calculate the index of the last bit as there is only 54 GPIO pins.
         const std::uint32_t last_bit_idx =
-        last_reg ? (NUMBER_OF_GPIO_PINS - NUMBER_OF_PINS_IN_REG) : NUMBER_OF_PINS_IN_REG;
+        last_reg ? (Number_of_GPIO_Pins - Number_Of_Pins_In_Reg) : Number_Of_Pins_In_Reg;
 
         // Iterate through the pins of the register.
         for (std::uint32_t idx = 0; idx < last_bit_idx; ++idx)
         {
             // Calculate the pin index.
-            const auto pin_idx = last_reg ? (NUMBER_OF_PINS_IN_REG + idx) : idx;
+            const auto pin_idx = last_reg ? (Number_Of_Pins_In_Reg + idx) : idx;
 
             if (utils::math::Is_Bit_Set(m_regs[reg_idx], idx))
             {
@@ -313,7 +313,7 @@ namespace zero_mate::peripheral
 
     void CGPIO_Manager::Write(std::uint32_t addr, const char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = addr / REG_SIZE;
+        const std::size_t reg_idx = addr / Reg_Size;
         const auto reg_type = static_cast<NRegister>(reg_idx);
 
         // Make sure we are not writing to a read-only register.
@@ -429,7 +429,7 @@ namespace zero_mate::peripheral
 
     void CGPIO_Manager::Read(std::uint32_t addr, char* data, std::uint32_t size)
     {
-        const std::size_t reg_idx = addr / REG_SIZE;
+        const std::size_t reg_idx = addr / Reg_Size;
         const auto reg_type = static_cast<NRegister>(reg_idx);
 
         // Make sure we are not reading from a write-only register.
@@ -460,7 +460,7 @@ namespace zero_mate::peripheral
     CGPIO_Manager::NPin_Set_Status CGPIO_Manager::Set_Pin_State(std::size_t pin_idx, CPin::NState state)
     {
         // Make sure pin_idx is valid.
-        if (pin_idx >= NUMBER_OF_GPIO_PINS)
+        if (pin_idx >= Number_of_GPIO_Pins)
         {
             return NPin_Set_Status::Invalid_Pin_Number;
         }
@@ -510,13 +510,13 @@ namespace zero_mate::peripheral
     {
         // Calculate the index of the last bit as there is only 54 GPIO pins.
         const std::uint32_t last_bit_idx =
-        last_reg ? (NUMBER_OF_GPIO_PINS - NUMBER_OF_PINS_IN_REG) : NUMBER_OF_PINS_IN_REG;
+        last_reg ? (Number_of_GPIO_Pins - Number_Of_Pins_In_Reg) : Number_Of_Pins_In_Reg;
 
         // Iterate through the pins of the register.
         for (std::uint32_t idx = 0; idx < last_bit_idx; ++idx)
         {
             // Calculate the pin index.
-            const auto pin_idx = last_reg ? (NUMBER_OF_PINS_IN_REG + idx) : idx;
+            const auto pin_idx = last_reg ? (Number_Of_Pins_In_Reg + idx) : idx;
             auto& pin = m_pins[pin_idx];
 
             // Check if the pin is set to a 1 (pending interrupt should be cleared)

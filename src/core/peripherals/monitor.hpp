@@ -28,16 +28,16 @@ namespace zero_mate::peripheral
     {
     public:
         /// Width of the monitor
-        static constexpr std::uint32_t WIDTH = 80;
+        static constexpr std::uint32_t Width = 80;
 
         /// Height of the monitor
-        static constexpr std::uint32_t HEIGHT = 25;
+        static constexpr std::uint32_t Height = 25;
 
         /// Total size of the monitor in 8-bit characters
-        static constexpr std::uint32_t SIZE = WIDTH * HEIGHT;
+        static constexpr std::uint32_t Size = Width * Height;
 
         /// Default character used to fill out the monitor with
-        static constexpr char DEFAULT_CHARACTER = '0';
+        static constexpr char Default_Character = '0';
 
     public:
         // -------------------------------------------------------------------------------------------------------------

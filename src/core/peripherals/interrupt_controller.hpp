@@ -94,10 +94,10 @@ namespace zero_mate::peripheral
         };
 
         /// Total number of registers associated with the peripheral
-        static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::uint32_t>(NRegister::Count);
+        static constexpr auto Number_Of_Registers = static_cast<std::uint32_t>(NRegister::Count);
 
         /// Size of a single register
-        static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
+        static constexpr auto Reg_Size = static_cast<std::uint32_t>(sizeof(std::uint32_t));
 
         // -------------------------------------------------------------------------------------------------------------
         /// \struct TInterrupt_Info
@@ -266,7 +266,7 @@ namespace zero_mate::peripheral
 
     private:
         const arm1176jzf_s::CCPU_Context& m_cpu_context;                            ///< CPU context
-        std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;                      ///< IC registers
+        std::array<std::uint32_t, Number_Of_Registers> m_regs;                      ///< IC registers
         std::unordered_map<NIRQ_Basic_Source, TInterrupt_Info> m_irq_basic_sources; ///< Collection of IRQ basic sources
         std::unordered_map<NIRQ_Source, TInterrupt_Info> m_irq_sources;             ///< Collection of IRQ sources
         utils::CLogging_System& m_logging_system;                                   ///< Logging system

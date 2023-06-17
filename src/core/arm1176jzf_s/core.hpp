@@ -57,7 +57,7 @@ namespace zero_mate::arm1176jzf_s
         using IC_t = std::shared_ptr<peripheral::CInterrupt_Controller>;
 
         /// Default execution start address (address of the first instruction)
-        static constexpr std::uint32_t DEFAULT_ENTRY_POINT = 0x8000;
+        static constexpr std::uint32_t Default_Entry_Point_Addr = 0x8000;
 
     public:
         // -------------------------------------------------------------------------------------------------------------
@@ -475,7 +475,7 @@ namespace zero_mate::arm1176jzf_s
             {
                 // Increment before
                 case Instruction::NAddressing_Mode::IB:
-                    return m_context.Get_Register(base_reg_idx, cpu_mode) + CCPU_Context::REG_SIZE;
+                    return m_context.Get_Register(base_reg_idx, cpu_mode) + CCPU_Context::Reg_Size;
 
                 // Increment after
                 case Instruction::NAddressing_Mode::IA:
@@ -483,12 +483,12 @@ namespace zero_mate::arm1176jzf_s
 
                 // Decrement before
                 case Instruction::NAddressing_Mode::DB:
-                    return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE);
+                    return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::Reg_Size);
 
                 // Decrement after
                 case Instruction::NAddressing_Mode::DA:
-                    return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::REG_SIZE) +
-                           CCPU_Context::REG_SIZE;
+                    return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::Reg_Size) +
+                           CCPU_Context::Reg_Size;
             }
 
             return {}; // Just so the compiler does not gripe about a missing return value.

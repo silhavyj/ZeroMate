@@ -5,7 +5,7 @@
 
 using namespace zero_mate;
 
-static constexpr std::uint32_t RAM_SIZE = 1024;
+static constexpr std::uint32_t RAM_Size = 1024;
 
 TEST(b_instruction, test_01)
 {
@@ -18,7 +18,7 @@ TEST(b_instruction, test_01)
         0xe320f000  // 00000010     nop
     };
 
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size, 0, ram_content);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -26,7 +26,7 @@ TEST(b_instruction, test_01)
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Steps(2);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 12);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 12);
 }
 
 TEST(b_instruction, test_02)
@@ -40,7 +40,7 @@ TEST(b_instruction, test_02)
         0xeafffffc, // 00000010     b label1
     };
 
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size, 0, ram_content);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -48,7 +48,7 @@ TEST(b_instruction, test_02)
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Steps(5);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x8);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x8);
 }
 
 TEST(b_instruction, test_03)
@@ -58,7 +58,7 @@ TEST(b_instruction, test_03)
         0xeafffffe, // 00000000     b label1
     };
 
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size, 0, ram_content);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -66,7 +66,7 @@ TEST(b_instruction, test_03)
     arm1176jzf_s::CCPU_Core cpu{ 0, bus };
 
     cpu.Steps(10);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x0);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x0);
 }
 
 TEST(b_instruction, test_04)
@@ -85,7 +85,7 @@ TEST(b_instruction, test_04)
         0xeafffffa, // 0000001C     b label2
     };
 
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size, 0, ram_content);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -94,17 +94,17 @@ TEST(b_instruction, test_04)
 
     // Jump immediately to label4
     cpu.Steps(1);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x18);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x18);
 
     // After a nop instruction, we should jump to label2
     cpu.Steps(2);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x0C);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x0C);
 
     // After two nop instructions, we should be at label3
     cpu.Steps(2);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x14);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x14);
 
     // Infinite loop (stuck at label3)
     cpu.Steps(2);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x14);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x14);
 }

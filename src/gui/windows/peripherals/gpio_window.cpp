@@ -15,7 +15,7 @@ namespace zero_mate::gui
         {
             ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(0, 1, 0, 1));
 
-            if (ImGui::BeginTable("##GPIO", 5, TABLE_FLAGS))
+            if (ImGui::BeginTable("##GPIO", 5, Table_Flags))
             {
                 ImGui::TableSetupColumn("ID", ImGuiTableColumnFlags_WidthFixed);
                 ImGui::TableSetupColumn("Function", ImGuiTableColumnFlags_WidthFixed);
@@ -25,7 +25,7 @@ namespace zero_mate::gui
 
                 ImGui::TableHeadersRow();
 
-                for (std::size_t i = 0; i < peripheral::CGPIO_Manager::NUMBER_OF_GPIO_PINS; ++i)
+                for (std::size_t i = 0; i < peripheral::CGPIO_Manager::Number_of_GPIO_Pins; ++i)
                 {
                     ImGui::TableNextRow();
                     ImGui::TableNextColumn();
@@ -34,7 +34,7 @@ namespace zero_mate::gui
                     ImGui::Text("%s", magic_enum::enum_name(m_gpio->Get_Pin(i).Get_Function()).data());
                     ImGui::TableNextColumn();
 
-                    for (std::size_t j = 0; j < peripheral::CGPIO_Manager::CPin::NUMBER_OF_INTERRUPT_TYPES; ++j)
+                    for (std::size_t j = 0; j < peripheral::CGPIO_Manager::CPin::Number_Of_Interrupt_Types; ++j)
                     {
                         const auto interrupt_type = magic_enum::enum_cast<peripheral::CGPIO_Manager::CPin::NInterrupt_Type>(static_cast<std::uint8_t>(j));
 
