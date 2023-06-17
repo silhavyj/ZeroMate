@@ -6,8 +6,8 @@
 
 #include "control_window.hpp"
 
-#include "../../core/utils/singleton.hpp"
-#include "../../core/utils/elf_loader.hpp"
+#include "zero_mate/utils/singleton.hpp"
+#include "../../utils/elf_loader.hpp"
 
 namespace zero_mate::gui
 {
@@ -161,7 +161,7 @@ namespace zero_mate::gui
         // ImGui::Checkbox("Show demo window", &s_show_demo_window);
         // if (s_show_demo_window)
         // {
-        //    ImGui::ShowDemoWindow();
+        //     ImGui::ShowDemoWindow();
         // }
     }
 
@@ -181,10 +181,10 @@ namespace zero_mate::gui
             {
                 m_breakpoint_hit = true;
                 m_stop_cpu_thread = true;
-                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX]).c_str());
+                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx]).c_str());
             }
 
-            const auto curr_pc = m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX];
+            const auto curr_pc = m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx];
             if (prev_pc == curr_pc)
             {
                 std::this_thread::sleep_for(std::chrono::milliseconds(1));

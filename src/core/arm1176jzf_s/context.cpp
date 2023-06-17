@@ -15,7 +15,7 @@
 #include "context.hpp"
 #include "exceptions.hpp"
 
-#include "../utils/singleton.hpp"
+#include "zero_mate/utils/singleton.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -178,7 +178,7 @@ namespace zero_mate::arm1176jzf_s
         Set_CPU_Mode(Get_CPU_Mode(new_cpsr));
 
         // TODO these two lines might be redundant?
-        new_cpsr &= ~CPU_MODE_MASK;
+        new_cpsr &= ~CPU_Mode_Mask;
         new_cpsr |= static_cast<std::uint32_t>(Get_CPU_Mode());
 
         // Set the new value of the CPSR register in the new mode of the CPU.
@@ -190,7 +190,7 @@ namespace zero_mate::arm1176jzf_s
         if (m_mode == NCPU_Mode::User)
         {
             // Check if least significant byte would change.
-            return (new_cpsr & CPU_CONTROL_BITS_MASK) != (Get_CPSR() & CPU_CONTROL_BITS_MASK);
+            return (new_cpsr & CPU_Control_Bits_Mask) != (Get_CPSR() & CPU_Control_Bits_Mask);
         }
 
         // The CPU is in a privileged mode - manipulation is allowed.

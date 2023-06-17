@@ -9,7 +9,7 @@
 
 namespace zero_mate::gui
 {
-    class CInterrupt_Controller_Window final : public CGUI_Window
+    class CInterrupt_Controller_Window final : public IGUI_Window
     {
     public:
         explicit CInterrupt_Controller_Window(const std::shared_ptr<peripheral::CInterrupt_Controller>& interrupt_controller);
@@ -21,7 +21,7 @@ namespace zero_mate::gui
         void Render_IRQ();
 
     private:
-        static constexpr ImGuiTableFlags TABLE_FLAGS = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
+        static constexpr ImGuiTableFlags Table_Flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 

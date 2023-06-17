@@ -2,15 +2,15 @@
 
 #include "core/peripherals/ram.hpp"
 #include "core/arm1176jzf_s/core.hpp"
-#include "core/utils/elf_loader.hpp"
+#include "utils/elf_loader.hpp"
 
 // #define ENABLE_ELF_TESTS
 
 [[maybe_unused]] static void Run_Test(const char* filename, std::uint32_t expected_value)
 {
-    static constexpr std::uint32_t RAM_SIZE = 1024 * 1024 * 256;
+    static constexpr std::uint32_t RAM_Size = 1024 * 1024 * 256;
 
-    auto ram = std::make_shared<zero_mate::peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<zero_mate::peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<zero_mate::CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), zero_mate::CBus::NStatus::OK);

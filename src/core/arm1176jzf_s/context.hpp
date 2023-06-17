@@ -17,7 +17,7 @@
 
 // Project file imports
 
-#include "../utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -29,28 +29,28 @@ namespace zero_mate::arm1176jzf_s
     {
     public:
         /// Total number of CPU registers
-        static constexpr std::size_t NUMBER_OF_REGS = 16;
+        static constexpr std::size_t Number_Of_Regs = 16;
 
         /// Number of general-purpose registers (LR, SP, PC are considered to be special registers)
-        static constexpr std::size_t NUMBER_OF_GENERAL_REGS = 13;
+        static constexpr std::size_t Number_Of_General_Regs = 13;
 
         /// Register size (4B)
-        static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
+        static constexpr auto Reg_Size = static_cast<std::uint32_t>(sizeof(std::uint32_t));
 
         /// The least significant 5 bits in the CPS register represent the mode of the CPU
-        static constexpr std::uint32_t CPU_MODE_MASK = 0b11111U;
+        static constexpr std::uint32_t CPU_Mode_Mask = 0b11111U;
 
         /// The lowest 8 bits of CPSR are called control bits
-        static constexpr std::uint32_t CPU_CONTROL_BITS_MASK = 0xFFU;
+        static constexpr std::uint32_t CPU_Control_Bits_Mask = 0xFFU;
 
         /// Index of the PC (program counter) register
-        static constexpr std::size_t PC_REG_IDX = 15;
+        static constexpr std::size_t PC_Reg_Idx = 15;
 
         /// Index of the LR (link register) register
-        static constexpr std::size_t LR_REG_IDX = 14;
+        static constexpr std::size_t LR_Reg_Idx = 14;
 
         /// Index of the SP (stack pointer) register
-        static constexpr std::size_t SP_REG_IDX = 13;
+        static constexpr std::size_t SP_Reg_Idx = 13;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \enum NFlag
@@ -329,7 +329,7 @@ namespace zero_mate::arm1176jzf_s
 
     private:
         NCPU_Mode m_mode;                                    ///< Current mode of the CPU
-        std::array<std::uint32_t, NUMBER_OF_REGS> m_regs;    ///< USR and SYS mode registers
+        std::array<std::uint32_t, Number_Of_Regs> m_regs;    ///< USR and SYS mode registers
         Banked_Registers_t m_banked_regs;                    ///< Banked registers
         std::unordered_map<NCPU_Mode, std::uint32_t> m_spsr; ///< SPSR registers (for different CPU modes)
         std::unordered_map<NCPU_Mode, std::uint32_t> m_cpsr; ///< CPSR registers (for different CPU modes)

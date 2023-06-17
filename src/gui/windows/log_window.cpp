@@ -113,19 +113,19 @@ namespace zero_mate::gui
 
     void CLog_Window::Set_Log_Message_Color(const std::string& msg)
     {
-        if (msg.starts_with(utils::CLogging_System::DEBUG_MSG_PREFIX))
+        if (msg.starts_with(utils::CLogging_System::Debug_Msg_Prefix))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 0.7f, 1.0f, 1.0f));
         }
-        else if (msg.starts_with(utils::CLogging_System::INFO_MSG_PREFIX))
+        else if (msg.starts_with(utils::CLogging_System::Info_Msg_Prefix))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 1.0f, 0.0f, 1.0f));
         }
-        else if (msg.starts_with(utils::CLogging_System::WARNING_MSG_PREFIX))
+        else if (msg.starts_with(utils::CLogging_System::Warning_Msg_Prefix))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 0.0f, 1.0f));
         }
-        else if (msg.starts_with(utils::CLogging_System::ERROR_MSG_PREFIX))
+        else if (msg.starts_with(utils::CLogging_System::Error_Msg_Prefix))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
         }

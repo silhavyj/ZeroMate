@@ -9,7 +9,7 @@
 
 namespace zero_mate::gui
 {
-    class CARM_Timer_Window final : public CGUI_Window
+    class CARM_Timer_Window final : public IGUI_Window
     {
     public:
         explicit CARM_Timer_Window(const std::shared_ptr<peripheral::CARM_Timer>& arm_timer);
@@ -21,7 +21,7 @@ namespace zero_mate::gui
         void Render_Control_Register();
 
     private:
-        static constexpr ImGuiTableFlags TABLE_FLAGS = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
+        static constexpr ImGuiTableFlags Table_Flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 

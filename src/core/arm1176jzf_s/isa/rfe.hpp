@@ -25,7 +25,7 @@ namespace zero_mate::arm1176jzf_s::isa
     {
     public:
         /// Total number of register to be transferred (popped off the stack).
-        static constexpr std::size_t NUMBER_OF_REGS_TO_TRANSFER = 2;
+        static constexpr std::size_t Number_Of_Regs_To_Transfer = 2;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \enum NAddressing_Mode

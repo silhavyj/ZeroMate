@@ -15,7 +15,7 @@
 
 // Project file imports
 
-#include "../bus.hpp"
+#include "../core/bus.hpp"
 
 namespace zero_mate::utils::elf
 {

@@ -5,11 +5,11 @@
 
 using namespace zero_mate;
 
-static constexpr std::uint32_t RAM_SIZE = 1024;
+static constexpr std::uint32_t RAM_Size = 1024;
 
 TEST(str_instruction, test_01)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -28,7 +28,7 @@ TEST(str_instruction, test_01)
 
 TEST(str_instruction, test_02)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -47,7 +47,7 @@ TEST(str_instruction, test_02)
 
 TEST(str_instruction, test_03)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -65,7 +65,7 @@ TEST(str_instruction, test_03)
 
 TEST(str_instruction, test_04)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -87,7 +87,7 @@ TEST(str_instruction, test_04)
 
 TEST(str_instruction, test_05)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -105,7 +105,7 @@ TEST(str_instruction, test_05)
 
 TEST(str_instruction, test_06)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -125,7 +125,7 @@ TEST(str_instruction, test_06)
 
 TEST(str_instruction, test_07)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -143,7 +143,7 @@ TEST(str_instruction, test_07)
 
 TEST(str_instruction, test_08)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -163,7 +163,7 @@ TEST(str_instruction, test_08)
 
 TEST(str_instruction, test_09)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -187,7 +187,7 @@ TEST(str_instruction, test_09)
 
 TEST(str_instruction, test_10)
 {
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -200,6 +200,6 @@ TEST(str_instruction, test_10)
     { 0xe52d1004 }  // push {r1}
     });
 
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_REG_IDX], 196);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::SP_Reg_Idx], 196);
     EXPECT_EQ(bus->Read<std::uint32_t>(196), 0xFF);
 }

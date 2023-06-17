@@ -5,7 +5,7 @@
 
 using namespace zero_mate;
 
-static constexpr std::uint32_t RAM_SIZE = 1024;
+static constexpr std::uint32_t RAM_Size = 1024;
 
 TEST(bl_instruction, test_01)
 {
@@ -21,7 +21,7 @@ TEST(bl_instruction, test_01)
         0xe320f000, // 00000018     nop
     };
 
-    auto ram = std::make_shared<peripheral::CRAM>(RAM_SIZE, 0, ram_content);
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size, 0, ram_content);
     auto bus = std::make_shared<CBus>();
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
@@ -30,14 +30,14 @@ TEST(bl_instruction, test_01)
 
     // Skip the add subroutine (jump to main)
     cpu.Steps(1);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x0C);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x0C);
 
     // Entered the subroutine
     cpu.Steps(3);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x04);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x04);
 
     // Returned from the subroutine (r0 should equal to 50)
     cpu.Steps(2);
-    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX], 0x18);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x18);
     EXPECT_EQ(cpu.Get_CPU_Context()[0], 50);
 }

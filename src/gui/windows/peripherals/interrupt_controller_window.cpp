@@ -26,7 +26,7 @@ namespace zero_mate::gui
     {
         ImGui::Text("Basic IRQ sources");
 
-        if (ImGui::BeginTable("##Basic_IRQ", 3, TABLE_FLAGS))
+        if (ImGui::BeginTable("##Basic_IRQ", 3, Table_Flags))
         {
             ImGui::TableSetupColumn("Source", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn("Enabled", ImGuiTableColumnFlags_WidthFixed);
@@ -62,7 +62,7 @@ namespace zero_mate::gui
     {
         ImGui::Text("IRQ sources");
 
-        if (ImGui::BeginTable("##IRQ", 3, TABLE_FLAGS))
+        if (ImGui::BeginTable("##IRQ", 3, Table_Flags))
         {
             ImGui::TableSetupColumn("Source", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn("Enabled", ImGuiTableColumnFlags_WidthFixed);

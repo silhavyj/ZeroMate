@@ -4,12 +4,12 @@
 
 #include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/bus.hpp"
-#include "../../core/utils/elf_loader.hpp"
-#include "../../core/utils/logger/logger.hpp"
+#include "../../utils/elf_loader.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::gui
 {
-    class CFile_Window final : public CGUI_Window
+    class CFile_Window final : public IGUI_Window
     {
     public:
         explicit CFile_Window(std::shared_ptr<CBus> bus,

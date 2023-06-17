@@ -14,7 +14,7 @@ namespace zero_mate::gui
 
     void CRegisters_Window::Render()
     {
-        if (!m_cpu_running && m_cpu_context[arm1176jzf_s::CCPU_Context::PC_REG_IDX] != m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_REG_IDX])
+        if (!m_cpu_running && m_cpu_context[arm1176jzf_s::CCPU_Context::PC_Reg_Idx] != m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
         {
             m_cpu_context = m_cpu->Get_CPU_Context();
         }
@@ -151,14 +151,14 @@ namespace zero_mate::gui
 
     void CRegisters_Window::Render_Registers_Table(const char* const title, const char* const type, NFormat format, arm1176jzf_s::CCPU_Context::NCPU_Mode mode)
     {
-        if (ImGui::BeginTable(fmt::format("##{}", title).c_str(), 2, TABLE_FLAGS))
+        if (ImGui::BeginTable(fmt::format("##{}", title).c_str(), 2, Table_Flags))
         {
             ImGui::TableSetupColumn("Register", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn(fmt::format("{}##{}", type, title).c_str(), ImGuiTableColumnFlags_WidthStretch);
 
             ImGui::TableHeadersRow();
 
-            for (std::uint32_t i = 0; i < arm1176jzf_s::CCPU_Context::NUMBER_OF_GENERAL_REGS; ++i)
+            for (std::uint32_t i = 0; i < arm1176jzf_s::CCPU_Context::Number_Of_General_Regs; ++i)
             {
                 ImGui::TableNextRow();
                 ImGui::TableNextColumn();
@@ -171,19 +171,19 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::Text("R13 (LR)");
             ImGui::TableNextColumn();
-            Render_Value(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::LR_REG_IDX, mode), format);
+            Render_Value(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::LR_Reg_Idx, mode), format);
             ImGui::TableNextRow();
 
             ImGui::TableNextColumn();
             ImGui::Text("R14 (SP)");
             ImGui::TableNextColumn();
-            Render_Value(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::SP_REG_IDX, mode), format);
+            Render_Value(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::SP_Reg_Idx, mode), format);
             ImGui::TableNextRow();
 
             ImGui::TableNextColumn();
             ImGui::Text("R15 (PC)");
             ImGui::TableNextColumn();
-            Render_Value(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::PC_REG_IDX, mode), format);
+            Render_Value(m_cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::PC_Reg_Idx, mode), format);
             ImGui::TableNextRow();
 
             ImGui::TableNextColumn();
@@ -227,7 +227,7 @@ namespace zero_mate::gui
     {
         ImGui::Text("Flags in CSPR");
 
-        if (ImGui::BeginTable("Flags", 7, TABLE_FLAGS))
+        if (ImGui::BeginTable("Flags", 7, Table_Flags))
         {
             ImGui::TableSetupColumn("N", ImGuiTableColumnFlags_WidthFixed);
             ImGui::TableSetupColumn("Z", ImGuiTableColumnFlags_WidthFixed);

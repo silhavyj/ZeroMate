@@ -9,3 +9,6 @@ Raspberry Pi Zero Emulator
 ---
 
 https://silhavyj.github.io/ZeroMate/
+
+
+<img src="misc/pics/screenshot-01.png">

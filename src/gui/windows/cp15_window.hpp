@@ -6,7 +6,7 @@
 
 namespace zero_mate::gui
 {
-    class CCP15_Window final : public CGUI_Window
+    class CCP15_Window final : public IGUI_Window
     {
     public:
         explicit CCP15_Window(std::shared_ptr<coprocessor::CCP15> cp15);
@@ -17,7 +17,7 @@ namespace zero_mate::gui
         inline void Render_Primary_Register_C1();
 
     private:
-        static constexpr ImGuiTableFlags TABLE_FLAGS = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
+        static constexpr ImGuiTableFlags Table_Flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 

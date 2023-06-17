@@ -8,7 +8,7 @@
 
 namespace zero_mate::gui
 {
-    class CRegisters_Window final : public CGUI_Window
+    class CRegisters_Window final : public IGUI_Window
     {
     public:
         explicit CRegisters_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu, const bool& cpu_running);
@@ -29,7 +29,7 @@ namespace zero_mate::gui
         void Render_Value(std::uint32_t value, NFormat format);
 
     private:
-        static constexpr ImGuiTableFlags TABLE_FLAGS = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
+        static constexpr ImGuiTableFlags Table_Flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 

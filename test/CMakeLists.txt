@@ -2,10 +2,18 @@
 include_directories(../src)
 
 # Find all source files to be compiled with the unit tests
-file(GLOB_RECURSE core_source_files "../src/core/*.cpp" "../src/core/*.hpp")
+file(
+    GLOB_RECURSE core_source_files
+    "../src/core/*.cpp"
+    "../src/core/*.hpp"
+    "../src/utils/*.hpp"
+    "../src/utils/*.cpp")
 
 # Find all unit test source files
-file(GLOB_RECURSE test_source_files "./*.cpp" "./*.hpp")
+file(
+    GLOB_RECURSE test_source_files
+    "./*.cpp"
+    "./*.hpp")
 
 # Build unit tests
 add_executable(
@@ -19,7 +27,10 @@ target_include_directories(
     SYSTEM PRIVATE 
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include)
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/dylib/include/
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/json/include/
+        ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 # Link libraries to the executable
 target_link_libraries(
@@ -31,12 +42,19 @@ target_link_libraries(
         elfio
         magic_enum
         capstone
-        demangle)
+        demangle
+        logger)
+
+# If we are no Windows, copy logger.dll to the location of the executable
+if (WIN32)
+    set(output_directory ${PROJECT_SOURCE_DIR}/output)
+    add_custom_command(
+        TARGET unit_tests POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy ${output_directory}/logger.dll $<TARGET_FILE_DIR:unit_tests>)
+endif()
 
 # Include the download CMake file
 include(GoogleTest)
 
 # Discover all tests
 gtest_discover_tests(unit_tests)
-
-# EOF

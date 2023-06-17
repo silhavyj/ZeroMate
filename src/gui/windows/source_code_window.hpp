@@ -5,11 +5,11 @@
 #include "../window.hpp"
 
 #include "../../core/arm1176jzf_s/core.hpp"
-#include "../../core/utils/elf_loader.hpp"
+#include "../../utils/elf_loader.hpp"
 
 namespace zero_mate::gui
 {
-    class CSource_Code_Window final : public CGUI_Window
+    class CSource_Code_Window final : public IGUI_Window
     {
     public:
         explicit CSource_Code_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
@@ -20,7 +20,7 @@ namespace zero_mate::gui
         void Render() override;
 
     private:
-        static constexpr ImGuiTableFlags TABLE_FLAGS = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
+        static constexpr ImGuiTableFlags Table_Flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 

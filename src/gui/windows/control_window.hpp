@@ -6,13 +6,13 @@
 
 #include "../window.hpp"
 
-#include "../../core/utils/logger/logger.hpp"
+#include "zero_mate/utils/logger.hpp"
 #include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/peripherals/peripheral.hpp"
 
 namespace zero_mate::gui
 {
-    class CControl_Window final : public CGUI_Window
+    class CControl_Window final : public IGUI_Window
     {
     public:
         explicit CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,

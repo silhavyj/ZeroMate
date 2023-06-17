@@ -44,7 +44,7 @@ namespace zero_mate::test
                 return true;
             }
 
-            for (std::uint32_t i = 0; i < arm1176jzf_s::CCPU_Context::NUMBER_OF_REGS; ++i)
+            for (std::uint32_t i = 0; i < arm1176jzf_s::CCPU_Context::Number_Of_Regs; ++i)
             {
                 bool excluded_reg{ false };
 

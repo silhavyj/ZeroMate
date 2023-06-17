@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "core/utils/math.hpp"
+#include "zero_mate/utils/math.hpp"
 
 TEST(is_negative, uint32_test_01)
 {

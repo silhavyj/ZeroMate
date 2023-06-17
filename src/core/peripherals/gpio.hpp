@@ -24,8 +24,9 @@
 
 #include "peripheral.hpp"
 #include "interrupt_controller.hpp"
-#include "../utils/logger/logger.hpp"
-#include "external_peripheral.hpp"
+#include "zero_mate/utils/logger.hpp"
+
+#include <zero_mate/external_peripheral.hpp>
 
 namespace zero_mate::peripheral
 {
@@ -37,16 +38,13 @@ namespace zero_mate::peripheral
     {
     public:
         /// Size of a single register
-        static constexpr auto REG_SIZE = static_cast<std::uint32_t>(sizeof(std::uint32_t));
+        static constexpr auto Reg_Size = static_cast<std::uint32_t>(sizeof(std::uint32_t));
 
         /// Total number of GPIO pins
-        static constexpr std::size_t NUMBER_OF_GPIO_PINS = 54;
+        static constexpr std::size_t Number_of_GPIO_Pins = 54;
 
         /// Number of pins encapsulated in a single register
-        static constexpr std::uint32_t NUMBER_OF_PINS_IN_REG = std::numeric_limits<std::uint32_t>::digits;
-
-        // Alias for external peripherals to make the code less wordy
-        using External_Peripherals_t = std::vector<std::shared_ptr<IExternal_Peripheral>>;
+        static constexpr std::uint32_t Number_Of_Pins_In_Reg = std::numeric_limits<std::uint32_t>::digits;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \class CPin
@@ -96,10 +94,10 @@ namespace zero_mate::peripheral
 
             /// Total number of interrupt types
             /// TODO add count to NInterrupt_Type
-            static constexpr std::size_t NUMBER_OF_INTERRUPT_TYPES = 4;
+            static constexpr std::size_t Number_Of_Interrupt_Types = 4;
 
             /// Alias for an array of interrupts (just to make the code less wordy)
-            using Interrupts_t = std::array<bool, NUMBER_OF_INTERRUPT_TYPES>;
+            using Interrupts_t = std::array<bool, Number_Of_Interrupt_Types>;
 
         public:
             // ---------------------------------------------------------------------------------------------------------
@@ -240,7 +238,7 @@ namespace zero_mate::peripheral
         static const std::unordered_set<NRegister> s_write_only_registers;
 
         /// Total number of GPIO registers
-        static constexpr auto NUMBER_OF_REGISTERS = static_cast<std::size_t>(NRegister::Count);
+        static constexpr auto Number_Of_Registers = static_cast<std::size_t>(NRegister::Count);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \enum NPin_Set_Status
@@ -293,7 +291,7 @@ namespace zero_mate::peripheral
         /// \brief Hooks up an external peripheral to the GPIO manager.
         /// \param peripheral Instance of an external peripheral
         // -------------------------------------------------------------------------------------------------------------
-        void Add_External_Peripheral(std::shared_ptr<IExternal_Peripheral> peripheral);
+        void Add_External_Peripheral(IExternal_Peripheral* peripheral);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns a const reference to a pin (visualization purposes).
@@ -383,11 +381,11 @@ namespace zero_mate::peripheral
         void Notify_External_Peripherals(std::uint32_t pin_idx);
 
     private:
-        std::array<std::uint32_t, NUMBER_OF_REGISTERS> m_regs;         ///< GPIO registers
-        std::array<CPin, NUMBER_OF_GPIO_PINS> m_pins;                  ///< GPIO pins
+        std::array<std::uint32_t, Number_Of_Registers> m_regs;         ///< GPIO registers
+        std::array<CPin, Number_of_GPIO_Pins> m_pins;                  ///< GPIO pins
         utils::CLogging_System& m_logging_system;                      ///< Logging system
         std::shared_ptr<CInterrupt_Controller> m_interrupt_controller; ///< Interrupt controller
-        External_Peripherals_t m_external_peripherals;                 ///< Collection of external peripherals
+        std::vector<IExternal_Peripheral*> m_external_peripherals;     ///< Collection of external peripherals
     };
 
 } // namespace zero_mate::peripheral
