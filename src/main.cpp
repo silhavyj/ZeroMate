@@ -19,7 +19,9 @@
 // ---------------------------------------------------------------------------------------------------------------------
 int main(int argc, const char* argv[])
 {
+    // Init the system (create & connect peripherals).
     zero_mate::soc::Init();
 
+    // Run the GUI.
     return zero_mate::gui::Main_GUI(argc, argv);
 }

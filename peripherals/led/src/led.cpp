@@ -1,4 +1,5 @@
 #include <cassert>
+
 #include "led.hpp"
 
 CLED::CLED(const std::string& name,
