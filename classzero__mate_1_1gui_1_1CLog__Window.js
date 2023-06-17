@@ -11,7 +11,7 @@ var classzero__mate_1_1gui_1_1CLog__Window =
     [ "Render_Filtered_Log_Messages", "classzero__mate_1_1gui_1_1CLog__Window.html#adb7453fd69db4264b631251e48b68201", null ],
     [ "Warning", "classzero__mate_1_1gui_1_1CLog__Window.html#aa04e47cb002e6d244ab1bb0e20a99628", null ],
     [ "m_auto_scroll", "classzero__mate_1_1gui_1_1CLog__Window.html#a6dfb6627d3b4c89e40af6258c9c5e899", null ],
-    [ "m_buffer", "classzero__mate_1_1gui_1_1CLog__Window.html#a24dadcd6bb82a4b2b65512b2fc230a05", null ],
+    [ "m_buffer", "classzero__mate_1_1gui_1_1CLog__Window.html#a8c48b4f01b83030d7906b93c914af2a2", null ],
     [ "m_filter", "classzero__mate_1_1gui_1_1CLog__Window.html#a8c40a3640e74e3ce2cef96228b24f94f", null ],
     [ "m_mtx", "classzero__mate_1_1gui_1_1CLog__Window.html#a140bf9c6107fb344c6c6a2d90b5fd15a", null ]
 ];

@@ -1,7 +1,6 @@
 var classzero__mate_1_1peripheral_1_1CGPIO__Manager =
 [
     [ "CPin", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin" ],
-    [ "External_Peripherals_t", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#adca396dee122065df4787820288e9953", null ],
     [ "NPin_Set_Status", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35", [
       [ "OK", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35ae0aa021e21dddbd6d8cecec71e9cf564", null ],
       [ "Not_Input_Pin", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35ad08288f57995b4de10bc2b53fa9472b2", null ],
@@ -54,7 +53,7 @@ var classzero__mate_1_1peripheral_1_1CGPIO__Manager =
       [ "Count", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698ae93f994f01c537c4e2f7d8528c3eb5e9", null ]
     ] ],
     [ "CGPIO_Manager", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9ecaa919171ea326f918ffd329cf4892", null ],
-    [ "Add_External_Peripheral", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2bae23db247eae130a35439057e91cd9", null ],
+    [ "Add_External_Peripheral", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acaefed8fb15a4f12929366b58b3b438e", null ],
     [ "Clear_IRQ", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c", null ],
     [ "Get_Pin", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a116ef53e902c5521278e011f527a4027", null ],
     [ "Get_Size", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a3d659010e4b36a13162587514cdb09da", null ],
@@ -68,9 +67,9 @@ var classzero__mate_1_1peripheral_1_1CGPIO__Manager =
     [ "Update_Pin_Function", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad7c6aa486cf3b116ffae9f16eec64064", null ],
     [ "Update_Pin_State", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae93785da50eefb8a8cc21c1c59a32726", null ],
     [ "Write", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c", null ],
-    [ "m_external_peripherals", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa8f0cb0b2beb927f78b0728b842f1265", null ],
+    [ "m_external_peripherals", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2c7c68349ed743537a7803e7bc304538", null ],
     [ "m_interrupt_controller", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a43ed044330df6283b46136be4ea6d001", null ],
     [ "m_logging_system", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a6c1effcbe75ccf50c7d9dedfe9b623b7", null ],
-    [ "m_pins", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ab8ba793b863bba20c5e3cf153f3665dd", null ],
-    [ "m_regs", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acea8e786d9b86118342a18f247d9adc0", null ]
+    [ "m_pins", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aaca8d66de2f775ce6b1f209dca13f998", null ],
+    [ "m_regs", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8f4c84de60c732982b9ed362dd145b34", null ]
 ];

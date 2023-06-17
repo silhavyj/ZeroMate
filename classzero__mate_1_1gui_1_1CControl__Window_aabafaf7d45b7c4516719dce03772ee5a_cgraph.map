@@ -1,14 +1,11 @@
 <map id="zero_mate::gui::CControl_Window::Render" name="zero_mate::gui::CControl_Window::Render">
-<area shape="rect" id="node1" title=" " alt="" coords="5,108,188,149"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a9be0d8c611ece954a13f3763744b074f" title=" " alt="" coords="256,63,444,119"/>
-<area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a2b7970947b3c184bdddece580ba6d4f8" title=" " alt="" coords="245,144,455,185"/>
-<area shape="rect" id="node11" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a74f6b0b602377c47ae321127a4c90d29" title=" " alt="" coords="236,209,464,251"/>
-<area shape="rect" id="node12" href="$classzero__mate_1_1gui_1_1CControl__Window.html#ad83b2651e1d6bf8ed72e3553526f17ca" title=" " alt="" coords="522,5,705,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a46cc1dd042f93990abb7b0b68f566a2d" title=" " alt="" coords="512,137,715,193"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a37a3c37d6d92c239742abf75b3aebec9" title=" " alt="" coords="518,71,709,112"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="763,136,957,177"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="1005,5,1204,47"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02" title="Logs an info message via all registered loggers." alt="" coords="763,5,957,47"/>
-<area shape="rect" id="node8" href="$namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595" title="Reloads the same kernel that was loaded using the Load_Kernel function." alt="" coords="784,71,936,112"/>
-<area shape="rect" id="node9" href="$namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory." alt="" coords="1029,71,1181,112"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,155,188,197"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a9be0d8c611ece954a13f3763744b074f" title=" " alt="" coords="256,41,444,97"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a2b7970947b3c184bdddece580ba6d4f8" title=" " alt="" coords="245,122,455,163"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a74f6b0b602377c47ae321127a4c90d29" title=" " alt="" coords="236,187,464,229"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1CControl__Window.html#ad83b2651e1d6bf8ed72e3553526f17ca" title=" " alt="" coords="259,253,441,294"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a46cc1dd042f93990abb7b0b68f566a2d" title=" " alt="" coords="512,5,715,61"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a37a3c37d6d92c239742abf75b3aebec9" title=" " alt="" coords="518,86,709,127"/>
+<area shape="rect" id="node5" href="$namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595" title="Reloads the same kernel that was loaded using the Load_Kernel function." alt="" coords="763,86,915,127"/>
+<area shape="rect" id="node6" href="$namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory." alt="" coords="963,86,1115,127"/>
 </map>

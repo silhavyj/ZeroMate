@@ -1,4 +1,0 @@
-<map id="zero_mate::peripheral::external::CShift_Register::Handle_Latch_Signal" name="zero_mate::peripheral::external::CShift_Register::Handle_Latch_Signal">
-<area shape="rect" id="node1" title="Handles the change of the state of the latch pin." alt="" coords="265,5,456,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1external_1_1CShift__Register.html#af1c9f626a9c2ed1287f7614e2821a3b1" title="Notifies the peripheral that the state of one of the pins it subscribes to has changed." alt="" coords="5,5,217,61"/>
-</map>

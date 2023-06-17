@@ -62,5 +62,5 @@ var classzero__mate_1_1peripheral_1_1CInterrupt__Controller =
     [ "m_irq_basic_sources", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a00fee42e842471e2881f0c61eca6f20f", null ],
     [ "m_irq_sources", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a2a1b6d62d8f74456f3bd50cf94aa4124", null ],
     [ "m_logging_system", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ae133fbf6ad5f9c78df063dd153a56f60", null ],
-    [ "m_regs", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aeb56cd427552f341b42d04c029c15394", null ]
+    [ "m_regs", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ad6b1329aa4442bf528bd84970beb0aa0", null ]
 ];

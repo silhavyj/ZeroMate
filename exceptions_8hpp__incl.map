@@ -2,5 +2,5 @@
 <area shape="rect" id="node1" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="45,5,196,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,111,121"/>
 <area shape="rect" id="node3" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="135,95,234,121"/>
-<area shape="rect" id="node4" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="95,169,274,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="87,169,282,196"/>
 </map>

@@ -1,8 +1,5 @@
 <map id="zero_mate::peripheral::CInterrupt_Controller::Write" name="zero_mate::peripheral::CInterrupt_Controller::Write">
 <area shape="rect" id="node1" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,45,172,101"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa731c1d6e73a4db1087a803ca5fe5557" title="Enables/disables interrupts from a basic IRQ source." alt="" coords="220,5,424,61"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ac3c9423e443ca2389cef743f32713cca" title="Enables/disables interrupts from an IRQ source." alt="" coords="239,85,405,141"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" title="Logs a debug message via all registered loggers." alt="" coords="472,17,667,58"/>
-<area shape="rect" id="node5" href="$namespacezero__mate_1_1utils_1_1math.html#af7d93c996dab2ff1b91c5a399dcfe29f" title="Tests whether a bit is set in the given integral variable." alt="" coords="485,86,654,127"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="715,17,913,58"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ac3c9423e443ca2389cef743f32713cca" title="Enables/disables interrupts from an IRQ source." alt="" coords="239,85,405,141"/>
 </map>

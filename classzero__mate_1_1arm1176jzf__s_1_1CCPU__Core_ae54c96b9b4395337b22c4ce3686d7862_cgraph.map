@@ -1,6 +1,4 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute">
 <area shape="rect" id="node1" title="Executes a coprocessor register transfer instruction (coprocessor instruction (1))." alt="" coords="5,13,181,54"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad2c251aa49f9dc14f692a986ef3a090b" title="Checks if a coprocessor of a given id is present of not." alt="" coords="229,5,408,61"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="456,13,651,54"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="699,13,897,54"/>
 </map>

@@ -34,5 +34,5 @@ var classzero__mate_1_1peripheral_1_1CARM__Timer =
     [ "m_interrupt_controller", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#ae9d99292933a35e828e6859cb8ba01d0", null ],
     [ "m_logging_system", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#a118de07e05f4e8b04798bcd0e9219d51", null ],
     [ "m_prescaler", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#a78157a8c97b877a5746ece590b55c46d", null ],
-    [ "m_regs", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#a97587f8e011bf334151f699f983aca66", null ]
+    [ "m_regs", "classzero__mate_1_1peripheral_1_1CARM__Timer.html#a4a538aa87a43d43b243191c68ebfd098", null ]
 ];

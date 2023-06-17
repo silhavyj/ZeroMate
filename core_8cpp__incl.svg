@@ -5,16 +5,16 @@
  -->
 <!-- Title: src/core/arm1176jzf_s/core.cpp Pages: 1 -->
 <svg width="2380pt" height="397pt"
- viewBox="0.00 0.00 2380.46 397.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 2380.47 397.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 393)">
 <title>src/core/arm1176jzf_s/core.cpp</title>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="This file implements the CCPU_Core class defined in core.hpp.">
-<polygon fill="#bfbfbf" stroke="black" points="1836.5,-358.5 1836.5,-388.5 1949.5,-388.5 1949.5,-358.5 1836.5,-358.5"/>
-<text text-anchor="start" x="1844.5" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
-<text text-anchor="middle" x="1893" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/core.cpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="1781.5,-358.5 1781.5,-388.5 1894.5,-388.5 1894.5,-358.5 1781.5,-358.5"/>
+<text text-anchor="start" x="1789.5" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
+<text text-anchor="middle" x="1838" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/core.cpp</text>
 </a>
 </g>
 </g>
@@ -30,23 +30,23 @@
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M1836.45,-372.71C1651.01,-372.92 1044.41,-369.71 533.95,-322.08"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="534.09,-318.58 523.8,-321.13 533.43,-325.55 534.09,-318.58"/>
+<path fill="none" stroke="midnightblue" d="M1781.2,-372.59C1600.36,-372.38 1021.68,-367.97 533.86,-322.07"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="534.09,-318.58 523.8,-321.12 533.43,-325.55 534.09,-318.58"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="alu_8hpp.html" target="_top" xlink:title="This file defines the functionality of the arithmetic logic unit (ALU).">
-<polygon fill="none" stroke="black" points="1866.5,-179.5 1866.5,-198.5 1919.5,-198.5 1919.5,-179.5 1866.5,-179.5"/>
-<text text-anchor="middle" x="1893" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">alu.hpp</text>
+<polygon fill="none" stroke="black" points="1811.5,-179.5 1811.5,-198.5 1864.5,-198.5 1864.5,-179.5 1811.5,-179.5"/>
+<text text-anchor="middle" x="1838" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">alu.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M1893,-358.48C1893,-326.1 1893,-246.04 1893,-209.16"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1896.5,-208.82 1893,-198.82 1889.5,-208.82 1896.5,-208.82"/>
+<path fill="none" stroke="midnightblue" d="M1838,-358.48C1838,-326.1 1838,-246.04 1838,-209.16"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1841.5,-208.82 1838,-198.82 1834.5,-208.82 1841.5,-208.82"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
@@ -60,8 +60,8 @@
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M1907.11,-358.33C1921.75,-343.81 1945.46,-320.77 1967,-302 2034.98,-242.76 2120.07,-177.59 2158.07,-148.92"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2160.39,-151.56 2166.27,-142.76 2156.18,-145.97 2160.39,-151.56"/>
+<path fill="none" stroke="midnightblue" d="M1851.17,-358.39C1865.43,-343.5 1889.19,-319.78 1912,-302 1995.39,-236.98 2104.78,-174.22 2153.15,-147.49"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2154.91,-150.52 2161.99,-142.64 2151.54,-144.38 2154.91,-150.52"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
@@ -75,23 +75,23 @@
 <!-- Node1&#45;&gt;Node9 -->
 <g id="edge10" class="edge">
 <title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M1836.2,-369.94C1613.2,-359.91 800.61,-323.33 610.83,-314.79"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="610.89,-311.29 600.74,-314.34 610.57,-318.28 610.89,-311.29"/>
+<path fill="none" stroke="midnightblue" d="M1781.1,-369.83C1564.53,-359.66 794.64,-323.5 610.69,-314.86"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="610.8,-311.37 600.64,-314.39 610.47,-318.36 610.8,-311.37"/>
 </g>
 <!-- Node37 -->
 <g id="node37" class="node">
 <title>Node37</title>
-<g id="a_node37"><a xlink:href="singleton_8hpp.html" target="_top" xlink:title="This file defines and implements a generic class that is used to treat other classes as singletons.">
-<polygon fill="none" stroke="black" points="1976,-302.5 1976,-321.5 2092,-321.5 2092,-302.5 1976,-302.5"/>
-<text text-anchor="middle" x="2034" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">../utils/singleton.hpp</text>
+<g id="a_node37"><a xlink:title=" ">
+<polygon fill="none" stroke="#bfbfbf" points="1921.5,-302.5 1921.5,-321.5 2082.5,-321.5 2082.5,-302.5 1921.5,-302.5"/>
+<text text-anchor="middle" x="2002" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate/utils/singleton.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node37 -->
 <g id="edge68" class="edge">
 <title>Node1&#45;&gt;Node37</title>
-<path fill="none" stroke="midnightblue" d="M1926.42,-358.4C1949.97,-348.46 1981.24,-335.26 2003.99,-325.66"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2005.63,-328.77 2013.48,-321.66 2002.91,-322.32 2005.63,-328.77"/>
+<path fill="none" stroke="midnightblue" d="M1876.87,-358.4C1904.75,-348.28 1941.94,-334.79 1968.51,-325.15"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1969.93,-328.36 1978.14,-321.66 1967.54,-321.78 1969.93,-328.36"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -105,8 +105,8 @@
 <!-- Node3&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1903.45,-179.32C1926.89,-159.84 1983.95,-112.42 2013.53,-87.84"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2015.98,-90.36 2021.43,-81.28 2011.5,-84.98 2015.98,-90.36"/>
+<path fill="none" stroke="midnightblue" d="M1852.58,-179.32C1886.02,-159.41 1968.44,-110.34 2008.87,-86.27"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2010.71,-89.25 2017.51,-81.12 2007.13,-83.23 2010.71,-89.25"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
@@ -183,9 +183,9 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="logger_8hpp.html" target="_top" xlink:title="This file defines a general logger interface as well as a logging system that is used in the project.">
-<polygon fill="none" stroke="black" points="9,-0.5 9,-19.5 143,-19.5 143,-0.5 9,-0.5"/>
-<text text-anchor="middle" x="76" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">../utils/logger/logger.hpp</text>
+<g id="a_node11"><a xlink:title=" ">
+<polygon fill="none" stroke="#bfbfbf" points="3,-0.5 3,-19.5 149,-19.5 149,-0.5 3,-0.5"/>
+<text text-anchor="middle" x="76" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate/utils/logger.hpp</text>
 </a>
 </g>
 </g>
@@ -229,16 +229,16 @@
 <g id="node29" class="node">
 <title>Node29</title>
 <g id="a_node29"><a xlink:href="isa__decoder_8hpp.html" target="_top" xlink:title="This file defines an instruction decoder.">
-<polygon fill="none" stroke="black" points="1602.5,-179.5 1602.5,-198.5 1715.5,-198.5 1715.5,-179.5 1602.5,-179.5"/>
-<text text-anchor="middle" x="1659" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">isa/isa_decoder.hpp</text>
+<polygon fill="none" stroke="black" points="1425.5,-179.5 1425.5,-198.5 1538.5,-198.5 1538.5,-179.5 1425.5,-179.5"/>
+<text text-anchor="middle" x="1482" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">isa/isa_decoder.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node29 -->
 <g id="edge49" class="edge">
 <title>Node9&#45;&gt;Node29</title>
-<path fill="none" stroke="midnightblue" d="M600.67,-307.7C745.85,-291.55 1382.97,-220.7 1592.18,-197.43"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1592.85,-200.88 1602.41,-196.29 1592.08,-193.92 1592.85,-200.88"/>
+<path fill="none" stroke="midnightblue" d="M600.54,-307.08C727.93,-290.16 1232.21,-223.18 1415.21,-198.87"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1415.79,-202.33 1425.24,-197.54 1414.87,-195.39 1415.79,-202.33"/>
 </g>
 <!-- Node30 -->
 <g id="node30" class="node">
@@ -258,17 +258,17 @@
 <!-- Node34 -->
 <g id="node34" class="node">
 <title>Node34</title>
-<g id="a_node34"><a xlink:href="math_8hpp.html" target="_top" xlink:title="This file defines and implements a variety of handy helper functions that are used throughout the pro...">
-<polygon fill="none" stroke="black" points="599,-241 599,-260 695,-260 695,-241 599,-241"/>
-<text text-anchor="middle" x="647" y="-248" font-family="Helvetica,sans-Serif" font-size="10.00">../utils/math.hpp</text>
+<g id="a_node34"><a xlink:title=" ">
+<polygon fill="none" stroke="#bfbfbf" points="599,-241 599,-260 741,-260 741,-241 599,-241"/>
+<text text-anchor="middle" x="670" y="-248" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate/utils/math.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node34 -->
 <g id="edge61" class="edge">
 <title>Node9&#45;&gt;Node34</title>
-<path fill="none" stroke="midnightblue" d="M581.89,-302.48C593.97,-293.02 613.67,-277.6 628.24,-266.19"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="630.41,-268.93 636.13,-260.01 626.1,-263.42 630.41,-268.93"/>
+<path fill="none" stroke="midnightblue" d="M585.18,-302.48C601.36,-292.75 628.03,-276.73 647.14,-265.24"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="649.07,-268.16 655.84,-260.01 645.47,-262.16 649.07,-268.16"/>
 </g>
 <!-- Node35 -->
 <g id="node35" class="node">
@@ -290,17 +290,17 @@
 <g id="node36" class="node">
 <title>Node36</title>
 <g id="a_node36"><a xlink:href="system__clock__listener_8hpp.html" target="_top" xlink:title="This file defines an interface for a CPU clock listener.">
-<polygon fill="none" stroke="black" points="713.5,-235.5 713.5,-265.5 832.5,-265.5 832.5,-235.5 713.5,-235.5"/>
-<text text-anchor="start" x="721.5" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">../peripherals/system</text>
-<text text-anchor="middle" x="773" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">_clock_listener.hpp</text>
+<polygon fill="none" stroke="black" points="759.5,-235.5 759.5,-265.5 878.5,-265.5 878.5,-235.5 759.5,-235.5"/>
+<text text-anchor="start" x="767.5" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">../peripherals/system</text>
+<text text-anchor="middle" x="819" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">_clock_listener.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node36 -->
 <g id="edge67" class="edge">
 <title>Node9&#45;&gt;Node36</title>
-<path fill="none" stroke="midnightblue" d="M599.94,-302.48C629.98,-293.63 677.78,-279.55 715.53,-268.43"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="716.79,-271.71 725.39,-265.52 714.81,-264.99 716.79,-271.71"/>
+<path fill="none" stroke="midnightblue" d="M600.91,-303.82C637.8,-294.97 701.61,-279.66 750.72,-267.88"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="751.73,-271.24 760.64,-265.5 750.1,-264.43 751.73,-271.24"/>
 </g>
 <!-- Node10&#45;&gt;Node11 -->
 <g id="edge12" class="edge">
@@ -651,7 +651,7 @@
 <!-- Node29&#45;&gt;Node5 -->
 <g id="edge50" class="edge">
 <title>Node29&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M1715.55,-185.51C1837.53,-179.81 2121.92,-164.61 2216,-143 2288.88,-126.26 2411.54,-110.17 2360,-56 2330.7,-25.2 1703.63,-14.29 1512.69,-11.67"/>
+<path fill="none" stroke="midnightblue" d="M1538.73,-186.79C1687.65,-183.24 2087.09,-171.29 2216,-143 2289.04,-126.97 2411.54,-110.17 2360,-56 2330.7,-25.2 1703.63,-14.29 1512.69,-11.67"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1512.64,-8.17 1502.6,-11.54 1512.55,-15.17 1512.64,-8.17"/>
 </g>
 <!-- Node30&#45;&gt;Node12 -->

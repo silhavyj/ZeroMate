@@ -1,7 +1,9 @@
 var namespacezero__mate_1_1gui =
 [
-    [ "external_peripheral", "namespacezero__mate_1_1gui_1_1external__peripheral.html", "namespacezero__mate_1_1gui_1_1external__peripheral" ],
-    [ "CGUI_Window", "classzero__mate_1_1gui_1_1CGUI__Window.html", "classzero__mate_1_1gui_1_1CGUI__Window" ],
+    [ "config", "namespacezero__mate_1_1gui_1_1config.html", [
+      [ "Font_Path", "namespacezero__mate_1_1gui_1_1config.html#a91e188391aceeae7f5baabab75a0689f", null ],
+      [ "Icons_Path", "namespacezero__mate_1_1gui_1_1config.html#a7c2f9c6c64b1802a2a93e7da4bc7a16a", null ]
+    ] ],
     [ "CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", "classzero__mate_1_1gui_1_1CControl__Window" ],
     [ "CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", "classzero__mate_1_1gui_1_1CCP15__Window" ],
     [ "CFile_Window", "classzero__mate_1_1gui_1_1CFile__Window.html", "classzero__mate_1_1gui_1_1CFile__Window" ],

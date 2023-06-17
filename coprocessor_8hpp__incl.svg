@@ -85,9 +85,9 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="logger_8hpp.html" target="_top" xlink:title="This file defines a general logger interface as well as a logging system that is used in the project.">
-<polygon fill="none" stroke="black" points="9,-0.5 9,-19.5 143,-19.5 143,-0.5 9,-0.5"/>
-<text text-anchor="middle" x="76" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">../utils/logger/logger.hpp</text>
+<g id="a_node3"><a xlink:title=" ">
+<polygon fill="none" stroke="#bfbfbf" points="3,-0.5 3,-19.5 149,-19.5 149,-0.5 3,-0.5"/>
+<text text-anchor="middle" x="76" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate/utils/logger.hpp</text>
 </a>
 </g>
 </g>

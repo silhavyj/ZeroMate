@@ -1,4 +1,4 @@
 <map id="src/core/arm1176jzf_s/context.hpp" name="src/core/arm1176jzf_s/context.hpp">
-<area shape="rect" id="node1" title="This file defines the context (registers) of the CPU." alt="" coords="19,5,170,47"/>
-<area shape="rect" id="node2" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="5,95,184,121"/>
+<area shape="rect" id="node1" title="This file defines the context (registers) of the CPU." alt="" coords="27,5,178,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,200,121"/>
 </map>

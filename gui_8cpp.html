@@ -97,11 +97,10 @@ $(document).ready(function(){initNavTree('gui_8cpp.html',''); initResizable(); }
 <code>#include &lt;GLFW/glfw3.h&gt;</code><br />
 <code>#include &lt;imgui/imgui.h&gt;</code><br />
 <code>#include &lt;magic_enum.hpp&gt;</code><br />
-<code>#include &lt;inih/cpp/INIReader.h&gt;</code><br />
 <code>#include &lt;imgui/backends/imgui_impl_glfw.h&gt;</code><br />
 <code>#include &lt;imgui/backends/imgui_impl_opengl3.h&gt;</code><br />
 <code>#include &lt;IconFontCppHeaders/IconsFontAwesome5.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="config_8hpp_source.html">../config.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="soc_8hpp_source.html">../core/soc.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gui_8hpp_source.html">gui.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="window_8hpp_source.html">window.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="registers__window_8hpp_source.html">windows/registers_window.hpp</a>&quot;</code><br />
@@ -115,15 +114,11 @@ $(document).ready(function(){initNavTree('gui_8cpp.html',''); initResizable(); }
 <code>#include &quot;<a class="el" href="arm__timer__window_8hpp_source.html">windows/peripherals/arm_timer_window.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="monitor__window_8hpp_source.html">windows/peripherals/monitor_window.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="interrupt__controller__window_8hpp_source.html">windows/peripherals/interrupt_controller_window.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="button__window_8hpp_source.html">windows/peripherals/external/button_window.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="seven__segment__display__window_8hpp_source.html">windows/peripherals/external/seven_segment_display_window.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="trng_8hpp_source.html">../core/peripherals/trng.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="singleton_8hpp_source.html">../core/utils/singleton.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="logger__stdo_8hpp_source.html">../core/utils/logger/logger_stdo.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger__stdo_8hpp_source.html">../utils/logger/logger_stdo.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for gui.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gui_8cpp__incl.svg" width="4574" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="gui_8cpp__incl.svg" width="3706" height="544"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -139,105 +134,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ad17e948433f50f210774367b5671af03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1gui.html#ad17e948433f50f210774367b5671af03">zero_mate::gui::Main_GUI</a> ([[maybe_unused]] int argc, [[maybe_unused]] const char *argv[])</td></tr>
 <tr class="separator:ad17e948433f50f210774367b5671af03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a917431437bcbaff0caf627e80904f215"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a917431437bcbaff0caf627e80904f215">&#9670;&nbsp;</a></span>arm_timer_map_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::uint32_t arm_timer_map_addr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a28ed9cf56c1f8eda5c8c0b851b1f1b72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28ed9cf56c1f8eda5c8c0b851b1f1b72">&#9670;&nbsp;</a></span>gpio_map_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::uint32_t gpio_map_addr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2468ac759d009a43fe9525339be6a75e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2468ac759d009a43fe9525339be6a75e">&#9670;&nbsp;</a></span>interrupt_controller_map_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::uint32_t interrupt_controller_map_addr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a344b62d11af3c63830d59cc8138ce4c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a344b62d11af3c63830d59cc8138ce4c5">&#9670;&nbsp;</a></span>monitor_map_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::uint32_t monitor_map_addr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a92476e727f623fe6fa359cc4ba73a24d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92476e727f623fe6fa359cc4ba73a24d">&#9670;&nbsp;</a></span>ram_map_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::uint32_t ram_map_addr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af8d49c17feb18d9d4057ad4f0489e747"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8d49c17feb18d9d4057ad4f0489e747">&#9670;&nbsp;</a></span>ram_size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::uint32_t ram_size</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a72cd30023a84b088314e42dfeb18b604"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72cd30023a84b088314e42dfeb18b604">&#9670;&nbsp;</a></span>trng_map_addr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::uint32_t trng_map_addr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,5 +1,0 @@
-<map id="zero_mate::coprocessor::CCP15::Perform_Register_Transfer" name="zero_mate::coprocessor::CCP15::Perform_Register_Transfer">
-<area shape="rect" id="node1" title="Performs a coprocessor register transfer instruction (ICoprocessor interface)." alt="" coords="5,5,199,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="247,13,441,54"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="489,13,688,54"/>
-</map>

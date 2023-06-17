@@ -5,25 +5,25 @@
 <area shape="rect" id="node4" title=" " alt="" coords="2345,102,2457,129"/>
 <area shape="rect" id="node5" title=" " alt="" coords="2482,95,2654,136"/>
 <area shape="rect" id="node6" href="$control__window_8hpp.html" title=" " alt="" coords="2678,102,2829,129"/>
-<area shape="rect" id="node43" href="$singleton_8hpp.html" title="This file defines and implements a generic class that is used to treat other classes as singletons." alt="" coords="2903,102,3102,129"/>
-<area shape="rect" id="node44" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="3465,184,3591,225"/>
+<area shape="rect" id="node43" title=" " alt="" coords="2905,102,3119,129"/>
+<area shape="rect" id="node44" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="3525,191,3696,218"/>
 <area shape="rect" id="node7" title=" " alt="" coords="2536,191,2603,218"/>
 <area shape="rect" id="node8" title=" " alt="" coords="2627,191,2690,218"/>
 <area shape="rect" id="node9" title=" " alt="" coords="2515,281,2592,307"/>
 <area shape="rect" id="node10" href="$window_8hpp.html" title=" " alt="" coords="2401,191,2511,218"/>
-<area shape="rect" id="node11" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="3205,601,3355,643"/>
+<area shape="rect" id="node11" title=" " alt="" coords="3189,601,3384,628"/>
 <area shape="rect" id="node12" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="3013,184,3165,225"/>
-<area shape="rect" id="node39" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="3390,363,3583,389"/>
-<area shape="rect" id="node13" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="3144,519,3243,546"/>
-<area shape="rect" id="node14" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="3049,363,3170,389"/>
+<area shape="rect" id="node39" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="3397,363,3590,389"/>
+<area shape="rect" id="node13" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="3151,519,3249,546"/>
+<area shape="rect" id="node14" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="3055,363,3177,389"/>
 <area shape="rect" id="node16" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="1583,437,1675,464"/>
 <area shape="rect" id="node35" href="$isa__decoder_8hpp.html" title="This file defines an instruction decoder." alt="" coords="2817,363,2967,389"/>
-<area shape="rect" id="node36" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="3304,281,3389,307"/>
-<area shape="rect" id="node40" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="3152,281,3280,307"/>
-<area shape="rect" id="node41" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="3491,273,3658,315"/>
+<area shape="rect" id="node36" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="3365,281,3451,307"/>
+<area shape="rect" id="node40" title=" " alt="" coords="3152,281,3341,307"/>
+<area shape="rect" id="node41" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="3526,273,3693,315"/>
 <area shape="rect" id="node42" href="$system__clock__listener_8hpp.html" title="This file defines an interface for a CPU clock listener." alt="" coords="2867,273,3026,315"/>
-<area shape="rect" id="node15" title=" " alt="" coords="3050,437,3155,464"/>
-<area shape="rect" id="node17" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="1570,609,1689,635"/>
+<area shape="rect" id="node15" title=" " alt="" coords="3057,437,3162,464"/>
+<area shape="rect" id="node17" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="1570,601,1689,628"/>
 <area shape="rect" id="node18" href="$branch__and__exchange_8hpp.html" title="This file defines a branch and exchange instruction (BX)." alt="" coords="5,519,200,546"/>
 <area shape="rect" id="node19" href="$branch_8hpp.html" title="This file defines a branch instruction (B, BL)." alt="" coords="225,519,319,546"/>
 <area shape="rect" id="node20" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="343,519,499,546"/>
@@ -41,6 +41,6 @@
 <area shape="rect" id="node32" href="$srs_8hpp.html" title="This file defines an SRS instruction (store return state onto a stack)." alt="" coords="1813,519,1883,546"/>
 <area shape="rect" id="node33" href="$rfe_8hpp.html" title="This file defines an RFE instruction (return from exception)." alt="" coords="1907,519,1975,546"/>
 <area shape="rect" id="node34" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="1999,519,2067,546"/>
-<area shape="rect" id="node37" href="$cp15_8hpp.html" title="This file defines CP15 (system control coprocessor)." alt="" coords="3195,363,3365,389"/>
+<area shape="rect" id="node37" href="$cp15_8hpp.html" title="This file defines CP15 (system control coprocessor)." alt="" coords="3201,363,3372,389"/>
 <area shape="rect" id="node38" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="2662,437,2789,464"/>
 </map>

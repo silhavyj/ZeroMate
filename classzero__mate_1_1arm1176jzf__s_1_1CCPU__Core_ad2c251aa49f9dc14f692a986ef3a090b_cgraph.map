@@ -1,5 +1,0 @@
-<map id="zero_mate::arm1176jzf_s::CCPU_Core::Check_Coprocessor_Existence" name="zero_mate::arm1176jzf_s::CCPU_Core::Check_Coprocessor_Existence">
-<area shape="rect" id="node1" title="Checks if a coprocessor of a given id is present of not." alt="" coords="5,5,184,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="232,13,427,54"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="475,13,673,54"/>
-</map>

@@ -1,19 +1,19 @@
 <map id="src/gui/windows/source_code_window.hpp" name="src/gui/windows/source_code_window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="284,5,457,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="97,102,221,129"/>
-<area shape="rect" id="node3" href="$window_8hpp.html" title=" " alt="" coords="245,102,355,129"/>
+<area shape="rect" id="node1" title=" " alt="" coords="273,5,447,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="74,102,198,129"/>
+<area shape="rect" id="node3" href="$window_8hpp.html" title=" " alt="" coords="222,102,333,129"/>
 <area shape="rect" id="node5" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="616,95,768,136"/>
-<area shape="rect" id="node37" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="379,95,506,136"/>
+<area shape="rect" id="node37" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="357,102,528,129"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,191,83,218"/>
 <area shape="rect" id="node6" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="432,430,531,457"/>
-<area shape="rect" id="node7" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="181,512,360,539"/>
+<area shape="rect" id="node7" title=" " alt="" coords="173,512,368,539"/>
 <area shape="rect" id="node8" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="507,273,629,300"/>
 <area shape="rect" id="node10" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="2015,348,2107,375"/>
-<area shape="rect" id="node29" href="$isa__decoder_8hpp.html" title="This file defines an instruction decoder." alt="" coords="2521,273,2671,300"/>
+<area shape="rect" id="node29" href="$isa__decoder_8hpp.html" title="This file defines an instruction decoder." alt="" coords="2537,273,2687,300"/>
 <area shape="rect" id="node30" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="400,191,485,218"/>
-<area shape="rect" id="node34" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="755,191,883,218"/>
+<area shape="rect" id="node34" title=" " alt="" coords="755,191,944,218"/>
 <area shape="rect" id="node35" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="107,184,274,225"/>
-<area shape="rect" id="node36" href="$system__clock__listener_8hpp.html" title="This file defines an interface for a CPU clock listener." alt="" coords="907,184,1066,225"/>
+<area shape="rect" id="node36" href="$system__clock__listener_8hpp.html" title="This file defines an interface for a CPU clock listener." alt="" coords="969,184,1127,225"/>
 <area shape="rect" id="node9" title=" " alt="" coords="519,348,625,375"/>
 <area shape="rect" id="node11" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="2094,512,2213,539"/>
 <area shape="rect" id="node12" href="$branch__and__exchange_8hpp.html" title="This file defines a branch and exchange instruction (BX)." alt="" coords="2263,430,2457,457"/>

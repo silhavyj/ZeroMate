@@ -1,4 +1,0 @@
-<map id="zero_mate::peripheral::external::CShift_Register&lt; Register &gt;" name="zero_mate::peripheral::external::CShift_Register&lt; Register &gt;">
-<area shape="rect" id="node1" title="This class represents a shift register (external peripheral)" alt="" coords="5,95,196,151"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1IExternal__Peripheral.html" title="This class represents an interface for external peripheral that are connected to GPIO pins." alt="" coords="18,5,183,47"/>
-</map>

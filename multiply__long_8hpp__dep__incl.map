@@ -1,18 +1,21 @@
 <map id="src/core/arm1176jzf_s/isa/multiply_long.hpp" name="src/core/arm1176jzf_s/isa/multiply_long.hpp">
-<area shape="rect" id="node1" title="This file defines a multiplication (long) instruction." alt="" coords="717,5,897,47"/>
-<area shape="rect" id="node2" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="533,95,683,136"/>
-<area shape="rect" id="node14" href="$multiply__long_8cpp.html" title="This file implements a multiplication (long) instruction as defined in multiply_long...." alt="" coords="907,95,1085,136"/>
-<area shape="rect" id="node15" href="$mac_8hpp.html" title="This file defines the functionality of the CPU multiplier (MAC unit)." alt="" coords="731,95,882,136"/>
-<area shape="rect" id="node3" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="483,184,634,225"/>
-<area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="858,273,1009,315"/>
-<area shape="rect" id="node5" href="$control__window_8hpp.html" title=" " alt="" coords="273,273,447,315"/>
-<area shape="rect" id="node8" href="$file__window_8hpp.html" title=" " alt="" coords="471,273,622,315"/>
-<area shape="rect" id="node10" href="$registers__window_8hpp.html" title=" " alt="" coords="647,273,833,315"/>
-<area shape="rect" id="node12" href="$source__code__window_8hpp.html" title=" " alt="" coords="75,273,248,315"/>
-<area shape="rect" id="node6" href="$gui_8cpp.html" title=" " alt="" coords="402,370,518,397"/>
-<area shape="rect" id="node7" href="$control__window_8cpp.html" title=" " alt="" coords="203,363,378,404"/>
-<area shape="rect" id="node9" href="$file__window_8cpp.html" title=" " alt="" coords="542,363,693,404"/>
-<area shape="rect" id="node11" href="$registers__window_8cpp.html" title=" " alt="" coords="717,363,904,404"/>
-<area shape="rect" id="node13" href="$source__code__window_8cpp.html" title=" " alt="" coords="5,363,179,404"/>
-<area shape="rect" id="node16" href="$mac_8cpp.html" title="This file implements the functionality of the CPU multiplier (MAC unit)." alt="" coords="731,184,882,225"/>
+<area shape="rect" id="node1" title="This file defines a multiplication (long) instruction." alt="" coords="897,5,1077,47"/>
+<area shape="rect" id="node2" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="723,95,873,136"/>
+<area shape="rect" id="node17" href="$multiply__long_8cpp.html" title="This file implements a multiplication (long) instruction as defined in multiply_long...." alt="" coords="898,95,1077,136"/>
+<area shape="rect" id="node18" href="$mac_8hpp.html" title="This file defines the functionality of the CPU multiplier (MAC unit)." alt="" coords="1101,95,1252,136"/>
+<area shape="rect" id="node3" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="723,184,873,225"/>
+<area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="1080,273,1231,315"/>
+<area shape="rect" id="node5" href="$soc_8hpp.html" title=" " alt="" coords="929,281,1056,307"/>
+<area shape="rect" id="node9" href="$control__window_8hpp.html" title=" " alt="" coords="147,273,321,315"/>
+<area shape="rect" id="node11" href="$file__window_8hpp.html" title=" " alt="" coords="345,273,496,315"/>
+<area shape="rect" id="node13" href="$registers__window_8hpp.html" title=" " alt="" coords="521,273,707,315"/>
+<area shape="rect" id="node15" href="$source__code__window_8hpp.html" title=" " alt="" coords="731,273,905,315"/>
+<area shape="rect" id="node6" href="$soc_8cpp.html" title=" " alt="" coords="929,370,1056,397"/>
+<area shape="rect" id="node7" href="$gui_8cpp.html" title=" " alt="" coords="591,370,707,397"/>
+<area shape="rect" id="node8" href="$main_8cpp.html" title="This file defines and implements the main function of the application." alt="" coords="1080,370,1185,397"/>
+<area shape="rect" id="node10" href="$control__window_8cpp.html" title=" " alt="" coords="5,363,180,404"/>
+<area shape="rect" id="node12" href="$file__window_8cpp.html" title=" " alt="" coords="204,363,355,404"/>
+<area shape="rect" id="node14" href="$registers__window_8cpp.html" title=" " alt="" coords="379,363,566,404"/>
+<area shape="rect" id="node16" href="$source__code__window_8cpp.html" title=" " alt="" coords="731,363,905,404"/>
+<area shape="rect" id="node19" href="$mac_8cpp.html" title="This file implements the functionality of the CPU multiplier (MAC unit)." alt="" coords="1193,184,1344,225"/>
 </map>

@@ -1,7 +1,10 @@
 <map id="src/core/peripherals/ram.hpp" name="src/core/peripherals/ram.hpp">
-<area shape="rect" id="node1" title="This file defines the RAM (random access memory) used in BCM2835." alt="" coords="105,5,256,47"/>
+<area shape="rect" id="node1" title="This file defines the RAM (random access memory) used in BCM2835." alt="" coords="168,5,319,47"/>
 <area shape="rect" id="node2" href="$ram_8cpp.html" title="This file implements the RAM (random access memory) used in BCM2835." alt="" coords="5,95,156,136"/>
-<area shape="rect" id="node3" href="$ram__window_8hpp.html" title=" " alt="" coords="181,95,383,136"/>
-<area shape="rect" id="node4" href="$gui_8cpp.html" title=" " alt="" coords="132,191,248,218"/>
-<area shape="rect" id="node5" href="$ram__window_8cpp.html" title=" " alt="" coords="273,184,475,225"/>
+<area shape="rect" id="node3" href="$soc_8hpp.html" title=" " alt="" coords="180,102,307,129"/>
+<area shape="rect" id="node7" href="$ram__window_8hpp.html" title=" " alt="" coords="331,95,534,136"/>
+<area shape="rect" id="node4" href="$soc_8cpp.html" title=" " alt="" coords="40,191,167,218"/>
+<area shape="rect" id="node5" href="$gui_8cpp.html" title=" " alt="" coords="320,191,436,218"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="This file defines and implements the main function of the application." alt="" coords="191,191,296,218"/>
+<area shape="rect" id="node8" href="$ram__window_8cpp.html" title=" " alt="" coords="461,184,663,225"/>
 </map>

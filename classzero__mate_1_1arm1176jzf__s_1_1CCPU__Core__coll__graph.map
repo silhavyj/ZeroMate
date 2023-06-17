@@ -1,6 +1,5 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core" name="zero_mate::arm1176jzf_s::CCPU_Core">
-<area shape="rect" id="node1" title="Raspberry Pi Zero CPU core (arm1176jzf_s)." alt="" coords="751,43,924,85"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" title="This class represents the context (registers) of the CPU." alt="" coords="376,43,549,85"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title="This class defines a logging system that is used throughout the project." alt="" coords="5,9,200,50"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html" title="This class represents an instruction decoder." alt="" coords="376,109,549,150"/>
+<area shape="rect" id="node1" title="Raspberry Pi Zero CPU core (arm1176jzf_s)." alt="" coords="104,109,277,151"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" title="This class represents the context (registers) of the CPU." alt="" coords="5,5,179,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html" title="This class represents an instruction decoder." alt="" coords="203,5,376,47"/>
 </map>

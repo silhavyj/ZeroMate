@@ -36,9 +36,9 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="logger_8hpp.html" target="_top" xlink:title="This file defines a general logger interface as well as a logging system that is used in the project.">
-<polygon fill="none" stroke="black" points="77,-0.5 77,-19.5 211,-19.5 211,-0.5 77,-0.5"/>
-<text text-anchor="middle" x="144" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">../utils/logger/logger.hpp</text>
+<g id="a_node3"><a xlink:title=" ">
+<polygon fill="none" stroke="#bfbfbf" points="71,-0.5 71,-19.5 217,-19.5 217,-0.5 71,-0.5"/>
+<text text-anchor="middle" x="144" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate/utils/logger.hpp</text>
 </a>
 </g>
 </g>
@@ -111,17 +111,17 @@
 <!-- Node30 -->
 <g id="node30" class="node">
 <title>Node30</title>
-<g id="a_node30"><a xlink:href="math_8hpp.html" target="_top" xlink:title="This file defines and implements a variety of handy helper functions that are used throughout the pro...">
-<polygon fill="none" stroke="black" points="664,-241 664,-260 760,-260 760,-241 664,-241"/>
-<text text-anchor="middle" x="712" y="-248" font-family="Helvetica,sans-Serif" font-size="10.00">../utils/math.hpp</text>
+<g id="a_node30"><a xlink:title=" ">
+<polygon fill="none" stroke="#bfbfbf" points="664,-241 664,-260 806,-260 806,-241 664,-241"/>
+<text text-anchor="middle" x="735" y="-248" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate/utils/math.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node30 -->
 <g id="edge54" class="edge">
 <title>Node1&#45;&gt;Node30</title>
-<path fill="none" stroke="midnightblue" d="M436.51,-306.69C491.24,-297.01 576.5,-281.46 650,-266 655.41,-264.86 661.07,-263.62 666.68,-262.35"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="667.69,-265.71 676.65,-260.06 666.12,-258.88 667.69,-265.71"/>
+<path fill="none" stroke="midnightblue" d="M436.64,-306.13C503.02,-293.97 612.34,-273.96 678.61,-261.82"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="679.26,-265.26 688.47,-260.02 678,-258.38 679.26,-265.26"/>
 </g>
 <!-- Node31 -->
 <g id="node31" class="node">
@@ -143,17 +143,17 @@
 <g id="node32" class="node">
 <title>Node32</title>
 <g id="a_node32"><a xlink:href="system__clock__listener_8hpp.html" target="_top" xlink:title="This file defines an interface for a CPU clock listener.">
-<polygon fill="none" stroke="black" points="778.5,-235.5 778.5,-265.5 897.5,-265.5 897.5,-235.5 778.5,-235.5"/>
-<text text-anchor="start" x="786.5" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">../peripherals/system</text>
-<text text-anchor="middle" x="838" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">_clock_listener.hpp</text>
+<polygon fill="none" stroke="black" points="824.5,-235.5 824.5,-265.5 943.5,-265.5 943.5,-235.5 824.5,-235.5"/>
+<text text-anchor="start" x="832.5" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">../peripherals/system</text>
+<text text-anchor="middle" x="884" y="-242.5" font-family="Helvetica,sans-Serif" font-size="10.00">_clock_listener.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node32 -->
 <g id="edge60" class="edge">
 <title>Node1&#45;&gt;Node32</title>
-<path fill="none" stroke="midnightblue" d="M436.57,-310.56C510.47,-302.48 644.06,-286.82 768.16,-266.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="768.94,-269.48 778.22,-264.36 767.77,-262.57 768.94,-269.48"/>
+<path fill="none" stroke="midnightblue" d="M436.54,-311.6C517.79,-304.2 672.46,-288.73 814.05,-266.06"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="814.91,-269.46 824.22,-264.41 813.79,-262.55 814.91,-269.46"/>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">

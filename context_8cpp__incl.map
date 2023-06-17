@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,140,121"/>
 <area shape="rect" id="node3" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="129,169,227,196"/>
 <area shape="rect" id="node5" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="216,95,337,121"/>
-<area shape="rect" id="node7" href="$singleton_8hpp.html" title="This file defines and implements a generic class that is used to treat other classes as singletons." alt="" coords="362,95,517,121"/>
-<area shape="rect" id="node4" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="89,244,267,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="361,95,576,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="81,244,275,271"/>
 <area shape="rect" id="node6" title=" " alt="" coords="252,169,357,196"/>
 </map>

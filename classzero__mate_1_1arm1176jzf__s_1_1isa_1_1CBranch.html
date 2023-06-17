@@ -204,9 +204,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a6106283c614f3eb52d26814aba2f1ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration represents different shift types used not only in a data processing instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#a6106283c614f3eb52d26814aba2f1ff0">More...</a><br /></td></tr>
 <tr class="separator:a6106283c614f3eb52d26814aba2f1ff0 inherit pub_types_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
-<tr class="memitem:aacc09a69d69c590f4664d0a09a395561 inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#aacc09a69d69c590f4664d0a09a395561">AVERAGE_CPI</a> { 8 }</td></tr>
-<tr class="memdesc:aacc09a69d69c590f4664d0a09a395561 inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average number of cycles it takes the CPU to execute an instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#aacc09a69d69c590f4664d0a09a395561">More...</a><br /></td></tr>
-<tr class="separator:aacc09a69d69c590f4664d0a09a395561 inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af67d15f1170be05fd92ff921ad39587b inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af67d15f1170be05fd92ff921ad39587b">Average_CPI</a> { 8 }</td></tr>
+<tr class="memdesc:af67d15f1170be05fd92ff921ad39587b inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average number of cycles it takes the CPU to execute an instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af67d15f1170be05fd92ff921ad39587b">More...</a><br /></td></tr>
+<tr class="separator:af67d15f1170be05fd92ff921ad39587b inherit pub_static_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">zero_mate::arm1176jzf_s::isa::CInstruction</a></td></tr>
 <tr class="memitem:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ac8cd077b7574ab7d94cf34114a9234fa">m_value</a></td></tr>
 <tr class="memdesc:ac8cd077b7574ab7d94cf34114a9234fa inherit pro_attribs_classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Machine code encoding of the instruction (32-bit value)  <a href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ac8cd077b7574ab7d94cf34114a9234fa">More...</a><br /></td></tr>
@@ -276,12 +276,6 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns the offset of the branch instruction. </p>
 <p>The offset is stored as a signed 2's complement 24-bit value. It is added to the current value of the PC address to determine the destination address.</p>
 <dl class="section return"><dt>Returns</dt><dd>Offset of the branch instruction </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch_a802cd5fadc7952225e152142ab047b0f_cgraph.svg" width="402" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>

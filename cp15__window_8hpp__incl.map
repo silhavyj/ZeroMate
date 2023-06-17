@@ -4,7 +4,7 @@
 <area shape="rect" id="node4" href="$cp15_8hpp.html" title="This file defines CP15 (system control coprocessor)." alt="" coords="141,95,303,136"/>
 <area shape="rect" id="node3" title=" " alt="" coords="22,184,99,211"/>
 <area shape="rect" id="node5" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="461,184,588,211"/>
-<area shape="rect" id="node7" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="159,363,338,389"/>
+<area shape="rect" id="node7" title=" " alt="" coords="151,363,346,389"/>
 <area shape="rect" id="node6" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="217,273,419,300"/>
 <area shape="rect" id="node8" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="444,259,605,315"/>
 <area shape="rect" id="node10" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="629,266,855,307"/>

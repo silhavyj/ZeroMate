@@ -103,12 +103,6 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1CC
  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="context_8hpp_source.html">context.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for zero_mate::arm1176jzf_s::CCPU_Context:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context__coll__graph.svg" width="236" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -216,30 +210,30 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ac4948fa820e156f7505bbf3014ba3733"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac4948fa820e156f7505bbf3014ba3733">NUMBER_OF_REGS</a> = 16</td></tr>
-<tr class="memdesc:ac4948fa820e156f7505bbf3014ba3733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of CPU registers.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac4948fa820e156f7505bbf3014ba3733">More...</a><br /></td></tr>
-<tr class="separator:ac4948fa820e156f7505bbf3014ba3733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0947821872bfe58acdc42f4df8bd86ad"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0947821872bfe58acdc42f4df8bd86ad">NUMBER_OF_GENERAL_REGS</a> = 13</td></tr>
-<tr class="memdesc:a0947821872bfe58acdc42f4df8bd86ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of general-purpose registers (LR, SP, PC are considered to be special registers)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0947821872bfe58acdc42f4df8bd86ad">More...</a><br /></td></tr>
-<tr class="separator:a0947821872bfe58acdc42f4df8bd86ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4da96711ed542bed76f292525c40d8ce"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4da96711ed542bed76f292525c40d8ce">REG_SIZE</a> = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td></tr>
-<tr class="memdesc:a4da96711ed542bed76f292525c40d8ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register size (4B)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4da96711ed542bed76f292525c40d8ce">More...</a><br /></td></tr>
-<tr class="separator:a4da96711ed542bed76f292525c40d8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a053ed9b34d5aa41c59432d7bb4ad7e09"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a053ed9b34d5aa41c59432d7bb4ad7e09">CPU_MODE_MASK</a> = 0b11111U</td></tr>
-<tr class="memdesc:a053ed9b34d5aa41c59432d7bb4ad7e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">The least significant 5 bits in the CPS register represent the mode of the CPU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a053ed9b34d5aa41c59432d7bb4ad7e09">More...</a><br /></td></tr>
-<tr class="separator:a053ed9b34d5aa41c59432d7bb4ad7e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e4cf80c6456e949aec471c292e42378"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a3e4cf80c6456e949aec471c292e42378">CPU_CONTROL_BITS_MASK</a> = 0xFFU</td></tr>
-<tr class="memdesc:a3e4cf80c6456e949aec471c292e42378"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lowest 8 bits of CPSR are called control bits.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a3e4cf80c6456e949aec471c292e42378">More...</a><br /></td></tr>
-<tr class="separator:a3e4cf80c6456e949aec471c292e42378"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a359cbf5c6efb754156cb3b046db2acbd"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a359cbf5c6efb754156cb3b046db2acbd">PC_REG_IDX</a> = 15</td></tr>
-<tr class="memdesc:a359cbf5c6efb754156cb3b046db2acbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the PC (program counter) register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a359cbf5c6efb754156cb3b046db2acbd">More...</a><br /></td></tr>
-<tr class="separator:a359cbf5c6efb754156cb3b046db2acbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cc06e6d24db355ceafb1017459922a8"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7cc06e6d24db355ceafb1017459922a8">LR_REG_IDX</a> = 14</td></tr>
-<tr class="memdesc:a7cc06e6d24db355ceafb1017459922a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the LR (link register) register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7cc06e6d24db355ceafb1017459922a8">More...</a><br /></td></tr>
-<tr class="separator:a7cc06e6d24db355ceafb1017459922a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89a9a0aa8e0bf3e321d04f8eb14c70ab"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a89a9a0aa8e0bf3e321d04f8eb14c70ab">SP_REG_IDX</a> = 13</td></tr>
-<tr class="memdesc:a89a9a0aa8e0bf3e321d04f8eb14c70ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the SP (stack pointer) register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a89a9a0aa8e0bf3e321d04f8eb14c70ab">More...</a><br /></td></tr>
-<tr class="separator:a89a9a0aa8e0bf3e321d04f8eb14c70ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58031f7a63ee10070c0447ac8ff5842c"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a58031f7a63ee10070c0447ac8ff5842c">Number_Of_Regs</a> = 16</td></tr>
+<tr class="memdesc:a58031f7a63ee10070c0447ac8ff5842c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of CPU registers.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a58031f7a63ee10070c0447ac8ff5842c">More...</a><br /></td></tr>
+<tr class="separator:a58031f7a63ee10070c0447ac8ff5842c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c4cfcc0e2305fadfaf78d2d93b90eb0"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a8c4cfcc0e2305fadfaf78d2d93b90eb0">Number_Of_General_Regs</a> = 13</td></tr>
+<tr class="memdesc:a8c4cfcc0e2305fadfaf78d2d93b90eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of general-purpose registers (LR, SP, PC are considered to be special registers)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a8c4cfcc0e2305fadfaf78d2d93b90eb0">More...</a><br /></td></tr>
+<tr class="separator:a8c4cfcc0e2305fadfaf78d2d93b90eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aaf18a7cf68e2260e1d7b36d5d074c0"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a8aaf18a7cf68e2260e1d7b36d5d074c0">Reg_Size</a> = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td></tr>
+<tr class="memdesc:a8aaf18a7cf68e2260e1d7b36d5d074c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register size (4B)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a8aaf18a7cf68e2260e1d7b36d5d074c0">More...</a><br /></td></tr>
+<tr class="separator:a8aaf18a7cf68e2260e1d7b36d5d074c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66806f0e093d292e51faabc084b49122"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a66806f0e093d292e51faabc084b49122">CPU_Mode_Mask</a> = 0b11111U</td></tr>
+<tr class="memdesc:a66806f0e093d292e51faabc084b49122"><td class="mdescLeft">&#160;</td><td class="mdescRight">The least significant 5 bits in the CPS register represent the mode of the CPU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a66806f0e093d292e51faabc084b49122">More...</a><br /></td></tr>
+<tr class="separator:a66806f0e093d292e51faabc084b49122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae5f3e3600b50a0e58b368a96918b892"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aae5f3e3600b50a0e58b368a96918b892">CPU_Control_Bits_Mask</a> = 0xFFU</td></tr>
+<tr class="memdesc:aae5f3e3600b50a0e58b368a96918b892"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lowest 8 bits of CPSR are called control bits.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#aae5f3e3600b50a0e58b368a96918b892">More...</a><br /></td></tr>
+<tr class="separator:aae5f3e3600b50a0e58b368a96918b892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaffeb9fb2df35732736f9ac679d5516"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#adaffeb9fb2df35732736f9ac679d5516">PC_Reg_Idx</a> = 15</td></tr>
+<tr class="memdesc:adaffeb9fb2df35732736f9ac679d5516"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the PC (program counter) register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#adaffeb9fb2df35732736f9ac679d5516">More...</a><br /></td></tr>
+<tr class="separator:adaffeb9fb2df35732736f9ac679d5516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a882411356cd7814f997decd2ee838b07"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a882411356cd7814f997decd2ee838b07">LR_Reg_Idx</a> = 14</td></tr>
+<tr class="memdesc:a882411356cd7814f997decd2ee838b07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the LR (link register) register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a882411356cd7814f997decd2ee838b07">More...</a><br /></td></tr>
+<tr class="separator:a882411356cd7814f997decd2ee838b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2549de77c08f41146805af674f52d06"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac2549de77c08f41146805af674f52d06">SP_Reg_Idx</a> = 13</td></tr>
+<tr class="memdesc:ac2549de77c08f41146805af674f52d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the SP (stack pointer) register.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac2549de77c08f41146805af674f52d06">More...</a><br /></td></tr>
+<tr class="separator:ac2549de77c08f41146805af674f52d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -287,9 +281,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:acf71b6238b5cb0b9c0c2235bf296fdca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf71b6238b5cb0b9c0c2235bf296fdca">m_mode</a></td></tr>
 <tr class="memdesc:acf71b6238b5cb0b9c0c2235bf296fdca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current mode of the CPU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf71b6238b5cb0b9c0c2235bf296fdca">More...</a><br /></td></tr>
 <tr class="separator:acf71b6238b5cb0b9c0c2235bf296fdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8e26506e2bb7f5413531be9d7bdb183"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::uint32_t, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac4948fa820e156f7505bbf3014ba3733">NUMBER_OF_REGS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac8e26506e2bb7f5413531be9d7bdb183">m_regs</a></td></tr>
-<tr class="memdesc:ac8e26506e2bb7f5413531be9d7bdb183"><td class="mdescLeft">&#160;</td><td class="mdescRight">USR and SYS mode registers.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac8e26506e2bb7f5413531be9d7bdb183">More...</a><br /></td></tr>
-<tr class="separator:ac8e26506e2bb7f5413531be9d7bdb183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1dab1d3d7a0316dde8db22acacc281b"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::uint32_t, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a58031f7a63ee10070c0447ac8ff5842c">Number_Of_Regs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af1dab1d3d7a0316dde8db22acacc281b">m_regs</a></td></tr>
+<tr class="memdesc:af1dab1d3d7a0316dde8db22acacc281b"><td class="mdescLeft">&#160;</td><td class="mdescRight">USR and SYS mode registers.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af1dab1d3d7a0316dde8db22acacc281b">More...</a><br /></td></tr>
+<tr class="separator:af1dab1d3d7a0316dde8db22acacc281b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dcb0bac27ee95ddb44ba376ac7c268d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a110b4d2a333fb510bb627a3fc109c35f">Banked_Registers_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a3dcb0bac27ee95ddb44ba376ac7c268d">m_banked_regs</a></td></tr>
 <tr class="memdesc:a3dcb0bac27ee95ddb44ba376ac7c268d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Banked registers.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a3dcb0bac27ee95ddb44ba376ac7c268d">More...</a><br /></td></tr>
 <tr class="separator:a3dcb0bac27ee95ddb44ba376ac7c268d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,7 +293,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6763c648704a19923a5aae4fb314a31f"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">NCPU_Mode</a>, std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6763c648704a19923a5aae4fb314a31f">m_cpsr</a></td></tr>
 <tr class="memdesc:a6763c648704a19923a5aae4fb314a31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPSR registers (for different CPU modes)  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6763c648704a19923a5aae4fb314a31f">More...</a><br /></td></tr>
 <tr class="separator:a6763c648704a19923a5aae4fb314a31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3064b2b4039870158575655cfce8e41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af3064b2b4039870158575655cfce8e41">m_logging_system</a></td></tr>
+<tr class="memitem:af3064b2b4039870158575655cfce8e41"><td class="memItemLeft" align="right" valign="top">utils::CLogging_System *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af3064b2b4039870158575655cfce8e41">m_logging_system</a></td></tr>
 <tr class="memdesc:af3064b2b4039870158575655cfce8e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging system.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af3064b2b4039870158575655cfce8e41">More...</a><br /></td></tr>
 <tr class="separator:af3064b2b4039870158575655cfce8e41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -729,7 +723,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_ae00681efcbc4adfcfde001a67c5baeca_cgraph.svg" width="940" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_ae00681efcbc4adfcfde001a67c5baeca_cgraph.svg" width="672" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -774,7 +768,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a8640117a5d7886b324a368c9dc41288d_cgraph.svg" width="940" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a8640117a5d7886b324a368c9dc41288d_cgraph.svg" width="672" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -813,7 +807,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a1723b9f6993f17c2d293bd5a5e4d3440_cgraph.svg" width="940" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a1723b9f6993f17c2d293bd5a5e4d3440_cgraph.svg" width="672" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1428,7 +1422,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a53765299c790cc790e15deb2c701bd2a_cgraph.svg" width="708" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a53765299c790cc790e15deb2c701bd2a_cgraph.svg" width="458" height="227"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -1615,7 +1609,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a1b322131a1168763d2b8083c17a1079b_cgraph.svg" width="938" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a1b322131a1168763d2b8083c17a1079b_cgraph.svg" width="670" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -1665,7 +1659,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a050dada520ca82a21874045815c596a8_cgraph.svg" width="683" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context_a050dada520ca82a21874045815c596a8_cgraph.svg" width="415" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -1678,8 +1672,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a3e4cf80c6456e949aec471c292e42378"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e4cf80c6456e949aec471c292e42378">&#9670;&nbsp;</a></span>CPU_CONTROL_BITS_MASK</h2>
+<a id="aae5f3e3600b50a0e58b368a96918b892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae5f3e3600b50a0e58b368a96918b892">&#9670;&nbsp;</a></span>CPU_Control_Bits_Mask</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1688,7 +1682,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::uint32_t zero_mate::arm1176jzf_s::CCPU_Context::CPU_CONTROL_BITS_MASK = 0xFFU</td>
+          <td class="memname">constexpr std::uint32_t zero_mate::arm1176jzf_s::CCPU_Context::CPU_Control_Bits_Mask = 0xFFU</td>
         </tr>
       </table>
   </td>
@@ -1702,8 +1696,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a053ed9b34d5aa41c59432d7bb4ad7e09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a053ed9b34d5aa41c59432d7bb4ad7e09">&#9670;&nbsp;</a></span>CPU_MODE_MASK</h2>
+<a id="a66806f0e093d292e51faabc084b49122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66806f0e093d292e51faabc084b49122">&#9670;&nbsp;</a></span>CPU_Mode_Mask</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1712,7 +1706,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::uint32_t zero_mate::arm1176jzf_s::CCPU_Context::CPU_MODE_MASK = 0b11111U</td>
+          <td class="memname">constexpr std::uint32_t zero_mate::arm1176jzf_s::CCPU_Context::CPU_Mode_Mask = 0b11111U</td>
         </tr>
       </table>
   </td>
@@ -1726,8 +1720,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a7cc06e6d24db355ceafb1017459922a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cc06e6d24db355ceafb1017459922a8">&#9670;&nbsp;</a></span>LR_REG_IDX</h2>
+<a id="a882411356cd7814f997decd2ee838b07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882411356cd7814f997decd2ee838b07">&#9670;&nbsp;</a></span>LR_Reg_Idx</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1736,7 +1730,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::size_t zero_mate::arm1176jzf_s::CCPU_Context::LR_REG_IDX = 14</td>
+          <td class="memname">constexpr std::size_t zero_mate::arm1176jzf_s::CCPU_Context::LR_Reg_Idx = 14</td>
         </tr>
       </table>
   </td>
@@ -1808,7 +1802,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a>* zero_mate::arm1176jzf_s::CCPU_Context::m_logging_system</td>
+          <td class="memname">utils::CLogging_System* zero_mate::arm1176jzf_s::CCPU_Context::m_logging_system</td>
         </tr>
       </table>
   </td>
@@ -1846,8 +1840,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ac8e26506e2bb7f5413531be9d7bdb183"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8e26506e2bb7f5413531be9d7bdb183">&#9670;&nbsp;</a></span>m_regs</h2>
+<a id="af1dab1d3d7a0316dde8db22acacc281b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1dab1d3d7a0316dde8db22acacc281b">&#9670;&nbsp;</a></span>m_regs</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1856,7 +1850,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;std::uint32_t, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac4948fa820e156f7505bbf3014ba3733">NUMBER_OF_REGS</a>&gt; zero_mate::arm1176jzf_s::CCPU_Context::m_regs</td>
+          <td class="memname">std::array&lt;std::uint32_t, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a58031f7a63ee10070c0447ac8ff5842c">Number_Of_Regs</a>&gt; zero_mate::arm1176jzf_s::CCPU_Context::m_regs</td>
         </tr>
       </table>
   </td>
@@ -1894,8 +1888,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a0947821872bfe58acdc42f4df8bd86ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0947821872bfe58acdc42f4df8bd86ad">&#9670;&nbsp;</a></span>NUMBER_OF_GENERAL_REGS</h2>
+<a id="a8c4cfcc0e2305fadfaf78d2d93b90eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c4cfcc0e2305fadfaf78d2d93b90eb0">&#9670;&nbsp;</a></span>Number_Of_General_Regs</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1904,7 +1898,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::size_t zero_mate::arm1176jzf_s::CCPU_Context::NUMBER_OF_GENERAL_REGS = 13</td>
+          <td class="memname">constexpr std::size_t zero_mate::arm1176jzf_s::CCPU_Context::Number_Of_General_Regs = 13</td>
         </tr>
       </table>
   </td>
@@ -1918,8 +1912,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ac4948fa820e156f7505bbf3014ba3733"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4948fa820e156f7505bbf3014ba3733">&#9670;&nbsp;</a></span>NUMBER_OF_REGS</h2>
+<a id="a58031f7a63ee10070c0447ac8ff5842c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58031f7a63ee10070c0447ac8ff5842c">&#9670;&nbsp;</a></span>Number_Of_Regs</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1928,7 +1922,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::size_t zero_mate::arm1176jzf_s::CCPU_Context::NUMBER_OF_REGS = 16</td>
+          <td class="memname">constexpr std::size_t zero_mate::arm1176jzf_s::CCPU_Context::Number_Of_Regs = 16</td>
         </tr>
       </table>
   </td>
@@ -1942,8 +1936,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a359cbf5c6efb754156cb3b046db2acbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a359cbf5c6efb754156cb3b046db2acbd">&#9670;&nbsp;</a></span>PC_REG_IDX</h2>
+<a id="adaffeb9fb2df35732736f9ac679d5516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaffeb9fb2df35732736f9ac679d5516">&#9670;&nbsp;</a></span>PC_Reg_Idx</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1952,7 +1946,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::size_t zero_mate::arm1176jzf_s::CCPU_Context::PC_REG_IDX = 15</td>
+          <td class="memname">constexpr std::size_t zero_mate::arm1176jzf_s::CCPU_Context::PC_Reg_Idx = 15</td>
         </tr>
       </table>
   </td>
@@ -1966,8 +1960,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a4da96711ed542bed76f292525c40d8ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4da96711ed542bed76f292525c40d8ce">&#9670;&nbsp;</a></span>REG_SIZE</h2>
+<a id="a8aaf18a7cf68e2260e1d7b36d5d074c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aaf18a7cf68e2260e1d7b36d5d074c0">&#9670;&nbsp;</a></span>Reg_Size</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1976,7 +1970,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto zero_mate::arm1176jzf_s::CCPU_Context::REG_SIZE = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td>
+          <td class="memname">constexpr auto zero_mate::arm1176jzf_s::CCPU_Context::Reg_Size = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td>
         </tr>
       </table>
   </td>
@@ -1990,8 +1984,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a89a9a0aa8e0bf3e321d04f8eb14c70ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89a9a0aa8e0bf3e321d04f8eb14c70ab">&#9670;&nbsp;</a></span>SP_REG_IDX</h2>
+<a id="ac2549de77c08f41146805af674f52d06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2549de77c08f41146805af674f52d06">&#9670;&nbsp;</a></span>SP_Reg_Idx</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2000,7 +1994,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::size_t zero_mate::arm1176jzf_s::CCPU_Context::SP_REG_IDX = 13</td>
+          <td class="memname">constexpr std::size_t zero_mate::arm1176jzf_s::CCPU_Context::SP_Reg_Idx = 13</td>
         </tr>
       </table>
   </td>

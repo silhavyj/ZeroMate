@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ZeroMate: src/core/utils/logger/logger_stdo.hpp Source File</title>
+<title>ZeroMate: src/utils/logger/logger_stdo.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('logger__stdo_8hpp_source.html',''); in
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Project file imports</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="logger_8hpp.html">logger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;zero_mate/utils/logger.hpp&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacezero__mate_1_1utils.html">zero_mate::utils</a></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('logger__stdo_8hpp_source.html',''); in
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">    /// \class CLogger_STDO</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">    /// \brief This class represents a logger that logs messages to the standard output (STDO).</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span>    <span class="comment">// -----------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classzero__mate_1_1utils_1_1CLogger__STDO.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classzero__mate_1_1utils_1_1CLogger__STDO.html">CLogger_STDO</a> final : <span class="keyword">public</span> <a class="code" href="classzero__mate_1_1utils_1_1ILogger.html">ILogger</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classzero__mate_1_1utils_1_1CLogger__STDO.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classzero__mate_1_1utils_1_1CLogger__STDO.html">CLogger_STDO</a> final : <span class="keyword">public</span> ILogger</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
@@ -165,15 +165,13 @@ $(document).ready(function(){initNavTree('logger__stdo_8hpp_source.html',''); in
 <div class="ttc" id="aclasszero__mate_1_1utils_1_1CLogger__STDO_html_a76a800f7ae9457dfac14ea098a18c5d9"><div class="ttname"><a href="classzero__mate_1_1utils_1_1CLogger__STDO.html#a76a800f7ae9457dfac14ea098a18c5d9">zero_mate::utils::CLogger_STDO::Info</a></div><div class="ttdeci">void Info(const char *msg) override</div><div class="ttdoc">Logs an info message (ILogger interface).</div><div class="ttdef"><b>Definition:</b> logger_stdo.cpp:26</div></div>
 <div class="ttc" id="aclasszero__mate_1_1utils_1_1CLogger__STDO_html_ae1018920ff746c7dabb80f8add71ce99"><div class="ttname"><a href="classzero__mate_1_1utils_1_1CLogger__STDO.html#ae1018920ff746c7dabb80f8add71ce99">zero_mate::utils::CLogger_STDO::Warning</a></div><div class="ttdeci">void Warning(const char *msg) override</div><div class="ttdoc">Logs a warning message (ILogger interface).</div><div class="ttdef"><b>Definition:</b> logger_stdo.cpp:48</div></div>
 <div class="ttc" id="aclasszero__mate_1_1utils_1_1CLogger__STDO_html_af2eb04f109b5806dd8039f4667f558e0"><div class="ttname"><a href="classzero__mate_1_1utils_1_1CLogger__STDO.html#af2eb04f109b5806dd8039f4667f558e0">zero_mate::utils::CLogger_STDO::Debug</a></div><div class="ttdeci">void Debug(const char *msg) override</div><div class="ttdoc">Logs a debug message (ILogger interface).</div><div class="ttdef"><b>Definition:</b> logger_stdo.cpp:37</div></div>
-<div class="ttc" id="aclasszero__mate_1_1utils_1_1ILogger_html"><div class="ttname"><a href="classzero__mate_1_1utils_1_1ILogger.html">zero_mate::utils::ILogger</a></div><div class="ttdoc">This class represents a logger interface.</div><div class="ttdef"><b>Definition:</b> logger.hpp:28</div></div>
-<div class="ttc" id="alogger_8hpp_html"><div class="ttname"><a href="logger_8hpp.html">logger.hpp</a></div><div class="ttdoc">This file defines a general logger interface as well as a logging system that is used in the project.</div></div>
 <div class="ttc" id="anamespacezero__mate_1_1utils_html"><div class="ttname"><a href="namespacezero__mate_1_1utils.html">zero_mate::utils</a></div><div class="ttdef"><b>Definition:</b> elf_loader.cpp:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a class="el" href="dir_a8053b3d69cfefb2b2e6ec7bf9dd5c1a.html">utils</a></li><li class="navelem"><a class="el" href="dir_542f07d19a7bc13a9a2a495b9230dab5.html">logger</a></li><li class="navelem"><a class="el" href="logger__stdo_8hpp.html">logger_stdo.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><a class="el" href="dir_a1400a24f2811f25b162f4f43c231c58.html">logger</a></li><li class="navelem"><a class="el" href="logger__stdo_8hpp.html">logger_stdo.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

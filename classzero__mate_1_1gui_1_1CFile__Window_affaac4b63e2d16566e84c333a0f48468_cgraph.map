@@ -1,7 +1,4 @@
 <map id="zero_mate::gui::CFile_Window::Render" name="zero_mate::gui::CFile_Window::Render">
-<area shape="rect" id="node1" title=" " alt="" coords="5,71,164,112"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="212,5,407,47"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02" title="Logs an info message via all registered loggers." alt="" coords="212,71,407,112"/>
-<area shape="rect" id="node5" href="$namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory." alt="" coords="233,136,385,177"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="455,39,653,80"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node2" href="$namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory." alt="" coords="212,5,364,47"/>
 </map>

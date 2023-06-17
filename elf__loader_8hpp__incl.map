@@ -1,15 +1,15 @@
-<map id="src/core/utils/elf_loader.hpp" name="src/core/utils/elf_loader.hpp">
-<area shape="rect" id="node1" title="This file defines the functionality of an ELF loader." alt="" coords="828,5,955,47"/>
-<area shape="rect" id="node2" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="849,95,934,121"/>
-<area shape="rect" id="node3" href="$cp15_8hpp.html" title="This file defines CP15 (system control coprocessor)." alt="" coords="590,169,761,196"/>
-<area shape="rect" id="node11" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="1023,169,1216,196"/>
-<area shape="rect" id="node12" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="785,169,998,196"/>
-<area shape="rect" id="node4" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="532,244,659,271"/>
-<area shape="rect" id="node6" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="694,423,873,449"/>
-<area shape="rect" id="node5" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="751,333,954,360"/>
-<area shape="rect" id="node7" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="515,319,676,375"/>
-<area shape="rect" id="node9" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="5,326,231,367"/>
-<area shape="rect" id="node10" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="254,326,491,367"/>
-<area shape="rect" id="node8" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="313,423,432,449"/>
-<area shape="rect" id="node13" title=" " alt="" coords="891,244,996,271"/>
+<map id="src/utils/elf_loader.hpp" name="src/utils/elf_loader.hpp">
+<area shape="rect" id="node1" title="This file defines the functionality of an ELF loader." alt="" coords="807,5,976,32"/>
+<area shape="rect" id="node2" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="833,80,950,107"/>
+<area shape="rect" id="node3" href="$cp15_8hpp.html" title="This file defines CP15 (system control coprocessor)." alt="" coords="590,155,761,181"/>
+<area shape="rect" id="node11" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="1023,155,1216,181"/>
+<area shape="rect" id="node12" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="785,155,998,181"/>
+<area shape="rect" id="node4" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="532,229,659,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="686,408,881,435"/>
+<area shape="rect" id="node5" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="751,319,954,345"/>
+<area shape="rect" id="node7" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="515,304,676,360"/>
+<area shape="rect" id="node9" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="5,311,231,353"/>
+<area shape="rect" id="node10" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="254,311,491,353"/>
+<area shape="rect" id="node8" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="313,408,432,435"/>
+<area shape="rect" id="node13" title=" " alt="" coords="891,229,996,256"/>
 </map>

@@ -1,0 +1,14 @@
+<map id="zero_mate::IGUI_Window" name="zero_mate::IGUI_Window">
+<area shape="rect" id="node1" title=" " alt="" coords="5,339,192,366"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CARM__Timer__Window.html" title=" " alt="" coords="255,5,422,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CCP15__Window.html" title=" " alt="" coords="254,71,423,112"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CControl__Window.html" title=" " alt="" coords="247,136,430,177"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CFile__Window.html" title=" " alt="" coords="259,201,418,243"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CGPIO__Window.html" title=" " alt="" coords="255,267,423,308"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CInterrupt__Controller__Window.html" title=" " alt="" coords="243,332,435,373"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CLog__Window.html" title=" " alt="" coords="259,397,418,439"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1CMonitor__Window.html" title=" " alt="" coords="245,463,432,504"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CRAM__Window.html" title=" " alt="" coords="255,528,422,569"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html" title=" " alt="" coords="240,593,437,635"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html" title=" " alt="" coords="249,659,429,700"/>
+</map>

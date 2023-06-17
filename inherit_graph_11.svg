@@ -15,7 +15,7 @@
 <polygon fill="none" stroke="black" points="0,-0.5 0,-41.5 140,-41.5 140,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::gui::CCircular</text>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Log_Buffer&lt; std::string,</text>
-<text text-anchor="middle" x="70" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"> MAX_LOGS &gt;</text>
+<text text-anchor="middle" x="70" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00"> Max_Logs &gt;</text>
 </a>
 </g>
 </g>

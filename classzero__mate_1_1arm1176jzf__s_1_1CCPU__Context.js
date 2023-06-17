@@ -53,6 +53,6 @@ var classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context =
     [ "m_cpsr", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6763c648704a19923a5aae4fb314a31f", null ],
     [ "m_logging_system", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af3064b2b4039870158575655cfce8e41", null ],
     [ "m_mode", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf71b6238b5cb0b9c0c2235bf296fdca", null ],
-    [ "m_regs", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ac8e26506e2bb7f5413531be9d7bdb183", null ],
+    [ "m_regs", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af1dab1d3d7a0316dde8db22acacc281b", null ],
     [ "m_spsr", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a43b8f9cf97fb52ce2b6eec7cb1ed5ae6", null ]
 ];

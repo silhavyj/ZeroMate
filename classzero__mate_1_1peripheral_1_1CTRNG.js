@@ -15,6 +15,6 @@ var classzero__mate_1_1peripheral_1_1CTRNG =
     [ "Reset", "classzero__mate_1_1peripheral_1_1CTRNG.html#a3a5abd59d64cb3ff975e85b829a83665", null ],
     [ "Write", "classzero__mate_1_1peripheral_1_1CTRNG.html#acd83e2dc5066adb3529450c578f90f2f", null ],
     [ "m_rand_dev", "classzero__mate_1_1peripheral_1_1CTRNG.html#ade019118ea7442af87e1eb00604c9b60", null ],
-    [ "m_regs", "classzero__mate_1_1peripheral_1_1CTRNG.html#a44778e614572111e7cc59a7363f620eb", null ],
+    [ "m_regs", "classzero__mate_1_1peripheral_1_1CTRNG.html#a0062b7911273a8667577a9f32fb1e723", null ],
     [ "m_uniform_dist", "classzero__mate_1_1peripheral_1_1CTRNG.html#a012a9bb5690d5b6edada3550d5f96c25", null ]
 ];

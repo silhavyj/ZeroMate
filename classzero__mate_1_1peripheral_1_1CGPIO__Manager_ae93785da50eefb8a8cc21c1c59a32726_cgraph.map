@@ -1,10 +1,6 @@
 <map id="zero_mate::peripheral::CGPIO_Manager::Update_Pin_State" name="zero_mate::peripheral::CGPIO_Manager::Update_Pin_State">
-<area shape="rect" id="node1" title="Updates the state of all pins within a given register." alt="" coords="5,129,196,185"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" title="Logs a debug message via all registered loggers." alt="" coords="244,136,439,177"/>
-<area shape="rect" id="node4" href="$namespacezero__mate_1_1utils_1_1math.html#af7d93c996dab2ff1b91c5a399dcfe29f" title="Tests whether a bit is set in the given integral variable." alt="" coords="257,71,426,112"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b" title="Mirrors the state of a given in in the GPLEV register." alt="" coords="250,282,433,338"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a623c62636a57d6c63db1331a42100452" title="Notifies external peripherals that subscribe to the given pin about the change of its state." alt="" coords="250,202,433,258"/>
-<area shape="rect" id="node8" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title="Logs a warning message via all registered loggers." alt="" coords="244,5,439,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="487,71,685,112"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa6b0515a8e4fecb78bebfbb79a13994b" title="Returns the index of the register (out of the two alternatives) based on the pin index." alt="" coords="503,282,669,338"/>
+<area shape="rect" id="node1" title="Updates the state of all pins within a given register." alt="" coords="5,45,196,101"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b" title="Mirrors the state of a given in in the GPLEV register." alt="" coords="244,5,427,61"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a623c62636a57d6c63db1331a42100452" title="Notifies external peripherals that subscribe to the given pin about the change of its state." alt="" coords="244,85,427,141"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa6b0515a8e4fecb78bebfbb79a13994b" title="Returns the index of the register (out of the two alternatives) based on the pin index." alt="" coords="475,5,641,61"/>
 </map>

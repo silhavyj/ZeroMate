@@ -6,5 +6,5 @@
 <area shape="rect" id="node5" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="292,95,471,136"/>
 <area shape="rect" id="node6" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="139,184,255,211"/>
 <area shape="rect" id="node7" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="280,184,483,211"/>
-<area shape="rect" id="node8" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="361,259,540,285"/>
+<area shape="rect" id="node8" title=" " alt="" coords="353,259,548,285"/>
 </map>

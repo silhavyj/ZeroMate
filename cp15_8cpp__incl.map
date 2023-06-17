@@ -3,9 +3,9 @@
 <area shape="rect" id="node2" title=" " alt="" coords="421,95,527,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="551,95,685,121"/>
 <area shape="rect" id="node4" href="$cp15_8hpp.html" title="This file defines CP15 (system control coprocessor)." alt="" coords="709,95,791,121"/>
-<area shape="rect" id="node12" href="$singleton_8hpp.html" title="This file defines and implements a generic class that is used to treat other classes as singletons." alt="" coords="815,95,970,121"/>
+<area shape="rect" id="node12" title=" " alt="" coords="815,95,1029,121"/>
 <area shape="rect" id="node5" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="495,169,621,196"/>
-<area shape="rect" id="node7" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="782,348,961,375"/>
+<area shape="rect" id="node7" title=" " alt="" coords="774,348,969,375"/>
 <area shape="rect" id="node6" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="701,259,903,285"/>
 <area shape="rect" id="node8" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="5,244,167,300"/>
 <area shape="rect" id="node10" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="191,251,416,293"/>

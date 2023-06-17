@@ -1,14 +1,10 @@
 var dir_34794bca92a793a1e58b77dac439fbe4 =
 [
-    [ "external", "dir_201422a1f30c7aa454c93b7eb9d74aa9.html", "dir_201422a1f30c7aa454c93b7eb9d74aa9" ],
     [ "arm_timer.cpp", "arm__timer_8cpp.html", null ],
     [ "arm_timer.hpp", "arm__timer_8hpp.html", [
       [ "CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", "classzero__mate_1_1peripheral_1_1CARM__Timer" ],
       [ "TControl_Register", "structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html", "structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register" ],
       [ "CPrescaler", "classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html", "classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler" ]
-    ] ],
-    [ "external_peripheral.hpp", "external__peripheral_8hpp.html", [
-      [ "IExternal_Peripheral", "classzero__mate_1_1peripheral_1_1IExternal__Peripheral.html", "classzero__mate_1_1peripheral_1_1IExternal__Peripheral" ]
     ] ],
     [ "gpio.cpp", "gpio_8cpp.html", null ],
     [ "gpio.hpp", "gpio_8hpp.html", [

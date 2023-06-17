@@ -112,7 +112,7 @@ Inheritance diagram for zero_mate::peripheral::CGPIO_Manager:</div>
 <div class="dynheader">
 Collaboration diagram for zero_mate::peripheral::CGPIO_Manager:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager__coll__graph.svg" width="395" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager__coll__graph.svg" width="176" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -189,8 +189,6 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a7babe4ce0aef0ec79b8a76bce0cd5e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines return values when setting a new state of pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35">More...</a><br /></td></tr>
 <tr class="separator:a7babe4ce0aef0ec79b8a76bce0cd5e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adca396dee122065df4787820288e9953"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#adca396dee122065df4787820288e9953">External_Peripherals_t</a> = std::vector&lt; std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> &gt; &gt;</td></tr>
-<tr class="separator:adca396dee122065df4787820288e9953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -209,9 +207,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac3edf689b30c39f2406fa6308fdeb2e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9">Read</a> (std::uint32_t addr, char *data, std::uint32_t size) override</td></tr>
 <tr class="memdesc:ac3edf689b30c39f2406fa6308fdeb2e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9">More...</a><br /></td></tr>
 <tr class="separator:ac3edf689b30c39f2406fa6308fdeb2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bae23db247eae130a35439057e91cd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2bae23db247eae130a35439057e91cd9">Add_External_Peripheral</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> &gt; peripheral)</td></tr>
-<tr class="memdesc:a2bae23db247eae130a35439057e91cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hooks up an external peripheral to the GPIO manager.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2bae23db247eae130a35439057e91cd9">More...</a><br /></td></tr>
-<tr class="separator:a2bae23db247eae130a35439057e91cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaefed8fb15a4f12929366b58b3b438e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acaefed8fb15a4f12929366b58b3b438e">Add_External_Peripheral</a> (IExternal_Peripheral *peripheral)</td></tr>
+<tr class="memdesc:acaefed8fb15a4f12929366b58b3b438e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hooks up an external peripheral to the GPIO manager.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acaefed8fb15a4f12929366b58b3b438e">More...</a><br /></td></tr>
+<tr class="separator:acaefed8fb15a4f12929366b58b3b438e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a116ef53e902c5521278e011f527a4027"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html">CPin</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a116ef53e902c5521278e011f527a4027">Get_Pin</a> (std::size_t idx) const</td></tr>
 <tr class="memdesc:a116ef53e902c5521278e011f527a4027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to a pin (visualization purposes).  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a116ef53e902c5521278e011f527a4027">More...</a><br /></td></tr>
 <tr class="separator:a116ef53e902c5521278e011f527a4027"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -243,24 +241,24 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a8487914af5e11dfb40c672bc2b30c185"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8487914af5e11dfb40c672bc2b30c185">REG_SIZE</a> = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td></tr>
-<tr class="memdesc:a8487914af5e11dfb40c672bc2b30c185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of a single register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8487914af5e11dfb40c672bc2b30c185">More...</a><br /></td></tr>
-<tr class="separator:a8487914af5e11dfb40c672bc2b30c185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2b60cdee74ffb1d92516bb55a7ca441"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa2b60cdee74ffb1d92516bb55a7ca441">NUMBER_OF_GPIO_PINS</a> = 54</td></tr>
-<tr class="memdesc:aa2b60cdee74ffb1d92516bb55a7ca441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of GPIO pins.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa2b60cdee74ffb1d92516bb55a7ca441">More...</a><br /></td></tr>
-<tr class="separator:aa2b60cdee74ffb1d92516bb55a7ca441"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa28dd9d8831088ea75d0c7672ff4d9d5"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa28dd9d8831088ea75d0c7672ff4d9d5">NUMBER_OF_PINS_IN_REG</a> = std::numeric_limits&lt;std::uint32_t&gt;::digits</td></tr>
-<tr class="memdesc:aa28dd9d8831088ea75d0c7672ff4d9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of pins encapsulated in a single register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa28dd9d8831088ea75d0c7672ff4d9d5">More...</a><br /></td></tr>
-<tr class="separator:aa28dd9d8831088ea75d0c7672ff4d9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbf72eb89fd4fea9bf8de658a6dcd102"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#adbf72eb89fd4fea9bf8de658a6dcd102">Reg_Size</a> = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td></tr>
+<tr class="memdesc:adbf72eb89fd4fea9bf8de658a6dcd102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of a single register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#adbf72eb89fd4fea9bf8de658a6dcd102">More...</a><br /></td></tr>
+<tr class="separator:adbf72eb89fd4fea9bf8de658a6dcd102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c13c8158b226a226f9d5173c7bcbe2"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a29c13c8158b226a226f9d5173c7bcbe2">Number_of_GPIO_Pins</a> = 54</td></tr>
+<tr class="memdesc:a29c13c8158b226a226f9d5173c7bcbe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of GPIO pins.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a29c13c8158b226a226f9d5173c7bcbe2">More...</a><br /></td></tr>
+<tr class="separator:a29c13c8158b226a226f9d5173c7bcbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbf61d6ae5daba0d523d35de7908bce6"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#abbf61d6ae5daba0d523d35de7908bce6">Number_Of_Pins_In_Reg</a> = std::numeric_limits&lt;std::uint32_t&gt;::digits</td></tr>
+<tr class="memdesc:abbf61d6ae5daba0d523d35de7908bce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of pins encapsulated in a single register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#abbf61d6ae5daba0d523d35de7908bce6">More...</a><br /></td></tr>
+<tr class="separator:abbf61d6ae5daba0d523d35de7908bce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ad41543dc93d652b60500382196721c"><td class="memItemLeft" align="right" valign="top">static const std::unordered_set&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698">NRegister</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2ad41543dc93d652b60500382196721c">s_read_only_registers</a></td></tr>
 <tr class="memdesc:a2ad41543dc93d652b60500382196721c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of read-only registers (access control)  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2ad41543dc93d652b60500382196721c">More...</a><br /></td></tr>
 <tr class="separator:a2ad41543dc93d652b60500382196721c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad97a66fe9d76238cccffb6afea1133c"><td class="memItemLeft" align="right" valign="top">static const std::unordered_set&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698">NRegister</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aad97a66fe9d76238cccffb6afea1133c">s_write_only_registers</a></td></tr>
 <tr class="memdesc:aad97a66fe9d76238cccffb6afea1133c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of write-only registers (access control)  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aad97a66fe9d76238cccffb6afea1133c">More...</a><br /></td></tr>
 <tr class="separator:aad97a66fe9d76238cccffb6afea1133c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4a9bcbbae95588dfffd9cefca437499"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa4a9bcbbae95588dfffd9cefca437499">NUMBER_OF_REGISTERS</a> = static_cast&lt;std::size_t&gt;(<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698ae93f994f01c537c4e2f7d8528c3eb5e9">NRegister::Count</a>)</td></tr>
-<tr class="memdesc:aa4a9bcbbae95588dfffd9cefca437499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of GPIO registers.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa4a9bcbbae95588dfffd9cefca437499">More...</a><br /></td></tr>
-<tr class="separator:aa4a9bcbbae95588dfffd9cefca437499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae428bf6999910f568d1e5ff348e2c830"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae428bf6999910f568d1e5ff348e2c830">Number_Of_Registers</a> = static_cast&lt;std::size_t&gt;(<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698ae93f994f01c537c4e2f7d8528c3eb5e9">NRegister::Count</a>)</td></tr>
+<tr class="memdesc:ae428bf6999910f568d1e5ff348e2c830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of GPIO registers.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae428bf6999910f568d1e5ff348e2c830">More...</a><br /></td></tr>
+<tr class="separator:ae428bf6999910f568d1e5ff348e2c830"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -291,40 +289,25 @@ Static Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:acea8e786d9b86118342a18f247d9adc0"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::uint32_t, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa4a9bcbbae95588dfffd9cefca437499">NUMBER_OF_REGISTERS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acea8e786d9b86118342a18f247d9adc0">m_regs</a></td></tr>
-<tr class="memdesc:acea8e786d9b86118342a18f247d9adc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO registers.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acea8e786d9b86118342a18f247d9adc0">More...</a><br /></td></tr>
-<tr class="separator:acea8e786d9b86118342a18f247d9adc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8ba793b863bba20c5e3cf153f3665dd"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html">CPin</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa2b60cdee74ffb1d92516bb55a7ca441">NUMBER_OF_GPIO_PINS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ab8ba793b863bba20c5e3cf153f3665dd">m_pins</a></td></tr>
-<tr class="memdesc:ab8ba793b863bba20c5e3cf153f3665dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pins.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ab8ba793b863bba20c5e3cf153f3665dd">More...</a><br /></td></tr>
-<tr class="separator:ab8ba793b863bba20c5e3cf153f3665dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a6c1effcbe75ccf50c7d9dedfe9b623b7">m_logging_system</a></td></tr>
+<tr class="memitem:a8f4c84de60c732982b9ed362dd145b34"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::uint32_t, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae428bf6999910f568d1e5ff348e2c830">Number_Of_Registers</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8f4c84de60c732982b9ed362dd145b34">m_regs</a></td></tr>
+<tr class="memdesc:a8f4c84de60c732982b9ed362dd145b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO registers.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8f4c84de60c732982b9ed362dd145b34">More...</a><br /></td></tr>
+<tr class="separator:a8f4c84de60c732982b9ed362dd145b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca8d66de2f775ce6b1f209dca13f998"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html">CPin</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a29c13c8158b226a226f9d5173c7bcbe2">Number_of_GPIO_Pins</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aaca8d66de2f775ce6b1f209dca13f998">m_pins</a></td></tr>
+<tr class="memdesc:aaca8d66de2f775ce6b1f209dca13f998"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pins.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aaca8d66de2f775ce6b1f209dca13f998">More...</a><br /></td></tr>
+<tr class="separator:aaca8d66de2f775ce6b1f209dca13f998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="memItemLeft" align="right" valign="top">utils::CLogging_System &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a6c1effcbe75ccf50c7d9dedfe9b623b7">m_logging_system</a></td></tr>
 <tr class="memdesc:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging system.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a6c1effcbe75ccf50c7d9dedfe9b623b7">More...</a><br /></td></tr>
 <tr class="separator:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43ed044330df6283b46136be4ea6d001"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html">CInterrupt_Controller</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a43ed044330df6283b46136be4ea6d001">m_interrupt_controller</a></td></tr>
 <tr class="memdesc:a43ed044330df6283b46136be4ea6d001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt controller.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a43ed044330df6283b46136be4ea6d001">More...</a><br /></td></tr>
 <tr class="separator:a43ed044330df6283b46136be4ea6d001"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8f0cb0b2beb927f78b0728b842f1265"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#adca396dee122065df4787820288e9953">External_Peripherals_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa8f0cb0b2beb927f78b0728b842f1265">m_external_peripherals</a></td></tr>
-<tr class="memdesc:aa8f0cb0b2beb927f78b0728b842f1265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of external peripherals.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa8f0cb0b2beb927f78b0728b842f1265">More...</a><br /></td></tr>
-<tr class="separator:aa8f0cb0b2beb927f78b0728b842f1265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c7c68349ed743537a7803e7bc304538"><td class="memItemLeft" align="right" valign="top">std::vector&lt; IExternal_Peripheral * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2c7c68349ed743537a7803e7bc304538">m_external_peripherals</a></td></tr>
+<tr class="memdesc:a2c7c68349ed743537a7803e7bc304538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of external peripherals.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2c7c68349ed743537a7803e7bc304538">More...</a><br /></td></tr>
+<tr class="separator:a2c7c68349ed743537a7803e7bc304538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class represents a GPIO (general-purpose I/O) manager. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="adca396dee122065df4787820288e9953"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adca396dee122065df4787820288e9953">&#9670;&nbsp;</a></span>External_Peripherals_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#adca396dee122065df4787820288e9953">zero_mate::peripheral::CGPIO_Manager::External_Peripherals_t</a> =  std::vector&lt;std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1peripheral_1_1IExternal__Peripheral.html">IExternal_Peripheral</a>&gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a7babe4ce0aef0ec79b8a76bce0cd5e35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7babe4ce0aef0ec79b8a76bce0cd5e35">&#9670;&nbsp;</a></span>NPin_Set_Status</h2>
 
@@ -503,18 +486,12 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a9ecaa919171ea326f918ffd329cf4892_cgraph.svg" width="448" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2bae23db247eae130a35439057e91cd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bae23db247eae130a35439057e91cd9">&#9670;&nbsp;</a></span>Add_External_Peripheral()</h2>
+<a id="acaefed8fb15a4f12929366b58b3b438e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaefed8fb15a4f12929366b58b3b438e">&#9670;&nbsp;</a></span>Add_External_Peripheral()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -522,7 +499,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void zero_mate::peripheral::CGPIO_Manager::Add_External_Peripheral </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> &gt;&#160;</td>
+          <td class="paramtype">IExternal_Peripheral *&#160;</td>
           <td class="paramname"><em>peripheral</em></td><td>)</td>
           <td></td>
         </tr>
@@ -584,7 +561,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a4a4e9cf470ed6f7dbfb3ada75d35e47c_cgraph.svg" width="707" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a4a4e9cf470ed6f7dbfb3ada75d35e47c_cgraph.svg" width="432" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -861,12 +838,6 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p>Implements <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a627a2ceb458041ac41e2de52484c918f">zero_mate::peripheral::IPeripheral</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ac3edf689b30c39f2406fa6308fdeb2e9_cgraph.svg" width="676" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -977,12 +948,6 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ad29d57528b73baef90b0ca885a297e4d_cgraph.svg" width="666" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ad29d57528b73baef90b0ca885a297e4d_icgraph.svg" width="403" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
@@ -1079,12 +1044,6 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ad7c6aa486cf3b116ffae9f16eec64064_cgraph.svg" width="691" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ad7c6aa486cf3b116ffae9f16eec64064_icgraph.svg" width="428" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
@@ -1145,7 +1104,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ae93785da50eefb8a8cc21c1c59a32726_cgraph.svg" width="691" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ae93785da50eefb8a8cc21c1c59a32726_cgraph.svg" width="647" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -1211,15 +1170,15 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a26aa957dbb7682447e4ebf9aa078c00c_cgraph.svg" width="934" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a26aa957dbb7682447e4ebf9aa078c00c_cgraph.svg" width="890" height="340"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa8f0cb0b2beb927f78b0728b842f1265"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8f0cb0b2beb927f78b0728b842f1265">&#9670;&nbsp;</a></span>m_external_peripherals</h2>
+<a id="a2c7c68349ed743537a7803e7bc304538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7c68349ed743537a7803e7bc304538">&#9670;&nbsp;</a></span>m_external_peripherals</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1228,7 +1187,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#adca396dee122065df4787820288e9953">External_Peripherals_t</a> zero_mate::peripheral::CGPIO_Manager::m_external_peripherals</td>
+          <td class="memname">std::vector&lt;IExternal_Peripheral*&gt; zero_mate::peripheral::CGPIO_Manager::m_external_peripherals</td>
         </tr>
       </table>
   </td>
@@ -1276,7 +1235,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a>&amp; zero_mate::peripheral::CGPIO_Manager::m_logging_system</td>
+          <td class="memname">utils::CLogging_System&amp; zero_mate::peripheral::CGPIO_Manager::m_logging_system</td>
         </tr>
       </table>
   </td>
@@ -1290,8 +1249,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ab8ba793b863bba20c5e3cf153f3665dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8ba793b863bba20c5e3cf153f3665dd">&#9670;&nbsp;</a></span>m_pins</h2>
+<a id="aaca8d66de2f775ce6b1f209dca13f998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca8d66de2f775ce6b1f209dca13f998">&#9670;&nbsp;</a></span>m_pins</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1300,7 +1259,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html">CPin</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa2b60cdee74ffb1d92516bb55a7ca441">NUMBER_OF_GPIO_PINS</a>&gt; zero_mate::peripheral::CGPIO_Manager::m_pins</td>
+          <td class="memname">std::array&lt;<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html">CPin</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a29c13c8158b226a226f9d5173c7bcbe2">Number_of_GPIO_Pins</a>&gt; zero_mate::peripheral::CGPIO_Manager::m_pins</td>
         </tr>
       </table>
   </td>
@@ -1314,8 +1273,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="acea8e786d9b86118342a18f247d9adc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acea8e786d9b86118342a18f247d9adc0">&#9670;&nbsp;</a></span>m_regs</h2>
+<a id="a8f4c84de60c732982b9ed362dd145b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f4c84de60c732982b9ed362dd145b34">&#9670;&nbsp;</a></span>m_regs</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1324,7 +1283,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;std::uint32_t, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa4a9bcbbae95588dfffd9cefca437499">NUMBER_OF_REGISTERS</a>&gt; zero_mate::peripheral::CGPIO_Manager::m_regs</td>
+          <td class="memname">std::array&lt;std::uint32_t, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae428bf6999910f568d1e5ff348e2c830">Number_Of_Registers</a>&gt; zero_mate::peripheral::CGPIO_Manager::m_regs</td>
         </tr>
       </table>
   </td>
@@ -1338,8 +1297,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aa2b60cdee74ffb1d92516bb55a7ca441"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2b60cdee74ffb1d92516bb55a7ca441">&#9670;&nbsp;</a></span>NUMBER_OF_GPIO_PINS</h2>
+<a id="a29c13c8158b226a226f9d5173c7bcbe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c13c8158b226a226f9d5173c7bcbe2">&#9670;&nbsp;</a></span>Number_of_GPIO_Pins</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1348,7 +1307,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::size_t zero_mate::peripheral::CGPIO_Manager::NUMBER_OF_GPIO_PINS = 54</td>
+          <td class="memname">constexpr std::size_t zero_mate::peripheral::CGPIO_Manager::Number_of_GPIO_Pins = 54</td>
         </tr>
       </table>
   </td>
@@ -1362,8 +1321,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aa28dd9d8831088ea75d0c7672ff4d9d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa28dd9d8831088ea75d0c7672ff4d9d5">&#9670;&nbsp;</a></span>NUMBER_OF_PINS_IN_REG</h2>
+<a id="abbf61d6ae5daba0d523d35de7908bce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbf61d6ae5daba0d523d35de7908bce6">&#9670;&nbsp;</a></span>Number_Of_Pins_In_Reg</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1372,7 +1331,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::uint32_t zero_mate::peripheral::CGPIO_Manager::NUMBER_OF_PINS_IN_REG = std::numeric_limits&lt;std::uint32_t&gt;::digits</td>
+          <td class="memname">constexpr std::uint32_t zero_mate::peripheral::CGPIO_Manager::Number_Of_Pins_In_Reg = std::numeric_limits&lt;std::uint32_t&gt;::digits</td>
         </tr>
       </table>
   </td>
@@ -1386,8 +1345,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aa4a9bcbbae95588dfffd9cefca437499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4a9bcbbae95588dfffd9cefca437499">&#9670;&nbsp;</a></span>NUMBER_OF_REGISTERS</h2>
+<a id="ae428bf6999910f568d1e5ff348e2c830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae428bf6999910f568d1e5ff348e2c830">&#9670;&nbsp;</a></span>Number_Of_Registers</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1396,7 +1355,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto zero_mate::peripheral::CGPIO_Manager::NUMBER_OF_REGISTERS = static_cast&lt;std::size_t&gt;(<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698ae93f994f01c537c4e2f7d8528c3eb5e9">NRegister::Count</a>)</td>
+          <td class="memname">constexpr auto zero_mate::peripheral::CGPIO_Manager::Number_Of_Registers = static_cast&lt;std::size_t&gt;(<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698ae93f994f01c537c4e2f7d8528c3eb5e9">NRegister::Count</a>)</td>
         </tr>
       </table>
   </td>
@@ -1410,8 +1369,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a8487914af5e11dfb40c672bc2b30c185"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8487914af5e11dfb40c672bc2b30c185">&#9670;&nbsp;</a></span>REG_SIZE</h2>
+<a id="adbf72eb89fd4fea9bf8de658a6dcd102"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbf72eb89fd4fea9bf8de658a6dcd102">&#9670;&nbsp;</a></span>Reg_Size</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1420,7 +1379,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto zero_mate::peripheral::CGPIO_Manager::REG_SIZE = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td>
+          <td class="memname">constexpr auto zero_mate::peripheral::CGPIO_Manager::Reg_Size = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td>
         </tr>
       </table>
   </td>
