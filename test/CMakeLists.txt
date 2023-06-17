@@ -28,6 +28,8 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/elfio/
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/dylib/include/
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/json/include/
         ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 # Link libraries to the executable
