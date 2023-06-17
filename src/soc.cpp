@@ -206,7 +206,7 @@ namespace zero_mate::soc
                 // Attempt to parse the file's contents.
                 return nlohmann::json::parse(config_file);
             }
-            catch (std::exception&)
+            catch ([[maybe_unused]] const std::exception& e)
             {
                 // clang-format off
                 g_logging_system.Error(fmt::format("Failed to parse the config file ({})",
@@ -317,7 +317,7 @@ namespace zero_mate::soc
                     s_external_peripheral_names.insert(config.name);
                 }
             }
-            catch (const std::exception& e)
+            catch ([[maybe_unused]] const std::exception& e)
             {
                 // clang-format off
                 g_logging_system.Error(fmt::format("Failed to load a shared library: path = {}; name = {} ",
