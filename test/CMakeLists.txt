@@ -45,7 +45,7 @@ target_link_libraries(
         demangle
         logger)
 
-# If we are no Windows, copy the library (.dll) to the output directory
+# If we are no Windows, copy logger.dll to the location of the executable
 if (WIN32)
     set(output_directory ${PROJECT_SOURCE_DIR}/output)
     add_custom_command(
