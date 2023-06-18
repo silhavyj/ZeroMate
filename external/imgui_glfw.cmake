@@ -36,3 +36,12 @@ target_link_libraries(
         libglew_static
         glfw
         OpenGL::GL)
+
+# Copy the library to the output directory
+if(NOT WIN32)
+    set(output_directory ${PROJECT_SOURCE_DIR}/output)
+    add_custom_command(
+        TARGET imgui_glfw POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory ${output_directory}
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:imgui_glfw> ${output_directory})
+endif()

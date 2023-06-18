@@ -54,6 +54,14 @@ target_link_libraries(
         demangle
         logger)
 
+# Set the rpath to look for shared libraries relative to the executable
+if(NOT WIN32)
+    set_target_properties(
+        zero_mate PROPERTIES
+        INSTALL_RPATH "$ORIGIN"
+        BUILD_WITH_INSTALL_RPATH TRUE)
+endif()
+
 # Set the output directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output)
 
