@@ -135,7 +135,7 @@ extern "C"
     /// This function is called outside the shared library. It is called by the emulator when it attempts to attach
     /// the peripheral to the GPIO pins.
     ///
-    /// \param peripheral
+    /// \param peripheral Pointer to a pointer to an external peripheral (the actual pointer is in the emulator)
     /// \param name Unique name of the peripheral (e.g. "My button")
     /// \param gpio_pins Collection of GPIO pins the peripherals is hooked up to
     /// \param pin_count Number of GPIO pins used by the peripheral
