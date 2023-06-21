@@ -41,7 +41,7 @@ namespace zero_mate::coprocessor
 
         // Permit unaligned memory access.
         m_regs[NPrimary_Register::C1][static_cast<std::uint32_t>(NC1_Register::Control)] |=
-        static_cast<std::uint32_t>(NC1_Control_Flags::U);
+        static_cast<std::uint32_t>(NC1_Control_Flags::Unaligned_Memory_Access_Enable);
     }
 
     bool CCP15::Is_C1_Control_Flag_Set(NC1_Control_Flags flag) const
@@ -90,7 +90,7 @@ namespace zero_mate::coprocessor
 
     bool CCP15::Is_Unaligned_Access_Permitted() const
     {
-        return Is_C1_Control_Flag_Set(NC1_Control_Flags::U);
+        return Is_C1_Control_Flag_Set(NC1_Control_Flags::Unaligned_Memory_Access_Enable);
     }
 
     void CCP15::Perform_Data_Transfer([[maybe_unused]] arm1176jzf_s::isa::CCoprocessor_Data_Transfer instruction)

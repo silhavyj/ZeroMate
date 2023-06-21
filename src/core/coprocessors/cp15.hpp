@@ -62,7 +62,20 @@ namespace zero_mate::coprocessor
         // -------------------------------------------------------------------------------------------------------------
         enum class NC1_Control_Flags : std::uint32_t
         {
-            U = 0b1U << 22U ///< Enable/disable unaligned memory access
+            MMU_Enable = 0b1U << 0U,                                  ///< Enables MMU
+            Strict_Alignment_Enable = 0b1U << 1U,                     ///< Any memory access must be aligned to 4B
+            Data_Cache_Enable = 0b1U << 2U,                           ///< Enable/disable data cache
+
+            Big_Endian_Mem = 0b1U << 7U,                              ///< Switch between Little and Big endian
+
+            Branch_Prediction_Enable = 0b1U << 11U,                   ///< Enable/disable branch prediction
+            Instruction_Cache_Enable = 0b1U << 12U,                   ///< Enable/disable instruction cache
+            High_Exception_Vectors = 0b1U << 13U,                     ///< IVT is located at 0xFFFF0000
+
+            Low_Interrupt_Latency_Configuration_Enable = 0b1U << 21U, ///< Low latency for FIQ
+            Unaligned_Memory_Access_Enable = 0b1U << 22U,             ///< Enable/disable unaligned memory access
+
+            TEX_Remap_Enable = 0b1U << 28U                            ///< Enable/disable remapping of the TEX bit
         };
 
     public:
