@@ -1,12 +1,13 @@
 #include <cassert>
+#include <utility>
 
 #include "button.hpp"
 
-CButton::CButton(const std::string& name,
+CButton::CButton(std::string name,
                  std::uint32_t pin_idx,
                  zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                 zero_mate::utils::CLogging_System& logging_system)
-: m_name{ name }
+                 zero_mate::utils::CLogging_System* logging_system)
+: m_name{ std::move(name) }
 , m_pin_idx{ pin_idx }
 , m_set_pin{ set_pin }
 , m_output{ false }
@@ -43,7 +44,7 @@ void CButton::Render_Button()
 {
     if (ImGui::Button("Press"))
     {
-        m_logging_system.Info("Button has been pressed");
+        m_logging_system->Info("Button has been pressed");
         Toggle();
     }
 }
@@ -57,19 +58,25 @@ void CButton::Toggle()
 extern "C"
 {
     int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
-                          const std::string& name,
-                          const std::vector<std::uint32_t>& gpio_pins,
+                          const char* name,
+                          const std::uint32_t* gpio_pins,
+                          std::size_t pin_count,
                           zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
-                          zero_mate::utils::CLogging_System& logging_system)
+                          [[maybe_unused]] zero_mate::utils::CLogging_System* logging_system)
     {
+        if (pin_count != 1)
+        {
+            return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::GPIO_Mismatch);
+        }
+
         *peripheral = new (std::nothrow) CButton(name, gpio_pins[0], set_pin, logging_system);
 
         if (*peripheral == nullptr)
         {
-            return 1;
+            return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::Allocation_Error);
         }
 
-        return 0;
+        return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::OK);
     }
 }

@@ -265,8 +265,8 @@ namespace zero_mate::soc
         }
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param config
+        /// \brief Creates an instance of an external peripheral and connects it to the system.
+        /// \param config Configuration of the external peripheral (dll path, name, etc.)
         // -------------------------------------------------------------------------------------------------------------
         inline void Create_External_Peripheral(const TPeripheral_Config& config)
         {
@@ -287,36 +287,68 @@ namespace zero_mate::soc
 
                 // Get the address of the "Create_Peripheral" function located in the shared library.
                 auto create_peripheral = lib->get_function<int(IExternal_Peripheral**,
-                                                               const std::string&,
-                                                               const std::vector<std::uint32_t>&,
-                                                               std::function<void(int, bool)>,
-                                                               std::function<bool(int)>,
-                                                               utils::CLogging_System&)>("Create_Peripheral");
+                                                               const char*,
+                                                               const std::uint32_t*,
+                                                               std::size_t,
+                                                               IExternal_Peripheral::Set_GPIO_Pin_t,
+                                                               IExternal_Peripheral::Read_GPIO_Pin_t,
+                                                               utils::CLogging_System*)>("Create_Peripheral");
 
                 // Create room for the new external peripheral in the collection of all external peripherals
                 g_external_peripherals.emplace_back();
 
                 // Call the extern "Create_Peripheral" function to create the peripheral.
-                const int status = create_peripheral(&g_external_peripherals.back(),
-                                                     config.name,
-                                                     config.pins,
-                                                     Set_GPIO_Pin,
-                                                     Read_GPIO_Pin,
-                                                     g_logging_system);
+                const auto status = static_cast<IExternal_Peripheral::NInit_Status>(
+                create_peripheral(&g_external_peripherals.back(),
+                                  config.name.c_str(),
+                                  config.pins.data(),
+                                  config.pins.size(),
+                                  &Set_GPIO_Pin,
+                                  &Read_GPIO_Pin,
+                                  utils::CSingleton<utils::CLogging_System>::Get_Instance()));
 
-                if (status != 0)
+                switch (status)
+                {
+                    case IExternal_Peripheral::NInit_Status::OK:
+                        // Add the peripheral to the GPIO manager, so it can notify it
+                        // whenever the state of its pins changes.
+                        g_gpio->Add_External_Peripheral(g_external_peripherals.back());
+
+                        // No other external peripheral with the same name can be connected to the system again.
+                        s_external_peripheral_names.insert(config.name);
+                        break;
+
+                    case IExternal_Peripheral::NInit_Status::GPIO_Mismatch:
+                        // clang-format off
+                        g_logging_system.Error(fmt::format("Failed to initialize an external peripheral: path = {}; "
+                                                           "name = {} - number of expected GPIO pins does not match "
+                                                           "the expected value",
+                                                           config.lib_dir, config.lib_name).c_str());
+                        // clang-format on
+                        break;
+
+                    case IExternal_Peripheral::NInit_Status::Allocation_Error:
+                        // clang-format off
+                        g_logging_system.Error(fmt::format("Failed to initialize an external peripheral: path = {}; "
+                                                           "name = {} - allocation failed",
+                                                           config.lib_dir, config.lib_name).c_str());
+                        // clang-format on
+                        break;
+
+                    default:
+                        // clang-format off
+                        g_logging_system.Error(fmt::format("Failed to initialize an external peripheral: path = {}; "
+                                                           "name = {} - unknown error number: {}",
+                                                           config.lib_dir, config.lib_name,
+                                                           static_cast<int>(status)).c_str());
+                        // clang-format on
+                        break;
+                }
+
+                if (status != IExternal_Peripheral::NInit_Status::OK)
                 {
                     // We do not need room for the peripheral as it has not been created successfully.
                     g_external_peripherals.pop_back();
-                }
-                else
-                {
-                    // Add the peripheral to the GPIO manager, so it can notify it
-                    // whenever the state of its pins changes.
-                    g_gpio->Add_External_Peripheral(g_external_peripherals.back());
-
-                    // No other external peripheral with the same name can be connected to the system again.
-                    s_external_peripheral_names.insert(config.name);
                 }
             }
             catch ([[maybe_unused]] const std::exception& e)

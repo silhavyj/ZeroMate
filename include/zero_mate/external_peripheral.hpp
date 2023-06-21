@@ -14,7 +14,6 @@
 #include <string>
 #include <cstdint>
 #include <memory>
-#include <functional>
 #include <unordered_set>
 /// \endcond
 
@@ -30,10 +29,21 @@ namespace zero_mate
     {
     public:
         /// Alias for a function that sets the value of a GPIO pin
-        using Set_GPIO_Pin_t = std::function<int(std::uint32_t, bool)>;
+        using Set_GPIO_Pin_t = int (*)(std::uint32_t, bool);
 
         /// Alias for a function that reads the value of a GPIO pin
-        using Read_GPIO_Pin_t = std::function<bool(std::uint32_t)>;
+        using Read_GPIO_Pin_t = bool (*)(std::uint32_t);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \enum NInit_Status
+        /// \brief Defines values that can be returned from the #Create_Peripheral function.
+        // -------------------------------------------------------------------------------------------------------------
+        enum class NInit_Status
+        {
+            OK = 0,          ///< All went well
+            GPIO_Mismatch,   ///< Number of GPIO pins does not match the expected value
+            Allocation_Error ///< Failed to create (allocate) the peripheral
+        };
 
     public:
         // -------------------------------------------------------------------------------------------------------------
@@ -128,15 +138,17 @@ extern "C"
     /// \param peripheral
     /// \param name Unique name of the peripheral (e.g. "My button")
     /// \param gpio_pins Collection of GPIO pins the peripherals is hooked up to
+    /// \param pin_count Number of GPIO pins used by the peripheral
     /// \param set_pin Reference to a function the peripheral can use to set GPIO pins
     /// \param read_pin Reference to a function the peripheral can use to read values of GPIO pins
-    /// \param logging_system Reference to the logging system that is used throughout the project
+    /// \param logging_system Pointer to the logging system that is used throughout the project
     /// \return 0, if all goes well and the peripheral is created successfully. 1, otherwise.
     // -----------------------------------------------------------------------------------------------------------------
     int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
-                          const std::string& name,
-                          const std::vector<std::uint32_t>& gpio_pins,
+                          const char* name,
+                          const std::uint32_t* gpio_pins,
+                          std::size_t pin_count,
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
-                          [[maybe_unused]] zero_mate::utils::CLogging_System& logging_system);
+                          [[maybe_unused]] zero_mate::utils::CLogging_System* logging_system);
 }
