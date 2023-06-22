@@ -113,19 +113,26 @@ namespace zero_mate::gui
 
     void CLog_Window::Set_Log_Message_Color(const std::string& msg)
     {
-        if (msg.starts_with(utils::CLogging_System::Debug_Msg_Prefix))
+        if (msg.length() <= 10)
+        {
+            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, 1.0f));
+        }
+
+        const std::string msg_with_no_timestamp = msg.substr(10);
+
+        if (msg_with_no_timestamp.starts_with(utils::CLogging_System::Debug_Msg_Prefix))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 0.7f, 1.0f, 1.0f));
         }
-        else if (msg.starts_with(utils::CLogging_System::Info_Msg_Prefix))
+        else if (msg_with_no_timestamp.starts_with(utils::CLogging_System::Info_Msg_Prefix))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 1.0f, 0.0f, 1.0f));
         }
-        else if (msg.starts_with(utils::CLogging_System::Warning_Msg_Prefix))
+        else if (msg_with_no_timestamp.starts_with(utils::CLogging_System::Warning_Msg_Prefix))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 0.0f, 1.0f));
         }
-        else if (msg.starts_with(utils::CLogging_System::Error_Msg_Prefix))
+        else if (msg_with_no_timestamp.starts_with(utils::CLogging_System::Error_Msg_Prefix))
         {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
         }

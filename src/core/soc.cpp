@@ -287,8 +287,8 @@ namespace zero_mate::soc
 
                 // Get the address of the "Create_Peripheral" function located in the shared library.
                 auto create_peripheral = lib->get_function<int(IExternal_Peripheral**,
-                                                               const char*,
-                                                               const std::uint32_t*,
+                                                               const char* const,
+                                                               const std::uint32_t* const,
                                                                std::size_t,
                                                                IExternal_Peripheral::Set_GPIO_Pin_t,
                                                                IExternal_Peripheral::Read_GPIO_Pin_t,
