@@ -63,8 +63,8 @@ namespace zero_mate::coprocessor
         if (!m_regs.contains(primary_reg))
         {
             // clang-format off
-            m_logging_system.Error(fmt::format("CP15: {} register has not been implemented yet",
-                                               magic_enum::enum_name(primary_reg)).c_str());
+            m_logging_system.Error(fmt::format("CP15: c{} register has not been implemented yet",
+                                               instruction.Get_CRn_Idx()).c_str());
             // clang-format on
 
             return;

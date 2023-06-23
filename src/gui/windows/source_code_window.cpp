@@ -108,7 +108,7 @@ namespace zero_mate::gui
             ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(color.r, color.g, color.b, 0.5f));
         }
 
-        if (ImGui::CollapsingHeader(m_source_code[idx].disassembly.c_str()))
+        if (ImGui::CollapsingHeader(fmt::format("{}##{}", m_source_code[idx].disassembly, m_source_code[idx].index).c_str()))
         {
             if (highlight_code_block || is_class_member)
             {
