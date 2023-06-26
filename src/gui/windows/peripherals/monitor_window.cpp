@@ -13,7 +13,9 @@ namespace zero_mate::gui
     {
         if (ImGui::Begin("Monitor"))
         {
-            ImGui::Text("Debug monitor: %dx%d 8-bit characters", peripheral::CMonitor::Width, peripheral::CMonitor::Height);
+            ImGui::Text("Debug monitor: %dx%d 8-bit characters",
+                        peripheral::CMonitor::Width,
+                        peripheral::CMonitor::Height);
             ImGui::Separator();
 
             for (std::uint32_t y = 0; y < peripheral::CMonitor::Height; ++y)
@@ -23,7 +25,11 @@ namespace zero_mate::gui
                 ImGui::SameLine();
 
                 ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(255, 255, 0, 255));
-                ImGui::Text("%s", m_monitor->Get_Data().substr(static_cast<std::size_t>(y) * peripheral::CMonitor::Width, peripheral::CMonitor::Width).c_str());
+                ImGui::Text(
+                "%s",
+                m_monitor->Get_Data()
+                .substr(static_cast<std::size_t>(y) * peripheral::CMonitor::Width, peripheral::CMonitor::Width)
+                .c_str());
                 ImGui::PopStyleColor(2);
             }
             ImGui::Separator();

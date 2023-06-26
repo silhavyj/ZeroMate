@@ -23,7 +23,10 @@ namespace zero_mate::gui
             S32
         };
 
-        void Render_Registers_Table(const char* const title, const char* const type, NFormat format, arm1176jzf_s::CCPU_Context::NCPU_Mode mode);
+        void Render_Registers_Table(const char* const title,
+                                    const char* const type,
+                                    NFormat format,
+                                    arm1176jzf_s::CCPU_Context::NCPU_Mode mode);
         void Render_Register_Tabs(arm1176jzf_s::CCPU_Context::NCPU_Mode mode);
         void Render_Flags();
         void Render_Value(std::uint32_t value, NFormat format);

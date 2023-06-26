@@ -39,7 +39,8 @@ namespace zero_mate::soc
     std::shared_ptr<peripheral::CRAM> g_ram{ nullptr };
     std::shared_ptr<zero_mate::CBus> g_bus = std::make_shared<CBus>();
     std::shared_ptr<arm1176jzf_s::CCPU_Core> g_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, g_bus);
-    std::shared_ptr<coprocessor::CCP15> g_cp15 = std::make_shared<coprocessor::CCP15>(g_cpu->Get_CPU_Context());
+    std::shared_ptr<coprocessor::cp15::CCP15> g_cp15 =
+    std::make_shared<coprocessor::cp15::CCP15>(g_cpu->Get_CPU_Context());
     std::shared_ptr<peripheral::CInterrupt_Controller> g_ic =
     std::make_shared<peripheral::CInterrupt_Controller>(g_cpu->Get_CPU_Context());
     std::shared_ptr<peripheral::CARM_Timer> g_arm_timer = std::make_shared<peripheral::CARM_Timer>(g_ic);
@@ -175,7 +176,7 @@ namespace zero_mate::soc
             // Attach the interrupt controller, ARM timer, and CP15 to the CPU.
             g_cpu->Set_Interrupt_Controller(g_ic);
             g_cpu->Register_System_Clock_Listener(g_arm_timer);
-            g_cpu->Add_Coprocessor(coprocessor::CCP15::ID, g_cp15);
+            g_cpu->Add_Coprocessor(coprocessor::cp15::CCP15::ID, g_cp15);
 
             // Add a reference to CP15 to the bus, so it knows whether to check for unaligned memory access.
             g_bus->Set_CP15(g_cp15);

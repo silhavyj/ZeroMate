@@ -80,7 +80,7 @@ namespace zero_mate::utils::elf
         /// \param bus Bus used to access the RAM
         /// \param elf_reader Reference to an ELF reader
         // -------------------------------------------------------------------------------------------------------------
-        inline void Map_Segments_To_RAM([[maybe_unused]] CBus& bus, const ELFIO::elfio& elf_reader)
+        inline void Map_Segments_To_RAM(CBus& bus, const ELFIO::elfio& elf_reader)
         {
             // Get the total number of ELF segments.
             const ELFIO::Elf_Half number_of_segments = elf_reader.segments.size();

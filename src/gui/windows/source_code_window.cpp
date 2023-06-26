@@ -47,7 +47,8 @@ namespace zero_mate::gui
                 return false;
             }
 
-            if (!m_cpu_running && m_source_code[i].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
+            if (!m_cpu_running &&
+                m_source_code[i].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
             {
                 return true;
             }
@@ -80,11 +81,9 @@ namespace zero_mate::gui
     {
         const std::size_t hash_value = std::hash<std::string>()(str) % 0xFFFFFFU;
 
-        return {
-            static_cast<float>((hash_value & 0xFF0000U) >> 16U) / 255.0f,
-            static_cast<float>((hash_value & 0x00FF00U) >> 8U) / 255.0f,
-            static_cast<float>(hash_value & 0x0000FFU) / 255.0f
-        };
+        return { static_cast<float>((hash_value & 0xFF0000U) >> 16U) / 255.0f,
+                 static_cast<float>((hash_value & 0x00FF00U) >> 8U) / 255.0f,
+                 static_cast<float>(hash_value & 0x0000FFU) / 255.0f };
     }
 
     void CSource_Code_Window::Render_Code_Block(std::size_t& idx)
@@ -108,19 +107,25 @@ namespace zero_mate::gui
             ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(color.r, color.g, color.b, 0.5f));
         }
 
-        if (ImGui::CollapsingHeader(fmt::format("{}##{}", m_source_code[idx].disassembly, m_source_code[idx].index).c_str()))
+        if (ImGui::CollapsingHeader(
+            fmt::format("{}##{}", m_source_code[idx].disassembly, m_source_code[idx].index).c_str()))
         {
             if (highlight_code_block || is_class_member)
             {
                 ImGui::PopStyleColor(2);
             }
-            if (ImGui::BeginTable(fmt::format("##source_code_table{}", m_source_code[idx].disassembly).c_str(), 4,
+            if (ImGui::BeginTable(fmt::format("##source_code_table{}", m_source_code[idx].disassembly).c_str(),
+                                  4,
                                   Table_Flags))
             {
-                ImGui::TableSetupColumn(fmt::format("##breakpoint{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthFixed);
-                ImGui::TableSetupColumn(fmt::format("Address##{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthFixed);
-                ImGui::TableSetupColumn(fmt::format("Opcode##{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthFixed);
-                ImGui::TableSetupColumn(fmt::format("Disassembly##{}", m_source_code[idx].disassembly).c_str(), ImGuiTableColumnFlags_WidthStretch);
+                ImGui::TableSetupColumn(fmt::format("##breakpoint{}", m_source_code[idx].disassembly).c_str(),
+                                        ImGuiTableColumnFlags_WidthFixed);
+                ImGui::TableSetupColumn(fmt::format("Address##{}", m_source_code[idx].disassembly).c_str(),
+                                        ImGuiTableColumnFlags_WidthFixed);
+                ImGui::TableSetupColumn(fmt::format("Opcode##{}", m_source_code[idx].disassembly).c_str(),
+                                        ImGuiTableColumnFlags_WidthFixed);
+                ImGui::TableSetupColumn(fmt::format("Disassembly##{}", m_source_code[idx].disassembly).c_str(),
+                                        ImGuiTableColumnFlags_WidthStretch);
 
                 ImGui::TableHeadersRow();
 
@@ -136,7 +141,9 @@ namespace zero_mate::gui
                     }
 
                     ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(1.f, 0.f, 0.f, 1.f));
-                    if (ImGui::RadioButton(fmt::format("##{}", m_source_code[idx].addr).c_str(), m_breakpoints[m_source_code[idx].addr]) && !m_cpu_running)
+                    if (ImGui::RadioButton(fmt::format("##{}", m_source_code[idx].addr).c_str(),
+                                           m_breakpoints[m_source_code[idx].addr]) &&
+                        !m_cpu_running)
                     {
                         m_breakpoints[m_source_code[idx].addr] = !m_breakpoints[m_source_code[idx].addr];
                         if (m_breakpoints[m_source_code[idx].addr])
@@ -174,7 +181,8 @@ namespace zero_mate::gui
                         ImGui::Text("%s", m_source_code[idx].disassembly.c_str());
                     }
 
-                    if (!m_cpu_running && m_source_code[idx].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
+                    if (!m_cpu_running &&
+                        m_source_code[idx].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
                     {
                         const ImU32 cell_bg_color = ImGui::GetColorU32(ImVec4(1.0f, 1.0f, 0.0f, 0.3f));
                         ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, cell_bg_color);
@@ -207,7 +215,8 @@ namespace zero_mate::gui
                     break;
                 }
 
-                if (!m_cpu_running && m_source_code[idx].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
+                if (!m_cpu_running &&
+                    m_source_code[idx].addr == m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
                 {
                     if (m_scroll_to_curr_line && !ImGui::IsItemVisible())
                     {

@@ -34,42 +34,57 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::Text("Load");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::Load)).c_str());
+            ImGui::Text("%s",
+                        fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::Load)).c_str());
 
             ImGui::TableNextColumn();
             ImGui::Text("Value");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::Value)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::Value)).c_str());
 
             ImGui::TableNextColumn();
             ImGui::Text("IRQ Clear");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::IRQ_Clear)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::IRQ_Clear)).c_str());
 
             ImGui::TableNextColumn();
             ImGui::Text("IRQ Raw");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::IRQ_Raw)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::IRQ_Raw)).c_str());
 
             ImGui::TableNextColumn();
             ImGui::Text("IRQ Masked");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::IRQ_Masked)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::IRQ_Masked)).c_str());
 
             ImGui::TableNextColumn();
             ImGui::Text("Reload");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::Reload)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::Reload)).c_str());
 
             ImGui::TableNextColumn();
             ImGui::Text("Pre divider");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::Pre_Divider)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::Pre_Divider)).c_str());
 
             ImGui::TableNextColumn();
             ImGui::Text("Free running");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::Free_Running)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("0x{:08X}", m_arm_timer->Get_Reg(peripheral::CARM_Timer::NRegister::Free_Running)).c_str());
 
             ImGui::EndTable();
         }

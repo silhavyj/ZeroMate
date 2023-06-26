@@ -53,7 +53,8 @@ namespace zero_mate::gui
                             peripheral->Reset();
                         });
 
-                        const auto [error_code, pc, disassembly] = utils::elf::Load_Kernel(*m_bus, s_elf_filename.c_str());
+                        const auto [error_code, pc, disassembly] =
+                        utils::elf::Load_Kernel(*m_bus, s_elf_filename.c_str());
 
                         switch (error_code)
                         {
@@ -61,7 +62,11 @@ namespace zero_mate::gui
                                 m_cpu->Reset_Context();
                                 m_cpu->Set_PC(pc);
                                 m_source_code = disassembly;
-                                m_logging_system.Info(fmt::format("The .ELF file has been loaded successfully. The program starts at 0x{:08X}", pc).c_str());
+                                m_logging_system.Info(
+                                fmt::format(
+                                "The .ELF file has been loaded successfully. The program starts at 0x{:08X}",
+                                pc)
+                                .c_str());
                                 m_elf_file_has_been_loaded = true;
                                 break;
 
@@ -70,7 +75,8 @@ namespace zero_mate::gui
                                 break;
 
                             case utils::elf::NError_Code::ELF_Loader_Error:
-                                m_logging_system.Error("Failed to load the ELF file. Make sure you entered a valid path to a valid ELF file");
+                                m_logging_system.Error(
+                                "Failed to load the ELF file. Make sure you entered a valid path to a valid ELF file");
                                 break;
 
                             case utils::elf::NError_Code::Disassembly_Engine_Error:

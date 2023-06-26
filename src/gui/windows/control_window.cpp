@@ -110,7 +110,8 @@ namespace zero_mate::gui
         switch (error_code)
         {
             case utils::elf::NError_Code::OK:
-                m_logging_system.Info(fmt::format("The .ELF file has been loaded successfully. The program starts at 0x{:08X}", pc).c_str());
+                m_logging_system.Info(
+                fmt::format("The .ELF file has been loaded successfully. The program starts at 0x{:08X}", pc).c_str());
                 break;
 
             case utils::elf::NError_Code::ELF_64_Not_Supported:
@@ -118,7 +119,8 @@ namespace zero_mate::gui
                 break;
 
             case utils::elf::NError_Code::ELF_Loader_Error:
-                m_logging_system.Error("Failed to load the ELF file. Make sure you entered a valid path to a valid ELF file");
+                m_logging_system.Error(
+                "Failed to load the ELF file. Make sure you entered a valid path to a valid ELF file");
                 break;
 
             case utils::elf::NError_Code::Disassembly_Engine_Error:
@@ -181,7 +183,9 @@ namespace zero_mate::gui
             {
                 m_breakpoint_hit = true;
                 m_stop_cpu_thread = true;
-                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}", m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx]).c_str());
+                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}",
+                                                  m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
+                                      .c_str());
             }
 
             const auto curr_pc = m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx];

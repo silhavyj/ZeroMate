@@ -2,14 +2,14 @@
 
 #include "../window.hpp"
 
-#include "../../core/coprocessors/cp15.hpp"
+#include "../../core/coprocessors/cp15/cp15.hpp"
 
 namespace zero_mate::gui
 {
     class CCP15_Window final : public IGUI_Window
     {
     public:
-        explicit CCP15_Window(std::shared_ptr<coprocessor::CCP15> cp15);
+        explicit CCP15_Window(std::shared_ptr<coprocessor::cp15::CCP15> cp15);
 
         void Render() override;
 
@@ -21,6 +21,6 @@ namespace zero_mate::gui
                                                        ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |
                                                        ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;
 
-        std::shared_ptr<coprocessor::CCP15> m_cp15;
+        std::shared_ptr<coprocessor::cp15::CCP15> m_cp15;
     };
 }

@@ -20,7 +20,7 @@
 
 // Project file imports
 
-#include "coprocessors/cp15.hpp"
+#include "coprocessors/cp15/cp15.hpp"
 #include "peripherals/peripheral.hpp"
 #include "arm1176jzf_s/exceptions.hpp"
 
@@ -92,7 +92,7 @@ namespace zero_mate
         ///
         /// \param cp15 Instance of CP15
         // -------------------------------------------------------------------------------------------------------------
-        void Set_CP15(std::shared_ptr<coprocessor::CCP15> cp15);
+        void Set_CP15(std::shared_ptr<coprocessor::cp15::CCP15> cp15);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Writes data to the given address in the address space.
@@ -165,7 +165,17 @@ namespace zero_mate
         template<typename Type>
         [[nodiscard]] inline bool Unaligned_Access_Violation(std::uint32_t addr) const
         {
-            return m_cp15 != nullptr && !m_cp15->Is_Unaligned_Access_Permitted() && (addr % sizeof(Type)) != 0;
+            // Make sure CP15 is preset.
+            if (m_cp15 == nullptr)
+            {
+                return false;
+            }
+
+            // Retrieve the secondary register in which the desired flag is located
+            const auto cp15_c1 =
+            m_cp15->Get_Primary_Register<coprocessor::cp15::CC1>(coprocessor::cp15::NPrimary_Register::C1);
+
+            return !cp15_c1->Is_Unaligned_Access_Permitted() && (addr % sizeof(Type)) != 0;
         }
 
         // -------------------------------------------------------------------------------------------------------------
@@ -266,9 +276,9 @@ namespace zero_mate
         }
 
     private:
-        Peripherals_t m_peripherals;                ///< Collection of all memory-mapped peripherals
-        std::mutex m_mtx;                           ///< Mutex to make memory accesses thread-safe
-        std::shared_ptr<coprocessor::CCP15> m_cp15; ///< Reference to CP15 (coprocessor 15)
+        Peripherals_t m_peripherals;                      ///< Collection of all memory-mapped peripherals
+        std::mutex m_mtx;                                 ///< Mutex to make memory accesses thread-safe
+        std::shared_ptr<coprocessor::cp15::CCP15> m_cp15; ///< Reference to CP15 (coprocessor 15)
     };
 
 } // namespace zero_mate
