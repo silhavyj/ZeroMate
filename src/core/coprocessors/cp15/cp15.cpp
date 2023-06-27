@@ -27,6 +27,9 @@ namespace zero_mate::coprocessor::cp15
     {
         // Create primary registers of coprocessor CP15.
         m_regs[static_cast<std::uint32_t>(NPrimary_Register::C1)] = std::make_shared<CC1>();
+        m_regs[static_cast<std::uint32_t>(NPrimary_Register::C2)] = std::make_shared<CC2>();
+        m_regs[static_cast<std::uint32_t>(NPrimary_Register::C3)] = std::make_shared<CC3>();
+        m_regs[static_cast<std::uint32_t>(NPrimary_Register::C7)] = std::make_shared<CC7>();
     }
 
     void CCP15::Perform_Register_Transfer(arm1176jzf_s::isa::CCoprocessor_Reg_Transfer instruction)
@@ -39,7 +42,7 @@ namespace zero_mate::coprocessor::cp15
         // Make sure the primary register exists/has been implemented.
         if (!m_regs.contains(crn_idx))
         {
-            m_logging_system.Error(fmt::format("CP15: CRn c{} register has not been implemented yet", crn_idx).c_str());
+            m_logging_system.Error(fmt::format("CP15: CRn C{} register has not been implemented yet", crn_idx).c_str());
             return;
         }
 

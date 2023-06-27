@@ -72,5 +72,3 @@ option(BUILD_DOC "Build Documentation" ON)
 if (BUILD_DOC)
     include(cmake/doxygen.cmake)
 endif()
-
-# EOF

@@ -15,6 +15,9 @@ namespace zero_mate::gui
 
     private:
         inline void Render_Primary_Register_C1();
+        inline void Render_Primary_Register_C2();
+        inline void Render_Primary_Register_C3();
+        inline void Render_Primary_Register_C7();
 
     private:
         static constexpr ImGuiTableFlags Table_Flags = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |

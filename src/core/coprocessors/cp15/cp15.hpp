@@ -21,6 +21,9 @@
 // Project file imports
 
 #include "c1.hpp"
+#include "c2.hpp"
+#include "c3.hpp"
+#include "c7.hpp"
 #include "primary_reg.hpp"
 #include "../coprocessor.hpp"
 #include "zero_mate/utils/logger.hpp"

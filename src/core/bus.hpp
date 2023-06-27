@@ -175,7 +175,9 @@ namespace zero_mate
             const auto cp15_c1 =
             m_cp15->Get_Primary_Register<coprocessor::cp15::CC1>(coprocessor::cp15::NPrimary_Register::C1);
 
-            return !cp15_c1->Is_Unaligned_Access_Permitted() && (addr % sizeof(Type)) != 0;
+            return !cp15_c1->Is_Control_Flag_Set(
+                   coprocessor::cp15::CC1::NC0_Control_Flags::Unaligned_Memory_Access_Enable) &&
+                   (addr % sizeof(Type)) != 0;
         }
 
         // -------------------------------------------------------------------------------------------------------------

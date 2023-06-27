@@ -18,6 +18,10 @@
 #include <unordered_map>
 /// \endcond
 
+// Project file imports
+
+#include "zero_mate/utils/logger.hpp"
+
 namespace zero_mate::coprocessor::cp15
 {
     // -----------------------------------------------------------------------------------------------------------------
@@ -26,7 +30,10 @@ namespace zero_mate::coprocessor::cp15
     // -----------------------------------------------------------------------------------------------------------------
     enum class NPrimary_Register : std::uint32_t
     {
-        C1 = 1 ///< C1 primary register
+        C1 = 1, ///< C1 primary register
+        C2 = 2, ///< C2 primary register
+        C3 = 3, ///< C3 primary register (domain access control)
+        C7 = 7  ///< C7 primary register
     };
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -36,6 +43,9 @@ namespace zero_mate::coprocessor::cp15
     class IPrimary_Reg
     {
     public:
+        /// Value to be returned when accessing a register that does not exist (has not been implemented yet)
+        static constexpr auto Invalid_Reg_Value = static_cast<std::uint32_t>(0);
+
         /// Alias for the structure of the register of the primary register (just to make the code less wordy).
         using Registers_t = std::unordered_map<std::uint32_t, std::unordered_map<std::uint32_t, std::uint32_t>>;
 
@@ -43,7 +53,7 @@ namespace zero_mate::coprocessor::cp15
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Creates an instance of the class.
         // -------------------------------------------------------------------------------------------------------------
-        IPrimary_Reg() = default;
+        IPrimary_Reg();
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Destroys (deletes) the object from the memory.
@@ -80,7 +90,7 @@ namespace zero_mate::coprocessor::cp15
         /// \param op2 Index of the register of the secondary register (e.g. Control, AUX, etc.)
         /// \return Reference to the desired register
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] virtual std::uint32_t& Get_Reg(std::uint32_t crm_idx, std::uint32_t op2) = 0;
+        [[nodiscard]] std::uint32_t& Get_Reg(std::uint32_t crm_idx, std::uint32_t op2);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns const a reference to the register addressed by a secondary register index and op2
@@ -90,7 +100,17 @@ namespace zero_mate::coprocessor::cp15
         /// \param op2 Index of the register of the secondary register (e.g. Control, AUX, etc.)
         /// \return Const reference to the desired register
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] virtual const std::uint32_t& Get_Reg(std::uint32_t crm_idx, std::uint32_t op2) const = 0;
+        [[nodiscard]] const std::uint32_t& Get_Reg(std::uint32_t crm_idx, std::uint32_t op2) const;
+
+    private:
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks whether a register addressed by a secondary register index and op2 exists or not.
+        /// \param regs Registers of the primary registers
+        /// \param crm_idx Index of the secondary register
+        /// \param op2 Index of the register of the secondary register (e.g. Control, AUX, etc.)
+        /// \return true, if the register exists. false otherwise.
+        // -------------------------------------------------------------------------------------------------------------
+        bool Register_Exists(const Registers_t& regs, std::uint32_t crm_idx, std::uint32_t op2) const;
 
     protected:
         // -------------------------------------------------------------------------------------------------------------
@@ -100,6 +120,11 @@ namespace zero_mate::coprocessor::cp15
         /// \return true, if the flag is set. false, otherwise.
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] static bool Is_Flag_Set(std::uint32_t reg, std::uint32_t flag);
+
+    protected:
+        mutable std::uint32_t m_invalid_reg;      ///< Invalid register value (helper variable)
+        utils::CLogging_System& m_logging_system; ///< Logging system
+        Registers_t m_regs;                       ///< Registers of the primary primary register
     };
 
 } // namespace zero_mate::coprocessor::cp15

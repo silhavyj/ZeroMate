@@ -14,7 +14,7 @@ TEST(enable_unaligned_access, test_01)
     cpu.Add_Coprocessor(coprocessor::cp15::CCP15::ID, cp15);
 
     const auto cp15_c1 = cp15->Get_Primary_Register<coprocessor::cp15::CC1>(coprocessor::cp15::NPrimary_Register::C1);
-    EXPECT_EQ(cp15_c1->Is_Unaligned_Access_Permitted(), true);
+    EXPECT_EQ(cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::Unaligned_Memory_Access_Enable), true);
 
     cpu.Execute({
     { 0xee114f10 }, // mrc p15, #0, r4, c1, c0, #0
@@ -22,7 +22,7 @@ TEST(enable_unaligned_access, test_01)
     { 0xee014f10 }  // mcr p15, #0, r4, c1, c0, #0
     });
 
-    EXPECT_EQ(cp15_c1->Is_Unaligned_Access_Permitted(), true);
+    EXPECT_EQ(cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::Unaligned_Memory_Access_Enable), true);
 }
 
 TEST(disable_unaligned_access, test_02)
@@ -33,7 +33,7 @@ TEST(disable_unaligned_access, test_02)
     cpu.Add_Coprocessor(coprocessor::cp15::CCP15::ID, cp15);
 
     const auto cp15_c1 = cp15->Get_Primary_Register<coprocessor::cp15::CC1>(coprocessor::cp15::NPrimary_Register::C1);
-    EXPECT_EQ(cp15_c1->Is_Unaligned_Access_Permitted(), true);
+    EXPECT_EQ(cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::Unaligned_Memory_Access_Enable), true);
 
     cpu.Execute({
     { 0xee114f10 }, // mrc p15, #0, r4, c1, c0, #0
@@ -42,5 +42,5 @@ TEST(disable_unaligned_access, test_02)
     { 0xee014f10 }  // mcr p15, #0, r4, c1, c0, #0
     });
 
-    EXPECT_EQ(cp15_c1->Is_Unaligned_Access_Permitted(), false);
+    EXPECT_EQ(cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::Unaligned_Memory_Access_Enable), false);
 }
