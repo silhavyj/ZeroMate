@@ -25,6 +25,11 @@ namespace zero_mate::coprocessor::cp15
     : ICoprocessor{ cpu_context }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
+       Reset();
+    }
+
+    void CCP15::Reset()
+    {
         // Create primary registers of coprocessor CP15.
         m_regs[static_cast<std::uint32_t>(NPrimary_Register::C1)] = std::make_shared<CC1>();
         m_regs[static_cast<std::uint32_t>(NPrimary_Register::C2)] = std::make_shared<CC2>();

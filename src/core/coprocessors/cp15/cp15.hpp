@@ -48,6 +48,11 @@ namespace zero_mate::coprocessor::cp15
         explicit CCP15(arm1176jzf_s::CCPU_Context& cpu_context);
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets the coprocessor.
+        // -------------------------------------------------------------------------------------------------------------
+        void Reset() override;
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns a primary register of a given type.
         ///
         /// All primary registers are held by this class as IPrimary_Reg, which they all inherit from. When the caller

@@ -49,34 +49,7 @@ namespace zero_mate::utils::elf
         };
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Maps an ELF section into the RAM which is accessed through the bus.
-        /// \param bus Bus that is used to access the RAM
-        /// \param section Section to be mapped to the RAM
-        // -------------------------------------------------------------------------------------------------------------
-        inline void Map_Section_To_RAM(CBus& bus, ELFIO::Elf64_Addr physical_addr, const ELFIO::section& section)
-        {
-            // Retrieve the data of the given section.
-            const char* data = section.get_data();
-
-            // Make sure it is not the BSS section.
-            if (data == nullptr)
-            {
-                return;
-            }
-
-            // Iterate over the data of the section (byte by byte).
-            for (ELFIO::Elf_Xword i = 0; i < section.get_size(); ++i)
-            {
-                const auto value = static_cast<std::uint8_t>(data[i]);
-                const auto addr = static_cast<std::uint32_t>(physical_addr + section.get_offset() + i);
-
-                // Map the byte to its corresponding address.
-                bus.Write<std::uint8_t>(addr, value);
-            }
-        }
-
-        // -------------------------------------------------------------------------------------------------------------
-        /// \brief Maps a segment of an ELF file to RAM.
+        /// \brief Maps all segments of an ELF file to RAM.
         /// \param bus Bus used to access the RAM
         /// \param elf_reader Reference to an ELF reader
         // -------------------------------------------------------------------------------------------------------------
@@ -88,24 +61,20 @@ namespace zero_mate::utils::elf
             // Iterate over the segments.
             for (ELFIO::Elf_Half idx = 0; idx < number_of_segments; ++idx)
             {
-                // Retrieve the current, number of ELF section that fall under this segment, and its physical address.
                 const ELFIO::segment& segment = *elf_reader.segments[idx];
-                const ELFIO::Elf_Half number_of_sections = segment.get_sections_num();
                 const ELFIO::Elf64_Addr physical_addr = segment.get_physical_address();
+                const ELFIO::Elf64_Addr segment_size = segment.get_file_size();
 
-                // Go over all ELF sections of the current ELF segment.
-                for (ELFIO::Elf_Half i = 0; i < number_of_sections; ++i)
+                const char* data = segment.get_data();
+
+                // Map the data of the segment into RAM
+                for (ELFIO::Elf_Xword i = 0; i < segment_size; ++i)
                 {
-                    // Retrieve the ELF section.
-                    const ELFIO::Elf_Half section_idx = segment.get_section_index_at(i);
-                    const ELFIO::section& section = *elf_reader.sections[section_idx];
+                    const auto value = static_cast<std::uint8_t>(data[i]);
+                    const auto addr = static_cast<std::uint32_t>(physical_addr + i);
 
-                    // Check whether it should be mapped to the RAM.
-                    if ((section.get_flags() & ELFIO::SHF_ALLOC) == ELFIO::SHF_ALLOC)
-                    {
-                        // Map it to the RAM.
-                        Map_Section_To_RAM(bus, physical_addr, section);
-                    }
+                    // Map the byte to its corresponding address.
+                    bus.Write<std::uint8_t>(addr, value);
                 }
             }
         }
