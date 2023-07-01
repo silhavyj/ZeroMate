@@ -31,8 +31,10 @@ namespace zero_mate::coprocessor::cp15
         // -------------------------------------------------------------------------------------------------------------
         enum class NCRm : std::uint32_t
         {
-            C5 = 5, ///< CRm = 5
-            C6 = 6  ///< CRm = 6
+            C5 = 5,  ///< CRm = 5
+            C6 = 6,  ///< CRm = 6
+            C7 = 7,  ///< CRm = 7
+            C10 = 10 ///< CRm = 10
         };
 
         // -------------------------------------------------------------------------------------------------------------
@@ -51,6 +53,24 @@ namespace zero_mate::coprocessor::cp15
         enum class NCRm_C6_Register : std::uint32_t
         {
             Invalidate_Entire_Data_Cache = 0 ///< Invalidate entire data cache
+        };
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \enum NCRm_C7_Register
+        /// \brief Enumeration of the registers of the NCRm::C7 secondary register.
+        // -------------------------------------------------------------------------------------------------------------
+        enum class NCRm_C7_Register : std::uint32_t
+        {
+            Invalidate_Both_Caches = 0 ///< Invalidate both caches
+        };
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \enum NCRm_C10_Register
+        /// \brief Enumeration of the registers of the NCRm::C10 secondary register.
+        // -------------------------------------------------------------------------------------------------------------
+        enum class NCRm_C10_Register : std::uint32_t
+        {
+            Data_Synchronization_Barrier = 4 ///< Data synchronization barrier
         };
 
     public:
@@ -73,6 +93,18 @@ namespace zero_mate::coprocessor::cp15
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] bool Is_Invalidate_Entire_Data_Cache_Set() const;
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks whether the invalidate both caches register is NOT set to 0.
+        /// \return true if the register is not zero. false otherwise
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] bool Is_Invalidate_Both_Caches_Set() const;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks whether the data synchronization barrier register is NOT set to 0.
+        /// \return true if the register is not zero. false otherwise
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] bool Is_Data_Synchronization_Barrier_Set() const;
+
     private:
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Initializes secondary register C5.
@@ -87,6 +119,20 @@ namespace zero_mate::coprocessor::cp15
         /// This function is called from the constructor.
         // -------------------------------------------------------------------------------------------------------------
         inline void Init_CRm_R6();
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Initializes secondary register C7.
+        ///
+        /// This function is called from the constructor.
+        // -------------------------------------------------------------------------------------------------------------
+        inline void Init_CRm_R7();
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Initializes secondary register C10.
+        ///
+        /// This function is called from the constructor.
+        // -------------------------------------------------------------------------------------------------------------
+        inline void Init_CRm_R10();
     };
 
 } // namespace zero_mate::coprocessor::cp15

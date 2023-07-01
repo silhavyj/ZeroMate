@@ -33,7 +33,8 @@ namespace zero_mate::coprocessor::cp15
         C1 = 1, ///< C1 primary register
         C2 = 2, ///< C2 primary register
         C3 = 3, ///< C3 primary register (domain access control)
-        C7 = 7  ///< C7 primary register
+        C7 = 7, ///< C7 primary register
+        C8 = 8  ///< C8 primary register
     };
 
     // -----------------------------------------------------------------------------------------------------------------

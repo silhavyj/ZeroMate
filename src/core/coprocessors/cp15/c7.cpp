@@ -20,6 +20,8 @@ namespace zero_mate::coprocessor::cp15
     {
         Init_CRm_R5();
         Init_CRm_R6();
+        Init_CRm_R7();
+        Init_CRm_R10();
     }
 
     void CC7::Init_CRm_R5()
@@ -40,6 +42,24 @@ namespace zero_mate::coprocessor::cp15
         m_regs[crm_c6_idx][static_cast<std::uint32_t>(NCRm_C6_Register::Invalidate_Entire_Data_Cache)] = 1;
     }
 
+    void CC7::Init_CRm_R7()
+    {
+        // Index of the C7 secondary register.
+        const auto crm_c7_idx = static_cast<std::uint32_t>(NCRm::C7);
+
+        // Initialize all registers of the C7 secondary register (indexed by op2).
+        m_regs[crm_c7_idx][static_cast<std::uint32_t>(NCRm_C7_Register::Invalidate_Both_Caches)] = 1;
+    }
+
+    void CC7::Init_CRm_R10()
+    {
+        // Index of the C10 secondary register.
+        const auto crm_c10_idx = static_cast<std::uint32_t>(NCRm::C10);
+
+        // Initialize all registers of the C10 secondary register (indexed by op2).
+        m_regs[crm_c10_idx][static_cast<std::uint32_t>(NCRm_C10_Register::Data_Synchronization_Barrier)] = 1;
+    }
+
     bool CC7::Is_Flush_Prefetch_Buffer_Set() const
     {
         const auto crm_c5_idx = static_cast<std::uint32_t>(NCRm::C5);
@@ -56,6 +76,24 @@ namespace zero_mate::coprocessor::cp15
 
         // Check if the register is NOT set to 0.
         return m_regs.at(crm_c6_idx).at(crm_c6_0_idx) == 0;
+    }
+
+    bool CC7::Is_Invalidate_Both_Caches_Set() const
+    {
+        const auto crm_c7_idx = static_cast<std::uint32_t>(NCRm::C7);
+        const auto crm_c7_0_idx = static_cast<std::uint32_t>(NCRm_C7_Register::Invalidate_Both_Caches);
+
+        // Check if the register is NOT set to 0.
+        return m_regs.at(crm_c7_idx).at(crm_c7_0_idx) == 0;
+    }
+
+    bool CC7::Is_Data_Synchronization_Barrier_Set() const
+    {
+        const auto crm_c10_idx = static_cast<std::uint32_t>(NCRm::C10);
+        const auto crm_c10_4_idx = static_cast<std::uint32_t>(NCRm_C10_Register::Data_Synchronization_Barrier);
+
+        // Check if the register is NOT set to 0.
+        return m_regs.at(crm_c10_idx).at(crm_c10_4_idx) == 0;
     }
 
 } // namespace zero_mate::coprocessor::cp15

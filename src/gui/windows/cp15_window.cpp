@@ -41,6 +41,12 @@ namespace zero_mate::gui
                     ImGui::EndTabItem();
                 }
 
+                if (ImGui::BeginTabItem("C8", nullptr))
+                {
+                    Render_Primary_Register_C8();
+                    ImGui::EndTabItem();
+                }
+
                 ImGui::EndTabBar();
             }
         }
@@ -66,43 +72,69 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::Text("MMU enabled");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::MMU_Enable)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::MMU_Enable))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("Data cache enabled");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::Data_Cache_Enable)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}",
+                        cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::Data_Cache_Enable))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("Branch prediction enabled");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::Branch_Prediction_Enable)).c_str());
+            ImGui::Text("%s",
+                        fmt::format("{}",
+                                    cp15_c1->Is_Control_Flag_Set(
+                                    coprocessor::cp15::CC1::NC0_Control_Flags::Branch_Prediction_Enable))
+                        .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("Instruction cache enable");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::Instruction_Cache_Enable)).c_str());
+            ImGui::Text("%s",
+                        fmt::format("{}",
+                                    cp15_c1->Is_Control_Flag_Set(
+                                    coprocessor::cp15::CC1::NC0_Control_Flags::Instruction_Cache_Enable))
+                        .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("High exception vectors enabled");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::High_Exception_Vectors)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}",
+                        cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::High_Exception_Vectors))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("Unaligned access enabled");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::Unaligned_Memory_Access_Enable)).c_str());
+            ImGui::Text("%s",
+                        fmt::format("{}",
+                                    cp15_c1->Is_Control_Flag_Set(
+                                    coprocessor::cp15::CC1::NC0_Control_Flags::Unaligned_Memory_Access_Enable))
+                        .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("TEX remap enabled");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::TEX_Remap_Enable)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::TEX_Remap_Enable))
+            .c_str());
 
             ImGui::EndTable();
         }
@@ -128,19 +160,31 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::Text("Shared");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c2->Is_TTB_Shared(coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_0)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}",
+                        cp15_c2->Is_TTB_Shared(coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_0))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("Inner cacheable");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c2->Is_TTB_Inner_Cacheable(coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_0)).c_str());
+            ImGui::Text("%s",
+                        fmt::format("{}",
+                                    cp15_c2->Is_TTB_Inner_Cacheable(
+                                    coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_0))
+                        .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("Address");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("0x{:08X}", cp15_c2->Get_TTB_Address(coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_0)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("0x{:08X}",
+                        cp15_c2->Get_TTB_Address(coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_0))
+            .c_str());
 
             ImGui::EndTable();
         }
@@ -162,19 +206,31 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::Text("Shared");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c2->Is_TTB_Shared(coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_1)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}",
+                        cp15_c2->Is_TTB_Shared(coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_1))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("Inner cacheable");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", cp15_c2->Is_TTB_Inner_Cacheable(coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_1)).c_str());
+            ImGui::Text("%s",
+                        fmt::format("{}",
+                                    cp15_c2->Is_TTB_Inner_Cacheable(
+                                    coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_1))
+                        .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("Address");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("0x{:08X}", cp15_c2->Get_TTB_Address(coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_1)).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("0x{:08X}",
+                        cp15_c2->Get_TTB_Address(coprocessor::cp15::CC2::NCRm_C0_Register::Translation_Table_Base_1))
+            .c_str());
 
             ImGui::EndTable();
         }
@@ -230,97 +286,145 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::Text("D0");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D0))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D0)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D1");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D1))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D1)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D2");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D2))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D2)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D3");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D3))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D3)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D4");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D4))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D4)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D5");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D5))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D5)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D6");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D6))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D6)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D7");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D7))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D7)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D8");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D8))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D8)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D9");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D9))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D9)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D10");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D10))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D10)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D11");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D11))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D11)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D12");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D12))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D12)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D13");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D13))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D13)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D14");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D14))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D14)))
+            .c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();
             ImGui::Text("D15");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D15))).c_str());
+            ImGui::Text(
+            "%s",
+            fmt::format("{}", magic_enum::enum_name(cp15_c3->Get_Domain_Value(coprocessor::cp15::CC3::NDomain::D15)))
+            .c_str());
 
             ImGui::EndTable();
         }
@@ -365,6 +469,70 @@ namespace zero_mate::gui
             ImGui::Text("Invalidate Entire Data Cache");
             ImGui::TableNextColumn();
             ImGui::Text("%s", fmt::format("{}", cp15_c7->Is_Invalidate_Entire_Data_Cache_Set()).c_str());
+
+            ImGui::EndTable();
+        }
+
+        ImGui::Separator();
+
+        ImGui::Text("C7 (0)");
+
+        if (ImGui::BeginTable("C7 (0)", 2, Table_Flags))
+        {
+            ImGui::TableSetupColumn("Field", ImGuiTableColumnFlags_WidthFixed);
+            ImGui::TableSetupColumn("Value", ImGuiTableColumnFlags_WidthStretch);
+
+            ImGui::TableHeadersRow();
+
+            ImGui::TableNextRow();
+            ImGui::TableNextColumn();
+            ImGui::Text("Invalidate Both Caches");
+            ImGui::TableNextColumn();
+            ImGui::Text("%s", fmt::format("{}", cp15_c7->Is_Invalidate_Both_Caches_Set()).c_str());
+
+            ImGui::EndTable();
+        }
+
+        ImGui::Separator();
+
+        ImGui::Text("C10 (4)");
+
+        if (ImGui::BeginTable("C10 (4)", 2, Table_Flags))
+        {
+            ImGui::TableSetupColumn("Field", ImGuiTableColumnFlags_WidthFixed);
+            ImGui::TableSetupColumn("Value", ImGuiTableColumnFlags_WidthStretch);
+
+            ImGui::TableHeadersRow();
+
+            ImGui::TableNextRow();
+            ImGui::TableNextColumn();
+            ImGui::Text("Data Synchronization Barrier");
+            ImGui::TableNextColumn();
+            ImGui::Text("%s", fmt::format("{}", cp15_c7->Is_Data_Synchronization_Barrier_Set()).c_str());
+
+            ImGui::EndTable();
+        }
+    }
+
+    void CCP15_Window::Render_Primary_Register_C8()
+    {
+        const auto cp15_c8 =
+        m_cp15->Get_Primary_Register<coprocessor::cp15::CC8>(coprocessor::cp15::NPrimary_Register::C8);
+
+        ImGui::Text("C7 (0)");
+
+        if (ImGui::BeginTable("C7 (0)", 2, Table_Flags))
+        {
+            ImGui::TableSetupColumn("Field", ImGuiTableColumnFlags_WidthFixed);
+            ImGui::TableSetupColumn("Value", ImGuiTableColumnFlags_WidthStretch);
+
+            ImGui::TableHeadersRow();
+
+            ImGui::TableNextRow();
+            ImGui::TableNextColumn();
+            ImGui::Text("Invalidate Unified TLB Unlocked Entries");
+            ImGui::TableNextColumn();
+            ImGui::Text("%s", fmt::format("{}", cp15_c8->Is_Invalidate_Unified_TLB_Unlocked_Entries_Set()).c_str());
 
             ImGui::EndTable();
         }

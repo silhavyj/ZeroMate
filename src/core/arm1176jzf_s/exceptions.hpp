@@ -33,6 +33,9 @@ namespace zero_mate::arm1176jzf_s::exceptions
     class CCPU_Exception : public std::runtime_error
     {
     public:
+        /// High base address of the IVT table (reallocation is enabled in CP15)
+        static constexpr std::uint32_t IVT_High_Base_Addr = 0xFFFF0000;
+
         // -------------------------------------------------------------------------------------------------------------
         /// \enum NType
         /// \brief Type of the exception.
