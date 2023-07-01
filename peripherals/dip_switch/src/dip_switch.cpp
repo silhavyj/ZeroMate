@@ -6,6 +6,8 @@
 /// \brief This file implements a DIP switch that can be connected to a GPIO pin at runtime as a shared library.
 // ---------------------------------------------------------------------------------------------------------------------
 
+#include <cassert>
+
 #include "dip_switch.hpp"
 
 CDIP_Switch::CDIP_Switch(std::string name,

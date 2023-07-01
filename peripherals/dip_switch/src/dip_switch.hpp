@@ -19,10 +19,10 @@ class CDIP_Switch : public zero_mate::IExternal_Peripheral
 {
 public:
     // -----------------------------------------------------------------------------------------------------------------
-    /// \brief Creates an instance of the class,
+    /// \brief Creates an instance of the class.
     /// \param name Unique name of the peripheral (e.g. My_DIP_Switch_1)
     /// \param pin_idx GPIO pin the DIP switch is connected to
-    /// \param set_pin Function provided by the emulator that can be used to change the state of a GPIO pin
+    /// \param set_pin Function provided by the emulator that is used to change the state of a GPIO pin
     // -----------------------------------------------------------------------------------------------------------------
     explicit CDIP_Switch(std::string name,
                          std::uint32_t pin_idx,

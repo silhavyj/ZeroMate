@@ -22,7 +22,7 @@ public:
     /// \brief Creates an instance of the class.
     /// \param name Unique name of the peripheral (e.g. My_Button_1)
     /// \param pin_idx GPIO pin the button is connected to
-    /// \param set_pin Function provided by the emulator that can be used to change the state of a GPIO pin
+    /// \param set_pin Function provided by the emulator that is used to change the state of a GPIO pin
     /// \param logging_system Logging system provided by the emulator
     // -----------------------------------------------------------------------------------------------------------------
     explicit CButton(std::string name,
