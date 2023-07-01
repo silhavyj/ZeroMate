@@ -1,3 +1,11 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file button.cpp
+/// \date 01. 07. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements a button that can be connected to GPIO pins at runtime as a shared library.
+// ---------------------------------------------------------------------------------------------------------------------
+
 #include <cassert>
 #include <utility>
 
@@ -18,14 +26,17 @@ CButton::CButton(std::string name,
 
 void CButton::Set_ImGui_Context(void* context)
 {
+    // Store the ImGUI Context.
     m_context = static_cast<ImGuiContext*>(context);
 }
 
 void CButton::Render()
 {
+    // Make sure the ImGUIContext has been set.
     assert(m_context != nullptr);
     ImGui::SetCurrentContext(m_context);
 
+    // Render the window.
     if (ImGui::Begin(m_name.c_str()))
     {
         Render_Pin_Idx();
@@ -42,6 +53,7 @@ void CButton::Render_Pin_Idx() const
 
 void CButton::Render_Button()
 {
+    // The button needs to be pressed down for the output to stay HIGH.
     if (ImGui::Button("Press"))
     {
         if (!m_output && !ImGui::IsItemActive())
@@ -69,18 +81,22 @@ extern "C"
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
                           [[maybe_unused]] zero_mate::utils::CLogging_System* logging_system)
     {
+        // Only one pin shall be passed to the peripheral.
         if (pin_count != 1)
         {
             return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::GPIO_Mismatch);
         }
 
+        // Create an instance of a button.
         *peripheral = new (std::nothrow) CButton(name, gpio_pins[0], set_pin, logging_system);
 
+        // Make sure the creation was successful.
         if (*peripheral == nullptr)
         {
             return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::Allocation_Error);
         }
 
+        // All went well.
         return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::OK);
     }
 }
