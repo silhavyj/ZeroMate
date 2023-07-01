@@ -24,6 +24,7 @@
 #include "c2.hpp"
 #include "c3.hpp"
 #include "c7.hpp"
+#include "c8.hpp"
 #include "primary_reg.hpp"
 #include "../coprocessor.hpp"
 #include "zero_mate/utils/logger.hpp"

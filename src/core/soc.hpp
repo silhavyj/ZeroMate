@@ -24,6 +24,7 @@
 
 #include "bus.hpp"
 #include "arm1176jzf_s/core.hpp"
+#include "arm1176jzf_s/mmu/mmu.hpp"
 #include "coprocessors/cp15/cp15.hpp"
 #include "peripherals/ram.hpp"
 #include "peripherals/interrupt_controller.hpp"
@@ -87,13 +88,16 @@ namespace zero_mate::soc
     extern std::shared_ptr<peripheral::CRAM> g_ram;
 
     /// Global reference to the bus which the CPU uses to access memory-mapped peripherals
-    extern std::shared_ptr<zero_mate::CBus> g_bus;
+    extern std::shared_ptr<CBus> g_bus;
 
     /// Global reference to the CPU
     extern std::shared_ptr<arm1176jzf_s::CCPU_Core> g_cpu;
 
     /// Global reference to the CP15 (system control coprocessor)
     extern std::shared_ptr<coprocessor::cp15::CCP15> g_cp15;
+
+    /// Global reference to the MMU (memory management unit).
+    extern std::shared_ptr<arm1176jzf_s::mmu::CMMU> g_mmu;
 
     /// Global reference to the interrupt controller
     extern std::shared_ptr<peripheral::CInterrupt_Controller> g_ic;

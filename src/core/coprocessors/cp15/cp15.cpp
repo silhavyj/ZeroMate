@@ -25,7 +25,7 @@ namespace zero_mate::coprocessor::cp15
     : ICoprocessor{ cpu_context }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     {
-       Reset();
+        Reset();
     }
 
     void CCP15::Reset()
@@ -35,6 +35,7 @@ namespace zero_mate::coprocessor::cp15
         m_regs[static_cast<std::uint32_t>(NPrimary_Register::C2)] = std::make_shared<CC2>();
         m_regs[static_cast<std::uint32_t>(NPrimary_Register::C3)] = std::make_shared<CC3>();
         m_regs[static_cast<std::uint32_t>(NPrimary_Register::C7)] = std::make_shared<CC7>();
+        m_regs[static_cast<std::uint32_t>(NPrimary_Register::C8)] = std::make_shared<CC8>();
     }
 
     void CCP15::Perform_Register_Transfer(arm1176jzf_s::isa::CCoprocessor_Reg_Transfer instruction)

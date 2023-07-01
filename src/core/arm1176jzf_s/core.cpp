@@ -35,6 +35,7 @@ namespace zero_mate::arm1176jzf_s
     CCPU_Core::CCPU_Core(std::uint32_t pc, std::shared_ptr<CBus> bus) noexcept
     : m_context{}
     , m_bus{ bus }
+    , m_mmu{ nullptr }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_entry_point{ Default_Entry_Point_Addr }
     , m_interrupt_controller{ nullptr }
@@ -59,6 +60,18 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Reset_Context()
     {
+        // Reset all coprocessors.
+        for (auto& [id, coprocessor] : m_coprocessors)
+        {
+            coprocessor->Reset();
+        }
+
+        // Reset the MMU.
+        if (m_mmu != nullptr)
+        {
+            m_mmu->Reset();
+        }
+
         m_context.Reset();
         Set_PC(m_entry_point);
     }
@@ -72,6 +85,11 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Set_Interrupt_Controller(std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller)
     {
         m_interrupt_controller = interrupt_controller;
+    }
+
+    void CCPU_Core::Set_MMU(std::shared_ptr<mmu::CMMU> mmu)
+    {
+        m_mmu = mmu;
     }
 
     void CCPU_Core::Register_System_Clock_Listener(const System_Clock_Listener_t& listener)
@@ -138,7 +156,7 @@ namespace zero_mate::arm1176jzf_s
         {
             // Reading from the bus may throw an exception (e.g. when there is an error
             // in the code and the PC register is set to a nonsense value).
-            const std::unsigned_integral auto instruction = m_bus->Read<std::uint32_t>(PC());
+            const std::unsigned_integral auto instruction = Read<std::uint32_t>(PC());
 
             PC() += CCPU_Context::Reg_Size;
 
@@ -362,6 +380,25 @@ namespace zero_mate::arm1176jzf_s
         }
     }
 
+    bool CCPU_Core::Is_IVT_Reallocated_To_High_Addr()
+    {
+        // Coprocessor CP15 must exist.
+        if (!m_coprocessors.contains(coprocessor::cp15::CCP15::ID))
+        {
+            return false;
+        }
+
+        // Get the CP15 register
+        auto cp15 = std::static_pointer_cast<coprocessor::cp15::CCP15>(m_coprocessors.at(coprocessor::cp15::CCP15::ID));
+
+        // Retrieve the C1 register - Control register.
+        const auto cp15_c1 =
+        cp15->Get_Primary_Register<coprocessor::cp15::CC1>(coprocessor::cp15::NPrimary_Register::C1);
+
+        // Check if the exception handler should be looked for at higher addresses.
+        return cp15_c1->Is_Control_Flag_Set(coprocessor::cp15::CC1::NC0_Control_Flags::High_Exception_Vectors);
+    }
+
     void CCPU_Core::Execute_Exception(const exceptions::CCPU_Exception& exception)
     {
         m_logging_system.Warning(exception.what());
@@ -379,8 +416,17 @@ namespace zero_mate::arm1176jzf_s
         // LR = PC
         m_context[CCPU_Context::LR_Reg_Idx] = PC();
 
+        // Retrieve the exception vector (address of the exception handler).
+        std::uint32_t exception_vector = exception.Get_Exception_Vector();
+
+        // Check if the exception vector is located at higher addresses.
+        if (Is_IVT_Reallocated_To_High_Addr())
+        {
+            exception_vector += exceptions::CCPU_Exception::IVT_High_Base_Addr;
+        }
+
         // PC = &exception_handler
-        PC() = exception.Get_Exception_Vector();
+        PC() = exception_vector;
     }
 
     std::uint32_t CCPU_Core::Get_Shift_Amount(isa::CData_Processing instruction) const noexcept
@@ -696,12 +742,12 @@ namespace zero_mate::arm1176jzf_s
             if (store_value)
             {
                 // Write data to the bus.
-                m_bus->Write<std::uint32_t>(addr, m_context.Get_Register(reg_idx, cpu_mode));
+                Write<std::uint32_t>(addr, m_context.Get_Register(reg_idx, cpu_mode));
             }
             else
             {
                 // Read data from the bus.
-                m_context.Get_Register(reg_idx, cpu_mode) = m_bus->Read<std::uint32_t>(addr);
+                m_context.Get_Register(reg_idx, cpu_mode) = Read<std::uint32_t>(addr);
 
                 if (s_bit && reg_idx == CCPU_Context::PC_Reg_Idx)
                 {
@@ -769,18 +815,18 @@ namespace zero_mate::arm1176jzf_s
 
             // Read an unsigned 16-bit value from the bus.
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                m_context[dest_reg_idx] = m_bus->Read<std::uint16_t>(addr);
+                m_context[dest_reg_idx] = Read<std::uint16_t>(addr);
                 break;
 
             // Read a signed 8-bit value from the bus.
             case isa::CHalfword_Data_Transfer::NType::Signed_Byte:
-                read_value = m_bus->Read<std::uint8_t>(addr);
+                read_value = Read<std::uint8_t>(addr);
                 m_context[dest_reg_idx] = utils::math::Sign_Extend_Value(std::get<std::uint8_t>(read_value));
                 break;
 
             // Read a signed 16-bit value from the bus.
             case isa::CHalfword_Data_Transfer::NType::Signed_Halfwords:
-                read_value = m_bus->Read<std::uint16_t>(addr);
+                read_value = Read<std::uint16_t>(addr);
                 m_context[dest_reg_idx] = utils::math::Sign_Extend_Value(std::get<std::uint16_t>(read_value));
                 break;
         }
@@ -795,7 +841,7 @@ namespace zero_mate::arm1176jzf_s
             // TODO verify this
             // Only Unsigned_Halfwords can be written to the bus.
             case isa::CHalfword_Data_Transfer::NType::Unsigned_Halfwords:
-                m_bus->Write<std::uint16_t>(addr, static_cast<std::uint16_t>(m_context[src_reg_idx] & 0x0000FFFFU));
+                Write<std::uint16_t>(addr, static_cast<std::uint16_t>(m_context[src_reg_idx] & 0x0000FFFFU));
                 break;
 
             case isa::CHalfword_Data_Transfer::NType::SWP:
@@ -1150,8 +1196,8 @@ namespace zero_mate::arm1176jzf_s
         // clang-format on
 
         // Store the registers of the current mode onto the stack.
-        m_bus->Write<std::uint32_t>(addr, m_context[CCPU_Context::LR_Reg_Idx]);
-        m_bus->Write<std::uint32_t>(addr + CCPU_Context::Reg_Size, m_context.Get_SPSR());
+        Write<std::uint32_t>(addr, m_context[CCPU_Context::LR_Reg_Idx]);
+        Write<std::uint32_t>(addr + CCPU_Context::Reg_Size, m_context.Get_SPSR());
 
         // Write the final address back to SP of the mode defined in the instruction.
         if (instruction.Is_W_Bit_Set())
@@ -1191,8 +1237,8 @@ namespace zero_mate::arm1176jzf_s
         auto addr = Calculate_Base_Address(instruction, reg_rn_idx, cpu_mode, isa::CRFE::Number_Of_Regs_To_Transfer);
 
         // Read LR and SPSR off the stack.
-        const auto lr = m_bus->Read<std::uint32_t>(addr);
-        const auto spsr = m_bus->Read<std::uint32_t>(addr + CCPU_Context::Reg_Size);
+        const auto lr = Read<std::uint32_t>(addr);
+        const auto spsr = Read<std::uint32_t>(addr + CCPU_Context::Reg_Size);
 
         // Write the final address back to Rn.
         if (instruction.Is_W_Bit_Set())

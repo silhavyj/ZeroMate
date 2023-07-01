@@ -139,6 +139,13 @@ namespace zero_mate::arm1176jzf_s::exceptions
         /// \param addr Address where the prefetch abort was triggered
         // -------------------------------------------------------------------------------------------------------------
         explicit CPrefetch_Abort(std::uint32_t addr);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Constructor of the class.
+        /// \param addr Address where the prefetch abort was triggered
+        /// \param msg Message describing what the cause of the exception being thrown
+        // -------------------------------------------------------------------------------------------------------------
+        explicit CPrefetch_Abort(std::uint32_t addr, const char* msg);
     };
 
     // -----------------------------------------------------------------------------------------------------------------
