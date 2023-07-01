@@ -146,7 +146,9 @@ private:
 
         // Draw all 7 segments of the display.
         draw_list->AddLine(v_min, { v_min.x + SIZE, v_min.y }, Get_Segment_Color(7), THICKNESS);
+
         draw_list->AddLine(v_min, { v_min.x, v_min.y + SIZE }, Get_Segment_Color(1), THICKNESS);
+
         draw_list->AddLine({ v_min.x + SIZE, v_min.y },
                            { v_min.x + SIZE, v_min.y + SIZE },
                            Get_Segment_Color(4),
@@ -165,6 +167,7 @@ private:
                            { v_min.x + SIZE, v_min.y + 2 * SIZE },
                            Get_Segment_Color(2),
                            THICKNESS);
+
         draw_list->AddLine({ v_min.x, v_min.y + 2 * SIZE },
                            { v_min.x + SIZE, v_min.y + 2 * SIZE },
                            Get_Segment_Color(3),
