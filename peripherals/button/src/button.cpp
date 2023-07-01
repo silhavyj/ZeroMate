@@ -10,13 +10,13 @@ CButton::CButton(std::string name,
 : m_name{ std::move(name) }
 , m_pin_idx{ pin_idx }
 , m_set_pin{ set_pin }
-, m_output{ false }
+, m_output{ true }
 , m_context{ nullptr }
 , m_logging_system{ logging_system }
 {
 }
 
-void CButton::Set_ImGui_Context(void *context)
+void CButton::Set_ImGui_Context(void* context)
 {
     m_context = static_cast<ImGuiContext*>(context);
 }
@@ -25,7 +25,7 @@ void CButton::Render()
 {
     assert(m_context != nullptr);
     ImGui::SetCurrentContext(m_context);
-    
+
     if (ImGui::Begin(m_name.c_str()))
     {
         Render_Pin_Idx();
@@ -44,15 +44,19 @@ void CButton::Render_Button()
 {
     if (ImGui::Button("Press"))
     {
-        m_logging_system->Info("Button has been pressed");
-        Toggle();
+        if (!m_output && !ImGui::IsItemActive())
+        {
+            m_output = true;
+            m_logging_system->Info("Button has been released");
+            m_set_pin(m_pin_idx, !m_output);
+        }
     }
-}
-
-void CButton::Toggle()
-{
-    m_set_pin(m_pin_idx, !m_output);
-    m_output = !m_output;
+    else if (m_output && ImGui::IsItemActive())
+    {
+        m_output = false;
+        m_logging_system->Info("Button has been pressed");
+        m_set_pin(m_pin_idx, !m_output);
+    }
 }
 
 extern "C"

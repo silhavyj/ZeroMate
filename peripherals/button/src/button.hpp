@@ -6,16 +6,15 @@
 class CButton final : public zero_mate::IExternal_Peripheral
 {
 public:
-    explicit CButton(std::string  name,
+    explicit CButton(std::string name,
                      std::uint32_t pin_idx,
                      zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
                      zero_mate::utils::CLogging_System* logging_system);
 
     void Render() override;
-    void Set_ImGui_Context(void *context) override;
+    void Set_ImGui_Context(void* context) override;
 
 private:
-    inline void Toggle();
     inline void Render_Pin_Idx() const;
     inline void Render_Button();
 
