@@ -51,6 +51,7 @@ namespace zero_mate::utils::elf
         std::uint32_t addr;             ///< Address of the instruction
         std::uint32_t opcode;           ///< Opcode of the instruction (32-bit encoding)
         std::string disassembly;        ///< Disassembly (description) of the instruction
+        std::size_t index;              ///< Index of the label (if there are more labels with the same demangled name)
     };
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -68,9 +69,6 @@ namespace zero_mate::utils::elf
     ///
     /// It is used when the capstone library fails to recognize an instruction.
     inline static const char* const UNKNOWN_INSTRUCTION_STR = "Unknown instruction";
-
-    /// Start label (entry point of the program)
-    inline static const char* const START_LABEL = "_start";
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Loads a given ELF file (kernel) into the memory.

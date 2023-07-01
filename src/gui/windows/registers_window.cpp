@@ -14,7 +14,8 @@ namespace zero_mate::gui
 
     void CRegisters_Window::Render()
     {
-        if (!m_cpu_running && m_cpu_context[arm1176jzf_s::CCPU_Context::PC_Reg_Idx] != m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
+        if (!m_cpu_running && m_cpu_context[arm1176jzf_s::CCPU_Context::PC_Reg_Idx] !=
+                              m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
         {
             m_cpu_context = m_cpu->Get_CPU_Context();
         }
@@ -123,23 +124,33 @@ namespace zero_mate::gui
 
     void CRegisters_Window::Render_Register_Tabs(arm1176jzf_s::CCPU_Context::NCPU_Mode mode)
     {
-        if (ImGui::BeginTabBar(fmt::format("##cpu_regs_tabs_{}_mode", static_cast<std::uint32_t>(mode)).c_str(), ImGuiTabBarFlags_None))
+        if (ImGui::BeginTabBar(fmt::format("##cpu_regs_tabs_{}_mode", static_cast<std::uint32_t>(mode)).c_str(),
+                               ImGuiTabBarFlags_None))
         {
             if (ImGui::BeginTabItem(fmt::format("HEX##{}", static_cast<std::uint32_t>(mode)).c_str()))
             {
-                Render_Registers_Table(fmt::format("HEX##table_{}", static_cast<std::uint32_t>(mode)).c_str(), "Value", NFormat::HEX, mode);
+                Render_Registers_Table(fmt::format("HEX##table_{}", static_cast<std::uint32_t>(mode)).c_str(),
+                                       "Value",
+                                       NFormat::HEX,
+                                       mode);
                 ImGui::EndTabItem();
             }
 
             if (ImGui::BeginTabItem(fmt::format("U32##{}", static_cast<std::uint32_t>(mode)).c_str()))
             {
-                Render_Registers_Table(fmt::format("U32##table_{}", static_cast<std::uint32_t>(mode)).c_str(), "Value", NFormat::U32, mode);
+                Render_Registers_Table(fmt::format("U32##table_{}", static_cast<std::uint32_t>(mode)).c_str(),
+                                       "Value",
+                                       NFormat::U32,
+                                       mode);
                 ImGui::EndTabItem();
             }
 
             if (ImGui::BeginTabItem(fmt::format("S32##{}", static_cast<std::uint32_t>(mode)).c_str()))
             {
-                Render_Registers_Table(fmt::format("S32##table_{}", static_cast<std::uint32_t>(mode)).c_str(), "Value", NFormat::S32, mode);
+                Render_Registers_Table(fmt::format("S32##table_{}", static_cast<std::uint32_t>(mode)).c_str(),
+                                       "Value",
+                                       NFormat::S32,
+                                       mode);
                 ImGui::EndTabItem();
             }
 
@@ -149,7 +160,10 @@ namespace zero_mate::gui
         Render_Flags();
     }
 
-    void CRegisters_Window::Render_Registers_Table(const char* const title, const char* const type, NFormat format, arm1176jzf_s::CCPU_Context::NCPU_Mode mode)
+    void CRegisters_Window::Render_Registers_Table(const char* const title,
+                                                   const char* const type,
+                                                   NFormat format,
+                                                   arm1176jzf_s::CCPU_Context::NCPU_Mode mode)
     {
         if (ImGui::BeginTable(fmt::format("##{}", title).c_str(), 2, Table_Flags))
         {

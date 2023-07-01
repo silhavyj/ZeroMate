@@ -33,6 +33,9 @@ namespace zero_mate::arm1176jzf_s::exceptions
     class CCPU_Exception : public std::runtime_error
     {
     public:
+        /// High base address of the IVT table (reallocation is enabled in CP15)
+        static constexpr std::uint32_t IVT_High_Base_Addr = 0xFFFF0000;
+
         // -------------------------------------------------------------------------------------------------------------
         /// \enum NType
         /// \brief Type of the exception.
@@ -136,6 +139,13 @@ namespace zero_mate::arm1176jzf_s::exceptions
         /// \param addr Address where the prefetch abort was triggered
         // -------------------------------------------------------------------------------------------------------------
         explicit CPrefetch_Abort(std::uint32_t addr);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Constructor of the class.
+        /// \param addr Address where the prefetch abort was triggered
+        /// \param msg Message describing what the cause of the exception being thrown
+        // -------------------------------------------------------------------------------------------------------------
+        explicit CPrefetch_Abort(std::uint32_t addr, const char* msg);
     };
 
     // -----------------------------------------------------------------------------------------------------------------

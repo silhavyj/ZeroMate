@@ -4,7 +4,8 @@
 
 namespace zero_mate::gui
 {
-    CInterrupt_Controller_Window::CInterrupt_Controller_Window(const std::shared_ptr<peripheral::CInterrupt_Controller>& interrupt_controller)
+    CInterrupt_Controller_Window::CInterrupt_Controller_Window(
+    const std::shared_ptr<peripheral::CInterrupt_Controller>& interrupt_controller)
     : m_interrupt_controller{ interrupt_controller }
     {
     }
@@ -13,7 +14,8 @@ namespace zero_mate::gui
     {
         if (ImGui::Begin("IC"))
         {
-            ImGui::Text("Has a pending interrupt: %d", static_cast<int>(m_interrupt_controller->Has_Pending_Interrupt()));
+            ImGui::Text("Has a pending interrupt: %d",
+                        static_cast<int>(m_interrupt_controller->Has_Pending_Interrupt()));
 
             Render_Basic_IRQ();
             Render_IRQ();

@@ -36,16 +36,21 @@ namespace zero_mate::gui
 
                     for (std::size_t j = 0; j < peripheral::CGPIO_Manager::CPin::Number_Of_Interrupt_Types; ++j)
                     {
-                        const auto interrupt_type = magic_enum::enum_cast<peripheral::CGPIO_Manager::CPin::NInterrupt_Type>(static_cast<std::uint8_t>(j));
+                        const auto interrupt_type =
+                        magic_enum::enum_cast<peripheral::CGPIO_Manager::CPin::NInterrupt_Type>(
+                        static_cast<std::uint8_t>(j));
 
-                        if (m_gpio->Get_Pin(i).Is_Interrupt_Enabled(interrupt_type.value_or(peripheral::CGPIO_Manager::CPin::NInterrupt_Type::Undefined)))
+                        if (m_gpio->Get_Pin(i).Is_Interrupt_Enabled(
+                            interrupt_type.value_or(peripheral::CGPIO_Manager::CPin::NInterrupt_Type::Undefined)))
                         {
-                            const std::string_view interrupt_name = magic_enum::enum_name(interrupt_type.value_or(peripheral::CGPIO_Manager::CPin::NInterrupt_Type::Undefined));
+                            const std::string_view interrupt_name = magic_enum::enum_name(
+                            interrupt_type.value_or(peripheral::CGPIO_Manager::CPin::NInterrupt_Type::Undefined));
                             ImGui::Text("%s", interrupt_name.data());
                         }
                     }
                     ImGui::TableNextColumn();
-                    ImGui::RadioButton("", m_gpio->Get_Pin(i).Get_State() == peripheral::CGPIO_Manager::CPin::NState::High);
+                    ImGui::RadioButton("",
+                                       m_gpio->Get_Pin(i).Get_State() == peripheral::CGPIO_Manager::CPin::NState::High);
                     ImGui::TableNextColumn();
                     if (m_gpio->Get_Pin(i).Has_Pending_IRQ())
                     {

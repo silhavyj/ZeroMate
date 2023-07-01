@@ -37,9 +37,11 @@ namespace zero_mate::soc
 
     // Initialize all peripherals.
     std::shared_ptr<peripheral::CRAM> g_ram{ nullptr };
-    std::shared_ptr<zero_mate::CBus> g_bus = std::make_shared<CBus>();
+    std::shared_ptr<CBus> g_bus = std::make_shared<CBus>();
     std::shared_ptr<arm1176jzf_s::CCPU_Core> g_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, g_bus);
-    std::shared_ptr<coprocessor::CCP15> g_cp15 = std::make_shared<coprocessor::CCP15>(g_cpu->Get_CPU_Context());
+    std::shared_ptr<coprocessor::cp15::CCP15> g_cp15 =
+    std::make_shared<coprocessor::cp15::CCP15>(g_cpu->Get_CPU_Context());
+    std::shared_ptr<arm1176jzf_s::mmu::CMMU> g_mmu = std::make_shared<arm1176jzf_s::mmu::CMMU>(g_bus, g_cp15);
     std::shared_ptr<peripheral::CInterrupt_Controller> g_ic =
     std::make_shared<peripheral::CInterrupt_Controller>(g_cpu->Get_CPU_Context());
     std::shared_ptr<peripheral::CARM_Timer> g_arm_timer = std::make_shared<peripheral::CARM_Timer>(g_ic);
@@ -172,10 +174,11 @@ namespace zero_mate::soc
             Attach_Peripheral_To_Bus<peripheral::CMonitor>("monitor", config::Monitor_Address, g_monitor);
             Attach_Peripheral_To_Bus<peripheral::CTRNG>("trng", config::TRNG_Address, g_trng);
 
-            // Attach the interrupt controller, ARM timer, and CP15 to the CPU.
+            // Attach the interrupt controller, ARM timer, MMU, and CP15 to the CPU.
             g_cpu->Set_Interrupt_Controller(g_ic);
             g_cpu->Register_System_Clock_Listener(g_arm_timer);
-            g_cpu->Add_Coprocessor(coprocessor::CCP15::ID, g_cp15);
+            g_cpu->Add_Coprocessor(coprocessor::cp15::CCP15::ID, g_cp15);
+            g_cpu->Set_MMU(g_mmu);
 
             // Add a reference to CP15 to the bus, so it knows whether to check for unaligned memory access.
             g_bus->Set_CP15(g_cp15);
@@ -265,8 +268,8 @@ namespace zero_mate::soc
         }
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param config
+        /// \brief Creates an instance of an external peripheral and connects it to the system.
+        /// \param config Configuration of the external peripheral (dll path, name, etc.)
         // -------------------------------------------------------------------------------------------------------------
         inline void Create_External_Peripheral(const TPeripheral_Config& config)
         {
@@ -287,36 +290,68 @@ namespace zero_mate::soc
 
                 // Get the address of the "Create_Peripheral" function located in the shared library.
                 auto create_peripheral = lib->get_function<int(IExternal_Peripheral**,
-                                                               const std::string&,
-                                                               const std::vector<std::uint32_t>&,
-                                                               std::function<void(int, bool)>,
-                                                               std::function<bool(int)>,
-                                                               utils::CLogging_System&)>("Create_Peripheral");
+                                                               const char* const,
+                                                               const std::uint32_t* const,
+                                                               std::size_t,
+                                                               IExternal_Peripheral::Set_GPIO_Pin_t,
+                                                               IExternal_Peripheral::Read_GPIO_Pin_t,
+                                                               utils::CLogging_System*)>("Create_Peripheral");
 
                 // Create room for the new external peripheral in the collection of all external peripherals
                 g_external_peripherals.emplace_back();
 
                 // Call the extern "Create_Peripheral" function to create the peripheral.
-                const int status = create_peripheral(&g_external_peripherals.back(),
-                                                     config.name,
-                                                     config.pins,
-                                                     Set_GPIO_Pin,
-                                                     Read_GPIO_Pin,
-                                                     g_logging_system);
+                const auto status = static_cast<IExternal_Peripheral::NInit_Status>(
+                create_peripheral(&g_external_peripherals.back(),
+                                  config.name.c_str(),
+                                  config.pins.data(),
+                                  config.pins.size(),
+                                  &Set_GPIO_Pin,
+                                  &Read_GPIO_Pin,
+                                  utils::CSingleton<utils::CLogging_System>::Get_Instance()));
 
-                if (status != 0)
+                switch (status)
+                {
+                    case IExternal_Peripheral::NInit_Status::OK:
+                        // Add the peripheral to the GPIO manager, so it can notify it
+                        // whenever the state of its pins changes.
+                        g_gpio->Add_External_Peripheral(g_external_peripherals.back());
+
+                        // No other external peripheral with the same name can be connected to the system again.
+                        s_external_peripheral_names.insert(config.name);
+                        break;
+
+                    case IExternal_Peripheral::NInit_Status::GPIO_Mismatch:
+                        // clang-format off
+                        g_logging_system.Error(fmt::format("Failed to initialize an external peripheral: path = {}; "
+                                                           "name = {} - number of expected GPIO pins does not match "
+                                                           "the expected value",
+                                                           config.lib_dir, config.lib_name).c_str());
+                        // clang-format on
+                        break;
+
+                    case IExternal_Peripheral::NInit_Status::Allocation_Error:
+                        // clang-format off
+                        g_logging_system.Error(fmt::format("Failed to initialize an external peripheral: path = {}; "
+                                                           "name = {} - allocation failed",
+                                                           config.lib_dir, config.lib_name).c_str());
+                        // clang-format on
+                        break;
+
+                    default:
+                        // clang-format off
+                        g_logging_system.Error(fmt::format("Failed to initialize an external peripheral: path = {}; "
+                                                           "name = {} - unknown error number: {}",
+                                                           config.lib_dir, config.lib_name,
+                                                           static_cast<int>(status)).c_str());
+                        // clang-format on
+                        break;
+                }
+
+                if (status != IExternal_Peripheral::NInit_Status::OK)
                 {
                     // We do not need room for the peripheral as it has not been created successfully.
                     g_external_peripherals.pop_back();
-                }
-                else
-                {
-                    // Add the peripheral to the GPIO manager, so it can notify it
-                    // whenever the state of its pins changes.
-                    g_gpio->Add_External_Peripheral(g_external_peripherals.back());
-
-                    // No other external peripheral with the same name can be connected to the system again.
-                    s_external_peripheral_names.insert(config.name);
                 }
             }
             catch ([[maybe_unused]] const std::exception& e)

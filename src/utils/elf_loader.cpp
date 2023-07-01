@@ -32,7 +32,11 @@ namespace zero_mate::utils::elf
     // Anonymous namespace to make its content visible only to this translation unit.
     namespace
     {
+        // Name of the last .elf file that was loaded
         std::string s_last_filename_loaded{ "" };
+
+        // Alias for labels just to make the code less wordy (addr, <label_name, count>)
+        using Labels_t = std::unordered_map<std::uint32_t, std::pair<std::string, std::size_t>>;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \struct TDisassembly_Result
@@ -45,97 +49,34 @@ namespace zero_mate::utils::elf
         };
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Maps an ELF section into the RAM which is accessed through the bus.
-        /// \param bus Bus that is used to access the RAM
-        /// \param section Section to be mapped to the RAM
+        /// \brief Maps all segments of an ELF file to RAM.
+        /// \param bus Bus used to access the RAM
+        /// \param elf_reader Reference to an ELF reader
         // -------------------------------------------------------------------------------------------------------------
-        inline void Map_Section_To_RAM(CBus& bus, const ELFIO::section& section)
+        inline void Map_Segments_To_RAM(CBus& bus, const ELFIO::elfio& elf_reader)
         {
-            // Retrieve the data of the given section.
-            const char* data = section.get_data();
+            // Get the total number of ELF segments.
+            const ELFIO::Elf_Half number_of_segments = elf_reader.segments.size();
 
-            // Make sure it is not the BSS section.
-            if (data == nullptr)
+            // Iterate over the segments.
+            for (ELFIO::Elf_Half idx = 0; idx < number_of_segments; ++idx)
             {
-                return;
-            }
+                const ELFIO::segment& segment = *elf_reader.segments[idx];
+                const ELFIO::Elf64_Addr physical_addr = segment.get_physical_address();
+                const ELFIO::Elf64_Addr segment_size = segment.get_file_size();
 
-            // Iterate over the data of the section (byte by byte).
-            for (ELFIO::Elf_Xword i = 0; i < section.get_size(); ++i)
-            {
-                const auto value = static_cast<std::uint8_t>(data[i]);
-                const auto addr = static_cast<std::uint32_t>(section.get_address() + i);
+                const char* data = segment.get_data();
 
-                // Map the byte to its corresponding address.
-                bus.Write<std::uint8_t>(addr, value);
-            }
-        }
-
-        // -------------------------------------------------------------------------------------------------------------
-        /// \brief Maps sections of an ELF file into the RAM.
-        /// \param bus Bus that is used to access the RAM
-        /// \param elf_reader Reference to an ELF reader (ELF parser)
-        // -------------------------------------------------------------------------------------------------------------
-        inline void Map_Sections_To_RAM(CBus& bus, const ELFIO::elfio& elf_reader)
-        {
-            // Retrieve all sections from the ELF reader.
-            const ELFIO::Elf_Half number_of_sections = elf_reader.sections.size();
-
-            // Iterate over the sections and map them to RAM one by one.
-            for (ELFIO::Elf_Half idx = 0; idx < number_of_sections; ++idx)
-            {
-                // Get the current section
-                const ELFIO::section& section = *elf_reader.sections[idx];
-
-                // Should this section be mapped?
-                if ((section.get_flags() & ELFIO::SHF_ALLOC) == ELFIO::SHF_ALLOC)
+                // Map the data of the segment into RAM
+                for (ELFIO::Elf_Xword i = 0; i < segment_size; ++i)
                 {
-                    Map_Section_To_RAM(bus, section);
+                    const auto value = static_cast<std::uint8_t>(data[i]);
+                    const auto addr = static_cast<std::uint32_t>(physical_addr + i);
+
+                    // Map the byte to its corresponding address.
+                    bus.Write<std::uint8_t>(addr, value);
                 }
             }
-        }
-
-        // -------------------------------------------------------------------------------------------------------------
-        /// \brief Retrieves all labels that are found in the ELF file.
-        /// \param elf_reader Reference to an ELF loader (ELF parser)
-        /// \return Collection of all labels found in the ELF file (key: address, value: label)
-        // -------------------------------------------------------------------------------------------------------------
-        inline std::unordered_map<std::uint32_t, std::string> Get_Labels(const ELFIO::elfio& elf_reader)
-        {
-            // Section with all labels.
-            static constexpr const char* const Symbol_Section = ".symtab";
-
-            std::unordered_map<std::uint32_t, std::string> labels;
-
-            // The _start label is located at the address of the first instruction.
-            labels[static_cast<std::uint32_t>(elf_reader.get_entry())] = START_LABEL;
-
-            // Retrieve all symbols.
-            const ELFIO::symbol_section_accessor symbols(elf_reader, elf_reader.sections[Symbol_Section]);
-
-            // Datatype returned from the get_symbol function (we are only interested in the address and name).
-            ELFIO::Elf64_Addr addr{};
-            std::string name;
-            ELFIO::Elf_Xword size{};
-            unsigned char bind{};
-            unsigned char type{};
-            ELFIO::Elf_Half section_index{};
-            unsigned char other{};
-
-            // Iterate over all the symbols that were found.
-            for (ELFIO::Elf_Xword i = 0; i < symbols.get_symbols_num(); ++i)
-            {
-                // Retrieve more detailed information about the current symbol.
-                symbols.get_symbol(i, name, addr, size, bind, type, section_index, other);
-
-                if (type == ELFIO::STB_WEAK)
-                {
-                    // Add the label with its address to the collection.
-                    labels[static_cast<std::uint32_t>(addr)] = name;
-                }
-            }
-
-            return labels;
         }
 
         // -------------------------------------------------------------------------------------------------------------
@@ -164,44 +105,83 @@ namespace zero_mate::utils::elf
         }
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Disassembles an ELF file.
-        /// \param elf_reader Reference to an ELF reader (ELF parser)
-        /// \return Result of the disassembly process
+        /// \brief Retrieves all labels that are found in the ELF file.
+        /// \param elf_reader Reference to an ELF loader (ELF parser)
+        /// \return Collection of all labels found in the ELF file (key: address, value: label)
         // -------------------------------------------------------------------------------------------------------------
-        inline TDisassembly_Result Disassemble_Instructions(const ELFIO::elfio& elf_reader)
+        inline Labels_t Get_Labels(const ELFIO::elfio& elf_reader)
         {
-            // Code section
-            static constexpr const char* const Text_Section = ".text";
+            // Section with all labels.
+            static constexpr const char* const Symbol_Section = ".symtab";
 
-            csh handle{};
-            TDisassembly_Result result{};
-            auto& logging_system = *CSingleton<CLogging_System>::Get_Instance();
+            // Collection of labels to be returned.
+            Labels_t labels;
 
-            // Initialize the capstone library.
-            if (cs_open(CS_ARCH_ARM, CS_MODE_ARM, &handle) != CS_ERR_OK)
+            // Keep track of duplicities, so we can append an index to them.
+            std::unordered_map<std::string, std::size_t> name_count;
+
+            // Retrieve all symbols.
+            const ELFIO::symbol_section_accessor symbols(elf_reader, elf_reader.sections[Symbol_Section]);
+
+            // Datatype returned from the get_symbol function (we are only interested in the address and name).
+            ELFIO::Elf64_Addr addr{};
+            std::string name;
+            ELFIO::Elf_Xword size{};
+            unsigned char bind{};
+            unsigned char type{};
+            ELFIO::Elf_Half section_index{};
+            unsigned char other{};
+
+            // Iterate over all the symbols that were found.
+            for (ELFIO::Elf_Xword i = 0; i < symbols.get_symbols_num(); ++i)
             {
-                result.status = NError_Code::Disassembly_Engine_Error;
-                return result;
+                // Retrieve more detailed information about the current symbol.
+                symbols.get_symbol(i, name, addr, size, bind, type, section_index, other);
+
+                // Make sure the label is not empty
+                if (!name.empty()) [[likely]]
+                {
+                    // Demangle the name and increment the number of times it has been seen.
+                    name = Demangle_Label_Name(name);
+                    ++name_count[name];
+
+                    // Add the label with its address to the collection.
+                    labels[static_cast<std::uint32_t>(addr)] = { name, name_count[name] };
+                }
             }
 
-            // Retrieve all labels found in the .symtab section.
-            const auto labels = Get_Labels(elf_reader);
+            // Return the labels.
+            return labels;
+        }
 
-            // Get the .text section and the data stored in it.
-            const auto* const text_section = elf_reader.sections[Text_Section];
-            const auto* data = std::bit_cast<const uint8_t*>(text_section->get_data());
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Disassembles instructions in an ELF section.
+        /// \param section ELF section to be disassembled
+        /// \param cs_handle Reference to csh that performs the disassembly
+        /// \param labels Reference to all labels retrieved from the ELF file
+        /// \param result Disassembled instructions
+        // -------------------------------------------------------------------------------------------------------------
+        inline void Disassemble_Instructions_In_Section(const ELFIO::section& section,
+                                                        csh& cs_handle,
+                                                        const Labels_t& labels,
+                                                        TDisassembly_Result& result)
+        {
+            auto& logging_system = *CSingleton<CLogging_System>::Get_Instance();
 
-            cs_insn* instructions{ nullptr };                               // Disassembled instructions
-            bool done{ false };                                             // Has the whole section been processed?
-            std::size_t remaining_section_size{ text_section->get_size() }; // Remaining size to be processed
-            std::size_t address_offset{ text_section->get_address() };      // Offset to disassemble insts. from
+            // Raw data (bytes) of the ELF section.
+            const auto* data = std::bit_cast<const uint8_t*>(section.get_data());
+
+            cs_insn* instructions{ nullptr };                         // Disassembled instructions
+            bool done{ false };                                       // Has the whole section been processed?
+            std::size_t remaining_section_size{ section.get_size() }; // Remaining size to be processed
+            std::size_t address_offset{ section.get_address() };      // Offset of the ELF section (virtual addr)
 
             while (!done)
             {
                 instructions = nullptr;
 
-                // Disassemble next set of instruction.
-                const auto count = cs_disasm(handle, data, remaining_section_size, address_offset, 0, &instructions);
+                // Disassemble next set of instructions.
+                const auto count = cs_disasm(cs_handle, data, remaining_section_size, address_offset, 0, &instructions);
 
                 // Iterate over all the instruction that have been disassembled.
                 for (std::size_t i = 0; i < count; ++i)
@@ -223,15 +203,20 @@ namespace zero_mate::utils::elf
                     if (labels.contains(address))
                     {
                         // Push_back the label first before you push_back the instruction itself.
-                        const auto demangled_label = Demangle_Label_Name(labels.at(address));
-                        result.disassembly.push_back({ NText_Section_Record_Type::Label, {}, {}, demangled_label });
+                        result.disassembly.push_back({ .type = NText_Section_Record_Type::Label,
+                                                       .addr = {},
+                                                       .opcode = {},
+                                                       .disassembly = labels.at(address).first,
+                                                       .index = labels.at(address).second });
                     }
 
                     // Add the instruction to the result.
                     // clang-format off
-                    result.disassembly.push_back({ NText_Section_Record_Type::Instruction,
-                                                   address, opcode,
-                                                   instruction_str });
+                    result.disassembly.push_back({ .type = NText_Section_Record_Type::Instruction,
+                                                   .addr = address,
+                                                   .opcode = opcode,
+                                                   .disassembly = instruction_str,
+                                                   .index = 0 });
                     // clang-format on
                 }
 
@@ -250,10 +235,11 @@ namespace zero_mate::utils::elf
                 else
                 {
                     // An unknown instruction has been found (capstone failed to disassemble it).
-                    result.disassembly.push_back({ NText_Section_Record_Type::Instruction,
-                                                   static_cast<std::uint32_t>(address_offset),
-                                                   static_cast<std::uint32_t>(*data),
-                                                   UNKNOWN_INSTRUCTION_STR });
+                    result.disassembly.push_back({ .type = NText_Section_Record_Type::Instruction,
+                                                   .addr = static_cast<std::uint32_t>(address_offset),
+                                                   .opcode = static_cast<std::uint32_t>(*data),
+                                                   .disassembly = UNKNOWN_INSTRUCTION_STR,
+                                                   .index = 0 });
 
                     // clang-format off
                     logging_system.Warning(fmt::format("Unknown instruction found at address 0x{:08X} in the "
@@ -266,9 +252,56 @@ namespace zero_mate::utils::elf
                     address_offset += sizeof(std::uint32_t);
                 }
             }
+        }
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Disassembles instructions found in all executable segments of the ELF file.
+        /// \param elf_reader Reference to an ELF reader
+        /// \return Disassembled instructions
+        // -------------------------------------------------------------------------------------------------------------
+        inline TDisassembly_Result Disassemble_Instructions(const ELFIO::elfio& elf_reader)
+        {
+            csh cs_handle{};
+            TDisassembly_Result result{};
+
+            // Initialize the capstone library.
+            if (cs_open(CS_ARCH_ARM, CS_MODE_ARM, &cs_handle) != CS_ERR_OK)
+            {
+                result.status = NError_Code::Disassembly_Engine_Error;
+                return result;
+            }
+
+            // Retrieve all labels found in the .symtab section.
+            const Labels_t labels = Get_Labels(elf_reader);
+
+            // Retrieve the total number of ELF segments.
+            const ELFIO::Elf_Half number_of_segments = elf_reader.segments.size();
+
+            // Iterate over all segments.
+            for (ELFIO::Elf_Half idx = 0; idx < number_of_segments; ++idx)
+            {
+                // Retrieve the current segment and the total number of its ELF sections.
+                const ELFIO::segment& segment = *elf_reader.segments[idx];
+                const ELFIO::Elf_Half number_of_sections = segment.get_sections_num();
+
+                // Iterate over all sections.
+                for (ELFIO::Elf_Half i = 0; i < number_of_sections; ++i)
+                {
+                    // Retrieve the current section.
+                    const ELFIO::Elf_Half section_idx = segment.get_section_index_at(i);
+                    const ELFIO::section& section = *elf_reader.sections[section_idx];
+
+                    // Check if it is an executable section and therefore shall be disassembled.
+                    if (((section.get_flags() & ELFIO::SHF_ALLOC) == ELFIO::SHF_ALLOC) &&
+                        ((section.get_flags() & ELFIO::SHF_EXECINSTR) == ELFIO::SHF_EXECINSTR))
+                    {
+                        Disassemble_Instructions_In_Section(section, cs_handle, labels, result);
+                    }
+                }
+            }
 
             // Close the handler.
-            cs_close(&handle);
+            cs_close(&cs_handle);
 
             return result;
         }
@@ -292,7 +325,7 @@ namespace zero_mate::utils::elf
         }
 
         // Map the instructions (32-bit values) into the memory via the bus.
-        Map_Sections_To_RAM(bus, elf_reader);
+        Map_Segments_To_RAM(bus, elf_reader);
 
         // Disassemble the instructions, so they can be visualized in the GUI.
         const auto disassembly_result = Disassemble_Instructions(elf_reader);

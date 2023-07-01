@@ -27,7 +27,7 @@ namespace zero_mate
     {
     }
 
-    void CBus::Set_CP15(std::shared_ptr<coprocessor::CCP15> cp15)
+    void CBus::Set_CP15(std::shared_ptr<coprocessor::cp15::CCP15> cp15)
     {
         m_cp15 = cp15;
     }

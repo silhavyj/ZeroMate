@@ -51,9 +51,19 @@ namespace zero_mate::gui
 
             s_windows.emplace_back(std::make_shared<CRegisters_Window>(soc::g_cpu, s_cpu_running));
             s_windows.push_back(std::make_shared<CRAM_Window>(soc::g_ram));
-            s_windows.emplace_back(std::make_shared<CControl_Window>(soc::g_cpu, s_scroll_to_curr_line, s_elf_file_has_been_loaded, s_cpu_running, soc::g_peripherals, soc::g_bus));
-            s_windows.emplace_back(std::make_shared<CSource_Code_Window>(soc::g_cpu, s_source_code, s_scroll_to_curr_line, s_cpu_running));
-            s_windows.emplace_back(std::make_shared<CFile_Window>(soc::g_bus, soc::g_cpu, s_source_code, s_elf_file_has_been_loaded, soc::g_peripherals));
+            s_windows.emplace_back(std::make_shared<CControl_Window>(soc::g_cpu,
+                                                                     s_scroll_to_curr_line,
+                                                                     s_elf_file_has_been_loaded,
+                                                                     s_cpu_running,
+                                                                     soc::g_peripherals,
+                                                                     soc::g_bus));
+            s_windows.emplace_back(
+            std::make_shared<CSource_Code_Window>(soc::g_cpu, s_source_code, s_scroll_to_curr_line, s_cpu_running));
+            s_windows.emplace_back(std::make_shared<CFile_Window>(soc::g_bus,
+                                                                  soc::g_cpu,
+                                                                  s_source_code,
+                                                                  s_elf_file_has_been_loaded,
+                                                                  soc::g_peripherals));
             s_windows.emplace_back(std::make_shared<CGPIO_Window>(soc::g_gpio));
             s_windows.emplace_back(s_log_window);
             s_windows.emplace_back(std::make_shared<CInterrupt_Controller_Window>(soc::g_ic));
@@ -61,12 +71,10 @@ namespace zero_mate::gui
             s_windows.emplace_back(std::make_shared<CMonitor_Window>(soc::g_monitor));
             s_windows.emplace_back(std::make_shared<CCP15_Window>(soc::g_cp15));
         }
-        
+
         void Render_GUI()
         {
-            std::for_each(s_windows.begin(),
-                          s_windows.end(),
-                          [](const auto& window) -> void { window->Render(); });
+            std::for_each(s_windows.begin(), s_windows.end(), [](const auto& window) -> void { window->Render(); });
 
             std::for_each(soc::g_external_peripherals.begin(),
                           soc::g_external_peripherals.end(),
@@ -86,7 +94,8 @@ namespace zero_mate::gui
         Initialize_Windows();
 
         glfwSetErrorCallback([](int error_code, const char* description) -> void {
-            soc::g_logging_system.Error(fmt::format("Error {} occurred when initializing GLFW: {}", error_code, description).c_str());
+            soc::g_logging_system.Error(
+            fmt::format("Error {} occurred when initializing GLFW: {}", error_code, description).c_str());
             std::terminate();
         });
 
@@ -185,7 +194,8 @@ namespace zero_mate::gui
             ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
             ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
 
-            window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+            window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize |
+                            ImGuiWindowFlags_NoMove;
             window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
 
             if (dockspace_flags & ImGuiDockNodeFlags_PassthruCentralNode)
