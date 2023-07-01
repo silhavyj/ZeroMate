@@ -3,7 +3,7 @@
 /// \date 01. 07. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file implements a button that can be connected to GPIO pins at runtime as a shared library.
+/// \brief This file implements a button that can be connected to a GPIO pin at runtime as a shared library.
 // ---------------------------------------------------------------------------------------------------------------------
 
 #include <cassert>
