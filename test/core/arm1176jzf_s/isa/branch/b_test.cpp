@@ -108,3 +108,43 @@ TEST(b_instruction, test_04)
     cpu.Steps(2);
     EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x14);
 }
+
+TEST(b_instruction, test_05)
+{
+    const std::vector<std::uint32_t> ram_content = {
+        0xe3a02000, // mov r2, #0
+        0xe3a03001, // mov r3, #1
+        0xe1520003, // cmp r2, r3
+        0x3afffffb  // bcc 0x0
+    };
+
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size, 0, ram_content);
+    auto bus = std::make_shared<CBus>();
+
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
+
+    cpu.Steps(4);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x0);
+}
+
+TEST(b_instruction, test_06)
+{
+    const std::vector<std::uint32_t> ram_content = {
+        0xe3a02000, // mov r2, #0
+        0xe3a03000, // mov r3, #0
+        0xe1520003, // cmp r2, r3
+        0x3afffffb  // bcc 0x0
+    };
+
+    auto ram = std::make_shared<peripheral::CRAM>(RAM_Size, 0, ram_content);
+    auto bus = std::make_shared<CBus>();
+
+    EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), CBus::NStatus::OK);
+
+    arm1176jzf_s::CCPU_Core cpu{ 0, bus };
+
+    cpu.Steps(4);
+    EXPECT_EQ(cpu.Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx], 0x10);
+}

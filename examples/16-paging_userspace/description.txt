@@ -1,0 +1,6 @@
+- stránkování, VM pro user procesy
+- TLB
+- data/prefetch abort
+- terminate syscall
+
+- stdutil knihovna pro OLED výstup
