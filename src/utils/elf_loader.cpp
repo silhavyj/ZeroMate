@@ -237,7 +237,7 @@ namespace zero_mate::utils::elf
                     result.disassembly.push_back({ .type = NText_Section_Record_Type::Instruction,
                                                    .addr = static_cast<std::uint32_t>(address_offset),
                                                    .opcode = static_cast<std::uint32_t>(*data),
-                                                   .disassembly = UNKNOWN_INSTRUCTION_STR,
+                                                   .disassembly = Unknown_Instruction_Str,
                                                    .index = 0 });
 
                     // clang-format off

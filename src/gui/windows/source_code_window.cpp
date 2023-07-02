@@ -207,7 +207,7 @@ namespace zero_mate::gui
 
                     ImGui::TableNextColumn();
 
-                    if (source_code[idx].disassembly == utils::elf::UNKNOWN_INSTRUCTION_STR)
+                    if (source_code[idx].disassembly == utils::elf::Unknown_Instruction_Str)
                     {
                         ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 0.85f));
                         ImGui::Text("%s", source_code[idx].disassembly.c_str());

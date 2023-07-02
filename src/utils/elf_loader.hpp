@@ -68,7 +68,7 @@ namespace zero_mate::utils::elf
     /// \brief Disassembly (description) of an unknown instruction.
     ///
     /// It is used when the capstone library fails to recognize an instruction.
-    inline static const char* const UNKNOWN_INSTRUCTION_STR = "Unknown instruction";
+    inline static const char* const Unknown_Instruction_Str = "Unknown instruction";
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Loads a given ELF file (kernel) into the memory.
