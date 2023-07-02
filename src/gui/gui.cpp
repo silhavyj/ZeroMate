@@ -8,6 +8,9 @@
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
 
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb/stb_image.h>
+
 #include "../core/soc.hpp"
 
 #include "gui.hpp"
@@ -169,6 +172,16 @@ namespace zero_mate::gui
         int display_h{};
 
         Init_External_GUIs(context);
+
+        GLFWimage images[1];
+        images[0].pixels = stbi_load(config::Window_Icon_Path, &images[0].width, &images[0].height, 0, 4);
+
+        if (images[0].pixels != nullptr)
+        {
+            glfwSetWindowIcon(window, 1, images);
+        }
+        
+        stbi_image_free(images[0].pixels);
 
         while (!glfwWindowShouldClose(window))
         {
