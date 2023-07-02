@@ -1,36 +1,32 @@
 // ---------------------------------------------------------------------------------------------------------------------
-/// \file button.cpp
+/// \file dip_switch.cpp
 /// \date 01. 07. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file implements a button that can be connected to a GPIO pin at runtime as a shared library.
+/// \brief This file implements a DIP switch that can be connected to a GPIO pin at runtime as a shared library.
 // ---------------------------------------------------------------------------------------------------------------------
 
 #include <cassert>
-#include <utility>
 
-#include "button.hpp"
+#include "dip_switch.hpp"
 
-CButton::CButton(std::string name,
-                 std::uint32_t pin_idx,
-                 zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                 zero_mate::utils::CLogging_System* logging_system)
+CDIP_Switch::CDIP_Switch(std::string name,
+                         std::uint32_t pin_idx,
+                         zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin)
 : m_name{ std::move(name) }
 , m_pin_idx{ pin_idx }
 , m_set_pin{ set_pin }
-, m_output{ true }
-, m_context{ nullptr }
-, m_logging_system{ logging_system }
+, m_output{ false }
 {
 }
 
-void CButton::Set_ImGui_Context(void* context)
+void CDIP_Switch::Set_ImGui_Context(void* context)
 {
     // Store the ImGUI Context.
     m_context = static_cast<ImGuiContext*>(context);
 }
 
-void CButton::Render()
+void CDIP_Switch::Render()
 {
     // Make sure the ImGUIContext has been set.
     assert(m_context != nullptr);
@@ -40,34 +36,22 @@ void CButton::Render()
     if (ImGui::Begin(m_name.c_str()))
     {
         Render_Pin_Idx();
-        Render_Button();
+        Render_DIP_Switch();
     }
 
     ImGui::End();
 }
 
-void CButton::Render_Pin_Idx() const
+void CDIP_Switch::Render_Pin_Idx() const
 {
     ImGui::Text("GPIO pin: %d", m_pin_idx);
 }
 
-void CButton::Render_Button()
+void CDIP_Switch::Render_DIP_Switch()
 {
-    // The button needs to be pressed down for the output to stay HIGH.
-    if (ImGui::Button("Press"))
+    if (ImGui::Checkbox("Toggle", &m_output))
     {
-        if (!m_output && !ImGui::IsItemActive())
-        {
-            m_output = true;
-            m_logging_system->Info("Button has been released");
-            m_set_pin(m_pin_idx, !m_output);
-        }
-    }
-    else if (m_output && ImGui::IsItemActive())
-    {
-        m_output = false;
-        m_logging_system->Info("Button has been pressed");
-        m_set_pin(m_pin_idx, !m_output);
+        m_set_pin(m_pin_idx, m_output);
     }
 }
 
@@ -87,8 +71,8 @@ extern "C"
             return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::GPIO_Mismatch);
         }
 
-        // Create an instance of a button.
-        *peripheral = new (std::nothrow) CButton(name, gpio_pins[0], set_pin, logging_system);
+        // Create an instance of a DIP switch.
+        *peripheral = new (std::nothrow) CDIP_Switch(name, gpio_pins[0], set_pin);
 
         // Make sure the creation was successful.
         if (*peripheral == nullptr)

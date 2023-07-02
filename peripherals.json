@@ -18,6 +18,12 @@
       "pins" : [ 47 ],
       "lib_dir" : "peripherals",
       "lib_name" : "led"
+    },
+    {
+      "name" : "DIP switch",
+      "pins" : [ 6 ],
+      "lib_dir" : "peripherals",
+      "lib_name" : "dip_switch"
     }
   ]
 }

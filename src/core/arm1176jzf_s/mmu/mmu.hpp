@@ -130,7 +130,7 @@ namespace zero_mate::arm1176jzf_s::mmu
         std::uint32_t m_TTBR0_addr;                       ///< Address of page table 0
         CPage_Table m_page_table_0;                       ///< Page table 0
         std::uint32_t m_TTBR1_addr;                       ///< Address of page table 1
-        [[maybe_unused]] CPage_Table m_page_table_1;      ///< Page table 1
+        CPage_Table m_page_table_1;                       ///< Page table 1
 
         // TODO create a TLB for m_page_table_1?
         std::unordered_map<std::uint32_t, std::uint32_t> m_TLB_cache; ///< TLB cache
