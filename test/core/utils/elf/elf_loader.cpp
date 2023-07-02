@@ -15,7 +15,7 @@
 
     EXPECT_EQ(bus->Attach_Peripheral(0x0, ram), zero_mate::CBus::NStatus::OK);
 
-    const auto [error_code, pc, _] = zero_mate::utils::elf::Load_Kernel(*bus, filename);
+    const auto [error_code, pc, _] = zero_mate::utils::elf::Load_ELF(*bus, filename);
     EXPECT_EQ(error_code, zero_mate::utils::elf::NError_Code::OK);
 
     zero_mate::arm1176jzf_s::CCPU_Core cpu{ pc, bus };

@@ -1,9 +1,9 @@
 #include <filesystem>
+#include <unordered_map>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <imgui/imgui.h>
-#include <magic_enum.hpp>
 #include <imgui/backends/imgui_impl_glfw.h>
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <IconFontCppHeaders/IconsFontAwesome5.h>
@@ -25,8 +25,6 @@
 #include "windows/peripherals/monitor_window.hpp"
 #include "windows/peripherals/interrupt_controller_window.hpp"
 
-#include "../utils/logger/logger_stdo.hpp"
-
 namespace zero_mate::gui
 {
     static inline constexpr const char* const Window_Title = "ZeroMate - Rpi Zero emulator";
@@ -37,7 +35,7 @@ namespace zero_mate::gui
     namespace
     {
         auto s_log_window = std::make_shared<CLog_Window>();
-        std::vector<utils::elf::TText_Section_Record> s_source_code;
+        std::unordered_map<std::string, std::vector<utils::elf::TText_Section_Record>> s_source_codes;
         std::vector<std::shared_ptr<IGUI_Window>> s_windows;
 
         bool s_scroll_to_curr_line{ false };
@@ -58,10 +56,10 @@ namespace zero_mate::gui
                                                                      soc::g_peripherals,
                                                                      soc::g_bus));
             s_windows.emplace_back(
-            std::make_shared<CSource_Code_Window>(soc::g_cpu, s_source_code, s_scroll_to_curr_line, s_cpu_running));
+            std::make_shared<CSource_Code_Window>(soc::g_cpu, s_source_codes, s_scroll_to_curr_line, s_cpu_running));
             s_windows.emplace_back(std::make_shared<CFile_Window>(soc::g_bus,
                                                                   soc::g_cpu,
-                                                                  s_source_code,
+                                                                  s_source_codes,
                                                                   s_elf_file_has_been_loaded,
                                                                   soc::g_peripherals));
             s_windows.emplace_back(std::make_shared<CGPIO_Window>(soc::g_gpio));

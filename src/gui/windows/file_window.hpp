@@ -12,18 +12,19 @@ namespace zero_mate::gui
     class CFile_Window final : public IGUI_Window
     {
     public:
-        explicit CFile_Window(std::shared_ptr<CBus> bus,
-                              std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
-                              std::vector<utils::elf::TText_Section_Record>& source_code,
-                              bool& elf_file_has_been_loaded,
-                              std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals);
+        explicit CFile_Window(
+        std::shared_ptr<CBus> bus,
+        std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
+        std::unordered_map<std::string, std::vector<utils::elf::TText_Section_Record>>& source_codes,
+        bool& elf_file_has_been_loaded,
+        std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals);
 
         void Render() override;
 
     private:
         std::shared_ptr<CBus> m_bus;
         std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;
-        std::vector<utils::elf::TText_Section_Record>& m_source_code;
+        std::unordered_map<std::string, std::vector<utils::elf::TText_Section_Record>>& m_source_codes;
         utils::CLogging_System& m_logging_system;
         bool& m_elf_file_has_been_loaded;
         std::vector<std::shared_ptr<peripheral::IPeripheral>>& m_peripherals;

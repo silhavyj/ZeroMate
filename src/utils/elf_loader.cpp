@@ -25,15 +25,14 @@
 
 #include "zero_mate/utils/singleton.hpp"
 #include "elf_loader.hpp"
-#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::utils::elf
 {
     // Anonymous namespace to make its content visible only to this translation unit.
     namespace
     {
-        // Name of the last .elf file that was loaded
-        std::string s_last_filename_loaded{ "" };
+        // Name of the last kernel .elf file that was loaded
+        std::string s_last_kernel_filename{ "" };
 
         // Alias for labels just to make the code less wordy (addr, <label_name, count>)
         using Labels_t = std::unordered_map<std::uint32_t, std::pair<std::string, std::size_t>>;
@@ -307,10 +306,9 @@ namespace zero_mate::utils::elf
         }
     }
 
-    TStatus Load_Kernel(CBus& bus, const char* filename)
+    TStatus Load_ELF(CBus& bus, const char* filename, bool kernel)
     {
         ELFIO::elfio elf_reader;
-        s_last_filename_loaded = filename;
 
         // Load the kernel using the elfio library.
         if (!elf_reader.load(filename, true))
@@ -325,7 +323,11 @@ namespace zero_mate::utils::elf
         }
 
         // Map the instructions (32-bit values) into the memory via the bus.
-        Map_Segments_To_RAM(bus, elf_reader);
+        if (kernel)
+        {
+            Map_Segments_To_RAM(bus, elf_reader);
+            s_last_kernel_filename = filename;
+        }
 
         // Disassemble the instructions, so they can be visualized in the GUI.
         const auto disassembly_result = Disassemble_Instructions(elf_reader);
@@ -339,7 +341,7 @@ namespace zero_mate::utils::elf
 
     TStatus Reload_Kernel(CBus& bus)
     {
-        return Load_Kernel(bus, s_last_filename_loaded.c_str());
+        return Load_ELF(bus, s_last_kernel_filename.c_str(), true);
     }
 
 } // namespace zero_mate::utils::elf

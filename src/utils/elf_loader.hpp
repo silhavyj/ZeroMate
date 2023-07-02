@@ -21,7 +21,7 @@ namespace zero_mate::utils::elf
 {
     // -----------------------------------------------------------------------------------------------------------------
     /// \enum NError_Code
-    /// \brief This enumeration defines different error codes that can be returned from #Load_Kernel.
+    /// \brief This enumeration defines different error codes that can be returned from #Load_ELF.
     // -----------------------------------------------------------------------------------------------------------------
     enum class NError_Code : std::uint8_t
     {
@@ -56,7 +56,7 @@ namespace zero_mate::utils::elf
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \struct TStatus
-    /// \brief This structure represents the return value of #Load_Kernel.
+    /// \brief This structure represents the return value of #Load_ELF.
     // -----------------------------------------------------------------------------------------------------------------
     struct TStatus
     {
@@ -74,14 +74,15 @@ namespace zero_mate::utils::elf
     /// \brief Loads a given ELF file (kernel) into the memory.
     /// \param bus Reference to a bus via which the memory is accessed
     /// \param filename Path to the ELF file (kernel) on the user's machine
+    /// \param kernel Flag if the ELF file should be mapped to the RAM (only the kernel is loaded)
     /// \return Packed structure containing disassembled instructions as well as a status code
     // -----------------------------------------------------------------------------------------------------------------
-    [[nodiscard]] TStatus Load_Kernel(CBus& bus, const char* filename);
+    [[nodiscard]] TStatus Load_ELF(CBus& bus, const char* filename, bool kernel = true);
 
     // -----------------------------------------------------------------------------------------------------------------
-    /// \brief Reloads the same kernel that was loaded using the #Load_Kernel function.
+    /// \brief Reloads the same kernel that was loaded using the #Load_ELF function.
     ///
-    /// #Load_Kernel keeps track of what kernel was loaded - the same path is used in this function.
+    /// #Load_ELF keeps track of what kernel was loaded - the same path is used in this function.
     ///
     /// \param bus  Reference to a bus via which the memory is accessed
     /// \return Packed structure containing disassembled instructions as well as a status code
