@@ -47,9 +47,41 @@ namespace zero_mate::coprocessor::cp15
         return static_cast<bool>(Extract_Bits_From_TTBR(reg, NC0_TTB_Flags::Inner_Cacheable));
     }
 
-    CC2::NBoundary CC2::Get_Boundary() const
+    CC2::NBoundary CC2::Get_Boundary_Type() const
     {
         return static_cast<NBoundary>(Extract_Bits_From_TTB_Ctrl(NC0_TTB_Control_Flags::Boundary));
+    }
+
+    std::uint32_t CC2::Get_Boundary() const
+    {
+        switch (Get_Boundary_Type())
+        {
+            case NBoundary::KB_16:
+                return 16 * 1024 * 1024;
+
+            case NBoundary::KB_8:
+                return 8 * 1024 * 1024;
+
+            case NBoundary::KB_4:
+                return 4 * 1024 * 1024;
+
+            case NBoundary::KB_2:
+                return 2 * 1024 * 1024;
+
+            case NBoundary::KB_1:
+                return 1 * 1024 * 1024;
+
+            case NBoundary::B_512:
+                return 512 * 1024;
+
+            case NBoundary::B_256:
+                return 128 * 1024;
+
+            case NBoundary::B_128:
+                break;
+        }
+
+        return 0;
     }
 
     bool CC2::Is_PD0_Set() const

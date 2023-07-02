@@ -119,10 +119,16 @@ namespace zero_mate::coprocessor::cp15
         [[nodiscard]] bool Is_TTB_Inner_Cacheable(NCRm_C0_Register reg) const;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Returns the set boundary that determines the use of either TTB0 or TTB1
-        /// \return Boundary that splits the use of TTB0 and TTB1
+        /// \brief Returns the set boundary type that determines the use of either TTB0 or TTB1
+        /// \return Boundary (type) that splits the use of TTB0 and TTB1
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] NBoundary Get_Boundary() const;
+        [[nodiscard]] NBoundary Get_Boundary_Type() const;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Returns the boundary value that determines the use of either TTB0 or TTB1
+        /// \return  Boundary value that splits the use of TTB0 and TTB1
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] std::uint32_t Get_Boundary() const;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns whether the PD0 is set or not (performing a page table walk).
