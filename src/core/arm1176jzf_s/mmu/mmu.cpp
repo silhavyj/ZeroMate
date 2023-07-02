@@ -63,9 +63,6 @@ namespace zero_mate::arm1176jzf_s::mmu
         {
             m_TTBR0_addr = tbbr0_addr;
             m_page_table_0 = m_bus->Read<CPage_Table>(m_TTBR0_addr);
-
-            // TODO do this only when it's indicated by flags in CP15
-            m_TLB_cache.clear();
         }
 
         // Retrieve the current address of page table 1.
@@ -175,14 +172,33 @@ namespace zero_mate::arm1176jzf_s::mmu
         Verify_Access_Privileges(page, virtual_addr, cpu_context, write_access);
     }
 
+    void CMMU::Flush_TLB_If_Needed()
+    {
+        // Get the C8 primary registers of CP15.
+        auto cp15_c8 =
+        m_cp15->Get_Primary_Register<coprocessor::cp15::CC8>(coprocessor::cp15::NPrimary_Register::C8);
+
+        // Should the TLB be cleared?
+        if (cp15_c8->Is_Invalidate_Unified_TLB_Unlocked_Entries_Set())
+        {
+            m_TLB_cache.clear();
+            cp15_c8->TLB_Has_Been_Invalidated();
+        }
+    }
+
     std::uint32_t
     CMMU::Get_Physical_Addr(std::uint32_t virtual_addr, const CCPU_Context& cpu_context, bool write_access)
     {
         // TODO determine whether LD1 or LD2 should be used (only LD1 is supported right now)
 
+        // Check the TLB should be cleared.
+        Flush_TLB_If_Needed();
+
         // Check if the page tables should be updated.
         Fetch_DL1_From_RAM();
 
+        // TODO should Verify_Access be called here as well? The TTBR may have been changed without flushing the TLB
+        // (security issue)
         // Check if the virtual address has already been cached.
         if (m_TLB_cache.contains(virtual_addr))
         {
@@ -195,12 +211,8 @@ namespace zero_mate::arm1176jzf_s::mmu
         // Check no access rules have been violated
         Verify_Access(page, virtual_addr, cpu_context, write_access);
 
-        // TODO also check if the Inner_Cacheable flag is set in NC0_TTB_Flags
-        // Check if this page can be cached using the TLB.
-        if (page.Is_Flag_Set(CPage_Entry::NFlag::Cacheable))
-        {
-            m_TLB_cache[virtual_addr] = physical_addr;
-        }
+        // Store the address into the TLB.
+        m_TLB_cache[virtual_addr] = physical_addr;
 
         // Return the physical address.
         return physical_addr;

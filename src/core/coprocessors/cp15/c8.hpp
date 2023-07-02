@@ -40,7 +40,7 @@ namespace zero_mate::coprocessor::cp15
         // -------------------------------------------------------------------------------------------------------------
         enum class NCRm_C7_Register : std::uint32_t
         {
-            Invalidate_Unified_TLB_Unlocked_Entries = 0 ///> Invalidate unified TLB unlocked entries
+            Invalidate_Unified_TLB_Unlocked_Entries = 0 ///< Invalidate unified TLB unlocked entries
         };
 
     public:
@@ -56,6 +56,11 @@ namespace zero_mate::coprocessor::cp15
         /// \return true if the register is not zero. false otherwise
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] bool Is_Invalidate_Unified_TLB_Unlocked_Entries_Set() const;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets the flag that indicates that the TLB entries should be invalidated.
+        // -------------------------------------------------------------------------------------------------------------
+        void TLB_Has_Been_Invalidated();
 
     private:
         // -------------------------------------------------------------------------------------------------------------

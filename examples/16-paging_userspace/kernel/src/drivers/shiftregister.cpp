@@ -84,14 +84,14 @@ void CShift_Register::Shift_In(bool bit)
     sGPIO.Set_Output(mClock_Pin, true);
 
     // pockat par milisekund
-    for (i = 0; i < 0x4000; i++)
+    for (i = 0; i < 0x10; i++)
         ;
 
     // vratit clock zpatky
     sGPIO.Set_Output(mClock_Pin, false);
 
     // pockat par milisekund
-    for (i = 0; i < 0x4000; i++)
+    for (i = 0; i < 0x10; i++)
         ;
 
     // propiseme bank do vystupu
@@ -114,12 +114,12 @@ void CShift_Register::Shift_In(uint8_t byte)
         sGPIO.Set_Output(mData_Pin, ((byte >> j) & 0x1));
         sGPIO.Set_Output(mClock_Pin, true);
 
-        for (i = 0; i < 0x4000; i++)
+        for (i = 0; i < 0x10; i++)
             ;
 
         sGPIO.Set_Output(mClock_Pin, false);
 
-        for (i = 0; i < 0x4000; i++)
+        for (i = 0; i < 0x10; i++)
             ;
     }
 

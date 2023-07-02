@@ -85,31 +85,32 @@ void __crt0_run()
     // volani konstruktoru globalnich trid (C++)
     _cpp_startup();
     8074:	eb000040 	bl	817c <_cpp_startup>
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/crt0.c:27
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/crt0.c:28
 
     // volani funkce main
     // nebudeme se zde zabyvat predavanim parametru do funkce main
-    // jinak by se mohly predavat napr. namapovane do virtualniho adr. prostoru a odkazem pres zasobnik (kam nam muze OS pushnout co chce)
+    // jinak by se mohly predavat napr. namapovane do virtualniho adr. prostoru a odkazem pres zasobnik (kam nam muze OS
+    // pushnout co chce)
     int result = main(0, 0);
     8078:	e3a01000 	mov	r1, #0
     807c:	e3a00000 	mov	r0, #0
     8080:	eb000069 	bl	822c <main>
     8084:	e50b0008 	str	r0, [fp, #-8]
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/crt0.c:30
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/crt0.c:31
 
     // volani destruktoru globalnich trid (C++)
     _cpp_shutdown();
     8088:	eb000051 	bl	81d4 <_cpp_shutdown>
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/crt0.c:33
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/crt0.c:34
 
     // volani terminate() syscallu s navratovym kodem funkce main
-    asm volatile("mov r0, %0" : : "r" (result));
+    asm volatile("mov r0, %0" : : "r"(result));
     808c:	e51b3008 	ldr	r3, [fp, #-8]
     8090:	e1a00003 	mov	r0, r3
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/crt0.c:34
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/crt0.c:35
     asm volatile("svc #1");
     8094:	ef000001 	svc	0x00000001
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/crt0.c:35
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/crt0.c:36
 }
     8098:	e320f000 	nop	{0}
     809c:	e24bd004 	sub	sp, fp, #4
@@ -118,18 +119,18 @@ void __crt0_run()
 000080a4 <__cxa_guard_acquire>:
 __cxa_guard_acquire():
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:11
-	extern "C" int __cxa_guard_acquire (__guard *);
-	extern "C" void __cxa_guard_release (__guard *);
-	extern "C" void __cxa_guard_abort (__guard *);
+    extern "C" int __cxa_guard_acquire(__guard*);
+    extern "C" void __cxa_guard_release(__guard*);
+    extern "C" void __cxa_guard_abort(__guard*);
 
-	extern "C" int __cxa_guard_acquire (__guard *g)
-	{
+    extern "C" int __cxa_guard_acquire(__guard* g)
+    {
     80a4:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
     80a8:	e28db000 	add	fp, sp, #0
     80ac:	e24dd00c 	sub	sp, sp, #12
     80b0:	e50b0008 	str	r0, [fp, #-8]
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:12
-		return !*(char *)(g);
+        return !*(char*)(g);
     80b4:	e51b3008 	ldr	r3, [fp, #-8]
     80b8:	e5d33000 	ldrb	r3, [r3]
     80bc:	e3530000 	cmp	r3, #0
@@ -137,7 +138,7 @@ __cxa_guard_acquire():
     80c4:	13a03000 	movne	r3, #0
     80c8:	e6ef3073 	uxtb	r3, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:13
-	}
+    }
     80cc:	e1a00003 	mov	r0, r3
     80d0:	e28bd000 	add	sp, fp, #0
     80d4:	e49db004 	pop	{fp}		; (ldr fp, [sp], #4)
@@ -147,19 +148,19 @@ __cxa_guard_acquire():
 __cxa_guard_release():
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:16
 
-	extern "C" void __cxa_guard_release (__guard *g)
-	{
+    extern "C" void __cxa_guard_release(__guard* g)
+    {
     80dc:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
     80e0:	e28db000 	add	fp, sp, #0
     80e4:	e24dd00c 	sub	sp, sp, #12
     80e8:	e50b0008 	str	r0, [fp, #-8]
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:17
-		*(char *)g = 1;
+        *(char*)g = 1;
     80ec:	e51b3008 	ldr	r3, [fp, #-8]
     80f0:	e3a02001 	mov	r2, #1
     80f4:	e5c32000 	strb	r2, [r3]
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:18
-	}
+    }
     80f8:	e320f000 	nop	{0}
     80fc:	e28bd000 	add	sp, fp, #0
     8100:	e49db004 	pop	{fp}		; (ldr fp, [sp], #4)
@@ -169,15 +170,14 @@ __cxa_guard_release():
 __cxa_guard_abort():
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:21
 
-	extern "C" void __cxa_guard_abort (__guard *)
-	{
+    extern "C" void __cxa_guard_abort(__guard*)
+    {
     8108:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
     810c:	e28db000 	add	fp, sp, #0
     8110:	e24dd00c 	sub	sp, sp, #12
     8114:	e50b0008 	str	r0, [fp, #-8]
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:23
-
-	}
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:22
+    }
     8118:	e320f000 	nop	{0}
     811c:	e28bd000 	add	sp, fp, #0
     8120:	e49db004 	pop	{fp}		; (ldr fp, [sp], #4)
@@ -185,14 +185,14 @@ __cxa_guard_abort():
 
 00008128 <__dso_handle>:
 __dso_handle():
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:27
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:26
 }
 
 extern "C" void __dso_handle()
 {
     8128:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
     812c:	e28db000 	add	fp, sp, #0
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:29
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:28
     // ignore dtors for now
 }
     8130:	e320f000 	nop	{0}
@@ -202,13 +202,13 @@ extern "C" void __dso_handle()
 
 00008140 <__cxa_atexit>:
 __cxa_atexit():
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:32
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:31
 
 extern "C" void __cxa_atexit()
 {
     8140:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
     8144:	e28db000 	add	fp, sp, #0
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:34
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:33
     // ignore dtors for now
 }
     8148:	e320f000 	nop	{0}
@@ -218,13 +218,13 @@ extern "C" void __cxa_atexit()
 
 00008158 <__cxa_pure_virtual>:
 __cxa_pure_virtual():
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:37
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:36
 
 extern "C" void __cxa_pure_virtual()
 {
     8158:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
     815c:	e28db000 	add	fp, sp, #0
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:39
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:38
     // pure virtual method called
 }
     8160:	e320f000 	nop	{0}
@@ -234,19 +234,19 @@ extern "C" void __cxa_pure_virtual()
 
 00008170 <__aeabi_unwind_cpp_pr1>:
 __aeabi_unwind_cpp_pr1():
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:42
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:41
 
 extern "C" void __aeabi_unwind_cpp_pr1()
 {
     8170:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
     8174:	e28db000 	add	fp, sp, #0
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:43 (discriminator 1)
-	while (true)
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:42 (discriminator 1)
+    while (true)
     8178:	eafffffe 	b	8178 <__aeabi_unwind_cpp_pr1+0x8>
 
 0000817c <_cpp_startup>:
 _cpp_startup():
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:61
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:60
 extern "C" dtor_ptr __DTOR_LIST__[0];
 // konec pole destruktoru
 extern "C" dtor_ptr __DTOR_END__[0];
@@ -256,35 +256,35 @@ extern "C" int _cpp_startup(void)
     817c:	e92d4800 	push	{fp, lr}
     8180:	e28db004 	add	fp, sp, #4
     8184:	e24dd008 	sub	sp, sp, #8
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:66
-	ctor_ptr* fnptr;
-	
-	// zavolame konstruktory globalnich C++ trid
-	// v poli __CTOR_LIST__ jsou ukazatele na vygenerovane stuby volani konstruktoru
-	for (fnptr = __CTOR_LIST__; fnptr < __CTOR_END__; fnptr++)
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:65
+    ctor_ptr* fnptr;
+
+    // zavolame konstruktory globalnich C++ trid
+    // v poli __CTOR_LIST__ jsou ukazatele na vygenerovane stuby volani konstruktoru
+    for (fnptr = __CTOR_LIST__; fnptr < __CTOR_END__; fnptr++)
     8188:	e59f303c 	ldr	r3, [pc, #60]	; 81cc <_cpp_startup+0x50>
     818c:	e50b3008 	str	r3, [fp, #-8]
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:66 (discriminator 3)
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:65 (discriminator 3)
     8190:	e51b3008 	ldr	r3, [fp, #-8]
     8194:	e59f2034 	ldr	r2, [pc, #52]	; 81d0 <_cpp_startup+0x54>
     8198:	e1530002 	cmp	r3, r2
     819c:	2a000006 	bcs	81bc <_cpp_startup+0x40>
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:67 (discriminator 2)
-		(*fnptr)();
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:66 (discriminator 2)
+        (*fnptr)();
     81a0:	e51b3008 	ldr	r3, [fp, #-8]
     81a4:	e5933000 	ldr	r3, [r3]
     81a8:	e12fff33 	blx	r3
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:66 (discriminator 2)
-	for (fnptr = __CTOR_LIST__; fnptr < __CTOR_END__; fnptr++)
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:65 (discriminator 2)
+    for (fnptr = __CTOR_LIST__; fnptr < __CTOR_END__; fnptr++)
     81ac:	e51b3008 	ldr	r3, [fp, #-8]
     81b0:	e2833004 	add	r3, r3, #4
     81b4:	e50b3008 	str	r3, [fp, #-8]
     81b8:	eafffff4 	b	8190 <_cpp_startup+0x14>
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:69
-	
-	return 0;
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:68
+
+    return 0;
     81bc:	e3a03000 	mov	r3, #0
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:70
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:69
 }
     81c0:	e1a00003 	mov	r0, r3
     81c4:	e24bd004 	sub	sp, fp, #4
@@ -294,41 +294,41 @@ extern "C" int _cpp_startup(void)
 
 000081d4 <_cpp_shutdown>:
 _cpp_shutdown():
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:73
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:72
 
 extern "C" int _cpp_shutdown(void)
 {
     81d4:	e92d4800 	push	{fp, lr}
     81d8:	e28db004 	add	fp, sp, #4
     81dc:	e24dd008 	sub	sp, sp, #8
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:77
-	dtor_ptr* fnptr;
-	
-	// zavolame destruktory globalnich C++ trid
-	for (fnptr = __DTOR_LIST__; fnptr < __DTOR_END__; fnptr++)
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:76
+    dtor_ptr* fnptr;
+
+    // zavolame destruktory globalnich C++ trid
+    for (fnptr = __DTOR_LIST__; fnptr < __DTOR_END__; fnptr++)
     81e0:	e59f303c 	ldr	r3, [pc, #60]	; 8224 <_cpp_shutdown+0x50>
     81e4:	e50b3008 	str	r3, [fp, #-8]
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:77 (discriminator 3)
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:76 (discriminator 3)
     81e8:	e51b3008 	ldr	r3, [fp, #-8]
     81ec:	e59f2034 	ldr	r2, [pc, #52]	; 8228 <_cpp_shutdown+0x54>
     81f0:	e1530002 	cmp	r3, r2
     81f4:	2a000006 	bcs	8214 <_cpp_shutdown+0x40>
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:78 (discriminator 2)
-		(*fnptr)();
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:77 (discriminator 2)
+        (*fnptr)();
     81f8:	e51b3008 	ldr	r3, [fp, #-8]
     81fc:	e5933000 	ldr	r3, [r3]
     8200:	e12fff33 	blx	r3
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:77 (discriminator 2)
-	for (fnptr = __DTOR_LIST__; fnptr < __DTOR_END__; fnptr++)
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:76 (discriminator 2)
+    for (fnptr = __DTOR_LIST__; fnptr < __DTOR_END__; fnptr++)
     8204:	e51b3008 	ldr	r3, [fp, #-8]
     8208:	e2833004 	add	r3, r3, #4
     820c:	e50b3008 	str	r3, [fp, #-8]
     8210:	eafffff4 	b	81e8 <_cpp_shutdown+0x14>
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:80
-	
-	return 0;
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:79
+
+    return 0;
     8214:	e3a03000 	mov	r3, #0
-/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:81
+/mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/cxxabi.cpp:80
 }
     8218:	e1a00003 	mov	r0, r3
     821c:	e24bd004 	sub	sp, fp, #4
@@ -351,7 +351,7 @@ int main(int argc, char** argv)
     8238:	e50b0018 	str	r0, [fp, #-24]	; 0xffffffe8
     823c:	e50b101c 	str	r1, [fp, #-28]	; 0xffffffe4
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/userspace/test_process_1/main.cpp:10
-	volatile int i;
+    volatile int i;
 
     uint32_t f = open("DEV:segd", NFile_Open_Mode::Write_Only);
     8240:	e3a01001 	mov	r1, #1
@@ -438,7 +438,7 @@ uint32_t getpid()
     asm volatile("swi 0");
     82ec:	ef000000 	svc	0x00000000
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:8
-    asm volatile("mov %0, r0" : "=r" (pid));
+    asm volatile("mov %0, r0" : "=r"(pid));
     82f0:	e1a03000 	mov	r3, r0
     82f4:	e50b3008 	str	r3, [fp, #-8]
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:10
@@ -463,7 +463,7 @@ void terminate(int exitcode)
     8314:	e24dd00c 	sub	sp, sp, #12
     8318:	e50b0008 	str	r0, [fp, #-8]
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:15
-    asm volatile("mov r0, %0" : : "r" (exitcode));
+    asm volatile("mov r0, %0" : : "r"(exitcode));
     831c:	e51b3008 	ldr	r3, [fp, #-8]
     8320:	e1a00003 	mov	r0, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:16
@@ -508,18 +508,18 @@ uint32_t open(const char* filename, NFile_Open_Mode mode)
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:28
     uint32_t file;
 
-    asm volatile("mov r0, %0" : : "r" (filename));
+    asm volatile("mov r0, %0" : : "r"(filename));
     8368:	e51b3010 	ldr	r3, [fp, #-16]
     836c:	e1a00003 	mov	r0, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:29
-    asm volatile("mov r1, %0" : : "r" (mode));
+    asm volatile("mov r1, %0" : : "r"(mode));
     8370:	e51b3014 	ldr	r3, [fp, #-20]	; 0xffffffec
     8374:	e1a01003 	mov	r1, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:30
     asm volatile("swi 64");
     8378:	ef000040 	svc	0x00000040
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:31
-    asm volatile("mov %0, r0" : "=r" (file));
+    asm volatile("mov %0, r0" : "=r"(file));
     837c:	e1a03000 	mov	r3, r0
     8380:	e50b3008 	str	r3, [fp, #-8]
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:33
@@ -548,22 +548,22 @@ uint32_t read(uint32_t file, char* const buffer, uint32_t size)
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:40
     uint32_t rdnum;
 
-    asm volatile("mov r0, %0" : : "r" (file));
+    asm volatile("mov r0, %0" : : "r"(file));
     83b0:	e51b3010 	ldr	r3, [fp, #-16]
     83b4:	e1a00003 	mov	r0, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:41
-    asm volatile("mov r1, %0" : : "r" (buffer));
+    asm volatile("mov r1, %0" : : "r"(buffer));
     83b8:	e51b3014 	ldr	r3, [fp, #-20]	; 0xffffffec
     83bc:	e1a01003 	mov	r1, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:42
-    asm volatile("mov r2, %0" : : "r" (size));
+    asm volatile("mov r2, %0" : : "r"(size));
     83c0:	e51b3018 	ldr	r3, [fp, #-24]	; 0xffffffe8
     83c4:	e1a02003 	mov	r2, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:43
     asm volatile("swi 65");
     83c8:	ef000041 	svc	0x00000041
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:44
-    asm volatile("mov %0, r0" : "=r" (rdnum));
+    asm volatile("mov %0, r0" : "=r"(rdnum));
     83cc:	e1a03000 	mov	r3, r0
     83d0:	e50b3008 	str	r3, [fp, #-8]
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:46
@@ -592,22 +592,22 @@ uint32_t write(uint32_t file, const char* buffer, uint32_t size)
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:53
     uint32_t wrnum;
 
-    asm volatile("mov r0, %0" : : "r" (file));
+    asm volatile("mov r0, %0" : : "r"(file));
     8400:	e51b3010 	ldr	r3, [fp, #-16]
     8404:	e1a00003 	mov	r0, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:54
-    asm volatile("mov r1, %0" : : "r" (buffer));
+    asm volatile("mov r1, %0" : : "r"(buffer));
     8408:	e51b3014 	ldr	r3, [fp, #-20]	; 0xffffffec
     840c:	e1a01003 	mov	r1, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:55
-    asm volatile("mov r2, %0" : : "r" (size));
+    asm volatile("mov r2, %0" : : "r"(size));
     8410:	e51b3018 	ldr	r3, [fp, #-24]	; 0xffffffe8
     8414:	e1a02003 	mov	r2, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:56
     asm volatile("swi 66");
     8418:	ef000042 	svc	0x00000042
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:57
-    asm volatile("mov %0, r0" : "=r" (wrnum));
+    asm volatile("mov %0, r0" : "=r"(wrnum));
     841c:	e1a03000 	mov	r3, r0
     8420:	e50b3008 	str	r3, [fp, #-8]
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:59
@@ -632,7 +632,7 @@ void close(uint32_t file)
     8440:	e24dd00c 	sub	sp, sp, #12
     8444:	e50b0008 	str	r0, [fp, #-8]
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:64
-    asm volatile("mov r0, %0" : : "r" (file));
+    asm volatile("mov r0, %0" : : "r"(file));
     8448:	e51b3008 	ldr	r3, [fp, #-8]
     844c:	e1a00003 	mov	r0, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:65
@@ -660,22 +660,22 @@ uint32_t ioctl(uint32_t file, NIOCtl_Operation operation, void* param)
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:72
     uint32_t retcode;
 
-    asm volatile("mov r0, %0" : : "r" (file));
+    asm volatile("mov r0, %0" : : "r"(file));
     847c:	e51b3010 	ldr	r3, [fp, #-16]
     8480:	e1a00003 	mov	r0, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:73
-    asm volatile("mov r1, %0" : : "r" (operation));
+    asm volatile("mov r1, %0" : : "r"(operation));
     8484:	e51b3014 	ldr	r3, [fp, #-20]	; 0xffffffec
     8488:	e1a01003 	mov	r1, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:74
-    asm volatile("mov r2, %0" : : "r" (param));
+    asm volatile("mov r2, %0" : : "r"(param));
     848c:	e51b3018 	ldr	r3, [fp, #-24]	; 0xffffffe8
     8490:	e1a02003 	mov	r2, r3
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:75
     asm volatile("swi 68");
     8494:	ef000044 	svc	0x00000044
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:76
-    asm volatile("mov %0, r0" : "=r" (retcode));
+    asm volatile("mov %0, r0" : "=r"(retcode));
     8498:	e1a03000 	mov	r3, r0
     849c:	e50b3008 	str	r3, [fp, #-8]
 /mnt/c/Users/Kuba/Documents/School/ZeroMate/examples/16-paging_userspace/stdlib/src/stdfile.cpp:78
@@ -839,7 +839,7 @@ Disassembly of section .debug_line:
  128:	05660104 	strbeq	r0, [r6, #-260]!	; 0xfffffefc
  12c:	05d98401 	ldrbeq	r8, [r9, #1025]	; 0x401
  130:	05316805 	ldreq	r6, [r1, #-2053]!	; 0xfffff7fb
- 134:	05053312 	streq	r3, [r5, #-786]	; 0xfffffcee
+ 134:	05053412 	streq	r3, [r5, #-1042]	; 0xfffffbee
  138:	054b3185 	strbeq	r3, [fp, #-389]	; 0xfffffe7b
  13c:	06022f01 	streq	r2, [r2], -r1, lsl #30
  140:	0b010100 	bleq	40548 <__bss_end+0x38054>
@@ -878,37 +878,37 @@ Disassembly of section .debug_line:
  1c4:	692d746c 	pushvs	{r2, r3, r5, r6, sl, ip, sp, lr}
  1c8:	00003e6e 	andeq	r3, r0, lr, ror #28
  1cc:	05000000 	streq	r0, [r0, #-0]
- 1d0:	02050002 	andeq	r0, r5, #2
+ 1d0:	02050005 	andeq	r0, r5, #5
  1d4:	000080a4 	andeq	r8, r0, r4, lsr #1
  1d8:	05010a03 	streq	r0, [r1, #-2563]	; 0xfffff5fd
- 1dc:	0a05830b 	beq	160e10 <__bss_end+0x15891c>
- 1e0:	8302054a 	movwhi	r0, #9546	; 0x254a
- 1e4:	830e0585 	movwhi	r0, #58757	; 0xe585
- 1e8:	85670205 	strbhi	r0, [r7, #-517]!	; 0xfffffdfb
- 1ec:	86010584 	strhi	r0, [r1], -r4, lsl #11
+ 1dc:	10058311 	andne	r8, r5, r1, lsl r3
+ 1e0:	8305054a 	movwhi	r0, #21834	; 0x554a
+ 1e4:	83130585 	tsthi	r3, #557842432	; 0x21400000
+ 1e8:	85670505 	strbhi	r0, [r7, #-1285]!	; 0xfffffafb
+ 1ec:	86010583 	strhi	r0, [r1], -r3, lsl #11
  1f0:	854c854c 	strbhi	r8, [ip, #-1356]	; 0xfffffab4
- 1f4:	0205854c 	andeq	r8, r5, #76, 10	; 0x13000000
+ 1f4:	0505854c 	streq	r8, [r5, #-1356]	; 0xfffffab4
  1f8:	01040200 	mrseq	r0, R12_usr
  1fc:	0301054b 	movweq	r0, #5451	; 0x154b
- 200:	0d052e12 	stceq	14, cr2, [r5, #-72]	; 0xffffffb8
- 204:	0024056b 	eoreq	r0, r4, fp, ror #10
+ 200:	10052e12 	andne	r2, r5, r2, lsl lr
+ 204:	0027056b 	eoreq	r0, r7, fp, ror #10
  208:	4a030402 	bmi	c1218 <__bss_end+0xb8d24>
- 20c:	02000405 	andeq	r0, r0, #83886080	; 0x5000000
+ 20c:	02000a05 	andeq	r0, r0, #20480	; 0x5000
  210:	05830204 	streq	r0, [r3, #516]	; 0x204
- 214:	0402000b 	streq	r0, [r2], #-11
- 218:	02054a02 	andeq	r4, r5, #8192	; 0x2000
+ 214:	04020011 	streq	r0, [r2], #-17	; 0xffffffef
+ 218:	05054a02 	streq	r4, [r5, #-2562]	; 0xfffff5fe
  21c:	02040200 	andeq	r0, r4, #0, 4
- 220:	8509052d 	strhi	r0, [r9, #-1325]	; 0xfffffad3
+ 220:	850c052d 	strhi	r0, [ip, #-1325]	; 0xfffffad3
  224:	a12f0105 			; <UNDEFINED> instruction: 0xa12f0105
- 228:	056a0d05 	strbeq	r0, [sl, #-3333]!	; 0xfffff2fb
- 22c:	04020024 	streq	r0, [r2], #-36	; 0xffffffdc
- 230:	04054a03 	streq	r4, [r5], #-2563	; 0xfffff5fd
+ 228:	056a1005 	strbeq	r1, [sl, #-5]!
+ 22c:	04020027 	streq	r0, [r2], #-39	; 0xffffffd9
+ 230:	0a054a03 	beq	152a44 <__bss_end+0x14a550>
  234:	02040200 	andeq	r0, r4, #0, 4
- 238:	000b0583 	andeq	r0, fp, r3, lsl #11
+ 238:	00110583 	andseq	r0, r1, r3, lsl #11
  23c:	4a020402 	bmi	8124c <__bss_end+0x78d58>
- 240:	02000205 	andeq	r0, r0, #1342177280	; 0x50000000
+ 240:	02000505 	andeq	r0, r0, #20971520	; 0x1400000
  244:	052d0204 	streq	r0, [sp, #-516]!	; 0xfffffdfc
- 248:	01058509 	tsteq	r5, r9, lsl #10
+ 248:	0105850c 	tsteq	r5, ip, lsl #10
  24c:	000a022f 	andeq	r0, sl, pc, lsr #4
  250:	01b60101 			; <UNDEFINED> instruction: 0x01b60101
  254:	00030000 	andeq	r0, r3, r0
@@ -1240,7 +1240,7 @@ Disassembly of section .debug_info:
   78:	9c010000 	stcls	0, cr0, [r1], {-0}
   7c:	0000006a 	andeq	r0, r0, sl, rrx
   80:	00015b05 	andeq	r5, r1, r5, lsl #22
-  84:	091b0100 	ldmdbeq	fp, {r8}
+  84:	091c0100 	ldmdbeq	ip, {r8}
   88:	0000006a 	andeq	r0, r0, sl, rrx
   8c:	00749102 	rsbseq	r9, r4, r2, lsl #2
   90:	69050406 	stmdbvs	r5, {r1, r2, sl}
@@ -1266,12 +1266,12 @@ Disassembly of section .debug_info:
   e0:	00018800 	andeq	r8, r1, r0, lsl #16
   e4:	00014300 	andeq	r4, r1, r0, lsl #6
   e8:	03e00200 	mvneq	r0, #0, 4
-  ec:	2f010000 	svccs	0x00010000
+  ec:	2e010000 	cdpcs	0, 0, cr0, cr1, cr0, {0}
   f0:	00003107 	andeq	r3, r0, r7, lsl #2
   f4:	37040300 	strcc	r0, [r4, -r0, lsl #6]
   f8:	04000000 	streq	r0, [r0], #-0
   fc:	00028802 	andeq	r8, r2, r2, lsl #16
- 100:	07300100 	ldreq	r0, [r0, -r0, lsl #2]!
+ 100:	072f0100 	streq	r0, [pc, -r0, lsl #2]!
  104:	00000031 	andeq	r0, r0, r1, lsr r0
  108:	00002505 	andeq	r2, r0, r5, lsl #10
  10c:	00005700 	andeq	r5, r0, r0, lsl #14
@@ -1281,82 +1281,82 @@ Disassembly of section .debug_info:
  11c:	0ad20704 	beq	ff481d34 <__bss_end+0xff479840>
  120:	d2080000 	andle	r0, r8, #0
  124:	01000003 	tsteq	r0, r3
- 128:	00441533 	subeq	r1, r4, r3, lsr r5
+ 128:	00441532 	subeq	r1, r4, r2, lsr r5
  12c:	4e080000 	cdpmi	0, 0, cr0, cr8, cr0, {0}
  130:	01000002 	tsteq	r0, r2
- 134:	00441535 	subeq	r1, r4, r5, lsr r5
+ 134:	00441534 	subeq	r1, r4, r4, lsr r5
  138:	38050000 	stmdacc	r5, {}	; <UNPREDICTABLE>
  13c:	89000000 	stmdbhi	r0, {}	; <UNPREDICTABLE>
  140:	06000000 	streq	r0, [r0], -r0
  144:	00000057 	andeq	r0, r0, r7, asr r0
  148:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
  14c:	02680800 	rsbeq	r0, r8, #0, 16
- 150:	38010000 	stmdacc	r1, {}	; <UNPREDICTABLE>
+ 150:	37010000 	strcc	r0, [r1, -r0]
  154:	00007615 	andeq	r7, r0, r5, lsl r6
  158:	02ef0800 	rsceq	r0, pc, #0, 16
- 15c:	3a010000 	bcc	40164 <__bss_end+0x37c70>
+ 15c:	39010000 	stmdbcc	r1, {}	; <UNPREDICTABLE>
  160:	00007615 	andeq	r7, r0, r5, lsl r6
  164:	02080900 	andeq	r0, r8, #0, 18
- 168:	48010000 	stmdami	r1, {}	; <UNPREDICTABLE>
+ 168:	47010000 	strmi	r0, [r1, -r0]
  16c:	0000cb10 	andeq	ip, r0, r0, lsl fp
  170:	0081d400 	addeq	sp, r1, r0, lsl #8
  174:	00005800 	andeq	r5, r0, r0, lsl #16
  178:	cb9c0100 	blgt	fe700580 <__bss_end+0xfe6f808c>
  17c:	0a000000 	beq	184 <_start-0x7e7c>
  180:	00000216 	andeq	r0, r0, r6, lsl r2
- 184:	d20c4a01 	andle	r4, ip, #4096	; 0x1000
+ 184:	d20f4901 	andle	r4, pc, #16384	; 0x4000
  188:	02000000 	andeq	r0, r0, #0
  18c:	0b007491 	bleq	1d3d8 <__bss_end+0x14ee4>
  190:	6e690504 	cdpvs	5, 6, cr0, cr9, cr4, {0}
  194:	04030074 	streq	r0, [r3], #-116	; 0xffffff8c
  198:	00000038 	andeq	r0, r0, r8, lsr r0
  19c:	00031709 	andeq	r1, r3, r9, lsl #14
- 1a0:	103c0100 	eorsne	r0, ip, r0, lsl #2
+ 1a0:	103b0100 	eorsne	r0, fp, r0, lsl #2
  1a4:	000000cb 	andeq	r0, r0, fp, asr #1
  1a8:	0000817c 	andeq	r8, r0, ip, ror r1
  1ac:	00000058 	andeq	r0, r0, r8, asr r0
  1b0:	01029c01 	tsteq	r2, r1, lsl #24
  1b4:	160a0000 	strne	r0, [sl], -r0
  1b8:	01000002 	tsteq	r0, r2
- 1bc:	01020c3e 	tsteq	r2, lr, lsr ip
+ 1bc:	01020f3d 	tsteq	r2, sp, lsr pc
  1c0:	91020000 	mrsls	r0, (UNDEF: 2)
  1c4:	04030074 	streq	r0, [r3], #-116	; 0xffffff8c
  1c8:	00000025 	andeq	r0, r0, r5, lsr #32
  1cc:	0001f10c 	andeq	pc, r1, ip, lsl #2
- 1d0:	11290100 			; <UNDEFINED> instruction: 0x11290100
+ 1d0:	11280100 			; <UNDEFINED> instruction: 0x11280100
  1d4:	00008170 	andeq	r8, r0, r0, ror r1
  1d8:	0000000c 	andeq	r0, r0, ip
  1dc:	270c9c01 	strcs	r9, [ip, -r1, lsl #24]
  1e0:	01000002 	tsteq	r0, r2
- 1e4:	81581124 	cmphi	r8, r4, lsr #2
+ 1e4:	81581123 	cmphi	r8, r3, lsr #2
  1e8:	00180000 	andseq	r0, r8, r0
  1ec:	9c010000 	stcls	0, cr0, [r1], {-0}
  1f0:	0002fc0c 	andeq	pc, r2, ip, lsl #24
- 1f4:	111f0100 	tstne	pc, r0, lsl #2
+ 1f4:	111e0100 	tstne	lr, r0, lsl #2
  1f8:	00008140 	andeq	r8, r0, r0, asr #2
  1fc:	00000018 	andeq	r0, r0, r8, lsl r0
  200:	5b0c9c01 	blpl	32720c <__bss_end+0x31ed18>
  204:	01000002 	tsteq	r0, r2
- 208:	8128111a 			; <UNDEFINED> instruction: 0x8128111a
+ 208:	81281119 			; <UNDEFINED> instruction: 0x81281119
  20c:	00180000 	andseq	r0, r8, r0
  210:	9c010000 	stcls	0, cr0, [r1], {-0}
  214:	00021c0d 	andeq	r1, r2, sp, lsl #24
  218:	9e000200 	cdpls	2, 0, cr0, cr0, cr0, {0}
  21c:	0e000001 	cdpeq	0, 0, cr0, cr0, cr1, {0}
  220:	00000276 	andeq	r0, r0, r6, ror r2
- 224:	6d121401 	cfldrsvs	mvf1, [r2, #-4]
+ 224:	6d151401 	cfldrsvs	mvf1, [r5, #-4]
  228:	0f000001 	svceq	0x00000001
  22c:	0000019e 	muleq	r0, lr, r1
  230:	01e90200 	mvneq	r0, r0, lsl #4
  234:	04010000 	streq	r0, [r1], #-0
- 238:	0001a41c 	andeq	sl, r1, ip, lsl r4
+ 238:	0001a41f 	andeq	sl, r1, pc, lsl r4
  23c:	023a0e00 	eorseq	r0, sl, #0, 28
  240:	0f010000 	svceq	0x00010000
- 244:	00018b12 	andeq	r8, r1, r2, lsl fp
+ 244:	00018b15 	andeq	r8, r1, r5, lsl fp
  248:	019e0f00 	orrseq	r0, lr, r0, lsl #30
  24c:	10000000 	andne	r0, r0, r0
  250:	000003e9 	andeq	r0, r0, r9, ror #7
- 254:	cb110a01 	blgt	442a60 <__bss_end+0x43a56c>
+ 254:	cb140a01 	blgt	502a60 <__bss_end+0x4fa56c>
  258:	0f000000 	svceq	0x00000000
  25c:	0000019e 	muleq	r0, lr, r1
  260:	04030000 	streq	r0, [r3], #-0
@@ -1375,7 +1375,7 @@ Disassembly of section .debug_info:
  294:	0000002c 	andeq	r0, r0, ip, lsr #32
  298:	01e89c01 	mvneq	r9, r1, lsl #24
  29c:	67130000 	ldrvs	r0, [r3, -r0]
- 2a0:	300f0100 	andcc	r0, pc, r0, lsl #2
+ 2a0:	320f0100 	andcc	r0, pc, #0, 2
  2a4:	0000019e 	muleq	r0, lr, r1
  2a8:	00749102 	rsbseq	r9, r4, r2, lsl #2
  2ac:	00018b14 	andeq	r8, r1, r4, lsl fp
@@ -1383,7 +1383,7 @@ Disassembly of section .debug_info:
  2b4:	00003800 	andeq	r3, r0, r0, lsl #16
  2b8:	139c0100 	orrsne	r0, ip, #0, 2
  2bc:	0a010067 	beq	40460 <__bss_end+0x37f6c>
- 2c0:	00019e2f 	andeq	r9, r1, pc, lsr #28
+ 2c0:	00019e31 	andeq	r9, r1, r1, lsr lr
  2c4:	74910200 	ldrvc	r0, [r1], #512	; 0x200
  2c8:	01500000 	cmpeq	r0, r0
  2cc:	00040000 	andeq	r0, r4, r0
@@ -1455,7 +1455,7 @@ Disassembly of section .debug_info:
  3d4:	0000013b 	andeq	r0, r0, fp, lsr r1
  3d8:	0c609102 	stfeqp	f1, [r0], #-8
  3dc:	08010069 	stmdaeq	r1, {r0, r3, r5, r6}
- 3e0:	00003a0f 	andeq	r3, r0, pc, lsl #20
+ 3e0:	00003a12 	andeq	r3, r0, r2, lsl sl
  3e4:	70910200 	addsvc	r0, r1, r0, lsl #4
  3e8:	0100660c 	tsteq	r0, ip, lsl #12
  3ec:	004d0e0a 	subeq	r0, sp, sl, lsl #28

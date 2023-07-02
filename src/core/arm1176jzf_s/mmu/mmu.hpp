@@ -124,6 +124,13 @@ namespace zero_mate::arm1176jzf_s::mmu
                                   const CCPU_Context& cpu_context,
                                   bool write_access);
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks if the TLB entries should be invalidated and if so, it clears the cache.
+        ///
+        /// It does it by checking the flag in the c8, c7, 0 register of coprocessor CP15.
+        // -------------------------------------------------------------------------------------------------------------
+        void Flush_TLB_If_Needed();
+
     private:
         std::shared_ptr<CBus> m_bus;                      ///< Bus
         std::shared_ptr<coprocessor::cp15::CCP15> m_cp15; ///< Coprocessor CP15
