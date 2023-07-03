@@ -38,8 +38,11 @@ https://silhavyj.github.io/ZeroMate/
 - [x] Exceptions
 - [x] CPU modes (+ view of all banked CPU registers)
 - [x] Paging
-- [x] Support for external peripherals (shared libraries)
+- [x] Support for external peripherals (shared libraries such as a button, LED, 7-segment display, etc.)
 - [x] Loading of multiple ELF filer (kernel + separately compiled processes)
+- [ ] I2C
+- [ ] SPI
+- [ ] UART 
 
 
 <img src="misc/screenshots/screenshot-01.png">
