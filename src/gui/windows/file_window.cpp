@@ -1,20 +1,22 @@
 #include <imgui/imgui.h>
 #include <ImGuiFileDialog/ImGuiFileDialog.h>
 #include <fmt/include/fmt/core.h>
+#include <filesystem>
 
 #include "file_window.hpp"
 #include "zero_mate/utils/singleton.hpp"
 
 namespace zero_mate::gui
 {
-    CFile_Window::CFile_Window(std::shared_ptr<CBus> bus,
-                               std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
-                               std::vector<utils::elf::TText_Section_Record>& source_code,
-                               bool& elf_file_has_been_loaded,
-                               std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals)
+    CFile_Window::CFile_Window(
+    std::shared_ptr<CBus> bus,
+    std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
+    std::unordered_map<std::string, std::vector<utils::elf::TText_Section_Record>>& source_codes,
+    bool& elf_file_has_been_loaded,
+    std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals)
     : m_bus{ bus }
     , m_cpu{ cpu }
-    , m_source_code{ source_code }
+    , m_source_codes{ source_codes }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
     , m_peripherals{ peripherals }
@@ -26,7 +28,7 @@ namespace zero_mate::gui
         if (ImGui::Begin("File"))
         {
             static bool s_open_elf{ false };
-            static std::string s_elf_filename{};
+            static std::string s_elf_full_path{};
 
             if (ImGui::Button("Open .ELF"))
             {
@@ -38,7 +40,6 @@ namespace zero_mate::gui
             }
 
             ImGui::SameLine();
-            ImGui::Text("%s", s_elf_filename.c_str());
 
             if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey"))
             {
@@ -46,27 +47,43 @@ namespace zero_mate::gui
                 {
                     if (s_open_elf)
                     {
-                        s_elf_filename = ImGuiFileDialog::Instance()->GetFilePathName();
+                        s_elf_full_path = ImGuiFileDialog::Instance()->GetFilePathName();
+
+                        const std::filesystem::path full_path{ s_elf_full_path };
+                        const std::string elf_filename = full_path.filename().string();
+
+                        if (m_source_codes.contains(elf_filename))
+                        {
+                            m_logging_system.Error(
+                            fmt::format("{} has already been loaded. You may need to close it first", elf_filename)
+                            .c_str());
+                            goto cleanup;
+                        }
+
+                        // TODO think of a better way to detect that it is the kernel being loaded
 
                         // Reset peripherals.
-                        std::for_each(m_peripherals.begin(), m_peripherals.end(), [](auto& peripheral) -> void {
-                            peripheral->Reset();
-                        });
+                        if (elf_filename == "kernel.elf")
+                        {
+                            std::for_each(m_peripherals.begin(), m_peripherals.end(), [](auto& peripheral) -> void {
+                                peripheral->Reset();
+                            });
+                        }
 
                         const auto [error_code, pc, disassembly] =
-                        utils::elf::Load_Kernel(*m_bus, s_elf_filename.c_str());
+                        utils::elf::Load_ELF(*m_bus, s_elf_full_path.c_str(), elf_filename == "kernel.elf");
 
                         switch (error_code)
                         {
                             case utils::elf::NError_Code::OK:
-                                m_cpu->Reset_Context();
-                                m_cpu->Set_PC(pc);
-                                m_source_code = disassembly;
+                                if (elf_filename == "kernel.elf")
+                                {
+                                    m_cpu->Reset_Context();
+                                    m_cpu->Set_PC(pc);
+                                }
+                                m_source_codes[elf_filename] = disassembly;
                                 m_logging_system.Info(
-                                fmt::format(
-                                "The .ELF file has been loaded successfully. The program starts at 0x{:08X}",
-                                pc)
-                                .c_str());
+                                fmt::format("{} has been loaded successfully", s_elf_full_path.c_str()).c_str());
                                 m_elf_file_has_been_loaded = true;
                                 break;
 
@@ -85,9 +102,8 @@ namespace zero_mate::gui
                         }
                     }
                 }
-
+            cleanup:
                 s_open_elf = false;
-
                 ImGuiFileDialog::Instance()->Close();
             }
         }

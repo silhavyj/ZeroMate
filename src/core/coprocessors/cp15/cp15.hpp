@@ -64,7 +64,7 @@ namespace zero_mate::coprocessor::cp15
         /// \return Primary register of CP15
         // -------------------------------------------------------------------------------------------------------------
         template<typename Reg_Type>
-        [[nodiscard]] std::shared_ptr<const Reg_Type> Get_Primary_Register(NPrimary_Register primary_reg) const
+        [[nodiscard]] std::shared_ptr<Reg_Type> Get_Primary_Register(NPrimary_Register primary_reg) const
         {
             // Make sure Reg_Type is derived from IPrimary_Reg.
             static_assert(std::is_base_of<IPrimary_Reg, Reg_Type>::value);

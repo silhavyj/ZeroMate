@@ -250,7 +250,7 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::Text("Boundary");
             ImGui::TableNextColumn();
-            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c2->Get_Boundary())).c_str());
+            ImGui::Text("%s", fmt::format("{}", magic_enum::enum_name(cp15_c2->Get_Boundary_Type())).c_str());
 
             ImGui::TableNextRow();
             ImGui::TableNextColumn();

@@ -82,10 +82,12 @@ namespace zero_mate::arm1176jzf_s::mmu
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Retrieves a given page from a page table by a given virtual address.
+        /// \param page_table Page table used for address translation
         /// \param virtual_addr Virtual address used to retrieve the corresponding page from the page table
         /// \return Page retrieved from the page table as well as the physical address (virtual address translation)
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] inline TPage_Table_Record Get_Page_Table_Record(std::uint32_t virtual_addr) const;
+        [[nodiscard]] inline TPage_Table_Record Get_Page_Table_Record(CPage_Table& page_table,
+                                                                      std::uint32_t virtual_addr) const;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Verifies access privileges when accessing a page (virtual address).
@@ -95,10 +97,10 @@ namespace zero_mate::arm1176jzf_s::mmu
         /// \param cpu_context
         /// \param write_access Read/Write acCPU context to retrieve the current CPU modecess to the page
         // -------------------------------------------------------------------------------------------------------------
-        inline void Verify_Access_Privileges(const CPage_Entry& page,
-                                             std::uint32_t virtual_addr,
-                                             const CCPU_Context& cpu_context,
-                                             bool write_access);
+        static inline void Verify_Access_Privileges(const CPage_Entry& page,
+                                                    std::uint32_t virtual_addr,
+                                                    const CCPU_Context& cpu_context,
+                                                    bool write_access);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Verifies the access type.
@@ -124,15 +126,27 @@ namespace zero_mate::arm1176jzf_s::mmu
                                   const CCPU_Context& cpu_context,
                                   bool write_access);
 
-    private:
-        std::shared_ptr<CBus> m_bus;                      ///< Bus
-        std::shared_ptr<coprocessor::cp15::CCP15> m_cp15; ///< Coprocessor CP15
-        std::uint32_t m_TTBR0_addr;                       ///< Address of page table 0
-        CPage_Table m_page_table_0;                       ///< Page table 0
-        std::uint32_t m_TTBR1_addr;                       ///< Address of page table 1
-        CPage_Table m_page_table_1;                       ///< Page table 1
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks if the TLB entries should be invalidated and if so, it clears the cache.
+        ///
+        /// It does it by checking the flag in the c8, c7, 0 register of coprocessor CP15.
+        // -------------------------------------------------------------------------------------------------------------
+        void Flush_TLB_If_Needed();
 
-        // TODO create a TLB for m_page_table_1?
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Returns the page table that will be used for address translation (boundary register C2 C0 2).
+        /// \param virtual_addr Virtual address issued by the CPU (we need to determine what page table will be used)
+        /// \return Page table to be used for address translation
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] CPage_Table& Get_Page_Table(std::uint32_t virtual_addr);
+
+    private:
+        std::shared_ptr<CBus> m_bus;                                  ///< Bus
+        std::shared_ptr<coprocessor::cp15::CCP15> m_cp15;             ///< Coprocessor CP15
+        std::uint32_t m_TTBR0_addr;                                   ///< Address of page table 0
+        CPage_Table m_page_table_0;                                   ///< Page table 0
+        std::uint32_t m_TTBR1_addr;                                   ///< Address of page table 1
+        CPage_Table m_page_table_1;                                   ///< Page table 1
         std::unordered_map<std::uint32_t, std::uint32_t> m_TLB_cache; ///< TLB cache
     };
 

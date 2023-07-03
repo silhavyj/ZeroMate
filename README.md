@@ -1,4 +1,4 @@
-#  <img src="misc/logo/logo_1.svg" width="25%">
+#  <img src="misc/logos/title.svg" width="25%">
 
 Raspberry Pi Zero Emulator
 
@@ -14,4 +14,4 @@ Raspberry Pi Zero Emulator
 https://silhavyj.github.io/ZeroMate/
 
 
-<img src="misc/pics/screenshot-01.png">
+<img src="misc/screenshots/screenshot-01.png">

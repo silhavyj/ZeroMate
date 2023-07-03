@@ -39,4 +39,12 @@ namespace zero_mate::coprocessor::cp15
         return m_regs.at(crm_c7_idx).at(crm_c7_0_idx) == 0;
     }
 
+    void CC8::TLB_Has_Been_Invalidated()
+    {
+        const auto crm_c7_idx = static_cast<std::uint32_t>(NCRm::C7);
+        const auto crm_c7_0_idx = static_cast<std::uint32_t>(NCRm_C7_Register::Invalidate_Unified_TLB_Unlocked_Entries);
+
+        m_regs[crm_c7_idx][crm_c7_0_idx] = 1;
+    }
+
 } // namespace zero_mate::coprocessor::cp15
