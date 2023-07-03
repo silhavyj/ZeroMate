@@ -11,6 +11,19 @@ Raspberry Pi Zero Emulator
 
 ---
 
+## Description
+
+ZeroMate is an educational Raspberry Pi Zero emulator designed specifically as a **debugging tool for operating system development**. While using the emulator, please keep in mind that certain features may be missing or limited, as it is still under active development.
+
+## Download
+
+The emulator was tested on both Windows and Linux using the MSVC and gcc compiler respectively. You can download a ready-to-use executable for both platforms from the latest [release](https://github.com/silhavyj/ZeroMate/releases). Alternatively, if you are brave enough, you can attempt to [build](docs/build.md) it yourself from the source code.
+
+## Examples 
+
+The emulator comes with a couple of prebuilt [examples](examples/README.md) that you are encouraged to try out. For more implementation details, you can also check out 
+
+ Online Doxygen documentation can be found over 
 https://silhavyj.github.io/ZeroMate/
 
 
