@@ -21,10 +21,25 @@ The emulator was tested on both Windows and Linux using the MSVC and gcc compile
 
 ## Examples 
 
-The emulator comes with a couple of prebuilt [examples](examples/README.md) that you are encouraged to try out. For more implementation details, you can also check out 
+The emulator comes with a couple of prebuilt [examples](examples/README.md) that you are encouraged to try out.
 
- Online Doxygen documentation can be found over 
+Online Doxygen documentation can be found over 
 https://silhavyj.github.io/ZeroMate/
+
+## Some of the key features
+
+- [x] Majority of ARMv6 instructions
+- [x] Stepping through the source code
+- [x] RAM
+- [x] GPIO
+- [x] Interrupt controller
+- [x] ARM timer
+- [x] TRNG (random number generator)
+- [x] Exceptions
+- [x] CPU modes (+ view of all banked CPU registers)
+- [x] Paging
+- [x] Support for external peripherals (shared libraries)
+- [x] Loading of multiple ELF filer (kernel + separately compiled processes)
 
 
 <img src="misc/screenshots/screenshot-01.png">
