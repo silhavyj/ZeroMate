@@ -1,14 +1,5 @@
 # Building the emulator from the source code
 
-- [Requirements](#requirements)
-- [Cloning](#cloning)
-- [Build](#build)
-  * [Windows](#windows)
-  * [Linux](#linux)
-    + [Debug](#debug)
-    + [Release](#release)
-- [Output](#output)
-
 ## Requirements
 
 To build the emulator from the source code, the user needs to have [CMake](https://cmake.org/), a C++ compiler, and a build system of their choice installed on their machine. However, it is recommended to use the following combinations to ensure a smooth build process:

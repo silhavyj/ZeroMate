@@ -17,4 +17,10 @@ Each example includes the source code, as well as an output folder containing EL
 - [13 - context_switch_monitor](13-context_switch_monitor/README.md)
 - [14 - filesystem_monitor](14-filesystem_monitor/README.md)
 - [15 - DPP_01_external_peripherals](15-DPP_01_external_peripherals/README.md)
-- [16-paging_userspace](16-paging_userspace/README.md)
+- [16 - paging_userspace](16-paging_userspace/README.md)
+
+If the user wants to modify or rebuild any of the examples, they are more than welcome to do so. However, they will need to have `gcc-arm-none-eabi` installed on their machine. On a Debian-based machine, it can be achieved by running the following command:
+
+```
+sudo apt install gcc-arm-none-eabi
+```
