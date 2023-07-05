@@ -13,6 +13,8 @@ ZeroMate utilizes several external libraries. However, the user does not need to
 
 The only essential dependency that must already be present on the user's machine is [OpenGL](https://www.opengl.org/), which is most likely already included by default.
 
+## Cloning
+
 ## Windows
 
 First, the user needs to navigate to the root folder of the project structure, where the root [CMakeLists.txt](../CMakeLists.txt) is located, and run the following command.
@@ -25,7 +27,7 @@ Once the command has finished, the `.sln` file should be located in `build/msvc`
 
 ## Linux
 
-The process of building the emulator on Linux is nearly identical. Users can choose whether they want to build for debugging or release. It is recommended to choose the release option as it incorporates various optimizations.
+The process of building the emulator on Linux is nearly identical. The user can choose whether they want to build for debugging or release. It is recommended to choose the release option as it incorporates various optimizations.
 
 ### Debug
 
