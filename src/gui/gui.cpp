@@ -50,7 +50,7 @@ namespace zero_mate::gui
             s_log_window->Set_Logging_Level(utils::ILogger::NLogging_Level::Debug);
             soc::g_logging_system.Add_Logger(s_log_window);
 
-            s_windows.emplace_back(std::make_shared<CRegisters_Window>(soc::g_cpu, s_cpu_running));
+            s_windows.emplace_back(std::make_shared<CRegisters_Window>(soc::g_cpu));
             s_windows.push_back(std::make_shared<CRAM_Window>(soc::g_ram));
             s_windows.emplace_back(std::make_shared<CControl_Window>(soc::g_cpu,
                                                                      s_scroll_to_curr_line,
