@@ -1,11 +1,20 @@
-# Build
+# Building the emulator from the source code
+
+- [Requirements](#requirements)
+- [Cloning](#cloning)
+- [Build](#build)
+  * [Windows](#windows)
+  * [Linux](#linux)
+    + [Debug](#debug)
+    + [Release](#release)
+- [Output](#output)
 
 ## Requirements
 
 To build the emulator from the source code, the user needs to have [CMake](https://cmake.org/), a C++ compiler, and a build system of their choice installed on their machine. However, it is recommended to use the following combinations to ensure a smooth build process:
 
-- Windows: Microsoft Visual Studio + MSVC
-- Linux: Makefiles + GCC
+- Windows: [Microsoft Visual Studio](https://visualstudio.microsoft.com/) + MSVC
+- Linux: Makefiles + [GCC](https://gcc.gnu.org/)
 
 Other build systems and compilers can also be used. These recommendations are based on the combinations used during the development of the emulator, increasing the likelihood of a successful build. The user can also use [CMakePresets.json](../CMakePresets.json) to automate the build process.
 
@@ -15,7 +24,17 @@ The only essential dependency that must already be present on the user's machine
 
 ## Cloning
 
-## Windows
+First of all, the user needs to **recursively** clone the repository by running the following command:
+
+```
+git clone --recursive https://github.com/silhavyj/ZeroMate.git
+```
+
+The recursive version of the clone commands ensures that all submodules are cloned as well. 
+
+## Build
+
+### Windows
 
 First, the user needs to navigate to the root folder of the project structure, where the root [CMakeLists.txt](../CMakeLists.txt) is located, and run the following command.
 
@@ -25,11 +44,11 @@ cmake --preset=msvc
 
 Once the command has finished, the `.sln` file should be located in `build/msvc`. This file can be opened using Microsoft Visual Studio. The actual build can be then done from the IDE itself.
 
-## Linux
+### Linux
 
 The process of building the emulator on Linux is nearly identical. The user can choose whether they want to build for debugging or release. It is recommended to choose the release option as it incorporates various optimizations.
 
-### Debug
+#### Debug
 
 ```
 cmake --preset=unix_debug
@@ -38,7 +57,7 @@ cmake --preset=unix_debug
 ```
 cmake --build build/unix_makefiles/debug -j10
 ```
-### Release
+#### Release
 
 ```
 cmake --preset=unix_release
