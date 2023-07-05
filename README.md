@@ -11,7 +11,38 @@ Raspberry Pi Zero Emulator
 
 ---
 
-https://silhavyj.github.io/ZeroMate/
+## Description
+
+ZeroMate is an educational Raspberry Pi Zero emulator designed specifically as a **debugging tool for operating system development**. Its ultimate goal is to emulate [KIV-RTOS](https://github.com/MartinUbl/KIV-RTOS). For more information about the operating system itself, you can visit https://home.zcu.cz/~ublm/?page=vyuka&sub=os. Please keep in mind that while using the emulator, certain features may be missing or limited as it is still under active development.
+
+## Installation
+
+The emulator was tested on both Windows and Linux using the MSVC and gcc compiler respectively. You can download a ready-to-use executable for both platforms from the latest [release](https://github.com/silhavyj/ZeroMate/releases). Alternatively, if you are brave enough, you can attempt to [build](docs/build.md) it yourself from the source code.
+
+## Examples 
+
+The emulator comes with a couple of prebuilt [examples](examples/README.md) that you are encouraged to try out.
+
+Online Doxygen documentation can be found over at https://silhavyj.github.io/ZeroMate/
+
+## Some of the key features
+
+- [x] Majority of ARMv6 instructions
+- [x] Stepping through the source code
+- [x] RAM
+- [x] GPIO
+- [x] Interrupt controller
+- [x] ARM timer
+- [x] Memory-mapped debug monitor
+- [x] TRNG (random number generator)
+- [x] Exceptions
+- [x] CPU modes (+ view of all banked CPU registers)
+- [x] Paging
+- [x] Support for external peripherals (shared libraries such as a button, LED, 7-segment display, etc.)
+- [x] Loading of multiple ELF filer (kernel + separately compiled processes)
+- [ ] I2C
+- [ ] SPI
+- [ ] UART 
 
 
 <img src="misc/screenshots/screenshot-01.png">
