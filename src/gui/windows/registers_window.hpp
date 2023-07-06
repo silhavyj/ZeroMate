@@ -61,29 +61,32 @@ namespace zero_mate::gui
         };
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param cpu_context
+        /// \brief Checks if the CPU mode has changed.
+        ///
+        /// If it has, it selects the corresponding tab to view the banked registers of the current CPU mode.
+        ///
+        /// \param cpu_context CPU context
         // -------------------------------------------------------------------------------------------------------------
         void Check_If_CPU_Mode_Changes(const arm1176jzf_s::CCPU_Context& cpu_context);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param cpu_context
+        /// \brief Renders a label displaying the current CPU mode.
+        /// \param cpu_context CPU context
         // -------------------------------------------------------------------------------------------------------------
         void Render_CPU_Mode(const arm1176jzf_s::CCPU_Context& cpu_context);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param cpu_context
+        /// \brief Renders tabs for different CPU modes (SVC, IRQ, FIQ, etc.)
+        /// \param cpu_context CPU context
         // -------------------------------------------------------------------------------------------------------------
         void Render_Register_Modes_Tabs(const arm1176jzf_s::CCPU_Context& cpu_context);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param title
-        /// \param format
-        /// \param mode
-        /// \param cpu_context
+        /// \brief Renders table with CPU registers of a given CPU mode.
+        /// \param title Unique title (identifier) of the table
+        /// \param format Format in which numbers will be printed (HEX, DEC, ...)
+        /// \param mode Mode of the CPU
+        /// \param cpu_context CPU context
         // -------------------------------------------------------------------------------------------------------------
         void Render_Registers_Table(const char* const title,
                                     NFormat format,
@@ -91,25 +94,25 @@ namespace zero_mate::gui
                                     const arm1176jzf_s::CCPU_Context& cpu_context);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param mode
-        /// \param context
+        /// \brief Renders different format tabs of a given CPU mode.
+        /// \param mode Mode of the CPU
+        /// \param context CPU context
         // -------------------------------------------------------------------------------------------------------------
         void Render_Register_Tabs(arm1176jzf_s::CCPU_Context::NCPU_Mode mode,
                                   const arm1176jzf_s::CCPU_Context& context);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param cpu_context
+        /// \brief Renders flags of the CPSR register.
+        /// \param cpu_context  CPU context
         // -------------------------------------------------------------------------------------------------------------
-        void Render_Flags(const arm1176jzf_s::CCPU_Context& cpu_context);
+        void Render_CPSR_Flags(const arm1176jzf_s::CCPU_Context& cpu_context);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief
-        /// \param value
-        /// \param format
+        /// \brief Renders a raw integer value in a given format.
+        /// \param value Value to be rendered
+        /// \param format Format of the number (HEX, DEC, ...)
         // -------------------------------------------------------------------------------------------------------------
-        void Render_Value(std::uint32_t value, NFormat format);
+        void Render_Raw_Value(std::uint32_t value, NFormat format);
 
     private:
         const std::shared_ptr<arm1176jzf_s::CCPU_Core> m_cpu;  /// Reference to the CPU
