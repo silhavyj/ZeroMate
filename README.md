@@ -2,8 +2,9 @@
 
 Raspberry Pi Zero Emulator
 
-![version](https://img.shields.io/badge/version-1.0.1-brightgreen)
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
+![version](https://img.shields.io/badge/version-1.0.1-green)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Doxygen Documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://silhavyj.github.io/ZeroMate/)
 
 [![Ubuntu](https://github.com/silhavyj/ZeroMate/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/ubuntu.yml)
 [![Windows](https://github.com/silhavyj/ZeroMate/actions/workflows/windows.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/windows.yml)
@@ -22,8 +23,6 @@ The emulator was tested on both Windows and Linux using the MSVC and gcc compile
 ## Examples 
 
 The emulator comes with a couple of prebuilt [examples](examples/README.md) that you are encouraged to try out.
-
-Online Doxygen documentation can be found over at https://silhavyj.github.io/ZeroMate/
 
 ## Some of the key features
 
