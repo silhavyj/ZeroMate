@@ -215,7 +215,7 @@ namespace zero_mate::gui
             ImGui::EndTabBar();
         }
 
-        Render_Flags(context);
+        Render_CPSR_Flags(context);
     }
 
     void CRegisters_Window::Render_Registers_Table(const char* const title,
@@ -245,7 +245,7 @@ namespace zero_mate::gui
                 ImGui::TableNextColumn();
 
                 // Render the value of the register.
-                Render_Value(cpu_context.Get_Register(i, mode), format);
+                Render_Raw_Value(cpu_context.Get_Register(i, mode), format);
             }
 
             // Render register R13 (LR).
@@ -253,28 +253,28 @@ namespace zero_mate::gui
             ImGui::TableNextColumn();
             ImGui::Text("R13 (LR)");
             ImGui::TableNextColumn();
-            Render_Value(cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::LR_Reg_Idx, mode), format);
+            Render_Raw_Value(cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::LR_Reg_Idx, mode), format);
             ImGui::TableNextRow();
 
             // Render register R14 (SP).
             ImGui::TableNextColumn();
             ImGui::Text("R14 (SP)");
             ImGui::TableNextColumn();
-            Render_Value(cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::SP_Reg_Idx, mode), format);
+            Render_Raw_Value(cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::SP_Reg_Idx, mode), format);
             ImGui::TableNextRow();
 
             // Render register R15 (PC).
             ImGui::TableNextColumn();
             ImGui::Text("R15 (PC)");
             ImGui::TableNextColumn();
-            Render_Value(cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::PC_Reg_Idx, mode), format);
+            Render_Raw_Value(cpu_context.Get_Register(arm1176jzf_s::CCPU_Context::PC_Reg_Idx, mode), format);
             ImGui::TableNextRow();
 
             // Render CPSR (current program status register).
             ImGui::TableNextColumn();
             ImGui::Text("CPSR");
             ImGui::TableNextColumn();
-            Render_Value(cpu_context.Get_CPSR(), format);
+            Render_Raw_Value(cpu_context.Get_CPSR(), format);
             ImGui::TableNextRow();
 
             // Render SPSR (saved program status register) if the mode supports it.
@@ -283,7 +283,7 @@ namespace zero_mate::gui
                 ImGui::TableNextColumn();
                 ImGui::Text("SPSR");
                 ImGui::TableNextColumn();
-                Render_Value(cpu_context.Get_SPSR(mode), format);
+                Render_Raw_Value(cpu_context.Get_SPSR(mode), format);
                 ImGui::TableNextRow();
             }
 
@@ -291,7 +291,7 @@ namespace zero_mate::gui
         }
     }
 
-    void CRegisters_Window::Render_Value(std::uint32_t value, NFormat format)
+    void CRegisters_Window::Render_Raw_Value(std::uint32_t value, NFormat format)
     {
         // Display the given value in the desired format.
         switch (format)
@@ -313,7 +313,7 @@ namespace zero_mate::gui
         }
     }
 
-    void CRegisters_Window::Render_Flags(const arm1176jzf_s::CCPU_Context& cpu_context)
+    void CRegisters_Window::Render_CPSR_Flags(const arm1176jzf_s::CCPU_Context& cpu_context)
     {
         ImGui::Text("Flags in CSPR");
 
