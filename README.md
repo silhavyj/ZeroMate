@@ -48,3 +48,5 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |UART|❌||
 |Logic analyzer|❌||
 |Statistical data collection|❌|Number of I/O operations|
+
+<img src="misc/screenshots/screenshot-01.png">
