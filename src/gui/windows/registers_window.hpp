@@ -3,7 +3,7 @@
 /// \date 05. 07. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file defines a window that displays the contents of all CPU registers.
+/// \brief This file defines the window that displays the contents of all CPU registers.
 // ---------------------------------------------------------------------------------------------------------------------
 
 #pragma once
