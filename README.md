@@ -14,7 +14,7 @@ Raspberry Pi Zero Emulator
 
 ## Description
 
-ZeroMate is an educational Raspberry Pi Zero emulator designed specifically as a **debugging tool for operating system development**. Its ultimate goal is to emulate [KIV-RTOS](https://github.com/MartinUbl/KIV-RTOS). For more information about the operating system itself, you can visit https://home.zcu.cz/~ublm/?page=vyuka&sub=os. Please keep in mind that while using the emulator, certain features may be missing or limited as it is still under active development.
+ZeroMate is an educational Raspberry Pi Zero emulator designed specifically as a **debugging tool for operating system development**. Its ultimate goal is to emulate [KIV-RTOS](https://github.com/MartinUbl/KIV-RTOS). More information about the operating system itself can be found [here](https://home.zcu.cz/~ublm/?page=vyuka&sub=os). Please keep in mind that while using the emulator, certain features may be missing or limited as it is still under active development.
 
 ## Installation
 
