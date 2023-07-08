@@ -16,10 +16,10 @@
 
 // 3rd party library includes
 
-#include <fmt/format.h>
-#include <elfio/elfio.hpp>
-#include <capstone/capstone.h>
-#include <llvm/Demangle/Demangle.h>
+#include "fmt/format.h"
+#include "elfio/elfio.hpp"
+#include "capstone/capstone.h"
+#include "llvm/Demangle/Demangle.h"
 
 // Project file imports
 

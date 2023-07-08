@@ -143,6 +143,8 @@ namespace zero_mate::utils
         static constexpr const char* const Warning_Msg_Prefix = "[WARNING]"; ///< Warning message prefix
         static constexpr const char* const Error_Msg_Prefix = "[ERROR]";     ///< Error message prefix
 
+        static constexpr std::size_t Timestamp_Length{ 10 };                 ///< Length of a timestamp (prefix)
+
     public:
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Registers a logger to the logging system.
