@@ -2,7 +2,7 @@
 
 Raspberry Pi Zero Emulator
 
-![version](https://img.shields.io/badge/version-1.0.1-green)
+![version](https://img.shields.io/badge/version-1.0.1-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Doxygen Documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://silhavyj.github.io/ZeroMate/)
 
@@ -14,7 +14,7 @@ Raspberry Pi Zero Emulator
 
 ## Description
 
-ZeroMate is an educational Raspberry Pi Zero emulator designed specifically as a **debugging tool for operating system development**. Its ultimate goal is to emulate [KIV-RTOS](https://github.com/MartinUbl/KIV-RTOS). For more information about the operating system itself, you can visit https://home.zcu.cz/~ublm/?page=vyuka&sub=os. Please keep in mind that while using the emulator, certain features may be missing or limited as it is still under active development.
+ZeroMate is an educational Raspberry Pi Zero emulator designed specifically as a **debugging tool for operating system development**. Its ultimate goal is to emulate [KIV-RTOS](https://github.com/MartinUbl/KIV-RTOS). More information about the operating system itself can be found [here](https://home.zcu.cz/~ublm/?page=vyuka&sub=os). Please keep in mind that while using the emulator, certain features may be missing or limited as it is still under active development.
 
 ## Installation
 
@@ -26,22 +26,27 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 
 ## Some of the key features
 
-- [x] Majority of ARMv6 instructions
-- [x] Stepping through the source code
-- [x] RAM
-- [x] GPIO
-- [x] Interrupt controller
-- [x] ARM timer
-- [x] Memory-mapped debug monitor
-- [x] TRNG (random number generator)
-- [x] Exceptions
-- [x] CPU modes (+ view of all banked CPU registers)
-- [x] Paging
-- [x] Support for external peripherals (shared libraries such as a button, LED, 7-segment display, etc.)
-- [x] Loading of multiple ELF filer (kernel + separately compiled processes)
-- [ ] I2C
-- [ ] SPI
-- [ ] UART 
-
+|Feature|Support|Note|
+|---|---|---|
+|ARMv6 ISA|⏳| The vast majority of ARM instructions are supported. However, there are still some missing.|
+|System bus|✅||
+|Debugger|⏳| Stepping through the source code, breakpoints, pause, reset, and play.|
+|RAM|✅||
+|GPIO|✅||
+|Interrupt controller (IC)|✅||
+|ARM timer|✅||
+|Memory-mapped debug monitor|✅|Debug purposes during development.|
+|TRNG (random number generator)|✅||
+|CPU exceptions|✅||
+|CPU modes (+ viewing of all banked CPU registers)|✅||
+|Paging|✅||
+|Support for external peripherals|✅|External peripherals are loaded as shared libraries at runtime. For instance, an LED, DIP switch, 7-segment display, etc.|
+|Loading of multiple ELF files (kernel + separately compiled processes)|✅||
+|Floating point unit (FPU)|❌||
+|I2C|❌||
+|SPI|❌||
+|UART|❌||
+|Logic analyzer|❌||
+|Statistical data collection|❌|Number of I/O operations|
 
 <img src="misc/screenshots/screenshot-01.png">
