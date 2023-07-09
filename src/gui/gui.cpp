@@ -236,12 +236,12 @@ namespace zero_mate::gui
         // Set up window style.
         ImGui::StyleColorsDark();
         ImGuiStyle& style = ImGui::GetStyle();
-        style.FrameRounding = 4.0f;
+        style.FrameRounding = 4.0F;
 
-        if (imgui_io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+        if ((imgui_io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) != 0)
         {
-            style.WindowRounding = 0.0f;
-            style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+            style.WindowRounding = 0.0F;
+            style.Colors[ImGuiCol_WindowBg].w = 1.0F;
         }
 
         // Init ImGUI GLFW with OpenGL implementation.
@@ -252,11 +252,11 @@ namespace zero_mate::gui
         if (std::filesystem::exists(config::Font_Path) && std::filesystem::exists(config::Icons_Path))
         {
             // Load a custom font.
-            imgui_io.Fonts->AddFontFromFileTTF(config::Font_Path, 15.0f);
+            imgui_io.Fonts->AddFontFromFileTTF(config::Font_Path, 15.0F);
 
             // Set up a base font size and calculate the appropriate icon size.
-            const float baseFontSize = 13.0f;
-            const float iconFontSize = baseFontSize * 2.0f / 3.0f;
+            const float baseFontSize = 13.0F;
+            const float iconFontSize = baseFontSize * 2.0F / 3.0F;
 
             static const ImWchar icons_ranges[] = { ICON_MIN_FA, ICON_MAX_16_FA, 0 };
             ImFontConfig icons_config;
@@ -294,7 +294,7 @@ namespace zero_mate::gui
         stbi_image_free(images[0].pixels);
 
         // Main loop
-        while (!glfwWindowShouldClose(window))
+        while (glfwWindowShouldClose(window) == 0)
         {
             // Poll events.
             glfwPollEvents();
@@ -318,8 +318,8 @@ namespace zero_mate::gui
             ImGui::SetNextWindowPos(viewport->WorkPos);
             ImGui::SetNextWindowSize(viewport->WorkSize);
             ImGui::SetNextWindowViewport(viewport->ID);
-            ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
-            ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+            ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0F);
+            ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0F);
 
             // clang-format off
             window_flags |= ImGuiWindowFlags_NoTitleBar |
@@ -330,21 +330,21 @@ namespace zero_mate::gui
                             ImGuiWindowFlags_NoNavFocus;
             // clang-format on
 
-            if (dockspace_flags & ImGuiDockNodeFlags_PassthruCentralNode)
+            if ((dockspace_flags & ImGuiDockNodeFlags_PassthruCentralNode) != 0)
             {
                 window_flags |= ImGuiWindowFlags_NoBackground;
             }
 
             // State a dockspace
-            ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
+            ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0F, 0.0F));
             ImGui::Begin("##ZeroMate Dockspace", &dockspace_open, window_flags);
             ImGui::PopStyleVar();
             ImGui::PopStyleVar(2);
 
-            if (imgui_io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
+            if ((imgui_io.ConfigFlags & ImGuiConfigFlags_DockingEnable) != 0)
             {
                 const ImGuiID dockspace_id = ImGui::GetID("ZeroMateDockspace");
-                ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
+                ImGui::DockSpace(dockspace_id, ImVec2(0.0F, 0.0F), dockspace_flags);
             }
 
             // Render all GUI windows.
@@ -360,7 +360,7 @@ namespace zero_mate::gui
             glClear(GL_COLOR_BUFFER_BIT);
             ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
-            if (imgui_io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+            if ((imgui_io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) != 0)
             {
                 GLFWwindow* backup_current_context = glfwGetCurrentContext();
                 ImGui::UpdatePlatformWindows();
