@@ -6,6 +6,8 @@
 /// \brief This file implements a window that displays log messages.
 // ---------------------------------------------------------------------------------------------------------------------
 
+// Project file imports
+
 #include "log_window.hpp"
 
 namespace zero_mate::gui

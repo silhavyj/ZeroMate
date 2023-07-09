@@ -8,8 +8,8 @@
 
 // 3rd party library includes
 
-#include <magic_enum.hpp>
-#include <fmt/include/fmt/core.h>
+#include "magic_enum.hpp"
+#include "fmt/format.h"
 
 // Project file imports
 
