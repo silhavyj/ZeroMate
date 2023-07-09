@@ -54,7 +54,7 @@ namespace zero_mate::gui
         {
             // Render the load kernel, load process, and reset button.
             Render_Load_Button("Load Kernel", true);
-            Render_Load_Button("Load Process", false);
+            Render_Load_Button("Load Processes", false);
             Render_Reload_Button();
 
             Render_Kernel_Filename();
@@ -140,17 +140,21 @@ namespace zero_mate::gui
         const std::string filename = Get_Filename(path);
 
         // Make sure such filename has not been loaded yet.
-        if (m_source_codes.contains(filename))
+        if (!loading_kernel && m_source_codes.contains(filename)) [[unlikely]]
         {
             // clang-format off
             m_logging_system.Error(fmt::format("{} has already been loaded. You may need to close it first",
                                                filename).c_str());
             // clang-format on
+            return;
         }
 
         // Reset all peripherals if a kernel is being loaded.
         if (loading_kernel)
         {
+            // Erase the previous kernel.
+            m_source_codes.erase(filename);
+
             // clang-format off
             std::for_each(m_peripherals.begin(),
                           m_peripherals.end(),
@@ -178,7 +182,7 @@ namespace zero_mate::gui
                 }
 
                 // Add the disassembled ELF file into the collection of all loaded source codes.
-                m_source_codes[filename] = { .kernel = m_loading_kernel, .code = code };
+                m_source_codes[filename] = { .is_kernel = m_loading_kernel, .code = code };
                 m_logging_system.Info(fmt::format("{} has been loaded successfully", path).c_str());
                 break;
 

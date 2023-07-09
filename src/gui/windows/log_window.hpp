@@ -8,8 +8,11 @@
 
 #pragma once
 
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <mutex>
 #include <vector>
+/// \endcond
 
 // 3rd party libraries
 
@@ -73,17 +76,6 @@ namespace zero_mate::gui
     private:
         std::vector<Type> m_data; ///< Collection of log messages
     };
-
-    // Assigned colors of different kinds of log messages.
-    namespace color
-    {
-        static constexpr ImVec4 White{ 1.0F, 1.0F, 1.0F, 1.0F };
-        static constexpr ImVec4 Blue{ 0.0F, 0.7F, 1.0F, 1.0F };
-        static constexpr ImVec4 Green{ 0.0F, 1.0F, 0.0F, 1.0F };
-        static constexpr ImVec4 Yellow{ 1.0F, 1.0F, 0.0F, 1.0F };
-        static constexpr ImVec4 Red{ 1.0F, 0.0F, 0.0F, 1.0F };
-
-    } // namespace color
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \class CLog_Window

@@ -71,7 +71,7 @@ namespace zero_mate::utils::elf
     // -----------------------------------------------------------------------------------------------------------------
     struct TSource_Code
     {
-        bool kernel;                            ///< Flag indicating whether it is a kernel or a process
+        bool is_kernel;                         ///< Flag indicating whether it is a kernel or a process
         std::vector<TText_Section_Record> code; ///< Disassembled instructions
     };
 

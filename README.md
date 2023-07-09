@@ -24,7 +24,7 @@ The emulator was tested on both Windows and Linux using the MSVC and gcc compile
 
 The emulator comes with a couple of prebuilt [examples](examples/README.md) that you are encouraged to try out.
 
-## Some of the key features
+## Capabilities
 
 |Feature|Support|Note|
 |---|---|---|
@@ -48,5 +48,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |UART|❌||
 |Logic analyzer|❌||
 |Statistical data collection|❌|Number of I/O operations|
+
+## Screenshots
 
 <img src="misc/screenshots/screenshot-01.png">

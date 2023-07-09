@@ -10,6 +10,7 @@
 
 // STL imports (excluded from Doxygen)
 /// \cond
+#include <string>
 #include <memory>
 /// \endcond
 
@@ -17,8 +18,40 @@
 
 #include "imgui/imgui.h"
 
-namespace zero_mate
+namespace zero_mate::gui
 {
+    namespace color
+    {
+        static constexpr ImVec4 White{ 1.0F, 1.0F, 1.0F, 1.0F };                ///< White color
+        static constexpr ImVec4 Blue{ 0.0F, 0.7F, 1.0F, 1.0F };                 ///< Blue color
+        static constexpr ImVec4 Green{ 0.0F, 1.0F, 0.0F, 1.0F };                ///< Green color
+        static constexpr ImVec4 Yellow{ 1.0F, 1.0F, 0.0F, 1.0F };               ///< Yellow color
+        static constexpr ImVec4 Red{ 1.0F, 0.0F, 0.0F, 1.0F };                  ///< Red color
+        static constexpr ImVec4 Gray{ 0.65F, 0.65F, 0.65F, 1.0F };              ///< Gray color
+        static constexpr ImVec4 Dark_Red{ 0.8F, 0.0F, 0.0F, 1.0F };             ///< Dark red color
+        static constexpr ImVec4 Transparent_Yellow_1{ 1.0f, 1.0f, 0.0f, 0.3f }; ///< Transparent yellow color 1
+        static constexpr ImVec4 Transparent_Yellow_2{ 1.0f, 1.0f, 0.0f, 0.5f }; ///< Transparent yellow color 2
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \struct TRGB
+        /// \brief Representation of an RGB format.
+        // -------------------------------------------------------------------------------------------------------------
+        struct TRGB
+        {
+            float r{}; ///< Red
+            float g{}; ///< Green
+            float b{}; ///< Blue
+        };
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Assigns a string its corresponding color based on its hash value.
+        /// \param str String which will be assigned a color.
+        /// \return Color based on the hash value calculated from the given string
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] TRGB Assign_Color_From_Hash(const std::string& str);
+
+    } // namespace color
+
     // -----------------------------------------------------------------------------------------------------------------
     /// \class IGUI_Window
     /// \brief Common interface for all GUI windows.
