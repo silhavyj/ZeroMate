@@ -33,7 +33,7 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/IconFontCppHeaders
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui_club
-        ${CMAKE_CURRENT_SOURCE_DIR}/../external/ImGuiFileDialog
+        ${CMAKE_CURRENT_SOURCE_DIR}/../external/imgui-filebrowser
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/magic_enum/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/demumble/third_party/llvm/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/dylib/include/

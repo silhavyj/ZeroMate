@@ -31,9 +31,6 @@ namespace zero_mate::utils::elf
     // Anonymous namespace to make its content visible only to this translation unit.
     namespace
     {
-        // Name of the last kernel .elf file that was loaded
-        std::string s_last_kernel_filename{ "" };
-
         // Alias for labels just to make the code less wordy (addr, <label_name, count>)
         using Labels_t = std::unordered_map<std::uint32_t, std::pair<std::string, std::size_t>>;
 
@@ -326,7 +323,6 @@ namespace zero_mate::utils::elf
         if (kernel)
         {
             Map_Segments_To_RAM(bus, elf_reader);
-            s_last_kernel_filename = filename;
         }
 
         // Disassemble the instructions, so they can be visualized in the GUI.
@@ -337,11 +333,6 @@ namespace zero_mate::utils::elf
             static_cast<std::uint32_t>(elf_reader.get_entry()), // Address of the first instruction
             disassembly_result.disassembly                      // Disassembled instructions
         };
-    }
-
-    TStatus Reload_Kernel(CBus& bus)
-    {
-        return Load_ELF(bus, s_last_kernel_filename.c_str(), true);
     }
 
 } // namespace zero_mate::utils::elf

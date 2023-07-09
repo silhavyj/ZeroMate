@@ -59,7 +59,7 @@ namespace zero_mate::gui
         auto s_log_window = std::make_shared<CLog_Window>();
 
         /// Collection of loaded ELF files.
-        std::unordered_map<std::string, std::vector<utils::elf::TText_Section_Record>> s_source_codes;
+        utils::elf::Source_Codes_t s_source_codes;
 
         /// Collection of all windows that will be rendered.
         std::vector<std::shared_ptr<IGUI_Window>> s_windows;
@@ -67,7 +67,7 @@ namespace zero_mate::gui
         // Variables shared among multiple windows.
 
         bool s_scroll_to_curr_line{ false };      ///< Should the source code window scroll to the current line of exec.
-        bool s_elf_file_has_been_loaded{ false }; ///< Has the kernel been loaded?
+        bool s_kernel_has_been_loaded{ false };   ///< Has the kernel been loaded?
         bool s_cpu_running{ false };              ///< Is the CPU running?
 
         // -------------------------------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ namespace zero_mate::gui
             // Control window
             s_windows.emplace_back(std::make_shared<CControl_Window>(soc::g_cpu,
                                                                      s_scroll_to_curr_line,
-                                                                     s_elf_file_has_been_loaded,
+                                                                     s_kernel_has_been_loaded,
                                                                      s_cpu_running,
                                                                      soc::g_peripherals,
                                                                      soc::g_bus));
@@ -111,8 +111,9 @@ namespace zero_mate::gui
             s_windows.emplace_back(std::make_shared<CFile_Window>(soc::g_bus,
                                                                   soc::g_cpu,
                                                                   s_source_codes,
-                                                                  s_elf_file_has_been_loaded,
-                                                                  soc::g_peripherals));
+                                                                  s_kernel_has_been_loaded,
+                                                                  soc::g_peripherals,
+                                                                  s_cpu_running));
         }
 
         // -------------------------------------------------------------------------------------------------------------
