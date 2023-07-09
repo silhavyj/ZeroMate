@@ -24,9 +24,12 @@ add_library(
 target_include_directories(
     imgui_glfw
     PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/
         ${CMAKE_CURRENT_SOURCE_DIR}/imgui
+        ${CMAKE_CURRENT_SOURCE_DIR}/imgui_club
         ${CMAKE_CURRENT_SOURCE_DIR}/imgui/backends
-        ${CMAKE_CURRENT_SOURCE_DIR}/imgui-filebrowser)
+        ${CMAKE_CURRENT_SOURCE_DIR}/imgui-filebrowser
+        ${CMAKE_CURRENT_SOURCE_DIR}/IconFontCppHeaders)
 
 # Link OpenGL, GLFW and GLEW to the library
 target_link_libraries(
