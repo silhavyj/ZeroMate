@@ -32,7 +32,7 @@
 #include "windows/registers_window.hpp"
 #include "windows/control_window.hpp"
 #include "windows/source_code_window.hpp"
-#include "windows/file_window.hpp"
+#include "windows/top_bar_menu.hpp"
 #include "windows/log_window.hpp"
 #include "windows/cp15_window.hpp"
 #include "windows/peripherals/ram_window.hpp"
@@ -69,6 +69,7 @@ namespace zero_mate::gui
         bool s_scroll_to_curr_line{ false };      ///< Should the source code window scroll to the current line of exec.
         bool s_kernel_has_been_loaded{ false };   ///< Has the kernel been loaded?
         bool s_cpu_running{ false };              ///< Is the CPU running?
+        std::string s_kernel_filename;            ///< Currently loaded kernel
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Initializes the logging window.
@@ -97,7 +98,8 @@ namespace zero_mate::gui
                                                                      s_kernel_has_been_loaded,
                                                                      s_cpu_running,
                                                                      soc::g_peripherals,
-                                                                     soc::g_bus));
+                                                                     soc::g_bus,
+                                                                     s_kernel_filename));
 
             // Source code window
             // clang-format off
@@ -107,13 +109,14 @@ namespace zero_mate::gui
                                                                          s_cpu_running));
             // clang-format on
 
-            // File window
-            s_windows.emplace_back(std::make_shared<CFile_Window>(soc::g_bus,
-                                                                  soc::g_cpu,
-                                                                  s_source_codes,
-                                                                  s_kernel_has_been_loaded,
-                                                                  soc::g_peripherals,
-                                                                  s_cpu_running));
+            // Top bar menu
+            s_windows.emplace_back(std::make_shared<CTop_Bar_Menu>(soc::g_bus,
+                                                                   soc::g_cpu,
+                                                                   s_source_codes,
+                                                                   s_kernel_has_been_loaded,
+                                                                   soc::g_peripherals,
+                                                                   s_cpu_running,
+                                                                   s_kernel_filename));
         }
 
         // -------------------------------------------------------------------------------------------------------------

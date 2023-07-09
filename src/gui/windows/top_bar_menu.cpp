@@ -3,7 +3,7 @@
 /// \date 09. 07. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file implements a window that allows the user to load ELF files (kernel + processes).
+/// \brief This file implements a top bar menu that allows the user to load ELF files (kernel + processes).
 // ---------------------------------------------------------------------------------------------------------------------
 
 // STL imports (excluded from Doxygen)
@@ -17,17 +17,18 @@
 
 // Project file imports
 
-#include "file_window.hpp"
+#include "top_bar_menu.hpp"
 #include "zero_mate/utils/singleton.hpp"
 
 namespace zero_mate::gui
 {
-    CFile_Window::CFile_Window(std::shared_ptr<CBus> bus,
-                               std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
-                               utils::elf::Source_Codes_t& source_codes,
-                               bool& kernel_has_been_loaded,
-                               std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals,
-                               const bool& cpu_running)
+    CTop_Bar_Menu::CTop_Bar_Menu(std::shared_ptr<CBus> bus,
+                                 std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
+                                 utils::elf::Source_Codes_t& source_codes,
+                                 bool& kernel_has_been_loaded,
+                                 std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals,
+                                 const bool& cpu_running,
+                                 std::string& kernel_filename)
     : m_bus{ bus }
     , m_cpu{ cpu }
     , m_source_codes{ source_codes }
@@ -37,66 +38,62 @@ namespace zero_mate::gui
     , m_file_browser{ ImGuiFileBrowserFlags_MultipleSelection | ImGuiFileBrowserFlags_CloseOnEsc }
     , m_loading_kernel{ true }
     , m_cpu_running{ cpu_running }
+    , m_kernel_filename{ kernel_filename }
     {
         Init_File_Browser();
     }
 
-    void CFile_Window::Init_File_Browser()
+    void CTop_Bar_Menu::Init_File_Browser()
     {
         m_file_browser.SetTitle("Select an ELF file"); // Title
         m_file_browser.SetTypeFilters({ ".elf" });     // Only allow the user to select ELF files
     }
 
-    void CFile_Window::Render()
+    void CTop_Bar_Menu::Render()
     {
-        // Render the window.
-        if (ImGui::Begin("File"))
+        // Render a menu bar
+        if (ImGui::BeginMainMenuBar())
         {
-            // Render the load kernel, load process, and reset button.
-            Render_Load_Button("Load Kernel", true);
-            Render_Load_Button("Load Processes", false);
-            Render_Reload_Button();
-
-            Render_Kernel_Filename();
-            Render_File_Browser();
-        }
-
-        ImGui::End();
-    }
-
-    void CFile_Window::Render_Kernel_Filename()
-    {
-        ImGui::Separator();
-        ImGui::Text("Loaded kernel: %s", m_kernel_filename.c_str());
-    }
-
-    void CFile_Window::Render_Reload_Button()
-    {
-        if (ImGui::Button("Reload kernel"))
-        {
-            // Do not allow the user to reload the kernel if the CPU is still running.
-            if (m_cpu_running)
+            // File tab
+            if (ImGui::BeginMenu("File"))
             {
-                m_logging_system.Error("The CPU is running. You need to first stop the execution.");
-                return;
+                // Load a kernel
+                if (ImGui::MenuItem("Load Kernel", nullptr))
+                {
+                    Open_File_Browser(true);
+                }
+
+                // Load processes
+                if (ImGui::MenuItem("Load Processes", nullptr))
+                {
+                    Open_File_Browser(false);
+                }
+
+                // Reload the kernel
+                if (ImGui::MenuItem("Reload kernel", nullptr))
+                {
+                    Reload_Kernel();
+                }
+
+                ImGui::EndMenu();
             }
 
-            // Reload the kernel.
-            Load_ELF_File(m_kernel_filename, true);
+            ImGui::EndMainMenuBar();
         }
+
+        // Render the file browser.
+        Render_File_Browser();
     }
 
-    void CFile_Window::Render_Load_Button(const char* name, bool loading_kernel)
+    void CTop_Bar_Menu::Open_File_Browser(bool loading_kernel)
     {
-        if (ImGui::Button(name))
+        // The user must stop the execution before loading any input ELF files.
+        if (m_cpu_running)
         {
-            // The user must stop the execution before loading any input ELF files.
-            if (m_cpu_running)
-            {
-                m_logging_system.Error("The CPU is running. You need to first stop the execution.");
-                return;
-            }
-
+            m_logging_system.Error("The CPU is running. You need to first stop the execution.");
+        }
+        else
+        {
             // Are we loading a kernel or a process?
             m_loading_kernel = loading_kernel;
 
@@ -105,7 +102,20 @@ namespace zero_mate::gui
         }
     }
 
-    void CFile_Window::Render_File_Browser()
+    void CTop_Bar_Menu::Reload_Kernel()
+    {
+        // Do not allow the user to reload the kernel if the CPU is still running.
+        if (m_cpu_running)
+        {
+            m_logging_system.Error("The CPU is running. You need to first stop the execution.");
+            return;
+        }
+
+        // Reload the kernel.
+        Load_ELF_File(m_kernel_filename, true);
+    }
+
+    void CTop_Bar_Menu::Render_File_Browser()
     {
         m_file_browser.Display();
 
@@ -117,7 +127,7 @@ namespace zero_mate::gui
         }
     }
 
-    void CFile_Window::Load_ELF_Files()
+    void CTop_Bar_Menu::Load_ELF_Files()
     {
         if (m_loading_kernel)
         {
@@ -134,7 +144,7 @@ namespace zero_mate::gui
         }
     }
 
-    void CFile_Window::Load_ELF_File(const std::string& path, bool loading_kernel)
+    void CTop_Bar_Menu::Load_ELF_File(const std::string& path, bool loading_kernel)
     {
         // Get the filename from the given path.
         const std::string filename = Get_Filename(path);
@@ -209,7 +219,7 @@ namespace zero_mate::gui
         }
     }
 
-    std::string CFile_Window::Get_Filename(const std::string& path)
+    std::string CTop_Bar_Menu::Get_Filename(const std::string& path)
     {
         const std::filesystem::path full_path{ path };
         return full_path.filename().string();

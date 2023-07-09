@@ -16,7 +16,8 @@ namespace zero_mate::gui
                                      const bool& elf_file_has_been_loaded,
                                      bool& cpu_running,
                                      std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals,
-                                     std::shared_ptr<CBus> bus)
+                                     std::shared_ptr<CBus> bus,
+                                     const std::string& kernel_filename)
     : m_cpu{ cpu }
     , m_scroll_to_curr_line{ scroll_to_curr_line }
     , m_elf_file_has_been_loaded{ elf_file_has_been_loaded }
@@ -27,6 +28,7 @@ namespace zero_mate::gui
     , m_stop_cpu_thread{ false }
     , m_peripherals{ peripherals }
     , m_bus{ bus }
+    , m_kernel_filename{ kernel_filename }
     {
     }
 
@@ -96,6 +98,8 @@ namespace zero_mate::gui
 //        {
 //            Reset_Emulator();
 //        }
+
+        ImGui::Text("Loaded kernel: %s", m_kernel_filename.c_str());
     }
 
     void CControl_Window::Reset_Emulator()
@@ -158,13 +162,13 @@ namespace zero_mate::gui
 
     void CControl_Window::Render_ImGUI_Demo()
     {
-        // static bool s_show_demo_window{ false };
-        //
-        // ImGui::Checkbox("Show demo window", &s_show_demo_window);
-        // if (s_show_demo_window)
-        // {
-        //     ImGui::ShowDemoWindow();
-        // }
+//         static bool s_show_demo_window{ false };
+//
+//         ImGui::Checkbox("Show demo window", &s_show_demo_window);
+//         if (s_show_demo_window)
+//         {
+//             ImGui::ShowDemoWindow();
+//         }
     }
 
     inline void CControl_Window::Print_No_ELF_File_Loaded_Error_Msg() const
