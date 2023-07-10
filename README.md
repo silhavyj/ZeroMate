@@ -1,6 +1,6 @@
 #  <img src="misc/logos/title.svg" width="25%">
 
-Raspberry Pi Zero Emulator
+*Raspberry Pi Zero Emulator*
 
 ![version](https://img.shields.io/badge/version-1.0.1-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
