@@ -36,7 +36,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |GPIO|✅||
 |Interrupt controller (IC)|✅||
 |ARM timer|✅||
-|Memory-mapped debug monitor|✅|Debug purposes during development. Find out more [here](tools/README.md)|
+|Memory-mapped debug monitor|✅|Debug purposes during development. Find out more information [here](tools/README.md).|
 |TRNG (random number generator)|✅||
 |CPU exceptions|✅||
 |CPU modes (+ viewing of all banked CPU registers)|✅||
