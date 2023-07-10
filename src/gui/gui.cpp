@@ -66,10 +66,10 @@ namespace zero_mate::gui
 
         // Variables shared among multiple windows.
 
-        bool s_scroll_to_curr_line{ false };      ///< Should the source code window scroll to the current line of exec.
-        bool s_kernel_has_been_loaded{ false };   ///< Has the kernel been loaded?
-        bool s_cpu_running{ false };              ///< Is the CPU running?
-        std::string s_kernel_filename;            ///< Currently loaded kernel
+        bool s_scroll_to_curr_line{ false };    ///< Should the source code window scroll to the current line of exec.
+        bool s_kernel_has_been_loaded{ false }; ///< Has the kernel been loaded?
+        bool s_cpu_running{ false };            ///< Is the CPU running?
+        std::string s_kernel_filename;          ///< Currently loaded kernel
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Initializes the logging window.
@@ -319,8 +319,8 @@ namespace zero_mate::gui
             ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
             const ImGuiViewport* viewport = ImGui::GetMainViewport();
 
-            ImGui::SetNextWindowPos(viewport->WorkPos);
-            ImGui::SetNextWindowSize(viewport->WorkSize);
+            ImGui::SetNextWindowPos(viewport->Pos);
+            ImGui::SetNextWindowSize(viewport->Size);
             ImGui::SetNextWindowViewport(viewport->ID);
             ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0F);
             ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0F);

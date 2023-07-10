@@ -29,6 +29,8 @@ namespace zero_mate::gui
         static constexpr ImVec4 Red{ 1.0F, 0.0F, 0.0F, 1.0F };                  ///< Red color
         static constexpr ImVec4 Gray{ 0.65F, 0.65F, 0.65F, 1.0F };              ///< Gray color
         static constexpr ImVec4 Dark_Red{ 0.8F, 0.0F, 0.0F, 1.0F };             ///< Dark red color
+        static constexpr ImVec4 Dark_Gray_1{ 0.25F, 0.25F, 0.25F, 1.0F };       ///< Dark gray color 1
+        static constexpr ImVec4 Dark_Gray_2{ 0.2F, 0.2F, 0.2F, 1.0F };          ///< Dark gray color 2
         static constexpr ImVec4 Transparent_Yellow_1{ 1.0f, 1.0f, 0.0f, 0.3f }; ///< Transparent yellow color 1
         static constexpr ImVec4 Transparent_Yellow_2{ 1.0f, 1.0f, 0.0f, 0.5f }; ///< Transparent yellow color 2
 

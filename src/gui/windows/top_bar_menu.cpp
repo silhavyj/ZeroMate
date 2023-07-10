@@ -57,16 +57,21 @@ namespace zero_mate::gui
             // File tab
             if (ImGui::BeginMenu("File"))
             {
-                // Load a kernel
-                if (ImGui::MenuItem("Load Kernel", nullptr))
+                if (ImGui::BeginMenu("Load"))
                 {
-                    Open_File_Browser(true);
-                }
+                    // Load a kernel
+                    if (ImGui::MenuItem("Load Kernel", nullptr))
+                    {
+                        Open_File_Browser(true);
+                    }
 
-                // Load processes
-                if (ImGui::MenuItem("Load Processes", nullptr))
-                {
-                    Open_File_Browser(false);
+                    // Load processes
+                    if (ImGui::MenuItem("Load Processes", nullptr))
+                    {
+                        Open_File_Browser(false);
+                    }
+
+                    ImGui::EndMenu();
                 }
 
                 // Reload the kernel
@@ -192,7 +197,7 @@ namespace zero_mate::gui
                 }
 
                 // Add the disassembled ELF file into the collection of all loaded source codes.
-                m_source_codes[filename] = { .is_kernel = m_loading_kernel, .code = code };
+                m_source_codes[filename] = { .is_kernel = loading_kernel, .code = code };
                 m_logging_system.Info(fmt::format("{} has been loaded successfully", path).c_str());
                 break;
 

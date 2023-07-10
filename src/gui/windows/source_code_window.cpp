@@ -93,9 +93,9 @@ namespace zero_mate::gui
         // Color the kernel tab a special color, so it is easy to spot.
         if (source_code.is_kernel)
         {
-            ImGui::PushStyleColor(ImGuiCol_TabHovered, color::Red);
-            ImGui::PushStyleColor(ImGuiCol_TabActive, color::Red);
-            ImGui::PushStyleColor(ImGuiCol_Tab, color::Dark_Red);
+            ImGui::PushStyleColor(ImGuiCol_TabHovered, color::Dark_Gray_1);
+            ImGui::PushStyleColor(ImGuiCol_TabActive, color::Dark_Gray_1);
+            ImGui::PushStyleColor(ImGuiCol_Tab, color::Dark_Gray_2);
         }
 
         // Render the tab
