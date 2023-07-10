@@ -60,7 +60,7 @@ cmake --build build/unix_makefiles/release -j10
 
 ## Output
 
-After a successful build on either platform, you can find all the output files in the 'output' folder, which is located in the root directory of the project structure.
+After a successful build on either platform, you can find all the output files in the output folder, which is located in the root directory of the project structure.
 
 ```
 .

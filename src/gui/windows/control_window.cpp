@@ -1,22 +1,50 @@
-#include <thread>
-#include <algorithm>
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file control_window.cpp
+/// \date 10. 07. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements a window that allows the user to control CPU execution.
+// ---------------------------------------------------------------------------------------------------------------------
 
-#include <imgui/imgui.h>
-#include <IconFontCppHeaders/IconsFontAwesome5.h>
+// STL imports (excluded from Doxygen)
+/// \cond
+#include <thread>
+/// \endcond
+
+// 3rd party libraries
+
+#include "imgui/imgui.h"
+#include "IconFontCppHeaders/IconsFontAwesome5.h"
+
+// Project file imports
 
 #include "control_window.hpp"
-
 #include "zero_mate/utils/singleton.hpp"
-#include "../../utils/elf_loader.hpp"
 
 namespace zero_mate::gui
 {
+    // Anonymous namespace to make its content visible only to this translation unit.
+    namespace
+    {
+        [[maybe_unused]] void Render_ImGUI_Demo()
+        {
+            static bool s_show_demo_window{ false };
+
+            // Check box to close the demo window.
+            ImGui::Checkbox("Show demo window", &s_show_demo_window);
+
+            // Show the window.
+            if (s_show_demo_window)
+            {
+                ImGui::ShowDemoWindow();
+            }
+        }
+    }
+
     CControl_Window::CControl_Window(std::shared_ptr<arm1176jzf_s::CCPU_Core> cpu,
                                      bool& scroll_to_curr_line,
                                      const bool& elf_file_has_been_loaded,
                                      bool& cpu_running,
-                                     std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals,
-                                     std::shared_ptr<CBus> bus,
                                      const std::string& kernel_filename)
     : m_cpu{ cpu }
     , m_scroll_to_curr_line{ scroll_to_curr_line }
@@ -26,149 +54,146 @@ namespace zero_mate::gui
     , m_breakpoint_hit{ false }
     , m_start_cpu_thread{ false }
     , m_stop_cpu_thread{ false }
-    , m_peripherals{ peripherals }
-    , m_bus{ bus }
     , m_kernel_filename{ kernel_filename }
     {
     }
 
     void CControl_Window::Render()
     {
+        // Render the window.
         if (ImGui::Begin("Control"))
         {
-
             Render_Control_Buttons();
             Render_CPU_State();
+            Render_Currently_Loaded_Kernel();
 
-            Render_ImGUI_Demo();
+            // Just for debugging purposes.
+            // Render_ImGUI_Demo();
 
+            // Should we start CPU execution?
             if (m_start_cpu_thread)
             {
-                m_start_cpu_thread = false;
-                m_stop_cpu_thread = false;
-                m_cpu_running = true;
-                m_breakpoint_hit = false;
-
-                std::thread cpu_thread(&CControl_Window::Run, this);
-                cpu_thread.detach();
+                Start_CPU_Thread();
             }
         }
 
         ImGui::End();
     }
 
-    void CControl_Window::Render_Control_Buttons()
+    void CControl_Window::Render_Currently_Loaded_Kernel()
     {
-        if (ImGui::Button(ICON_FA_STEP_FORWARD " Step") && !m_cpu_running)
-        {
-            if (!m_elf_file_has_been_loaded)
-            {
-                Print_No_ELF_File_Loaded_Error_Msg();
-            }
-            else
-            {
-                m_cpu->Step(true);
-                m_scroll_to_curr_line = true;
-            }
-        }
-
-        ImGui::SameLine();
-
-        if (ImGui::Button(ICON_FA_PLAY_CIRCLE " Run") && !m_cpu_running)
-        {
-            if (!m_elf_file_has_been_loaded)
-            {
-                Print_No_ELF_File_Loaded_Error_Msg();
-            }
-            else
-            {
-                m_start_cpu_thread = true;
-                m_cpu->Step(true);
-            }
-        }
-
-        ImGui::SameLine();
-
-        if (ImGui::Button(ICON_FA_STOP " Stop") && m_cpu_running)
-        {
-            m_stop_cpu_thread = true;
-        }
-
-//        if (ImGui::Button(ICON_FA_POWER_OFF " Reset") && !m_cpu_running)
-//        {
-//            Reset_Emulator();
-//        }
-
         ImGui::Text("Loaded kernel: %s", m_kernel_filename.c_str());
     }
 
-    void CControl_Window::Reset_Emulator()
+    void CControl_Window::Start_CPU_Thread()
     {
-//        m_cpu->Reset_Context();
-//        std::for_each(m_peripherals.begin(), m_peripherals.end(), [](auto& peripheral) -> void {
-//            peripheral->Reset();
-//        });
-//
-//        const auto [error_code, pc, disassembly] = utils::elf::Reload_Kernel(*m_bus);
-//
-//        switch (error_code)
-//        {
-//            case utils::elf::NError_Code::OK:
-//                m_logging_system.Info(
-//                fmt::format("The .ELF file has been loaded successfully. The program starts at 0x{:08X}", pc).c_str());
-//                break;
-//
-//            case utils::elf::NError_Code::ELF_64_Not_Supported:
-//                m_logging_system.Error("64 bit ELF format is not supported by the emulator");
-//                break;
-//
-//            case utils::elf::NError_Code::ELF_Loader_Error:
-//                m_logging_system.Error(
-//                "Failed to load the ELF file. Make sure you entered a valid path to a valid ELF file");
-//                break;
-//
-//            case utils::elf::NError_Code::Disassembly_Engine_Error:
-//                m_logging_system.Error("Failed to initialize a disassembly engine");
-//                break;
-//        }
+        // Clear the flags.
+        m_start_cpu_thread = false;
+        m_stop_cpu_thread = false;
+        m_breakpoint_hit = false;
+
+        // The CPU is now running.
+        m_cpu_running = true;
+
+        // Start CPU execution in a separate thread.
+        std::thread cpu_thread(&CControl_Window::Run, this);
+        cpu_thread.detach();
+    }
+
+    void CControl_Window::Render_Step_Button()
+    {
+        if (ImGui::Button(ICON_FA_STEP_FORWARD " Step") && !m_cpu_running)
+        {
+            // Make sure a kernel has been loaded.
+            if (!m_elf_file_has_been_loaded)
+            {
+                Print_No_ELF_File_Loaded_Error_Msg();
+            }
+            else
+            {
+                // Perform a single step regardless of any set breakpoints.
+                m_cpu->Step(true);
+
+                // Trigger the GUI to scroll to the current line of execution.
+                m_scroll_to_curr_line = true;
+            }
+        }
+    }
+
+    void CControl_Window::Render_Stop_Button()
+    {
+        if (ImGui::Button(ICON_FA_STOP " Stop") && m_cpu_running)
+        {
+            // Set the flag to stop CPU execution (running thread).
+            m_stop_cpu_thread = true;
+        }
+    }
+
+    void CControl_Window::Render_Run_Button()
+    {
+        if (ImGui::Button(ICON_FA_PLAY_CIRCLE " Run") && !m_cpu_running)
+        {
+            // Make sure a kernel has been loaded.
+            if (!m_elf_file_has_been_loaded)
+            {
+                Print_No_ELF_File_Loaded_Error_Msg();
+            }
+            else
+            {
+                // Set the flag to start CPU execution.
+                m_start_cpu_thread = true;
+
+                // Perform a single step regardless of any set breakpoints.
+                m_cpu->Step(true);
+            }
+        }
+    }
+
+    void CControl_Window::Render_Control_Buttons()
+    {
+        // Step button
+        Render_Step_Button();
+        ImGui::SameLine();
+
+        // Run button
+        Render_Run_Button();
+        ImGui::SameLine();
+
+        // Stop button
+        Render_Stop_Button();
+        ImGui::Separator();
     }
 
     void CControl_Window::Render_CPU_State() const
     {
+        // Render a "state" label.
         ImGui::Text("State:");
         ImGui::SameLine();
 
         if (m_breakpoint_hit)
         {
-            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 0.7f, 1.0f, 1.0f));
-            ImGui::Text("breakpoint");
+            // Breakpoint
+            ImGui::PushStyleColor(ImGuiCol_Text, color::Light_Blue);
+            ImGui::Text("Breakpoint");
         }
         else
         {
             if (m_cpu_running)
             {
-                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 1.0f, 0.0f, 1.0f));
-                ImGui::Text("running");
+                // Running
+                ImGui::PushStyleColor(ImGuiCol_Text, color::Green);
+                ImGui::Text("Running");
             }
             else
             {
-                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
-                ImGui::Text("stopped");
+                // Stopped
+                ImGui::PushStyleColor(ImGuiCol_Text, color::Red);
+                ImGui::Text("Stopped");
             }
         }
 
+        // Do not forget to pop the pushed style (color).
         ImGui::PopStyleColor();
-    }
-
-    void CControl_Window::Render_ImGUI_Demo()
-    {
-//         static bool s_show_demo_window{ false };
-//
-//         ImGui::Checkbox("Show demo window", &s_show_demo_window);
-//         if (s_show_demo_window)
-//         {
-//             ImGui::ShowDemoWindow();
-//         }
     }
 
     inline void CControl_Window::Print_No_ELF_File_Loaded_Error_Msg() const
@@ -179,33 +204,35 @@ namespace zero_mate::gui
     void CControl_Window::Run()
     {
         m_logging_system.Info("CPU execution has started");
-        std::uint32_t prev_pc{ 0 };
 
+        // Keep stepping the CPU
         while (!m_stop_cpu_thread)
         {
+            // Perform a single step and check if the execution has hit a breakpoint.
             if (!m_cpu->Step())
             {
+                // Breakpoint hit -> CPU has execution stopped.
                 m_breakpoint_hit = true;
                 m_stop_cpu_thread = true;
-                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}",
-                                                  m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx])
-                                      .c_str());
-            }
 
-            const auto curr_pc = m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx];
-            if (prev_pc == curr_pc)
-            {
-                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+                // clang-format off
+                m_logging_system.Info(fmt::format("CPU execution has hit a breakpoint at address 0x{:08X}",
+                                      m_cpu->Get_CPU_Context()[arm1176jzf_s::CCPU_Context::PC_Reg_Idx]).c_str());
+                // clang-format on
             }
-            prev_pc = curr_pc;
         }
 
+        // CPU is no longer in a running mode.
         m_cpu_running = false;
+
+        // The GUI should scroll to the current line of execution.
         m_scroll_to_curr_line = true;
 
+        // If the CPU was not due to a breakpoint.
         if (!m_breakpoint_hit)
         {
             m_logging_system.Info("CPU execution has stopped");
         }
     }
-}
+
+} // namespace zero_mate::gui

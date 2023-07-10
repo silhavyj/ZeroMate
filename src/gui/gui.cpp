@@ -97,8 +97,6 @@ namespace zero_mate::gui
                                                                      s_scroll_to_curr_line,
                                                                      s_kernel_has_been_loaded,
                                                                      s_cpu_running,
-                                                                     soc::g_peripherals,
-                                                                     soc::g_bus,
                                                                      s_kernel_filename));
 
             // Source code window

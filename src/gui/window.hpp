@@ -33,6 +33,7 @@ namespace zero_mate::gui
         static constexpr ImVec4 Dark_Gray_2{ 0.2F, 0.2F, 0.2F, 1.0F };          ///< Dark gray color 2
         static constexpr ImVec4 Transparent_Yellow_1{ 1.0f, 1.0f, 0.0f, 0.3f }; ///< Transparent yellow color 1
         static constexpr ImVec4 Transparent_Yellow_2{ 1.0f, 1.0f, 0.0f, 0.5f }; ///< Transparent yellow color 2
+        static constexpr ImVec4 Light_Blue{ 0.0f, 0.7f, 1.0f, 1.0f };           ///< Light blue color
 
         // -------------------------------------------------------------------------------------------------------------
         /// \struct TRGB
