@@ -3,7 +3,7 @@
 /// \date 16. 06. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file defined the entire system on chip (SoC).
+/// \brief This file defines the entire system on chip (SoC).
 ///
 /// It creates, hooks up, and provides access to individual peripherals used on the Raspberry Pi Zero board.
 /// Any file includes his header file can access all Raspberry Pi Zero components (CPU, RAM, ...)

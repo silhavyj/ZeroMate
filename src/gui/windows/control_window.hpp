@@ -20,7 +20,8 @@ namespace zero_mate::gui
                                  const bool& elf_file_has_been_loaded,
                                  bool& cpu_running,
                                  std::vector<std::shared_ptr<peripheral::IPeripheral>>& peripherals,
-                                 std::shared_ptr<CBus> bus);
+                                 std::shared_ptr<CBus> bus,
+                                 const std::string& kernel_filename);
 
         void Render() override;
 
@@ -43,5 +44,6 @@ namespace zero_mate::gui
         std::atomic<bool> m_stop_cpu_thread;
         std::vector<std::shared_ptr<peripheral::IPeripheral>>& m_peripherals;
         std::shared_ptr<CBus> m_bus;
+        const std::string& m_kernel_filename;
     };
 }

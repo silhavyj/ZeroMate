@@ -16,7 +16,6 @@
 
 // Project file imports
 
-#include "zero_mate/utils/math.hpp"
 #include "isa_decoder.hpp"
 
 namespace zero_mate::arm1176jzf_s::isa

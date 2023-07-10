@@ -19,10 +19,10 @@
 
 // 3rd party library includes
 
-#include <dylib.hpp>
-#include <fmt/format.h>
-#include <magic_enum.hpp>
-#include <nlohmann/json.hpp>
+#include "dylib.hpp"
+#include "fmt/format.h"
+#include "magic_enum.hpp"
+#include "nlohmann/json.hpp"
 
 // Project file imports
 

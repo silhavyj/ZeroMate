@@ -22,7 +22,7 @@ add_executable(
     main.cpp
     ${utils_source_files}
     ${core_source_files}
-    ${gui_source_files})
+    ${gui_source_files} gui/window.cpp)
 
 # Add system headers, so the build passes all compiler warnings
 target_include_directories(
@@ -84,6 +84,6 @@ if(WIN32)
     target_sources(zero_mate PRIVATE ${RESOURCE_FILE})
     set_source_files_properties(${RESOURCE_FILE} PROPERTIES GENERATED TRUE)
     set_target_properties(
-        zero_mate PROPERTIES
-        LINK_FLAGS "/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
+            zero_mate PROPERTIES
+            LINK_FLAGS "/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 endif()

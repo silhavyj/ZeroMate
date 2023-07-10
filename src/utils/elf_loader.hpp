@@ -65,6 +65,19 @@ namespace zero_mate::utils::elf
         std::vector<TText_Section_Record> disassembly; ///< Collection of disassembled instructions
     };
 
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \struct TSource_Code
+    /// \brief Encapsulation of metadata related to a source code (disassembly).
+    // -----------------------------------------------------------------------------------------------------------------
+    struct TSource_Code
+    {
+        bool is_kernel;                         ///< Flag indicating whether it is a kernel or a process
+        std::vector<TText_Section_Record> code; ///< Disassembled instructions
+    };
+
+    /// Alias for loaded source ELF files.
+    using Source_Codes_t = std::unordered_map<std::string, TSource_Code>;
+
     /// \brief Disassembly (description) of an unknown instruction.
     ///
     /// It is used when the capstone library fails to recognize an instruction.
@@ -78,15 +91,5 @@ namespace zero_mate::utils::elf
     /// \return Packed structure containing disassembled instructions as well as a status code
     // -----------------------------------------------------------------------------------------------------------------
     [[nodiscard]] TStatus Load_ELF(CBus& bus, const char* filename, bool kernel = true);
-
-    // -----------------------------------------------------------------------------------------------------------------
-    /// \brief Reloads the same kernel that was loaded using the #Load_ELF function.
-    ///
-    /// #Load_ELF keeps track of what kernel was loaded - the same path is used in this function.
-    ///
-    /// \param bus  Reference to a bus via which the memory is accessed
-    /// \return Packed structure containing disassembled instructions as well as a status code
-    // -----------------------------------------------------------------------------------------------------------------
-    [[nodiscard]] TStatus Reload_Kernel(CBus& bus);
 
 } // namespace zero_mate::utils::elf

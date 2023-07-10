@@ -16,8 +16,8 @@
 
 // 3rd party library includes
 
-#include <fmt/format.h>
-#include <magic_enum.hpp>
+#include "fmt/format.h"
+#include "magic_enum.hpp"
 
 // Project file imports
 
