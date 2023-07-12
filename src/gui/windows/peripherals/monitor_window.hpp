@@ -34,7 +34,7 @@ namespace zero_mate::gui
         explicit CMonitor_Window(const std::shared_ptr<peripheral::CMonitor>& monitor);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Renders debug memory-mapped monitor (IGUI_Window interface).
+        /// \brief Renders the debug memory-mapped monitor (IGUI_Window interface).
         // -------------------------------------------------------------------------------------------------------------
         void Render() override;
 
