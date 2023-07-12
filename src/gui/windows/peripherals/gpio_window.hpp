@@ -28,13 +28,13 @@ namespace zero_mate::gui
     {
     public:
         // -------------------------------------------------------------------------------------------------------------
-        /// Creates an instance of the class.
+        /// \brief Creates an instance of the class.
         /// \param gpio Reference to the GPIO manager
         // -------------------------------------------------------------------------------------------------------------
         explicit CGPIO_Window(const std::shared_ptr<peripheral::CGPIO_Manager> gpio);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Renders the bar (IGUI_Window interface).
+        /// \brief Renders GPIO pins (IGUI_Window interface).
         // -------------------------------------------------------------------------------------------------------------
         void Render() override;
 

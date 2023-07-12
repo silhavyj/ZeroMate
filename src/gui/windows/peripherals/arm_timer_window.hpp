@@ -30,13 +30,13 @@ namespace zero_mate::gui
     {
     public:
         // -------------------------------------------------------------------------------------------------------------
-        /// Creates an instance of the class
+        /// \brief Creates an instance of the class
         /// \param arm_timer Reference to the ARM timer
         // -------------------------------------------------------------------------------------------------------------
         explicit CARM_Timer_Window(const std::shared_ptr<peripheral::CARM_Timer>& arm_timer);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Renders the bar (IGUI_Window interface).
+        /// \brief Renders the ARM timer registers (IGUI_Window interface).
         // -------------------------------------------------------------------------------------------------------------
         void Render() override;
 

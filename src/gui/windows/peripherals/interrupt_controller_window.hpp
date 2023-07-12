@@ -28,14 +28,14 @@ namespace zero_mate::gui
     {
     public:
         // -------------------------------------------------------------------------------------------------------------
-        /// Creates an instance of the class.
+        /// \brief Creates an instance of the class.
         /// \param interrupt_controller Referent to the interrupt controller (IC)
         // -------------------------------------------------------------------------------------------------------------
         explicit CInterrupt_Controller_Window(
         const std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller);
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Renders the bar (IGUI_Window interface).
+        /// \brief Renders interrupt controller registers (IGUI_Window interface).
         // -------------------------------------------------------------------------------------------------------------
         void Render() override;
 
