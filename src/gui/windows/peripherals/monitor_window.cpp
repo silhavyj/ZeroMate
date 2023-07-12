@@ -37,7 +37,7 @@ namespace zero_mate::gui
     std::string CMonitor_Window::Get_Current_Row(std::size_t line_no)
     {
         // Start index in the buffer.
-        const auto start_idx = static_cast<std::size_t>(line_no) * peripheral::CMonitor::Width;
+        const auto start_idx = line_no * peripheral::CMonitor::Width;
 
         return m_monitor->Get_Data().substr(start_idx, peripheral::CMonitor::Width);
     }
