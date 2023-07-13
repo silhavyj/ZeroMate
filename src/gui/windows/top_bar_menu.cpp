@@ -60,13 +60,13 @@ namespace zero_mate::gui
                 if (ImGui::BeginMenu("Load"))
                 {
                     // Load a kernel
-                    if (ImGui::MenuItem("Load Kernel", nullptr))
+                    if (ImGui::MenuItem("Kernel", nullptr))
                     {
                         Open_File_Browser(true);
                     }
 
                     // Load processes
-                    if (ImGui::MenuItem("Load Processes", nullptr))
+                    if (ImGui::MenuItem("Processes", nullptr))
                     {
                         Open_File_Browser(false);
                     }
