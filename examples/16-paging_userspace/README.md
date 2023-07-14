@@ -2,7 +2,7 @@
 
 ## Description
 
-This examples tests out the use of paging. When the kernel is executed, it first creates three user processes:
+This examples tests out the use of paging as well as switching between privileged and non-privileged CPU modes. When the kernel is executed, it first creates three user processes:
 
 1) [IDLE process](userspace/idle_process/main.cpp) that does nothing but yields
 2) [Process 1](userspace/test_process_1/main.cpp) that keeps writing digits 0 through 9 to the 7-segment display
