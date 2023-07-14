@@ -2,7 +2,7 @@
 
 Each example includes the source code, as well as an output folder containing ELF files that can be loaded into the emulator.
 
-- [01 - fibonacci_recursive](01-fibonacci_recursive/README.md)
+- [01 - factorial_recursive](01-factorial_recursive/README.md)
 - [02 - factorial_non_recursive](02-factorial_non_recursive/README.md)
 - [03 - fibonacci_dynamic](03-fibonacci_dynamic/README.md)
 - [04 - fibonacci_recursive](04-fibonacci_recursive/README.md)
