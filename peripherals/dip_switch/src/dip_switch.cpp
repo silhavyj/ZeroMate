@@ -16,6 +16,7 @@ CDIP_Switch::CDIP_Switch(std::string name,
 : m_name{ std::move(name) }
 , m_pin_idx{ pin_idx }
 , m_set_pin{ set_pin }
+, m_context{ nullptr }
 , m_output{ false }
 {
 }
