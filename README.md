@@ -44,7 +44,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |TRNG (random number generator)|✅||
 |CPU exceptions|✅||
 |CPU modes (+ viewing of all banked CPU registers)|✅||
-|Paging|✅||
+|Paging|⏳|Nested level paging is not supported yet.|
 |Support for external peripherals|✅|External peripherals are loaded as shared libraries at runtime. For instance, an LED, DIP switch, 7-segment display, etc.|
 |Loading of multiple ELF files (kernel + separately compiled processes)|✅||
 |Floating point unit (FPU)|❌||
