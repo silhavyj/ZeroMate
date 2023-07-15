@@ -62,12 +62,16 @@ namespace zero_mate::arm1176jzf_s::exceptions
                       NType::Software_Interrupt }
     {
     }
-    // clang-format on
 
     CPrefetch_Abort::CPrefetch_Abort(std::uint32_t addr)
+    : CPrefetch_Abort(addr, "")
+    {
+    }
+
+    CPrefetch_Abort::CPrefetch_Abort(std::uint32_t addr, const char* msg)
     : CCPU_Exception{ 0x0CU,
                       CCPU_Context::NCPU_Mode::Abort,
-                      fmt::format("Prefetch abort exception at address 0x{:08X}", addr).c_str(),
+                      fmt::format("Prefetch abort exception at address 0x{:08X} ({})", addr, msg).c_str(),
                       NType::Prefetch_Abort }
     {
     }

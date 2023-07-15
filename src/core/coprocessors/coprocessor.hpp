@@ -63,6 +63,11 @@ namespace zero_mate::coprocessor
         ICoprocessor& operator=(ICoprocessor&&) = delete;
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Resets the coprocessor.
+        // -------------------------------------------------------------------------------------------------------------
+        virtual void Reset() = 0;
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Performs a coprocessor register transfer instruction.
         ///
         /// This is one of the three functions to interact with a coprocessor. Any class that implements the

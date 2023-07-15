@@ -31,6 +31,7 @@
 #include "isa/isa_decoder.hpp"
 
 #include "../bus.hpp"
+#include "mmu/mmu.hpp"
 
 #include "zero_mate/utils/math.hpp"
 #include "zero_mate/utils/logger.hpp"
@@ -81,6 +82,12 @@ namespace zero_mate::arm1176jzf_s
         /// \param interrupt_controller Interrupt controller
         // -------------------------------------------------------------------------------------------------------------
         void Set_Interrupt_Controller(std::shared_ptr<peripheral::CInterrupt_Controller> interrupt_controller);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Sets an MMU (memory management unit)
+        /// \param mmu MMU to be hooked up to the CPU.
+        // -------------------------------------------------------------------------------------------------------------
+        void Set_MMU(std::shared_ptr<mmu::CMMU> mmu);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Registers a system clock listener.
@@ -523,35 +530,92 @@ namespace zero_mate::arm1176jzf_s
         }
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Converts a given virtual address into a physical address using the MMU.
+        /// \param virtual_addr Virtual address to be converted into a physical address
+        /// \param write_access Indication of whether write or read access is intended to be performed
+        /// \return Physical address
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] std::uint32_t Convert_Virtual_Addr_To_Physical_Addr(std::uint32_t virtual_addr, bool write_access)
+        {
+            // If the MMU is not preset, or it is not enabled, then virtual addr = physical addr.
+            if (m_mmu != nullptr && m_mmu->Is_Enabled())
+            {
+                return m_mmu->Get_Physical_Addr(virtual_addr, m_context, write_access);
+            }
+
+            return virtual_addr;
+        }
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Writes data to the bus.
+        /// \tparam Type Data type to be written to the bus
+        /// \param virtual_addr Virtual address where the data will be written
+        /// \param value Value (data) to be written to the bus
+        // -------------------------------------------------------------------------------------------------------------
+        template<typename Type>
+        void Write(std::uint32_t virtual_addr, Type value)
+        {
+            // Make sure the CPU is connected to the bus.
+            assert(m_bus != nullptr);
+
+            // Convert the virtual address into a physical address.
+            const std::uint32_t physical_addr = Convert_Virtual_Addr_To_Physical_Addr(virtual_addr, true);
+
+            // Write data to the bus.
+            m_bus->Write<Type>(physical_addr, value);
+        }
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Reads data from the bus.
+        /// \tparam Type Type of data to be read the bus
+        /// \param virtual_addr Virtual address where the data will be read from
+        /// \return Data read from the bus
+        // -------------------------------------------------------------------------------------------------------------
+        template<typename Type>
+        [[nodiscard]] Type Read(std::uint32_t virtual_addr)
+        {
+            // Make sure the CPU is connected to the bus.
+            assert(m_bus != nullptr);
+
+            // Convert the virtual address into a physical address.
+            const std::uint32_t physical_addr = Convert_Virtual_Addr_To_Physical_Addr(virtual_addr, false);
+
+            // Write data to the bus.
+            return m_bus->Read<Type>(physical_addr);
+        }
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Reads/writes data to the bus.
         /// \note The bus width is usually a fixed size. The generic type is supported only for emulation purposes
         /// \tparam Type Data type to be read/written to the bus
         /// \param instruction Instruction that is being executed
-        /// \param addr Address to read or written to
+        /// \param virtual_addr Virtual address to read or written to
         /// \param reg_idx Index of the register used in the instruction
         // -------------------------------------------------------------------------------------------------------------
         template<std::unsigned_integral Type>
-        void Read_Write_Value(isa::CSingle_Data_Transfer instruction, std::uint32_t addr, std::uint32_t reg_idx)
+        void Read_Write_Value(isa::CSingle_Data_Transfer instruction, std::uint32_t virtual_addr, std::uint32_t reg_idx)
         {
-            // Make sure the CPU is connected to the bus, so we can read/write to it.
-            assert(m_bus != nullptr);
-
             if (instruction.Is_L_Bit_Set())
             {
-                // Read data from the given bus address.
-                m_context[reg_idx] = m_bus->Read<Type>(addr);
+                m_context[reg_idx] = Read<Type>(virtual_addr);
             }
             else
             {
-                // Write data to the given bus address.
-                m_bus->Write<Type>(addr, static_cast<Type>(m_context[reg_idx]));
+                Write<Type>(virtual_addr, static_cast<Type>(m_context[reg_idx]));
             }
         }
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks if the IVT (interrupt vector table) has been reallocated to the higher address (0xFFFF0000).
+        /// \return true, if the base address of the IVT is 0xFFFF0000. false, otherwise.
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] bool Is_IVT_Reallocated_To_High_Addr();
 
     private:
         CCPU_Context m_context;                                        ///< Context of the CPU (registers, mode, ...)
         isa::CISA_Decoder m_instruction_decoder;                       ///< Instruction (machine code) decoder
         std::shared_ptr<CBus> m_bus;                                   ///< Bus to access different peripherals
+        std::shared_ptr<mmu::CMMU> m_mmu;                              ///< MMU used to convert virtual addresses
         std::unordered_set<std::uint32_t> m_breakpoints;               ///< Collection of set breakpoints
         utils::CLogging_System& m_logging_system;                      ///< Logging system
         std::uint32_t m_entry_point;                                   ///< Starting address of execution

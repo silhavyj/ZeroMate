@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.21)
 # General info about the project
 project(
     ZeroMate
-    VERSION 1.0.1
+    VERSION 1.1.0
     DESCRIPTION "Raspberry Pi Zero emulator"
     HOMEPAGE_URL "https://github.com/silhavyj/ZeroMate"
     LANGUAGES C CXX)
@@ -72,5 +72,3 @@ option(BUILD_DOC "Build Documentation" ON)
 if (BUILD_DOC)
     include(cmake/doxygen.cmake)
 endif()
-
-# EOF

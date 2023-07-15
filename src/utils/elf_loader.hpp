@@ -21,7 +21,7 @@ namespace zero_mate::utils::elf
 {
     // -----------------------------------------------------------------------------------------------------------------
     /// \enum NError_Code
-    /// \brief This enumeration defines different error codes that can be returned from #Load_Kernel.
+    /// \brief This enumeration defines different error codes that can be returned from #Load_ELF.
     // -----------------------------------------------------------------------------------------------------------------
     enum class NError_Code : std::uint8_t
     {
@@ -51,11 +51,12 @@ namespace zero_mate::utils::elf
         std::uint32_t addr;             ///< Address of the instruction
         std::uint32_t opcode;           ///< Opcode of the instruction (32-bit encoding)
         std::string disassembly;        ///< Disassembly (description) of the instruction
+        std::size_t index;              ///< Index of the label (if there are more labels with the same demangled name)
     };
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \struct TStatus
-    /// \brief This structure represents the return value of #Load_Kernel.
+    /// \brief This structure represents the return value of #Load_ELF.
     // -----------------------------------------------------------------------------------------------------------------
     struct TStatus
     {
@@ -64,30 +65,31 @@ namespace zero_mate::utils::elf
         std::vector<TText_Section_Record> disassembly; ///< Collection of disassembled instructions
     };
 
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \struct TSource_Code
+    /// \brief Encapsulation of metadata related to a source code (disassembly).
+    // -----------------------------------------------------------------------------------------------------------------
+    struct TSource_Code
+    {
+        bool is_kernel;                         ///< Flag indicating whether it is a kernel or a process
+        std::vector<TText_Section_Record> code; ///< Disassembled instructions
+    };
+
+    /// Alias for loaded source ELF files.
+    using Source_Codes_t = std::unordered_map<std::string, TSource_Code>;
+
     /// \brief Disassembly (description) of an unknown instruction.
     ///
     /// It is used when the capstone library fails to recognize an instruction.
-    inline static const char* const UNKNOWN_INSTRUCTION_STR = "Unknown instruction";
-
-    /// Start label (entry point of the program)
-    inline static const char* const START_LABEL = "_start";
+    inline static const char* const Unknown_Instruction_Str = "Unknown instruction";
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Loads a given ELF file (kernel) into the memory.
     /// \param bus Reference to a bus via which the memory is accessed
     /// \param filename Path to the ELF file (kernel) on the user's machine
+    /// \param kernel Flag if the ELF file should be mapped to the RAM (only the kernel is loaded)
     /// \return Packed structure containing disassembled instructions as well as a status code
     // -----------------------------------------------------------------------------------------------------------------
-    [[nodiscard]] TStatus Load_Kernel(CBus& bus, const char* filename);
-
-    // -----------------------------------------------------------------------------------------------------------------
-    /// \brief Reloads the same kernel that was loaded using the #Load_Kernel function.
-    ///
-    /// #Load_Kernel keeps track of what kernel was loaded - the same path is used in this function.
-    ///
-    /// \param bus  Reference to a bus via which the memory is accessed
-    /// \return Packed structure containing disassembled instructions as well as a status code
-    // -----------------------------------------------------------------------------------------------------------------
-    [[nodiscard]] TStatus Reload_Kernel(CBus& bus);
+    [[nodiscard]] TStatus Load_ELF(CBus& bus, const char* filename, bool kernel = true);
 
 } // namespace zero_mate::utils::elf

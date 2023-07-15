@@ -138,10 +138,12 @@ namespace zero_mate::utils
     class CLogging_System final
     {
     public:
-        static constexpr const char* const Debug_Msg_Prefix = "[debug]";     ///< Debug message prefix
-        static constexpr const char* const Info_Msg_Prefix = "[info]";       ///< Info message prefix
-        static constexpr const char* const Warning_Msg_Prefix = "[warning]"; ///< Warning message prefix
-        static constexpr const char* const Error_Msg_Prefix = "[error]";     ///< Error message prefix
+        static constexpr const char* const Debug_Msg_Prefix = "[DEBUG]";     ///< Debug message prefix
+        static constexpr const char* const Info_Msg_Prefix = "[INFO]";       ///< Info message prefix
+        static constexpr const char* const Warning_Msg_Prefix = "[WARNING]"; ///< Warning message prefix
+        static constexpr const char* const Error_Msg_Prefix = "[ERROR]";     ///< Error message prefix
+
+        static constexpr std::size_t Timestamp_Length{ 10 };                 ///< Length of a timestamp (prefix)
 
     public:
         // -------------------------------------------------------------------------------------------------------------
@@ -186,11 +188,49 @@ namespace zero_mate::utils
 
     private:
         // -------------------------------------------------------------------------------------------------------------
+        /// \struct TTimestamp
+        /// \brief Structure holding information about the current system time.
+        // -------------------------------------------------------------------------------------------------------------
+        struct TTimestamp
+        {
+            std::uint32_t hour;   ///< Current hour
+            std::uint32_t minute; ///< Current number of minutes
+            std::uint32_t second; ///< Current number of seconds
+        };
+
+    private:
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Extract the filename from a given location within the source files.
         /// \param location Location within the project (source file)
         /// \return Stripped filename of the source file
         // -------------------------------------------------------------------------------------------------------------
-        static std::string Extract_Filename(const std::source_location& location);
+        [[nodiscard]] static std::string Extract_Filename(const std::source_location& location);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Creates a formatted message to be logged.
+        /// \param prefix Level of debugging (prefix)
+        /// \param filename Filename where the log message comes from
+        /// \param line_no Line number where the function was called (where the log comes from)
+        /// \param msg Contents of the message to be logged
+        /// \return Formatted message
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] static std::string Create_Formatted_Log_Msg(const char* const prefix,
+                                                                  const std::string& filename,
+                                                                  std::size_t line_no,
+                                                                  const char* msg);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Returns the current timestamp that will be used in a log message.
+        /// \return Current timestamp
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] static TTimestamp Get_Timestamp();
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Formats a given timestamp.
+        /// \param timestamp Timestamp to be formatted
+        /// \return Formatted timestamp
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] static inline std::string Format_Timestamp(const TTimestamp& timestamp);
 
     private:
         std::vector<std::shared_ptr<ILogger>> m_loggers; ///< Collection of all registered loggers
