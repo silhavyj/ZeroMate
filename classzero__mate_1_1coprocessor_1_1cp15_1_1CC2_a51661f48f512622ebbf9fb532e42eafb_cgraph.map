@@ -1,0 +1,4 @@
+<map id="zero_mate::coprocessor::cp15::CC2::Is_PD1_Set" name="zero_mate::coprocessor::cp15::CC2::Is_PD1_Set">
+<area shape="rect" id="node1" title="Returns whether the PD1 is set or not (performing a page table walk)." alt="" coords="5,13,183,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html#ac791c544839c158bfba9aaa4d6a1aa91" title="Extract bits from the NCRm_C0_Register::Translation_Table_Base_Control register." alt="" coords="231,5,412,61"/>
+</map>

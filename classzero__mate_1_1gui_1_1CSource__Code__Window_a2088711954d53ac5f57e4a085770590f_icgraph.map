@@ -1,0 +1,5 @@
+<map id="zero_mate::gui::CSource_Code_Window::Render_Tab" name="zero_mate::gui::CSource_Code_Window::Render_Tab">
+<area shape="rect" id="node1" title="Renders a single tab (ELF source file)." alt="" coords="553,5,756,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a1f2a59252814f5b499c09bf2959741ad" title="Renders the disassembled contents of all ELF loaded into the emulator." alt="" coords="233,5,505,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a24d4560bdcaf8c4fb0611de1b55ac687" title="Renders the window (IGUI_Window interface)." alt="" coords="5,5,185,47"/>
+</map>

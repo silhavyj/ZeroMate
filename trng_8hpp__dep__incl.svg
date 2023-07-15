@@ -67,7 +67,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="gui_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="gui_8cpp.html" target="_top" xlink:title="This file implements the main GUI entry function that takes care of creating and rendering all window...">
 <polygon fill="none" stroke="black" points="135,-0.5 135,-19.5 222,-19.5 222,-0.5 135,-0.5"/>
 <text text-anchor="middle" x="178.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/gui.cpp</text>
 </a>

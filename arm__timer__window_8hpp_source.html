@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -89,45 +89,81 @@ $(document).ready(function(){initNavTree('arm__timer__window_8hpp_source.html','
 <div class="title">arm_timer_window.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="arm__timer__window_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;imgui.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../../window.hpp&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../../../core/peripherals/arm_timer.hpp&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacezero__mate_1_1gui.html">zero_mate::gui</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html">CARM_Timer_Window</a> final : <span class="keyword">public</span> <a class="code" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#af6c92d90a6517106f543136ba169f20e">CARM_Timer_Window</a>(<span class="keyword">const</span> std::shared_ptr&lt;peripheral::CARM_Timer&gt;&amp; arm_timer);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aaf519012bb20d98b58690c86ce7f2009">Render</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a9285c91bad23db6dc55b0fab3bd8161a">Render_Registers</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#ae81010b350ca24a45d2bd7bb6e979d72">Render_Control_Register</a>();</div>
+<a href="arm__timer__window_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/// \file arm_timer_window.hpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// \date 12. 07. 2023</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/// \brief This file defines a window that visualizes the contents of the ARM timer registers.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span><span class="comment">// ---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// STL imports (excluded from Doxygen)</span><span class="comment"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/// \cond</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span><span class="comment"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/// \endcond</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// Project file imports</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;../../window.hpp&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;../../../core/peripherals/arm_timer.hpp&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aee5e35a2a18c4bc77309c3bd03127a5d">   24</a></span>&#160;        <span class="keyword">static</span> constexpr ImGuiTableFlags <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aee5e35a2a18c4bc77309c3bd03127a5d">Table_Flags</a> = ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                       ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                       ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a497e6bcdd362dfd38aa67a2c218efa94">   28</a></span>&#160;        <span class="keyword">const</span> std::shared_ptr&lt;peripheral::CARM_Timer&gt; <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a497e6bcdd362dfd38aa67a2c218efa94">m_arm_timer</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="ttc" id="aclasszero__mate_1_1IGUI__Window_html"><div class="ttname"><a href="classzero__mate_1_1IGUI__Window.html">zero_mate::IGUI_Window</a></div><div class="ttdef"><b>Definition:</b> window.hpp:8</div></div>
-<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html">zero_mate::gui::CARM_Timer_Window</a></div><div class="ttdef"><b>Definition:</b> arm_timer_window.hpp:13</div></div>
-<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_a497e6bcdd362dfd38aa67a2c218efa94"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a497e6bcdd362dfd38aa67a2c218efa94">zero_mate::gui::CARM_Timer_Window::m_arm_timer</a></div><div class="ttdeci">const std::shared_ptr&lt; peripheral::CARM_Timer &gt; m_arm_timer</div><div class="ttdef"><b>Definition:</b> arm_timer_window.hpp:28</div></div>
-<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_a9285c91bad23db6dc55b0fab3bd8161a"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a9285c91bad23db6dc55b0fab3bd8161a">zero_mate::gui::CARM_Timer_Window::Render_Registers</a></div><div class="ttdeci">void Render_Registers()</div><div class="ttdef"><b>Definition:</b> arm_timer_window.cpp:23</div></div>
-<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_aaf519012bb20d98b58690c86ce7f2009"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aaf519012bb20d98b58690c86ce7f2009">zero_mate::gui::CARM_Timer_Window::Render</a></div><div class="ttdeci">void Render() override</div><div class="ttdef"><b>Definition:</b> arm_timer_window.cpp:12</div></div>
-<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_ae81010b350ca24a45d2bd7bb6e979d72"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#ae81010b350ca24a45d2bd7bb6e979d72">zero_mate::gui::CARM_Timer_Window::Render_Control_Register</a></div><div class="ttdeci">void Render_Control_Register()</div><div class="ttdef"><b>Definition:</b> arm_timer_window.cpp:78</div></div>
-<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_aee5e35a2a18c4bc77309c3bd03127a5d"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aee5e35a2a18c4bc77309c3bd03127a5d">zero_mate::gui::CARM_Timer_Window::Table_Flags</a></div><div class="ttdeci">static constexpr ImGuiTableFlags Table_Flags</div><div class="ttdef"><b>Definition:</b> arm_timer_window.hpp:24</div></div>
-<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_af6c92d90a6517106f543136ba169f20e"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#af6c92d90a6517106f543136ba169f20e">zero_mate::gui::CARM_Timer_Window::CARM_Timer_Window</a></div><div class="ttdeci">CARM_Timer_Window(const std::shared_ptr&lt; peripheral::CARM_Timer &gt; &amp;arm_timer)</div><div class="ttdef"><b>Definition:</b> arm_timer_window.cpp:7</div></div>
-<div class="ttc" id="anamespacezero__mate_1_1gui_html"><div class="ttname"><a href="namespacezero__mate_1_1gui.html">zero_mate::gui</a></div><div class="ttdef"><b>Definition:</b> gui.cpp:31</div></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacezero__mate_1_1gui.html">zero_mate::gui</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// -----------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">    /// \class CARM_Timer_Window</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">    /// \brief This windows visualizes the contents of the ARM timer registers.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span>    <span class="comment">// -----------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html">   29</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html">CARM_Timer_Window</a> final : <span class="keyword">public</span> <a class="code" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">        /// \brief Creates an instance of the class</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">        /// \param arm_timer Reference to the ARM timer</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#af6c92d90a6517106f543136ba169f20e">CARM_Timer_Window</a>(<span class="keyword">const</span> std::shared_ptr&lt;peripheral::CARM_Timer&gt;&amp; arm_timer);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">        /// \brief Renders the ARM timer registers (IGUI_Window interface).</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aaf519012bb20d98b58690c86ce7f2009">Render</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">        /// \brief Renders ARM timer registers (value, load, etc.).</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a9285c91bad23db6dc55b0fab3bd8161a">Render_Registers</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">        /// \brief Render individual bits of the ARM timer control register.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#ae81010b350ca24a45d2bd7bb6e979d72">Render_Control_Register</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">        /// \brief Renders a table (register values).</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">        /// \param title Title of the table</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">        /// \param data Data where each item represents a single row in the table (key, value)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a37b1eac29643357b2406f711c35a9f83">Render_Table</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* title,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                        <span class="keyword">const</span> std::vector&lt;std::pair&lt;std::string, std::string&gt;&gt;&amp; data);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a497e6bcdd362dfd38aa67a2c218efa94">   63</a></span>&#160;        <span class="keyword">const</span> std::shared_ptr&lt;peripheral::CARM_Timer&gt; <a class="code" href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a497e6bcdd362dfd38aa67a2c218efa94">m_arm_timer</a>; <span class="comment">///&lt; ARM timer</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <span class="comment">// namespace zero_mate::gui</span></div>
+<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html">zero_mate::gui::CARM_Timer_Window</a></div><div class="ttdoc">This windows visualizes the contents of the ARM timer registers.</div><div class="ttdef"><b>Definition:</b> arm_timer_window.hpp:30</div></div>
+<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_a37b1eac29643357b2406f711c35a9f83"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a37b1eac29643357b2406f711c35a9f83">zero_mate::gui::CARM_Timer_Window::Render_Table</a></div><div class="ttdeci">static void Render_Table(const char *title, const std::vector&lt; std::pair&lt; std::string, std::string &gt;&gt; &amp;data)</div><div class="ttdoc">Renders a table (register values).</div><div class="ttdef"><b>Definition:</b> arm_timer_window.cpp:39</div></div>
+<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_a497e6bcdd362dfd38aa67a2c218efa94"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a497e6bcdd362dfd38aa67a2c218efa94">zero_mate::gui::CARM_Timer_Window::m_arm_timer</a></div><div class="ttdeci">const std::shared_ptr&lt; peripheral::CARM_Timer &gt; m_arm_timer</div><div class="ttdoc">ARM timer.</div><div class="ttdef"><b>Definition:</b> arm_timer_window.hpp:63</div></div>
+<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_a9285c91bad23db6dc55b0fab3bd8161a"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a9285c91bad23db6dc55b0fab3bd8161a">zero_mate::gui::CARM_Timer_Window::Render_Registers</a></div><div class="ttdeci">void Render_Registers()</div><div class="ttdoc">Renders ARM timer registers (value, load, etc.).</div><div class="ttdef"><b>Definition:</b> arm_timer_window.cpp:64</div></div>
+<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_aaf519012bb20d98b58690c86ce7f2009"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aaf519012bb20d98b58690c86ce7f2009">zero_mate::gui::CARM_Timer_Window::Render</a></div><div class="ttdeci">void Render() override</div><div class="ttdoc">Renders the ARM timer registers (IGUI_Window interface).</div><div class="ttdef"><b>Definition:</b> arm_timer_window.cpp:24</div></div>
+<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_ae81010b350ca24a45d2bd7bb6e979d72"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#ae81010b350ca24a45d2bd7bb6e979d72">zero_mate::gui::CARM_Timer_Window::Render_Control_Register</a></div><div class="ttdeci">void Render_Control_Register()</div><div class="ttdoc">Render individual bits of the ARM timer control register.</div><div class="ttdef"><b>Definition:</b> arm_timer_window.cpp:106</div></div>
+<div class="ttc" id="aclasszero__mate_1_1gui_1_1CARM__Timer__Window_html_af6c92d90a6517106f543136ba169f20e"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CARM__Timer__Window.html#af6c92d90a6517106f543136ba169f20e">zero_mate::gui::CARM_Timer_Window::CARM_Timer_Window</a></div><div class="ttdeci">CARM_Timer_Window(const std::shared_ptr&lt; peripheral::CARM_Timer &gt; &amp;arm_timer)</div><div class="ttdoc">Creates an instance of the class.</div><div class="ttdef"><b>Definition:</b> arm_timer_window.cpp:19</div></div>
+<div class="ttc" id="aclasszero__mate_1_1gui_1_1IGUI__Window_html"><div class="ttname"><a href="classzero__mate_1_1gui_1_1IGUI__Window.html">zero_mate::gui::IGUI_Window</a></div><div class="ttdoc">Common interface for all GUI windows.</div><div class="ttdef"><b>Definition:</b> window.hpp:63</div></div>
+<div class="ttc" id="anamespacezero__mate_1_1gui_html"><div class="ttname"><a href="namespacezero__mate_1_1gui.html">zero_mate::gui</a></div><div class="ttdef"><b>Definition:</b> gui.cpp:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

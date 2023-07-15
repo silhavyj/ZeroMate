@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CMonitor_Window::Render_Monitor" name="zero_mate::gui::CMonitor_Window::Render_Monitor">
+<area shape="rect" id="node1" title="Renders the contents of the memory&#45;mapped debug monitor." alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CMonitor__Window.html#a2d7c8f0dafc37fcdfba3979870827462" title="Retrieves a junk of data from the monitor which represents the current row." alt="" coords="244,5,445,47"/>
+</map>

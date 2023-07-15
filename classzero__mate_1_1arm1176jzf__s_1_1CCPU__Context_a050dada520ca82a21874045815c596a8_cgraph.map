@@ -1,4 +1,9 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Context::Verify_SPSR_Accessibility" name="zero_mate::arm1176jzf_s::CCPU_Context::Verify_SPSR_Accessibility">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,188,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6fc387fa0b0dd040c4e2463606d933e4" title="Checks if the CPU mode passed in as a parameter supports the SPSR register or not." alt="" coords="236,5,409,61"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,105,188,161"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="236,75,431,116"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6fc387fa0b0dd040c4e2463606d933e4" title="Checks if the CPU mode passed in as a parameter supports the SPSR register or not." alt="" coords="247,141,420,197"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="479,30,681,86"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="481,111,679,152"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="729,5,943,47"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="739,71,933,112"/>
 </map>

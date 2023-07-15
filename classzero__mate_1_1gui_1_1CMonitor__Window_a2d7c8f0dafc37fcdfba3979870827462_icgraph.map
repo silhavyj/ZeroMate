@@ -1,0 +1,5 @@
+<map id="zero_mate::gui::CMonitor_Window::Get_Current_Row" name="zero_mate::gui::CMonitor_Window::Get_Current_Row">
+<area shape="rect" id="node1" title="Retrieves a junk of data from the monitor which represents the current row." alt="" coords="479,5,680,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CMonitor__Window.html#a5d0f74e6f49d94dbd80ce748e04141bc" title="Renders the contents of the memory&#45;mapped debug monitor." alt="" coords="240,5,431,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CMonitor__Window.html#a603ab2808379078762eea4a99b7cdc7b" title="Renders the debug memory&#45;mapped monitor (IGUI_Window interface)." alt="" coords="5,5,192,47"/>
+</map>

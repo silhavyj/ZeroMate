@@ -1,6 +1,13 @@
 <map id="zero_mate::peripheral::CGPIO_Manager::Update_Pin_State" name="zero_mate::peripheral::CGPIO_Manager::Update_Pin_State">
-<area shape="rect" id="node1" title="Updates the state of all pins within a given register." alt="" coords="5,45,196,101"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b" title="Mirrors the state of a given in in the GPLEV register." alt="" coords="244,5,427,61"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a623c62636a57d6c63db1331a42100452" title="Notifies external peripherals that subscribe to the given pin about the change of its state." alt="" coords="244,85,427,141"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa6b0515a8e4fecb78bebfbb79a13994b" title="Returns the index of the register (out of the two alternatives) based on the pin index." alt="" coords="475,5,641,61"/>
+<area shape="rect" id="node1" title="Updates the state of all pins within a given register." alt="" coords="5,133,196,189"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" title="Logs a debug message via all registered loggers." alt="" coords="244,75,439,116"/>
+<area shape="rect" id="node7" href="$namespacezero__mate_1_1utils_1_1math.html#af7d93c996dab2ff1b91c5a399dcfe29f" title="Tests whether a bit is set in the given integral variable." alt="" coords="257,140,426,181"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b" title="Mirrors the state of a given in in the GPLEV register." alt="" coords="250,206,433,262"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a623c62636a57d6c63db1331a42100452" title="Notifies external peripherals that subscribe to the given pin about the change of its state." alt="" coords="250,286,433,342"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title="Logs a warning message via all registered loggers." alt="" coords="244,9,439,51"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="487,71,689,127"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="489,5,687,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="737,45,951,87"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="747,111,941,152"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa6b0515a8e4fecb78bebfbb79a13994b" title="Returns the index of the register (out of the two alternatives) based on the pin index." alt="" coords="505,206,671,262"/>
 </map>

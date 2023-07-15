@@ -1,0 +1,5 @@
+<map id="src/core/coprocessors/cp15/c8.hpp" name="src/core/coprocessors/cp15/c8.hpp">
+<area shape="rect" id="node1" title="This file defines the primary register C8 of coprocessor CP15." alt="" coords="21,5,184,47"/>
+<area shape="rect" id="node2" href="$primary__reg_8hpp.html" title="This file defines a primary register interface of coprocessor CP15." alt="" coords="38,95,167,121"/>
+<area shape="rect" id="node3" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="5,169,200,196"/>
+</map>

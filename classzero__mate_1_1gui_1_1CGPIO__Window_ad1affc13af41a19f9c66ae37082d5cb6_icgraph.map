@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CGPIO_Window::Render_GPIO_Pins_Table" name="zero_mate::gui::CGPIO_Window::Render_GPIO_Pins_Table">
+<area shape="rect" id="node1" title="Renders a table with all GPIO pins." alt="" coords="221,5,395,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CGPIO__Window.html#a8ce2c10cab6d91789adc071291c9a5be" title="Renders GPIO pins (IGUI_Window interface)." alt="" coords="5,13,173,54"/>
+</map>

@@ -1,7 +1,7 @@
 <map id="src/gui/windows/peripherals/monitor_window.hpp" name="src/gui/windows/peripherals/monitor_window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,208,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="19,184,96,211"/>
-<area shape="rect" id="node3" href="$window_8hpp.html" title=" " alt="" coords="45,102,168,129"/>
-<area shape="rect" id="node4" href="$monitor_8hpp.html" title="This file defines an 80x25 8&#45;bit memory&#45;mapped monitor which is used as a debug output." alt="" coords="192,95,355,136"/>
-<area shape="rect" id="node5" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="215,184,331,211"/>
+<area shape="rect" id="node1" title="This file defines a window that visualizes the memory&#45;mapped debug monitor." alt="" coords="48,5,251,47"/>
+<area shape="rect" id="node2" href="$window_8hpp.html" title="This file defines an interface for all windows that will be rendered by the application." alt="" coords="5,102,128,129"/>
+<area shape="rect" id="node4" href="$monitor_8hpp.html" title="This file defines an 80x25 8&#45;bit memory&#45;mapped monitor which is used as a debug output." alt="" coords="152,95,315,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="11,184,123,211"/>
+<area shape="rect" id="node5" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="175,184,291,211"/>
 </map>

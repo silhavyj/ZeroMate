@@ -9,5 +9,6 @@ var classzero__mate_1_1coprocessor_1_1ICoprocessor =
     [ "Perform_Data_Operation", "classzero__mate_1_1coprocessor_1_1ICoprocessor.html#a7c3c3f9aacc5710d97544fcf76525b4f", null ],
     [ "Perform_Data_Transfer", "classzero__mate_1_1coprocessor_1_1ICoprocessor.html#a741213c5f2ab14ec7f6ccb97c7f4f976", null ],
     [ "Perform_Register_Transfer", "classzero__mate_1_1coprocessor_1_1ICoprocessor.html#a61deee49dd6d1f815e0de8bee23ce04a", null ],
+    [ "Reset", "classzero__mate_1_1coprocessor_1_1ICoprocessor.html#a3f3da8c630b7bdf92218bf0a7c050f47", null ],
     [ "m_cpu_context", "classzero__mate_1_1coprocessor_1_1ICoprocessor.html#a892c31685b8a023844011b0394e5ea26", null ]
 ];

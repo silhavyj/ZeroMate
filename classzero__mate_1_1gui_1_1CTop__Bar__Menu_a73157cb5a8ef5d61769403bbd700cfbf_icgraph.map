@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CTop_Bar_Menu::Reload_Kernel" name="zero_mate::gui::CTop_Bar_Menu::Reload_Kernel">
+<area shape="rect" id="node1" title="Reloads the kernel." alt="" coords="212,5,407,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#ad8f10caa7780d6c4e9fb20c4ab702a60" title="Renders the bar (IGUI_Window interface)." alt="" coords="5,5,164,47"/>
+</map>

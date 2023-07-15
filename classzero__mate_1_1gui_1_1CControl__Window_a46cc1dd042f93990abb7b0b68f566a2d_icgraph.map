@@ -1,5 +1,7 @@
 <map id="zero_mate::gui::CControl_Window::Print_No_ELF_File_Loaded_Error_Msg" name="zero_mate::gui::CControl_Window::Print_No_ELF_File_Loaded_Error_Msg">
-<area shape="rect" id="node1" title=" " alt="" coords="472,5,675,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a9be0d8c611ece954a13f3763744b074f" title=" " alt="" coords="236,5,424,61"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a" title=" " alt="" coords="5,13,188,54"/>
+<area shape="rect" id="node1" title="Log an error message saying that no ELF file (kernel) has been loaded yet." alt="" coords="740,31,943,87"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CControl__Window.html#ac547361a03efba8bcb05e216ae512dac" title="Renders the run control button." alt="" coords="474,5,690,47"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a9dabdbd3011cc2a5a13e7409a65deb3e" title="Renders the step control button." alt="" coords="472,71,692,112"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a9be0d8c611ece954a13f3763744b074f" title="Renders the control button (step, stop, run)" alt="" coords="236,31,424,87"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a" title="Renders the window (IGUI_Window interface)." alt="" coords="5,39,188,80"/>
 </map>

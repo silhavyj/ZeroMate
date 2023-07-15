@@ -1,0 +1,11 @@
+<map id="zero_mate::utils::CLogging_System::Info" name="zero_mate::utils::CLogging_System::Info">
+<area shape="rect" id="node1" title="Logs an info message via all registered loggers." alt="" coords="949,119,1144,161"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#af8e80293dff0c20be7ea071d50dec62c" title="Loads a single ELF file." alt="" coords="708,86,901,127"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CControl__Window.html#ad83b2651e1d6bf8ed72e3553526f17ca" title="Runs CPU execution (separate thread)." alt="" coords="713,151,896,193"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a7fee26ed69f7536b8396d3fe2f97c5e4" title="Loads ELF files selected by the user using the file browser." alt="" coords="457,21,657,62"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a73157cb5a8ef5d61769403bbd700cfbf" title="Reloads the kernel." alt="" coords="212,86,407,127"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a8dbf5620303332f1ad1b7449793a3621" title="Renders the file browser." alt="" coords="220,5,399,61"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#ad8f10caa7780d6c4e9fb20c4ab702a60" title="Renders the bar (IGUI_Window interface)." alt="" coords="5,50,164,91"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a1c2dbf328ff8bb1d5be18824806b8995" title="Starts CPU execution as a separate thread." alt="" coords="455,151,660,193"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a" title="Renders the window (IGUI_Window interface)." alt="" coords="218,151,401,193"/>
+</map>

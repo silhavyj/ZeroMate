@@ -1,0 +1,5 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Core::Is_IVT_Reallocated_To_High_Addr" name="zero_mate::arm1176jzf_s::CCPU_Core::Is_IVT_Reallocated_To_High_Addr">
+<area shape="rect" id="node1" title="Checks if the IVT (interrupt vector table) has been reallocated to the higher address (0xFFFF0000)." alt="" coords="5,5,207,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#ac6b22a989b3f58443f36e32999150eb6" title=" " alt="" coords="255,5,432,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a0780610d57b65a633a1776be372116a6" title="Checks whether a flag is set in a given register." alt="" coords="480,5,657,61"/>
+</map>

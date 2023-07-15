@@ -1,0 +1,8 @@
+<map id="zero_mate::gui::CLog_Window::Render_Top_Bar" name="zero_mate::gui::CLog_Window::Render_Top_Bar">
+<area shape="rect" id="node1" title="Renders the top bar of the window (the options, clear button, and the filter)" alt="" coords="5,86,197,127"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#aada4dbfcfe761cd1f7f050a866a4e02c" title="Renders a clear button for clearing the message area." alt="" coords="255,5,429,61"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a249f1f3cca8a46de6d042bdf3f837ace" title="Renders a message filer." alt="" coords="255,86,429,127"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a0126c0d93a1bfb3689f3b9cb35f8e996" title="Renders a popup menu (options)." alt="" coords="245,152,439,208"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CLog__Window.html#aab3c1c25eedfe7230d905ae5355265c0" title="Clears all log messages." alt="" coords="487,13,645,54"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#af165b3edecdde5d0ea7a10957849921b" title="Clears the circular buffer (deletes all log messages)." alt="" coords="693,13,880,54"/>
+</map>

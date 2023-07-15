@@ -31,6 +31,7 @@ var NAVTREE =
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
@@ -41,7 +42,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ]
       ] ]
@@ -51,7 +52,8 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ]
+        [ "Variables", "globals_vars.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -60,11 +62,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "alu_8cpp.html",
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a924538a26c7127ace3c4794dc2f4eda0",
-"classzero__mate_1_1coprocessor_1_1CCP15.html#aa6e5433a8d6dd2203585c7cf9696a85e",
-"classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a4ca0071bafb6078e80f91643854f0c77",
-"functions_o.html",
-"trng_8hpp.html"
+"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1a3153bfc2aa11e2c86d55eea07e4c5a",
+"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html#a425c0885ab43120d44b7efd10dbed47fa0a5a4d7386065c6c6ac19c303768c7e1",
+"classzero__mate_1_1gui_1_1CControl__Window.html#a6fa5dff2436bd03edb514219a1731b75",
+"classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72a28d0edd045e05cf5af64e35ae0c4c6ef",
+"functions.html",
+"peripheral_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

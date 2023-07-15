@@ -39,17 +39,33 @@ var annotated_dup =
         [ "mac", "namespacezero__mate_1_1arm1176jzf__s_1_1mac.html", [
           [ "TResult", "structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html", "structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult" ]
         ] ],
+        [ "mmu", "namespacezero__mate_1_1arm1176jzf__s_1_1mmu.html", [
+          [ "CMMU", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU" ],
+          [ "CPage_Entry", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Entry.html", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Entry" ],
+          [ "CPage_Table", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Table.html", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Table" ]
+        ] ],
         [ "CCPU_Context", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context" ],
         [ "CCPU_Core", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core" ]
       ] ],
       [ "coprocessor", "namespacezero__mate_1_1coprocessor.html", [
-        [ "ICoprocessor", "classzero__mate_1_1coprocessor_1_1ICoprocessor.html", "classzero__mate_1_1coprocessor_1_1ICoprocessor" ],
-        [ "CCP15", "classzero__mate_1_1coprocessor_1_1CCP15.html", "classzero__mate_1_1coprocessor_1_1CCP15" ]
+        [ "cp15", "namespacezero__mate_1_1coprocessor_1_1cp15.html", [
+          [ "CC1", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1" ],
+          [ "CC2", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC2" ],
+          [ "CC3", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC3.html", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC3" ],
+          [ "CC7", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC7.html", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC7" ],
+          [ "CC8", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC8.html", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC8" ],
+          [ "CCP15", "classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html", "classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15" ],
+          [ "IPrimary_Reg", "classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html", "classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg" ]
+        ] ],
+        [ "ICoprocessor", "classzero__mate_1_1coprocessor_1_1ICoprocessor.html", "classzero__mate_1_1coprocessor_1_1ICoprocessor" ]
       ] ],
       [ "gui", "namespacezero__mate_1_1gui.html", [
+        [ "color", "namespacezero__mate_1_1gui_1_1color.html", [
+          [ "TRGB", "structzero__mate_1_1gui_1_1color_1_1TRGB.html", "structzero__mate_1_1gui_1_1color_1_1TRGB" ]
+        ] ],
+        [ "IGUI_Window", "classzero__mate_1_1gui_1_1IGUI__Window.html", "classzero__mate_1_1gui_1_1IGUI__Window" ],
         [ "CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", "classzero__mate_1_1gui_1_1CControl__Window" ],
         [ "CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", "classzero__mate_1_1gui_1_1CCP15__Window" ],
-        [ "CFile_Window", "classzero__mate_1_1gui_1_1CFile__Window.html", "classzero__mate_1_1gui_1_1CFile__Window" ],
         [ "CCircular_Log_Buffer", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer" ],
         [ "CLog_Window", "classzero__mate_1_1gui_1_1CLog__Window.html", "classzero__mate_1_1gui_1_1CLog__Window" ],
         [ "CARM_Timer_Window", "classzero__mate_1_1gui_1_1CARM__Timer__Window.html", "classzero__mate_1_1gui_1_1CARM__Timer__Window" ],
@@ -58,7 +74,8 @@ var annotated_dup =
         [ "CMonitor_Window", "classzero__mate_1_1gui_1_1CMonitor__Window.html", "classzero__mate_1_1gui_1_1CMonitor__Window" ],
         [ "CRAM_Window", "classzero__mate_1_1gui_1_1CRAM__Window.html", "classzero__mate_1_1gui_1_1CRAM__Window" ],
         [ "CRegisters_Window", "classzero__mate_1_1gui_1_1CRegisters__Window.html", "classzero__mate_1_1gui_1_1CRegisters__Window" ],
-        [ "CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html", "classzero__mate_1_1gui_1_1CSource__Code__Window" ]
+        [ "CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html", "classzero__mate_1_1gui_1_1CSource__Code__Window" ],
+        [ "CTop_Bar_Menu", "classzero__mate_1_1gui_1_1CTop__Bar__Menu.html", "classzero__mate_1_1gui_1_1CTop__Bar__Menu" ]
       ] ],
       [ "peripheral", "namespacezero__mate_1_1peripheral.html", [
         [ "CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", "classzero__mate_1_1peripheral_1_1CARM__Timer" ],
@@ -73,11 +90,18 @@ var annotated_dup =
       [ "utils", "namespacezero__mate_1_1utils.html", [
         [ "elf", "namespacezero__mate_1_1utils_1_1elf.html", [
           [ "TText_Section_Record", "structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html", "structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record" ],
-          [ "TStatus", "structzero__mate_1_1utils_1_1elf_1_1TStatus.html", "structzero__mate_1_1utils_1_1elf_1_1TStatus" ]
+          [ "TStatus", "structzero__mate_1_1utils_1_1elf_1_1TStatus.html", "structzero__mate_1_1utils_1_1elf_1_1TStatus" ],
+          [ "TSource_Code", "structzero__mate_1_1utils_1_1elf_1_1TSource__Code.html", "structzero__mate_1_1utils_1_1elf_1_1TSource__Code" ]
         ] ],
-        [ "CLogger_STDO", "classzero__mate_1_1utils_1_1CLogger__STDO.html", "classzero__mate_1_1utils_1_1CLogger__STDO" ]
+        [ "math", "namespacezero__mate_1_1utils_1_1math.html", [
+          [ "TShift_Result", "structzero__mate_1_1utils_1_1math_1_1TShift__Result.html", "structzero__mate_1_1utils_1_1math_1_1TShift__Result" ]
+        ] ],
+        [ "CLogger_STDO", "classzero__mate_1_1utils_1_1CLogger__STDO.html", "classzero__mate_1_1utils_1_1CLogger__STDO" ],
+        [ "ILogger", "classzero__mate_1_1utils_1_1ILogger.html", "classzero__mate_1_1utils_1_1ILogger" ],
+        [ "CLogging_System", "classzero__mate_1_1utils_1_1CLogging__System.html", "classzero__mate_1_1utils_1_1CLogging__System" ],
+        [ "CSingleton", "classzero__mate_1_1utils_1_1CSingleton.html", null ]
       ] ],
       [ "CBus", "classzero__mate_1_1CBus.html", "classzero__mate_1_1CBus" ],
-      [ "IGUI_Window", "classzero__mate_1_1IGUI__Window.html", "classzero__mate_1_1IGUI__Window" ]
+      [ "IExternal_Peripheral", "classzero__mate_1_1IExternal__Peripheral.html", "classzero__mate_1_1IExternal__Peripheral" ]
     ] ]
 ];

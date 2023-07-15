@@ -1,0 +1,28 @@
+<map id="src/core/coprocessors/cp15/c2.hpp" name="src/core/coprocessors/cp15/c2.hpp">
+<area shape="rect" id="node1" title="This file defines the primary register C2 of coprocessor CP15." alt="" coords="559,5,722,47"/>
+<area shape="rect" id="node2" href="$c2_8cpp.html" title="This file implements the primary register C2 of coprocessor CP15." alt="" coords="466,95,629,136"/>
+<area shape="rect" id="node3" href="$cp15_8hpp.html" title="This file defines coprocessor CP15." alt="" coords="653,95,815,136"/>
+<area shape="rect" id="node4" href="$mmu_8hpp.html" title="This file defines the MMU (memory management unit) of the CPU." alt="" coords="387,273,537,315"/>
+<area shape="rect" id="node7" href="$soc_8hpp.html" title=" " alt="" coords="75,459,201,486"/>
+<area shape="rect" id="node20" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="670,191,798,218"/>
+<area shape="rect" id="node24" href="$cp15_8cpp.html" title="This file implements coprocessor CP15." alt="" coords="1302,184,1465,225"/>
+<area shape="rect" id="node25" href="$cp15__window_8hpp.html" title="This file defines a window that displays data (information) related to coprocessor 15." alt="" coords="1116,184,1277,225"/>
+<area shape="rect" id="node5" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="613,363,764,404"/>
+<area shape="rect" id="node19" href="$mmu_8cpp.html" title="This file implements the MMU (memory management unit) of the CPU." alt="" coords="273,363,424,404"/>
+<area shape="rect" id="node6" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="225,452,376,493"/>
+<area shape="rect" id="node11" href="$control__window_8hpp.html" title="This file defines a window that allows the user to control CPU execution." alt="" coords="400,452,575,493"/>
+<area shape="rect" id="node13" href="$registers__window_8hpp.html" title="This file defines a window that displays the contents of all CPU registers." alt="" coords="599,452,786,493"/>
+<area shape="rect" id="node15" href="$source__code__window_8hpp.html" title="This file defines a window that displays loaded ELF files (disassembled instructions of the source co..." alt="" coords="986,452,1159,493"/>
+<area shape="rect" id="node17" href="$top__bar__menu_8hpp.html" title=" " alt="" coords="811,452,961,493"/>
+<area shape="rect" id="node8" href="$soc_8cpp.html" title=" " alt="" coords="5,549,132,575"/>
+<area shape="rect" id="node9" href="$gui_8cpp.html" title="This file implements the main GUI entry function that takes care of creating and rendering all window..." alt="" coords="811,549,927,575"/>
+<area shape="rect" id="node10" href="$main_8cpp.html" title="This file defines and implements the main function of the application." alt="" coords="156,549,261,575"/>
+<area shape="rect" id="node12" href="$control__window_8cpp.html" title="This file implements a window that allows the user to control CPU execution." alt="" coords="400,541,575,583"/>
+<area shape="rect" id="node14" href="$registers__window_8cpp.html" title="This file implements a window that displays the contents of all CPU registers." alt="" coords="599,541,786,583"/>
+<area shape="rect" id="node16" href="$source__code__window_8cpp.html" title="This file implements a window that displays loaded ELF files (disassembled instructions of the source..." alt="" coords="1214,541,1387,583"/>
+<area shape="rect" id="node18" href="$top__bar__menu_8cpp.html" title=" " alt="" coords="951,541,1101,583"/>
+<area shape="rect" id="node21" href="$bus_8cpp.html" title="This file implements the interface defined in bus.hpp." alt="" coords="721,281,848,307"/>
+<area shape="rect" id="node22" href="$elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader." alt="" coords="988,370,1157,397"/>
+<area shape="rect" id="node23" href="$elf__loader_8cpp.html" title="This file implements the functionality of an ELF loader defined in elf_loader.hpp." alt="" coords="1183,459,1351,486"/>
+<area shape="rect" id="node26" href="$cp15__window_8cpp.html" title="This file implements a window that displays data (information) related to coprocessor 15." alt="" coords="1477,273,1639,315"/>
+</map>

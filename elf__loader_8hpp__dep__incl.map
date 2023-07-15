@@ -1,10 +1,9 @@
 <map id="src/utils/elf_loader.hpp" name="src/utils/elf_loader.hpp">
-<area shape="rect" id="node1" title="This file defines the functionality of an ELF loader." alt="" coords="381,5,551,32"/>
-<area shape="rect" id="node2" href="$control__window_8cpp.html" title=" " alt="" coords="5,80,180,121"/>
-<area shape="rect" id="node3" href="$file__window_8hpp.html" title=" " alt="" coords="204,80,355,121"/>
-<area shape="rect" id="node6" href="$source__code__window_8cpp.html" title=" " alt="" coords="503,169,677,211"/>
-<area shape="rect" id="node7" href="$source__code__window_8hpp.html" title=" " alt="" coords="379,80,553,121"/>
-<area shape="rect" id="node8" href="$elf__loader_8cpp.html" title="This file implements the functionality of an ELF loader defined in elf_loader.hpp." alt="" coords="627,87,795,114"/>
-<area shape="rect" id="node4" href="$gui_8cpp.html" title=" " alt="" coords="363,177,479,203"/>
-<area shape="rect" id="node5" href="$file__window_8cpp.html" title=" " alt="" coords="188,169,339,211"/>
+<area shape="rect" id="node1" title="This file defines the functionality of an ELF loader." alt="" coords="225,5,394,32"/>
+<area shape="rect" id="node2" href="$source__code__window_8cpp.html" title="This file implements a window that displays loaded ELF files (disassembled instructions of the source..." alt="" coords="5,169,179,211"/>
+<area shape="rect" id="node3" href="$source__code__window_8hpp.html" title="This file defines a window that displays loaded ELF files (disassembled instructions of the source co..." alt="" coords="129,80,303,121"/>
+<area shape="rect" id="node5" href="$top__bar__menu_8hpp.html" title=" " alt="" coords="327,80,478,121"/>
+<area shape="rect" id="node7" href="$elf__loader_8cpp.html" title="This file implements the functionality of an ELF loader defined in elf_loader.hpp." alt="" coords="503,87,671,114"/>
+<area shape="rect" id="node4" href="$gui_8cpp.html" title="This file implements the main GUI entry function that takes care of creating and rendering all window..." alt="" coords="203,177,319,203"/>
+<area shape="rect" id="node6" href="$top__bar__menu_8cpp.html" title=" " alt="" coords="343,169,494,211"/>
 </map>

@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -107,7 +107,7 @@ Inheritance diagram for zero_mate::coprocessor::ICoprocessor:</div>
 <div class="dynheader">
 Collaboration diagram for zero_mate::coprocessor::ICoprocessor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1coprocessor_1_1ICoprocessor__coll__graph.svg" width="204" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1coprocessor_1_1ICoprocessor__coll__graph.svg" width="236" height="260"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -131,6 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac382acf9435c9898dc273fff22b55f1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html">ICoprocessor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html#ac382acf9435c9898dc273fff22b55f1d">operator=</a> (<a class="el" href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html">ICoprocessor</a> &amp;&amp;)=delete</td></tr>
 <tr class="memdesc:ac382acf9435c9898dc273fff22b55f1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted assignment operator with an r-value reference (rule of five).  <a href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html#ac382acf9435c9898dc273fff22b55f1d">More...</a><br /></td></tr>
 <tr class="separator:ac382acf9435c9898dc273fff22b55f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f3da8c630b7bdf92218bf0a7c050f47"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html#a3f3da8c630b7bdf92218bf0a7c050f47">Reset</a> ()=0</td></tr>
+<tr class="memdesc:a3f3da8c630b7bdf92218bf0a7c050f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the coprocessor.  <a href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html#a3f3da8c630b7bdf92218bf0a7c050f47">More...</a><br /></td></tr>
+<tr class="separator:a3f3da8c630b7bdf92218bf0a7c050f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61deee49dd6d1f815e0de8bee23ce04a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html#a61deee49dd6d1f815e0de8bee23ce04a">Perform_Register_Transfer</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Reg__Transfer.html">arm1176jzf_s::isa::CCoprocessor_Reg_Transfer</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)=0</td></tr>
 <tr class="memdesc:a61deee49dd6d1f815e0de8bee23ce04a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a coprocessor register transfer instruction.  <a href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html#a61deee49dd6d1f815e0de8bee23ce04a">More...</a><br /></td></tr>
 <tr class="separator:a61deee49dd6d1f815e0de8bee23ce04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -358,7 +361,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html#ad77826237c15f2dae64384f0615cf139">zero_mate::coprocessor::CCP15</a>.</p>
+<p>Implemented in <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#a25c220322512bcaeeca48659ae30cca1">zero_mate::coprocessor::cp15::CCP15</a>.</p>
 
 </div>
 </div>
@@ -395,7 +398,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html#a945c53f9e128ebfe380e96e02988d3f0">zero_mate::coprocessor::CCP15</a>.</p>
+<p>Implemented in <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#a0f61288965a57717bc0add85d6adc511">zero_mate::coprocessor::cp15::CCP15</a>.</p>
 
 </div>
 </div>
@@ -432,7 +435,36 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html#aa6e5433a8d6dd2203585c7cf9696a85e">zero_mate::coprocessor::CCP15</a>.</p>
+<p>Implemented in <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#acf21d27cfbac80830347b0e69c1385c1">zero_mate::coprocessor::cp15::CCP15</a>.</p>
+
+</div>
+</div>
+<a id="a3f3da8c630b7bdf92218bf0a7c050f47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f3da8c630b7bdf92218bf0a7c050f47">&#9670;&nbsp;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void zero_mate::coprocessor::ICoprocessor::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets the coprocessor. </p>
+
+<p>Implemented in <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#a8098e151767a4776575e6732d72b6845">zero_mate::coprocessor::cp15::CCP15</a>.</p>
 
 </div>
 </div>

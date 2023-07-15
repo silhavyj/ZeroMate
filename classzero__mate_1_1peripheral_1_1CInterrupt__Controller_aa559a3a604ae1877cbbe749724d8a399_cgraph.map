@@ -1,5 +1,10 @@
 <map id="zero_mate::peripheral::CInterrupt_Controller::Signalize_IRQ" name="zero_mate::peripheral::CInterrupt_Controller::Signalize_IRQ">
-<area shape="rect" id="node1" title="Notifies the interrupt controller about a pending interrupt triggered by an IRQ source." alt="" coords="5,45,172,101"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef" title="Checks whether a given flag is set in the CPSR register of the current CPU mode." alt="" coords="224,5,397,61"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#af7cf0c917cceee8c39d16e833fc9a879" title="Checks whether an IRQ source is enabled or not." alt="" coords="220,85,401,141"/>
+<area shape="rect" id="node1" title="Notifies the interrupt controller about a pending interrupt triggered by an IRQ source." alt="" coords="5,141,172,197"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" title="Logs a debug message via all registered loggers." alt="" coords="220,75,415,116"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef" title="Checks whether a given flag is set in the CPSR register of the current CPU mode." alt="" coords="231,141,404,197"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#af7cf0c917cceee8c39d16e833fc9a879" title="Checks whether an IRQ source is enabled or not." alt="" coords="227,221,408,277"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="463,30,665,86"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="465,111,663,152"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="713,5,927,47"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="723,71,917,112"/>
 </map>

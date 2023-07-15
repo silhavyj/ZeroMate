@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1arm1176jzf__s_1_1ex
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -142,6 +143,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aabb81de8a3e09534245ef3851a31c3c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1f">NType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aabb81de8a3e09534245ef3851a31c3c0">Get_Type</a> () const</td></tr>
 <tr class="memdesc:aabb81de8a3e09534245ef3851a31c3c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the exception.  <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aabb81de8a3e09534245ef3851a31c3c0">More...</a><br /></td></tr>
 <tr class="separator:aabb81de8a3e09534245ef3851a31c3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ad9b65d2d99a15aced730838c70124376"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ad9b65d2d99a15aced730838c70124376">IVT_High_Base_Addr</a> = 0xFFFF0000</td></tr>
+<tr class="memdesc:ad9b65d2d99a15aced730838c70124376"><td class="mdescLeft">&#160;</td><td class="mdescRight">High base address of the IVT table (reallocation is enabled in CP15)  <a href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ad9b65d2d99a15aced730838c70124376">More...</a><br /></td></tr>
+<tr class="separator:ad9b65d2d99a15aced730838c70124376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -338,6 +345,30 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad9b65d2d99a15aced730838c70124376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b65d2d99a15aced730838c70124376">&#9670;&nbsp;</a></span>IVT_High_Base_Addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::uint32_t zero_mate::arm1176jzf_s::exceptions::CCPU_Exception::IVT_High_Base_Addr = 0xFFFF0000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>High base address of the IVT table (reallocation is enabled in CP15) </p>
+
+</div>
+</div>
 <a id="a1c84ad9c11e14653fbf5ac38a1f5d9d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c84ad9c11e14653fbf5ac38a1f5d9d8">&#9670;&nbsp;</a></span>m_exception_vector</h2>
 

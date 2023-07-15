@@ -1,6 +1,6 @@
 <map id="zero_mate::gui::CLog_Window" name="zero_mate::gui::CLog_Window">
-<area shape="rect" id="node1" title=" " alt="" coords="303,49,461,90"/>
-<area shape="rect" id="node2" title=" " alt="" coords="45,5,152,32"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1IGUI__Window.html" title=" " alt="" coords="5,56,192,83"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html" title=" " alt="" coords="5,107,192,163"/>
+<area shape="rect" id="node1" title="This class represents a window that displays log messages." alt="" coords="303,57,461,98"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logger interface." alt="" coords="7,5,190,32"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows." alt="" coords="21,57,176,98"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html" title=" " alt="" coords="5,123,192,179"/>
 </map>

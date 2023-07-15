@@ -1,4 +1,4 @@
 <map id="zero_mate::gui::CARM_Timer_Window::Render_Control_Register" name="zero_mate::gui::CARM_Timer_Window::Render_Control_Register">
-<area shape="rect" id="node1" title=" " alt="" coords="232,5,411,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aaf519012bb20d98b58690c86ce7f2009" title=" " alt="" coords="5,13,184,54"/>
+<area shape="rect" id="node1" title="Render individual bits of the ARM timer control register." alt="" coords="232,5,411,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aaf519012bb20d98b58690c86ce7f2009" title="Renders the ARM timer registers (IGUI_Window interface)." alt="" coords="5,13,184,54"/>
 </map>

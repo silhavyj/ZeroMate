@@ -22,17 +22,17 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="core_8hpp.html" target="_top" xlink:title="This file defines a class that represents a CPU core (arm1176jzf_s).">
-<polygon fill="none" stroke="black" points="447,-134.5 447,-164.5 560,-164.5 560,-134.5 447,-134.5"/>
-<text text-anchor="start" x="455" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
-<text text-anchor="middle" x="503.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/core.hpp</text>
+<polygon fill="none" stroke="black" points="456,-134.5 456,-164.5 569,-164.5 569,-134.5 456,-134.5"/>
+<text text-anchor="start" x="464" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
+<text text-anchor="middle" x="512.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s/core.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M1123.03,-208.28C981.56,-195.08 684.56,-167.39 560.18,-155.79"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1123.07,-211.79 1133.35,-209.24 1123.72,-204.82 1123.07,-211.79"/>
+<path fill="none" stroke="midnightblue" d="M1123.08,-208.19C983.35,-194.98 692.14,-167.47 569.2,-155.86"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1122.99,-211.69 1133.28,-209.15 1123.65,-204.72 1122.99,-211.69"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -100,7 +100,7 @@
 <!-- Node25 -->
 <g id="node25" class="node">
 <title>Node25</title>
-<g id="a_node25"><a xlink:href="interrupt__controller__window_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node25"><a xlink:href="interrupt__controller__window_8hpp.html" target="_top" xlink:title="This file defines a window that visualizes the interrupt controller IC.">
 <polygon fill="none" stroke="black" points="756.5,-134.5 756.5,-164.5 932.5,-164.5 932.5,-134.5 756.5,-134.5"/>
 <text text-anchor="start" x="764.5" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/peripherals</text>
 <text text-anchor="middle" x="844.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/interrupt_controller_window.hpp</text>
@@ -126,19 +126,19 @@
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M543.07,-130.13C565.31,-119.8 592.65,-107.11 613.18,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="541.47,-127.01 533.88,-134.4 544.42,-133.36 541.47,-127.01"/>
+<path fill="none" stroke="midnightblue" d="M550.08,-129.85C570.79,-119.58 596.09,-107.03 615.13,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="548.33,-126.82 540.93,-134.4 551.44,-133.09 548.33,-126.82"/>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M570.21,-144.28C745.97,-133.1 1210.56,-103.27 1243.5,-98 1252.57,-96.55 1262.31,-94.33 1271.13,-92.05"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="569.81,-140.79 560.06,-144.92 570.26,-147.78 569.81,-140.79"/>
+<path fill="none" stroke="midnightblue" d="M579.33,-144.21C753.65,-132.98 1211.02,-103.21 1243.5,-98 1252.57,-96.54 1262.31,-94.32 1271.13,-92.05"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="579,-140.72 569.25,-144.86 579.45,-147.71 579,-140.72"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="control__window_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="control__window_8hpp.html" target="_top" xlink:title="This file defines a window that allows the user to control CPU execution.">
 <polygon fill="none" stroke="black" points="0,-67.5 0,-97.5 131,-97.5 131,-67.5 0,-67.5"/>
 <text text-anchor="start" x="8" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/control</text>
 <text text-anchor="middle" x="65.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_window.hpp</text>
@@ -148,56 +148,56 @@
 <!-- Node2&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node2&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M436.93,-140.39C363.81,-131.23 243.02,-115.31 139.5,-98 136.79,-97.55 134.02,-97.07 131.23,-96.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="436.56,-143.87 446.92,-141.64 437.43,-136.93 436.56,-143.87"/>
+<path fill="none" stroke="midnightblue" d="M445.76,-140.58C371.18,-131.47 246.92,-115.5 140.5,-98 137.49,-97.51 134.42,-96.98 131.31,-96.44"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="445.6,-144.09 455.95,-141.82 446.44,-137.14 445.6,-144.09"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="file__window_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="149,-67.5 149,-97.5 262,-97.5 262,-67.5 149,-67.5"/>
-<text text-anchor="start" x="157" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/file</text>
-<text text-anchor="middle" x="205.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_window.hpp</text>
+<g id="a_node10"><a xlink:href="registers__window_8hpp.html" target="_top" xlink:title="This file defines a window that displays the contents of all CPU registers.">
+<polygon fill="none" stroke="black" points="149.5,-67.5 149.5,-97.5 289.5,-97.5 289.5,-67.5 149.5,-67.5"/>
+<text text-anchor="start" x="157.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/registers</text>
+<text text-anchor="middle" x="219.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_window.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node10 -->
 <g id="edge10" class="edge">
 <title>Node2&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M436.84,-134.03C390.47,-123.95 327.21,-110.18 271.5,-98 268.41,-97.32 265.23,-96.63 262.02,-95.93"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="436.25,-137.48 446.76,-136.18 437.73,-130.64 436.25,-137.48"/>
+<path fill="none" stroke="midnightblue" d="M445.8,-133.7C396.89,-122.85 330.89,-108.21 282.79,-97.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="445.14,-137.14 455.66,-135.89 446.65,-130.31 445.14,-137.14"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="registers__window_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="280.5,-67.5 280.5,-97.5 420.5,-97.5 420.5,-67.5 280.5,-67.5"/>
-<text text-anchor="start" x="288.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/registers</text>
-<text text-anchor="middle" x="350.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_window.hpp</text>
+<g id="a_node12"><a xlink:href="source__code__window_8hpp.html" target="_top" xlink:title="This file defines a window that displays loaded ELF files (disassembled instructions of the source co...">
+<polygon fill="none" stroke="black" points="307.5,-67.5 307.5,-97.5 437.5,-97.5 437.5,-67.5 307.5,-67.5"/>
+<text text-anchor="start" x="315.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/source</text>
+<text text-anchor="middle" x="372.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_code_window.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node12 -->
 <g id="edge13" class="edge">
 <title>Node2&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M460.91,-130.41C436.48,-120.03 406.28,-107.2 383.63,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="459.73,-133.71 470.3,-134.4 462.47,-127.26 459.73,-133.71"/>
+<path fill="none" stroke="midnightblue" d="M472.93,-130.13C450.69,-119.8 423.35,-107.11 402.82,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="471.58,-133.36 482.12,-134.4 474.53,-127.01 471.58,-133.36"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="source__code__window_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="438.5,-67.5 438.5,-97.5 568.5,-97.5 568.5,-67.5 438.5,-67.5"/>
-<text text-anchor="start" x="446.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/source</text>
-<text text-anchor="middle" x="503.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_code_window.hpp</text>
+<g id="a_node14"><a xlink:href="top__bar__menu_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="456,-67.5 456,-97.5 569,-97.5 569,-67.5 456,-67.5"/>
+<text text-anchor="start" x="464" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/top</text>
+<text text-anchor="middle" x="512.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_bar_menu.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node14 -->
 <g id="edge16" class="edge">
 <title>Node2&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M503.5,-124.11C503.5,-115.15 503.5,-105.32 503.5,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="500,-124.4 503.5,-134.4 507,-124.4 500,-124.4"/>
+<path fill="none" stroke="midnightblue" d="M512.5,-124.11C512.5,-115.15 512.5,-105.32 512.5,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="509,-124.4 512.5,-134.4 516,-124.4 509,-124.4"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
@@ -217,7 +217,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="gui_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="gui_8cpp.html" target="_top" xlink:title="This file implements the main GUI entry function that takes care of creating and rendering all window...">
 <polygon fill="none" stroke="black" points="636,-6 636,-25 723,-25 723,-6 636,-6"/>
 <text text-anchor="middle" x="679.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/gui.cpp</text>
 </a>
@@ -247,13 +247,13 @@
 <!-- Node8&#45;&gt;Node6 -->
 <g id="edge8" class="edge">
 <title>Node8&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M141.13,-66.87C334.69,-40.59 386.61,-52.39 577.5,-31 596.7,-28.85 617.85,-25.93 635.89,-23.28"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="140.63,-63.4 131.2,-68.23 141.59,-70.34 140.63,-63.4"/>
+<path fill="none" stroke="midnightblue" d="M141.23,-67.01C335.27,-40.86 387.05,-52.36 577.5,-31 596.7,-28.85 617.85,-25.93 635.89,-23.28"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="140.72,-63.54 131.28,-68.36 141.66,-70.48 140.72,-63.54"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="control__window_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="control__window_8cpp.html" target="_top" xlink:title="This file implements a window that allows the user to control CPU execution.">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-30.5 131,-30.5 131,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/control</text>
 <text text-anchor="middle" x="65.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_window.cpp</text>
@@ -269,68 +269,68 @@
 <!-- Node10&#45;&gt;Node6 -->
 <g id="edge11" class="edge">
 <title>Node10&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M272.28,-66.98C408.24,-44.47 444.89,-48.22 577.5,-31 596.66,-28.51 617.8,-25.54 635.85,-22.94"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="271.6,-63.54 262.31,-68.64 272.75,-70.45 271.6,-63.54"/>
+<path fill="none" stroke="midnightblue" d="M299.57,-66.88C423.69,-47.7 456.75,-47.37 577.5,-31 596.64,-28.4 617.79,-25.42 635.84,-22.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="299.02,-63.42 289.68,-68.42 300.1,-70.34 299.02,-63.42"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="file__window_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="149,-0.5 149,-30.5 262,-30.5 262,-0.5 149,-0.5"/>
-<text text-anchor="start" x="157" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/file</text>
-<text text-anchor="middle" x="205.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_window.cpp</text>
+<g id="a_node11"><a xlink:href="registers__window_8cpp.html" target="_top" xlink:title="This file implements a window that displays the contents of all CPU registers.">
+<polygon fill="none" stroke="black" points="149.5,-0.5 149.5,-30.5 289.5,-30.5 289.5,-0.5 149.5,-0.5"/>
+<text text-anchor="start" x="157.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/registers</text>
+<text text-anchor="middle" x="219.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_window.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node11 -->
 <g id="edge12" class="edge">
 <title>Node10&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M205.5,-57.11C205.5,-48.15 205.5,-38.32 205.5,-30.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="202,-57.4 205.5,-67.4 209,-57.4 202,-57.4"/>
+<path fill="none" stroke="midnightblue" d="M219.5,-57.11C219.5,-48.15 219.5,-38.32 219.5,-30.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="216,-57.4 219.5,-67.4 223,-57.4 216,-57.4"/>
 </g>
 <!-- Node12&#45;&gt;Node6 -->
 <g id="edge14" class="edge">
 <title>Node12&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M430.85,-65.63C495.54,-52.84 584,-35.37 636.11,-25.07"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="429.81,-62.26 420.68,-67.64 431.16,-69.13 429.81,-62.26"/>
+<path fill="none" stroke="midnightblue" d="M447.47,-65.63C507.79,-52.85 590.27,-35.39 638.91,-25.09"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="446.66,-62.22 437.61,-67.72 448.11,-69.07 446.66,-62.22"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="registers__window_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="280.5,-0.5 280.5,-30.5 420.5,-30.5 420.5,-0.5 280.5,-0.5"/>
-<text text-anchor="start" x="288.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/registers</text>
-<text text-anchor="middle" x="350.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_window.cpp</text>
+<g id="a_node13"><a xlink:href="source__code__window_8cpp.html" target="_top" xlink:title="This file implements a window that displays loaded ELF files (disassembled instructions of the source...">
+<polygon fill="none" stroke="black" points="307.5,-0.5 307.5,-30.5 437.5,-30.5 437.5,-0.5 307.5,-0.5"/>
+<text text-anchor="start" x="315.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/source</text>
+<text text-anchor="middle" x="372.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_code_window.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node12&#45;&gt;Node13 -->
 <g id="edge15" class="edge">
 <title>Node12&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M350.5,-57.11C350.5,-48.15 350.5,-38.32 350.5,-30.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="347,-57.4 350.5,-67.4 354,-57.4 347,-57.4"/>
+<path fill="none" stroke="midnightblue" d="M372.5,-57.11C372.5,-48.15 372.5,-38.32 372.5,-30.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="369,-57.4 372.5,-67.4 376,-57.4 369,-57.4"/>
 </g>
 <!-- Node14&#45;&gt;Node6 -->
 <g id="edge17" class="edge">
 <title>Node14&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M551.47,-63.78C585.6,-51.18 629.93,-34.81 656.47,-25.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="549.86,-60.65 541.69,-67.4 552.28,-67.21 549.86,-60.65"/>
+<path fill="none" stroke="midnightblue" d="M558.43,-63.62C590.76,-51.04 632.57,-34.77 657.64,-25.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="556.79,-60.51 548.74,-67.4 559.33,-67.03 556.79,-60.51"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="source__code__window_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="438.5,-0.5 438.5,-30.5 568.5,-30.5 568.5,-0.5 438.5,-0.5"/>
-<text text-anchor="start" x="446.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/source</text>
-<text text-anchor="middle" x="503.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_code_window.cpp</text>
+<g id="a_node15"><a xlink:href="top__bar__menu_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="456,-0.5 456,-30.5 569,-30.5 569,-0.5 456,-0.5"/>
+<text text-anchor="start" x="464" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/top</text>
+<text text-anchor="middle" x="512.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_bar_menu.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node14&#45;&gt;Node15 -->
 <g id="edge18" class="edge">
 <title>Node14&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M503.5,-57.11C503.5,-48.15 503.5,-38.32 503.5,-30.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="500,-57.4 503.5,-67.4 507,-57.4 500,-57.4"/>
+<path fill="none" stroke="midnightblue" d="M512.5,-57.11C512.5,-48.15 512.5,-38.32 512.5,-30.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="509,-57.4 512.5,-67.4 516,-57.4 509,-57.4"/>
 </g>
 <!-- Node16&#45;&gt;Node4 -->
 <g id="edge21" class="edge">
@@ -357,7 +357,7 @@
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="arm__timer__window_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node18"><a xlink:href="arm__timer__window_8hpp.html" target="_top" xlink:title="This file defines a window that visualizes the contents of the ARM timer registers.">
 <polygon fill="none" stroke="black" points="1082.5,-67.5 1082.5,-97.5 1234.5,-97.5 1234.5,-67.5 1082.5,-67.5"/>
 <text text-anchor="start" x="1090.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/peripherals</text>
 <text text-anchor="middle" x="1158.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/arm_timer_window.hpp</text>
@@ -379,7 +379,7 @@
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="arm__timer__window_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node19"><a xlink:href="arm__timer__window_8cpp.html" target="_top" xlink:title="This file implements a window that visualizes the contents of the ARM timer registers.">
 <polygon fill="none" stroke="black" points="1082.5,-0.5 1082.5,-30.5 1234.5,-30.5 1234.5,-0.5 1082.5,-0.5"/>
 <text text-anchor="start" x="1090.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/peripherals</text>
 <text text-anchor="middle" x="1158.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/arm_timer_window.cpp</text>
@@ -417,7 +417,7 @@
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="gpio__window_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node22"><a xlink:href="gpio__window_8hpp.html" target="_top" xlink:title="This file defines a window that visualizes the states and information about GPIO pins.">
 <polygon fill="none" stroke="black" points="1497.5,-67.5 1497.5,-97.5 1649.5,-97.5 1649.5,-67.5 1497.5,-67.5"/>
 <text text-anchor="start" x="1505.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/peripherals</text>
 <text text-anchor="middle" x="1573.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/gpio_window.hpp</text>
@@ -439,7 +439,7 @@
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="gpio__window_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node23"><a xlink:href="gpio__window_8cpp.html" target="_top" xlink:title="This file implements a window that visualizes the states and information about GPIO pins.">
 <polygon fill="none" stroke="black" points="1497.5,-0.5 1497.5,-30.5 1649.5,-30.5 1649.5,-0.5 1497.5,-0.5"/>
 <text text-anchor="start" x="1505.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/peripherals</text>
 <text text-anchor="middle" x="1573.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/gpio_window.cpp</text>
@@ -461,7 +461,7 @@
 <!-- Node26 -->
 <g id="node26" class="node">
 <title>Node26</title>
-<g id="a_node26"><a xlink:href="interrupt__controller__window_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node26"><a xlink:href="interrupt__controller__window_8cpp.html" target="_top" xlink:title="This file implements a window that visualizes the interrupt controller IC.">
 <polygon fill="none" stroke="black" points="756.5,-67.5 756.5,-97.5 932.5,-97.5 932.5,-67.5 756.5,-67.5"/>
 <text text-anchor="start" x="764.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/gui/windows/peripherals</text>
 <text text-anchor="middle" x="844.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/interrupt_controller_window.cpp</text>

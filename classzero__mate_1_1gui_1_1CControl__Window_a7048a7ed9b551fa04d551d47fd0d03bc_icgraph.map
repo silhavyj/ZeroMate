@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CControl_Window::Render_Currently_Loaded_Kernel" name="zero_mate::gui::CControl_Window::Render_Currently_Loaded_Kernel">
+<area shape="rect" id="node1" title="Renders the name (filepath) of the currently loaded kernel (ELF file)." alt="" coords="236,5,437,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a" title="Renders the window (IGUI_Window interface)." alt="" coords="5,13,188,54"/>
+</map>

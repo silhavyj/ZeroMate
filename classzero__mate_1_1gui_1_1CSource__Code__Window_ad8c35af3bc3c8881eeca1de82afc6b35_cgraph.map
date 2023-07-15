@@ -1,0 +1,6 @@
+<map id="zero_mate::gui::CSource_Code_Window::Render_Code_Table" name="zero_mate::gui::CSource_Code_Window::Render_Code_Table">
+<area shape="rect" id="node1" title="Renders a table that containing disassembled instructions." alt="" coords="5,43,260,84"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a92af51ccb5ebca752cddaac27c38f1f8" title="Renders the body of a source code table." alt="" coords="308,5,563,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#aa46c591d1c9bb994ccee55d371919e37" title="Renders table headings (breakpoint, address, opcode, disassembly)" alt="" coords="328,71,543,127"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a854994af8a4bb90df17e2e24c8d7a3a5" title="Renders a single breakpoint." alt="" coords="611,5,863,47"/>
+</map>

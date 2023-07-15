@@ -1,0 +1,4 @@
+<map id="include/zero_mate/external_peripheral.hpp" name="include/zero_mate/external_peripheral.hpp">
+<area shape="rect" id="node1" title="This file defines an interface for external peripherals that can be attached to the system via GPIO p..." alt="" coords="5,5,205,47"/>
+<area shape="rect" id="node2" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="8,95,203,121"/>
+</map>

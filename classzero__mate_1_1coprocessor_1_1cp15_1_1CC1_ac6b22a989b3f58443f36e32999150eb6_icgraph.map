@@ -1,0 +1,12 @@
+<map id="zero_mate::coprocessor::cp15::CC1::Is_Control_Flag_Set" name="zero_mate::coprocessor::cp15::CC1::Is_Control_Flag_Set">
+<area shape="rect" id="node1" title=" " alt="" coords="1151,71,1328,127"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a0e4282050053a8672260e9752da301bb" title="Returns information about whether the MMU is enabled or not." alt="" coords="896,5,1103,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad6dadfc114c7d0d6b43496f9f5651be7" title="Checks if the IVT (interrupt vector table) has been reallocated to the higher address (0xFFFF0000)." alt="" coords="899,71,1100,127"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1CBus.html#a3822e274a11c99cfc0584b5755af65f5" title="Checks for unaligned memory access." alt="" coords="896,152,1103,193"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e6ef006a36e1adb56abd3ecc6481be" title="Executes a CPU exception." alt="" coords="672,71,848,127"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac81ae05305c6916b7eda83abff602dcf" title="Executes a single instruction." alt="" coords="448,41,624,83"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa327755c4c57c01f03e16fb3d1195f6a" title="Fetches the next instruction." alt="" coords="449,107,623,163"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a1665360d8ae71ed541b4c10f39e655a5" title=" " alt="" coords="227,115,400,156"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad07b9956fd3f7b6c64b93c69243092f4" title="Starts the execution." alt="" coords="5,81,179,123"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a16544e9981489e1f4a25405248e5a5c0" title=" " alt="" coords="5,147,179,188"/>
+</map>

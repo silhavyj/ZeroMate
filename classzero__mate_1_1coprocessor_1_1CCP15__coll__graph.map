@@ -1,5 +1,0 @@
-<map id="zero_mate::coprocessor::CCP15" name="zero_mate::coprocessor::CCP15">
-<area shape="rect" id="node1" title="This class represents the system control coprocessor." alt="" coords="5,200,183,241"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1ICoprocessor.html" title="This class represents an interface of a coprocessor." alt="" coords="5,109,183,151"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" title="This class represents the context (registers) of the CPU." alt="" coords="7,5,181,47"/>
-</map>

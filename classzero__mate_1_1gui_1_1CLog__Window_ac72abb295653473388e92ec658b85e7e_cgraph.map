@@ -1,0 +1,7 @@
+<map id="zero_mate::gui::CLog_Window::Render_Message_Area" name="zero_mate::gui::CLog_Window::Render_Message_Area">
+<area shape="rect" id="node1" title="Renders the message scrolling area." alt="" coords="5,53,241,94"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a67b875f7111438d9100d927992e27c4f" title="Renders all log messages (no filter activated)." alt="" coords="291,5,479,61"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CLog__Window.html#adb7453fd69db4264b631251e48b68201" title="Renders log messages that satisfy the criteria given by a message filter." alt="" coords="289,85,480,141"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#ac16e7e106825569a5fe48b06eefb28be" title="Returns a collection of log messages currently stored in the buffer." alt="" coords="557,17,744,58"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CLog__Window.html#acd4c871dccefcf04fb9b3bb8973086c0" title="Sets the color of a log message based on its type (error, info, etc.)" alt="" coords="528,86,773,127"/>
+</map>

@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -126,9 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5928650c76e0e10ffdd30561dd585e1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1CBus.html#a5928650c76e0e10ffdd30561dd585e1a">CBus</a> ()</td></tr>
 <tr class="memdesc:a5928650c76e0e10ffdd30561dd585e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1CBus.html#a5928650c76e0e10ffdd30561dd585e1a">More...</a><br /></td></tr>
 <tr class="separator:a5928650c76e0e10ffdd30561dd585e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba2235a12cebc9a603c57a4840a4decb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1CBus.html#aba2235a12cebc9a603c57a4840a4decb">Set_CP15</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a> &gt; cp15)</td></tr>
-<tr class="memdesc:aba2235a12cebc9a603c57a4840a4decb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a reference to CP15 (coprocessor 15).  <a href="classzero__mate_1_1CBus.html#aba2235a12cebc9a603c57a4840a4decb">More...</a><br /></td></tr>
-<tr class="separator:aba2235a12cebc9a603c57a4840a4decb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4307c5afa92f875a3c550cbc5113fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1CBus.html#a9b4307c5afa92f875a3c550cbc5113fb">Set_CP15</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt; cp15)</td></tr>
+<tr class="memdesc:a9b4307c5afa92f875a3c550cbc5113fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a reference to CP15 (coprocessor 15).  <a href="classzero__mate_1_1CBus.html#a9b4307c5afa92f875a3c550cbc5113fb">More...</a><br /></td></tr>
+<tr class="separator:a9b4307c5afa92f875a3c550cbc5113fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa526b7afc98f66dbb672fe8d4f3ae88a"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
 <tr class="memitem:aa526b7afc98f66dbb672fe8d4f3ae88a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1CBus.html#aa526b7afc98f66dbb672fe8d4f3ae88a">Write</a> (std::uint32_t addr, Type value)</td></tr>
 <tr class="memdesc:aa526b7afc98f66dbb672fe8d4f3ae88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data to the given address in the address space.  <a href="classzero__mate_1_1CBus.html#aa526b7afc98f66dbb672fe8d4f3ae88a">More...</a><br /></td></tr>
@@ -172,9 +172,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a962dea38bc516d4d9e5e8f974b164e53"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1CBus.html#a962dea38bc516d4d9e5e8f974b164e53">m_mtx</a></td></tr>
 <tr class="memdesc:a962dea38bc516d4d9e5e8f974b164e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex to make memory accesses thread-safe.  <a href="classzero__mate_1_1CBus.html#a962dea38bc516d4d9e5e8f974b164e53">More...</a><br /></td></tr>
 <tr class="separator:a962dea38bc516d4d9e5e8f974b164e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ed0a009853798e6e73c3f9e3c976ac9"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1CBus.html#a5ed0a009853798e6e73c3f9e3c976ac9">m_cp15</a></td></tr>
-<tr class="memdesc:a5ed0a009853798e6e73c3f9e3c976ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to CP15 (coprocessor 15)  <a href="classzero__mate_1_1CBus.html#a5ed0a009853798e6e73c3f9e3c976ac9">More...</a><br /></td></tr>
-<tr class="separator:a5ed0a009853798e6e73c3f9e3c976ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eba364f064e94d287ecd93d4c57fffd"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1CBus.html#a5eba364f064e94d287ecd93d4c57fffd">m_cp15</a></td></tr>
+<tr class="memdesc:a5eba364f064e94d287ecd93d4c57fffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to CP15 (coprocessor 15)  <a href="classzero__mate_1_1CBus.html#a5eba364f064e94d287ecd93d4c57fffd">More...</a><br /></td></tr>
+<tr class="separator:a5eba364f064e94d287ecd93d4c57fffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An interface the CPU uses to communicate with different peripherals. </p>
@@ -513,8 +513,8 @@ template&lt;typename Type &gt; </div>
 
 </div>
 </div>
-<a id="aba2235a12cebc9a603c57a4840a4decb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba2235a12cebc9a603c57a4840a4decb">&#9670;&nbsp;</a></span>Set_CP15()</h2>
+<a id="a9b4307c5afa92f875a3c550cbc5113fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b4307c5afa92f875a3c550cbc5113fb">&#9670;&nbsp;</a></span>Set_CP15()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -522,7 +522,7 @@ template&lt;typename Type &gt; </div>
         <tr>
           <td class="memname">void zero_mate::CBus::Set_CP15 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt;&#160;</td>
           <td class="paramname"><em>cp15</em></td><td>)</td>
           <td></td>
         </tr>
@@ -581,6 +581,12 @@ template&lt;typename Type &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true, if unaligned access takes place. false, otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1CBus_a3822e274a11c99cfc0584b5755af65f5_cgraph.svg" width="668" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -639,8 +645,8 @@ template&lt;typename Type &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a5ed0a009853798e6e73c3f9e3c976ac9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ed0a009853798e6e73c3f9e3c976ac9">&#9670;&nbsp;</a></span>m_cp15</h2>
+<a id="a5eba364f064e94d287ecd93d4c57fffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eba364f064e94d287ecd93d4c57fffd">&#9670;&nbsp;</a></span>m_cp15</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -649,7 +655,7 @@ template&lt;typename Type &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a>&gt; zero_mate::CBus::m_cp15</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a>&gt; zero_mate::CBus::m_cp15</td>
         </tr>
       </table>
   </td>

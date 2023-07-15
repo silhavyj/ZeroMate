@@ -1,9 +1,14 @@
 <map id="zero_mate::gui::CLog_Window::Render" name="zero_mate::gui::CLog_Window::Render">
-<area shape="rect" id="node1" title=" " alt="" coords="5,79,164,120"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#aab3c1c25eedfe7230d905ae5355265c0" title=" " alt="" coords="228,5,387,47"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a67b875f7111438d9100d927992e27c4f" title=" " alt="" coords="213,151,401,207"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CLog__Window.html#adb7453fd69db4264b631251e48b68201" title=" " alt="" coords="212,71,403,127"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#af165b3edecdde5d0ea7a10957849921b" title=" " alt="" coords="480,5,667,47"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#ac16e7e106825569a5fe48b06eefb28be" title=" " alt="" coords="480,155,667,196"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CLog__Window.html#acd4c871dccefcf04fb9b3bb8973086c0" title=" " alt="" coords="451,85,696,127"/>
+<area shape="rect" id="node1" title="Renders the window (IGUI_Window interface)." alt="" coords="5,169,164,210"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#ac72abb295653473388e92ec658b85e7e" title="Renders the message scrolling area." alt="" coords="212,93,448,134"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CLog__Window.html#ab5d91eb4a2187a347f7c4a9ba84a527d" title="Renders the top bar of the window (the options, clear button, and the filter)" alt="" coords="234,209,426,250"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a67b875f7111438d9100d927992e27c4f" title="Renders all log messages (no filter activated)." alt="" coords="499,5,687,61"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CLog__Window.html#adb7453fd69db4264b631251e48b68201" title="Renders log messages that satisfy the criteria given by a message filter." alt="" coords="497,85,688,141"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#ac16e7e106825569a5fe48b06eefb28be" title="Returns a collection of log messages currently stored in the buffer." alt="" coords="767,89,953,130"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CLog__Window.html#acd4c871dccefcf04fb9b3bb8973086c0" title="Sets the color of a log message based on its type (error, info, etc.)" alt="" coords="737,17,983,58"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CLog__Window.html#aada4dbfcfe761cd1f7f050a866a4e02c" title="Renders a clear button for clearing the message area." alt="" coords="505,165,680,221"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a249f1f3cca8a46de6d042bdf3f837ace" title="Renders a message filer." alt="" coords="505,246,680,287"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a0126c0d93a1bfb3689f3b9cb35f8e996" title="Renders a popup menu (options)." alt="" coords="496,312,689,368"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1CLog__Window.html#aab3c1c25eedfe7230d905ae5355265c0" title="Clears all log messages." alt="" coords="781,173,939,214"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#af165b3edecdde5d0ea7a10957849921b" title="Clears the circular buffer (deletes all log messages)." alt="" coords="1031,173,1217,214"/>
 </map>

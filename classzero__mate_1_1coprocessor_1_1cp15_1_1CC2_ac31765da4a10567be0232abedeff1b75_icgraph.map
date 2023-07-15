@@ -1,0 +1,8 @@
+<map id="zero_mate::coprocessor::cp15::CC2::Extract_Bits_From_TTBR" name="zero_mate::coprocessor::cp15::CC2::Extract_Bits_From_TTBR">
+<area shape="rect" id="node1" title="Extracts bits determined by a given mask from a given secondary register." alt="" coords="799,79,980,135"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html#ae01856374ec8bac99ac7652c0d99de48" title="Returns the physical address of a given page table." alt="" coords="533,13,751,54"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html#ace026da873f481c05e741a3d0628752a" title="Returns information about whether a given translation table is inner cacheable or not." alt="" coords="549,79,735,135"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html#ab66e2160652f6829589989b7ae05573d" title="Returns information about whether a given translation table is shared among multiple CPU cores." alt="" coords="543,159,741,201"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a2af0846c0e594495eeeb2ec51717dfa7" title="Fetches the first level page tables (tbbr0, tbbr1) from the RAM." alt="" coords="312,5,485,61"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a7bc1002a8f1032547deee07589cbbb84" title="Converts a given virtual address into a physical address." alt="" coords="5,13,264,54"/>
+</map>

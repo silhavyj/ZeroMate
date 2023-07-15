@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Renders the control button (step, stop, run)">
 <polygon fill="#bfbfbf" stroke="black" points="173,-0.5 173,-41.5 314,-41.5 314,-0.5 173,-0.5"/>
 <text text-anchor="start" x="181" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::gui::CControl</text>
 <text text-anchor="start" x="181" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Window::Render_Control</text>
@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a" target="_top" xlink:title="Renders the window (IGUI_Window interface).">
 <polygon fill="none" stroke="black" points="0,-6 0,-36 137,-36 137,-6 0,-6"/>
 <text text-anchor="start" x="8" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::gui::CControl</text>
 <text text-anchor="middle" x="68.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">_Window::Render</text>

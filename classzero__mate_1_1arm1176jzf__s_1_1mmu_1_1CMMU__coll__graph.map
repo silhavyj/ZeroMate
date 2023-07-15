@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::mmu::CMMU" name="zero_mate::arm1176jzf_s::mmu::CMMU">
+<area shape="rect" id="node1" title="This class represents a memory management unit (MMU)." alt="" coords="5,124,179,165"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Table.html" title="This class represents a page table." alt="" coords="5,5,179,47"/>
+</map>

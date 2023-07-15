@@ -1,0 +1,4 @@
+<map id="zero_mate::coprocessor::cp15::CC7" name="zero_mate::coprocessor::cp15::CC7">
+<area shape="rect" id="node1" title="This class represents primary register C7 of coprocessor CP15." alt="" coords="5,95,183,136"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html" title="This interface defines common functionality of every primary register of coprocessor CP15." alt="" coords="5,5,183,47"/>
+</map>

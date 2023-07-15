@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CMonitor_Window::Render_Monitor_Info" name="zero_mate::gui::CMonitor_Window::Render_Monitor_Info">
+<area shape="rect" id="node1" title="Renders general information about the monitor (width, height, ...)" alt="" coords="240,5,463,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CMonitor__Window.html#a603ab2808379078762eea4a99b7cdc7b" title="Renders the debug memory&#45;mapped monitor (IGUI_Window interface)." alt="" coords="5,5,192,47"/>
+</map>

@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('namespacezero__mate_1_1utils_1_1elf.ht
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -100,8 +101,17 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure represents a single record (line) within an ELF file.  <a href="structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html">TStatus</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure represents the return value of <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory.">Load_Kernel</a>.  <a href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure represents the return value of <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a9f6c82c3b8cd3f725d004c7b9022d69a" title="Loads a given ELF file (kernel) into the memory.">Load_ELF</a>.  <a href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TSource__Code.html">TSource_Code</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulation of metadata related to a source code (disassembly).  <a href="structzero__mate_1_1utils_1_1elf_1_1TSource__Code.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:acfb339d8dd3c960598ed8dd03235f426"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#acfb339d8dd3c960598ed8dd03235f426">Source_Codes_t</a> = std::unordered_map&lt; std::string, <a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TSource__Code.html">TSource_Code</a> &gt;</td></tr>
+<tr class="memdesc:acfb339d8dd3c960598ed8dd03235f426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for loaded source ELF files.  <a href="namespacezero__mate_1_1utils_1_1elf.html#acfb339d8dd3c960598ed8dd03235f426">More...</a><br /></td></tr>
+<tr class="separator:acfb339d8dd3c960598ed8dd03235f426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -110,7 +120,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696a7b3655191e25bd671e35caf4f5b23a7e">ELF_Loader_Error</a>
 , <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696abf878a4226d73b21fb754598f64da06f">Disassembly_Engine_Error</a>
  }</td></tr>
-<tr class="memdesc:a168db2218bf676ff9e0baa59f6fd6696"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different error codes that can be returned from #Load_Kernel.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696">More...</a><br /></td></tr>
+<tr class="memdesc:a168db2218bf676ff9e0baa59f6fd6696"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines different error codes that can be returned from #Load_ELF.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696">More...</a><br /></td></tr>
 <tr class="separator:a168db2218bf676ff9e0baa59f6fd6696"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b229f39af9362fb4bf340499656012d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012d">NText_Section_Record_Type</a> { <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012dac742c5a36b6307267bb709355feb2c41">Instruction</a>
 , <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7b229f39af9362fb4bf340499656012dab021df6aac4654c454f46c77646e745f">Label</a>
@@ -120,13 +130,27 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a95a9f666929811b558bcb9da0969972a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html">TStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">Load_Kernel</a> (<a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &amp;bus, const char *filename)</td></tr>
-<tr class="memdesc:a95a9f666929811b558bcb9da0969972a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a given ELF file (kernel) into the memory.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">More...</a><br /></td></tr>
-<tr class="separator:a95a9f666929811b558bcb9da0969972a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7af51862dcfbf3eda33e79e06f610595"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html">TStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595">Reload_Kernel</a> (<a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &amp;bus)</td></tr>
-<tr class="memdesc:a7af51862dcfbf3eda33e79e06f610595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reloads the same kernel that was loaded using the <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory.">Load_Kernel</a> function.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595">More...</a><br /></td></tr>
-<tr class="separator:a7af51862dcfbf3eda33e79e06f610595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f6c82c3b8cd3f725d004c7b9022d69a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html">TStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a9f6c82c3b8cd3f725d004c7b9022d69a">Load_ELF</a> (<a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &amp;bus, const char *filename, bool kernel=true)</td></tr>
+<tr class="memdesc:a9f6c82c3b8cd3f725d004c7b9022d69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a given ELF file (kernel) into the memory.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a9f6c82c3b8cd3f725d004c7b9022d69a">More...</a><br /></td></tr>
+<tr class="separator:a9f6c82c3b8cd3f725d004c7b9022d69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="acfb339d8dd3c960598ed8dd03235f426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfb339d8dd3c960598ed8dd03235f426">&#9670;&nbsp;</a></span>Source_Codes_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#acfb339d8dd3c960598ed8dd03235f426">zero_mate::utils::elf::Source_Codes_t</a> = typedef std::unordered_map&lt;std::string, <a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TSource__Code.html">TSource_Code</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for loaded source ELF files. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a168db2218bf676ff9e0baa59f6fd6696"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a168db2218bf676ff9e0baa59f6fd6696">&#9670;&nbsp;</a></span>NError_Code</h2>
@@ -148,7 +172,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>This enumeration defines different error codes that can be returned from <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory.">Load_Kernel</a>. </p>
+<p>This enumeration defines different error codes that can be returned from <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a9f6c82c3b8cd3f725d004c7b9022d69a" title="Loads a given ELF file (kernel) into the memory.">Load_ELF</a>. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a168db2218bf676ff9e0baa59f6fd6696ae0aa021e21dddbd6d8cecec71e9cf564"></a>OK&#160;</td><td class="fielddoc"><p>All went well. </p>
 </td></tr>
@@ -193,14 +217,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a95a9f666929811b558bcb9da0969972a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95a9f666929811b558bcb9da0969972a">&#9670;&nbsp;</a></span>Load_Kernel()</h2>
+<a id="a9f6c82c3b8cd3f725d004c7b9022d69a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f6c82c3b8cd3f725d004c7b9022d69a">&#9670;&nbsp;</a></span>Load_ELF()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html">TStatus</a> zero_mate::utils::elf::Load_Kernel </td>
+          <td class="memname"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html">TStatus</a> zero_mate::utils::elf::Load_ELF </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &amp;&#160;</td>
           <td class="paramname"><em>bus</em>, </td>
@@ -209,7 +233,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>kernel</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -224,6 +254,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">bus</td><td>Reference to a bus via which the memory is accessed </td></tr>
     <tr><td class="paramname">filename</td><td>Path to the ELF file (kernel) on the user's machine </td></tr>
+    <tr><td class="paramname">kernel</td><td>Flag if the ELF file should be mapped to the RAM (only the kernel is loaded) </td></tr>
   </table>
   </dd>
 </dl>
@@ -231,47 +262,7 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacezero__mate_1_1utils_1_1elf_a95a9f666929811b558bcb9da0969972a_icgraph.svg" width="1075" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a7af51862dcfbf3eda33e79e06f610595"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7af51862dcfbf3eda33e79e06f610595">&#9670;&nbsp;</a></span>Reload_Kernel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structzero__mate_1_1utils_1_1elf_1_1TStatus.html">TStatus</a> zero_mate::utils::elf::Reload_Kernel </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &amp;&#160;</td>
-          <td class="paramname"><em>bus</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reloads the same kernel that was loaded using the <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory.">Load_Kernel</a> function. </p>
-<p><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory.">Load_Kernel</a> keeps track of what kernel was loaded - the same path is used in this function.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bus</td><td>Reference to a bus via which the memory is accessed </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Packed structure containing disassembled instructions as well as a status code </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacezero__mate_1_1utils_1_1elf_a7af51862dcfbf3eda33e79e06f610595_cgraph.svg" width="363" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacezero__mate_1_1utils_1_1elf_a7af51862dcfbf3eda33e79e06f610595_icgraph.svg" width="868" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacezero__mate_1_1utils_1_1elf_a9f6c82c3b8cd3f725d004c7b9022d69a_icgraph.svg" width="1102" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

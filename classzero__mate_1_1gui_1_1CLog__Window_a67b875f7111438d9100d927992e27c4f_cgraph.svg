@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Renders all log messages (no filter activated).">
 <polygon fill="#bfbfbf" stroke="black" points="0,-19 0,-60 141,-60 141,-19 0,-19"/>
 <text text-anchor="start" x="8" y="-48" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::gui::CLog</text>
 <text text-anchor="start" x="8" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">_Window::Render_All_Log</text>
@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#ac16e7e106825569a5fe48b06eefb28be" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#ac16e7e106825569a5fe48b06eefb28be" target="_top" xlink:title="Returns a collection of log messages currently stored in the buffer.">
 <polygon fill="none" stroke="black" points="199,-49.5 199,-79.5 339,-79.5 339,-49.5 199,-49.5"/>
 <text text-anchor="start" x="207" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::gui::CCircular</text>
 <text text-anchor="middle" x="269" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Log_Buffer::Get_Data</text>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1gui_1_1CLog__Window.html#acd4c871dccefcf04fb9b3bb8973086c0" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1gui_1_1CLog__Window.html#acd4c871dccefcf04fb9b3bb8973086c0" target="_top" xlink:title="Sets the color of a log message based on its type (error, info, etc.)">
 <polygon fill="none" stroke="black" points="177,-0.5 177,-30.5 361,-30.5 361,-0.5 177,-0.5"/>
 <text text-anchor="start" x="185" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::gui::CLog</text>
 <text text-anchor="middle" x="269" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Window::Set_Log_Message_Color</text>

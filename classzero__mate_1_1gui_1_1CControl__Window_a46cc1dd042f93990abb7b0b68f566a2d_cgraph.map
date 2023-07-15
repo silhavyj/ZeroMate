@@ -1,0 +1,8 @@
+<map id="zero_mate::gui::CControl_Window::Print_No_ELF_File_Loaded_Error_Msg" name="zero_mate::gui::CControl_Window::Print_No_ELF_File_Loaded_Error_Msg">
+<area shape="rect" id="node1" title="Log an error message saying that no ELF file (kernel) has been loaded yet." alt="" coords="5,67,208,123"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="256,75,451,116"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="499,30,701,86"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="501,111,699,152"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="749,5,963,47"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="759,71,953,112"/>
+</map>

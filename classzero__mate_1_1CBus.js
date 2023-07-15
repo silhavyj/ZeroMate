@@ -14,10 +14,10 @@ var classzero__mate_1_1CBus =
     [ "Get_Peripheral", "classzero__mate_1_1CBus.html#ab8ddfa19054d7573bbc4aa05f93080c8", null ],
     [ "Is_Peripheral_Accessible", "classzero__mate_1_1CBus.html#a6331d83a0dcf19b139ff42a6f2693787", null ],
     [ "Read", "classzero__mate_1_1CBus.html#a1bcd53677c24f62d7cce5e95636e776a", null ],
-    [ "Set_CP15", "classzero__mate_1_1CBus.html#aba2235a12cebc9a603c57a4840a4decb", null ],
+    [ "Set_CP15", "classzero__mate_1_1CBus.html#a9b4307c5afa92f875a3c550cbc5113fb", null ],
     [ "Unaligned_Access_Violation", "classzero__mate_1_1CBus.html#a3822e274a11c99cfc0584b5755af65f5", null ],
     [ "Write", "classzero__mate_1_1CBus.html#aa526b7afc98f66dbb672fe8d4f3ae88a", null ],
-    [ "m_cp15", "classzero__mate_1_1CBus.html#a5ed0a009853798e6e73c3f9e3c976ac9", null ],
+    [ "m_cp15", "classzero__mate_1_1CBus.html#a5eba364f064e94d287ecd93d4c57fffd", null ],
     [ "m_mtx", "classzero__mate_1_1CBus.html#a962dea38bc516d4d9e5e8f974b164e53", null ],
     [ "m_peripherals", "classzero__mate_1_1CBus.html#a22ede877d597bbd5a275fddef2e25e71", null ]
 ];

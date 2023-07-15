@@ -1,4 +1,5 @@
 <map id="zero_mate::gui::CLog_Window::Render_All_Log_Messages" name="zero_mate::gui::CLog_Window::Render_All_Log_Messages">
-<area shape="rect" id="node1" title=" " alt="" coords="212,5,400,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a679fe192aa1335396f06e63678bb71d5" title=" " alt="" coords="5,13,164,54"/>
+<area shape="rect" id="node1" title="Renders all log messages (no filter activated)." alt="" coords="496,5,684,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#ac72abb295653473388e92ec658b85e7e" title="Renders the message scrolling area." alt="" coords="212,13,448,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a679fe192aa1335396f06e63678bb71d5" title="Renders the window (IGUI_Window interface)." alt="" coords="5,13,164,54"/>
 </map>

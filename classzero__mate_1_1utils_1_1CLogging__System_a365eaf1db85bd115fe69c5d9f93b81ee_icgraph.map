@@ -1,0 +1,13 @@
+<map id="zero_mate::utils::CLogging_System::Debug" name="zero_mate::utils::CLogging_System::Debug">
+<area shape="rect" id="node1" title="Logs a debug message via all registered loggers." alt="" coords="487,279,681,321"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a4a4e9cf470ed6f7dbfb3ada75d35e47c" title="Clears a pending interrupt by writing a 1 to the GPEDS register." alt="" coords="232,166,439,207"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa731c1d6e73a4db1087a803ca5fe5557" title="Enables/disables interrupts from a basic IRQ source." alt="" coords="233,5,437,61"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ac3c9423e443ca2389cef743f32713cca" title="Enables/disables interrupts from an IRQ source." alt="" coords="252,85,419,141"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d" title="Enables/disables an interrupt for all pins within a given register." alt="" coords="253,232,418,288"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a32373b931bb37ef8ee92f95a3f833284" title="Notifies the interrupt controller about a pending interrupt triggered by a basic IRQ source." alt="" coords="252,312,419,368"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aa559a3a604ae1877cbbe749724d8a399" title="Notifies the interrupt controller about a pending interrupt triggered by an IRQ source." alt="" coords="252,392,419,448"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad7c6aa486cf3b116ffae9f16eec64064" title="Updates the function of all pins within a given register." alt="" coords="240,472,431,528"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae93785da50eefb8a8cc21c1c59a32726" title="Updates the state of all pins within a given register." alt="" coords="240,552,431,608"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,359,184,401"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="11,45,178,101"/>
+</map>

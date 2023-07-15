@@ -1,0 +1,5 @@
+<map id="zero_mate::coprocessor::cp15::CC1::CC1" name="zero_mate::coprocessor::cp15::CC1::CC1">
+<area shape="rect" id="node1" title="Creates an instance of the class." alt="" coords="5,39,183,80"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#abd6005a7102398c012f1f7cadf1ff7d7" title="Initializes secondary register C0." alt="" coords="231,5,417,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#a4d1ec76aeccc474aaf3ee6d8fbcdd8aa" title="Initializes secondary register C1." alt="" coords="231,71,417,112"/>
+</map>

@@ -1,4 +1,4 @@
 <map id="src/utils/logger/logger_stdo.hpp" name="src/utils/logger/logger_stdo.hpp">
 <area shape="rect" id="node1" title="This file defines a standard output logger (STDO)." alt="" coords="21,5,184,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,200,121"/>
+<area shape="rect" id="node2" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="5,95,200,121"/>
 </map>

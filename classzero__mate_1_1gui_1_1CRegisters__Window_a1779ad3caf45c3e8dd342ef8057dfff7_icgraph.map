@@ -1,0 +1,6 @@
+<map id="zero_mate::gui::CRegisters_Window::Render_Registers_Table" name="zero_mate::gui::CRegisters_Window::Render_Registers_Table">
+<area shape="rect" id="node1" title="Renders table with CPU registers of a given CPU mode." alt="" coords="775,13,1017,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html#a25928c2ab0086154b73843f84a831953" title="Renders different format tabs of a given CPU mode." alt="" coords="496,13,727,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html#ac9b00209a3db86452bf51d8f4c9dbf72" title="Renders tabs for different CPU modes (SVC, IRQ, FIQ, etc.)" alt="" coords="251,5,448,61"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html#a12beb19205052a340193be90b32e5717" title="Renders the windows (IGUI_Window interface)." alt="" coords="5,13,203,54"/>
+</map>

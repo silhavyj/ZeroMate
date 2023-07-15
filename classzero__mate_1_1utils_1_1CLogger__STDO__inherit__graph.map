@@ -1,4 +1,4 @@
 <map id="zero_mate::utils::CLogger_STDO" name="zero_mate::utils::CLogger_STDO">
 <area shape="rect" id="node1" title="This class represents a logger that logs messages to the standard output (STDO)." alt="" coords="5,80,236,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="85,5,156,32"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logger interface." alt="" coords="29,5,212,32"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="zero_mate::gui::CSource_Code_Window::Extract_Class_Name" name="zero_mate::gui::CSource_Code_Window::Extract_Class_Name">
-<area shape="rect" id="node1" title=" " alt="" coords="539,5,719,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#acdb10e47501c4cf6af2c50383388cc4a" title=" " alt="" coords="233,13,491,54"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a24d4560bdcaf8c4fb0611de1b55ac687" title=" " alt="" coords="5,13,185,54"/>
+<area shape="rect" id="node1" title="Extracts the class name from a given label (function name)." alt="" coords="1109,5,1289,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#af9afd629a519bacd1ce89faf8bbcdb9c" title="Renders a block of code (a single function/method)." alt="" coords="804,13,1061,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a2088711954d53ac5f57e4a085770590f" title="Renders a single tab (ELF source file)." alt="" coords="553,13,756,54"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a1f2a59252814f5b499c09bf2959741ad" title="Renders the disassembled contents of all ELF loaded into the emulator." alt="" coords="233,13,505,54"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a24d4560bdcaf8c4fb0611de1b55ac687" title="Renders the window (IGUI_Window interface)." alt="" coords="5,13,185,54"/>
 </map>

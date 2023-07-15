@@ -25,29 +25,33 @@ var hierarchy =
       [ "zero_mate::arm1176jzf_s::isa::CSingle_Data_Transfer", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html", null ]
     ] ],
     [ "zero_mate::arm1176jzf_s::isa::CISA_Decoder", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html", null ],
+    [ "zero_mate::utils::CLogging_System", "classzero__mate_1_1utils_1_1CLogging__System.html", null ],
+    [ "zero_mate::arm1176jzf_s::mmu::CMMU", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html", null ],
+    [ "zero_mate::arm1176jzf_s::mmu::CPage_Entry", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Entry.html", null ],
+    [ "zero_mate::arm1176jzf_s::mmu::CPage_Table", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Table.html", null ],
     [ "zero_mate::peripheral::CGPIO_Manager::CPin", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html", null ],
     [ "zero_mate::peripheral::CARM_Timer::CPrescaler", "classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html", null ],
+    [ "zero_mate::utils::CSingleton< Type >", "classzero__mate_1_1utils_1_1CSingleton.html", null ],
     [ "zero_mate::coprocessor::ICoprocessor", "classzero__mate_1_1coprocessor_1_1ICoprocessor.html", [
-      [ "zero_mate::coprocessor::CCP15", "classzero__mate_1_1coprocessor_1_1CCP15.html", null ]
+      [ "zero_mate::coprocessor::cp15::CCP15", "classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html", null ]
     ] ],
-    [ "zero_mate::IGUI_Window", "classzero__mate_1_1IGUI__Window.html", [
+    [ "zero_mate::IExternal_Peripheral", "classzero__mate_1_1IExternal__Peripheral.html", null ],
+    [ "zero_mate::gui::IGUI_Window", "classzero__mate_1_1gui_1_1IGUI__Window.html", [
       [ "zero_mate::gui::CARM_Timer_Window", "classzero__mate_1_1gui_1_1CARM__Timer__Window.html", null ],
       [ "zero_mate::gui::CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", null ],
       [ "zero_mate::gui::CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", null ],
-      [ "zero_mate::gui::CFile_Window", "classzero__mate_1_1gui_1_1CFile__Window.html", null ],
       [ "zero_mate::gui::CGPIO_Window", "classzero__mate_1_1gui_1_1CGPIO__Window.html", null ],
       [ "zero_mate::gui::CInterrupt_Controller_Window", "classzero__mate_1_1gui_1_1CInterrupt__Controller__Window.html", null ],
       [ "zero_mate::gui::CLog_Window", "classzero__mate_1_1gui_1_1CLog__Window.html", null ],
       [ "zero_mate::gui::CMonitor_Window", "classzero__mate_1_1gui_1_1CMonitor__Window.html", null ],
       [ "zero_mate::gui::CRAM_Window", "classzero__mate_1_1gui_1_1CRAM__Window.html", null ],
       [ "zero_mate::gui::CRegisters_Window", "classzero__mate_1_1gui_1_1CRegisters__Window.html", null ],
-      [ "zero_mate::gui::CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html", null ]
+      [ "zero_mate::gui::CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html", null ],
+      [ "zero_mate::gui::CTop_Bar_Menu", "classzero__mate_1_1gui_1_1CTop__Bar__Menu.html", null ]
     ] ],
-    [ "ILogger", null, [
+    [ "zero_mate::utils::ILogger", "classzero__mate_1_1utils_1_1ILogger.html", [
+      [ "zero_mate::gui::CLog_Window", "classzero__mate_1_1gui_1_1CLog__Window.html", null ],
       [ "zero_mate::utils::CLogger_STDO", "classzero__mate_1_1utils_1_1CLogger__STDO.html", null ]
-    ] ],
-    [ "utils::ILogger", null, [
-      [ "zero_mate::gui::CLog_Window", "classzero__mate_1_1gui_1_1CLog__Window.html", null ]
     ] ],
     [ "zero_mate::peripheral::IPeripheral", "classzero__mate_1_1peripheral_1_1IPeripheral.html", [
       [ "zero_mate::peripheral::CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", null ],
@@ -56,6 +60,13 @@ var hierarchy =
       [ "zero_mate::peripheral::CMonitor", "classzero__mate_1_1peripheral_1_1CMonitor.html", null ],
       [ "zero_mate::peripheral::CRAM", "classzero__mate_1_1peripheral_1_1CRAM.html", null ],
       [ "zero_mate::peripheral::CTRNG", "classzero__mate_1_1peripheral_1_1CTRNG.html", null ]
+    ] ],
+    [ "zero_mate::coprocessor::cp15::IPrimary_Reg", "classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html", [
+      [ "zero_mate::coprocessor::cp15::CC1", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html", null ],
+      [ "zero_mate::coprocessor::cp15::CC2", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html", null ],
+      [ "zero_mate::coprocessor::cp15::CC3", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC3.html", null ],
+      [ "zero_mate::coprocessor::cp15::CC7", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC7.html", null ],
+      [ "zero_mate::coprocessor::cp15::CC8", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC8.html", null ]
     ] ],
     [ "zero_mate::peripheral::ISystem_Clock_Listener", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html", [
       [ "zero_mate::peripheral::CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", null ]
@@ -72,12 +83,18 @@ var hierarchy =
       ] ]
     ] ],
     [ "zero_mate::peripheral::CARM_Timer::TControl_Register", "structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html", null ],
+    [ "zero_mate::gui::CRegisters_Window::TCPU_Mode_Tab_States", "structzero__mate_1_1gui_1_1CRegisters__Window_1_1TCPU__Mode__Tab__States.html", null ],
     [ "zero_mate::arm1176jzf_s::isa::CISA_Decoder::TInstruction_Lookup_Record", "structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html", null ],
     [ "zero_mate::peripheral::CInterrupt_Controller::TInterrupt_Info", "structzero__mate_1_1peripheral_1_1CInterrupt__Controller_1_1TInterrupt__Info.html", null ],
+    [ "zero_mate::gui::CGPIO_Window::TInterrupt_Type", "structzero__mate_1_1gui_1_1CGPIO__Window_1_1TInterrupt__Type.html", null ],
     [ "zero_mate::CBus::TMapped_Peripheral", "structzero__mate_1_1CBus_1_1TMapped__Peripheral.html", null ],
+    [ "zero_mate::arm1176jzf_s::mmu::CMMU::TPage_Table_Record", "structzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU_1_1TPage__Table__Record.html", null ],
     [ "zero_mate::arm1176jzf_s::alu::TResult", "structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html", null ],
     [ "zero_mate::arm1176jzf_s::mac::TResult", "structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html", null ],
-    [ "zero_mate::gui::CSource_Code_Window::TRGB_Color", "structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color.html", null ],
+    [ "zero_mate::gui::color::TRGB", "structzero__mate_1_1gui_1_1color_1_1TRGB.html", null ],
+    [ "zero_mate::utils::math::TShift_Result< Type >", "structzero__mate_1_1utils_1_1math_1_1TShift__Result.html", null ],
+    [ "zero_mate::utils::elf::TSource_Code", "structzero__mate_1_1utils_1_1elf_1_1TSource__Code.html", null ],
     [ "zero_mate::utils::elf::TStatus", "structzero__mate_1_1utils_1_1elf_1_1TStatus.html", null ],
-    [ "zero_mate::utils::elf::TText_Section_Record", "structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html", null ]
+    [ "zero_mate::utils::elf::TText_Section_Record", "structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html", null ],
+    [ "zero_mate::utils::CLogging_System::TTimestamp", "structzero__mate_1_1utils_1_1CLogging__System_1_1TTimestamp.html", null ]
 ];

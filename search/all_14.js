@@ -1,19 +1,11 @@
 var searchData=
 [
-  ['alu_785',['alu',['../namespacezero__mate_1_1arm1176jzf__s_1_1alu.html',1,'zero_mate::arm1176jzf_s']]],
-  ['arm1176jzf_5fs_786',['arm1176jzf_s',['../namespacezero__mate_1_1arm1176jzf__s.html',1,'zero_mate']]],
-  ['config_787',['config',['../namespacezero__mate_1_1gui_1_1config.html',1,'zero_mate::gui::config'],['../namespacezero__mate_1_1soc_1_1config.html',1,'zero_mate::soc::config']]],
-  ['coprocessor_788',['coprocessor',['../namespacezero__mate_1_1coprocessor.html',1,'zero_mate']]],
-  ['elf_789',['elf',['../namespacezero__mate_1_1utils_1_1elf.html',1,'zero_mate::utils']]],
-  ['exceptions_790',['exceptions',['../namespacezero__mate_1_1arm1176jzf__s_1_1exceptions.html',1,'zero_mate::arm1176jzf_s']]],
-  ['gui_791',['gui',['../namespacezero__mate_1_1gui.html',1,'zero_mate']]],
-  ['isa_792',['isa',['../namespacezero__mate_1_1arm1176jzf__s_1_1isa.html',1,'zero_mate::arm1176jzf_s']]],
-  ['mac_793',['mac',['../namespacezero__mate_1_1arm1176jzf__s_1_1mac.html',1,'zero_mate::arm1176jzf_s']]],
-  ['peripheral_794',['peripheral',['../namespacezero__mate_1_1peripheral.html',1,'zero_mate']]],
-  ['sections_795',['sections',['../namespacezero__mate_1_1soc_1_1config_1_1sections.html',1,'zero_mate::soc::config']]],
-  ['soc_796',['soc',['../namespacezero__mate_1_1soc.html',1,'zero_mate']]],
-  ['utils_797',['utils',['../namespacezero__mate_1_1utils.html',1,'zero_mate']]],
-  ['z_798',['Z',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a391d3ef35a11316f2d9690ddae7bd8e7a21c2e59531c8710156d34a3c30ac81d5',1,'zero_mate::arm1176jzf_s::CCPU_Context']]],
-  ['z_5fflag_799',['z_flag',['../structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html#a0a28aa4fb53ac4c129eccc670b39d8cd',1,'zero_mate::arm1176jzf_s::alu::TResult::z_flag()'],['../structzero__mate_1_1arm1176jzf__s_1_1mac_1_1TResult.html#a03f8c4513d72ef4ce94d8cca74b105d3',1,'zero_mate::arm1176jzf_s::mac::TResult::z_flag()']]],
-  ['zero_5fmate_800',['zero_mate',['../namespacezero__mate.html',1,'']]]
+  ['warning_1051',['Warning',['../classzero__mate_1_1gui_1_1CLog__Window.html#aa04e47cb002e6d244ab1bb0e20a99628',1,'zero_mate::gui::CLog_Window::Warning()'],['../classzero__mate_1_1utils_1_1CLogger__STDO.html#ae1018920ff746c7dabb80f8add71ce99',1,'zero_mate::utils::CLogger_STDO::Warning()'],['../classzero__mate_1_1utils_1_1ILogger.html#a480bb3a45da1a4b4de84a5764e0c007c',1,'zero_mate::utils::ILogger::Warning()'],['../classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443',1,'zero_mate::utils::CLogging_System::Warning()'],['../classzero__mate_1_1utils_1_1ILogger.html#a59c4b9eddb6ec9f0612f213f35113989a0eaadb4fcb48a0a0ed7bc9868be9fbaa',1,'zero_mate::utils::ILogger::Warning()']]],
+  ['warning_5fmsg_5fprefix_1052',['Warning_Msg_Prefix',['../classzero__mate_1_1utils_1_1CLogging__System.html#a295c778c0c48d90be926991788bdc2ed',1,'zero_mate::utils::CLogging_System']]],
+  ['width_1053',['Width',['../classzero__mate_1_1peripheral_1_1CMonitor.html#a60931dc71b341a7e622baf1c1fdf5afb',1,'zero_mate::peripheral::CMonitor']]],
+  ['window_2ecpp_1054',['window.cpp',['../window_8cpp.html',1,'']]],
+  ['window_2ehpp_1055',['window.hpp',['../window_8hpp.html',1,'']]],
+  ['window_5ficon_5fpath_1056',['Window_Icon_Path',['../namespacezero__mate_1_1gui_1_1config.html#af427d7a82ba72d9aaaede4da9b8d4ce1',1,'zero_mate::gui::config']]],
+  ['write_1057',['Write',['../classzero__mate_1_1CBus.html#aa526b7afc98f66dbb672fe8d4f3ae88a',1,'zero_mate::CBus::Write()'],['../classzero__mate_1_1peripheral_1_1CTRNG.html#acd83e2dc5066adb3529450c578f90f2f',1,'zero_mate::peripheral::CTRNG::Write()'],['../classzero__mate_1_1peripheral_1_1CRAM.html#ae61301f586d6e9c233951576d9005c17',1,'zero_mate::peripheral::CRAM::Write()'],['../classzero__mate_1_1peripheral_1_1IPeripheral.html#aee1e0ced5d3a5a4081ebedb711552eaf',1,'zero_mate::peripheral::IPeripheral::Write()'],['../classzero__mate_1_1peripheral_1_1CMonitor.html#aeff9d9a1babf88b330706c489182940a',1,'zero_mate::peripheral::CMonitor::Write()'],['../classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3',1,'zero_mate::peripheral::CInterrupt_Controller::Write()'],['../classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c',1,'zero_mate::peripheral::CGPIO_Manager::Write()'],['../classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34',1,'zero_mate::peripheral::CARM_Timer::Write()'],['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a4e94818c05fb1ddd0a08762eb06e629d',1,'zero_mate::arm1176jzf_s::CCPU_Core::Write()']]],
+  ['write_5fback_1058',['write_back',['../structzero__mate_1_1arm1176jzf__s_1_1alu_1_1TResult.html#aa4e321b63ebc0263097fde2b4ba35071',1,'zero_mate::arm1176jzf_s::alu::TResult::write_back()'],['../alu_8cpp.html#ac0a7ad2f7b4ec3687df4861604f69589',1,'write_back():&#160;alu.cpp']]]
 ];

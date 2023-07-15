@@ -1,0 +1,8 @@
+<map id="zero_mate::gui::CTop_Bar_Menu::Get_Filename" name="zero_mate::gui::CTop_Bar_Menu::Get_Filename">
+<area shape="rect" id="node1" title="Returns a filename of a given filepath." alt="" coords="944,50,1136,91"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#af8e80293dff0c20be7ea071d50dec62c" title="Loads a single ELF file." alt="" coords="703,50,896,91"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a7fee26ed69f7536b8396d3fe2f97c5e4" title="Loads ELF files selected by the user using the file browser." alt="" coords="455,17,655,58"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a73157cb5a8ef5d61769403bbd700cfbf" title="Reloads the kernel." alt="" coords="212,86,407,127"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a8dbf5620303332f1ad1b7449793a3621" title="Renders the file browser." alt="" coords="220,5,399,61"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#ad8f10caa7780d6c4e9fb20c4ab702a60" title="Renders the bar (IGUI_Window interface)." alt="" coords="5,50,164,91"/>
+</map>

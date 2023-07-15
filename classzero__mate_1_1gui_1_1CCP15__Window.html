@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -88,66 +88,104 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1gui_1_1CCP15__Windo
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classzero__mate_1_1gui_1_1CCP15__Window-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">zero_mate::gui::CCP15_Window Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a window that displays information related to CP15 (coprocessor 15).  
+ <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="cp15__window_8hpp_source.html">cp15_window.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::gui::CCP15_Window:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window__inherit__graph.svg" width="198" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window__inherit__graph.svg" width="180" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for zero_mate::gui::CCP15_Window:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window__coll__graph.svg" width="198" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window__coll__graph.svg" width="180" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ade8f1a5c2a6515efc53cb1aa92e5bf0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#ade8f1a5c2a6515efc53cb1aa92e5bf0e">CCP15_Window</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a> &gt; cp15)</td></tr>
-<tr class="separator:ade8f1a5c2a6515efc53cb1aa92e5bf0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd0a34d76a36c8e20944b05ae199a2a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#afd0a34d76a36c8e20944b05ae199a2a3">CCP15_Window</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt; cp15)</td></tr>
+<tr class="memdesc:afd0a34d76a36c8e20944b05ae199a2a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#afd0a34d76a36c8e20944b05ae199a2a3">More...</a><br /></td></tr>
+<tr class="separator:afd0a34d76a36c8e20944b05ae199a2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02fdded272906e0bb3665c8b3aa03ba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#a02fdded272906e0bb3665c8b3aa03ba0">Render</a> () override</td></tr>
+<tr class="memdesc:a02fdded272906e0bb3665c8b3aa03ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the window (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows.">IGUI_Window</a> interface).  <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#a02fdded272906e0bb3665c8b3aa03ba0">More...</a><br /></td></tr>
 <tr class="separator:a02fdded272906e0bb3665c8b3aa03ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classzero__mate_1_1IGUI__Window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1IGUI__Window')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1IGUI__Window.html">zero_mate::IGUI_Window</a></td></tr>
-<tr class="memitem:a04aae02b39d52074347dabdddc530c1e inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a04aae02b39d52074347dabdddc530c1e">IGUI_Window</a> ()=default</td></tr>
-<tr class="separator:a04aae02b39d52074347dabdddc530c1e inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0edde376f90491265baa3b596bd981fc inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a0edde376f90491265baa3b596bd981fc">~IGUI_Window</a> ()=default</td></tr>
-<tr class="separator:a0edde376f90491265baa3b596bd981fc inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac688f83c7c30e52f1500302a555fe390 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#ac688f83c7c30e52f1500302a555fe390">IGUI_Window</a> (const <a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
-<tr class="separator:ac688f83c7c30e52f1500302a555fe390 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d8554559e9fd830c8fce05535720579 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a0d8554559e9fd830c8fce05535720579">operator=</a> (const <a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
-<tr class="separator:a0d8554559e9fd830c8fce05535720579 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dc8d41af41498656c8f221b345c82a0 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a3dc8d41af41498656c8f221b345c82a0">IGUI_Window</a> (<a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
-<tr class="separator:a3dc8d41af41498656c8f221b345c82a0 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabe655a1ab938a0578a70168dbc5e48d inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#aabe655a1ab938a0578a70168dbc5e48d">operator=</a> (<a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
-<tr class="separator:aabe655a1ab938a0578a70168dbc5e48d inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1gui_1_1IGUI__Window')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">zero_mate::gui::IGUI_Window</a></td></tr>
+<tr class="memitem:a01366a79de09394e379f531f54cc968c inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a01366a79de09394e379f531f54cc968c">IGUI_Window</a> ()=default</td></tr>
+<tr class="memdesc:a01366a79de09394e379f531f54cc968c inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class (default non-parameterized constructor).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a01366a79de09394e379f531f54cc968c">More...</a><br /></td></tr>
+<tr class="separator:a01366a79de09394e379f531f54cc968c inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7e88dcd5925c10d6faeda3131e5464 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#abf7e88dcd5925c10d6faeda3131e5464">~IGUI_Window</a> ()=default</td></tr>
+<tr class="memdesc:abf7e88dcd5925c10d6faeda3131e5464 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys (deletes) the object from the memory.  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#abf7e88dcd5925c10d6faeda3131e5464">More...</a><br /></td></tr>
+<tr class="separator:abf7e88dcd5925c10d6faeda3131e5464 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80003ddc9ed6c5da0bdc3dd6e30cdf54 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a80003ddc9ed6c5da0bdc3dd6e30cdf54">IGUI_Window</a> (const <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a80003ddc9ed6c5da0bdc3dd6e30cdf54 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a80003ddc9ed6c5da0bdc3dd6e30cdf54">More...</a><br /></td></tr>
+<tr class="separator:a80003ddc9ed6c5da0bdc3dd6e30cdf54 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abccc9fbf04395abc39b09033af61be12 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#abccc9fbf04395abc39b09033af61be12">operator=</a> (const <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
+<tr class="memdesc:abccc9fbf04395abc39b09033af61be12 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted assignment operator (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#abccc9fbf04395abc39b09033af61be12">More...</a><br /></td></tr>
+<tr class="separator:abccc9fbf04395abc39b09033af61be12 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc2994c84ccb5c491c49ba0c001807d inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a2cc2994c84ccb5c491c49ba0c001807d">IGUI_Window</a> (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a2cc2994c84ccb5c491c49ba0c001807d inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move constructor (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a2cc2994c84ccb5c491c49ba0c001807d">More...</a><br /></td></tr>
+<tr class="separator:a2cc2994c84ccb5c491c49ba0c001807d inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7852e184b1cfb2041628232d04d1dd5b inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a7852e184b1cfb2041628232d04d1dd5b">operator=</a> (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a7852e184b1cfb2041628232d04d1dd5b inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted assignment operator with an r-value reference (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a7852e184b1cfb2041628232d04d1dd5b">More...</a><br /></td></tr>
+<tr class="separator:a7852e184b1cfb2041628232d04d1dd5b inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a0d41be7f469e6b9493815c5cd094939a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#a0d41be7f469e6b9493815c5cd094939a">Render_Tab_Bar</a> ()</td></tr>
+<tr class="memdesc:a0d41be7f469e6b9493815c5cd094939a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders tabs representing the primary registers of CP15.  <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#a0d41be7f469e6b9493815c5cd094939a">More...</a><br /></td></tr>
+<tr class="separator:a0d41be7f469e6b9493815c5cd094939a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27304ba7d10bb901f8fe474ccb61f57f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#a27304ba7d10bb901f8fe474ccb61f57f">Render_Primary_Register_C1</a> ()</td></tr>
+<tr class="memdesc:a27304ba7d10bb901f8fe474ccb61f57f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders registers that fall under primary register C1.  <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#a27304ba7d10bb901f8fe474ccb61f57f">More...</a><br /></td></tr>
 <tr class="separator:a27304ba7d10bb901f8fe474ccb61f57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad49346264b18c4727c832ff376dba2a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#ad49346264b18c4727c832ff376dba2a9">Render_Primary_Register_C2</a> ()</td></tr>
+<tr class="memdesc:ad49346264b18c4727c832ff376dba2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders registers that fall under primary register C2.  <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#ad49346264b18c4727c832ff376dba2a9">More...</a><br /></td></tr>
+<tr class="separator:ad49346264b18c4727c832ff376dba2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d74a31c2235e1756f08800427f15a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#ae2d74a31c2235e1756f08800427f15a6">Render_Primary_Register_C3</a> ()</td></tr>
+<tr class="memdesc:ae2d74a31c2235e1756f08800427f15a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders registers that fall under primary register C3.  <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#ae2d74a31c2235e1756f08800427f15a6">More...</a><br /></td></tr>
+<tr class="separator:ae2d74a31c2235e1756f08800427f15a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e61d67b6bbe3da5f321753d1891843"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#af6e61d67b6bbe3da5f321753d1891843">Render_Primary_Register_C7</a> ()</td></tr>
+<tr class="memdesc:af6e61d67b6bbe3da5f321753d1891843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders registers that fall under primary register C7.  <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#af6e61d67b6bbe3da5f321753d1891843">More...</a><br /></td></tr>
+<tr class="separator:af6e61d67b6bbe3da5f321753d1891843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a84763e3c17b33b3a13e66ea82d22f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#a5a84763e3c17b33b3a13e66ea82d22f7">Render_Primary_Register_C8</a> ()</td></tr>
+<tr class="memdesc:a5a84763e3c17b33b3a13e66ea82d22f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders registers that fall under primary register C8.  <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#a5a84763e3c17b33b3a13e66ea82d22f7">More...</a><br /></td></tr>
+<tr class="separator:a5a84763e3c17b33b3a13e66ea82d22f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ad67ac648e09dbf936ab6a756a302f8bd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#ad67ac648e09dbf936ab6a756a302f8bd">Render_Table</a> (const char *title, const std::vector&lt; std::pair&lt; std::string, std::string &gt;&gt; &amp;data)</td></tr>
+<tr class="memdesc:ad67ac648e09dbf936ab6a756a302f8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a table (register values).  <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#ad67ac648e09dbf936ab6a756a302f8bd">More...</a><br /></td></tr>
+<tr class="separator:ad67ac648e09dbf936ab6a756a302f8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a770852fd5c94d02a2901b39f29e4323b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#a770852fd5c94d02a2901b39f29e4323b">m_cp15</a></td></tr>
-<tr class="separator:a770852fd5c94d02a2901b39f29e4323b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe5366c19597841fc3549d05b1d4310c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#abe5366c19597841fc3549d05b1d4310c">m_cp15</a></td></tr>
+<tr class="memdesc:abe5366c19597841fc3549d05b1d4310c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coprocessor 15.  <a href="classzero__mate_1_1gui_1_1CCP15__Window.html#abe5366c19597841fc3549d05b1d4310c">More...</a><br /></td></tr>
+<tr class="separator:abe5366c19597841fc3549d05b1d4310c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:a4403b5e4f32959481295c64114c10cd7"><td class="memItemLeft" align="right" valign="top">static constexpr ImGuiTableFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#a4403b5e4f32959481295c64114c10cd7">Table_Flags</a></td></tr>
-<tr class="separator:a4403b5e4f32959481295c64114c10cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">zero_mate::gui::IGUI_Window</a></td></tr>
+<tr class="memitem:aec13fa282561f5cd447f1598391260f5 inherit pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">static constexpr ImGuiTableFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#aec13fa282561f5cd447f1598391260f5">Table_Flags</a></td></tr>
+<tr class="memdesc:aec13fa282561f5cd447f1598391260f5 inherit pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags defining the looks of all tables.  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#aec13fa282561f5cd447f1598391260f5">More...</a><br /></td></tr>
+<tr class="separator:aec13fa282561f5cd447f1598391260f5 inherit pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ade8f1a5c2a6515efc53cb1aa92e5bf0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade8f1a5c2a6515efc53cb1aa92e5bf0e">&#9670;&nbsp;</a></span>CCP15_Window()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a window that displays information related to CP15 (coprocessor 15). </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afd0a34d76a36c8e20944b05ae199a2a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0a34d76a36c8e20944b05ae199a2a3">&#9670;&nbsp;</a></span>CCP15_Window()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,7 +196,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">zero_mate::gui::CCP15_Window::CCP15_Window </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt;&#160;</td>
           <td class="paramname"><em>cp15</em></td><td>)</td>
           <td></td>
         </tr>
@@ -169,6 +207,14 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp15</td><td>Reference to coprocessor 15. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -196,11 +242,13 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classzero__mate_1_1IGUI__Window.html#a2303be8c1cd0538dda53e8296078d9fc">zero_mate::IGUI_Window</a>.</p>
+<p>Renders the window (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows.">IGUI_Window</a> interface). </p>
+
+<p>Implements <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a7478fadaf0ac8872e9563b86734c542c">zero_mate::gui::IGUI_Window</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_a02fdded272906e0bb3665c8b3aa03ba0_cgraph.svg" width="420" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_a02fdded272906e0bb3665c8b3aa03ba0_cgraph.svg" width="883" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -228,18 +276,25 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Renders registers that fall under primary register C1. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_a27304ba7d10bb901f8fe474ccb61f57f_cgraph.svg" width="426" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_a27304ba7d10bb901f8fe474ccb61f57f_icgraph.svg" width="420" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_a27304ba7d10bb901f8fe474ccb61f57f_icgraph.svg" width="660" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a770852fd5c94d02a2901b39f29e4323b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a770852fd5c94d02a2901b39f29e4323b">&#9670;&nbsp;</a></span>m_cp15</h2>
+<a id="ad49346264b18c4727c832ff376dba2a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad49346264b18c4727c832ff376dba2a9">&#9670;&nbsp;</a></span>Render_Primary_Register_C2()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,7 +303,254 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a>&gt; zero_mate::gui::CCP15_Window::m_cp15</td>
+          <td class="memname">void zero_mate::gui::CCP15_Window::Render_Primary_Register_C2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders registers that fall under primary register C2. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_ad49346264b18c4727c832ff376dba2a9_cgraph.svg" width="426" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_ad49346264b18c4727c832ff376dba2a9_icgraph.svg" width="660" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae2d74a31c2235e1756f08800427f15a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d74a31c2235e1756f08800427f15a6">&#9670;&nbsp;</a></span>Render_Primary_Register_C3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CCP15_Window::Render_Primary_Register_C3 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders registers that fall under primary register C3. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_ae2d74a31c2235e1756f08800427f15a6_cgraph.svg" width="426" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_ae2d74a31c2235e1756f08800427f15a6_icgraph.svg" width="660" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af6e61d67b6bbe3da5f321753d1891843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e61d67b6bbe3da5f321753d1891843">&#9670;&nbsp;</a></span>Render_Primary_Register_C7()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CCP15_Window::Render_Primary_Register_C7 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders registers that fall under primary register C7. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_af6e61d67b6bbe3da5f321753d1891843_cgraph.svg" width="426" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_af6e61d67b6bbe3da5f321753d1891843_icgraph.svg" width="660" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5a84763e3c17b33b3a13e66ea82d22f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a84763e3c17b33b3a13e66ea82d22f7">&#9670;&nbsp;</a></span>Render_Primary_Register_C8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CCP15_Window::Render_Primary_Register_C8 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders registers that fall under primary register C8. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_a5a84763e3c17b33b3a13e66ea82d22f7_cgraph.svg" width="426" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_a5a84763e3c17b33b3a13e66ea82d22f7_icgraph.svg" width="660" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0d41be7f469e6b9493815c5cd094939a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d41be7f469e6b9493815c5cd094939a">&#9670;&nbsp;</a></span>Render_Tab_Bar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CCP15_Window::Render_Tab_Bar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders tabs representing the primary registers of CP15. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_a0d41be7f469e6b9493815c5cd094939a_cgraph.svg" width="666" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_a0d41be7f469e6b9493815c5cd094939a_icgraph.svg" width="420" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad67ac648e09dbf936ab6a756a302f8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad67ac648e09dbf936ab6a756a302f8bd">&#9670;&nbsp;</a></span>Render_Table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CCP15_Window::Render_Table </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::string, std::string &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders a table (register values). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Title of the table </td></tr>
+    <tr><td class="paramname">data</td><td>Data where each item represents a single row in the table (key, value) </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCP15__Window_ad67ac648e09dbf936ab6a756a302f8bd_icgraph.svg" width="883" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="abe5366c19597841fc3549d05b1d4310c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe5366c19597841fc3549d05b1d4310c">&#9670;&nbsp;</a></span>m_cp15</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a>&gt; zero_mate::gui::CCP15_Window::m_cp15</td>
         </tr>
       </table>
   </td>
@@ -258,31 +560,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a4403b5e4f32959481295c64114c10cd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4403b5e4f32959481295c64114c10cd7">&#9670;&nbsp;</a></span>Table_Flags</h2>
+<p>Coprocessor 15. </p>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr ImGuiTableFlags zero_mate::gui::CCP15_Window::Table_Flags</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |</div>
-<div class="line">                                                       ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |</div>
-<div class="line">                                                       ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable</div>
-</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

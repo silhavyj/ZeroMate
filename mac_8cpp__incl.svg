@@ -36,8 +36,8 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:title=" ">
-<polygon fill="none" stroke="#bfbfbf" points="158,-112.5 158,-131.5 300,-131.5 300,-112.5 158,-112.5"/>
+<g id="a_node6"><a xlink:href="math_8hpp.html" target="_top" xlink:title="This file defines and implements a variety of handy helper functions that are used throughout the pro...">
+<polygon fill="none" stroke="black" points="158,-112.5 158,-131.5 300,-131.5 300,-112.5 158,-112.5"/>
 <text text-anchor="middle" x="229" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate/utils/math.hpp</text>
 </a>
 </g>

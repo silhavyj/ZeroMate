@@ -1,4 +1,5 @@
 <map id="zero_mate::peripheral::CGPIO_Manager" name="zero_mate::peripheral::CGPIO_Manager">
-<area shape="rect" id="node1" title="This class represents a GPIO (general&#45;purpose I/O) manager." alt="" coords="5,95,171,136"/>
+<area shape="rect" id="node1" title="This class represents a GPIO (general&#45;purpose I/O) manager." alt="" coords="107,109,272,151"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory&#45;mapped peripheral." alt="" coords="5,5,171,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title="This class defines a logging system that is used throughout the project." alt="" coords="195,5,389,47"/>
 </map>

@@ -1,0 +1,6 @@
+<map id="zero_mate::gui::CARM_Timer_Window::Render_Table" name="zero_mate::gui::CARM_Timer_Window::Render_Table">
+<area shape="rect" id="node1" title="Renders a table (register values)." alt="" coords="459,53,679,94"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CARM__Timer__Window.html#ae81010b350ca24a45d2bd7bb6e979d72" title="Render individual bits of the ARM timer control register." alt="" coords="232,5,411,61"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CARM__Timer__Window.html#a9285c91bad23db6dc55b0fab3bd8161a" title="Renders ARM timer registers (value, load, etc.)." alt="" coords="232,85,411,141"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CARM__Timer__Window.html#aaf519012bb20d98b58690c86ce7f2009" title="Renders the ARM timer registers (IGUI_Window interface)." alt="" coords="5,53,184,94"/>
+</map>

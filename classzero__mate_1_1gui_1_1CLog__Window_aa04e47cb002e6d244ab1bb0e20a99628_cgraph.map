@@ -1,4 +1,4 @@
 <map id="zero_mate::gui::CLog_Window::Warning" name="zero_mate::gui::CLog_Window::Warning">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,164,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#aa8b45ef3c4ca74bce9b84a04c47241ce" title=" " alt="" coords="212,5,399,47"/>
+<area shape="rect" id="node1" title="Logs a warning message (utils::ILogger interface)." alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#aa8b45ef3c4ca74bce9b84a04c47241ce" title="Adds a log message into the buffer." alt="" coords="212,5,399,47"/>
 </map>

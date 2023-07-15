@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::mmu::CMMU::Get_Page_Table_Record" name="zero_mate::arm1176jzf_s::mmu::CMMU::Get_Page_Table_Record">
+<area shape="rect" id="node1" title="Retrieves a given page from a page table by a given virtual address." alt="" coords="5,5,204,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Entry.html#a4f2dc11deaa1a64983e18d91bcaee1c5" title="Returns the raw value of the page." alt="" coords="252,5,425,61"/>
+</map>

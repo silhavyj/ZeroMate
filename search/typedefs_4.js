@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['system_5fclock_5flistener_5ft_1412',['System_Clock_Listener_t',['../classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a89a1a7cea70ce64266d50387d19fcb05',1,'zero_mate::arm1176jzf_s::CCPU_Core']]]
+  ['read_5fgpio_5fpin_5ft_1895',['Read_GPIO_Pin_t',['../classzero__mate_1_1IExternal__Peripheral.html#a0ecb01abe68c8df229a650678224aed3',1,'zero_mate::IExternal_Peripheral']]],
+  ['registers_5ft_1896',['Registers_t',['../classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a8f1063c370833c5b3920b8209c2d207c',1,'zero_mate::coprocessor::cp15::IPrimary_Reg']]]
 ];

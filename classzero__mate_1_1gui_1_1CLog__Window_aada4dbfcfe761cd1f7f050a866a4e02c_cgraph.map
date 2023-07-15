@@ -1,0 +1,5 @@
+<map id="zero_mate::gui::CLog_Window::Render_Clear_Button" name="zero_mate::gui::CLog_Window::Render_Clear_Button">
+<area shape="rect" id="node1" title="Renders a clear button for clearing the message area." alt="" coords="5,5,180,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#aab3c1c25eedfe7230d905ae5355265c0" title="Clears all log messages." alt="" coords="228,13,387,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#af165b3edecdde5d0ea7a10957849921b" title="Clears the circular buffer (deletes all log messages)." alt="" coords="435,13,621,54"/>
+</map>

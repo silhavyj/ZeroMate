@@ -1,0 +1,5 @@
+<map id="zero_mate::gui::CCP15_Window::Render_Primary_Register_C2" name="zero_mate::gui::CCP15_Window::Render_Primary_Register_C2">
+<area shape="rect" id="node1" title="Renders registers that fall under primary register C2." alt="" coords="463,5,655,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CCP15__Window.html#a0d41be7f469e6b9493815c5cd094939a" title="Renders tabs representing the primary registers of CP15." alt="" coords="223,13,415,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CCP15__Window.html#a02fdded272906e0bb3665c8b3aa03ba0" title="Renders the window (IGUI_Window interface)." alt="" coords="5,13,175,54"/>
+</map>

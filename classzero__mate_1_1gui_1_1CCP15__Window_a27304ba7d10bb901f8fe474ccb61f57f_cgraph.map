@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CCP15_Window::Render_Primary_Register_C1" name="zero_mate::gui::CCP15_Window::Render_Primary_Register_C1">
+<area shape="rect" id="node1" title="Renders registers that fall under primary register C1." alt="" coords="5,5,197,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CCP15__Window.html#ad67ac648e09dbf936ab6a756a302f8bd" title="Renders a table (register values)." alt="" coords="245,13,420,54"/>
+</map>

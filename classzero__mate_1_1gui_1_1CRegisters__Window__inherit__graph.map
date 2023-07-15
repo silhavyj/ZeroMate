@@ -1,4 +1,4 @@
 <map id="zero_mate::gui::CRegisters_Window" name="zero_mate::gui::CRegisters_Window">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,203,121"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1IGUI__Window.html" title=" " alt="" coords="11,5,197,32"/>
+<area shape="rect" id="node1" title="This class represents the window that displays the contents of all CPU registers." alt="" coords="5,95,203,136"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows." alt="" coords="27,5,181,47"/>
 </map>

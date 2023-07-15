@@ -1,0 +1,9 @@
+<map id="zero_mate::gui::CSource_Code_Window::Render_Breakpoint" name="zero_mate::gui::CSource_Code_Window::Render_Breakpoint">
+<area shape="rect" id="node1" title="Renders a single breakpoint." alt="" coords="1715,5,1967,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a92af51ccb5ebca752cddaac27c38f1f8" title="Renders the body of a source code table." alt="" coords="1412,5,1667,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#ad8c35af3bc3c8881eeca1de82afc6b35" title="Renders a table that containing disassembled instructions." alt="" coords="1109,5,1364,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#af9afd629a519bacd1ce89faf8bbcdb9c" title="Renders a block of code (a single function/method)." alt="" coords="804,5,1061,47"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a2088711954d53ac5f57e4a085770590f" title="Renders a single tab (ELF source file)." alt="" coords="553,5,756,47"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a1f2a59252814f5b499c09bf2959741ad" title="Renders the disassembled contents of all ELF loaded into the emulator." alt="" coords="233,5,505,47"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a24d4560bdcaf8c4fb0611de1b55ac687" title="Renders the window (IGUI_Window interface)." alt="" coords="5,5,185,47"/>
+</map>

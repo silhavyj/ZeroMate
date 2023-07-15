@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -107,21 +107,24 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a48caa029960db12d20bc0a5254f1a436"><td class="memItemLeft" align="right" valign="top">utils::CLogging_System &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a48caa029960db12d20bc0a5254f1a436">g_logging_system</a> = *utils::CSingleton&lt;utils::CLogging_System&gt;::Get_Instance()</td></tr>
+<tr class="memitem:a48caa029960db12d20bc0a5254f1a436"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a48caa029960db12d20bc0a5254f1a436">g_logging_system</a> = *<a class="el" href="classzero__mate_1_1utils_1_1CSingleton.html">utils::CSingleton</a>&lt;<a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a>&gt;::Get_Instance()</td></tr>
 <tr class="memdesc:a48caa029960db12d20bc0a5254f1a436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to a logging system used throughout the project.  <a href="namespacezero__mate_1_1soc.html#a48caa029960db12d20bc0a5254f1a436">More...</a><br /></td></tr>
 <tr class="separator:a48caa029960db12d20bc0a5254f1a436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1eea95ae44848a3e76601e17e7f1537"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CRAM.html">peripheral::CRAM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#af1eea95ae44848a3e76601e17e7f1537">g_ram</a> { nullptr }</td></tr>
 <tr class="memdesc:af1eea95ae44848a3e76601e17e7f1537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the RAM.  <a href="namespacezero__mate_1_1soc.html#af1eea95ae44848a3e76601e17e7f1537">More...</a><br /></td></tr>
 <tr class="separator:af1eea95ae44848a3e76601e17e7f1537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a126b6b09f5a8db4afc826a89d979f2de"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1CBus.html">zero_mate::CBus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a126b6b09f5a8db4afc826a89d979f2de">g_bus</a> = std::make_shared&lt;<a class="el" href="classzero__mate_1_1CBus.html">CBus</a>&gt;()</td></tr>
-<tr class="memdesc:a126b6b09f5a8db4afc826a89d979f2de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the bus which the CPU uses to access memory-mapped peripherals.  <a href="namespacezero__mate_1_1soc.html#a126b6b09f5a8db4afc826a89d979f2de">More...</a><br /></td></tr>
-<tr class="separator:a126b6b09f5a8db4afc826a89d979f2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9065456f3dfe3d1edf7e6d81d8a13b87"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">g_cpu</a> = std::make_shared&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a>&gt;(0, <a class="el" href="namespacezero__mate_1_1soc.html#a126b6b09f5a8db4afc826a89d979f2de">g_bus</a>)</td></tr>
+<tr class="memitem:ad65a35f2c2911b074e894fce7ec80f3b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#ad65a35f2c2911b074e894fce7ec80f3b">g_bus</a> = std::make_shared&lt;<a class="el" href="classzero__mate_1_1CBus.html">CBus</a>&gt;()</td></tr>
+<tr class="memdesc:ad65a35f2c2911b074e894fce7ec80f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the bus which the CPU uses to access memory-mapped peripherals.  <a href="namespacezero__mate_1_1soc.html#ad65a35f2c2911b074e894fce7ec80f3b">More...</a><br /></td></tr>
+<tr class="separator:ad65a35f2c2911b074e894fce7ec80f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9065456f3dfe3d1edf7e6d81d8a13b87"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">g_cpu</a> = std::make_shared&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a>&gt;(0, <a class="el" href="namespacezero__mate_1_1soc.html#ad65a35f2c2911b074e894fce7ec80f3b">g_bus</a>)</td></tr>
 <tr class="memdesc:a9065456f3dfe3d1edf7e6d81d8a13b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the CPU.  <a href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">More...</a><br /></td></tr>
 <tr class="separator:a9065456f3dfe3d1edf7e6d81d8a13b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e73c326962117e5dbeba48f4114a1ec"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a5e73c326962117e5dbeba48f4114a1ec">g_cp15</a> = std::make_shared&lt;<a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a>&gt;(<a class="el" href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">g_cpu</a>-&gt;Get_CPU_Context())</td></tr>
-<tr class="memdesc:a5e73c326962117e5dbeba48f4114a1ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the CP15 (system control coprocessor)  <a href="namespacezero__mate_1_1soc.html#a5e73c326962117e5dbeba48f4114a1ec">More...</a><br /></td></tr>
-<tr class="separator:a5e73c326962117e5dbeba48f4114a1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a222d970a693f2c2e954472dda0bbaa"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a4a222d970a693f2c2e954472dda0bbaa">g_cp15</a></td></tr>
+<tr class="memdesc:a4a222d970a693f2c2e954472dda0bbaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the CP15 (system control coprocessor)  <a href="namespacezero__mate_1_1soc.html#a4a222d970a693f2c2e954472dda0bbaa">More...</a><br /></td></tr>
+<tr class="separator:a4a222d970a693f2c2e954472dda0bbaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a005be01df026c2b3776aa7c68aafd8"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html">arm1176jzf_s::mmu::CMMU</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a4a005be01df026c2b3776aa7c68aafd8">g_mmu</a> = std::make_shared&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html">arm1176jzf_s::mmu::CMMU</a>&gt;(<a class="el" href="namespacezero__mate_1_1soc.html#ad65a35f2c2911b074e894fce7ec80f3b">g_bus</a>, <a class="el" href="namespacezero__mate_1_1soc.html#a4a222d970a693f2c2e954472dda0bbaa">g_cp15</a>)</td></tr>
+<tr class="memdesc:a4a005be01df026c2b3776aa7c68aafd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the MMU (memory management unit).  <a href="namespacezero__mate_1_1soc.html#a4a005be01df026c2b3776aa7c68aafd8">More...</a><br /></td></tr>
+<tr class="separator:a4a005be01df026c2b3776aa7c68aafd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0fef44087a0e8fa42a3a1a8ac1af6bc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html">peripheral::CInterrupt_Controller</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#ac0fef44087a0e8fa42a3a1a8ac1af6bc">g_ic</a></td></tr>
 <tr class="memdesc:ac0fef44087a0e8fa42a3a1a8ac1af6bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the interrupt controller.  <a href="namespacezero__mate_1_1soc.html#ac0fef44087a0e8fa42a3a1a8ac1af6bc">More...</a><br /></td></tr>
 <tr class="separator:ac0fef44087a0e8fa42a3a1a8ac1af6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,7 +143,7 @@ Variables</h2></td></tr>
 <tr class="memitem:a28798ab9e9c9f0414bc5df1d5c759019"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">peripheral::IPeripheral</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a28798ab9e9c9f0414bc5df1d5c759019">g_peripherals</a> {}</td></tr>
 <tr class="memdesc:a28798ab9e9c9f0414bc5df1d5c759019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of all "internal" peripherals (so they can be globally all reset, updated, etc)  <a href="namespacezero__mate_1_1soc.html#a28798ab9e9c9f0414bc5df1d5c759019">More...</a><br /></td></tr>
 <tr class="separator:a28798ab9e9c9f0414bc5df1d5c759019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7016de16fb03bd2b6bd91b81971a4bad"><td class="memItemLeft" align="right" valign="top">std::vector&lt; IExternal_Peripheral * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a7016de16fb03bd2b6bd91b81971a4bad">g_external_peripherals</a> {}</td></tr>
+<tr class="memitem:a7016de16fb03bd2b6bd91b81971a4bad"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a7016de16fb03bd2b6bd91b81971a4bad">g_external_peripherals</a> {}</td></tr>
 <tr class="memdesc:a7016de16fb03bd2b6bd91b81971a4bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of all external peripherals that are connected to the system via GPIO pins.  <a href="namespacezero__mate_1_1soc.html#a7016de16fb03bd2b6bd91b81971a4bad">More...</a><br /></td></tr>
 <tr class="separator:a7016de16fb03bd2b6bd91b81971a4bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -188,14 +191,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a126b6b09f5a8db4afc826a89d979f2de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a126b6b09f5a8db4afc826a89d979f2de">&#9670;&nbsp;</a></span>g_bus</h2>
+<a id="ad65a35f2c2911b074e894fce7ec80f3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad65a35f2c2911b074e894fce7ec80f3b">&#9670;&nbsp;</a></span>g_bus</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1CBus.html">zero_mate::CBus</a> &gt; zero_mate::soc::g_bus = std::make_shared&lt;<a class="el" href="classzero__mate_1_1CBus.html">CBus</a>&gt;()</td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1CBus.html">CBus</a> &gt; zero_mate::soc::g_bus = std::make_shared&lt;<a class="el" href="classzero__mate_1_1CBus.html">CBus</a>&gt;()</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -204,18 +207,21 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a5e73c326962117e5dbeba48f4114a1ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e73c326962117e5dbeba48f4114a1ec">&#9670;&nbsp;</a></span>g_cp15</h2>
+<a id="a4a222d970a693f2c2e954472dda0bbaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a222d970a693f2c2e954472dda0bbaa">&#9670;&nbsp;</a></span>g_cp15</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a> &gt; zero_mate::soc::g_cp15 = std::make_shared&lt;<a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">coprocessor::CCP15</a>&gt;(<a class="el" href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">g_cpu</a>-&gt;Get_CPU_Context())</td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt; zero_mate::soc::g_cp15</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    std::make_shared&lt;coprocessor::cp15::CCP15&gt;(<a class="code" href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">g_cpu</a>-&gt;Get_CPU_Context())</div>
+<div class="ttc" id="anamespacezero__mate_1_1soc_html_a9065456f3dfe3d1edf7e6d81d8a13b87"><div class="ttname"><a href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">zero_mate::soc::g_cpu</a></div><div class="ttdeci">std::shared_ptr&lt; arm1176jzf_s::CCPU_Core &gt; g_cpu</div><div class="ttdoc">Global reference to the CPU.</div><div class="ttdef"><b>Definition:</b> soc.cpp:41</div></div>
+</div><!-- fragment -->
 <p>Global reference to the CP15 (system control coprocessor) </p>
 
 </div>
@@ -227,7 +233,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt; zero_mate::soc::g_cpu = std::make_shared&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a>&gt;(0, <a class="el" href="namespacezero__mate_1_1soc.html#a126b6b09f5a8db4afc826a89d979f2de">g_bus</a>)</td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt; zero_mate::soc::g_cpu = std::make_shared&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a>&gt;(0, <a class="el" href="namespacezero__mate_1_1soc.html#ad65a35f2c2911b074e894fce7ec80f3b">g_bus</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -243,7 +249,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; IExternal_Peripheral * &gt; zero_mate::soc::g_external_peripherals {}</td>
+          <td class="memname">std::vector&lt; <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> * &gt; zero_mate::soc::g_external_peripherals {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -281,7 +287,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    std::make_shared&lt;peripheral::CInterrupt_Controller&gt;(<a class="code" href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">g_cpu</a>-&gt;Get_CPU_Context())</div>
-<div class="ttc" id="anamespacezero__mate_1_1soc_html_a9065456f3dfe3d1edf7e6d81d8a13b87"><div class="ttname"><a href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">zero_mate::soc::g_cpu</a></div><div class="ttdeci">std::shared_ptr&lt; arm1176jzf_s::CCPU_Core &gt; g_cpu</div><div class="ttdoc">Global reference to the CPU.</div><div class="ttdef"><b>Definition:</b> soc.cpp:41</div></div>
 </div><!-- fragment -->
 <p>Global reference to the interrupt controller. </p>
 
@@ -294,12 +299,28 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">utils::CLogging_System &amp; zero_mate::soc::g_logging_system = *utils::CSingleton&lt;utils::CLogging_System&gt;::Get_Instance()</td>
+          <td class="memname"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a> &amp; zero_mate::soc::g_logging_system = *<a class="el" href="classzero__mate_1_1utils_1_1CSingleton.html">utils::CSingleton</a>&lt;<a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a>&gt;::Get_Instance()</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Global reference to a logging system used throughout the project. </p>
+
+</div>
+</div>
+<a id="a4a005be01df026c2b3776aa7c68aafd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a005be01df026c2b3776aa7c68aafd8">&#9670;&nbsp;</a></span>g_mmu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html">arm1176jzf_s::mmu::CMMU</a> &gt; zero_mate::soc::g_mmu = std::make_shared&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html">arm1176jzf_s::mmu::CMMU</a>&gt;(<a class="el" href="namespacezero__mate_1_1soc.html#ad65a35f2c2911b074e894fce7ec80f3b">g_bus</a>, <a class="el" href="namespacezero__mate_1_1soc.html#a4a222d970a693f2c2e954472dda0bbaa">g_cp15</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Global reference to the MMU (memory management unit). </p>
 
 </div>
 </div>

@@ -1,8 +1,8 @@
 <map id="zero_mate::gui::CCircular_Log_Buffer::Add" name="zero_mate::gui::CCircular_Log_Buffer::Add">
-<area shape="rect" id="node1" title=" " alt="" coords="212,136,399,177"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a6b4f83e40bffb362563b26c9d806819c" title=" " alt="" coords="5,5,164,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CLog__Window.html#af9c372af23e3c9aacde724f08663cbed" title=" " alt="" coords="5,71,164,112"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a3f33c514782679e209eab04e72d57a5a" title=" " alt="" coords="5,136,164,177"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a7eb5c6c3430e5ce1dd6052a2b14e05ce" title=" " alt="" coords="5,201,164,243"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CLog__Window.html#aa04e47cb002e6d244ab1bb0e20a99628" title=" " alt="" coords="5,267,164,308"/>
+<area shape="rect" id="node1" title="Adds a log message into the buffer." alt="" coords="212,136,399,177"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a6b4f83e40bffb362563b26c9d806819c" title="Logs a debug message (utils::ILogger interface)." alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CLog__Window.html#af9c372af23e3c9aacde724f08663cbed" title="Logs an error message (utils::ILogger interface)." alt="" coords="5,71,164,112"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a3f33c514782679e209eab04e72d57a5a" title="Logs an info message (utils::ILogger interface)." alt="" coords="5,136,164,177"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a7eb5c6c3430e5ce1dd6052a2b14e05ce" title="Logs a plain&#45;text message (no formatting is taking place, utils::ILogger interface)." alt="" coords="5,201,164,243"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CLog__Window.html#aa04e47cb002e6d244ab1bb0e20a99628" title="Logs a warning message (utils::ILogger interface)." alt="" coords="5,267,164,308"/>
 </map>

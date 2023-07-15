@@ -1,7 +1,8 @@
 <map id="src/gui/windows/peripherals/ram_window.hpp" name="src/gui/windows/peripherals/ram_window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="48,5,251,47"/>
-<area shape="rect" id="node2" href="$window_8hpp.html" title=" " alt="" coords="5,102,128,129"/>
-<area shape="rect" id="node4" href="$ram_8hpp.html" title="This file defines the RAM (random access memory) used in BCM2835." alt="" coords="152,95,315,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="28,184,105,211"/>
-<area shape="rect" id="node5" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="175,184,291,211"/>
+<area shape="rect" id="node1" title="This file defines a window that visualizes the contents of the RAM." alt="" coords="102,5,305,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="84,184,196,211"/>
+<area shape="rect" id="node3" title=" " alt="" coords="25,95,206,136"/>
+<area shape="rect" id="node4" href="$window_8hpp.html" title="This file defines an interface for all windows that will be rendered by the application." alt="" coords="230,102,353,129"/>
+<area shape="rect" id="node5" href="$ram_8hpp.html" title="This file defines the RAM (random access memory) used in BCM2835." alt="" coords="377,95,540,136"/>
+<area shape="rect" id="node6" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="400,184,516,211"/>
 </map>

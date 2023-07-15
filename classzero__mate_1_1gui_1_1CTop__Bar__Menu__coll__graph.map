@@ -1,0 +1,5 @@
+<map id="zero_mate::gui::CTop_Bar_Menu" name="zero_mate::gui::CTop_Bar_Menu">
+<area shape="rect" id="node1" title="This class represents a top bar through which the user can load ELF files." alt="" coords="102,109,261,151"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows." alt="" coords="5,5,160,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title="This class defines a logging system that is used throughout the project." alt="" coords="184,5,379,47"/>
+</map>

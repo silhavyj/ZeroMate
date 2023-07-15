@@ -1,5 +1,5 @@
 <map id="zero_mate::gui::CLog_Window::Render_Filtered_Log_Messages" name="zero_mate::gui::CLog_Window::Render_Filtered_Log_Messages">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,196,87"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#ac16e7e106825569a5fe48b06eefb28be" title=" " alt="" coords="273,5,460,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CLog__Window.html#acd4c871dccefcf04fb9b3bb8973086c0" title=" " alt="" coords="244,71,489,112"/>
+<area shape="rect" id="node1" title="Renders log messages that satisfy the criteria given by a message filter." alt="" coords="5,31,196,87"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#ac16e7e106825569a5fe48b06eefb28be" title="Returns a collection of log messages currently stored in the buffer." alt="" coords="273,5,460,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CLog__Window.html#acd4c871dccefcf04fb9b3bb8973086c0" title="Sets the color of a log message based on its type (error, info, etc.)" alt="" coords="244,71,489,112"/>
 </map>

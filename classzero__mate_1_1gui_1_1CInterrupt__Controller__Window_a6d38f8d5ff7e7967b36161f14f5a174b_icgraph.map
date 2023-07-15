@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CInterrupt_Controller_Window::Render_IRQ" name="zero_mate::gui::CInterrupt_Controller_Window::Render_IRQ">
+<area shape="rect" id="node1" title="Renders information about IRQ sources." alt="" coords="259,5,493,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CInterrupt__Controller__Window.html#a9cd5d75a01cd945d4383c9291a8e392b" title="Renders interrupt controller registers (IGUI_Window interface)." alt="" coords="5,5,211,47"/>
+</map>

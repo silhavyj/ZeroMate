@@ -9,10 +9,6 @@ var dir_2c5e0d2f5313fab5e08c06477185b08d =
     [ "cp15_window.hpp", "cp15__window_8hpp.html", [
       [ "CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", "classzero__mate_1_1gui_1_1CCP15__Window" ]
     ] ],
-    [ "file_window.cpp", "file__window_8cpp.html", null ],
-    [ "file_window.hpp", "file__window_8hpp.html", [
-      [ "CFile_Window", "classzero__mate_1_1gui_1_1CFile__Window.html", "classzero__mate_1_1gui_1_1CFile__Window" ]
-    ] ],
     [ "log_window.cpp", "log__window_8cpp.html", null ],
     [ "log_window.hpp", "log__window_8hpp.html", [
       [ "CCircular_Log_Buffer", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer" ],
@@ -20,11 +16,15 @@ var dir_2c5e0d2f5313fab5e08c06477185b08d =
     ] ],
     [ "registers_window.cpp", "registers__window_8cpp.html", null ],
     [ "registers_window.hpp", "registers__window_8hpp.html", [
-      [ "CRegisters_Window", "classzero__mate_1_1gui_1_1CRegisters__Window.html", "classzero__mate_1_1gui_1_1CRegisters__Window" ]
+      [ "CRegisters_Window", "classzero__mate_1_1gui_1_1CRegisters__Window.html", "classzero__mate_1_1gui_1_1CRegisters__Window" ],
+      [ "TCPU_Mode_Tab_States", "structzero__mate_1_1gui_1_1CRegisters__Window_1_1TCPU__Mode__Tab__States.html", "structzero__mate_1_1gui_1_1CRegisters__Window_1_1TCPU__Mode__Tab__States" ]
     ] ],
     [ "source_code_window.cpp", "source__code__window_8cpp.html", null ],
     [ "source_code_window.hpp", "source__code__window_8hpp.html", [
-      [ "CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html", "classzero__mate_1_1gui_1_1CSource__Code__Window" ],
-      [ "TRGB_Color", "structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color.html", "structzero__mate_1_1gui_1_1CSource__Code__Window_1_1TRGB__Color" ]
+      [ "CSource_Code_Window", "classzero__mate_1_1gui_1_1CSource__Code__Window.html", "classzero__mate_1_1gui_1_1CSource__Code__Window" ]
+    ] ],
+    [ "top_bar_menu.cpp", "top__bar__menu_8cpp.html", null ],
+    [ "top_bar_menu.hpp", "top__bar__menu_8hpp.html", [
+      [ "CTop_Bar_Menu", "classzero__mate_1_1gui_1_1CTop__Bar__Menu.html", "classzero__mate_1_1gui_1_1CTop__Bar__Menu" ]
     ] ]
 ];

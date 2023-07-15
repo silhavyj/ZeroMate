@@ -1,0 +1,5 @@
+<map id="zero_mate::coprocessor::cp15::CC8" name="zero_mate::coprocessor::cp15::CC8">
+<area shape="rect" id="node1" title="This class represents primary register C8 of coprocessor CP15." alt="" coords="14,200,191,241"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html" title="This interface defines common functionality of every primary register of coprocessor CP15." alt="" coords="14,109,191,151"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title="This class defines a logging system that is used throughout the project." alt="" coords="5,5,200,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="zero_mate::coprocessor::cp15::CC1::Is_Control_Flag_Set" name="zero_mate::coprocessor::cp15::CC1::Is_Control_Flag_Set">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,183,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a0780610d57b65a633a1776be372116a6" title="Checks whether a flag is set in a given register." alt="" coords="231,5,408,61"/>
+</map>

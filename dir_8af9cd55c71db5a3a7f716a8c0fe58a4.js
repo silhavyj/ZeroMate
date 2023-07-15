@@ -6,7 +6,8 @@ var dir_8af9cd55c71db5a3a7f716a8c0fe58a4 =
     ] ],
     [ "gpio_window.cpp", "gpio__window_8cpp.html", null ],
     [ "gpio_window.hpp", "gpio__window_8hpp.html", [
-      [ "CGPIO_Window", "classzero__mate_1_1gui_1_1CGPIO__Window.html", "classzero__mate_1_1gui_1_1CGPIO__Window" ]
+      [ "CGPIO_Window", "classzero__mate_1_1gui_1_1CGPIO__Window.html", "classzero__mate_1_1gui_1_1CGPIO__Window" ],
+      [ "TInterrupt_Type", "structzero__mate_1_1gui_1_1CGPIO__Window_1_1TInterrupt__Type.html", "structzero__mate_1_1gui_1_1CGPIO__Window_1_1TInterrupt__Type" ]
     ] ],
     [ "interrupt_controller_window.cpp", "interrupt__controller__window_8cpp.html", null ],
     [ "interrupt_controller_window.hpp", "interrupt__controller__window_8hpp.html", [

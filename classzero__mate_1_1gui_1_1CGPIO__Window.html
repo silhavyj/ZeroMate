@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -86,62 +86,97 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1gui_1_1CGPIO__Windo
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classzero__mate_1_1gui_1_1CGPIO__Window-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">zero_mate::gui::CGPIO_Window Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a windows that displays information about GPIO pins.  
+ <a href="classzero__mate_1_1gui_1_1CGPIO__Window.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="gpio__window_8hpp_source.html">gpio_window.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::gui::CGPIO_Window:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CGPIO__Window__inherit__graph.svg" width="198" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CGPIO__Window__inherit__graph.svg" width="179" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for zero_mate::gui::CGPIO_Window:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CGPIO__Window__coll__graph.svg" width="198" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CGPIO__Window__coll__graph.svg" width="179" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1gui_1_1CGPIO__Window_1_1TInterrupt__Type.html">TInterrupt_Type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure encapsulates an interrupt type and its string representation (name)  <a href="structzero__mate_1_1gui_1_1CGPIO__Window_1_1TInterrupt__Type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abcf4698859542b88d44e61963645ec43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CGPIO__Window.html#abcf4698859542b88d44e61963645ec43">CGPIO_Window</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html">peripheral::CGPIO_Manager</a> &gt; gpio)</td></tr>
-<tr class="separator:abcf4698859542b88d44e61963645ec43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdfbc1598abcb8a978de9b53ce0f2782"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CGPIO__Window.html#acdfbc1598abcb8a978de9b53ce0f2782">CGPIO_Window</a> (const std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html">peripheral::CGPIO_Manager</a> &gt; gpio)</td></tr>
+<tr class="memdesc:acdfbc1598abcb8a978de9b53ce0f2782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1gui_1_1CGPIO__Window.html#acdfbc1598abcb8a978de9b53ce0f2782">More...</a><br /></td></tr>
+<tr class="separator:acdfbc1598abcb8a978de9b53ce0f2782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ce2c10cab6d91789adc071291c9a5be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CGPIO__Window.html#a8ce2c10cab6d91789adc071291c9a5be">Render</a> () override</td></tr>
+<tr class="memdesc:a8ce2c10cab6d91789adc071291c9a5be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders GPIO pins (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows.">IGUI_Window</a> interface).  <a href="classzero__mate_1_1gui_1_1CGPIO__Window.html#a8ce2c10cab6d91789adc071291c9a5be">More...</a><br /></td></tr>
 <tr class="separator:a8ce2c10cab6d91789adc071291c9a5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classzero__mate_1_1IGUI__Window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1IGUI__Window')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1IGUI__Window.html">zero_mate::IGUI_Window</a></td></tr>
-<tr class="memitem:a04aae02b39d52074347dabdddc530c1e inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a04aae02b39d52074347dabdddc530c1e">IGUI_Window</a> ()=default</td></tr>
-<tr class="separator:a04aae02b39d52074347dabdddc530c1e inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0edde376f90491265baa3b596bd981fc inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a0edde376f90491265baa3b596bd981fc">~IGUI_Window</a> ()=default</td></tr>
-<tr class="separator:a0edde376f90491265baa3b596bd981fc inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac688f83c7c30e52f1500302a555fe390 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#ac688f83c7c30e52f1500302a555fe390">IGUI_Window</a> (const <a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
-<tr class="separator:ac688f83c7c30e52f1500302a555fe390 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d8554559e9fd830c8fce05535720579 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a0d8554559e9fd830c8fce05535720579">operator=</a> (const <a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
-<tr class="separator:a0d8554559e9fd830c8fce05535720579 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dc8d41af41498656c8f221b345c82a0 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a3dc8d41af41498656c8f221b345c82a0">IGUI_Window</a> (<a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
-<tr class="separator:a3dc8d41af41498656c8f221b345c82a0 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabe655a1ab938a0578a70168dbc5e48d inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#aabe655a1ab938a0578a70168dbc5e48d">operator=</a> (<a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
-<tr class="separator:aabe655a1ab938a0578a70168dbc5e48d inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1gui_1_1IGUI__Window')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">zero_mate::gui::IGUI_Window</a></td></tr>
+<tr class="memitem:a01366a79de09394e379f531f54cc968c inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a01366a79de09394e379f531f54cc968c">IGUI_Window</a> ()=default</td></tr>
+<tr class="memdesc:a01366a79de09394e379f531f54cc968c inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class (default non-parameterized constructor).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a01366a79de09394e379f531f54cc968c">More...</a><br /></td></tr>
+<tr class="separator:a01366a79de09394e379f531f54cc968c inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7e88dcd5925c10d6faeda3131e5464 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#abf7e88dcd5925c10d6faeda3131e5464">~IGUI_Window</a> ()=default</td></tr>
+<tr class="memdesc:abf7e88dcd5925c10d6faeda3131e5464 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys (deletes) the object from the memory.  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#abf7e88dcd5925c10d6faeda3131e5464">More...</a><br /></td></tr>
+<tr class="separator:abf7e88dcd5925c10d6faeda3131e5464 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80003ddc9ed6c5da0bdc3dd6e30cdf54 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a80003ddc9ed6c5da0bdc3dd6e30cdf54">IGUI_Window</a> (const <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a80003ddc9ed6c5da0bdc3dd6e30cdf54 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a80003ddc9ed6c5da0bdc3dd6e30cdf54">More...</a><br /></td></tr>
+<tr class="separator:a80003ddc9ed6c5da0bdc3dd6e30cdf54 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abccc9fbf04395abc39b09033af61be12 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#abccc9fbf04395abc39b09033af61be12">operator=</a> (const <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
+<tr class="memdesc:abccc9fbf04395abc39b09033af61be12 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted assignment operator (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#abccc9fbf04395abc39b09033af61be12">More...</a><br /></td></tr>
+<tr class="separator:abccc9fbf04395abc39b09033af61be12 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc2994c84ccb5c491c49ba0c001807d inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a2cc2994c84ccb5c491c49ba0c001807d">IGUI_Window</a> (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a2cc2994c84ccb5c491c49ba0c001807d inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move constructor (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a2cc2994c84ccb5c491c49ba0c001807d">More...</a><br /></td></tr>
+<tr class="separator:a2cc2994c84ccb5c491c49ba0c001807d inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7852e184b1cfb2041628232d04d1dd5b inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a7852e184b1cfb2041628232d04d1dd5b">operator=</a> (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a7852e184b1cfb2041628232d04d1dd5b inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted assignment operator with an r-value reference (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a7852e184b1cfb2041628232d04d1dd5b">More...</a><br /></td></tr>
+<tr class="separator:a7852e184b1cfb2041628232d04d1dd5b inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad1affc13af41a19f9c66ae37082d5cb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CGPIO__Window.html#ad1affc13af41a19f9c66ae37082d5cb6">Render_GPIO_Pins_Table</a> ()</td></tr>
+<tr class="memdesc:ad1affc13af41a19f9c66ae37082d5cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a table with all GPIO pins.  <a href="classzero__mate_1_1gui_1_1CGPIO__Window.html#ad1affc13af41a19f9c66ae37082d5cb6">More...</a><br /></td></tr>
+<tr class="separator:ad1affc13af41a19f9c66ae37082d5cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb6f57b70b2367e666550cb69bd5d13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CGPIO__Window.html#aeeb6f57b70b2367e666550cb69bd5d13">Render_GPIO_Pin</a> (std::size_t idx)</td></tr>
+<tr class="memdesc:aeeb6f57b70b2367e666550cb69bd5d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders information about a single GPIO pin (table row).  <a href="classzero__mate_1_1gui_1_1CGPIO__Window.html#aeeb6f57b70b2367e666550cb69bd5d13">More...</a><br /></td></tr>
+<tr class="separator:aeeb6f57b70b2367e666550cb69bd5d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee3deaa24f122b1b4c9bb4fc5814953"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1gui_1_1CGPIO__Window_1_1TInterrupt__Type.html">TInterrupt_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CGPIO__Window.html#a0ee3deaa24f122b1b4c9bb4fc5814953">Get_Interrupt_Type_From_Idx</a> (std::size_t idx)</td></tr>
+<tr class="memdesc:a0ee3deaa24f122b1b4c9bb4fc5814953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an interrupt index into an enumeration along with its string representation.  <a href="classzero__mate_1_1gui_1_1CGPIO__Window.html#a0ee3deaa24f122b1b4c9bb4fc5814953">More...</a><br /></td></tr>
+<tr class="separator:a0ee3deaa24f122b1b4c9bb4fc5814953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:af577ddbc6b1f0d14988fdae716a0b5b4"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html">peripheral::CGPIO_Manager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CGPIO__Window.html#af577ddbc6b1f0d14988fdae716a0b5b4">m_gpio</a></td></tr>
-<tr class="separator:af577ddbc6b1f0d14988fdae716a0b5b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8addf86639ebf0c35e62027b82b2b526"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html">peripheral::CGPIO_Manager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CGPIO__Window.html#a8addf86639ebf0c35e62027b82b2b526">m_gpio</a></td></tr>
+<tr class="memdesc:a8addf86639ebf0c35e62027b82b2b526"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO manager.  <a href="classzero__mate_1_1gui_1_1CGPIO__Window.html#a8addf86639ebf0c35e62027b82b2b526">More...</a><br /></td></tr>
+<tr class="separator:a8addf86639ebf0c35e62027b82b2b526"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:a8d8a2b274ade6c1ebf815483a611d7cc"><td class="memItemLeft" align="right" valign="top">static constexpr ImGuiTableFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CGPIO__Window.html#a8d8a2b274ade6c1ebf815483a611d7cc">Table_Flags</a></td></tr>
-<tr class="separator:a8d8a2b274ade6c1ebf815483a611d7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">zero_mate::gui::IGUI_Window</a></td></tr>
+<tr class="memitem:aec13fa282561f5cd447f1598391260f5 inherit pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">static constexpr ImGuiTableFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#aec13fa282561f5cd447f1598391260f5">Table_Flags</a></td></tr>
+<tr class="memdesc:aec13fa282561f5cd447f1598391260f5 inherit pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags defining the looks of all tables.  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#aec13fa282561f5cd447f1598391260f5">More...</a><br /></td></tr>
+<tr class="separator:aec13fa282561f5cd447f1598391260f5 inherit pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abcf4698859542b88d44e61963645ec43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcf4698859542b88d44e61963645ec43">&#9670;&nbsp;</a></span>CGPIO_Window()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a windows that displays information about GPIO pins. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acdfbc1598abcb8a978de9b53ce0f2782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdfbc1598abcb8a978de9b53ce0f2782">&#9670;&nbsp;</a></span>CGPIO_Window()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +187,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">zero_mate::gui::CGPIO_Window::CGPIO_Window </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html">peripheral::CGPIO_Manager</a> &gt;&#160;</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html">peripheral::CGPIO_Manager</a> &gt;&#160;</td>
           <td class="paramname"><em>gpio</em></td><td>)</td>
           <td></td>
         </tr>
@@ -164,9 +199,58 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpio</td><td>Reference to the GPIO manager </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0ee3deaa24f122b1b4c9bb4fc5814953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee3deaa24f122b1b4c9bb4fc5814953">&#9670;&nbsp;</a></span>Get_Interrupt_Type_From_Idx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structzero__mate_1_1gui_1_1CGPIO__Window_1_1TInterrupt__Type.html">CGPIO_Window::TInterrupt_Type</a> zero_mate::gui::CGPIO_Window::Get_Interrupt_Type_From_Idx </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts an interrupt index into an enumeration along with its string representation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>Interrupt index (type) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Interrupt type as well as its name (string representation) </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CGPIO__Window_a0ee3deaa24f122b1b4c9bb4fc5814953_icgraph.svg" width="871" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a8ce2c10cab6d91789adc071291c9a5be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ce2c10cab6d91789adc071291c9a5be">&#9670;&nbsp;</a></span>Render()</h2>
 
@@ -190,13 +274,20 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classzero__mate_1_1IGUI__Window.html#a2303be8c1cd0538dda53e8296078d9fc">zero_mate::IGUI_Window</a>.</p>
+<p>Renders GPIO pins (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows.">IGUI_Window</a> interface). </p>
+
+<p>Implements <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a7478fadaf0ac8872e9563b86734c542c">zero_mate::gui::IGUI_Window</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CGPIO__Window_a8ce2c10cab6d91789adc071291c9a5be_cgraph.svg" width="871" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="af577ddbc6b1f0d14988fdae716a0b5b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af577ddbc6b1f0d14988fdae716a0b5b4">&#9670;&nbsp;</a></span>m_gpio</h2>
+<a id="aeeb6f57b70b2367e666550cb69bd5d13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb6f57b70b2367e666550cb69bd5d13">&#9670;&nbsp;</a></span>Render_GPIO_Pin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,7 +296,93 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html">peripheral::CGPIO_Manager</a>&gt; zero_mate::gui::CGPIO_Window::m_gpio</td>
+          <td class="memname">void zero_mate::gui::CGPIO_Window::Render_GPIO_Pin </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders information about a single GPIO pin (table row). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>Index of the GPIO pin to be rendered. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CGPIO__Window_aeeb6f57b70b2367e666550cb69bd5d13_cgraph.svg" width="434" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CGPIO__Window_aeeb6f57b70b2367e666550cb69bd5d13_icgraph.svg" width="648" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad1affc13af41a19f9c66ae37082d5cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1affc13af41a19f9c66ae37082d5cb6">&#9670;&nbsp;</a></span>Render_GPIO_Pins_Table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CGPIO_Window::Render_GPIO_Pins_Table </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders a table with all GPIO pins. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CGPIO__Window_ad1affc13af41a19f9c66ae37082d5cb6_cgraph.svg" width="655" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CGPIO__Window_ad1affc13af41a19f9c66ae37082d5cb6_icgraph.svg" width="400" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8addf86639ebf0c35e62027b82b2b526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8addf86639ebf0c35e62027b82b2b526">&#9670;&nbsp;</a></span>m_gpio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html">peripheral::CGPIO_Manager</a>&gt; zero_mate::gui::CGPIO_Window::m_gpio</td>
         </tr>
       </table>
   </td>
@@ -215,31 +392,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a8d8a2b274ade6c1ebf815483a611d7cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d8a2b274ade6c1ebf815483a611d7cc">&#9670;&nbsp;</a></span>Table_Flags</h2>
+<p>GPIO manager. </p>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr ImGuiTableFlags zero_mate::gui::CGPIO_Window::Table_Flags</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |</div>
-<div class="line">                                                       ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |</div>
-<div class="line">                                                       ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable</div>
-</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

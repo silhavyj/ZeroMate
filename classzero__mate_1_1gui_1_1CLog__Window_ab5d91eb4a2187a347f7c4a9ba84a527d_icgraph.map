@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CLog_Window::Render_Top_Bar" name="zero_mate::gui::CLog_Window::Render_Top_Bar">
+<area shape="rect" id="node1" title="Renders the top bar of the window (the options, clear button, and the filter)" alt="" coords="212,5,404,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a679fe192aa1335396f06e63678bb71d5" title="Renders the window (IGUI_Window interface)." alt="" coords="5,5,164,47"/>
+</map>

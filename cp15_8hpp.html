@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ZeroMate: src/core/coprocessors/cp15.hpp File Reference</title>
+<title>ZeroMate: src/core/coprocessors/cp15/cp15.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -93,20 +93,26 @@ $(document).ready(function(){initNavTree('cp15_8hpp.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 
-<p>This file defines CP15 (system control coprocessor).  
+<p>This file defines coprocessor CP15.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="coprocessor_8hpp_source.html">coprocessor.hpp</a>&quot;</code><br />
-<code>#include &quot;zero_mate/utils/logger.hpp&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="c1_8hpp_source.html">c1.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="c2_8hpp_source.html">c2.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="c3_8hpp_source.html">c3.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="c7_8hpp_source.html">c7.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="c8_8hpp_source.html">c8.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="primary__reg_8hpp_source.html">primary_reg.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="coprocessor_8hpp_source.html">../coprocessor.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8hpp_source.html">zero_mate/utils/logger.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for cp15.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="cp15_8hpp__incl.svg" width="975" height="306"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="cp15_8hpp__incl.svg" width="1460" height="306"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="cp15_8hpp__dep__incl.svg" width="1570" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="cp15_8hpp__dep__incl.svg" width="1644" height="499"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -114,8 +120,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1CCP15.html">zero_mate::coprocessor::CCP15</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents the system control coprocessor.  <a href="classzero__mate_1_1coprocessor_1_1CCP15.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">zero_mate::coprocessor::cp15::CCP15</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents coprocessor CP15.  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -124,18 +130,20 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacezero__mate_1_1coprocessor"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1coprocessor.html">zero_mate::coprocessor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacezero__mate_1_1coprocessor_1_1cp15"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1coprocessor_1_1cp15.html">zero_mate::coprocessor::cp15</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file defines CP15 (system control coprocessor). </p>
-<dl class="section date"><dt>Date</dt><dd>29. 05. 2023 </dd></dl>
+<div class="textblock"><p>This file defines coprocessor CP15. </p>
+<dl class="section date"><dt>Date</dt><dd>26. 06. 2023 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Jakub Silhavy (<a href="#" onclick="location.href='mai'+'lto:'+'jak'+'ub'+'.si'+'lh'+'avy'+'.c'+'z@g'+'ma'+'il.'+'co'+'m'; return false;">jakub<span style="display: none;">.nosp@m.</span>.sil<span style="display: none;">.nosp@m.</span>havy.<span style="display: none;">.nosp@m.</span>cz@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a>)</dd></dl>
-<p>To find more information about the coprocessor, please visit <a href="https://developer.arm.com/documentation/ddi0290/g/system-control-coprocessor/about-control-coprocessor-cp15">https://developer.arm.com/documentation/ddi0290/g/system-control-coprocessor/about-control-coprocessor-cp15</a> </p>
+<p>List of all registers of CP15 can be found over at <a href="https://developer.arm.com/documentation/ddi0301/h/system-control-coprocessor/system-control-processor-registers/">https://developer.arm.com/documentation/ddi0301/h/system-control-coprocessor/system-control-processor-registers/</a> register-allocation?lang=en </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a class="el" href="dir_523ec841fd74605300afe43d91402cb4.html">coprocessors</a></li><li class="navelem"><a class="el" href="cp15_8hpp.html">cp15.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a class="el" href="dir_523ec841fd74605300afe43d91402cb4.html">coprocessors</a></li><li class="navelem"><a class="el" href="dir_6c386251880f58185420946bef4182a1.html">cp15</a></li><li class="navelem"><a class="el" href="cp15_8hpp.html">cp15.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

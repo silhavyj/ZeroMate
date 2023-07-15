@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -86,50 +86,67 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1gui_1_1CRegisters__
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classzero__mate_1_1gui_1_1CRegisters__Window-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">zero_mate::gui::CRegisters_Window Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents the window that displays the contents of all CPU registers.  
+ <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="registers__window_8hpp_source.html">registers_window.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::gui::CRegisters_Window:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window__inherit__graph.svg" width="208" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window__inherit__graph.svg" width="208" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for zero_mate::gui::CRegisters_Window:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window__coll__graph.svg" width="395" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window__coll__graph.svg" width="592" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzero__mate_1_1gui_1_1CRegisters__Window_1_1TCPU__Mode__Tab__States.html">TCPU_Mode_Tab_States</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure containing information about what tab (CPU mode) is currently selected.  <a href="structzero__mate_1_1gui_1_1CRegisters__Window_1_1TCPU__Mode__Tab__States.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae9c09d19a287b7a2b75fd7117f28c9a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#ae9c09d19a287b7a2b75fd7117f28c9a8">CRegisters_Window</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt; cpu, const bool &amp;cpu_running)</td></tr>
-<tr class="separator:ae9c09d19a287b7a2b75fd7117f28c9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecdb8908359efc59a3931616c808a0a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#aecdb8908359efc59a3931616c808a0a3">CRegisters_Window</a> (const std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt; cpu)</td></tr>
+<tr class="memdesc:aecdb8908359efc59a3931616c808a0a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#aecdb8908359efc59a3931616c808a0a3">More...</a><br /></td></tr>
+<tr class="separator:aecdb8908359efc59a3931616c808a0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12beb19205052a340193be90b32e5717"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a12beb19205052a340193be90b32e5717">Render</a> () override</td></tr>
+<tr class="memdesc:a12beb19205052a340193be90b32e5717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the windows (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows.">IGUI_Window</a> interface).  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a12beb19205052a340193be90b32e5717">More...</a><br /></td></tr>
 <tr class="separator:a12beb19205052a340193be90b32e5717"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classzero__mate_1_1IGUI__Window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1IGUI__Window')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1IGUI__Window.html">zero_mate::IGUI_Window</a></td></tr>
-<tr class="memitem:a04aae02b39d52074347dabdddc530c1e inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a04aae02b39d52074347dabdddc530c1e">IGUI_Window</a> ()=default</td></tr>
-<tr class="separator:a04aae02b39d52074347dabdddc530c1e inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0edde376f90491265baa3b596bd981fc inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a0edde376f90491265baa3b596bd981fc">~IGUI_Window</a> ()=default</td></tr>
-<tr class="separator:a0edde376f90491265baa3b596bd981fc inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac688f83c7c30e52f1500302a555fe390 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#ac688f83c7c30e52f1500302a555fe390">IGUI_Window</a> (const <a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
-<tr class="separator:ac688f83c7c30e52f1500302a555fe390 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d8554559e9fd830c8fce05535720579 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a0d8554559e9fd830c8fce05535720579">operator=</a> (const <a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
-<tr class="separator:a0d8554559e9fd830c8fce05535720579 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dc8d41af41498656c8f221b345c82a0 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#a3dc8d41af41498656c8f221b345c82a0">IGUI_Window</a> (<a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
-<tr class="separator:a3dc8d41af41498656c8f221b345c82a0 inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabe655a1ab938a0578a70168dbc5e48d inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IGUI__Window.html#aabe655a1ab938a0578a70168dbc5e48d">operator=</a> (<a class="el" href="classzero__mate_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
-<tr class="separator:aabe655a1ab938a0578a70168dbc5e48d inherit pub_methods_classzero__mate_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1gui_1_1IGUI__Window')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">zero_mate::gui::IGUI_Window</a></td></tr>
+<tr class="memitem:a01366a79de09394e379f531f54cc968c inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a01366a79de09394e379f531f54cc968c">IGUI_Window</a> ()=default</td></tr>
+<tr class="memdesc:a01366a79de09394e379f531f54cc968c inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class (default non-parameterized constructor).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a01366a79de09394e379f531f54cc968c">More...</a><br /></td></tr>
+<tr class="separator:a01366a79de09394e379f531f54cc968c inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7e88dcd5925c10d6faeda3131e5464 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#abf7e88dcd5925c10d6faeda3131e5464">~IGUI_Window</a> ()=default</td></tr>
+<tr class="memdesc:abf7e88dcd5925c10d6faeda3131e5464 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys (deletes) the object from the memory.  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#abf7e88dcd5925c10d6faeda3131e5464">More...</a><br /></td></tr>
+<tr class="separator:abf7e88dcd5925c10d6faeda3131e5464 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80003ddc9ed6c5da0bdc3dd6e30cdf54 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a80003ddc9ed6c5da0bdc3dd6e30cdf54">IGUI_Window</a> (const <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a80003ddc9ed6c5da0bdc3dd6e30cdf54 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a80003ddc9ed6c5da0bdc3dd6e30cdf54">More...</a><br /></td></tr>
+<tr class="separator:a80003ddc9ed6c5da0bdc3dd6e30cdf54 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abccc9fbf04395abc39b09033af61be12 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#abccc9fbf04395abc39b09033af61be12">operator=</a> (const <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;)=delete</td></tr>
+<tr class="memdesc:abccc9fbf04395abc39b09033af61be12 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted assignment operator (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#abccc9fbf04395abc39b09033af61be12">More...</a><br /></td></tr>
+<tr class="separator:abccc9fbf04395abc39b09033af61be12 inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc2994c84ccb5c491c49ba0c001807d inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a2cc2994c84ccb5c491c49ba0c001807d">IGUI_Window</a> (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a2cc2994c84ccb5c491c49ba0c001807d inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move constructor (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a2cc2994c84ccb5c491c49ba0c001807d">More...</a><br /></td></tr>
+<tr class="separator:a2cc2994c84ccb5c491c49ba0c001807d inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7852e184b1cfb2041628232d04d1dd5b inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a7852e184b1cfb2041628232d04d1dd5b">operator=</a> (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a7852e184b1cfb2041628232d04d1dd5b inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted assignment operator with an r-value reference (rule of five).  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#a7852e184b1cfb2041628232d04d1dd5b">More...</a><br /></td></tr>
+<tr class="separator:a7852e184b1cfb2041628232d04d1dd5b inherit pub_methods_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -137,34 +154,54 @@ Private Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a53ceb63856847dcc4feabfdb36fd877eac8bd5bedff8ef192d39a962afc0e19ee">U32</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a53ceb63856847dcc4feabfdb36fd877eaa1e28eee0339658d39a8b4d325b56e9c">S32</a>
  }</td></tr>
+<tr class="memdesc:a53ceb63856847dcc4feabfdb36fd877e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of different formats values can be displayed.  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a53ceb63856847dcc4feabfdb36fd877e">More...</a><br /></td></tr>
 <tr class="separator:a53ceb63856847dcc4feabfdb36fd877e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ad3bf490925aef83d99eda63e054f7c43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#ad3bf490925aef83d99eda63e054f7c43">Render_Registers_Table</a> (const char *const title, const char *const type, <a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a53ceb63856847dcc4feabfdb36fd877e">NFormat</a> format, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">arm1176jzf_s::CCPU_Context::NCPU_Mode</a> mode)</td></tr>
-<tr class="separator:ad3bf490925aef83d99eda63e054f7c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd9fc32fa1db2adfa6de67fdcd47035c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#acd9fc32fa1db2adfa6de67fdcd47035c">Render_Register_Tabs</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">arm1176jzf_s::CCPU_Context::NCPU_Mode</a> mode)</td></tr>
-<tr class="separator:acd9fc32fa1db2adfa6de67fdcd47035c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab255199c377b463784b2cf30606c2d18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#ab255199c377b463784b2cf30606c2d18">Render_Flags</a> ()</td></tr>
-<tr class="separator:ab255199c377b463784b2cf30606c2d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01300a0700c4a72bda627efb62154b87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a01300a0700c4a72bda627efb62154b87">Render_Value</a> (std::uint32_t value, <a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a53ceb63856847dcc4feabfdb36fd877e">NFormat</a> format)</td></tr>
-<tr class="separator:a01300a0700c4a72bda627efb62154b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d2aecdd70593ed8765fb5a72d28ff0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a5d2aecdd70593ed8765fb5a72d28ff0c">Check_If_CPU_Mode_Changes</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;cpu_context)</td></tr>
+<tr class="memdesc:a5d2aecdd70593ed8765fb5a72d28ff0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the CPU mode has changed.  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a5d2aecdd70593ed8765fb5a72d28ff0c">More...</a><br /></td></tr>
+<tr class="separator:a5d2aecdd70593ed8765fb5a72d28ff0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee27571a09be2cad3cd096b1c36040a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#afee27571a09be2cad3cd096b1c36040a">Render_CPU_Mode</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;cpu_context)</td></tr>
+<tr class="memdesc:afee27571a09be2cad3cd096b1c36040a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a label displaying the current CPU mode.  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#afee27571a09be2cad3cd096b1c36040a">More...</a><br /></td></tr>
+<tr class="separator:afee27571a09be2cad3cd096b1c36040a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b00209a3db86452bf51d8f4c9dbf72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#ac9b00209a3db86452bf51d8f4c9dbf72">Render_Register_Modes_Tabs</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;cpu_context)</td></tr>
+<tr class="memdesc:ac9b00209a3db86452bf51d8f4c9dbf72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders tabs for different CPU modes (SVC, IRQ, FIQ, etc.)  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#ac9b00209a3db86452bf51d8f4c9dbf72">More...</a><br /></td></tr>
+<tr class="separator:ac9b00209a3db86452bf51d8f4c9dbf72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1779ad3caf45c3e8dd342ef8057dfff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a1779ad3caf45c3e8dd342ef8057dfff7">Render_Registers_Table</a> (const char *const title, <a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a53ceb63856847dcc4feabfdb36fd877e">NFormat</a> format, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">arm1176jzf_s::CCPU_Context::NCPU_Mode</a> mode, const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;cpu_context)</td></tr>
+<tr class="memdesc:a1779ad3caf45c3e8dd342ef8057dfff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders table with CPU registers of a given CPU mode.  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a1779ad3caf45c3e8dd342ef8057dfff7">More...</a><br /></td></tr>
+<tr class="separator:a1779ad3caf45c3e8dd342ef8057dfff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25928c2ab0086154b73843f84a831953"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a25928c2ab0086154b73843f84a831953">Render_Register_Tabs</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">arm1176jzf_s::CCPU_Context::NCPU_Mode</a> mode, const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;context)</td></tr>
+<tr class="memdesc:a25928c2ab0086154b73843f84a831953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders different format tabs of a given CPU mode.  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a25928c2ab0086154b73843f84a831953">More...</a><br /></td></tr>
+<tr class="separator:a25928c2ab0086154b73843f84a831953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab910a37cb5f1cd13e2566c87a6bc0121"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#ab910a37cb5f1cd13e2566c87a6bc0121">Render_CPSR_Flags</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;cpu_context)</td></tr>
+<tr class="memdesc:ab910a37cb5f1cd13e2566c87a6bc0121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders flags of the CPSR register.  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#ab910a37cb5f1cd13e2566c87a6bc0121">More...</a><br /></td></tr>
+<tr class="separator:ab910a37cb5f1cd13e2566c87a6bc0121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5240e615ada1d612975e9339ae715f1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a5240e615ada1d612975e9339ae715f1e">Render_Raw_Value</a> (std::uint32_t value, <a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a53ceb63856847dcc4feabfdb36fd877e">NFormat</a> format)</td></tr>
+<tr class="memdesc:a5240e615ada1d612975e9339ae715f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a raw integer value in a given format.  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a5240e615ada1d612975e9339ae715f1e">More...</a><br /></td></tr>
+<tr class="separator:a5240e615ada1d612975e9339ae715f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:af8913d8435a59166e7c40643afc1608c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#af8913d8435a59166e7c40643afc1608c">m_cpu</a></td></tr>
-<tr class="separator:af8913d8435a59166e7c40643afc1608c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a943eefc68a8d0ccbed42c7ca87b00d65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a943eefc68a8d0ccbed42c7ca87b00d65">m_cpu_context</a></td></tr>
-<tr class="separator:a943eefc68a8d0ccbed42c7ca87b00d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b7f37682f737564500eab14ec29ced2"><td class="memItemLeft" align="right" valign="top">const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a9b7f37682f737564500eab14ec29ced2">m_cpu_running</a></td></tr>
-<tr class="separator:a9b7f37682f737564500eab14ec29ced2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6cd7d5c82c1e66ffb620164a549e084"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#ab6cd7d5c82c1e66ffb620164a549e084">m_cpu</a></td></tr>
+<tr class="separator:ab6cd7d5c82c1e66ffb620164a549e084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782b8689e264098f67c7f2f7e76457b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1gui_1_1CRegisters__Window_1_1TCPU__Mode__Tab__States.html">TCPU_Mode_Tab_States</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a782b8689e264098f67c7f2f7e76457b9">m_tab_states</a></td></tr>
+<tr class="memdesc:a782b8689e264098f67c7f2f7e76457b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the CPU.  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a782b8689e264098f67c7f2f7e76457b9">More...</a><br /></td></tr>
+<tr class="separator:a782b8689e264098f67c7f2f7e76457b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2628a3ebf17c1f249fd0adafb9cb6a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">arm1176jzf_s::CCPU_Context::NCPU_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#aa2628a3ebf17c1f249fd0adafb9cb6a5">m_cpu_mode_prev</a></td></tr>
+<tr class="memdesc:aa2628a3ebf17c1f249fd0adafb9cb6a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous CPU mode.  <a href="classzero__mate_1_1gui_1_1CRegisters__Window.html#aa2628a3ebf17c1f249fd0adafb9cb6a5">More...</a><br /></td></tr>
+<tr class="separator:aa2628a3ebf17c1f249fd0adafb9cb6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:a3de6c3f9dea7b754f398c237dece8ab0"><td class="memItemLeft" align="right" valign="top">static constexpr ImGuiTableFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a3de6c3f9dea7b754f398c237dece8ab0">Table_Flags</a></td></tr>
-<tr class="separator:a3de6c3f9dea7b754f398c237dece8ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html">zero_mate::gui::IGUI_Window</a></td></tr>
+<tr class="memitem:aec13fa282561f5cd447f1598391260f5 inherit pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memItemLeft" align="right" valign="top">static constexpr ImGuiTableFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#aec13fa282561f5cd447f1598391260f5">Table_Flags</a></td></tr>
+<tr class="memdesc:aec13fa282561f5cd447f1598391260f5 inherit pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags defining the looks of all tables.  <a href="classzero__mate_1_1gui_1_1IGUI__Window.html#aec13fa282561f5cd447f1598391260f5">More...</a><br /></td></tr>
+<tr class="separator:aec13fa282561f5cd447f1598391260f5 inherit pub_static_attribs_classzero__mate_1_1gui_1_1IGUI__Window"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents the window that displays the contents of all CPU registers. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a53ceb63856847dcc4feabfdb36fd877e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a53ceb63856847dcc4feabfdb36fd877e">&#9670;&nbsp;</a></span>NFormat</h2>
 
@@ -184,17 +221,22 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Enumeration of different formats values can be displayed. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a53ceb63856847dcc4feabfdb36fd877ea58c9566f3c750ce7147b045fdd14202b"></a>HEX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a53ceb63856847dcc4feabfdb36fd877eac8bd5bedff8ef192d39a962afc0e19ee"></a>U32&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a53ceb63856847dcc4feabfdb36fd877eaa1e28eee0339658d39a8b4d325b56e9c"></a>S32&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a53ceb63856847dcc4feabfdb36fd877ea58c9566f3c750ce7147b045fdd14202b"></a>HEX&#160;</td><td class="fielddoc"><p>Hexadecimal values. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a53ceb63856847dcc4feabfdb36fd877eac8bd5bedff8ef192d39a962afc0e19ee"></a>U32&#160;</td><td class="fielddoc"><p>Unsigned 32 bits. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a53ceb63856847dcc4feabfdb36fd877eaa1e28eee0339658d39a8b4d325b56e9c"></a>S32&#160;</td><td class="fielddoc"><p>Signed 32 bits. </p>
+</td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae9c09d19a287b7a2b75fd7117f28c9a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9c09d19a287b7a2b75fd7117f28c9a8">&#9670;&nbsp;</a></span>CRegisters_Window()</h2>
+<a id="aecdb8908359efc59a3931616c808a0a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecdb8908359efc59a3931616c808a0a3">&#9670;&nbsp;</a></span>CRegisters_Window()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,19 +247,9 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">zero_mate::gui::CRegisters_Window::CRegisters_Window </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt;&#160;</td>
-          <td class="paramname"><em>cpu</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt;&#160;</td>
+          <td class="paramname"><em>cpu</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>cpu_running</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -227,9 +259,64 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Reference to the CPU whose registers' contents will be visualized </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5d2aecdd70593ed8765fb5a72d28ff0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d2aecdd70593ed8765fb5a72d28ff0c">&#9670;&nbsp;</a></span>Check_If_CPU_Mode_Changes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CRegisters_Window::Check_If_CPU_Mode_Changes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>cpu_context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the CPU mode has changed. </p>
+<p>If it has, it selects the corresponding tab to view the banked registers of the current CPU mode.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu_context</td><td>CPU context </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_a5d2aecdd70593ed8765fb5a72d28ff0c_cgraph.svg" width="454" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_a5d2aecdd70593ed8765fb5a72d28ff0c_icgraph.svg" width="478" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a12beb19205052a340193be90b32e5717"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12beb19205052a340193be90b32e5717">&#9670;&nbsp;</a></span>Render()</h2>
 
@@ -253,18 +340,20 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classzero__mate_1_1IGUI__Window.html#a2303be8c1cd0538dda53e8296078d9fc">zero_mate::IGUI_Window</a>.</p>
+<p>Renders the windows (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows.">IGUI_Window</a> interface). </p>
+
+<p>Implements <a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html#a7478fadaf0ac8872e9563b86734c542c">zero_mate::gui::IGUI_Window</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_a12beb19205052a340193be90b32e5717_cgraph.svg" width="1488" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_a12beb19205052a340193be90b32e5717_cgraph.svg" width="2292" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="ab255199c377b463784b2cf30606c2d18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab255199c377b463784b2cf30606c2d18">&#9670;&nbsp;</a></span>Render_Flags()</h2>
+<a id="ab910a37cb5f1cd13e2566c87a6bc0121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab910a37cb5f1cd13e2566c87a6bc0121">&#9670;&nbsp;</a></span>Render_CPSR_Flags()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -273,9 +362,10 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void zero_mate::gui::CRegisters_Window::Render_Flags </td>
+          <td class="memname">void zero_mate::gui::CRegisters_Window::Render_CPSR_Flags </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>cpu_context</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -285,23 +375,31 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Renders flags of the CPSR register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu_context</td><td>CPU context </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_ab255199c377b463784b2cf30606c2d18_cgraph.svg" width="430" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_ab910a37cb5f1cd13e2566c87a6bc0121_cgraph.svg" width="450" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_ab255199c377b463784b2cf30606c2d18_icgraph.svg" width="732" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_ab910a37cb5f1cd13e2566c87a6bc0121_icgraph.svg" width="998" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="acd9fc32fa1db2adfa6de67fdcd47035c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd9fc32fa1db2adfa6de67fdcd47035c">&#9670;&nbsp;</a></span>Render_Register_Tabs()</h2>
+<a id="afee27571a09be2cad3cd096b1c36040a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee27571a09be2cad3cd096b1c36040a">&#9670;&nbsp;</a></span>Render_CPU_Mode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,10 +408,10 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void zero_mate::gui::CRegisters_Window::Render_Register_Tabs </td>
+          <td class="memname">void zero_mate::gui::CRegisters_Window::Render_CPU_Mode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">arm1176jzf_s::CCPU_Context::NCPU_Mode</a>&#160;</td>
-          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>cpu_context</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -323,23 +421,31 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Renders a label displaying the current CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu_context</td><td>CPU context </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_acd9fc32fa1db2adfa6de67fdcd47035c_cgraph.svg" width="1243" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_afee27571a09be2cad3cd096b1c36040a_cgraph.svg" width="443" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_acd9fc32fa1db2adfa6de67fdcd47035c_icgraph.svg" width="487" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_afee27571a09be2cad3cd096b1c36040a_icgraph.svg" width="467" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="ad3bf490925aef83d99eda63e054f7c43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3bf490925aef83d99eda63e054f7c43">&#9670;&nbsp;</a></span>Render_Registers_Table()</h2>
+<a id="a5240e615ada1d612975e9339ae715f1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5240e615ada1d612975e9339ae715f1e">&#9670;&nbsp;</a></span>Render_Raw_Value()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -348,67 +454,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void zero_mate::gui::CRegisters_Window::Render_Registers_Table </td>
-          <td>(</td>
-          <td class="paramtype">const char *const&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *const&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a53ceb63856847dcc4feabfdb36fd877e">NFormat</a>&#160;</td>
-          <td class="paramname"><em>format</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">arm1176jzf_s::CCPU_Context::NCPU_Mode</a>&#160;</td>
-          <td class="paramname"><em>mode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_ad3bf490925aef83d99eda63e054f7c43_cgraph.svg" width="964" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_ad3bf490925aef83d99eda63e054f7c43_icgraph.svg" width="778" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a01300a0700c4a72bda627efb62154b87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01300a0700c4a72bda627efb62154b87">&#9670;&nbsp;</a></span>Render_Value()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void zero_mate::gui::CRegisters_Window::Render_Value </td>
+          <td class="memname">void zero_mate::gui::CRegisters_Window::Render_Raw_Value </td>
           <td>(</td>
           <td class="paramtype">std::uint32_t&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -431,18 +477,202 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Renders a raw integer value in a given format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Value to be rendered </td></tr>
+    <tr><td class="paramname">format</td><td>Format of the number (HEX, DEC, ...) </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_a01300a0700c4a72bda627efb62154b87_icgraph.svg" width="1023" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_a5240e615ada1d612975e9339ae715f1e_icgraph.svg" width="1283" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac9b00209a3db86452bf51d8f4c9dbf72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b00209a3db86452bf51d8f4c9dbf72">&#9670;&nbsp;</a></span>Render_Register_Modes_Tabs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CRegisters_Window::Render_Register_Modes_Tabs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>cpu_context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders tabs for different CPU modes (SVC, IRQ, FIQ, etc.) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu_context</td><td>CPU context </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_ac9b00209a3db86452bf51d8f4c9dbf72_cgraph.svg" width="2023" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_ac9b00209a3db86452bf51d8f4c9dbf72_icgraph.svg" width="454" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a25928c2ab0086154b73843f84a831953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25928c2ab0086154b73843f84a831953">&#9670;&nbsp;</a></span>Render_Register_Tabs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CRegisters_Window::Render_Register_Tabs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">arm1176jzf_s::CCPU_Context::NCPU_Mode</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders different format tabs of a given CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>Mode of the CPU </td></tr>
+    <tr><td class="paramname">context</td><td>CPU context </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Render all CPU registers.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_a25928c2ab0086154b73843f84a831953_cgraph.svg" width="1778" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_a25928c2ab0086154b73843f84a831953_icgraph.svg" width="732" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a1779ad3caf45c3e8dd342ef8057dfff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1779ad3caf45c3e8dd342ef8057dfff7">&#9670;&nbsp;</a></span>Render_Registers_Table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::gui::CRegisters_Window::Render_Registers_Table </td>
+          <td>(</td>
+          <td class="paramtype">const char *const&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classzero__mate_1_1gui_1_1CRegisters__Window.html#a53ceb63856847dcc4feabfdb36fd877e">NFormat</a>&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">arm1176jzf_s::CCPU_Context::NCPU_Mode</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>cpu_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders table with CPU registers of a given CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Unique title (identifier) of the table </td></tr>
+    <tr><td class="paramname">format</td><td>Format in which numbers will be printed (HEX, DEC, ...) </td></tr>
+    <tr><td class="paramname">mode</td><td>Mode of the CPU </td></tr>
+    <tr><td class="paramname">cpu_context</td><td>CPU context </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_a1779ad3caf45c3e8dd342ef8057dfff7_cgraph.svg" width="1499" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CRegisters__Window_a1779ad3caf45c3e8dd342ef8057dfff7_icgraph.svg" width="1023" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af8913d8435a59166e7c40643afc1608c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8913d8435a59166e7c40643afc1608c">&#9670;&nbsp;</a></span>m_cpu</h2>
+<a id="ab6cd7d5c82c1e66ffb620164a549e084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6cd7d5c82c1e66ffb620164a549e084">&#9670;&nbsp;</a></span>m_cpu</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -451,7 +681,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a>&gt; zero_mate::gui::CRegisters_Window::m_cpu</td>
+          <td class="memname">const std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a>&gt; zero_mate::gui::CRegisters_Window::m_cpu</td>
         </tr>
       </table>
   </td>
@@ -463,8 +693,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a943eefc68a8d0ccbed42c7ca87b00d65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a943eefc68a8d0ccbed42c7ca87b00d65">&#9670;&nbsp;</a></span>m_cpu_context</h2>
+<a id="aa2628a3ebf17c1f249fd0adafb9cb6a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2628a3ebf17c1f249fd0adafb9cb6a5">&#9670;&nbsp;</a></span>m_cpu_mode_prev</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -473,7 +703,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">arm1176jzf_s::CCPU_Context</a> zero_mate::gui::CRegisters_Window::m_cpu_context</td>
+          <td class="memname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">arm1176jzf_s::CCPU_Context::NCPU_Mode</a> zero_mate::gui::CRegisters_Window::m_cpu_mode_prev</td>
         </tr>
       </table>
   </td>
@@ -483,10 +713,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Previous CPU mode. </p>
+
 </div>
 </div>
-<a id="a9b7f37682f737564500eab14ec29ced2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b7f37682f737564500eab14ec29ced2">&#9670;&nbsp;</a></span>m_cpu_running</h2>
+<a id="a782b8689e264098f67c7f2f7e76457b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a782b8689e264098f67c7f2f7e76457b9">&#9670;&nbsp;</a></span>m_tab_states</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -495,7 +727,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const bool&amp; zero_mate::gui::CRegisters_Window::m_cpu_running</td>
+          <td class="memname"><a class="el" href="structzero__mate_1_1gui_1_1CRegisters__Window_1_1TCPU__Mode__Tab__States.html">TCPU_Mode_Tab_States</a> zero_mate::gui::CRegisters_Window::m_tab_states</td>
         </tr>
       </table>
   </td>
@@ -505,31 +737,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a3de6c3f9dea7b754f398c237dece8ab0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3de6c3f9dea7b754f398c237dece8ab0">&#9670;&nbsp;</a></span>Table_Flags</h2>
+<p>Reference to the CPU. </p>
+<p>States of CPU modes (tabs) </p>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr ImGuiTableFlags zero_mate::gui::CRegisters_Window::Table_Flags</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= ImGuiTableFlags_SizingFixedFit | ImGuiTableFlags_RowBg |</div>
-<div class="line">                                                       ImGuiTableFlags_Borders | ImGuiTableFlags_Resizable |</div>
-<div class="line">                                                       ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable</div>
-</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

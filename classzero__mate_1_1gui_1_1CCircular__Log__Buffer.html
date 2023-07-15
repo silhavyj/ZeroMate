@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -94,25 +94,45 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1gui_1_1CCircular__L
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents a circular buffer (for log messages)  
+ <a href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="log__window_8hpp_source.html">log_window.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a879302dc62841dd8363e24150abf9e06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#a879302dc62841dd8363e24150abf9e06">CCircular_Log_Buffer</a> ()=default</td></tr>
+<tr class="memdesc:a879302dc62841dd8363e24150abf9e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#a879302dc62841dd8363e24150abf9e06">More...</a><br /></td></tr>
 <tr class="separator:a879302dc62841dd8363e24150abf9e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8b45ef3c4ca74bce9b84a04c47241ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#aa8b45ef3c4ca74bce9b84a04c47241ce">Add</a> (Type value)</td></tr>
+<tr class="memdesc:aa8b45ef3c4ca74bce9b84a04c47241ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a log message into the buffer.  <a href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#aa8b45ef3c4ca74bce9b84a04c47241ce">More...</a><br /></td></tr>
 <tr class="separator:aa8b45ef3c4ca74bce9b84a04c47241ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af165b3edecdde5d0ea7a10957849921b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#af165b3edecdde5d0ea7a10957849921b">Clear</a> ()</td></tr>
+<tr class="memdesc:af165b3edecdde5d0ea7a10957849921b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the circular buffer (deletes all log messages).  <a href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#af165b3edecdde5d0ea7a10957849921b">More...</a><br /></td></tr>
 <tr class="separator:af165b3edecdde5d0ea7a10957849921b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac16e7e106825569a5fe48b06eefb28be"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#ac16e7e106825569a5fe48b06eefb28be">Get_Data</a> () const</td></tr>
+<tr class="memdesc:ac16e7e106825569a5fe48b06eefb28be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a collection of log messages currently stored in the buffer.  <a href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#ac16e7e106825569a5fe48b06eefb28be">More...</a><br /></td></tr>
 <tr class="separator:ac16e7e106825569a5fe48b06eefb28be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a680b201ca80f72e3c0765f08eb423f29"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#a680b201ca80f72e3c0765f08eb423f29">m_data</a></td></tr>
+<tr class="memdesc:a680b201ca80f72e3c0765f08eb423f29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of log messages.  <a href="classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#a680b201ca80f72e3c0765f08eb423f29">More...</a><br /></td></tr>
 <tr class="separator:a680b201ca80f72e3c0765f08eb423f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename Type, std::size_t Size&gt;<br />
+class zero_mate::gui::CCircular_Log_Buffer&lt; Type, Size &gt;</h3>
+
+<p>This class represents a circular buffer (for log messages) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Type</td><td>Type of a log message (e.g. std::string) </td></tr>
+    <tr><td class="paramname">Size</td><td>Size of the buffer (maximum number of elements it can hold at a time) </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a879302dc62841dd8363e24150abf9e06"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a879302dc62841dd8363e24150abf9e06">&#9670;&nbsp;</a></span>CCircular_Log_Buffer()</h2>
 
@@ -137,6 +157,8 @@ template&lt;typename Type , std::size_t Size&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates an instance of the class. </p>
 
 </div>
 </div>
@@ -166,6 +188,14 @@ template&lt;typename Type , std::size_t Size&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Adds a log message into the buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Log message to be added into the circular buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -199,10 +229,12 @@ template&lt;typename Type , std::size_t Size&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Clears the circular buffer (deletes all log messages). </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCircular__Log__Buffer_af165b3edecdde5d0ea7a10957849921b_icgraph.svg" width="631" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCircular__Log__Buffer_af165b3edecdde5d0ea7a10957849921b_icgraph.svg" width="1078" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -232,10 +264,13 @@ template&lt;typename Type , std::size_t Size&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns a collection of log messages currently stored in the buffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Collection of log messages. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCircular__Log__Buffer_ac16e7e106825569a5fe48b06eefb28be_icgraph.svg" width="643" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1gui_1_1CCircular__Log__Buffer_ac16e7e106825569a5fe48b06eefb28be_icgraph.svg" width="927" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -263,6 +298,8 @@ template&lt;typename Type , std::size_t Size&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Collection of log messages. </p>
 
 </div>
 </div>

@@ -1,6 +1,7 @@
 <map id="zero_mate::gui::CCircular_Log_Buffer::Get_Data" name="zero_mate::gui::CCircular_Log_Buffer::Get_Data">
-<area shape="rect" id="node1" title=" " alt="" coords="451,53,637,94"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a67b875f7111438d9100d927992e27c4f" title=" " alt="" coords="213,5,401,61"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CLog__Window.html#adb7453fd69db4264b631251e48b68201" title=" " alt="" coords="212,85,403,141"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a679fe192aa1335396f06e63678bb71d5" title=" " alt="" coords="5,53,164,94"/>
+<area shape="rect" id="node1" title="Returns a collection of log messages currently stored in the buffer." alt="" coords="735,53,921,94"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a67b875f7111438d9100d927992e27c4f" title="Renders all log messages (no filter activated)." alt="" coords="497,5,685,61"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CLog__Window.html#adb7453fd69db4264b631251e48b68201" title="Renders log messages that satisfy the criteria given by a message filter." alt="" coords="496,85,687,141"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CLog__Window.html#ac72abb295653473388e92ec658b85e7e" title="Renders the message scrolling area." alt="" coords="212,53,448,94"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a679fe192aa1335396f06e63678bb71d5" title="Renders the window (IGUI_Window interface)." alt="" coords="5,53,164,94"/>
 </map>

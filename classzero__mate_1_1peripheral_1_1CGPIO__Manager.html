@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -112,7 +112,7 @@ Inheritance diagram for zero_mate::peripheral::CGPIO_Manager:</div>
 <div class="dynheader">
 Collaboration diagram for zero_mate::peripheral::CGPIO_Manager:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager__coll__graph.svg" width="176" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager__coll__graph.svg" width="395" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -207,7 +207,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac3edf689b30c39f2406fa6308fdeb2e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9">Read</a> (std::uint32_t addr, char *data, std::uint32_t size) override</td></tr>
 <tr class="memdesc:ac3edf689b30c39f2406fa6308fdeb2e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9">More...</a><br /></td></tr>
 <tr class="separator:ac3edf689b30c39f2406fa6308fdeb2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaefed8fb15a4f12929366b58b3b438e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acaefed8fb15a4f12929366b58b3b438e">Add_External_Peripheral</a> (IExternal_Peripheral *peripheral)</td></tr>
+<tr class="memitem:acaefed8fb15a4f12929366b58b3b438e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acaefed8fb15a4f12929366b58b3b438e">Add_External_Peripheral</a> (<a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> *peripheral)</td></tr>
 <tr class="memdesc:acaefed8fb15a4f12929366b58b3b438e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hooks up an external peripheral to the GPIO manager.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#acaefed8fb15a4f12929366b58b3b438e">More...</a><br /></td></tr>
 <tr class="separator:acaefed8fb15a4f12929366b58b3b438e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a116ef53e902c5521278e011f527a4027"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html">CPin</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a116ef53e902c5521278e011f527a4027">Get_Pin</a> (std::size_t idx) const</td></tr>
@@ -295,13 +295,13 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aaca8d66de2f775ce6b1f209dca13f998"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html">CPin</a>, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a29c13c8158b226a226f9d5173c7bcbe2">Number_of_GPIO_Pins</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aaca8d66de2f775ce6b1f209dca13f998">m_pins</a></td></tr>
 <tr class="memdesc:aaca8d66de2f775ce6b1f209dca13f998"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pins.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aaca8d66de2f775ce6b1f209dca13f998">More...</a><br /></td></tr>
 <tr class="separator:aaca8d66de2f775ce6b1f209dca13f998"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="memItemLeft" align="right" valign="top">utils::CLogging_System &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a6c1effcbe75ccf50c7d9dedfe9b623b7">m_logging_system</a></td></tr>
+<tr class="memitem:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a6c1effcbe75ccf50c7d9dedfe9b623b7">m_logging_system</a></td></tr>
 <tr class="memdesc:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging system.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a6c1effcbe75ccf50c7d9dedfe9b623b7">More...</a><br /></td></tr>
 <tr class="separator:a6c1effcbe75ccf50c7d9dedfe9b623b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43ed044330df6283b46136be4ea6d001"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html">CInterrupt_Controller</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a43ed044330df6283b46136be4ea6d001">m_interrupt_controller</a></td></tr>
 <tr class="memdesc:a43ed044330df6283b46136be4ea6d001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt controller.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a43ed044330df6283b46136be4ea6d001">More...</a><br /></td></tr>
 <tr class="separator:a43ed044330df6283b46136be4ea6d001"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c7c68349ed743537a7803e7bc304538"><td class="memItemLeft" align="right" valign="top">std::vector&lt; IExternal_Peripheral * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2c7c68349ed743537a7803e7bc304538">m_external_peripherals</a></td></tr>
+<tr class="memitem:a2c7c68349ed743537a7803e7bc304538"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2c7c68349ed743537a7803e7bc304538">m_external_peripherals</a></td></tr>
 <tr class="memdesc:a2c7c68349ed743537a7803e7bc304538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of external peripherals.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2c7c68349ed743537a7803e7bc304538">More...</a><br /></td></tr>
 <tr class="separator:a2c7c68349ed743537a7803e7bc304538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -486,6 +486,12 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a9ecaa919171ea326f918ffd329cf4892_cgraph.svg" width="448" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -499,7 +505,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void zero_mate::peripheral::CGPIO_Manager::Add_External_Peripheral </td>
           <td>(</td>
-          <td class="paramtype">IExternal_Peripheral *&#160;</td>
+          <td class="paramtype"><a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> *&#160;</td>
           <td class="paramname"><em>peripheral</em></td><td>)</td>
           <td></td>
         </tr>
@@ -561,7 +567,7 @@ Private Attributes</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a4a4e9cf470ed6f7dbfb3ada75d35e47c_cgraph.svg" width="432" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a4a4e9cf470ed6f7dbfb3ada75d35e47c_cgraph.svg" width="972" height="268"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -838,6 +844,12 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p>Implements <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a627a2ceb458041ac41e2de52484c918f">zero_mate::peripheral::IPeripheral</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ac3edf689b30c39f2406fa6308fdeb2e9_cgraph.svg" width="942" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -948,6 +960,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ad29d57528b73baef90b0ca885a297e4d_cgraph.svg" width="931" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ad29d57528b73baef90b0ca885a297e4d_icgraph.svg" width="403" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
@@ -1044,6 +1062,12 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ad7c6aa486cf3b116ffae9f16eec64064_cgraph.svg" width="956" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ad7c6aa486cf3b116ffae9f16eec64064_icgraph.svg" width="428" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
@@ -1104,7 +1128,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ae93785da50eefb8a8cc21c1c59a32726_cgraph.svg" width="647" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_ae93785da50eefb8a8cc21c1c59a32726_cgraph.svg" width="956" height="348"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -1170,7 +1194,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a26aa957dbb7682447e4ebf9aa078c00c_cgraph.svg" width="890" height="340"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a26aa957dbb7682447e4ebf9aa078c00c_cgraph.svg" width="1199" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1187,7 +1211,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;IExternal_Peripheral*&gt; zero_mate::peripheral::CGPIO_Manager::m_external_peripherals</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a>*&gt; zero_mate::peripheral::CGPIO_Manager::m_external_peripherals</td>
         </tr>
       </table>
   </td>
@@ -1235,7 +1259,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">utils::CLogging_System&amp; zero_mate::peripheral::CGPIO_Manager::m_logging_system</td>
+          <td class="memname"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a>&amp; zero_mate::peripheral::CGPIO_Manager::m_logging_system</td>
         </tr>
       </table>
   </td>

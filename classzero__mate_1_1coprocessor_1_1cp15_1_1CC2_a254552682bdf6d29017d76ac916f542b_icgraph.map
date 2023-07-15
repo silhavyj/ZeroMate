@@ -1,0 +1,4 @@
+<map id="zero_mate::coprocessor::cp15::CC2::Get_Boundary_Type" name="zero_mate::coprocessor::cp15::CC2::Get_Boundary_Type">
+<area shape="rect" id="node1" title="Returns the set boundary type that determines the use of either TTB0 or TTB1." alt="" coords="248,5,480,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html#a62e92636b35bed43391605a1d9eb0593" title="Returns the boundary value that determines the use of either TTB0 or TTB1." alt="" coords="5,5,200,47"/>
+</map>

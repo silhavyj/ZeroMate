@@ -1,0 +1,5 @@
+<map id="zero_mate::arm1176jzf_s::mmu::CMMU::Verify_Access_Type" name="zero_mate::arm1176jzf_s::mmu::CMMU::Verify_Access_Type">
+<area shape="rect" id="node1" title="Verifies the access type." alt="" coords="535,5,709,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ab1413e798b9ac2d3bcdf521e7dfe7bdf" title="Verifies page access (calls a chain of functions that validate the access)." alt="" coords="312,5,487,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a7bc1002a8f1032547deee07589cbbb84" title="Converts a given virtual address into a physical address." alt="" coords="5,13,264,54"/>
+</map>

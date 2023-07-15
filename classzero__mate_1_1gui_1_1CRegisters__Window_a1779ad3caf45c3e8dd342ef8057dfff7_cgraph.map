@@ -1,0 +1,14 @@
+<map id="zero_mate::gui::CRegisters_Window::Render_Registers_Table" name="zero_mate::gui::CRegisters_Window::Render_Registers_Table">
+<area shape="rect" id="node1" title="Renders table with CPU registers of a given CPU mode." alt="" coords="5,152,248,193"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#acf66c6ff905975912dbf52133ddfeceb" title="Returns a reference the CPSR register of the current CPU mode." alt="" coords="297,5,507,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a22efcb34f3c1bd9f46f1f75771103ef9" title="Returns a const reference to a register of a particular CPU mode." alt="" coords="315,71,489,127"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#ae00681efcbc4adfcfde001a67c5baeca" title="Returns the value of the SPSR register of the current CPU mode." alt="" coords="297,152,507,193"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6fc387fa0b0dd040c4e2463606d933e4" title="Checks if the CPU mode passed in as a parameter supports the SPSR register or not." alt="" coords="797,203,971,259"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html#a5240e615ada1d612975e9339ae715f1e" title="Renders a raw integer value in a given format." alt="" coords="296,269,508,311"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a050dada520ca82a21874045815c596a8" title=" " alt="" coords="556,138,739,194"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="787,137,981,179"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="1029,93,1232,149"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="1031,173,1230,215"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="1280,68,1493,109"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="1289,133,1484,175"/>
+</map>

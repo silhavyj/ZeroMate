@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CCP15_Window::Render_Tab_Bar" name="zero_mate::gui::CCP15_Window::Render_Tab_Bar">
+<area shape="rect" id="node1" title="Renders tabs representing the primary registers of CP15." alt="" coords="223,5,415,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CCP15__Window.html#a02fdded272906e0bb3665c8b3aa03ba0" title="Renders the window (IGUI_Window interface)." alt="" coords="5,5,175,47"/>
+</map>

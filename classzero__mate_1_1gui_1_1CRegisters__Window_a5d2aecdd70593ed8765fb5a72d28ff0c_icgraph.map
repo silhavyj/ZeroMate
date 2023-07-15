@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CRegisters_Window::Check_If_CPU_Mode_Changes" name="zero_mate::gui::CRegisters_Window::Check_If_CPU_Mode_Changes">
+<area shape="rect" id="node1" title="Checks if the CPU mode has changed." alt="" coords="251,5,472,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html#a12beb19205052a340193be90b32e5717" title="Renders the windows (IGUI_Window interface)." alt="" coords="5,13,203,54"/>
+</map>

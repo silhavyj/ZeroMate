@@ -1,0 +1,5 @@
+<map id="zero_mate::coprocessor::cp15::CC2::Get_TTB_Address" name="zero_mate::coprocessor::cp15::CC2::Get_TTB_Address">
+<area shape="rect" id="node1" title="Returns the physical address of a given page table." alt="" coords="533,13,751,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a2af0846c0e594495eeeb2ec51717dfa7" title="Fetches the first level page tables (tbbr0, tbbr1) from the RAM." alt="" coords="312,5,485,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a7bc1002a8f1032547deee07589cbbb84" title="Converts a given virtual address into a physical address." alt="" coords="5,13,264,54"/>
+</map>

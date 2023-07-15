@@ -1,0 +1,22 @@
+<map id="src/core/arm1176jzf_s/mmu/page_entry.hpp" name="src/core/arm1176jzf_s/mmu/page_entry.hpp">
+<area shape="rect" id="node1" title="This file defines a page table entry." alt="" coords="464,5,641,47"/>
+<area shape="rect" id="node2" href="$page__entry_8cpp.html" title="This file implements a page table entry." alt="" coords="365,95,541,136"/>
+<area shape="rect" id="node3" href="$page__table_8hpp.html" title="This file defines a page table." alt="" coords="565,95,743,136"/>
+<area shape="rect" id="node4" href="$mmu_8hpp.html" title="This file defines the MMU (memory management unit) of the CPU." alt="" coords="484,184,635,225"/>
+<area shape="rect" id="node20" href="$page__table_8cpp.html" title="This file implements a page table." alt="" coords="659,184,836,225"/>
+<area shape="rect" id="node5" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="484,273,635,315"/>
+<area shape="rect" id="node7" href="$soc_8hpp.html" title=" " alt="" coords="135,370,261,397"/>
+<area shape="rect" id="node19" href="$mmu_8cpp.html" title="This file implements the MMU (memory management unit) of the CPU." alt="" coords="659,273,809,315"/>
+<area shape="rect" id="node6" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="659,363,809,404"/>
+<area shape="rect" id="node11" href="$control__window_8hpp.html" title="This file defines a window that allows the user to control CPU execution." alt="" coords="833,363,1008,404"/>
+<area shape="rect" id="node13" href="$registers__window_8hpp.html" title="This file defines a window that displays the contents of all CPU registers." alt="" coords="1033,363,1219,404"/>
+<area shape="rect" id="node15" href="$source__code__window_8hpp.html" title="This file defines a window that displays loaded ELF files (disassembled instructions of the source co..." alt="" coords="286,363,459,404"/>
+<area shape="rect" id="node17" href="$top__bar__menu_8hpp.html" title=" " alt="" coords="484,363,635,404"/>
+<area shape="rect" id="node8" href="$soc_8cpp.html" title=" " alt="" coords="135,459,261,486"/>
+<area shape="rect" id="node9" href="$gui_8cpp.html" title="This file implements the main GUI entry function that takes care of creating and rendering all window..." alt="" coords="493,459,609,486"/>
+<area shape="rect" id="node10" href="$main_8cpp.html" title="This file defines and implements the main function of the application." alt="" coords="5,459,111,486"/>
+<area shape="rect" id="node12" href="$control__window_8cpp.html" title="This file implements a window that allows the user to control CPU execution." alt="" coords="833,452,1008,493"/>
+<area shape="rect" id="node14" href="$registers__window_8cpp.html" title="This file implements a window that displays the contents of all CPU registers." alt="" coords="1033,452,1219,493"/>
+<area shape="rect" id="node16" href="$source__code__window_8cpp.html" title="This file implements a window that displays loaded ELF files (disassembled instructions of the source..." alt="" coords="286,452,459,493"/>
+<area shape="rect" id="node18" href="$top__bar__menu_8cpp.html" title=" " alt="" coords="633,452,784,493"/>
+</map>

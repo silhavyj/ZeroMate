@@ -1,8 +1,0 @@
-<map id="zero_mate::utils::elf::Load_Kernel" name="zero_mate::utils::elf::Load_Kernel">
-<area shape="rect" id="node1" title="Loads a given ELF file (kernel) into the memory." alt="" coords="917,46,1069,87"/>
-<area shape="rect" id="node2" href="$namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595" title="Reloads the same kernel that was loaded using the Load_Kernel function." alt="" coords="714,13,866,54"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CFile__Window.html#affaac4b63e2d16566e84c333a0f48468" title=" " alt="" coords="711,78,869,119"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a37a3c37d6d92c239742abf75b3aebec9" title=" " alt="" coords="472,13,663,54"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a9be0d8c611ece954a13f3763744b074f" title=" " alt="" coords="236,5,424,61"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a" title=" " alt="" coords="5,13,188,54"/>
-</map>

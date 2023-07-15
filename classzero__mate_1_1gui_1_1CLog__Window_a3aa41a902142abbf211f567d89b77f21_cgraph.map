@@ -1,5 +1,5 @@
 <map id="zero_mate::gui::CLog_Window::CLog_Window" name="zero_mate::gui::CLog_Window::CLog_Window">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,184,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#aab3c1c25eedfe7230d905ae5355265c0" title=" " alt="" coords="232,5,391,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#af165b3edecdde5d0ea7a10957849921b" title=" " alt="" coords="439,5,625,47"/>
+<area shape="rect" id="node1" title="Creates an instance of the class." alt="" coords="5,5,184,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#aab3c1c25eedfe7230d905ae5355265c0" title="Clears all log messages." alt="" coords="232,5,391,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html#af165b3edecdde5d0ea7a10957849921b" title="Clears the circular buffer (deletes all log messages)." alt="" coords="439,5,625,47"/>
 </map>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['peripheral_5ft_1410',['Peripheral_t',['../classzero__mate_1_1CBus.html#a6d35256fc0205e260516148a1780d0dc',1,'zero_mate::CBus']]],
-  ['peripherals_5ft_1411',['Peripherals_t',['../classzero__mate_1_1CBus.html#a5b389ea9950ca078a7d07c5425f60f12',1,'zero_mate::CBus']]]
+  ['peripheral_5ft_1893',['Peripheral_t',['../classzero__mate_1_1CBus.html#a6d35256fc0205e260516148a1780d0dc',1,'zero_mate::CBus']]],
+  ['peripherals_5ft_1894',['Peripherals_t',['../classzero__mate_1_1CBus.html#a5b389ea9950ca078a7d07c5425f60f12',1,'zero_mate::CBus']]]
 ];

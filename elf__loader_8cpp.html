@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -95,17 +95,16 @@ $(document).ready(function(){initNavTree('elf__loader_8cpp.html',''); initResiza
 
 <p>This file implements the functionality of an ELF loader defined in <a class="el" href="elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader.">elf_loader.hpp</a>.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;fmt/format.h&gt;</code><br />
-<code>#include &lt;elfio/elfio.hpp&gt;</code><br />
-<code>#include &lt;capstone/capstone.h&gt;</code><br />
-<code>#include &lt;llvm/Demangle/Demangle.h&gt;</code><br />
-<code>#include &quot;zero_mate/utils/singleton.hpp&quot;</code><br />
+<div class="textblock"><code>#include &quot;fmt/format.h&quot;</code><br />
+<code>#include &quot;elfio/elfio.hpp&quot;</code><br />
+<code>#include &quot;capstone/capstone.h&quot;</code><br />
+<code>#include &quot;llvm/Demangle/Demangle.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="singleton_8hpp_source.html">zero_mate/utils/singleton.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="elf__loader_8hpp_source.html">elf_loader.hpp</a>&quot;</code><br />
-<code>#include &quot;zero_mate/utils/logger.hpp&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for elf_loader.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="elf__loader_8cpp__incl.svg" width="1258" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="elf__loader_8cpp__incl.svg" width="1790" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -120,12 +119,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a95a9f666929811b558bcb9da0969972a"><td class="memItemLeft" align="right" valign="top">TStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">zero_mate::utils::elf::Load_Kernel</a> (CBus &amp;bus, const char *filename)</td></tr>
-<tr class="memdesc:a95a9f666929811b558bcb9da0969972a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a given ELF file (kernel) into the memory.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a">More...</a><br /></td></tr>
-<tr class="separator:a95a9f666929811b558bcb9da0969972a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7af51862dcfbf3eda33e79e06f610595"><td class="memItemLeft" align="right" valign="top">TStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595">zero_mate::utils::elf::Reload_Kernel</a> (CBus &amp;bus)</td></tr>
-<tr class="memdesc:a7af51862dcfbf3eda33e79e06f610595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reloads the same kernel that was loaded using the <a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a95a9f666929811b558bcb9da0969972a" title="Loads a given ELF file (kernel) into the memory.">Load_Kernel</a> function.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a7af51862dcfbf3eda33e79e06f610595">More...</a><br /></td></tr>
-<tr class="separator:a7af51862dcfbf3eda33e79e06f610595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f6c82c3b8cd3f725d004c7b9022d69a"><td class="memItemLeft" align="right" valign="top">TStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1utils_1_1elf.html#a9f6c82c3b8cd3f725d004c7b9022d69a">zero_mate::utils::elf::Load_ELF</a> (CBus &amp;bus, const char *filename, bool kernel=true)</td></tr>
+<tr class="memdesc:a9f6c82c3b8cd3f725d004c7b9022d69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a given ELF file (kernel) into the memory.  <a href="namespacezero__mate_1_1utils_1_1elf.html#a9f6c82c3b8cd3f725d004c7b9022d69a">More...</a><br /></td></tr>
+<tr class="separator:a9f6c82c3b8cd3f725d004c7b9022d69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file implements the functionality of an ELF loader defined in <a class="el" href="elf__loader_8hpp.html" title="This file defines the functionality of an ELF loader.">elf_loader.hpp</a>. </p>

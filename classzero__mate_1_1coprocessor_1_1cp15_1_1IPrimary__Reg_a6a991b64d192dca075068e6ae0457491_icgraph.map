@@ -1,0 +1,4 @@
+<map id="zero_mate::coprocessor::cp15::IPrimary_Reg::Register_Exists" name="zero_mate::coprocessor::cp15::IPrimary_Reg::Register_Exists">
+<area shape="rect" id="node1" title="Checks whether a register addressed by a secondary register index and op2 exists or not." alt="" coords="231,5,408,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a87a20ccf36f790af24155b35590c780c" title="Returns a reference to the register addressed by a secondary register index and op2." alt="" coords="5,5,183,61"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="zero_mate::coprocessor::cp15::CC2::Is_TTB_Inner_Cacheable" name="zero_mate::coprocessor::cp15::CC2::Is_TTB_Inner_Cacheable">
+<area shape="rect" id="node1" title="Returns information about whether a given translation table is inner cacheable or not." alt="" coords="5,5,192,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html#ac31765da4a10567be0232abedeff1b75" title="Extracts bits determined by a given mask from a given secondary register." alt="" coords="240,5,421,61"/>
+</map>

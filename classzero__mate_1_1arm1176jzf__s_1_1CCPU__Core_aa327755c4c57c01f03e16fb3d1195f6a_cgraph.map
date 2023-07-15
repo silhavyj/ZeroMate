@@ -1,9 +1,17 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Core::Fetch_Instruction" name="zero_mate::arm1176jzf_s::CCPU_Core::Fetch_Instruction">
-<area shape="rect" id="node1" title="Fetches the next instruction." alt="" coords="5,259,179,315"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e6ef006a36e1adb56abd3ecc6481be" title="Executes a CPU exception." alt="" coords="227,221,403,277"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a423eacd01e574e782a2b7cf51f28c56c" title="Returns a reference to the PC register (r15)" alt="" coords="465,342,638,383"/>
+<area shape="rect" id="node1" title="Fetches the next instruction." alt="" coords="5,371,179,427"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e6ef006a36e1adb56abd3ecc6481be" title="Executes a CPU exception." alt="" coords="227,301,403,357"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a423eacd01e574e782a2b7cf51f28c56c" title="Returns a reference to the PC register (r15)" alt="" coords="465,487,638,529"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ab18a4a4b6a54029ccf141784cfe9c737" title="Returns the mode into which the CPU will switch when the exception is thrown." alt="" coords="451,5,652,61"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ae87c33c76ed6571b2408fd293710b6c4" title="Returns the address of the handler of the exception." alt="" coords="454,86,649,157"/>
 <area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aabb81de8a3e09534245ef3851a31c3c0" title="Returns the type of the exception." alt="" coords="465,181,638,237"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5" title="Sets the mode of the CPU." alt="" coords="465,261,638,317"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad6dadfc114c7d0d6b43496f9f5651be7" title="Checks if the IVT (interrupt vector table) has been reallocated to the higher address (0xFFFF0000)." alt="" coords="451,261,652,317"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5" title="Sets the mode of the CPU." alt="" coords="465,341,638,397"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" title="Logs a warning message via all registered loggers." alt="" coords="454,422,649,463"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#ac6b22a989b3f58443f36e32999150eb6" title=" " alt="" coords="713,261,890,317"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a0780610d57b65a633a1776be372116a6" title="Checks whether a flag is set in a given register." alt="" coords="969,261,1146,317"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="700,377,903,433"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="702,458,901,499"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="951,363,1164,405"/>
+<area shape="rect" id="node14" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="960,429,1155,470"/>
 </map>

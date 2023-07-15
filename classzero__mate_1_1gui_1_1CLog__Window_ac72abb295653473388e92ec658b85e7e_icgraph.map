@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CLog_Window::Render_Message_Area" name="zero_mate::gui::CLog_Window::Render_Message_Area">
+<area shape="rect" id="node1" title="Renders the message scrolling area." alt="" coords="212,5,448,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a679fe192aa1335396f06e63678bb71d5" title="Renders the window (IGUI_Window interface)." alt="" coords="5,5,164,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="zero_mate::gui::CLog_Window::Render_Window_Options" name="zero_mate::gui::CLog_Window::Render_Window_Options">
+<area shape="rect" id="node1" title="Renders a popup menu (options)." alt="" coords="452,5,645,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CLog__Window.html#ab5d91eb4a2187a347f7c4a9ba84a527d" title="Renders the top bar of the window (the options, clear button, and the filter)" alt="" coords="212,13,404,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CLog__Window.html#a679fe192aa1335396f06e63678bb71d5" title="Renders the window (IGUI_Window interface)." alt="" coords="5,13,164,54"/>
+</map>

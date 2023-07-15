@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::mmu::CMMU::TPage_Table_Record" name="zero_mate::arm1176jzf_s::mmu::CMMU::TPage_Table_Record">
+<area shape="rect" id="node1" title="Helper structure that is used when accessing different memory pages." alt="" coords="5,109,181,165"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Entry.html" title="This class represents a single page table entry." alt="" coords="7,5,180,47"/>
+</map>

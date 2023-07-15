@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.0.1</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -93,14 +93,10 @@ $(document).ready(function(){initNavTree('gui_8hpp.html',''); initResizable(); }
 <div class="title">gui.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for gui.hpp:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gui_8hpp__incl.svg" width="128" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-</div><div class="textblock"><div class="dynheader">
+
+<p>This file defines the main GUI entry function that takes care of creating and rendering all windows.  
+<a href="#details">More...</a></p>
+<div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="gui_8hpp__dep__incl.svg" width="256" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
@@ -121,16 +117,26 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:af6a45e4660638d498cd499f94ddaad6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1gui.html#af6a45e4660638d498cd499f94ddaad6f">zero_mate::gui::Main_GUI</a> (int argc, const char *argv[])</td></tr>
+<tr class="memdesc:af6a45e4660638d498cd499f94ddaad6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main entry point of the GUI of the application.  <a href="namespacezero__mate_1_1gui.html#af6a45e4660638d498cd499f94ddaad6f">More...</a><br /></td></tr>
 <tr class="separator:af6a45e4660638d498cd499f94ddaad6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a91e188391aceeae7f5baabab75a0689f"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1gui_1_1config.html#a91e188391aceeae7f5baabab75a0689f">zero_mate::gui::config::Font_Path</a> = &quot;fonts/Cousine-Regular.ttf&quot;</td></tr>
+<tr class="memdesc:a91e188391aceeae7f5baabab75a0689f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the font used by the application.  <a href="namespacezero__mate_1_1gui_1_1config.html#a91e188391aceeae7f5baabab75a0689f">More...</a><br /></td></tr>
 <tr class="separator:a91e188391aceeae7f5baabab75a0689f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c2f9c6c64b1802a2a93e7da4bc7a16a"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1gui_1_1config.html#a7c2f9c6c64b1802a2a93e7da4bc7a16a">zero_mate::gui::config::Icons_Path</a> = &quot;icons/fa-solid-900.ttf&quot;</td></tr>
+<tr class="memdesc:a7c2f9c6c64b1802a2a93e7da4bc7a16a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the icons used in the GUI of the application.  <a href="namespacezero__mate_1_1gui_1_1config.html#a7c2f9c6c64b1802a2a93e7da4bc7a16a">More...</a><br /></td></tr>
 <tr class="separator:a7c2f9c6c64b1802a2a93e7da4bc7a16a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af427d7a82ba72d9aaaede4da9b8d4ce1"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1gui_1_1config.html#af427d7a82ba72d9aaaede4da9b8d4ce1">zero_mate::gui::config::Window_Icon_Path</a> = &quot;logos/logo.png&quot;</td></tr>
+<tr class="memdesc:af427d7a82ba72d9aaaede4da9b8d4ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the logo of the application.  <a href="namespacezero__mate_1_1gui_1_1config.html#af427d7a82ba72d9aaaede4da9b8d4ce1">More...</a><br /></td></tr>
+<tr class="separator:af427d7a82ba72d9aaaede4da9b8d4ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file defines the main GUI entry function that takes care of creating and rendering all windows. </p>
+<dl class="section date"><dt>Date</dt><dd>05. 07. 2023 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Jakub Silhavy (<a href="#" onclick="location.href='mai'+'lto:'+'jak'+'ub'+'.si'+'lh'+'avy'+'.c'+'z@g'+'ma'+'il.'+'co'+'m'; return false;">jakub<span style="display: none;">.nosp@m.</span>.sil<span style="display: none;">.nosp@m.</span>havy.<span style="display: none;">.nosp@m.</span>cz@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a>) </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

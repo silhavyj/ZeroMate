@@ -7,5 +7,5 @@ var namespacezero__mate =
     [ "soc", "namespacezero__mate_1_1soc.html", "namespacezero__mate_1_1soc" ],
     [ "utils", "namespacezero__mate_1_1utils.html", "namespacezero__mate_1_1utils" ],
     [ "CBus", "classzero__mate_1_1CBus.html", "classzero__mate_1_1CBus" ],
-    [ "IGUI_Window", "classzero__mate_1_1IGUI__Window.html", "classzero__mate_1_1IGUI__Window" ]
+    [ "IExternal_Peripheral", "classzero__mate_1_1IExternal__Peripheral.html", "classzero__mate_1_1IExternal__Peripheral" ]
 ];

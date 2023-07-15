@@ -1,0 +1,9 @@
+<map id="zero_mate::gui::CGPIO_Window::Render_GPIO_Pins_Table" name="zero_mate::gui::CGPIO_Window::Render_GPIO_Pins_Table">
+<area shape="rect" id="node1" title="Renders a table with all GPIO pins." alt="" coords="5,165,179,221"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CGPIO__Window.html#aeeb6f57b70b2367e666550cb69bd5d13" title="Renders information about a single GPIO pin (table row)." alt="" coords="227,173,427,214"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#acf6b92ed8408ada497c28c405af395d6" title="Returns the current function of the pin." alt="" coords="476,5,648,61"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CGPIO__Window.html#a0ee3deaa24f122b1b4c9bb4fc5814953" title="Converts an interrupt index into an enumeration along with its string representation." alt="" coords="475,85,649,141"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ab910baeb4caa3129739eccf087d06dd4" title="Returns the current state of the pin." alt="" coords="476,165,648,221"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a0536631c62e1aa7a96404501768f31a6" title="Checks if there is a pending interrupt on the pin." alt="" coords="476,245,648,301"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a9330f754330cb20d555969ec55c0a679" title="Checks whether or not an interrupt is enabled on the pin." alt="" coords="476,325,648,381"/>
+</map>

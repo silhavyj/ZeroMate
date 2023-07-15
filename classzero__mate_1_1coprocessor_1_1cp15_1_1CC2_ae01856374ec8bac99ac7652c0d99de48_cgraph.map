@@ -1,0 +1,4 @@
+<map id="zero_mate::coprocessor::cp15::CC2::Get_TTB_Address" name="zero_mate::coprocessor::cp15::CC2::Get_TTB_Address">
+<area shape="rect" id="node1" title="Returns the physical address of a given page table." alt="" coords="5,13,223,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html#ac31765da4a10567be0232abedeff1b75" title="Extracts bits determined by a given mask from a given secondary register." alt="" coords="271,5,452,61"/>
+</map>

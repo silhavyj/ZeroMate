@@ -1,7 +1,15 @@
 <map id="zero_mate::gui::CSource_Code_Window::Render" name="zero_mate::gui::CSource_Code_Window::Render">
-<area shape="rect" id="node1" title=" " alt="" coords="5,93,185,134"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#acdb10e47501c4cf6af2c50383388cc4a" title=" " alt="" coords="233,93,491,134"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a8ab01667cca3406c621027962c2d22bd" title=" " alt="" coords="547,5,727,61"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a9f6a5501665b1b3c3883c88660873d09" title=" " alt="" coords="543,85,730,141"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#afefe1191e405b0ad44c81b54ff63ad97" title=" " alt="" coords="539,166,735,207"/>
+<area shape="rect" id="node1" title="Renders the window (IGUI_Window interface)." alt="" coords="5,120,185,161"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#abc0903527899c5a5a96df03979eab006" title="Removes all tabs (ELF source files) which the user has closed." alt="" coords="235,87,504,128"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a1f2a59252814f5b499c09bf2959741ad" title="Renders the disassembled contents of all ELF loaded into the emulator." alt="" coords="233,152,505,193"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a2088711954d53ac5f57e4a085770590f" title="Renders a single tab (ELF source file)." alt="" coords="553,152,756,193"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#af9afd629a519bacd1ce89faf8bbcdb9c" title="Renders a block of code (a single function/method)." alt="" coords="804,152,1061,193"/>
+<area shape="rect" id="node6" href="$namespacezero__mate_1_1gui_1_1color.html#a60970f5b5a08721617863b63cc7cc292" title="Assigns a string its corresponding color based on its hash value." alt="" coords="1147,5,1342,47"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a8ab01667cca3406c621027962c2d22bd" title="Extracts the class name from a given label (function name)." alt="" coords="1155,71,1335,127"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#ad8c35af3bc3c8881eeca1de82afc6b35" title="Renders a table that containing disassembled instructions." alt="" coords="1117,152,1372,193"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#ad485f4213e9fff6ac5327683e2e6abc7" title="Checks if the block of code which is currently being rendered should be highlighted or not." alt="" coords="1139,218,1351,274"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a0fa8c26175b9585a867f343c1148d258" title="Skips a block of code (function) which is collapsed and therefore not visible to the user." alt="" coords="1109,299,1380,340"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a92af51ccb5ebca752cddaac27c38f1f8" title="Renders the body of a source code table." alt="" coords="1428,116,1683,157"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#aa46c591d1c9bb994ccee55d371919e37" title="Renders table headings (breakpoint, address, opcode, disassembly)" alt="" coords="1448,182,1663,238"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html#a854994af8a4bb90df17e2e24c8d7a3a5" title="Renders a single breakpoint." alt="" coords="1731,116,1983,157"/>
 </map>

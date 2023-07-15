@@ -1,5 +1,5 @@
 <map id="zero_mate::gui::CRegisters_Window" name="zero_mate::gui::CRegisters_Window">
-<area shape="rect" id="node1" title=" " alt="" coords="101,109,299,151"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1IGUI__Window.html" title=" " alt="" coords="5,13,192,39"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" title="This class represents the context (registers) of the CPU." alt="" coords="216,5,389,47"/>
+<area shape="rect" id="node1" title="This class represents the window that displays the contents of all CPU registers." alt="" coords="389,39,587,80"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows." alt="" coords="49,5,204,47"/>
+<area shape="rect" id="node3" href="$structzero__mate_1_1gui_1_1CRegisters__Window_1_1TCPU__Mode__Tab__States.html" title="Structure containing information about what tab (CPU mode) is currently selected." alt="" coords="5,71,248,112"/>
 </map>

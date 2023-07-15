@@ -1,4 +1,4 @@
 <map id="zero_mate::gui::CControl_Window" name="zero_mate::gui::CControl_Window">
-<area shape="rect" id="node1" title=" " alt="" coords="7,80,190,121"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1IGUI__Window.html" title=" " alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node1" title="This class represents a window that allows the user to control CPU execution." alt="" coords="5,95,188,136"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows." alt="" coords="19,5,174,47"/>
 </map>

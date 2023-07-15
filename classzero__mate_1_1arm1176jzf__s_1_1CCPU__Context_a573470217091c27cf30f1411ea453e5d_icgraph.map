@@ -1,4 +1,7 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Context::Is_In_Privileged_Mode" name="zero_mate::arm1176jzf_s::CCPU_Context::Is_In_Privileged_Mode">
-<area shape="rect" id="node1" title="Checks if the CPU is in a privileged mode." alt="" coords="229,5,403,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acd8902811a86afabf464f121d58628ee" title="Executes a CPS instruction." alt="" coords="5,13,181,54"/>
+<area shape="rect" id="node1" title="Checks if the CPU is in a privileged mode." alt="" coords="759,35,932,91"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acd8902811a86afabf464f121d58628ee" title="Executes a CPS instruction." alt="" coords="535,5,711,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a0e32ece3d5ac208c69fa5573fcea3205" title="Verifies access privileges when accessing a page (virtual address)." alt="" coords="535,71,710,127"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ab1413e798b9ac2d3bcdf521e7dfe7bdf" title="Verifies page access (calls a chain of functions that validate the access)." alt="" coords="312,71,487,127"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a7bc1002a8f1032547deee07589cbbb84" title="Converts a given virtual address into a physical address." alt="" coords="5,79,264,120"/>
 </map>
