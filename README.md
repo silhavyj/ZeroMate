@@ -2,7 +2,7 @@
 
 *Raspberry Pi Zero Emulator*
 
-![version](https://img.shields.io/badge/version-1.0.1-blue)
+[![version](https://img.shields.io/badge/version-1.0.1-blue)](https://github.com/silhavyj/ZeroMate/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Doxygen Documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://silhavyj.github.io/ZeroMate/)
 
@@ -18,11 +18,15 @@ ZeroMate is an educational Raspberry Pi Zero emulator designed specifically as a
 
 ## Installation
 
-The emulator was tested on both Windows and Linux using the MSVC and gcc compiler respectively. You can download a ready-to-use executable for both platforms from the latest [release](https://github.com/silhavyj/ZeroMate/releases). Alternatively, if you are brave enough, you can attempt to [build](docs/build.md) it yourself from the source code.
+The emulator was tested on both Windows and Linux using the MSVC and GCC compiler respectively. You can download a ready-to-use executable for both platforms from the latest [release](https://github.com/silhavyj/ZeroMate/releases). Alternatively, if you are brave enough, you can attempt to [build](docs/build.md) it yourself from the source code.
+
+## User manual
+
+Once the emulator is successfully built or downloaded, the [user manual](docs/user_manual.md) can be used as a brief description of how the application is intended to be used.
 
 ## Examples 
 
-The emulator comes with a couple of prebuilt [examples](examples/README.md) that you are encouraged to try out.
+The emulator comes with a couple of prebuilt [examples](examples/README.md) that you are encouraged to try out to get an idea of what the emulator is capable of.
 
 ## Capabilities
 
@@ -40,7 +44,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |TRNG (random number generator)|✅||
 |CPU exceptions|✅||
 |CPU modes (+ viewing of all banked CPU registers)|✅||
-|Paging|✅||
+|Paging|⏳|Nested level paging is not supported yet.|
 |Support for external peripherals|✅|External peripherals are loaded as shared libraries at runtime. For instance, an LED, DIP switch, 7-segment display, etc.|
 |Loading of multiple ELF files (kernel + separately compiled processes)|✅||
 |Floating point unit (FPU)|❌||
