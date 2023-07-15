@@ -2,7 +2,7 @@
 
 *Raspberry Pi Zero Emulator*
 
-[![version](https://img.shields.io/badge/version-1.0.1-blue)](https://github.com/silhavyj/ZeroMate/releases)
+[![version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/silhavyj/ZeroMate/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Doxygen Documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://silhavyj.github.io/ZeroMate/)
 
@@ -44,7 +44,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |TRNG (random number generator)|✅||
 |CPU exceptions|✅||
 |CPU modes (+ viewing of all banked CPU registers)|✅||
-|Paging|⏳|Nested level paging is not supported yet.|
+|Paging|⏳|Nested-level paging is not supported yet.|
 |Support for external peripherals|✅|External peripherals are loaded as shared libraries at runtime. For instance, an LED, DIP switch, 7-segment display, etc.|
 |Loading of multiple ELF files (kernel + separately compiled processes)|✅||
 |Floating point unit (FPU)|❌||
