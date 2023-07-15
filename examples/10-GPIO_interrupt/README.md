@@ -6,7 +6,7 @@ This example demonstrates the use of external GPIO interrupts. The kernel sets t
 
 ## External peripherals
 
-A dip switch can alo be used instead of a button. The difference is that a button needs to be held down for its output to be active whereas a dip switch remains in its last position all by itself.
+A dip switch can also be used instead of a regular button. The difference is that a button needs to be held down for its output to be active, whereas a dip switch remains in its last position all by itself.
 
 Here is the content of [peripherals.json](../../peripherals.json) used in this example. It connects a button and a dip switch to the same GPIO pin (pin 5). It also connects an LED to GPIO pin 47.
 

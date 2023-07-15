@@ -2,7 +2,7 @@
 
 ## Description
 
-An ARM timer interrupt should be cleared once it has been handled. In this example, it is intentionally not clear in order to demonstrate what happens if it is forgotten to do so. 
+An ARM timer interrupt should be cleared once it has been handled. In this example, it is intentionally not being cleared in order to demonstrate what happens if it is forgotten to do so. 
 
 ```c++
 void CTimer::IRQ_Callback()
@@ -16,11 +16,11 @@ void CTimer::IRQ_Callback()
 }
 ```
 
-After an interrupt has been handled, it checks whether there is another pending interrupt or not, and since the interrupt is not cleared, the CPU jumps back into the exception handler, effectively doing nothing but executing the same routine over and over again.
+After an interrupt has been handled, the CPU checks whether there is another pending interrupt or not, and since the interrupt has not been cleared, the CPU jumps back into the exception handler, effectively doing nothing but executing the same routine over and over again.
 
 ## Demo
 
-This can be demonstrating by setting a breakpoint at the very last instruction of the `kernel_main` function (infinite loop). If the interrupt is not cleared, once the first interrupt is triggered, the execution will never return back to the `kernel_main` function.
+This can be demonstrated by setting a breakpoint at the very last instruction of the `kernel_main` function (infinite loop). If the interrupt is not cleared, once the first interrupt is triggered, the execution will never return back to the `kernel_main` function.
 
 ### Interrupt is NOT cleared
 

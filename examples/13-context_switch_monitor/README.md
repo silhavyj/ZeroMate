@@ -2,11 +2,11 @@
 
 ## Description
 
-This examples showcases the use of context switching, which an essential part in any operating system. The kernel creates four processes that share their time on the CPU. Whenever its is time to switch to another process (determined by the ARM timer), the CPU stores the context of the current process and loads the context of the next one.
+This examples showcases the use of context switching, which an essential part of any operating system. The kernel creates four processes that share the time on the CPU. Whenever it is time to switch to another process (determined by the ARM timer), the CPU stores the context of the current process and loads the context of the next one.
 
 ### Process
 
-Onces a process is bootstrapped, it starts printing the its index number (e. g. 1) into the debug monitor.
+Once a process is bootstrapped, it starts printing its index number (e.g. 1) to the debug monitor.
 
 ```c++
 extern "C" void Process_1()

@@ -1,8 +1,8 @@
 # 14 - filesystem monitor
 
-This examples tests the implementation of an in-memory filesystem, which is used as an abstraction between resources and user [processes](kernel/src/test_processes.cpp).
+This examples tests the implementation of an in-memory filesystem, which is used as an abstraction between system resources and user [processes](kernel/src/test_processes.cpp).
 
-It prints out information regarding the creation of the filesystem into the debug monitor. Then, it creates three processes that take advantage of the filesystem to access and toggle GPIO pins. The fourth process prints the string "Hello!" into the debug monitor.
+It prints out information regarding the creation of the filesystem to the debug monitor. Then, it creates three processes that take advantage of the filesystem to access and toggle GPIO pins. The fourth process prints the string "Hello!" to the debug monitor.
 
 ## External peripherals
 
