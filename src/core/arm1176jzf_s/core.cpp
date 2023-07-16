@@ -352,16 +352,17 @@ namespace zero_mate::arm1176jzf_s
                     break;
             }
 
-            // Update all system clock listeners about how many clock cycles it took to execute the instruction.
-            Update_Cycle_Listeners();
-
             // Check if there is a pending IRQ.
+            // TODO make sure both SWI and IRQ get thrown...
             Check_For_Pending_IRQ();
         }
         catch (const exceptions::CCPU_Exception& ex)
         {
             Execute_Exception(ex);
         }
+
+        // Update all system clock listeners about how many clock cycles it took to execute the instruction.
+        Update_Cycle_Listeners();
     }
 
     void CCPU_Core::Update_Cycle_Listeners()
