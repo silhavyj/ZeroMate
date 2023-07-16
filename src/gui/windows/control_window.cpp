@@ -58,6 +58,20 @@ namespace zero_mate::gui
     {
     }
 
+    CControl_Window::~CControl_Window()
+    {
+        if (m_cpu_running)
+        {
+            // Terminate the execution thread.
+            m_stop_cpu_thread = true;
+
+            // Wait for the CPU (execution thread) to stop.
+            while (m_cpu_running)
+            {
+            }
+        }
+    }
+
     void CControl_Window::Render()
     {
         // Render the window.

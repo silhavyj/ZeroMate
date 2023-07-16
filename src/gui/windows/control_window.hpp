@@ -46,6 +46,13 @@ namespace zero_mate::gui
                                  const std::string& kernel_filename);
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Deletes the object from memory.
+        ///
+        /// Before the object gets deleted, it waits for the CPU execution thread to finish.
+        // -------------------------------------------------------------------------------------------------------------
+        ~CControl_Window() override;
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Renders the window (IGUI_Window interface).
         // -------------------------------------------------------------------------------------------------------------
         void Render() override;
