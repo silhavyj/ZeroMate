@@ -60,6 +60,7 @@ namespace zero_mate::gui
 
     CControl_Window::~CControl_Window()
     {
+        // Is the CPU execution thread still running?
         if (m_cpu_running)
         {
             // Terminate the execution thread.
