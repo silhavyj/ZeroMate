@@ -53,7 +53,7 @@ extern "C" int _kernel_main(void)
     // sProcessMgr.Create_Process(__oled_task, __oled_task_len, false);
     sProcessMgr.Create_Process(__logger_task, __logger_task_len, false);
     sProcessMgr.Create_Process(__counter_task, __counter_task_len, false);
-    // sProcessMgr.Create_Process(__tilt_task, __tilt_task_len, false);
+    sProcessMgr.Create_Process(__tilt_task, __tilt_task_len, false);
 
     // zatim zakazeme IRQ casovace
     sInterruptCtl.Disable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);

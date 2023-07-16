@@ -31,7 +31,7 @@ int main(int argc, char** argv)
 
     while (true)
     {
-        wait(tiltsensor_file, 0x800);
+        // wait(tiltsensor_file, 8);
 
         // "debounce" - tilt senzor bude chvili flappovat mezi vysokou a nizkou urovni
         // sleep(0x100, Deadline_Unchanged);
@@ -51,7 +51,7 @@ int main(int argc, char** argv)
             oldstate = state;
         }
 
-        sleep(0x1000, Indefinite /*0x100*/);
+        sleep(10, Indefinite /*0x100*/);
     }
 
     // TODO zavrit PWM
