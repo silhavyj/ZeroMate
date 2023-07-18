@@ -352,9 +352,6 @@ namespace zero_mate::arm1176jzf_s
                     break;
             }
 
-            // Update all system clock listeners about how many clock cycles it took to execute the instruction.
-            Update_Cycle_Listeners();
-
             // Check if there is a pending IRQ.
             Check_For_Pending_IRQ();
         }
@@ -362,6 +359,9 @@ namespace zero_mate::arm1176jzf_s
         {
             Execute_Exception(ex);
         }
+
+        // Update all system clock listeners about how many clock cycles it took to execute the instruction.
+        Update_Cycle_Listeners();
     }
 
     void CCPU_Core::Update_Cycle_Listeners()
@@ -851,7 +851,7 @@ namespace zero_mate::arm1176jzf_s
                 // Something went wrong if the execution gets here.
                 // clang-format off
                 m_logging_system.Warning("Only unsigned halfwords should be used "
-"                                         when performing a halfword data write");
+                                         "when performing a halfword data write");
                 // clang-format on
                 break;
         }

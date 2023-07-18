@@ -10,6 +10,7 @@
 
 // STL imports (excluded from Doxygen)
 /// \cond
+#include <atomic>
 #include <array>
 #include <cstdint>
 #include <unordered_map>
@@ -328,7 +329,7 @@ namespace zero_mate::arm1176jzf_s
         [[nodiscard]] bool Invalid_Change_Of_Control_Bits(std::uint32_t new_cpsr) noexcept;
 
     private:
-        NCPU_Mode m_mode;                                    ///< Current mode of the CPU
+        std::atomic<NCPU_Mode> m_mode;                       ///< Current mode of the CPU
         std::array<std::uint32_t, Number_Of_Regs> m_regs;    ///< USR and SYS mode registers
         Banked_Registers_t m_banked_regs;                    ///< Banked registers
         std::unordered_map<NCPU_Mode, std::uint32_t> m_spsr; ///< SPSR registers (for different CPU modes)
