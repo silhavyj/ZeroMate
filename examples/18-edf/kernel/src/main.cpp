@@ -50,7 +50,6 @@ extern "C" int _kernel_main(void)
     // vytvoreni vsech tasku
     // TODO: presunuti do init procesu a nejake inicializacni sekce
     sProcessMgr.Create_Process(__sos_task, __sos_task_len, false);
-    // sProcessMgr.Create_Process(__oled_task, __oled_task_len, false);
     sProcessMgr.Create_Process(__logger_task, __logger_task_len, false);
     sProcessMgr.Create_Process(__counter_task, __counter_task_len, false);
     sProcessMgr.Create_Process(__tilt_task, __tilt_task_len, false);

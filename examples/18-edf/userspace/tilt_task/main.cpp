@@ -31,10 +31,10 @@ int main(int argc, char** argv)
 
     while (true)
     {
-        // wait(tiltsensor_file, 8);
+        // wait(tiltsensor_file, 1);
 
         // "debounce" - tilt senzor bude chvili flappovat mezi vysokou a nizkou urovni
-        // sleep(0x100, Deadline_Unchanged);
+        // sleep(2, Deadline_Unchanged);
 
         read(tiltsensor_file, &state, 1);
 

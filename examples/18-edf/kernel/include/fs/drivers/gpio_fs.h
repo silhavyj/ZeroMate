@@ -4,6 +4,7 @@
 #include <hal/peripherals.h>
 #include <memory/kernel_heap.h>
 #include <fs/filesystem.h>
+#include <drivers/monitor.h>
 #include <stdstring.h>
 #include <process/process_manager.h>
 
@@ -79,6 +80,7 @@ public:
             case NIOCtl_Operation::Enable_Event_Detection:
                 sGPIO.Enable_Event_Detect(mPinNo, evtype);
                 return true;
+
             case NIOCtl_Operation::Disable_Event_Detection:
                 sGPIO.Disable_Event_Detect(mPinNo, evtype);
                 return true;
@@ -90,6 +92,7 @@ public:
     virtual bool Wait(uint32_t count) override
     {
         Wait_Enqueue_Current();
+        // sMonitor << "mPinNo = " << static_cast<unsigned int>(mPinNo) << '\n';
         sGPIO.Wait_For_Event(this, mPinNo);
 
         // zablokujeme, probudi nas az notify

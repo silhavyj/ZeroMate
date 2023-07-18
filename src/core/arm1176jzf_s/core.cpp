@@ -353,7 +353,6 @@ namespace zero_mate::arm1176jzf_s
             }
 
             // Check if there is a pending IRQ.
-            // TODO make sure both SWI and IRQ get thrown...
             Check_For_Pending_IRQ();
         }
         catch (const exceptions::CCPU_Exception& ex)
@@ -852,7 +851,7 @@ namespace zero_mate::arm1176jzf_s
                 // Something went wrong if the execution gets here.
                 // clang-format off
                 m_logging_system.Warning("Only unsigned halfwords should be used "
-"                                         when performing a halfword data write");
+                                         "when performing a halfword data write");
                 // clang-format on
                 break;
         }

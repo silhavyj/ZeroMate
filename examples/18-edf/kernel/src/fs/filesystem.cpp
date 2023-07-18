@@ -1,6 +1,7 @@
 #include <fs/filesystem.h>
 
 #include <memory/kernel_heap.h>
+#include <drivers/monitor.h>
 #include <process/process_manager.h>
 
 #include <stdstring.h>
@@ -187,7 +188,9 @@ void IFile::Wait_Enqueue_Current()
 
 uint32_t IFile::Notify(uint32_t count)
 {
+    // sMonitor << "Notifying...(1)\n";
     spinlock_lock(&mWait_Lock);
+    // sMonitor << "Notifying...(2)\n";
 
     TWaiting_Task* tmp;
     TWaiting_Task* itr = mWaiting_Tasks;
@@ -197,6 +200,7 @@ uint32_t IFile::Notify(uint32_t count)
     uint32_t notified_count = 0;
     while (itr && notified_count < count)
     {
+        // sMonitor << notified_count << " " << count << '\n';
         sProcessMgr.Notify_Process(itr->pid);
 
         tmp = itr;
@@ -213,8 +217,11 @@ uint32_t IFile::Notify(uint32_t count)
             break;
         }
     }
+    // sMonitor << "done\n";
 
+    // sMonitor << "Notifying...(3)\n";
     spinlock_unlock(&mWait_Lock);
+    // sMonitor << "Notifying...(4)\n";
 
     return notified_count;
 }

@@ -389,10 +389,10 @@ int main(int argc, char** argv)
     8284:	eb000106 	bl	86a4 <_Z4pipePKcj>
     8288:	e50b0010 	str	r0, [fp, #-16]
 /mnt/c/Users/Kuba/Documents/ZeroMate/examples/18-edf/userspace/tilt_task/main.cpp:39
-        // wait(tiltsensor_file, 8);
+        // wait(tiltsensor_file, 1);
 
         // "debounce" - tilt senzor bude chvili flappovat mezi vysokou a nizkou urovni
-        // sleep(0x100, Deadline_Unchanged);
+        // sleep(2, Deadline_Unchanged);
 
         read(tiltsensor_file, &state, 1);
     828c:	e24b3011 	sub	r3, fp, #17

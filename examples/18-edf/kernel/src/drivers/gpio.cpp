@@ -265,6 +265,15 @@ void CGPIO_Handler::Wait_For_Event(IFile* file, uint32_t pin)
 
     mWaiting_Files = wf;
 
+    unsigned int count = 0;
+
+    /*TWaiting_File* tmp = mWaiting_Files;
+    while (tmp != nullptr)
+    {
+        sMonitor << "pin = " << tmp->pin_idx << '\n';
+        tmp = tmp->next;
+    }*/
+
     spinlock_unlock(&mLock);
 }
 
@@ -300,6 +309,8 @@ void CGPIO_Handler::Handle_IRQ()
             wf = mWaiting_Files;
             while (wf != nullptr)
             {
+                // sMonitor << "A\n";
+
                 if (wf->pin_idx == pin)
                 {
                     // probudime proces

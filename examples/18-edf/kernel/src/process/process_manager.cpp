@@ -200,11 +200,13 @@ void CProcess_Manager::Schedule()
     // byla by to chyba programatora kernelu, ale kdyby k tomu doslo, obtizne by se to diagnostikovalo
 
     // planovac usoudil, ze ma byt naplanovany proces, ktery zrovna ma CPU pro sebe - nemusime nic menit
-    if (next == mCurrent_Task_Node)
+    if (next == mCurrent_Task_Node) 
+    {
+        // sMonitor << "Staying in process " << next->task->pid << '\n';    
         return;
+    }
 
     // sMonitor << "Swithing to process " << next->task->pid << '\n';
-
     Switch_To(next);
 }
 
