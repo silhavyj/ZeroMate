@@ -53,6 +53,6 @@ struct TTask_Struct
     uint32_t sleep_timer; // casovac pro uspane procesy - jakmile systemovy citac prekroci tuto hodnotu, proces je
                           // odblokovan maximalni podporovany rozsah cekani je 0x7FFFFFFF, jelikoz muze citac pretect;
                           // diference je vzdy pocitana i s moznosti preteceni
-    uint32_t deadline;          // deadline dokonceni tasku
+    uint32_t deadline;    // deadline dokonceni tasku
     uint32_t notified_deadline; // deadline nastavena po nasledujicim probuzeni procesu
 };
