@@ -1,5 +1,0 @@
-- spinlock
-- mutex, podminkova promenna (resp. notifikovatelny soubor)
-- wait syscall, mutex lock/unlock syscall
-- GPIO interrupt
-- EDF scheduler

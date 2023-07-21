@@ -37,16 +37,28 @@ namespace zero_mate::soc
 
     // Initialize all peripherals.
     std::shared_ptr<peripheral::CRAM> g_ram{ nullptr };
+
     std::shared_ptr<CBus> g_bus = std::make_shared<CBus>();
+
     std::shared_ptr<arm1176jzf_s::CCPU_Core> g_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, g_bus);
+
     std::shared_ptr<coprocessor::cp15::CCP15> g_cp15 =
     std::make_shared<coprocessor::cp15::CCP15>(g_cpu->Get_CPU_Context());
+
+    std::shared_ptr<coprocessor::cp10::CFPU> g_fpu =
+    std::make_shared<coprocessor::cp10::CFPU>(g_cpu->Get_CPU_Context());
+
     std::shared_ptr<arm1176jzf_s::mmu::CMMU> g_mmu = std::make_shared<arm1176jzf_s::mmu::CMMU>(g_bus, g_cp15);
+
     std::shared_ptr<peripheral::CInterrupt_Controller> g_ic =
     std::make_shared<peripheral::CInterrupt_Controller>(g_cpu->Get_CPU_Context());
+
     std::shared_ptr<peripheral::CARM_Timer> g_arm_timer = std::make_shared<peripheral::CARM_Timer>(g_ic);
+
     std::shared_ptr<peripheral::CGPIO_Manager> g_gpio = std::make_shared<peripheral::CGPIO_Manager>(g_ic);
+
     std::shared_ptr<peripheral::CMonitor> g_monitor = std::make_shared<peripheral::CMonitor>();
+
     std::shared_ptr<peripheral::CTRNG> g_trng = std::make_shared<peripheral::CTRNG>();
 
     // Initialize the collection of all internal peripherals as well as a collection of all external
@@ -178,6 +190,7 @@ namespace zero_mate::soc
             g_cpu->Set_Interrupt_Controller(g_ic);
             g_cpu->Register_System_Clock_Listener(g_arm_timer);
             g_cpu->Add_Coprocessor(coprocessor::cp15::CCP15::ID, g_cp15);
+            g_cpu->Add_Coprocessor(coprocessor::cp10::CFPU::ID, g_fpu);
             g_cpu->Set_MMU(g_mmu);
 
             // Add a reference to CP15 to the bus, so it knows whether to check for unaligned memory access.
