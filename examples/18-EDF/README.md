@@ -18,7 +18,7 @@ The kernel creates 5 user processes:
 There are a few limitations embedded in this example, which might need to be addressed in the future.
 
 1) The init task is indeed just an infinite loop (no yielding is taking place)
-2) The lilt task does not wait on GPIO pin 23 nor does it sleep to compensate for flapping
+2) The tilt task does not wait on GPIO pin 23 nor does it sleep to compensate for flapping
 3) Some timing adjustments were made (real HW offers a faster execution compared to the emulator)
 
 ## External peripherals
