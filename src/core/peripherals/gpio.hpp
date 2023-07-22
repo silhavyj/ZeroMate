@@ -314,9 +314,12 @@ namespace zero_mate::peripheral
         ///
         /// \param pin_idx Index of the pin whose state will be changed
         /// \param state New state of the pin
+        /// \param notify_peripherals Should external peripherals be notified about the change of the pin state?
         /// \return Information about whether the state has been changed successfully or not
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] NPin_Set_Status Set_Pin_State(std::size_t pin_idx, CPin::NState state);
+        [[nodiscard]] NPin_Set_Status Set_Pin_State(std::size_t pin_idx,
+                                                    CPin::NState state,
+                                                    bool notify_peripherals = false);
 
     private:
         // -------------------------------------------------------------------------------------------------------------

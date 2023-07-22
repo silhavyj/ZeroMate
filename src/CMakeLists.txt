@@ -22,7 +22,7 @@ add_executable(
     main.cpp
     ${utils_source_files}
     ${core_source_files}
-    ${gui_source_files} gui/window.cpp core/coprocessors/fpu/fpu.hpp core/coprocessors/fpu/fpu.cpp)
+    ${gui_source_files})
 
 # Add system headers, so the build passes all compiler warnings
 target_include_directories(

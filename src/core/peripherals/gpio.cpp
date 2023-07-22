@@ -461,7 +461,9 @@ namespace zero_mate::peripheral
         return m_pins.at(idx).Get_State();
     }
 
-    CGPIO_Manager::NPin_Set_Status CGPIO_Manager::Set_Pin_State(std::size_t pin_idx, CPin::NState state)
+    CGPIO_Manager::NPin_Set_Status CGPIO_Manager::Set_Pin_State(std::size_t pin_idx,
+                                                                CPin::NState state,
+                                                                bool notify_peripherals)
     {
         // Make sure pin_idx is valid.
         if (pin_idx >= Number_of_GPIO_Pins)
@@ -474,16 +476,16 @@ namespace zero_mate::peripheral
 
         // Make sure the pin function has been set to input.
         // TODO there might be exceptions such as the Alt_x functions?
-        if (pin.Get_Function() != CPin::NFunction::Input)
-        {
-            return NPin_Set_Status::Not_Input_Pin;
-        }
+        // if (pin.Get_Function() != CPin::NFunction::Input)
+        // {
+        //    return NPin_Set_Status::Not_Input_Pin;
+        // }
 
         // Check if setting the pin state actually does something.
-        if (pin.Get_State() == state)
-        {
-            return NPin_Set_Status::State_Already_Set;
-        }
+        // if (pin.Get_State() == state)
+        // {
+        //    return NPin_Set_Status::State_Already_Set;
+        // }
 
         // Check if changing the pin's state triggers an interrupt.
         // This must be checked before the state is changed.
@@ -492,6 +494,12 @@ namespace zero_mate::peripheral
         // Change the state of the pin.
         pin.Set_State(state);
         Mirror_Pin_State_In_GPLEVn(pin_idx, state);
+
+        // Notify external peripherals.
+        if (notify_peripherals)
+        {
+            Notify_External_Peripherals(static_cast<std::uint32_t>(pin_idx));
+        }
 
         if (interrupt_detected)
         {

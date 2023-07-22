@@ -20,7 +20,8 @@
 
 // Project file imports
 
-#include <zero_mate/external_peripheral.hpp>
+#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/external_peripheral.hpp"
 
 #include "bus.hpp"
 #include "arm1176jzf_s/core.hpp"
@@ -33,8 +34,7 @@
 #include "peripherals/monitor.hpp"
 #include "peripherals/trng.hpp"
 #include "peripherals/gpio.hpp"
-
-#include "zero_mate/utils/logger.hpp"
+#include "peripherals/auxiliary.hpp"
 
 namespace zero_mate::soc
 {
@@ -80,6 +80,9 @@ namespace zero_mate::soc
         /// Default TRNG (random number generator) map address (where it is found in the address space)
         inline constexpr std::uint32_t TRNG_Address = 0x20104000;
 
+        /// Default AUX peripheral address (where it is found in the address space)
+        inline constexpr std::uint32_t AUX_Address = 0x20215000;
+
     } // namespace zero_mate::config
 
     /// Global reference to a logging system used throughout the project
@@ -123,6 +126,9 @@ namespace zero_mate::soc
 
     /// Collection of all external peripherals that are connected to the system via GPIO pins
     extern std::vector<IExternal_Peripheral*> g_external_peripherals;
+
+    /// Global reference to the auxiliary peripheral (UART, SPI_1, and SPI_2)
+    extern std::shared_ptr<peripheral::CAUX> g_aux;
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Initializes the system.
