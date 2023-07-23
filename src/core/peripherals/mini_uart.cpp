@@ -1,7 +1,5 @@
 #include <chrono>
 
-#include "fmt/format.h"
-
 #include "mini_uart.hpp"
 #include "auxiliary.hpp"
 
@@ -13,8 +11,8 @@ namespace zero_mate::peripheral
     , m_receive_shift_reg{ 0 }
     , m_is_there_data_to_transmit{ false }
     , m_cpu_cycles{ 0 }
-    , m_bit_idx{ 0 }
-    , m_state{ NState_Machine::Start_Bit }
+    , m_TX_bit_idx{ 0 }
+    , m_TX_state{ NState_Machine::Start_Bit }
     {
     }
 
@@ -78,16 +76,23 @@ namespace zero_mate::peripheral
 
     void CMini_UART::Update()
     {
-        // clang-format off
-        if (!m_aux.Is_Enabled(CAUX::NAUX_Peripheral::Mini_UART) ||
-            !m_is_there_data_to_transmit ||
-            !Is_Transmitter_Enabled())
+        if (!m_aux.Is_Enabled(CAUX::NAUX_Peripheral::Mini_UART))
         {
             return;
         }
-        // clang-format on
 
-        switch (m_state)
+        Update_TX();
+        Update_RX();
+    }
+
+    void CMini_UART::Update_TX()
+    {
+        if (!m_is_there_data_to_transmit || !Is_Transmitter_Enabled())
+        {
+            return;
+        }
+
+        switch (m_TX_state)
         {
             case NState_Machine::Start_Bit:
                 Send_Start_Bit();
@@ -105,16 +110,21 @@ namespace zero_mate::peripheral
                 break;
         }
 
-        if (m_state == NState_Machine::End_Of_Frame)
+        if (m_TX_state == NState_Machine::End_Of_Frame)
         {
             Reset_Transmission();
         }
     }
 
+    void CMini_UART::Update_RX()
+    {
+        // TODO
+    }
+
     void CMini_UART::Send_Start_Bit()
     {
         Set_TX_Pin(false);
-        m_state = NState_Machine::Payload;
+        m_TX_state = NState_Machine::Payload;
     }
 
     void CMini_UART::Send_Payload()
@@ -122,19 +132,19 @@ namespace zero_mate::peripheral
         Set_TX_Pin(static_cast<bool>(m_transmit_shift_reg & 0b1U));
 
         m_transmit_shift_reg >>= 1U;
-        ++m_bit_idx;
+        ++m_TX_bit_idx;
 
-        if (m_bit_idx >= Get_Char_Length_Value(Get_Char_Length()))
+        if (m_TX_bit_idx >= Get_Char_Length_Value(Get_Char_Length()))
         {
-            m_bit_idx = 0;
-            m_state = NState_Machine::Stop_Bit;
+            m_TX_bit_idx = 0;
+            m_TX_state = NState_Machine::Stop_Bit;
         }
     }
 
     void CMini_UART::Send_Stop_bit()
     {
         Set_TX_Pin(true);
-        m_state = NState_Machine::End_Of_Frame;
+        m_TX_state = NState_Machine::End_Of_Frame;
     }
 
     void CMini_UART::Reset_Transmission()
@@ -142,8 +152,10 @@ namespace zero_mate::peripheral
         // TODO fire an interrupt, if enabled?
 
         m_is_there_data_to_transmit = false;
-        m_state = NState_Machine::Start_Bit;
+        m_TX_state = NState_Machine::Start_Bit;
         Set_TX_Pin(true);
+
+        // TODO add an enumeration instead of 5
         m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] |= (1U << 5U);
     }
 
@@ -171,6 +183,7 @@ namespace zero_mate::peripheral
     {
         m_cpu_cycles += count;
 
+        // TODO 10U?
         if (m_cpu_cycles >= (Get_Baud_Rate_Counter() / 10U))
         {
             m_cpu_cycles = 0;

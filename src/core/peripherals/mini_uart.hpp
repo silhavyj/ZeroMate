@@ -42,6 +42,9 @@ namespace zero_mate::peripheral
     private:
         [[nodiscard]] static std::uint32_t Get_Char_Length_Value(NChar_Length char_length) noexcept;
         void Update();
+        inline void Update_TX();
+        inline void Update_RX();
+
         inline void Send_Start_Bit();
         inline void Send_Payload();
         inline void Send_Stop_bit();
@@ -54,7 +57,7 @@ namespace zero_mate::peripheral
         std::uint8_t m_receive_shift_reg;
         bool m_is_there_data_to_transmit;
         std::uint32_t m_cpu_cycles;
-        std::uint8_t m_bit_idx;
-        NState_Machine m_state;
+        std::uint8_t m_TX_bit_idx;
+        NState_Machine m_TX_state;
     };
 }
