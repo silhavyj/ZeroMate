@@ -147,6 +147,7 @@ namespace zero_mate::soc
             g_logging_system.Add_Logger(s_logger_stdo);
         }
 
+        // clang-format off
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Attaches a peripherals to a given address on the bus.
         /// \tparam Peripheral Type of the peripheral to be mapped to the address space
