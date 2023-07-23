@@ -7,12 +7,13 @@
 #include "gpio.hpp"
 #include "mini_uart.hpp"
 #include "peripheral.hpp"
+#include "system_clock_listener.hpp"
 #include "interrupt_controller.hpp"
 #include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::peripheral
 {
-    class CAUX final : public IPeripheral
+    class CAUX final : public IPeripheral, public ISystem_Clock_Listener
     {
     public:
         friend class CMini_UART;
@@ -56,6 +57,7 @@ namespace zero_mate::peripheral
         [[nodiscard]] std::uint32_t Get_Size() const noexcept override;
         void Write(std::uint32_t addr, const char* data, std::uint32_t size) override;
         void Read(std::uint32_t addr, char* data, std::uint32_t size) override;
+        void Increment_Passed_Cycles(std::uint32_t count) override;
 
         [[nodiscard]] bool Is_Enabled(NAUX_Peripheral peripheral) const;
         [[nodiscard]] bool Has_Pending_IRQ(NAUX_Peripheral peripheral) const;

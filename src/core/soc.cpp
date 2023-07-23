@@ -147,7 +147,6 @@ namespace zero_mate::soc
             g_logging_system.Add_Logger(s_logger_stdo);
         }
 
-        // clang-format off
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Attaches a peripherals to a given address on the bus.
         /// \tparam Peripheral Type of the peripheral to be mapped to the address space
@@ -200,12 +199,15 @@ namespace zero_mate::soc
             Attach_Peripheral_To_Bus<peripheral::CTRNG>("TRNG", config::TRNG_Address, g_trng);
             Attach_Peripheral_To_Bus<peripheral::CAUX>("AUX", config::AUX_Address, g_aux);
 
-            // Attach the interrupt controller, ARM timer, MMU, and CP15 to the CPU.
+            // Attach the interrupt controller, MMU, and CP15 to the CPU.
             g_cpu->Set_Interrupt_Controller(g_ic);
-            g_cpu->Register_System_Clock_Listener(g_arm_timer);
             g_cpu->Add_Coprocessor(coprocessor::cp15::CCP15::ID, g_cp15);
             g_cpu->Add_Coprocessor(coprocessor::cp10::CFPU::ID, g_fpu);
             g_cpu->Set_MMU(g_mmu);
+
+            // Register system clock listeners.
+            g_cpu->Register_System_Clock_Listener(g_arm_timer);
+            g_cpu->Register_System_Clock_Listener(g_aux);
 
             // Add a reference to CP15 to the bus, so it knows whether to check for unaligned memory access.
             g_bus->Set_CP15(g_cp15);

@@ -67,10 +67,6 @@ namespace zero_mate::peripheral
                 m_mini_UART->Set_Transmit_Shift_Reg(static_cast<std::uint8_t>(m_regs[reg_idx] & 0xFFU));
                 break;
 
-            case NRegister::MU_CNTL:
-                m_mini_UART->Try_To_Transmit_Data();
-                break;
-
             default:
                 break;
         }
@@ -104,5 +100,10 @@ namespace zero_mate::peripheral
     {
         return static_cast<bool>(m_regs.at(static_cast<std::uint32_t>(NRegister::IRQ)) &
                                  (1U << static_cast<std::uint32_t>(peripheral)));
+    }
+
+    void CAUX::Increment_Passed_Cycles(std::uint32_t count)
+    {
+        m_mini_UART->Increment_Passed_Cycles(count);
     }
 }
