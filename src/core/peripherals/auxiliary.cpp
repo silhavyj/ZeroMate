@@ -59,8 +59,16 @@ namespace zero_mate::peripheral
 
         switch (reg_type)
         {
+            case NRegister::ENABLES:
+                m_mini_UART->Enable(Is_Enabled(NAUX_Peripheral::Mini_UART));
+                break;
+
             case NRegister::MU_IO:
                 m_mini_UART->Set_Transmit_Shift_Reg(static_cast<std::uint8_t>(m_regs[reg_idx] & 0xFFU));
+                break;
+
+            case NRegister::MU_CNTL:
+                m_mini_UART->Try_To_Transmit_Data();
                 break;
 
             default:
@@ -89,12 +97,12 @@ namespace zero_mate::peripheral
     bool CAUX::Is_Enabled(zero_mate::peripheral::CAUX::NAUX_Peripheral peripheral) const
     {
         return static_cast<bool>(m_regs.at(static_cast<std::uint32_t>(NRegister::ENABLES)) &
-                                 static_cast<std::uint32_t>(peripheral));
+                                 (1U << static_cast<std::uint32_t>(peripheral)));
     }
 
     bool CAUX::Has_Pending_IRQ(zero_mate::peripheral::CAUX::NAUX_Peripheral peripheral) const
     {
         return static_cast<bool>(m_regs.at(static_cast<std::uint32_t>(NRegister::IRQ)) &
-                                 static_cast<std::uint32_t>(peripheral));
+                                 (1U << static_cast<std::uint32_t>(peripheral)));
     }
 }

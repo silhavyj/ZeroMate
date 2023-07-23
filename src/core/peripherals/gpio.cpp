@@ -461,9 +461,7 @@ namespace zero_mate::peripheral
         return m_pins.at(idx).Get_State();
     }
 
-    CGPIO_Manager::NPin_Set_Status CGPIO_Manager::Set_Pin_State(std::size_t pin_idx,
-                                                                CPin::NState state,
-                                                                bool notify_peripherals)
+    CGPIO_Manager::NPin_Set_Status CGPIO_Manager::Set_Pin_State(std::size_t pin_idx, CPin::NState state)
     {
         // Make sure pin_idx is valid.
         if (pin_idx >= Number_of_GPIO_Pins)
@@ -474,18 +472,13 @@ namespace zero_mate::peripheral
         // Get the pin by its index.
         auto& pin = m_pins[pin_idx];
 
-        // Make sure the pin function has been set to input.
-        // TODO there might be exceptions such as the Alt_x functions?
-        // if (pin.Get_Function() != CPin::NFunction::Input)
-        // {
-        //    return NPin_Set_Status::Not_Input_Pin;
-        // }
+        const CPin::NFunction pin_function = pin.Get_Function();
 
-        // Check if setting the pin state actually does something.
-        // if (pin.Get_State() == state)
-        // {
-        //    return NPin_Set_Status::State_Already_Set;
-        // }
+        // Make sure the pin function has been set to input.
+        if ((pin_function != CPin::NFunction::Input) && (pin_function != CPin::NFunction::Alt_5))
+        {
+            return NPin_Set_Status::Invalid_Pin_Function;
+        }
 
         // Check if changing the pin's state triggers an interrupt.
         // This must be checked before the state is changed.
@@ -496,10 +489,7 @@ namespace zero_mate::peripheral
         Mirror_Pin_State_In_GPLEVn(pin_idx, state);
 
         // Notify external peripherals.
-        if (notify_peripherals)
-        {
-            Notify_External_Peripherals(static_cast<std::uint32_t>(pin_idx));
-        }
+        Notify_External_Peripherals(static_cast<std::uint32_t>(pin_idx));
 
         if (interrupt_detected)
         {
