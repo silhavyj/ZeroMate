@@ -26,6 +26,24 @@ namespace zero_mate::peripheral
             End_Of_Frame
         };
 
+        enum class NLSR_Flags : std::uint32_t
+        {
+            Transmitter_Empty = 0b1U << 5U,
+            Transmitter_Idle = 0b1U << 6U
+        };
+
+        enum class NCNTL_Flags : std::uint32_t
+        {
+            Receiver_Enable = 0b1U << 0U,
+            Transmitter_Enable = 0b1U << 1U
+        };
+
+        enum class NIIR_Flags : std::uint32_t
+        {
+            Enable_Transmit_Interrupt = 0b1U << 0U,
+            Enable_Receive_Interrupt = 0b1U << 1U
+        };
+
     public:
         explicit CMini_UART(CAUX& aux);
 
@@ -38,6 +56,7 @@ namespace zero_mate::peripheral
         [[nodiscard]] std::uint32_t Get_Baud_Rate_Counter() const noexcept;
         void Enable(bool enabled);
         void Increment_Passed_Cycles(std::uint32_t count);
+        void Reset();
 
     private:
         [[nodiscard]] static std::uint32_t Get_Char_Length_Value(NChar_Length char_length) noexcept;

@@ -199,11 +199,12 @@ namespace zero_mate::soc
             Attach_Peripheral_To_Bus<peripheral::CTRNG>("TRNG", config::TRNG_Address, g_trng);
             Attach_Peripheral_To_Bus<peripheral::CAUX>("AUX", config::AUX_Address, g_aux);
 
-            // Attach the interrupt controller, MMU, and CP15 to the CPU.
+            // Attach the interrupt controller, MMU, external peripherals, and CP15 to the CPU.
             g_cpu->Set_Interrupt_Controller(g_ic);
             g_cpu->Add_Coprocessor(coprocessor::cp15::CCP15::ID, g_cp15);
             g_cpu->Add_Coprocessor(coprocessor::cp10::CFPU::ID, g_fpu);
             g_cpu->Set_MMU(g_mmu);
+            g_cpu->Set_External_Peripherals(&g_external_peripherals);
 
             // Register system clock listeners.
             g_cpu->Register_System_Clock_Listener(g_arm_timer);

@@ -13,7 +13,7 @@ extern "C" int _kernel_main(void)
     sGPIO.Set_GPIO_Function(ACT_Pin, NGPIO_Function::Output);
 
     // inicializujeme UART kanal 0
-    sUART0.Set_Baud_Rate(NUART_Baud_Rate::BR_115200);
+    sUART0.Set_Baud_Rate(NUART_Baud_Rate::BR_9600);
     sUART0.Set_Char_Length(NUART_Char_Length::Char_8);
 
     // vypiseme ladici hlasku
@@ -23,6 +23,11 @@ extern "C" int _kernel_main(void)
 
     while (1)
     {
+        // sUART0.Write("Welcome to KIV/OS RPiOS kernel\r\n");
+        
+        // for (tim = 0; tim < 0x100; tim++)
+        //    ;
+        
         /*// spalime 500000 taktu (cekani par milisekund)
 for(tim = 0; tim < 500000; tim++)
     ;

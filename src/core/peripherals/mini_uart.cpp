@@ -16,21 +16,37 @@ namespace zero_mate::peripheral
     {
     }
 
+    void CMini_UART::Reset()
+    {
+        m_cpu_cycles = 0;
+        m_is_there_data_to_transmit = false;
+        m_TX_bit_idx = 0;
+        m_TX_state = NState_Machine::Start_Bit;
+
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] |=
+        static_cast<std::uint32_t>(NLSR_Flags::Transmitter_Empty);
+    }
+
     void CMini_UART::Set_Transmit_Shift_Reg(std::uint8_t value)
     {
         m_transmit_shift_reg = value;
-        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] &= ~(1U << 5U);
+
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] &=
+        ~static_cast<std::uint32_t>(NLSR_Flags::Transmitter_Empty);
+
         m_is_there_data_to_transmit = true;
     }
 
     bool CMini_UART::Is_Receive_Interrupt_Enabled() const noexcept
     {
-        return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] & 0b10U);
+        return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] &
+                                 static_cast<std::uint32_t>(NIIR_Flags::Enable_Receive_Interrupt));
     }
 
     bool CMini_UART::Is_Transmit_Interrupt_Enabled() const noexcept
     {
-        return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] & 0b01U);
+        return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] &
+                                 static_cast<std::uint32_t>(NIIR_Flags::Enable_Transmit_Interrupt));
     }
 
     CMini_UART::NChar_Length CMini_UART::Get_Char_Length() const noexcept
@@ -40,17 +56,21 @@ namespace zero_mate::peripheral
 
     bool CMini_UART::Is_Transmitter_Enabled() const noexcept
     {
-        return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_CNTL)] & 0b10U);
+        return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_CNTL)] &
+                                 static_cast<std::uint32_t>(NCNTL_Flags::Transmitter_Enable));
     }
 
     bool CMini_UART::Is_Receiver_Enabled() const noexcept
     {
-        return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_CNTL)] & 0b01U);
+        return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_CNTL)] &
+                                 static_cast<std::uint32_t>(NCNTL_Flags::Receiver_Enable));
     }
 
     std::uint32_t CMini_UART::Get_Baud_Rate_Counter() const noexcept
     {
-        return m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_BAUD)] & 0xFFFFU;
+        static constexpr std::uint32_t Baud_Rate_Mask = 0xFFFFU;
+
+        return m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_BAUD)] & Baud_Rate_Mask;
     }
 
     std::uint32_t CMini_UART::Get_Char_Length_Value(NChar_Length char_length) noexcept
@@ -155,8 +175,8 @@ namespace zero_mate::peripheral
         m_TX_state = NState_Machine::Start_Bit;
         Set_TX_Pin(true);
 
-        // TODO add an enumeration instead of 5
-        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] |= (1U << 5U);
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] |=
+        static_cast<std::uint32_t>(NLSR_Flags::Transmitter_Empty);
     }
 
     void CMini_UART::Set_TX_Pin(bool state)
@@ -183,8 +203,7 @@ namespace zero_mate::peripheral
     {
         m_cpu_cycles += count;
 
-        // TODO 10U?
-        if (m_cpu_cycles >= (Get_Baud_Rate_Counter() / 10U))
+        if (m_cpu_cycles >= Get_Baud_Rate_Counter())
         {
             m_cpu_cycles = 0;
             Update();

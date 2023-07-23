@@ -121,6 +121,18 @@ namespace zero_mate
         {
         }
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Notifies the peripheral about how many CPU cycles have passed by.
+        ///
+        /// The CPU core calls this function after every instruction, so the peripheral can update itself.
+        ///
+        /// \note In reality, external peripherals do not know of CPU cycles - simplification (e.g. UART)
+        /// \param count Number of CPU cycles
+        // -------------------------------------------------------------------------------------------------------------
+        [[maybe_unused]] virtual void Increment_Passed_Cycles([[maybe_unused]] std::uint32_t count)
+        {
+        }
+
     protected:
         std::unordered_set<std::uint32_t> m_gpio_subscription{}; ///< Collection of GPIO the peripheral subscribes to
     };

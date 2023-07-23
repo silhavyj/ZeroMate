@@ -30,8 +30,7 @@ namespace zero_mate::peripheral
     void CAUX::Reset() noexcept
     {
         std::fill(m_regs.begin(), m_regs.end(), 0);
-
-        m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] |= (1U << 5U);
+        m_mini_UART->Reset();
     }
 
     std::uint32_t CAUX::Get_Size() const noexcept

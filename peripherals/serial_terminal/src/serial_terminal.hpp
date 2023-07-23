@@ -1,8 +1,6 @@
 #pragma once
 
 #include <array>
-#include <thread>
-#include <atomic>
 
 #include <imgui.h>
 #include <zero_mate/external_peripheral.hpp>
@@ -34,11 +32,10 @@ public:
                               zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
                               zero_mate::utils::CLogging_System* logging_system);
 
-    ~CSerial_Terminal() override;
-
     void Render() override;
     void Set_ImGui_Context(void* context) override;
     void GPIO_Subscription_Callback(std::uint32_t pin_idx) override;
+    void Increment_Passed_Cycles(std::uint32_t count) override;
 
 private:
     inline void Init_GPIO_Subscription();
@@ -47,8 +44,9 @@ private:
     inline void Render_Stop_Bits();
     inline void Render_Data_Lengths();
     inline void Render_Data();
-
-    void Run_RX();
+    inline void Render_Buttons();
+    inline void Read_Payload();
+    void Update();
 
 private:
     std::string m_name;
@@ -62,7 +60,10 @@ private:
     std::uint32_t m_stop_bits;
     int m_data_length_idx;
     std::uint32_t m_data_length;
-    std::thread m_RX_thread;
-    std::atomic<bool> m_RX_thread_has_stopped;
     zero_mate::utils::CLogging_System* m_logging_system;
+    std::uint32_t m_cpu_cycles;
+    NState_Machine m_RX_state;
+    std::uint32_t m_RX_bit_idx;
+    std::string m_buffer;
+    bool m_start_bit_detected;
 };

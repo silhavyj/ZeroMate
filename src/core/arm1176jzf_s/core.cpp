@@ -39,6 +39,7 @@ namespace zero_mate::arm1176jzf_s
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_entry_point{ Default_Entry_Point_Addr }
     , m_interrupt_controller{ nullptr }
+    , m_external_peripherals{ nullptr }
     {
         Set_PC(pc);
     }
@@ -95,6 +96,11 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Register_System_Clock_Listener(const System_Clock_Listener_t& listener)
     {
         m_system_clock_listeners.push_back(listener);
+    }
+
+    void CCPU_Core::Set_External_Peripherals(std::vector<IExternal_Peripheral*>* external_peripherals)
+    {
+        m_external_peripherals = external_peripherals;
     }
 
     void CCPU_Core::Add_Breakpoint(std::uint32_t addr)
@@ -370,6 +376,15 @@ namespace zero_mate::arm1176jzf_s
         std::for_each(m_system_clock_listeners.begin(), m_system_clock_listeners.end(), [](auto& listener) -> void {
             listener->Increment_Passed_Cycles(isa::CInstruction::Average_CPI);
         });
+
+        // Notify all external peripherals about how many CPU cycles have passed by.
+        if (m_external_peripherals != nullptr)
+        {
+            for (auto* listener : *m_external_peripherals)
+            {
+                listener->Increment_Passed_Cycles(isa::CInstruction::Average_CPI);
+            }
+        }
     }
 
     void CCPU_Core::Check_For_Pending_IRQ()
