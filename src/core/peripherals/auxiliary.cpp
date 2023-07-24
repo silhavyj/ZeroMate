@@ -1,7 +1,24 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file aux.cpp \date 24. 07. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements the auxiliaries (UART1 & SPI1, and SPI2) used in BCM2835.
+///
+/// To find more information about this peripheral, please visit
+/// https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf (chapter 2)
+// ---------------------------------------------------------------------------------------------------------------------
+
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <algorithm>
+/// \endcond
+
+// 3rd party libraries
 
 #include "fmt/format.h"
 #include "magic_enum.hpp"
+
+// Project file imports
 
 #include "auxiliary.hpp"
 #include "zero_mate/utils/singleton.hpp"
@@ -9,10 +26,15 @@
 namespace zero_mate::peripheral
 {
     // clang-format off
+    // Read-only registers
     const std::unordered_set<CAUX::NRegister> CAUX::s_read_only_registers = {
-        CAUX::NRegister::IRQ
+        CAUX::NRegister::IRQ,
+        CAUX::NRegister::MU_LSR,
+        CAUX::NRegister::MU_MSR,
+        CAUX::NRegister::MU_STAT
     };
 
+    // Write-only registers
     const std::unordered_set<CAUX::NRegister> CAUX::s_write_only_registers = {
     };
     // clang-format on
@@ -29,7 +51,10 @@ namespace zero_mate::peripheral
 
     void CAUX::Reset() noexcept
     {
+        // Reset all registers.
         std::fill(m_regs.begin(), m_regs.end(), 0);
+
+        // Reset all auxiliaries (one by one)
         m_mini_UART->Reset();
     }
 
@@ -43,7 +68,7 @@ namespace zero_mate::peripheral
         const std::size_t reg_idx = addr / Reg_Size;
         const auto reg_type = static_cast<NRegister>(reg_idx);
 
-        // TODO make sure the register does exist (indexes are not continuous)
+        // Make sure we are not writing into a read-only register.
         if (s_read_only_registers.contains(reg_type))
         {
             // clang-format off
@@ -54,18 +79,22 @@ namespace zero_mate::peripheral
             return;
         }
 
+        // Write data to the peripheral's registers.
         std::copy_n(data, size, &std::bit_cast<char*>(m_regs.data())[addr]);
 
         switch (reg_type)
         {
+            // Enable AUX peripherals.
             case NRegister::ENABLES:
                 m_mini_UART->Enable(Is_Enabled(NAUX_Peripheral::Mini_UART));
                 break;
 
+            // Mini UART IO (transmit/receive data)
             case NRegister::MU_IO:
                 m_mini_UART->Set_Transmit_Shift_Reg(static_cast<std::uint8_t>(m_regs[reg_idx] & 0xFFU));
                 break;
 
+            // Mini UART IER (reset IRQ?)
             case NRegister::MU_IER:
                 m_mini_UART->Clear_IRQ();
                 break;
@@ -80,6 +109,7 @@ namespace zero_mate::peripheral
         const std::size_t reg_idx = addr / Reg_Size;
         const auto reg_type = static_cast<NRegister>(reg_idx);
 
+        // Make sure we are not reading from a write-only register.
         if (s_write_only_registers.contains(reg_type))
         {
             // clang-format off
@@ -90,11 +120,13 @@ namespace zero_mate::peripheral
             return;
         }
 
+        // Read data from the peripheral's registers.
         std::copy_n(&std::bit_cast<char*>(m_regs.data())[addr], size, data);
 
+        // If we are reading from the Mini UART's IO register, clear data ready flag (it's just been read).
         if (reg_type == NRegister::MU_IO)
         {
-           m_mini_UART->Clear_Data_Ready();
+            m_mini_UART->Clear_Data_Ready();
         }
     }
 
@@ -112,6 +144,8 @@ namespace zero_mate::peripheral
 
     void CAUX::Increment_Passed_Cycles(std::uint32_t count)
     {
+        // Forward the CPU cycles to the Mini UART.
         m_mini_UART->Increment_Passed_Cycles(count);
     }
-}
+
+} // namespace zero_mate::peripheral
