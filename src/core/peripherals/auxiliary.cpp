@@ -66,6 +66,10 @@ namespace zero_mate::peripheral
                 m_mini_UART->Set_Transmit_Shift_Reg(static_cast<std::uint8_t>(m_regs[reg_idx] & 0xFFU));
                 break;
 
+            case NRegister::MU_IER:
+                m_mini_UART->Clear_IRQ();
+                break;
+
             default:
                 break;
         }
@@ -87,6 +91,11 @@ namespace zero_mate::peripheral
         }
 
         std::copy_n(&std::bit_cast<char*>(m_regs.data())[addr], size, data);
+
+        if (reg_type == NRegister::MU_IO)
+        {
+           m_mini_UART->Clear_Data_Ready();
+        }
     }
 
     bool CAUX::Is_Enabled(zero_mate::peripheral::CAUX::NAUX_Peripheral peripheral) const
