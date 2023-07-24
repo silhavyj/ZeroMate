@@ -36,7 +36,7 @@ namespace zero_mate::peripheral
     class CAUX final : public IPeripheral, public ISystem_Clock_Listener
     {
     public:
-        /// Allow the CMini_UART class to have access to private members of this class (regs, ic, gpio, ...)
+        // Allow the CMini_UART class to have access to private members of this class (regs, ic, gpio, ...)
         friend class CMini_UART;
 
         // -------------------------------------------------------------------------------------------------------------

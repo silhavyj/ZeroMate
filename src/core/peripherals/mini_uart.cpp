@@ -1,4 +1,20 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file mini_uart.cpp
+/// \date 24. 07. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements the Mini UART auxiliary peripheral used in BCM2835.
+///
+/// To find more information about this peripheral, please visit
+/// https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf (chapter 2)
+// ---------------------------------------------------------------------------------------------------------------------
+
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <chrono>
+/// \endcond
+
+// Project file imports
 
 #include "mini_uart.hpp"
 #include "auxiliary.hpp"
@@ -90,7 +106,7 @@ namespace zero_mate::peripheral
                                  static_cast<std::uint32_t>(NCNTL_Flags::Receiver_Enable));
     }
 
-    bool CMini_UART::Is_Transmit_FIFO_Empty() const noexcept
+    bool CMini_UART::Is_Transmission_FIFO_Empty() const noexcept
     {
         return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] &
                                  static_cast<std::uint32_t>(NLSR_Flags::Transmitter_Empty));
@@ -139,7 +155,7 @@ namespace zero_mate::peripheral
     void CMini_UART::Update_TX()
     {
         // Make sure we have some data to transfer and that the transmitter has been enabled.
-        if (Is_Transmit_FIFO_Empty() || !Is_Transmitter_Enabled())
+        if (Is_Transmission_FIFO_Empty() || !Is_Transmitter_Enabled())
         {
             return;
         }
@@ -171,6 +187,7 @@ namespace zero_mate::peripheral
 
     void CMini_UART::Update_RX()
     {
+        // Make sure the receiver is enabled.
         if (!Is_Receiver_Enabled())
         {
             return;
@@ -178,14 +195,17 @@ namespace zero_mate::peripheral
 
         switch (m_rx.state)
         {
+            // Receive a start bit.
             case NState_Machine::Start_Bit:
                 Receive_Start_Bit();
                 break;
 
+            // Receive data (payload).
             case NState_Machine::Payload:
                 Receive_Payload();
                 break;
 
+            // Receive a stop bit.
             case NState_Machine::Stop_Bit:
                 Receive_Stop_Bit();
                 break;
@@ -374,4 +394,5 @@ namespace zero_mate::peripheral
             Update();
         }
     }
-}
+
+} // namespace zero_mate::peripheral
