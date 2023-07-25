@@ -23,8 +23,9 @@ namespace zero_mate::peripheral
 {
     CMini_UART::CMini_UART(CAUX& aux)
     : m_aux{ aux }
-    , m_rx{}
+    , m_cpu_cycles{ 0 }
     , m_tx{}
+    , m_rx{}
     {
         Reset();
     }
@@ -228,7 +229,7 @@ namespace zero_mate::peripheral
     void CMini_UART::Receive_Payload()
     {
         // Read the current value of the RX pin
-        const auto bit = static_cast<std::uint32_t>(m_aux.m_gpio->Read_GPIO_Pin(UART_0_RX_PIN_IDX));
+        const auto bit = static_cast<std::uint8_t>(m_aux.m_gpio->Read_GPIO_Pin(UART_0_RX_PIN_IDX));
 
         // Add it to the FIFO.
         m_rx.fifo <<= 1U;

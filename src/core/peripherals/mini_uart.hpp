@@ -277,10 +277,10 @@ namespace zero_mate::peripheral
         [[nodiscard]] bool Is_Transmit_Interrupt_Enabled() const noexcept;
 
     private:
-        CAUX& m_aux;                  ///< Reference to AUX
-        std::uint32_t m_cpu_cycles{}; ///< Total number of passed CPU cycles
-        TState_Machine_Data m_tx{};   ///< TX state machine
-        TState_Machine_Data m_rx{};   ///< RX state machine
+        CAUX& m_aux;                ///< Reference to AUX
+        std::uint32_t m_cpu_cycles; ///< Total number of passed CPU cycles
+        TState_Machine_Data m_tx;   ///< TX state machine
+        TState_Machine_Data m_rx;   ///< RX state machine
     };
 
 } // namespace zero_mate::peripheral
