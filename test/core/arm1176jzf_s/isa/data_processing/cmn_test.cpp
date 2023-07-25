@@ -22,7 +22,7 @@ TEST(cmn_instruction, test_01)
     // clang-format off
     EXPECT_EQ(register_state_checker.Is_Any_Other_Register_Modified(
               cpu.Get_CPU_Context(), { { .idx = 0, .expected_value = 170 },
-                            { .idx = 1, .expected_value = 2048 } }), false);
+                                     { .idx = 1, .expected_value = 2048 } }), false);
     // clang-format on
 
     EXPECT_EQ(cpu.Get_CPU_Context().Is_Flag_Set(CCPU_Context::NFlag::N), false);
