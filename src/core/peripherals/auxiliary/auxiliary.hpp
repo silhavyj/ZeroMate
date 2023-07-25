@@ -20,11 +20,11 @@
 
 // Project file imports
 
-#include "gpio.hpp"
+#include "../gpio.hpp"
 #include "mini_uart.hpp"
-#include "peripheral.hpp"
-#include "system_clock_listener.hpp"
-#include "interrupt_controller.hpp"
+#include "../peripheral.hpp"
+#include "../system_clock_listener.hpp"
+#include "../interrupt_controller.hpp"
 #include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::peripheral

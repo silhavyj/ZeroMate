@@ -34,7 +34,7 @@
 #include "peripherals/monitor.hpp"
 #include "peripherals/trng.hpp"
 #include "peripherals/gpio.hpp"
-#include "peripherals/auxiliary.hpp"
+#include "peripherals/auxiliary/auxiliary.hpp"
 
 namespace zero_mate::soc
 {
