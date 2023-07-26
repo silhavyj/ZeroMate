@@ -47,7 +47,8 @@ namespace zero_mate::peripheral
         {
             Mini_UART = 0, ///< Mini UART
             SPI_1 = 1,     ///< SPI 1
-            SPI_2 = 2      ///< SPI 2
+            SPI_2 = 2,     ///< SPI 2
+            Count          ///< Total number of auxiliary peripherals
         };
 
         // -------------------------------------------------------------------------------------------------------------
@@ -129,6 +130,12 @@ namespace zero_mate::peripheral
         /// \param count Number of CPU cycles it took to execute the last instruction
         // -------------------------------------------------------------------------------------------------------------
         void Increment_Passed_Cycles(std::uint32_t count) override;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Returns a const reference to the mini UART auxiliary peripheral.
+        /// \return Const reference to the mini UART
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] const CMini_UART* const Get_Mini_UART() const;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns information about whether an auxiliary peripheral is enabled or not.

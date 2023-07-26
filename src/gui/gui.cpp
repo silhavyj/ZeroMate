@@ -39,6 +39,7 @@
 #include "windows/peripherals/gpio_window.hpp"
 #include "windows/peripherals/arm_timer_window.hpp"
 #include "windows/peripherals/monitor_window.hpp"
+#include "windows/peripherals/aux_window.hpp"
 #include "windows/peripherals/interrupt_controller_window.hpp"
 
 namespace zero_mate::gui
@@ -122,9 +123,6 @@ namespace zero_mate::gui
         // -------------------------------------------------------------------------------------------------------------
         inline void Initialize_Peripheral_Windows()
         {
-            // RAM
-            s_windows.push_back(std::make_shared<CRAM_Window>(soc::g_ram));
-
             // GPIO
             s_windows.emplace_back(std::make_shared<CGPIO_Window>(soc::g_gpio));
 
@@ -139,6 +137,12 @@ namespace zero_mate::gui
 
             // Coprocessor CP15
             s_windows.emplace_back(std::make_shared<CCP15_Window>(soc::g_cp15));
+
+            // AUX window
+            s_windows.emplace_back(std::make_shared<CAUX_Window>(soc::g_aux));
+
+            // RAM
+            s_windows.push_back(std::make_shared<CRAM_Window>(soc::g_ram));
         }
 
         // -------------------------------------------------------------------------------------------------------------
@@ -147,8 +151,8 @@ namespace zero_mate::gui
         void Initialize_Windows()
         {
             Initialize_Logging_Window();
-            Initialize_Emulator_Windows();
             Initialize_Peripheral_Windows();
+            Initialize_Emulator_Windows();
         }
 
         // -------------------------------------------------------------------------------------------------------------

@@ -148,4 +148,9 @@ namespace zero_mate::peripheral
         m_mini_UART->Increment_Passed_Cycles(count);
     }
 
+    const CMini_UART* const CAUX::Get_Mini_UART() const
+    {
+        return m_mini_UART.get();
+    }
+
 } // namespace zero_mate::peripheral
