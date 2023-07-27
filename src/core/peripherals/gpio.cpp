@@ -472,17 +472,12 @@ namespace zero_mate::peripheral
         // Get the pin by its index.
         auto& pin = m_pins[pin_idx];
 
-        // Make sure the pin function has been set to input.
-        // TODO there might be exceptions such as the Alt_x functions?
-        if (pin.Get_Function() != CPin::NFunction::Input)
-        {
-            return NPin_Set_Status::Not_Input_Pin;
-        }
+        const CPin::NFunction pin_function = pin.Get_Function();
 
-        // Check if setting the pin state actually does something.
-        if (pin.Get_State() == state)
+        // Make sure the pin function has been set to input.
+        if ((pin_function != CPin::NFunction::Input) && (pin_function != CPin::NFunction::Alt_5))
         {
-            return NPin_Set_Status::State_Already_Set;
+            return NPin_Set_Status::Invalid_Pin_Function;
         }
 
         // Check if changing the pin's state triggers an interrupt.
@@ -492,6 +487,9 @@ namespace zero_mate::peripheral
         // Change the state of the pin.
         pin.Set_State(state);
         Mirror_Pin_State_In_GPLEVn(pin_idx, state);
+
+        // Notify external peripherals.
+        Notify_External_Peripherals(static_cast<std::uint32_t>(pin_idx));
 
         if (interrupt_detected)
         {

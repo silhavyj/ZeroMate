@@ -50,7 +50,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |Floating point unit (FPU)|❌||
 |I2C|❌||
 |SPI|❌||
-|UART|❌||
+|UART|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
 |Logic analyzer|❌||
 |Statistical data collection|❌|Number of I/O operations|
 

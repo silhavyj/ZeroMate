@@ -246,10 +246,9 @@ namespace zero_mate::peripheral
         // -------------------------------------------------------------------------------------------------------------
         enum class NPin_Set_Status
         {
-            OK,                ///< The new state has been set successfully
-            Not_Input_Pin,     ///< The function of the pin must be set to Input (TODO there might be exceptions?)
-            State_Already_Set, ///< The pin is already in the desired state
-            Invalid_Pin_Number ///< Invalid pin number (Rpi Zero has 54 GPIO pins)
+            OK,                   ///< The new state has been set successfully
+            Invalid_Pin_Function, ///< The function of the pin must be set to Input (TODO there might be exceptions?)
+            Invalid_Pin_Number    ///< Invalid pin number (Rpi Zero has 54 GPIO pins)
         };
 
     public:

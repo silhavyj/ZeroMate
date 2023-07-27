@@ -22,8 +22,6 @@ SECTIONS
 		__data = .;
         *(.data)
     } > ram
-    
-    . = ALIGN(4);
 	
 	_bss_start = .;
 	
@@ -34,3 +32,4 @@ SECTIONS
 	
 	_bss_end = .;
 }
+
