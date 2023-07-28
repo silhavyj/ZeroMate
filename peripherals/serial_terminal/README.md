@@ -2,6 +2,8 @@
 
 The serial terminal needs to connected to GPIO pins - RX, and TX. It communicates via the UART protocol. However, only from the terminal's perspective, only the RX channel is used, making the it a write-only external device.
 
+<img src="../../misc/screenshots/peripherals/serial_terminal.png">
+
 ## Configuration
 
 ```json

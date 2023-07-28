@@ -2,6 +2,8 @@
 
 The 7-segment display is controlled via an 8-bit shift register and it is capable of displaying digits 0 through 9. The shift register can be controlled via its pins - latch, data, and clock.
 
+<img src="../../misc/screenshots/peripherals/7-seg_display.png">
+
 ## Configuration
 
 ```json

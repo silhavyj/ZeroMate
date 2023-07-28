@@ -35,6 +35,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |ARMv6 ISA|⏳| The vast majority of ARM instructions are supported. However, there are still some missing.|
 |System bus|✅||
 |Debugger|⏳| Stepping through the source code, breakpoints, pause, reset, and play.|
+|Searching functions by their names|❌||
 |RAM|✅||
 |Logging system|✅||
 |GPIO|✅||
@@ -51,7 +52,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |I2C|❌||
 |SPI|❌||
 |UART|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
-|Simple logic analyzer|✅||
+|Simple logic analyzer|✅|More information can be found [here](peripherals/logic_analyzer/README.md).|
 |Statistical data collection|❌|Number of I/O operations, etc.|
 
 ## Screenshots
