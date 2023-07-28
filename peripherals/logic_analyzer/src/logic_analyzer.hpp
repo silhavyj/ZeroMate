@@ -10,6 +10,10 @@
 class CLogic_Analyzer final : public zero_mate::IExternal_Peripheral
 {
 public:
+    static constexpr int Max_Number_Of_Samples = 1024;
+    static constexpr int Min_Number_Of_Samples = 0;
+
+public:
     explicit CLogic_Analyzer(const std::string& name,
                              const std::vector<std::uint32_t>& pins,
                              zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin);
@@ -32,9 +36,11 @@ private:
     std::string m_name;
     std::vector<std::uint32_t> m_pins;
     zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t m_read_pin;
-    std::uint32_t m_timestamp;
+    std::uint32_t m_curr_sample_idx;
     ImGuiContext* m_ImGui_context;
     ImPlotContext* m_ImPlot_context;
     std::map<std::uint32_t, std::vector<std::uint32_t>> m_data;
-    std::vector<std::uint32_t> m_time;
+    std::vector<std::uint32_t> m_sample_idxs;
+    int m_max_number_of_samples;
+    std::uint32_t m_number_of_collected_samples;
 };

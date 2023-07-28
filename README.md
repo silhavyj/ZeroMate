@@ -2,7 +2,7 @@
 
 *Raspberry Pi Zero Emulator*
 
-[![version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/silhavyj/ZeroMate/releases)
+[![version](https://img.shields.io/badge/version-1.2.0-blue)](https://github.com/silhavyj/ZeroMate/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Doxygen Documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://silhavyj.github.io/ZeroMate/)
 

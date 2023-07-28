@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "logic_analyzer.hpp"
 
 CLogic_Analyzer::CLogic_Analyzer(const std::string& name,
@@ -5,10 +7,12 @@ CLogic_Analyzer::CLogic_Analyzer(const std::string& name,
                                  zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin)
 : m_name{ std::move(name) }
 , m_pins{ std::move(pins) }
-, m_timestamp{ 0 }
+, m_curr_sample_idx{ 0 }
 , m_ImGui_context{ nullptr }
 , m_ImPlot_context{ nullptr }
 , m_read_pin{ read_pin }
+, m_max_number_of_samples{ 20 }
+, m_number_of_collected_samples{ 0 }
 {
     Init_GPIO_Subscription(m_pins);
 }
@@ -29,7 +33,7 @@ bool CLogic_Analyzer::Is_There_Transition()
     {
         const auto state = static_cast<std::uint32_t>(m_read_pin(pin));
 
-        if (m_timestamp > 1 && state != m_data[pin].back())
+        if (m_curr_sample_idx > 1 && state != m_data[pin].back())
         {
             return true;
         }
@@ -40,8 +44,15 @@ bool CLogic_Analyzer::Is_There_Transition()
 
 void CLogic_Analyzer::GPIO_Subscription_Callback([[maybe_unused]] std::uint32_t pin_idx)
 {
-    m_time.emplace_back(m_timestamp);
-    ++m_timestamp;
+    if (m_number_of_collected_samples >= m_max_number_of_samples)
+    {
+        return;
+    }
+
+    ++m_number_of_collected_samples;
+
+    m_sample_idxs.emplace_back(m_curr_sample_idx);
+    ++m_curr_sample_idx;
 
     if (Is_There_Transition())
     {
@@ -50,7 +61,7 @@ void CLogic_Analyzer::GPIO_Subscription_Callback([[maybe_unused]] std::uint32_t 
             m_data[pin].emplace_back(m_data[pin].back());
         }
 
-        m_time.emplace_back(m_timestamp - 1);
+        m_sample_idxs.emplace_back(m_curr_sample_idx - 1);
     }
 
     for (const auto& pin : m_pins)
@@ -79,16 +90,20 @@ void CLogic_Analyzer::Render()
 
 void CLogic_Analyzer::Render_Max_Number_Of_Samples()
 {
-    // TODO
+    ImGui::InputInt("Max number of samples", &m_max_number_of_samples);
+    ImGui::Text("Number of collected samples: %d", m_number_of_collected_samples);
+
+    m_max_number_of_samples = std::clamp(m_max_number_of_samples, Min_Number_Of_Samples, Max_Number_Of_Samples);
 }
 
 void CLogic_Analyzer::Render_Buttons()
 {
     if (ImGui::Button("Reset"))
     {
-        m_time.clear();
+        m_sample_idxs.clear();
         m_data.clear();
-        m_timestamp = 0;
+        m_curr_sample_idx = 0;
+        m_number_of_collected_samples = 0;
     }
 
     ImGui::Separator();
@@ -110,11 +125,15 @@ void CLogic_Analyzer::Render_Line_Chart(std::uint32_t pin_idx)
     if (ImPlot::BeginPlot(name.c_str()))
     {
         // Axes labels.
-        ImPlot::SetupAxis(ImAxis_X1, "Time");
+        ImPlot::SetupAxis(ImAxis_X1, "Samples [1]");
         ImPlot::SetupAxis(ImAxis_Y1, "Voltage (1 = 5V; 0 = 0V)");
 
         // Render the data itself.
-        ImPlot::PlotLine(name.c_str(), m_time.data(), m_data[pin_idx].data(), static_cast<int>(m_time.size()), ImPlotFlags_Equal);
+        ImPlot::PlotLine(name.c_str(),
+                         m_sample_idxs.data(),
+                         m_data[pin_idx].data(),
+                         static_cast<int>(m_sample_idxs.size()),
+                         ImPlotFlags_Equal);
 
         // Render data annotation (1s and 0s)
         Render_Data_Annotation(pin_idx);
@@ -128,17 +147,17 @@ void CLogic_Analyzer::Render_Data_Annotation(std::uint32_t pin_idx)
     std::uint32_t i = 0;
     static bool clamp{ true };
 
-    while (i < m_time.size())
+    while (i < m_sample_idxs.size())
     {
         // Check if there is a transition to a new voltage level.
         // If so, skip the mock value (enforce discrete transition).
-        if (i > 0 && i < (m_time.size() - 1) && m_time[i] == m_time[i + 1])
+        if (i > 0 && i < (m_sample_idxs.size() - 1) && m_sample_idxs[i] == m_sample_idxs[i + 1])
         {
             ++i;
         }
 
         // Render the annotation in the middle of the pulse.
-        ImPlot::Annotation(m_time[i] + 0.5f,
+        ImPlot::Annotation(m_sample_idxs[i] + 0.5f,
                            m_data[pin_idx][i],
                            ImVec4(0, 0, 0, 0),
                            ImVec2(0, -5),
