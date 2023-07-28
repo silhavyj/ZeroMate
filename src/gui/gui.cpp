@@ -37,6 +37,8 @@
 #include "windows/top_bar_menu.hpp"
 #include "windows/log_window.hpp"
 #include "windows/cp15_window.hpp"
+#include "windows/demo_window.hpp"
+
 #include "windows/peripherals/ram_window.hpp"
 #include "windows/peripherals/gpio_window.hpp"
 #include "windows/peripherals/arm_timer_window.hpp"
@@ -94,6 +96,9 @@ namespace zero_mate::gui
         {
             // Register window
             s_windows.emplace_back(std::make_shared<CRegisters_Window>(soc::g_cpu));
+
+            // Demo window.
+            s_windows.emplace_back(std::make_shared<CDemo_Window>());
 
             // Control window
             s_windows.emplace_back(std::make_shared<CControl_Window>(soc::g_cpu,

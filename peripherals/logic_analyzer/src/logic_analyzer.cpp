@@ -67,37 +67,88 @@ void CLogic_Analyzer::Render()
     ImGui::SetCurrentContext(m_ImGui_context);
     ImPlot::SetCurrentContext(m_ImPlot_context);
 
-    static bool clamp = false;
-    static double y1 = 1.0;
-
     if (ImGui::Begin(m_name.c_str()))
     {
-        for (const auto& pin : m_pins)
-        {
-            const std::string name = "GPIO pin " + std::to_string(pin);
-
-            if (ImPlot::BeginPlot(name.c_str()))
-            {
-                ImPlot::PlotLine(name.c_str(), m_time.data(), m_data[pin].data(), m_time.size());
-
-                std::uint32_t i = 0;
-
-                while (i < m_time.size())
-                {
-                    if (i > 1 && i < (m_time.size() - 1) && m_time[i] == m_time[i + 1])
-                    {
-                        ++i;
-                    }
-                    ImPlot::Annotation(m_time[i] + 0.5f, m_data[pin][i], ImVec4(0, 0, 0, 0), ImVec2(0, -5), clamp, "%d", m_data[pin][i]);
-                    ++i;
-                }
-
-                ImPlot::EndPlot();
-            }
-        }
+        Render_Max_Number_Of_Samples();
+        Render_Buttons();
+        Render_Line_Charts();
     }
 
     ImGui::End();
+}
+
+void CLogic_Analyzer::Render_Max_Number_Of_Samples()
+{
+    // TODO
+}
+
+void CLogic_Analyzer::Render_Buttons()
+{
+    if (ImGui::Button("Reset"))
+    {
+        m_time.clear();
+        m_data.clear();
+        m_timestamp = 0;
+    }
+
+    ImGui::Separator();
+}
+
+void CLogic_Analyzer::Render_Line_Charts()
+{
+    for (const auto& pin : m_pins)
+    {
+        Render_Line_Chart(pin);
+    }
+}
+
+void CLogic_Analyzer::Render_Line_Chart(std::uint32_t pin_idx)
+{
+    // Name of the graph.
+    const std::string name = "GPIO pin " + std::to_string(pin_idx);
+
+    if (ImPlot::BeginPlot(name.c_str()))
+    {
+        // Axes labels.
+        ImPlot::SetupAxis(ImAxis_X1, "Time");
+        ImPlot::SetupAxis(ImAxis_Y1, "Voltage (1 = 5V; 0 = 0V)");
+
+        // Render the data itself.
+        ImPlot::PlotLine(name.c_str(), m_time.data(), m_data[pin_idx].data(), static_cast<int>(m_time.size()), ImPlotFlags_Equal);
+
+        // Render data annotation (1s and 0s)
+        Render_Data_Annotation(pin_idx);
+
+        ImPlot::EndPlot();
+    }
+}
+
+void CLogic_Analyzer::Render_Data_Annotation(std::uint32_t pin_idx)
+{
+    std::uint32_t i = 0;
+    static bool clamp{ true };
+
+    while (i < m_time.size())
+    {
+        // Check if there is a transition to a new voltage level.
+        // If so, skip the mock value (enforce discrete transition).
+        if (i > 0 && i < (m_time.size() - 1) && m_time[i] == m_time[i + 1])
+        {
+            ++i;
+        }
+
+        // Render the annotation in the middle of the pulse.
+        ImPlot::Annotation(m_time[i] + 0.5f,
+                           m_data[pin_idx][i],
+                           ImVec4(0, 0, 0, 0),
+                           ImVec2(0, -5),
+                           clamp,
+                           "%d",
+                           m_data[pin_idx][i]);
+
+        // Move on to the next label
+        ++i;
+    }
 }
 
 void CLogic_Analyzer::Init_GPIO_Subscription(const std::vector<std::uint32_t>& pins)

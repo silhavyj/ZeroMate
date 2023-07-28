@@ -22,6 +22,11 @@ public:
 private:
     inline void Init_GPIO_Subscription(const std::vector<std::uint32_t>& pins);
     [[nodiscard]] inline bool Is_There_Transition();
+    inline void Render_Line_Charts();
+    inline void Render_Line_Chart(std::uint32_t pin_idx);
+    inline void Render_Data_Annotation(std::uint32_t pin_idx);
+    inline void Render_Max_Number_Of_Samples();
+    inline void Render_Buttons();
 
 private:
     std::string m_name;
