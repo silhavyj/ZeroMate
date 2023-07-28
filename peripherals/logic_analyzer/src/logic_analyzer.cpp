@@ -15,6 +15,18 @@ CLogic_Analyzer::CLogic_Analyzer(const std::string& name,
 , m_number_of_collected_samples{ 0 }
 {
     Init_GPIO_Subscription(m_pins);
+    Init_Offsets();
+}
+
+void CLogic_Analyzer::Init_Offsets()
+{
+    std::uint32_t offset{ 0 };
+
+    for (const auto& pin : m_pins)
+    {
+        m_offsets[pin] = offset;
+        offset += Offset_Step;
+    }
 }
 
 void CLogic_Analyzer::Set_ImGui_Context(void* context)
@@ -31,7 +43,7 @@ bool CLogic_Analyzer::Is_There_Transition()
 {
     for (const auto& pin : m_pins)
     {
-        const auto state = static_cast<std::uint32_t>(m_read_pin(pin));
+        const auto state = static_cast<std::uint32_t>(m_read_pin(pin)) +  + m_offsets[pin];
 
         if (m_curr_sample_idx > 1 && state != m_data[pin].back())
         {
@@ -66,7 +78,7 @@ void CLogic_Analyzer::GPIO_Subscription_Callback([[maybe_unused]] std::uint32_t 
 
     for (const auto& pin : m_pins)
     {
-        m_data[pin].emplace_back(static_cast<std::uint32_t>(m_read_pin(pin)));
+        m_data[pin].emplace_back(static_cast<std::uint32_t>(m_read_pin(pin)) + m_offsets[pin]);
     }
 }
 
@@ -111,9 +123,22 @@ void CLogic_Analyzer::Render_Buttons()
 
 void CLogic_Analyzer::Render_Line_Charts()
 {
-    for (const auto& pin : m_pins)
+    if (ImPlot::BeginPlot("GPIO pins"))
     {
-        Render_Line_Chart(pin);
+        // Axes labels.
+        ImPlot::SetupAxis(ImAxis_X1, "Samples [1]");
+        ImPlot::SetupAxis(ImAxis_Y1, "Voltage (1 = 5V; 0 = 0V)");
+
+        for (const auto& pin : m_pins)
+        {
+            Render_Line_Chart(pin);
+        }
+
+        static double drag_tag = 0.25;
+        ImPlot::DragLineX(0,&drag_tag,ImVec4(1,1,0,0.7),1,ImPlotDragToolFlags_NoFit);
+        ImPlot::TagX(drag_tag, ImVec4(1,1,0,0.7), " ");
+
+        ImPlot::EndPlot();
     }
 }
 
@@ -122,24 +147,15 @@ void CLogic_Analyzer::Render_Line_Chart(std::uint32_t pin_idx)
     // Name of the graph.
     const std::string name = "GPIO pin " + std::to_string(pin_idx);
 
-    if (ImPlot::BeginPlot(name.c_str()))
-    {
-        // Axes labels.
-        ImPlot::SetupAxis(ImAxis_X1, "Samples [1]");
-        ImPlot::SetupAxis(ImAxis_Y1, "Voltage (1 = 5V; 0 = 0V)");
+    // Render the data itself.
+    ImPlot::PlotLine(name.c_str(),
+                       m_sample_idxs.data(),
+                       m_data[pin_idx].data(),
+                       static_cast<int>(m_sample_idxs.size()),
+                       ImPlotFlags_Equal);
 
-        // Render the data itself.
-        ImPlot::PlotLine(name.c_str(),
-                         m_sample_idxs.data(),
-                         m_data[pin_idx].data(),
-                         static_cast<int>(m_sample_idxs.size()),
-                         ImPlotFlags_Equal);
-
-        // Render data annotation (1s and 0s)
-        Render_Data_Annotation(pin_idx);
-
-        ImPlot::EndPlot();
-    }
+    // Render data annotation (1s and 0s)
+    Render_Data_Annotation(pin_idx);
 }
 
 void CLogic_Analyzer::Render_Data_Annotation(std::uint32_t pin_idx)
@@ -156,6 +172,11 @@ void CLogic_Analyzer::Render_Data_Annotation(std::uint32_t pin_idx)
             ++i;
         }
 
+        if (i >= m_sample_idxs.size() - 1)
+        {
+            break;
+        }
+
         // Render the annotation in the middle of the pulse.
         ImPlot::Annotation(m_sample_idxs[i] + 0.5f,
                            m_data[pin_idx][i],
@@ -163,7 +184,7 @@ void CLogic_Analyzer::Render_Data_Annotation(std::uint32_t pin_idx)
                            ImVec2(0, -5),
                            clamp,
                            "%d",
-                           m_data[pin_idx][i]);
+                           m_data[pin_idx][i] - m_offsets[pin_idx]);
 
         // Move on to the next label
         ++i;

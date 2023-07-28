@@ -1,7 +1,7 @@
 #pragma once
 
-#include <map>
 #include <vector>
+#include <unordered_map>
 
 #include <imgui.h>
 #include <implot/implot.h>
@@ -12,6 +12,8 @@ class CLogic_Analyzer final : public zero_mate::IExternal_Peripheral
 public:
     static constexpr int Max_Number_Of_Samples = 1024;
     static constexpr int Min_Number_Of_Samples = 0;
+
+    static constexpr std::uint32_t Offset_Step = 2;
 
 public:
     explicit CLogic_Analyzer(const std::string& name,
@@ -31,6 +33,7 @@ private:
     inline void Render_Data_Annotation(std::uint32_t pin_idx);
     inline void Render_Max_Number_Of_Samples();
     inline void Render_Buttons();
+    inline void Init_Offsets();
 
 private:
     std::string m_name;
@@ -39,8 +42,9 @@ private:
     std::uint32_t m_curr_sample_idx;
     ImGuiContext* m_ImGui_context;
     ImPlotContext* m_ImPlot_context;
-    std::map<std::uint32_t, std::vector<std::uint32_t>> m_data;
+    std::unordered_map<std::uint32_t, std::vector<std::uint32_t>> m_data;
     std::vector<std::uint32_t> m_sample_idxs;
     int m_max_number_of_samples;
     std::uint32_t m_number_of_collected_samples;
+    std::unordered_map<std::uint32_t, std::uint32_t> m_offsets;
 };
