@@ -123,7 +123,7 @@ void CLogic_Analyzer::Render_Buttons()
 
 void CLogic_Analyzer::Render_Line_Charts()
 {
-    if (ImPlot::BeginPlot("GPIO pins"))
+    if (ImPlot::BeginPlot("GPIO pins", ImVec2(-1, -1)))
     {
         // Axes labels.
         ImPlot::SetupAxis(ImAxis_X1, "Samples [1]");
