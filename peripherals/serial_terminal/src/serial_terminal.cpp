@@ -296,7 +296,7 @@ extern "C"
                           zero_mate::utils::CLogging_System* logging_system)
     {
         // Only one pin shall be passed to the peripheral.
-        if (pin_count != 1)
+        if (pin_count != 2)
         {
             return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::GPIO_Mismatch);
         }
