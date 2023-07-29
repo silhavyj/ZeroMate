@@ -37,7 +37,7 @@ Here is the content of [peripherals.json](../../peripherals.json) used in this e
 
 ## Demo
 
-<img src="../../misc/screenshots/gifs/examples/18-UART.gif">
+<img src="../../misc/screenshots/examples/18-UART.gif">
 
 The first few frames can be decoding as follows:
 

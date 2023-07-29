@@ -5,7 +5,7 @@ The logic analyzer can be used to view raw bits of various kinds communications 
 For instance, if the user wants the view the UART communication, they can set the sampling frequency to 270, assuming the default clock rate is 250000000 and the baudrate is 115200.
 
 ```c++
-(const unsigned int val = ((hal::Default_Clock_Rate / static_cast<unsigned int>(rate)) / 8) - 1;)
+const unsigned int val = ((hal::Default_Clock_Rate / static_cast<unsigned int>(rate)) / 8) - 1;
 ```
 
 <img src="../../misc/screenshots/peripherals/logic_analyzer.png">
