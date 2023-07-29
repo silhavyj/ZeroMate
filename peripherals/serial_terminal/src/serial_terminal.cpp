@@ -277,7 +277,7 @@ void CSerial_Terminal::Increment_Passed_Cycles(std::uint32_t count)
 {
     m_cpu_cycles += count;
 
-    // Should we update the UART RX state machine.
+    // Should we update the UART RX state machine?
     if (m_cpu_cycles >= m_baud_rate)
     {
         m_cpu_cycles = 0;

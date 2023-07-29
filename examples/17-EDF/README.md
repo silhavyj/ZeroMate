@@ -1,4 +1,4 @@
-# 18 - EDF
+# 17 - EDF
 
 ## Description
 
@@ -71,4 +71,4 @@ Here is the content of [peripherals.json](../../peripherals.json) used in this e
 
 ## Demo
 
-<img src="../../misc/screenshots/gifs/examples/18-EDF.gif">
+<img src="../../misc/screenshots/gifs/examples/17-EDF.gif">
