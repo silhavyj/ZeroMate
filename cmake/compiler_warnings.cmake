@@ -2,7 +2,7 @@
 # https://github.com/lefticus/cppbestpractices/blob/master/02-Use_the_Tools_Available.md
 
 function(set_project_warnings project_name)
-    option(WARNINGS_AS_ERRORS "Treat compiler warnings as errors" ON)
+    option(WARNINGS_AS_ERRORS "Treat compiler warnings as errors" OFF)
 
     # MVC warnings
     set(MSVC_WARNINGS
@@ -43,6 +43,7 @@ function(set_project_warnings project_name)
         -Wsign-conversion    # warn on sign conversions
         -Wnull-dereference   # warn if a null dereference is detected
         -Wdouble-promotion   # warn if float is implicit promoted to double
+        -Wno-microsoft-enum-value # Workaround because of the Capstone library
         -Wformat=2)          # warn on security issues around functions that format output (ie printf)
 
     # Also if WARNINGS_AS_ERRORS is enabled, add -Werror to CLANG_WARNINGS

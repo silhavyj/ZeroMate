@@ -78,12 +78,12 @@ add_custom_command(
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/peripherals.json ${output_directory})
 
 # Windows specific: Embed the icon into the executable
-if(WIN32)
+if(WIN32 AND MSVC)
     set(RESOURCE_FILE ${CMAKE_CURRENT_BINARY_DIR}/resources.rc)
     file(WRITE ${RESOURCE_FILE} "IDI_ICON1 ICON \"${CMAKE_SOURCE_DIR}/misc/logos/logo.ico\"")
     target_sources(zero_mate PRIVATE ${RESOURCE_FILE})
     set_source_files_properties(${RESOURCE_FILE} PROPERTIES GENERATED TRUE)
     set_target_properties(
-            zero_mate PROPERTIES
-            LINK_FLAGS "/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
+        zero_mate PROPERTIES
+        LINK_FLAGS "/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 endif()
