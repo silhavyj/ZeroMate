@@ -32,4 +32,4 @@ In this example, the handler does not do anything useful - it contains a piece o
 
 The proper call of a SW exception can be tested by setting a breakpoint at the address of the `svc` instruction. Once the code execution stops at this instruction, we can step through the code twice to jump into the exception handler - the first step retrieves the address from the IVT, and the second step performs the jump itself.
 
-<img src="../../misc/screenshots/gifs/examples/10-software_interrupt.gif">
+<img src="../../misc/screenshots/examples/10-software_interrupt.gif">

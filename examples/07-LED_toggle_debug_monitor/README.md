@@ -6,4 +6,4 @@ Similarly to example [06 - LED_toggle](../06-LED_toggle/README.md). It periodica
 
 ## Demo
 
-<img src="../../misc/screenshots/gifs/examples/07-LED_toggle_debug_monitor.gif">
+<img src="../../misc/screenshots/examples/07-LED_toggle_debug_monitor.gif">

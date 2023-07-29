@@ -29,4 +29,4 @@ extern "C" void Process_1()
 
 ## Demo
 
-<img src="../../misc/screenshots/gifs/examples/13-context_switch_monitor.gif">
+<img src="../../misc/screenshots/examples/13-context_switch_monitor.gif">
