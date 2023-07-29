@@ -4,11 +4,11 @@
 
 The UART example demonstrates a simple use of the UART communication between the emulator and a serial terminal that was implemented as an external peripheral.
 
-There are two `.elf` files for this example the user can try out. They both send the message `Welcome to KIV/OS RPiOS kernel\r\n`. However, they use different baudrates. The user needs to set the appropriate baudate in the serial terminal as well. 
+There are two `.elf` files for this example the user can try out. They both transmit the message `Welcome to KIV/OS RPiOS kernel\r\n` over UART. However, they use different baudrates. The user needs to set the appropriate baudate in the serial terminal as well. 
 
 ## Simplifications
 
-As the serial terminal does not have its own internal clock, it is derived directly from the emulator. In reality, there is not synchronization taking place between the two devices. The user still needs to set the baudrate properly for the communication to work as expected.
+As the serial terminal does not have its own internal clock, it is derived directly from the emulator. In reality, there is not synchronization taking place between the two devices whatsoever. Nevertheless, the user still needs to set the baudrate properly for the communication to work as expected.
 
 ## External peripherals
 
