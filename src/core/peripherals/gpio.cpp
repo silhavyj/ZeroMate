@@ -327,6 +327,10 @@ namespace zero_mate::peripheral
             return;
         }
 
+        // Store a copy of the GPIO registers before they get overwritten.
+        // The copy is used for example when accessing GPEDS0 and GPEDS1 (SW emulation).
+        m_regs_prev = m_regs;
+
         // Write data to the peripheral's registers.
         std::copy_n(data, size, &std::bit_cast<char*>(m_regs.data())[addr]);
 
@@ -468,17 +472,12 @@ namespace zero_mate::peripheral
         // Get the pin by its index.
         auto& pin = m_pins[pin_idx];
 
-        // Make sure the pin function has been set to input.
-        // TODO there might be exceptions such as the Alt_x functions?
-        if (pin.Get_Function() != CPin::NFunction::Input)
-        {
-            return NPin_Set_Status::Not_Input_Pin;
-        }
+        const CPin::NFunction pin_function = pin.Get_Function();
 
-        // Check if setting the pin state actually does something.
-        if (pin.Get_State() == state)
+        // Make sure the pin function has been set to input.
+        if ((pin_function != CPin::NFunction::Input) && (pin_function != CPin::NFunction::Alt_5))
         {
-            return NPin_Set_Status::State_Already_Set;
+            return NPin_Set_Status::Invalid_Pin_Function;
         }
 
         // Check if changing the pin's state triggers an interrupt.
@@ -489,12 +488,16 @@ namespace zero_mate::peripheral
         pin.Set_State(state);
         Mirror_Pin_State_In_GPLEVn(pin_idx, state);
 
+        // Notify external peripherals.
+        Notify_External_Peripherals(static_cast<std::uint32_t>(pin_idx));
+
         if (interrupt_detected)
         {
             // Set a pending interrupt on the pin.
             pin.Set_Pending_IRQ(true);
 
-            // TODO should not the pending IRQ be reflected in the GPEDS register?
+            // Reflect the pending IRQ in GPEDS.
+            Update_GPEDS(pin_idx);
 
             // Convert the pin index into an IRQ source.
             const auto irq_source = CInterrupt_Controller::Get_IRQ_Source(pin_idx);
@@ -504,6 +507,22 @@ namespace zero_mate::peripheral
         }
 
         return NPin_Set_Status::OK;
+    }
+
+    void CGPIO_Manager::Update_GPEDS(std::size_t pin_idx)
+    {
+        // Assume the pin index comes from the first set of indexes.
+        auto reg_idx = static_cast<std::uint32_t>(NRegister::GPEDS0);
+
+        // Check if GPEDS1 should be used (pin_idx >= 32)
+        if (pin_idx >= Number_Of_Pins_In_Reg)
+        {
+            reg_idx = static_cast<std::uint32_t>(NRegister::GPEDS1);
+            pin_idx -= Number_Of_Pins_In_Reg;
+        }
+
+        // There is a pending IRQ on this pin.
+        m_regs[reg_idx] |= (1U << pin_idx);
     }
 
     void CGPIO_Manager::Clear_IRQ(std::size_t reg_idx, bool last_reg)
@@ -522,6 +541,9 @@ namespace zero_mate::peripheral
             // Check if the pin is set to a 1 (pending interrupt should be cleared)
             if (utils::math::Is_Bit_Set(m_regs[reg_idx], idx) && pin.Has_Pending_IRQ())
             {
+                // Clear the bit (in the prev value, so we do not affect the current state).
+                m_regs_prev[reg_idx] &= ~(1U << idx);
+
                 // Clear the interrupt
                 pin.Set_Pending_IRQ(false);
 
@@ -539,7 +561,7 @@ namespace zero_mate::peripheral
         }
 
         // RS latch - only the last write defines the state of the pin (SW emulation).
-        m_regs[reg_idx] = 0;
+        m_regs[reg_idx] = m_regs_prev[reg_idx];
     }
 
 } // namespace zero_mate::peripheral

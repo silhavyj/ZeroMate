@@ -20,20 +20,21 @@
 
 // Project file imports
 
-#include <zero_mate/external_peripheral.hpp>
+#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/external_peripheral.hpp"
 
 #include "bus.hpp"
 #include "arm1176jzf_s/core.hpp"
 #include "arm1176jzf_s/mmu/mmu.hpp"
 #include "coprocessors/cp15/cp15.hpp"
+#include "coprocessors/fpu/fpu.hpp"
 #include "peripherals/ram.hpp"
 #include "peripherals/interrupt_controller.hpp"
 #include "peripherals/arm_timer.hpp"
 #include "peripherals/monitor.hpp"
 #include "peripherals/trng.hpp"
 #include "peripherals/gpio.hpp"
-
-#include "zero_mate/utils/logger.hpp"
+#include "peripherals/auxiliary/auxiliary.hpp"
 
 namespace zero_mate::soc
 {
@@ -79,6 +80,9 @@ namespace zero_mate::soc
         /// Default TRNG (random number generator) map address (where it is found in the address space)
         inline constexpr std::uint32_t TRNG_Address = 0x20104000;
 
+        /// Default AUX peripheral address (where it is found in the address space)
+        inline constexpr std::uint32_t AUX_Address = 0x20215000;
+
     } // namespace zero_mate::config
 
     /// Global reference to a logging system used throughout the project
@@ -95,6 +99,9 @@ namespace zero_mate::soc
 
     /// Global reference to the CP15 (system control coprocessor)
     extern std::shared_ptr<coprocessor::cp15::CCP15> g_cp15;
+
+    /// Global reference to FPU (floating point unit)
+    extern std::shared_ptr<coprocessor::cp10::CFPU> g_fpu;
 
     /// Global reference to the MMU (memory management unit).
     extern std::shared_ptr<arm1176jzf_s::mmu::CMMU> g_mmu;
@@ -119,6 +126,9 @@ namespace zero_mate::soc
 
     /// Collection of all external peripherals that are connected to the system via GPIO pins
     extern std::vector<IExternal_Peripheral*> g_external_peripherals;
+
+    /// Global reference to the auxiliary peripheral (UART, SPI_1, and SPI_2)
+    extern std::shared_ptr<peripheral::CAUX> g_aux;
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Initializes the system.

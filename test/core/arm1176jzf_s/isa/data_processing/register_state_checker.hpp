@@ -20,7 +20,13 @@ namespace zero_mate::test
     public:
         void Record_State(const CPU_Context& cpu_context) noexcept
         {
-            m_cpu_context = cpu_context;
+            m_cpu_context.Set_CPSR(cpu_context.Get_CPSR());
+            m_cpu_context.Set_SPSR(cpu_context.Get_SPSR());
+
+            for (std::size_t i = 0; i < arm1176jzf_s::CCPU_Context::Number_Of_Regs; ++i)
+            {
+                m_cpu_context[static_cast<std::uint32_t>(i)] = cpu_context[static_cast<std::uint32_t>(i)];
+            }
         }
 
         [[nodiscard]] bool Is_Any_Other_Register_Modified(const CPU_Context& curr_cpu_context, Changed_registers_t changed_registers) const noexcept

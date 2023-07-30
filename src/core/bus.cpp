@@ -39,7 +39,7 @@ namespace zero_mate
 
         // The very last address in the address space. It is stored as std::uint64_t, so we
         // can check for overflows within the address space.
-        const auto last_address = static_cast<std::uint64_t>(std::numeric_limits<std::uint32_t>::max());
+        constexpr auto last_address = static_cast<std::uint64_t>(std::numeric_limits<std::uint32_t>::max());
 
         // Make sure the peripheral does not "fall out of the accessible address space".
         if (last_peripheral_address >= last_address)

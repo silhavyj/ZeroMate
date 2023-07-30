@@ -26,16 +26,13 @@
 
 #include "context.hpp"
 #include "exceptions.hpp"
-
 #include "isa/isa.hpp"
 #include "isa/isa_decoder.hpp"
-
 #include "../bus.hpp"
 #include "mmu/mmu.hpp"
-
 #include "zero_mate/utils/math.hpp"
 #include "zero_mate/utils/logger.hpp"
-
+#include "zero_mate/external_peripheral.hpp"
 #include "../peripherals/interrupt_controller.hpp"
 #include "../peripherals/system_clock_listener.hpp"
 
@@ -98,6 +95,12 @@ namespace zero_mate::arm1176jzf_s
         /// \param listener System clock listener to be registered
         // -------------------------------------------------------------------------------------------------------------
         void Register_System_Clock_Listener(const System_Clock_Listener_t& listener);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Sets a collection of external peripherals, so they can be notified about CPU cycles.
+        /// \param external_peripherals Collection of external peripherals
+        // -------------------------------------------------------------------------------------------------------------
+        void Set_External_Peripherals(std::vector<IExternal_Peripheral*>* external_peripherals);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Sets a coprocessor.
@@ -622,6 +625,7 @@ namespace zero_mate::arm1176jzf_s
         IC_t m_interrupt_controller;                                   ///< Interrupt controller
         std::vector<System_Clock_Listener_t> m_system_clock_listeners; ///< Collection of system clock listeners
         Coprocessors_t m_coprocessors;                                 ///< Collection of different coprocessors
+        std::vector<IExternal_Peripheral*>* m_external_peripherals;    ///< Collection of external peripherals
     };
 
 } // namespace zero_mate::arm1176jzf_s

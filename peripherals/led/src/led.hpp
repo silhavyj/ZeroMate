@@ -70,7 +70,7 @@ private:
     /// \brief Returns the current color of the LED based on its current state (on/off).
     /// \return Current color of the LED
     // -----------------------------------------------------------------------------------------------------------------
-    inline ImU32 Get_Current_Color() const;
+    [[nodiscard]] inline ImU32 Get_Current_Color() const;
 
 private:
     std::string m_name;                                          ///< Unique name of the peripheral

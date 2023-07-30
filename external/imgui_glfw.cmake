@@ -18,7 +18,10 @@ add_library(
     ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui_draw.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imgui/imgui_demo.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imgui/backends/imgui_impl_glfw.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/imgui/backends/imgui_impl_opengl3.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/imgui/backends/imgui_impl_opengl3.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/implot/implot.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/implot/implot_items.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/implot/implot_demo.cpp)
 
 # Specify the public include directories
 target_include_directories(
@@ -26,7 +29,8 @@ target_include_directories(
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/imgui
         ${CMAKE_CURRENT_SOURCE_DIR}/imgui/backends
-        ${CMAKE_CURRENT_SOURCE_DIR}/imgui-filebrowser)
+        ${CMAKE_CURRENT_SOURCE_DIR}/imgui-filebrowser
+        ${CMAKE_CURRENT_SOURCE_DIR}/implot)
 
 # Link OpenGL, GLFW and GLEW to the library
 target_link_libraries(
@@ -40,7 +44,7 @@ target_link_libraries(
 if(NOT WIN32)
     set(output_directory ${PROJECT_SOURCE_DIR}/output)
     add_custom_command(
-            TARGET imgui_glfw POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E make_directory ${output_directory}
-            COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:imgui_glfw> ${output_directory})
+        TARGET imgui_glfw POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory ${output_directory}
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:imgui_glfw> ${output_directory})
 endif()

@@ -35,4 +35,4 @@ Here is the content of [peripherals.json](../../peripherals.json) used in this e
 
 ## Demo
 
-<img src="../../misc/screenshots/gifs/examples/14-filesystem_monitor.gif">
+<img src="../../misc/screenshots/examples/14-filesystem_monitor.gif">

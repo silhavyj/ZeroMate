@@ -35,19 +35,44 @@ namespace zero_mate::soc
     // Initialize the logging system.
     utils::CLogging_System& g_logging_system = *utils::CSingleton<utils::CLogging_System>::Get_Instance();
 
-    // Initialize all peripherals.
+    // RAM
     std::shared_ptr<peripheral::CRAM> g_ram{ nullptr };
+
+    // Bus
     std::shared_ptr<CBus> g_bus = std::make_shared<CBus>();
+
+    // CPU
     std::shared_ptr<arm1176jzf_s::CCPU_Core> g_cpu = std::make_shared<arm1176jzf_s::CCPU_Core>(0, g_bus);
+
+    // CP15
     std::shared_ptr<coprocessor::cp15::CCP15> g_cp15 =
     std::make_shared<coprocessor::cp15::CCP15>(g_cpu->Get_CPU_Context());
+
+    // FPU
+    std::shared_ptr<coprocessor::cp10::CFPU> g_fpu =
+    std::make_shared<coprocessor::cp10::CFPU>(g_cpu->Get_CPU_Context());
+
+    // MMU
     std::shared_ptr<arm1176jzf_s::mmu::CMMU> g_mmu = std::make_shared<arm1176jzf_s::mmu::CMMU>(g_bus, g_cp15);
+
+    // IC (interrupt controller)
     std::shared_ptr<peripheral::CInterrupt_Controller> g_ic =
     std::make_shared<peripheral::CInterrupt_Controller>(g_cpu->Get_CPU_Context());
+
+    // ARM timer
     std::shared_ptr<peripheral::CARM_Timer> g_arm_timer = std::make_shared<peripheral::CARM_Timer>(g_ic);
+
+    // GPIO
     std::shared_ptr<peripheral::CGPIO_Manager> g_gpio = std::make_shared<peripheral::CGPIO_Manager>(g_ic);
+
+    // Monitor
     std::shared_ptr<peripheral::CMonitor> g_monitor = std::make_shared<peripheral::CMonitor>();
+
+    // TRNG (random number generator)
     std::shared_ptr<peripheral::CTRNG> g_trng = std::make_shared<peripheral::CTRNG>();
+
+    // AUX
+    std::shared_ptr<peripheral::CAUX> g_aux = std::make_shared<peripheral::CAUX>(g_gpio, g_ic);
 
     // Initialize the collection of all internal peripherals as well as a collection of all external
     // peripherals that are connected to the board via GPIO.
@@ -166,19 +191,25 @@ namespace zero_mate::soc
 
             // Map the peripherals to the bus.
             Attach_Peripheral_To_Bus<peripheral::CRAM>("RAM memory", config::RAM_Address, g_ram);
-            Attach_Peripheral_To_Bus<peripheral::CInterrupt_Controller>("nterrupt controller",
+            Attach_Peripheral_To_Bus<peripheral::CInterrupt_Controller>("interrupt controller",
                                                                         config::IC_Address,
                                                                         g_ic);
-            Attach_Peripheral_To_Bus<peripheral::CGPIO_Manager>("GPIO pin registers", config::GPIO_Address, g_gpio);
+            Attach_Peripheral_To_Bus<peripheral::CGPIO_Manager>("GPIO", config::GPIO_Address, g_gpio);
             Attach_Peripheral_To_Bus<peripheral::CARM_Timer>("ARM timer", config::ARM_Timer_Address, g_arm_timer);
             Attach_Peripheral_To_Bus<peripheral::CMonitor>("monitor", config::Monitor_Address, g_monitor);
-            Attach_Peripheral_To_Bus<peripheral::CTRNG>("trng", config::TRNG_Address, g_trng);
+            Attach_Peripheral_To_Bus<peripheral::CTRNG>("TRNG", config::TRNG_Address, g_trng);
+            Attach_Peripheral_To_Bus<peripheral::CAUX>("AUX", config::AUX_Address, g_aux);
 
-            // Attach the interrupt controller, ARM timer, MMU, and CP15 to the CPU.
+            // Attach the interrupt controller, MMU, external peripherals, and CP15 to the CPU.
             g_cpu->Set_Interrupt_Controller(g_ic);
-            g_cpu->Register_System_Clock_Listener(g_arm_timer);
             g_cpu->Add_Coprocessor(coprocessor::cp15::CCP15::ID, g_cp15);
+            g_cpu->Add_Coprocessor(coprocessor::cp10::CFPU::ID, g_fpu);
             g_cpu->Set_MMU(g_mmu);
+            g_cpu->Set_External_Peripherals(&g_external_peripherals);
+
+            // Register system clock listeners.
+            g_cpu->Register_System_Clock_Listener(g_arm_timer);
+            g_cpu->Register_System_Clock_Listener(g_aux);
 
             // Add a reference to CP15 to the bus, so it knows whether to check for unaligned memory access.
             g_bus->Set_CP15(g_cp15);

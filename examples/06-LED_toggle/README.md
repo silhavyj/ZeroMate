@@ -6,4 +6,4 @@ This example is the first example that interacts with GPIO pins. In particular, 
 
 ## Demo
 
-<img src="../../misc/screenshots/gifs/examples/06-LED_toggle.gif">
+<img src="../../misc/screenshots/examples/06-LED_toggle.gif">

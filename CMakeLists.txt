@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.21)
 # General info about the project
 project(
     ZeroMate
-    VERSION 1.1.0
+    VERSION 1.2.0
     DESCRIPTION "Raspberry Pi Zero emulator"
     HOMEPAGE_URL "https://github.com/silhavyj/ZeroMate"
     LANGUAGES C CXX)
@@ -41,7 +41,6 @@ include(cmake/static_analyzers.cmake)
 
 # Add submodules (libraries)
 add_subdirectory(external/fmt)
-add_subdirectory(external/googletest)
 add_subdirectory(external/elfio)
 add_subdirectory(external/glew)
 add_subdirectory(external/glfw)
@@ -63,6 +62,7 @@ add_subdirectory(src)
 # Add tests
 option(ENABLE_TESTING "Enable Test Builds" ON)
 if(ENABLE_TESTING)
+    add_subdirectory(external/googletest)
     enable_testing()
     add_subdirectory(test)
 endif()

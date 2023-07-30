@@ -246,10 +246,9 @@ namespace zero_mate::peripheral
         // -------------------------------------------------------------------------------------------------------------
         enum class NPin_Set_Status
         {
-            OK,                ///< The new state has been set successfully
-            Not_Input_Pin,     ///< The function of the pin must be set to Input (TODO there might be exceptions?)
-            State_Already_Set, ///< The pin is already in the desired state
-            Invalid_Pin_Number ///< Invalid pin number (Rpi Zero has 54 GPIO pins)
+            OK,                   ///< The new state has been set successfully
+            Invalid_Pin_Function, ///< The function of the pin must be set to Input (TODO there might be exceptions?)
+            Invalid_Pin_Number    ///< Invalid pin number (Rpi Zero has 54 GPIO pins)
         };
 
     public:
@@ -380,12 +379,19 @@ namespace zero_mate::peripheral
         // -------------------------------------------------------------------------------------------------------------
         void Notify_External_Peripherals(std::uint32_t pin_idx);
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Reflects the state of a pending IRQ in the GPEDS register.
+        /// \param pin_idx Index of the pin where an interrupt has occurred
+        // -------------------------------------------------------------------------------------------------------------
+        void Update_GPEDS(std::size_t pin_idx);
+
     private:
         std::array<std::uint32_t, Number_Of_Registers> m_regs;         ///< GPIO registers
         std::array<CPin, Number_of_GPIO_Pins> m_pins;                  ///< GPIO pins
         utils::CLogging_System& m_logging_system;                      ///< Logging system
         std::shared_ptr<CInterrupt_Controller> m_interrupt_controller; ///< Interrupt controller
         std::vector<IExternal_Peripheral*> m_external_peripherals;     ///< Collection of external peripherals
+        std::array<std::uint32_t, Number_Of_Registers> m_regs_prev;    ///< Previous values of the GPIO registers
     };
 
 } // namespace zero_mate::peripheral
