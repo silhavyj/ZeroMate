@@ -1,0 +1,35 @@
+name: MacOS
+
+# Define the rules when this workflow should be applied
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    # Specify the type of the machine
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    # Configure the CMake project using CMake Presets
+    - name: Configure CMake
+      run: cmake --preset unix_makefiles_gcc_debug
+
+    # Build the project
+    - name: Build
+      run: cmake --build --preset unix_makefiles_gcc_debug
+
+    # Run tests
+    - name: Tests
+      working-directory: build/unix_makefiles/gcc/debug
+      run: ctest --rerun-failed --output-on-failure
+
+# EOF

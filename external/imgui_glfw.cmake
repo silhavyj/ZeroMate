@@ -44,7 +44,7 @@ target_link_libraries(
 if(NOT WIN32)
     set(output_directory ${PROJECT_SOURCE_DIR}/output)
     add_custom_command(
-            TARGET imgui_glfw POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E make_directory ${output_directory}
-            COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:imgui_glfw> ${output_directory})
+        TARGET imgui_glfw POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory ${output_directory}
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:imgui_glfw> ${output_directory})
 endif()
