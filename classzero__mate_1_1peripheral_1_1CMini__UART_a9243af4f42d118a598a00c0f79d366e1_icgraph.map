@@ -1,0 +1,12 @@
+<map id="zero_mate::peripheral::CMini_UART::Set_GPIO_pin" name="zero_mate::peripheral::CMini_UART::Set_GPIO_pin">
+<area shape="rect" id="node1" title="Sets the state of a given GPIO pin." alt="" coords="1180,39,1383,80"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a33db8351f94fd39f6c10594c574c8195" title="Sets the state of the RX pin." alt="" coords="943,5,1132,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aa97db5d47b819acd85beda1dc91cb355" title="Sets the state of the TX pin." alt="" coords="943,71,1131,112"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aee9c1b3a2634b94002a0111d1ecdf107" title="Enables/disables the mini UART peripheral." alt="" coords="707,5,872,47"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a26406d8e22c04d3107bcfaba34a36d4b" title="Sends another bit of the current payload (actual data)." alt="" coords="686,71,893,112"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a3f90165b3b568a8f8eae2a44a357fe1f" title="Sends a start bit." alt="" coords="684,136,895,177"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a7446eb5b85539db10da52cf2780a0d49" title="Sends a stop bit." alt="" coords="685,201,893,243"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a39f26f9ac5a5cb08b2a292f5c6fab6db" title="Updates the transmission state machine." alt="" coords="449,136,636,177"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a3b75064597a5fbfe9c4c7d1f2e0c7e5f" title="Updates the state machines (transmission/reception)." alt="" coords="236,136,401,177"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aae5f7e2bbffa6e3881675058a0aedf6f" title="Updates the number of passed CPU cycles (forwarded from the AUX peripheral)." alt="" coords="5,129,188,185"/>
+</map>

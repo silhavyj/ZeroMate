@@ -1,0 +1,20 @@
+<map id="zero_mate::utils::CLogging_System::Warning" name="zero_mate::utils::CLogging_System::Warning">
+<area shape="rect" id="node1" title="Logs a warning message via all registered loggers." alt="" coords="949,381,1144,423"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e6ef006a36e1adb56abd3ecc6481be" title="Executes a CPU exception." alt="" coords="700,71,876,127"/>
+<area shape="rect" id="node8" href="$namespacezero__mate_1_1gui.html#ad17e948433f50f210774367b5671af03" title=" " alt="" coords="693,151,883,178"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a00f4cf1169d774a50886f60f5f166f8b" title="Performs a halfword data write to a given address." alt="" coords="675,202,901,258"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9c9fd268222fa96e4a81d65f7340235c" title="Reads data from the peripheral (IPeripheral interface)." alt="" coords="705,283,871,324"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1peripheral_1_1CAUX.html#aedef3fa569fbcba697c28a9a5a3ecab9" title="Reads data from the peripheral (IPeripheral interface)." alt="" coords="705,348,871,389"/>
+<area shape="rect" id="node14" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9" title="Reads data from the peripheral (IPeripheral interface)." alt="" coords="700,413,876,455"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae93785da50eefb8a8cc21c1c59a32726" title="Updates the state of all pins within a given register." alt="" coords="693,479,883,535"/>
+<area shape="rect" id="node16" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a26aa957dbb7682447e4ebf9aa078c00c" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="448,519,627,560"/>
+<area shape="rect" id="node17" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="705,611,871,652"/>
+<area shape="rect" id="node18" href="$classzero__mate_1_1peripheral_1_1CAUX.html#a66c343e995d87042d200831e5692a3a9" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="705,676,871,717"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac81ae05305c6916b7eda83abff602dcf" title="Executes a single instruction." alt="" coords="449,5,625,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa327755c4c57c01f03e16fb3d1195f6a" title="Fetches the next instruction." alt="" coords="451,71,624,127"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a1665360d8ae71ed541b4c10f39e655a5" title=" " alt="" coords="227,79,400,120"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad07b9956fd3f7b6c64b93c69243092f4" title="Starts the execution." alt="" coords="5,45,179,87"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a16544e9981489e1f4a25405248e5a5c0" title=" " alt="" coords="5,111,179,152"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Entry point of the application." alt="" coords="510,151,565,178"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae5fc1112d78d8c344841fd94d1356635" title="Executes a halfword data transfer instruction." alt="" coords="449,209,625,251"/>
+</map>

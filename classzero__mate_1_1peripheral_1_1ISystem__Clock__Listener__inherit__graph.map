@@ -1,4 +1,5 @@
 <map id="zero_mate::peripheral::ISystem_Clock_Listener" name="zero_mate::peripheral::ISystem_Clock_Listener">
-<area shape="rect" id="node1" title="This class represents a general interface for a CPU clock listener." alt="" coords="5,5,191,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html" title="This class represents the ARM timer used in BCM2835." alt="" coords="15,95,181,136"/>
+<area shape="rect" id="node1" title="This class represents a general interface for a CPU clock listener." alt="" coords="90,5,275,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CARM__Timer.html" title="This class represents the ARM timer used in BCM2835." alt="" coords="5,95,171,136"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CAUX.html" title="This class represents the auxiliaries (UART1 &amp; SPI1, and SPI2)." alt="" coords="195,95,360,136"/>
 </map>

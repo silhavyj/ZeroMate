@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -147,6 +147,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a221d922c8dbe0f017f9692d8cf5d1b18"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a221d922c8dbe0f017f9692d8cf5d1b18">Set_ImGui_Context</a> ([[maybe_unused]] void *context)</td></tr>
 <tr class="memdesc:a221d922c8dbe0f017f9692d8cf5d1b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets ImGuiContext which is used when the peripheral decides to render itself.  <a href="classzero__mate_1_1IExternal__Peripheral.html#a221d922c8dbe0f017f9692d8cf5d1b18">More...</a><br /></td></tr>
 <tr class="separator:a221d922c8dbe0f017f9692d8cf5d1b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac840c0ea71b02336d731176f6f385a0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#ac840c0ea71b02336d731176f6f385a0e">Set_ImPlot_Context</a> ([[maybe_unused]] void *context)</td></tr>
+<tr class="memdesc:ac840c0ea71b02336d731176f6f385a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets ImPlotContext which is used to render plots &amp; graphs.  <a href="classzero__mate_1_1IExternal__Peripheral.html#ac840c0ea71b02336d731176f6f385a0e">More...</a><br /></td></tr>
+<tr class="separator:ac840c0ea71b02336d731176f6f385a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee4b5c0163e520cfec93846904e3620"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#afee4b5c0163e520cfec93846904e3620">Increment_Passed_Cycles</a> ([[maybe_unused]] std::uint32_t count)</td></tr>
+<tr class="memdesc:afee4b5c0163e520cfec93846904e3620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the peripheral about how many CPU cycles have passed by.  <a href="classzero__mate_1_1IExternal__Peripheral.html#afee4b5c0163e520cfec93846904e3620">More...</a><br /></td></tr>
+<tr class="separator:afee4b5c0163e520cfec93846904e3620"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -398,6 +404,42 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="afee4b5c0163e520cfec93846904e3620"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee4b5c0163e520cfec93846904e3620">&#9670;&nbsp;</a></span>Increment_Passed_Cycles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void zero_mate::IExternal_Peripheral::Increment_Passed_Cycles </td>
+          <td>(</td>
+          <td class="paramtype">[[maybe_unused] ] std::uint32_t&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Notifies the peripheral about how many CPU cycles have passed by. </p>
+<p>The CPU core calls this function after every instruction, so the peripheral can update itself.</p>
+<dl class="section note"><dt>Note</dt><dd>In reality, external peripherals do not know of CPU cycles - simplification (e.g. UART) </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>Number of CPU cycles </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8cb02b902e1725018ef692ef98718d34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8cb02b902e1725018ef692ef98718d34">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -514,6 +556,41 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">context</td><td>Pointer to an ImGuiContext </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac840c0ea71b02336d731176f6f385a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac840c0ea71b02336d731176f6f385a0e">&#9670;&nbsp;</a></span>Set_ImPlot_Context()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void zero_mate::IExternal_Peripheral::Set_ImPlot_Context </td>
+          <td>(</td>
+          <td class="paramtype">[[maybe_unused] ] void *&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets ImPlotContext which is used to render plots &amp; graphs. </p>
+<dl class="section note"><dt>Note</dt><dd>The ImPlotContext is passed as a void pointer to avoid compile-time dependency on the ImPlot library. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>Pointer to an ImPlotContext </td></tr>
   </table>
   </dd>
 </dl>

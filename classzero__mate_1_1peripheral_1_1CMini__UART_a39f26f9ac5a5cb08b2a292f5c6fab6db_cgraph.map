@@ -1,0 +1,20 @@
+<map id="zero_mate::peripheral::CMini_UART::Update_TX" name="zero_mate::peripheral::CMini_UART::Update_TX">
+<area shape="rect" id="node1" title="Updates the transmission state machine." alt="" coords="5,199,192,241"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a2786f867a05087fc463657262594db71" title="Returns information about whether the transmission FIFO is empty or not." alt="" coords="253,5,472,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a968340fbf2802af5178531146bca03c8" title="Returns information about whether the transmitter is enabled or not." alt="" coords="259,85,467,141"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a7d118e7d2ef856b0a3a6dafc32f08383" title="Resets transmission (end of the current UART frame)." alt="" coords="240,166,485,207"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a26406d8e22c04d3107bcfaba34a36d4b" title="Sends another bit of the current payload (actual data)." alt="" coords="259,231,466,273"/>
+<area shape="rect" id="node17" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a3f90165b3b568a8f8eae2a44a357fe1f" title="Sends a start bit." alt="" coords="257,297,468,338"/>
+<area shape="rect" id="node18" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a7446eb5b85539db10da52cf2780a0d49" title="Sends a stop bit." alt="" coords="259,362,467,403"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a1e54d90a036d327e36d06a74be1595c3" title="Returns information about a transmit interrupt is enabled." alt="" coords="533,55,724,111"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a792a3a1a286bf0e7f47bb255bc104294" title="Triggers an interrupt." alt="" coords="533,135,724,177"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a2f29b39f721b4ae5acf81f61ab210325" title="Returns the length of payload (7 or 8 bits)." alt="" coords="541,201,717,257"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a4e01dd26b71c9c13ec8a81510cbf2450" title="Returns the data length from a given enumeration." alt="" coords="541,281,717,337"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aa97db5d47b819acd85beda1dc91cb355" title="Sets the state of the TX pin." alt="" coords="535,362,723,403"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a9243af4f42d118a598a00c0f79d366e1" title="Sets the state of a given GPIO pin." alt="" coords="772,362,975,403"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="1023,362,1217,403"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="1265,317,1468,373"/>
+<area shape="rect" id="node16" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="1267,398,1466,439"/>
+<area shape="rect" id="node14" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="1516,293,1729,334"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="1525,358,1720,399"/>
+</map>

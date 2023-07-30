@@ -7,6 +7,7 @@ var namespacezero__mate_1_1soc_1_1config =
       [ "Pins", "namespacezero__mate_1_1soc_1_1config_1_1sections.html#a392cc70e714e5ce5957a87527ba59a7a", null ]
     ] ],
     [ "ARM_Timer_Address", "namespacezero__mate_1_1soc_1_1config.html#a0b9c1816e485f680330c939a4066f17d", null ],
+    [ "AUX_Address", "namespacezero__mate_1_1soc_1_1config.html#a22320326abefd378425806d64368eb9b", null ],
     [ "External_Peripherals_Config_File", "namespacezero__mate_1_1soc_1_1config.html#a2bb78f7e9c151d956354dfb556d566fa", null ],
     [ "GPIO_Address", "namespacezero__mate_1_1soc_1_1config.html#a3d6125d0197a653cfb052aeebf1f15c2", null ],
     [ "IC_Address", "namespacezero__mate_1_1soc_1_1config.html#aaf7dcb45e5b2104d7e301002aae90d9c", null ],

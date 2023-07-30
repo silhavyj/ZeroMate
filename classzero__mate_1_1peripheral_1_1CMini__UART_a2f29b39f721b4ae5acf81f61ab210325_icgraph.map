@@ -1,0 +1,11 @@
+<map id="zero_mate::peripheral::CMini_UART::Get_Char_Length" name="zero_mate::peripheral::CMini_UART::Get_Char_Length">
+<area shape="rect" id="node1" title="Returns the length of payload (7 or 8 bits)." alt="" coords="944,79,1120,135"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aa1f84217d3edc234677d1b755f829a92" title="Receives another bit of the current payload (actual data)." alt="" coords="707,5,875,61"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CAUX__Window.html#a84134555bb7100075f909c0de2f0829b" title="Renders information related to the mini UART auxiliary peripheral." alt="" coords="685,86,896,127"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a26406d8e22c04d3107bcfaba34a36d4b" title="Sends another bit of the current payload (actual data)." alt="" coords="687,151,894,193"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a6b04378225c55c43c00805cb5bdb99b3" title="Updates the reception state machines." alt="" coords="449,17,637,58"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a3b75064597a5fbfe9c4c7d1f2e0c7e5f" title="Updates the state machines (transmission/reception)." alt="" coords="236,86,401,127"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aae5f7e2bbffa6e3881675058a0aedf6f" title="Updates the number of passed CPU cycles (forwarded from the AUX peripheral)." alt="" coords="5,79,188,135"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CAUX__Window.html#a1441eb934e43fe96d1324da6f0b9d2a0" title="Renders GPIO pins (IGUI_Window interface)." alt="" coords="461,86,625,127"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a39f26f9ac5a5cb08b2a292f5c6fab6db" title="Updates the transmission state machine." alt="" coords="450,151,637,193"/>
+</map>

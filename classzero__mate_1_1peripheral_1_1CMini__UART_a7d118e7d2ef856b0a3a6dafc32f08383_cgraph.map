@@ -1,0 +1,5 @@
+<map id="zero_mate::peripheral::CMini_UART::Reset_Transmission" name="zero_mate::peripheral::CMini_UART::Reset_Transmission">
+<area shape="rect" id="node1" title="Resets transmission (end of the current UART frame)." alt="" coords="5,50,251,91"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a1e54d90a036d327e36d06a74be1595c3" title="Returns information about a transmit interrupt is enabled." alt="" coords="299,5,489,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a792a3a1a286bf0e7f47bb255bc104294" title="Triggers an interrupt." alt="" coords="299,86,489,127"/>
+</map>

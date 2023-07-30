@@ -1,6 +1,8 @@
 <map id="zero_mate::peripheral::CGPIO_Manager::Set_Pin_State" name="zero_mate::peripheral::CGPIO_Manager::Set_Pin_State">
-<area shape="rect" id="node1" title="Sets a new state of a given pin." alt="" coords="5,45,171,101"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a35b97d4871edb1ee3a0fbda305c58b95" title="Returns the corresponding IRQ source for a given GPIO pin." alt="" coords="227,5,393,61"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b" title="Mirrors the state of a given in in the GPLEV register." alt="" coords="219,85,401,141"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa6b0515a8e4fecb78bebfbb79a13994b" title="Returns the index of the register (out of the two alternatives) based on the pin index." alt="" coords="449,85,616,141"/>
+<area shape="rect" id="node1" title="Sets a new state of a given pin." alt="" coords="5,125,171,181"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a35b97d4871edb1ee3a0fbda305c58b95" title="Returns the corresponding IRQ source for a given GPIO pin." alt="" coords="256,5,423,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#afb4a55159afdaa47cd3640dfd1e0106b" title="Mirrors the state of a given in in the GPLEV register." alt="" coords="248,85,431,141"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a623c62636a57d6c63db1331a42100452" title="Notifies external peripherals that subscribe to the given pin about the change of its state." alt="" coords="248,165,431,221"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8e4591c379574b393dc9fcf6ecc5891c" title="Reflects the state of a pending IRQ in the GPEDS register." alt="" coords="219,246,460,287"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aa6b0515a8e4fecb78bebfbb79a13994b" title="Returns the index of the register (out of the two alternatives) based on the pin index." alt="" coords="508,85,675,141"/>
 </map>

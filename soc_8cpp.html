@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('soc_8cpp.html',''); initResizable(); }
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for soc.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="soc_8cpp__incl.svg" width="4739" height="694"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="soc_8cpp__incl.svg" width="3942" height="694"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -137,6 +137,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a4a222d970a693f2c2e954472dda0bbaa"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; coprocessor::cp15::CCP15 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a4a222d970a693f2c2e954472dda0bbaa">zero_mate::soc::g_cp15</a></td></tr>
 <tr class="memdesc:a4a222d970a693f2c2e954472dda0bbaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the CP15 (system control coprocessor)  <a href="namespacezero__mate_1_1soc.html#a4a222d970a693f2c2e954472dda0bbaa">More...</a><br /></td></tr>
 <tr class="separator:a4a222d970a693f2c2e954472dda0bbaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4df543adb1f3264878585d4d3de499"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; coprocessor::cp10::CFPU &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#afc4df543adb1f3264878585d4d3de499">zero_mate::soc::g_fpu</a></td></tr>
+<tr class="memdesc:afc4df543adb1f3264878585d4d3de499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to FPU (floating point unit)  <a href="namespacezero__mate_1_1soc.html#afc4df543adb1f3264878585d4d3de499">More...</a><br /></td></tr>
+<tr class="separator:afc4df543adb1f3264878585d4d3de499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a005be01df026c2b3776aa7c68aafd8"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; arm1176jzf_s::mmu::CMMU &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a4a005be01df026c2b3776aa7c68aafd8">zero_mate::soc::g_mmu</a> = std::make_shared&lt;arm1176jzf_s::mmu::CMMU&gt;(g_bus, g_cp15)</td></tr>
 <tr class="memdesc:a4a005be01df026c2b3776aa7c68aafd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the MMU (memory management unit).  <a href="namespacezero__mate_1_1soc.html#a4a005be01df026c2b3776aa7c68aafd8">More...</a><br /></td></tr>
 <tr class="separator:a4a005be01df026c2b3776aa7c68aafd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,6 +158,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a2208cd3d9bc57373962d581e701e5025"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; peripheral::CTRNG &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a2208cd3d9bc57373962d581e701e5025">zero_mate::soc::g_trng</a> = std::make_shared&lt;peripheral::CTRNG&gt;()</td></tr>
 <tr class="memdesc:a2208cd3d9bc57373962d581e701e5025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the TRNG (random number generator)  <a href="namespacezero__mate_1_1soc.html#a2208cd3d9bc57373962d581e701e5025">More...</a><br /></td></tr>
 <tr class="separator:a2208cd3d9bc57373962d581e701e5025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3946989b6fb2074745f373befc5307e2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; peripheral::CAUX &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a3946989b6fb2074745f373befc5307e2">zero_mate::soc::g_aux</a> = std::make_shared&lt;peripheral::CAUX&gt;(g_gpio, g_ic)</td></tr>
+<tr class="memdesc:a3946989b6fb2074745f373befc5307e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the auxiliary peripheral (UART, SPI_1, and SPI_2)  <a href="namespacezero__mate_1_1soc.html#a3946989b6fb2074745f373befc5307e2">More...</a><br /></td></tr>
+<tr class="separator:a3946989b6fb2074745f373befc5307e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28798ab9e9c9f0414bc5df1d5c759019"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; peripheral::IPeripheral &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a28798ab9e9c9f0414bc5df1d5c759019">zero_mate::soc::g_peripherals</a> {}</td></tr>
 <tr class="memdesc:a28798ab9e9c9f0414bc5df1d5c759019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of all "internal" peripherals (so they can be globally all reset, updated, etc)  <a href="namespacezero__mate_1_1soc.html#a28798ab9e9c9f0414bc5df1d5c759019">More...</a><br /></td></tr>
 <tr class="separator:a28798ab9e9c9f0414bc5df1d5c759019"><td class="memSeparator" colspan="2">&#160;</td></tr>

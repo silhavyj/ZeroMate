@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -183,8 +183,7 @@ Public Types</h2></td></tr>
 <tr class="memdesc:a19409e7e50658ff0ca681e3cbb504698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of different registers which are used to interact with the GPIO pins.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698">More...</a><br /></td></tr>
 <tr class="separator:a19409e7e50658ff0ca681e3cbb504698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7babe4ce0aef0ec79b8a76bce0cd5e35"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35">NPin_Set_Status</a> { <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35ae0aa021e21dddbd6d8cecec71e9cf564">OK</a>
-, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35ad08288f57995b4de10bc2b53fa9472b2">Not_Input_Pin</a>
-, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35aae8f448ad9b574b0a848dca75093e517">State_Already_Set</a>
+, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35a51eae2e2bae3190e0150f2591e0816d9">Invalid_Pin_Function</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35a129d0df4d73b91437e13633546b87cce">Invalid_Pin_Number</a>
  }</td></tr>
 <tr class="memdesc:a7babe4ce0aef0ec79b8a76bce0cd5e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration defines return values when setting a new state of pin.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35">More...</a><br /></td></tr>
@@ -280,6 +279,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a623c62636a57d6c63db1331a42100452"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a623c62636a57d6c63db1331a42100452">Notify_External_Peripherals</a> (std::uint32_t pin_idx)</td></tr>
 <tr class="memdesc:a623c62636a57d6c63db1331a42100452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies external peripherals that subscribe to the given pin about the change of its state.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a623c62636a57d6c63db1331a42100452">More...</a><br /></td></tr>
 <tr class="separator:a623c62636a57d6c63db1331a42100452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4591c379574b393dc9fcf6ecc5891c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8e4591c379574b393dc9fcf6ecc5891c">Update_GPEDS</a> (std::size_t pin_idx)</td></tr>
+<tr class="memdesc:a8e4591c379574b393dc9fcf6ecc5891c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reflects the state of a pending IRQ in the GPEDS register.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a8e4591c379574b393dc9fcf6ecc5891c">More...</a><br /></td></tr>
+<tr class="separator:a8e4591c379574b393dc9fcf6ecc5891c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -304,6 +306,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a2c7c68349ed743537a7803e7bc304538"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2c7c68349ed743537a7803e7bc304538">m_external_peripherals</a></td></tr>
 <tr class="memdesc:a2c7c68349ed743537a7803e7bc304538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of external peripherals.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a2c7c68349ed743537a7803e7bc304538">More...</a><br /></td></tr>
 <tr class="separator:a2c7c68349ed743537a7803e7bc304538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5983f57ef12e24e9e8c3c6a1963d8d9"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::uint32_t, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae428bf6999910f568d1e5ff348e2c830">Number_Of_Registers</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#af5983f57ef12e24e9e8c3c6a1963d8d9">m_regs_prev</a></td></tr>
+<tr class="memdesc:af5983f57ef12e24e9e8c3c6a1963d8d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous values of the GPIO registers.  <a href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#af5983f57ef12e24e9e8c3c6a1963d8d9">More...</a><br /></td></tr>
+<tr class="separator:af5983f57ef12e24e9e8c3c6a1963d8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class represents a GPIO (general-purpose I/O) manager. </p>
@@ -332,9 +337,7 @@ Private Attributes</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35ae0aa021e21dddbd6d8cecec71e9cf564"></a>OK&#160;</td><td class="fielddoc"><p>The new state has been set successfully. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35ad08288f57995b4de10bc2b53fa9472b2"></a>Not_Input_Pin&#160;</td><td class="fielddoc"><p>The function of the pin must be set to Input (TODO there might be exceptions?) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35aae8f448ad9b574b0a848dca75093e517"></a>State_Already_Set&#160;</td><td class="fielddoc"><p>The pin is already in the desired state. </p>
+<tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35a51eae2e2bae3190e0150f2591e0816d9"></a>Invalid_Pin_Function&#160;</td><td class="fielddoc"><p>The function of the pin must be set to Input (TODO there might be exceptions?) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a7babe4ce0aef0ec79b8a76bce0cd5e35a129d0df4d73b91437e13633546b87cce"></a>Invalid_Pin_Number&#160;</td><td class="fielddoc"><p>Invalid pin number (Rpi Zero has 54 GPIO pins) </p>
 </td></tr>
@@ -787,7 +790,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a623c62636a57d6c63db1331a42100452_icgraph.svg" width="659" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a623c62636a57d6c63db1331a42100452_icgraph.svg" width="659" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1013,7 +1016,47 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a9d695b8f3fc211eaaf4c15a982d3f504_cgraph.svg" width="622" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a9d695b8f3fc211eaaf4c15a982d3f504_cgraph.svg" width="680" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8e4591c379574b393dc9fcf6ecc5891c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e4591c379574b393dc9fcf6ecc5891c">&#9670;&nbsp;</a></span>Update_GPEDS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::peripheral::CGPIO_Manager::Update_GPEDS </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>pin_idx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reflects the state of a pending IRQ in the GPEDS register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_idx</td><td>Index of the pin where an interrupt has occurred </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CGPIO__Manager_a8e4591c379574b393dc9fcf6ecc5891c_icgraph.svg" width="466" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1318,6 +1361,30 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>GPIO registers. </p>
+
+</div>
+</div>
+<a id="af5983f57ef12e24e9e8c3c6a1963d8d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5983f57ef12e24e9e8c3c6a1963d8d9">&#9670;&nbsp;</a></span>m_regs_prev</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;std::uint32_t, <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ae428bf6999910f568d1e5ff348e2c830">Number_Of_Registers</a>&gt; zero_mate::peripheral::CGPIO_Manager::m_regs_prev</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Previous values of the GPIO registers. </p>
 
 </div>
 </div>

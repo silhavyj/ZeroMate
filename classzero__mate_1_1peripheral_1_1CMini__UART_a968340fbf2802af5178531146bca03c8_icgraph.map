@@ -1,0 +1,8 @@
+<map id="zero_mate::peripheral::CMini_UART::Is_Transmitter_Enabled" name="zero_mate::peripheral::CMini_UART::Is_Transmitter_Enabled">
+<area shape="rect" id="node1" title="Returns information about whether the transmitter is enabled or not." alt="" coords="708,31,916,87"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CAUX__Window.html#a84134555bb7100075f909c0de2f0829b" title="Renders information related to the mini UART auxiliary peripheral." alt="" coords="449,5,660,47"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a39f26f9ac5a5cb08b2a292f5c6fab6db" title="Updates the transmission state machine." alt="" coords="461,71,648,112"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CAUX__Window.html#a1441eb934e43fe96d1324da6f0b9d2a0" title="Renders GPIO pins (IGUI_Window interface)." alt="" coords="237,5,401,47"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a3b75064597a5fbfe9c4c7d1f2e0c7e5f" title="Updates the state machines (transmission/reception)." alt="" coords="236,71,401,112"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aae5f7e2bbffa6e3881675058a0aedf6f" title="Updates the number of passed CPU cycles (forwarded from the AUX peripheral)." alt="" coords="5,63,188,119"/>
+</map>

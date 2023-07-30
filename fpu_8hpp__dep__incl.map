@@ -1,0 +1,8 @@
+<map id="src/core/coprocessors/fpu/fpu.hpp" name="src/core/coprocessors/fpu/fpu.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="89,5,252,47"/>
+<area shape="rect" id="node2" href="$fpu_8cpp.html" title=" " alt="" coords="5,95,168,136"/>
+<area shape="rect" id="node3" href="$soc_8hpp.html" title=" " alt="" coords="193,102,319,129"/>
+<area shape="rect" id="node4" href="$soc_8cpp.html" title=" " alt="" coords="47,184,174,211"/>
+<area shape="rect" id="node5" href="$gui_8cpp.html" title="This file implements the main GUI entry function that takes care of creating and rendering all window..." alt="" coords="198,184,314,211"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="This file defines and implements the main function of the application." alt="" coords="338,184,443,211"/>
+</map>

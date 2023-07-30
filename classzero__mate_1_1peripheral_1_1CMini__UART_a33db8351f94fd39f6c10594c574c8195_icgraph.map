@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CMini_UART::Set_RX_Pin" name="zero_mate::peripheral::CMini_UART::Set_RX_Pin">
+<area shape="rect" id="node1" title="Sets the state of the RX pin." alt="" coords="219,5,408,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aee9c1b3a2634b94002a0111d1ecdf107" title="Enables/disables the mini UART peripheral." alt="" coords="5,5,171,47"/>
+</map>

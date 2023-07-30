@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CGPIO_Manager::Update_GPEDS" name="zero_mate::peripheral::CGPIO_Manager::Update_GPEDS">
+<area shape="rect" id="node1" title="Reflects the state of a pending IRQ in the GPEDS register." alt="" coords="219,13,460,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504" title="Sets a new state of a given pin." alt="" coords="5,5,171,61"/>
+</map>

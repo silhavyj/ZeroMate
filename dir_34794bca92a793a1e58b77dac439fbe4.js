@@ -1,5 +1,6 @@
 var dir_34794bca92a793a1e58b77dac439fbe4 =
 [
+    [ "auxiliary", "dir_d76b111fde503afb4d629e488ee1218e.html", "dir_d76b111fde503afb4d629e488ee1218e" ],
     [ "arm_timer.cpp", "arm__timer_8cpp.html", null ],
     [ "arm_timer.hpp", "arm__timer_8hpp.html", [
       [ "CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", "classzero__mate_1_1peripheral_1_1CARM__Timer" ],

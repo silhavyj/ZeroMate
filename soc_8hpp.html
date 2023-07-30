@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -93,22 +93,24 @@ $(document).ready(function(){initNavTree('soc_8hpp.html',''); initResizable(); }
 <div class="title">soc.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="external__peripheral_8hpp_source.html">zero_mate/external_peripheral.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="logger_8hpp_source.html">zero_mate/utils/logger.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="external__peripheral_8hpp_source.html">zero_mate/external_peripheral.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bus_8hpp_source.html">bus.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="core_8hpp_source.html">arm1176jzf_s/core.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="mmu_8hpp_source.html">arm1176jzf_s/mmu/mmu.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cp15_8hpp_source.html">coprocessors/cp15/cp15.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fpu_8hpp_source.html">coprocessors/fpu/fpu.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ram_8hpp_source.html">peripherals/ram.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="interrupt__controller_8hpp_source.html">peripherals/interrupt_controller.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="arm__timer_8hpp_source.html">peripherals/arm_timer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="monitor_8hpp_source.html">peripherals/monitor.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="trng_8hpp_source.html">peripherals/trng.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gpio_8hpp_source.html">peripherals/gpio.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="logger_8hpp_source.html">zero_mate/utils/logger.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auxiliary_8hpp_source.html">peripherals/auxiliary/auxiliary.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for soc.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="soc_8hpp__incl.svg" width="4526" height="604"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="soc_8hpp__incl.svg" width="4836" height="634"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -175,6 +177,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a4c3906691e64619cde7e20e145a91f9a"><td class="memItemLeft" align="right" valign="top">constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc_1_1config.html#a4c3906691e64619cde7e20e145a91f9a">zero_mate::soc::config::TRNG_Address</a> = 0x20104000</td></tr>
 <tr class="memdesc:a4c3906691e64619cde7e20e145a91f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default TRNG (random number generator) map address (where it is found in the address space)  <a href="namespacezero__mate_1_1soc_1_1config.html#a4c3906691e64619cde7e20e145a91f9a">More...</a><br /></td></tr>
 <tr class="separator:a4c3906691e64619cde7e20e145a91f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22320326abefd378425806d64368eb9b"><td class="memItemLeft" align="right" valign="top">constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc_1_1config.html#a22320326abefd378425806d64368eb9b">zero_mate::soc::config::AUX_Address</a> = 0x20215000</td></tr>
+<tr class="memdesc:a22320326abefd378425806d64368eb9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default AUX peripheral address (where it is found in the address space)  <a href="namespacezero__mate_1_1soc_1_1config.html#a22320326abefd378425806d64368eb9b">More...</a><br /></td></tr>
+<tr class="separator:a22320326abefd378425806d64368eb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

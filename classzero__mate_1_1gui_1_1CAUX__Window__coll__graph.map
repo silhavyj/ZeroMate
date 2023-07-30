@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CAUX_Window" name="zero_mate::gui::CAUX_Window">
+<area shape="rect" id="node1" title="This class represents the windows that visualizes auxiliary peripherals." alt="" coords="5,95,169,136"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows." alt="" coords="10,5,165,47"/>
+</map>

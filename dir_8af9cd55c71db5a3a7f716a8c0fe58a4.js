@@ -4,6 +4,10 @@ var dir_8af9cd55c71db5a3a7f716a8c0fe58a4 =
     [ "arm_timer_window.hpp", "arm__timer__window_8hpp.html", [
       [ "CARM_Timer_Window", "classzero__mate_1_1gui_1_1CARM__Timer__Window.html", "classzero__mate_1_1gui_1_1CARM__Timer__Window" ]
     ] ],
+    [ "aux_window.cpp", "aux__window_8cpp.html", null ],
+    [ "aux_window.hpp", "aux__window_8hpp.html", [
+      [ "CAUX_Window", "classzero__mate_1_1gui_1_1CAUX__Window.html", "classzero__mate_1_1gui_1_1CAUX__Window" ]
+    ] ],
     [ "gpio_window.cpp", "gpio__window_8cpp.html", null ],
     [ "gpio_window.hpp", "gpio__window_8hpp.html", [
       [ "CGPIO_Window", "classzero__mate_1_1gui_1_1CGPIO__Window.html", "classzero__mate_1_1gui_1_1CGPIO__Window" ],

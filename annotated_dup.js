@@ -48,6 +48,9 @@ var annotated_dup =
         [ "CCPU_Core", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core" ]
       ] ],
       [ "coprocessor", "namespacezero__mate_1_1coprocessor.html", [
+        [ "cp10", "namespacezero__mate_1_1coprocessor_1_1cp10.html", [
+          [ "CFPU", "classzero__mate_1_1coprocessor_1_1cp10_1_1CFPU.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1CFPU" ]
+        ] ],
         [ "cp15", "namespacezero__mate_1_1coprocessor_1_1cp15.html", [
           [ "CC1", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1" ],
           [ "CC2", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC2" ],
@@ -66,9 +69,11 @@ var annotated_dup =
         [ "IGUI_Window", "classzero__mate_1_1gui_1_1IGUI__Window.html", "classzero__mate_1_1gui_1_1IGUI__Window" ],
         [ "CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", "classzero__mate_1_1gui_1_1CControl__Window" ],
         [ "CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", "classzero__mate_1_1gui_1_1CCP15__Window" ],
+        [ "CDemo_Window", "classzero__mate_1_1gui_1_1CDemo__Window.html", "classzero__mate_1_1gui_1_1CDemo__Window" ],
         [ "CCircular_Log_Buffer", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer" ],
         [ "CLog_Window", "classzero__mate_1_1gui_1_1CLog__Window.html", "classzero__mate_1_1gui_1_1CLog__Window" ],
         [ "CARM_Timer_Window", "classzero__mate_1_1gui_1_1CARM__Timer__Window.html", "classzero__mate_1_1gui_1_1CARM__Timer__Window" ],
+        [ "CAUX_Window", "classzero__mate_1_1gui_1_1CAUX__Window.html", "classzero__mate_1_1gui_1_1CAUX__Window" ],
         [ "CGPIO_Window", "classzero__mate_1_1gui_1_1CGPIO__Window.html", "classzero__mate_1_1gui_1_1CGPIO__Window" ],
         [ "CInterrupt_Controller_Window", "classzero__mate_1_1gui_1_1CInterrupt__Controller__Window.html", "classzero__mate_1_1gui_1_1CInterrupt__Controller__Window" ],
         [ "CMonitor_Window", "classzero__mate_1_1gui_1_1CMonitor__Window.html", "classzero__mate_1_1gui_1_1CMonitor__Window" ],
@@ -79,6 +84,8 @@ var annotated_dup =
       ] ],
       [ "peripheral", "namespacezero__mate_1_1peripheral.html", [
         [ "CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", "classzero__mate_1_1peripheral_1_1CARM__Timer" ],
+        [ "CAUX", "classzero__mate_1_1peripheral_1_1CAUX.html", "classzero__mate_1_1peripheral_1_1CAUX" ],
+        [ "CMini_UART", "classzero__mate_1_1peripheral_1_1CMini__UART.html", "classzero__mate_1_1peripheral_1_1CMini__UART" ],
         [ "CGPIO_Manager", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html", "classzero__mate_1_1peripheral_1_1CGPIO__Manager" ],
         [ "CInterrupt_Controller", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller" ],
         [ "CMonitor", "classzero__mate_1_1peripheral_1_1CMonitor.html", "classzero__mate_1_1peripheral_1_1CMonitor" ],

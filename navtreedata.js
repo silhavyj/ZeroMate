@@ -44,7 +44,8 @@ var NAVTREE =
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
-        [ "Enumerations", "functions_enum.html", null ]
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -62,12 +63,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "alu_8cpp.html",
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#a1a3153bfc2aa11e2c86d55eea07e4c5a",
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html#a425c0885ab43120d44b7efd10dbed47fa0a5a4d7386065c6c6ac19c303768c7e1",
-"classzero__mate_1_1gui_1_1CControl__Window.html#a6fa5dff2436bd03edb514219a1731b75",
-"classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7262b1ac5b25b5b2d13ba7ef1be53d72a28d0edd045e05cf5af64e35ae0c4c6ef",
-"functions.html",
-"peripheral_8hpp_source.html"
+"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CData__Abort.html",
+"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html",
+"classzero__mate_1_1gui_1_1CAUX__Window.html#a6d822f8dca01634419fb70dd44e97a4d",
+"classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698a52fd5d715a3e55d05585303d17f66fa6",
+"classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html#a05ed09bc5076dec62453be677bd44e9e",
+"mac_8cpp.html#ab1a830ce062246c13527c96c13b3b6d2",
+"structzero__mate_1_1gui_1_1CRegisters__Window_1_1TCPU__Mode__Tab__States.html#a6bc7047f1624566d30c831329174c069"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

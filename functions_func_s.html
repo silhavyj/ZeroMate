@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -88,6 +88,15 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 &#160;
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>Send_Payload()
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a26406d8e22c04d3107bcfaba34a36d4b">zero_mate::peripheral::CMini_UART</a>
+</li>
+<li>Send_Start_Bit()
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a3f90165b3b568a8f8eae2a44a357fe1f">zero_mate::peripheral::CMini_UART</a>
+</li>
+<li>Send_Stop_bit()
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a7446eb5b85539db10da52cf2780a0d49">zero_mate::peripheral::CMini_UART</a>
+</li>
 <li>Set_CP15()
 : <a class="el" href="classzero__mate_1_1CBus.html#a9b4307c5afa92f875a3c550cbc5113fb">zero_mate::CBus</a>
 </li>
@@ -97,14 +106,23 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 <li>Set_CPU_Mode()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a7efff674f8141eab73cb69099220f0d5">zero_mate::arm1176jzf_s::CCPU_Context</a>
 </li>
+<li>Set_External_Peripherals()
+: <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a38c0885ed54065f936ef22976bfab8c7">zero_mate::arm1176jzf_s::CCPU_Core</a>
+</li>
 <li>Set_Flag()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a984bace2773aca71cf04701aa0ce9c54">zero_mate::arm1176jzf_s::CCPU_Context</a>
 </li>
 <li>Set_Function()
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a0c45c24454ccabf427a78111533cf88e">zero_mate::peripheral::CGPIO_Manager::CPin</a>
 </li>
+<li>Set_GPIO_pin()
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a9243af4f42d118a598a00c0f79d366e1">zero_mate::peripheral::CMini_UART</a>
+</li>
 <li>Set_ImGui_Context()
 : <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a221d922c8dbe0f017f9692d8cf5d1b18">zero_mate::IExternal_Peripheral</a>
+</li>
+<li>Set_ImPlot_Context()
+: <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#ac840c0ea71b02336d731176f6f385a0e">zero_mate::IExternal_Peripheral</a>
 </li>
 <li>Set_Interrupt()
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ad29d57528b73baef90b0ca885a297e4d">zero_mate::peripheral::CGPIO_Manager</a>
@@ -136,11 +154,20 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 <li>Set_Pin_State()
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a9d695b8f3fc211eaaf4c15a982d3f504">zero_mate::peripheral::CGPIO_Manager</a>
 </li>
+<li>Set_RX_Pin()
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a33db8351f94fd39f6c10594c574c8195">zero_mate::peripheral::CMini_UART</a>
+</li>
 <li>Set_SPSR()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a1b322131a1168763d2b8083c17a1079b">zero_mate::arm1176jzf_s::CCPU_Context</a>
 </li>
 <li>Set_State()
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#a7764fcc57371d4c867603b32176f8414">zero_mate::peripheral::CGPIO_Manager::CPin</a>
+</li>
+<li>Set_Transmit_Shift_Reg()
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CMini__UART.html#ab5d2e9caf71f101101ef1bb75d69d94f">zero_mate::peripheral::CMini_UART</a>
+</li>
+<li>Set_TX_Pin()
+: <a class="el" href="classzero__mate_1_1peripheral_1_1CMini__UART.html#aa97db5d47b819acd85beda1dc91cb355">zero_mate::peripheral::CMini_UART</a>
 </li>
 <li>Should_Code_Block_Be_Highlighted()
 : <a class="el" href="classzero__mate_1_1gui_1_1CSource__Code__Window.html#ad485f4213e9fff6ac5327683e2e6abc7">zero_mate::gui::CSource_Code_Window</a>
@@ -150,6 +177,9 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 </li>
 <li>Should_SP_Be_Decremented()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html#aab25e735beb79ce5aab47d69d2171cd6">zero_mate::arm1176jzf_s::isa::CSRS</a>
+</li>
+<li>Show_About_Window()
+: <a class="el" href="classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#ae1db9ea2006086f7ea206b3fa98a1af7">zero_mate::gui::CTop_Bar_Menu</a>
 </li>
 <li>Signalize_Basic_IRQ()
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#a32373b931bb37ef8ee92f95a3f833284">zero_mate::peripheral::CInterrupt_Controller</a>

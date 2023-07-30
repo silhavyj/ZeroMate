@@ -1,0 +1,5 @@
+<map id="src/gui/windows/demo_window.hpp" name="src/gui/windows/demo_window.hpp">
+<area shape="rect" id="node1" title="This file defines a window that displays the ImGui and ImPlot demos (used for debugging)." alt="" coords="63,5,229,47"/>
+<area shape="rect" id="node2" href="$gui_8cpp.html" title="This file implements the main GUI entry function that takes care of creating and rendering all window..." alt="" coords="5,102,121,129"/>
+<area shape="rect" id="node3" href="$demo__window_8cpp.html" title="This file implements a window that displays the ImGui and ImPlot demos (used for debugging)." alt="" coords="145,95,312,136"/>
+</map>

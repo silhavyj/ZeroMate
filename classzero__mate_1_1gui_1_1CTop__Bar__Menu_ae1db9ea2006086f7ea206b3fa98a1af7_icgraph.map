@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CTop_Bar_Menu::Show_About_Window" name="zero_mate::gui::CTop_Bar_Menu::Show_About_Window">
+<area shape="rect" id="node1" title="Shows the about window of the application." alt="" coords="212,5,395,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#ad8f10caa7780d6c4e9fb20c4ab702a60" title="Renders the bar (IGUI_Window interface)." alt="" coords="5,13,164,54"/>
+</map>

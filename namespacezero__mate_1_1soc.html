@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -122,6 +122,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a4a222d970a693f2c2e954472dda0bbaa"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a4a222d970a693f2c2e954472dda0bbaa">g_cp15</a></td></tr>
 <tr class="memdesc:a4a222d970a693f2c2e954472dda0bbaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the CP15 (system control coprocessor)  <a href="namespacezero__mate_1_1soc.html#a4a222d970a693f2c2e954472dda0bbaa">More...</a><br /></td></tr>
 <tr class="separator:a4a222d970a693f2c2e954472dda0bbaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4df543adb1f3264878585d4d3de499"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CFPU.html">coprocessor::cp10::CFPU</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#afc4df543adb1f3264878585d4d3de499">g_fpu</a></td></tr>
+<tr class="memdesc:afc4df543adb1f3264878585d4d3de499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to FPU (floating point unit)  <a href="namespacezero__mate_1_1soc.html#afc4df543adb1f3264878585d4d3de499">More...</a><br /></td></tr>
+<tr class="separator:afc4df543adb1f3264878585d4d3de499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a005be01df026c2b3776aa7c68aafd8"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html">arm1176jzf_s::mmu::CMMU</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a4a005be01df026c2b3776aa7c68aafd8">g_mmu</a> = std::make_shared&lt;<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html">arm1176jzf_s::mmu::CMMU</a>&gt;(<a class="el" href="namespacezero__mate_1_1soc.html#ad65a35f2c2911b074e894fce7ec80f3b">g_bus</a>, <a class="el" href="namespacezero__mate_1_1soc.html#a4a222d970a693f2c2e954472dda0bbaa">g_cp15</a>)</td></tr>
 <tr class="memdesc:a4a005be01df026c2b3776aa7c68aafd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the MMU (memory management unit).  <a href="namespacezero__mate_1_1soc.html#a4a005be01df026c2b3776aa7c68aafd8">More...</a><br /></td></tr>
 <tr class="separator:a4a005be01df026c2b3776aa7c68aafd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,6 +143,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a2208cd3d9bc57373962d581e701e5025"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html">peripheral::CTRNG</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a2208cd3d9bc57373962d581e701e5025">g_trng</a> = std::make_shared&lt;<a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html">peripheral::CTRNG</a>&gt;()</td></tr>
 <tr class="memdesc:a2208cd3d9bc57373962d581e701e5025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the TRNG (random number generator)  <a href="namespacezero__mate_1_1soc.html#a2208cd3d9bc57373962d581e701e5025">More...</a><br /></td></tr>
 <tr class="separator:a2208cd3d9bc57373962d581e701e5025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3946989b6fb2074745f373befc5307e2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CAUX.html">peripheral::CAUX</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a3946989b6fb2074745f373befc5307e2">g_aux</a> = std::make_shared&lt;<a class="el" href="classzero__mate_1_1peripheral_1_1CAUX.html">peripheral::CAUX</a>&gt;(<a class="el" href="namespacezero__mate_1_1soc.html#a929b6d907cf49d47c29e710548566df1">g_gpio</a>, <a class="el" href="namespacezero__mate_1_1soc.html#ac0fef44087a0e8fa42a3a1a8ac1af6bc">g_ic</a>)</td></tr>
+<tr class="memdesc:a3946989b6fb2074745f373befc5307e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global reference to the auxiliary peripheral (UART, SPI_1, and SPI_2)  <a href="namespacezero__mate_1_1soc.html#a3946989b6fb2074745f373befc5307e2">More...</a><br /></td></tr>
+<tr class="separator:a3946989b6fb2074745f373befc5307e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28798ab9e9c9f0414bc5df1d5c759019"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">peripheral::IPeripheral</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc.html#a28798ab9e9c9f0414bc5df1d5c759019">g_peripherals</a> {}</td></tr>
 <tr class="memdesc:a28798ab9e9c9f0414bc5df1d5c759019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of all "internal" peripherals (so they can be globally all reset, updated, etc)  <a href="namespacezero__mate_1_1soc.html#a28798ab9e9c9f0414bc5df1d5c759019">More...</a><br /></td></tr>
 <tr class="separator:a28798ab9e9c9f0414bc5df1d5c759019"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,6 +197,22 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a3946989b6fb2074745f373befc5307e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3946989b6fb2074745f373befc5307e2">&#9670;&nbsp;</a></span>g_aux</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CAUX.html">peripheral::CAUX</a> &gt; zero_mate::soc::g_aux = std::make_shared&lt;<a class="el" href="classzero__mate_1_1peripheral_1_1CAUX.html">peripheral::CAUX</a>&gt;(<a class="el" href="namespacezero__mate_1_1soc.html#a929b6d907cf49d47c29e710548566df1">g_gpio</a>, <a class="el" href="namespacezero__mate_1_1soc.html#ac0fef44087a0e8fa42a3a1a8ac1af6bc">g_ic</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Global reference to the auxiliary peripheral (UART, SPI_1, and SPI_2) </p>
+
+</div>
+</div>
 <a id="ad65a35f2c2911b074e894fce7ec80f3b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad65a35f2c2911b074e894fce7ec80f3b">&#9670;&nbsp;</a></span>g_bus</h2>
 
@@ -220,7 +242,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    std::make_shared&lt;coprocessor::cp15::CCP15&gt;(<a class="code" href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">g_cpu</a>-&gt;Get_CPU_Context())</div>
-<div class="ttc" id="anamespacezero__mate_1_1soc_html_a9065456f3dfe3d1edf7e6d81d8a13b87"><div class="ttname"><a href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">zero_mate::soc::g_cpu</a></div><div class="ttdeci">std::shared_ptr&lt; arm1176jzf_s::CCPU_Core &gt; g_cpu</div><div class="ttdoc">Global reference to the CPU.</div><div class="ttdef"><b>Definition:</b> soc.cpp:41</div></div>
+<div class="ttc" id="anamespacezero__mate_1_1soc_html_a9065456f3dfe3d1edf7e6d81d8a13b87"><div class="ttname"><a href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">zero_mate::soc::g_cpu</a></div><div class="ttdeci">std::shared_ptr&lt; arm1176jzf_s::CCPU_Core &gt; g_cpu</div><div class="ttdoc">Global reference to the CPU.</div><div class="ttdef"><b>Definition:</b> soc.cpp:45</div></div>
 </div><!-- fragment -->
 <p>Global reference to the CP15 (system control coprocessor) </p>
 
@@ -255,6 +277,24 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Collection of all external peripherals that are connected to the system via GPIO pins. </p>
+
+</div>
+</div>
+<a id="afc4df543adb1f3264878585d4d3de499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4df543adb1f3264878585d4d3de499">&#9670;&nbsp;</a></span>g_fpu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CFPU.html">coprocessor::cp10::CFPU</a> &gt; zero_mate::soc::g_fpu</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    std::make_shared&lt;coprocessor::cp10::CFPU&gt;(<a class="code" href="namespacezero__mate_1_1soc.html#a9065456f3dfe3d1edf7e6d81d8a13b87">g_cpu</a>-&gt;Get_CPU_Context())</div>
+</div><!-- fragment -->
+<p>Global reference to FPU (floating point unit) </p>
 
 </div>
 </div>

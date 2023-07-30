@@ -9,9 +9,9 @@
 <area shape="rect" id="node14" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a6fc387fa0b0dd040c4e2463606d933e4" title="Checks if the CPU mode passed in as a parameter supports the SPSR register or not." alt="" coords="1076,284,1249,340"/>
 <area shape="rect" id="node15" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html#a5240e615ada1d612975e9339ae715f1e" title="Renders a raw integer value in a given format." alt="" coords="575,350,787,391"/>
 <area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a050dada520ca82a21874045815c596a8" title=" " alt="" coords="835,219,1017,275"/>
-<area shape="rect" id="node9" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="1065,218,1260,259"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="1065,218,1260,259"/>
 <area shape="rect" id="node10" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="1308,175,1511,231"/>
-<area shape="rect" id="node13" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="1310,255,1509,297"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="1310,255,1509,297"/>
 <area shape="rect" id="node11" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="1559,150,1772,191"/>
 <area shape="rect" id="node12" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="1568,215,1763,257"/>
 </map>

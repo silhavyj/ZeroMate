@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CMini_UART::Update" name="zero_mate::peripheral::CMini_UART::Update">
+<area shape="rect" id="node1" title="Updates the state machines (transmission/reception)." alt="" coords="236,13,401,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aae5f7e2bbffa6e3881675058a0aedf6f" title="Updates the number of passed CPU cycles (forwarded from the AUX peripheral)." alt="" coords="5,5,188,61"/>
+</map>

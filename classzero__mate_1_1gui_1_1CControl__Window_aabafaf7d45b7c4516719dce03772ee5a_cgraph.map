@@ -8,11 +8,11 @@
 <area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a9dabdbd3011cc2a5a13e7409a65deb3e" title="Renders the step control button." alt="" coords="493,71,713,112"/>
 <area shape="rect" id="node11" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a7a5636aa7de9957ac3339ff8bff63038" title="Renders the stop control button." alt="" coords="493,136,713,177"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CControl__Window.html#a46cc1dd042f93990abb7b0b68f566a2d" title="Log an error message saying that no ELF file (kernel) has been loaded yet." alt="" coords="761,63,964,119"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="1012,83,1207,124"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="1012,83,1207,124"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="1255,75,1457,131"/>
-<area shape="rect" id="node9" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="1257,156,1455,197"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="1257,156,1455,197"/>
 <area shape="rect" id="node7" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="1505,51,1719,92"/>
 <area shape="rect" id="node8" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="1515,116,1709,157"/>
 <area shape="rect" id="node15" href="$classzero__mate_1_1gui_1_1CControl__Window.html#ad83b2651e1d6bf8ed72e3553526f17ca" title="Runs CPU execution (separate thread)." alt="" coords="771,181,954,223"/>
-<area shape="rect" id="node16" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02" title="Logs an info message via all registered loggers." alt="" coords="1012,156,1207,197"/>
+<area shape="rect" id="node16" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a455d99c3614dc92ffbdbdcdb6b8b8bb8" title="Logs an info message via all registered loggers." alt="" coords="1012,156,1207,197"/>
 </map>

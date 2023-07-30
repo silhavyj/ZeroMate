@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CAUX::Reset" name="zero_mate::peripheral::CAUX::Reset">
+<area shape="rect" id="node1" title="Resets/re&#45;initializes the peripheral (IPeripheral interface)." alt="" coords="219,5,384,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CAUX.html#ad3cc30afe663f073c63c5ac8e3729e6a" title="Creates an instance of the class." alt="" coords="5,5,171,47"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="zero_mate::peripheral::CMini_UART::Get_Baud_Rate_Counter" name="zero_mate::peripheral::CMini_UART::Get_Baud_Rate_Counter">
+<area shape="rect" id="node1" title="Returns the set up baud rate." alt="" coords="476,43,655,99"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aae5f7e2bbffa6e3881675058a0aedf6f" title="Updates the number of passed CPU cycles (forwarded from the AUX peripheral)." alt="" coords="231,5,414,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CAUX__Window.html#a84134555bb7100075f909c0de2f0829b" title="Renders information related to the mini UART auxiliary peripheral." alt="" coords="217,86,428,127"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CAUX__Window.html#a1441eb934e43fe96d1324da6f0b9d2a0" title="Renders GPIO pins (IGUI_Window interface)." alt="" coords="5,86,169,127"/>
+</map>

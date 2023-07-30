@@ -1,0 +1,6 @@
+<map id="zero_mate::peripheral::CMini_UART::Send_Payload" name="zero_mate::peripheral::CMini_UART::Send_Payload">
+<area shape="rect" id="node1" title="Sends another bit of the current payload (actual data)." alt="" coords="684,13,891,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a39f26f9ac5a5cb08b2a292f5c6fab6db" title="Updates the transmission state machine." alt="" coords="449,13,636,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a3b75064597a5fbfe9c4c7d1f2e0c7e5f" title="Updates the state machines (transmission/reception)." alt="" coords="236,13,401,54"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aae5f7e2bbffa6e3881675058a0aedf6f" title="Updates the number of passed CPU cycles (forwarded from the AUX peripheral)." alt="" coords="5,5,188,61"/>
+</map>

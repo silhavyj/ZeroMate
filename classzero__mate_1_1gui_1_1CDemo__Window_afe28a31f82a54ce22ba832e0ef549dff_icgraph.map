@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CDemo_Window::Render_ImPlot_Demo" name="zero_mate::gui::CDemo_Window::Render_ImPlot_Demo">
+<area shape="rect" id="node1" title="Renders the ImPlot demo window." alt="" coords="228,5,457,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CDemo__Window.html#a136374d5b5c0dc1a1ea071ce0151519d" title="Renders the window (IGUI_Window interface)." alt="" coords="5,5,180,47"/>
+</map>

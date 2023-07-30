@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -138,6 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adea9e22ac4f8a04dfe8009afdb55cf37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#adea9e22ac4f8a04dfe8009afdb55cf37">Register_System_Clock_Listener</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a89a1a7cea70ce64266d50387d19fcb05">System_Clock_Listener_t</a> &amp;listener)</td></tr>
 <tr class="memdesc:adea9e22ac4f8a04dfe8009afdb55cf37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a system clock listener.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#adea9e22ac4f8a04dfe8009afdb55cf37">More...</a><br /></td></tr>
 <tr class="separator:adea9e22ac4f8a04dfe8009afdb55cf37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38c0885ed54065f936ef22976bfab8c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a38c0885ed54065f936ef22976bfab8c7">Set_External_Peripherals</a> (std::vector&lt; <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> * &gt; *external_peripherals)</td></tr>
+<tr class="memdesc:a38c0885ed54065f936ef22976bfab8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a collection of external peripherals, so they can be notified about CPU cycles.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a38c0885ed54065f936ef22976bfab8c7">More...</a><br /></td></tr>
+<tr class="separator:a38c0885ed54065f936ef22976bfab8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dbc0995492246b3c8226004149d311a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a6dbc0995492246b3c8226004149d311a">Add_Coprocessor</a> (std::uint32_t id, const std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html">coprocessor::ICoprocessor</a> &gt; &amp;coprocessor)</td></tr>
 <tr class="memdesc:a6dbc0995492246b3c8226004149d311a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a coprocessor.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a6dbc0995492246b3c8226004149d311a">More...</a><br /></td></tr>
 <tr class="separator:a6dbc0995492246b3c8226004149d311a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -354,6 +357,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a8f27671dcc6c73c898159f8522d0881a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aab345b997e1d12a5de1c8517bb1b3f7d">Coprocessors_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a8f27671dcc6c73c898159f8522d0881a">m_coprocessors</a></td></tr>
 <tr class="memdesc:a8f27671dcc6c73c898159f8522d0881a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of different coprocessors.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a8f27671dcc6c73c898159f8522d0881a">More...</a><br /></td></tr>
 <tr class="separator:a8f27671dcc6c73c898159f8522d0881a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a006bcec630ea7f8c28f5952d562319c6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a006bcec630ea7f8c28f5952d562319c6">m_external_peripherals</a></td></tr>
+<tr class="memdesc:a006bcec630ea7f8c28f5952d562319c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of external peripherals.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a006bcec630ea7f8c28f5952d562319c6">More...</a><br /></td></tr>
+<tr class="separator:a006bcec630ea7f8c28f5952d562319c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Raspberry Pi Zero CPU core (<a class="el" href="namespacezero__mate_1_1arm1176jzf__s.html">arm1176jzf_s</a>). </p>
@@ -2617,6 +2623,32 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a38c0885ed54065f936ef22976bfab8c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38c0885ed54065f936ef22976bfab8c7">&#9670;&nbsp;</a></span>Set_External_Peripherals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::arm1176jzf_s::CCPU_Core::Set_External_Peripherals </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>external_peripherals</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a collection of external peripherals, so they can be notified about CPU cycles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">external_peripherals</td><td>Collection of external peripherals </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a62d5038df12cc069a7af1351c78bc57e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62d5038df12cc069a7af1351c78bc57e">&#9670;&nbsp;</a></span>Set_Interrupt_Controller()</h2>
 
@@ -3078,6 +3110,30 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Starting address of execution. </p>
+
+</div>
+</div>
+<a id="a006bcec630ea7f8c28f5952d562319c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a006bcec630ea7f8c28f5952d562319c6">&#9670;&nbsp;</a></span>m_external_peripherals</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a>*&gt;* zero_mate::arm1176jzf_s::CCPU_Core::m_external_peripherals</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Collection of external peripherals. </p>
 
 </div>
 </div>

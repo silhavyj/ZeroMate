@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CDemo_Window" name="zero_mate::gui::CDemo_Window">
+<area shape="rect" id="node1" title="This class displays the ImGui and ImPlot demos." alt="" coords="5,95,180,136"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows." alt="" coords="15,5,170,47"/>
+</map>

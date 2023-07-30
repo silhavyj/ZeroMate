@@ -1,16 +1,17 @@
 <map id="zero_mate::gui::CTop_Bar_Menu::Render" name="zero_mate::gui::CTop_Bar_Menu::Render">
-<area shape="rect" id="node1" title="Renders the bar (IGUI_Window interface)." alt="" coords="5,75,164,117"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a38a9c7aa06cf280f433a9b9fb8e0d2cb" title="Opens up a file browser." alt="" coords="700,5,867,61"/>
-<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a73157cb5a8ef5d61769403bbd700cfbf" title="Reloads the kernel." alt="" coords="441,75,636,117"/>
-<area shape="rect" id="node13" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a8dbf5620303332f1ad1b7449793a3621" title="Renders the file browser." alt="" coords="212,133,391,189"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aba3c5c64cd12e058e6a288db2cd89a15" title="Logs an error message via all registered loggers." alt="" coords="928,42,1123,83"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="1171,65,1373,121"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" title="Extract the filename from a given location within the source files." alt="" coords="1173,177,1371,218"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="1421,39,1635,81"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="1431,105,1625,146"/>
-<area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#af8e80293dff0c20be7ea071d50dec62c" title="Loads a single ELF file." alt="" coords="687,138,880,179"/>
-<area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a9374e039e857fa2f4d1e65f7edcd707f" title="Returns a filename of a given filepath." alt="" coords="929,107,1121,149"/>
-<area shape="rect" id="node11" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aee146ee8db11fa8f184757f980d35c02" title="Logs an info message via all registered loggers." alt="" coords="928,238,1123,279"/>
-<area shape="rect" id="node12" href="$namespacezero__mate_1_1utils_1_1elf.html#a9f6c82c3b8cd3f725d004c7b9022d69a" title="Loads a given ELF file (kernel) into the memory." alt="" coords="949,173,1101,214"/>
-<area shape="rect" id="node14" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a7fee26ed69f7536b8396d3fe2f97c5e4" title="Loads ELF files selected by the user using the file browser." alt="" coords="439,141,639,182"/>
+<area shape="rect" id="node1" title="Renders the bar (IGUI_Window interface)." alt="" coords="5,109,164,150"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a38a9c7aa06cf280f433a9b9fb8e0d2cb" title="Opens up a file browser." alt="" coords="704,5,871,61"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a73157cb5a8ef5d61769403bbd700cfbf" title="Reloads the kernel." alt="" coords="445,75,640,117"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a8dbf5620303332f1ad1b7449793a3621" title="Renders the file browser." alt="" coords="214,133,393,189"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#ae1db9ea2006086f7ea206b3fa98a1af7" title="Shows the about window of the application." alt="" coords="212,213,395,269"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="932,42,1127,83"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="1175,65,1377,121"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="1177,177,1375,218"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="1425,39,1639,81"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="1435,105,1629,146"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#af8e80293dff0c20be7ea071d50dec62c" title="Loads a single ELF file." alt="" coords="691,138,884,179"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a9374e039e857fa2f4d1e65f7edcd707f" title="Returns a filename of a given filepath." alt="" coords="933,107,1125,149"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a455d99c3614dc92ffbdbdcdb6b8b8bb8" title="Logs an info message via all registered loggers." alt="" coords="932,238,1127,279"/>
+<area shape="rect" id="node12" href="$namespacezero__mate_1_1utils_1_1elf.html#a9f6c82c3b8cd3f725d004c7b9022d69a" title="Loads a given ELF file (kernel) into the memory." alt="" coords="953,173,1105,214"/>
+<area shape="rect" id="node14" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a7fee26ed69f7536b8396d3fe2f97c5e4" title="Loads ELF files selected by the user using the file browser." alt="" coords="443,141,643,182"/>
 </map>

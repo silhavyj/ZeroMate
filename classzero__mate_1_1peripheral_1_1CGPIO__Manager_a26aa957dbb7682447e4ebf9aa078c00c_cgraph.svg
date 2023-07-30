@@ -88,7 +88,7 @@
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a8904feb1d77dc350717ebcd00e7e5443" target="_top" xlink:title="Logs a warning message via all registered loggers.">
+<g id="a_node16"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a2bb4d37b178f29335f726875bad91bd4" target="_top" xlink:title="Logs a warning message via all registered loggers.">
 <polygon fill="none" stroke="black" points="361,-61 361,-91 507,-91 507,-61 361,-61"/>
 <text text-anchor="start" x="369" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="434" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Warning</text>
@@ -104,7 +104,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a365eaf1db85bd115fe69c5d9f93b81ee" target="_top" xlink:title="Logs a debug message via all registered loggers.">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#ade996da881888272ace7deaa82c975e9" target="_top" xlink:title="Logs a debug message via all registered loggers.">
 <polygon fill="none" stroke="black" points="361,-220 361,-250 507,-250 507,-220 361,-220"/>
 <text text-anchor="start" x="369" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="434" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Debug</text>
@@ -170,7 +170,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a90671387b53987d6fd3c85348cb234e4" target="_top" xlink:title="Extract the filename from a given location within the source files.">
+<g id="a_node7"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" target="_top" xlink:title="Extract the filename from a given location within the source files.">
 <polygon fill="none" stroke="black" points="544.5,-195 544.5,-225 693.5,-225 693.5,-195 544.5,-195"/>
 <text text-anchor="start" x="552.5" y="-213" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
 <text text-anchor="middle" x="619" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Extract_Filename</text>

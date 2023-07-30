@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -117,6 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa0a2b7f217cae7a47662471bc1de4350"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#aa0a2b7f217cae7a47662471bc1de4350">CControl_Window</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html">arm1176jzf_s::CCPU_Core</a> &gt; cpu, bool &amp;scroll_to_curr_line, const bool &amp;elf_file_has_been_loaded, bool &amp;cpu_running, const std::string &amp;kernel_filename)</td></tr>
 <tr class="memdesc:aa0a2b7f217cae7a47662471bc1de4350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1gui_1_1CControl__Window.html#aa0a2b7f217cae7a47662471bc1de4350">More...</a><br /></td></tr>
 <tr class="separator:aa0a2b7f217cae7a47662471bc1de4350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab8c42d352d1907d5068599309dd0cbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#aab8c42d352d1907d5068599309dd0cbc">~CControl_Window</a> () override</td></tr>
+<tr class="memdesc:aab8c42d352d1907d5068599309dd0cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the object from memory.  <a href="classzero__mate_1_1gui_1_1CControl__Window.html#aab8c42d352d1907d5068599309dd0cbc">More...</a><br /></td></tr>
+<tr class="separator:aab8c42d352d1907d5068599309dd0cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabafaf7d45b7c4516719dce03772ee5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a">Render</a> () override</td></tr>
 <tr class="memdesc:aabafaf7d45b7c4516719dce03772ee5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the window (<a class="el" href="classzero__mate_1_1gui_1_1IGUI__Window.html" title="Common interface for all GUI windows.">IGUI_Window</a> interface).  <a href="classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a">More...</a><br /></td></tr>
 <tr class="separator:aabafaf7d45b7c4516719dce03772ee5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -273,6 +276,34 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aab8c42d352d1907d5068599309dd0cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab8c42d352d1907d5068599309dd0cbc">&#9670;&nbsp;</a></span>~CControl_Window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">zero_mate::gui::CControl_Window::~CControl_Window </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deletes the object from memory. </p>
+<p>Before the object gets deleted, it waits for the CPU execution thread to finish. </p>
 
 </div>
 </div>

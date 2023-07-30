@@ -9,6 +9,10 @@ var dir_2c5e0d2f5313fab5e08c06477185b08d =
     [ "cp15_window.hpp", "cp15__window_8hpp.html", [
       [ "CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", "classzero__mate_1_1gui_1_1CCP15__Window" ]
     ] ],
+    [ "demo_window.cpp", "demo__window_8cpp.html", null ],
+    [ "demo_window.hpp", "demo__window_8hpp.html", [
+      [ "CDemo_Window", "classzero__mate_1_1gui_1_1CDemo__Window.html", "classzero__mate_1_1gui_1_1CDemo__Window" ]
+    ] ],
     [ "log_window.cpp", "log__window_8cpp.html", null ],
     [ "log_window.hpp", "log__window_8hpp.html", [
       [ "CCircular_Log_Buffer", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer" ],

@@ -1,6 +1,7 @@
 var classzero__mate_1_1gui_1_1CControl__Window =
 [
     [ "CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html#aa0a2b7f217cae7a47662471bc1de4350", null ],
+    [ "~CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html#aab8c42d352d1907d5068599309dd0cbc", null ],
     [ "Print_No_ELF_File_Loaded_Error_Msg", "classzero__mate_1_1gui_1_1CControl__Window.html#a46cc1dd042f93990abb7b0b68f566a2d", null ],
     [ "Render", "classzero__mate_1_1gui_1_1CControl__Window.html#aabafaf7d45b7c4516719dce03772ee5a", null ],
     [ "Render_Control_Buttons", "classzero__mate_1_1gui_1_1CControl__Window.html#a9be0d8c611ece954a13f3763744b074f", null ],

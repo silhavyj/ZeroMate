@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CAUX_Window::Render_AUX" name="zero_mate::gui::CAUX_Window::Render_AUX">
+<area shape="rect" id="node1" title="Renders the ENABLES and IRQ register of the AUX peripheral." alt="" coords="217,5,387,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CAUX__Window.html#a1441eb934e43fe96d1324da6f0b9d2a0" title="Renders GPIO pins (IGUI_Window interface)." alt="" coords="5,5,169,47"/>
+</map>

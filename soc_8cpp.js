@@ -2,10 +2,12 @@ var soc_8cpp =
 [
     [ "Init", "soc_8cpp.html#a3a1bd117cb86b2023bd0a9c617ce3bfe", null ],
     [ "g_arm_timer", "soc_8cpp.html#ae383e1fc5aa0e83abcd5103e73d6ba96", null ],
+    [ "g_aux", "soc_8cpp.html#a3946989b6fb2074745f373befc5307e2", null ],
     [ "g_bus", "soc_8cpp.html#ad65a35f2c2911b074e894fce7ec80f3b", null ],
     [ "g_cp15", "soc_8cpp.html#a4a222d970a693f2c2e954472dda0bbaa", null ],
     [ "g_cpu", "soc_8cpp.html#a9065456f3dfe3d1edf7e6d81d8a13b87", null ],
     [ "g_external_peripherals", "soc_8cpp.html#a7016de16fb03bd2b6bd91b81971a4bad", null ],
+    [ "g_fpu", "soc_8cpp.html#afc4df543adb1f3264878585d4d3de499", null ],
     [ "g_gpio", "soc_8cpp.html#a929b6d907cf49d47c29e710548566df1", null ],
     [ "g_ic", "soc_8cpp.html#ac0fef44087a0e8fa42a3a1a8ac1af6bc", null ],
     [ "g_logging_system", "soc_8cpp.html#a48caa029960db12d20bc0a5254f1a436", null ],

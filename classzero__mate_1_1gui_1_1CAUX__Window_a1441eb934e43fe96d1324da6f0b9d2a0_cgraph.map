@@ -1,0 +1,9 @@
+<map id="zero_mate::gui::CAUX_Window::Render" name="zero_mate::gui::CAUX_Window::Render">
+<area shape="rect" id="node1" title="Renders GPIO pins (IGUI_Window interface)." alt="" coords="5,101,169,142"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CAUX__Window.html#a8e358814f5acb7ee712a6193dbfc908f" title="Renders the ENABLES and IRQ register of the AUX peripheral." alt="" coords="238,67,407,109"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CAUX__Window.html#a84134555bb7100075f909c0de2f0829b" title="Renders information related to the mini UART auxiliary peripheral." alt="" coords="217,133,428,174"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a3ab953c18059ccd52099be9bb7b6edac" title="Returns the set up baud rate." alt="" coords="491,5,669,61"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a2f29b39f721b4ae5acf81f61ab210325" title="Returns the length of payload (7 or 8 bits)." alt="" coords="492,85,668,141"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a2a71009ed1f6227341dad8926bd73d81" title="Returns information about whether the receiver is enabled or not." alt="" coords="485,165,675,221"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a968340fbf2802af5178531146bca03c8" title="Returns information about whether the transmitter is enabled or not." alt="" coords="476,245,684,301"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="zero_mate::peripheral::CMini_UART" name="zero_mate::peripheral::CMini_UART">
+<area shape="rect" id="node1" title="This class represents the Mini UART used in BCM2835." alt="" coords="639,49,804,90"/>
+<area shape="rect" id="node2" href="$structzero__mate_1_1peripheral_1_1CMini__UART_1_1TState__Machine__Data.html" title="Encapsulation of state machine related data (transmission/reception)." alt="" coords="376,5,541,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CAUX.html" title="This class represents the auxiliaries (UART1 &amp; SPI1, and SPI2)." alt="" coords="376,86,541,127"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory&#45;mapped peripheral." alt="" coords="20,21,185,62"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html" title="This class represents a general interface for a CPU clock listener." alt="" coords="10,86,195,127"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title="This class defines a logging system that is used throughout the project." alt="" coords="5,151,200,193"/>
+</map>
