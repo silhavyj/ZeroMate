@@ -1,3 +1,11 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file app_info.hpp
+/// \date 30. 07. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file defines general information about the application.
+// ---------------------------------------------------------------------------------------------------------------------
+
 #pragma once
 
 namespace zero_mate::app_info
