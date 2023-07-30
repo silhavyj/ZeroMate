@@ -17,6 +17,7 @@
 
 // Project file imports
 
+#include "../../app_info.hpp"
 #include "top_bar_menu.hpp"
 #include "zero_mate/utils/singleton.hpp"
 
@@ -39,6 +40,7 @@ namespace zero_mate::gui
     , m_loading_kernel{ true }
     , m_cpu_running{ cpu_running }
     , m_kernel_filename{ kernel_filename }
+    , m_show_about_window{ false }
     {
         Init_File_Browser();
     }
@@ -82,12 +84,67 @@ namespace zero_mate::gui
 
                 ImGui::EndMenu();
             }
+            if (ImGui::BeginMenu("Help"))
+            {
+                // About pop up window
+                if (ImGui::MenuItem("About", nullptr))
+                {
+                    m_show_about_window = true;
+                }
+
+                ImGui::EndMenu();
+            }
 
             ImGui::EndMainMenuBar();
         }
 
         // Render the file browser.
         Render_File_Browser();
+
+        // Show to the about pop up window.
+        Show_About_Window();
+    }
+
+    void CTop_Bar_Menu::Show_About_Window()
+    {
+        // Has the user clicked on the menu item?
+        if (!m_show_about_window)
+        {
+            return;
+        }
+
+        // Open a popup called About.
+        ImGui::OpenPopup("About");
+
+        // Only show the About pop-up when it is active.
+        if (ImGui::BeginPopupModal("About", &m_show_about_window, ImGuiWindowFlags_AlwaysAutoResize))
+        {
+            // Description
+            ImGui::Text("%s", app_info::Description);
+            ImGui::Separator();
+
+            // General information
+            ImGui::Text("Version: %s", app_info::Version);
+            ImGui::Text("URL: %s", app_info::URL);
+            ImGui::Text("Author: %s", app_info::Author);
+            ImGui::Text("Email: %s", app_info::Email);
+
+            ImGui::Separator();
+
+            // Centralize the close button.
+            const float button_width = ImGui::GetContentRegionAvail().x;
+            const float button_x = (button_width - ImGui::GetTextLineHeightWithSpacing()) * 0.5f;
+            ImGui::SetCursorPosX(button_x);
+
+            // Close button
+            if (ImGui::Button("Close"))
+            {
+                m_show_about_window = false;
+                ImGui::CloseCurrentPopup();
+            }
+
+            ImGui::EndPopup();
+        }
     }
 
     void CTop_Bar_Menu::Open_File_Browser(bool loading_kernel)

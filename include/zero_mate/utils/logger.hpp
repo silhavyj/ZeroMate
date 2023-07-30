@@ -15,7 +15,6 @@
 #include <memory>
 #include <cstdint>
 #include <string_view>
-#include <source_location>
 /// \endcond
 
 namespace zero_mate::utils
@@ -157,28 +156,28 @@ namespace zero_mate::utils
         /// \param msg Debug message to be logged
         /// \param location Location within the source code this function was called from
         // -------------------------------------------------------------------------------------------------------------
-        void Debug(const char* msg, const std::source_location& location = std::source_location::current());
+        void Debug(const char* msg, const char* location =  __builtin_FILE(), int line = __builtin_LINE());
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Logs an info message via all registered loggers.
         /// \param msg Info message to be logged
         /// \param location Location within the source code this function was called from
         // -------------------------------------------------------------------------------------------------------------
-        void Info(const char* msg, const std::source_location& location = std::source_location::current());
+        void Info(const char* msg, const char* location =  __builtin_FILE(), int line = __builtin_LINE());
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Logs a warning message via all registered loggers.
         /// \param msg Warning message to be logged
         /// \param location Location within the source code this function was called from
         // -------------------------------------------------------------------------------------------------------------
-        void Warning(const char* msg, const std::source_location& location = std::source_location::current());
+        void Warning(const char* msg, const char* location =  __builtin_FILE(), int line = __builtin_LINE());
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Logs an error message via all registered loggers.
         /// \param msg Error message to be logged
         /// \param location Location within the source code this function was called from
         // -------------------------------------------------------------------------------------------------------------
-        void Error(const char* msg, const std::source_location& location = std::source_location::current());
+        void Error(const char* msg, const char* location =  __builtin_FILE(), int line = __builtin_LINE());
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Logs a plain text message (without any formatting) via all registered loggers.
@@ -204,7 +203,7 @@ namespace zero_mate::utils
         /// \param location Location within the project (source file)
         /// \return Stripped filename of the source file
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] static std::string Extract_Filename(const std::source_location& location);
+        [[nodiscard]] static std::string Extract_Filename(const std::string& location);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Creates a formatted message to be logged.

@@ -277,7 +277,7 @@ void CSerial_Terminal::Increment_Passed_Cycles(std::uint32_t count)
 {
     m_cpu_cycles += count;
 
-    // Should we update the UART RX state machine.
+    // Should we update the UART RX state machine?
     if (m_cpu_cycles >= m_baud_rate)
     {
         m_cpu_cycles = 0;
@@ -296,7 +296,7 @@ extern "C"
                           zero_mate::utils::CLogging_System* logging_system)
     {
         // Only one pin shall be passed to the peripheral.
-        if (pin_count != 1)
+        if (pin_count != 2)
         {
             return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::GPIO_Mismatch);
         }

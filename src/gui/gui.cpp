@@ -21,6 +21,8 @@
 #include "imgui/backends/imgui_impl_opengl3.h"
 #include "IconFontCppHeaders/IconsFontAwesome5.h"
 
+#include "implot/implot.h"
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 
@@ -35,6 +37,8 @@
 #include "windows/top_bar_menu.hpp"
 #include "windows/log_window.hpp"
 #include "windows/cp15_window.hpp"
+#include "windows/demo_window.hpp"
+
 #include "windows/peripherals/ram_window.hpp"
 #include "windows/peripherals/gpio_window.hpp"
 #include "windows/peripherals/arm_timer_window.hpp"
@@ -92,6 +96,9 @@ namespace zero_mate::gui
         {
             // Register window
             s_windows.emplace_back(std::make_shared<CRegisters_Window>(soc::g_cpu));
+
+            // Demo window.
+            s_windows.emplace_back(std::make_shared<CDemo_Window>());
 
             // Control window
             s_windows.emplace_back(std::make_shared<CControl_Window>(soc::g_cpu,
@@ -174,14 +181,18 @@ namespace zero_mate::gui
         }
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Passes ImGuiContext to all external peripherals, so they can render themselves as GUIs.
-        /// \param context ImGuiContext
+        /// \brief Passes ImGuiContext & ImPlotContext to all external peripherals, so they can render as GUIs.
+        /// \param imgui_context ImGuiContext
+        /// \param implot_context ImPlotContext
         // -------------------------------------------------------------------------------------------------------------
-        void Init_External_GUIs(ImGuiContext* context)
+        void Init_External_GUIs(ImGuiContext* imgui_context, ImPlotContext* implot_context)
         {
             std::for_each(soc::g_external_peripherals.begin(),
                           soc::g_external_peripherals.end(),
-                          [&](const auto& window) -> void { window->Set_ImGui_Context(context); });
+                          [&](const auto& window) -> void {
+                              window->Set_ImGui_Context(imgui_context);
+                              window->Set_ImPlot_Context(implot_context);
+                          });
         }
     }
 
@@ -231,7 +242,10 @@ namespace zero_mate::gui
 
         // Create an ImGUI context.
         IMGUI_CHECKVERSION();
-        ImGuiContext* context = ImGui::CreateContext();
+        ImGuiContext* imgui_context = ImGui::CreateContext();
+
+        // Create an Implot context.
+        ImPlotContext* implot_context = ImPlot::CreateContext();
 
         // Set up some config flags.
         ImGuiIO& imgui_io = ImGui::GetIO();
@@ -283,8 +297,8 @@ namespace zero_mate::gui
         int display_w{};
         int display_h{};
 
-        // Initialize external peripherals (provide them with the ImGuiContext)
-        Init_External_GUIs(context);
+        // Initialize external peripherals (provide them with the ImGuiContext & ImPlotContext)
+        Init_External_GUIs(imgui_context, implot_context);
 
         // Load the window logo.
         GLFWimage images[1];
@@ -311,7 +325,8 @@ namespace zero_mate::gui
             ImGui::NewFrame();
 
             // Do not forge to set ImGuiContext.
-            ImGui::SetCurrentContext(context);
+            ImGui::SetCurrentContext(imgui_context);
+            ImPlot::SetCurrentContext(implot_context);
 
             // Dockspace flags
             [[maybe_unused]] static bool dockspace_open = true;
@@ -380,6 +395,7 @@ namespace zero_mate::gui
         // Clean up.
         ImGui_ImplOpenGL3_Shutdown();
         ImGui_ImplGlfw_Shutdown();
+        ImPlot::DestroyContext();
         ImGui::DestroyContext();
 
         glfwDestroyWindow(window);

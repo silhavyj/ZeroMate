@@ -38,7 +38,7 @@ PROJECT_NAME           = "ZeroMate"
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER         = "v1.1.0"
+PROJECT_NUMBER         = "v1.2.0"
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
@@ -866,7 +866,7 @@ WARN_LOGFILE           =
 
 INPUT                  = src     \
                          include \
-                         lib
+                         lib     
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

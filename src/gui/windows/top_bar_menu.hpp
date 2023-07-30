@@ -65,6 +65,11 @@ namespace zero_mate::gui
         inline void Render_File_Browser();
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Shows the about window of the application.
+        // -------------------------------------------------------------------------------------------------------------
+        inline void Show_About_Window();
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Loads ELF files selected by the user using the file browser.
         // -------------------------------------------------------------------------------------------------------------
         inline void Load_ELF_Files();
@@ -105,6 +110,7 @@ namespace zero_mate::gui
         bool m_loading_kernel;                                                ///< Is a kernel being loaded?
         const bool& m_cpu_running;                                            ///< Is the CPU running?
         std::string& m_kernel_filename;                                       ///< Filepath of the kernel
+        bool m_show_about_window;                                             ///< Show the about windnow
     };
 
 } // namespace zero_mate::gui

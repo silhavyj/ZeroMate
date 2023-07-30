@@ -2,7 +2,7 @@
 
 *Raspberry Pi Zero Emulator*
 
-[![version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/silhavyj/ZeroMate/releases)
+[![version](https://img.shields.io/badge/version-1.2.0-blue)](https://github.com/silhavyj/ZeroMate/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Doxygen Documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://silhavyj.github.io/ZeroMate/)
 
@@ -18,7 +18,7 @@ ZeroMate is an educational Raspberry Pi Zero emulator designed specifically as a
 
 ## Installation
 
-The emulator was tested on both Windows and Linux using the MSVC and GCC compiler respectively. You can download a ready-to-use executable for both platforms from the latest [release](https://github.com/silhavyj/ZeroMate/releases). Alternatively, if you are brave enough, you can attempt to [build](docs/build.md) it yourself from the source code.
+The emulator was tested on both Windows and Linux using the MSVC, GCC, and Clang compilers. You can download a ready-to-use executable for both platforms from the latest [release](https://github.com/silhavyj/ZeroMate/releases). Alternatively, if you are brave enough, you can attempt to [build](docs/build.md) it yourself from the source code.
 
 ## User manual
 
@@ -35,6 +35,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |ARMv6 ISA|⏳| The vast majority of ARM instructions are supported. However, there are still some missing.|
 |System bus|✅||
 |Debugger|⏳| Stepping through the source code, breakpoints, pause, reset, and play.|
+|Searching functions by their names|❌||
 |RAM|✅||
 |Logging system|✅||
 |GPIO|✅||
@@ -51,8 +52,8 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |I2C|❌||
 |SPI|❌||
 |UART|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
-|Logic analyzer|❌||
-|Statistical data collection|❌|Number of I/O operations|
+|Simple logic analyzer|✅|More information can be found [here](peripherals/logic_analyzer/README.md).|
+|Statistical data collection|❌|Number of I/O operations, etc.|
 
 ## Screenshots
 

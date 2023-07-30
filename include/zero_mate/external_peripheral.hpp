@@ -122,6 +122,15 @@ namespace zero_mate
         }
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Sets ImPlotContext which is used to render plots & graphs.
+        /// \note The ImPlotContext is passed as a void pointer to avoid compile-time dependency on the ImPlot library.
+        /// \param context Pointer to an ImPlotContext
+        // -------------------------------------------------------------------------------------------------------------
+        [[maybe_unused]] virtual void Set_ImPlot_Context([[maybe_unused]] void* context)
+        {
+        }
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Notifies the peripheral about how many CPU cycles have passed by.
         ///
         /// The CPU core calls this function after every instruction, so the peripheral can update itself.

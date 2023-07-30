@@ -35,10 +35,10 @@ namespace zero_mate::utils
         m_loggers.push_back(logger);
     }
 
-    std::string CLogging_System::Extract_Filename(const std::source_location& location)
+    std::string CLogging_System::Extract_Filename(const std::string& location)
     {
         // Use std::filesystem::path to extract the filename from the path.
-        const std::filesystem::path full_path{ location.file_name() };
+        const std::filesystem::path full_path{ location };
 
         return full_path.filename().string();
     }
@@ -52,7 +52,7 @@ namespace zero_mate::utils
         std::for_each(m_loggers.begin(), m_loggers.end(), [&](auto& logger) -> void { logger->Print(msg); });
     }
 
-    void CLogging_System::Debug(const char* msg, const std::source_location& location)
+    void CLogging_System::Debug(const char* msg, const char* location, int line)
     {
         // Make sure the function is thread-safe.
         const std::lock_guard<std::mutex> lock(m_mtx);
@@ -61,7 +61,7 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // Create a formatted message
-        const std::string msg_formatted = Create_Formatted_Log_Msg(Debug_Msg_Prefix, filename, location.line(), msg);
+        const std::string msg_formatted = Create_Formatted_Log_Msg(Debug_Msg_Prefix, filename, line, msg);
 
         // Forward the log message to all registered loggers.
         std::for_each(m_loggers.begin(), m_loggers.end(), [&](auto& logger) -> void {
@@ -69,7 +69,7 @@ namespace zero_mate::utils
         });
     }
 
-    void CLogging_System::Info(const char* msg, const std::source_location& location)
+    void CLogging_System::Info(const char* msg, const char* location, int line)
     {
         // Make sure the function is thread-safe.
         const std::lock_guard<std::mutex> lock(m_mtx);
@@ -78,7 +78,7 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // Create a formatted message
-        const std::string msg_formatted = Create_Formatted_Log_Msg(Info_Msg_Prefix, filename, location.line(), msg);
+        const std::string msg_formatted = Create_Formatted_Log_Msg(Info_Msg_Prefix, filename, line, msg);
 
         // Forward the log message to all registered loggers.
         std::for_each(m_loggers.begin(), m_loggers.end(), [&](auto& logger) -> void {
@@ -86,7 +86,7 @@ namespace zero_mate::utils
         });
     }
 
-    void CLogging_System::Warning(const char* msg, const std::source_location& location)
+    void CLogging_System::Warning(const char* msg, const char* location, int line)
     {
         // Make sure the function is thread-safe.
         const std::lock_guard<std::mutex> lock(m_mtx);
@@ -95,7 +95,7 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // Create a formatted message
-        const std::string msg_formatted = Create_Formatted_Log_Msg(Warning_Msg_Prefix, filename, location.line(), msg);
+        const std::string msg_formatted = Create_Formatted_Log_Msg(Warning_Msg_Prefix, filename, line, msg);
 
         // Forward the log message to all registered loggers.
         std::for_each(m_loggers.begin(), m_loggers.end(), [&](auto& logger) -> void {
@@ -103,7 +103,7 @@ namespace zero_mate::utils
         });
     }
 
-    void CLogging_System::Error(const char* msg, const std::source_location& location)
+    void CLogging_System::Error(const char* msg, const char* location, int line)
     {
         // Make sure the function is thread-safe.
         const std::lock_guard<std::mutex> lock(m_mtx);
@@ -112,7 +112,7 @@ namespace zero_mate::utils
         const auto filename = Extract_Filename(location);
 
         // Create a formatted message
-        const std::string msg_formatted = Create_Formatted_Log_Msg(Error_Msg_Prefix, filename, location.line(), msg);
+        const std::string msg_formatted = Create_Formatted_Log_Msg(Error_Msg_Prefix, filename, line, msg);
 
         // Forward the log message to all registered loggers.
         std::for_each(m_loggers.begin(), m_loggers.end(), [&](auto& logger) -> void {

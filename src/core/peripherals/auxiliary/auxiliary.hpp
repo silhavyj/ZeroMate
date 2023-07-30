@@ -135,7 +135,7 @@ namespace zero_mate::peripheral
         /// \brief Returns a const reference to the mini UART auxiliary peripheral.
         /// \return Const reference to the mini UART
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] const CMini_UART* const Get_Mini_UART() const;
+        [[nodiscard]] const CMini_UART* Get_Mini_UART() const;
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns information about whether an auxiliary peripheral is enabled or not.

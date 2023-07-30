@@ -49,4 +49,4 @@ Here is the content of [peripherals.json](../../peripherals.json) used in this e
 ```
 ## Demo
 
-<img src="../../misc/screenshots/gifs/examples/16-paging_userspace.gif">
+<img src="../../misc/screenshots/examples/16-paging_userspace.gif">

@@ -24,8 +24,8 @@ This can be demonstrated by setting a breakpoint at the very last instruction of
 
 ### Interrupt is NOT cleared
 
-<img src="../../misc/screenshots/gifs/examples/12-timer_no_clear_IRQ_2.gif">
+<img src="../../misc/screenshots/examples/12-timer_no_clear_IRQ_2.gif">
 
 ### Interrupt is cleared
 
-<img src="../../misc/screenshots/gifs/examples/12-timer_no_clear_IRQ_1.gif">
+<img src="../../misc/screenshots/examples/12-timer_no_clear_IRQ_1.gif">

@@ -340,9 +340,6 @@ namespace zero_mate::peripheral
         m_tx.state = NState_Machine::Start_Bit;
         m_tx.bit_idx = 0;
 
-        // High level voltage = IDLE state.
-        Set_TX_Pin(true);
-
         // Transmit FIFO is now empty.
         m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] |=
         static_cast<std::uint32_t>(NLSR_Flags::Transmitter_Empty);

@@ -8,4 +8,4 @@ The kernel recursively calculates `7!` and then halts the CPU. The result of the
 
 ## Demo
 
-<img src="../../misc/screenshots/gifs/examples/01-factorial_recursive.gif">
+<img src="../../misc/screenshots/examples/01-factorial_recursive.gif">
