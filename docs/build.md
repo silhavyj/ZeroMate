@@ -20,11 +20,11 @@ The recursive version of the clone commands ensures that all submodules are clon
 
 ## Build
 
-The user can use the predefined [CMakePresets.json](../CMakePresets.json) to run different builds according to their build system and the compiler.
+The user can use the predefined [CMakePresets.json](../CMakePresets.json) to run different builds according to their build system and compiler.
 
 ### List all CMake presets
 
-The following command lists out all presents that are currently supported in the project.
+The following command lists out all presets that are currently supported in the project.
 
 ```
 cmake --list-presets
@@ -58,7 +58,7 @@ cmake --preset ninja_clang_release
 
 ### CMake build
 
-After the previous commands has finished successfully, they can build the application using the following command:
+After the previous command has finished successfully, they can build the application using the following command:
 
 ```
 cmake --build --preset ninja_clang_release
