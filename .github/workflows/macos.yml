@@ -21,11 +21,11 @@ jobs:
 
     # Configure the CMake project using CMake Presets
     - name: Configure CMake
-      run: cmake --preset unix_makefiles_gcc_debug
+      run: cmake --preset unix_makefiles_clang_debug
 
     # Build the project
     - name: Build
-      run: cmake --build --preset unix_makefiles_gcc_debug
+      run: cmake --build --preset unix_makefiles_clang_debug
 
     # Run tests
     - name: Tests
