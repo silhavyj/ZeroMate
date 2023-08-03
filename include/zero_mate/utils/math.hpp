@@ -62,6 +62,38 @@ namespace zero_mate::utils::math
     }
 
     // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Checks whether the given integral value is negative by examining the MSB
+    /// \tparam Type Type of the variable the function is called with
+    /// \param value Value to be check for being negative
+    /// \return true, if the MSB is set (the value is negative). false, otherwise.
+    // -----------------------------------------------------------------------------------------------------------------
+    template<std::unsigned_integral Type>
+    [[nodiscard]] bool Is_Negative(Type value) noexcept
+    {
+        return Is_Bit_Set<Type>(value, std::numeric_limits<Type>::digits - 1U);
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Checks if the value is negative or not.
+    ///
+    /// The position of the MSB is determined by Type_Narrower. For example, if Is_Negative<std::uint32_t, std::uint8_t>
+    /// is called, the 7th bit (starting from 0) of the value is treated as the most significant bit (MSB).
+    ///
+    /// \tparam Type Type of the variable the function is called with
+    /// \tparam Type_Narrower This determines the MSB position in the value that is supposed to be of a larger datatype
+    /// \param value Value to be check for being negative
+    /// \return true, if the value is negative. false, otherwise.
+    // -----------------------------------------------------------------------------------------------------------------
+    template<std::unsigned_integral Type, std::unsigned_integral Type_Narrower>
+    [[nodiscard]] bool Is_Negative(Type value) noexcept
+    {
+        // Make sure that Type is made up of more bits than Type_Narrower.
+        static_assert(std::numeric_limits<Type_Narrower>::digits <= std::numeric_limits<Type>::digits);
+
+        return Is_Bit_Set<Type>(value, std::numeric_limits<Type_Narrower>::digits - 1U);
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
     /// \struct TShift_Result
     /// \brief Helper structure to hold the result of the LSL, LSR, ASR, and ROR operations (functions).
     /// \tparam Type Type of the variable the function is called with
@@ -246,38 +278,6 @@ namespace zero_mate::utils::math
         }
 
         return static_cast<Type>(value >> rot) | static_cast<Type>(value << (std::numeric_limits<Type>::digits - rot));
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    /// \brief Checks whether the given integral value is negative by examining the MSB
-    /// \tparam Type Type of the variable the function is called with
-    /// \param value Value to be check for being negative
-    /// \return true, if the MSB is set (the value is negative). false, otherwise.
-    // -----------------------------------------------------------------------------------------------------------------
-    template<std::unsigned_integral Type>
-    [[nodiscard]] bool Is_Negative(Type value) noexcept
-    {
-        return Is_Bit_Set<Type>(value, std::numeric_limits<Type>::digits - 1U);
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    /// \brief Checks if the value is negative or not.
-    ///
-    /// The position of the MSB is determined by Type_Narrower. For example, if Is_Negative<std::uint32_t, std::uint8_t>
-    /// is called, the 7th bit (starting from 0) of the value is treated as the most significant bit (MSB).
-    ///
-    /// \tparam Type Type of the variable the function is called with
-    /// \tparam Type_Narrower This determines the MSB position in the value that is supposed to be of a larger datatype
-    /// \param value Value to be check for being negative
-    /// \return true, if the value is negative. false, otherwise.
-    // -----------------------------------------------------------------------------------------------------------------
-    template<std::unsigned_integral Type, std::unsigned_integral Type_Narrower>
-    [[nodiscard]] bool Is_Negative(Type value) noexcept
-    {
-        // Make sure that Type is made up of more bits than Type_Narrower.
-        static_assert(std::numeric_limits<Type_Narrower>::digits <= std::numeric_limits<Type>::digits);
-
-        return Is_Bit_Set<Type>(value, std::numeric_limits<Type_Narrower>::digits - 1U);
     }
 
     // -----------------------------------------------------------------------------------------------------------------

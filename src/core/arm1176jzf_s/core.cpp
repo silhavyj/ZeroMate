@@ -1299,4 +1299,108 @@ namespace zero_mate::arm1176jzf_s
         // Store the result in the Rd register.
         m_context[instruction.Get_Rd_Idx()] = leading_zeros;
     }
+
+    [[nodiscard]] std::uint32_t CCPU_Core::Convert_Virtual_Addr_To_Physical_Addr(std::uint32_t virtual_addr,
+                                                                                 bool write_access)
+    {
+        // If the MMU is not preset, or it is not enabled, then virtual addr = physical addr.
+        if (m_mmu != nullptr && m_mmu->Is_Enabled())
+        {
+            return m_mmu->Get_Physical_Addr(virtual_addr, m_context, write_access);
+        }
+
+        return virtual_addr;
+    }
+
+    template<typename Instruction>
+    [[nodiscard]] std::uint32_t CCPU_Core::Calculate_Base_Address(Instruction instruction,
+                                                                  std::uint32_t base_reg_idx,
+                                                                  CCPU_Context::NCPU_Mode cpu_mode,
+                                                                  std::uint32_t number_of_regs) const
+    {
+        switch (instruction.Get_Addressing_Mode())
+        {
+            // Increment before
+            case Instruction::NAddressing_Mode::IB:
+                return m_context.Get_Register(base_reg_idx, cpu_mode) + CCPU_Context::Reg_Size;
+
+            // Increment after
+            case Instruction::NAddressing_Mode::IA:
+                return m_context.Get_Register(base_reg_idx, cpu_mode);
+
+            // Decrement before
+            case Instruction::NAddressing_Mode::DB:
+                return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::Reg_Size);
+
+            // Decrement after
+            case Instruction::NAddressing_Mode::DA:
+                return m_context.Get_Register(base_reg_idx, cpu_mode) - (number_of_regs * CCPU_Context::Reg_Size) +
+                       CCPU_Context::Reg_Size;
+        }
+
+        return {}; // Just so the compiler does not gripe about a missing return value.
+    }
+
+    template<typename Instruction>
+    [[nodiscard]] utils::math::TShift_Result<std::uint32_t>
+    CCPU_Core::Get_Second_Operand_Imm(Instruction instruction) const noexcept
+    {
+        // Retrieve the immediate value and the shift amount.
+        // The shift amount is always multiplied by 2 - see the documentation.
+        const std::uint32_t immediate = instruction.Get_Immediate();
+        const std::uint32_t shift_amount = instruction.Get_Rotate() * 2;
+
+        // Create the result.
+        utils::math::TShift_Result<std::uint32_t> second_operand{ m_context.Is_Flag_Set(CCPU_Context::NFlag::C),
+                                                                  immediate };
+
+        // Perform ROR if possible.
+        if (shift_amount != 0 && shift_amount != std::numeric_limits<std::uint32_t>::digits)
+        {
+            second_operand = utils::math::ROR(immediate, shift_amount, false);
+        }
+
+        return second_operand;
+    }
+
+    template<typename Type>
+    void CCPU_Core::Write(std::uint32_t virtual_addr, Type value)
+    {
+        // Make sure the CPU is connected to the bus.
+        assert(m_bus != nullptr);
+
+        // Convert the virtual address into a physical address.
+        const std::uint32_t physical_addr = Convert_Virtual_Addr_To_Physical_Addr(virtual_addr, true);
+
+        // Write data to the bus.
+        m_bus->Write<Type>(physical_addr, value);
+    }
+
+    template<typename Type>
+    [[nodiscard]] Type CCPU_Core::Read(std::uint32_t virtual_addr)
+    {
+        // Make sure the CPU is connected to the bus.
+        assert(m_bus != nullptr);
+
+        // Convert the virtual address into a physical address.
+        const std::uint32_t physical_addr = Convert_Virtual_Addr_To_Physical_Addr(virtual_addr, false);
+
+        // Write data to the bus.
+        return m_bus->Read<Type>(physical_addr);
+    }
+
+    template<std::unsigned_integral Type>
+    void CCPU_Core::Read_Write_Value(isa::CSingle_Data_Transfer instruction,
+                                     std::uint32_t virtual_addr,
+                                     std::uint32_t reg_idx)
+    {
+        if (instruction.Is_L_Bit_Set())
+        {
+            m_context[reg_idx] = Read<Type>(virtual_addr);
+        }
+        else
+        {
+            Write<Type>(virtual_addr, static_cast<Type>(m_context[reg_idx]));
+        }
+    }
 }

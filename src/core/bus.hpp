@@ -16,6 +16,7 @@
 #include <limits>
 #include <memory>
 #include <cstdint>
+#include <algorithm>
 /// \endcond
 
 // Project file imports

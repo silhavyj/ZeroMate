@@ -66,10 +66,18 @@ endif()
 # Set the output directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output)
 
-# Copy the output file into the output directory
 add_custom_command(
     TARGET zero_mate POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E make_directory ${output_directory}
+
+    # Copy all output files into the location of the executable
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:logger> $<TARGET_FILE_DIR:zero_mate>
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/fonts $<TARGET_FILE_DIR:zero_mate>/fonts
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/icons $<TARGET_FILE_DIR:zero_mate>/icons
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/logos $<TARGET_FILE_DIR:zero_mate>/logos
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/imgui.ini $<TARGET_FILE_DIR:zero_mate>
+
+    # Copy all output files into the ouput directory
     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:zero_mate> ${output_directory}
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/fonts ${output_directory}/fonts
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/icons ${output_directory}/icons
