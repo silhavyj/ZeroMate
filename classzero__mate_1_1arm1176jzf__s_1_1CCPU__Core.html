@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.2.0</span>
+   &#160;<span id="projectnumber">v1.2.1</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -292,17 +292,17 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:af576acdfa9a998bc49f2203c5be2ab8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#af576acdfa9a998bc49f2203c5be2ab8c">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCLZ.html">isa::CCLZ</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:af576acdfa9a998bc49f2203c5be2ab8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a CLZ instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#af576acdfa9a998bc49f2203c5be2ab8c">More...</a><br /></td></tr>
 <tr class="separator:af576acdfa9a998bc49f2203c5be2ab8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea0a4bf2d64e0418882ab2d1840a8cb"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0ea0a4bf2d64e0418882ab2d1840a8cb">Convert_Virtual_Addr_To_Physical_Addr</a> (std::uint32_t virtual_addr, bool write_access)</td></tr>
+<tr class="memdesc:a0ea0a4bf2d64e0418882ab2d1840a8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a given virtual address into a physical address using the MMU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0ea0a4bf2d64e0418882ab2d1840a8cb">More...</a><br /></td></tr>
+<tr class="separator:a0ea0a4bf2d64e0418882ab2d1840a8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65fef8be920aaccdf3cfea5b0e3d0cee"><td class="memTemplParams" colspan="2">template&lt;typename Instruction &gt; </td></tr>
 <tr class="memitem:a65fef8be920aaccdf3cfea5b0e3d0cee"><td class="memTemplItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a65fef8be920aaccdf3cfea5b0e3d0cee">Calculate_Base_Address</a> (Instruction <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>, std::uint32_t base_reg_idx, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a80df62c0bceb498b0a6cc65d54c8352b">CCPU_Context::NCPU_Mode</a> cpu_mode, std::uint32_t number_of_regs) const</td></tr>
 <tr class="memdesc:a65fef8be920aaccdf3cfea5b0e3d0cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the base address of a data transfer instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a65fef8be920aaccdf3cfea5b0e3d0cee">More...</a><br /></td></tr>
 <tr class="separator:a65fef8be920aaccdf3cfea5b0e3d0cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0b5e216097f56e428a5c67eb63a08d9"><td class="memTemplParams" colspan="2">template&lt;typename Instruction &gt; </td></tr>
-<tr class="memitem:ac0b5e216097f56e428a5c67eb63a08d9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1math_1_1TShift__Result.html">utils::math::TShift_Result</a>&lt; std::uint32_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac0b5e216097f56e428a5c67eb63a08d9">Get_Second_Operand_Imm</a> (Instruction <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) const noexcept</td></tr>
-<tr class="memdesc:ac0b5e216097f56e428a5c67eb63a08d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the second immediate operand of a given instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac0b5e216097f56e428a5c67eb63a08d9">More...</a><br /></td></tr>
-<tr class="separator:ac0b5e216097f56e428a5c67eb63a08d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ea0a4bf2d64e0418882ab2d1840a8cb"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0ea0a4bf2d64e0418882ab2d1840a8cb">Convert_Virtual_Addr_To_Physical_Addr</a> (std::uint32_t virtual_addr, bool write_access)</td></tr>
-<tr class="memdesc:a0ea0a4bf2d64e0418882ab2d1840a8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a given virtual address into a physical address using the MMU.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0ea0a4bf2d64e0418882ab2d1840a8cb">More...</a><br /></td></tr>
-<tr class="separator:a0ea0a4bf2d64e0418882ab2d1840a8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9e6a828e9739a227ab6da615fb4b15"><td class="memTemplParams" colspan="2">template&lt;typename Instruction &gt; </td></tr>
+<tr class="memitem:a4b9e6a828e9739a227ab6da615fb4b15"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1utils_1_1math_1_1TShift__Result.html">utils::math::TShift_Result</a>&lt; std::uint32_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a4b9e6a828e9739a227ab6da615fb4b15">Get_Second_Operand_Imm</a> (Instruction <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>) const noexcept</td></tr>
+<tr class="memdesc:a4b9e6a828e9739a227ab6da615fb4b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the second immediate operand of a given instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a4b9e6a828e9739a227ab6da615fb4b15">More...</a><br /></td></tr>
+<tr class="separator:a4b9e6a828e9739a227ab6da615fb4b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e94818c05fb1ddd0a08762eb06e629d"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
 <tr class="memitem:a4e94818c05fb1ddd0a08762eb06e629d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a4e94818c05fb1ddd0a08762eb06e629d">Write</a> (std::uint32_t virtual_addr, Type value)</td></tr>
 <tr class="memdesc:a4e94818c05fb1ddd0a08762eb06e629d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data to the bus.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a4e94818c05fb1ddd0a08762eb06e629d">More...</a><br /></td></tr>
@@ -590,7 +590,7 @@ template&lt;typename Instruction &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -742,7 +742,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1407,7 +1407,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a3a90c040b3cbe4545a9acc5e35acdd45_cgraph.svg" width="1714" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a3a90c040b3cbe4545a9acc5e35acdd45_cgraph.svg" width="1714" height="612"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1692,7 +1692,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_abe7461d09a52f28f99037717f61975c6_cgraph.svg" width="1490" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_abe7461d09a52f28f99037717f61975c6_cgraph.svg" width="1490" height="568"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -1921,8 +1921,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ac0b5e216097f56e428a5c67eb63a08d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0b5e216097f56e428a5c67eb63a08d9">&#9670;&nbsp;</a></span>Get_Second_Operand_Imm()</h2>
+<a id="a4b9e6a828e9739a227ab6da615fb4b15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9e6a828e9739a227ab6da615fb4b15">&#9670;&nbsp;</a></span>Get_Second_Operand_Imm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1933,7 +1933,7 @@ template&lt;typename Instruction &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structzero__mate_1_1utils_1_1math_1_1TShift__Result.html">utils::math::TShift_Result</a>&lt;std::uint32_t&gt; zero_mate::arm1176jzf_s::CCPU_Core::Get_Second_Operand_Imm </td>
+          <td class="memname"><a class="el" href="structzero__mate_1_1utils_1_1math_1_1TShift__Result.html">utils::math::TShift_Result</a>&lt; std::uint32_t &gt; zero_mate::arm1176jzf_s::CCPU_Core::Get_Second_Operand_Imm </td>
           <td>(</td>
           <td class="paramtype">Instruction&#160;</td>
           <td class="paramname"><em>instruction</em></td><td>)</td>
@@ -1942,7 +1942,7 @@ template&lt;typename Instruction &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1964,13 +1964,13 @@ template&lt;typename Instruction &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ac0b5e216097f56e428a5c67eb63a08d9_cgraph.svg" width="467" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a4b9e6a828e9739a227ab6da615fb4b15_cgraph.svg" width="467" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ac0b5e216097f56e428a5c67eb63a08d9_icgraph.svg" width="698" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a4b9e6a828e9739a227ab6da615fb4b15_icgraph.svg" width="698" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -2431,7 +2431,7 @@ template&lt;typename Type &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2496,7 +2496,7 @@ template&lt;std::unsigned_integral Type&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2940,7 +2940,7 @@ template&lt;typename Type &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

@@ -40,7 +40,7 @@ var classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core =
     [ "Get_Offset", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e27faf1eee6c2ef6fc2cfae3fe2b87", null ],
     [ "Get_Offset", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab8055407426b0f25544d2b33a89b22a7", null ],
     [ "Get_Second_Operand", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa5b55276e454abfced2b5714b936e98d", null ],
-    [ "Get_Second_Operand_Imm", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac0b5e216097f56e428a5c67eb63a08d9", null ],
+    [ "Get_Second_Operand_Imm", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a4b9e6a828e9739a227ab6da615fb4b15", null ],
     [ "Get_Shift_Amount", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0478a8424dae644c2370128633e973f3", null ],
     [ "Is_Instruction_Condition_Met", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae71d278b2aa5b43c174c50ee2d7aa281", null ],
     [ "Is_IVT_Reallocated_To_High_Addr", "classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad6dadfc114c7d0d6b43496f9f5651be7", null ],

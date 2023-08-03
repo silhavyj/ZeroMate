@@ -36,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac0b5e216097f56e428a5c67eb63a08d9" target="_top" xlink:title="Calculates the second immediate operand of a given instruction.">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a4b9e6a828e9739a227ab6da615fb4b15" target="_top" xlink:title="Calculates the second immediate operand of a given instruction.">
 <polygon fill="none" stroke="black" points="363,-0.5 363,-41.5 515,-41.5 515,-0.5 363,-0.5"/>
 <text text-anchor="start" x="371" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
 <text text-anchor="start" x="371" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">_s::CCPU_Core::Get_Second</text>

@@ -1,0 +1,6 @@
+<map id="zero_mate::arm1176jzf_s::isa::CData_Processing::Get_Rotate" name="zero_mate::arm1176jzf_s::isa::CData_Processing::Get_Rotate">
+<area shape="rect" id="node1" title="Returns the shift amount to be applied to the immediate value." alt="" coords="740,5,928,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a4b9e6a828e9739a227ab6da615fb4b15" title="Calculates the second immediate operand of a given instruction." alt="" coords="489,5,692,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#abe7461d09a52f28f99037717f61975c6" title="Executes an MSR instruction (move data to CPSR/SPSR from an ARM register)." alt="" coords="229,13,441,54"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a3a90c040b3cbe4545a9acc5e35acdd45" title="Executes a PSR transfer instruction." alt="" coords="5,13,181,54"/>
+</map>
