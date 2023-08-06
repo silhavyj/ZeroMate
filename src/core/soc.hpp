@@ -34,6 +34,7 @@
 #include "peripherals/monitor.hpp"
 #include "peripherals/trng.hpp"
 #include "peripherals/gpio.hpp"
+#include "peripherals/bsc.hpp"
 #include "peripherals/auxiliary/auxiliary.hpp"
 
 namespace zero_mate::soc
@@ -83,6 +84,15 @@ namespace zero_mate::soc
         /// Default AUX peripheral address (where it is found in the address space)
         inline constexpr std::uint32_t AUX_Address = 0x20215000;
 
+        /// Default address of the broadcom serial controller 1 (BSC 1)
+        inline constexpr std::uint32_t BSC_1_Address = 0x20205000;
+
+        /// Default address of the broadcom serial controller 2 (BSC 2)
+        inline constexpr std::uint32_t BSC_2_Address = 0x20804000;
+
+        /// Default address of the broadcom serial controller 3 (BSC 3)
+        inline constexpr std::uint32_t BSC_3_Address = 0x20805000;
+
     } // namespace zero_mate::config
 
     /// Global reference to a logging system used throughout the project
@@ -129,6 +139,15 @@ namespace zero_mate::soc
 
     /// Global reference to the auxiliary peripheral (UART, SPI_1, and SPI_2)
     extern std::shared_ptr<peripheral::CAUX> g_aux;
+
+    /// Broadcom serial controller 1 (BSC 1)
+    extern std::shared_ptr<peripheral::CBSC> g_bsc_1;
+
+    /// Broadcom serial controller 2 (BSC 2)
+    extern std::shared_ptr<peripheral::CBSC> g_bsc_2;
+
+    /// Broadcom serial controller 3 (BSC 3)
+    extern std::shared_ptr<peripheral::CBSC> g_bsc_3;
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Initializes the system.
