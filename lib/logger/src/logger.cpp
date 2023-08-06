@@ -16,6 +16,7 @@
 
 // Project file imports
 
+#define ZERO_MATE_EXPORT
 #include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::utils

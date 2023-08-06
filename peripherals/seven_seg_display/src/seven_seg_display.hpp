@@ -12,9 +12,10 @@
 #include <cassert>
 #include <numeric>
 
-#include <imgui.h>
+#include "imgui.h"
 
-#include <zero_mate/external_peripheral.hpp>
+#define ZERO_MATE_EXPORT
+#include "zero_mate/external_peripheral.hpp"
 
 // ---------------------------------------------------------------------------------------------------------------------
 /// \class CSeven_Segment_Display

@@ -15,13 +15,6 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external/imgui)
 
-# Export all symbols on Windows and create a led.lib file
-set_target_properties(
-    led
-    PROPERTIES
-    WINDOWS_EXPORT_ALL_SYMBOLS ON
-    IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/led.lib)
-
 # Specify the source file making up the led peripheral
 target_sources(
     led

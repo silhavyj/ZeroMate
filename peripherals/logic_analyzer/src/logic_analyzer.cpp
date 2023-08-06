@@ -210,7 +210,7 @@ void CLogic_Analyzer::Render_Line_Charts()
         // Axes labels.
         const std::string x_label = "Time [x * " + std::to_string(m_sampling_frequency) + "]";
         ImPlot::SetupAxis(ImAxis_X1, x_label.c_str());
-        ImPlot::SetupAxis(ImAxis_Y1, "Voltage (1 = 5V; 0 = 0V)");
+        ImPlot::SetupAxis(ImAxis_Y1, "Logic level", ImPlotAxisFlags_NoTickLabels);
 
         // Render data channels.
         for (const auto& pin : m_pins)
