@@ -3,6 +3,7 @@
 #include <array>
 #include <queue>
 
+#include "gpio.hpp"
 #include "peripheral.hpp"
 #include "system_clock_listener.hpp"
 
@@ -11,8 +12,10 @@ namespace zero_mate::peripheral
     class CBSC final : public IPeripheral, public ISystem_Clock_Listener
     {
     public:
-        static constexpr std::uint32_t SDA_PIN_IDX = 2;
-        static constexpr std::uint32_t SCL_PIN_IDX = 3;
+        static constexpr std::uint32_t SDA_Pin_Idx = 2;
+        static constexpr std::uint32_t SCL_Pin_Idx = 3;
+
+        static constexpr std::uint32_t CPU_Cycles_Per_Update = 100;
 
         enum class NRegister : std::uint32_t
         {
@@ -46,7 +49,7 @@ namespace zero_mate::peripheral
         static constexpr auto Reg_Size = static_cast<std::uint32_t>(sizeof(std::uint32_t));
 
     public:
-        CBSC() = default;
+        explicit CBSC(std::shared_ptr<CGPIO_Manager> gpio);
 
         void Reset() noexcept override;
         [[nodiscard]] std::uint32_t Get_Size() const noexcept override;
@@ -56,8 +59,38 @@ namespace zero_mate::peripheral
         void Increment_Passed_Cycles(std::uint32_t count) override;
 
     private:
+        inline void Add_Data_To_FIFO();
+        inline void Control_Reg_Callback();
+        inline void Clear_FIFO();
+        [[nodiscard]] inline bool Should_Transaction_Begin();
+        [[nodiscard]] inline bool Should_FIFO_Be_Cleared();
+        void Update();
+
+    private:
+        enum class NState_Machine : std::uint8_t
+        {
+            Start_Bit,
+            Address,
+            RW,
+            Register,
+            Data,
+            Stop_Bit
+        };
+
+        struct TTransaction
+        {
+            NState_Machine state{ NState_Machine::Start_Bit };
+            std::uint32_t address{ 0x0 };
+            std::uint32_t length{ 0 };
+            bool read{ false };
+        };
+
+    private:
+        std::shared_ptr<CGPIO_Manager> m_gpio;
         std::array<std::uint32_t, Number_Of_Registers> m_regs;
         std::queue<std::uint8_t> m_fifo;
         std::uint32_t m_cpu_cycles;
+        bool m_transaction_in_progress;
+        TTransaction m_transaction;
     };
 }

@@ -75,13 +75,13 @@ namespace zero_mate::soc
     std::shared_ptr<peripheral::CAUX> g_aux = std::make_shared<peripheral::CAUX>(g_gpio, g_ic);
 
     // BSC 1
-    std::shared_ptr<peripheral::CBSC> g_bsc_1 = std::make_shared<peripheral::CBSC>();
+    std::shared_ptr<peripheral::CBSC> g_bsc_1 = std::make_shared<peripheral::CBSC>(g_gpio);
 
     // BSC 2
-    std::shared_ptr<peripheral::CBSC> g_bsc_2 = std::make_shared<peripheral::CBSC>();
+    std::shared_ptr<peripheral::CBSC> g_bsc_2 = std::make_shared<peripheral::CBSC>(g_gpio);
 
     // BSC 3
-    std::shared_ptr<peripheral::CBSC> g_bsc_3 = std::make_shared<peripheral::CBSC>();
+    std::shared_ptr<peripheral::CBSC> g_bsc_3 = std::make_shared<peripheral::CBSC>(g_gpio);
 
     // Initialize the collection of all internal peripherals as well as a collection of all external
     // peripherals that are connected to the board via GPIO.
