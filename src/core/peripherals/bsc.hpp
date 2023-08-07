@@ -6,6 +6,7 @@
 #include "gpio.hpp"
 #include "peripheral.hpp"
 #include "system_clock_listener.hpp"
+#include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate::peripheral
 {
@@ -14,6 +15,8 @@ namespace zero_mate::peripheral
     public:
         static constexpr std::uint32_t SDA_Pin_Idx = 2;
         static constexpr std::uint32_t SCL_Pin_Idx = 3;
+        static constexpr std::uint8_t Slave_Addr_Length = 7;
+        static constexpr std::uint8_t Data_Length = 8;
 
         static constexpr std::uint32_t CPU_Cycles_Per_Update = 100;
 
@@ -59,21 +62,14 @@ namespace zero_mate::peripheral
         void Increment_Passed_Cycles(std::uint32_t count) override;
 
     private:
-        inline void Add_Data_To_FIFO();
-        inline void Control_Reg_Callback();
-        inline void Clear_FIFO();
-        [[nodiscard]] inline bool Should_Transaction_Begin();
-        [[nodiscard]] inline bool Should_FIFO_Be_Cleared();
-        void Update();
-
-    private:
         enum class NState_Machine : std::uint8_t
         {
             Start_Bit,
             Address,
             RW,
-            Register,
+            ACK_1,
             Data,
+            ACK_2,
             Stop_Bit
         };
 
@@ -82,8 +78,36 @@ namespace zero_mate::peripheral
             NState_Machine state{ NState_Machine::Start_Bit };
             std::uint32_t address{ 0x0 };
             std::uint32_t length{ 0 };
+            std::uint8_t addr_idx{ Slave_Addr_Length };
+            std::uint8_t data_idx{ Data_Length };
             bool read{ false };
         };
+
+        enum class NSCL_State
+        {
+            SDA_Change,
+            SCL_Low,
+            SCL_High
+        };
+
+    private:
+        inline void Add_Data_To_FIFO();
+        inline void Control_Reg_Callback();
+        inline void Clear_FIFO();
+        [[nodiscard]] inline bool Should_Transaction_Begin();
+        [[nodiscard]] inline bool Should_FIFO_Be_Cleared();
+        inline void Set_GPIO_pin(std::uint8_t pin_idx, bool set);
+        inline void Terminate_Transaction();
+
+        void Update();
+
+        inline void I2C_Send_Start_Bit();
+        inline void I2C_Send_Slave_Address();
+        inline void I2C_Send_RW_Bit();
+        inline void I2C_Receive_ACK_1();
+        inline void I2C_Send_Data();
+        inline void I2C_Receive_ACK_2();
+        inline void I2C_Send_Stop_Bit();
 
     private:
         std::shared_ptr<CGPIO_Manager> m_gpio;
@@ -92,5 +116,7 @@ namespace zero_mate::peripheral
         std::uint32_t m_cpu_cycles;
         bool m_transaction_in_progress;
         TTransaction m_transaction;
+        NSCL_State m_SCL_state;
+        utils::CLogging_System& m_logging_system;
     };
 }
