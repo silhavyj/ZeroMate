@@ -39,7 +39,7 @@ public:
                                     std::uint32_t latch_pin_idx,
                                     std::uint32_t data_pin_idx,
                                     std::uint32_t clock_pin_idx)
-    : m_name{ name }
+    : m_name{ std::move(name) }
     , m_read_pin{ read_pin }
     , m_last_input_value{ 0 }
     , m_value{ 0 }
