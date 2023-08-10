@@ -11,7 +11,7 @@
 #include "led.hpp"
 
 CLED::CLED(const std::string& name, std::uint32_t pin_idx, zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin)
-: m_name{ name }
+: m_name{ std::move(name) }
 , m_pin_idx{ pin_idx }
 , m_read_pin{ read_pin }
 , m_context{ nullptr }

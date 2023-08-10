@@ -74,6 +74,15 @@ namespace zero_mate::soc
     // AUX
     std::shared_ptr<peripheral::CAUX> g_aux = std::make_shared<peripheral::CAUX>(g_gpio, g_ic);
 
+    // BSC 1
+    std::shared_ptr<peripheral::CBSC> g_bsc_1 = std::make_shared<peripheral::CBSC>(g_gpio);
+
+    // BSC 2
+    std::shared_ptr<peripheral::CBSC> g_bsc_2 = std::make_shared<peripheral::CBSC>(g_gpio);
+
+    // BSC 3
+    std::shared_ptr<peripheral::CBSC> g_bsc_3 = std::make_shared<peripheral::CBSC>(g_gpio);
+
     // Initialize the collection of all internal peripherals as well as a collection of all external
     // peripherals that are connected to the board via GPIO.
     std::vector<std::shared_ptr<peripheral::IPeripheral>> g_peripherals{};
@@ -199,6 +208,9 @@ namespace zero_mate::soc
             Attach_Peripheral_To_Bus<peripheral::CMonitor>("monitor", config::Monitor_Address, g_monitor);
             Attach_Peripheral_To_Bus<peripheral::CTRNG>("TRNG", config::TRNG_Address, g_trng);
             Attach_Peripheral_To_Bus<peripheral::CAUX>("AUX", config::AUX_Address, g_aux);
+            Attach_Peripheral_To_Bus<peripheral::CBSC>("BSC_1", config::BSC_1_Address, g_bsc_1);
+            Attach_Peripheral_To_Bus<peripheral::CBSC>("BSC_2", config::BSC_2_Address, g_bsc_2);
+            Attach_Peripheral_To_Bus<peripheral::CBSC>("BSC_3", config::BSC_3_Address, g_bsc_3);
 
             // Attach the interrupt controller, MMU, external peripherals, and CP15 to the CPU.
             g_cpu->Set_Interrupt_Controller(g_ic);

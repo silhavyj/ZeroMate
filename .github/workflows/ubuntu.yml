@@ -26,15 +26,20 @@ jobs:
 
     # Configure the CMake project using CMake Presets
     - name: Configure CMake
-      run: cmake --preset unix_makefiles_gcc_debug
+      run: cmake --preset unix_makefiles_gcc_code_coverage
 
     # Build the project
     - name: Build
-      run: cmake --build --preset unix_makefiles_gcc_debug
+      run: cmake --build --preset unix_makefiles_gcc_code_coverage -j10
 
     # Run tests
     - name: Tests
-      working-directory: build/unix_makefiles/gcc/debug
-      run: ctest --rerun-failed --output-on-failure
+      run: |
+        cd build/unix_makefiles/gcc/code_coverage
+        ctest --rerun-failed --output-on-failure
+
+    # Report test coverage
+    - name: Upload coverage reports to Codecov
+      run: bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
 
 # EOF

@@ -17,13 +17,17 @@
 #include <string_view>
 /// \endcond
 
+// Project file imports
+
+#include "zero_mate/api_export.hpp"
+
 namespace zero_mate::utils
 {
     // -----------------------------------------------------------------------------------------------------------------
     /// \class ILogger
     /// \brief This class represents a logger interface.
     // -----------------------------------------------------------------------------------------------------------------
-    class ILogger
+    class ZERO_MATE_API ILogger
     {
     public:
         // -------------------------------------------------------------------------------------------------------------
@@ -134,7 +138,7 @@ namespace zero_mate::utils
     /// It holds a collection of loggers that are registered to the logging system. When a message is being logged,
     /// the logging system forwards the message to all its registers loggers.
     // -----------------------------------------------------------------------------------------------------------------
-    class CLogging_System final
+    class ZERO_MATE_API CLogging_System final
     {
     public:
         static constexpr const char* const Debug_Msg_Prefix = "[DEBUG]";     ///< Debug message prefix
@@ -156,28 +160,28 @@ namespace zero_mate::utils
         /// \param msg Debug message to be logged
         /// \param location Location within the source code this function was called from
         // -------------------------------------------------------------------------------------------------------------
-        void Debug(const char* msg, const char* location =  __builtin_FILE(), int line = __builtin_LINE());
+        void Debug(const char* msg, const char* location = __builtin_FILE(), int line = __builtin_LINE());
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Logs an info message via all registered loggers.
         /// \param msg Info message to be logged
         /// \param location Location within the source code this function was called from
         // -------------------------------------------------------------------------------------------------------------
-        void Info(const char* msg, const char* location =  __builtin_FILE(), int line = __builtin_LINE());
+        void Info(const char* msg, const char* location = __builtin_FILE(), int line = __builtin_LINE());
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Logs a warning message via all registered loggers.
         /// \param msg Warning message to be logged
         /// \param location Location within the source code this function was called from
         // -------------------------------------------------------------------------------------------------------------
-        void Warning(const char* msg, const char* location =  __builtin_FILE(), int line = __builtin_LINE());
+        void Warning(const char* msg, const char* location = __builtin_FILE(), int line = __builtin_LINE());
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Logs an error message via all registered loggers.
         /// \param msg Error message to be logged
         /// \param location Location within the source code this function was called from
         // -------------------------------------------------------------------------------------------------------------
-        void Error(const char* msg, const char* location =  __builtin_FILE(), int line = __builtin_LINE());
+        void Error(const char* msg, const char* location = __builtin_FILE(), int line = __builtin_LINE());
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Logs a plain text message (without any formatting) via all registered loggers.

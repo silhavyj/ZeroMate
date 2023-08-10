@@ -15,13 +15,6 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external/imgui)
 
-# Export all symbols on Windows and create a serial_terminal.lib file
-set_target_properties(
-    serial_terminal
-    PROPERTIES
-    WINDOWS_EXPORT_ALL_SYMBOLS ON
-    IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/serial_terminal.lib)
-
 # Specify the source file making up the serial_terminal peripheral
 target_sources(
     serial_terminal

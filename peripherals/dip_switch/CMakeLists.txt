@@ -15,13 +15,6 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external/imgui)
 
-# Export all symbols on Windows and create a dip_switch.lib file
-set_target_properties(
-    dip_switch
-    PROPERTIES
-    WINDOWS_EXPORT_ALL_SYMBOLS ON
-    IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/dip_switch.lib)
-
 # Specify the source file making up the dip_switch peripheral
 target_sources(
     dip_switch
