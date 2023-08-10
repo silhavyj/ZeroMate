@@ -166,22 +166,22 @@ namespace zero_mate::peripheral
         {
             // Send a start bit.
             case NState_Machine::Start_Bit:
-                Send_Start_Bit();
+                UART_Send_Start_Bit();
                 break;
 
             // Send the payload (body of the message).
             case NState_Machine::Payload:
-                Send_Payload();
+                UART_Send_Payload();
                 break;
 
             // Send the stop bit.
             case NState_Machine::Stop_Bit:
-                Send_Stop_bit();
+                UART_Send_Stop_bit();
                 break;
 
             // Reset transmission.
             case NState_Machine::End_Of_Frame:
-                Reset_Transmission();
+                UART_Reset_Transmission();
                 break;
         }
     }
@@ -198,17 +198,17 @@ namespace zero_mate::peripheral
         {
             // Receive a start bit.
             case NState_Machine::Start_Bit:
-                Receive_Start_Bit();
+                UART_Receive_Start_Bit();
                 break;
 
             // Receive data (payload).
             case NState_Machine::Payload:
-                Receive_Payload();
+                UART_Receive_Payload();
                 break;
 
             // Receive a stop bit.
             case NState_Machine::Stop_Bit:
-                Receive_Stop_Bit();
+                UART_Receive_Stop_Bit();
                 break;
 
             case NState_Machine::End_Of_Frame:
@@ -216,7 +216,7 @@ namespace zero_mate::peripheral
         }
     }
 
-    void CMini_UART::Receive_Start_Bit()
+    void CMini_UART::UART_Receive_Start_Bit()
     {
         // Check if the start bit is detected (voltage level is low).
         if (m_aux.m_gpio->Read_GPIO_Pin(UART_0_RX_PIN_IDX) == CGPIO_Manager::CPin::NState::Low)
@@ -226,7 +226,7 @@ namespace zero_mate::peripheral
         }
     }
 
-    void CMini_UART::Receive_Payload()
+    void CMini_UART::UART_Receive_Payload()
     {
         // Read the current value of the RX pin
         const auto bit = static_cast<std::uint8_t>(m_aux.m_gpio->Read_GPIO_Pin(UART_0_RX_PIN_IDX));
@@ -246,7 +246,7 @@ namespace zero_mate::peripheral
         }
     }
 
-    void CMini_UART::Receive_Stop_Bit()
+    void CMini_UART::UART_Receive_Stop_Bit()
     {
         // The stop bit must be a 1!
         if (m_aux.m_gpio->Read_GPIO_Pin(UART_0_RX_PIN_IDX) != CGPIO_Manager::CPin::NState::High)
@@ -279,7 +279,7 @@ namespace zero_mate::peripheral
         ~static_cast<std::uint32_t>(NLSR_Flags::Data_Ready);
     }
 
-    void CMini_UART::Send_Start_Bit()
+    void CMini_UART::UART_Send_Start_Bit()
     {
         // Pull the voltage level down.
         Set_TX_Pin(false);
@@ -288,7 +288,7 @@ namespace zero_mate::peripheral
         m_tx.state = NState_Machine::Payload;
     }
 
-    void CMini_UART::Send_Payload()
+    void CMini_UART::UART_Send_Payload()
     {
         // Send another bit from the payload (FIFO).
         Set_TX_Pin(static_cast<bool>(m_tx.fifo & 0b1U));
@@ -305,7 +305,7 @@ namespace zero_mate::peripheral
         }
     }
 
-    void CMini_UART::Send_Stop_bit()
+    void CMini_UART::UART_Send_Stop_bit()
     {
         // Pull the voltage level up.
         Set_TX_Pin(true);
@@ -328,7 +328,7 @@ namespace zero_mate::peripheral
         m_aux.m_ic->Signalize_IRQ(CInterrupt_Controller::NIRQ_Source::UART);
     }
 
-    void CMini_UART::Reset_Transmission()
+    void CMini_UART::UART_Reset_Transmission()
     {
         // Check if an interrupt should be triggered.
         if (Is_Transmit_Interrupt_Enabled())

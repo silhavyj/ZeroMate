@@ -14,9 +14,11 @@
 #include <unordered_map>
 /// \endcond
 
-#include <imgui.h>
-#include <implot/implot.h>
-#include <zero_mate/external_peripheral.hpp>
+#include "imgui.h"
+#include "implot/implot.h"
+
+#define ZERO_MATE_EXPORT
+#include "zero_mate/external_peripheral.hpp"
 
 // ---------------------------------------------------------------------------------------------------------------------
 /// \class CLogic_Analyzer

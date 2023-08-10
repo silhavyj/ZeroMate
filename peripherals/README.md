@@ -8,3 +8,4 @@ Here is a list of external peripherals that come with the emulator. They are all
 - [Logic analyzer](logic_analyzer/README.md)
 - [Serial terminal](serial_terminal/README.md)
 - [7-segment display](seven_seg_display/README.md)
+- [SSD1306 OLED](ssd1306_oled/README.md)

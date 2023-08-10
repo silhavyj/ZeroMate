@@ -27,6 +27,18 @@
          }
       },
       {
+         "name":"unix_makefiles_gcc_code_coverage",
+         "generator":"Unix Makefiles",
+         "binaryDir":"${sourceDir}/build/unix_makefiles/gcc/code_coverage",
+         "cacheVariables":{
+            "CMAKE_BUILD_TYPE":"Debug",
+            "ENABLE_TESTING":"ON",
+            "ENABLE_COVERAGE":"ON",
+            "CMAKE_C_COMPILER":"gcc",
+            "CMAKE_CXX_COMPILER":"g++"
+         }
+      },
+      {
          "name":"unix_makefiles_clang_release",
          "generator":"Unix Makefiles",
          "binaryDir":"${sourceDir}/build/unix_makefiles/clang/release",
@@ -49,12 +61,36 @@
          }
       },
       {
+         "name":"unix_makefiles_clang_code_coverage",
+         "generator":"Unix Makefiles",
+         "binaryDir":"${sourceDir}/build/unix_makefiles/clang/code_coverage",
+         "cacheVariables":{
+            "CMAKE_BUILD_TYPE":"Debug",
+            "ENABLE_TESTING":"ON",
+            "ENABLE_COVERAGE":"ON",
+            "CMAKE_C_COMPILER":"clang",
+            "CMAKE_CXX_COMPILER":"clang++"
+         }
+      },
+      {
          "name":"ninja_clang_release",
          "generator":"Ninja",
          "binaryDir":"${sourceDir}/build/ninja/clang/release",
          "cacheVariables":{
             "CMAKE_BUILD_TYPE":"Release",
             "ENABLE_TESTING":"OFF",
+            "CMAKE_C_COMPILER":"clang",
+            "CMAKE_CXX_COMPILER":"clang++"
+         }
+      },
+      {
+         "name":"ninja_clang_code_coverage",
+         "generator":"Ninja",
+         "binaryDir":"${sourceDir}/build/ninja/clang/code_coverage",
+         "cacheVariables":{
+            "CMAKE_BUILD_TYPE":"Debug",
+            "ENABLE_TESTING":"ON",
+            "ENABLE_COVERAGE":"ON",
             "CMAKE_C_COMPILER":"clang",
             "CMAKE_CXX_COMPILER":"clang++"
          }
@@ -96,6 +132,18 @@
          }
       },
       {
+         "name":"ninja_gcc_code_coverage",
+         "generator":"Ninja",
+         "binaryDir":"${sourceDir}/build/ninja/gcc/code_coverage",
+         "cacheVariables":{
+            "CMAKE_BUILD_TYPE":"Debug",
+            "ENABLE_TESTING":"ON",
+            "ENABLE_COVERAGE":"ON",
+            "CMAKE_C_COMPILER":"gcc",
+            "CMAKE_CXX_COMPILER":"g++"
+         }
+      },
+      {
          "name":"msvc",
          "generator":"Visual Studio 17 2022",
          "binaryDir":"${sourceDir}/build/msvc",
@@ -114,12 +162,20 @@
          "configurePreset":"ninja_clang_debug"
       },
       {
+         "name":"ninja_clang_code_coverage",
+         "configurePreset":"ninja_clang_code_coverage"
+      },
+      {
          "name":"ninja_gcc_release",
          "configurePreset":"ninja_gcc_release"
       },
       {
          "name":"ninja_gcc_debug",
          "configurePreset":"ninja_gcc_debug"
+      },
+      {
+         "name":"ninja_gcc_code_coverage",
+         "configurePreset":"ninja_gcc_code_coverage"
       },
       {
          "name":"unix_makefiles_clang_release",
@@ -130,12 +186,20 @@
          "configurePreset":"unix_makefiles_clang_debug"
       },
       {
+         "name":"unix_makefiles_clang_code_coverage",
+         "configurePreset":"unix_makefiles_clang_code_coverage"
+      },
+      {
          "name":"unix_makefiles_gcc_release",
          "configurePreset":"unix_makefiles_gcc_release"
       },
       {
          "name":"unix_makefiles_gcc_debug",
          "configurePreset":"unix_makefiles_gcc_debug"
+      },
+      {
+         "name":"unix_makefiles_gcc_code_coverage",
+         "configurePreset":"unix_makefiles_gcc_code_coverage"
       }
    ]
 }
