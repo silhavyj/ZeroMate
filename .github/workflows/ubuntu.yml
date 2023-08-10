@@ -4,7 +4,7 @@ name: Ubuntu
 on:
   push:
     branches:
-      - main
+      - '**'
   pull_request:
     branches:
       - main
@@ -26,15 +26,22 @@ jobs:
 
     # Configure the CMake project using CMake Presets
     - name: Configure CMake
-      run: cmake --preset unix_makefiles_gcc_debug
+      run: cmake --preset unix_makefiles_gcc_code_coverage
 
     # Build the project
     - name: Build
-      run: cmake --build --preset unix_makefiles_gcc_debug
+      run: cmake --build --preset unix_makefiles_gcc_code_coverage -j10
 
     # Run tests
     - name: Tests
-      working-directory: build/unix_makefiles/gcc/debug
-      run: ctest --rerun-failed --output-on-failure
+      run: |
+        cd build/unix_makefiles/gcc/unix_makefiles_gcc_code_coverage
+        ctest --rerun-failed --output-on-failure
+
+    # Report test coverage
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
 # EOF
