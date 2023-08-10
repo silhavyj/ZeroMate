@@ -15,13 +15,6 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external/imgui)
 
-# Export all symbols on Windows and create a logic_analyzer.lib file
-set_target_properties(
-    logic_analyzer
-    PROPERTIES
-    WINDOWS_EXPORT_ALL_SYMBOLS ON
-    IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/logic_analyzer.lib)
-
 # Specify the source file making up the logic_analyzer peripheral
 target_sources(
     logic_analyzer

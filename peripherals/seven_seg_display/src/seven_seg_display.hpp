@@ -12,9 +12,10 @@
 #include <cassert>
 #include <numeric>
 
-#include <imgui.h>
+#include "imgui.h"
 
-#include <zero_mate/external_peripheral.hpp>
+#define ZERO_MATE_EXPORT
+#include "zero_mate/external_peripheral.hpp"
 
 // ---------------------------------------------------------------------------------------------------------------------
 /// \class CSeven_Segment_Display
@@ -38,7 +39,7 @@ public:
                                     std::uint32_t latch_pin_idx,
                                     std::uint32_t data_pin_idx,
                                     std::uint32_t clock_pin_idx)
-    : m_name{ name }
+    : m_name{ std::move(name) }
     , m_read_pin{ read_pin }
     , m_last_input_value{ 0 }
     , m_value{ 0 }

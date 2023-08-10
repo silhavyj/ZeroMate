@@ -12,13 +12,6 @@ target_include_directories(
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>)
 
-# Export all symbols on Windows and create a logger.lib file
-set_target_properties(
-    logger
-    PROPERTIES
-    WINDOWS_EXPORT_ALL_SYMBOLS ON
-    IMPORTED_IMPLIB ${CMAKE_CURRENT_BINARY_DIR}/logger.lib)
-
 # Specify the source file making up the logger library
 target_sources(
     logger

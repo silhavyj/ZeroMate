@@ -10,8 +10,10 @@
 
 #include <array>
 
-#include <imgui.h>
-#include <zero_mate/external_peripheral.hpp>
+#include "imgui.h"
+
+#define ZERO_MATE_EXPORT
+#include "zero_mate/external_peripheral.hpp"
 
 // ---------------------------------------------------------------------------------------------------------------------
 /// \class CTerminal

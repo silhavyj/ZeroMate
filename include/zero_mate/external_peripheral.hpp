@@ -17,6 +17,7 @@
 #include <unordered_set>
 /// \endcond
 
+#include "zero_mate/api_export.hpp"
 #include "zero_mate/utils/logger.hpp"
 
 namespace zero_mate
@@ -165,11 +166,11 @@ extern "C"
     /// \param logging_system Pointer to the logging system that is used throughout the project
     /// \return 0, if all goes well and the peripheral is created successfully. 1, otherwise.
     // -----------------------------------------------------------------------------------------------------------------
-    int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
-                          const char* const name,
-                          const std::uint32_t* const gpio_pins,
-                          std::size_t pin_count,
-                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
-                          [[maybe_unused]] zero_mate::utils::CLogging_System* logging_system);
+    ZERO_MATE_API int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
+                                        const char* const name,
+                                        const std::uint32_t* const gpio_pins,
+                                        std::size_t pin_count,
+                                        [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
+                                        [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
+                                        [[maybe_unused]] zero_mate::utils::CLogging_System* logging_system);
 }
