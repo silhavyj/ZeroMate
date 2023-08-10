@@ -39,9 +39,12 @@ jobs:
         ctest --rerun-failed --output-on-failure
 
     # Report test coverage
+    # - name: Upload coverage reports to Codecov
+    #  uses: codecov/codecov-action@v3
+    #  env:
+    #    CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
     - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v3
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      run: bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
 
 # EOF
