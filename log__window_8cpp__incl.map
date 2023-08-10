@@ -4,4 +4,5 @@
 <area shape="rect" id="node3" title=" " alt="" coords="5,244,117,271"/>
 <area shape="rect" id="node4" href="$window_8hpp.html" title="This file defines an interface for all windows that will be rendered by the application." alt="" coords="53,169,163,196"/>
 <area shape="rect" id="node5" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="188,169,383,196"/>
+<area shape="rect" id="node6" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="189,244,381,271"/>
 </map>

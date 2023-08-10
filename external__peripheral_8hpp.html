@@ -96,17 +96,18 @@ $(document).ready(function(){initNavTree('external__peripheral_8hpp.html',''); i
 
 <p>This file defines an interface for external peripherals that can be attached to the system via GPIO pins at runtime as shared libraries.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="logger_8hpp_source.html">zero_mate/utils/logger.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="api__export_8hpp_source.html">zero_mate/api_export.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger_8hpp_source.html">zero_mate/utils/logger.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for external_peripheral.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="external__peripheral_8hpp__incl.svg" width="211" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="external__peripheral_8hpp__incl.svg" width="276" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="external__peripheral_8hpp__dep__incl.svg" width="1994" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="external__peripheral_8hpp__dep__incl.svg" width="2168" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -125,23 +126,23 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a635525e7f34976acf780e5e510285d41"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="external__peripheral_8hpp.html#a635525e7f34976acf780e5e510285d41">Create_Peripheral</a> (<a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">zero_mate::IExternal_Peripheral</a> **peripheral, const char *const <a class="el" href="soc_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, const std::uint32_t *const gpio_pins, std::size_t pin_count, [[maybe_unused]] <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a99b9d6f259b06f97cdf1db19deaf4786">zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t</a> set_pin, [[maybe_unused]] <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a0ecb01abe68c8df229a650678224aed3">zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t</a> read_pin, [[maybe_unused]] <a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">zero_mate::utils::CLogging_System</a> *logging_system)</td></tr>
-<tr class="memdesc:a635525e7f34976acf780e5e510285d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of an external peripheral.  <a href="external__peripheral_8hpp.html#a635525e7f34976acf780e5e510285d41">More...</a><br /></td></tr>
-<tr class="separator:a635525e7f34976acf780e5e510285d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02559c093f474a4a40ed312f9fd66d63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="api__export_8hpp.html#ac16f367097173491d7cd467ef4f2495f">ZERO_MATE_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="external__peripheral_8hpp.html#a02559c093f474a4a40ed312f9fd66d63">Create_Peripheral</a> (<a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">zero_mate::IExternal_Peripheral</a> **peripheral, const char *const <a class="el" href="soc_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, const std::uint32_t *const gpio_pins, std::size_t pin_count, [[maybe_unused]] <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a99b9d6f259b06f97cdf1db19deaf4786">zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t</a> set_pin, [[maybe_unused]] <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a0ecb01abe68c8df229a650678224aed3">zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t</a> read_pin, [[maybe_unused]] <a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">zero_mate::utils::CLogging_System</a> *logging_system)</td></tr>
+<tr class="memdesc:a02559c093f474a4a40ed312f9fd66d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of an external peripheral.  <a href="external__peripheral_8hpp.html#a02559c093f474a4a40ed312f9fd66d63">More...</a><br /></td></tr>
+<tr class="separator:a02559c093f474a4a40ed312f9fd66d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file defines an interface for external peripherals that can be attached to the system via GPIO pins at runtime as shared libraries. </p>
 <dl class="section date"><dt>Date</dt><dd>15. 06. 2023 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Jakub Silhavy (<a href="#" onclick="location.href='mai'+'lto:'+'jak'+'ub'+'.si'+'lh'+'avy'+'.c'+'z@g'+'ma'+'il.'+'co'+'m'; return false;">jakub<span style="display: none;">.nosp@m.</span>.sil<span style="display: none;">.nosp@m.</span>havy.<span style="display: none;">.nosp@m.</span>cz@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a>) </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a635525e7f34976acf780e5e510285d41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a635525e7f34976acf780e5e510285d41">&#9670;&nbsp;</a></span>Create_Peripheral()</h2>
+<a id="a02559c093f474a4a40ed312f9fd66d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02559c093f474a4a40ed312f9fd66d63">&#9670;&nbsp;</a></span>Create_Peripheral()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Create_Peripheral </td>
+          <td class="memname"><a class="el" href="api__export_8hpp.html#ac16f367097173491d7cd467ef4f2495f">ZERO_MATE_API</a> int Create_Peripheral </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">zero_mate::IExternal_Peripheral</a> **&#160;</td>
           <td class="paramname"><em>peripheral</em>, </td>

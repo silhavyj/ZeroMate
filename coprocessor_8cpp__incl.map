@@ -2,9 +2,10 @@
 <area shape="rect" id="node1" title="This file implements the common functionality of a general interface of a coprocessor." alt="" coords="340,5,503,47"/>
 <area shape="rect" id="node2" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="358,95,485,121"/>
 <area shape="rect" id="node3" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="5,184,208,211"/>
-<area shape="rect" id="node5" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="233,169,394,225"/>
-<area shape="rect" id="node7" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="418,177,643,218"/>
-<area shape="rect" id="node8" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="667,177,904,218"/>
+<area shape="rect" id="node6" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="233,169,394,225"/>
+<area shape="rect" id="node8" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="418,177,643,218"/>
+<area shape="rect" id="node9" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="667,177,904,218"/>
 <area shape="rect" id="node4" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="9,273,204,300"/>
-<area shape="rect" id="node6" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="471,273,590,300"/>
+<area shape="rect" id="node5" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="11,348,203,375"/>
+<area shape="rect" id="node7" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="471,273,590,300"/>
 </map>

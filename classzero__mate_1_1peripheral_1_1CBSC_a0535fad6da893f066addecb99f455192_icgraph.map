@@ -1,0 +1,5 @@
+<map id="zero_mate::peripheral::CBSC::I2C_Send_Slave_Address" name="zero_mate::peripheral::CBSC::I2C_Send_Slave_Address">
+<area shape="rect" id="node1" title=" " alt="" coords="457,5,633,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#aa195c567531f97d585212978ab0f687a" title=" " alt="" coords="244,13,409,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488" title="Notifies the peripheral about how many CPU cycles have passed by." alt="" coords="5,5,196,61"/>
+</map>

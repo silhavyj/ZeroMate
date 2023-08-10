@@ -69,5 +69,20 @@
 <path fill="none" stroke="midnightblue" d="M71.22,-56.08C66.33,-48.53 59.17,-37.49 53.17,-28.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="56.05,-26.24 47.67,-19.75 50.17,-30.05 56.05,-26.24"/>
 </g>
+<!-- Node5 -->
+<g id="node5" class="node">
+<title>Node5</title>
+<g id="a_node5"><a xlink:href="api__export_8hpp.html" target="_top" xlink:title="This file defines macros for exporting symbols out of a shared library.">
+<polygon fill="none" stroke="black" points="138,-0.5 138,-19.5 282,-19.5 282,-0.5 138,-0.5"/>
+<text text-anchor="middle" x="210" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate/api_export.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge5" class="edge">
+<title>Node4&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M210,-56.08C210,-49.01 210,-38.86 210,-29.99"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="213.5,-29.75 210,-19.75 206.5,-29.75 213.5,-29.75"/>
+</g>
 </g>
 </svg>

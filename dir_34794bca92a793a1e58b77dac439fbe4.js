@@ -7,6 +7,11 @@ var dir_34794bca92a793a1e58b77dac439fbe4 =
       [ "TControl_Register", "structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html", "structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register" ],
       [ "CPrescaler", "classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html", "classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler" ]
     ] ],
+    [ "bsc.cpp", "bsc_8cpp.html", null ],
+    [ "bsc.hpp", "bsc_8hpp.html", [
+      [ "CBSC", "classzero__mate_1_1peripheral_1_1CBSC.html", "classzero__mate_1_1peripheral_1_1CBSC" ],
+      [ "TTransaction", "structzero__mate_1_1peripheral_1_1CBSC_1_1TTransaction.html", "structzero__mate_1_1peripheral_1_1CBSC_1_1TTransaction" ]
+    ] ],
     [ "gpio.cpp", "gpio_8cpp.html", null ],
     [ "gpio.hpp", "gpio_8hpp.html", [
       [ "CGPIO_Manager", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html", "classzero__mate_1_1peripheral_1_1CGPIO__Manager" ],

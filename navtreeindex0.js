@@ -17,6 +17,9 @@ var NAVTREEINDEX0 =
 "alu_8hpp.html#a73ff714734ac2e53a9374d1f2b9877d6":[2,0,2,0,0,3,1],
 "alu_8hpp_source.html":[2,0,2,0,0,3],
 "annotated.html":[1,0],
+"api__export_8hpp.html":[2,0,0,0,1],
+"api__export_8hpp.html#ac16f367097173491d7cd467ef4f2495f":[2,0,0,0,1,0],
+"api__export_8hpp_source.html":[2,0,0,0,1],
 "app__info_8hpp.html":[2,0,2,3],
 "app__info_8hpp.html#a0edc953ddd8783dc07c7491ed4cd77b0":[2,0,2,3,0],
 "app__info_8hpp.html#aa73a2df210b46ed8a40bc3319accaebe":[2,0,2,3,1],
@@ -45,6 +48,9 @@ var NAVTREEINDEX0 =
 "branch__and__exchange_8cpp.html":[2,0,2,0,0,0,4],
 "branch__and__exchange_8hpp.html":[2,0,2,0,0,0,5],
 "branch__and__exchange_8hpp_source.html":[2,0,2,0,0,0,5],
+"bsc_8cpp.html":[2,0,2,0,2,3],
+"bsc_8hpp.html":[2,0,2,0,2,4],
+"bsc_8hpp_source.html":[2,0,2,0,2,4],
 "bus_8cpp.html":[2,0,2,0,3],
 "bus_8hpp.html":[2,0,2,0,4],
 "bus_8hpp_source.html":[2,0,2,0,4],
@@ -243,11 +249,5 @@ var NAVTREEINDEX0 =
 "classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ab18a4a4b6a54029ccf141784cfe9c737":[1,0,0,0,1,0,2],
 "classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ae87c33c76ed6571b2408fd293710b6c4":[1,0,0,0,1,0,3],
 "classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1f":[1,0,0,0,1,0,0],
-"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fa19d751dff27aea339cf66284e97e1d5e":[1,0,0,0,1,0,0,5],
-"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fa3014392235f3266413d0c17efd64c67b":[1,0,0,0,1,0,0,3],
-"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fa515b9a5d45581087efc00a8dbacb13ca":[1,0,0,0,1,0,0,6],
-"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fa526d688f37a86d3c3f27d0c5016eb71d":[1,0,0,0,1,0,0,0],
-"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1faa481adb3b002c4c014c64128a4f706df":[1,0,0,0,1,0,0,1],
-"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fab712d6dcbb60c5d0e0fe4c084d4d258d":[1,0,0,0,1,0,0,4],
-"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fad80cf7913f5f7e250f7a38397b573bfe":[1,0,0,0,1,0,0,2]
+"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fa19d751dff27aea339cf66284e97e1d5e":[1,0,0,0,1,0,0,5]
 };

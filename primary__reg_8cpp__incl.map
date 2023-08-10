@@ -2,6 +2,7 @@
 <area shape="rect" id="node1" title="This file implements a primary register interface of coprocessor CP15." alt="" coords="116,5,283,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,111,121"/>
 <area shape="rect" id="node3" href="$primary__reg_8hpp.html" title="This file defines a primary register interface of coprocessor CP15." alt="" coords="135,95,264,121"/>
-<area shape="rect" id="node5" href="$singleton_8hpp.html" title="This file defines and implements a generic class that is used to treat other classes as singletons." alt="" coords="288,95,503,121"/>
+<area shape="rect" id="node6" href="$singleton_8hpp.html" title="This file defines and implements a generic class that is used to treat other classes as singletons." alt="" coords="288,95,503,121"/>
 <area shape="rect" id="node4" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="102,169,297,196"/>
+<area shape="rect" id="node5" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="103,244,295,271"/>
 </map>

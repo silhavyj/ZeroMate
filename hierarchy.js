@@ -60,6 +60,7 @@ var hierarchy =
     [ "zero_mate::peripheral::IPeripheral", "classzero__mate_1_1peripheral_1_1IPeripheral.html", [
       [ "zero_mate::peripheral::CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", null ],
       [ "zero_mate::peripheral::CAUX", "classzero__mate_1_1peripheral_1_1CAUX.html", null ],
+      [ "zero_mate::peripheral::CBSC", "classzero__mate_1_1peripheral_1_1CBSC.html", null ],
       [ "zero_mate::peripheral::CGPIO_Manager", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html", null ],
       [ "zero_mate::peripheral::CInterrupt_Controller", "classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html", null ],
       [ "zero_mate::peripheral::CMonitor", "classzero__mate_1_1peripheral_1_1CMonitor.html", null ],
@@ -75,7 +76,8 @@ var hierarchy =
     ] ],
     [ "zero_mate::peripheral::ISystem_Clock_Listener", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html", [
       [ "zero_mate::peripheral::CARM_Timer", "classzero__mate_1_1peripheral_1_1CARM__Timer.html", null ],
-      [ "zero_mate::peripheral::CAUX", "classzero__mate_1_1peripheral_1_1CAUX.html", null ]
+      [ "zero_mate::peripheral::CAUX", "classzero__mate_1_1peripheral_1_1CAUX.html", null ],
+      [ "zero_mate::peripheral::CBSC", "classzero__mate_1_1peripheral_1_1CBSC.html", null ]
     ] ],
     [ "std::runtime_error", null, [
       [ "zero_mate::arm1176jzf_s::exceptions::CCPU_Exception", "classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html", [
@@ -103,5 +105,6 @@ var hierarchy =
     [ "zero_mate::peripheral::CMini_UART::TState_Machine_Data", "structzero__mate_1_1peripheral_1_1CMini__UART_1_1TState__Machine__Data.html", null ],
     [ "zero_mate::utils::elf::TStatus", "structzero__mate_1_1utils_1_1elf_1_1TStatus.html", null ],
     [ "zero_mate::utils::elf::TText_Section_Record", "structzero__mate_1_1utils_1_1elf_1_1TText__Section__Record.html", null ],
-    [ "zero_mate::utils::CLogging_System::TTimestamp", "structzero__mate_1_1utils_1_1CLogging__System_1_1TTimestamp.html", null ]
+    [ "zero_mate::utils::CLogging_System::TTimestamp", "structzero__mate_1_1utils_1_1CLogging__System_1_1TTimestamp.html", null ],
+    [ "zero_mate::peripheral::CBSC::TTransaction", "structzero__mate_1_1peripheral_1_1CBSC_1_1TTransaction.html", null ]
 ];

@@ -5,7 +5,8 @@
 <area shape="rect" id="node3" title=" " alt="" coords="5,184,117,211"/>
 <area shape="rect" id="node5" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="6,266,122,293"/>
 <area shape="rect" id="node6" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="193,184,367,211"/>
-<area shape="rect" id="node8" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="315,348,509,375"/>
-<area shape="rect" id="node9" href="$external__peripheral_8hpp.html" title="This file defines an interface for external peripherals that can be attached to the system via GPIO p..." alt="" coords="475,259,624,300"/>
+<area shape="rect" id="node8" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="317,348,512,375"/>
+<area shape="rect" id="node10" href="$external__peripheral_8hpp.html" title="This file defines an interface for external peripherals that can be attached to the system via GPIO p..." alt="" coords="475,259,624,300"/>
 <area shape="rect" id="node7" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="147,266,349,293"/>
+<area shape="rect" id="node9" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="385,423,577,449"/>
 </map>
