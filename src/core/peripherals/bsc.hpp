@@ -18,7 +18,7 @@ namespace zero_mate::peripheral
         static constexpr std::uint8_t Slave_Addr_Length = 7;
         static constexpr std::uint8_t Data_Length = 8;
 
-        static constexpr std::uint32_t CPU_Cycles_Per_Update = 100;
+        static constexpr std::uint32_t CPU_Cycles_Per_Update = 30;
 
         enum class NRegister : std::uint32_t
         {

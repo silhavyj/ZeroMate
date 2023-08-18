@@ -93,8 +93,8 @@ namespace zero_mate::peripheral
     bool CBSC::Should_FIFO_Be_Cleared()
     {
         // clang-format off
-        return m_regs[static_cast<std::uint32_t>(NRegister::Control)] >>
-               static_cast<std::uint32_t>(NControl_Flags::FIFO_Clear) != 0;
+        return (m_regs[static_cast<std::uint32_t>(NRegister::Control)] >>
+               static_cast<std::uint32_t>(NControl_Flags::FIFO_Clear) & 0b11U) != 0;
         // clang-format on
     }
 
@@ -183,8 +183,8 @@ namespace zero_mate::peripheral
 
     void CBSC::I2C_Send_Slave_Address()
     {
-        const auto curr_bit = static_cast<bool>((m_transaction.address >> m_transaction.addr_idx) & 0b1U);
         --m_transaction.addr_idx;
+        const auto curr_bit = static_cast<bool>((m_transaction.address >> m_transaction.addr_idx) & 0b1U);
 
         Set_GPIO_pin(SDA_Pin_Idx, curr_bit);
 
@@ -213,6 +213,7 @@ namespace zero_mate::peripheral
     void CBSC::I2C_Send_Data()
     {
         bool curr_bit{ false };
+        --m_transaction.data_idx;
 
         if (m_fifo.empty())
         {
@@ -224,7 +225,6 @@ namespace zero_mate::peripheral
         }
 
         Set_GPIO_pin(SDA_Pin_Idx, curr_bit);
-        --m_transaction.data_idx;
 
         if (m_transaction.data_idx == 0)
         {
@@ -232,6 +232,7 @@ namespace zero_mate::peripheral
             {
                 m_fifo.pop();
             }
+
             m_transaction.state = NState_Machine::ACK_2;
         }
     }
@@ -248,6 +249,7 @@ namespace zero_mate::peripheral
         if (m_transaction.length != 0)
         {
             m_transaction.state = NState_Machine::Data;
+            m_transaction.data_idx = Data_Length;
         }
         else
         {
@@ -257,7 +259,8 @@ namespace zero_mate::peripheral
 
     void CBSC::I2C_Send_Stop_Bit()
     {
-        Set_GPIO_pin(SDA_Pin_Idx, true);
+        Set_GPIO_pin(SCL_Pin_Idx, true);
+        Terminate_Transaction();
     }
 
     void CBSC::Increment_Passed_Cycles(std::uint32_t count)
@@ -280,24 +283,17 @@ namespace zero_mate::peripheral
         {
             case NSCL_State::SDA_Change:
                 Update();
-                m_SCL_state = NSCL_State::SCL_Low;
-                break;
-
-            case NSCL_State::SCL_Low:
-                Set_GPIO_pin(SCL_Pin_Idx, false);
                 m_SCL_state = NSCL_State::SCL_High;
                 break;
 
             case NSCL_State::SCL_High:
                 Set_GPIO_pin(SCL_Pin_Idx, true);
-                if (m_transaction.state != NState_Machine::Stop_Bit)
-                {
-                    m_SCL_state = NSCL_State::SDA_Change;
-                }
-                else
-                {
-                    Terminate_Transaction();
-                }
+                m_SCL_state = NSCL_State::SCL_Low;
+                break;
+
+            case NSCL_State::SCL_Low:
+                Set_GPIO_pin(SCL_Pin_Idx, false);
+                m_SCL_state = NSCL_State::SDA_Change;
                 break;
         }
     }
@@ -306,8 +302,17 @@ namespace zero_mate::peripheral
     {
         m_transaction_in_progress = false;
 
+        m_SCL_state = NSCL_State::SDA_Change;
+        Set_GPIO_pin(SDA_Pin_Idx, true);
+
         m_regs[static_cast<std::uint32_t>(NRegister::Status)] |=
         static_cast<std::uint32_t>(NStatus_Flags::Transfer_Done);
+
+        m_regs[static_cast<std::uint32_t>(NRegister::Control)] &=
+        ~static_cast<std::uint32_t>(NControl_Flags::Start_Transfer);
+
+        m_regs[static_cast<std::uint32_t>(NRegister::Control)] &=
+        ~(0b11U << static_cast<std::uint32_t>(NControl_Flags::FIFO_Clear));
     }
 
     void CBSC::Set_GPIO_pin(std::uint8_t pin_idx, bool set)

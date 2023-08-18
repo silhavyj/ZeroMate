@@ -222,6 +222,9 @@ namespace zero_mate::soc
             // Register system clock listeners.
             g_cpu->Register_System_Clock_Listener(g_arm_timer);
             g_cpu->Register_System_Clock_Listener(g_aux);
+            g_cpu->Register_System_Clock_Listener(g_bsc_1);
+            g_cpu->Register_System_Clock_Listener(g_bsc_2);
+            g_cpu->Register_System_Clock_Listener(g_bsc_3);
 
             // Add a reference to CP15 to the bus, so it knows whether to check for unaligned memory access.
             g_bus->Set_CP15(g_cp15);

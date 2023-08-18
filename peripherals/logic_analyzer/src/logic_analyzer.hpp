@@ -28,7 +28,7 @@ class CLogic_Analyzer final : public zero_mate::IExternal_Peripheral
 {
 public:
     /// Maximum number of samples the logic analyzer can capture
-    static constexpr int Max_Number_Of_Samples = 1024;
+    static constexpr int Max_Number_Of_Samples = 4096;
 
     /// Minimum number of samples the logic analyzer can capture
     static constexpr int Min_Number_Of_Samples = 0;
@@ -76,7 +76,18 @@ public:
     // -----------------------------------------------------------------------------------------------------------------
     void Increment_Passed_Cycles(std::uint32_t count) override;
 
+    // -------------------------------------------------------------------------------------------------------------
+    /// \brief Notifies the peripheral that the state of one of the pins it subscribes to has changed.
+    /// \param pin_idx Index of the GPIO pin whose state has been changed
+    // -------------------------------------------------------------------------------------------------------------
+    void GPIO_Subscription_Callback(std::uint32_t pin_idx) override;
+
 private:
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Initializes the subscription (list of GPIO pins the peripheral wants to listen to).
+    // -----------------------------------------------------------------------------------------------------------------
+    inline void Init_GPIO_Subscription();
+
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Samples all GPIO pins the logic analyzer is connected to.
     // -----------------------------------------------------------------------------------------------------------------
@@ -158,4 +169,5 @@ private:
     std::unordered_map<std::uint32_t, std::uint32_t> m_offsets;           ///< Offsets of different data channels
     bool m_running;                                                       ///< Is the logic analyzer running?
     std::uint32_t m_cpu_cycles;                                           ///< Current number of CPU cycles
+    bool m_controlled_by_pin_change;                                      ///< Should it be updated with a pin change?
 };

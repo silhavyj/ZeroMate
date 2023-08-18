@@ -20,6 +20,7 @@ Each example includes the source code, as well as an output folder containing EL
 - [16 - paging_userspace](16-paging_userspace/README.md)
 - [17 - EDF](17-EDF/README.md)
 - [18 - UART](18-UART/README.md)
+- [19 - I2C](19-I2C/README.md)
 
 If the user wants to modify or rebuild any of the examples, they are more than welcome to do so. However, they will need to have `gcc-arm-none-eabi` installed on their machine. On a Debian-based machine, it can be achieved by running the following command:
 
