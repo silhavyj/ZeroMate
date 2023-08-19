@@ -1,5 +1,5 @@
 #include <drivers/i2c.h>
-#include <drivers/monitor.h>
+
 #include <drivers/gpio.h>
 
 CI2C sI2C1(hal::BSC1_Base, 2, 3);
@@ -116,17 +116,8 @@ void CI2C::End_Transaction(CI2C_Transaction& transaction, bool commit)
     Reg(hal::BSC_Reg::Slave_Address) = transaction.mAddress;
     Reg(hal::BSC_Reg::Data_Length) = transaction.mLength;
 
-    // sMonitor << "Addr = " << CMonitor::NNumber_Base::HEX << static_cast<unsigned int>(transaction.mAddress) << '\n';
-    // sMonitor << "Len = " << CMonitor::NNumber_Base::DEC << static_cast<unsigned int>(transaction.mLength) << '\n';
-    // sMonitor << "Data:\n";
-
     for (volatile int i = 0; i < transaction.mLength; i++)
-    {
         Reg(hal::BSC_Reg::Data_FIFO) = transaction.mBuffer[i];
-        // sMonitor << CMonitor::NNumber_Base::DEC << static_cast<unsigned int>(transaction.mBuffer[i]) << ' ';
-    }
-
-    // sMonitor << '\n';
 
     Reg(hal::BSC_Reg::Status) = (1 << 9) | (1 << 8) | (1 << 1); // reset "slave clock hold", "slave fail" a "status" bitu
     Reg(hal::BSC_Reg::Control) = (1 << 15) | (1 << 7); // zapoceti noveho prenosu (enable bsc + start transfer)

@@ -3,7 +3,6 @@
 #include <drivers/timer.h>
 #include <drivers/segmentdisplay.h>
 #include <drivers/monitor.h>
-#include <drivers/oled_ssd1306.h>
 #include <interrupt_controller.h>
 
 #include <memory/memmap.h>
@@ -30,6 +29,7 @@ extern void Process_2();
 extern void Process_3();
 extern void Process_4();
 extern void Process_5();
+extern void Process_6();
 
 extern "C" int _kernel_main(void)
 {
@@ -46,30 +46,31 @@ extern "C" int _kernel_main(void)
     sMonitor.Clear();
 
     // inicializace souboroveho systemu
-   // sFilesystem.Initialize();
+    sFilesystem.Initialize();
 
     // vytvoreni hlavniho procesu
     // sProcessMgr.Create_Main_Process();
 
-    /*sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_1));
-    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_2));
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_1));
+    
+    /*sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_2));
     sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_3));
     sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_4));
-    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_5)); */
-
-	sDisplay_SSD1306.Open(128, 32);
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_5));*/
+	
+	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_6));
 
     // zatim zakazeme IRQ casovace
     sInterruptCtl.Disable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
 
     // nastavime casovac - v callbacku se provadi planovani procesu
-    // sTimer.Enable(Timer_Callback, 0x20, NTimer_Prescaler::Prescaler_256);
+    sTimer.Enable(Timer_Callback, 0x20, NTimer_Prescaler::Prescaler_256);
 
     // povolime IRQ casovace
-    // sInterruptCtl.Enable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
+    sInterruptCtl.Enable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);
 
     // povolime IRQ a od tohoto momentu je vse v rukou planovace
-    // enable_irq();
+    enable_irq();
 
     // nekonecna smycka - tadyodsud se CPU uz nedostane jinak, nez treba prerusenim
     while (1)

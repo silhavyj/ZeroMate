@@ -1,6 +1,6 @@
 #include <drivers/oled_ssd1306.h>
-#include <memory/kernel_heap.h>
 #include <drivers/monitor.h>
+#include <memory/kernel_heap.h>
 
 #include <drivers/bridges/display_protocol.h>
 
@@ -247,7 +247,7 @@ void CDisplay_SSD1306::Flip()
 
         ta << SSD1306_Cmd::Command_Start
             << SSD1306_Cmd::Set_Page_Addr
-            << 0x00 
+            << 0x00
             << 0xFF
             << SSD1306_Cmd::Set_Column_Addr
             << 0x00
@@ -260,8 +260,6 @@ void CDisplay_SSD1306::Flip()
     constexpr int PktSize = 4;
 
     const int maxIdx = mWidth * (mHeight / 8);
-    // sMonitor << "maxIdx = " <<  static_cast<unsigned int>(maxIdx) << '\n';
-    // sMonitor << "PktSize = " << static_cast<unsigned int>(PktSize) << '\n';
 
     for (int i = 0; i < maxIdx; i += PktSize)
     {
@@ -269,7 +267,10 @@ void CDisplay_SSD1306::Flip()
 
         ta << SSD1306_Cmd::Data_Continue;
         for (int j = 0; j < PktSize; j++)
+        {
             ta << mBuffer[i + j];
+            // sMonitor << "Sending " << static_cast<unsigned int>(mBuffer[i + j]) << '\n';
+        }
 
         mI2C.End_Transaction(ta);
     }
@@ -285,14 +286,18 @@ void CDisplay_SSD1306::Process_External_Command(const char* input, uint32_t leng
     switch (cmd)
     {
         case NDisplay_Command::Nop:
+            sMonitor << "External CMD: NOP\n";
             break;
 
         case NDisplay_Command::Flip:
+            sMonitor << "External CMD: Flip\n";
             Flip();
             break;
 
         case NDisplay_Command::Clear:
         {
+            sMonitor << "External CMD: Clear\n";
+
             if (length != sizeof(TDisplay_Clear_Packet))
                 return;
 
@@ -305,6 +310,8 @@ void CDisplay_SSD1306::Process_External_Command(const char* input, uint32_t leng
 
         case NDisplay_Command::Draw_Pixel_Array:
         {
+            sMonitor << "External CMD: Draw_Pixel_Array\n";
+
             if (length < sizeof(TDisplay_Draw_Pixel_Array_Packet))
                 return;
 
@@ -320,12 +327,16 @@ void CDisplay_SSD1306::Process_External_Command(const char* input, uint32_t leng
 
         case NDisplay_Command::Draw_Pixel_Array_To_Rect:
         {
+            sMonitor << "External CMD: Draw_Pixel_Array_To_Rect\n";
+
             if (length < sizeof(TDisplay_Pixels_To_Rect))
                 return;
 
             const TDisplay_Pixels_To_Rect* pkt = reinterpret_cast<const TDisplay_Pixels_To_Rect*>(input);
 
             const uint8_t* data = &pkt->first;
+
+            sMonitor << "pkt->vflip = " << (pkt->vflip == 0) << '\n';
 
             if (pkt->vflip == 0)
             {
@@ -335,19 +346,39 @@ void CDisplay_SSD1306::Process_External_Command(const char* input, uint32_t leng
                     {
                         const uint16_t pos = ((y - pkt->y1) * pkt->w + (x - pkt->x1));
 
+                        
                         Set_Pixel(x, y, ((data[pos / 8] >> (7 - (pos % 8))) & 0x1) != 0);
                     }
                 }
             }
             else
             {
-                for (uint16_t x = 0; x < pkt->w; x++)
-                {
-                    for (uint16_t y = 0; y < pkt->h; y++)
-                    {
-                        const uint16_t pos = (x * pkt->h + y);
+                // sMonitor << "pkt->w = " << static_cast<unsigned int>(pkt->w) << '\n';
+                // sMonitor << "pkt->h = " << static_cast<unsigned int>(pkt->h) << '\n';
+                // sMonitor << "pkt->x1 = " << static_cast<unsigned int>(pkt->x1) << '\n';
+                // sMonitor << "pkt->y1 = " << static_cast<unsigned int>(pkt->y1) << '\n';
 
-                        Set_Pixel(x + pkt->x1, (pkt->h - y) + pkt->y1, ((data[pos / 8] >> (7 - (pos % 8))) & 0x1) != 0);
+                /*sMonitor << "data = ";
+                for (uint16_t i = 0; i < 10; ++i)
+                {
+                    sMonitor << static_cast<unsigned int>(data[i]) << " ";
+                }
+                sMonitor << "\n";*/
+
+                for (uint32_t x = 0; x < pkt->w; x++)
+                {
+                    for (uint32_t y = 0; y < pkt->h; y++)
+                    {
+                        const uint32_t pos = (x * pkt->h + y);
+
+                        //sMonitor << "x = " << static_cast<unsigned int>(x) << "; y = " << static_cast<unsigned int>(y) << '\n';
+                        //sMonitor << "pos = " << static_cast<unsigned int>(pos) << '\n';
+                        //sMonitor << "[a; b] = [" << static_cast<unsigned int>(pos / 8) << "; " << static_cast<unsigned int>(7 - (pos % 8)) << "]\n";
+
+                        const bool set = ((data[pos / 8] >> (7 - (pos % 8))) & 0x1) != 0;
+                        //sMonitor << "[" << static_cast<unsigned int>((pkt->h - y) + pkt->y1) << "; " << static_cast<unsigned int>(x + pkt->x1) << "] = " << set << "\n";
+
+                        Set_Pixel(x + pkt->x1, (pkt->h - y) + pkt->y1, set);
                     }
                 }
             }

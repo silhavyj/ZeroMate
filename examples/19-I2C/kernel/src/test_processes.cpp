@@ -1,5 +1,16 @@
+#include <oled.h>
 #include <stdstring.h>
 #include <stdfile.h>
+#include <drivers/bridges/uart_defs.h>
+#include <drivers/bridges/display_protocol.h>
+
+const char* messages[] = {
+	"I blink, therefore I am.",
+	"I see dead pixels.",
+	"One CPU rules them all.",
+	"My favourite sport is ARM wrestling",
+	"Old MacDonald had a farm, EIGRP",
+};
 
 #include <../../kernel/include/drivers/monitor.h>
 
@@ -149,4 +160,16 @@ void Process_5()
     }
 
     close(f);
+}
+
+void Process_6()
+{
+    COLED_Display disp("DEV:oled");
+	disp.Clear(false);
+	disp.Put_String(10, 10, "KIV-RTOS init...");
+	disp.Flip();
+
+    while (true)
+    {
+    }
 }

@@ -16,33 +16,8 @@ public:
     static constexpr std::uint32_t Height = 32;
     static constexpr std::uint32_t Pixel_Size = 2;
 
-    static constexpr ImVec4 Color_Pixel_ON = { 0, 0, 255, 255 };
-    static constexpr ImVec4 Color_Pixel_OFF = { 0, 0, 0, 255 };
-
-public:
-    explicit CSSD1036_OLED(const std::string& name,
-                           std::uint32_t address,
-                           std::uint32_t sda_pin_idx,
-                           std::uint32_t scl_pin_idx,
-                           zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
-                           zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                           zero_mate::utils::CLogging_System* logging_system);
-
-    void Render() override;
-    void Set_ImGui_Context(void* context) override;
-
-    void GPIO_Subscription_Callback([[maybe_unused]] std::uint32_t pin_idx) override;
-
-private:
-    enum class NState_Machine : std::uint8_t
-    {
-        Start_Bit,
-        Address,
-        RW,
-        ACK_1,
-        Data,
-        ACK_2
-    };
+    static constexpr ImVec4 Color_Pixel_ON = { 0.6, 0.8, 1, 1 };
+    static constexpr ImVec4 Color_Pixel_OFF = { 0.15, 0.15, 0.15, 1 };
 
     enum class NCMD : std::uint8_t
     {
@@ -82,6 +57,31 @@ private:
         Set_VCOM_Detect = 0xD8,
     };
 
+public:
+    explicit CSSD1036_OLED(const std::string& name,
+                           std::uint32_t address,
+                           std::uint32_t sda_pin_idx,
+                           std::uint32_t scl_pin_idx,
+                           zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
+                           zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
+                           zero_mate::utils::CLogging_System* logging_system);
+
+    void Render() override;
+    void Set_ImGui_Context(void* context) override;
+
+    void GPIO_Subscription_Callback([[maybe_unused]] std::uint32_t pin_idx) override;
+
+private:
+    enum class NState_Machine : std::uint8_t
+    {
+        Start_Bit,
+        Address,
+        RW,
+        ACK_1,
+        Data,
+        ACK_2
+    };
+
     struct TTransaction
     {
         NState_Machine state{ NState_Machine::Start_Bit };
@@ -97,6 +97,7 @@ private:
     inline void Render_Display();
 
     inline void Init_GPIO_Subscription();
+    inline void Init_Pixels();
     inline void Update();
     inline void I2C_Receive_Start_Bit();
     inline void I2C_Receive_Address();
@@ -107,7 +108,29 @@ private:
     inline void Received_Transaction_Callback();
     inline void Init_Transaction();
     inline void Send_ACK();
-    inline void Process_CMD(NCMD cmd);
+    inline void Process_CMD(std::uint8_t data);
+    inline void Process_Data(std::uint8_t data);
+    [[nodiscard]] inline ImColor Get_Pixel_Color(std::uint32_t y, std::uint32_t x) const;
+    inline void Log_Received_Data();
+    void Updated_Type_Of_Processing_Data(std::uint8_t data);
+    inline void Set_Pixel(std::uint32_t y, std::uint32_t x, bool set);
+    inline void Display_Off_Callback();
+    inline void Display_On_Callback();
+    inline void Set_Display_Clock_Div_Ratio_Callback(std::uint8_t data);
+    inline void Set_Column_Addr_Callback(std::uint8_t data);
+    inline void Set_Multiplex_Ratio(std::uint8_t data);
+    inline void Set_Display_Offset(std::uint8_t data);
+    inline void Charge_Pump_Callback(std::uint8_t data);
+    inline void Memory_Addr_Mode_Callback(std::uint8_t data);
+    inline void Com_Scan_Dir_Dec_Callback();
+    inline void Set_Com_Pins_Callback(std::uint8_t data);
+    inline void Set_Contrast_Callback(std::uint8_t data);
+    inline void Set_Precharge_Period_Callback(std::uint8_t data);
+    inline void Set_VCOM_Detect_Callback(std::uint8_t data);
+    inline void Display_All_On_Resume_Callback();
+    inline void Normal_Display_Callback();
+    inline void Deactivate_Scroll_Callback();
+    inline void Set_Page_Addr_Callback(std::uint8_t data);
 
 private:
     std::string m_name;
@@ -128,4 +151,11 @@ private:
     zero_mate::utils::CLogging_System* m_logging_system;
     ImGuiContext* m_ImGui_context;
     bool m_display_on;
+    std::vector<bool> m_pixels;
+    bool m_processing_cmd;
+    NCMD m_curr_cmd;
+    bool m_lock_incoming_data;
+    std::uint32_t m_y;
+    std::uint32_t m_x;
+    std::uint32_t m_y_ref;
 };
