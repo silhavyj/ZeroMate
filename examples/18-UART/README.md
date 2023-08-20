@@ -19,13 +19,13 @@ Here is the content of [peripherals.json](../../peripherals.json) used in this e
   "peripherals": [
     {
       "name" : "Logic analyzer",
-      "pins" : [ 14, 15, 22, 27, 10, 4, 17, 16, 18, 23 ],
+      "connection" : [ 14, 15, 22, 27, 10, 4, 17, 16, 18, 23 ],
       "lib_dir" : "peripherals",
       "lib_name" : "logic_analyzer"
     },
     {
       "name" : "Serial terminal",
-      "pins" : [ 14, 15 ],
+      "connection" : [ 14, 15 ],
       "comment" : "pins: [TX, RX]",
       "lib_dir" : "peripherals",
       "lib_name" : "serial_terminal"

@@ -30,38 +30,38 @@ Here is the content of [peripherals.json](../../peripherals.json) used in this e
   "peripherals": [
     {
       "name" : "7-segment display",
-      "pins" : [ 22, 27, 10 ],
+      "connection" : [ 22, 27, 10 ],
       "comment" : "pins: latch, data, clock",
       "lib_dir" : "peripherals",
       "lib_name" : "seven_seg_display"
     },
     {
       "name" : "Direction",
-      "pins" : [ 4 ],
+      "connection" : [ 4 ],
       "lib_dir" : "peripherals",
       "lib_name" : "dip_switch"
     },
     {
       "name" : "Speed",
-      "pins" : [ 17 ],
+      "connection" : [ 17 ],
       "lib_dir" : "peripherals",
       "lib_name" : "dip_switch"
     },
     {
       "name" : "SOS btn",
-      "pins" : [ 16 ],
+      "connection" : [ 16 ],
       "lib_dir" : "peripherals",
       "lib_name" : "button"
     },
     {
       "name" : "SOS LED",
-      "pins" : [ 18 ],
+      "connection" : [ 18 ],
       "lib_dir" : "peripherals",
       "lib_name" : "led"
     },
     {
       "name" : "titl btn",
-      "pins" : [ 23 ],
+      "connection" : [ 23 ],
       "lib_dir" : "peripherals",
       "lib_name" : "button"
     }
