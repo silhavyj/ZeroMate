@@ -8,10 +8,11 @@
 #include <fs/filesystem.h>
 
 // "importovane" funkce z asm
-extern "C" {
-void process_bootstrap();
-void context_switch(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
-void context_switch_first(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
+extern "C"
+{
+    void process_bootstrap();
+    void context_switch(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
+    void context_switch_first(TCPU_Context* ctx_to, TCPU_Context* ctx_from);
 };
 
 CProcess_Manager sProcessMgr;

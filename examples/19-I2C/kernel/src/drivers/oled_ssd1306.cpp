@@ -7,9 +7,12 @@
 CDisplay_SSD1306 sDisplay_SSD1306(sI2C1);
 
 CDisplay_SSD1306::CDisplay_SSD1306(CI2C& i2c)
-    : mI2C(i2c), mOpened(false), mBuffer(nullptr), mWidth(0), mHeight(0)
+: mI2C(i2c)
+, mOpened(false)
+, mBuffer(nullptr)
+, mWidth(0)
+, mHeight(0)
 {
-
 }
 
 bool CDisplay_SSD1306::Open(int width, int height)
@@ -31,15 +34,13 @@ bool CDisplay_SSD1306::Open(int width, int height)
     // ale to my ted nepotrebujeme, obzvlast kdyz spotrebujeme max jednotky kB a mame k dispozici >512MB RAM
     mBuffer = new uint8_t[mWidth * mHeight / 8];
 
-    // vypneme displej, nastavime clock ratio (z datasheetu, doporucena hodnota), nastavime multiplex ratio (vysku displeje)
+    // vypneme displej, nastavime clock ratio (z datasheetu, doporucena hodnota), nastavime multiplex ratio (vysku
+    // displeje)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << SSD1306_Cmd::Display_Off
-            << SSD1306_Cmd::Set_Display_Clock_Div_Ratio
-            << 0x80
-            << SSD1306_Cmd::Set_Multiplex_Ratio;
+        ta << SSD1306_Cmd::Command_Start << SSD1306_Cmd::Display_Off << SSD1306_Cmd::Set_Display_Clock_Div_Ratio << 0x80
+           << SSD1306_Cmd::Set_Multiplex_Ratio;
 
         mI2C.End_Transaction(ta);
     }
@@ -48,21 +49,19 @@ bool CDisplay_SSD1306::Open(int width, int height)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << height - 1;
+        ta << SSD1306_Cmd::Command_Start << height - 1;
 
         mI2C.End_Transaction(ta);
     }
 
-    // nastavime display offset (pametovy offset a jeho matching na realnou matici), pocatecni radek a vlastnosti vnitrniho menice (nabojova pumúa)
+    // nastavime display offset (pametovy offset a jeho matching na realnou matici), pocatecni radek a vlastnosti
+    // vnitrniho menice (nabojova pumúa)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << SSD1306_Cmd::Set_Display_Offset
-            << 0x00
-            << (static_cast<uint8_t>(SSD1306_Cmd::Set_Start_Line) | 0x00) // zacatek na radce 0
-            << SSD1306_Cmd::Charge_Pump;
+        ta << SSD1306_Cmd::Command_Start << SSD1306_Cmd::Set_Display_Offset << 0x00
+           << (static_cast<uint8_t>(SSD1306_Cmd::Set_Start_Line) | 0x00) // zacatek na radce 0
+           << SSD1306_Cmd::Charge_Pump;
 
         mI2C.End_Transaction(ta);
     }
@@ -71,8 +70,7 @@ bool CDisplay_SSD1306::Open(int width, int height)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << 0x14;
+        ta << SSD1306_Cmd::Command_Start << 0x14;
 
         mI2C.End_Transaction(ta);
     }
@@ -82,11 +80,8 @@ bool CDisplay_SSD1306::Open(int width, int height)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << SSD1306_Cmd::Memory_Addr_Mode
-            << 0x00
-            << (static_cast<uint8_t>(SSD1306_Cmd::Set_Segment_Remap) | 0x01)
-            << SSD1306_Cmd::Com_Scan_Dir_Dec;
+        ta << SSD1306_Cmd::Command_Start << SSD1306_Cmd::Memory_Addr_Mode << 0x00
+           << (static_cast<uint8_t>(SSD1306_Cmd::Set_Segment_Remap) | 0x01) << SSD1306_Cmd::Com_Scan_Dir_Dec;
 
         mI2C.End_Transaction(ta);
     }
@@ -95,8 +90,7 @@ bool CDisplay_SSD1306::Open(int width, int height)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << SSD1306_Cmd::Set_Com_Pins;
+        ta << SSD1306_Cmd::Command_Start << SSD1306_Cmd::Set_Com_Pins;
 
         mI2C.End_Transaction(ta);
     }
@@ -105,8 +99,7 @@ bool CDisplay_SSD1306::Open(int width, int height)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << 0x02;
+        ta << SSD1306_Cmd::Command_Start << 0x02;
 
         mI2C.End_Transaction(ta);
     }
@@ -115,8 +108,7 @@ bool CDisplay_SSD1306::Open(int width, int height)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << SSD1306_Cmd::Set_Contrast;
+        ta << SSD1306_Cmd::Command_Start << SSD1306_Cmd::Set_Contrast;
 
         mI2C.End_Transaction(ta);
     }
@@ -125,8 +117,7 @@ bool CDisplay_SSD1306::Open(int width, int height)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << 0x8F;
+        ta << SSD1306_Cmd::Command_Start << 0x8F;
 
         mI2C.End_Transaction(ta);
     }
@@ -135,8 +126,7 @@ bool CDisplay_SSD1306::Open(int width, int height)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << SSD1306_Cmd::Set_Precharge_Period;
+        ta << SSD1306_Cmd::Command_Start << SSD1306_Cmd::Set_Precharge_Period;
 
         mI2C.End_Transaction(ta);
     }
@@ -145,23 +135,18 @@ bool CDisplay_SSD1306::Open(int width, int height)
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << 0xF1;
+        ta << SSD1306_Cmd::Command_Start << 0xF1;
 
         mI2C.End_Transaction(ta);
     }
 
-    // finalni aktivace displeje - uroven detekce vstupu, nahozeni panelu, neinvertovane barvy, neskrolujeme, zapneme podsviceni
+    // finalni aktivace displeje - uroven detekce vstupu, nahozeni panelu, neinvertovane barvy, neskrolujeme, zapneme
+    // podsviceni
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << SSD1306_Cmd::Set_VCOM_Detect
-            << 0x40
-            << SSD1306_Cmd::Display_All_On_Resume
-            << SSD1306_Cmd::Normal_Display
-            << SSD1306_Cmd::Deactivate_Scroll
-            << SSD1306_Cmd::Display_On;
+        ta << SSD1306_Cmd::Command_Start << SSD1306_Cmd::Set_VCOM_Detect << 0x40 << SSD1306_Cmd::Display_All_On_Resume
+           << SSD1306_Cmd::Normal_Display << SSD1306_Cmd::Deactivate_Scroll << SSD1306_Cmd::Display_On;
 
         mI2C.End_Transaction(ta);
     }
@@ -175,8 +160,7 @@ void CDisplay_SSD1306::Send_Command(SSD1306_Cmd cmd, uint8_t lowPart)
 {
     auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-    ta << SSD1306_Cmd::Command_Start
-       << (static_cast<uint8_t>(cmd) | lowPart);
+    ta << SSD1306_Cmd::Command_Start << (static_cast<uint8_t>(cmd) | lowPart);
 
     mI2C.End_Transaction(ta);
 }
@@ -190,8 +174,7 @@ void CDisplay_SSD1306::Close()
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << SSD1306_Cmd::Display_Off;
+        ta << SSD1306_Cmd::Command_Start << SSD1306_Cmd::Display_Off;
 
         mI2C.End_Transaction(ta);
     }
@@ -245,13 +228,8 @@ void CDisplay_SSD1306::Flip()
     {
         auto& ta = mI2C.Begin_Transaction(SSD1306_Slave_Address);
 
-        ta << SSD1306_Cmd::Command_Start
-            << SSD1306_Cmd::Set_Page_Addr
-            << 0x00
-            << 0xFF
-            << SSD1306_Cmd::Set_Column_Addr
-            << 0x00
-            << mWidth - 1;
+        ta << SSD1306_Cmd::Command_Start << SSD1306_Cmd::Set_Page_Addr << 0x00 << 0xFF << SSD1306_Cmd::Set_Column_Addr
+           << 0x00 << mWidth - 1;
 
         mI2C.End_Transaction(ta);
     }
@@ -286,17 +264,16 @@ void CDisplay_SSD1306::Process_External_Command(const char* input, uint32_t leng
     switch (cmd)
     {
         case NDisplay_Command::Nop:
-            sMonitor << "External CMD: NOP\n";
+            // sMonitor << "External CMD: NOP\n";
             break;
 
         case NDisplay_Command::Flip:
-            sMonitor << "External CMD: Flip\n";
+            // sMonitor << "External CMD: Flip\n";
             Flip();
             break;
 
-        case NDisplay_Command::Clear:
-        {
-            sMonitor << "External CMD: Clear\n";
+        case NDisplay_Command::Clear: {
+            //  sMonitor << "External CMD: Clear\n";
 
             if (length != sizeof(TDisplay_Clear_Packet))
                 return;
@@ -308,14 +285,14 @@ void CDisplay_SSD1306::Process_External_Command(const char* input, uint32_t leng
             break;
         }
 
-        case NDisplay_Command::Draw_Pixel_Array:
-        {
-            sMonitor << "External CMD: Draw_Pixel_Array\n";
+        case NDisplay_Command::Draw_Pixel_Array: {
+            // sMonitor << "External CMD: Draw_Pixel_Array\n";
 
             if (length < sizeof(TDisplay_Draw_Pixel_Array_Packet))
                 return;
 
-            const TDisplay_Draw_Pixel_Array_Packet* pkt = reinterpret_cast<const TDisplay_Draw_Pixel_Array_Packet*>(input);
+            const TDisplay_Draw_Pixel_Array_Packet* pkt =
+            reinterpret_cast<const TDisplay_Draw_Pixel_Array_Packet*>(input);
 
             const TDisplay_Pixel_Spec* ptr = &pkt->first;
 
@@ -325,9 +302,8 @@ void CDisplay_SSD1306::Process_External_Command(const char* input, uint32_t leng
             break;
         }
 
-        case NDisplay_Command::Draw_Pixel_Array_To_Rect:
-        {
-            sMonitor << "External CMD: Draw_Pixel_Array_To_Rect\n";
+        case NDisplay_Command::Draw_Pixel_Array_To_Rect: {
+            // sMonitor << "External CMD: Draw_Pixel_Array_To_Rect\n";
 
             if (length < sizeof(TDisplay_Pixels_To_Rect))
                 return;
@@ -336,7 +312,7 @@ void CDisplay_SSD1306::Process_External_Command(const char* input, uint32_t leng
 
             const uint8_t* data = &pkt->first;
 
-            sMonitor << "pkt->vflip = " << (pkt->vflip == 0) << '\n';
+            // sMonitor << "pkt->vflip = " << (pkt->vflip == 0) << '\n';
 
             if (pkt->vflip == 0)
             {
@@ -346,7 +322,6 @@ void CDisplay_SSD1306::Process_External_Command(const char* input, uint32_t leng
                     {
                         const uint16_t pos = ((y - pkt->y1) * pkt->w + (x - pkt->x1));
 
-                        
                         Set_Pixel(x, y, ((data[pos / 8] >> (7 - (pos % 8))) & 0x1) != 0);
                     }
                 }
@@ -371,12 +346,14 @@ void CDisplay_SSD1306::Process_External_Command(const char* input, uint32_t leng
                     {
                         const uint32_t pos = (x * pkt->h + y);
 
-                        //sMonitor << "x = " << static_cast<unsigned int>(x) << "; y = " << static_cast<unsigned int>(y) << '\n';
-                        //sMonitor << "pos = " << static_cast<unsigned int>(pos) << '\n';
-                        //sMonitor << "[a; b] = [" << static_cast<unsigned int>(pos / 8) << "; " << static_cast<unsigned int>(7 - (pos % 8)) << "]\n";
+                        // sMonitor << "x = " << static_cast<unsigned int>(x) << "; y = " << static_cast<unsigned
+                        // int>(y) << '\n'; sMonitor << "pos = " << static_cast<unsigned int>(pos) << '\n'; sMonitor <<
+                        // "[a; b] = [" << static_cast<unsigned int>(pos / 8) << "; " << static_cast<unsigned int>(7 -
+                        // (pos % 8)) << "]\n";
 
                         const bool set = ((data[pos / 8] >> (7 - (pos % 8))) & 0x1) != 0;
-                        //sMonitor << "[" << static_cast<unsigned int>((pkt->h - y) + pkt->y1) << "; " << static_cast<unsigned int>(x + pkt->x1) << "] = " << set << "\n";
+                        // sMonitor << "[" << static_cast<unsigned int>((pkt->h - y) + pkt->y1) << "; " <<
+                        // static_cast<unsigned int>(x + pkt->x1) << "] = " << set << "\n";
 
                         Set_Pixel(x + pkt->x1, (pkt->h - y) + pkt->y1, set);
                     }

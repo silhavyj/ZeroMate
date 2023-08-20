@@ -13,19 +13,19 @@ Here is the content of [peripherals.json](../../peripherals.json) used in this e
   "peripherals": [
     {
       "name" : "LED (1)",
-      "pins" : [ 18 ],
+      "connection" : [ 18 ],
       "lib_dir" : "peripherals",
       "lib_name" : "led"
     },
     {
       "name" : "LED (2)",
-      "pins" : [ 19 ],
+      "connection" : [ 19 ],
       "lib_dir" : "peripherals",
       "lib_name" : "led"
     },
     {
       "name" : "LED (3)",
-      "pins" : [ 20 ],
+      "connection" : [ 20 ],
       "lib_dir" : "peripherals",
       "lib_name" : "led"
     }

@@ -4,14 +4,6 @@
 #include <drivers/bridges/uart_defs.h>
 #include <drivers/bridges/display_protocol.h>
 
-const char* messages[] = {
-	"I blink, therefore I am.",
-	"I see dead pixels.",
-	"One CPU rules them all.",
-	"My favourite sport is ARM wrestling",
-	"Old MacDonald had a farm, EIGRP",
-};
-
 #include <../../kernel/include/drivers/monitor.h>
 
 extern "C" void enable_irq();
@@ -162,14 +154,47 @@ void Process_5()
     close(f);
 }
 
+const char* messages[] = {
+    "I blink, therefore I am.",        "I see dead pixels.",
+    "One CPU rules them all.",         "My favourite sport is ARM wrestling",
+    "Old MacDonald had a farm, EIGRP",
+};
+
 void Process_6()
 {
-    COLED_Display disp("DEV:oled");
-	disp.Clear(false);
-	disp.Put_String(10, 10, "KIV-RTOS init...");
-	disp.Flip();
+    /*COLED_Display disp("DEV:oled");
+        disp.Clear(false);
+        disp.Put_String(10, 10, "KIV-RTOS init...");
+        disp.Flip();
 
     while (true)
     {
+    }*/
+
+    volatile int i;
+
+    COLED_Display disp("DEV:oled");
+    disp.Clear(false);
+    disp.Put_String(10, 10, "KIV-RTOS init...");
+    disp.Flip();
+
+    uint32_t trng_file = open("DEV:trng", NFile_Open_Mode::Read_Only);
+    uint32_t num = 0;
+
+    for (i = 0; i < 0x1600; i++)
+        ;
+
+    while (true)
+    {
+        // ziskame si nahodne cislo a vybereme podle toho zpravu
+        read(trng_file, reinterpret_cast<char*>(&num), sizeof(num));
+        const char* msg = messages[num % (sizeof(messages) / sizeof(const char*))];
+
+        disp.Clear(false);
+        disp.Put_String(0, 0, msg);
+        disp.Flip();
+
+        for (i = 0; i < 0x1600; i++)
+            ;
     }
 }

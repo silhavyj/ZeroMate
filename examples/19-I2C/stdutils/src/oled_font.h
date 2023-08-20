@@ -11,14 +11,13 @@ namespace OLED_Font
     // prvni znak, ktery je definovan ve fontu
     constexpr uint16_t Char_Begin = 32;
     // posledni znak (resp. jeden za poslednim) fontu
-    constexpr uint16_t Char_End = 128;      // max + 1
+    constexpr uint16_t Char_End = 128; // max + 1
 
     // je potreba tento font preklapet?
     constexpr bool Flip_Chars = true;
 
     // jednoduchy 6x8 font
-    const uint8_t OLED_Font_Default[(Char_End - Char_Begin) * Char_Width] =
-    {
+    const uint8_t OLED_Font_Default[(Char_End - Char_Begin) * Char_Width] = {
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // mezernik
         0x00, 0x00, 0x00, 0x2f, 0x00, 0x00, // !
         0x00, 0x00, 0x07, 0x00, 0x07, 0x00, // "

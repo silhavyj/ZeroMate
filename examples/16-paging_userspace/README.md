@@ -18,28 +18,28 @@ Here is the content of [peripherals.json](../../peripherals.json) used in this e
   "peripherals": [
     {
       "name" : "Display (1)",
-      "pins" : [ 2, 3, 4 ],
+      "connection" : [ 2, 3, 4 ],
       "comment" : "pins: latch, data, clock",
       "lib_dir" : "peripherals",
       "lib_name" : "seven_seg_display"
     },
     {
       "name" : "Display (2)",
-      "pins" : [ 2, 3, 4 ],
+      "connection" : [ 2, 3, 4 ],
       "comment" : "pins: latch, data, clock",
       "lib_dir" : "peripherals",
       "lib_name" : "seven_seg_display"
     },
     {
       "name" : "Display (3)",
-      "pins" : [ 2, 3, 4 ],
+      "connection" : [ 2, 3, 4 ],
       "comment" : "pins: latch, data, clock",
       "lib_dir" : "peripherals",
       "lib_name" : "seven_seg_display"
     },
     {
       "name" : "Display (4)",
-      "pins" : [ 2, 3, 4 ],
+      "connection" : [ 2, 3, 4 ],
       "comment" : "pins: latch, data, clock",
       "lib_dir" : "peripherals",
       "lib_name" : "seven_seg_display"

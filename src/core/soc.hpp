@@ -49,8 +49,8 @@ namespace zero_mate::soc
             /// Name of an external peripheral
             inline const char* const Name = "name";
 
-            /// GPIO pins an external peripherals is connected to
-            inline const char* const Pins = "pins";
+            /// Connection of an external peripheral (GPIO pins, I2C address, etc.)
+            inline const char* const Connection = "connection";
 
             /// Path to the directory where the shared library is located
             inline const char* const Lib_Dir = "lib_dir";

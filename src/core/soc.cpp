@@ -106,10 +106,10 @@ namespace zero_mate::soc
         // -------------------------------------------------------------------------------------------------------------
         struct TPeripheral_Config
         {
-            std::string name;                ///< Name of the external peripherals
-            std::vector<std::uint32_t> pins; ///< Collection of GPIO pins the peripheral will be connected to
-            std::string lib_dir;             ///< Path to the directory where the shared library is located
-            std::string lib_name;            ///< Name of the shared library
+            std::string name;                      ///< Name of the external peripherals
+            std::vector<std::uint32_t> connection; ///< Connection of the external peripheral (GPIO pins, I2C addr, ...)
+            std::string lib_dir;                   ///< Path to the directory where the shared library is located
+            std::string lib_name;                  ///< Name of the shared library
         };
 
         // -------------------------------------------------------------------------------------------------------------
@@ -276,14 +276,14 @@ namespace zero_mate::soc
         {
             // clang-format off
             if (!peripheral.contains(config::sections::Name) ||
-                !peripheral.contains(config::sections::Pins) ||
+                !peripheral.contains(config::sections::Connection) ||
                 !peripheral.contains(config::sections::Lib_Name) ||
                 !peripheral.contains(config::sections::Lib_Dir))
             {
                 g_logging_system.Error(fmt::format("At least one of the following sections is missing in the {} "
                                                    "file: {}, {}, {}, or {}",
                                                    config::sections::Name,
-                                                   config::sections::Pins,
+                                                   config::sections::Connection,
                                                    config::sections::Lib_Name,
                                                    config::sections::Lib_Dir,
                                                    config::External_Peripherals_Config_File).c_str());
@@ -305,10 +305,10 @@ namespace zero_mate::soc
             TPeripheral_Config config{};
 
             // Read data from the config sections.
-            config.name = peripheral["name"].template get<std::string>();
-            config.pins = peripheral["pins"].template get<std::vector<std::uint32_t>>();
-            config.lib_name = peripheral["lib_name"].template get<std::string>();
-            config.lib_dir = peripheral["lib_dir"].template get<std::string>();
+            config.name = peripheral[config::sections::Name].template get<std::string>();
+            config.connection = peripheral[config::sections::Connection].template get<std::vector<std::uint32_t>>();
+            config.lib_name = peripheral[config::sections::Lib_Name].template get<std::string>();
+            config.lib_dir = peripheral[config::sections::Lib_Dir].template get<std::string>();
 
             return config;
         }
@@ -350,8 +350,8 @@ namespace zero_mate::soc
                 const auto status = static_cast<IExternal_Peripheral::NInit_Status>(
                 create_peripheral(&g_external_peripherals.back(),
                                   config.name.c_str(),
-                                  config.pins.data(),
-                                  config.pins.size(),
+                                  config.connection.data(),
+                                  config.connection.size(),
                                   &Set_GPIO_Pin,
                                   &Read_GPIO_Pin,
                                   utils::CSingleton<utils::CLogging_System>::Get_Instance()));

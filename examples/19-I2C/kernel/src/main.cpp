@@ -52,13 +52,13 @@ extern "C" int _kernel_main(void)
     // sProcessMgr.Create_Main_Process();
 
     sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_1));
-    
+
     /*sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_2));
     sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_3));
     sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_4));
     sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_5));*/
-	
-	sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_6));
+
+    sProcessMgr.Create_Process(reinterpret_cast<unsigned long>(&Process_6));
 
     // zatim zakazeme IRQ casovace
     sInterruptCtl.Disable_Basic_IRQ(hal::IRQ_Basic_Source::Timer);

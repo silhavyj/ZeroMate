@@ -9,7 +9,8 @@
 #include "oled_font.h"
 
 COLED_Display::COLED_Display(const char* path)
-    : mHandle{ open(path, NFile_Open_Mode::Write_Only) }, mOpened(false)
+: mHandle{ open(path, NFile_Open_Mode::Write_Only) }
+, mOpened(false)
 {
     // nastavime priznak dle toho, co vrati open
     mOpened = (mHandle != static_cast<uint32_t>(-1));
@@ -36,9 +37,9 @@ void COLED_Display::Clear(bool clearSet)
         return;
 
     TDisplay_Clear_Packet pkt;
-	pkt.header.cmd = NDisplay_Command::Clear;
-	pkt.clearSet = clearSet ? 1 : 0;
-	write(mHandle, reinterpret_cast<char*>(&pkt), sizeof(pkt));
+    pkt.header.cmd = NDisplay_Command::Clear;
+    pkt.clearSet = clearSet ? 1 : 0;
+    write(mHandle, reinterpret_cast<char*>(&pkt), sizeof(pkt));
 }
 
 void COLED_Display::Set_Pixel(uint16_t x, uint16_t y, bool set)
@@ -74,8 +75,10 @@ void COLED_Display::Put_Char(uint16_t x, uint16_t y, char c)
     ptr->x1 = x;
     ptr->y1 = y;
     ptr->vflip = OLED_Font::Flip_Chars ? 1 : 0;
-    
-    memcpy(&OLED_Font::OLED_Font_Default[OLED_Font::Char_Width * (((uint16_t)c) - OLED_Font::Char_Begin)], &ptr->first, OLED_Font::Char_Width);
+
+    memcpy(&OLED_Font::OLED_Font_Default[OLED_Font::Char_Width * (((uint16_t)c) - OLED_Font::Char_Begin)],
+           &ptr->first,
+           OLED_Font::Char_Width);
 
     /*char* memdst = reinterpret_cast<char*>(&ptr->first);
 
