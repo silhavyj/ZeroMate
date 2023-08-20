@@ -321,7 +321,7 @@ extern "C"
 {
     int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
                           const char* const name,
-                          const std::uint32_t* const gpio_pins,
+                          const std::uint32_t* const connection,
                           std::size_t pin_count,
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
                           zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
@@ -332,7 +332,7 @@ extern "C"
 
         for (std::uint32_t i = 0; i < pin_count; ++i)
         {
-            pins[i] = gpio_pins[i];
+            pins[i] = connection[i];
         }
 
         // Create an instance of a logic analyzer.

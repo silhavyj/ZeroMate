@@ -168,7 +168,7 @@ extern "C"
     // -----------------------------------------------------------------------------------------------------------------
     ZERO_MATE_API int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
                                         const char* const name,
-                                        const std::uint32_t* const gpio_pins,
+                                        const std::uint32_t* const connection,
                                         std::size_t pin_count,
                                         [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
                                         [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
