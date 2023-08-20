@@ -181,7 +181,7 @@ void Process_6()
     uint32_t trng_file = open("DEV:trng", NFile_Open_Mode::Read_Only);
     uint32_t num = 0;
 
-    for (i = 0; i < 0x1600; i++)
+    for (i = 0; i < 0x3200; i++)
         ;
 
     while (true)
@@ -194,7 +194,7 @@ void Process_6()
         disp.Put_String(0, 0, msg);
         disp.Flip();
 
-        for (i = 0; i < 0x1600; i++)
+        for (i = 0; i < 0x3200; i++)
             ;
     }
 }
