@@ -6,19 +6,24 @@ This example demonstrates the use of an SSD1306 OLED display that is controlled 
 
 1) Process 1 (dummy tasks that blinks an LED)
 2) Process 6
-      - Reads random numbers from the TRNG peripheral and prints out messages to the OLED display. Here is a list of possible messages that may appear on the display (based on the random number):
+   - Reads random numbers from the TRNG peripheral and prints out messages to the OLED display. Here is a list of possible messages that may appear on the display (based on the random number):
 
-      ```c++
-      const char* messages[] = 
-      {
-          "I blink, therefore I am.",        
-          "I see dead pixels.",
-          "One CPU rules them all.",         
-          "My favourite sport is ARM wrestling",
-          "Old MacDonald had a farm, EIGRP",
-      };
-      ```
-      
+     ```c++
+     const char* messages[] = 
+     {
+         "I blink, therefore I am.",        
+         "I see dead pixels.",
+         "One CPU rules them all.",         
+         "My favourite sport is ARM wrestling",
+         "Old MacDonald had a farm, EIGRP",
+     };
+     ```
+
+## Parameters of the I2C protocol
+
+- **Clock** (SCL line) is triggered by a rising edge
+- **Start bit** is represented by the SDA line going from HIGH to LOW
+- **Stop bit** is represented by the SDA line going HIGH after the SCL line has already been set to HIGH
 
 ## External peripherals
 
