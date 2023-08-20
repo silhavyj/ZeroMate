@@ -2,7 +2,7 @@
 
 ## Description
 
-This example demonstrate the use of an SSD1306 OLED display that is controlled over I2C. There are two user [tasks](kernel/src/test_processes.cpp) created within this example.
+This example demonstrates the use of an SSD1306 OLED display that is controlled over I2C. There are two user [tasks](kernel/src/test_processes.cpp) created within this example.
 
 1) Process 1 (dummy tasks that blinks an LED)
 2) Process 6
