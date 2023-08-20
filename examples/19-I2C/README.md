@@ -51,7 +51,7 @@ Here is the content of [peripherals.json](../../peripherals.json) used in this e
 
 Using the [logic analyzer](../../peripherals/logic_analyzer/README.md), we can capture and debug I2C communication. In the picture below, you can see two bytes worth of payload being sent to the target device.
 
-<img src="../../misc/screenshots/examples/19-i2C.png">
+<img src="../../misc/screenshots/examples/19-I2C.png">
 
 ```
 Address = 0x3C (60 DEC)
