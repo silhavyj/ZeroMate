@@ -28,8 +28,18 @@ CLogic_Analyzer::CLogic_Analyzer(const std::string& name,
 , m_sampling_frequency{ Max_Sampling_Frequency_CPI }
 , m_running{ false }
 , m_cpu_cycles{ 0 }
+, m_controlled_by_pin_change{ false }
 {
     Init_Offsets();
+    Init_GPIO_Subscription();
+}
+
+void CLogic_Analyzer::Init_GPIO_Subscription()
+{
+    for (const auto& pin_idx : m_pins)
+    {
+        m_gpio_subscription.insert(pin_idx);
+    }
 }
 
 void CLogic_Analyzer::Init_Offsets()
@@ -41,6 +51,14 @@ void CLogic_Analyzer::Init_Offsets()
     {
         m_offsets[pin] = offset;
         offset += Offset_Step;
+    }
+}
+
+void CLogic_Analyzer::GPIO_Subscription_Callback([[maybe_unused]] std::uint32_t pin_idx)
+{
+    if (m_running && m_controlled_by_pin_change)
+    {
+        Sample();
     }
 }
 
@@ -137,6 +155,9 @@ void CLogic_Analyzer::Render_Settings()
     // Sampling frequency.
     ImGui::InputInt("Sampling frequency (CPI)", &m_sampling_frequency);
     m_sampling_frequency = std::clamp(m_sampling_frequency, Min_Sampling_Frequency_CPI, Max_Sampling_Frequency_CPI);
+
+    // Should the samples by collected upon a change of a pin?
+    ImGui::Checkbox("Update with each pin change?", &m_controlled_by_pin_change);
 
     ImGui::Separator();
 }
@@ -280,7 +301,7 @@ void CLogic_Analyzer::Render_Data_Annotation(std::uint32_t pin_idx)
 void CLogic_Analyzer::Increment_Passed_Cycles(std::uint32_t count)
 {
     // Make sure logic analyzer is in a sampling mode.
-    if (!m_running)
+    if (!m_running || m_controlled_by_pin_change)
     {
         return;
     }
@@ -300,7 +321,7 @@ extern "C"
 {
     int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
                           const char* const name,
-                          const std::uint32_t* const gpio_pins,
+                          const std::uint32_t* const connection,
                           std::size_t pin_count,
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
                           zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
@@ -311,7 +332,7 @@ extern "C"
 
         for (std::uint32_t i = 0; i < pin_count; ++i)
         {
-            pins[i] = gpio_pins[i];
+            pins[i] = connection[i];
         }
 
         // Create an instance of a logic analyzer.

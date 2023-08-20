@@ -475,10 +475,14 @@ namespace zero_mate::peripheral
         const CPin::NFunction pin_function = pin.Get_Function();
 
         // Make sure the pin function has been set to input.
-        if ((pin_function != CPin::NFunction::Input) && (pin_function != CPin::NFunction::Alt_5))
+        // clang-format off
+        if ((pin_function != CPin::NFunction::Input) &&
+            (pin_function != CPin::NFunction::Alt_5) &&
+            (pin_function != CPin::NFunction::Alt_0))
         {
             return NPin_Set_Status::Invalid_Pin_Function;
         }
+        // clang-format on
 
         // Check if changing the pin's state triggers an interrupt.
         // This must be checked before the state is changed.

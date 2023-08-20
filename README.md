@@ -2,14 +2,15 @@
 
 *Raspberry Pi Zero Emulator*
 
-[![version](https://img.shields.io/badge/version-1.2.1-blue)](https://github.com/silhavyj/ZeroMate/releases)
+[![version](https://img.shields.io/badge/version-1.3.0-blue)](https://github.com/silhavyj/ZeroMate/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Doxygen Documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://silhavyj.github.io/ZeroMate/)
 
-[![Ubuntu](https://github.com/silhavyj/ZeroMate/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/ubuntu.yml)
-[![Windows](https://github.com/silhavyj/ZeroMate/actions/workflows/windows.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/windows.yml)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ecdf90cb11424b19a184ad5a34c7c820)](https://www.codacy.com/gh/silhavyj/ZeroMate/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=silhavyj/ZeroMate&amp;utm_campaign=Badge_Grade)
-[![codecov](https://codecov.io/gh/silhavyj/ZeroMate/branch/main/graph/badge.svg?token=SJOWREI75F)](https://codecov.io/gh/silhavyj/ZeroMate)
+| CI  | Status  |
+| ------------- | ------------- |
+| Build  | [![Ubuntu](https://github.com/silhavyj/ZeroMate/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/ubuntu.yml) [![Windows](https://github.com/silhavyj/ZeroMate/actions/workflows/windows.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/windows.yml)  |
+| Static code analysis  | [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ecdf90cb11424b19a184ad5a34c7c820)](https://www.codacy.com/gh/silhavyj/ZeroMate/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=silhavyj/ZeroMate&amp;utm_campaign=Badge_Grade)  |
+| Code coverage | [![codecov](https://codecov.io/gh/silhavyj/ZeroMate/branch/main/graph/badge.svg?token=SJOWREI75F)](https://codecov.io/gh/silhavyj/ZeroMate) |
 
 ---
 
@@ -34,27 +35,29 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |Feature|Support|Note|
 |---|---|---|
 |ARMv6 ISA|⏳| The vast majority of ARM instructions are supported. However, there are still some missing.|
-|System bus|✅||
+|System bus|✔️||
 |Debugger|⏳| Stepping through the source code, breakpoints, pause, reset, and play.|
 |Searching functions by their names|❌||
-|RAM|✅||
-|Logging system|✅||
-|GPIO|✅||
-|Interrupt controller (IC)|✅||
-|ARM timer|✅||
-|Memory-mapped debug monitor|✅|Debug purposes during development. Find out more information [here](tools/README.md).|
-|TRNG (random number generator)|✅||
-|CPU exceptions|✅||
-|CPU modes (+ viewing of all banked CPU registers)|✅||
+|RAM|✔️||
+|Logging system|✔️||
+|GPIO|✔️||
+|Interrupt controller (IC)|✔️||
+|ARM timer|✔️||
+|Memory-mapped debug monitor|✔️|Debug purposes during development. Find out more information [here](tools/README.md).|
+|TRNG (random number generator)|✔️||
+|CPU exceptions|✔️||
+|CPU modes (+ viewing of all banked CPU registers)|✔️||
 |Paging|⏳|Nested-level paging is not supported yet.|
-|Support for external peripherals|✅|External peripherals are loaded as shared libraries at runtime. For instance, an LED, DIP switch, 7-segment display, etc.|
-|Loading of multiple ELF files (kernel + separately compiled processes)|✅||
+|Support for external peripherals|✔️|External peripherals are loaded as shared libraries at runtime. For instance, an LED, DIP switch, 7-segment display, etc.|
+|Loading of multiple ELF files (kernel + separately compiled processes)|✔️||
 |Floating point unit (FPU)|❌||
-|I2C|❌||
+|I2C|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
 |SPI|❌||
 |UART|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
-|Simple logic analyzer|✅|More information can be found [here](peripherals/logic_analyzer/README.md).|
+|Simple logic analyzer|✔️|More information can be found [here](peripherals/logic_analyzer/README.md).|
 |Statistical data collection|❌|Number of I/O operations, etc.|
+
+✔️ - Fully implemented | ❌ - Not supported yet |  ⏳ -  Limited functionality
 
 ## Screenshots
 

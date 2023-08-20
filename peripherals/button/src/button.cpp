@@ -75,7 +75,7 @@ extern "C"
 {
     int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
                           const char* const name,
-                          const std::uint32_t* const gpio_pins,
+                          const std::uint32_t* const connection,
                           std::size_t pin_count,
                           zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
                           [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
@@ -88,7 +88,7 @@ extern "C"
         }
 
         // Create an instance of a button.
-        *peripheral = new (std::nothrow) CButton(name, gpio_pins[0], set_pin, logging_system);
+        *peripheral = new (std::nothrow) CButton(name, connection[0], set_pin, logging_system);
 
         // Make sure the creation was successful.
         if (*peripheral == nullptr)
