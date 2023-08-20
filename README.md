@@ -51,7 +51,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |Support for external peripherals|✔️|External peripherals are loaded as shared libraries at runtime. For instance, an LED, DIP switch, 7-segment display, etc.|
 |Loading of multiple ELF files (kernel + separately compiled processes)|✔️||
 |Floating point unit (FPU)|❌||
-|I2C|❌||
+|I2C|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
 |SPI|❌||
 |UART|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
 |Simple logic analyzer|✔️|More information can be found [here](peripherals/logic_analyzer/README.md).|
