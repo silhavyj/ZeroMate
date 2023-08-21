@@ -11,6 +11,9 @@
 
 #pragma once
 
+// To speed up the simulation - use a pseudo rnd number generator
+// #define USE_REAL_RND_NUMBER_GENERATOR
+
 // STL imports (excluded from Doxygen)
 /// \cond
 #include <array>
@@ -93,9 +96,19 @@ namespace zero_mate::peripheral
         [[nodiscard]] bool Is_Enabled() const;
 
     private:
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Returns a random number.
+        /// If the USE_REAL_RND_NUMBER_GENERATOR macro is defined, the function uses a built-in rnd number generator.
+        /// Otherwise, the random generator produces sudo-random numbers.
+        /// \return Random number
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] std::uint32_t Get_Rnd_Number();
+
+    private:
         std::array<std::uint32_t, Number_Of_Registers> m_regs;       ///< Peripheral's registers
         std::random_device m_rand_dev;                               ///< Random device used to generate rnd numbers
         std::uniform_int_distribution<std::uint32_t> m_uniform_dist; ///< Uniform std::uint32_t distribution
+        std::uint32_t m_seed;                                        ///< Initial seed
     };
 
 } // namespace zero_mate::peripheral
