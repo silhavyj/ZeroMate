@@ -2,6 +2,7 @@
 
 *Raspberry Pi Zero Emulator*
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5565c951dcce4bb7aa7b074e629a10be)](https://app.codacy.com/gh/silhavyj/ZeroMate?utm_source=github.com&utm_medium=referral&utm_content=silhavyj/ZeroMate&utm_campaign=Badge_Grade)
 [![version](https://img.shields.io/badge/version-1.2.1-blue)](https://github.com/silhavyj/ZeroMate/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Doxygen Documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://silhavyj.github.io/ZeroMate/)
