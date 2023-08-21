@@ -18,7 +18,7 @@
 // Project file imports
 
 #include "../window.hpp"
-#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/utils/logging_system.hpp"
 #include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/peripherals/peripheral.hpp"
 

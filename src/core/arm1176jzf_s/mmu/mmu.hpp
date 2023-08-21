@@ -121,7 +121,7 @@ namespace zero_mate::arm1176jzf_s::mmu
         /// \param cpu_context CPU context to retrieve the current CPU mode
         /// \param write_access Read/Write access to the page
         // -------------------------------------------------------------------------------------------------------------
-        inline void Verify_Access(const CPage_Entry& page,
+        static inline void Verify_Access(const CPage_Entry& page,
                                   std::uint32_t virtual_addr,
                                   const CCPU_Context& cpu_context,
                                   bool write_access);

@@ -319,13 +319,14 @@ void CLogic_Analyzer::Increment_Passed_Cycles(std::uint32_t count)
 
 extern "C"
 {
-    int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
-                          const char* const name,
-                          const std::uint32_t* const connection,
-                          std::size_t pin_count,
-                          [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                          zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
-                          [[maybe_unused]] zero_mate::utils::CLogging_System* logging_system)
+    zero_mate::IExternal_Peripheral::NInit_Status
+    Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
+                      const char* const name,
+                      const std::uint32_t* const connection,
+                      std::size_t pin_count,
+                      [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
+                      zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
+                      [[maybe_unused]] zero_mate::utils::CLogging_System* logging_system)
     {
         // Converts the raw C-style array of GPIO pins to an std::vector.
         std::vector<std::uint32_t> pins(pin_count);
@@ -341,10 +342,10 @@ extern "C"
         // Make sure the creation was successful.
         if (*peripheral == nullptr)
         {
-            return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::Allocation_Error);
+            return zero_mate::IExternal_Peripheral::NInit_Status::Allocation_Error;
         }
 
         // All went well.
-        return static_cast<int>(zero_mate::IExternal_Peripheral::NInit_Status::OK);
+        return zero_mate::IExternal_Peripheral::NInit_Status::OK;
     }
 }
