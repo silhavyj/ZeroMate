@@ -335,13 +335,13 @@ namespace zero_mate::soc
                 const auto& lib = s_shared_libs.at(lib_id);
 
                 // Get the address of the "Create_Peripheral" function located in the shared library.
-                auto create_peripheral = lib->get_function<int(IExternal_Peripheral**,
-                                                               const char* const,
-                                                               const std::uint32_t* const,
-                                                               std::size_t,
-                                                               IExternal_Peripheral::Set_GPIO_Pin_t,
-                                                               IExternal_Peripheral::Read_GPIO_Pin_t,
-                                                               utils::CLogging_System*)>("Create_Peripheral");
+                auto create_peripheral = lib->get_function<std::uint32_t(IExternal_Peripheral**,
+                                                                         const char* const,
+                                                                         const std::uint32_t* const,
+                                                                         std::size_t,
+                                                                         IExternal_Peripheral::Set_GPIO_Pin_t,
+                                                                         IExternal_Peripheral::Read_GPIO_Pin_t,
+                                                                         utils::CLogging_System*)>("Create_Peripheral");
 
                 // Create room for the new external peripheral in the collection of all external peripherals
                 g_external_peripherals.emplace_back();

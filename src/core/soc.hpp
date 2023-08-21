@@ -20,7 +20,7 @@
 
 // Project file imports
 
-#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/utils/logging_system.hpp"
 #include "zero_mate/external_peripheral.hpp"
 
 #include "bus.hpp"

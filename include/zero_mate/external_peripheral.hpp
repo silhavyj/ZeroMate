@@ -18,7 +18,7 @@
 /// \endcond
 
 #include "zero_mate/api_export.hpp"
-#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/utils/logging_system.hpp"
 
 namespace zero_mate
 {
@@ -39,7 +39,7 @@ namespace zero_mate
         /// \enum NInit_Status
         /// \brief Defines values that can be returned from the #Create_Peripheral function.
         // -------------------------------------------------------------------------------------------------------------
-        enum class NInit_Status
+        enum class NInit_Status : std::uint32_t
         {
             OK = 0,          ///< All went well
             GPIO_Mismatch,   ///< Number of GPIO pins does not match the expected value
@@ -166,11 +166,12 @@ extern "C"
     /// \param logging_system Pointer to the logging system that is used throughout the project
     /// \return 0, if all goes well and the peripheral is created successfully. 1, otherwise.
     // -----------------------------------------------------------------------------------------------------------------
-    ZERO_MATE_API int Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
-                                        const char* const name,
-                                        const std::uint32_t* const connection,
-                                        std::size_t pin_count,
-                                        [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
-                                        [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
-                                        [[maybe_unused]] zero_mate::utils::CLogging_System* logging_system);
+    ZERO_MATE_API zero_mate::IExternal_Peripheral::NInit_Status
+    Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
+                      const char* const name,
+                      const std::uint32_t* const connection,
+                      std::size_t pin_count,
+                      [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
+                      [[maybe_unused]] zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
+                      [[maybe_unused]] zero_mate::utils::CLogging_System* logging_system);
 }

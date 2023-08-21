@@ -552,7 +552,8 @@ namespace zero_mate::arm1176jzf_s
                                                        magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
                     // clang-format on
 
-                    return;
+                    // Reset the CPU (SPSR is not supported in the current CPU mode).
+                    throw exceptions::CReset{};
                 }
                 m_context.Set_CPSR(m_context.Get_SPSR());
             }
@@ -1109,7 +1110,8 @@ namespace zero_mate::arm1176jzf_s
                                                magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
             // clang-format on
 
-            return;
+            // Reset the CPU.
+            throw exceptions::CReset{};
         }
 
         // Retrieve the current value of the CPSR register.
@@ -1196,7 +1198,8 @@ namespace zero_mate::arm1176jzf_s
                                                magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
             // clang-format on
 
-            return;
+            // Reset the CPU.
+            throw exceptions::CReset{};
         }
 
         // Get the CPU mode used in the instruction.
@@ -1242,7 +1245,8 @@ namespace zero_mate::arm1176jzf_s
                                                magic_enum::enum_name(m_context.Get_CPU_Mode())).c_str());
             // clang-format on
 
-            return;
+            // Reset the CPU.
+            throw exceptions::CReset{};
         }
 
         const auto reg_rn_idx = instruction.Get_Rn_Idx();

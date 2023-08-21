@@ -24,7 +24,7 @@
 #include "interrupt_controller.hpp"
 #include "system_clock_listener.hpp"
 
-#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/utils/logging_system.hpp"
 
 namespace zero_mate::peripheral
 {

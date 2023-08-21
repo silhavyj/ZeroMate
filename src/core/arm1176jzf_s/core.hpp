@@ -31,7 +31,7 @@
 #include "../bus.hpp"
 #include "mmu/mmu.hpp"
 #include "zero_mate/utils/math.hpp"
-#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/utils/logging_system.hpp"
 #include "zero_mate/external_peripheral.hpp"
 #include "../peripherals/interrupt_controller.hpp"
 #include "../peripherals/system_clock_listener.hpp"
