@@ -109,6 +109,9 @@ namespace zero_mate::peripheral
             bool pending{ false }; ///< Is the source pending or not?
         };
 
+        /// Default values of the TInterrupt_Info structure
+        static constexpr TInterrupt_Info Disabled_Non_Pending_Interrupt{ .enabled = false, .pending = false };
+
     public:
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Creates an instance of the class.

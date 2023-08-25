@@ -26,3 +26,6 @@
 #include "srs.hpp"
 #include "rfe.hpp"
 #include "clz.hpp"
+#include "smulxy.hpp"
+#include "smulwy.hpp"
+#include "smlaxy.hpp"

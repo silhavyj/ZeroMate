@@ -80,6 +80,9 @@ namespace zero_mate::arm1176jzf_s::isa
             SRS,                           ///< SRS instruction (store LR and SPSR)
             RFE,                           ///< RFE instruction (load LR and SPSR)
             CLZ,                           ///< Count leading zeros instruction
+            SMULxy,                        ///< SMULxy instruction
+            SMULWy,                        ///< SMULWy instruction
+            SMLAxy,                        ///< SMLAxy instruction
             Unknown                        ///< Unknown instruction
         };
 

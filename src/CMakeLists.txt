@@ -53,7 +53,7 @@ target_link_libraries(
         magic_enum
         capstone
         demangle
-        logger)
+        logging_system)
 
 # Set the rpath to look for shared libraries relative to the executable
 if(NOT WIN32)
@@ -71,7 +71,7 @@ add_custom_command(
     COMMAND ${CMAKE_COMMAND} -E make_directory ${output_directory}
 
     # Copy all output files into the location of the executable
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:logger> $<TARGET_FILE_DIR:zero_mate>
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:logging_system> $<TARGET_FILE_DIR:zero_mate>
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/fonts $<TARGET_FILE_DIR:zero_mate>/fonts
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/icons $<TARGET_FILE_DIR:zero_mate>/icons
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/misc/logos $<TARGET_FILE_DIR:zero_mate>/logos

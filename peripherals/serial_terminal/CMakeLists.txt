@@ -22,13 +22,13 @@ target_sources(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/serial_terminal.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/serial_terminal.cpp)
 
-# Link imgui_glfw and logger to the serial_terminal library so the peripheral can
+# Link imgui_glfw and logging_system to the serial_terminal library so the peripheral can
 # render itself and log messages to the logging system
 target_link_libraries(
     serial_terminal
     PRIVATE
         imgui_glfw
-        logger)
+        logging_system)
 
 # Copy the shared library into the output/peripherals directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)

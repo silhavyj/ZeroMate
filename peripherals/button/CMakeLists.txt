@@ -22,13 +22,13 @@ target_sources(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/button.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/button.cpp)
 
-# Link imgui_glfw and logger to the button library so the peripheral can
+# Link imgui_glfw and logging_system to the button library so the peripheral can
 # render itself and log messages to the logging system
 target_link_libraries(
     button
     PRIVATE
         imgui_glfw
-        logger)
+        logging_system)
 
 # Copy the shared library into the output/peripherals directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)

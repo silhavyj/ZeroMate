@@ -47,32 +47,32 @@ namespace zero_mate::peripheral
     void CInterrupt_Controller::Initialize_Basic_IRQ_Sources()
     {
         // Initialize basic IRQ sources (enable = false, pending = false).
-        m_irq_basic_sources[NIRQ_Basic_Source::ARM_Timer] = {};
-        m_irq_basic_sources[NIRQ_Basic_Source::ARM_Mailbox] = {};
-        m_irq_basic_sources[NIRQ_Basic_Source::ARM_Doorbell_0] = {};
-        m_irq_basic_sources[NIRQ_Basic_Source::ARM_Doorbell_1] = {};
-        m_irq_basic_sources[NIRQ_Basic_Source::GPU_0_Halted] = {};
-        m_irq_basic_sources[NIRQ_Basic_Source::GPU_1_Halted] = {};
-        m_irq_basic_sources[NIRQ_Basic_Source::Illegal_Access_Type_1] = {};
-        m_irq_basic_sources[NIRQ_Basic_Source::Illegal_Access_Type_0] = {};
+        m_irq_basic_sources[NIRQ_Basic_Source::ARM_Timer] = Disabled_Non_Pending_Interrupt;
+        m_irq_basic_sources[NIRQ_Basic_Source::ARM_Mailbox] = Disabled_Non_Pending_Interrupt;
+        m_irq_basic_sources[NIRQ_Basic_Source::ARM_Doorbell_0] = Disabled_Non_Pending_Interrupt;
+        m_irq_basic_sources[NIRQ_Basic_Source::ARM_Doorbell_1] = Disabled_Non_Pending_Interrupt;
+        m_irq_basic_sources[NIRQ_Basic_Source::GPU_0_Halted] = Disabled_Non_Pending_Interrupt;
+        m_irq_basic_sources[NIRQ_Basic_Source::GPU_1_Halted] = Disabled_Non_Pending_Interrupt;
+        m_irq_basic_sources[NIRQ_Basic_Source::Illegal_Access_Type_1] = Disabled_Non_Pending_Interrupt;
+        m_irq_basic_sources[NIRQ_Basic_Source::Illegal_Access_Type_0] = Disabled_Non_Pending_Interrupt;
     }
 
     void CInterrupt_Controller::Initialize_IRQ_Sources()
     {
         // Initialize IRQ sources (enable = false, pending = false).
-        m_irq_sources[NIRQ_Source::AUX] = {};
-        m_irq_sources[NIRQ_Source::I2C_SPI_SLV] = {};
-        m_irq_sources[NIRQ_Source::PWA_0] = {};
-        m_irq_sources[NIRQ_Source::PWA_1] = {};
-        m_irq_sources[NIRQ_Source::SMI] = {};
-        m_irq_sources[NIRQ_Source::GPIO_0] = {};
-        m_irq_sources[NIRQ_Source::GPIO_1] = {};
-        m_irq_sources[NIRQ_Source::GPIO_2] = {};
-        m_irq_sources[NIRQ_Source::GPIO_3] = {};
-        m_irq_sources[NIRQ_Source::I2C] = {};
-        m_irq_sources[NIRQ_Source::SPI] = {};
-        m_irq_sources[NIRQ_Source::PCM] = {};
-        m_irq_sources[NIRQ_Source::UART] = {};
+        m_irq_sources[NIRQ_Source::AUX] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::I2C_SPI_SLV] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::PWA_0] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::PWA_1] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::SMI] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::GPIO_0] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::GPIO_1] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::GPIO_2] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::GPIO_3] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::I2C] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::SPI] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::PCM] = Disabled_Non_Pending_Interrupt;
+        m_irq_sources[NIRQ_Source::UART] = Disabled_Non_Pending_Interrupt;
     }
 
     std::uint32_t CInterrupt_Controller::Get_Size() const noexcept

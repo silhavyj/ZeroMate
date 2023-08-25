@@ -11,6 +11,7 @@
 #include <bit>
 #include <variant>
 #include <algorithm>
+#include <type_traits>
 /// \endcond
 
 // 3rd party library includes
@@ -355,6 +356,18 @@ namespace zero_mate::arm1176jzf_s
 
                 case isa::CInstruction::NType::CLZ:
                     Execute(isa::CCLZ{ instruction });
+                    break;
+
+                case isa::CInstruction::NType::SMULxy:
+                    Execute(isa::CSMULxy{ instruction });
+                    break;
+
+                case isa::CInstruction::NType::SMULWy:
+                    Execute(isa::CSMULWy{ instruction });
+                    break;
+
+                case isa::CInstruction::NType::SMLAxy:
+                    Execute(isa::CSMLAxy{ instruction });
                     break;
             }
 
@@ -1302,6 +1315,87 @@ namespace zero_mate::arm1176jzf_s
 
         // Store the result in the Rd register.
         m_context[instruction.Get_Rd_Idx()] = leading_zeros;
+    }
+
+    void CCPU_Core::Execute(isa::CSMULWy instruction)
+    {
+        // Retrieve the type of the instruction.
+        const auto type = instruction.Get_Type();
+
+        // Retrieve the register indexes.
+        const auto rd_idx = instruction.Get_Rd_Idx();
+        const auto rm_idx = instruction.Get_Rm_Idx();
+        const auto rs_idx = instruction.Get_Rs_Idx();
+
+        // Convert the first operand into signed 32-bit integer.
+        const auto op1 = static_cast<std::int32_t>(m_context[rm_idx]);
+        std::int16_t op2{};
+
+        // Get the second as a signed 16-bit integer.
+        switch (type)
+        {
+            case isa::CSMULWy::NType::SMULWB:
+                op2 = static_cast<std::int16_t>(m_context[rs_idx] & 0xFFFFU);
+                break;
+
+            case isa::CSMULWy::NType::SMULWT:
+                op2 = static_cast<std::int16_t>(m_context[rs_idx] >> 16U);
+                break;
+        }
+
+        // Calculate the result (only store the upper 32 bits of the 48-bit result).
+        m_context[rd_idx] = static_cast<std::uint32_t>(static_cast<std::uint64_t>(op1 * op2) >> 16U);
+    }
+
+    void CCPU_Core::Execute(isa::CSMULxy instruction)
+    {
+        Sign_Multiply_Accumulate(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CSMLAxy instruction)
+    {
+        Sign_Multiply_Accumulate(instruction);
+    }
+
+    template<typename Instruction>
+    void CCPU_Core::Sign_Multiply_Accumulate(Instruction instruction)
+    {
+        // Retrieve the type of the instruction.
+        const auto type = instruction.Get_Type();
+
+        // Retrieve the register indexes.
+        const auto rd_idx = instruction.Get_Rd_Idx();
+        const auto rm_idx = instruction.Get_Rm_Idx();
+        const auto rs_idx = instruction.Get_Rs_Idx();
+
+        switch (type)
+        {
+            case Instruction::NType::BB:
+                m_context[rd_idx] = static_cast<std::uint32_t>(static_cast<std::int16_t>(m_context[rm_idx] & 0xFFFFU) *
+                                                               static_cast<std::int16_t>(m_context[rs_idx] & 0xFFFFU));
+                break;
+
+            case Instruction::NType::BT:
+                m_context[rd_idx] = static_cast<std::uint32_t>(static_cast<std::int16_t>(m_context[rm_idx] & 0xFFFFU) *
+                                                               static_cast<std::int16_t>(m_context[rs_idx] >> 16U));
+                break;
+
+            case Instruction::NType::TB:
+                m_context[rd_idx] = static_cast<std::uint32_t>(static_cast<std::int16_t>(m_context[rm_idx] >> 16U) *
+                                                               static_cast<std::int16_t>(m_context[rs_idx] & 0xFFFFU));
+                break;
+
+            case Instruction::NType::TT:
+                m_context[rd_idx] = static_cast<std::uint32_t>(static_cast<std::int16_t>(m_context[rm_idx] >> 16U) *
+                                                               static_cast<std::int16_t>(m_context[rs_idx] >> 16U));
+                break;
+        }
+
+        // Add the acc register based on the type of the instruction.
+        if constexpr (std::is_same<Instruction, isa::CSMLAxy>::value)
+        {
+            m_context[rd_idx] += m_context[instruction.Get_Rn_Idx()];
+        }
     }
 
     [[nodiscard]] std::uint32_t CCPU_Core::Convert_Virtual_Addr_To_Physical_Addr(std::uint32_t virtual_addr,

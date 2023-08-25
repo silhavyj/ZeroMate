@@ -51,6 +51,8 @@ namespace zero_mate::utils::elf
         // -------------------------------------------------------------------------------------------------------------
         inline void Map_Segments_To_RAM(CBus& bus, const ELFIO::elfio& elf_reader)
         {
+            static constexpr std::uint32_t Word_Size = sizeof(std::uint32_t);
+
             // Get the total number of ELF segments.
             const ELFIO::Elf_Half number_of_segments = elf_reader.segments.size();
 
@@ -61,16 +63,20 @@ namespace zero_mate::utils::elf
                 const ELFIO::Elf64_Addr physical_addr = segment.get_physical_address();
                 const ELFIO::Elf64_Addr segment_size = segment.get_file_size();
 
-                const char* data = segment.get_data();
+                // Get the data as bytes and as words as well.
+                const auto* data_as_words = reinterpret_cast<const uint32_t*>(&segment.get_data()[0]);
 
-                // Map the data of the segment into RAM
-                for (ELFIO::Elf_Xword i = 0; i < segment_size; ++i)
+                // Calculate the total number of words making up the kernel.
+                const auto total_number_of_words = segment_size / Word_Size;
+
+                // Map the data (as words) of the segment into RAM
+                for (ELFIO::Elf_Xword i = 0; i < total_number_of_words; ++i)
                 {
-                    const auto value = static_cast<std::uint8_t>(data[i]);
-                    const auto addr = static_cast<std::uint32_t>(physical_addr + i);
+                    const auto value = static_cast<std::uint32_t>(data_as_words[i]);
+                    const auto addr = static_cast<std::uint32_t>(physical_addr + (i * Word_Size));
 
-                    // Map the byte to its corresponding address.
-                    bus.Write<std::uint8_t>(addr, value);
+                    // Map the word to its corresponding address.
+                    bus.Write<std::uint32_t>(addr, value);
                 }
             }
         }

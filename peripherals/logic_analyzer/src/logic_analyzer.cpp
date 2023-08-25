@@ -319,7 +319,9 @@ void CLogic_Analyzer::Increment_Passed_Cycles(std::uint32_t count)
 
 extern "C"
 {
-    zero_mate::IExternal_Peripheral::NInit_Status
+    #define ZM_EXTERNAL_PERIPHERAL_EXPORT
+
+    ZM_EXTERNAL_PERIPHERAL_API zero_mate::IExternal_Peripheral::NInit_Status
     Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
                       const char* const name,
                       const std::uint32_t* const connection,

@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------------------------------------
 /// \file logger.hpp
-/// \date 21. 08. 2023
+/// \date 22. 08. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
 /// \brief This file defines a general logger interface.
@@ -17,17 +17,13 @@
 #include <string_view>
 /// \endcond
 
-// Project file imports
-
-#include "zero_mate/api_export.hpp"
-
 namespace zero_mate::utils
 {
     // -----------------------------------------------------------------------------------------------------------------
     /// \class ILogger
-    /// \brief This class represents a logger interface.
+    /// \brief This class represents a logging_system interface.
     // -----------------------------------------------------------------------------------------------------------------
-    class ZERO_MATE_API ILogger
+    class ILogger
     {
     public:
         // -------------------------------------------------------------------------------------------------------------

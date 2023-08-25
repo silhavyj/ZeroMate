@@ -467,6 +467,32 @@ namespace zero_mate::arm1176jzf_s
         void Execute(isa::CCLZ instruction);
 
         // -------------------------------------------------------------------------------------------------------------
+        /// \brief Executes a CSMULxy instruction.
+        /// \param instruction CSMULxy instruction to be executed
+        // -------------------------------------------------------------------------------------------------------------
+        void Execute(isa::CSMULxy instruction);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Executes a CSMULWy instruction.
+        /// \param instruction CSMULWy instruction to be executed
+        // -------------------------------------------------------------------------------------------------------------
+        void Execute(isa::CSMULWy instruction);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Executes a CSMLAxy instruction.
+        /// \param instruction CSMLAxy instruction to be executed
+        // -------------------------------------------------------------------------------------------------------------
+        void Execute(isa::CSMLAxy instruction);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Combines the functionality of the isa::CSMULWy and isa::CSMLAxy instructions.
+        /// \tparam Instruction Type of instruction to be executed
+        /// \param instruction Instruction to be executed (value)
+        // -------------------------------------------------------------------------------------------------------------
+        template<typename Instruction>
+        void Sign_Multiply_Accumulate(Instruction instruction);
+
+        // -------------------------------------------------------------------------------------------------------------
         /// \brief Converts a given virtual address into a physical address using the MMU.
         /// \param virtual_addr Virtual address to be converted into a physical address
         /// \param write_access Indication of whether write or read access is intended to be performed

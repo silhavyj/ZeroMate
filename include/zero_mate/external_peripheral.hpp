@@ -17,8 +17,17 @@
 #include <unordered_set>
 /// \endcond
 
-#include "zero_mate/api_export.hpp"
 #include "zero_mate/utils/logging_system.hpp"
+
+#ifdef _WIN32
+    #ifdef ZM_EXTERNAL_PERIPHERAL_EXPORT
+        #define ZM_EXTERNAL_PERIPHERAL_API __declspec(dllexport)
+    #else
+        #define ZM_EXTERNAL_PERIPHERAL_API __declspec(dllimport)
+    #endif
+#else
+    #define ZM_EXTERNAL_PERIPHERAL_API
+#endif
 
 namespace zero_mate
 {
@@ -166,7 +175,7 @@ extern "C"
     /// \param logging_system Pointer to the logging system that is used throughout the project
     /// \return 0, if all goes well and the peripheral is created successfully. 1, otherwise.
     // -----------------------------------------------------------------------------------------------------------------
-    ZERO_MATE_API zero_mate::IExternal_Peripheral::NInit_Status
+    ZM_EXTERNAL_PERIPHERAL_API zero_mate::IExternal_Peripheral::NInit_Status
     Create_Peripheral(zero_mate::IExternal_Peripheral** peripheral,
                       const char* const name,
                       const std::uint32_t* const connection,

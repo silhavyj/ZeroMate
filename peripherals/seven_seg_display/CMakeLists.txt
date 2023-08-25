@@ -22,13 +22,13 @@ target_sources(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/seven_seg_display.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/seven_seg_display.cpp)
 
-# Link imgui_glfw and logger to the seven_seg_display library so the peripheral can
+# Link imgui_glfw and logging_system to the seven_seg_display library so the peripheral can
 # render itself and log messages to the logging system
 target_link_libraries(
     seven_seg_display
     PRIVATE
         imgui_glfw
-        logger)
+        logging_system)
 
 # Copy the shared library into the output/peripherals directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)
