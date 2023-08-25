@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.21)
 # Add the serial_terminal peripheral as a shared library
 add_library(serial_terminal SHARED)
 
+# Define the ZM_EXTERNAL_PERIPHERAL_EXPORT macro
+target_compile_definitions(serial_terminal PRIVATE ZM_EXTERNAL_PERIPHERAL_EXPORT)
+
 # Specify the public and private include directories
 target_include_directories(
     serial_terminal

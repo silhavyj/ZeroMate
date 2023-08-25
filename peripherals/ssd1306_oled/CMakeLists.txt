@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.21)
 # Add the ssd1306_oled peripheral as a shared library
 add_library(ssd1306_oled SHARED)
 
+# Define the ZM_EXTERNAL_PERIPHERAL_EXPORT macro
+target_compile_definitions(ssd1306_oled PRIVATE ZM_EXTERNAL_PERIPHERAL_EXPORT)
+
 # Specify the public and private include directories
 target_include_directories(
     ssd1306_oled

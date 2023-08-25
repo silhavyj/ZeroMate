@@ -10,7 +10,6 @@
 
 #include "imgui.h"
 
-#define ZM_EXTERNAL_PERIPHERAL_EXPORT
 #include "zero_mate/external_peripheral.hpp"
 
 // ---------------------------------------------------------------------------------------------------------------------

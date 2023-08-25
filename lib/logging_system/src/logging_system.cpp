@@ -16,7 +16,6 @@
 
 // Project file imports
 
-#define ZM_LOGGING_SYSTEM_EXPORT
 #include "zero_mate/utils/logging_system.hpp"
 
 namespace zero_mate::utils

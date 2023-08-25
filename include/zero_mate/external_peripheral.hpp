@@ -17,9 +17,6 @@
 #include <unordered_set>
 /// \endcond
 
-#ifdef ZM_LOGGING_SYSTEM_EXPORT
-    #undef ZM_LOGGING_SYSTEM_EXPORT
-#endif
 #include "zero_mate/utils/logging_system.hpp"
 
 #ifdef _WIN32

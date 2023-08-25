@@ -14,7 +14,6 @@
 
 #include "imgui.h"
 
-#define ZERO_MATE_EXPORT
 #include "zero_mate/external_peripheral.hpp"
 
 // ---------------------------------------------------------------------------------------------------------------------

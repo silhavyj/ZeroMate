@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.21)
 # Add the seven_seg_display peripheral as a shared library
 add_library(seven_seg_display SHARED)
 
+# Define the ZM_EXTERNAL_PERIPHERAL_EXPORT macro
+target_compile_definitions(seven_seg_display PRIVATE ZM_EXTERNAL_PERIPHERAL_EXPORT)
+
 # Specify the public and private include directories
 target_include_directories(
     seven_seg_display

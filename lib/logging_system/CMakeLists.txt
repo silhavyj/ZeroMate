@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.21)
 # Add the logging_system as a shared library
 add_library(logging_system SHARED)
 
+# Define the ZM_EXTERNAL_PERIPHERAL_EXPORT macro
+target_compile_definitions(logging_system PRIVATE ZM_LOGGING_SYSTEM_EXPORT)
+
 # Specify the public include directories
 target_include_directories(
     logging_system

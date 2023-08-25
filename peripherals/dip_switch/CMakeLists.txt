@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.21)
 # Add the dip_switch peripheral as a shared library
 add_library(dip_switch SHARED)
 
+# Define the ZM_EXTERNAL_PERIPHERAL_EXPORT macro
+target_compile_definitions(dip_switch PRIVATE ZM_EXTERNAL_PERIPHERAL_EXPORT)
+
 # Specify the public and private include directories
 target_include_directories(
     dip_switch
