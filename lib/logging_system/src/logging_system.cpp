@@ -1,9 +1,9 @@
 // ---------------------------------------------------------------------------------------------------------------------
-/// \file logger.cpp
-/// \date 31. 05. 2023
+/// \file logging_system.cpp
+/// \date 22. 08. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file implements a general logger interface as well as a logging system that is used in the project.
+/// \brief This file implements a logging system that is used in the project.
 // ---------------------------------------------------------------------------------------------------------------------
 
 // STL imports (excluded from Doxygen)
@@ -16,21 +16,10 @@
 
 // Project file imports
 
-#define ZERO_MATE_EXPORT
 #include "zero_mate/utils/logging_system.hpp"
 
 namespace zero_mate::utils
 {
-    ILogger::ILogger()
-    : m_logging_level{ NLogging_Level::Debug }
-    {
-    }
-
-    void ILogger::Set_Logging_Level(NLogging_Level logging_level)
-    {
-        m_logging_level = logging_level;
-    }
-
     void CLogging_System::Add_Logger(std::shared_ptr<ILogger> logger)
     {
         m_loggers.push_back(logger);

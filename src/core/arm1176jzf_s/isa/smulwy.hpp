@@ -1,68 +1,70 @@
 // ---------------------------------------------------------------------------------------------------------------------
-/// \file logger_stdo.hpp
-/// \date 02. 06. 2023
+/// \file smulwy.hpp
+/// \date 23. 08. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file defines a standard output logging_system (STDO).
+/// \brief This file defines a SMULWy instruction.
+///
+/// To find more information about this instruction, please visit
+/// https://developer.arm.com/documentation/ddi0597/2020-12/Base-Instructions/
+/// SMULWB--SMULWT--Signed-Multiply--word-by-halfword--
 // ---------------------------------------------------------------------------------------------------------------------
 
 #pragma once
 
-// STL imports (excluded from Doxygen)
-/// \cond
-#include <mutex>
-/// \endcond
-
 // Project file imports
 
-#include "zero_mate/utils/logging_system.hpp"
+#include "instruction.hpp"
 
-namespace zero_mate::utils
+namespace zero_mate::arm1176jzf_s::isa
 {
     // -----------------------------------------------------------------------------------------------------------------
-    /// \class CLogger_STDO
-    /// \brief This class represents a logging_system that logs messages to the standard output (STDO).
+    /// \class CSMULWy
+    /// \brief This class represents a CSMULWy instruction.
     // -----------------------------------------------------------------------------------------------------------------
-    class CLogger_STDO final : public ILogger
+    class CSMULWy final : public CInstruction
     {
     public:
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Creates an instance of the class
+        /// \enum NType
+        /// \brief Enumeration of different types of the instruction.
         // -------------------------------------------------------------------------------------------------------------
-        CLogger_STDO() = default;
+        enum class NType : std::uint32_t
+        {
+            B = 0, ///< Take the lower 16-bits of the second operand
+            T = 1  ///< Take the upper 16-bits of the second operand
+        };
+
+    public:
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Creates an instance of the class.
+        /// \param instruction General instruction (32-bit value)
+        // -------------------------------------------------------------------------------------------------------------
+        explicit CSMULWy(CInstruction instruction) noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Prints out a given message without any special formatting applied (ILogger interface).
-        /// \param msg Plain text message to be logged
+        /// \brief Returns the index of the Rd register (destination register).
+        /// \return Index of the Rd register
         // -------------------------------------------------------------------------------------------------------------
-        void Print(const char* msg) override;
+        [[nodiscard]] std::uint32_t Get_Rd_Idx() const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Logs a debug message (ILogger interface).
-        /// \param msg Debug message to be logged
+        /// \brief Returns the index of the Rs register (operand 1).
+        /// \return Index of the Rs register
         // -------------------------------------------------------------------------------------------------------------
-        void Debug(const char* msg) override;
+        [[nodiscard]] std::uint32_t Get_Rs_Idx() const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Logs an info message (ILogger interface).
-        /// \param msg Info message to be logged
+        /// \brief Returns the index of the Rm register (operand 2).
+        /// \return Index of the Rm register
         // -------------------------------------------------------------------------------------------------------------
-        void Info(const char* msg) override;
+        [[nodiscard]] std::uint32_t Get_Rm_Idx() const noexcept;
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Logs a warning message (ILogger interface).
-        /// \param msg Warning message to be logged
+        /// \brief Returns the type of the CSMULWy instruction.
+        /// \return Type of the instruction
         // -------------------------------------------------------------------------------------------------------------
-        void Warning(const char* msg) override;
-
-        // -------------------------------------------------------------------------------------------------------------
-        /// \brief Logs an error message (ILogger interface).
-        /// \param msg Error message to be logged
-        // -------------------------------------------------------------------------------------------------------------
-        void Error(const char* msg) override;
-
-    private:
-        std::mutex m_mtx; ///< Mutex for making logging thread-safe
+        [[nodiscard]] NType Get_Type() const noexcept;
     };
 
-} // namespace zero_mate::utils
+} // namespace zero_mate::arm1176jzf_s::isa

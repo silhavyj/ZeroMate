@@ -61,7 +61,7 @@ cmake --preset ninja_clang_release
 After the previous command has finished successfully, they can build the application using the following command:
 
 ```
-cmake --build --preset ninja_clang_release
+cmake --build --preset ninja_clang_release -j10
 ```
 
 | ⚠️ WARNING: The MinGW compiler (Windows version of GCC) currently does not work |

@@ -122,9 +122,9 @@ namespace zero_mate::arm1176jzf_s::mmu
         /// \param write_access Read/Write access to the page
         // -------------------------------------------------------------------------------------------------------------
         static inline void Verify_Access(const CPage_Entry& page,
-                                  std::uint32_t virtual_addr,
-                                  const CCPU_Context& cpu_context,
-                                  bool write_access);
+                                         std::uint32_t virtual_addr,
+                                         const CCPU_Context& cpu_context,
+                                         bool write_access);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Checks if the TLB entries should be invalidated and if so, it clears the cache.

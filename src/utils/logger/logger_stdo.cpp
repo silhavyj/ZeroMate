@@ -3,7 +3,7 @@
 /// \date 02. 06. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file defines a standard output logger (STDO) as defined in logger_stdo.hpp.
+/// \brief This file defines a standard output logging_system (STDO) as defined in logger_stdo.hpp.
 // ---------------------------------------------------------------------------------------------------------------------
 
 // 3rd party library includes

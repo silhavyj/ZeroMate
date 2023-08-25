@@ -102,7 +102,7 @@ namespace zero_mate::peripheral
         /// Otherwise, the random generator produces sudo-random numbers.
         /// \return Random number
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] std::uint32_t Get_Rnd_Number();
+        [[nodiscard]] std::uint32_t Get_Rnd_Number() const;
 
     private:
         std::array<std::uint32_t, Number_Of_Registers> m_regs;       ///< Peripheral's registers

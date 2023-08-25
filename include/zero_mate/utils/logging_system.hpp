@@ -11,7 +11,16 @@
 // Project file imports
 
 #include "logger.hpp"
-#include "zero_mate/api_export.hpp"
+
+#ifdef _WIN32
+    #ifdef ZM_LOGGING_SYSTEM_EXPORT
+        #define ZM_LOGGING_SYSTEM_API __declspec(dllexport)
+    #else
+        #define ZM_LOGGING_SYSTEM_API __declspec(dllimport)
+    #endif
+#else
+    #define ZM_LOGGING_SYSTEM_API
+#endif
 
 namespace zero_mate::utils
 {
@@ -22,7 +31,7 @@ namespace zero_mate::utils
     /// It holds a collection of loggers that are registered to the logging system. When a message is being logged,
     /// the logging system forwards the message to all its registers loggers.
     // -----------------------------------------------------------------------------------------------------------------
-    class ZERO_MATE_API CLogging_System final
+    class ZM_LOGGING_SYSTEM_API CLogging_System final
     {
     public:
         static constexpr const char* const Debug_Msg_Prefix = "[DEBUG]";     ///< Debug message prefix
@@ -34,7 +43,7 @@ namespace zero_mate::utils
 
     public:
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Registers a logger to the logging system.
+        /// \brief Registers a logging_system to the logging system.
         /// \param logger Logger to be registered
         // -------------------------------------------------------------------------------------------------------------
         void Add_Logger(std::shared_ptr<ILogger> logger);
