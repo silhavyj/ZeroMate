@@ -71,8 +71,9 @@ namespace zero_mate::peripheral
         return static_cast<bool>(m_regs[static_cast<std::uint32_t>(NRegister::Control)] & 0b1U);
     }
 
-    std::uint32_t CTRNG::Get_Rnd_Number() const
-#ifdef USE_REAL_RND_NUMBER_GENERATOR
+    std::uint32_t CTRNG::Get_Rnd_Number()
+    {
+#if USE_REAL_RND_NUMBER_GENERATOR == 1
         return m_uniform_dist(m_rand_dev);
 #else
         // More info about the algorithm: https://youtu.be/5_RAHZQCPjE?t=613
