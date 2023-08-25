@@ -20,7 +20,14 @@
 
 // Project file imports
 
+#ifdef ZM_LOGGING_SYSTEM_EXPORT
+    #undef ZM_LOGGING_SYSTEM_EXPORT
+#endif
 #include "zero_mate/utils/logging_system.hpp"
+
+#ifdef ZM_EXTERNAL_PERIPHERAL_EXPORT
+    #undef ZM_EXTERNAL_PERIPHERAL_EXPORT
+#endif
 #include "zero_mate/external_peripheral.hpp"
 
 #include "bus.hpp"

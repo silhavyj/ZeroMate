@@ -31,8 +31,8 @@ namespace zero_mate::arm1176jzf_s::isa
         // -------------------------------------------------------------------------------------------------------------
         enum class NType : std::uint32_t
         {
-            SMULWB = 0, ///< Take the lower 16-bits of the second operand
-            SMULWT = 1  ///< Take the upper 16-bits of the second operand
+            B = 0, ///< Take the lower 16-bits of the second operand
+            T = 1  ///< Take the upper 16-bits of the second operand
         };
 
     public:

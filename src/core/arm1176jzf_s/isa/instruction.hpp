@@ -83,6 +83,7 @@ namespace zero_mate::arm1176jzf_s::isa
             SMULxy,                        ///< SMULxy instruction
             SMULWy,                        ///< SMULWy instruction
             SMLAxy,                        ///< SMLAxy instruction
+            SMLAWy,                        ///< SMLAWy instruction
             Unknown                        ///< Unknown instruction
         };
 

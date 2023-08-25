@@ -29,3 +29,4 @@
 #include "smulxy.hpp"
 #include "smulwy.hpp"
 #include "smlaxy.hpp"
+#include "smlawy.hpp"

@@ -369,6 +369,10 @@ namespace zero_mate::arm1176jzf_s
                 case isa::CInstruction::NType::SMLAxy:
                     Execute(isa::CSMLAxy{ instruction });
                     break;
+
+                case isa::CInstruction::NType::SMLAWy:
+                    Execute(isa::CSMLAWy{ instruction });
+                    break;
             }
 
             // Check if there is a pending IRQ.
@@ -1319,6 +1323,27 @@ namespace zero_mate::arm1176jzf_s
 
     void CCPU_Core::Execute(isa::CSMULWy instruction)
     {
+        Sign_Multiply_Accumulate_Word_Halfword(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CSMLAWy instruction)
+    {
+        Sign_Multiply_Accumulate_Word_Halfword(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CSMULxy instruction)
+    {
+        Sign_Multiply_Accumulate(instruction);
+    }
+
+    void CCPU_Core::Execute(isa::CSMLAxy instruction)
+    {
+        Sign_Multiply_Accumulate(instruction);
+    }
+
+    template<typename Instruction>
+    void CCPU_Core::Sign_Multiply_Accumulate_Word_Halfword(Instruction instruction)
+    {
         // Retrieve the type of the instruction.
         const auto type = instruction.Get_Type();
 
@@ -1331,30 +1356,31 @@ namespace zero_mate::arm1176jzf_s
         const auto op1 = static_cast<std::int32_t>(m_context[rm_idx]);
         std::int16_t op2{};
 
+        std::uint32_t acc_value{ 0 };
+
+        // Retrieve the accumulate value based on the type of the instruction.
+        if constexpr (std::is_same<Instruction, isa::CSMLAWy>::value)
+        {
+            acc_value = m_context[instruction.Get_Rn_Idx()];
+        }
+
         // Get the second as a signed 16-bit integer.
         switch (type)
         {
-            case isa::CSMULWy::NType::SMULWB:
+            // Bottom 16 bits
+            case Instruction::NType::B:
                 op2 = static_cast<std::int16_t>(m_context[rs_idx] & 0xFFFFU);
                 break;
 
-            case isa::CSMULWy::NType::SMULWT:
+            // Upper 16 bits
+            case Instruction::NType::T:
                 op2 = static_cast<std::int16_t>(m_context[rs_idx] >> 16U);
                 break;
         }
 
         // Calculate the result (only store the upper 32 bits of the 48-bit result).
         m_context[rd_idx] = static_cast<std::uint32_t>(static_cast<std::uint64_t>(op1 * op2) >> 16U);
-    }
-
-    void CCPU_Core::Execute(isa::CSMULxy instruction)
-    {
-        Sign_Multiply_Accumulate(instruction);
-    }
-
-    void CCPU_Core::Execute(isa::CSMLAxy instruction)
-    {
-        Sign_Multiply_Accumulate(instruction);
+        m_context[rd_idx] += acc_value;
     }
 
     template<typename Instruction>
@@ -1370,7 +1396,7 @@ namespace zero_mate::arm1176jzf_s
 
         std::uint32_t acc_value{ 0 };
 
-        // Add the acc register based on the type of the instruction.
+        // Retrieve the accumulate value based on the type of the instruction.
         if constexpr (std::is_same<Instruction, isa::CSMLAxy>::value)
         {
             acc_value = m_context[instruction.Get_Rn_Idx()];
@@ -1378,27 +1404,32 @@ namespace zero_mate::arm1176jzf_s
 
         switch (type)
         {
+            // Bottom 16 bits | bottom 16 bits
             case Instruction::NType::BB:
                 m_context[rd_idx] = static_cast<std::uint32_t>(static_cast<std::int16_t>(m_context[rm_idx] & 0xFFFFU) *
                                                                static_cast<std::int16_t>(m_context[rs_idx] & 0xFFFFU));
                 break;
 
+            // Bottom 16 bits | upper 16 bits
             case Instruction::NType::BT:
                 m_context[rd_idx] = static_cast<std::uint32_t>(static_cast<std::int16_t>(m_context[rm_idx] & 0xFFFFU) *
                                                                static_cast<std::int16_t>(m_context[rs_idx] >> 16U));
                 break;
 
+            // Upper 16 bits | bottom 16 bits
             case Instruction::NType::TB:
                 m_context[rd_idx] = static_cast<std::uint32_t>(static_cast<std::int16_t>(m_context[rm_idx] >> 16U) *
                                                                static_cast<std::int16_t>(m_context[rs_idx] & 0xFFFFU));
                 break;
 
+            // Upper 16 bits | upper 16 bits
             case Instruction::NType::TT:
                 m_context[rd_idx] = static_cast<std::uint32_t>(static_cast<std::int16_t>(m_context[rm_idx] >> 16U) *
                                                                static_cast<std::int16_t>(m_context[rs_idx] >> 16U));
                 break;
         }
 
+        // Add the accumulate value to the destination register.
         m_context[rd_idx] += acc_value;
     }
 
