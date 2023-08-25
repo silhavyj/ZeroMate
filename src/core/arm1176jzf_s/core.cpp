@@ -1368,6 +1368,14 @@ namespace zero_mate::arm1176jzf_s
         const auto rm_idx = instruction.Get_Rm_Idx();
         const auto rs_idx = instruction.Get_Rs_Idx();
 
+        std::uint32_t acc_value{ 0 };
+
+        // Add the acc register based on the type of the instruction.
+        if constexpr (std::is_same<Instruction, isa::CSMLAxy>::value)
+        {
+            acc_value = m_context[instruction.Get_Rn_Idx()];
+        }
+
         switch (type)
         {
             case Instruction::NType::BB:
@@ -1391,11 +1399,7 @@ namespace zero_mate::arm1176jzf_s
                 break;
         }
 
-        // Add the acc register based on the type of the instruction.
-        if constexpr (std::is_same<Instruction, isa::CSMLAxy>::value)
-        {
-            m_context[rd_idx] += m_context[instruction.Get_Rn_Idx()];
-        }
+        m_context[rd_idx] += acc_value;
     }
 
     [[nodiscard]] std::uint32_t CCPU_Core::Convert_Virtual_Addr_To_Physical_Addr(std::uint32_t virtual_addr,

@@ -14,7 +14,7 @@ extern "C"
         // Exactly 3 pins shall be passed to the peripheral - latch, data, and clock.
         if (pin_count != 3)
         {
-            zero_mate::IExternal_Peripheral::NInit_Status::GPIO_Mismatch;
+            return zero_mate::IExternal_Peripheral::NInit_Status::GPIO_Mismatch;
         }
 
         // Create an instance of 7-segment display.
