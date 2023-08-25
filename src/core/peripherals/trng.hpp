@@ -12,7 +12,7 @@
 #pragma once
 
 // To speed up the simulation - use a pseudo rnd number generator
-// #define USE_REAL_RND_NUMBER_GENERATOR
+#define USE_REAL_RND_NUMBER_GENERATOR 0
 
 // STL imports (excluded from Doxygen)
 /// \cond
@@ -102,7 +102,7 @@ namespace zero_mate::peripheral
         /// Otherwise, the random generator produces sudo-random numbers.
         /// \return Random number
         // -------------------------------------------------------------------------------------------------------------
-        [[nodiscard]] std::uint32_t Get_Rnd_Number() const;
+        [[nodiscard]] std::uint32_t Get_Rnd_Number();
 
     private:
         std::array<std::uint32_t, Number_Of_Registers> m_regs;       ///< Peripheral's registers
