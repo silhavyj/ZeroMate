@@ -9,6 +9,7 @@
 #pragma once
 
 #include <array>
+#include <queue>
 
 #include "imgui.h"
 
@@ -92,6 +93,9 @@ public:
     /// Default height of the terminal
     static constexpr std::uint32_t Terminal_Height = 25;
 
+    /// Maximum number of characters the user is allowed to send via UART at a time
+    static constexpr std::uint32_t User_Input_Buffer_Size = 64;
+
     // -----------------------------------------------------------------------------------------------------------------
     /// \enum NState_Machine
     /// \brief States used in the RX state machine (a single UART frame).
@@ -100,20 +104,25 @@ public:
     {
         Start_Bit, ///< Receive a start bit
         Payload,   ///< Receive a payload (actual data)
-        Stop_Bit   ///< Receive a stop bit (end of frame)
+        Stop_Bit,  ///< Receive a stop bit (end of frame)
+        End_Of_Frame
     };
 
 public:
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Creates an instance of the class.
     /// \param name Unique name of the peripheral
-    /// \param pin_idx UART RX pin index
+    /// \param RX_pin_idx UART RX pin index
+    /// \param TX_pin_idx UART TX pin index
     /// \param read_pin Function the peripheral can used to read the state of a desired GPIO pin
+    /// \param set_pin Function the peripheral can used to set the state of a desired GPIO pin
     /// \param logging_system Pointer to the logging system used throughout the application
     // -----------------------------------------------------------------------------------------------------------------
     explicit CSerial_Terminal(const std::string& name,
-                              std::uint32_t pin_idx,
+                              std::uint32_t RX_pin_idx,
+                              std::uint32_t TX_pin_idx,
                               zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
+                              zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
                               zero_mate::utils::CLogging_System* logging_system);
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -152,12 +161,27 @@ private:
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Renders control button.
     // -----------------------------------------------------------------------------------------------------------------
-    inline void Render_Buttons();
+    inline void Render_Control_Buttons();
+
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Renders the user input.
+    // -----------------------------------------------------------------------------------------------------------------
+    inline void Render_User_Input();
+
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Adds whatever user enters to the TX queue (char by char).
+    // -----------------------------------------------------------------------------------------------------------------
+    inline void Add_User_Input_Into_TX_Queue();
+
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Updates the UART TX state machine.
+    // -----------------------------------------------------------------------------------------------------------------
+    void Update_TX();
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Updates the UART RX state machine.
     // -----------------------------------------------------------------------------------------------------------------
-    void Update();
+    void Update_RX();
 
     // -----------------------------------------------------------------------------------------------------------------
     /// \brief Receives a start bit.
@@ -174,10 +198,38 @@ private:
     // -----------------------------------------------------------------------------------------------------------------
     inline void Receive_Stop_Bit();
 
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Sends a start bit.
+    // -----------------------------------------------------------------------------------------------------------------
+    inline void Send_Start_Bit();
+
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Sends another bit of the current payload (data).
+    // -----------------------------------------------------------------------------------------------------------------
+    inline void Send_Payload();
+
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Sends a stop bit.
+    // -----------------------------------------------------------------------------------------------------------------
+    inline void Send_Stop_Bit();
+
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Resets the current TX transaction.
+    // -----------------------------------------------------------------------------------------------------------------
+    inline void Reset_Transaction();
+
+    // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Sets the value of the UART TX pin.
+    /// \param set Value the TX pin will be set to
+    // -----------------------------------------------------------------------------------------------------------------
+    inline void Set_TX_Pin(bool set);
+
 private:
     std::string m_name;                                          ///< Unique name of the peripheral
-    std::uint32_t m_pin_idx;                                     ///< UART RX index
+    std::uint32_t m_RX_pin_idx;                                  ///< UART RX index
+    std::uint32_t m_TX_pin_idx;                                  ///< UART TX index
     zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t m_read_pin; ///< Function used to read the state of a GPIO pin
+    zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t m_set_pin;   ///< Function used to set the state of a GPIO pin
     ImGuiContext* m_context;                                     ///< ImGui context
     int m_baud_rate_idx;                                         ///< Index of the chosen baud rate
     std::uint32_t m_baud_rate;                                   ///< Value of the chosen baud rate
@@ -187,7 +239,12 @@ private:
 
     std::uint32_t m_cpu_cycles;                                  ///< Number of passed CPU cycles
     NState_Machine m_RX_state;                                   ///< Current state of the UART RX state machine
-    std::uint32_t m_RX_bit_idx;                                  ///< Current bit index of the current payload
+    std::uint32_t m_RX_bit_idx;                                  ///< Current bit index of the current payload (RX)
     std::string m_buffer;                                        ///< Reception FIFO
     CTerminal m_terminal;                                        ///< GUI element of the serial terminal
+    std::array<char, User_Input_Buffer_Size> m_user_input;       ///< User input (text area)
+    std::queue<std::uint8_t> m_TX_queue;                         ///< TX FIFO (queue)
+    NState_Machine m_TX_state;                                   ///< Current state of the UART TX state machine
+    std::uint32_t m_TX_bit_idx;                                  ///< Current bit index of the current payload (TX)
+    std::uint8_t m_TX_curr_data;                                 ///< Current data being sent via UART (TX)
 };

@@ -228,18 +228,20 @@ namespace zero_mate::peripheral
 
     void CMini_UART::UART_Receive_Payload()
     {
+        // Get the current char length
+        const std::uint32_t char_length = Get_Char_Length_Value(Get_Char_Length());
+
         // Read the current value of the RX pin
         const auto bit = static_cast<std::uint8_t>(m_aux.m_gpio->Read_GPIO_Pin(UART_0_RX_PIN_IDX));
 
         // Add it to the FIFO.
-        m_rx.fifo <<= 1U;
-        m_rx.fifo |= bit;
+        m_rx.fifo |= static_cast<std::uint8_t>(bit << m_rx.bit_idx);
 
         // Increment the number of received bits.
         ++m_rx.bit_idx;
 
         // Check if we have already read the expected number of bits.
-        if (m_rx.bit_idx >= Get_Char_Length_Value(Get_Char_Length()))
+        if (m_rx.bit_idx >= char_length)
         {
             // Move on to receiving the stop bit.
             m_rx.state = NState_Machine::Stop_Bit;
@@ -253,6 +255,11 @@ namespace zero_mate::peripheral
         {
             m_aux.m_logging_system.Error("Stop bit was not received correctly");
         }
+
+        // TODO
+        std::string rr = "Received: ";
+        rr += static_cast<char>(m_rx.fifo);
+        m_aux.m_logging_system.Debug(rr.c_str());
 
         // Move the received data from the FIFO to the IO register.
         m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IO)] = m_rx.fifo;
@@ -290,15 +297,18 @@ namespace zero_mate::peripheral
 
     void CMini_UART::UART_Send_Payload()
     {
+        // Get the current char length
+        const std::uint32_t char_length = Get_Char_Length_Value(Get_Char_Length());
+
         // Send another bit from the payload (FIFO).
         Set_TX_Pin(static_cast<bool>(m_tx.fifo & 0b1U));
 
         // Update the FIFO.
-        m_tx.fifo >>= 1U;
+        m_tx.fifo >>= 1;
         ++m_tx.bit_idx;
 
         // Check if we have sent the expected number of bits (7/8).
-        if (m_tx.bit_idx >= Get_Char_Length_Value(Get_Char_Length()))
+        if (m_tx.bit_idx >= char_length)
         {
             // Move on to the next state (send the stop bit).
             m_tx.state = NState_Machine::Stop_Bit;

@@ -8,6 +8,7 @@
 
 #include <chrono>
 #include <cassert>
+#include <algorithm>
 
 #include "serial_terminal.hpp"
 
@@ -121,12 +122,16 @@ const std::array<const char* const, CSerial_Terminal::Number_Of_Data_Length_Opti
 // clang-format on
 
 CSerial_Terminal::CSerial_Terminal(const std::string& name,
-                                   std::uint32_t pin_idx,
+                                   std::uint32_t RX_pin_idx,
+                                   std::uint32_t TX_pin_idx,
                                    zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
+                                   zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
                                    zero_mate::utils::CLogging_System* logging_system)
 : m_name{ std::move(name) }
-, m_pin_idx{ pin_idx }
+, m_RX_pin_idx{ RX_pin_idx }
+, m_TX_pin_idx{ TX_pin_idx }
 , m_read_pin{ read_pin }
+, m_set_pin{ set_pin }
 , m_context{ nullptr }
 , m_baud_rate_idx{ 7 }
 , m_baud_rate{ ((Clock_Rate / static_cast<unsigned int>(std::stoi(s_baud_rates[m_baud_rate_idx]))) / 8U) - 1 }
@@ -137,6 +142,10 @@ CSerial_Terminal::CSerial_Terminal(const std::string& name,
 , m_RX_state{ NState_Machine::Start_Bit }
 , m_RX_bit_idx{ 0 }
 , m_terminal{ Terminal_Width, Terminal_Height }
+, m_user_input{}
+, m_TX_state{ NState_Machine::Start_Bit }
+, m_TX_bit_idx{ 0 }
+, m_TX_curr_data{ 0 }
 {
 }
 
@@ -151,12 +160,13 @@ void CSerial_Terminal::Render()
     {
         Render_Settings();
         m_terminal.Render();
+        Render_User_Input();
     }
 
     ImGui::End();
 }
 
-void CSerial_Terminal::Update()
+void CSerial_Terminal::Update_RX()
 {
     // UART TX state machine
     switch (m_RX_state)
@@ -175,13 +185,16 @@ void CSerial_Terminal::Update()
         case NState_Machine::Stop_Bit:
             Receive_Stop_Bit();
             break;
+
+        case NState_Machine::End_Of_Frame:
+            break;
     }
 }
 
 void CSerial_Terminal::Receive_Start_Bit()
 {
     // A start bit is signalized by the voltage level being pulled down.
-    if (!m_read_pin(m_pin_idx))
+    if (!m_read_pin(m_RX_pin_idx))
     {
         m_RX_state = NState_Machine::Payload;
     }
@@ -190,7 +203,7 @@ void CSerial_Terminal::Receive_Start_Bit()
 void CSerial_Terminal::Receive_Payload()
 {
     // Read the state of the RX pin.
-    m_buffer += std::to_string(static_cast<int>(m_read_pin(m_pin_idx)));
+    m_buffer += std::to_string(static_cast<int>(m_read_pin(m_RX_pin_idx)));
 
     // Increment the number of received bits of the payload.
     ++m_RX_bit_idx;
@@ -214,7 +227,7 @@ void CSerial_Terminal::Receive_Payload()
 void CSerial_Terminal::Receive_Stop_Bit()
 {
     // Stop bit is signalized as high level of voltage.
-    if (!m_read_pin(m_pin_idx))
+    if (!m_read_pin(m_RX_pin_idx))
     {
         m_logging_system->Error("Stop bit was not received correctly");
     }
@@ -234,7 +247,7 @@ void CSerial_Terminal::Render_Settings()
     Render_Baud_Rate();
     Render_Data_Lengths();
     ImGui::Separator();
-    Render_Buttons();
+    Render_Control_Buttons();
     ImGui::Separator();
     ImGui::Separator();
 }
@@ -255,7 +268,7 @@ void CSerial_Terminal::Render_Data_Lengths()
     }
 }
 
-void CSerial_Terminal::Render_Buttons()
+void CSerial_Terminal::Render_Control_Buttons()
 {
     if (ImGui::Button("Reset settings"))
     {
@@ -263,6 +276,7 @@ void CSerial_Terminal::Render_Buttons()
         m_RX_state = NState_Machine::Start_Bit;
         m_RX_bit_idx = 0;
         m_buffer = "";
+        std::fill(m_user_input.begin(), m_user_input.end(), 0);
     }
 
     ImGui::SameLine();
@@ -270,6 +284,123 @@ void CSerial_Terminal::Render_Buttons()
     if (ImGui::Button("Clear screen"))
     {
         m_terminal.Clear();
+    }
+}
+
+void CSerial_Terminal::Render_User_Input()
+{
+    // Render the input text.
+    ImGui::InputText("User input", m_user_input.data(), User_Input_Buffer_Size);
+    ImGui::SameLine();
+
+    // Render the send button.
+    if (ImGui::Button("Send"))
+    {
+        Add_User_Input_Into_TX_Queue();
+    }
+};
+
+void CSerial_Terminal::Add_User_Input_Into_TX_Queue()
+{
+    // Add the text user has entered into the TX FIFO.
+    for (const char& c : m_user_input)
+    {
+        // Stop when we reach '\0'
+        if (c == 0)
+        {
+            break;
+        }
+
+        // Print the current character to the terminal and add it to the TX queue.
+        m_terminal.Add_Character(c);
+        m_TX_queue.push(c);
+    }
+
+    // Add a new line to the terminal (enter).
+    m_terminal.Add_Character('\n');
+
+    // Clear the user input.
+    std::fill(m_user_input.begin(), m_user_input.end(), 0);
+}
+
+void CSerial_Terminal::Update_TX()
+{
+    // UART TX state machine
+    switch (m_TX_state)
+    {
+        // Start bit
+        case NState_Machine::Start_Bit:
+            Send_Start_Bit();
+            break;
+
+        // Payload
+        case NState_Machine::Payload:
+            Send_Payload();
+            break;
+
+        // Stop bit
+        case NState_Machine::Stop_Bit:
+            Send_Stop_Bit();
+            break;
+
+        case NState_Machine::End_Of_Frame:
+            Reset_Transaction();
+            break;
+    }
+}
+
+void CSerial_Terminal::Send_Start_Bit()
+{
+    // Make sure there is data to be sent.
+    if (m_TX_queue.empty())
+    {
+        return;
+    }
+
+    // Pop the next byte out of the FIFO.
+    m_TX_curr_data = m_TX_queue.front();
+    m_TX_queue.pop();
+    m_TX_state = NState_Machine::Payload;
+
+    // Send a start bit.
+    Set_TX_Pin(false);
+}
+
+void CSerial_Terminal::Send_Payload()
+{
+    // Send another bit of the payload.
+    Set_TX_Pin(static_cast<bool>(m_TX_curr_data & 0b1U));
+
+    // Update the fifo (prepare the next bit to be sent).
+    m_TX_curr_data >>= 1U;
+    ++m_TX_bit_idx;
+
+    // Have all the bits been sent yet?
+    if (m_TX_bit_idx >= m_data_length)
+    {
+        m_TX_state = NState_Machine::Stop_Bit;
+    }
+}
+
+void CSerial_Terminal::Send_Stop_Bit()
+{
+    // Send a stop bit.
+    Set_TX_Pin(true);
+    m_TX_state = NState_Machine::End_Of_Frame;
+}
+
+void CSerial_Terminal::Reset_Transaction()
+{
+    m_TX_bit_idx = 0;
+    m_TX_state = NState_Machine::Start_Bit;
+}
+
+void CSerial_Terminal::Set_TX_Pin(bool set)
+{
+    // Make sure the pin state was set successfully.
+    if (m_set_pin(m_TX_pin_idx, set) != 0)
+    {
+        m_logging_system->Error("Failed to set the state of the UART TX pin");
     }
 }
 
@@ -281,7 +412,9 @@ void CSerial_Terminal::Increment_Passed_Cycles(std::uint32_t count)
     if (m_cpu_cycles >= m_baud_rate)
     {
         m_cpu_cycles = 0;
-        Update();
+
+        Update_RX();
+        Update_TX();
     }
 }
 
@@ -292,7 +425,7 @@ extern "C"
                       const char* const name,
                       const std::uint32_t* const connection,
                       std::size_t pin_count,
-                      [[maybe_unused]] zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
+                      zero_mate::IExternal_Peripheral::Set_GPIO_Pin_t set_pin,
                       zero_mate::IExternal_Peripheral::Read_GPIO_Pin_t read_pin,
                       zero_mate::utils::CLogging_System* logging_system)
     {
@@ -303,7 +436,14 @@ extern "C"
         }
 
         // Create an instance of a serial monitor.
-        *peripheral = new (std::nothrow) CSerial_Terminal(name, connection[0], read_pin, logging_system);
+        // clang-format off
+        *peripheral = new (std::nothrow) CSerial_Terminal(name,
+                                                          connection[0],
+                                                          connection[1],
+                                                          read_pin,
+                                                          set_pin,
+                                                          logging_system);
+        // clang-format on
 
         // Make sure the creation was successful.
         if (*peripheral == nullptr)
