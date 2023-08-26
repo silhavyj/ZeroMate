@@ -290,7 +290,7 @@ void CSerial_Terminal::Render_Control_Buttons()
 void CSerial_Terminal::Render_User_Input()
 {
     // Render the input text.
-    ImGui::InputText("User input", m_user_input.data(), User_Input_Buffer_Size);
+    ImGui::InputText("##User input", m_user_input.data(), User_Input_Buffer_Size);
     ImGui::SameLine();
 
     // Render the send button.
