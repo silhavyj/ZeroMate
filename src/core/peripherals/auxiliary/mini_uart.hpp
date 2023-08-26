@@ -13,7 +13,9 @@
 
 // STL imports (excluded from Doxygen)
 /// \cond
+#include <queue>
 #include <cstdint>
+#include <utility>
 /// \endcond
 
 namespace zero_mate::peripheral
@@ -161,6 +163,12 @@ namespace zero_mate::peripheral
         // -------------------------------------------------------------------------------------------------------------
         void Clear_IRQ();
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Pops a byte of data from the RX queue.
+        /// \return If there is no data to be popped, the second element will be set to false.
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] std::pair<std::uint8_t, bool> Pop_RX_Data();
+
     private:
         // -------------------------------------------------------------------------------------------------------------
         /// \struct TState_Machine_Data
@@ -277,10 +285,11 @@ namespace zero_mate::peripheral
         [[nodiscard]] bool Is_Transmit_Interrupt_Enabled() const noexcept;
 
     private:
-        CAUX& m_aux;                ///< Reference to AUX
-        std::uint32_t m_cpu_cycles; ///< Total number of passed CPU cycles
-        TState_Machine_Data m_tx;   ///< TX state machine
-        TState_Machine_Data m_rx;   ///< RX state machine
+        CAUX& m_aux;                         ///< Reference to AUX
+        std::uint32_t m_cpu_cycles;          ///< Total number of passed CPU cycles
+        TState_Machine_Data m_tx;            ///< TX state machine
+        TState_Machine_Data m_rx;            ///< RX state machine
+        std::queue<std::uint8_t> m_RX_queue; ///< RX queue of all received characters
     };
 
 } // namespace zero_mate::peripheral

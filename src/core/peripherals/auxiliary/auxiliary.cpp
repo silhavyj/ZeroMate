@@ -120,14 +120,22 @@ namespace zero_mate::peripheral
             return;
         }
 
-        // Read data from the peripheral's registers.
-        std::copy_n(&std::bit_cast<char*>(m_regs.data())[addr], size, data);
-
-        // If we are reading from the Mini UART's IO register, clear data ready flag (it's just been read).
         if (reg_type == NRegister::MU_IO)
         {
+            // If we are reading from the Mini UART's IO register, clear data ready flag (it's just been read).
             m_mini_UART->Clear_Data_Ready();
+
+            // Get another byte of data from the Mini UART's RX queue.
+            const auto [RX_data, RX_queue_empty] = m_mini_UART->Pop_RX_Data();
+
+            if (!RX_queue_empty)
+            {
+                m_regs[reg_idx] = RX_data;
+            }
         }
+
+        // Read data from the peripheral's registers.
+        std::copy_n(&std::bit_cast<char*>(m_regs.data())[addr], size, data);
     }
 
     bool CAUX::Is_Enabled(zero_mate::peripheral::CAUX::NAUX_Peripheral peripheral) const

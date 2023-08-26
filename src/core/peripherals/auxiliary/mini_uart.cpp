@@ -68,6 +68,21 @@ namespace zero_mate::peripheral
         ~static_cast<std::uint32_t>(CAUX::NAUX_Peripheral::Mini_UART);
     }
 
+    std::pair<std::uint8_t, bool> CMini_UART::Pop_RX_Data()
+    {
+        // Check if the RX queue is empty.
+        if (m_RX_queue.empty())
+        {
+            return { 0, false };
+        }
+
+        // Pop the first element.
+        const std::pair<std::uint8_t, bool> data{ m_RX_queue.front(), true };
+        m_RX_queue.pop();
+
+        return data;
+    }
+
     void CMini_UART::Set_Transmit_Shift_Reg(std::uint8_t value)
     {
         // Store the value (byte) into the transmit FIFO.
@@ -256,10 +271,7 @@ namespace zero_mate::peripheral
             m_aux.m_logging_system.Error("Stop bit was not received correctly");
         }
 
-        // TODO
-        std::string rr = "Received: ";
-        rr += static_cast<char>(m_rx.fifo);
-        m_aux.m_logging_system.Debug(rr.c_str());
+        m_RX_queue.push(m_rx.fifo);
 
         // Move the received data from the FIFO to the IO register.
         m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IO)] = m_rx.fifo;
@@ -268,16 +280,16 @@ namespace zero_mate::peripheral
         m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] |=
         static_cast<std::uint32_t>(NLSR_Flags::Data_Ready);
 
+        // Reset the state machine.
+        m_rx.state = NState_Machine::Start_Bit;
+        m_rx.bit_idx = 0;
+        m_rx.fifo = 0;
+
         // Check if an interrupt should be triggered.
         if (Is_Receive_Interrupt_Enabled())
         {
             Trigger_IRQ();
         }
-
-        // Reset the state machine.
-        m_rx.state = NState_Machine::Start_Bit;
-        m_rx.bit_idx = 0;
-        m_rx.fifo = 0;
     }
 
     void CMini_UART::Clear_Data_Ready()
@@ -304,7 +316,7 @@ namespace zero_mate::peripheral
         Set_TX_Pin(static_cast<bool>(m_tx.fifo & 0b1U));
 
         // Update the FIFO.
-        m_tx.fifo >>= 1;
+        m_tx.fifo >>= 1U;
         ++m_tx.bit_idx;
 
         // Check if we have sent the expected number of bits (7/8).
@@ -340,12 +352,6 @@ namespace zero_mate::peripheral
 
     void CMini_UART::UART_Reset_Transmission()
     {
-        // Check if an interrupt should be triggered.
-        if (Is_Transmit_Interrupt_Enabled())
-        {
-            Trigger_IRQ();
-        }
-
         // Reset the transmission state machine.
         m_tx.state = NState_Machine::Start_Bit;
         m_tx.bit_idx = 0;
@@ -353,6 +359,12 @@ namespace zero_mate::peripheral
         // Transmit FIFO is now empty.
         m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_LSR)] |=
         static_cast<std::uint32_t>(NLSR_Flags::Transmitter_Empty);
+
+        // Check if an interrupt should be triggered.
+        if (Is_Transmit_Interrupt_Enabled())
+        {
+            Trigger_IRQ();
+        }
     }
 
     void CMini_UART::Set_TX_Pin(bool set)
