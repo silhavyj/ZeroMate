@@ -13,7 +13,9 @@
 
 // STL imports (excluded from Doxygen)
 /// \cond
+#include <queue>
 #include <cstdint>
+#include <utility>
 /// \endcond
 
 namespace zero_mate::peripheral
@@ -77,25 +79,34 @@ namespace zero_mate::peripheral
         };
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \enum NIIR_Flags
-        /// \brief Flags that can be found in the MU_IIR register.
+        /// \enum NIER_Flags
+        /// \brief Flags that can be found in the MU_IER register.
         // -------------------------------------------------------------------------------------------------------------
-        enum class NIIR_Flags : std::uint32_t
+        enum class NIER_Flags : std::uint32_t
         {
             Enable_Transmit_Interrupt = 0b1U << 0U, ///< Enable transmit interrupt
             Enable_Receive_Interrupt = 0b1U << 1U   ///< Enable receive interrupt
         };
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \enum NIER_Flags
-        /// \brief Flags that can be found in the MU_IER register.
+        /// \enum NIIR_Flags
+        /// \brief Flags that can be found in the MU_IIR register.
         // -------------------------------------------------------------------------------------------------------------
-        enum class NIER_Flags : std::uint32_t
+        enum class NIIR_Flags : std::uint32_t
         {
             Pending_IRQ = 0b1U << 0U,        ///< Is there a pending IRQ (inverted logic)
-            Clear_Receive_FIFO = 0b1U << 1U, ///< Should reception FIFO be cleared?
-            Clear_Transmit_FIFO = 0b1U << 2U ///< Should the transmission FIFO be cleared?
+            Clear_Receive_FIFO = 0b1U << 1U, ///< Should receive FIFO be cleared?
+            Clear_Transmit_FIFO = 0b1U << 2U ///< Should the transmit FIFO be cleared?
         };
+
+        /// Pending receive IRQ flag
+        static constexpr std::uint32_t IIR_IRQ_Receive_Pending = 0b10U << 1U;
+
+        /// Pending transmit IRQ flag
+        static constexpr std::uint32_t IIR_IRQ_Transmit_Pending = 0b01U << 1U;
+
+        /// Pending IRQ type bitmask
+        static constexpr std::uint32_t IIR_IRQ_Type_Mask = IIR_IRQ_Transmit_Pending | IIR_IRQ_Transmit_Pending;
 
     public:
         // -------------------------------------------------------------------------------------------------------------
@@ -161,6 +172,29 @@ namespace zero_mate::peripheral
         // -------------------------------------------------------------------------------------------------------------
         void Clear_IRQ();
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Pops a byte of data from the RX queue.
+        /// \return If there is no data to be popped, the second element will be set to false.
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] std::pair<std::uint8_t, bool> Pop_RX_Data();
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks whether there is a pending receive IRQ.
+        /// \return true, if there is a pending receive IRQ. false otherwise.
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] bool Has_Pending_Receive_IRQ() const;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks whether there is a pending transmit IRQ.
+        /// \return true, if there is a transmit receive IRQ. false otherwise.
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] bool Has_Pending_Transmit_IRQ() const;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Clears a pending receive IRQ.
+        // -------------------------------------------------------------------------------------------------------------
+        void Clear_Pending_Receive_IRQ();
+
     private:
         // -------------------------------------------------------------------------------------------------------------
         /// \struct TState_Machine_Data
@@ -174,6 +208,11 @@ namespace zero_mate::peripheral
         };
 
     private:
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Helper function to clear global IRQ flags (not those related to a particular IRQ type).
+        // -------------------------------------------------------------------------------------------------------------
+        void Clear_Global_IRQ_Flags();
+
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Updates the state machines (transmission/reception).
         // -------------------------------------------------------------------------------------------------------------
@@ -254,8 +293,9 @@ namespace zero_mate::peripheral
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Triggers an interrupt.
+        /// \param receive Should we trigger a receive or transmit interrupt?
         // -------------------------------------------------------------------------------------------------------------
-        inline void Trigger_IRQ();
+        inline void Trigger_IRQ(bool receive);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Sets the state of a given GPIO pin.
@@ -276,11 +316,18 @@ namespace zero_mate::peripheral
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] bool Is_Transmit_Interrupt_Enabled() const noexcept;
 
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Sets the type of a pending IRQ in the IIR register
+        /// \param receive Type of the pending interrupt
+        // -------------------------------------------------------------------------------------------------------------
+        inline void Set_Pending_IRQ_Type(bool receive);
+
     private:
-        CAUX& m_aux;                ///< Reference to AUX
-        std::uint32_t m_cpu_cycles; ///< Total number of passed CPU cycles
-        TState_Machine_Data m_tx;   ///< TX state machine
-        TState_Machine_Data m_rx;   ///< RX state machine
+        CAUX& m_aux;                         ///< Reference to AUX
+        std::uint32_t m_cpu_cycles;          ///< Total number of passed CPU cycles
+        TState_Machine_Data m_tx;            ///< TX state machine
+        TState_Machine_Data m_rx;            ///< RX state machine
+        std::queue<std::uint8_t> m_RX_queue; ///< RX queue of all received characters
     };
 
 } // namespace zero_mate::peripheral

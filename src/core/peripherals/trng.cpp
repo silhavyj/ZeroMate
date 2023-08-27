@@ -23,6 +23,7 @@ namespace zero_mate::peripheral
 {
     CTRNG::CTRNG()
     : m_regs{}
+    , m_seed{ m_uniform_dist(m_rand_dev) }
     {
         Reset();
     }
@@ -53,7 +54,7 @@ namespace zero_mate::peripheral
         // before the register is read from.
         if (reg_type == NRegister::Data && Is_Enabled())
         {
-            m_regs[static_cast<std::uint32_t>(NRegister::Data)] = m_uniform_dist(m_rand_dev);
+            m_regs[static_cast<std::uint32_t>(NRegister::Data)] = Get_Rnd_Number();
         }
 
         // Simplification - the random generator is always ready to be read from (one number at a time).
@@ -68,6 +69,23 @@ namespace zero_mate::peripheral
     {
         // The 0th bit of the control register indicates whether the generator is enabled or disabled.
         return static_cast<bool>(m_regs[static_cast<std::uint32_t>(NRegister::Control)] & 0b1U);
+    }
+
+    std::uint32_t CTRNG::Get_Rnd_Number()
+    {
+#if USE_REAL_RND_NUMBER_GENERATOR == 1
+        return m_uniform_dist(m_rand_dev);
+#else
+        // More info about the algorithm: https://youtu.be/5_RAHZQCPjE?t=613
+
+        static std::uint32_t seed = m_seed;
+
+        const std::uint32_t state = seed * 747796405U + 2891336453U;
+        const std::uint32_t word = ((state >> ((state >> 28U) + 4U)) ^ state) * 277803737U;
+        seed = (word >> 22U) ^ word;
+
+        return seed;
+#endif
     }
 
 } // namespace zero_mate::peripheral

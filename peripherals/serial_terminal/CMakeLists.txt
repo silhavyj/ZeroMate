@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.21)
 # Add the serial_terminal peripheral as a shared library
 add_library(serial_terminal SHARED)
 
+# Define the ZM_EXTERNAL_PERIPHERAL_EXPORT macro
+target_compile_definitions(serial_terminal PRIVATE ZM_EXTERNAL_PERIPHERAL_EXPORT)
+
 # Specify the public and private include directories
 target_include_directories(
     serial_terminal
@@ -22,13 +25,13 @@ target_sources(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/serial_terminal.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/serial_terminal.cpp)
 
-# Link imgui_glfw and logger to the serial_terminal library so the peripheral can
+# Link imgui_glfw and logging_system to the serial_terminal library so the peripheral can
 # render itself and log messages to the logging system
 target_link_libraries(
     serial_terminal
     PRIVATE
         imgui_glfw
-        logger)
+        logging_system)
 
 # Copy the shared library into the output/peripherals directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)

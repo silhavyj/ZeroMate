@@ -19,7 +19,7 @@
 #include "../../core/arm1176jzf_s/core.hpp"
 #include "../../core/bus.hpp"
 #include "../../utils/elf_loader.hpp"
-#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/utils/logging_system.hpp"
 
 namespace zero_mate::gui
 {

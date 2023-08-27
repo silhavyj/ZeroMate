@@ -3,7 +3,7 @@
 /// \date 02. 06. 2023
 /// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
 ///
-/// \brief This file defines a standard output logger (STDO).
+/// \brief This file defines a standard output logging_system (STDO).
 // ---------------------------------------------------------------------------------------------------------------------
 
 #pragma once
@@ -15,13 +15,13 @@
 
 // Project file imports
 
-#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/utils/logging_system.hpp"
 
 namespace zero_mate::utils
 {
     // -----------------------------------------------------------------------------------------------------------------
     /// \class CLogger_STDO
-    /// \brief This class represents a logger that logs messages to the standard output (STDO).
+    /// \brief This class represents a logging_system that logs messages to the standard output (STDO).
     // -----------------------------------------------------------------------------------------------------------------
     class CLogger_STDO final : public ILogger
     {

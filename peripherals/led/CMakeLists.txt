@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.21)
 # Add the led peripheral as a shared library
 add_library(led SHARED)
 
+# Define the ZM_EXTERNAL_PERIPHERAL_EXPORT macro
+target_compile_definitions(led PRIVATE ZM_EXTERNAL_PERIPHERAL_EXPORT)
+
 # Specify the public and private include directories
 target_include_directories(
     led
@@ -22,13 +25,13 @@ target_sources(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/led.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/led.cpp)
 
-# Link imgui_glfw and logger to the led library so the peripheral can
+# Link imgui_glfw and logging_system to the led library so the peripheral can
 # render itself and log messages to the logging system
 target_link_libraries(
     led
     PRIVATE
         imgui_glfw
-        logger)
+        logging_system)
 
 # Copy the shared library into the output/peripherals directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)

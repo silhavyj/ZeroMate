@@ -31,7 +31,7 @@
 #include "../bus.hpp"
 #include "mmu/mmu.hpp"
 #include "zero_mate/utils/math.hpp"
-#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/utils/logging_system.hpp"
 #include "zero_mate/external_peripheral.hpp"
 #include "../peripherals/interrupt_controller.hpp"
 #include "../peripherals/system_clock_listener.hpp"
@@ -465,6 +465,46 @@ namespace zero_mate::arm1176jzf_s
         /// \param instruction CLZ instruction to be executed
         // -------------------------------------------------------------------------------------------------------------
         void Execute(isa::CCLZ instruction);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Executes a CSMULxy instruction.
+        /// \param instruction CSMULxy instruction to be executed
+        // -------------------------------------------------------------------------------------------------------------
+        void Execute(isa::CSMULxy instruction);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Executes a CSMULWy instruction.
+        /// \param instruction CSMULWy instruction to be executed
+        // -------------------------------------------------------------------------------------------------------------
+        void Execute(isa::CSMULWy instruction);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Executes a CSMLAxy instruction.
+        /// \param instruction CSMLAxy instruction to be executed
+        // -------------------------------------------------------------------------------------------------------------
+        void Execute(isa::CSMLAxy instruction);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Executes a CSMLAWy instruction.
+        /// \param instruction CSMLAWy instruction to be executed
+        // -------------------------------------------------------------------------------------------------------------
+        void Execute(isa::CSMLAWy instruction);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Combines the functionality of the isa::CSMULxy and isa::CSMLAxy instructions.
+        /// \tparam Instruction Type of instruction to be executed
+        /// \param instruction Instruction to be executed (value)
+        // -------------------------------------------------------------------------------------------------------------
+        template<typename Instruction>
+        void Sign_Multiply_Accumulate(Instruction instruction);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Combines the functionality of the isa::CSMULWy and isa::CSMLAWy instructions.
+        /// \tparam Instruction Type of instruction to be executed
+        /// \param instruction Instruction to be executed (value)
+        // -------------------------------------------------------------------------------------------------------------
+        template<typename Instruction>
+        void Sign_Multiply_Accumulate_Word_Halfword(Instruction instruction);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Converts a given virtual address into a physical address using the MMU.

@@ -24,7 +24,7 @@
 
 #include "peripheral.hpp"
 #include "interrupt_controller.hpp"
-#include "zero_mate/utils/logger.hpp"
+#include "zero_mate/utils/logging_system.hpp"
 
 #include <zero_mate/external_peripheral.hpp>
 
@@ -244,10 +244,10 @@ namespace zero_mate::peripheral
         /// \enum NPin_Set_Status
         /// \brief This enumeration defines return values when setting a new state of pin.
         // -------------------------------------------------------------------------------------------------------------
-        enum class NPin_Set_Status
+        enum class NPin_Set_Status : std::uint32_t
         {
             OK,                   ///< The new state has been set successfully
-            Invalid_Pin_Function, ///< The function of the pin must be set to Input (TODO there might be exceptions?)
+            Invalid_Pin_Function, ///< The function of the pin must be set to Input
             Invalid_Pin_Number    ///< Invalid pin number (Rpi Zero has 54 GPIO pins)
         };
 

@@ -1,0 +1,2 @@
+[16:56:40][DEBUG][ssd1306_oled.cpp:219] Received data: 64 0 254 16 40
+[16:56:40][DEBUG][ssd1306_oled.cpp:219] Received data: 64 68 130 0 0

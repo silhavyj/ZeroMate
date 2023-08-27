@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.21)
 # Add the logic_analyzer peripheral as a shared library
 add_library(logic_analyzer SHARED)
 
+# Define the ZM_EXTERNAL_PERIPHERAL_EXPORT macro
+target_compile_definitions(logic_analyzer PRIVATE ZM_EXTERNAL_PERIPHERAL_EXPORT)
+
 # Specify the public and private include directories
 target_include_directories(
     logic_analyzer
@@ -22,13 +25,13 @@ target_sources(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/logic_analyzer.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/logic_analyzer.cpp)
 
-# Link imgui_glfw and logger to the logic_analyzer library so the peripheral can
+# Link imgui_glfw and logging_system to the logic_analyzer library so the peripheral can
 # render itself and log messages to the logging system
 target_link_libraries(
     logic_analyzer
     PRIVATE
         imgui_glfw
-        logger)
+        logging_system)
 
 # Copy the shared library into the output/peripherals directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)

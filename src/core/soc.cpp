@@ -106,10 +106,10 @@ namespace zero_mate::soc
         // -------------------------------------------------------------------------------------------------------------
         struct TPeripheral_Config
         {
-            std::string name;                ///< Name of the external peripherals
-            std::vector<std::uint32_t> pins; ///< Collection of GPIO pins the peripheral will be connected to
-            std::string lib_dir;             ///< Path to the directory where the shared library is located
-            std::string lib_name;            ///< Name of the shared library
+            std::string name;                      ///< Name of the external peripherals
+            std::vector<std::uint32_t> connection; ///< Connection of the external peripheral (GPIO pins, I2C addr, ...)
+            std::string lib_dir;                   ///< Path to the directory where the shared library is located
+            std::string lib_name;                  ///< Name of the shared library
         };
 
         // -------------------------------------------------------------------------------------------------------------
@@ -222,6 +222,9 @@ namespace zero_mate::soc
             // Register system clock listeners.
             g_cpu->Register_System_Clock_Listener(g_arm_timer);
             g_cpu->Register_System_Clock_Listener(g_aux);
+            g_cpu->Register_System_Clock_Listener(g_bsc_1);
+            g_cpu->Register_System_Clock_Listener(g_bsc_2);
+            g_cpu->Register_System_Clock_Listener(g_bsc_3);
 
             // Add a reference to CP15 to the bus, so it knows whether to check for unaligned memory access.
             g_bus->Set_CP15(g_cp15);
@@ -273,14 +276,14 @@ namespace zero_mate::soc
         {
             // clang-format off
             if (!peripheral.contains(config::sections::Name) ||
-                !peripheral.contains(config::sections::Pins) ||
+                !peripheral.contains(config::sections::Connection) ||
                 !peripheral.contains(config::sections::Lib_Name) ||
                 !peripheral.contains(config::sections::Lib_Dir))
             {
                 g_logging_system.Error(fmt::format("At least one of the following sections is missing in the {} "
                                                    "file: {}, {}, {}, or {}",
                                                    config::sections::Name,
-                                                   config::sections::Pins,
+                                                   config::sections::Connection,
                                                    config::sections::Lib_Name,
                                                    config::sections::Lib_Dir,
                                                    config::External_Peripherals_Config_File).c_str());
@@ -302,10 +305,10 @@ namespace zero_mate::soc
             TPeripheral_Config config{};
 
             // Read data from the config sections.
-            config.name = peripheral["name"].template get<std::string>();
-            config.pins = peripheral["pins"].template get<std::vector<std::uint32_t>>();
-            config.lib_name = peripheral["lib_name"].template get<std::string>();
-            config.lib_dir = peripheral["lib_dir"].template get<std::string>();
+            config.name = peripheral[config::sections::Name].template get<std::string>();
+            config.connection = peripheral[config::sections::Connection].template get<std::vector<std::uint32_t>>();
+            config.lib_name = peripheral[config::sections::Lib_Name].template get<std::string>();
+            config.lib_dir = peripheral[config::sections::Lib_Dir].template get<std::string>();
 
             return config;
         }
@@ -332,13 +335,13 @@ namespace zero_mate::soc
                 const auto& lib = s_shared_libs.at(lib_id);
 
                 // Get the address of the "Create_Peripheral" function located in the shared library.
-                auto create_peripheral = lib->get_function<int(IExternal_Peripheral**,
-                                                               const char* const,
-                                                               const std::uint32_t* const,
-                                                               std::size_t,
-                                                               IExternal_Peripheral::Set_GPIO_Pin_t,
-                                                               IExternal_Peripheral::Read_GPIO_Pin_t,
-                                                               utils::CLogging_System*)>("Create_Peripheral");
+                auto create_peripheral = lib->get_function<std::uint32_t(IExternal_Peripheral**,
+                                                                         const char* const,
+                                                                         const std::uint32_t* const,
+                                                                         std::size_t,
+                                                                         IExternal_Peripheral::Set_GPIO_Pin_t,
+                                                                         IExternal_Peripheral::Read_GPIO_Pin_t,
+                                                                         utils::CLogging_System*)>("Create_Peripheral");
 
                 // Create room for the new external peripheral in the collection of all external peripherals
                 g_external_peripherals.emplace_back();
@@ -347,8 +350,8 @@ namespace zero_mate::soc
                 const auto status = static_cast<IExternal_Peripheral::NInit_Status>(
                 create_peripheral(&g_external_peripherals.back(),
                                   config.name.c_str(),
-                                  config.pins.data(),
-                                  config.pins.size(),
+                                  config.connection.data(),
+                                  config.connection.size(),
                                   &Set_GPIO_Pin,
                                   &Read_GPIO_Pin,
                                   utils::CSingleton<utils::CLogging_System>::Get_Instance()));
