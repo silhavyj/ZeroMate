@@ -15,7 +15,7 @@ extern "C" int _kernel_main(void)
 
     sUART0.Write("Welcome to a guessing game!\r\n");
     sUART0.Write("---------------------------\r\n");
-    sUART0.Write("Think of a number between 1 and 100 and I'm gonna guess what it is. All you gotta do is to tell me "
+    sUART0.Write("Think of a number between 0 and 100 and I'm gonna guess what it is. All you gotta do is to tell me "
                  "whether my guess is larger than your number of choice or not, okay? [y/n]: ");
 
     while (1)

@@ -236,6 +236,7 @@ private:
     int m_data_length_idx;                                       ///< Index of the chosen data length
     std::uint32_t m_data_length;                                 ///< Value of the chosen data length
     zero_mate::utils::CLogging_System* m_logging_system;         ///< Logging system
+    bool m_use_cr_lf;                                            ///< Use CR+LF as the enter termination character
 
     std::uint32_t m_cpu_cycles;                                  ///< Number of passed CPU cycles
     NState_Machine m_RX_state;                                   ///< Current state of the UART RX state machine

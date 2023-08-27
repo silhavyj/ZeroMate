@@ -138,6 +138,7 @@ CSerial_Terminal::CSerial_Terminal(const std::string& name,
 , m_data_length{ 8 }
 , m_data_length_idx{ 1 }
 , m_logging_system{ logging_system }
+, m_use_cr_lf{ false }
 , m_cpu_cycles{ 0 }
 , m_RX_state{ NState_Machine::Start_Bit }
 , m_RX_bit_idx{ 0 }
@@ -285,6 +286,20 @@ void CSerial_Terminal::Render_Control_Buttons()
     {
         m_terminal.Clear();
     }
+
+    ImGui::SameLine();
+
+    if (ImGui::RadioButton("CR+LF", m_use_cr_lf))
+    {
+        m_use_cr_lf = true;
+    }
+
+    ImGui::SameLine();
+
+    if (ImGui::RadioButton("LF", !m_use_cr_lf))
+    {
+        m_use_cr_lf = false;
+    }
 }
 
 void CSerial_Terminal::Render_User_Input()
@@ -314,6 +329,17 @@ void CSerial_Terminal::Add_User_Input_Into_TX_Queue()
         // Print the current character to the terminal and add it to the TX queue.
         m_terminal.Add_Character(c);
         m_TX_queue.push(c);
+    }
+
+    // Append an enter character crlf
+    if (m_use_cr_lf)
+    {
+        m_TX_queue.push('\r');
+        m_TX_queue.push('\n');
+    }
+    else
+    {
+        m_TX_queue.push('\n');
     }
 
     // Add a new line to the terminal (enter).

@@ -38,6 +38,7 @@ public:
     void Write(const char* str);
     void Write(const char* str, unsigned int len);
     void Write(unsigned int num);
+    void Write(int num);
     void Write_Hex(unsigned int num);
     void Read(char* c);
 

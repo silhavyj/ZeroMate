@@ -5,9 +5,9 @@
 #include <interrupt_controller.h>
 
 volatile int game_state = 0;
-volatile unsigned int max_num = 100;
-volatile unsigned int min_num = 1;
-volatile unsigned int middle;
+volatile int max_num = 100;
+volatile int min_num = 0;
+volatile int middle;
 
 void Guessing_Game(char c)
 {
@@ -39,7 +39,7 @@ void Guessing_Game(char c)
         case 2:
             if (c == 'y' || c == 'Y')
             {
-                min_num += middle + 1;
+                min_num = middle + 1;
                 greater = true;
             }
             else
@@ -51,7 +51,7 @@ void Guessing_Game(char c)
             if (min_num > max_num)
             {
                 sUART0.Write("The number you're thinking of must be ");
-                sUART0.Write(greater ? (middle + 1) : (middle - 1));
+                sUART0.Write(min_num);
                 sUART0.Write("!\n\r");
                 sUART0.Write("Do you wanna play again? [y/n]: ");
                 game_state = 3;
@@ -68,7 +68,7 @@ void Guessing_Game(char c)
         case 3:
             if (c == 'y' || c == 'Y')
             {
-                min_num = 1;
+                min_num = 0;
                 max_num = 100;
 
                 sUART0.Write("Is your number greater than ");
@@ -98,6 +98,9 @@ extern "C" void __attribute__((interrupt("IRQ"))) irq_handler()
     char c;
 
     sUART0.Read(&c);
+    if (c == '\n' || c == '\r')
+        return;
+
     Guessing_Game(c);
 }
 

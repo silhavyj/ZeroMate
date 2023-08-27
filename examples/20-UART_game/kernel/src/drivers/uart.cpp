@@ -67,6 +67,11 @@ void CUART::Write(unsigned int num)
     Write(buf);
 }
 
+void CUART::Write(int num)
+{
+    Write(static_cast<unsigned int>(num));
+}
+
 void CUART::Write_Hex(unsigned int num)
 {
     static char buf[16];
