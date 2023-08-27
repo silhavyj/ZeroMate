@@ -43,29 +43,58 @@ namespace zero_mate::peripheral
         static_cast<std::uint32_t>(NLSR_Flags::Transmitter_Empty);
 
         // No pending IRQ
-        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] |=
-        static_cast<std::uint32_t>(NIER_Flags::Pending_IRQ);
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IIR)] |=
+        static_cast<std::uint32_t>(NIIR_Flags::Pending_IRQ);
     }
 
     void CMini_UART::Clear_IRQ()
     {
-        // TODO when exactly is a pending IRQ cleared?
-
         // Clear transmit FIFO flag.
-        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] &=
-        ~static_cast<std::uint32_t>(NIER_Flags::Clear_Transmit_FIFO);
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IIR)] &=
+        ~static_cast<std::uint32_t>(NIIR_Flags::Clear_Transmit_FIFO);
 
         // Clear receive FIFO flag.
-        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] &=
-        ~static_cast<std::uint32_t>(NIER_Flags::Clear_Receive_FIFO);
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IIR)] &=
+        ~static_cast<std::uint32_t>(NIIR_Flags::Clear_Receive_FIFO);
 
+        Clear_Global_IRQ_Flags();
+    }
+
+    bool CMini_UART::Has_Pending_Receive_IRQ() const
+    {
+        return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IIR)] &
+                                 IIR_IRQ_Receive_Pending);
+    }
+
+    bool CMini_UART::Has_Pending_Transmit_IRQ() const
+    {
+        return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IIR)] &
+                                 IIR_IRQ_Transmit_Pending);
+    }
+
+    void CMini_UART::Clear_Pending_Receive_IRQ()
+    {
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IIR)] &= IIR_IRQ_Receive_Pending;
+
+        // Is the there is no transit IRQ pending, clear IRQ completely.
+        if (!Has_Pending_Transmit_IRQ())
+        {
+            Clear_Global_IRQ_Flags();
+        }
+    }
+
+    void CMini_UART::Clear_Global_IRQ_Flags()
+    {
         // Clear pending IRQ (inverted logic - 1 means that there is no pending IRQ).
-        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] |=
-        static_cast<std::uint32_t>(NIER_Flags::Pending_IRQ);
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IIR)] |=
+        static_cast<std::uint32_t>(NIIR_Flags::Pending_IRQ);
 
         // Clear pending IRQ in the IRQ register of the AUX peripheral.
         m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::IRQ)] &=
         ~static_cast<std::uint32_t>(CAUX::NAUX_Peripheral::Mini_UART);
+
+        // Notify the interrupt controller.
+        m_aux.m_ic->Clear_Pending_IRQ(CInterrupt_Controller::NIRQ_Source::AUX);
     }
 
     std::pair<std::uint8_t, bool> CMini_UART::Pop_RX_Data()
@@ -96,13 +125,13 @@ namespace zero_mate::peripheral
     bool CMini_UART::Is_Receive_Interrupt_Enabled() const noexcept
     {
         return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] &
-                                 static_cast<std::uint32_t>(NIIR_Flags::Enable_Receive_Interrupt));
+                                 static_cast<std::uint32_t>(NIER_Flags::Enable_Receive_Interrupt));
     }
 
     bool CMini_UART::Is_Transmit_Interrupt_Enabled() const noexcept
     {
         return static_cast<bool>(m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] &
-                                 static_cast<std::uint32_t>(NIIR_Flags::Enable_Transmit_Interrupt));
+                                 static_cast<std::uint32_t>(NIER_Flags::Enable_Transmit_Interrupt));
     }
 
     CMini_UART::NChar_Length CMini_UART::Get_Char_Length() const noexcept
@@ -288,7 +317,7 @@ namespace zero_mate::peripheral
         // Check if an interrupt should be triggered.
         if (Is_Receive_Interrupt_Enabled())
         {
-            Trigger_IRQ();
+            Trigger_IRQ(true);
         }
     }
 
@@ -336,18 +365,31 @@ namespace zero_mate::peripheral
         m_tx.state = NState_Machine::End_Of_Frame;
     }
 
-    void CMini_UART::Trigger_IRQ()
+    void CMini_UART::Trigger_IRQ(bool receive)
     {
-        // Set pending IRQ
-        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IER)] &=
-        ~static_cast<std::uint32_t>(NIER_Flags::Pending_IRQ);
+        // Set the type of the pending IRQ.
+        Set_Pending_IRQ_Type(receive);
+
+        // Set pending IRQ.
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IIR)] &=
+        ~static_cast<std::uint32_t>(NIIR_Flags::Pending_IRQ);
 
         // Set pending IRQ in the IRQ register of the AUX peripheral.
         m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::IRQ)] |=
         static_cast<std::uint32_t>(CAUX::NAUX_Peripheral::Mini_UART);
 
         // Signalize the interrupt controller.
-        m_aux.m_ic->Signalize_IRQ(CInterrupt_Controller::NIRQ_Source::UART);
+        m_aux.m_ic->Signalize_IRQ(CInterrupt_Controller::NIRQ_Source::AUX);
+    }
+
+    void CMini_UART::Set_Pending_IRQ_Type(bool receive)
+    {
+        // Clear both flags (receive + transmit).
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IIR)] &= IIR_IRQ_Type_Mask;
+
+        // Set the type of the pending IRQ.
+        m_aux.m_regs[static_cast<std::uint32_t>(CAUX::NRegister::MU_IIR)] |=
+        receive ? IIR_IRQ_Receive_Pending : IIR_IRQ_Transmit_Pending;
     }
 
     void CMini_UART::UART_Reset_Transmission()
@@ -363,7 +405,7 @@ namespace zero_mate::peripheral
         // Check if an interrupt should be triggered.
         if (Is_Transmit_Interrupt_Enabled())
         {
-            Trigger_IRQ();
+            Trigger_IRQ(false);
         }
     }
 

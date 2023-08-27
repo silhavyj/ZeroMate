@@ -132,6 +132,12 @@ namespace zero_mate::peripheral
             {
                 m_regs[reg_idx] = RX_data;
             }
+
+            // If there is a pending receive IRQ, clear it.
+            if (m_mini_UART->Has_Pending_Receive_IRQ())
+            {
+                m_mini_UART->Clear_Pending_Receive_IRQ();
+            }
         }
 
         // Read data from the peripheral's registers.

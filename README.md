@@ -57,7 +57,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |Simple logic analyzer|✔️|More information can be found [here](peripherals/logic_analyzer/README.md).|
 |Statistical data collection|❌|Number of I/O operations, etc.|
 
-✔️ - Fully implemented | ❌ - Not supported yet |  ⏳ -  Limited functionality
+✔️ Fully implemented | ❌ Not supported yet | ⏳ Limited functionality
 
 ## Screenshots
 
