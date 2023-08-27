@@ -53,11 +53,11 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |Floating point unit (FPU)|❌||
 |I2C|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
 |SPI|❌||
-|MiniUART|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
+|Mini UART|✔️||
 |Simple logic analyzer|✔️|More information can be found [here](peripherals/logic_analyzer/README.md).|
 |Statistical data collection|❌|Number of I/O operations, etc.|
 
-✔️ - Fully implemented | ❌ - Not supported yet |  ⏳ -  Limited functionality
+✔️ Fully implemented | ❌ Not supported yet | ⏳ Limited functionality
 
 ## Screenshots
 

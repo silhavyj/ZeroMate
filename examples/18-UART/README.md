@@ -32,7 +32,6 @@ Here is the content of [peripherals.json](../../peripherals.json) used in this e
     }
   ]
 }
-
 ```
 
 ## Demo
