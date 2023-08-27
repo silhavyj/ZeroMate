@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CMini_UART::Has_Pending_Transmit_IRQ" name="zero_mate::peripheral::CMini_UART::Has_Pending_Transmit_IRQ">
+<area shape="rect" id="node1" title="Checks whether there is a pending transmit IRQ." alt="" coords="263,5,463,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#ae982e8e52b5242cf8a68aec6e269cc8c" title="Clears a pending receive IRQ." alt="" coords="5,5,215,61"/>
+</map>

@@ -1,5 +1,5 @@
 <map id="zero_mate::arm1176jzf_s::isa::CInstruction" name="zero_mate::arm1176jzf_s::isa::CInstruction">
-<area shape="rect" id="node1" title="This class represents a parent class for all ARM instructions used in the emulator." alt="" coords="5,605,179,646"/>
+<area shape="rect" id="node1" title="This class represents a parent class for all ARM instructions used in the emulator." alt="" coords="5,743,179,785"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html" title="This class represents a data block transfer instruction." alt="" coords="234,5,407,61"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch.html" title="This class represents a branch instruction." alt="" coords="234,86,407,127"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBranch__And__Exchange.html" title="This class represents a branch and exchange instruction." alt="" coords="234,152,407,208"/>
@@ -15,6 +15,10 @@
 <area shape="rect" id="node14" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html" title="This class represents a multiplication long instruction." alt="" coords="234,882,407,923"/>
 <area shape="rect" id="node15" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html" title="This class represents a PSR instruction." alt="" coords="234,947,407,989"/>
 <area shape="rect" id="node16" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html" title="This class represents an RFE instruction (return from exception)." alt="" coords="234,1013,407,1054"/>
-<area shape="rect" id="node17" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html" title="his class represents an SRS instruction (store return state onto a stack)." alt="" coords="234,1078,407,1119"/>
-<area shape="rect" id="node18" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html" title="This class represents a single data transfer instruction." alt="" coords="234,1144,407,1200"/>
+<area shape="rect" id="node17" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAWy.html" title="This class represents a CSMLAWy instruction." alt="" coords="234,1078,407,1119"/>
+<area shape="rect" id="node18" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAxy.html" title="This class represents a CSMLAxy instruction." alt="" coords="234,1143,407,1185"/>
+<area shape="rect" id="node19" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULWy.html" title="This class represents a CSMULWy instruction." alt="" coords="234,1209,407,1250"/>
+<area shape="rect" id="node20" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULxy.html" title="This class represents a SMULxy instruction." alt="" coords="234,1274,407,1315"/>
+<area shape="rect" id="node21" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html" title="his class represents an SRS instruction (store return state onto a stack)." alt="" coords="234,1339,407,1381"/>
+<area shape="rect" id="node22" href="$classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html" title="This class represents a single data transfer instruction." alt="" coords="234,1405,407,1461"/>
 </map>

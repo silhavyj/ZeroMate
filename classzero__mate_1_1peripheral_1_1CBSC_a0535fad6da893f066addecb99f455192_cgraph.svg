@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Sends another bit of the slave&#39;s address.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-22 0,-63 132,-63 132,-22 0,-22"/>
 <text text-anchor="start" x="8" y="-51" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="8" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::I2C_Send_Slave</text>
@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" target="_top" xlink:title="Sets the state of a given GPIO pin.">
 <polygon fill="none" stroke="black" points="168,-27.5 168,-57.5 292,-57.5 292,-27.5 168,-27.5"/>
 <text text-anchor="start" x="176" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="230" y="-34.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Set_GPIO_pin</text>

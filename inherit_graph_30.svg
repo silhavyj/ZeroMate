@@ -53,7 +53,7 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html" target="_top" xlink:title="This class represents the BSC peripheral used in BCM2835.">
 <polygon fill="none" stroke="black" points="175.5,-245.5 175.5,-275.5 299.5,-275.5 299.5,-245.5 175.5,-245.5"/>
 <text text-anchor="start" x="183.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="237.5" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC</text>
@@ -146,9 +146,9 @@
 <path fill="none" stroke="midnightblue" d="M89.91,-163.85C109.53,-142.1 141.65,-109.53 175,-88.5 180.23,-85.2 186,-82.22 191.83,-79.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="87.29,-161.53 83.26,-171.33 92.52,-166.17 87.29,-161.53"/>
 </g>
-<!-- Node68 -->
+<!-- Node72 -->
 <g id="node10" class="node">
-<title>Node68</title>
+<title>Node72</title>
 <g id="a_node10"><a xlink:href="classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html" target="_top" xlink:title="This class represents a general interface for a CPU clock listener.">
 <polygon fill="none" stroke="black" points="0,-294.5 0,-324.5 139,-324.5 139,-294.5 0,-294.5"/>
 <text text-anchor="start" x="8" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
@@ -156,21 +156,21 @@
 </a>
 </g>
 </g>
-<!-- Node68&#45;&gt;Node1 -->
+<!-- Node72&#45;&gt;Node1 -->
 <g id="edge9" class="edge">
-<title>Node68&#45;&gt;Node1</title>
+<title>Node72&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M131.37,-327.47C149.15,-332.72 168.4,-338.4 185.51,-343.45"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="132.24,-324.08 121.66,-324.6 130.26,-330.79 132.24,-324.08"/>
 </g>
-<!-- Node68&#45;&gt;Node2 -->
+<!-- Node72&#45;&gt;Node2 -->
 <g id="edge10" class="edge">
-<title>Node68&#45;&gt;Node2</title>
+<title>Node72&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M149.6,-309.5C158.28,-309.5 167.02,-309.5 175.44,-309.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="149.46,-306 139.46,-309.5 149.46,-313 149.46,-306"/>
 </g>
-<!-- Node68&#45;&gt;Node3 -->
+<!-- Node72&#45;&gt;Node3 -->
 <g id="edge11" class="edge">
-<title>Node68&#45;&gt;Node3</title>
+<title>Node72&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M131.37,-291.53C149.15,-286.28 168.4,-280.6 185.51,-275.55"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="130.26,-288.21 121.66,-294.4 132.24,-294.92 130.26,-288.21"/>
 </g>

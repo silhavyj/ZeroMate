@@ -37,7 +37,5 @@ var dir_34794bca92a793a1e58b77dac439fbe4 =
       [ "ISystem_Clock_Listener", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html", "classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener" ]
     ] ],
     [ "trng.cpp", "trng_8cpp.html", null ],
-    [ "trng.hpp", "trng_8hpp.html", [
-      [ "CTRNG", "classzero__mate_1_1peripheral_1_1CTRNG.html", "classzero__mate_1_1peripheral_1_1CTRNG" ]
-    ] ]
+    [ "trng.hpp", "trng_8hpp.html", "trng_8hpp" ]
 ];

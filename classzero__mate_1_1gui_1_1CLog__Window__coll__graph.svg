@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1utils_1_1ILogger.html" target="_top" xlink:title="This class represents a logger interface.">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1utils_1_1ILogger.html" target="_top" xlink:title="This class represents a logging_system interface.">
 <polygon fill="none" stroke="black" points="1.5,-110.5 1.5,-129.5 138.5,-129.5 138.5,-110.5 1.5,-110.5"/>
 <text text-anchor="middle" x="70" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::ILogger</text>
 </a>

@@ -1,0 +1,9 @@
+<map id="zero_mate::peripheral::CBSC::Terminate_Transaction" name="zero_mate::peripheral::CBSC::Terminate_Transaction">
+<area shape="rect" id="node1" title="Terminates an ongoing transaction (stop bit)." alt="" coords="5,75,224,116"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" title="Sets the state of a given GPIO pin." alt="" coords="272,75,437,116"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="485,75,680,116"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="728,30,931,86"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="730,111,929,152"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="979,5,1192,47"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="988,71,1183,112"/>
+</map>

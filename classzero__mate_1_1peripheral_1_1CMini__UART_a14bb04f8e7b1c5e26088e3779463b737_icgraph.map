@@ -1,0 +1,5 @@
+<map id="zero_mate::peripheral::CMini_UART::Clear_Global_IRQ_Flags" name="zero_mate::peripheral::CMini_UART::Clear_Global_IRQ_Flags">
+<area shape="rect" id="node1" title="Helper function to clear global IRQ flags (not those related to a particular IRQ type)." alt="" coords="263,35,461,91"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#ac621244aa73f1f7d3d8ddf18fc715b6a" title="Clears any pending interrupt." alt="" coords="20,5,200,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#ae982e8e52b5242cf8a68aec6e269cc8c" title="Clears a pending receive IRQ." alt="" coords="5,71,215,127"/>
+</map>

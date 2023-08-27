@@ -1,5 +1,5 @@
 <map id="zero_mate::peripheral::CBSC::I2C_Receive_ACK_2" name="zero_mate::peripheral::CBSC::I2C_Receive_ACK_2">
-<area shape="rect" id="node1" title=" " alt="" coords="457,13,660,54"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#aa195c567531f97d585212978ab0f687a" title=" " alt="" coords="244,13,409,54"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488" title="Notifies the peripheral about how many CPU cycles have passed by." alt="" coords="5,5,196,61"/>
+<area shape="rect" id="node1" title="Checks whether the slave device has sent ACK_2 as expected." alt="" coords="457,13,660,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a3b0dd18504053624d39b9015015bb8fc" title="Updates the I2C state machine." alt="" coords="244,13,409,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488" title="Notifies the peripheral about how many CPU cycles have passed (ISystem_Clock_Listener interface)." alt="" coords="5,5,196,61"/>
 </map>

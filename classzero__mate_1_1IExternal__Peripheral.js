@@ -2,10 +2,10 @@ var classzero__mate_1_1IExternal__Peripheral =
 [
     [ "Read_GPIO_Pin_t", "classzero__mate_1_1IExternal__Peripheral.html#a0ecb01abe68c8df229a650678224aed3", null ],
     [ "Set_GPIO_Pin_t", "classzero__mate_1_1IExternal__Peripheral.html#a99b9d6f259b06f97cdf1db19deaf4786", null ],
-    [ "NInit_Status", "classzero__mate_1_1IExternal__Peripheral.html#a3efd36df268667bc7578ddd15db6fe59", [
-      [ "OK", "classzero__mate_1_1IExternal__Peripheral.html#a3efd36df268667bc7578ddd15db6fe59ae0aa021e21dddbd6d8cecec71e9cf564", null ],
-      [ "GPIO_Mismatch", "classzero__mate_1_1IExternal__Peripheral.html#a3efd36df268667bc7578ddd15db6fe59a06d16a56d9e14931b6e1bc8dadd1f66a", null ],
-      [ "Allocation_Error", "classzero__mate_1_1IExternal__Peripheral.html#a3efd36df268667bc7578ddd15db6fe59aea185f1055f80afb4d86c1ea0f981c63", null ]
+    [ "NInit_Status", "classzero__mate_1_1IExternal__Peripheral.html#aba83a741de9b3e2eb214906d4aa51a00", [
+      [ "OK", "classzero__mate_1_1IExternal__Peripheral.html#aba83a741de9b3e2eb214906d4aa51a00ae0aa021e21dddbd6d8cecec71e9cf564", null ],
+      [ "GPIO_Mismatch", "classzero__mate_1_1IExternal__Peripheral.html#aba83a741de9b3e2eb214906d4aa51a00a06d16a56d9e14931b6e1bc8dadd1f66a", null ],
+      [ "Allocation_Error", "classzero__mate_1_1IExternal__Peripheral.html#aba83a741de9b3e2eb214906d4aa51a00aea185f1055f80afb4d86c1ea0f981c63", null ]
     ] ],
     [ "IExternal_Peripheral", "classzero__mate_1_1IExternal__Peripheral.html#af9fc9b4040bef7c4fd506be839063f63", null ],
     [ "~IExternal_Peripheral", "classzero__mate_1_1IExternal__Peripheral.html#a30c1b7084ccf17f186f154875cc7b571", null ],

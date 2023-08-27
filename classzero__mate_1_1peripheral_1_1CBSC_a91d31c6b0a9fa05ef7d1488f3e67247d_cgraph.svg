@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Writes data to the peripheral.">
+<g id="a_node1"><a xlink:title="Writes data to the peripheral (IPeripheral interface).">
 <polygon fill="#bfbfbf" stroke="black" points="0,-117 0,-147 124,-147 124,-117 0,-117"/>
 <text text-anchor="start" x="8" y="-135" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="62" y="-124" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Write</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#ab30554a8b7d94ebd2beb2fd4e21c6869" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#ab30554a8b7d94ebd2beb2fd4e21c6869" target="_top" xlink:title="Adds data to the FIFO.">
 <polygon fill="none" stroke="black" points="167.5,-142 167.5,-172 313.5,-172 313.5,-142 167.5,-142"/>
 <text text-anchor="start" x="175.5" y="-160" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="240.5" y="-149" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Add_Data_To_FIFO</text>
@@ -37,7 +37,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15" target="_top" xlink:title="Performs actions after the control register has been written to.">
 <polygon fill="none" stroke="black" points="160,-93 160,-123 321,-123 321,-93 160,-93"/>
 <text text-anchor="start" x="168" y="-111" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="240.5" y="-100" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Control_Reg_Callback</text>
@@ -53,7 +53,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#abb0839be28efd814d455b83af743e347" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#abb0839be28efd814d455b83af743e347" target="_top" xlink:title="Clears the FIFO.">
 <polygon fill="none" stroke="black" points="372,-170 372,-200 496,-200 496,-170 372,-170"/>
 <text text-anchor="start" x="380" y="-188" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="434" y="-177" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Clear_FIFO</text>
@@ -69,7 +69,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" target="_top" xlink:title="Sets the state of a given GPIO pin.">
 <polygon fill="none" stroke="black" points="372,-121 372,-151 496,-151 496,-121 372,-121"/>
 <text text-anchor="start" x="380" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="434" y="-128" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Set_GPIO_pin</text>
@@ -85,7 +85,7 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a631f31f819abf852e17bc0d6a54daa58" target="_top" xlink:title=" ">
+<g id="a_node11"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a631f31f819abf852e17bc0d6a54daa58" target="_top" xlink:title="Checks whether the FIFO should be cleared or not.">
 <polygon fill="none" stroke="black" points="367,-60.5 367,-101.5 501,-101.5 501,-60.5 367,-60.5"/>
 <text text-anchor="start" x="375" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="375" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Should_FIFO_Be</text>
@@ -102,7 +102,7 @@
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#af7243c8e41ac6d45e77d915ce2eb0a89" target="_top" xlink:title=" ">
+<g id="a_node12"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#af7243c8e41ac6d45e77d915ce2eb0a89" target="_top" xlink:title="Checks whether a new data transfer (transaction) should begin.">
 <polygon fill="none" stroke="black" points="357,-0.5 357,-41.5 511,-41.5 511,-0.5 357,-0.5"/>
 <text text-anchor="start" x="365" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="365" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Should_Transaction_</text>

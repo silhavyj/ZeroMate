@@ -74,6 +74,22 @@ var dir_18d97c789d65c625ba9fe3de5ae3d420 =
     [ "single_data_transfer.hpp", "single__data__transfer_8hpp.html", [
       [ "CSingle_Data_Transfer", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer" ]
     ] ],
+    [ "smlawy.cpp", "smlawy_8cpp.html", null ],
+    [ "smlawy.hpp", "smlawy_8hpp.html", [
+      [ "CSMLAWy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAWy.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAWy" ]
+    ] ],
+    [ "smlaxy.cpp", "smlaxy_8cpp.html", null ],
+    [ "smlaxy.hpp", "smlaxy_8hpp.html", [
+      [ "CSMLAxy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAxy.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAxy" ]
+    ] ],
+    [ "smulwy.cpp", "smulwy_8cpp.html", null ],
+    [ "smulwy.hpp", "smulwy_8hpp.html", [
+      [ "CSMULWy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULWy.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULWy" ]
+    ] ],
+    [ "smulxy.cpp", "smulxy_8cpp.html", null ],
+    [ "smulxy.hpp", "smulxy_8hpp.html", [
+      [ "CSMULxy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULxy.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULxy" ]
+    ] ],
     [ "srs.cpp", "srs_8cpp.html", null ],
     [ "srs.hpp", "srs_8hpp.html", [
       [ "CSRS", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS" ]

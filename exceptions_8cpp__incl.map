@@ -3,6 +3,6 @@
 <area shape="rect" id="node2" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="60,95,181,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,111,196"/>
 <area shape="rect" id="node4" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="135,169,234,196"/>
-<area shape="rect" id="node5" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="87,244,282,271"/>
-<area shape="rect" id="node6" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="89,319,281,345"/>
+<area shape="rect" id="node5" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="97,244,272,285"/>
+<area shape="rect" id="node6" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="139,333,230,360"/>
 </map>

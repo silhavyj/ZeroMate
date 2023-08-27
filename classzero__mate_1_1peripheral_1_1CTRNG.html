@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.2.1</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -89,6 +89,7 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1peripheral_1_1CTRNG
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classzero__mate_1_1peripheral_1_1CTRNG-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -177,6 +178,12 @@ Static Public Attributes</h2></td></tr>
 <tr class="memdesc:a96b94ce483688e97f462145419302452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of TRNG registers.  <a href="classzero__mate_1_1peripheral_1_1CTRNG.html#a96b94ce483688e97f462145419302452">More...</a><br /></td></tr>
 <tr class="separator:a96b94ce483688e97f462145419302452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ade8cc0a19f454df005f0b28aa7be89c6"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#ade8cc0a19f454df005f0b28aa7be89c6">Get_Rnd_Number</a> ()</td></tr>
+<tr class="memdesc:ade8cc0a19f454df005f0b28aa7be89c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random number. If the USE_REAL_RND_NUMBER_GENERATOR macro is defined, the function uses a built-in rnd number generator. Otherwise, the random generator produces sudo-random numbers.  <a href="classzero__mate_1_1peripheral_1_1CTRNG.html#ade8cc0a19f454df005f0b28aa7be89c6">More...</a><br /></td></tr>
+<tr class="separator:ade8cc0a19f454df005f0b28aa7be89c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a0062b7911273a8667577a9f32fb1e723"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::uint32_t, <a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#a96b94ce483688e97f462145419302452">Number_Of_Registers</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#a0062b7911273a8667577a9f32fb1e723">m_regs</a></td></tr>
@@ -188,6 +195,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a012a9bb5690d5b6edada3550d5f96c25"><td class="memItemLeft" align="right" valign="top">std::uniform_int_distribution&lt; std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#a012a9bb5690d5b6edada3550d5f96c25">m_uniform_dist</a></td></tr>
 <tr class="memdesc:a012a9bb5690d5b6edada3550d5f96c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uniform std::uint32_t distribution.  <a href="classzero__mate_1_1peripheral_1_1CTRNG.html#a012a9bb5690d5b6edada3550d5f96c25">More...</a><br /></td></tr>
 <tr class="separator:a012a9bb5690d5b6edada3550d5f96c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298cc0121a8cec675d3c73d86188ab77"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CTRNG.html#a298cc0121a8cec675d3c73d86188ab77">m_seed</a></td></tr>
+<tr class="memdesc:a298cc0121a8cec675d3c73d86188ab77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial seed.  <a href="classzero__mate_1_1peripheral_1_1CTRNG.html#a298cc0121a8cec675d3c73d86188ab77">More...</a><br /></td></tr>
+<tr class="separator:a298cc0121a8cec675d3c73d86188ab77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class represents a TRNG (random number generator). </p>
@@ -257,6 +267,40 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ade8cc0a19f454df005f0b28aa7be89c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade8cc0a19f454df005f0b28aa7be89c6">&#9670;&nbsp;</a></span>Get_Rnd_Number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::uint32_t zero_mate::peripheral::CTRNG::Get_Rnd_Number </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a random number. If the USE_REAL_RND_NUMBER_GENERATOR macro is defined, the function uses a built-in rnd number generator. Otherwise, the random generator produces sudo-random numbers. </p>
+<dl class="section return"><dt>Returns</dt><dd>Random number </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CTRNG_ade8cc0a19f454df005f0b28aa7be89c6_icgraph.svg" width="423" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="ad3e4ecda68f09ac472c0c999927720ed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3e4ecda68f09ac472c0c999927720ed">&#9670;&nbsp;</a></span>Get_Size()</h2>
 
@@ -368,7 +412,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CTRNG_a095899f3e801669d288974fc96553902_cgraph.svg" width="390" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CTRNG_a095899f3e801669d288974fc96553902_cgraph.svg" width="423" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -509,6 +553,30 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Peripheral's registers. </p>
+
+</div>
+</div>
+<a id="a298cc0121a8cec675d3c73d86188ab77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a298cc0121a8cec675d3c73d86188ab77">&#9670;&nbsp;</a></span>m_seed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::uint32_t zero_mate::peripheral::CTRNG::m_seed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initial seed. </p>
 
 </div>
 </div>

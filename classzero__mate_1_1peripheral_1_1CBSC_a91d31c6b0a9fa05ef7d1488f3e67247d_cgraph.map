@@ -1,11 +1,11 @@
 <map id="zero_mate::peripheral::CBSC::Write" name="zero_mate::peripheral::CBSC::Write">
-<area shape="rect" id="node1" title="Writes data to the peripheral." alt="" coords="5,80,171,121"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#ab30554a8b7d94ebd2beb2fd4e21c6869" title=" " alt="" coords="229,47,423,88"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15" title=" " alt="" coords="219,112,433,153"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CBSC.html#abb0839be28efd814d455b83af743e347" title=" " alt="" coords="501,9,667,51"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" title=" " alt="" coords="501,75,667,116"/>
-<area shape="rect" id="node11" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a631f31f819abf852e17bc0d6a54daa58" title=" " alt="" coords="495,141,673,197"/>
-<area shape="rect" id="node12" href="$classzero__mate_1_1peripheral_1_1CBSC.html#af7243c8e41ac6d45e77d915ce2eb0a89" title=" " alt="" coords="481,221,687,277"/>
+<area shape="rect" id="node1" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,80,171,121"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#ab30554a8b7d94ebd2beb2fd4e21c6869" title="Adds data to the FIFO." alt="" coords="229,47,423,88"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15" title="Performs actions after the control register has been written to." alt="" coords="219,112,433,153"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CBSC.html#abb0839be28efd814d455b83af743e347" title="Clears the FIFO." alt="" coords="501,9,667,51"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" title="Sets the state of a given GPIO pin." alt="" coords="501,75,667,116"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a631f31f819abf852e17bc0d6a54daa58" title="Checks whether the FIFO should be cleared or not." alt="" coords="495,141,673,197"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1peripheral_1_1CBSC.html#af7243c8e41ac6d45e77d915ce2eb0a89" title="Checks whether a new data transfer (transaction) should begin." alt="" coords="481,221,687,277"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="735,75,929,116"/>
 <area shape="rect" id="node7" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="977,30,1180,86"/>
 <area shape="rect" id="node10" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="979,111,1178,152"/>

@@ -1,50 +1,52 @@
 <map id="src/core/arm1176jzf_s/core.cpp" name="src/core/arm1176jzf_s/core.cpp">
-<area shape="rect" id="node1" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="3095,5,3246,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="762,95,897,121"/>
-<area shape="rect" id="node3" href="$alu_8hpp.html" title="This file defines the functionality of the arithmetic logic unit (ALU)." alt="" coords="3135,266,3206,293"/>
-<area shape="rect" id="node6" href="$mac_8hpp.html" title="This file defines the functionality of the CPU multiplier (MAC unit)." alt="" coords="3731,423,3810,449"/>
-<area shape="rect" id="node9" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="921,95,999,121"/>
-<area shape="rect" id="node48" href="$singleton_8hpp.html" title="This file defines and implements a generic class that is used to treat other classes as singletons." alt="" coords="3282,95,3497,121"/>
-<area shape="rect" id="node4" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="3487,505,3665,531"/>
-<area shape="rect" id="node5" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="2659,587,2778,613"/>
-<area shape="rect" id="node7" href="$multiply_8hpp.html" title="This file defines a multiplication instruction (MUL, MLA)." alt="" coords="3876,505,4001,531"/>
-<area shape="rect" id="node8" href="$multiply__long_8hpp.html" title="This file defines a multiplication (long) instruction." alt="" coords="3689,505,3852,531"/>
-<area shape="rect" id="node10" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="884,505,983,531"/>
-<area shape="rect" id="node11" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="181,587,376,613"/>
-<area shape="rect" id="node13" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="779,348,901,375"/>
-<area shape="rect" id="node15" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="2673,423,2765,449"/>
-<area shape="rect" id="node30" href="$isa__decoder_8hpp.html" title="This file defines an instruction decoder." alt="" coords="1173,177,1323,203"/>
-<area shape="rect" id="node31" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="713,266,799,293"/>
-<area shape="rect" id="node41" href="$mmu_8hpp.html" title="This file defines the MMU (memory management unit) of the CPU." alt="" coords="899,177,1021,203"/>
-<area shape="rect" id="node44" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="400,177,589,203"/>
-<area shape="rect" id="node45" href="$external__peripheral_8hpp.html" title="This file defines an interface for external peripherals that can be attached to the system via GPIO p..." alt="" coords="5,497,155,539"/>
-<area shape="rect" id="node46" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="407,259,574,300"/>
-<area shape="rect" id="node47" href="$system__clock__listener_8hpp.html" title="This file defines an interface for a CPU clock listener." alt="" coords="614,169,773,211"/>
-<area shape="rect" id="node12" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="76,661,268,688"/>
-<area shape="rect" id="node14" title=" " alt="" coords="933,423,1038,449"/>
-<area shape="rect" id="node16" href="$branch__and__exchange_8hpp.html" title="This file defines a branch and exchange instruction (BX)." alt="" coords="1871,505,2065,531"/>
-<area shape="rect" id="node17" href="$branch_8hpp.html" title="This file defines a branch instruction (B, BL)." alt="" coords="2090,505,2185,531"/>
-<area shape="rect" id="node18" href="$single__data__transfer_8hpp.html" title="This file defines single data transfer instruction (LDR, STR)." alt="" coords="2209,505,2391,531"/>
-<area shape="rect" id="node19" href="$block__data__transfer_8hpp.html" title="This file defines a block data transfer instruction (LDM, STM)." alt="" coords="2416,505,2595,531"/>
-<area shape="rect" id="node20" href="$halfword__data__transfer_8hpp.html" title="This file defines a Halfword data transfer instruction." alt="" coords="2619,505,2818,531"/>
-<area shape="rect" id="node21" href="$extend_8hpp.html" title="This file defines an extend instruction." alt="" coords="2842,505,2937,531"/>
-<area shape="rect" id="node22" href="$psr__transfer_8hpp.html" title="This file defines a PSR instruction (MRS, MSR)." alt="" coords="2961,505,3087,531"/>
-<area shape="rect" id="node23" href="$cps_8hpp.html" title="This file defines a change processor state instruction (CPS)." alt="" coords="3112,505,3184,531"/>
-<area shape="rect" id="node24" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="1393,497,1551,539"/>
-<area shape="rect" id="node25" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="1575,505,1796,531"/>
-<area shape="rect" id="node26" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="1135,505,1369,531"/>
-<area shape="rect" id="node27" href="$srs_8hpp.html" title="This file defines an SRS instruction (store return state onto a stack)." alt="" coords="3208,505,3277,531"/>
-<area shape="rect" id="node28" href="$rfe_8hpp.html" title="This file defines an RFE instruction (return from exception)." alt="" coords="3302,505,3370,531"/>
-<area shape="rect" id="node29" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="3394,505,3462,531"/>
-<area shape="rect" id="node32" href="$cp15_8hpp.html" title="This file defines coprocessor CP15." alt="" coords="499,348,704,375"/>
-<area shape="rect" id="node40" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="281,348,474,375"/>
-<area shape="rect" id="node33" href="$c1_8hpp.html" title="This file defines the primary register C1 of coprocessor CP15." alt="" coords="281,423,346,449"/>
-<area shape="rect" id="node34" href="$primary__reg_8hpp.html" title="This file defines a primary register interface of coprocessor CP15." alt="" coords="427,505,557,531"/>
-<area shape="rect" id="node35" href="$c2_8hpp.html" title="This file defines the primary register C2 of coprocessor CP15." alt="" coords="690,423,755,449"/>
-<area shape="rect" id="node36" href="$c3_8hpp.html" title="This file defines the primary register C3 of coprocessor CP15." alt="" coords="370,423,435,449"/>
-<area shape="rect" id="node37" href="$c7_8hpp.html" title="This file defines the primary register C7 of coprocessor CP15." alt="" coords="459,423,525,449"/>
-<area shape="rect" id="node38" href="$c8_8hpp.html" title="This file defines the primary register C8 of coprocessor CP15." alt="" coords="549,423,614,449"/>
-<area shape="rect" id="node39" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="1223,423,1361,449"/>
-<area shape="rect" id="node42" href="$page__table_8hpp.html" title="This file defines a page table." alt="" coords="873,266,996,293"/>
-<area shape="rect" id="node43" href="$page__entry_8hpp.html" title="This file defines a page table entry." alt="" coords="925,348,1046,375"/>
+<area shape="rect" id="node1" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="1879,5,2030,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="1687,95,1822,121"/>
+<area shape="rect" id="node3" href="$alu_8hpp.html" title="This file defines the functionality of the arithmetic logic unit (ALU)." alt="" coords="1846,95,1917,121"/>
+<area shape="rect" id="node6" href="$mac_8hpp.html" title="This file defines the functionality of the CPU multiplier (MAC unit)." alt="" coords="399,177,478,203"/>
+<area shape="rect" id="node9" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="3507,95,3586,121"/>
+<area shape="rect" id="node50" href="$singleton_8hpp.html" title="This file defines and implements a generic class that is used to treat other classes as singletons." alt="" coords="3610,95,3825,121"/>
+<area shape="rect" id="node4" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="5,266,184,293"/>
+<area shape="rect" id="node5" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="1813,348,1931,375"/>
+<area shape="rect" id="node7" href="$multiply_8hpp.html" title="This file defines a multiplication instruction (MUL, MLA)." alt="" coords="208,266,333,293"/>
+<area shape="rect" id="node8" href="$multiply__long_8hpp.html" title="This file defines a multiplication (long) instruction." alt="" coords="357,266,520,293"/>
+<area shape="rect" id="node10" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="3589,423,3688,449"/>
+<area shape="rect" id="node11" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="3709,587,3883,628"/>
+<area shape="rect" id="node13" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="3541,348,3662,375"/>
+<area shape="rect" id="node15" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="1826,177,1918,203"/>
+<area shape="rect" id="node34" href="$isa__decoder_8hpp.html" title="This file defines an instruction decoder." alt="" coords="3257,177,3407,203"/>
+<area shape="rect" id="node35" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="3584,266,3669,293"/>
+<area shape="rect" id="node44" href="$mmu_8hpp.html" title="This file defines the MMU (memory management unit) of the CPU." alt="" coords="3645,177,3768,203"/>
+<area shape="rect" id="node46" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="4313,177,4503,203"/>
+<area shape="rect" id="node47" href="$external__peripheral_8hpp.html" title="This file defines an interface for external peripherals that can be attached to the system via GPIO p..." alt="" coords="4084,497,4233,539"/>
+<area shape="rect" id="node48" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="3993,259,4159,300"/>
+<area shape="rect" id="node49" href="$system__clock__listener_8hpp.html" title="This file defines an interface for a CPU clock listener." alt="" coords="4527,169,4686,211"/>
+<area shape="rect" id="node12" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="3751,676,3841,703"/>
+<area shape="rect" id="node14" title=" " alt="" coords="3459,423,3565,449"/>
+<area shape="rect" id="node16" href="$branch__and__exchange_8hpp.html" title="This file defines a branch and exchange instruction (BX)." alt="" coords="595,266,789,293"/>
+<area shape="rect" id="node17" href="$branch_8hpp.html" title="This file defines a branch instruction (B, BL)." alt="" coords="814,266,909,293"/>
+<area shape="rect" id="node18" href="$single__data__transfer_8hpp.html" title="This file defines single data transfer instruction (LDR, STR)." alt="" coords="933,266,1115,293"/>
+<area shape="rect" id="node19" href="$block__data__transfer_8hpp.html" title="This file defines a block data transfer instruction (LDM, STM)." alt="" coords="1140,266,1319,293"/>
+<area shape="rect" id="node20" href="$halfword__data__transfer_8hpp.html" title="This file defines a Halfword data transfer instruction." alt="" coords="1343,266,1542,293"/>
+<area shape="rect" id="node21" href="$extend_8hpp.html" title="This file defines an extend instruction." alt="" coords="1566,266,1661,293"/>
+<area shape="rect" id="node22" href="$psr__transfer_8hpp.html" title="This file defines a PSR instruction (MRS, MSR)." alt="" coords="1685,266,1811,293"/>
+<area shape="rect" id="node23" href="$cps_8hpp.html" title="This file defines a change processor state instruction (CPS)." alt="" coords="1836,266,1908,293"/>
+<area shape="rect" id="node24" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="1932,259,2089,300"/>
+<area shape="rect" id="node25" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="2113,266,2335,293"/>
+<area shape="rect" id="node26" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="2359,266,2593,293"/>
+<area shape="rect" id="node27" href="$srs_8hpp.html" title="This file defines an SRS instruction (store return state onto a stack)." alt="" coords="2617,266,2687,293"/>
+<area shape="rect" id="node28" href="$rfe_8hpp.html" title="This file defines an RFE instruction (return from exception)." alt="" coords="2711,266,2779,293"/>
+<area shape="rect" id="node29" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="2803,266,2871,293"/>
+<area shape="rect" id="node30" href="$smulxy_8hpp.html" title="This file defines a SMULxy instruction." alt="" coords="2896,266,2992,293"/>
+<area shape="rect" id="node31" href="$smulwy_8hpp.html" title="This file implements a SMULWy instruction." alt="" coords="3016,266,3115,293"/>
+<area shape="rect" id="node32" href="$smlaxy_8hpp.html" title="This file defines a SMLAxy instruction." alt="" coords="3139,266,3235,293"/>
+<area shape="rect" id="node33" href="$smlawy_8hpp.html" title="This file defines a SMLAWy instruction." alt="" coords="3259,266,3357,293"/>
+<area shape="rect" id="node36" href="$cp15_8hpp.html" title="This file defines coprocessor CP15." alt="" coords="3791,348,3996,375"/>
+<area shape="rect" id="node43" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="4021,348,4214,375"/>
+<area shape="rect" id="node37" href="$c1_8hpp.html" title="This file defines the primary register C1 of coprocessor CP15." alt="" coords="3763,423,3829,449"/>
+<area shape="rect" id="node38" href="$primary__reg_8hpp.html" title="This file defines a primary register interface of coprocessor CP15." alt="" coords="3873,505,4002,531"/>
+<area shape="rect" id="node39" href="$c2_8hpp.html" title="This file defines the primary register C2 of coprocessor CP15." alt="" coords="3905,423,3970,449"/>
+<area shape="rect" id="node40" href="$c3_8hpp.html" title="This file defines the primary register C3 of coprocessor CP15." alt="" coords="3994,423,4059,449"/>
+<area shape="rect" id="node41" href="$c7_8hpp.html" title="This file defines the primary register C7 of coprocessor CP15." alt="" coords="4083,423,4149,449"/>
+<area shape="rect" id="node42" href="$c8_8hpp.html" title="This file defines the primary register C8 of coprocessor CP15." alt="" coords="4173,423,4238,449"/>
+<area shape="rect" id="node45" href="$page__table_8hpp.html" title="This file defines a page table." alt="" coords="3795,266,3917,293"/>
 </map>

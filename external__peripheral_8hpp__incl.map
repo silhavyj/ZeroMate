@@ -1,5 +1,5 @@
 <map id="include/zero_mate/external_peripheral.hpp" name="include/zero_mate/external_peripheral.hpp">
 <area shape="rect" id="node1" title="This file defines an interface for external peripherals that can be attached to the system via GPIO p..." alt="" coords="5,5,205,47"/>
-<area shape="rect" id="node2" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="9,169,201,196"/>
-<area shape="rect" id="node3" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="76,95,271,121"/>
+<area shape="rect" id="node2" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="18,95,193,136"/>
+<area shape="rect" id="node3" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="60,184,151,211"/>
 </map>

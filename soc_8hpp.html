@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.2.1</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('soc_8hpp.html',''); initResizable(); }
 <div class="title">soc.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="logger_8hpp_source.html">zero_mate/utils/logger.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="logging__system_8hpp_source.html">zero_mate/utils/logging_system.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="external__peripheral_8hpp_source.html">zero_mate/external_peripheral.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bus_8hpp_source.html">bus.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="core_8hpp_source.html">arm1176jzf_s/core.hpp</a>&quot;</code><br />
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('soc_8hpp.html',''); initResizable(); }
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for soc.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="soc_8hpp__incl.svg" width="4558" height="708"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="soc_8hpp__incl.svg" width="4747" height="723"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -148,9 +148,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a3fb00279320d8e60661fd7967c3ebeb6"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a3fb00279320d8e60661fd7967c3ebeb6">zero_mate::soc::config::sections::Name</a> = &quot;name&quot;</td></tr>
 <tr class="memdesc:a3fb00279320d8e60661fd7967c3ebeb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of an external peripheral.  <a href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a3fb00279320d8e60661fd7967c3ebeb6">More...</a><br /></td></tr>
 <tr class="separator:a3fb00279320d8e60661fd7967c3ebeb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a392cc70e714e5ce5957a87527ba59a7a"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a392cc70e714e5ce5957a87527ba59a7a">zero_mate::soc::config::sections::Pins</a> = &quot;pins&quot;</td></tr>
-<tr class="memdesc:a392cc70e714e5ce5957a87527ba59a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pins an external peripherals is connected to.  <a href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a392cc70e714e5ce5957a87527ba59a7a">More...</a><br /></td></tr>
-<tr class="separator:a392cc70e714e5ce5957a87527ba59a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b0c2f75910c61f0381bf4358cd5a36b"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a7b0c2f75910c61f0381bf4358cd5a36b">zero_mate::soc::config::sections::Connection</a> = &quot;connection&quot;</td></tr>
+<tr class="memdesc:a7b0c2f75910c61f0381bf4358cd5a36b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connection of an external peripheral (GPIO pins, I2C address, etc.)  <a href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a7b0c2f75910c61f0381bf4358cd5a36b">More...</a><br /></td></tr>
+<tr class="separator:a7b0c2f75910c61f0381bf4358cd5a36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f69671d4bbfea1c71b73b19f4a5b23a"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a0f69671d4bbfea1c71b73b19f4a5b23a">zero_mate::soc::config::sections::Lib_Dir</a> = &quot;lib_dir&quot;</td></tr>
 <tr class="memdesc:a0f69671d4bbfea1c71b73b19f4a5b23a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the directory where the shared library is located.  <a href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a0f69671d4bbfea1c71b73b19f4a5b23a">More...</a><br /></td></tr>
 <tr class="separator:a0f69671d4bbfea1c71b73b19f4a5b23a"><td class="memSeparator" colspan="2">&#160;</td></tr>

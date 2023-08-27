@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.2.1</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1utils_1_1CLogging__
 <p>This class defines a logging system that is used throughout the project.  
  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="logger_8hpp_source.html">logger.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="logging__system_8hpp_source.html">logging_system.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -111,7 +111,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adf892e1c0a68ca439ede00464128c563"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#adf892e1c0a68ca439ede00464128c563">Add_Logger</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html">ILogger</a> &gt; logger)</td></tr>
-<tr class="memdesc:adf892e1c0a68ca439ede00464128c563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a logger to the logging system.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#adf892e1c0a68ca439ede00464128c563">More...</a><br /></td></tr>
+<tr class="memdesc:adf892e1c0a68ca439ede00464128c563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a logging_system to the logging system.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#adf892e1c0a68ca439ede00464128c563">More...</a><br /></td></tr>
 <tr class="separator:adf892e1c0a68ca439ede00464128c563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade996da881888272ace7deaa82c975e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html#ade996da881888272ace7deaa82c975e9">Debug</a> (const char *msg, const char *location=__builtin_FILE(), int line=__builtin_LINE())</td></tr>
 <tr class="memdesc:ade996da881888272ace7deaa82c975e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a debug message via all registered loggers.  <a href="classzero__mate_1_1utils_1_1CLogging__System.html#ade996da881888272ace7deaa82c975e9">More...</a><br /></td></tr>
@@ -191,7 +191,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Registers a logger to the logging system. </p>
+<p>Registers a logging_system to the logging system. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">logger</td><td>Logger to be registered </td></tr>
@@ -377,7 +377,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1utils_1_1CLogging__System_a57ed77e1a5cf822cea532cc5e05c3f60_icgraph.svg" width="1231" height="1732"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1utils_1_1CLogging__System_a57ed77e1a5cf822cea532cc5e05c3f60_icgraph.svg" width="1455" height="1619"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -805,8 +805,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/zero_mate/utils/<a class="el" href="logger_8hpp_source.html">logger.hpp</a></li>
-<li>lib/logger/src/<a class="el" href="logger_8cpp.html">logger.cpp</a></li>
+<li>include/zero_mate/utils/<a class="el" href="logging__system_8hpp_source.html">logging_system.hpp</a></li>
+<li>lib/logging_system/src/<a class="el" href="logging__system_8cpp.html">logging_system.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

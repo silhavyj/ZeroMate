@@ -1,0 +1,5 @@
+<map id="zero_mate::peripheral::CMini_UART::Clear_Pending_Receive_IRQ" name="zero_mate::peripheral::CMini_UART::Clear_Pending_Receive_IRQ">
+<area shape="rect" id="node1" title="Clears a pending receive IRQ." alt="" coords="5,45,215,101"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a14bb04f8e7b1c5e26088e3779463b737" title="Helper function to clear global IRQ flags (not those related to a particular IRQ type)." alt="" coords="263,5,462,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aade3f3d1075daa5531f1ab1b27f202de" title="Checks whether there is a pending transmit IRQ." alt="" coords="263,85,463,141"/>
+</map>

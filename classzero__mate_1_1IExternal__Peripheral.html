@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.2.1</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -102,12 +102,12 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1IExternal__Peripher
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a3efd36df268667bc7578ddd15db6fe59"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a3efd36df268667bc7578ddd15db6fe59">NInit_Status</a> { <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a3efd36df268667bc7578ddd15db6fe59ae0aa021e21dddbd6d8cecec71e9cf564">OK</a> = 0
-, <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a3efd36df268667bc7578ddd15db6fe59a06d16a56d9e14931b6e1bc8dadd1f66a">GPIO_Mismatch</a>
-, <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a3efd36df268667bc7578ddd15db6fe59aea185f1055f80afb4d86c1ea0f981c63">Allocation_Error</a>
+<tr class="memitem:aba83a741de9b3e2eb214906d4aa51a00"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#aba83a741de9b3e2eb214906d4aa51a00">NInit_Status</a> : std::uint32_t { <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#aba83a741de9b3e2eb214906d4aa51a00ae0aa021e21dddbd6d8cecec71e9cf564">OK</a> = 0
+, <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#aba83a741de9b3e2eb214906d4aa51a00a06d16a56d9e14931b6e1bc8dadd1f66a">GPIO_Mismatch</a>
+, <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#aba83a741de9b3e2eb214906d4aa51a00aea185f1055f80afb4d86c1ea0f981c63">Allocation_Error</a>
  }</td></tr>
-<tr class="memdesc:a3efd36df268667bc7578ddd15db6fe59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines values that can be returned from the <a class="el" href="external__peripheral_8hpp.html#a02559c093f474a4a40ed312f9fd66d63" title="Creates an instance of an external peripheral.">Create_Peripheral</a> function.  <a href="classzero__mate_1_1IExternal__Peripheral.html#a3efd36df268667bc7578ddd15db6fe59">More...</a><br /></td></tr>
-<tr class="separator:a3efd36df268667bc7578ddd15db6fe59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:aba83a741de9b3e2eb214906d4aa51a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines values that can be returned from the <a class="el" href="external__peripheral_8hpp.html#a8ec2b305d95095a01bc14d1a53cae027" title="Creates an instance of an external peripheral.">Create_Peripheral</a> function.  <a href="classzero__mate_1_1IExternal__Peripheral.html#aba83a741de9b3e2eb214906d4aa51a00">More...</a><br /></td></tr>
+<tr class="separator:aba83a741de9b3e2eb214906d4aa51a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99b9d6f259b06f97cdf1db19deaf4786"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a99b9d6f259b06f97cdf1db19deaf4786">Set_GPIO_Pin_t</a> = int(*)(std::uint32_t, bool)</td></tr>
 <tr class="memdesc:a99b9d6f259b06f97cdf1db19deaf4786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for a function that sets the value of a GPIO pin.  <a href="classzero__mate_1_1IExternal__Peripheral.html#a99b9d6f259b06f97cdf1db19deaf4786">More...</a><br /></td></tr>
 <tr class="separator:a99b9d6f259b06f97cdf1db19deaf4786"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,8 +196,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a3efd36df268667bc7578ddd15db6fe59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3efd36df268667bc7578ddd15db6fe59">&#9670;&nbsp;</a></span>NInit_Status</h2>
+<a id="aba83a741de9b3e2eb214906d4aa51a00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba83a741de9b3e2eb214906d4aa51a00">&#9670;&nbsp;</a></span>NInit_Status</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +206,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#a3efd36df268667bc7578ddd15db6fe59">zero_mate::IExternal_Peripheral::NInit_Status</a></td>
+          <td class="memname">enum <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html#aba83a741de9b3e2eb214906d4aa51a00">zero_mate::IExternal_Peripheral::NInit_Status</a> : std::uint32_t</td>
         </tr>
       </table>
   </td>
@@ -216,13 +216,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Defines values that can be returned from the <a class="el" href="external__peripheral_8hpp.html#a02559c093f474a4a40ed312f9fd66d63" title="Creates an instance of an external peripheral.">Create_Peripheral</a> function. </p>
+<p>Defines values that can be returned from the <a class="el" href="external__peripheral_8hpp.html#a8ec2b305d95095a01bc14d1a53cae027" title="Creates an instance of an external peripheral.">Create_Peripheral</a> function. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3efd36df268667bc7578ddd15db6fe59ae0aa021e21dddbd6d8cecec71e9cf564"></a>OK&#160;</td><td class="fielddoc"><p>All went well. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aba83a741de9b3e2eb214906d4aa51a00ae0aa021e21dddbd6d8cecec71e9cf564"></a>OK&#160;</td><td class="fielddoc"><p>All went well. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a3efd36df268667bc7578ddd15db6fe59a06d16a56d9e14931b6e1bc8dadd1f66a"></a>GPIO_Mismatch&#160;</td><td class="fielddoc"><p>Number of GPIO pins does not match the expected value. </p>
+<tr><td class="fieldname"><a id="aba83a741de9b3e2eb214906d4aa51a00a06d16a56d9e14931b6e1bc8dadd1f66a"></a>GPIO_Mismatch&#160;</td><td class="fielddoc"><p>Number of GPIO pins does not match the expected value. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a3efd36df268667bc7578ddd15db6fe59aea185f1055f80afb4d86c1ea0f981c63"></a>Allocation_Error&#160;</td><td class="fielddoc"><p>Failed to create (allocate) the peripheral. </p>
+<tr><td class="fieldname"><a id="aba83a741de9b3e2eb214906d4aa51a00aea185f1055f80afb4d86c1ea0f981c63"></a>Allocation_Error&#160;</td><td class="fielddoc"><p>Failed to create (allocate) the peripheral. </p>
 </td></tr>
 </table>
 

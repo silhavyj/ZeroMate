@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.2.1</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -137,9 +137,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ab7c06f58fdf9bd0ad522175c47b9dd0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU_1_1TPage__Table__Record.html">TPage_Table_Record</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ab7c06f58fdf9bd0ad522175c47b9dd0e">Get_Page_Table_Record</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Table.html">CPage_Table</a> &amp;page_table, std::uint32_t virtual_addr) const</td></tr>
 <tr class="memdesc:ab7c06f58fdf9bd0ad522175c47b9dd0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a given page from a page table by a given virtual address.  <a href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ab7c06f58fdf9bd0ad522175c47b9dd0e">More...</a><br /></td></tr>
 <tr class="separator:ab7c06f58fdf9bd0ad522175c47b9dd0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1413e798b9ac2d3bcdf521e7dfe7bdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ab1413e798b9ac2d3bcdf521e7dfe7bdf">Verify_Access</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Entry.html">CPage_Entry</a> &amp;page, std::uint32_t virtual_addr, const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">CCPU_Context</a> &amp;cpu_context, bool write_access)</td></tr>
-<tr class="memdesc:ab1413e798b9ac2d3bcdf521e7dfe7bdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies page access (calls a chain of functions that validate the access).  <a href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ab1413e798b9ac2d3bcdf521e7dfe7bdf">More...</a><br /></td></tr>
-<tr class="separator:ab1413e798b9ac2d3bcdf521e7dfe7bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b99dfecfa3116a2524cd0a5e5217a9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a6b99dfecfa3116a2524cd0a5e5217a9a">Flush_TLB_If_Needed</a> ()</td></tr>
 <tr class="memdesc:a6b99dfecfa3116a2524cd0a5e5217a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the TLB entries should be invalidated and if so, it clears the cache.  <a href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a6b99dfecfa3116a2524cd0a5e5217a9a">More...</a><br /></td></tr>
 <tr class="separator:a6b99dfecfa3116a2524cd0a5e5217a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,6 +152,9 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memitem:ac834a31f545bceaea03c3fa127bf0fa1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ac834a31f545bceaea03c3fa127bf0fa1">Verify_Access_Type</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Entry.html">CPage_Entry</a> &amp;page, std::uint32_t virtual_add, bool write_access)</td></tr>
 <tr class="memdesc:ac834a31f545bceaea03c3fa127bf0fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies the access type.  <a href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ac834a31f545bceaea03c3fa127bf0fa1">More...</a><br /></td></tr>
 <tr class="separator:ac834a31f545bceaea03c3fa127bf0fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1413e798b9ac2d3bcdf521e7dfe7bdf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ab1413e798b9ac2d3bcdf521e7dfe7bdf">Verify_Access</a> (const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Entry.html">CPage_Entry</a> &amp;page, std::uint32_t virtual_addr, const <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">CCPU_Context</a> &amp;cpu_context, bool write_access)</td></tr>
+<tr class="memdesc:ab1413e798b9ac2d3bcdf521e7dfe7bdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies page access (calls a chain of functions that validate the access).  <a href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ab1413e798b9ac2d3bcdf521e7dfe7bdf">More...</a><br /></td></tr>
+<tr class="separator:ab1413e798b9ac2d3bcdf521e7dfe7bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -548,7 +548,7 @@ Here is the call graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

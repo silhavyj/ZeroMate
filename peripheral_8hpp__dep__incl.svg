@@ -84,7 +84,7 @@
 <!-- Node31 -->
 <g id="node31" class="node">
 <title>Node31</title>
-<g id="a_node31"><a xlink:href="bsc_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node31"><a xlink:href="bsc_8hpp.html" target="_top" xlink:title="This file defines the BSC peripheral used in BCM2835.">
 <polygon fill="none" stroke="black" points="1913.5,-134.5 1913.5,-164.5 2026.5,-164.5 2026.5,-134.5 1913.5,-134.5"/>
 <text text-anchor="start" x="1921.5" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="1970" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">/bsc.hpp</text>
@@ -675,7 +675,7 @@
 <!-- Node32 -->
 <g id="node32" class="node">
 <title>Node32</title>
-<g id="a_node32"><a xlink:href="bsc_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node32"><a xlink:href="bsc_8cpp.html" target="_top" xlink:title="This file implements the BSC peripheral used in BCM2835.">
 <polygon fill="none" stroke="black" points="1913.5,-67.5 1913.5,-97.5 2026.5,-97.5 2026.5,-67.5 1913.5,-67.5"/>
 <text text-anchor="start" x="1921.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/peripherals</text>
 <text text-anchor="middle" x="1970" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/bsc.cpp</text>

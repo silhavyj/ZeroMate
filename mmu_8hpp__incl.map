@@ -8,17 +8,17 @@
 <area shape="rect" id="node19" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="606,169,819,196"/>
 <area shape="rect" id="node4" href="$c1_8hpp.html" title="This file defines the primary register C1 of coprocessor CP15." alt="" coords="5,244,71,271"/>
 <area shape="rect" id="node5" href="$primary__reg_8hpp.html" title="This file defines a primary register interface of coprocessor CP15." alt="" coords="204,333,333,360"/>
-<area shape="rect" id="node6" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="282,423,477,449"/>
+<area shape="rect" id="node6" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="292,423,467,464"/>
 <area shape="rect" id="node8" href="$c2_8hpp.html" title="This file defines the primary register C2 of coprocessor CP15." alt="" coords="147,244,212,271"/>
 <area shape="rect" id="node9" href="$c3_8hpp.html" title="This file defines the primary register C3 of coprocessor CP15." alt="" coords="236,244,301,271"/>
 <area shape="rect" id="node10" href="$c7_8hpp.html" title="This file defines the primary register C7 of coprocessor CP15." alt="" coords="325,244,391,271"/>
 <area shape="rect" id="node11" href="$c8_8hpp.html" title="This file defines the primary register C8 of coprocessor CP15." alt="" coords="415,244,480,271"/>
 <area shape="rect" id="node12" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="757,244,895,271"/>
-<area shape="rect" id="node7" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="283,497,475,524"/>
+<area shape="rect" id="node7" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="334,512,425,539"/>
 <area shape="rect" id="node14" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="988,319,1149,375"/>
 <area shape="rect" id="node16" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="1173,326,1399,367"/>
 <area shape="rect" id="node17" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="727,326,965,367"/>
-<area shape="rect" id="node15" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="1009,423,1128,449"/>
+<area shape="rect" id="node15" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="1009,430,1128,457"/>
 <area shape="rect" id="node20" title=" " alt="" coords="920,244,1025,271"/>
 <area shape="rect" id="node22" href="$page__entry_8hpp.html" title="This file defines a page table entry." alt="" coords="1061,169,1183,196"/>
 </map>

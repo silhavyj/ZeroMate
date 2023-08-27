@@ -1,9 +1,10 @@
 <map id="zero_mate::peripheral::CBSC::I2C_Send_Stop_Bit" name="zero_mate::peripheral::CBSC::I2C_Send_Stop_Bit">
-<area shape="rect" id="node1" title=" " alt="" coords="5,75,200,116"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" title=" " alt="" coords="248,75,413,116"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="461,75,656,116"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="704,30,907,86"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="706,111,905,152"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="955,5,1168,47"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="964,71,1159,112"/>
+<area shape="rect" id="node1" title="Sends a stop bit (end of a frame)." alt="" coords="5,75,200,116"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" title="Sets the state of a given GPIO pin." alt="" coords="515,75,680,116"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a47d44cc0056a39f0404e501c4449355a" title="Terminates an ongoing transaction (stop bit)." alt="" coords="248,104,467,145"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="728,75,923,116"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="971,30,1173,86"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="973,111,1171,152"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="1221,5,1435,47"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="1231,71,1425,112"/>
 </map>

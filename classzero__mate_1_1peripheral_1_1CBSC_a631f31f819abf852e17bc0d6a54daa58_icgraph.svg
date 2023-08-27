@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Checks whether the FIFO should be cleared or not.">
 <polygon fill="#bfbfbf" stroke="black" points="357,-0.5 357,-41.5 491,-41.5 491,-0.5 357,-0.5"/>
 <text text-anchor="start" x="365" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="365" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Should_FIFO_Be</text>
@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15" target="_top" xlink:title="Performs actions after the control register has been written to.">
 <polygon fill="none" stroke="black" points="160,-6 160,-36 321,-36 321,-6 160,-6"/>
 <text text-anchor="start" x="168" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="240.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Control_Reg_Callback</text>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d" target="_top" xlink:title="Writes data to the peripheral.">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d" target="_top" xlink:title="Writes data to the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="0,-6 0,-36 124,-36 124,-6 0,-6"/>
 <text text-anchor="start" x="8" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="62" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Write</text>

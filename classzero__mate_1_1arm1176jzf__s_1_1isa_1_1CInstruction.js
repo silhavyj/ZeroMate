@@ -45,6 +45,10 @@ var classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction =
       [ "SRS", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba01e286717a0e2b926dd55314ec263883", null ],
       [ "RFE", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbab343befc76d20be6b994a4f728d96a78", null ],
       [ "CLZ", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba923009aed29c885c8df27915d76e15ed", null ],
+      [ "SMULxy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba7e0479c01b56deba8080730b37149322", null ],
+      [ "SMULWy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbac2c0c498c2260e32441fe42a0a15406b", null ],
+      [ "SMLAxy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba377de2895264b9d9f26eea2fa61adc05", null ],
+      [ "SMLAWy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba2b1379d8406885a99e4897d6820c4ff8", null ],
       [ "Unknown", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba88183b946cc5f0e8c96b2e66e1c74a7e", null ]
     ] ],
     [ "CInstruction", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#af0813b890400084720f720a1cfb6a683", null ],

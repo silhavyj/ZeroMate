@@ -50,19 +50,19 @@
 <path fill="none" stroke="midnightblue" d="M124.05,-441C132.39,-441 141.05,-441 149.66,-441"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="149.72,-444.5 159.72,-441 149.72,-437.5 149.72,-444.5"/>
 </g>
-<!-- Node17 -->
-<g id="node17" class="node">
-<title>Node17</title>
-<g id="a_node17"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a39f26f9ac5a5cb08b2a292f5c6fab6db" target="_top" xlink:title="Updates the transmission state machine.">
+<!-- Node18 -->
+<g id="node18" class="node">
+<title>Node18</title>
+<g id="a_node18"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a39f26f9ac5a5cb08b2a292f5c6fab6db" target="_top" xlink:title="Updates the transmission state machine.">
 <polygon fill="none" stroke="black" points="160.5,-186 160.5,-216 300.5,-216 300.5,-186 160.5,-186"/>
 <text text-anchor="start" x="168.5" y="-204" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="230.5" y="-193" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Update_TX</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node17 -->
-<g id="edge16" class="edge">
-<title>Node1&#45;&gt;Node17</title>
+<!-- Node1&#45;&gt;Node18 -->
+<g id="edge17" class="edge">
+<title>Node1&#45;&gt;Node18</title>
 <path fill="none" stroke="midnightblue" d="M73.42,-425.99C101.56,-385.41 179.32,-273.33 213.28,-224.38"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="216.26,-226.22 219.09,-216.01 210.51,-222.23 216.26,-226.22"/>
 </g>
@@ -70,18 +70,18 @@
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a2a71009ed1f6227341dad8926bd73d81" target="_top" xlink:title="Returns information about whether the receiver is enabled or not.">
-<polygon fill="none" stroke="black" points="347.5,-540.5 347.5,-581.5 490.5,-581.5 490.5,-540.5 347.5,-540.5"/>
-<text text-anchor="start" x="355.5" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="355.5" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Is_Receiver</text>
-<text text-anchor="middle" x="419" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Enabled</text>
+<polygon fill="none" stroke="black" points="347.5,-480.5 347.5,-521.5 490.5,-521.5 490.5,-480.5 347.5,-480.5"/>
+<text text-anchor="start" x="355.5" y="-509.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="355.5" y="-498.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Is_Receiver</text>
+<text text-anchor="middle" x="419" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Enabled</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M286.01,-456.15C291.39,-458.92 296.51,-462.18 301,-466 326.15,-487.4 311.95,-509.48 337,-531 338.54,-532.32 340.13,-533.58 341.79,-534.79"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="340.13,-537.89 350.43,-540.41 343.95,-532.02 340.13,-537.89"/>
+<path fill="none" stroke="midnightblue" d="M278.56,-456.14C298.49,-462.55 322.18,-470.17 344.33,-477.3"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="343.45,-480.69 354.05,-480.42 345.6,-474.03 343.45,-480.69"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
@@ -104,151 +104,151 @@
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a5c52c4391c9796abe9e33d0b672af4e0" target="_top" xlink:title="Receives a start bit.">
-<polygon fill="none" stroke="black" points="340,-420.5 340,-461.5 498,-461.5 498,-420.5 340,-420.5"/>
-<text text-anchor="start" x="348" y="-449.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="348" y="-438.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Receive</text>
-<text text-anchor="middle" x="419" y="-427.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Start_Bit</text>
+<polygon fill="none" stroke="black" points="340,-540.5 340,-581.5 498,-581.5 498,-540.5 340,-540.5"/>
+<text text-anchor="start" x="348" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="348" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Receive</text>
+<text text-anchor="middle" x="419" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Start_Bit</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node3&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M301.21,-441C310.48,-441 320.08,-441 329.62,-441"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="329.92,-444.5 339.92,-441 329.92,-437.5 329.92,-444.5"/>
+<path fill="none" stroke="midnightblue" d="M286.01,-456.15C291.39,-458.92 296.51,-462.18 301,-466 326.15,-487.4 311.95,-509.48 337,-531 338.54,-532.32 340.13,-533.58 341.79,-534.79"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="340.13,-537.89 350.43,-540.41 343.95,-532.02 340.13,-537.89"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
 <g id="a_node9"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#af0ac73a2cea4c4fb61673803f60cf9e6" target="_top" xlink:title="Receives a stop bit.">
-<polygon fill="none" stroke="black" points="340,-480.5 340,-521.5 498,-521.5 498,-480.5 340,-480.5"/>
-<text text-anchor="start" x="348" y="-509.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="348" y="-498.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Receive</text>
-<text text-anchor="middle" x="419" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Stop_Bit</text>
+<polygon fill="none" stroke="black" points="340,-420.5 340,-461.5 498,-461.5 498,-420.5 340,-420.5"/>
+<text text-anchor="start" x="348" y="-449.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="348" y="-438.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Receive</text>
+<text text-anchor="middle" x="419" y="-427.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Stop_Bit</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
 <title>Node3&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M278.56,-456.14C298.49,-462.55 322.18,-470.17 344.33,-477.3"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="343.45,-480.69 354.05,-480.42 345.6,-474.03 343.45,-480.69"/>
+<path fill="none" stroke="midnightblue" d="M301.21,-441C310.48,-441 320.08,-441 329.62,-441"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="329.92,-444.5 339.92,-441 329.92,-437.5 329.92,-444.5"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a2f29b39f721b4ae5acf81f61ab210325" target="_top" xlink:title="Returns the length of payload (7 or 8 bits).">
-<polygon fill="none" stroke="black" points="542.5,-274.5 542.5,-315.5 674.5,-315.5 674.5,-274.5 542.5,-274.5"/>
-<text text-anchor="start" x="550.5" y="-303.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="550.5" y="-292.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Get_Char</text>
-<text text-anchor="middle" x="608.5" y="-281.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Length</text>
+<polygon fill="none" stroke="black" points="542.5,-238.5 542.5,-279.5 674.5,-279.5 674.5,-238.5 542.5,-238.5"/>
+<text text-anchor="start" x="550.5" y="-267.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="550.5" y="-256.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Get_Char</text>
+<text text-anchor="middle" x="608.5" y="-245.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Length</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M498.16,-310.16C509.39,-308.6 520.93,-307 532.11,-305.45"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="532.83,-308.89 542.25,-304.05 531.87,-301.95 532.83,-308.89"/>
+<path fill="none" stroke="midnightblue" d="M482.17,-300.44C499.35,-294.76 518.13,-288.55 535.81,-282.71"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="537.1,-285.97 545.49,-279.5 534.9,-279.32 537.1,-285.97"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a4e01dd26b71c9c13ec8a81510cbf2450" target="_top" xlink:title="Returns the data length from a given enumeration.">
-<polygon fill="none" stroke="black" points="542.5,-201.5 542.5,-242.5 674.5,-242.5 674.5,-201.5 542.5,-201.5"/>
-<text text-anchor="start" x="550.5" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="550.5" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Get_Char</text>
-<text text-anchor="middle" x="608.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Length_Value</text>
+<polygon fill="none" stroke="black" points="542.5,-298.5 542.5,-339.5 674.5,-339.5 674.5,-298.5 542.5,-298.5"/>
+<text text-anchor="start" x="550.5" y="-327.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="550.5" y="-316.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Get_Char</text>
+<text text-anchor="middle" x="608.5" y="-305.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Length_Value</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node5&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M480.95,-300.48C487.83,-297.56 494.65,-294.39 501,-291 518.41,-281.71 520.56,-275.92 537,-265 545.51,-259.35 554.74,-253.51 563.64,-248.03"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="565.67,-250.89 572.38,-242.68 562.02,-244.91 565.67,-250.89"/>
+<path fill="none" stroke="midnightblue" d="M498.16,-320.17C509.39,-320.05 520.93,-319.92 532.11,-319.8"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="532.29,-323.3 542.25,-319.7 532.21,-316.3 532.29,-323.3"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
 <g id="a_node10"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" target="_top" xlink:title="Logs an error message via all registered loggers.">
-<polygon fill="none" stroke="black" points="904,-325 904,-355 1050,-355 1050,-325 904,-325"/>
-<text text-anchor="start" x="912" y="-343" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
-<text text-anchor="middle" x="977" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Error</text>
+<polygon fill="none" stroke="black" points="904,-326 904,-356 1050,-356 1050,-326 904,-326"/>
+<text text-anchor="start" x="912" y="-344" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
+<text text-anchor="middle" x="977" y="-333" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Error</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
 <g id="edge9" class="edge">
 <title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M498.04,-510.93C550.33,-515.18 620.29,-516.19 680,-501 787.72,-473.6 898.6,-398.18 948.61,-361.12"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="950.75,-363.88 956.66,-355.09 946.56,-358.28 950.75,-363.88"/>
+<path fill="none" stroke="midnightblue" d="M487.95,-461.55C578.82,-485.17 742.98,-514.06 868,-459 911.39,-439.89 944.93,-393.8 962.47,-365.21"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="965.7,-366.63 967.8,-356.24 959.68,-363.05 965.7,-366.63"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
 <g id="a_node15"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#aafdd369ea20fb588fdba59b98e20b3b8" target="_top" xlink:title="Returns information about a receive interrupt is enabled.">
-<polygon fill="none" stroke="black" points="538.5,-450.5 538.5,-491.5 678.5,-491.5 678.5,-450.5 538.5,-450.5"/>
-<text text-anchor="start" x="546.5" y="-479.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="546.5" y="-468.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Is_Receive</text>
-<text text-anchor="middle" x="608.5" y="-457.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Interrupt_Enabled</text>
+<polygon fill="none" stroke="black" points="538.5,-506.5 538.5,-547.5 678.5,-547.5 678.5,-506.5 538.5,-506.5"/>
+<text text-anchor="start" x="546.5" y="-535.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="546.5" y="-524.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Is_Receive</text>
+<text text-anchor="middle" x="608.5" y="-513.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Interrupt_Enabled</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node15 -->
 <g id="edge14" class="edge">
 <title>Node9&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M498.16,-488.49C508.18,-486.89 518.45,-485.25 528.49,-483.64"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="529.11,-487.09 538.43,-482.05 528,-480.18 529.11,-487.09"/>
+<path fill="none" stroke="midnightblue" d="M479.33,-461.62C486.71,-464.58 494.09,-467.73 501,-471 517.75,-478.91 520.7,-483.21 537,-492 542.98,-495.22 549.3,-498.52 555.59,-501.73"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="554.26,-504.97 564.76,-506.36 557.41,-498.73 554.26,-504.97"/>
 </g>
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a792a3a1a286bf0e7f47bb255bc104294" target="_top" xlink:title="Triggers an interrupt.">
-<polygon fill="none" stroke="black" points="537,-401 537,-431 680,-431 680,-401 537,-401"/>
-<text text-anchor="start" x="545" y="-419" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="middle" x="608.5" y="-408" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Trigger_IRQ</text>
+<g id="a_node16"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a8711d81118c89d5174a68d5b63ad3fac" target="_top" xlink:title="Triggers an interrupt.">
+<polygon fill="none" stroke="black" points="537,-419 537,-449 680,-449 680,-419 537,-419"/>
+<text text-anchor="start" x="545" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="middle" x="608.5" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Trigger_IRQ</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node16 -->
 <g id="edge15" class="edge">
 <title>Node9&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M482.47,-480.34C488.87,-477.5 495.16,-474.38 501,-471 519.03,-460.57 518.9,-451.31 537,-441 540.68,-438.9 544.57,-436.93 548.55,-435.1"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="550.16,-438.21 557.96,-431.04 547.39,-431.78 550.16,-438.21"/>
+<path fill="none" stroke="midnightblue" d="M498.16,-438.08C507.6,-437.73 517.27,-437.37 526.75,-437.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="527.09,-440.5 536.95,-436.63 526.82,-433.51 527.09,-440.5"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
 <g id="a_node11"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" target="_top" xlink:title="Creates a formatted message to be logged.">
-<polygon fill="none" stroke="black" points="1086,-347.5 1086,-388.5 1238,-388.5 1238,-347.5 1086,-347.5"/>
-<text text-anchor="start" x="1094" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
-<text text-anchor="start" x="1094" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Create_Formatted</text>
-<text text-anchor="middle" x="1162" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Log_Msg</text>
+<polygon fill="none" stroke="black" points="1086,-348.5 1086,-389.5 1238,-389.5 1238,-348.5 1086,-348.5"/>
+<text text-anchor="start" x="1094" y="-377.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
+<text text-anchor="start" x="1094" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Create_Formatted</text>
+<text text-anchor="middle" x="1162" y="-355.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Log_Msg</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
 <title>Node10&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M1050.06,-351.03C1058.55,-352.32 1067.26,-353.66 1075.9,-354.98"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1075.58,-358.47 1085.99,-356.52 1076.64,-351.55 1075.58,-358.47"/>
+<path fill="none" stroke="midnightblue" d="M1050.06,-352.03C1058.55,-353.32 1067.26,-354.66 1075.9,-355.98"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1075.58,-359.47 1085.99,-357.52 1076.64,-352.55 1075.58,-359.47"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
 <g id="a_node14"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" target="_top" xlink:title="Extract the filename from a given location within the source files.">
-<polygon fill="none" stroke="black" points="1087.5,-298 1087.5,-328 1236.5,-328 1236.5,-298 1087.5,-298"/>
-<text text-anchor="start" x="1095.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
-<text text-anchor="middle" x="1162" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Extract_Filename</text>
+<polygon fill="none" stroke="black" points="1087.5,-299 1087.5,-329 1236.5,-329 1236.5,-299 1087.5,-299"/>
+<text text-anchor="start" x="1095.5" y="-317" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
+<text text-anchor="middle" x="1162" y="-306" font-family="Helvetica,sans-Serif" font-size="10.00">_System::Extract_Filename</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node14 -->
 <g id="edge13" class="edge">
 <title>Node10&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M1050.06,-329.37C1059.1,-328.03 1068.4,-326.66 1077.59,-325.31"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1078.12,-328.77 1087.5,-323.84 1077.1,-321.84 1078.12,-328.77"/>
+<path fill="none" stroke="midnightblue" d="M1050.06,-330.37C1059.1,-329.03 1068.4,-327.66 1077.59,-326.31"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1078.12,-329.77 1087.5,-324.84 1077.1,-322.84 1078.12,-329.77"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
@@ -263,8 +263,8 @@
 <!-- Node11&#45;&gt;Node12 -->
 <g id="edge11" class="edge">
 <title>Node11&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M1238.09,-377.88C1246.52,-378.99 1255.16,-380.13 1263.74,-381.26"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1263.4,-384.74 1273.77,-382.57 1264.31,-377.8 1263.4,-384.74"/>
+<path fill="none" stroke="midnightblue" d="M1238.09,-378.49C1246.52,-379.55 1255.16,-380.64 1263.74,-381.73"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1263.41,-385.21 1273.77,-382.99 1264.29,-378.27 1263.41,-385.21"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
@@ -279,47 +279,64 @@
 <!-- Node11&#45;&gt;Node13 -->
 <g id="edge12" class="edge">
 <title>Node11&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M1238.09,-358.51C1248.89,-357.15 1260.05,-355.74 1270.98,-354.36"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1271.45,-357.83 1280.93,-353.1 1270.57,-350.88 1271.45,-357.83"/>
+<path fill="none" stroke="midnightblue" d="M1238.09,-359.12C1248.89,-357.7 1260.05,-356.23 1270.98,-354.79"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1271.47,-358.26 1280.93,-353.48 1270.56,-351.32 1271.47,-358.26"/>
 </g>
-<!-- Node18 -->
-<g id="node18" class="node">
-<title>Node18</title>
-<g id="a_node18"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a2786f867a05087fc463657262594db71" target="_top" xlink:title="Returns information about whether the transmission FIFO is empty or not.">
-<polygon fill="none" stroke="black" points="337,-240.5 337,-281.5 501,-281.5 501,-240.5 337,-240.5"/>
-<text text-anchor="start" x="345" y="-269.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="345" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Is_Transmission</text>
-<text text-anchor="middle" x="419" y="-247.5" font-family="Helvetica,sans-Serif" font-size="10.00">_FIFO_Empty</text>
+<!-- Node17 -->
+<g id="node17" class="node">
+<title>Node17</title>
+<g id="a_node17"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#aeedc743fe9b70dfb0019b775e2ea714a" target="_top" xlink:title="Sets the type of a pending IRQ in the IIR register.">
+<polygon fill="none" stroke="black" points="718.5,-408.5 718.5,-449.5 865.5,-449.5 865.5,-408.5 718.5,-408.5"/>
+<text text-anchor="start" x="726.5" y="-437.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="726.5" y="-426.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Set_Pending</text>
+<text text-anchor="middle" x="792" y="-415.5" font-family="Helvetica,sans-Serif" font-size="10.00">_IRQ_Type</text>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node18 -->
-<g id="edge17" class="edge">
-<title>Node17&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M278.56,-216.14C298.49,-222.55 322.18,-230.17 344.33,-237.3"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="343.45,-240.69 354.05,-240.42 345.6,-234.03 343.45,-240.69"/>
+<!-- Node16&#45;&gt;Node17 -->
+<g id="edge16" class="edge">
+<title>Node16&#45;&gt;Node17</title>
+<path fill="none" stroke="midnightblue" d="M680.19,-432.05C689.4,-431.8 698.9,-431.54 708.29,-431.28"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="708.51,-434.77 718.41,-431 708.31,-427.78 708.51,-434.77"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a968340fbf2802af5178531146bca03c8" target="_top" xlink:title="Returns information about whether the transmitter is enabled or not.">
-<polygon fill="none" stroke="black" points="341,-180.5 341,-221.5 497,-221.5 497,-180.5 341,-180.5"/>
-<text text-anchor="start" x="349" y="-209.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="349" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Is_Transmitter</text>
-<text text-anchor="middle" x="419" y="-187.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Enabled</text>
+<g id="a_node19"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a2786f867a05087fc463657262594db71" target="_top" xlink:title="Returns information about whether the transmission FIFO is empty or not.">
+<polygon fill="none" stroke="black" points="337,-60.5 337,-101.5 501,-101.5 501,-60.5 337,-60.5"/>
+<text text-anchor="start" x="345" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="345" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Is_Transmission</text>
+<text text-anchor="middle" x="419" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">_FIFO_Empty</text>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node19 -->
+<!-- Node18&#45;&gt;Node19 -->
 <g id="edge18" class="edge">
-<title>Node17&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M300.68,-201C310.48,-201 320.65,-201 330.74,-201"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="330.77,-204.5 340.77,-201 330.77,-197.5 330.77,-204.5"/>
+<title>Node18&#45;&gt;Node19</title>
+<path fill="none" stroke="midnightblue" d="M245.92,-185.74C265.11,-166.16 300.87,-132.2 337,-111 340,-109.24 343.12,-107.55 346.32,-105.94"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="347.96,-109.04 355.49,-101.59 344.96,-102.71 347.96,-109.04"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#af791add34c2efc17007de9d20185b24d" target="_top" xlink:title="Resets transmission (end of the current UART frame).">
+<g id="a_node20"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a968340fbf2802af5178531146bca03c8" target="_top" xlink:title="Returns information about whether the transmitter is enabled or not.">
+<polygon fill="none" stroke="black" points="341,-0.5 341,-41.5 497,-41.5 497,-0.5 341,-0.5"/>
+<text text-anchor="start" x="349" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="349" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Is_Transmitter</text>
+<text text-anchor="middle" x="419" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Enabled</text>
+</a>
+</g>
+</g>
+<!-- Node18&#45;&gt;Node20 -->
+<g id="edge19" class="edge">
+<title>Node18&#45;&gt;Node20</title>
+<path fill="none" stroke="midnightblue" d="M238.24,-185.96C252.35,-156.09 287.81,-88.88 337,-51 338.83,-49.59 340.74,-48.24 342.71,-46.94"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="344.83,-49.76 351.65,-41.65 341.26,-43.73 344.83,-49.76"/>
+</g>
+<!-- Node21 -->
+<g id="node21" class="node">
+<title>Node21</title>
+<g id="a_node21"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#af791add34c2efc17007de9d20185b24d" target="_top" xlink:title="Resets transmission (end of the current UART frame).">
 <polygon fill="none" stroke="black" points="346,-360.5 346,-401.5 492,-401.5 492,-360.5 346,-360.5"/>
 <text text-anchor="start" x="354" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="354" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Reset</text>
@@ -327,147 +344,147 @@
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node20 -->
-<g id="edge19" class="edge">
-<title>Node17&#45;&gt;Node20</title>
+<!-- Node18&#45;&gt;Node21 -->
+<g id="edge20" class="edge">
+<title>Node18&#45;&gt;Node21</title>
 <path fill="none" stroke="midnightblue" d="M238.24,-216.04C252.35,-245.91 287.81,-313.12 337,-351 338.83,-352.41 340.74,-353.76 342.71,-355.06"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="341.26,-358.27 351.65,-360.35 344.83,-352.24 341.26,-358.27"/>
-</g>
-<!-- Node22 -->
-<g id="node22" class="node">
-<title>Node22</title>
-<g id="a_node22"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a2c1cebe25a3de866fb30387c9d3e1093" target="_top" xlink:title="Sends another bit of the current payload (actual data).">
-<polygon fill="none" stroke="black" points="347.5,-120.5 347.5,-161.5 490.5,-161.5 490.5,-120.5 347.5,-120.5"/>
-<text text-anchor="start" x="355.5" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="355.5" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Send</text>
-<text text-anchor="middle" x="419" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Payload</text>
-</a>
-</g>
-</g>
-<!-- Node17&#45;&gt;Node22 -->
-<g id="edge22" class="edge">
-<title>Node17&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M278.56,-185.86C298.49,-179.45 322.18,-171.83 344.33,-164.7"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="345.6,-167.97 354.05,-161.58 343.45,-161.31 345.6,-167.97"/>
-</g>
-<!-- Node25 -->
-<g id="node25" class="node">
-<title>Node25</title>
-<g id="a_node25"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a8af3940e255317e7282402dce11c2d33" target="_top" xlink:title="Sends a start bit.">
-<polygon fill="none" stroke="black" points="347.5,-0.5 347.5,-41.5 490.5,-41.5 490.5,-0.5 347.5,-0.5"/>
-<text text-anchor="start" x="355.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="355.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Send</text>
-<text text-anchor="middle" x="419" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Start_Bit</text>
-</a>
-</g>
-</g>
-<!-- Node17&#45;&gt;Node25 -->
-<g id="edge28" class="edge">
-<title>Node17&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M238.24,-185.96C252.35,-156.09 287.81,-88.88 337,-51 338.83,-49.59 340.74,-48.24 342.71,-46.94"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="344.83,-49.76 351.65,-41.65 341.26,-43.73 344.83,-49.76"/>
-</g>
-<!-- Node26 -->
-<g id="node26" class="node">
-<title>Node26</title>
-<g id="a_node26"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#ad15628b6f928101a1844704a58b11cdb" target="_top" xlink:title="Sends a stop bit.">
-<polygon fill="none" stroke="black" points="347.5,-60.5 347.5,-101.5 490.5,-101.5 490.5,-60.5 347.5,-60.5"/>
-<text text-anchor="start" x="355.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="355.5" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Send</text>
-<text text-anchor="middle" x="419" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Stop_bit</text>
-</a>
-</g>
-</g>
-<!-- Node17&#45;&gt;Node26 -->
-<g id="edge30" class="edge">
-<title>Node17&#45;&gt;Node26</title>
-<path fill="none" stroke="midnightblue" d="M245.92,-185.74C265.11,-166.16 300.87,-132.2 337,-111 340,-109.24 343.12,-107.55 346.32,-105.94"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="347.96,-109.04 355.49,-101.59 344.96,-102.71 347.96,-109.04"/>
-</g>
-<!-- Node20&#45;&gt;Node16 -->
-<g id="edge21" class="edge">
-<title>Node20&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M492.22,-394.48C503.55,-396.6 515.33,-398.79 526.83,-400.94"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="526.38,-404.42 536.86,-402.81 527.67,-397.54 526.38,-404.42"/>
-</g>
-<!-- Node21 -->
-<g id="node21" class="node">
-<title>Node21</title>
-<g id="a_node21"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a1e54d90a036d327e36d06a74be1595c3" target="_top" xlink:title="Returns information about a transmit interrupt is enabled.">
-<polygon fill="none" stroke="black" points="537,-340.5 537,-381.5 680,-381.5 680,-340.5 537,-340.5"/>
-<text text-anchor="start" x="545" y="-369.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="start" x="545" y="-358.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Is_Transmit</text>
-<text text-anchor="middle" x="608.5" y="-347.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Interrupt_Enabled</text>
-</a>
-</g>
-</g>
-<!-- Node20&#45;&gt;Node21 -->
-<g id="edge20" class="edge">
-<title>Node20&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M492.22,-373.3C503.55,-372.09 515.33,-370.83 526.83,-369.6"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="527.29,-373.08 536.86,-368.54 526.54,-366.12 527.29,-373.08"/>
-</g>
-<!-- Node22&#45;&gt;Node6 -->
-<g id="edge23" class="edge">
-<title>Node22&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M488.71,-161.68C493.12,-164.42 497.28,-167.51 501,-171 529.73,-197.96 511,-222.4 537,-252 542.39,-258.14 548.87,-263.67 555.69,-268.56"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="554.19,-271.77 564.45,-274.42 558.08,-265.96 554.19,-271.77"/>
-</g>
-<!-- Node22&#45;&gt;Node7 -->
-<g id="edge24" class="edge">
-<title>Node22&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M477.78,-161.66C485.63,-164.68 493.54,-167.84 501,-171 519.81,-178.97 540.11,-188.46 557.89,-197.08"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="556.41,-200.25 566.94,-201.49 559.49,-193.96 556.41,-200.25"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#aa97db5d47b819acd85beda1dc91cb355" target="_top" xlink:title="Sets the state of the TX pin.">
-<polygon fill="none" stroke="black" points="538,-96 538,-126 679,-126 679,-96 538,-96"/>
-<text text-anchor="start" x="546" y="-114" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="middle" x="608.5" y="-103" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Set_TX_Pin</text>
+<g id="a_node23"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a2c1cebe25a3de866fb30387c9d3e1093" target="_top" xlink:title="Sends another bit of the current payload (actual data).">
+<polygon fill="none" stroke="black" points="347.5,-240.5 347.5,-281.5 490.5,-281.5 490.5,-240.5 347.5,-240.5"/>
+<text text-anchor="start" x="355.5" y="-269.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="355.5" y="-258.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Send</text>
+<text text-anchor="middle" x="419" y="-247.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Payload</text>
 </a>
 </g>
 </g>
-<!-- Node22&#45;&gt;Node23 -->
+<!-- Node18&#45;&gt;Node23 -->
+<g id="edge23" class="edge">
+<title>Node18&#45;&gt;Node23</title>
+<path fill="none" stroke="midnightblue" d="M278.56,-216.14C298.49,-222.55 322.18,-230.17 344.33,-237.3"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="343.45,-240.69 354.05,-240.42 345.6,-234.03 343.45,-240.69"/>
+</g>
+<!-- Node26 -->
+<g id="node26" class="node">
+<title>Node26</title>
+<g id="a_node26"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a8af3940e255317e7282402dce11c2d33" target="_top" xlink:title="Sends a start bit.">
+<polygon fill="none" stroke="black" points="347.5,-120.5 347.5,-161.5 490.5,-161.5 490.5,-120.5 347.5,-120.5"/>
+<text text-anchor="start" x="355.5" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="355.5" y="-138.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Send</text>
+<text text-anchor="middle" x="419" y="-127.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Start_Bit</text>
+</a>
+</g>
+</g>
+<!-- Node18&#45;&gt;Node26 -->
+<g id="edge29" class="edge">
+<title>Node18&#45;&gt;Node26</title>
+<path fill="none" stroke="midnightblue" d="M278.56,-185.86C298.49,-179.45 322.18,-171.83 344.33,-164.7"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="345.6,-167.97 354.05,-161.58 343.45,-161.31 345.6,-167.97"/>
+</g>
+<!-- Node27 -->
+<g id="node27" class="node">
+<title>Node27</title>
+<g id="a_node27"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#ad15628b6f928101a1844704a58b11cdb" target="_top" xlink:title="Sends a stop bit.">
+<polygon fill="none" stroke="black" points="347.5,-180.5 347.5,-221.5 490.5,-221.5 490.5,-180.5 347.5,-180.5"/>
+<text text-anchor="start" x="355.5" y="-209.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="355.5" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::UART_Send</text>
+<text text-anchor="middle" x="419" y="-187.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Stop_bit</text>
+</a>
+</g>
+</g>
+<!-- Node18&#45;&gt;Node27 -->
+<g id="edge31" class="edge">
+<title>Node18&#45;&gt;Node27</title>
+<path fill="none" stroke="midnightblue" d="M300.68,-201C312.59,-201 325.05,-201 337.23,-201"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="337.37,-204.5 347.37,-201 337.37,-197.5 337.37,-204.5"/>
+</g>
+<!-- Node21&#45;&gt;Node16 -->
+<g id="edge22" class="edge">
+<title>Node21&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M492.22,-401.42C509.47,-406.29 527.75,-411.46 544.54,-416.2"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="543.66,-419.59 554.24,-418.94 545.57,-412.86 543.66,-419.59"/>
+</g>
+<!-- Node22 -->
+<g id="node22" class="node">
+<title>Node22</title>
+<g id="a_node22"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a1e54d90a036d327e36d06a74be1595c3" target="_top" xlink:title="Returns information about a transmit interrupt is enabled.">
+<polygon fill="none" stroke="black" points="537,-358.5 537,-399.5 680,-399.5 680,-358.5 537,-358.5"/>
+<text text-anchor="start" x="545" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="start" x="545" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Is_Transmit</text>
+<text text-anchor="middle" x="608.5" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">_Interrupt_Enabled</text>
+</a>
+</g>
+</g>
+<!-- Node21&#45;&gt;Node22 -->
+<g id="edge21" class="edge">
+<title>Node21&#45;&gt;Node22</title>
+<path fill="none" stroke="midnightblue" d="M492.22,-380.23C503.55,-380.11 515.33,-379.98 526.83,-379.86"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="526.9,-383.36 536.86,-379.75 526.82,-376.36 526.9,-383.36"/>
+</g>
+<!-- Node23&#45;&gt;Node6 -->
+<g id="edge24" class="edge">
+<title>Node23&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M490.62,-260.25C504.1,-260.1 518.27,-259.95 531.9,-259.81"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="532.24,-263.3 542.2,-259.7 532.16,-256.3 532.24,-263.3"/>
+</g>
+<!-- Node23&#45;&gt;Node7 -->
 <g id="edge25" class="edge">
-<title>Node22&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M490.62,-129.7C502.7,-127.77 515.33,-125.75 527.64,-123.78"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="528.56,-127.18 537.88,-122.14 527.45,-120.26 528.56,-127.18"/>
+<title>Node23&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M486.37,-281.53C501.32,-286.15 517.29,-291.09 532.56,-295.82"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="531.89,-299.28 542.48,-298.89 533.96,-292.59 531.89,-299.28"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node">
 <title>Node24</title>
-<g id="a_node24"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a9243af4f42d118a598a00c0f79d366e1" target="_top" xlink:title="Sets the state of a given GPIO pin.">
-<polygon fill="none" stroke="black" points="716,-303 716,-333 868,-333 868,-303 716,-303"/>
-<text text-anchor="start" x="724" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="middle" x="792" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Set_GPIO_pin</text>
+<g id="a_node24"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#aa97db5d47b819acd85beda1dc91cb355" target="_top" xlink:title="Sets the state of the TX pin.">
+<polygon fill="none" stroke="black" points="538,-188 538,-218 679,-218 679,-188 538,-188"/>
+<text text-anchor="start" x="546" y="-206" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="middle" x="608.5" y="-195" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Set_TX_Pin</text>
 </a>
 </g>
 </g>
 <!-- Node23&#45;&gt;Node24 -->
 <g id="edge26" class="edge">
 <title>Node23&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M622.85,-126.22C654.38,-162.18 733.63,-252.57 770.96,-295.15"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="768.41,-297.54 777.63,-302.76 773.67,-292.93 768.41,-297.54"/>
+<path fill="none" stroke="midnightblue" d="M486.37,-240.47C506.92,-234.11 529.4,-227.16 549.35,-220.99"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="550.4,-224.33 558.92,-218.03 548.33,-217.64 550.4,-224.33"/>
 </g>
-<!-- Node24&#45;&gt;Node10 -->
+<!-- Node25 -->
+<g id="node25" class="node">
+<title>Node25</title>
+<g id="a_node25"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#a9243af4f42d118a598a00c0f79d366e1" target="_top" xlink:title="Sets the state of a given GPIO pin.">
+<polygon fill="none" stroke="black" points="716,-274 716,-304 868,-304 868,-274 716,-274"/>
+<text text-anchor="start" x="724" y="-292" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
+<text text-anchor="middle" x="792" y="-281" font-family="Helvetica,sans-Serif" font-size="10.00">::CMini_UART::Set_GPIO_pin</text>
+</a>
+</g>
+</g>
+<!-- Node24&#45;&gt;Node25 -->
 <g id="edge27" class="edge">
-<title>Node24&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M868.23,-327.04C876.57,-328.05 885.09,-329.07 893.52,-330.08"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="893.37,-333.59 903.72,-331.31 894.21,-326.64 893.37,-333.59"/>
+<title>Node24&#45;&gt;Node25</title>
+<path fill="none" stroke="midnightblue" d="M653.52,-218.13C662.38,-221.49 671.56,-225.19 680,-229 706.38,-240.92 735.09,-256.52 756.71,-268.82"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="755.1,-271.93 765.51,-273.87 758.58,-265.86 755.1,-271.93"/>
 </g>
-<!-- Node25&#45;&gt;Node23 -->
-<g id="edge29" class="edge">
-<title>Node25&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M478.85,-41.54C486.38,-44.54 493.92,-47.72 501,-51 526.33,-62.74 553.74,-78.25 574.42,-90.56"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="572.75,-93.65 583.12,-95.8 576.35,-87.65 572.75,-93.65"/>
+<!-- Node25&#45;&gt;Node10 -->
+<g id="edge28" class="edge">
+<title>Node25&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M845.93,-304.04C866.99,-310.02 891.37,-316.95 913.31,-323.19"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="912.61,-326.63 923.19,-325.99 914.53,-319.89 912.61,-326.63"/>
 </g>
-<!-- Node26&#45;&gt;Node23 -->
-<g id="edge31" class="edge">
-<title>Node26&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M490.62,-92.3C502.7,-94.23 515.33,-96.25 527.64,-98.22"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="527.45,-101.74 537.88,-99.86 528.56,-94.82 527.45,-101.74"/>
+<!-- Node26&#45;&gt;Node24 -->
+<g id="edge30" class="edge">
+<title>Node26&#45;&gt;Node24</title>
+<path fill="none" stroke="midnightblue" d="M482.17,-161.56C504.92,-169.08 530.48,-177.53 552.56,-184.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="551.51,-188.17 562.11,-187.99 553.71,-181.53 551.51,-188.17"/>
+</g>
+<!-- Node27&#45;&gt;Node24 -->
+<g id="edge32" class="edge">
+<title>Node27&#45;&gt;Node24</title>
+<path fill="none" stroke="midnightblue" d="M490.62,-201.75C502.7,-201.88 515.33,-202.02 527.64,-202.15"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="527.84,-205.65 537.88,-202.26 527.92,-198.65 527.84,-205.65"/>
 </g>
 </g>
 </svg>

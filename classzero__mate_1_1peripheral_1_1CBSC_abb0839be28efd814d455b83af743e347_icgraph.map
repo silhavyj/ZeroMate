@@ -1,5 +1,5 @@
 <map id="zero_mate::peripheral::CBSC::Clear_FIFO" name="zero_mate::peripheral::CBSC::Clear_FIFO">
-<area shape="rect" id="node1" title=" " alt="" coords="481,5,647,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15" title=" " alt="" coords="219,5,433,47"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d" title="Writes data to the peripheral." alt="" coords="5,5,171,47"/>
+<area shape="rect" id="node1" title="Clears the FIFO." alt="" coords="481,5,647,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15" title="Performs actions after the control register has been written to." alt="" coords="219,5,433,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,5,171,47"/>
 </map>

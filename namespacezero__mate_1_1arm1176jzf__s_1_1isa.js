@@ -18,5 +18,9 @@ var namespacezero__mate_1_1arm1176jzf__s_1_1isa =
     [ "CPSR_Transfer", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer" ],
     [ "CRFE", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE" ],
     [ "CSingle_Data_Transfer", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer" ],
+    [ "CSMLAWy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAWy.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAWy" ],
+    [ "CSMLAxy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAxy.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAxy" ],
+    [ "CSMULWy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULWy.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULWy" ],
+    [ "CSMULxy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULxy.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULxy" ],
     [ "CSRS", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS" ]
 ];

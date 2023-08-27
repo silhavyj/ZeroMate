@@ -44,9 +44,9 @@
 <area shape="rect" id="node40" href="$mini__uart_8cpp.html" title="This file implements the Mini UART auxiliary peripheral used in BCM2835." alt="" coords="2484,541,2660,583"/>
 <area shape="rect" id="node41" href="$aux__window_8hpp.html" title="This file defines a window that visualizes the auxiliaries (UART1 &amp; SPI1, and SPI2) used in BCM2835." alt="" coords="2684,541,2887,583"/>
 <area shape="rect" id="node42" href="$aux__window_8cpp.html" title="This file implements a window that visualizes the auxiliaries (UART1 &amp; SPI1, and SPI2) used in BCM283..." alt="" coords="2684,631,2887,672"/>
-<area shape="rect" id="node44" href="$bsc_8hpp.html" title=" " alt="" coords="2311,452,2462,493"/>
+<area shape="rect" id="node44" href="$bsc_8hpp.html" title="This file defines the BSC peripheral used in BCM2835." alt="" coords="2311,452,2462,493"/>
 <area shape="rect" id="node46" href="$gpio_8cpp.html" title="This file implements the GPIO controller used in BCM2835 (defined in gpio.hpp)." alt="" coords="2137,452,2287,493"/>
 <area shape="rect" id="node47" href="$gpio__window_8hpp.html" title="This file defines a window that visualizes the states and information about GPIO pins." alt="" coords="1909,452,2112,493"/>
-<area shape="rect" id="node45" href="$bsc_8cpp.html" title=" " alt="" coords="2115,541,2266,583"/>
+<area shape="rect" id="node45" href="$bsc_8cpp.html" title="This file implements the BSC peripheral used in BCM2835." alt="" coords="2115,541,2266,583"/>
 <area shape="rect" id="node50" href="$interrupt__controller__window_8cpp.html" title="This file implements a window that visualizes the interrupt controller IC." alt="" coords="1373,452,1608,493"/>
 </map>

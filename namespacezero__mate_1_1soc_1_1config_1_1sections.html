@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.2.1</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -97,9 +97,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a3fb00279320d8e60661fd7967c3ebeb6"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a3fb00279320d8e60661fd7967c3ebeb6">Name</a> = &quot;name&quot;</td></tr>
 <tr class="memdesc:a3fb00279320d8e60661fd7967c3ebeb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of an external peripheral.  <a href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a3fb00279320d8e60661fd7967c3ebeb6">More...</a><br /></td></tr>
 <tr class="separator:a3fb00279320d8e60661fd7967c3ebeb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a392cc70e714e5ce5957a87527ba59a7a"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a392cc70e714e5ce5957a87527ba59a7a">Pins</a> = &quot;pins&quot;</td></tr>
-<tr class="memdesc:a392cc70e714e5ce5957a87527ba59a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pins an external peripherals is connected to.  <a href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a392cc70e714e5ce5957a87527ba59a7a">More...</a><br /></td></tr>
-<tr class="separator:a392cc70e714e5ce5957a87527ba59a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b0c2f75910c61f0381bf4358cd5a36b"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a7b0c2f75910c61f0381bf4358cd5a36b">Connection</a> = &quot;connection&quot;</td></tr>
+<tr class="memdesc:a7b0c2f75910c61f0381bf4358cd5a36b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connection of an external peripheral (GPIO pins, I2C address, etc.)  <a href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a7b0c2f75910c61f0381bf4358cd5a36b">More...</a><br /></td></tr>
+<tr class="separator:a7b0c2f75910c61f0381bf4358cd5a36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f69671d4bbfea1c71b73b19f4a5b23a"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a0f69671d4bbfea1c71b73b19f4a5b23a">Lib_Dir</a> = &quot;lib_dir&quot;</td></tr>
 <tr class="memdesc:a0f69671d4bbfea1c71b73b19f4a5b23a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the directory where the shared library is located.  <a href="namespacezero__mate_1_1soc_1_1config_1_1sections.html#a0f69671d4bbfea1c71b73b19f4a5b23a">More...</a><br /></td></tr>
 <tr class="separator:a0f69671d4bbfea1c71b73b19f4a5b23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,6 +108,30 @@ Variables</h2></td></tr>
 <tr class="separator:afc8ab9e8adea48a6ed1aa2878da2faa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a7b0c2f75910c61f0381bf4358cd5a36b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b0c2f75910c61f0381bf4358cd5a36b">&#9670;&nbsp;</a></span>Connection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* const zero_mate::soc::config::sections::Connection = &quot;connection&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Connection of an external peripheral (GPIO pins, I2C address, etc.) </p>
+
+</div>
+</div>
 <a id="a0f69671d4bbfea1c71b73b19f4a5b23a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f69671d4bbfea1c71b73b19f4a5b23a">&#9670;&nbsp;</a></span>Lib_Dir</h2>
 
@@ -177,30 +201,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Name of an external peripheral. </p>
-
-</div>
-</div>
-<a id="a392cc70e714e5ce5957a87527ba59a7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a392cc70e714e5ce5957a87527ba59a7a">&#9670;&nbsp;</a></span>Pins</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* const zero_mate::soc::config::sections::Pins = &quot;pins&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>GPIO pins an external peripherals is connected to. </p>
 
 </div>
 </div>

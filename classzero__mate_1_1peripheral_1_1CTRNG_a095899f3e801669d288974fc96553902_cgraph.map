@@ -1,4 +1,5 @@
 <map id="zero_mate::peripheral::CTRNG::Read" name="zero_mate::peripheral::CTRNG::Read">
-<area shape="rect" id="node1" title="Reads data from the peripheral (IPeripheral interface)." alt="" coords="5,5,171,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CTRNG.html#a60c61febc58d60408b4861c25addbb2a" title="Returns information about whether the random number generator is enabled or not." alt="" coords="219,5,384,47"/>
+<area shape="rect" id="node1" title="Reads data from the peripheral (IPeripheral interface)." alt="" coords="5,39,171,80"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CTRNG.html#ade8cc0a19f454df005f0b28aa7be89c6" title="Returns a random number. If the USE_REAL_RND_NUMBER_GENERATOR macro is defined, the function uses a b..." alt="" coords="219,5,417,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CTRNG.html#a60c61febc58d60408b4861c25addbb2a" title="Returns information about whether the random number generator is enabled or not." alt="" coords="235,71,401,112"/>
 </map>

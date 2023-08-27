@@ -1,5 +1,6 @@
 <map id="zero_mate::peripheral::CMini_UART::UART_Reset_Transmission" name="zero_mate::peripheral::CMini_UART::UART_Reset_Transmission">
 <area shape="rect" id="node1" title="Resets transmission (end of the current UART frame)." alt="" coords="5,43,200,99"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a1e54d90a036d327e36d06a74be1595c3" title="Returns information about a transmit interrupt is enabled." alt="" coords="248,5,439,61"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a792a3a1a286bf0e7f47bb255bc104294" title="Triggers an interrupt." alt="" coords="248,86,439,127"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a8711d81118c89d5174a68d5b63ad3fac" title="Triggers an interrupt." alt="" coords="248,86,439,127"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aeedc743fe9b70dfb0019b775e2ea714a" title="Sets the type of a pending IRQ in the IIR register." alt="" coords="487,79,683,135"/>
 </map>

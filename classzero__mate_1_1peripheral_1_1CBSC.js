@@ -33,8 +33,6 @@ var classzero__mate_1_1peripheral_1_1CBSC =
       [ "Stop_Bit", "classzero__mate_1_1peripheral_1_1CBSC.html#aec40cdcf9f04dabed279f6e856764409afda5f5e6799a88aea12ca6754638842a", null ]
     ] ],
     [ "NStatus_Flags", "classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91d", [
-      [ "Clock_Stretch_Timeout", "classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91da113396fb23bb7a1cc870ca731a21f3a4", null ],
-      [ "ACK_Error", "classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91da3865ebc2032d289a396d05dcb075cf84", null ],
       [ "Transfer_Done", "classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91da5416dd4f984c3b1c4e4005370e7a3ac1", null ]
     ] ],
     [ "CBSC", "classzero__mate_1_1peripheral_1_1CBSC.html#aa8c073c82da602860f39e59b23d0abf3", null ],
@@ -49,6 +47,7 @@ var classzero__mate_1_1peripheral_1_1CBSC =
     [ "I2C_Send_Slave_Address", "classzero__mate_1_1peripheral_1_1CBSC.html#a0535fad6da893f066addecb99f455192", null ],
     [ "I2C_Send_Start_Bit", "classzero__mate_1_1peripheral_1_1CBSC.html#a3554dd56ba5d95d2eada7b0fd5a92c55", null ],
     [ "I2C_Send_Stop_Bit", "classzero__mate_1_1peripheral_1_1CBSC.html#aa830cee242bb74a3779bb54c4baee609", null ],
+    [ "I2C_Update", "classzero__mate_1_1peripheral_1_1CBSC.html#a3b0dd18504053624d39b9015015bb8fc", null ],
     [ "Increment_Passed_Cycles", "classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488", null ],
     [ "Read", "classzero__mate_1_1peripheral_1_1CBSC.html#a0a3d886157491acf8056a0f03eabda3b", null ],
     [ "Reset", "classzero__mate_1_1peripheral_1_1CBSC.html#a85a461fcca4871b5d21f079af60f9775", null ],
@@ -56,7 +55,6 @@ var classzero__mate_1_1peripheral_1_1CBSC =
     [ "Should_FIFO_Be_Cleared", "classzero__mate_1_1peripheral_1_1CBSC.html#a631f31f819abf852e17bc0d6a54daa58", null ],
     [ "Should_Transaction_Begin", "classzero__mate_1_1peripheral_1_1CBSC.html#af7243c8e41ac6d45e77d915ce2eb0a89", null ],
     [ "Terminate_Transaction", "classzero__mate_1_1peripheral_1_1CBSC.html#a47d44cc0056a39f0404e501c4449355a", null ],
-    [ "Update", "classzero__mate_1_1peripheral_1_1CBSC.html#aa195c567531f97d585212978ab0f687a", null ],
     [ "Write", "classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d", null ],
     [ "m_cpu_cycles", "classzero__mate_1_1peripheral_1_1CBSC.html#aa2e912c4ae673c73d6c54d93aef3af46", null ],
     [ "m_fifo", "classzero__mate_1_1peripheral_1_1CBSC.html#aa668578534466727a94ad5ea0c7a78e3", null ],

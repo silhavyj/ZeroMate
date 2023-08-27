@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.2.1</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1peripheral_1_1CBSC.
 </div><!--header-->
 <div class="contents">
 
+<p>This class represents the BSC peripheral used in BCM2835.  
+ <a href="classzero__mate_1_1peripheral_1_1CBSC.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="bsc_8hpp_source.html">bsc.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for zero_mate::peripheral::CBSC:</div>
@@ -134,37 +137,39 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a0baec4f9d22245ab4111fe566e30a2f2ae93f994f01c537c4e2f7d8528c3eb5e9">Count</a>
 <br />
  }</td></tr>
+<tr class="memdesc:a0baec4f9d22245ab4111fe566e30a2f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of the BSC registers.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a0baec4f9d22245ab4111fe566e30a2f2">More...</a><br /></td></tr>
 <tr class="separator:a0baec4f9d22245ab4111fe566e30a2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb23552c42bb995fc514667682301865"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abb23552c42bb995fc514667682301865">NControl_Flags</a> : std::uint32_t { <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abb23552c42bb995fc514667682301865a5d687de8e38e1ff9ba66a7ce80decc28">I2C_Enable</a> = 0b1U &lt;&lt; 15U
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abb23552c42bb995fc514667682301865ab4b2d91f5c716a7f45941e676aef670d">Start_Transfer</a> = 0b1U &lt;&lt; 7U
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abb23552c42bb995fc514667682301865a8d2cc577a408d5a7b880a8ab611776c5">FIFO_Clear</a> = 4U
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abb23552c42bb995fc514667682301865a8a5e49aec390df09f87c2daeb7899775">Read_Transfer</a> = 0b1U &lt;&lt; 0U
  }</td></tr>
+<tr class="memdesc:abb23552c42bb995fc514667682301865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of different flags of the control register.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#abb23552c42bb995fc514667682301865">More...</a><br /></td></tr>
 <tr class="separator:abb23552c42bb995fc514667682301865"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abff990115bde6e8c61cbba633c38c91d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91d">NStatus_Flags</a> : std::uint32_t { <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91da113396fb23bb7a1cc870ca731a21f3a4">Clock_Stretch_Timeout</a> = 0b1U &lt;&lt; 9U
-, <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91da3865ebc2032d289a396d05dcb075cf84">ACK_Error</a> = 0b1U &lt;&lt; 8U
-, <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91da5416dd4f984c3b1c4e4005370e7a3ac1">Transfer_Done</a> = 0b1U &lt;&lt; 1U
+<tr class="memitem:abff990115bde6e8c61cbba633c38c91d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91d">NStatus_Flags</a> : std::uint32_t { <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91da5416dd4f984c3b1c4e4005370e7a3ac1">Transfer_Done</a> = 0b1U &lt;&lt; 1U
  }</td></tr>
+<tr class="memdesc:abff990115bde6e8c61cbba633c38c91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of different flags of the status register.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#abff990115bde6e8c61cbba633c38c91d">More...</a><br /></td></tr>
 <tr class="separator:abff990115bde6e8c61cbba633c38c91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa8c073c82da602860f39e59b23d0abf3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#aa8c073c82da602860f39e59b23d0abf3">CBSC</a> (std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html">CGPIO_Manager</a> &gt; gpio)</td></tr>
+<tr class="memdesc:aa8c073c82da602860f39e59b23d0abf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#aa8c073c82da602860f39e59b23d0abf3">More...</a><br /></td></tr>
 <tr class="separator:aa8c073c82da602860f39e59b23d0abf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85a461fcca4871b5d21f079af60f9775"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a85a461fcca4871b5d21f079af60f9775">Reset</a> () noexcept override</td></tr>
-<tr class="memdesc:a85a461fcca4871b5d21f079af60f9775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a85a461fcca4871b5d21f079af60f9775">More...</a><br /></td></tr>
+<tr class="memdesc:a85a461fcca4871b5d21f079af60f9775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets/re-initializes the interrupt controller (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a85a461fcca4871b5d21f079af60f9775">More...</a><br /></td></tr>
 <tr class="separator:a85a461fcca4871b5d21f079af60f9775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e976ada3e8c61968a271f90949ddad4"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a1e976ada3e8c61968a271f90949ddad4">Get_Size</a> () const noexcept override</td></tr>
-<tr class="memdesc:a1e976ada3e8c61968a271f90949ddad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a1e976ada3e8c61968a271f90949ddad4">More...</a><br /></td></tr>
+<tr class="memdesc:a1e976ada3e8c61968a271f90949ddad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a1e976ada3e8c61968a271f90949ddad4">More...</a><br /></td></tr>
 <tr class="separator:a1e976ada3e8c61968a271f90949ddad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91d31c6b0a9fa05ef7d1488f3e67247d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d">Write</a> (std::uint32_t addr, const char *data, std::uint32_t size) override</td></tr>
-<tr class="memdesc:a91d31c6b0a9fa05ef7d1488f3e67247d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data to the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d">More...</a><br /></td></tr>
+<tr class="memdesc:a91d31c6b0a9fa05ef7d1488f3e67247d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data to the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d">More...</a><br /></td></tr>
 <tr class="separator:a91d31c6b0a9fa05ef7d1488f3e67247d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a3d886157491acf8056a0f03eabda3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a0a3d886157491acf8056a0f03eabda3b">Read</a> (std::uint32_t addr, char *data, std::uint32_t size) override</td></tr>
-<tr class="memdesc:a0a3d886157491acf8056a0f03eabda3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the peripheral.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a0a3d886157491acf8056a0f03eabda3b">More...</a><br /></td></tr>
+<tr class="memdesc:a0a3d886157491acf8056a0f03eabda3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a0a3d886157491acf8056a0f03eabda3b">More...</a><br /></td></tr>
 <tr class="separator:a0a3d886157491acf8056a0f03eabda3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a226982dd161163b65706cad569522488"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488">Increment_Passed_Cycles</a> (std::uint32_t count) override</td></tr>
-<tr class="memdesc:a226982dd161163b65706cad569522488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the peripheral about how many CPU cycles have passed by.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488">More...</a><br /></td></tr>
+<tr class="memdesc:a226982dd161163b65706cad569522488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the peripheral about how many CPU cycles have passed (<a class="el" href="classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html" title="This class represents a general interface for a CPU clock listener.">ISystem_Clock_Listener</a> interface).  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488">More...</a><br /></td></tr>
 <tr class="separator:a226982dd161163b65706cad569522488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1peripheral_1_1IPeripheral"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1peripheral_1_1IPeripheral')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html">zero_mate::peripheral::IPeripheral</a></td></tr>
 <tr class="memitem:a802de3443970ca57fd356ccfe9d45415 inherit pub_methods_classzero__mate_1_1peripheral_1_1IPeripheral"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a802de3443970ca57fd356ccfe9d45415">IPeripheral</a> ()=default</td></tr>
@@ -208,18 +213,24 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a61af963063d105e1f29b2dca25628635"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a61af963063d105e1f29b2dca25628635">SDA_Pin_Idx</a> = 2</td></tr>
+<tr class="memdesc:a61af963063d105e1f29b2dca25628635"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C SDA (data) pin on the Raspberry Pi Zero board.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a61af963063d105e1f29b2dca25628635">More...</a><br /></td></tr>
 <tr class="separator:a61af963063d105e1f29b2dca25628635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff6d288cdd811ff367118c19c6ad8dc2"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#aff6d288cdd811ff367118c19c6ad8dc2">SCL_Pin_Idx</a> = 3</td></tr>
+<tr class="memdesc:aff6d288cdd811ff367118c19c6ad8dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C SCL (clock) pin on the Raspberry Pi Zero board.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#aff6d288cdd811ff367118c19c6ad8dc2">More...</a><br /></td></tr>
 <tr class="separator:aff6d288cdd811ff367118c19c6ad8dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff13ab5f509224a413fcacfe48eeeabd"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#aff13ab5f509224a413fcacfe48eeeabd">Slave_Addr_Length</a> = 7</td></tr>
+<tr class="memdesc:aff13ab5f509224a413fcacfe48eeeabd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slave address length.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#aff13ab5f509224a413fcacfe48eeeabd">More...</a><br /></td></tr>
 <tr class="separator:aff13ab5f509224a413fcacfe48eeeabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad408e1805a525cc6bd3f5ac4827c04ae"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#ad408e1805a525cc6bd3f5ac4827c04ae">Data_Length</a> = 8</td></tr>
+<tr class="memdesc:ad408e1805a525cc6bd3f5ac4827c04ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data length.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#ad408e1805a525cc6bd3f5ac4827c04ae">More...</a><br /></td></tr>
 <tr class="separator:ad408e1805a525cc6bd3f5ac4827c04ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49d20021948a932d37a33bcf63a7748e"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a49d20021948a932d37a33bcf63a7748e">CPU_Cycles_Per_Update</a> = 100</td></tr>
+<tr class="memitem:a49d20021948a932d37a33bcf63a7748e"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a49d20021948a932d37a33bcf63a7748e">CPU_Cycles_Per_Update</a> = 30</td></tr>
 <tr class="separator:a49d20021948a932d37a33bcf63a7748e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a812837d1a929df3ab56b85c31ed264fa"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a812837d1a929df3ab56b85c31ed264fa">Number_Of_Registers</a> = static_cast&lt;std::size_t&gt;(<a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a0baec4f9d22245ab4111fe566e30a2f2ae93f994f01c537c4e2f7d8528c3eb5e9">NRegister::Count</a>)</td></tr>
+<tr class="memdesc:a812837d1a929df3ab56b85c31ed264fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of the peripheral's registers.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a812837d1a929df3ab56b85c31ed264fa">More...</a><br /></td></tr>
 <tr class="separator:a812837d1a929df3ab56b85c31ed264fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb9893ad4840d7ec85a0a4b29365705b"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#afb9893ad4840d7ec85a0a4b29365705b">Reg_Size</a> = static_cast&lt;std::uint32_t&gt;(sizeof(std::uint32_t))</td></tr>
+<tr class="memdesc:afb9893ad4840d7ec85a0a4b29365705b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of a single register.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#afb9893ad4840d7ec85a0a4b29365705b">More...</a><br /></td></tr>
 <tr class="separator:afb9893ad4840d7ec85a0a4b29365705b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
@@ -235,66 +246,93 @@ Private Types</h2></td></tr>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#aec40cdcf9f04dabed279f6e856764409afda5f5e6799a88aea12ca6754638842a">Stop_Bit</a>
 <br />
  }</td></tr>
+<tr class="memdesc:aec40cdcf9f04dabed279f6e856764409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of different states of the I2C state machine.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#aec40cdcf9f04dabed279f6e856764409">More...</a><br /></td></tr>
 <tr class="separator:aec40cdcf9f04dabed279f6e856764409"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1f6aaf6a8fdccabf1c8ccddc5d02948"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#ad1f6aaf6a8fdccabf1c8ccddc5d02948">NSCL_State</a> { <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#ad1f6aaf6a8fdccabf1c8ccddc5d02948a66e2ea3c835289f77ca583763aac307a">SDA_Change</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#ad1f6aaf6a8fdccabf1c8ccddc5d02948a57367a521c936f5f24566e4a57e1a3a1">SCL_Low</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#ad1f6aaf6a8fdccabf1c8ccddc5d02948ad6182ed298d354dda7b517c14c6b0f1c">SCL_High</a>
  }</td></tr>
+<tr class="memdesc:ad1f6aaf6a8fdccabf1c8ccddc5d02948"><td class="mdescLeft">&#160;</td><td class="mdescRight">State of the clock signal.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#ad1f6aaf6a8fdccabf1c8ccddc5d02948">More...</a><br /></td></tr>
 <tr class="separator:ad1f6aaf6a8fdccabf1c8ccddc5d02948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ab30554a8b7d94ebd2beb2fd4e21c6869"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#ab30554a8b7d94ebd2beb2fd4e21c6869">Add_Data_To_FIFO</a> ()</td></tr>
+<tr class="memdesc:ab30554a8b7d94ebd2beb2fd4e21c6869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds data to the FIFO.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#ab30554a8b7d94ebd2beb2fd4e21c6869">More...</a><br /></td></tr>
 <tr class="separator:ab30554a8b7d94ebd2beb2fd4e21c6869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab743dd233479745864da73cf7020ba15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15">Control_Reg_Callback</a> ()</td></tr>
+<tr class="memdesc:ab743dd233479745864da73cf7020ba15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs actions after the control register has been written to.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15">More...</a><br /></td></tr>
 <tr class="separator:ab743dd233479745864da73cf7020ba15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb0839be28efd814d455b83af743e347"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abb0839be28efd814d455b83af743e347">Clear_FIFO</a> ()</td></tr>
+<tr class="memdesc:abb0839be28efd814d455b83af743e347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the FIFO.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#abb0839be28efd814d455b83af743e347">More...</a><br /></td></tr>
 <tr class="separator:abb0839be28efd814d455b83af743e347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7243c8e41ac6d45e77d915ce2eb0a89"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#af7243c8e41ac6d45e77d915ce2eb0a89">Should_Transaction_Begin</a> ()</td></tr>
+<tr class="memdesc:af7243c8e41ac6d45e77d915ce2eb0a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a new data transfer (transaction) should begin.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#af7243c8e41ac6d45e77d915ce2eb0a89">More...</a><br /></td></tr>
 <tr class="separator:af7243c8e41ac6d45e77d915ce2eb0a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a631f31f819abf852e17bc0d6a54daa58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a631f31f819abf852e17bc0d6a54daa58">Should_FIFO_Be_Cleared</a> ()</td></tr>
+<tr class="memdesc:a631f31f819abf852e17bc0d6a54daa58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the FIFO should be cleared or not.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a631f31f819abf852e17bc0d6a54daa58">More...</a><br /></td></tr>
 <tr class="separator:a631f31f819abf852e17bc0d6a54daa58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74b84158da1933e79f091706e27c12f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5">Set_GPIO_pin</a> (std::uint8_t pin_idx, bool set)</td></tr>
+<tr class="memdesc:a74b84158da1933e79f091706e27c12f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the state of a given GPIO pin.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5">More...</a><br /></td></tr>
 <tr class="separator:a74b84158da1933e79f091706e27c12f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47d44cc0056a39f0404e501c4449355a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a47d44cc0056a39f0404e501c4449355a">Terminate_Transaction</a> ()</td></tr>
+<tr class="memdesc:a47d44cc0056a39f0404e501c4449355a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates an ongoing transaction (stop bit).  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a47d44cc0056a39f0404e501c4449355a">More...</a><br /></td></tr>
 <tr class="separator:a47d44cc0056a39f0404e501c4449355a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa195c567531f97d585212978ab0f687a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#aa195c567531f97d585212978ab0f687a">Update</a> ()</td></tr>
-<tr class="separator:aa195c567531f97d585212978ab0f687a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b0dd18504053624d39b9015015bb8fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a3b0dd18504053624d39b9015015bb8fc">I2C_Update</a> ()</td></tr>
+<tr class="memdesc:a3b0dd18504053624d39b9015015bb8fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the I2C state machine.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a3b0dd18504053624d39b9015015bb8fc">More...</a><br /></td></tr>
+<tr class="separator:a3b0dd18504053624d39b9015015bb8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3554dd56ba5d95d2eada7b0fd5a92c55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a3554dd56ba5d95d2eada7b0fd5a92c55">I2C_Send_Start_Bit</a> ()</td></tr>
+<tr class="memdesc:a3554dd56ba5d95d2eada7b0fd5a92c55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a start bit (start of a frame).  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a3554dd56ba5d95d2eada7b0fd5a92c55">More...</a><br /></td></tr>
 <tr class="separator:a3554dd56ba5d95d2eada7b0fd5a92c55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0535fad6da893f066addecb99f455192"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a0535fad6da893f066addecb99f455192">I2C_Send_Slave_Address</a> ()</td></tr>
+<tr class="memdesc:a0535fad6da893f066addecb99f455192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends another bit of the slave's address.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a0535fad6da893f066addecb99f455192">More...</a><br /></td></tr>
 <tr class="separator:a0535fad6da893f066addecb99f455192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf265364a9484ecfad37ab0893d981c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#acf265364a9484ecfad37ab0893d981c7">I2C_Send_RW_Bit</a> ()</td></tr>
+<tr class="memdesc:acf265364a9484ecfad37ab0893d981c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the RW bit.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#acf265364a9484ecfad37ab0893d981c7">More...</a><br /></td></tr>
 <tr class="separator:acf265364a9484ecfad37ab0893d981c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadbb0ba14e605ee9f1be46c02f549aaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#aadbb0ba14e605ee9f1be46c02f549aaa">I2C_Receive_ACK_1</a> ()</td></tr>
+<tr class="memdesc:aadbb0ba14e605ee9f1be46c02f549aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the slave device has sent ACK_1 as expected.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#aadbb0ba14e605ee9f1be46c02f549aaa">More...</a><br /></td></tr>
 <tr class="separator:aadbb0ba14e605ee9f1be46c02f549aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc87dd5711f004d648286ec13e22bb28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#abc87dd5711f004d648286ec13e22bb28">I2C_Send_Data</a> ()</td></tr>
+<tr class="memdesc:abc87dd5711f004d648286ec13e22bb28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends another bit of the data payload.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#abc87dd5711f004d648286ec13e22bb28">More...</a><br /></td></tr>
 <tr class="separator:abc87dd5711f004d648286ec13e22bb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a316b2af702507bdc0f385f5cf10bf47a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a316b2af702507bdc0f385f5cf10bf47a">I2C_Receive_ACK_2</a> ()</td></tr>
+<tr class="memdesc:a316b2af702507bdc0f385f5cf10bf47a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the slave device has sent ACK_2 as expected.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a316b2af702507bdc0f385f5cf10bf47a">More...</a><br /></td></tr>
 <tr class="separator:a316b2af702507bdc0f385f5cf10bf47a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa830cee242bb74a3779bb54c4baee609"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#aa830cee242bb74a3779bb54c4baee609">I2C_Send_Stop_Bit</a> ()</td></tr>
+<tr class="memdesc:aa830cee242bb74a3779bb54c4baee609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a stop bit (end of a frame).  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#aa830cee242bb74a3779bb54c4baee609">More...</a><br /></td></tr>
 <tr class="separator:aa830cee242bb74a3779bb54c4baee609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a54fb1915fa7d6220432b640479184acc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html">CGPIO_Manager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a54fb1915fa7d6220432b640479184acc">m_gpio</a></td></tr>
+<tr class="memdesc:a54fb1915fa7d6220432b640479184acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO manager.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a54fb1915fa7d6220432b640479184acc">More...</a><br /></td></tr>
 <tr class="separator:a54fb1915fa7d6220432b640479184acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a542b29d1857d7d9927bc95355bb7541a"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::uint32_t, <a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a812837d1a929df3ab56b85c31ed264fa">Number_Of_Registers</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a542b29d1857d7d9927bc95355bb7541a">m_regs</a></td></tr>
+<tr class="memdesc:a542b29d1857d7d9927bc95355bb7541a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral's registers.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a542b29d1857d7d9927bc95355bb7541a">More...</a><br /></td></tr>
 <tr class="separator:a542b29d1857d7d9927bc95355bb7541a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa668578534466727a94ad5ea0c7a78e3"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#aa668578534466727a94ad5ea0c7a78e3">m_fifo</a></td></tr>
+<tr class="memdesc:aa668578534466727a94ad5ea0c7a78e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data FIFO.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#aa668578534466727a94ad5ea0c7a78e3">More...</a><br /></td></tr>
 <tr class="separator:aa668578534466727a94ad5ea0c7a78e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2e912c4ae673c73d6c54d93aef3af46"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#aa2e912c4ae673c73d6c54d93aef3af46">m_cpu_cycles</a></td></tr>
+<tr class="memdesc:aa2e912c4ae673c73d6c54d93aef3af46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of passed CPU cycles.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#aa2e912c4ae673c73d6c54d93aef3af46">More...</a><br /></td></tr>
 <tr class="separator:aa2e912c4ae673c73d6c54d93aef3af46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bb46225b106c799997486b8f357bb2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a7bb46225b106c799997486b8f357bb2e">m_transaction_in_progress</a></td></tr>
+<tr class="memdesc:a7bb46225b106c799997486b8f357bb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is there an ongoing transaction?  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a7bb46225b106c799997486b8f357bb2e">More...</a><br /></td></tr>
 <tr class="separator:a7bb46225b106c799997486b8f357bb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab05ac5b1f16f31f7deca3b71f291ccc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzero__mate_1_1peripheral_1_1CBSC_1_1TTransaction.html">TTransaction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#ab05ac5b1f16f31f7deca3b71f291ccc7">m_transaction</a></td></tr>
+<tr class="memdesc:ab05ac5b1f16f31f7deca3b71f291ccc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current transaction.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#ab05ac5b1f16f31f7deca3b71f291ccc7">More...</a><br /></td></tr>
 <tr class="separator:ab05ac5b1f16f31f7deca3b71f291ccc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87e4cec5606431027e932dee34c40f5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#ad1f6aaf6a8fdccabf1c8ccddc5d02948">NSCL_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a87e4cec5606431027e932dee34c40f5e">m_SCL_state</a></td></tr>
+<tr class="memdesc:a87e4cec5606431027e932dee34c40f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">State of the clock line (SCL)  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a87e4cec5606431027e932dee34c40f5e">More...</a><br /></td></tr>
 <tr class="separator:a87e4cec5606431027e932dee34c40f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d6536fab111f5b7408b17a54db29e65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1utils_1_1CLogging__System.html">utils::CLogging_System</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1peripheral_1_1CBSC.html#a2d6536fab111f5b7408b17a54db29e65">m_logging_system</a></td></tr>
+<tr class="memdesc:a2d6536fab111f5b7408b17a54db29e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging system.  <a href="classzero__mate_1_1peripheral_1_1CBSC.html#a2d6536fab111f5b7408b17a54db29e65">More...</a><br /></td></tr>
 <tr class="separator:a2d6536fab111f5b7408b17a54db29e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents the BSC peripheral used in BCM2835. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="abb23552c42bb995fc514667682301865"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb23552c42bb995fc514667682301865">&#9670;&nbsp;</a></span>NControl_Flags</h2>
 
@@ -314,11 +352,17 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Enumeration of different flags of the control register. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abb23552c42bb995fc514667682301865a5d687de8e38e1ff9ba66a7ce80decc28"></a>I2C_Enable&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abb23552c42bb995fc514667682301865ab4b2d91f5c716a7f45941e676aef670d"></a>Start_Transfer&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abb23552c42bb995fc514667682301865a8d2cc577a408d5a7b880a8ab611776c5"></a>FIFO_Clear&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abb23552c42bb995fc514667682301865a8a5e49aec390df09f87c2daeb7899775"></a>Read_Transfer&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abb23552c42bb995fc514667682301865a5d687de8e38e1ff9ba66a7ce80decc28"></a>I2C_Enable&#160;</td><td class="fielddoc"><p>Enable the I2C peripheral. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb23552c42bb995fc514667682301865ab4b2d91f5c716a7f45941e676aef670d"></a>Start_Transfer&#160;</td><td class="fielddoc"><p>Begin data transfer. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb23552c42bb995fc514667682301865a8d2cc577a408d5a7b880a8ab611776c5"></a>FIFO_Clear&#160;</td><td class="fielddoc"><p>Clear the data FIFO. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb23552c42bb995fc514667682301865a8a5e49aec390df09f87c2daeb7899775"></a>Read_Transfer&#160;</td><td class="fielddoc"><p>Begin read transfer. </p>
+</td></tr>
 </table>
 
 </div>
@@ -342,16 +386,27 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Enumeration of the BSC registers. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2aa1595abbb4c3a326636dd178757cd6c1"></a>Control&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2aec53a8c4f07baed5d8825072c89799be"></a>Status&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2a72b58421240f3acae0d0017d591c21b4"></a>Data_Length&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2a9fcb718e2ea3d0915133daf8d38ec594"></a>Slave_Address&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2a7f0021d564f129a8a166c43024b1129c"></a>Data_FIFO&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2adead8dcbc903a49e973c3d6a9b208830"></a>Clock_Div&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2a2187b6a28fc5d8b243b6edfa66a635f1"></a>Data_Delay&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2a113396fb23bb7a1cc870ca731a21f3a4"></a>Clock_Stretch_Timeout&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2ae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2aa1595abbb4c3a326636dd178757cd6c1"></a>Control&#160;</td><td class="fielddoc"><p>Control register. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2aec53a8c4f07baed5d8825072c89799be"></a>Status&#160;</td><td class="fielddoc"><p>Status register. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2a72b58421240f3acae0d0017d591c21b4"></a>Data_Length&#160;</td><td class="fielddoc"><p>Data length (number of bytes to be sent/received) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2a9fcb718e2ea3d0915133daf8d38ec594"></a>Slave_Address&#160;</td><td class="fielddoc"><p>Address of the target device (slave) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2a7f0021d564f129a8a166c43024b1129c"></a>Data_FIFO&#160;</td><td class="fielddoc"><p>Interaction with the data FIFO (read/write) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2adead8dcbc903a49e973c3d6a9b208830"></a>Clock_Div&#160;</td><td class="fielddoc"><p>Clock div (not used) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2a2187b6a28fc5d8b243b6edfa66a635f1"></a>Data_Delay&#160;</td><td class="fielddoc"><p>Clock delay (not used) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2a113396fb23bb7a1cc870ca731a21f3a4"></a>Clock_Stretch_Timeout&#160;</td><td class="fielddoc"><p>Clock stretch timeout (not used) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0baec4f9d22245ab4111fe566e30a2f2ae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"><p>Help record (total number of registers) </p>
+</td></tr>
 </table>
 
 </div>
@@ -375,10 +430,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>State of the clock signal. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad1f6aaf6a8fdccabf1c8ccddc5d02948a66e2ea3c835289f77ca583763aac307a"></a>SDA_Change&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ad1f6aaf6a8fdccabf1c8ccddc5d02948a57367a521c936f5f24566e4a57e1a3a1"></a>SCL_Low&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ad1f6aaf6a8fdccabf1c8ccddc5d02948ad6182ed298d354dda7b517c14c6b0f1c"></a>SCL_High&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad1f6aaf6a8fdccabf1c8ccddc5d02948a66e2ea3c835289f77ca583763aac307a"></a>SDA_Change&#160;</td><td class="fielddoc"><p>SDA shall be updated. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad1f6aaf6a8fdccabf1c8ccddc5d02948a57367a521c936f5f24566e4a57e1a3a1"></a>SCL_Low&#160;</td><td class="fielddoc"><p>SCL shall go low. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad1f6aaf6a8fdccabf1c8ccddc5d02948ad6182ed298d354dda7b517c14c6b0f1c"></a>SCL_High&#160;</td><td class="fielddoc"><p>SCL shall go high. </p>
+</td></tr>
 </table>
 
 </div>
@@ -402,14 +462,23 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Enumeration of different states of the I2C state machine. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409a7d4dfc4398461138b4b7e27b7dc7b426"></a>Start_Bit&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409add7bf230fde8d4836917806aff6a6b27"></a>Address&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409a5c6dc3d436504b7a65191cafe28212ee"></a>RW&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409a2e4fbb918fcf78b57adbecedfa2d7dc0"></a>ACK_1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409af6068daa29dbb05a7ead1e3b5a48bbee"></a>Data&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409ae8427c9b277c090265ef992385283676"></a>ACK_2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409afda5f5e6799a88aea12ca6754638842a"></a>Stop_Bit&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409a7d4dfc4398461138b4b7e27b7dc7b426"></a>Start_Bit&#160;</td><td class="fielddoc"><p>Send a start bit (start of a transaction) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409add7bf230fde8d4836917806aff6a6b27"></a>Address&#160;</td><td class="fielddoc"><p>Send slave's address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409a5c6dc3d436504b7a65191cafe28212ee"></a>RW&#160;</td><td class="fielddoc"><p>Are we going to read from the device or write to it? </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409a2e4fbb918fcf78b57adbecedfa2d7dc0"></a>ACK_1&#160;</td><td class="fielddoc"><p>The slave device is supposed to send ACK_1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409af6068daa29dbb05a7ead1e3b5a48bbee"></a>Data&#160;</td><td class="fielddoc"><p>Data payload. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409ae8427c9b277c090265ef992385283676"></a>ACK_2&#160;</td><td class="fielddoc"><p>The slave device is supposed to send ACK_2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec40cdcf9f04dabed279f6e856764409afda5f5e6799a88aea12ca6754638842a"></a>Stop_Bit&#160;</td><td class="fielddoc"><p>Stop bit (end of a transaction) </p>
+</td></tr>
 </table>
 
 </div>
@@ -433,10 +502,11 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Enumeration of different flags of the status register. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abff990115bde6e8c61cbba633c38c91da113396fb23bb7a1cc870ca731a21f3a4"></a>Clock_Stretch_Timeout&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abff990115bde6e8c61cbba633c38c91da3865ebc2032d289a396d05dcb075cf84"></a>ACK_Error&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abff990115bde6e8c61cbba633c38c91da5416dd4f984c3b1c4e4005370e7a3ac1"></a>Transfer_Done&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abff990115bde6e8c61cbba633c38c91da5416dd4f984c3b1c4e4005370e7a3ac1"></a>Transfer_Done&#160;</td><td class="fielddoc"><p>Transfer is done. </p>
+</td></tr>
 </table>
 
 </div>
@@ -466,6 +536,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates an instance of the class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpio</td><td>Reference to a GPIO manager (changing the state of GPIO pins) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -491,6 +569,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Adds data to the FIFO. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -522,6 +602,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Clears the FIFO. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -553,6 +635,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Performs actions after the control register has been written to. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -591,8 +675,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the size of the peripheral. </p>
-<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function.</p>
+<p>Returns the size of the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
 <dl class="section return"><dt>Returns</dt><dd>number of register * register size </dd></dl>
 
 <p>Implements <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#abe4a3756bd97bd4eb4db1c9aad6f5a1b">zero_mate::peripheral::IPeripheral</a>.</p>
@@ -621,6 +704,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks whether the slave device has sent ACK_1 as expected. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -658,6 +743,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks whether the slave device has sent ACK_2 as expected. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -695,6 +782,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sends another bit of the data payload. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -732,6 +821,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sends the RW bit. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -769,6 +860,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sends another bit of the slave's address. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -806,6 +899,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sends a start bit (start of a frame). </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -843,16 +938,57 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sends a stop bit (end of a frame). </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_aa830cee242bb74a3779bb54c4baee609_cgraph.svg" width="1174" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_aa830cee242bb74a3779bb54c4baee609_cgraph.svg" width="1440" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_aa830cee242bb74a3779bb54c4baee609_icgraph.svg" width="658" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3b0dd18504053624d39b9015015bb8fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b0dd18504053624d39b9015015bb8fc">&#9670;&nbsp;</a></span>I2C_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::peripheral::CBSC::I2C_Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the I2C state machine. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_a3b0dd18504053624d39b9015015bb8fc_cgraph.svg" width="1692" height="458"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_a3b0dd18504053624d39b9015015bb8fc_icgraph.svg" width="415" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -882,11 +1018,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Notifies the peripheral about how many CPU cycles have passed by. </p>
-<p>The CPU core calls this function after every instruction, so the peripheral can update itself. Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html" title="This class represents a general interface for a CPU clock listener.">ISystem_Clock_Listener</a> class must implement this function.</p>
+<p>Notifies the peripheral about how many CPU cycles have passed (<a class="el" href="classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html" title="This class represents a general interface for a CPU clock listener.">ISystem_Clock_Listener</a> interface). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">count</td><td>Number of CPU cycles </td></tr>
+    <tr><td class="paramname">count</td><td>Number of CPU cycles it took to execute the last instruction </td></tr>
   </table>
   </dd>
 </dl>
@@ -895,7 +1030,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_a226982dd161163b65706cad569522488_cgraph.svg" width="1718" height="452"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_a226982dd161163b65706cad569522488_cgraph.svg" width="1931" height="519"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -941,8 +1076,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reads data from the peripheral. </p>
-<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function.</p>
+<p>Reads data from the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">addr</td><td>Relative address (from the peripheral's perspective) from which the data will be read </td></tr>
@@ -979,8 +1113,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Resets the peripheral. </p>
-<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function. </p>
+<p>Resets/re-initializes the interrupt controller (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
 
 <p>Implements <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#ad51da04a4d143152f96290bfe1c7fcd0">zero_mate::peripheral::IPeripheral</a>.</p>
 
@@ -1019,6 +1152,15 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets the state of a given GPIO pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_idx</td><td>Index of the GPIO pin whose state will be set </td></tr>
+    <tr><td class="paramname">set</td><td>Should the state of the pin be set to high or low? </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1028,7 +1170,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_a74b84158da1933e79f091706e27c12f5_icgraph.svg" width="891" height="447"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_a74b84158da1933e79f091706e27c12f5_icgraph.svg" width="1138" height="470"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1056,6 +1198,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks whether the FIFO should be cleared or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>true, if the FIFO should be cleared. false otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1087,6 +1232,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks whether a new data transfer (transaction) should begin. </p>
+<dl class="section return"><dt>Returns</dt><dd>true, if a new transaction should begin. false otherwise. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1118,47 +1266,18 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_a47d44cc0056a39f0404e501c4449355a_icgraph.svg" width="468" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
-</div>
-</div>
-<a id="aa195c567531f97d585212978ab0f687a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa195c567531f97d585212978ab0f687a">&#9670;&nbsp;</a></span>Update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void zero_mate::peripheral::CBSC::Update </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Terminates an ongoing transaction (stop bit). </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_aa195c567531f97d585212978ab0f687a_cgraph.svg" width="1426" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_a47d44cc0056a39f0404e501c4449355a_cgraph.svg" width="1198" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_aa195c567531f97d585212978ab0f687a_icgraph.svg" width="415" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1peripheral_1_1CBSC_a47d44cc0056a39f0404e501c4449355a_icgraph.svg" width="924" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1204,8 +1323,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Writes data to the peripheral. </p>
-<p>Every class/struct that inherits from the <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> class must implement this function.</p>
+<p>Writes data to the peripheral (<a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory-mapped peripheral.">IPeripheral</a> interface). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">addr</td><td>Relative address (from the peripheral's perspective) where the data will be written </td></tr>
@@ -1236,7 +1354,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::uint32_t zero_mate::peripheral::CBSC::CPU_Cycles_Per_Update = 100</td>
+          <td class="memname">constexpr std::uint32_t zero_mate::peripheral::CBSC::CPU_Cycles_Per_Update = 30</td>
         </tr>
       </table>
   </td>
@@ -1268,6 +1386,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Data length. </p>
+
 </div>
 </div>
 <a id="aa2e912c4ae673c73d6c54d93aef3af46"></a>
@@ -1289,6 +1409,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Number of passed CPU cycles. </p>
 
 </div>
 </div>
@@ -1312,6 +1434,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Data FIFO. </p>
+
 </div>
 </div>
 <a id="a54fb1915fa7d6220432b640479184acc"></a>
@@ -1333,6 +1457,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>GPIO manager. </p>
 
 </div>
 </div>
@@ -1356,6 +1482,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Logging system. </p>
+
 </div>
 </div>
 <a id="a542b29d1857d7d9927bc95355bb7541a"></a>
@@ -1377,6 +1505,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Peripheral's registers. </p>
 
 </div>
 </div>
@@ -1400,6 +1530,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>State of the clock line (SCL) </p>
+
 </div>
 </div>
 <a id="ab05ac5b1f16f31f7deca3b71f291ccc7"></a>
@@ -1421,6 +1553,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Current transaction. </p>
 
 </div>
 </div>
@@ -1444,6 +1578,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Is there an ongoing transaction? </p>
+
 </div>
 </div>
 <a id="a812837d1a929df3ab56b85c31ed264fa"></a>
@@ -1465,6 +1601,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Total number of the peripheral's registers. </p>
 
 </div>
 </div>
@@ -1488,6 +1626,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Size of a single register. </p>
+
 </div>
 </div>
 <a id="aff6d288cdd811ff367118c19c6ad8dc2"></a>
@@ -1509,6 +1649,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>I2C SCL (clock) pin on the Raspberry Pi Zero board. </p>
 
 </div>
 </div>
@@ -1532,6 +1674,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>I2C SDA (data) pin on the Raspberry Pi Zero board. </p>
+
 </div>
 </div>
 <a id="aff13ab5f509224a413fcacfe48eeeabd"></a>
@@ -1553,6 +1697,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Slave address length. </p>
 
 </div>
 </div>

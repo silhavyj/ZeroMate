@@ -1,5 +1,5 @@
 <map id="zero_mate::peripheral::CBSC::Set_GPIO_pin" name="zero_mate::peripheral::CBSC::Set_GPIO_pin">
-<area shape="rect" id="node1" title=" " alt="" coords="5,75,171,116"/>
+<area shape="rect" id="node1" title="Sets the state of a given GPIO pin." alt="" coords="5,75,171,116"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="219,75,413,116"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="461,30,664,86"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="463,111,662,152"/>

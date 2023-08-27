@@ -6,7 +6,7 @@
 <area shape="rect" id="node7" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="233,244,394,300"/>
 <area shape="rect" id="node9" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="418,251,643,293"/>
 <area shape="rect" id="node10" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="667,251,904,293"/>
-<area shape="rect" id="node5" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="9,348,204,375"/>
-<area shape="rect" id="node6" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="11,423,203,449"/>
-<area shape="rect" id="node8" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="471,348,590,375"/>
+<area shape="rect" id="node5" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="19,348,194,389"/>
+<area shape="rect" id="node6" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="61,437,152,464"/>
+<area shape="rect" id="node8" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="471,355,590,382"/>
 </map>

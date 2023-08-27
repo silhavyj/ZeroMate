@@ -1,5 +1,5 @@
 <map id="zero_mate::peripheral::CBSC" name="zero_mate::peripheral::CBSC">
-<area shape="rect" id="node1" title=" " alt="" coords="376,104,541,145"/>
+<area shape="rect" id="node1" title="This class represents the BSC peripheral used in BCM2835." alt="" coords="376,104,541,145"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1IPeripheral.html" title="This class represents a general interface of a memory&#45;mapped peripheral." alt="" coords="20,5,185,47"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1ISystem__Clock__Listener.html" title="This class represents a general interface for a CPU clock listener." alt="" coords="10,71,195,112"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title="This class defines a logging system that is used throughout the project." alt="" coords="5,136,200,177"/>

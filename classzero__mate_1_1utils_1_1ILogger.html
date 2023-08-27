@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.2.1</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1utils_1_1ILogger.ht
 </div><!--header-->
 <div class="contents">
 
-<p>This class represents a logger interface.  
+<p>This class represents a logging_system interface.  
  <a href="classzero__mate_1_1utils_1_1ILogger.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="logger_8hpp_source.html">logger.hpp</a>&gt;</code></p>
@@ -162,7 +162,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aae923e5cdee3e0f28937be3aa4b06213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class represents a logger interface. </p>
+<div class="textblock"><p>This class represents a logging_system interface. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a59c4b9eddb6ec9f0612f213f35113989"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a59c4b9eddb6ec9f0612f213f35113989">&#9670;&nbsp;</a></span>NLogging_Level</h2>
@@ -328,7 +328,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Logs a debug message. </p>
-<p>This function must be implemented by any class that implements the <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logger interface.">ILogger</a> interface.</p>
+<p>This function must be implemented by any class that implements the <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logging_system interface.">ILogger</a> interface.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td>Debug message to be logged </td></tr>
@@ -365,7 +365,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Logs an error message. </p>
-<p>This function must be implemented by any class that implements the <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logger interface.">ILogger</a> interface.</p>
+<p>This function must be implemented by any class that implements the <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logging_system interface.">ILogger</a> interface.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td>Error message to be logged </td></tr>
@@ -402,7 +402,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Logs an info message. </p>
-<p>This function must be implemented by any class that implements the <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logger interface.">ILogger</a> interface.</p>
+<p>This function must be implemented by any class that implements the <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logging_system interface.">ILogger</a> interface.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td>Info message to be logged </td></tr>
@@ -497,7 +497,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prints out a given message without any special formatting applied. </p>
-<p>This function must be implemented by any class that implements the <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logger interface.">ILogger</a> interface.</p>
+<p>This function must be implemented by any class that implements the <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logging_system interface.">ILogger</a> interface.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td>Plain text message to be logged </td></tr>
@@ -560,7 +560,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Logs a warning message. </p>
-<p>This function must be implemented by any class that implements the <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logger interface.">ILogger</a> interface.</p>
+<p>This function must be implemented by any class that implements the <a class="el" href="classzero__mate_1_1utils_1_1ILogger.html" title="This class represents a logging_system interface.">ILogger</a> interface.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td>Warning message to be logged </td></tr>
@@ -599,7 +599,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/zero_mate/utils/<a class="el" href="logger_8hpp_source.html">logger.hpp</a></li>
-<li>lib/logger/src/<a class="el" href="logger_8cpp.html">logger.cpp</a></li>
+<li>src/utils/logger/<a class="el" href="logger_8cpp.html">logger.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,7 +1,7 @@
 <map id="src/utils/logger/logger_stdo.cpp" name="src/utils/logger/logger_stdo.cpp">
-<area shape="rect" id="node1" title="This file defines a standard output logger (STDO) as defined in logger_stdo.hpp." alt="" coords="46,5,209,47"/>
+<area shape="rect" id="node1" title="This file defines a standard output logging_system (STDO) as defined in logger_stdo...." alt="" coords="46,5,209,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,111,121"/>
-<area shape="rect" id="node3" href="$logger__stdo_8hpp.html" title="This file defines a standard output logger (STDO)." alt="" coords="135,95,261,121"/>
-<area shape="rect" id="node4" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="101,169,295,196"/>
-<area shape="rect" id="node5" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="102,244,294,271"/>
+<area shape="rect" id="node3" href="$logger__stdo_8hpp.html" title="This file defines a standard output logging_system (STDO)." alt="" coords="135,95,261,121"/>
+<area shape="rect" id="node4" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="111,169,285,211"/>
+<area shape="rect" id="node5" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="153,259,243,285"/>
 </map>

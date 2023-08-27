@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Sends another bit of the slave&#39;s address.">
 <polygon fill="#bfbfbf" stroke="black" points="339,-0.5 339,-41.5 471,-41.5 471,-0.5 339,-0.5"/>
 <text text-anchor="start" x="347" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="347" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::I2C_Send_Slave</text>
@@ -22,10 +22,10 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#aa195c567531f97d585212978ab0f687a" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a3b0dd18504053624d39b9015015bb8fc" target="_top" xlink:title="Updates the I2C state machine.">
 <polygon fill="none" stroke="black" points="179,-6 179,-36 303,-36 303,-6 179,-6"/>
 <text text-anchor="start" x="187" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="middle" x="241" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Update</text>
+<text text-anchor="middle" x="241" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::I2C_Update</text>
 </a>
 </g>
 </g>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488" target="_top" xlink:title="Notifies the peripheral about how many CPU cycles have passed by.">
+<g id="a_node3"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488" target="_top" xlink:title="Notifies the peripheral about how many CPU cycles have passed (ISystem_Clock_Listener interface).">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-41.5 143,-41.5 143,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Increment_Passed</text>

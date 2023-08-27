@@ -1,5 +1,5 @@
 <map id="zero_mate::peripheral::CBSC::Should_Transaction_Begin" name="zero_mate::peripheral::CBSC::Should_Transaction_Begin">
-<area shape="rect" id="node1" title=" " alt="" coords="481,5,687,61"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15" title=" " alt="" coords="219,13,433,54"/>
-<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d" title="Writes data to the peripheral." alt="" coords="5,13,171,54"/>
+<area shape="rect" id="node1" title="Checks whether a new data transfer (transaction) should begin." alt="" coords="481,5,687,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#ab743dd233479745864da73cf7020ba15" title="Performs actions after the control register has been written to." alt="" coords="219,13,433,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,13,171,54"/>
 </map>

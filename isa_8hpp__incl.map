@@ -1,6 +1,6 @@
 <map id="src/core/arm1176jzf_s/isa/isa.hpp" name="src/core/arm1176jzf_s/isa/isa.hpp">
-<area shape="rect" id="node1" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="1356,5,1506,47"/>
-<area shape="rect" id="node2" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="1372,184,1490,211"/>
+<area shape="rect" id="node1" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="1637,5,1788,47"/>
+<area shape="rect" id="node2" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="1653,184,1772,211"/>
 <area shape="rect" id="node3" href="$branch__and__exchange_8hpp.html" title="This file defines a branch and exchange instruction (BX)." alt="" coords="27,102,222,129"/>
 <area shape="rect" id="node4" href="$branch_8hpp.html" title="This file defines a branch instruction (B, BL)." alt="" coords="246,102,341,129"/>
 <area shape="rect" id="node5" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="365,102,521,129"/>
@@ -18,4 +18,8 @@
 <area shape="rect" id="node17" href="$srs_8hpp.html" title="This file defines an SRS instruction (store return state onto a stack)." alt="" coords="2520,102,2590,129"/>
 <area shape="rect" id="node18" href="$rfe_8hpp.html" title="This file defines an RFE instruction (return from exception)." alt="" coords="2614,102,2682,129"/>
 <area shape="rect" id="node19" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="2706,102,2774,129"/>
+<area shape="rect" id="node20" href="$smulxy_8hpp.html" title="This file defines a SMULxy instruction." alt="" coords="2799,102,2895,129"/>
+<area shape="rect" id="node21" href="$smulwy_8hpp.html" title="This file implements a SMULWy instruction." alt="" coords="2919,102,3018,129"/>
+<area shape="rect" id="node22" href="$smlaxy_8hpp.html" title="This file defines a SMLAxy instruction." alt="" coords="3042,102,3138,129"/>
+<area shape="rect" id="node23" href="$smlawy_8hpp.html" title="This file defines a SMLAWy instruction." alt="" coords="3162,102,3260,129"/>
 </map>

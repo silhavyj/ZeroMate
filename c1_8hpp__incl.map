@@ -1,6 +1,6 @@
 <map id="src/core/coprocessors/cp15/c1.hpp" name="src/core/coprocessors/cp15/c1.hpp">
 <area shape="rect" id="node1" title="This file defines the primary register C1 of coprocessor CP15." alt="" coords="39,5,202,47"/>
 <area shape="rect" id="node2" href="$primary__reg_8hpp.html" title="This file defines a primary register interface of coprocessor CP15." alt="" coords="5,95,135,121"/>
-<area shape="rect" id="node3" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="23,169,218,196"/>
-<area shape="rect" id="node4" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="25,244,217,271"/>
+<area shape="rect" id="node3" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="33,169,208,211"/>
+<area shape="rect" id="node4" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="75,259,166,285"/>
 </map>

@@ -1,6 +1,7 @@
 var soc_8cpp =
 [
     [ "Init", "soc_8cpp.html#a3a1bd117cb86b2023bd0a9c617ce3bfe", null ],
+    [ "connection", "soc_8cpp.html#a3a0567749ee06b3e750af1cfb4173b1c", null ],
     [ "g_arm_timer", "soc_8cpp.html#ae383e1fc5aa0e83abcd5103e73d6ba96", null ],
     [ "g_aux", "soc_8cpp.html#a3946989b6fb2074745f373befc5307e2", null ],
     [ "g_bsc_1", "soc_8cpp.html#a385e5a58ae90c1f4510a66eda57e19c9", null ],
@@ -21,6 +22,5 @@ var soc_8cpp =
     [ "g_trng", "soc_8cpp.html#a2208cd3d9bc57373962d581e701e5025", null ],
     [ "lib_dir", "soc_8cpp.html#a6d22756d66c132946d86efc79b0487df", null ],
     [ "lib_name", "soc_8cpp.html#add091ede649287c2dd955ef4b0e26080", null ],
-    [ "name", "soc_8cpp.html#a9b45b3e13bd9167aab02e17e08916231", null ],
-    [ "pins", "soc_8cpp.html#afbd2505e359e4f02cda00a0c8e88aed8", null ]
+    [ "name", "soc_8cpp.html#a9b45b3e13bd9167aab02e17e08916231", null ]
 ];

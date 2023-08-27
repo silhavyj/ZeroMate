@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ae87c33c76ed6571b2408fd293710b6c4":[1,0,0,0,1,0,3],
+"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1f":[1,0,0,0,1,0,0],
+"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fa19d751dff27aea339cf66284e97e1d5e":[1,0,0,0,1,0,0,5],
 "classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fa3014392235f3266413d0c17efd64c67b":[1,0,0,0,1,0,0,3],
 "classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fa515b9a5d45581087efc00a8dbacb13ca":[1,0,0,0,1,0,0,6],
 "classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#aebc1815b9ac3d21d9e264c322670bd1fa526d688f37a86d3c3f27d0c5016eb71d":[1,0,0,0,1,0,0,0],
@@ -199,8 +202,11 @@ var NAVTREEINDEX1 =
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba1a004f5abe2b334db21328be1ea6b593":[1,0,0,0,2,11,2,16],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba24e76c50aa11daa615b6389c45db103d":[1,0,0,0,2,11,2,0],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba27c9f541f8dfaa575e05dba6fa7e7534":[1,0,0,0,2,11,2,7],
+"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba2b1379d8406885a99e4897d6820c4ff8":[1,0,0,0,2,11,2,23],
+"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba377de2895264b9d9f26eea2fa61adc05":[1,0,0,0,2,11,2,22],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba3bc026b815790a05493fa56fc4b8d8bd":[1,0,0,0,2,11,2,13],
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba88183b946cc5f0e8c96b2e66e1c74a7e":[1,0,0,0,2,11,2,20],
+"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba7e0479c01b56deba8080730b37149322":[1,0,0,0,2,11,2,20],
+"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba88183b946cc5f0e8c96b2e66e1c74a7e":[1,0,0,0,2,11,2,24],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba88bcd68d0b974bd41ba451f1677014f7":[1,0,0,0,2,11,2,11],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba923009aed29c885c8df27915d76e15ed":[1,0,0,0,2,11,2,19],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dba991ca6bda9a5fbbf705f4c183f773d87":[1,0,0,0,2,11,2,14],
@@ -209,6 +215,7 @@ var NAVTREEINDEX1 =
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbab343befc76d20be6b994a4f728d96a78":[1,0,0,0,2,11,2,18],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbaba4bb15e287985214d56d79e5f8fdd5f":[1,0,0,0,2,11,2,5],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbac0cba343bc753f8030abcbcf496425fa":[1,0,0,0,2,11,2,9],
+"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbac2c0c498c2260e32441fe42a0a15406b":[1,0,0,0,2,11,2,21],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbacc672100b2c0daeed019b6df309672c5":[1,0,0,0,2,11,2,10],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbad13f6aae326d61cb88b43b9d16d3bf5f":[1,0,0,0,2,11,2,3],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ae72b3268f36601933581ecf9851c14dbad80cf7913f5f7e250f7a38397b573bfe":[1,0,0,0,2,11,2,12],
@@ -242,12 +249,5 @@ var NAVTREEINDEX1 =
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a218575788eca2cd4f2c44037c003ca2f":[1,0,0,0,2,15,1],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a218575788eca2cd4f2c44037c003ca2fa1553efac04c2b29d8bb61a0a4552a34e":[1,0,0,0,2,15,1,0],
 "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a218575788eca2cd4f2c44037c003ca2fa88c3927325f37f64ba93991bb88caf8a":[1,0,0,0,2,15,1,1],
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a3c53a8ed393e0e284b5953a2a2d7cf7d":[1,0,0,0,2,15,3],
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a57095b246ae459c4135f5d5d9f6cbc85":[1,0,0,0,2,15,10],
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a65b16ce34a4591e78de88f812105b58b":[1,0,0,0,2,15,7],
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a6a0b2b90bc8fa9d50266f4416f2b5a0d":[1,0,0,0,2,15,13],
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a7e693b08d055faed4f1947dca3b70016":[1,0,0,0,2,15,0],
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a7e693b08d055faed4f1947dca3b70016a2e2fa97e0798296d2e54ebc690640419":[1,0,0,0,2,15,0,0],
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a7e693b08d055faed4f1947dca3b70016a4c975ba987e8f5ebda3b148c3011e881":[1,0,0,0,2,15,0,1],
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#aa2fa7591782207b606ca5542f57622cb":[1,0,0,0,2,15,11]
+"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a3c53a8ed393e0e284b5953a2a2d7cf7d":[1,0,0,0,2,15,3]
 };

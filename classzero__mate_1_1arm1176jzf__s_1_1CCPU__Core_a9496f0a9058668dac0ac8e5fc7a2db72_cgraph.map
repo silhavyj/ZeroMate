@@ -1,0 +1,4 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Core::Execute" name="zero_mate::arm1176jzf_s::CCPU_Core::Execute">
+<area shape="rect" id="node1" title="Executes a CSMULWy instruction." alt="" coords="5,13,181,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a5ce8166171feb7cd5a27ca935171a7c9" title="Combines the functionality of the isa::CSMULWy and isa::CSMLAWy instructions." alt="" coords="229,5,443,61"/>
+</map>

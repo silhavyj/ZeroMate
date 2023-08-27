@@ -1,4 +1,6 @@
 <map id="zero_mate::peripheral::CBSC::Terminate_Transaction" name="zero_mate::peripheral::CBSC::Terminate_Transaction">
-<area shape="rect" id="node1" title=" " alt="" coords="244,13,463,54"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488" title="Notifies the peripheral about how many CPU cycles have passed by." alt="" coords="5,5,196,61"/>
+<area shape="rect" id="node1" title="Terminates an ongoing transaction (stop bit)." alt="" coords="700,13,919,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#aa830cee242bb74a3779bb54c4baee609" title="Sends a stop bit (end of a frame)." alt="" coords="457,13,652,54"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a3b0dd18504053624d39b9015015bb8fc" title="Updates the I2C state machine." alt="" coords="244,13,409,54"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a226982dd161163b65706cad569522488" title="Notifies the peripheral about how many CPU cycles have passed (ISystem_Clock_Listener interface)." alt="" coords="5,5,196,61"/>
 </map>

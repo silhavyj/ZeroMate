@@ -21,6 +21,10 @@ var hierarchy =
       [ "zero_mate::arm1176jzf_s::isa::CMultiply_Long", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html", null ],
       [ "zero_mate::arm1176jzf_s::isa::CPSR_Transfer", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html", null ],
       [ "zero_mate::arm1176jzf_s::isa::CRFE", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html", null ],
+      [ "zero_mate::arm1176jzf_s::isa::CSMLAWy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAWy.html", null ],
+      [ "zero_mate::arm1176jzf_s::isa::CSMLAxy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMLAxy.html", null ],
+      [ "zero_mate::arm1176jzf_s::isa::CSMULWy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULWy.html", null ],
+      [ "zero_mate::arm1176jzf_s::isa::CSMULxy", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSMULxy.html", null ],
       [ "zero_mate::arm1176jzf_s::isa::CSRS", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html", null ],
       [ "zero_mate::arm1176jzf_s::isa::CSingle_Data_Transfer", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html", null ]
     ] ],

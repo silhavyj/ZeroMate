@@ -50,9 +50,9 @@
 <path fill="none" stroke="midnightblue" d="M798.95,-678.82C761.47,-714.34 689.2,-782.83 657.07,-813.27"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="801.54,-681.18 806.39,-671.76 796.73,-676.1 801.54,-681.18"/>
 </g>
-<!-- Node70 -->
+<!-- Node71 -->
 <g id="node41" class="node">
-<title>Node70</title>
+<title>Node71</title>
 <g id="a_node41"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a455d99c3614dc92ffbdbdcdb6b8b8bb8" target="_top" xlink:title="Logs an info message via all registered loggers.">
 <polygon fill="none" stroke="black" points="567,-493.5 567,-523.5 713,-523.5 713,-493.5 567,-493.5"/>
 <text text-anchor="start" x="575" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
@@ -60,15 +60,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node70 -->
+<!-- Node1&#45;&gt;Node71 -->
 <g id="edge50" class="edge">
-<title>Node1&#45;&gt;Node70</title>
+<title>Node1&#45;&gt;Node71</title>
 <path fill="none" stroke="midnightblue" d="M796.19,-635.05C758.96,-604.69 691.83,-549.95 659.45,-523.55"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="794.14,-637.89 804.1,-641.49 798.56,-632.46 794.14,-637.89"/>
 </g>
-<!-- Node73 -->
+<!-- Node74 -->
 <g id="node43" class="node">
-<title>Node73</title>
+<title>Node74</title>
 <g id="a_node43"><a xlink:href="classzero__mate_1_1utils_1_1CLogging__System.html#a2bb4d37b178f29335f726875bad91bd4" target="_top" xlink:title="Logs a warning message via all registered loggers.">
 <polygon fill="none" stroke="black" points="567,-262.5 567,-292.5 713,-292.5 713,-262.5 567,-262.5"/>
 <text text-anchor="start" x="575" y="-280.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogging</text>
@@ -76,9 +76,9 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node73 -->
+<!-- Node1&#45;&gt;Node74 -->
 <g id="edge53" class="edge">
-<title>Node1&#45;&gt;Node73</title>
+<title>Node1&#45;&gt;Node74</title>
 <path fill="none" stroke="midnightblue" d="M810.74,-631.95C776.26,-559.94 676.04,-350.68 648.23,-292.6"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="807.68,-633.67 815.16,-641.17 814,-630.64 807.68,-633.67"/>
 </g>
@@ -310,7 +310,7 @@
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#aadbb0ba14e605ee9f1be46c02f549aaa" target="_top" xlink:title=" ">
+<g id="a_node17"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#aadbb0ba14e605ee9f1be46c02f549aaa" target="_top" xlink:title="Checks whether the slave device has sent ACK_1 as expected.">
 <polygon fill="none" stroke="black" points="166.5,-789.5 166.5,-819.5 318.5,-819.5 318.5,-789.5 166.5,-789.5"/>
 <text text-anchor="start" x="174.5" y="-807.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="242.5" y="-796.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::I2C_Receive_ACK_1</text>
@@ -326,7 +326,7 @@
 <!-- Node20 -->
 <g id="node19" class="node">
 <title>Node20</title>
-<g id="a_node19"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a316b2af702507bdc0f385f5cf10bf47a" target="_top" xlink:title=" ">
+<g id="a_node19"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a316b2af702507bdc0f385f5cf10bf47a" target="_top" xlink:title="Checks whether the slave device has sent ACK_2 as expected.">
 <polygon fill="none" stroke="black" points="166.5,-658.5 166.5,-688.5 318.5,-688.5 318.5,-658.5 166.5,-658.5"/>
 <text text-anchor="start" x="174.5" y="-676.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="242.5" y="-665.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::I2C_Receive_ACK_2</text>
@@ -342,7 +342,7 @@
 <!-- Node21 -->
 <g id="node20" class="node">
 <title>Node21</title>
-<g id="a_node20"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#abc87dd5711f004d648286ec13e22bb28" target="_top" xlink:title=" ">
+<g id="a_node20"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#abc87dd5711f004d648286ec13e22bb28" target="_top" xlink:title="Sends another bit of the data payload.">
 <polygon fill="none" stroke="black" points="178.5,-1013.5 178.5,-1043.5 306.5,-1043.5 306.5,-1013.5 178.5,-1013.5"/>
 <text text-anchor="start" x="186.5" y="-1031.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="242.5" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::I2C_Send_Data</text>
@@ -539,7 +539,7 @@
 <!-- Node53 -->
 <g id="node38" class="node">
 <title>Node53</title>
-<g id="a_node38"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" target="_top" xlink:title=" ">
+<g id="a_node38"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" target="_top" xlink:title="Sets the state of a given GPIO pin.">
 <polygon fill="none" stroke="red" points="384,-1013.5 384,-1043.5 508,-1043.5 508,-1013.5 384,-1013.5"/>
 <text text-anchor="start" x="392" y="-1031.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
 <text text-anchor="middle" x="446" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Set_GPIO_pin</text>
@@ -552,9 +552,9 @@
 <path fill="none" stroke="midnightblue" d="M630.27,-853.5C615.7,-891.57 582.82,-963.82 531,-1003.5 524.24,-1008.68 516.41,-1012.79 508.31,-1016.05"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="633.7,-854.32 633.9,-843.73 627.14,-851.89 633.7,-854.32"/>
 </g>
-<!-- Node60 -->
+<!-- Node61 -->
 <g id="node39" class="node">
-<title>Node60</title>
+<title>Node61</title>
 <g id="a_node39"><a xlink:href="classzero__mate_1_1peripheral_1_1CMini__UART.html#af0ac73a2cea4c4fb61673803f60cf9e6" target="_top" xlink:title="Receives a stop bit.">
 <polygon fill="none" stroke="red" points="367,-1401 367,-1442 525,-1442 525,-1401 367,-1401"/>
 <text text-anchor="start" x="375" y="-1430" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
@@ -563,15 +563,15 @@
 </a>
 </g>
 </g>
-<!-- Node13&#45;&gt;Node60 -->
+<!-- Node13&#45;&gt;Node61 -->
 <g id="edge48" class="edge">
-<title>Node13&#45;&gt;Node60</title>
+<title>Node13&#45;&gt;Node61</title>
 <path fill="none" stroke="midnightblue" d="M637.42,-853.81C630.8,-952.27 602.26,-1308.37 531,-1391.5 527.98,-1395.03 524.51,-1398.14 520.74,-1400.89"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="640.93,-853.81 638.09,-843.61 633.94,-853.36 640.93,-853.81"/>
 </g>
-<!-- Node62 -->
+<!-- Node63 -->
 <g id="node40" class="node">
-<title>Node62</title>
+<title>Node63</title>
 <g id="a_node40"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a050dada520ca82a21874045815c596a8" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="red" points="377.5,-1281 377.5,-1322 514.5,-1322 514.5,-1281 377.5,-1281"/>
 <text text-anchor="start" x="385.5" y="-1310" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
@@ -580,9 +580,9 @@
 </a>
 </g>
 </g>
-<!-- Node13&#45;&gt;Node62 -->
+<!-- Node13&#45;&gt;Node63 -->
 <g id="edge49" class="edge">
-<title>Node13&#45;&gt;Node62</title>
+<title>Node13&#45;&gt;Node63</title>
 <path fill="none" stroke="midnightblue" d="M636.04,-853.44C625.62,-937.4 588.11,-1208.12 531,-1271.5 526.34,-1276.68 520.71,-1280.96 514.62,-1284.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="639.52,-853.86 637.26,-843.5 632.57,-853.01 639.52,-853.86"/>
 </g>
@@ -605,10 +605,10 @@
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#aa195c567531f97d585212978ab0f687a" target="_top" xlink:title=" ">
+<g id="a_node18"><a xlink:href="classzero__mate_1_1peripheral_1_1CBSC.html#a3b0dd18504053624d39b9015015bb8fc" target="_top" xlink:title="Updates the I2C state machine.">
 <polygon fill="none" stroke="red" points="0,-789.5 0,-819.5 124,-819.5 124,-789.5 0,-789.5"/>
 <text text-anchor="start" x="8" y="-807.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
-<text text-anchor="middle" x="62" y="-796.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::Update</text>
+<text text-anchor="middle" x="62" y="-796.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CBSC::I2C_Update</text>
 </a>
 </g>
 </g>
@@ -750,15 +750,15 @@
 <path fill="none" stroke="midnightblue" d="M373.78,-1028.5C351.92,-1028.5 328.03,-1028.5 306.74,-1028.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="374,-1032 384,-1028.5 374,-1025 374,-1032"/>
 </g>
-<!-- Node70&#45;&gt;Node22 -->
+<!-- Node71&#45;&gt;Node22 -->
 <g id="edge51" class="edge">
-<title>Node70&#45;&gt;Node22</title>
+<title>Node71&#45;&gt;Node22</title>
 <path fill="none" stroke="midnightblue" d="M556.89,-508.5C544.22,-508.5 531.22,-508.5 518.81,-508.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="556.96,-512 566.96,-508.5 556.96,-505 556.96,-512"/>
 </g>
-<!-- Node71 -->
+<!-- Node72 -->
 <g id="node42" class="node">
-<title>Node71</title>
+<title>Node72</title>
 <g id="a_node42"><a xlink:href="classzero__mate_1_1gui_1_1CControl__Window.html#ad83b2651e1d6bf8ed72e3553526f17ca" target="_top" xlink:title="Runs CPU execution (separate thread).">
 <polygon fill="none" stroke="red" points="377.5,-405.5 377.5,-435.5 514.5,-435.5 514.5,-405.5 377.5,-405.5"/>
 <text text-anchor="start" x="385.5" y="-423.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::gui::CControl</text>
@@ -766,33 +766,33 @@
 </a>
 </g>
 </g>
-<!-- Node70&#45;&gt;Node71 -->
+<!-- Node71&#45;&gt;Node72 -->
 <g id="edge52" class="edge">
-<title>Node70&#45;&gt;Node71</title>
+<title>Node71&#45;&gt;Node72</title>
 <path fill="none" stroke="midnightblue" d="M608.14,-487.83C587.09,-474.4 558.19,-457.27 531,-445.5 522.62,-441.87 513.56,-438.57 504.59,-435.64"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="606.36,-490.84 616.66,-493.33 610.16,-484.97 606.36,-490.84"/>
 </g>
-<!-- Node73&#45;&gt;Node4 -->
+<!-- Node74&#45;&gt;Node4 -->
 <g id="edge63" class="edge">
-<title>Node73&#45;&gt;Node4</title>
+<title>Node74&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M615.12,-299.44C594.36,-317.36 562.71,-342.01 531,-356.5 460.49,-388.71 410.48,-335.83 361,-395.5 295.92,-473.99 350.25,-1213.71 325,-1312.5 310.04,-1371.03 272.39,-1433.02 253.98,-1461.09"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="617.59,-301.93 622.79,-292.7 612.96,-296.68 617.59,-301.93"/>
 </g>
-<!-- Node73&#45;&gt;Node12 -->
+<!-- Node74&#45;&gt;Node12 -->
 <g id="edge60" class="edge">
-<title>Node73&#45;&gt;Node12</title>
+<title>Node74&#45;&gt;Node12</title>
 <path fill="none" stroke="midnightblue" d="M627.87,-301.79C611.12,-339.67 580.03,-415.53 567,-483.5 549.25,-576.12 586.95,-1255.58 531,-1331.5 527.33,-1336.49 522.75,-1340.65 517.64,-1344.12"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="631.1,-303.13 631.99,-292.58 624.71,-300.28 631.1,-303.13"/>
 </g>
-<!-- Node73&#45;&gt;Node27 -->
+<!-- Node74&#45;&gt;Node27 -->
 <g id="edge55" class="edge">
-<title>Node73&#45;&gt;Node27</title>
+<title>Node74&#45;&gt;Node27</title>
 <path fill="none" stroke="midnightblue" d="M630.09,-301.99C615.38,-338.85 582.42,-408.16 531,-444.5 524.88,-448.83 517.94,-452.23 510.75,-454.89"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="633.42,-303.09 633.76,-292.5 626.89,-300.57 633.42,-303.09"/>
 </g>
-<!-- Node74 -->
+<!-- Node75 -->
 <g id="node44" class="node">
-<title>Node74</title>
+<title>Node75</title>
 <g id="a_node44"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a85e6ef006a36e1adb56abd3ecc6481be" target="_top" xlink:title="Executes a CPU exception.">
 <polygon fill="none" stroke="red" points="380,-257 380,-298 512,-298 512,-257 380,-257"/>
 <text text-anchor="start" x="388" y="-286" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
@@ -801,15 +801,15 @@
 </a>
 </g>
 </g>
-<!-- Node73&#45;&gt;Node74 -->
+<!-- Node74&#45;&gt;Node75 -->
 <g id="edge54" class="edge">
-<title>Node73&#45;&gt;Node74</title>
+<title>Node74&#45;&gt;Node75</title>
 <path fill="none" stroke="midnightblue" d="M556.74,-277.5C541.84,-277.5 526.49,-277.5 512.17,-277.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="556.96,-281 566.96,-277.5 556.96,-274 556.96,-281"/>
 </g>
-<!-- Node80 -->
+<!-- Node81 -->
 <g id="node45" class="node">
-<title>Node80</title>
+<title>Node81</title>
 <g id="a_node45"><a xlink:href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a00f4cf1169d774a50886f60f5f166f8b" target="_top" xlink:title="Performs a halfword data write to a given address.">
 <polygon fill="none" stroke="red" points="361,-197 361,-238 531,-238 531,-197 361,-197"/>
 <text text-anchor="start" x="369" y="-226" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::arm1176jzf</text>
@@ -818,15 +818,15 @@
 </a>
 </g>
 </g>
-<!-- Node73&#45;&gt;Node80 -->
+<!-- Node74&#45;&gt;Node81 -->
 <g id="edge56" class="edge">
-<title>Node73&#45;&gt;Node80</title>
+<title>Node74&#45;&gt;Node81</title>
 <path fill="none" stroke="midnightblue" d="M580.92,-259.35C559.44,-252.64 534.95,-244.99 512.84,-238.08"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="579.96,-262.72 590.55,-262.36 582.05,-256.04 579.96,-262.72"/>
 </g>
-<!-- Node82 -->
+<!-- Node83 -->
 <g id="node46" class="node">
-<title>Node82</title>
+<title>Node83</title>
 <g id="a_node46"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a9c9fd268222fa96e4a81d65f7340235c" target="_top" xlink:title="Reads data from the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="384,-147.5 384,-177.5 508,-177.5 508,-147.5 384,-147.5"/>
 <text text-anchor="start" x="392" y="-165.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
@@ -834,15 +834,15 @@
 </a>
 </g>
 </g>
-<!-- Node73&#45;&gt;Node82 -->
+<!-- Node74&#45;&gt;Node83 -->
 <g id="edge57" class="edge">
-<title>Node73&#45;&gt;Node82</title>
+<title>Node74&#45;&gt;Node83</title>
 <path fill="none" stroke="midnightblue" d="M617.47,-254.94C596.98,-234.66 564.38,-205.39 531,-187.5 523.89,-183.69 516.13,-180.39 508.28,-177.54"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="615.18,-257.6 624.71,-262.23 620.15,-252.67 615.18,-257.6"/>
 </g>
-<!-- Node83 -->
+<!-- Node84 -->
 <g id="node47" class="node">
-<title>Node83</title>
+<title>Node84</title>
 <g id="a_node47"><a xlink:href="classzero__mate_1_1peripheral_1_1CAUX.html#aedef3fa569fbcba697c28a9a5a3ecab9" target="_top" xlink:title="Reads data from the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="384,-98.5 384,-128.5 508,-128.5 508,-98.5 384,-98.5"/>
 <text text-anchor="start" x="392" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
@@ -850,15 +850,15 @@
 </a>
 </g>
 </g>
-<!-- Node73&#45;&gt;Node83 -->
+<!-- Node74&#45;&gt;Node84 -->
 <g id="edge58" class="edge">
-<title>Node73&#45;&gt;Node83</title>
+<title>Node74&#45;&gt;Node84</title>
 <path fill="none" stroke="midnightblue" d="M626.73,-253.33C609.57,-221.95 575.43,-167.64 531,-137.5 524.1,-132.82 516.28,-129.04 508.27,-125.99"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="623.71,-255.1 631.51,-262.28 629.89,-251.81 623.71,-255.1"/>
 </g>
-<!-- Node84 -->
+<!-- Node85 -->
 <g id="node48" class="node">
-<title>Node84</title>
+<title>Node85</title>
 <g id="a_node48"><a xlink:href="classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#ac3edf689b30c39f2406fa6308fdeb2e9" target="_top" xlink:title="Reads data from the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="380,-49.5 380,-79.5 512,-79.5 512,-49.5 380,-49.5"/>
 <text text-anchor="start" x="388" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
@@ -866,15 +866,15 @@
 </a>
 </g>
 </g>
-<!-- Node73&#45;&gt;Node84 -->
+<!-- Node74&#45;&gt;Node85 -->
 <g id="edge59" class="edge">
-<title>Node73&#45;&gt;Node84</title>
+<title>Node74&#45;&gt;Node85</title>
 <path fill="none" stroke="midnightblue" d="M631.66,-252.75C618.36,-212.24 586.4,-131.94 531,-88.5 525.39,-84.1 519.01,-80.51 512.33,-77.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="628.35,-253.9 634.71,-262.37 635.03,-251.78 628.35,-253.9"/>
 </g>
-<!-- Node85 -->
+<!-- Node86 -->
 <g id="node49" class="node">
-<title>Node85</title>
+<title>Node86</title>
 <g id="a_node49"><a xlink:href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#adb5da1b77debf34bb53e590c1774af34" target="_top" xlink:title="Writes data to the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="384,-0.5 384,-30.5 508,-30.5 508,-0.5 384,-0.5"/>
 <text text-anchor="start" x="392" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
@@ -882,15 +882,15 @@
 </a>
 </g>
 </g>
-<!-- Node73&#45;&gt;Node85 -->
+<!-- Node74&#45;&gt;Node86 -->
 <g id="edge61" class="edge">
-<title>Node73&#45;&gt;Node85</title>
+<title>Node74&#45;&gt;Node86</title>
 <path fill="none" stroke="midnightblue" d="M634.77,-252.38C625.27,-203.84 597.61,-96.93 531,-39.5 524.34,-33.76 516.38,-29.38 508.06,-26.05"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="631.36,-253.15 636.63,-262.34 638.24,-251.87 631.36,-253.15"/>
 </g>
-<!-- Node86 -->
+<!-- Node87 -->
 <g id="node50" class="node">
-<title>Node86</title>
+<title>Node87</title>
 <g id="a_node50"><a xlink:href="classzero__mate_1_1peripheral_1_1CAUX.html#a66c343e995d87042d200831e5692a3a9" target="_top" xlink:title="Writes data to the peripheral (IPeripheral interface).">
 <polygon fill="none" stroke="black" points="384,-317.5 384,-347.5 508,-347.5 508,-317.5 384,-317.5"/>
 <text text-anchor="start" x="392" y="-335.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::peripheral</text>
@@ -898,9 +898,9 @@
 </a>
 </g>
 </g>
-<!-- Node73&#45;&gt;Node86 -->
+<!-- Node74&#45;&gt;Node87 -->
 <g id="edge62" class="edge">
-<title>Node73&#45;&gt;Node86</title>
+<title>Node74&#45;&gt;Node87</title>
 <path fill="none" stroke="midnightblue" d="M576.79,-295.32C551.8,-302.48 523.31,-310.64 499.4,-317.49"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="577.89,-298.65 586.54,-292.53 575.96,-291.92 577.89,-298.65"/>
 </g>

@@ -1,12 +1,12 @@
 <map id="src/core/peripherals/auxiliary/auxiliary.hpp" name="src/core/peripherals/auxiliary/auxiliary.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="527,5,698,47"/>
-<area shape="rect" id="node2" href="$gpio_8hpp.html" title="This file defines the GPIO controller used in BCM2835." alt="" coords="287,95,378,121"/>
-<area shape="rect" id="node3" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="5,251,121,278"/>
-<area shape="rect" id="node4" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="384,169,559,196"/>
-<area shape="rect" id="node6" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="345,333,539,360"/>
-<area shape="rect" id="node9" href="$mini__uart_8hpp.html" title="This file defines the Mini UART auxiliary peripheral used in BCM2835." alt="" coords="698,95,810,121"/>
-<area shape="rect" id="node10" href="$system__clock__listener_8hpp.html" title="This file defines an interface for a CPU clock listener." alt="" coords="835,95,1041,121"/>
-<area shape="rect" id="node8" href="$external__peripheral_8hpp.html" title="This file defines an interface for external peripherals that can be attached to the system via GPIO p..." alt="" coords="146,244,295,285"/>
-<area shape="rect" id="node5" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="370,251,573,278"/>
-<area shape="rect" id="node7" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="249,408,441,435"/>
+<area shape="rect" id="node1" title=" " alt="" coords="397,5,567,47"/>
+<area shape="rect" id="node2" href="$gpio_8hpp.html" title="This file defines the GPIO controller used in BCM2835." alt="" coords="355,95,446,121"/>
+<area shape="rect" id="node3" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="5,259,121,285"/>
+<area shape="rect" id="node4" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="127,177,301,203"/>
+<area shape="rect" id="node6" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="349,333,524,375"/>
+<area shape="rect" id="node9" href="$mini__uart_8hpp.html" title="This file defines the Mini UART auxiliary peripheral used in BCM2835." alt="" coords="601,95,713,121"/>
+<area shape="rect" id="node10" href="$system__clock__listener_8hpp.html" title="This file defines an interface for a CPU clock listener." alt="" coords="737,95,944,121"/>
+<area shape="rect" id="node8" href="$external__peripheral_8hpp.html" title="This file defines an interface for external peripherals that can be attached to the system via GPIO p..." alt="" coords="326,169,475,211"/>
+<area shape="rect" id="node5" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="146,259,349,285"/>
+<area shape="rect" id="node7" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="391,423,482,449"/>
 </map>

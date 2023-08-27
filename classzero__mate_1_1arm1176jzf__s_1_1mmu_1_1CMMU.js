@@ -9,7 +9,6 @@ var classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU =
     [ "Get_Physical_Addr", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a7bc1002a8f1032547deee07589cbbb84", null ],
     [ "Is_Enabled", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a0e4282050053a8672260e9752da301bb", null ],
     [ "Reset", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ae2f1490165f1235df8eab5eebafefb1b", null ],
-    [ "Verify_Access", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ab1413e798b9ac2d3bcdf521e7dfe7bdf", null ],
     [ "m_bus", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#abcff07d1a1e6dcaac0d238bb17073181", null ],
     [ "m_cp15", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a9e34ab127ed523dbf0025936a9426e60", null ],
     [ "m_page_table_0", "classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#ab6470d00b02176c20dae55e1aec18a52", null ],

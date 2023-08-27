@@ -1,9 +1,9 @@
 <map id="src/core/peripherals/gpio.hpp" name="src/core/peripherals/gpio.hpp">
 <area shape="rect" id="node1" title="This file defines the GPIO controller used in BCM2835." alt="" coords="299,5,449,47"/>
-<area shape="rect" id="node2" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="5,177,121,203"/>
-<area shape="rect" id="node3" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="192,95,367,121"/>
-<area shape="rect" id="node5" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="317,259,511,285"/>
-<area shape="rect" id="node7" href="$external__peripheral_8hpp.html" title="This file defines an interface for external peripherals that can be attached to the system via GPIO p..." alt="" coords="474,169,623,211"/>
-<area shape="rect" id="node4" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="146,177,349,203"/>
-<area shape="rect" id="node6" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="385,333,577,360"/>
+<area shape="rect" id="node2" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="5,184,121,211"/>
+<area shape="rect" id="node3" href="$interrupt__controller_8hpp.html" title="This file defines the interrupt controller used in BCM2835." alt="" coords="192,102,367,129"/>
+<area shape="rect" id="node5" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="324,259,499,300"/>
+<area shape="rect" id="node7" href="$external__peripheral_8hpp.html" title="This file defines an interface for external peripherals that can be attached to the system via GPIO p..." alt="" coords="474,95,623,136"/>
+<area shape="rect" id="node4" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="146,184,349,211"/>
+<area shape="rect" id="node6" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="366,348,457,375"/>
 </map>

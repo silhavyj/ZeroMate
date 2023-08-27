@@ -226,33 +226,33 @@
 <path fill="none" stroke="midnightblue" d="M74.25,-322.92C84.23,-277.26 111.69,-180.46 173,-128 180.76,-121.36 190.2,-116.49 199.93,-112.91"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="70.8,-322.36 72.18,-332.86 77.65,-323.78 70.8,-322.36"/>
 </g>
-<!-- Node51 -->
+<!-- Node55 -->
 <g id="node15" class="node">
-<title>Node51</title>
-<g id="a_node15"><a xlink:href="classzero__mate_1_1utils_1_1ILogger.html" target="_top" xlink:title="This class represents a logger interface.">
+<title>Node55</title>
+<g id="a_node15"><a xlink:href="classzero__mate_1_1utils_1_1ILogger.html" target="_top" xlink:title="This class represents a logging_system interface.">
 <polygon fill="none" stroke="black" points="0,-22.5 0,-41.5 137,-41.5 137,-22.5 0,-22.5"/>
 <text text-anchor="middle" x="68.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::ILogger</text>
 </a>
 </g>
 </g>
-<!-- Node51&#45;&gt;Node8 -->
+<!-- Node55&#45;&gt;Node8 -->
 <g id="edge14" class="edge">
-<title>Node51&#45;&gt;Node8</title>
+<title>Node55&#45;&gt;Node8</title>
 <path fill="none" stroke="midnightblue" d="M147.39,-41.07C164.88,-43.1 183.16,-45.23 199.72,-47.16"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="147.54,-37.56 137.2,-39.88 146.73,-44.51 147.54,-37.56"/>
 </g>
-<!-- Node52 -->
+<!-- Node56 -->
 <g id="node16" class="node">
-<title>Node52</title>
-<g id="a_node16"><a xlink:href="classzero__mate_1_1utils_1_1CLogger__STDO.html" target="_top" xlink:title="This class represents a logger that logs messages to the standard output (STDO).">
+<title>Node56</title>
+<g id="a_node16"><a xlink:href="classzero__mate_1_1utils_1_1CLogger__STDO.html" target="_top" xlink:title="This class represents a logging_system that logs messages to the standard output (STDO).">
 <polygon fill="none" stroke="black" points="173,-0.5 173,-19.5 346,-19.5 346,-0.5 173,-0.5"/>
 <text text-anchor="middle" x="259.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::utils::CLogger_STDO</text>
 </a>
 </g>
 </g>
-<!-- Node51&#45;&gt;Node52 -->
+<!-- Node55&#45;&gt;Node56 -->
 <g id="edge15" class="edge">
-<title>Node51&#45;&gt;Node52</title>
+<title>Node55&#45;&gt;Node56</title>
 <path fill="none" stroke="midnightblue" d="M147.24,-22.95C156.97,-21.82 166.95,-20.66 176.75,-19.52"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="146.73,-19.49 137.2,-24.12 147.54,-26.44 146.73,-19.49"/>
 </g>

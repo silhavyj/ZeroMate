@@ -1,0 +1,17 @@
+<map id="zero_mate::peripheral::CBSC::I2C_Update" name="zero_mate::peripheral::CBSC::I2C_Update">
+<area shape="rect" id="node1" title="Updates the I2C state machine." alt="" coords="5,173,171,215"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#aadbb0ba14e605ee9f1be46c02f549aaa" title="Checks whether the slave device has sent ACK_1 as expected." alt="" coords="729,5,932,47"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a316b2af702507bdc0f385f5cf10bf47a" title="Checks whether the slave device has sent ACK_2 as expected." alt="" coords="471,61,673,103"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1peripheral_1_1CBSC.html#abc87dd5711f004d648286ec13e22bb28" title="Sends another bit of the data payload." alt="" coords="487,127,657,168"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1peripheral_1_1CBSC.html#acf265364a9484ecfad37ab0893d981c7" title="Sends the RW bit." alt="" coords="479,192,665,233"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a0535fad6da893f066addecb99f455192" title="Sends another bit of the slave&#39;s address." alt="" coords="229,231,405,287"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a3554dd56ba5d95d2eada7b0fd5a92c55" title="Sends a start bit (start of a frame)." alt="" coords="219,312,415,353"/>
+<area shape="rect" id="node14" href="$classzero__mate_1_1peripheral_1_1CBSC.html#aa830cee242bb74a3779bb54c4baee609" title="Sends a stop bit (end of a frame)." alt="" coords="219,377,414,419"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="980,100,1175,141"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="1223,55,1425,111"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="1225,136,1423,177"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="1473,31,1687,72"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="1483,96,1677,137"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" title="Sets the state of a given GPIO pin." alt="" coords="748,251,913,292"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a47d44cc0056a39f0404e501c4449355a" title="Terminates an ongoing transaction (stop bit)." alt="" coords="463,411,681,452"/>
+</map>

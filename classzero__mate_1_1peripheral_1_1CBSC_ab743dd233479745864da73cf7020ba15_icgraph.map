@@ -1,4 +1,4 @@
 <map id="zero_mate::peripheral::CBSC::Control_Reg_Callback" name="zero_mate::peripheral::CBSC::Control_Reg_Callback">
-<area shape="rect" id="node1" title=" " alt="" coords="219,5,433,47"/>
-<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d" title="Writes data to the peripheral." alt="" coords="5,5,171,47"/>
+<area shape="rect" id="node1" title="Performs actions after the control register has been written to." alt="" coords="219,5,433,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a91d31c6b0a9fa05ef7d1488f3e67247d" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="5,5,171,47"/>
 </map>

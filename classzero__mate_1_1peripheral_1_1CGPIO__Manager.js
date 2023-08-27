@@ -1,10 +1,10 @@
 var classzero__mate_1_1peripheral_1_1CGPIO__Manager =
 [
     [ "CPin", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html", "classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin" ],
-    [ "NPin_Set_Status", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35", [
-      [ "OK", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35ae0aa021e21dddbd6d8cecec71e9cf564", null ],
-      [ "Invalid_Pin_Function", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35a51eae2e2bae3190e0150f2591e0816d9", null ],
-      [ "Invalid_Pin_Number", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a7babe4ce0aef0ec79b8a76bce0cd5e35a129d0df4d73b91437e13633546b87cce", null ]
+    [ "NPin_Set_Status", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aaac68ced50359478a60ed51d1fa750c5", [
+      [ "OK", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aaac68ced50359478a60ed51d1fa750c5ae0aa021e21dddbd6d8cecec71e9cf564", null ],
+      [ "Invalid_Pin_Function", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aaac68ced50359478a60ed51d1fa750c5a51eae2e2bae3190e0150f2591e0816d9", null ],
+      [ "Invalid_Pin_Number", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#aaac68ced50359478a60ed51d1fa750c5a129d0df4d73b91437e13633546b87cce", null ]
     ] ],
     [ "NRegister", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698", [
       [ "GPFSEL0", "classzero__mate_1_1peripheral_1_1CGPIO__Manager.html#a19409e7e50658ff0ca681e3cbb504698a0de08677ff40caa561160dd11e3d69c4", null ],

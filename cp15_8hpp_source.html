@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.2.1</span>
+   &#160;<span id="projectnumber">v1.3.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('cp15_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="c8_8hpp.html">c8.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="primary__reg_8hpp.html">primary_reg.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;../coprocessor.hpp&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="logger_8hpp.html">zero_mate/utils/logger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="logging__system_8hpp.html">zero_mate/utils/logging_system.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacezero__mate_1_1coprocessor_1_1cp15.html">zero_mate::coprocessor::cp15</a></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
@@ -209,8 +209,8 @@ $(document).ready(function(){initNavTree('cp15_8hpp_source.html',''); initResiza
 <div class="ttc" id="aclasszero__mate_1_1coprocessor_1_1cp15_1_1CCP15_html_a66a5759016cdfbd2bdf4bb743a4bfec1"><div class="ttname"><a href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#a66a5759016cdfbd2bdf4bb743a4bfec1">zero_mate::coprocessor::cp15::CCP15::CCP15</a></div><div class="ttdeci">CCP15(arm1176jzf_s::CCPU_Context &amp;cpu_context)</div><div class="ttdoc">Creates an instance of the class.</div><div class="ttdef"><b>Definition:</b> cp15.cpp:24</div></div>
 <div class="ttc" id="aclasszero__mate_1_1coprocessor_1_1cp15_1_1CCP15_html_a8098e151767a4776575e6732d72b6845"><div class="ttname"><a href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#a8098e151767a4776575e6732d72b6845">zero_mate::coprocessor::cp15::CCP15::Reset</a></div><div class="ttdeci">void Reset() override</div><div class="ttdoc">Resets the coprocessor.</div><div class="ttdef"><b>Definition:</b> cp15.cpp:31</div></div>
 <div class="ttc" id="aclasszero__mate_1_1coprocessor_1_1cp15_1_1CCP15_html_acf21d27cfbac80830347b0e69c1385c1"><div class="ttname"><a href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#acf21d27cfbac80830347b0e69c1385c1">zero_mate::coprocessor::cp15::CCP15::Perform_Register_Transfer</a></div><div class="ttdeci">void Perform_Register_Transfer(arm1176jzf_s::isa::CCoprocessor_Reg_Transfer instruction) override</div><div class="ttdoc">Performs a coprocessor register transfer instruction (ICoprocessor interface).</div><div class="ttdef"><b>Definition:</b> cp15.cpp:41</div></div>
-<div class="ttc" id="aclasszero__mate_1_1utils_1_1CLogging__System_html"><div class="ttname"><a href="classzero__mate_1_1utils_1_1CLogging__System.html">zero_mate::utils::CLogging_System</a></div><div class="ttdoc">This class defines a logging system that is used throughout the project.</div><div class="ttdef"><b>Definition:</b> logger.hpp:142</div></div>
-<div class="ttc" id="alogger_8hpp_html"><div class="ttname"><a href="logger_8hpp.html">logger.hpp</a></div><div class="ttdoc">This file defines a general logger interface as well as a logging system that is used in the project.</div></div>
+<div class="ttc" id="aclasszero__mate_1_1utils_1_1CLogging__System_html"><div class="ttname"><a href="classzero__mate_1_1utils_1_1CLogging__System.html">zero_mate::utils::CLogging_System</a></div><div class="ttdoc">This class defines a logging system that is used throughout the project.</div><div class="ttdef"><b>Definition:</b> logging_system.hpp:35</div></div>
+<div class="ttc" id="alogging__system_8hpp_html"><div class="ttname"><a href="logging__system_8hpp.html">logging_system.hpp</a></div><div class="ttdoc">This file defines a logging system that is used in the project.</div></div>
 <div class="ttc" id="anamespacezero__mate_1_1coprocessor_1_1cp15_html"><div class="ttname"><a href="namespacezero__mate_1_1coprocessor_1_1cp15.html">zero_mate::coprocessor::cp15</a></div><div class="ttdef"><b>Definition:</b> c1.cpp:18</div></div>
 <div class="ttc" id="anamespacezero__mate_1_1coprocessor_1_1cp15_html_a66b708afc4250fcf6c6c54c02f32b779"><div class="ttname"><a href="namespacezero__mate_1_1coprocessor_1_1cp15.html#a66b708afc4250fcf6c6c54c02f32b779">zero_mate::coprocessor::cp15::NPrimary_Register</a></div><div class="ttdeci">NPrimary_Register</div><div class="ttdoc">Lists out all primary registers that are supported/implemented by the emulator.</div><div class="ttdef"><b>Definition:</b> primary_reg.hpp:32</div></div>
 <div class="ttc" id="aprimary__reg_8hpp_html"><div class="ttname"><a href="primary__reg_8hpp.html">primary_reg.hpp</a></div><div class="ttdoc">This file defines a primary register interface of coprocessor CP15.</div></div>

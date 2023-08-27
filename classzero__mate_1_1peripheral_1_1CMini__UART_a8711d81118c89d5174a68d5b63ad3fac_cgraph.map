@@ -1,0 +1,4 @@
+<map id="zero_mate::peripheral::CMini_UART::Trigger_IRQ" name="zero_mate::peripheral::CMini_UART::Trigger_IRQ">
+<area shape="rect" id="node1" title="Triggers an interrupt." alt="" coords="5,13,196,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#aeedc743fe9b70dfb0019b775e2ea714a" title="Sets the type of a pending IRQ in the IIR register." alt="" coords="244,5,440,61"/>
+</map>

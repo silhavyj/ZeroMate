@@ -17,9 +17,9 @@
 <area shape="rect" id="node7" href="$classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#ab37428109c8e5f862b528417048903f3" title="Writes data to the peripheral (IPeripheral interface)." alt="" coords="245,45,412,101"/>
 <area shape="rect" id="node15" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad2c251aa49f9dc14f692a986ef3a090b" title="Checks if a coprocessor of a given id is present of not." alt="" coords="511,872,689,928"/>
 <area shape="rect" id="node17" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a92c997ad914fb73cec7feb5fa26d8ead" title="Executes a data processing instruction." alt="" coords="241,1157,417,1198"/>
-<area shape="rect" id="node18" href="$classzero__mate_1_1peripheral_1_1CBSC.html#aadbb0ba14e605ee9f1be46c02f549aaa" title=" " alt="" coords="227,1018,430,1059"/>
-<area shape="rect" id="node20" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a316b2af702507bdc0f385f5cf10bf47a" title=" " alt="" coords="227,1433,430,1474"/>
-<area shape="rect" id="node21" href="$classzero__mate_1_1peripheral_1_1CBSC.html#abc87dd5711f004d648286ec13e22bb28" title=" " alt="" coords="243,1557,414,1598"/>
+<area shape="rect" id="node18" href="$classzero__mate_1_1peripheral_1_1CBSC.html#aadbb0ba14e605ee9f1be46c02f549aaa" title="Checks whether the slave device has sent ACK_1 as expected." alt="" coords="227,1018,430,1059"/>
+<area shape="rect" id="node20" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a316b2af702507bdc0f385f5cf10bf47a" title="Checks whether the slave device has sent ACK_2 as expected." alt="" coords="227,1433,430,1474"/>
+<area shape="rect" id="node21" href="$classzero__mate_1_1peripheral_1_1CBSC.html#abc87dd5711f004d648286ec13e22bb28" title="Sends another bit of the data payload." alt="" coords="243,1557,414,1598"/>
 <area shape="rect" id="node22" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#af8e80293dff0c20be7ea071d50dec62c" title="Loads a single ELF file." alt="" coords="503,1775,697,1817"/>
 <area shape="rect" id="node24" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a73157cb5a8ef5d61769403bbd700cfbf" title="Reloads the kernel." alt="" coords="231,1717,426,1758"/>
 <area shape="rect" id="node26" href="$namespacezero__mate_1_1gui.html#ad17e948433f50f210774367b5671af03" title=" " alt="" coords="505,1841,695,1868"/>
@@ -31,11 +31,11 @@
 <area shape="rect" id="node35" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a6a991b64d192dca075068e6ae0457491" title="Checks whether a register addressed by a secondary register index and op2 exists or not." alt="" coords="511,1360,689,1416"/>
 <area shape="rect" id="node36" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a53765299c790cc790e15deb2c701bd2a" title="Sets a new value to the CPSR register." alt="" coords="496,1003,704,1045"/>
 <area shape="rect" id="node37" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#a9243af4f42d118a598a00c0f79d366e1" title="Sets the state of a given GPIO pin." alt="" coords="499,1491,701,1533"/>
-<area shape="rect" id="node38" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" title=" " alt="" coords="517,1557,683,1598"/>
+<area shape="rect" id="node38" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a74b84158da1933e79f091706e27c12f5" title="Sets the state of a given GPIO pin." alt="" coords="517,1557,683,1598"/>
 <area shape="rect" id="node39" href="$classzero__mate_1_1peripheral_1_1CMini__UART.html#af0ac73a2cea4c4fb61673803f60cf9e6" title="Receives a stop bit." alt="" coords="495,552,705,608"/>
 <area shape="rect" id="node40" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a050dada520ca82a21874045815c596a8" title=" " alt="" coords="509,712,691,768"/>
 <area shape="rect" id="node16" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae54c96b9b4395337b22c4ce3686d7862" title="Executes a coprocessor register transfer instruction (coprocessor instruction (1))." alt="" coords="241,879,417,921"/>
-<area shape="rect" id="node19" href="$classzero__mate_1_1peripheral_1_1CBSC.html#aa195c567531f97d585212978ab0f687a" title=" " alt="" coords="5,1433,171,1474"/>
+<area shape="rect" id="node19" href="$classzero__mate_1_1peripheral_1_1CBSC.html#a3b0dd18504053624d39b9015015bb8fc" title="Updates the I2C state machine." alt="" coords="5,1433,171,1474"/>
 <area shape="rect" id="node23" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#a7fee26ed69f7536b8396d3fe2f97c5e4" title="Loads ELF files selected by the user using the file browser." alt="" coords="229,1782,429,1823"/>
 <area shape="rect" id="node25" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#ad8f10caa7780d6c4e9fb20c4ab702a60" title="Renders the bar (IGUI_Window interface)." alt="" coords="9,1679,167,1721"/>
 <area shape="rect" id="node27" href="$main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Entry point of the application." alt="" coords="301,1848,356,1875"/>

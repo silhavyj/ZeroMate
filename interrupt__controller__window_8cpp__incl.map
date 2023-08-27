@@ -7,6 +7,6 @@
 <area shape="rect" id="node5" title=" " alt="" coords="5,273,117,300"/>
 <area shape="rect" id="node7" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="142,273,258,300"/>
 <area shape="rect" id="node8" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="283,273,485,300"/>
-<area shape="rect" id="node9" href="$logger_8hpp.html" title="This file defines a general logger interface as well as a logging system that is used in the project." alt="" coords="356,348,551,375"/>
-<area shape="rect" id="node10" href="$api__export_8hpp.html" title="This file defines macros for exporting symbols out of a shared library." alt="" coords="357,423,549,449"/>
+<area shape="rect" id="node9" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="366,348,541,389"/>
+<area shape="rect" id="node10" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="408,437,499,464"/>
 </map>

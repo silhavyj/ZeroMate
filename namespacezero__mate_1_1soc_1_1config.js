@@ -1,10 +1,10 @@
 var namespacezero__mate_1_1soc_1_1config =
 [
     [ "sections", "namespacezero__mate_1_1soc_1_1config_1_1sections.html", [
+      [ "Connection", "namespacezero__mate_1_1soc_1_1config_1_1sections.html#a7b0c2f75910c61f0381bf4358cd5a36b", null ],
       [ "Lib_Dir", "namespacezero__mate_1_1soc_1_1config_1_1sections.html#a0f69671d4bbfea1c71b73b19f4a5b23a", null ],
       [ "Lib_Name", "namespacezero__mate_1_1soc_1_1config_1_1sections.html#afc8ab9e8adea48a6ed1aa2878da2faa5", null ],
-      [ "Name", "namespacezero__mate_1_1soc_1_1config_1_1sections.html#a3fb00279320d8e60661fd7967c3ebeb6", null ],
-      [ "Pins", "namespacezero__mate_1_1soc_1_1config_1_1sections.html#a392cc70e714e5ce5957a87527ba59a7a", null ]
+      [ "Name", "namespacezero__mate_1_1soc_1_1config_1_1sections.html#a3fb00279320d8e60661fd7967c3ebeb6", null ]
     ] ],
     [ "ARM_Timer_Address", "namespacezero__mate_1_1soc_1_1config.html#a0b9c1816e485f680330c939a4066f17d", null ],
     [ "AUX_Address", "namespacezero__mate_1_1soc_1_1config.html#a22320326abefd378425806d64368eb9b", null ],
