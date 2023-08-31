@@ -359,11 +359,25 @@ namespace zero_mate::arm1176jzf_s
         inline void Check_For_Pending_IRQ();
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Checks if a coprocessor of a given id is present of not (including its access privileges).
+        /// \brief Performs coprocessor accessibility checks.
+        /// \param coprocessor_id ID of the coprocessor
+        /// \throws exceptions::CUndefined_Instruction is any of the checks fails
+        // -------------------------------------------------------------------------------------------------------------
+        inline void Perform_Coprocessor_Accessibility_Checks(std::uint32_t coprocessor_id);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks whether a given coprocessor is present or not.
         /// \param coprocessor_id ID of the coprocessor
         /// \throws exceptions::CUndefined_Instruction if the coprocessor is not present
         // -------------------------------------------------------------------------------------------------------------
-        inline void Check_Coprocessor_Existence_And_Access_Type(std::uint32_t coprocessor_id);
+        inline void Check_Coprocessor_Presence(std::uint32_t coprocessor_id);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Checks whether a given coprocessor can be accessed from the current CPU mode.
+        /// \param coprocessor_id ID of the coprocessor
+        /// \throws exceptions::CUndefined_Instruction if the check fails
+        // -------------------------------------------------------------------------------------------------------------
+        inline void Checks_Coprocessor_Access_Mode(std::uint32_t coprocessor_id);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Executes a single instruction.

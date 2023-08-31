@@ -63,7 +63,7 @@ namespace zero_mate::coprocessor::cp15
     CC1::NCoprocessor_Access_Type CC1::Get_Coprocessor_Access_Type(std::uint32_t cp_idx) const
     {
         // Make sure the index is within a given range
-        if (cp_idx >= CP_Max_Index)
+        if (cp_idx > CP_Max_Index)
         {
             return NCoprocessor_Access_Type::Access_Denied;
         }

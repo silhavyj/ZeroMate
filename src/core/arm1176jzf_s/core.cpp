@@ -1163,10 +1163,14 @@ namespace zero_mate::arm1176jzf_s
         m_context.Set_CPSR(cpsr);
     }
 
-    void CCPU_Core::Check_Coprocessor_Existence_And_Access_Type(std::uint32_t coprocessor_id)
+    void CCPU_Core::Perform_Coprocessor_Accessibility_Checks(std::uint32_t coprocessor_id)
     {
-        using namespace coprocessor::cp15;
+        Check_Coprocessor_Presence(coprocessor_id);
+        Checks_Coprocessor_Access_Mode(coprocessor_id);
+    }
 
+    void CCPU_Core::Check_Coprocessor_Presence(std::uint32_t coprocessor_id)
+    {
         // The coprocessor must be present.
         if (!m_coprocessors.contains(coprocessor_id))
         {
@@ -1177,14 +1181,8 @@ namespace zero_mate::arm1176jzf_s
             throw exceptions::CUndefined_Instruction{};
         }
 
-        // TODO? Do not validate access to CP15
-        if (coprocessor_id == CCP15::ID)
-        {
-            return;
-        }
-
         // The CPU needs to have access to CP15, so it can verify the access type.
-        if (m_cp15 == nullptr)
+        if (coprocessor_id != coprocessor::cp15::CCP15::ID && m_cp15 == nullptr)
         {
             // clang-format off
             m_logging_system.Error(fmt::format("CP15 has not been set - cannot verify access to coprocessor CP{}",
@@ -1192,6 +1190,25 @@ namespace zero_mate::arm1176jzf_s
             // clang-format on
 
             throw exceptions::CReset{};
+        }
+    }
+
+    void CCPU_Core::Checks_Coprocessor_Access_Mode(std::uint32_t coprocessor_id)
+    {
+        using namespace coprocessor::cp15;
+
+        // Are we accessing CP15?
+        if (coprocessor_id == CCP15::ID)
+        {
+            // Make sure the CPU is in a privileged mode when accessing CP15.
+            if (!m_context.Is_In_Privileged_Mode())
+            {
+                m_logging_system.Error("CP15 can be accessed only from a privileged mode");
+                throw exceptions::CReset{};
+            }
+
+            // Access has been verified.
+            return;
         }
 
         // Retrieve the access type to the given coprocessor from CP15.
@@ -1236,8 +1253,8 @@ namespace zero_mate::arm1176jzf_s
         // Get the coprocessor ID.
         const auto coprocessor_id = instruction.Get_Coprocessor_ID();
 
-        // Make sure the coprocessor is present.
-        Check_Coprocessor_Existence_And_Access_Type(coprocessor_id);
+        // Make sure the coprocessor is present, the CPU mode is correct, etc.
+        Perform_Coprocessor_Accessibility_Checks(coprocessor_id);
 
         // Pass the instruction to the coprocessor.
         m_coprocessors[coprocessor_id]->Perform_Register_Transfer(instruction);
@@ -1248,8 +1265,8 @@ namespace zero_mate::arm1176jzf_s
         // Get the coprocessor ID.
         const auto coprocessor_id = instruction.Get_Coprocessor_ID();
 
-        // Make sure the coprocessor is present.
-        Check_Coprocessor_Existence_And_Access_Type(coprocessor_id);
+        // Make sure the coprocessor is present, the CPU mode is correct, etc.
+        Perform_Coprocessor_Accessibility_Checks(coprocessor_id);
 
         // Pass the instruction to the coprocessor.
         m_coprocessors[coprocessor_id]->Perform_Data_Transfer(instruction);
@@ -1260,8 +1277,8 @@ namespace zero_mate::arm1176jzf_s
         // Get the coprocessor ID.
         const auto coprocessor_id = instruction.Get_Coprocessor_ID();
 
-        // Make sure the coprocessor is present.
-        Check_Coprocessor_Existence_And_Access_Type(coprocessor_id);
+        // Make sure the coprocessor is present, the CPU mode is correct, etc.
+        Perform_Coprocessor_Accessibility_Checks(coprocessor_id);
 
         // Pass the instruction to the coprocessor.
         m_coprocessors[coprocessor_id]->Perform_Data_Operation(instruction);
