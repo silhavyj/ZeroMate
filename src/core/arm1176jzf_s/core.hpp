@@ -35,6 +35,7 @@
 #include "zero_mate/external_peripheral.hpp"
 #include "../peripherals/interrupt_controller.hpp"
 #include "../peripherals/system_clock_listener.hpp"
+#include "../coprocessors/cp15/cp15.hpp"
 
 namespace zero_mate::arm1176jzf_s
 {
@@ -108,6 +109,12 @@ namespace zero_mate::arm1176jzf_s
         /// \param coprocessor Coprocessor itself
         // -------------------------------------------------------------------------------------------------------------
         void Add_Coprocessor(std::uint32_t id, const std::shared_ptr<coprocessor::ICoprocessor>& coprocessor);
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Sets the control coprocessor CP15
+        /// \param cp15 Reference to the CP15 coprocessor
+        // -------------------------------------------------------------------------------------------------------------
+        void Set_Coprocessor_15(const std::shared_ptr<coprocessor::cp15::CCP15>& cp15);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Returns a reference to the CPU context.
@@ -352,11 +359,11 @@ namespace zero_mate::arm1176jzf_s
         inline void Check_For_Pending_IRQ();
 
         // -------------------------------------------------------------------------------------------------------------
-        /// \brief Checks if a coprocessor of a given id is present of not.
+        /// \brief Checks if a coprocessor of a given id is present of not (including its access privileges).
         /// \param coprocessor_id ID of the coprocessor
         /// \throws exceptions::CUndefined_Instruction if the coprocessor is not present
         // -------------------------------------------------------------------------------------------------------------
-        inline void Check_Coprocessor_Existence(std::uint32_t coprocessor_id);
+        inline void Check_Coprocessor_Existence_And_Access_Type(std::uint32_t coprocessor_id);
 
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Executes a single instruction.
@@ -588,6 +595,7 @@ namespace zero_mate::arm1176jzf_s
         std::vector<System_Clock_Listener_t> m_system_clock_listeners; ///< Collection of system clock listeners
         Coprocessors_t m_coprocessors;                                 ///< Collection of different coprocessors
         std::vector<IExternal_Peripheral*>* m_external_peripherals;    ///< Collection of external peripherals
+        std::shared_ptr<coprocessor::cp15::CCP15> m_cp15;              ///< Reference to coprocessor CP15
     };
 
 } // namespace zero_mate::arm1176jzf_s

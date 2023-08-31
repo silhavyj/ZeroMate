@@ -218,6 +218,7 @@ namespace zero_mate::soc
             g_cpu->Add_Coprocessor(coprocessor::cp10::CFPU::ID, g_fpu);
             g_cpu->Set_MMU(g_mmu);
             g_cpu->Set_External_Peripherals(&g_external_peripherals);
+            g_cpu->Set_Coprocessor_15(g_cp15);
 
             // Register system clock listeners.
             g_cpu->Register_System_Clock_Listener(g_arm_timer);

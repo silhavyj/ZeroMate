@@ -39,7 +39,7 @@ namespace zero_mate::coprocessor::cp15
 
     void CC1::Init_CRm_R1()
     {
-        // Index of the C0 secondary register.
+        // Index of the C1 secondary register.
         const auto crm_c1_idx = static_cast<std::uint32_t>(NCRm::C1);
 
         // Initialize all register of the C1 secondary register (indexed by op2).
@@ -58,6 +58,24 @@ namespace zero_mate::coprocessor::cp15
             static_cast<std::uint32_t>(flag)
         );
         // clang-format on
+    }
+
+    CC1::NCoprocessor_Access_Type CC1::Get_Coprocessor_Access_Type(std::uint32_t cp_idx) const
+    {
+        // Make sure the index is within a given range
+        if (cp_idx >= CP_Max_Index)
+        {
+            return NCoprocessor_Access_Type::Access_Denied;
+        }
+
+        // Index of the C0 secondary register.
+        const auto crm_c0_idx = static_cast<std::uint32_t>(NCRm::C0);
+
+        // Index of the Coprocessor_Access_Control register.
+        const auto cp_access_cntrl_reg_idx = static_cast<std::uint32_t>(NCRm_C0_Register::Coprocessor_Access_Control);
+
+        return static_cast<NCoprocessor_Access_Type>(
+        (m_regs.at(crm_c0_idx).at(cp_access_cntrl_reg_idx) >> (2U * cp_idx)) & 0b11U);
     }
 
 } // namespace zero_mate::coprocessor::cp15

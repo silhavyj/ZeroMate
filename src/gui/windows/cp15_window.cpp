@@ -120,6 +120,70 @@ namespace zero_mate::gui
             },
         });
         // clang-format on
+
+        ImGui::Separator();
+
+        // clang-format off
+        // Render secondary register C1 (0).
+        Render_Table("C0 (2) - Coprocessor_Access_Control", {
+            {
+                "CP_0",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(0)))
+            },
+            {
+                "CP_1",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(1)))
+            },
+            {
+                "CP_2",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(2)))
+            },
+            {
+                "CP_3",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(3)))
+            },
+            {
+                "CP_4",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(4)))
+            },
+            {
+                "CP_5",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(5)))
+            },
+            {
+                "CP_6",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(6)))
+            },
+            {
+                "CP_7",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(7)))
+            },
+            {
+                "CP_8",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(8)))
+            },
+            {
+                "CP_9",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(9)))
+            },
+            {
+                "CP_10",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(10)))
+            },
+            {
+                "CP_11",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(11)))
+            },
+            {
+                "CP_12",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(12)))
+            },
+            {
+                "CP_13",
+                fmt::format("{}", magic_enum::enum_name(cp15_c1->Get_Coprocessor_Access_Type(13)))
+            },
+        });
+        // clang-format on
     }
 
     void CCP15_Window::Render_Primary_Register_C2()

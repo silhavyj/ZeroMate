@@ -73,6 +73,21 @@ namespace zero_mate::coprocessor::cp15
             TEX_Remap_Enable = 0b1U << 28U                ///< Enable/disable remapping of the TEX bit
         };
 
+        /// Maximum coprocessor index
+        static constexpr std::uint32_t CP_Max_Index = 13;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \enum NCoprocessor_Access_Type
+        /// \brief Enumeration of different access types to different coprocessors.
+        // -------------------------------------------------------------------------------------------------------------
+        enum class NCoprocessor_Access_Type : std::uint32_t
+        {
+            Access_Denied = 0b00U,                  ///< Access denied (coprocessor is disabled)
+            Privileged_Mode_Access_Only = 0b01U,    ///< Coprocessor can be accessed only from a privileged mode
+            Reserved = 0b10U,                       ///< Reserved
+            Privileged_And_User_Mode_Access = 0b11U ///< Coprocessor can be accessed from any mode
+        };
+
     public:
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Creates an instance of the class
@@ -87,6 +102,13 @@ namespace zero_mate::coprocessor::cp15
         /// \return true, if the flag is set. false otherwise
         // -------------------------------------------------------------------------------------------------------------
         [[nodiscard]] bool Is_Control_Flag_Set(NC0_Control_Flags flag) const;
+
+        // -------------------------------------------------------------------------------------------------------------
+        /// \brief Returns access type to a given coprocessor
+        /// \param cp_idx Index of the coprocessor
+        /// \return Type of access to the given coprocessor
+        // -------------------------------------------------------------------------------------------------------------
+        [[nodiscard]] NCoprocessor_Access_Type Get_Coprocessor_Access_Type(std::uint32_t cp_idx) const;
 
     private:
         // -------------------------------------------------------------------------------------------------------------
