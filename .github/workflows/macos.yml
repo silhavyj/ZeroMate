@@ -21,7 +21,7 @@ jobs:
 
       # Configure the CMake project using CMake Presets
       - name: Configure CMake
-        run: cmake -S . -B build/unix_makefiles/clang/debug -D CMAKE_C_COMPILER=gcc-11 -D CMAKE_CXX_COMPILER=gcc-11++
+        run: cmake -S . -B build/unix_makefiles/clang/debug -D CMAKE_C_COMPILER=gcc-11 -D CMAKE_CXX_COMPILER=g++-11
 
       # Build the project
       - name: Build
