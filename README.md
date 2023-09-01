@@ -7,7 +7,7 @@
 
 | CI  | Status  |
 | ------------- | ------------- |
-| Build  | [![Ubuntu](https://github.com/silhavyj/ZeroMate/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/ubuntu.yml) [![Windows](https://github.com/silhavyj/ZeroMate/actions/workflows/windows.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/windows.yml)  |
+| Build  | [![Ubuntu](https://github.com/silhavyj/ZeroMate/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/ubuntu.yml) [![Windows](https://github.com/silhavyj/ZeroMate/actions/workflows/windows.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/windows.yml) [![MacOS](https://github.com/silhavyj/ZeroMate/actions/workflows/macos.yml/badge.svg)](https://github.com/silhavyj/ZeroMate/actions/workflows/macos.yml) |
 | Static code analysis  | [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ecdf90cb11424b19a184ad5a34c7c820)](https://app.codacy.com/gh/silhavyj/ZeroMate/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) |
 | Test coverage | [![codecov](https://codecov.io/gh/silhavyj/ZeroMate/branch/main/graph/badge.svg?token=SJOWREI75F)](https://codecov.io/gh/silhavyj/ZeroMate) |
 | Docs | [![Doxygen Documentation](https://img.shields.io/badge/docs-doxygen-green.svg)](https://silhavyj.github.io/ZeroMate/) |
