@@ -4,13 +4,13 @@
 
 namespace zero_mate::coprocessor::cp10
 {
-    class CFPU final : public ICoprocessor
+    class CCP10 final : public ICoprocessor
     {
     public:
         static constexpr std::uint32_t ID = 10;
 
     public:
-        explicit CFPU(arm1176jzf_s::CCPU_Context& cpu_context);
+        explicit CCP10(arm1176jzf_s::CCPU_Context& cpu_context);
 
         void Reset() override;
 

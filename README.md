@@ -1,4 +1,4 @@
-#  <img src="misc/logos/title.svg" width="25%">
+# <img src="misc/logos/title.svg" width="25%">
 
 *Raspberry Pi Zero Emulator*
 
@@ -26,7 +26,7 @@ The emulator was tested on both Windows and Linux using the MSVC, GCC, and Clang
 
 Once the emulator is successfully built or downloaded, the [user manual](docs/user_manual.md) can be used as a brief description of how the application is intended to be used.
 
-## Examples 
+## Examples
 
 The emulator comes with a couple of prebuilt [examples](examples/README.md) that you are encouraged to try out to get an idea of what the emulator is capable of.
 
@@ -50,7 +50,8 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |Paging|⏳|Nested-level paging is not supported yet.|
 |Support for external peripherals|✔️|External peripherals are loaded as shared libraries at runtime. For instance, an LED, DIP switch, 7-segment display, etc.|
 |Loading of multiple ELF files (kernel + separately compiled processes)|✔️||
-|Floating point unit (FPU)|❌||
+|Floating point unit (FPU) - single precision|❌||
+|Floating point unit (FPU) - double precision|❌||
 |I2C|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
 |SPI|❌||
 |Mini UART|✔️||
