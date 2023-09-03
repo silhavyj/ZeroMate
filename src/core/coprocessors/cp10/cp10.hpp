@@ -5,9 +5,10 @@
 #include "fpexc.hpp"
 #include "register.hpp"
 #include "../coprocessor.hpp"
-#include "isa/data_processing.hpp"
-#include "isa/data_transfer.hpp"
-#include "isa/register_transfer.hpp"
+#include "isa/isa.hpp"
+#include "isa/cp_data_processing_inst.hpp"
+#include "isa/cp_data_transfer_inst.hpp"
+#include "isa/cp_register_transfer_inst.hpp"
 #include "zero_mate/utils/logging_system.hpp"
 
 namespace zero_mate::coprocessor::cp10
@@ -31,6 +32,12 @@ namespace zero_mate::coprocessor::cp10
 
     private:
         [[nodiscard]] inline bool Is_FPU_Enabled() const noexcept;
+
+        void Execute(isa::CVMSR instruction);
+        void Execute(isa::CVMOV_ARM_Register_Single_Precision_Register instruction);
+
+        template<typename Operation>
+        void Execute(isa::CData_Processing instruction, Operation operation);
 
     private:
         CFPEXC m_fpexc;

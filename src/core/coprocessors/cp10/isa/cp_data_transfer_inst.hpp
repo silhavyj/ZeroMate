@@ -7,7 +7,7 @@
 
 namespace zero_mate::coprocessor::cp10::isa
 {
-    class CData_Transfer final
+    class CCP_Data_Transfer_Inst final
     {
     public:
         enum class NType
@@ -34,7 +34,7 @@ namespace zero_mate::coprocessor::cp10::isa
         };
 
     public:
-        explicit CData_Transfer(std::uint32_t value) noexcept;
+        explicit CCP_Data_Transfer_Inst(std::uint32_t value) noexcept;
 
         [[nodiscard]] NType Get_Type() const noexcept;
 

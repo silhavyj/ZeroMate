@@ -1,3 +1,5 @@
+// https://developer.arm.com/documentation/ddi0406/c/Application-Level-Architecture/Advanced-SIMD-and-Floating-point-Instruction-Encoding/8--16--and-32-bit-transfer-between-ARM-core-and-extension-registers?lang=en
+
 #pragma once
 
 #include <array>
@@ -5,7 +7,7 @@
 
 namespace zero_mate::coprocessor::cp10::isa
 {
-    class CRegister_Transfer
+    class CCP_Register_Transfer_Inst
     {
     public:
         enum class NType
@@ -28,7 +30,7 @@ namespace zero_mate::coprocessor::cp10::isa
         };
 
     public:
-        explicit CRegister_Transfer(std::uint32_t value) noexcept;
+        explicit CCP_Register_Transfer_Inst(std::uint32_t value) noexcept;
 
         [[nodiscard]] NType Get_Type() const noexcept;
 
