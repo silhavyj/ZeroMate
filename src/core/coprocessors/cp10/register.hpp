@@ -1,13 +1,14 @@
 #pragma once
 
 #include <cstdint>
+#include <numeric>
 
 namespace zero_mate::coprocessor::cp10
 {
     class CRegister final
     {
     public:
-        static constexpr float Epsilon = 0.0000001F;
+        static constexpr float Epsilon = 0.00001F;
 
     public:
         CRegister() = default;
@@ -35,6 +36,10 @@ namespace zero_mate::coprocessor::cp10
         {
             return std::bit_cast<Type>(m_value);
         }
+
+        [[nodiscard]] CRegister Get_ABS() const noexcept;
+        [[nodiscard]] CRegister Get_NEG() const noexcept;
+        [[nodiscard]] CRegister Get_SQRT() const noexcept;
 
     private:
         template<typename Operation>

@@ -11,10 +11,17 @@ namespace zero_mate::coprocessor::cp10
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_regs{}
     {
+        Reset();
     }
 
     void CCP10::Reset()
     {
+        m_fpexc = 0;
+
+        for (auto& reg : m_regs)
+        {
+            reg = 0.0F;
+        }
     }
 
     void CCP10::Perform_Data_Operation(arm1176jzf_s::isa::CCoprocessor_Data_Operation instruction)
@@ -26,22 +33,43 @@ namespace zero_mate::coprocessor::cp10
         switch (type)
         {
             case isa::CCP_Data_Processing_Inst::NType::VMUL:
-                Execute(isa::CData_Processing{ instruction.Get_Value() }, [&](auto f1, auto f2) { return f1 * f2; });
+                Execute(isa::CData_Processing{ instruction.Get_Value() }, [&](auto vn, auto vm) { return vn * vm; });
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VADD:
-                [[fallthrough]];
+                Execute(isa::CData_Processing{ instruction.Get_Value() }, [&](auto vn, auto vm) { return vn + vm; });
+                break;
+
             case isa::CCP_Data_Processing_Inst::NType::VSUB:
+                Execute(isa::CData_Processing{ instruction.Get_Value() }, [&](auto vn, auto vm) { return vn - vm; });
+                break;
+
             case isa::CCP_Data_Processing_Inst::NType::VDIV:
+                Execute(isa::CData_Processing{ instruction.Get_Value() }, [&](auto vn, auto vm) { return vn / vm; });
+                break;
+
+            case isa::CCP_Data_Processing_Inst::NType::VABS:
+                Execute(isa::CData_Processing{ instruction.Get_Value() },
+                        [&]([[maybe_unused]] auto vn, auto vm) { return vm.Get_ABS(); });
+                break;
+
+            case isa::CCP_Data_Processing_Inst::NType::VNEG:
+                Execute(isa::CData_Processing{ instruction.Get_Value() },
+                        [&]([[maybe_unused]] auto vn, auto vm) { return vm.Get_NEG(); });
+                break;
+
+            case isa::CCP_Data_Processing_Inst::NType::VSQRT:
+                Execute(isa::CData_Processing{ instruction.Get_Value() },
+                        [&]([[maybe_unused]] auto vn, auto vm) { return vm.Get_SQRT(); });
+                break;
+
             case isa::CCP_Data_Processing_Inst::NType::VMLA_VMLS:
+                [[fallthrough]];
             case isa::CCP_Data_Processing_Inst::NType::VNMLA_VNMLS_VNMUL:
             case isa::CCP_Data_Processing_Inst::NType::VFNMA_VFNMS:
             case isa::CCP_Data_Processing_Inst::NType::VFMA_VFMS:
             case isa::CCP_Data_Processing_Inst::NType::VMOV_Immediate:
             case isa::CCP_Data_Processing_Inst::NType::VMOV_Register:
-            case isa::CCP_Data_Processing_Inst::NType::VABS:
-            case isa::CCP_Data_Processing_Inst::NType::VNEG:
-            case isa::CCP_Data_Processing_Inst::NType::VSQRT:
             case isa::CCP_Data_Processing_Inst::NType::VCVTB_VCVTT:
             case isa::CCP_Data_Processing_Inst::NType::VCMP_VCMPE:
             case isa::CCP_Data_Processing_Inst::NType::VCVT_Double_Precision_Single_Precision:

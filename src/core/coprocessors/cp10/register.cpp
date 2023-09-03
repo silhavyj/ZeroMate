@@ -69,4 +69,19 @@ namespace zero_mate::coprocessor::cp10
 
         return std::abs(f1 - f2) < Epsilon;
     }
+
+    CRegister CRegister::Get_ABS() const noexcept
+    {
+        return CRegister{ std::abs(Get_Value_As<float>()) };
+    }
+
+    CRegister CRegister::Get_NEG() const noexcept
+    {
+        return CRegister{ -Get_Value_As<float>() };
+    }
+
+    CRegister CRegister::Get_SQRT() const noexcept
+    {
+        return CRegister{ std::sqrt(Get_Value_As<float>()) };
+    }
 }

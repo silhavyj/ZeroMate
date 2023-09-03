@@ -31,7 +31,7 @@ using namespace coprocessor::cp15;
 //    vmov.f32 s0, r0
 //    vmov.f32 s1, r1
 //
-//    vmul.f32 s2, s0, s1
+//    vadd.f32 s2, s0, s1
 //    vmov.f32 r2, s2
 //
 // val0:
@@ -69,7 +69,7 @@ namespace
         });
 
         cpu.Execute({
-        { 0xee201a20 }, // vmul.f32 s2, s0, s1
+        { 0xee301a20 }, // vadd.f32 s2, s0, s1
         { 0xee112a10 }, // vmov.f32 r2, s2
         });
     }
@@ -106,18 +106,18 @@ namespace
     }
 }
 
-TEST(vmul, test_01)
+TEST(vadd, test_01)
 {
-    const float f1{ 0.65F };
-    const float f2{ -0.169F };
+    const float f1{ 156666.122253F };
+    const float f2{ 15555.0008F };
 
-    const float result_float{ -0.10985F };
-    const std::uint32_t result_uint32{ 0xbde0f909 };
+    const float result_float{ 172221.123053F };
+    const std::uint32_t result_uint32{ 0x48282f48 };
 
     Run_Test(f1, f2, result_float, result_uint32);
 }
 
-TEST(vmul, test_02)
+TEST(vadd, test_02)
 {
     const float f1{ std::numeric_limits<float>::max() };
     const float f2{ std::numeric_limits<float>::max() };
@@ -127,23 +127,13 @@ TEST(vmul, test_02)
     Run_Test(f1, f2, result_uint32);
 }
 
-TEST(vmul, test_03)
+TEST(vadd, test_03)
 {
-    const float f1{ std::numeric_limits<float>::min() };
+    const float f1{ std::numeric_limits<float>::lowest() };
     const float f2{ std::numeric_limits<float>::max() };
 
-    const float result_float{ 3.999998F };
-
-    Run_Test(f1, f2, result_float);
-}
-
-TEST(vmul, test_04)
-{
-    const float f1{ std::numeric_limits<float>::min() };
-    const float f2{ 0.000001F };
-
-    const float result_float{ 0.0F };
-    const std::uint32_t result_uint32{ 0x00000008 };
+    const std::uint32_t result_float{ 0 };
+    const std::uint32_t result_uint32{ 0 };
 
     Run_Test(f1, f2, result_float, result_uint32);
 }

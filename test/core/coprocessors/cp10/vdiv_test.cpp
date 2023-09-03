@@ -31,7 +31,7 @@ using namespace coprocessor::cp15;
 //    vmov.f32 s0, r0
 //    vmov.f32 s1, r1
 //
-//    vmul.f32 s2, s0, s1
+//    vdiv.f32 s2, s0, s1
 //    vmov.f32 r2, s2
 //
 // val0:
@@ -69,7 +69,7 @@ namespace
         });
 
         cpu.Execute({
-        { 0xee201a20 }, // vmul.f32 s2, s0, s1
+        { 0xee801a20 }, // vdiv.f32 s2, s0, s1
         { 0xee112a10 }, // vmov.f32 r2, s2
         });
     }
@@ -106,44 +106,44 @@ namespace
     }
 }
 
-TEST(vmul, test_01)
+TEST(vdiv, test_01)
 {
-    const float f1{ 0.65F };
-    const float f2{ -0.169F };
+    const float f1{ 156666.122253F };
+    const float f2{ 15555.0008F };
 
-    const float result_float{ -0.10985F };
-    const std::uint32_t result_uint32{ 0xbde0f909 };
+    const float result_float{ 10.071752760887033F };
+    const std::uint32_t result_uint32{ 0x412125e6 };
 
     Run_Test(f1, f2, result_float, result_uint32);
 }
 
-TEST(vmul, test_02)
+TEST(vdiv, test_02)
 {
-    const float f1{ std::numeric_limits<float>::max() };
-    const float f2{ std::numeric_limits<float>::max() };
+    const float f1{ 0.0F };
+    const float f2{ 0.0F };
+
+    const std::uint32_t result_uint32{ 0xffc00000 };
+
+    Run_Test(f1, f2, result_uint32);
+}
+
+TEST(vdiv, test_03)
+{
+    const float f1{ 100.0F };
+    const float f2{ 0.0F };
 
     const std::uint32_t result_uint32{ 0x7f800000 };
 
     Run_Test(f1, f2, result_uint32);
 }
 
-TEST(vmul, test_03)
+TEST(vdiv, test_04)
 {
-    const float f1{ std::numeric_limits<float>::min() };
-    const float f2{ std::numeric_limits<float>::max() };
+    const float f1{ 1000.0F };
+    const float f2{ 3.3333F };
 
-    const float result_float{ 3.999998F };
-
-    Run_Test(f1, f2, result_float);
-}
-
-TEST(vmul, test_04)
-{
-    const float f1{ std::numeric_limits<float>::min() };
-    const float f2{ 0.000001F };
-
-    const float result_float{ 0.0F };
-    const std::uint32_t result_uint32{ 0x00000008 };
+    const float result_float{ 300.00300003F };
+    const std::uint32_t result_uint32{ 0x43960062 };
 
     Run_Test(f1, f2, result_float, result_uint32);
 }
