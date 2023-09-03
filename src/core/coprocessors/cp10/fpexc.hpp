@@ -10,7 +10,7 @@ namespace zero_mate::coprocessor::cp10
         enum class NFlags : std::uint32_t
         {
             EX = 31U,
-            EN = 30U,
+            EN = 30U
         };
 
     public:

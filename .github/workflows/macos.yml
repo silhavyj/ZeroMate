@@ -4,10 +4,10 @@ name: MacOS
 on:
   push:
     branches:
-      - '**'
+      - main
   pull_request:
     branches:
-      - '**'
+      - main
 
 jobs:
   build:
@@ -21,11 +21,11 @@ jobs:
 
       # Configure the CMake project using CMake Presets
       - name: Configure CMake
-        run: cmake -S . -B build/unix_makefiles/clang/debug -D CMAKE_C_COMPILER=gcc-11 -D CMAKE_CXX_COMPILER=g++-11
+        run: cmake --preset unix_makefiles_clang_debug
 
       # Build the project
       - name: Build
-        run: cmake --build build/unix_makefiles/clang/debug -j10
+        run: cmake --build --preset unix_makefiles_clang_debug -j10
 
       # Run tests
       - name: Tests
