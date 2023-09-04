@@ -74,7 +74,7 @@ namespace
         });
     }
 
-    void Run_Test(float f1, float f2, float result)
+    [[maybe_unused]] void Run_Test(float f1, float f2, float result)
     {
         CCPU_Core cpu{};
         auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
