@@ -18,18 +18,13 @@ namespace zero_mate::coprocessor::cp10::isa
             VADD,
             VSUB,
             VDIV,
-            VFNMA_VFNMS,
-            VFMA_VFMS,
-            VMOV_Immediate,
             VMOV_Register,
             VABS,
             VNEG,
             VSQRT,
-            VCVTB_VCVTT,
             VCMP_VCMPE,
             VCVT_Double_Precision_Single_Precision,
             VCVT_VCVTR_Floating_Point_Integer,
-            VCVT_Floating_Point_Fixed_Point,
             Unknown
         };
 
@@ -49,7 +44,7 @@ namespace zero_mate::coprocessor::cp10::isa
     private:
         std::uint32_t m_value;
 
-        static constexpr std::size_t Instruction_Masks_Count = 22;
+        static constexpr std::size_t Instruction_Masks_Count = 16;
         static std::array<TInstruction_Lookup_Record, Instruction_Masks_Count> s_instruction_lookup_table;
     };
 }

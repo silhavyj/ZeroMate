@@ -42,7 +42,7 @@ using namespace coprocessor::cp15;
 
 namespace
 {
-    void Run_Test_Common(CCPU_Core& cpu, std::shared_ptr<CCP10> cp10, float f1, float f2)
+    [[maybe_unused]] void Run_Test_Common(CCPU_Core& cpu, std::shared_ptr<CCP10> cp10, float f1, float f2)
     {
         auto cp15 = std::make_shared<CCP15>(cpu.Get_CPU_Context());
 
@@ -74,7 +74,7 @@ namespace
         });
     }
 
-    void Run_Test(float f1, float f2, float result)
+    [[maybe_unused]] void Run_Test(float f1, float f2, float result)
     {
         CCPU_Core cpu{};
         auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
@@ -84,7 +84,7 @@ namespace
         EXPECT_TRUE(cp10->Get_Registers()[2] == result);
     }
 
-    void Run_Test(float f1, float f2, std::uint32_t result)
+    [[maybe_unused]] void Run_Test(float f1, float f2, std::uint32_t result)
     {
         CCPU_Core cpu{};
         auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
@@ -94,7 +94,7 @@ namespace
         EXPECT_EQ(cpu.Get_CPU_Context()[2], result);
     }
 
-    void Run_Test(float f1, float f2, float result_float, std::uint32_t result_uint32)
+    [[maybe_unused]] void Run_Test(float f1, float f2, float result_float, std::uint32_t result_uint32)
     {
         CCPU_Core cpu{};
         auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
@@ -119,8 +119,8 @@ TEST(vmul, test_01)
 
 TEST(vmul, test_02)
 {
-    const float f1{ std::numeric_limits<float>::max() };
-    const float f2{ std::numeric_limits<float>::max() };
+    const float f1{ 3.40282e+38F };
+    const float f2{ 3.40282e+38F };
 
     const std::uint32_t result_uint32{ 0x7f800000 };
 
@@ -129,17 +129,18 @@ TEST(vmul, test_02)
 
 TEST(vmul, test_03)
 {
-    const float f1{ std::numeric_limits<float>::min() };
-    const float f2{ std::numeric_limits<float>::max() };
+    const float f1{ 1.17549e-38F };
+    const float f2{ 3.40282e+38F };
 
-    const float result_float{ 3.999998F };
+    const float result_float{ 3.99998F };
+    const std::uint32_t result_uint32{ 0x407fffb0 };
 
-    Run_Test(f1, f2, result_float);
+    Run_Test(f1, f2, result_float, result_uint32);
 }
 
 TEST(vmul, test_04)
 {
-    const float f1{ std::numeric_limits<float>::min() };
+    const float f1{ 1.17549e-38F };
     const float f2{ 0.000001F };
 
     const float result_float{ 0.0F };

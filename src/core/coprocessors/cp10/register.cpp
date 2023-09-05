@@ -62,6 +62,26 @@ namespace zero_mate::coprocessor::cp10
         return *this;
     }
 
+    CRegister& CRegister::operator+=(const CRegister& other) noexcept
+    {
+        auto f1 = std::bit_cast<float>(m_value);
+
+        f1 += std::bit_cast<float>(other.m_value);
+        m_value = std::bit_cast<std::uint32_t>(f1);
+
+        return *this;
+    }
+
+    CRegister& CRegister::operator-=(const CRegister& other) noexcept
+    {
+        auto f1 = std::bit_cast<float>(m_value);
+
+        f1 -= std::bit_cast<float>(other.m_value);
+        m_value = std::bit_cast<std::uint32_t>(f1);
+
+        return *this;
+    }
+
     bool CRegister::operator==(const CRegister& other) const
     {
         const auto f1 = Get_Value_As<float>();

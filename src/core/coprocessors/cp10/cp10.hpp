@@ -36,8 +36,14 @@ namespace zero_mate::coprocessor::cp10
         void Execute(isa::CVMSR instruction);
         void Execute(isa::CVMOV_ARM_Register_Single_Precision_Register instruction);
 
-        template<typename Operation>
-        void Execute(isa::CData_Processing instruction, Operation operation);
+        inline void Execute_VMUL(isa::CData_Processing instruction);
+        inline void Execute_VADD(isa::CData_Processing instruction);
+        inline void Execute_VSUB(isa::CData_Processing instruction);
+        inline void Execute_VDIV(isa::CData_Processing instruction);
+        inline void Execute_VABS(isa::CData_Processing instruction);
+        inline void Execute_VNEG(isa::CData_Processing instruction);
+        inline void Execute_VSQRT(isa::CData_Processing instruction);
+        inline void Execute_VMLA_VMLS(isa::CData_Processing instruction);
 
     private:
         CFPEXC m_fpexc;

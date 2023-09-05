@@ -26,6 +26,9 @@ namespace zero_mate::coprocessor::cp10
         CRegister& operator*(const CRegister& other) noexcept;
         CRegister& operator/(const CRegister& other) noexcept;
 
+        CRegister& operator+=(const CRegister& other) noexcept;
+        CRegister& operator-=(const CRegister& other) noexcept;
+
         CRegister& operator=(float value);
         CRegister& operator=(std::uint32_t value);
 

@@ -26,7 +26,6 @@ using namespace coprocessor::cp15;
 //    ldr r0, [r0]
 //
 //    vmov.f32 s0, r0
-//    vmov.f32 s1, r1
 //
 //    vabs.f32 s2, s0
 //    vmov.f32 r2, s2
@@ -36,7 +35,7 @@ using namespace coprocessor::cp15;
 
 namespace
 {
-    void Run_Test_Common(CCPU_Core& cpu, std::shared_ptr<CCP10> cp10, float f1)
+    [[maybe_unused]] void Run_Test_Common(CCPU_Core& cpu, std::shared_ptr<CCP10> cp10, float f1)
     {
         auto cp15 = std::make_shared<CCP15>(cpu.Get_CPU_Context());
 
@@ -87,7 +86,7 @@ namespace
         EXPECT_EQ(cpu.Get_CPU_Context()[2], result);
     }
 
-    void Run_Test(float f1, float result_float, std::uint32_t result_uint32)
+    [[maybe_unused]] void Run_Test(float f1, float result_float, std::uint32_t result_uint32)
     {
         CCPU_Core cpu{};
         auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());

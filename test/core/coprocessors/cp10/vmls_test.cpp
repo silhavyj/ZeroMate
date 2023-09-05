@@ -28,10 +28,14 @@ using namespace coprocessor::cp15;
 //    ldr r1, =val1
 //    ldr r1, [r1]
 //
+//    ldr r2, =val2
+//    ldr r2, [r2]
+//
 //    vmov.f32 s0, r0
 //    vmov.f32 s1, r1
+//    vmov.f32 s2, r2
 //
-//    vsub.f32 s2, s0, s1
+//    vmls.f32 s2, s0, s1
 //    vmov.f32 r2, s2
 //
 // val0:
@@ -39,10 +43,13 @@ using namespace coprocessor::cp15;
 //
 // val1:
 //     .float 1.17549e-38
+//
+// val2:
+//     .float 1.17549e-38
 
 namespace
 {
-    [[maybe_unused]] void Run_Test_Common(CCPU_Core& cpu, std::shared_ptr<CCP10> cp10, float f1, float f2)
+    [[maybe_unused]] void Run_Test_Common(CCPU_Core& cpu, std::shared_ptr<CCP10> cp10, float f1, float f2, float vd)
     {
         auto cp15 = std::make_shared<CCP15>(cpu.Get_CPU_Context());
 
@@ -62,78 +69,84 @@ namespace
 
         cpu.Get_CPU_Context()[0] = std::bit_cast<std::uint32_t>(f1);
         cpu.Get_CPU_Context()[1] = std::bit_cast<std::uint32_t>(f2);
+        cpu.Get_CPU_Context()[2] = std::bit_cast<std::uint32_t>(vd);
 
         cpu.Execute({
         { 0xee000a10 }, // vmov.f32 s0, r0
         { 0xee001a90 }, // vmov.f32 s1, r1
+        { 0xee012a10 }, // vmov.f32 s2, r2
         });
 
         cpu.Execute({
-        { 0xee301a60 }, // vsub.f32 s2, s0, s1
+        { 0xee001a60 }, // vmls.f32 s2, s0, s1
         { 0xee112a10 }, // vmov.f32 r2, s2
         });
     }
 
-    [[maybe_unused]] void Run_Test(float f1, float f2, float result)
+    [[maybe_unused]] void Run_Test(float f1, float f2, float vd, float result)
     {
         CCPU_Core cpu{};
         auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
 
-        Run_Test_Common(cpu, cp10, f1, f2);
+        Run_Test_Common(cpu, cp10, f1, f2, vd);
 
         EXPECT_TRUE(cp10->Get_Registers()[2] == result);
     }
 
-    [[maybe_unused]] void Run_Test(float f1, float f2, std::uint32_t result)
+    [[maybe_unused]] void Run_Test(float f1, float f2, float vd, std::uint32_t result)
     {
         CCPU_Core cpu{};
         auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
 
-        Run_Test_Common(cpu, cp10, f1, f2);
+        Run_Test_Common(cpu, cp10, f1, f2 ,vd);
 
         EXPECT_EQ(cpu.Get_CPU_Context()[2], result);
     }
 
-    [[maybe_unused]] void Run_Test(float f1, float f2, float result_float, std::uint32_t result_uint32)
+    [[maybe_unused]] void Run_Test(float f1, float f2, float vd, float result_float, std::uint32_t result_uint32)
     {
         CCPU_Core cpu{};
         auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
 
-        Run_Test_Common(cpu, cp10, f1, f2);
+        Run_Test_Common(cpu, cp10, f1, f2, vd);
 
         EXPECT_TRUE(cp10->Get_Registers()[2] == result_float);
         EXPECT_EQ(cpu.Get_CPU_Context()[2], result_uint32);
     }
 }
 
-TEST(vsub, test_01)
+TEST(vmls, test_01)
 {
-    const float f1{ 156666.122253F };
-    const float f2{ 15555.0008F };
+    const float f1{ 0.65F };
+    const float f2{ -0.169F };
+    const float vd{ -123456.9998F };
 
-    const float result_float{ 141111.121453F };
-    const std::uint32_t result_uint32{ 0x4809cdc8 };
+    const float result_float{ -123456.8906F };
+    const std::uint32_t result_uint32{ 0xc7f12072 };
 
-    Run_Test(f1, f2, result_float, result_uint32);
+    Run_Test(f1, f2, vd, result_float, result_uint32);
 }
 
-TEST(vsub, test_02)
+TEST(vmls, test_02)
 {
-    const float f1{ 3.40282e+38F };
-    const float f2{ -3.40282e+38F };
+    const float f1{ 71.59858F };
+    const float f2{ 11.1118F };
+    const float vd{ 0.25698F };
 
-    const std::uint32_t result_uint32{ 0x7f800000 };
+    const float result_float{ -795.3321533F };
+    const std::uint32_t result_uint32{ 0xc446d542 };
 
-    Run_Test(f1, f2, result_uint32);
+    Run_Test(f1, f2, vd, result_float, result_uint32);
 }
 
-TEST(vsub, test_03)
+TEST(vmls, test_03)
 {
     const float f1{ 1.17549e-38F };
-    const float f2{ -3.40282e+38F };
+    const float f2{ 1.17549e-38F };
+    const float vd{ 1.17549e-38F };
 
-    const float result_float{ 3.40282e+38F };
-    const std::uint32_t result_uint32{ 0x7f7fffee };
+    const float result_float{ 1.175490007e-38F };
+    const std::uint32_t result_uint32{ 0x007fffe1 };
 
-    Run_Test(f1, f2, result_float, result_uint32);
+    Run_Test(f1, f2, vd, result_float, result_uint32);
 }

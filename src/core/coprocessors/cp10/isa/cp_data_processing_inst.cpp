@@ -18,23 +18,17 @@ namespace zero_mate::coprocessor::cp10::isa
     { .mask = 0b00000000'1011'0000'00000000'01'00'0000U, .expected = 0b00000000'0011'0000'00000000'01'00'0000U, .type = CCP_Data_Processing_Inst::NType::VSUB                                   },
     { .mask = 0b00000000'1011'0000'00000000'01'00'0000U, .expected = 0b00000000'1000'0000'00000000'00'00'0000U, .type = CCP_Data_Processing_Inst::NType::VDIV                                   },
     { .mask = 0b00000000'1011'0000'00000000'01'00'0000U, .expected = 0b00000000'1000'0000'00000000'00'00'0000U, .type = CCP_Data_Processing_Inst::NType::VDIV                                   },
-    { .mask = 0b00000000'1011'0000'00000000'00'00'0000U, .expected = 0b00000000'1001'0000'00000000'00'00'0000U, .type = CCP_Data_Processing_Inst::NType::VFNMA_VFNMS                            },
-    { .mask = 0b00000000'1011'0000'00000000'00'00'0000U, .expected = 0b00000000'1010'0000'00000000'00'00'0000U, .type = CCP_Data_Processing_Inst::NType::VFMA_VFMS                              },
 
     // Table 7.17. Other Floating-point data-processing instructions
 
-    { .mask = 0b00000000'1011'0000'00000000'01'00'0000U, .expected = 0b00000000'1011'0000'00000000'00'00'0000U, .type = CCP_Data_Processing_Inst::NType::VMOV_Immediate                         },
     { .mask = 0b00000000'1011'1111'00000000'11'00'0000U, .expected = 0b00000000'1011'0000'00000000'01'00'0000U, .type = CCP_Data_Processing_Inst::NType::VMOV_Register                          },
     { .mask = 0b00000000'1011'1111'00000000'11'00'0000U, .expected = 0b00000000'1011'0000'00000000'11'00'0000U, .type = CCP_Data_Processing_Inst::NType::VABS                                   },
     { .mask = 0b00000000'1011'1111'00000000'11'00'0000U, .expected = 0b00000000'1011'0001'00000000'01'00'0000U, .type = CCP_Data_Processing_Inst::NType::VNEG                                   },
     { .mask = 0b00000000'1011'1111'00000000'11'00'0000U, .expected = 0b00000000'1011'0001'00000000'11'00'0000U, .type = CCP_Data_Processing_Inst::NType::VSQRT                                  },
-    { .mask = 0b00000000'1011'1110'00000000'01'00'0000U, .expected = 0b00000000'1011'0010'00000000'01'00'0000U, .type = CCP_Data_Processing_Inst::NType::VCVTB_VCVTT                            },
     { .mask = 0b00000000'1011'1110'00000000'01'00'0000U, .expected = 0b00000000'1011'0100'00000000'01'00'0000U, .type = CCP_Data_Processing_Inst::NType::VCMP_VCMPE                             },
     { .mask = 0b00000000'1011'1111'00000000'11'00'0000U, .expected = 0b00000000'1011'0111'00000000'11'00'0000U, .type = CCP_Data_Processing_Inst::NType::VCVT_Double_Precision_Single_Precision },
     { .mask = 0b00000000'1011'1111'00000000'01'00'0000U, .expected = 0b00000000'1011'1000'00000000'01'00'0000U, .type = CCP_Data_Processing_Inst::NType::VCVT_VCVTR_Floating_Point_Integer      },
-    { .mask = 0b00000000'1011'1110'00000000'01'00'0000U, .expected = 0b00000000'1011'1010'00000000'01'00'0000U, .type = CCP_Data_Processing_Inst::NType::VCVT_Floating_Point_Fixed_Point        },
     { .mask = 0b00000000'1011'1110'00000000'01'00'0000U, .expected = 0b00000000'1011'1100'00000000'01'00'0000U, .type = CCP_Data_Processing_Inst::NType::VCVT_VCVTR_Floating_Point_Integer      },
-    { .mask = 0b00000000'1011'1110'00000000'01'00'0000U, .expected = 0b00000000'1011'1110'00000000'01'00'0000U, .type = CCP_Data_Processing_Inst::NType::VCVT_Floating_Point_Fixed_Point        }
     }};
     // clang-format on
 

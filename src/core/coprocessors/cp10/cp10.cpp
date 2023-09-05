@@ -30,61 +30,56 @@ namespace zero_mate::coprocessor::cp10
 
         const auto type = cp_instruction.Get_Type();
 
+        // clang-format off
         switch (type)
         {
             case isa::CCP_Data_Processing_Inst::NType::VMUL:
-                Execute(isa::CData_Processing{ instruction.Get_Value() }, [&](auto vn, auto vm) { return vn * vm; });
+                Execute_VMUL(isa::CData_Processing{ instruction.Get_Value() });
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VADD:
-                Execute(isa::CData_Processing{ instruction.Get_Value() }, [&](auto vn, auto vm) { return vn + vm; });
+                Execute_VADD(isa::CData_Processing{ instruction.Get_Value() });
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VSUB:
-                Execute(isa::CData_Processing{ instruction.Get_Value() }, [&](auto vn, auto vm) { return vn - vm; });
+                Execute_VSUB(isa::CData_Processing{ instruction.Get_Value() });
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VDIV:
-                Execute(isa::CData_Processing{ instruction.Get_Value() }, [&](auto vn, auto vm) { return vn / vm; });
+                Execute_VDIV(isa::CData_Processing{ instruction.Get_Value() });
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VABS:
-                Execute(isa::CData_Processing{ instruction.Get_Value() },
-                        [&]([[maybe_unused]] auto vn, auto vm) { return vm.Get_ABS(); });
+                Execute_VABS(isa::CData_Processing{ instruction.Get_Value() });
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VNEG:
-                Execute(isa::CData_Processing{ instruction.Get_Value() },
-                        [&]([[maybe_unused]] auto vn, auto vm) { return vm.Get_NEG(); });
+                Execute_VNEG(isa::CData_Processing{ instruction.Get_Value() });
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VSQRT:
-                Execute(isa::CData_Processing{ instruction.Get_Value() },
-                        [&]([[maybe_unused]] auto vn, auto vm) { return vm.Get_SQRT(); });
+                Execute_VSQRT(isa::CData_Processing{ instruction.Get_Value() });
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VMLA_VMLS:
-                [[fallthrough]];
+                Execute_VMLA_VMLS(isa::CData_Processing{ instruction.Get_Value() });
+                break;
+
             case isa::CCP_Data_Processing_Inst::NType::VNMLA_VNMLS_VNMUL:
-            case isa::CCP_Data_Processing_Inst::NType::VFNMA_VFNMS:
-            case isa::CCP_Data_Processing_Inst::NType::VFMA_VFMS:
-            case isa::CCP_Data_Processing_Inst::NType::VMOV_Immediate:
+                [[fallthrough]];
             case isa::CCP_Data_Processing_Inst::NType::VMOV_Register:
-            case isa::CCP_Data_Processing_Inst::NType::VCVTB_VCVTT:
             case isa::CCP_Data_Processing_Inst::NType::VCMP_VCMPE:
             case isa::CCP_Data_Processing_Inst::NType::VCVT_Double_Precision_Single_Precision:
             case isa::CCP_Data_Processing_Inst::NType::VCVT_VCVTR_Floating_Point_Integer:
-            case isa::CCP_Data_Processing_Inst::NType::VCVT_Floating_Point_Fixed_Point:
-                // clang-format off
                 m_logging_system.Error(fmt::format("{} instruction has not been implemented yet",
                                        magic_enum::enum_name(type)).c_str());
-                // clang-format on
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::Unknown:
                 m_logging_system.Error("Unknown FPU data processing instruction");
                 break;
         }
+        // clang-format on
     }
 
     void CCP10::Perform_Data_Transfer(arm1176jzf_s::isa::CCoprocessor_Data_Transfer instruction)
@@ -188,14 +183,67 @@ namespace zero_mate::coprocessor::cp10
         }
     }
 
-    template<typename Operation>
-    void CCP10::Execute(isa::CData_Processing instruction, Operation operation)
+    void CCP10::Execute_VMUL(isa::CData_Processing instruction)
     {
-        const std::uint32_t vd_idx = 2 * instruction.Get_Vd_Idx() + instruction.Get_Vd_Offset();
-        const std::uint32_t vn_idx = 2 * instruction.Get_Vn_Idx() + instruction.Get_Vn_Offset();
-        const std::uint32_t vm_idx = 2 * instruction.Get_Vm_Idx() + instruction.Get_Vm_Offset();
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
 
-        m_regs[vd_idx] = operation(m_regs[vn_idx], m_regs[vm_idx]);
+        m_regs[vd_idx] = m_regs[vn_idx] * m_regs[vm_idx];
+    }
+
+    void CCP10::Execute_VADD(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        m_regs[vd_idx] = m_regs[vn_idx] + m_regs[vm_idx];
+    }
+
+    void CCP10::Execute_VSUB(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        m_regs[vd_idx] = m_regs[vn_idx] - m_regs[vm_idx];
+    }
+
+    void CCP10::Execute_VDIV(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        m_regs[vd_idx] = m_regs[vn_idx] / m_regs[vm_idx];
+    }
+
+    void CCP10::Execute_VABS(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        m_regs[vd_idx] = m_regs[vm_idx].Get_ABS();
+    }
+
+    void CCP10::Execute_VNEG(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        m_regs[vd_idx] = m_regs[vm_idx].Get_NEG();
+    }
+
+    void CCP10::Execute_VSQRT(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        m_regs[vd_idx] = m_regs[vm_idx].Get_SQRT();
+    }
+
+    void CCP10::Execute_VMLA_VMLS(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        if (!instruction.Is_OP_Bit_Set())
+        {
+            m_regs[vd_idx] += (m_regs[vn_idx] * m_regs[vm_idx]);
+        }
+        else
+        {
+            m_regs[vd_idx] -= (m_regs[vn_idx] * m_regs[vm_idx]);
+        }
     }
 
     std::array<CRegister, CCP10::Number_Of_S_Registers>& CCP10::Get_Registers()

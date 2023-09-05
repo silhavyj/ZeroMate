@@ -50,7 +50,7 @@ The emulator comes with a couple of prebuilt [examples](examples/README.md) that
 |Paging|⏳|Nested-level paging is not supported yet.|
 |Support for external peripherals|✔️|External peripherals are loaded as shared libraries at runtime. For instance, an LED, DIP switch, 7-segment display, etc.|
 |Loading of multiple ELF files (kernel + separately compiled processes)|✔️||
-|Floating point unit (FPU) - single precision|❌||
+|Floating point unit (FPU) - single precision|✔️||
 |Floating point unit (FPU) - double precision|❌||
 |I2C|⏳|From the emulator's perspective, only the TX functionality was tested and fully implemented.|
 |SPI|❌||
