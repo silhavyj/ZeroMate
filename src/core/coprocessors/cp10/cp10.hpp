@@ -44,6 +44,8 @@ namespace zero_mate::coprocessor::cp10
         inline void Execute_VNEG(isa::CData_Processing instruction);
         inline void Execute_VSQRT(isa::CData_Processing instruction);
         inline void Execute_VMLA_VMLS(isa::CData_Processing instruction);
+        inline void Execute_VNMLA_VNMLS_VNMUL(isa::CData_Processing instruction);
+        inline void Execute_VMOV(isa::CData_Processing instruction);
 
     private:
         CFPEXC m_fpexc;

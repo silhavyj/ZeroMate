@@ -66,9 +66,15 @@ namespace zero_mate::coprocessor::cp10
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VNMLA_VNMLS_VNMUL:
-                [[fallthrough]];
+                Execute_VNMLA_VNMLS_VNMUL(isa::CData_Processing{ instruction.Get_Value() });
+                break;
+
             case isa::CCP_Data_Processing_Inst::NType::VMOV_Register:
+                Execute_VMOV(isa::CData_Processing{ instruction.Get_Value() });
+                break;
+
             case isa::CCP_Data_Processing_Inst::NType::VCMP_VCMPE:
+                [[fallthrough]];
             case isa::CCP_Data_Processing_Inst::NType::VCVT_Double_Precision_Single_Precision:
             case isa::CCP_Data_Processing_Inst::NType::VCVT_VCVTR_Floating_Point_Integer:
                 m_logging_system.Error(fmt::format("{} instruction has not been implemented yet",
@@ -244,6 +250,18 @@ namespace zero_mate::coprocessor::cp10
         {
             m_regs[vd_idx] -= (m_regs[vn_idx] * m_regs[vm_idx]);
         }
+    }
+
+    inline void CCP10::Execute_VNMLA_VNMLS_VNMUL(isa::CData_Processing instruction)
+    {
+        // TODO
+    }
+
+    void CCP10::Execute_VMOV(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        m_regs[vd_idx] = m_regs[vm_idx];
     }
 
     std::array<CRegister, CCP10::Number_Of_S_Registers>& CCP10::Get_Registers()
