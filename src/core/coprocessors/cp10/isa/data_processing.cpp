@@ -42,6 +42,11 @@ namespace zero_mate::coprocessor::cp10::isa
         return static_cast<bool>((m_value >> 6U) & 0b1U);
     }
 
+    bool CData_Processing::Compare_With_Zero() const noexcept
+    {
+        return !static_cast<bool>((m_value >> 16U) & 0b1U);
+    }
+
     CData_Processing::TRegisters CData_Processing::Get_Register_Idxs() const noexcept
     {
         return { .vd_idx = 2 * Get_Vd_Idx() + Get_Vd_Offset(),

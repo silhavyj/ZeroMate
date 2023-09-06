@@ -3,6 +3,7 @@
 #include <array>
 
 #include "fpexc.hpp"
+#include "fpscr.hpp"
 #include "register.hpp"
 #include "../coprocessor.hpp"
 #include "isa/isa.hpp"
@@ -34,6 +35,7 @@ namespace zero_mate::coprocessor::cp10
         [[nodiscard]] inline bool Is_FPU_Enabled() const noexcept;
 
         void Execute(isa::CVMSR instruction);
+        void Execute(isa::CVMRS instruction);
         void Execute(isa::CVMOV_ARM_Register_Single_Precision_Register instruction);
 
         inline void Execute_VMUL(isa::CData_Processing instruction);
@@ -46,9 +48,11 @@ namespace zero_mate::coprocessor::cp10
         inline void Execute_VMLA_VMLS(isa::CData_Processing instruction);
         inline void Execute_VNMLA_VNMLS_VNMUL(isa::CData_Processing instruction);
         inline void Execute_VMOV(isa::CData_Processing instruction);
+        inline void Execute_VCMP_VCMPE(isa::CData_Processing instruction);
 
     private:
         CFPEXC m_fpexc;
+        CFPSCR m_fpscr;
         utils::CLogging_System& m_logging_system;
         std::array<CRegister, Number_Of_S_Registers> m_regs;
     };

@@ -39,6 +39,22 @@ namespace zero_mate::coprocessor::cp10
         return *this;
     }
 
+    bool CRegister::operator>(const CRegister& other) const noexcept
+    {
+        const auto f1 = std::bit_cast<float>(m_value);
+        const auto f2 = std::bit_cast<float>(other.m_value);
+
+        return f1 > f2;
+    }
+
+    bool CRegister::operator<(const CRegister& other) const noexcept
+    {
+        const auto f1 = std::bit_cast<float>(m_value);
+        const auto f2 = std::bit_cast<float>(other.m_value);
+
+        return f1 < f2;
+    }
+
     template<typename Operation>
     void CRegister::Perform_Operation(const CRegister& other, const Operation op)
     {

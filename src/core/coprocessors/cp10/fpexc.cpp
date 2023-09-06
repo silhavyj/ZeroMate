@@ -3,7 +3,7 @@
 namespace zero_mate::coprocessor::cp10
 {
     CFPEXC::CFPEXC()
-    : m_value{}
+    : m_value{ 0 }
     {
     }
 

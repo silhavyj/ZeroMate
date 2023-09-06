@@ -25,6 +25,8 @@ namespace zero_mate::coprocessor::cp10
         CRegister& operator-(const CRegister& other) noexcept;
         CRegister& operator*(const CRegister& other) noexcept;
         CRegister& operator/(const CRegister& other) noexcept;
+        [[nodiscard]] bool operator>(const CRegister& other) const noexcept;
+        [[nodiscard]] bool operator<(const CRegister& other) const noexcept;
 
         CRegister& operator+=(const CRegister& other) noexcept;
         CRegister& operator-=(const CRegister& other) noexcept;

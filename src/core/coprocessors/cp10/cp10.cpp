@@ -74,8 +74,11 @@ namespace zero_mate::coprocessor::cp10
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VCMP_VCMPE:
-                [[fallthrough]];
+                Execute_VCMP_VCMPE(isa::CData_Processing{ instruction.Get_Value() });
+                break;
+
             case isa::CCP_Data_Processing_Inst::NType::VCVT_Double_Precision_Single_Precision:
+                [[fallthrough]];
             case isa::CCP_Data_Processing_Inst::NType::VCVT_VCVTR_Floating_Point_Integer:
                 m_logging_system.Error(fmt::format("{} instruction has not been implemented yet",
                                        magic_enum::enum_name(type)).c_str());
@@ -131,6 +134,10 @@ namespace zero_mate::coprocessor::cp10
                 Execute(isa::CVMSR{ instruction.Get_Value() });
                 break;
 
+            case isa::CCP_Register_Transfer_Inst::NType::VMRS:
+                Execute(isa::CVMRS{ instruction.Get_Value() });
+                break;
+
             case isa::CCP_Register_Transfer_Inst::NType::VMOV_ARM_Register_Single_Precision_Register:
                 Execute(isa::CVMOV_ARM_Register_Single_Precision_Register{ instruction.Get_Value() });
                 break;
@@ -138,7 +145,6 @@ namespace zero_mate::coprocessor::cp10
             case isa::CCP_Register_Transfer_Inst::NType::VMOV_ARM_Register_Scalar:
                 [[fallthrough]];
             case isa::CCP_Register_Transfer_Inst::NType::VDUP:
-            case isa::CCP_Register_Transfer_Inst::NType::VMRS:
             case isa::CCP_Register_Transfer_Inst::NType::VMOV_Scalar_ARM_Register:
                 // clang-format off
                 m_logging_system.Error(fmt::format("{} instruction has not been implemented yet",
@@ -159,18 +165,35 @@ namespace zero_mate::coprocessor::cp10
 
         switch (special_reg_type)
         {
-            case isa::CVMSR::NSpecial_Register_Type::FPSID:
-                [[fallthrough]];
+            case isa::CVMSR::NSpecial_Register_Type::FPEXC:
+                m_fpexc = m_cpu_context[rt_idx];
+                break;
+
             case isa::CVMSR::NSpecial_Register_Type::FPSCR:
+                m_fpscr = m_cpu_context[rt_idx];
+                break;
+
+            case isa::CVMSR::NSpecial_Register_Type::FPSID:
                 // clang-format off
                 m_logging_system.Error(fmt::format("VMSR {} register is not supported yet",
                                        magic_enum::enum_name(special_reg_type)).c_str());
                 // clang-format on
                 break;
+        }
+    }
 
-            case isa::CVMSR::NSpecial_Register_Type::FPEXC:
-                m_fpexc = m_cpu_context[rt_idx];
-                break;
+    void CCP10::Execute(isa::CVMRS instruction)
+    {
+        if (instruction.Transfer_To_APSR())
+        {
+            m_cpu_context.Set_Flag(arm1176jzf_s::CCPU_Context::NFlag::N, m_fpscr.Is_Flag_Set(CFPSCR::NFlag::N));
+            m_cpu_context.Set_Flag(arm1176jzf_s::CCPU_Context::NFlag::Z, m_fpscr.Is_Flag_Set(CFPSCR::NFlag::Z));
+            m_cpu_context.Set_Flag(arm1176jzf_s::CCPU_Context::NFlag::C, m_fpscr.Is_Flag_Set(CFPSCR::NFlag::C));
+            m_cpu_context.Set_Flag(arm1176jzf_s::CCPU_Context::NFlag::V, m_fpscr.Is_Flag_Set(CFPSCR::NFlag::V));
+        }
+        else
+        {
+            m_cpu_context[instruction.Get_Rt_Idx()] = m_fpscr.Get_Value();
         }
     }
 
@@ -252,9 +275,39 @@ namespace zero_mate::coprocessor::cp10
         }
     }
 
-    inline void CCP10::Execute_VNMLA_VNMLS_VNMUL(isa::CData_Processing instruction)
+    void CCP10::Execute_VNMLA_VNMLS_VNMUL(isa::CData_Processing instruction)
     {
         // TODO
+    }
+
+    void CCP10::Execute_VCMP_VCMPE(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        const CRegister val_1{ m_regs[vd_idx] };
+        const CRegister val_2{ instruction.Compare_With_Zero() ? m_regs[vm_idx] : 0.0F };
+
+        if (val_1 == val_2)
+        {
+            m_fpscr.Set_Flag(CFPSCR::NFlag::N, false);
+            m_fpscr.Set_Flag(CFPSCR::NFlag::Z, true);
+            m_fpscr.Set_Flag(CFPSCR::NFlag::C, true);
+            m_fpscr.Set_Flag(CFPSCR::NFlag::V, false);
+        }
+        else if (val_1 > val_2)
+        {
+            m_fpscr.Set_Flag(CFPSCR::NFlag::N, false);
+            m_fpscr.Set_Flag(CFPSCR::NFlag::Z, false);
+            m_fpscr.Set_Flag(CFPSCR::NFlag::C, true);
+            m_fpscr.Set_Flag(CFPSCR::NFlag::V, false);
+        }
+        else
+        {
+            m_fpscr.Set_Flag(CFPSCR::NFlag::N, true);
+            m_fpscr.Set_Flag(CFPSCR::NFlag::Z, false);
+            m_fpscr.Set_Flag(CFPSCR::NFlag::C, false);
+            m_fpscr.Set_Flag(CFPSCR::NFlag::V, false);
+        }
     }
 
     void CCP10::Execute_VMOV(isa::CData_Processing instruction)
