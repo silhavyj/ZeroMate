@@ -27,6 +27,7 @@ namespace zero_mate::coprocessor::cp10::isa
 
         [[nodiscard]] bool Is_OP_Bit_Set() const noexcept;
         [[nodiscard]] bool Compare_With_Zero() const noexcept;
+        [[nodiscard]] bool Is_Accumulate_Type() const noexcept;
 
         [[nodiscard]] TRegisters Get_Register_Idxs() const noexcept;
 

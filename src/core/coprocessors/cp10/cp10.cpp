@@ -277,7 +277,23 @@ namespace zero_mate::coprocessor::cp10
 
     void CCP10::Execute_VNMLA_VNMLS_VNMUL(isa::CData_Processing instruction)
     {
-        // TODO
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        if (instruction.Is_Accumulate_Type())
+        {
+            if (!instruction.Is_OP_Bit_Set())
+            {
+                m_regs[vd_idx] = m_regs[vd_idx].Get_NEG() + (m_regs[vn_idx] * m_regs[vm_idx]).Get_NEG();
+            }
+            else
+            {
+                m_regs[vd_idx] = m_regs[vd_idx].Get_NEG() - (m_regs[vn_idx] * m_regs[vm_idx]).Get_NEG();
+            }
+        }
+        else
+        {
+            m_regs[vd_idx] = (m_regs[vn_idx] * m_regs[vm_idx]).Get_NEG();
+        }
     }
 
     void CCP10::Execute_VCMP_VCMPE(isa::CData_Processing instruction)
