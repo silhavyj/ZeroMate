@@ -30,6 +30,8 @@ namespace zero_mate::coprocessor::cp10
         void Perform_Data_Operation(arm1176jzf_s::isa::CCoprocessor_Data_Operation instruction) override;
 
         [[nodiscard]] std::array<CRegister, Number_Of_S_Registers>& Get_Registers();
+        [[nodiscard]] const CFPSCR& Get_FPSCR() const noexcept;
+        [[nodiscard]] const CFPEXC& Get_FPEXC() const noexcept;
 
     private:
         [[nodiscard]] inline bool Is_FPU_Enabled() const noexcept;

@@ -13,8 +13,8 @@ namespace zero_mate::coprocessor::cp10
         return *this;
     }
 
-    bool CFPEXC::Is_Enabled() const noexcept
+    bool CFPEXC::Is_Flag_Set(NFlag flag) const noexcept
     {
-        return static_cast<bool>((m_value >> static_cast<std::uint32_t>(NFlags::EN)) & 0b1U);
+        return static_cast<bool>(m_value & static_cast<std::uint32_t>(flag));
     }
 }

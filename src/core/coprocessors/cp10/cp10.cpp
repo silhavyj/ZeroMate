@@ -322,9 +322,19 @@ namespace zero_mate::coprocessor::cp10
         return m_regs;
     }
 
+    const CFPSCR& CCP10::Get_FPSCR() const noexcept
+    {
+        return m_fpscr;
+    }
+
+    const CFPEXC& CCP10::Get_FPEXC() const noexcept
+    {
+        return m_fpexc;
+    }
+
     bool CCP10::Is_FPU_Enabled() const noexcept
     {
-        const auto enabled = m_fpexc.Is_Enabled();
+        const auto enabled = m_fpexc.Is_Flag_Set(CFPEXC::NFlag::EN);
 
         if (!enabled)
         {
