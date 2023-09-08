@@ -77,7 +77,7 @@ namespace
     }
 }
 
-TEST(vctc, test_01)
+TEST(vctc_float_to_int, test_01)
 {
     const float f1{ 3.40282F };
     const std::uint32_t result_u32{ 3 };
@@ -115,6 +115,15 @@ TEST(vctc_float_to_int, test_04)
 TEST(vctc_float_to_int, test_05)
 {
     const float f1{ 1.17549F };
+    const std::uint32_t result_u32{ 0x1 };
+    const std::uint32_t result_s32{ 0x1 };
+
+    Run_Test(f1, result_u32, result_s32);
+}
+
+TEST(vctc_float_to_int, test_06)
+{
+    const float f1{ -1236.565916F };
     const std::uint32_t result_u32{ 0x1 };
     const std::uint32_t result_s32{ 0x1 };
 

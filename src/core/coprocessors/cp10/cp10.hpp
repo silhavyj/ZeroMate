@@ -56,7 +56,7 @@ namespace zero_mate::coprocessor::cp10
         inline void Execute_VCVT_VCVTR_Floating_Point_Integer(isa::CData_Processing instruction);
 
         inline void Execute_VLDR_VSTR(isa::CData_Transfer instruction, bool is_load_op);
-        inline void Execute_VPUSH_VPOP(isa::CData_Transfer instruction, bool is_push_op);
+        inline void Execute_STM(isa::CData_Transfer instruction);
 
         [[nodiscard]] static std::uint32_t Convert_Float_To_Int(float value, bool is_signed);
         [[nodiscard]] static float Convert_Int_To_Float(std::uint32_t value, bool is_signed);

@@ -120,24 +120,15 @@ namespace zero_mate::coprocessor::cp10
                 break;
 
             case isa::CCP_Data_Transfer_Inst::NType::VPUSH:
-                Execute_VPUSH_VPOP(isa::CData_Transfer{ instruction.Get_Value() }, true);
-                break;
-
-            case isa::CCP_Data_Transfer_Inst::NType::VPOP:
-                Execute_VPUSH_VPOP(isa::CData_Transfer{ instruction.Get_Value() }, false);
-                break;
-
-            case isa::CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_No_Writeback:
                 [[fallthrough]];
+            case isa::CCP_Data_Transfer_Inst::NType::VPOP:
+            case isa::CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_No_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Decrement_Before_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Increment_After_No_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Increment_After_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Decrement_Before_Writeback:
-                // clang-format off
-                m_logging_system.Error(fmt::format("{} instruction has not been implemented yet",
-                                       magic_enum::enum_name(type)).c_str());
-                // clang-format on
+                Execute_STM(isa::CData_Transfer{ instruction.Get_Value() });
                 break;
 
             case isa::CCP_Data_Transfer_Inst::NType::Unknown:
@@ -420,23 +411,34 @@ namespace zero_mate::coprocessor::cp10
         }
     }
 
-    void CCP10::Execute_VPUSH_VPOP(isa::CData_Transfer instruction, bool is_push_op)
+    void CCP10::Execute_STM(isa::CData_Transfer instruction)
     {
         const std::uint32_t start_idx = 2 * instruction.Get_Vd_Idx() + instruction.Get_Vd_Offset();
         const std::uint32_t count = instruction.Get_Immediate();
-        std::uint32_t& SP = m_cpu_context[arm1176jzf_s::CCPU_Context::SP_Reg_Idx];
+        std::uint32_t& rn = m_cpu_context[instruction.Get_Rn_Idx()];
+        const bool add = instruction.Is_U_Bit_Set();
+        const bool write_back = instruction.Is_W_Bit_Set();
+        const bool p_bit = instruction.Is_P_Bit_Set();
 
         std::uint32_t addr{ 0 };
 
-        if (is_push_op)
+        if (add)
         {
-            addr = SP - arm1176jzf_s::CCPU_Context::Reg_Size * count;
-            SP -= (arm1176jzf_s::CCPU_Context::Reg_Size * count);
+            addr = rn;
+
+            if (write_back)
+            {
+                rn += (arm1176jzf_s::CCPU_Context::Reg_Size * count);
+            }
         }
         else
         {
-            addr = SP;
-            SP += (arm1176jzf_s::CCPU_Context::Reg_Size * count);
+            addr = rn - (arm1176jzf_s::CCPU_Context::Reg_Size * count);
+
+            if (write_back)
+            {
+                rn -= (arm1176jzf_s::CCPU_Context::Reg_Size * count);
+            }
         }
 
         for (std::uint32_t idx = start_idx; idx < (start_idx + count); ++idx)
@@ -446,7 +448,7 @@ namespace zero_mate::coprocessor::cp10
                 break;
             }
 
-            if (is_push_op)
+            if (p_bit)
             {
                 m_bus->Write<std::uint32_t>(addr, m_regs[idx].Get_Value_As<std::uint32_t>());
             }

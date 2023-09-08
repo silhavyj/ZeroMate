@@ -7,9 +7,19 @@ namespace zero_mate::coprocessor::cp10::isa
     {
     }
 
+    bool CData_Transfer::Is_P_Bit_Set() const noexcept
+    {
+        return static_cast<bool>((m_value >> 24U) & 0b1U);
+    }
+
     bool CData_Transfer::Is_U_Bit_Set() const noexcept
     {
         return static_cast<bool>((m_value >> 23U) & 0b1U);
+    }
+
+    bool CData_Transfer::Is_W_Bit_Set() const noexcept
+    {
+        return static_cast<bool>((m_value >> 21U) & 0b1U);
     }
 
     std::uint32_t CData_Transfer::Get_Vd_Offset() const noexcept
