@@ -15,6 +15,6 @@ namespace zero_mate::coprocessor::cp10
 
     bool CFPEXC::Is_Flag_Set(NFlag flag) const noexcept
     {
-        return static_cast<bool>(m_value & static_cast<std::uint32_t>(flag));
+        return static_cast<bool>((m_value >> static_cast<std::uint32_t>(flag)) & 0b1U);
     }
 }

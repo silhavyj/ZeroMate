@@ -26,6 +26,11 @@ namespace zero_mate::coprocessor::cp10
 
     void CCP10::Perform_Data_Operation(arm1176jzf_s::isa::CCoprocessor_Data_Operation instruction)
     {
+        if (!Is_FPU_Enabled())
+        {
+            return;
+        }
+
         const isa::CCP_Data_Processing_Inst cp_instruction{ instruction.Get_Value() };
 
         const auto type = cp_instruction.Get_Type();
@@ -78,10 +83,11 @@ namespace zero_mate::coprocessor::cp10
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::VCVT_Double_Precision_Single_Precision:
-                [[fallthrough]];
+                Execute_VCVT_Double_Precision_Single_Precision(isa::CData_Processing{ instruction.Get_Value() });
+                break;
+
             case isa::CCP_Data_Processing_Inst::NType::VCVT_VCVTR_Floating_Point_Integer:
-                m_logging_system.Error(fmt::format("{} instruction has not been implemented yet",
-                                       magic_enum::enum_name(type)).c_str());
+                Execute_VCVT_VCVTR_Floating_Point_Integer(isa::CData_Processing{ instruction.Get_Value() });
                 break;
 
             case isa::CCP_Data_Processing_Inst::NType::Unknown:
@@ -93,6 +99,11 @@ namespace zero_mate::coprocessor::cp10
 
     void CCP10::Perform_Data_Transfer(arm1176jzf_s::isa::CCoprocessor_Data_Transfer instruction)
     {
+        if (!Is_FPU_Enabled())
+        {
+            return;
+        }
+
         const isa::CCP_Data_Transfer_Inst cp_instruction{ instruction.Get_Value() };
 
         const auto type = cp_instruction.Get_Type();
@@ -265,7 +276,7 @@ namespace zero_mate::coprocessor::cp10
     {
         const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
 
-        if (!instruction.Is_OP_Bit_Set())
+        if (!instruction.Is_OP_6_Bit_Set())
         {
             m_regs[vd_idx] += (m_regs[vn_idx] * m_regs[vm_idx]);
         }
@@ -281,7 +292,7 @@ namespace zero_mate::coprocessor::cp10
 
         if (instruction.Is_Accumulate_Type())
         {
-            if (!instruction.Is_OP_Bit_Set())
+            if (!instruction.Is_OP_6_Bit_Set())
             {
                 m_regs[vd_idx] = m_regs[vd_idx].Get_NEG() + (m_regs[vn_idx] * m_regs[vm_idx]).Get_NEG();
             }
@@ -324,6 +335,49 @@ namespace zero_mate::coprocessor::cp10
             m_fpscr.Set_Flag(CFPSCR::NFlag::C, false);
             m_fpscr.Set_Flag(CFPSCR::NFlag::V, false);
         }
+    }
+
+    void CCP10::Execute_VCVT_Double_Precision_Single_Precision(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        m_regs[vd_idx] = m_regs[vm_idx];
+    }
+
+    void CCP10::Execute_VCVT_VCVTR_Floating_Point_Integer(isa::CData_Processing instruction)
+    {
+        const auto [vd_idx, vn_idx, vm_idx] = instruction.Get_Register_Idxs();
+
+        if (instruction.To_Integer())
+        {
+            const auto value = m_regs[vm_idx].Get_Value_As<float>();
+            m_regs[vd_idx] = Convert_Float_To_Int(value, instruction.Signed());
+        }
+        else
+        {
+            const auto value = m_regs[vm_idx].Get_Value_As<std::uint32_t>();
+            m_regs[vd_idx] = Convert_Int_To_Float(value, instruction.Is_OP_7_Bit_Set());
+        }
+    }
+
+    std::uint32_t CCP10::Convert_Float_To_Int(float value, bool is_signed)
+    {
+        if (is_signed)
+        {
+            return static_cast<std::uint32_t>(static_cast<std::int32_t>(value));
+        }
+
+        return static_cast<std::uint32_t>(value);
+    }
+
+    float CCP10::Convert_Int_To_Float(std::uint32_t value, bool is_signed)
+    {
+        if (is_signed)
+        {
+            return static_cast<float>(static_cast<std::int32_t>(value));
+        }
+
+        return static_cast<float>(value);
     }
 
     void CCP10::Execute_VMOV(isa::CData_Processing instruction)
