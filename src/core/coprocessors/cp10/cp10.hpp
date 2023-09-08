@@ -11,6 +11,7 @@
 #include "isa/cp_data_transfer_inst.hpp"
 #include "isa/cp_register_transfer_inst.hpp"
 #include "zero_mate/utils/logging_system.hpp"
+#include "../../bus.hpp"
 
 namespace zero_mate::coprocessor::cp10
 {
@@ -21,7 +22,7 @@ namespace zero_mate::coprocessor::cp10
         static constexpr std::uint32_t Number_Of_S_Registers = 32;
 
     public:
-        explicit CCP10(arm1176jzf_s::CCPU_Context& cpu_context);
+        explicit CCP10(arm1176jzf_s::CCPU_Context& cpu_context, std::shared_ptr<CBus> bus);
 
         void Reset() override;
 
@@ -54,10 +55,13 @@ namespace zero_mate::coprocessor::cp10
         inline void Execute_VCVT_Double_Precision_Single_Precision(isa::CData_Processing instruction);
         inline void Execute_VCVT_VCVTR_Floating_Point_Integer(isa::CData_Processing instruction);
 
+        inline void Execute_VLDR_VSTR(isa::CData_Transfer instruction, bool is_load_op);
+
         [[nodiscard]] static std::uint32_t Convert_Float_To_Int(float value, bool is_signed);
         [[nodiscard]] static float Convert_Int_To_Float(std::uint32_t value, bool is_signed);
 
     private:
+        std::shared_ptr<CBus> m_bus;
         CFPEXC m_fpexc;
         CFPSCR m_fpscr;
         utils::CLogging_System& m_logging_system;

@@ -3,6 +3,7 @@
 
 #include "gtest/gtest.h"
 
+#include "core/bus.hpp"
 #include "core/arm1176jzf_s/core.hpp"
 #include "core/coprocessors/cp10/cp10.hpp"
 
@@ -61,7 +62,8 @@ namespace
 {
     void Run_CMP_Zero_Test(CCPU_Core& cpu, float f1)
     {
-        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
+        auto bus = std::make_shared<CBus>();
+        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context(), bus);
         auto cp15 = std::make_shared<CCP15>(cpu.Get_CPU_Context());
 
         cpu.Add_Coprocessor(CCP10::ID, cp10);
@@ -88,7 +90,8 @@ namespace
 
     void Run_CMP_Test(CCPU_Core& cpu, float f1, float f2)
     {
-        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
+        auto bus = std::make_shared<CBus>();
+        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context(), bus);
         auto cp15 = std::make_shared<CCP15>(cpu.Get_CPU_Context());
 
         cpu.Add_Coprocessor(CCP10::ID, cp10);

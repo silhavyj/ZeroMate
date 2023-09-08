@@ -1,9 +1,9 @@
 #include <bit>
-#include <limits>
 #include <memory>
 
 #include "gtest/gtest.h"
 
+#include "core/bus.hpp"
 #include "core/arm1176jzf_s/core.hpp"
 #include "core/coprocessors/cp10/cp10.hpp"
 
@@ -35,7 +35,7 @@ using namespace coprocessor::cp15;
 //    vmov.f32 s1, r1
 //    vmov.f32 s2, r2
 //
-//    vmls.f32 s2, s0, s1
+//    vnmla.f32 s2, s0, s1
 //    vmov.f32 r2, s2
 //
 // val0:
@@ -78,7 +78,7 @@ namespace
         });
 
         cpu.Execute({
-        { 0xee001a60 }, // vmls.f32 s2, s0, s1
+        { 0xee101a60 }, // vnmla.f32 s2, s0, s1
         { 0xee112a10 }, // vmov.f32 r2, s2
         });
     }
@@ -86,7 +86,9 @@ namespace
     [[maybe_unused]] void Run_Test(float f1, float f2, float vd, float result)
     {
         CCPU_Core cpu{};
-        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
+
+        auto bus = std::make_shared<CBus>();
+        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context(), bus);
 
         Run_Test_Common(cpu, cp10, f1, f2, vd);
 
@@ -96,7 +98,9 @@ namespace
     [[maybe_unused]] void Run_Test(float f1, float f2, float vd, std::uint32_t result)
     {
         CCPU_Core cpu{};
-        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
+
+        auto bus = std::make_shared<CBus>();
+        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context(), bus);
 
         Run_Test_Common(cpu, cp10, f1, f2 ,vd);
 
@@ -106,7 +110,9 @@ namespace
     [[maybe_unused]] void Run_Test(float f1, float f2, float vd, float result_float, std::uint32_t result_uint32)
     {
         CCPU_Core cpu{};
-        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
+
+        auto bus = std::make_shared<CBus>();
+        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context(), bus);
 
         Run_Test_Common(cpu, cp10, f1, f2, vd);
 
@@ -115,38 +121,49 @@ namespace
     }
 }
 
-TEST(vmls, test_01)
+TEST(vnmla, test_01)
 {
     const float f1{ 0.65F };
     const float f2{ -0.169F };
     const float vd{ -123456.9998F };
 
-    const float result_float{ -123456.8906F };
-    const std::uint32_t result_uint32{ 0xc7f12072 };
+    const float result_float{ 123456.8906F };
+    const std::uint32_t result_uint32{ 0x47f12072 };
 
     Run_Test(f1, f2, vd, result_float, result_uint32);
 }
 
-TEST(vmls, test_02)
+TEST(vnmla, test_02)
 {
     const float f1{ 71.59858F };
     const float f2{ 11.1118F };
     const float vd{ 0.25698F };
 
-    const float result_float{ -795.3321533F };
-    const std::uint32_t result_uint32{ 0xc446d542 };
+    const float result_float{ 795.3321533F };
+    const std::uint32_t result_uint32{ 0x4446d542 };
 
     Run_Test(f1, f2, vd, result_float, result_uint32);
 }
 
-TEST(vmls, test_03)
+TEST(vnmla, test_03)
 {
-    const float f1{ 1.17549e-38F };
-    const float f2{ 1.17549e-38F };
+    const float f1{ 3.40282e+38F };
+    const float f2{ 3.40282e+38F };
+    const float vd{ 3.40282e+38F };
+
+    const std::uint32_t result_uint32{ 0x7f800000 };
+
+    Run_Test(f1, f2, vd, result_uint32);
+}
+
+TEST(vnmla, test_04)
+{
+    const float f1{ -1.17549e-38F };
+    const float f2{ -1.17549e-38F };
     const float vd{ 1.17549e-38F };
 
-    const float result_float{ 1.175490007e-38F };
-    const std::uint32_t result_uint32{ 0x007fffe1 };
+    const float result_float{ -1.175490007e-38F };
+    const std::uint32_t result_uint32{ 0x807fffe1 };
 
     Run_Test(f1, f2, vd, result_float, result_uint32);
 }

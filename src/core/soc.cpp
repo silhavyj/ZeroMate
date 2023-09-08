@@ -50,7 +50,7 @@ namespace zero_mate::soc
 
     // FPU (CP10)
     std::shared_ptr<coprocessor::cp10::CCP10> g_cp10 =
-    std::make_shared<coprocessor::cp10::CCP10>(g_cpu->Get_CPU_Context());
+    std::make_shared<coprocessor::cp10::CCP10>(g_cpu->Get_CPU_Context(), g_bus);
 
     // MMU
     std::shared_ptr<arm1176jzf_s::mmu::CMMU> g_mmu = std::make_shared<arm1176jzf_s::mmu::CMMU>(g_bus, g_cp15);

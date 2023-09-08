@@ -3,6 +3,7 @@
 
 #include "gtest/gtest.h"
 
+#include "core/bus.hpp"
 #include "core/arm1176jzf_s/core.hpp"
 #include "core/coprocessors/cp10/cp10.hpp"
 
@@ -40,8 +41,9 @@ namespace
     {
         CCPU_Core cpu{};
 
+        auto bus = std::make_shared<CBus>();
         auto cp15 = std::make_shared<CCP15>(cpu.Get_CPU_Context());
-        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
+        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context(), bus);
 
         cpu.Add_Coprocessor(CCP10::ID, cp10);
         cpu.Add_Coprocessor(CCP15::ID, cp15);

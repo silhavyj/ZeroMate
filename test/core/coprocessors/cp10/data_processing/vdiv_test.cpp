@@ -1,9 +1,9 @@
 #include <bit>
-#include <limits>
 #include <memory>
 
 #include "gtest/gtest.h"
 
+#include "core/bus.hpp"
 #include "core/arm1176jzf_s/core.hpp"
 #include "core/coprocessors/cp10/cp10.hpp"
 
@@ -77,7 +77,9 @@ namespace
     [[maybe_unused]] void Run_Test(float f1, float f2, float result)
     {
         CCPU_Core cpu{};
-        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
+
+        auto bus = std::make_shared<CBus>();
+        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context(), bus);
 
         Run_Test_Common(cpu, cp10, f1, f2);
 
@@ -87,7 +89,9 @@ namespace
     [[maybe_unused]] void Run_Test(float f1, float f2, std::uint32_t result)
     {
         CCPU_Core cpu{};
-        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
+
+        auto bus = std::make_shared<CBus>();
+        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context(), bus);
 
         Run_Test_Common(cpu, cp10, f1, f2);
 
@@ -97,7 +101,9 @@ namespace
     [[maybe_unused]] void Run_Test(float f1, float f2, float result_float, std::uint32_t result_uint32)
     {
         CCPU_Core cpu{};
-        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context());
+
+        auto bus = std::make_shared<CBus>();
+        auto cp10 = std::make_shared<CCP10>(cpu.Get_CPU_Context(), bus);
 
         Run_Test_Common(cpu, cp10, f1, f2);
 

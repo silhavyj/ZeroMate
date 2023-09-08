@@ -6,8 +6,9 @@
 
 namespace zero_mate::coprocessor::cp10
 {
-    CCP10::CCP10(arm1176jzf_s::CCPU_Context& cpu_context)
+    CCP10::CCP10(arm1176jzf_s::CCPU_Context& cpu_context, std::shared_ptr<CBus> bus)
     : ICoprocessor{ cpu_context }
+    , m_bus{ bus }
     , m_logging_system{ *utils::CSingleton<utils::CLogging_System>::Get_Instance() }
     , m_regs{}
     {
@@ -110,16 +111,22 @@ namespace zero_mate::coprocessor::cp10
 
         switch (type)
         {
+            case isa::CCP_Data_Transfer_Inst::NType::VLDR:
+                Execute_VLDR_VSTR(isa::CData_Transfer{ instruction.Get_Value() }, true);
+                break;
+
+            case isa::CCP_Data_Transfer_Inst::NType::VSTR:
+                Execute_VLDR_VSTR(isa::CData_Transfer{ instruction.Get_Value() }, false);
+                break;
+
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_No_Writeback:
                 [[fallthrough]];
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_Writeback:
-            case isa::CCP_Data_Transfer_Inst::NType::VSTR:
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Decrement_Before_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VPUSH:
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Increment_After_No_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Increment_After_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VPOP:
-            case isa::CCP_Data_Transfer_Inst::NType::VLDR:
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Decrement_Before_Writeback:
                 // clang-format off
                 m_logging_system.Error(fmt::format("{} instruction has not been implemented yet",
@@ -378,6 +385,33 @@ namespace zero_mate::coprocessor::cp10
         }
 
         return static_cast<float>(value);
+    }
+
+    void CCP10::Execute_VLDR_VSTR(isa::CData_Transfer instruction, bool is_load_op)
+    {
+        const std::uint32_t vd_idx = 2 * instruction.Get_Vd_Idx() + instruction.Get_Vd_Offset();
+        const std::uint32_t rn_idx = instruction.Get_Rn_Idx();
+        const std::uint32_t immediate = isa::CData_Transfer::Immediate_Step * instruction.Get_Immediate();
+
+        std::uint32_t addr{ m_cpu_context[rn_idx] };
+
+        if (instruction.Is_U_Bit_Set())
+        {
+            addr += immediate;
+        }
+        else
+        {
+            addr -= immediate;
+        }
+
+        if (is_load_op)
+        {
+            m_regs[vd_idx] = m_bus->Read<std::uint32_t>(addr);
+        }
+        else
+        {
+            m_bus->Write<std::uint32_t>(addr, m_regs[vd_idx].Get_Value_As<std::uint32_t>());
+        }
     }
 
     void CCP10::Execute_VMOV(isa::CData_Processing instruction)
