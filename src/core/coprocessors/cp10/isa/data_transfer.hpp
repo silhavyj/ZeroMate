@@ -7,9 +7,6 @@ namespace zero_mate::coprocessor::cp10::isa
     class CData_Transfer final
     {
     public:
-        static constexpr std::uint32_t Immediate_Step{ 4U };
-
-    public:
         explicit CData_Transfer(std::uint32_t value) noexcept;
 
         [[nodiscard]] bool Is_U_Bit_Set() const noexcept;

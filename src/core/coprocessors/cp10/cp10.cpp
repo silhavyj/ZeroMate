@@ -119,14 +119,20 @@ namespace zero_mate::coprocessor::cp10
                 Execute_VLDR_VSTR(isa::CData_Transfer{ instruction.Get_Value() }, false);
                 break;
 
+            case isa::CCP_Data_Transfer_Inst::NType::VPUSH:
+                Execute_VPUSH_VPOP(isa::CData_Transfer{ instruction.Get_Value() }, true);
+                break;
+
+            case isa::CCP_Data_Transfer_Inst::NType::VPOP:
+                Execute_VPUSH_VPOP(isa::CData_Transfer{ instruction.Get_Value() }, false);
+                break;
+
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_No_Writeback:
                 [[fallthrough]];
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Decrement_Before_Writeback:
-            case isa::CCP_Data_Transfer_Inst::NType::VPUSH:
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Increment_After_No_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Increment_After_Writeback:
-            case isa::CCP_Data_Transfer_Inst::NType::VPOP:
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Decrement_Before_Writeback:
                 // clang-format off
                 m_logging_system.Error(fmt::format("{} instruction has not been implemented yet",
@@ -391,7 +397,7 @@ namespace zero_mate::coprocessor::cp10
     {
         const std::uint32_t vd_idx = 2 * instruction.Get_Vd_Idx() + instruction.Get_Vd_Offset();
         const std::uint32_t rn_idx = instruction.Get_Rn_Idx();
-        const std::uint32_t immediate = isa::CData_Transfer::Immediate_Step * instruction.Get_Immediate();
+        const std::uint32_t immediate = arm1176jzf_s::CCPU_Context::Reg_Size * instruction.Get_Immediate();
 
         std::uint32_t addr{ m_cpu_context[rn_idx] };
 
@@ -411,6 +417,45 @@ namespace zero_mate::coprocessor::cp10
         else
         {
             m_bus->Write<std::uint32_t>(addr, m_regs[vd_idx].Get_Value_As<std::uint32_t>());
+        }
+    }
+
+    void CCP10::Execute_VPUSH_VPOP(isa::CData_Transfer instruction, bool is_push_op)
+    {
+        const std::uint32_t start_idx = 2 * instruction.Get_Vd_Idx() + instruction.Get_Vd_Offset();
+        const std::uint32_t count = instruction.Get_Immediate();
+        std::uint32_t& SP = m_cpu_context[arm1176jzf_s::CCPU_Context::SP_Reg_Idx];
+
+        std::uint32_t addr{ 0 };
+
+        if (is_push_op)
+        {
+            addr = SP - arm1176jzf_s::CCPU_Context::Reg_Size * count;
+            SP -= (arm1176jzf_s::CCPU_Context::Reg_Size * count);
+        }
+        else
+        {
+            addr = SP;
+            SP += (arm1176jzf_s::CCPU_Context::Reg_Size * count);
+        }
+
+        for (std::uint32_t idx = start_idx; idx < (start_idx + count); ++idx)
+        {
+            if (idx >= Number_Of_S_Registers)
+            {
+                break;
+            }
+
+            if (is_push_op)
+            {
+                m_bus->Write<std::uint32_t>(addr, m_regs[idx].Get_Value_As<std::uint32_t>());
+            }
+            else
+            {
+                m_regs[idx] = m_bus->Read<std::uint32_t>(addr);
+            }
+
+            addr += arm1176jzf_s::CCPU_Context::Reg_Size;
         }
     }
 
