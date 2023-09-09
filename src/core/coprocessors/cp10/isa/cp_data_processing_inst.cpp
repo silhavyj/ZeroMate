@@ -1,12 +1,29 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file cp_data_processing_inst.cpp
+/// \date 09. 09. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements a general CP10 data processing instruction.
+///
+/// More information about instruction encoding can be found over at
+/// https://developer.arm.com/documentation/ddi0406/c/Application-Level-Architecture/
+/// Advanced-SIMD-and-Floating-point-Instruction-Encoding/Floating-point-data-processing-instructions?lang=en
+// ---------------------------------------------------------------------------------------------------------------------
+
+// STL imports (excluded from Doxygen)
+/// \cond
 #include <bit>
 #include <algorithm>
+/// \endcond
+
+// Project file imports
 
 #include "cp_data_processing_inst.hpp"
 
 namespace zero_mate::coprocessor::cp10::isa
 {
     // clang-format off
-    std::array<CCP_Data_Processing_Inst::TInstruction_Lookup_Record, CCP_Data_Processing_Inst::Instruction_Masks_Count> CCP_Data_Processing_Inst::s_instruction_lookup_table = {{
+    std::array<CCP_Instruction::TInstruction_Lookup_Record<CCP_Data_Processing_Inst::NType>, CCP_Data_Processing_Inst::Instruction_Masks_Count> CCP_Data_Processing_Inst::s_instruction_lookup_table = {{
 
     // Table 7.16. Three-register Floating-point data-processing instructions
 
@@ -33,8 +50,9 @@ namespace zero_mate::coprocessor::cp10::isa
     // clang-format on
 
     CCP_Data_Processing_Inst::CCP_Data_Processing_Inst(std::uint32_t value) noexcept
-    : m_value{ value }
+    : CCP_Instruction{ value }
     {
+        // Sort out the look-up table by the mask restrictiveness (from the most to the least restrictive mask).
         std::sort(s_instruction_lookup_table.begin(),
                   s_instruction_lookup_table.end(),
                   [](const auto& record1, const auto& record2) -> bool {
@@ -44,14 +62,7 @@ namespace zero_mate::coprocessor::cp10::isa
 
     CCP_Data_Processing_Inst::NType CCP_Data_Processing_Inst::Get_Type() const noexcept
     {
-        for (const auto& [mask, expected, type] : s_instruction_lookup_table)
-        {
-            if ((m_value & mask) == expected)
-            {
-                return type;
-            }
-        }
-
-        return NType::Unknown;
+        return CCP_Instruction::Get_Type<NType, decltype(s_instruction_lookup_table)>(s_instruction_lookup_table);
     }
-}
+
+} // namespace zero_mate::coprocessor::cp10::isa
