@@ -1,3 +1,17 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file fpscr.cpp
+/// \date 09. 09. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements the FPSCR register of coprocessor CP10.
+///
+/// To see more information about the register, see https://developer.arm.com/documentation/101273/0001/
+/// Cortex-M55-Processor-level-components-and-system-registers---Reference-Material/Floating-point-and-MVE-support/
+/// Floating-point-Status-Control-Register--FPSCR
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Project file imports
+
 #include "fpscr.hpp"
 
 namespace zero_mate::coprocessor::cp10
@@ -34,4 +48,5 @@ namespace zero_mate::coprocessor::cp10
             m_value &= ~static_cast<std::uint32_t>(flag);
         }
     }
-}
+
+} // namespace zero_mate::coprocessor::cp10
