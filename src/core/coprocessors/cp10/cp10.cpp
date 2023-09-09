@@ -402,6 +402,11 @@ namespace zero_mate::coprocessor::cp10
 
         std::uint32_t addr{ m_cpu_context[rn_idx] };
 
+        if (rn_idx == arm1176jzf_s::CCPU_Context::PC_Reg_Idx)
+        {
+            addr += arm1176jzf_s::CCPU_Context::Reg_Size;
+        }
+
         if (instruction.Is_U_Bit_Set())
         {
             addr += immediate;
