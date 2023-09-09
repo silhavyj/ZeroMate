@@ -7,7 +7,7 @@ namespace zero_mate::coprocessor::cp10::isa
 {
     // clang-format off
     std::array<CCP_Data_Transfer_Inst::TInstruction_Lookup_Record, CCP_Data_Transfer_Inst::Instruction_Masks_Count> CCP_Data_Transfer_Inst::s_instruction_lookup_table = {{
-    { .mask = 0b0000000'11110'0000'0000000000000000U, .expected = 0b0000000'01000'0000'0000000000000000U, .type = CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_No_Writeback },
+    { .mask = 0b0000000'11011'0000'0000000000000000U, .expected = 0b0000000'01000'0000'0000000000000000U, .type = CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_No_Writeback },
     { .mask = 0b0000000'11011'0000'0000000000000000U, .expected = 0b0000000'01010'0000'0000000000000000U, .type = CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_Writeback    },
     { .mask = 0b0000000'10011'0000'0000000000000000U, .expected = 0b0000000'10000'0000'0000000000000000U, .type = CCP_Data_Transfer_Inst::NType::VSTR                              },
     { .mask = 0b0000000'11011'1111'0000000000000000U, .expected = 0b0000000'10010'1101'0000000000000000U, .type = CCP_Data_Transfer_Inst::NType::VPUSH                             },

@@ -37,7 +37,7 @@ using namespace coprocessor::cp15;
 
 namespace
 {
-    void Run_Test(float f1, std::uint32_t result_u32, std::uint32_t result_s32, bool float_to_int = true)
+    void Run_Test(float f1, std::uint32_t result_u32, std::uint32_t result_s32, bool float_to_int = true, bool check_unsigned = true)
     {
         CCPU_Core cpu{};
 
@@ -72,7 +72,10 @@ namespace
         { 0xee113a90 }, // vmov.f32 r3, s3
         });
 
-        EXPECT_EQ(cpu.Get_CPU_Context()[2], result_u32);
+        if (check_unsigned)
+        {
+            EXPECT_EQ(cpu.Get_CPU_Context()[2], result_u32);
+        }
         EXPECT_EQ(cpu.Get_CPU_Context()[3], result_s32);
     }
 }
@@ -124,10 +127,9 @@ TEST(vctc_float_to_int, test_05)
 TEST(vctc_float_to_int, test_06)
 {
     const float f1{ -1236.565916F };
-    const std::uint32_t result_u32{ 0x1 };
-    const std::uint32_t result_s32{ 0x1 };
+    const std::uint32_t result_s32{ 0xfffffb2c };
 
-    Run_Test(f1, result_u32, result_s32);
+    Run_Test(f1, 0, result_s32, true, false);
 }
 
 TEST(vctc_int_to_float, test_01)

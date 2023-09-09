@@ -120,15 +120,25 @@ namespace zero_mate::coprocessor::cp10
                 break;
 
             case isa::CCP_Data_Transfer_Inst::NType::VPUSH:
-                [[fallthrough]];
+                Execute_VSTM_VLDM(isa::CData_Transfer{ instruction.Get_Value() }, false);
+                break;
+
             case isa::CCP_Data_Transfer_Inst::NType::VPOP:
+                Execute_VSTM_VLDM(isa::CData_Transfer{ instruction.Get_Value() }, true);
+                break;
+
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_No_Writeback:
+                [[fallthrough]];
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Increment_After_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VSTM_Decrement_Before_Writeback:
+                Execute_VSTM_VLDM(isa::CData_Transfer{ instruction.Get_Value() }, false);
+                break;
+
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Increment_After_No_Writeback:
+                [[fallthrough]];
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Increment_After_Writeback:
             case isa::CCP_Data_Transfer_Inst::NType::VLDM_Decrement_Before_Writeback:
-                Execute_STM(isa::CData_Transfer{ instruction.Get_Value() });
+                Execute_VSTM_VLDM(isa::CData_Transfer{ instruction.Get_Value() }, true);
                 break;
 
             case isa::CCP_Data_Transfer_Inst::NType::Unknown:
@@ -411,14 +421,13 @@ namespace zero_mate::coprocessor::cp10
         }
     }
 
-    void CCP10::Execute_STM(isa::CData_Transfer instruction)
+    void CCP10::Execute_VSTM_VLDM(isa::CData_Transfer instruction, bool is_load_instruction)
     {
         const std::uint32_t start_idx = 2 * instruction.Get_Vd_Idx() + instruction.Get_Vd_Offset();
         const std::uint32_t count = instruction.Get_Immediate();
         std::uint32_t& rn = m_cpu_context[instruction.Get_Rn_Idx()];
         const bool add = instruction.Is_U_Bit_Set();
         const bool write_back = instruction.Is_W_Bit_Set();
-        const bool p_bit = instruction.Is_P_Bit_Set();
 
         std::uint32_t addr{ 0 };
 
@@ -448,13 +457,13 @@ namespace zero_mate::coprocessor::cp10
                 break;
             }
 
-            if (p_bit)
+            if (is_load_instruction)
             {
-                m_bus->Write<std::uint32_t>(addr, m_regs[idx].Get_Value_As<std::uint32_t>());
+                m_regs[idx] = m_bus->Read<std::uint32_t>(addr);
             }
             else
             {
-                m_regs[idx] = m_bus->Read<std::uint32_t>(addr);
+                m_bus->Write<std::uint32_t>(addr, m_regs[idx].Get_Value_As<std::uint32_t>());
             }
 
             addr += arm1176jzf_s::CCPU_Context::Reg_Size;
