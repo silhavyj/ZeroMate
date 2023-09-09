@@ -24,17 +24,12 @@ extern "C" int _kernel_main(void)
     float angle = 0.0F;
     float frequency = 1.0F;
 
-    float M_PI = 3.14159265358979323846F;
-
-    float one = 1.0F;
-    float twenty = 40.0F;
-    float zero_point_1 = 0.1F;
-    float two = 2.0F;
+    const float M_PI = 3.14159265358979323846F;
 
     while (1)
     {
         float value = custom_sin(angle);
-        int numStars = (int)((value + one) * twenty);
+        int numStars = (int)((value + 1.0F) * 40.F);
 
         for (int i = 0; i < numStars; i++)
         {
@@ -43,10 +38,10 @@ extern "C" int _kernel_main(void)
 
         sMonitor << '\n';
 
-        angle += zero_point_1 * frequency;
-        if (angle >= two * M_PI)
+        angle += 0.1F * frequency;
+        if (angle >= 2.0F * M_PI)
         {
-            angle -= two * M_PI;
+            angle -= 2.0F * M_PI;
         }
     }
 
