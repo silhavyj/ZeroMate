@@ -50,7 +50,7 @@ namespace zero_mate::coprocessor::cp10::isa
     public:
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Creates an instance of the class.
-        /// \param value Encoded instruction as 32-bit integer
+        /// \param value Encoded instruction as a 32-bit integer
         // -------------------------------------------------------------------------------------------------------------
         explicit CCP_Data_Processing_Inst(std::uint32_t value) noexcept;
 

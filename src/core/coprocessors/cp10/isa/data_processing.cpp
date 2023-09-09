@@ -1,3 +1,15 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file data_processing.cpp
+/// \date 09. 09. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements a data processing instruction.
+///
+/// It groups up the functionality of the majory of the data processing instructions.
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Project file imports
+
 #include "data_processing.hpp"
 
 namespace zero_mate::coprocessor::cp10::isa
@@ -69,8 +81,11 @@ namespace zero_mate::coprocessor::cp10::isa
 
     CData_Processing::TRegisters CData_Processing::Get_Register_Idxs() const noexcept
     {
+        // We assume that single-precision registers are being used (S{x}).
+
         return { .vd_idx = 2 * Get_Vd_Idx() + Get_Vd_Offset(),
                  .vn_idx = 2 * Get_Vn_Idx() + Get_Vn_Offset(),
                  .vm_idx = 2 * Get_Vm_Idx() + Get_Vm_Offset() };
     }
-}
+
+} // namespace zero_mate::coprocessor::cp10::isa
