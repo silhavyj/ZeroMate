@@ -18,6 +18,11 @@
 
 namespace zero_mate::coprocessor::cp10
 {
+    CRegister::CRegister()
+    : CRegister(0U)
+    {
+    }
+
     CRegister::CRegister(float value)
     : CRegister{ std::bit_cast<std::uint32_t>(value) }
     {
