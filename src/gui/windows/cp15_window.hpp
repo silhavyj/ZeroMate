@@ -30,7 +30,7 @@ namespace zero_mate::gui
     public:
         // -------------------------------------------------------------------------------------------------------------
         /// \brief Creates an instance of the class.
-        /// \param cp15 Reference to coprocessor 15.
+        /// \param cp15 Reference to coprocessor 15
         // -------------------------------------------------------------------------------------------------------------
         explicit CCP15_Window(std::shared_ptr<coprocessor::cp15::CCP15> cp15);
 

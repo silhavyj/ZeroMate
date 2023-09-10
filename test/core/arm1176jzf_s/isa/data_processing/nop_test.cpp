@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 
 #include "core/arm1176jzf_s/core.hpp"
 #include "register_state_checker.hpp"
