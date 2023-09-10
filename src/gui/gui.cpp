@@ -37,6 +37,7 @@
 #include "windows/top_bar_menu.hpp"
 #include "windows/log_window.hpp"
 #include "windows/cp15_window.hpp"
+#include "windows/cp10_window.hpp"
 #include "windows/demo_window.hpp"
 
 #include "windows/peripherals/ram_window.hpp"
@@ -144,6 +145,9 @@ namespace zero_mate::gui
 
             // Coprocessor CP15
             s_windows.emplace_back(std::make_shared<CCP15_Window>(soc::g_cp15));
+
+            // Coprocessor CP10
+            s_windows.emplace_back(std::make_shared<CCP10_Window>(soc::g_cp10));
 
             // AUX window
             s_windows.emplace_back(std::make_shared<CAUX_Window>(soc::g_aux));

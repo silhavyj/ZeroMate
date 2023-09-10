@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
-#include <fmt/core.h>
+#include "gtest/gtest.h"
+#include "fmt/core.h"
 
 #include "core/bus.hpp"
 #include "core/arm1176jzf_s/core.hpp"

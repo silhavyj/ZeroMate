@@ -48,9 +48,9 @@ namespace zero_mate::soc
     std::shared_ptr<coprocessor::cp15::CCP15> g_cp15 =
     std::make_shared<coprocessor::cp15::CCP15>(g_cpu->Get_CPU_Context());
 
-    // FPU
-    std::shared_ptr<coprocessor::cp10::CFPU> g_fpu =
-    std::make_shared<coprocessor::cp10::CFPU>(g_cpu->Get_CPU_Context());
+    // FPU (CP10)
+    std::shared_ptr<coprocessor::cp10::CCP10> g_cp10 =
+    std::make_shared<coprocessor::cp10::CCP10>(g_cpu->Get_CPU_Context(), g_bus);
 
     // MMU
     std::shared_ptr<arm1176jzf_s::mmu::CMMU> g_mmu = std::make_shared<arm1176jzf_s::mmu::CMMU>(g_bus, g_cp15);
@@ -215,9 +215,10 @@ namespace zero_mate::soc
             // Attach the interrupt controller, MMU, external peripherals, and CP15 to the CPU.
             g_cpu->Set_Interrupt_Controller(g_ic);
             g_cpu->Add_Coprocessor(coprocessor::cp15::CCP15::ID, g_cp15);
-            g_cpu->Add_Coprocessor(coprocessor::cp10::CFPU::ID, g_fpu);
+            g_cpu->Add_Coprocessor(coprocessor::cp10::CCP10::ID, g_cp10);
             g_cpu->Set_MMU(g_mmu);
             g_cpu->Set_External_Peripherals(&g_external_peripherals);
+            g_cpu->Set_Coprocessor_15(g_cp15);
 
             // Register system clock listeners.
             g_cpu->Register_System_Clock_Listener(g_arm_timer);

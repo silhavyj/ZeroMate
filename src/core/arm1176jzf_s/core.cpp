@@ -16,7 +16,7 @@
 
 // 3rd party library includes
 
-#include <magic_enum.hpp>
+#include "magic_enum.hpp"
 
 // Project file imports
 
@@ -41,6 +41,7 @@ namespace zero_mate::arm1176jzf_s
     , m_entry_point{ Default_Entry_Point_Addr }
     , m_interrupt_controller{ nullptr }
     , m_external_peripherals{ nullptr }
+    , m_cp15{ nullptr }
     {
         Set_PC(pc);
     }
@@ -48,6 +49,11 @@ namespace zero_mate::arm1176jzf_s
     void CCPU_Core::Add_Coprocessor(std::uint32_t id, const std::shared_ptr<coprocessor::ICoprocessor>& coprocessor)
     {
         m_coprocessors[id] = coprocessor;
+    }
+
+    void CCPU_Core::Set_Coprocessor_15(const std::shared_ptr<coprocessor::cp15::CCP15>& cp15)
+    {
+        m_cp15 = cp15;
     }
 
     CCPU_Context& CCPU_Core::Get_CPU_Context()
@@ -1157,8 +1163,15 @@ namespace zero_mate::arm1176jzf_s
         m_context.Set_CPSR(cpsr);
     }
 
-    void CCPU_Core::Check_Coprocessor_Existence(std::uint32_t coprocessor_id)
+    void CCPU_Core::Perform_Coprocessor_Accessibility_Checks(std::uint32_t coprocessor_id)
     {
+        Check_Coprocessor_Presence(coprocessor_id);
+        Checks_Coprocessor_Access_Mode(coprocessor_id);
+    }
+
+    void CCPU_Core::Check_Coprocessor_Presence(std::uint32_t coprocessor_id)
+    {
+        // The coprocessor must be present.
         if (!m_coprocessors.contains(coprocessor_id))
         {
             m_logging_system.Error(fmt::format("CP{} is not present", coprocessor_id).c_str());
@@ -1167,6 +1180,72 @@ namespace zero_mate::arm1176jzf_s
             // to make use of a coprocessor which is not present.
             throw exceptions::CUndefined_Instruction{};
         }
+
+        // The CPU needs to have access to CP15, so it can verify the access type.
+        if (coprocessor_id != coprocessor::cp15::CCP15::ID && m_cp15 == nullptr)
+        {
+            // clang-format off
+            m_logging_system.Error(fmt::format("CP15 has not been set - cannot verify access to coprocessor CP{}",
+                                               coprocessor_id).c_str());
+            // clang-format on
+
+            throw exceptions::CReset{};
+        }
+    }
+
+    void CCPU_Core::Checks_Coprocessor_Access_Mode(std::uint32_t coprocessor_id)
+    {
+        using namespace coprocessor::cp15;
+
+        // Are we accessing CP15?
+        if (coprocessor_id == CCP15::ID)
+        {
+            // Make sure the CPU is in a privileged mode when accessing CP15.
+            if (!m_context.Is_In_Privileged_Mode())
+            {
+                m_logging_system.Error("CP15 can be accessed only from a privileged mode");
+                throw exceptions::CReset{};
+            }
+
+            // Access has been verified.
+            return;
+        }
+
+        // Retrieve the access type to the given coprocessor from CP15.
+        const auto cp15_c1 = m_cp15->Get_Primary_Register<CC1>(NPrimary_Register::C1);
+        const auto access_type = cp15_c1->Get_Coprocessor_Access_Type(coprocessor_id);
+
+        switch (access_type)
+        {
+            // Access denied
+            case CC1::NCoprocessor_Access_Type::Access_Denied:
+                m_logging_system.Error(fmt::format("CP{}: Access denied", coprocessor_id).c_str());
+                throw exceptions::CReset{};
+                break;
+
+            // Privileged mode access only
+            case CC1::NCoprocessor_Access_Type::Privileged_Mode_Access_Only:
+                if (!m_context.Is_In_Privileged_Mode())
+                {
+                    // clang-format off
+                    m_logging_system.Error(fmt::format("CP{} can be accessed only from a privileged mode",
+                                                       coprocessor_id).c_str());
+                    // clang-format on
+
+                    throw exceptions::CReset{};
+                }
+                break;
+
+            // Reserved
+            case CC1::NCoprocessor_Access_Type::Reserved:
+                m_logging_system.Error(fmt::format("CP{}: Reserved access", coprocessor_id).c_str());
+                throw exceptions::CReset{};
+                break;
+
+            // Access in any mode
+            case CC1::NCoprocessor_Access_Type::Privileged_And_User_Mode_Access:
+                break;
+        }
     }
 
     void CCPU_Core::Execute(isa::CCoprocessor_Reg_Transfer instruction)
@@ -1174,8 +1253,8 @@ namespace zero_mate::arm1176jzf_s
         // Get the coprocessor ID.
         const auto coprocessor_id = instruction.Get_Coprocessor_ID();
 
-        // Make sure the coprocessor is present.
-        Check_Coprocessor_Existence(coprocessor_id);
+        // Make sure the coprocessor is present, the CPU mode is correct, etc.
+        Perform_Coprocessor_Accessibility_Checks(coprocessor_id);
 
         // Pass the instruction to the coprocessor.
         m_coprocessors[coprocessor_id]->Perform_Register_Transfer(instruction);
@@ -1186,8 +1265,8 @@ namespace zero_mate::arm1176jzf_s
         // Get the coprocessor ID.
         const auto coprocessor_id = instruction.Get_Coprocessor_ID();
 
-        // Make sure the coprocessor is present.
-        Check_Coprocessor_Existence(coprocessor_id);
+        // Make sure the coprocessor is present, the CPU mode is correct, etc.
+        Perform_Coprocessor_Accessibility_Checks(coprocessor_id);
 
         // Pass the instruction to the coprocessor.
         m_coprocessors[coprocessor_id]->Perform_Data_Transfer(instruction);
@@ -1198,8 +1277,8 @@ namespace zero_mate::arm1176jzf_s
         // Get the coprocessor ID.
         const auto coprocessor_id = instruction.Get_Coprocessor_ID();
 
-        // Make sure the coprocessor is present.
-        Check_Coprocessor_Existence(coprocessor_id);
+        // Make sure the coprocessor is present, the CPU mode is correct, etc.
+        Perform_Coprocessor_Accessibility_Checks(coprocessor_id);
 
         // Pass the instruction to the coprocessor.
         m_coprocessors[coprocessor_id]->Perform_Data_Operation(instruction);

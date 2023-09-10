@@ -27,7 +27,7 @@
 #include "arm1176jzf_s/core.hpp"
 #include "arm1176jzf_s/mmu/mmu.hpp"
 #include "coprocessors/cp15/cp15.hpp"
-#include "coprocessors/fpu/fpu.hpp"
+#include "coprocessors/cp10/cp10.hpp"
 #include "peripherals/ram.hpp"
 #include "peripherals/interrupt_controller.hpp"
 #include "peripherals/arm_timer.hpp"
@@ -110,8 +110,8 @@ namespace zero_mate::soc
     /// Global reference to the CP15 (system control coprocessor)
     extern std::shared_ptr<coprocessor::cp15::CCP15> g_cp15;
 
-    /// Global reference to FPU (floating point unit)
-    extern std::shared_ptr<coprocessor::cp10::CFPU> g_fpu;
+    /// Global reference to FPU (floating point unit CP10)
+    extern std::shared_ptr<coprocessor::cp10::CCP10> g_cp10;
 
     /// Global reference to the MMU (memory management unit).
     extern std::shared_ptr<arm1176jzf_s::mmu::CMMU> g_mmu;

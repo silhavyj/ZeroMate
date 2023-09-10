@@ -42,7 +42,7 @@ namespace zero_mate
         constexpr auto last_address = static_cast<std::uint64_t>(std::numeric_limits<std::uint32_t>::max());
 
         // Make sure the peripheral does not "fall out of the accessible address space".
-        if (last_peripheral_address >= last_address)
+        if (last_peripheral_address > last_address)
         {
             return NStatus::Out_Of_Addr_Space;
         }

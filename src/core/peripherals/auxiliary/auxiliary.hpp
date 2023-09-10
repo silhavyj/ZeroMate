@@ -157,7 +157,7 @@ namespace zero_mate::peripheral
         std::shared_ptr<CGPIO_Manager> m_gpio;                 ///< GPIO manager
         std::shared_ptr<CInterrupt_Controller> m_ic;           ///< Interrupt controller
 
-        std::unique_ptr<CMini_UART> m_mini_UART;               ///< Mini UART
+        std::unique_ptr<CMini_UART> m_mini_UART; ///< Mini UART
     };
 
 } // namespace zero_mate::peripheral

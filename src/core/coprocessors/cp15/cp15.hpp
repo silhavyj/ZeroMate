@@ -38,7 +38,7 @@ namespace zero_mate::coprocessor::cp15
     class CCP15 final : public ICoprocessor
     {
     public:
-        /// Unique ID of the coprocessor.
+        /// Unique ID of the coprocessor
         static constexpr std::uint32_t ID = 15;
 
     public:

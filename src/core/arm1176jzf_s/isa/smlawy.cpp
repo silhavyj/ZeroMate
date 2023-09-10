@@ -23,17 +23,17 @@ namespace zero_mate::arm1176jzf_s::isa
 
     std::uint32_t CSMLAWy::Get_Rd_Idx() const noexcept
     {
-        return static_cast<std::uint32_t>((m_value >> 16U) & 0b1111U);
+        return (m_value >> 16U) & 0b1111U;
     }
 
     std::uint32_t CSMLAWy::Get_Rn_Idx() const noexcept
     {
-        return static_cast<std::uint32_t>((m_value >> 12U) & 0b1111U);
+        return (m_value >> 12U) & 0b1111U;
     }
 
     std::uint32_t CSMLAWy::Get_Rs_Idx() const noexcept
     {
-        return static_cast<std::uint32_t>((m_value >> 8U) & 0b1111U);
+        return (m_value >> 8U) & 0b1111U;
     }
 
     std::uint32_t CSMLAWy::Get_Rm_Idx() const noexcept
