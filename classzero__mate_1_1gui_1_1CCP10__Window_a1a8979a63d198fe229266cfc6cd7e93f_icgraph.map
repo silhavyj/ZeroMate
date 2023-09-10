@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CCP10_Window::Render_FPEXC" name="zero_mate::gui::CCP10_Window::Render_FPEXC">
+<area shape="rect" id="node1" title="Renders the flags in the FPEXC register." alt="" coords="223,5,405,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CCP10__Window.html#a6d34cb82a44d4329c61c0e40028c6a54" title="Renders the window (IGUI_Window interface)." alt="" coords="5,5,175,47"/>
+</map>

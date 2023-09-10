@@ -1,0 +1,6 @@
+<map id="zero_mate::coprocessor::cp10::CFPSCR::Is_Flag_Set" name="zero_mate::coprocessor::cp10::CFPSCR::Is_Flag_Set">
+<area shape="rect" id="node1" title="Checks whether a given flag is set or not." alt="" coords="453,39,656,80"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a86ffa2d30274ae4ebf55cf7e06447a8f" title="Executes a VMRS floating point instruction." alt="" coords="225,5,403,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CCP10__Window.html#ac90d2ac5479e7790de0ee116dce5c248" title="Renders the flags in the FPSCR register." alt="" coords="223,71,405,112"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CCP10__Window.html#a6d34cb82a44d4329c61c0e40028c6a54" title="Renders the window (IGUI_Window interface)." alt="" coords="5,71,175,112"/>
+</map>

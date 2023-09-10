@@ -1,16 +1,17 @@
 <map id="zero_mate::gui::IGUI_Window" name="zero_mate::gui::IGUI_Window">
-<area shape="rect" id="node1" title="Common interface for all GUI windows." alt="" coords="5,397,160,439"/>
+<area shape="rect" id="node1" title="Common interface for all GUI windows." alt="" coords="5,431,160,472"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1gui_1_1CARM__Timer__Window.html" title="This windows visualizes the contents of the ARM timer registers." alt="" coords="223,5,390,47"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1gui_1_1CAUX__Window.html" title="This class represents the windows that visualizes auxiliary peripherals." alt="" coords="225,71,389,112"/>
-<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CCP15__Window.html" title="This class represents a window that displays information related to CP15 (coprocessor 15)." alt="" coords="222,136,391,177"/>
-<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CControl__Window.html" title="This class represents a window that allows the user to control CPU execution." alt="" coords="215,201,398,243"/>
-<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CDemo__Window.html" title="This class displays the ImGui and ImPlot demos." alt="" coords="219,267,394,308"/>
-<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CGPIO__Window.html" title="This class represents a windows that displays information about GPIO pins." alt="" coords="223,332,391,373"/>
-<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CInterrupt__Controller__Window.html" title="This class defines a window that displays information about the interrupt controller." alt="" coords="211,397,403,439"/>
-<area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1CLog__Window.html" title="This class represents a window that displays log messages." alt="" coords="227,463,386,504"/>
-<area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CMonitor__Window.html" title="This class represents a window that visualizes the memory&#45;mapped debug monitor." alt="" coords="213,528,400,569"/>
-<area shape="rect" id="node11" href="$classzero__mate_1_1gui_1_1CRAM__Window.html" title="This class represents a windows that visualizes the contents of the RAM." alt="" coords="223,593,390,635"/>
-<area shape="rect" id="node12" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html" title="This class represents the window that displays the contents of all CPU registers." alt="" coords="208,659,405,700"/>
-<area shape="rect" id="node13" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html" title="This class represents a windows that displays the contents of loaded ELF files." alt="" coords="217,724,397,765"/>
-<area shape="rect" id="node14" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html" title="This class represents a top bar through which the user can load ELF files." alt="" coords="227,789,386,831"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1gui_1_1CCP10__Window.html" title="This class represents a window that displays information related to CP10 (coprocessor 10)." alt="" coords="222,136,391,177"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1gui_1_1CCP15__Window.html" title="This class represents a window that displays information related to CP15 (coprocessor 15)." alt="" coords="222,201,391,243"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1gui_1_1CControl__Window.html" title="This class represents a window that allows the user to control CPU execution." alt="" coords="215,267,398,308"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1gui_1_1CDemo__Window.html" title="This class displays the ImGui and ImPlot demos." alt="" coords="219,332,394,373"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1gui_1_1CGPIO__Window.html" title="This class represents a windows that displays information about GPIO pins." alt="" coords="223,397,391,439"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1gui_1_1CInterrupt__Controller__Window.html" title="This class defines a window that displays information about the interrupt controller." alt="" coords="211,463,403,504"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1gui_1_1CLog__Window.html" title="This class represents a window that displays log messages." alt="" coords="227,528,386,569"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1gui_1_1CMonitor__Window.html" title="This class represents a window that visualizes the memory&#45;mapped debug monitor." alt="" coords="213,593,400,635"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1gui_1_1CRAM__Window.html" title="This class represents a windows that visualizes the contents of the RAM." alt="" coords="223,659,390,700"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1gui_1_1CRegisters__Window.html" title="This class represents the window that displays the contents of all CPU registers." alt="" coords="208,724,405,765"/>
+<area shape="rect" id="node14" href="$classzero__mate_1_1gui_1_1CSource__Code__Window.html" title="This class represents a windows that displays the contents of loaded ELF files." alt="" coords="217,789,397,831"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1gui_1_1CTop__Bar__Menu.html" title="This class represents a top bar through which the user can load ELF files." alt="" coords="227,855,386,896"/>
 </map>

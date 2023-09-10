@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.3.0</span>
+   &#160;<span id="projectnumber">v1.4.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 : <a class="el" href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html#aa921185383b9bb4ceb3675c89e95579d">zero_mate::coprocessor::ICoprocessor</a>
 </li>
 <li>ID
-: <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CFPU.html#ad3081a486b95170cb9da3d6d2bd7a63b">zero_mate::coprocessor::cp10::CFPU</a>
+: <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#afce5bf7a2f96559e525282ea6b04b9e2">zero_mate::coprocessor::cp10::CCP10</a>
 , <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#a42bf04c078179c2671e46a296d7e388c">zero_mate::coprocessor::cp15::CCP15</a>
 </li>
 <li>IExternal_Peripheral()
@@ -219,6 +219,9 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 </li>
 <li>Instruction_Masks_Count
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html#a8fd2a2fd345bed642984bddf14685bad">zero_mate::arm1176jzf_s::isa::CISA_Decoder</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Data__Processing__Inst.html#ad071ab1c287eeae5082f818c013a2672">zero_mate::coprocessor::cp10::isa::CCP_Data_Processing_Inst</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Data__Transfer__Inst.html#a9b7d3c5491493c22ee258ef8ad039499">zero_mate::coprocessor::cp10::isa::CCP_Data_Transfer_Inst</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Register__Transfer__Inst.html#a5c4ed73bf17d628ca29640f649210ef3">zero_mate::coprocessor::cp10::isa::CCP_Register_Transfer_Inst</a>
 </li>
 <li>Interrupt_Enabled
 : <a class="el" href="structzero__mate_1_1peripheral_1_1CARM__Timer_1_1TControl__Register.html#a48c7564460880f2513ef340ded50ea88">zero_mate::peripheral::CARM_Timer::TControl_Register</a>
@@ -233,10 +236,10 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 : <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#ac64df82bc4329f4b9f801ef10f72e340">zero_mate::coprocessor::cp15::IPrimary_Reg</a>
 </li>
 <li>IPeripheral()
-: <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a30a5acb7b905e36b6eeab48d253bd777">zero_mate::peripheral::IPeripheral</a>
+: <a class="el" href="classzero__mate_1_1peripheral_1_1IPeripheral.html#a802de3443970ca57fd356ccfe9d45415">zero_mate::peripheral::IPeripheral</a>
 </li>
 <li>IPrimary_Reg()
-: <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#ab6b6aa0d8a6e6fa4c7b0e8fd3b2bc7a2">zero_mate::coprocessor::cp15::IPrimary_Reg</a>
+: <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a16fb44594cba9b922d2406f5f2684f9a">zero_mate::coprocessor::cp15::IPrimary_Reg</a>
 </li>
 <li>IRQ_tab_open
 : <a class="el" href="structzero__mate_1_1gui_1_1CRegisters__Window_1_1TCPU__Mode__Tab__States.html#ae60cb91b38012350c642a7bfd46c8d08">zero_mate::gui::CRegisters_Window::TCPU_Mode_Tab_States</a>
@@ -245,6 +248,9 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a2583ff5d99f44afe2424ac8d38d3a5d1">zero_mate::arm1176jzf_s::isa::CCPS</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply.html#a7e9beb7721639b17e38c42f535b8baa0">zero_mate::arm1176jzf_s::isa::CMultiply</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html#a7a029b36e646e3f6e1aab8744cef48ec">zero_mate::arm1176jzf_s::isa::CMultiply_Long</a>
+</li>
+<li>Is_Accumulate_Type()
+: <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#a4933f170fdb865477bc2456f0252ea82">zero_mate::coprocessor::cp10::isa::CData_Processing</a>
 </li>
 <li>Is_B_Bit_Set()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html#ab2bd06becd608f8810e8da5fe41b031c">zero_mate::arm1176jzf_s::isa::CSingle_Data_Transfer</a>
@@ -270,10 +276,15 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 <li>Is_Flag_Set()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a0013811c3eef6d91ddfd2423a08889ef">zero_mate::arm1176jzf_s::CCPU_Context</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Entry.html#a1389995cd4c33cdee856dbc223ba11a3">zero_mate::arm1176jzf_s::mmu::CPage_Entry</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CFPEXC.html#a1e9712b7b92c2a1ef3e09f00ada91cf9">zero_mate::coprocessor::cp10::CFPEXC</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CFPSCR.html#abeebabe5395572a30e15aff234571c84">zero_mate::coprocessor::cp10::CFPSCR</a>
 , <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a0780610d57b65a633a1776be372116a6">zero_mate::coprocessor::cp15::IPrimary_Reg</a>
 </li>
 <li>Is_Flush_Prefetch_Buffer_Set()
 : <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC7.html#a41e488e63f654bd3148e5f3878276a87">zero_mate::coprocessor::cp15::CC7</a>
+</li>
+<li>Is_FPU_Enabled()
+: <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a42519c95eeada09e8b8f277f899f9185">zero_mate::coprocessor::cp10::CCP10</a>
 </li>
 <li>Is_I_Bit_Set()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html#a9f2533a907e445e2650ca948c8739128">zero_mate::arm1176jzf_s::isa::CCPS</a>
@@ -337,6 +348,12 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 <li>Is_N_Bit_Set()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Data__Transfer.html#aa2e1dd2a439312d55b0ca114ac242444">zero_mate::arm1176jzf_s::isa::CCoprocessor_Data_Transfer</a>
 </li>
+<li>Is_OP_6_Bit_Set()
+: <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#a8fe7079c2fcb75db28f44513c732b998">zero_mate::coprocessor::cp10::isa::CData_Processing</a>
+</li>
+<li>Is_OP_7_Bit_Set()
+: <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#a34b70573982240c62bb2e996a7d03446">zero_mate::coprocessor::cp10::isa::CData_Processing</a>
+</li>
 <li>Is_P_Bit_Set()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCoprocessor__Data__Transfer.html#a84bc977c34121da603625ee17d7e36e8">zero_mate::arm1176jzf_s::isa::CCoprocessor_Data_Transfer</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a32b2f3064b2ccb34f59fd8152ef0364d">zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer</a>
@@ -385,6 +402,7 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CHalfword__Data__Transfer.html#a3290a4a9fb19ae4937df9d57114383b3">zero_mate::arm1176jzf_s::isa::CHalfword_Data_Transfer</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html#af2719ff123bd261411a296934ea827ff">zero_mate::arm1176jzf_s::isa::CMultiply_Long</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html#aaeadcacec8cf69d00f098e4052b63565">zero_mate::arm1176jzf_s::isa::CSingle_Data_Transfer</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Transfer.html#a97119054087804d8f1cfb2faa70b180a">zero_mate::coprocessor::cp10::isa::CData_Transfer</a>
 </li>
 <li>Is_W_Bit_Set()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CBlock__Data__Transfer.html#af1ba54ca4e582db5d0a89b24d22a96fd">zero_mate::arm1176jzf_s::isa::CBlock_Data_Transfer</a>
@@ -393,6 +411,7 @@ $(document).ready(function(){initNavTree('functions_i.html',''); initResizable()
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CRFE.html#af6c44e56c0e4206e173ad866e3b1628d">zero_mate::arm1176jzf_s::isa::CRFE</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSingle__Data__Transfer.html#ae92a645b6f504daf95c0a09085f79139">zero_mate::arm1176jzf_s::isa::CSingle_Data_Transfer</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CSRS.html#a24fdc1ec3a9024d4a56bcdbb5c619421">zero_mate::arm1176jzf_s::isa::CSRS</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Transfer.html#ad1d4b385c601945cc67e0988f15b4fd6">zero_mate::coprocessor::cp10::isa::CData_Transfer</a>
 </li>
 <li>Is_X_Bit_Set()
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#ad7c504ddc0bf7e0d391e49993b6159ef">zero_mate::arm1176jzf_s::isa::CPSR_Transfer</a>

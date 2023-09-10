@@ -1,0 +1,4 @@
+<map id="zero_mate::gui::CCP10_Window::Render_FPSCR" name="zero_mate::gui::CCP10_Window::Render_FPSCR">
+<area shape="rect" id="node1" title="Renders the flags in the FPSCR register." alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CFPSCR.html#abeebabe5395572a30e15aff234571c84" title="Checks whether a given flag is set or not." alt="" coords="236,5,439,47"/>
+</map>

@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structzero__mate_1_1peripheral_1_1CBSC_1_1TTransaction.html" title=" " alt="" coords="5,5,171,47"/>
+<area shape="rect" id="node1" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html" title="This interface defines common functionality of every primary register of coprocessor CP15." alt="" coords="5,136,183,177"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html" title="This class represents primary register C1 of coprocessor CP15." alt="" coords="231,5,408,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC2.html" title="This class represents primary register C2 of coprocessor CP15." alt="" coords="231,71,408,112"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC3.html" title="This class represents primary register C3 of coprocessor CP15." alt="" coords="231,136,408,177"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC7.html" title="This class represents primary register C7 of coprocessor CP15." alt="" coords="231,201,408,243"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1coprocessor_1_1cp15_1_1CC8.html" title="This class represents primary register C8 of coprocessor CP15." alt="" coords="231,267,408,308"/>
 </map>

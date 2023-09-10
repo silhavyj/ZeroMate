@@ -1,7 +1,7 @@
 <map id="src/core/arm1176jzf_s/isa/halfword_data_transfer.hpp" name="src/core/arm1176jzf_s/isa/halfword_data_transfer.hpp">
 <area shape="rect" id="node1" title="This file defines a Halfword data transfer instruction." alt="" coords="354,5,509,61"/>
 <area shape="rect" id="node2" href="$halfword__data__transfer_8cpp.html" title="This file implements a Halfword data transfer instruction as defined in halfword_data_transfer...." alt="" coords="266,109,421,165"/>
-<area shape="rect" id="node3" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="445,117,596,158"/>
+<area shape="rect" id="node3" href="$arm1176jzf__s_2isa_2isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="445,117,596,158"/>
 <area shape="rect" id="node4" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="445,213,596,255"/>
 <area shape="rect" id="node5" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,303,156,344"/>
 <area shape="rect" id="node6" href="$soc_8hpp.html" title=" " alt="" coords="180,310,307,337"/>

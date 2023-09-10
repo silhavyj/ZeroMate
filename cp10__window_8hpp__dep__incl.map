@@ -1,0 +1,5 @@
+<map id="src/gui/windows/cp10_window.hpp" name="src/gui/windows/cp10_window.hpp">
+<area shape="rect" id="node1" title="This file defines a window that displays data (information) related to coprocessor 10 (FPU)." alt="" coords="64,5,225,47"/>
+<area shape="rect" id="node2" href="$gui_8cpp.html" title="This file implements the main GUI entry function that takes care of creating and rendering all window..." alt="" coords="5,102,121,129"/>
+<area shape="rect" id="node3" href="$cp10__window_8cpp.html" title="This file implements a window that displays data (information) related to coprocessor 10 (FPU)." alt="" coords="145,95,307,136"/>
+</map>

@@ -2,6 +2,6 @@
 <area shape="rect" id="node1" title="This file implements the functionality of the arithmetic logic unit (ALU)." alt="" coords="97,5,247,47"/>
 <area shape="rect" id="node2" href="$alu_8hpp.html" title="This file defines the functionality of the arithmetic logic unit (ALU)." alt="" coords="59,95,130,121"/>
 <area shape="rect" id="node5" href="$math_8hpp.html" title="This file defines and implements a variety of handy helper functions that are used throughout the pro..." alt="" coords="155,95,344,121"/>
-<area shape="rect" id="node3" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="5,169,184,196"/>
+<area shape="rect" id="node3" href="$arm1176jzf__s_2isa_2data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="5,169,184,196"/>
 <area shape="rect" id="node4" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="35,244,154,271"/>
 </map>

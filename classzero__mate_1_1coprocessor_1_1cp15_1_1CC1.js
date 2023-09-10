@@ -9,6 +9,12 @@ var classzero__mate_1_1coprocessor_1_1cp15_1_1CC1 =
       [ "Unaligned_Memory_Access_Enable", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#a4b18858e6aeb1ee109fe9887c23cd1a4a5a92338f33076a5293250a4e94279da4", null ],
       [ "TEX_Remap_Enable", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#a4b18858e6aeb1ee109fe9887c23cd1a4a4fe2d9380151a909db6adcfb1de77b72", null ]
     ] ],
+    [ "NCoprocessor_Access_Type", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295", [
+      [ "Access_Denied", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295a07712d4f998555e7bd624ec736be0f0c", null ],
+      [ "Privileged_Mode_Access_Only", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295a3ddb0dfceed2525974af11bf0ae405e5", null ],
+      [ "Reserved", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295a942d4e37dd5607ab68e54755540d4a47", null ],
+      [ "Privileged_And_User_Mode_Access", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295aa11ebb9baeaf52079cd61e7dd5d59607", null ]
+    ] ],
     [ "NCRm", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#af99cb7479c002fbe1984114984aad4ed", [
       [ "C0", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#af99cb7479c002fbe1984114984aad4eda9c5959e6f08f10d0edbadf5be1f33c53", null ],
       [ "C1", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#af99cb7479c002fbe1984114984aad4eda1a2ddc2db4693cfd16d534cde5572cc1", null ]
@@ -24,6 +30,7 @@ var classzero__mate_1_1coprocessor_1_1cp15_1_1CC1 =
       [ "Non_Secure_Access_Control", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#ad42a8beed18ab3ccaa0c6bb22affa0ccab4d2543f96a05768f5a08a5ab63714f0", null ]
     ] ],
     [ "CC1", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#ada9a5659aeef054ebf8c8fa24622b8dc", null ],
+    [ "Get_Coprocessor_Access_Type", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#a97d5176bbcd55aa8ab63793f40453cd5", null ],
     [ "Init_CRm_R0", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#abd6005a7102398c012f1f7cadf1ff7d7", null ],
     [ "Init_CRm_R1", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#a4d1ec76aeccc474aaf3ee6d8fbcdd8aa", null ],
     [ "Is_Control_Flag_Set", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#ac6b22a989b3f58443f36e32999150eb6", null ]

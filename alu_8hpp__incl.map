@@ -1,5 +1,5 @@
 <map id="src/core/arm1176jzf_s/alu.hpp" name="src/core/arm1176jzf_s/alu.hpp">
 <area shape="rect" id="node1" title="This file defines the functionality of the arithmetic logic unit (ALU)." alt="" coords="19,5,170,47"/>
-<area shape="rect" id="node2" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="5,95,184,121"/>
+<area shape="rect" id="node2" href="$arm1176jzf__s_2isa_2data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="5,95,184,121"/>
 <area shape="rect" id="node3" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="35,169,154,196"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="zero_mate::coprocessor::cp10::CFPSCR::Set_Flag" name="zero_mate::coprocessor::cp10::CFPSCR::Set_Flag">
+<area shape="rect" id="node1" title="Sets a given flag in the register value." alt="" coords="456,13,640,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a648564bc18e05cbdd009c5e76cace9b3" title="Executes a VCMP and CMPE float point instructions." alt="" coords="231,5,408,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#ad976e02e1423e39d963927ffc922f653" title="Performs a coprocessor data operation instruction (ICoprocessor interface)." alt="" coords="5,5,183,61"/>
+</map>

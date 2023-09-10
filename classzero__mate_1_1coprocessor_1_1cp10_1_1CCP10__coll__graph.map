@@ -1,0 +1,8 @@
+<map id="zero_mate::coprocessor::cp10::CCP10" name="zero_mate::coprocessor::cp10::CCP10">
+<area shape="rect" id="node1" title="This class represents coprocessor 10 (single&#45;precision FPU)." alt="" coords="1012,91,1189,133"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1ICoprocessor.html" title="This class represents an interface of a coprocessor." alt="" coords="725,58,903,99"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html" title="This class represents the context (registers) of the CPU." alt="" coords="376,58,549,99"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html" title="This class defines a logging system that is used throughout the project." alt="" coords="5,29,200,70"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CFPSCR.html" title="This class represents the FPSCR register of CP10." alt="" coords="725,123,903,165"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CFPEXC.html" title="This class represents the FPEXC register of CP10." alt="" coords="725,189,903,230"/>
+</map>

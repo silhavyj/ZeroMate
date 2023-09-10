@@ -1,0 +1,4 @@
+<map id="zero_mate::coprocessor::cp10::isa::CData_Processing::Get_Vd_Offset" name="zero_mate::coprocessor::cp10::isa::CData_Processing::Get_Vd_Offset">
+<area shape="rect" id="node1" title="Returns the offset of the Vd register (S{x} vs D{x})." alt="" coords="267,5,480,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#a8740e17ba3318dca9ca9953d79c6a7ab" title="Returns a collection of indexes of all three registers (Vd, Vn, and Vm)." alt="" coords="5,5,219,61"/>
+</map>

@@ -1,7 +1,7 @@
 <map id="src/core/arm1176jzf_s/isa/branch.hpp" name="src/core/arm1176jzf_s/isa/branch.hpp">
 <area shape="rect" id="node1" title="This file defines a branch instruction (B, BL)." alt="" coords="357,5,508,47"/>
 <area shape="rect" id="node2" href="$branch_8cpp.html" title="This file implements a branch instruction (B, BL) as defined in branch.hpp." alt="" coords="271,95,421,136"/>
-<area shape="rect" id="node3" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="445,95,596,136"/>
+<area shape="rect" id="node3" href="$arm1176jzf__s_2isa_2isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="445,95,596,136"/>
 <area shape="rect" id="node4" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="445,184,596,225"/>
 <area shape="rect" id="node5" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,273,156,315"/>
 <area shape="rect" id="node6" href="$soc_8hpp.html" title=" " alt="" coords="180,281,307,307"/>

@@ -1,0 +1,8 @@
+<map id="src/core/coprocessors/cp10/isa/isa.hpp" name="src/core/coprocessors/cp10/isa/isa.hpp">
+<area shape="rect" id="node1" title="This file combines different instruction type includes together." alt="" coords="216,5,379,47"/>
+<area shape="rect" id="node2" href="$vmsr_8hpp.html" title="This file defines a VMSR instruction (ARM register to a special FPU register)." alt="" coords="5,102,88,129"/>
+<area shape="rect" id="node3" href="$vmrs_8hpp.html" title="This file defines a VMRS instruction (FPU special register to an ARM register)." alt="" coords="112,102,195,129"/>
+<area shape="rect" id="node4" href="$coprocessors_2cp10_2isa_2data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="219,102,375,129"/>
+<area shape="rect" id="node5" href="$data__transfer_8hpp.html" title="This file defines a data transfer instruction." alt="" coords="400,102,536,129"/>
+<area shape="rect" id="node6" href="$vmov__arm__register__single__precision__register_8hpp.html" title="This file defines a VMOV instruction between an ARM register and an FPU register." alt="" coords="560,95,755,136"/>
+</map>

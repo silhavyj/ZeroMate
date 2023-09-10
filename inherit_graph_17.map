@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html" title="This class represents a circular buffer (for log messages)" alt="" coords="5,5,199,47"/>
+<area shape="rect" id="node1" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Instruction.html" title="This class represents a general CP10 instruction." alt="" coords="5,93,204,134"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Data__Processing__Inst.html" title="This class represents a general CP10 data processing instruction." alt="" coords="255,5,432,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Data__Transfer__Inst.html" title="This class represents a general CP10 data transfer instruction (load/store)." alt="" coords="255,85,432,141"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Register__Transfer__Inst.html" title="This class represents a general CP10 register transfer instruction." alt="" coords="252,165,435,221"/>
 </map>

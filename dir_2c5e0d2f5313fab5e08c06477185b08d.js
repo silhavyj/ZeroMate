@@ -5,6 +5,10 @@ var dir_2c5e0d2f5313fab5e08c06477185b08d =
     [ "control_window.hpp", "control__window_8hpp.html", [
       [ "CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", "classzero__mate_1_1gui_1_1CControl__Window" ]
     ] ],
+    [ "cp10_window.cpp", "cp10__window_8cpp.html", null ],
+    [ "cp10_window.hpp", "cp10__window_8hpp.html", [
+      [ "CCP10_Window", "classzero__mate_1_1gui_1_1CCP10__Window.html", "classzero__mate_1_1gui_1_1CCP10__Window" ]
+    ] ],
     [ "cp15_window.cpp", "cp15__window_8cpp.html", null ],
     [ "cp15_window.hpp", "cp15__window_8hpp.html", [
       [ "CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", "classzero__mate_1_1gui_1_1CCP15__Window" ]

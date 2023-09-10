@@ -32,8 +32,8 @@ var dir_18d97c789d65c625ba9fe3de5ae3d420 =
     [ "cps.hpp", "cps_8hpp.html", [
       [ "CCPS", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CCPS" ]
     ] ],
-    [ "data_processing.cpp", "data__processing_8cpp.html", null ],
-    [ "data_processing.hpp", "data__processing_8hpp.html", [
+    [ "data_processing.cpp", "arm1176jzf__s_2isa_2data__processing_8cpp.html", null ],
+    [ "data_processing.hpp", "arm1176jzf__s_2isa_2data__processing_8hpp.html", [
       [ "CData_Processing", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CData__Processing" ]
     ] ],
     [ "extend.cpp", "extend_8cpp.html", null ],
@@ -48,7 +48,7 @@ var dir_18d97c789d65c625ba9fe3de5ae3d420 =
     [ "instruction.hpp", "instruction_8hpp.html", [
       [ "CInstruction", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction" ]
     ] ],
-    [ "isa.hpp", "isa_8hpp.html", null ],
+    [ "isa.hpp", "arm1176jzf__s_2isa_2isa_8hpp.html", null ],
     [ "isa_decoder.cpp", "isa__decoder_8cpp.html", null ],
     [ "isa_decoder.hpp", "isa__decoder_8hpp.html", [
       [ "CISA_Decoder", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder.html", "classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder" ],

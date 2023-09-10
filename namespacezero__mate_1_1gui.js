@@ -8,6 +8,7 @@ var namespacezero__mate_1_1gui =
     ] ],
     [ "IGUI_Window", "classzero__mate_1_1gui_1_1IGUI__Window.html", "classzero__mate_1_1gui_1_1IGUI__Window" ],
     [ "CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", "classzero__mate_1_1gui_1_1CControl__Window" ],
+    [ "CCP10_Window", "classzero__mate_1_1gui_1_1CCP10__Window.html", "classzero__mate_1_1gui_1_1CCP10__Window" ],
     [ "CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", "classzero__mate_1_1gui_1_1CCP15__Window" ],
     [ "CDemo_Window", "classzero__mate_1_1gui_1_1CDemo__Window.html", "classzero__mate_1_1gui_1_1CDemo__Window" ],
     [ "CCircular_Log_Buffer", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer" ],

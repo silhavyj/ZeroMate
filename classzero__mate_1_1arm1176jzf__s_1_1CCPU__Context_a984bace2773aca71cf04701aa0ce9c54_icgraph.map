@@ -1,11 +1,12 @@
 <map id="zero_mate::arm1176jzf_s::CCPU_Context::Set_Flag" name="zero_mate::arm1176jzf_s::CCPU_Context::Set_Flag">
-<area shape="rect" id="node1" title="Sets/resets a flag in the CPSR register of the current CPU mode." alt="" coords="735,118,937,159"/>
+<area shape="rect" id="node1" title="Sets/resets a flag in the CPSR register of the current CPU mode." alt="" coords="735,150,937,191"/>
 <area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a2dd5a3a65e28cce65d01bdef2746cf1a" title="Globally enables/disables FIQ (fast interrupts)" alt="" coords="467,19,686,61"/>
 <area shape="rect" id="node6" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a4b48d0f9508c738b62d96e5593e6d704" title="Globally enables/disables IRQ (interrupts)" alt="" coords="467,85,687,126"/>
 <area shape="rect" id="node7" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a92c997ad914fb73cec7feb5fa26d8ead" title="Executes a data processing instruction." alt="" coords="489,150,665,191"/>
-<area shape="rect" id="node8" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a568509274f1d8ed69a2b263a7a0ec00f" title="Sets interrupt mask bits (A, I, and F) in the given value that is treated as the new value of the CPS..." alt="" coords="472,216,681,272"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a86ffa2d30274ae4ebf55cf7e06447a8f" title="Executes a VMRS floating point instruction." alt="" coords="488,215,665,257"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a568509274f1d8ed69a2b263a7a0ec00f" title="Sets interrupt mask bits (A, I, and F) in the given value that is treated as the new value of the CPS..." alt="" coords="472,281,681,337"/>
 <area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#a286edf7ca93bc920f9896b5b777b4b8b" title="Resets the context of the CPU." alt="" coords="236,53,419,94"/>
 <area shape="rect" id="node4" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#afb2bc49ac16284a27b81cec3322f8898" title="Constructor of the class." alt="" coords="5,5,188,61"/>
 <area shape="rect" id="node5" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acb9dcca2bec495d4424c6183c6ac7064" title="Resets the CPU context." alt="" coords="10,85,183,141"/>
-<area shape="rect" id="node9" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acd8902811a86afabf464f121d58628ee" title="Executes a CPS instruction." alt="" coords="239,223,415,265"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#acd8902811a86afabf464f121d58628ee" title="Executes a CPS instruction." alt="" coords="239,289,415,330"/>
 </map>

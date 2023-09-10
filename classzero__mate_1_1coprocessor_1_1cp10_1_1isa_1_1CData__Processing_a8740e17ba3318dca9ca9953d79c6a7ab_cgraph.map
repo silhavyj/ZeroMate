@@ -1,0 +1,9 @@
+<map id="zero_mate::coprocessor::cp10::isa::CData_Processing::Get_Register_Idxs" name="zero_mate::coprocessor::cp10::isa::CData_Processing::Get_Register_Idxs">
+<area shape="rect" id="node1" title="Returns a collection of indexes of all three registers (Vd, Vn, and Vm)." alt="" coords="5,205,219,261"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#ac3c2b7fa00ff41b0a305cf96b9b40e8a" title="Returns the index of the Vd register." alt="" coords="267,5,480,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#a9a722758da0bd85e78a6c1f41c28443a" title="Returns the offset of the Vd register (S{x} vs D{x})." alt="" coords="267,85,480,141"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#a12adf6834479667289a3618f05623ecd" title="Returns the index of the Vm register." alt="" coords="267,165,480,221"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#a69ce6e81e4f529840566e3bee36c5d20" title="Returns the offset of the Vm register (S{x} vs D{x})." alt="" coords="267,245,480,301"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#ac2c5b27964fdd49fc4f960c6b52f3936" title="Returns the index of the Vn register." alt="" coords="267,325,480,381"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#a9dd5cfa2e388b6e6019ba523e966d875" title="Returns the offset of the Vn register (S{x} vs D{x})." alt="" coords="267,405,480,461"/>
+</map>

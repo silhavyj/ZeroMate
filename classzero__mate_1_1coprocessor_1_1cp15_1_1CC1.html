@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.3.0</span>
+   &#160;<span id="projectnumber">v1.4.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classzero__mate_1_1coprocessor_1_1cp15
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -144,6 +145,13 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a4b18858e6aeb1ee109fe9887c23cd1a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of different flags that can be found in the <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#ad4339566381cc5beacbed1b5adb3b49baa1595abbb4c3a326636dd178757cd6c1" title="Control register (enable MMU, unaligned access, etc.)">NCRm_C0_Register::Control</a> register.  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#a4b18858e6aeb1ee109fe9887c23cd1a4">More...</a><br /></td></tr>
 <tr class="separator:a4b18858e6aeb1ee109fe9887c23cd1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa95bf13130780f07daddc93b1fc5c295"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295">NCoprocessor_Access_Type</a> : std::uint32_t { <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295a07712d4f998555e7bd624ec736be0f0c">Access_Denied</a> = 0b00U
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295a3ddb0dfceed2525974af11bf0ae405e5">Privileged_Mode_Access_Only</a> = 0b01U
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295a942d4e37dd5607ab68e54755540d4a47">Reserved</a> = 0b10U
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295aa11ebb9baeaf52079cd61e7dd5d59607">Privileged_And_User_Mode_Access</a> = 0b11U
+ }</td></tr>
+<tr class="memdesc:aa95bf13130780f07daddc93b1fc5c295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of different access types to different coprocessors.  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295">More...</a><br /></td></tr>
+<tr class="separator:aa95bf13130780f07daddc93b1fc5c295"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html">zero_mate::coprocessor::cp15::IPrimary_Reg</a></td></tr>
 <tr class="memitem:a8f1063c370833c5b3920b8209c2d207c inherit pub_types_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a8f1063c370833c5b3920b8209c2d207c">Registers_t</a> = std::unordered_map&lt; std::uint32_t, std::unordered_map&lt; std::uint32_t, std::uint32_t &gt; &gt;</td></tr>
 <tr class="memdesc:a8f1063c370833c5b3920b8209c2d207c inherit pub_types_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the structure of the register of the primary register (just to make the code less wordy).  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a8f1063c370833c5b3920b8209c2d207c">More...</a><br /></td></tr>
@@ -156,6 +164,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ada9a5659aeef054ebf8c8fa24622b8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6b22a989b3f58443f36e32999150eb6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#ac6b22a989b3f58443f36e32999150eb6">Is_Control_Flag_Set</a> (<a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#a4b18858e6aeb1ee109fe9887c23cd1a4">NC0_Control_Flags</a> flag) const</td></tr>
 <tr class="separator:ac6b22a989b3f58443f36e32999150eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d5176bbcd55aa8ab63793f40453cd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295">NCoprocessor_Access_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#a97d5176bbcd55aa8ab63793f40453cd5">Get_Coprocessor_Access_Type</a> (std::uint32_t cp_idx) const</td></tr>
+<tr class="memdesc:a97d5176bbcd55aa8ab63793f40453cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns access type to a given coprocessor.  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#a97d5176bbcd55aa8ab63793f40453cd5">More...</a><br /></td></tr>
+<tr class="separator:a97d5176bbcd55aa8ab63793f40453cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html">zero_mate::coprocessor::cp15::IPrimary_Reg</a></td></tr>
 <tr class="memitem:ab6b6aa0d8a6e6fa4c7b0e8fd3b2bc7a2 inherit pub_methods_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#ab6b6aa0d8a6e6fa4c7b0e8fd3b2bc7a2">IPrimary_Reg</a> ()</td></tr>
 <tr class="memdesc:ab6b6aa0d8a6e6fa4c7b0e8fd3b2bc7a2 inherit pub_methods_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the class.  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#ab6b6aa0d8a6e6fa4c7b0e8fd3b2bc7a2">More...</a><br /></td></tr>
@@ -182,6 +193,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:acb6586cd8a1bb690359575a96bded661 inherit pub_methods_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns const a reference to the register addressed by a secondary register index and op2.  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#acb6586cd8a1bb690359575a96bded661">More...</a><br /></td></tr>
 <tr class="separator:acb6586cd8a1bb690359575a96bded661 inherit pub_methods_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ae2dbd6facc71c50ed6b9bb4ed86df505"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#ae2dbd6facc71c50ed6b9bb4ed86df505">CP_Max_Index</a> = 13</td></tr>
+<tr class="memdesc:ae2dbd6facc71c50ed6b9bb4ed86df505"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum coprocessor index.  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#ae2dbd6facc71c50ed6b9bb4ed86df505">More...</a><br /></td></tr>
+<tr class="separator:ae2dbd6facc71c50ed6b9bb4ed86df505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_attribs_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html">zero_mate::coprocessor::cp15::IPrimary_Reg</a></td></tr>
+<tr class="memitem:ac64df82bc4329f4b9f801ef10f72e340 inherit pub_static_attribs_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#ac64df82bc4329f4b9f801ef10f72e340">Invalid_Reg_Value</a> = static_cast&lt;std::uint32_t&gt;(0)</td></tr>
+<tr class="memdesc:ac64df82bc4329f4b9f801ef10f72e340 inherit pub_static_attribs_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value to be returned when accessing a register that does not exist (has not been implemented yet)  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#ac64df82bc4329f4b9f801ef10f72e340">More...</a><br /></td></tr>
+<tr class="separator:ac64df82bc4329f4b9f801ef10f72e340 inherit pub_static_attribs_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:abd6005a7102398c012f1f7cadf1ff7d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#abd6005a7102398c012f1f7cadf1ff7d7">Init_CRm_R0</a> ()</td></tr>
@@ -193,10 +214,6 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_static_attribs_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html">zero_mate::coprocessor::cp15::IPrimary_Reg</a></td></tr>
-<tr class="memitem:ac64df82bc4329f4b9f801ef10f72e340 inherit pub_static_attribs_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#ac64df82bc4329f4b9f801ef10f72e340">Invalid_Reg_Value</a> = static_cast&lt;std::uint32_t&gt;(0)</td></tr>
-<tr class="memdesc:ac64df82bc4329f4b9f801ef10f72e340 inherit pub_static_attribs_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value to be returned when accessing a register that does not exist (has not been implemented yet)  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#ac64df82bc4329f4b9f801ef10f72e340">More...</a><br /></td></tr>
-<tr class="separator:ac64df82bc4329f4b9f801ef10f72e340 inherit pub_static_attribs_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_methods_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html">zero_mate::coprocessor::cp15::IPrimary_Reg</a></td></tr>
 <tr class="memitem:a0780610d57b65a633a1776be372116a6 inherit pro_static_methods_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a0780610d57b65a633a1776be372116a6">Is_Flag_Set</a> (std::uint32_t reg, std::uint32_t flag)</td></tr>
 <tr class="memdesc:a0780610d57b65a633a1776be372116a6 inherit pro_static_methods_classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a flag is set in a given register.  <a href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a0780610d57b65a633a1776be372116a6">More...</a><br /></td></tr>
@@ -250,6 +267,40 @@ Additional Inherited Members</h2></td></tr>
 <tr><td class="fieldname"><a id="a4b18858e6aeb1ee109fe9887c23cd1a4a5a92338f33076a5293250a4e94279da4"></a>Unaligned_Memory_Access_Enable&#160;</td><td class="fielddoc"><p>Enable/disable unaligned memory access. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a4b18858e6aeb1ee109fe9887c23cd1a4a4fe2d9380151a909db6adcfb1de77b72"></a>TEX_Remap_Enable&#160;</td><td class="fielddoc"><p>Enable/disable remapping of the TEX bit. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="aa95bf13130780f07daddc93b1fc5c295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa95bf13130780f07daddc93b1fc5c295">&#9670;&nbsp;</a></span>NCoprocessor_Access_Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295">zero_mate::coprocessor::cp15::CC1::NCoprocessor_Access_Type</a> : std::uint32_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enumeration of different access types to different coprocessors. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa95bf13130780f07daddc93b1fc5c295a07712d4f998555e7bd624ec736be0f0c"></a>Access_Denied&#160;</td><td class="fielddoc"><p>Access denied (coprocessor is disabled) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa95bf13130780f07daddc93b1fc5c295a3ddb0dfceed2525974af11bf0ae405e5"></a>Privileged_Mode_Access_Only&#160;</td><td class="fielddoc"><p>Coprocessor can be accessed only from a privileged mode. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa95bf13130780f07daddc93b1fc5c295a942d4e37dd5607ab68e54755540d4a47"></a>Reserved&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa95bf13130780f07daddc93b1fc5c295aa11ebb9baeaf52079cd61e7dd5d59607"></a>Privileged_And_User_Mode_Access&#160;</td><td class="fielddoc"><p>Coprocessor can be accessed from any mode. </p>
 </td></tr>
 </table>
 
@@ -377,6 +428,33 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a97d5176bbcd55aa8ab63793f40453cd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d5176bbcd55aa8ab63793f40453cd5">&#9670;&nbsp;</a></span>Get_Coprocessor_Access_Type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html#aa95bf13130780f07daddc93b1fc5c295">CC1::NCoprocessor_Access_Type</a> zero_mate::coprocessor::cp15::CC1::Get_Coprocessor_Access_Type </td>
+          <td>(</td>
+          <td class="paramtype">std::uint32_t&#160;</td>
+          <td class="paramname"><em>cp_idx</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns access type to a given coprocessor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp_idx</td><td>Index of the coprocessor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Type of access to the given coprocessor </dd></dl>
+
+</div>
+</div>
 <a id="abd6005a7102398c012f1f7cadf1ff7d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd6005a7102398c012f1f7cadf1ff7d7">&#9670;&nbsp;</a></span>Init_CRm_R0()</h2>
 
@@ -479,6 +557,31 @@ Here is the caller graph for this function:</div>
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1coprocessor_1_1cp15_1_1CC1_ac6b22a989b3f58443f36e32999150eb6_icgraph.svg" width="1334" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae2dbd6facc71c50ed6b9bb4ed86df505"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2dbd6facc71c50ed6b9bb4ed86df505">&#9670;&nbsp;</a></span>CP_Max_Index</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::uint32_t zero_mate::coprocessor::cp15::CC1::CP_Max_Index = 13</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum coprocessor index. </p>
 
 </div>
 </div>

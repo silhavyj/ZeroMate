@@ -1,6 +1,6 @@
 <map id="src/core/arm1176jzf_s/isa/rfe.hpp" name="src/core/arm1176jzf_s/isa/rfe.hpp">
 <area shape="rect" id="node1" title="This file defines an RFE instruction (return from exception)." alt="" coords="532,5,683,47"/>
-<area shape="rect" id="node2" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="445,95,596,136"/>
+<area shape="rect" id="node2" href="$arm1176jzf__s_2isa_2isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="445,95,596,136"/>
 <area shape="rect" id="node17" href="$rfe_8cpp.html" title="This file implements an RFE instruction (return from exception) as defined in rfe...." alt="" coords="620,95,771,136"/>
 <area shape="rect" id="node3" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="445,184,596,225"/>
 <area shape="rect" id="node4" href="$core_8cpp.html" title="This file implements the CCPU_Core class defined in core.hpp." alt="" coords="5,273,156,315"/>

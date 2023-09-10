@@ -1,6 +1,6 @@
 <map id="src/core/arm1176jzf_s/isa/multiply_long.hpp" name="src/core/arm1176jzf_s/isa/multiply_long.hpp">
 <area shape="rect" id="node1" title="This file defines a multiplication (long) instruction." alt="" coords="901,5,1081,47"/>
-<area shape="rect" id="node2" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="727,95,877,136"/>
+<area shape="rect" id="node2" href="$arm1176jzf__s_2isa_2isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="727,95,877,136"/>
 <area shape="rect" id="node17" href="$multiply__long_8cpp.html" title="This file implements a multiplication (long) instruction as defined in multiply_long...." alt="" coords="902,95,1081,136"/>
 <area shape="rect" id="node18" href="$mac_8hpp.html" title="This file defines the functionality of the CPU multiplier (MAC unit)." alt="" coords="1105,95,1256,136"/>
 <area shape="rect" id="node3" href="$core_8hpp.html" title="This file defines a class that represents a CPU core (arm1176jzf_s)." alt="" coords="727,184,877,225"/>

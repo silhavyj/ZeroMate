@@ -1,0 +1,13 @@
+<map id="src/core/coprocessors/cp10/isa/data_transfer.hpp" name="src/core/coprocessors/cp10/isa/data_transfer.hpp">
+<area shape="rect" id="node1" title="This file defines a data transfer instruction." alt="" coords="106,5,305,47"/>
+<area shape="rect" id="node2" href="$data__transfer_8cpp.html" title="This file implements a data transfer instruction." alt="" coords="5,95,203,136"/>
+<area shape="rect" id="node3" href="$coprocessors_2cp10_2isa_2isa_8hpp.html" title="This file combines different instruction type includes together." alt="" coords="227,95,389,136"/>
+<area shape="rect" id="node4" href="$cp10_8hpp.html" title="This file defines coprocessor CP10 (single&#45;precision FPU)." alt="" coords="227,184,389,225"/>
+<area shape="rect" id="node5" href="$cp10_8cpp.html" title="This file implements coprocessor CP10 (single&#45;precision FPU)." alt="" coords="57,273,220,315"/>
+<area shape="rect" id="node6" href="$soc_8hpp.html" title=" " alt="" coords="245,281,371,307"/>
+<area shape="rect" id="node10" href="$cp10__window_8hpp.html" title="This file defines a window that displays data (information) related to coprocessor 10 (FPU)." alt="" coords="395,273,557,315"/>
+<area shape="rect" id="node7" href="$soc_8cpp.html" title=" " alt="" coords="105,370,231,397"/>
+<area shape="rect" id="node8" href="$gui_8cpp.html" title="This file implements the main GUI entry function that takes care of creating and rendering all window..." alt="" coords="385,370,501,397"/>
+<area shape="rect" id="node9" href="$main_8cpp.html" title="This file defines and implements the main function of the application." alt="" coords="255,370,361,397"/>
+<area shape="rect" id="node11" href="$cp10__window_8cpp.html" title="This file implements a window that displays data (information) related to coprocessor 10 (FPU)." alt="" coords="525,363,686,404"/>
+</map>

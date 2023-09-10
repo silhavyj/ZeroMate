@@ -1,0 +1,4 @@
+<map id="zero_mate::coprocessor::cp10::CRegister::Perform_Operation" name="zero_mate::coprocessor::cp10::CRegister::Perform_Operation">
+<area shape="rect" id="node1" title="Performs a given arithmetic operation and stores the result into this register." alt="" coords="5,5,197,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CRegister.html#a7b26cf75164000cb21ef6aea65da1ad8" title="Returns the register value as a desired data type." alt="" coords="245,5,423,61"/>
+</map>

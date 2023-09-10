@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.3.0</span>
+   &#160;<span id="projectnumber">v1.4.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -112,36 +112,37 @@ $(document).ready(function(){initNavTree('demo__window_8hpp_source.html',''); in
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classzero__mate_1_1gui_1_1CDemo__Window.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classzero__mate_1_1gui_1_1CDemo__Window.html">CDemo_Window</a> final : <span class="keyword">public</span> <a class="code" href="classzero__mate_1_1gui_1_1IGUI__Window.html">IGUI_Window</a></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">// -----------------------------------------------------------------------------------static --------------------------</span><span class="comment"></span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">        /// \bstatic rief Creates an instance of the class.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classzero__mate_1_1gui_1_1CDemo__Window.html#a96307b1d2416776bdf3a28c2ee5ed11a">   27</a></span>&#160;        <a class="code" href="classzero__mate_1_1gui_1_1CDemo__Window.html#a96307b1d2416776bdf3a28c2ee5ed11a">CDemo_Window</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">        /// \brief Renders the window (IGUI_Window interface).</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CDemo__Window.html#a136374d5b5c0dc1a1ea071ce0151519d">Render</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">        /// \brief Renders the ImGui demo window.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CDemo__Window.html#a49fc965a62b870acb0081cc4b88af843">Render_ImGUI_Demo</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">        /// \brief Renders the ImPlot demo window.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CDemo__Window.html#afe28a31f82a54ce22ba832e0ef549dff">Render_ImPlot_Demo</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} <span class="comment">// namespace zero_mate::gui</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">// -----------------------------------------------------------------------------------static</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// --------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">        /// \bstatic rief Creates an instance of the class.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classzero__mate_1_1gui_1_1CDemo__Window.html#a96307b1d2416776bdf3a28c2ee5ed11a">   28</a></span>&#160;        <a class="code" href="classzero__mate_1_1gui_1_1CDemo__Window.html#a96307b1d2416776bdf3a28c2ee5ed11a">CDemo_Window</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">        /// \brief Renders the window (IGUI_Window interface).</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CDemo__Window.html#a136374d5b5c0dc1a1ea071ce0151519d">Render</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">        /// \brief Renders the ImGui demo window.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CDemo__Window.html#a49fc965a62b870acb0081cc4b88af843">Render_ImGUI_Demo</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">        /// \brief Renders the ImPlot demo window.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span>        <span class="comment">// -------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classzero__mate_1_1gui_1_1CDemo__Window.html#afe28a31f82a54ce22ba832e0ef549dff">Render_ImPlot_Demo</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;} <span class="comment">// namespace zero_mate::gui</span></div>
 <div class="ttc" id="aclasszero__mate_1_1gui_1_1CDemo__Window_html"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CDemo__Window.html">zero_mate::gui::CDemo_Window</a></div><div class="ttdoc">This class displays the ImGui and ImPlot demos.</div><div class="ttdef"><b>Definition:</b> demo_window.hpp:22</div></div>
 <div class="ttc" id="aclasszero__mate_1_1gui_1_1CDemo__Window_html_a136374d5b5c0dc1a1ea071ce0151519d"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CDemo__Window.html#a136374d5b5c0dc1a1ea071ce0151519d">zero_mate::gui::CDemo_Window::Render</a></div><div class="ttdeci">void Render() override</div><div class="ttdoc">Renders the window (IGUI_Window interface).</div><div class="ttdef"><b>Definition:</b> demo_window.cpp:20</div></div>
 <div class="ttc" id="aclasszero__mate_1_1gui_1_1CDemo__Window_html_a49fc965a62b870acb0081cc4b88af843"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CDemo__Window.html#a49fc965a62b870acb0081cc4b88af843">zero_mate::gui::CDemo_Window::Render_ImGUI_Demo</a></div><div class="ttdeci">static void Render_ImGUI_Demo()</div><div class="ttdoc">Renders the ImGui demo window.</div><div class="ttdef"><b>Definition:</b> demo_window.cpp:32</div></div>
 <div class="ttc" id="aclasszero__mate_1_1gui_1_1CDemo__Window_html_a96307b1d2416776bdf3a28c2ee5ed11a"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CDemo__Window.html#a96307b1d2416776bdf3a28c2ee5ed11a">zero_mate::gui::CDemo_Window::CDemo_Window</a></div><div class="ttdeci">CDemo_Window()=default</div><div class="ttdoc">\bstatic rief Creates an instance of the class.</div></div>
 <div class="ttc" id="aclasszero__mate_1_1gui_1_1CDemo__Window_html_afe28a31f82a54ce22ba832e0ef549dff"><div class="ttname"><a href="classzero__mate_1_1gui_1_1CDemo__Window.html#afe28a31f82a54ce22ba832e0ef549dff">zero_mate::gui::CDemo_Window::Render_ImPlot_Demo</a></div><div class="ttdeci">static void Render_ImPlot_Demo()</div><div class="ttdoc">Renders the ImPlot demo window.</div><div class="ttdef"><b>Definition:</b> demo_window.cpp:45</div></div>
 <div class="ttc" id="aclasszero__mate_1_1gui_1_1IGUI__Window_html"><div class="ttname"><a href="classzero__mate_1_1gui_1_1IGUI__Window.html">zero_mate::gui::IGUI_Window</a></div><div class="ttdoc">Common interface for all GUI windows.</div><div class="ttdef"><b>Definition:</b> window.hpp:63</div></div>
-<div class="ttc" id="anamespacezero__mate_1_1gui_html"><div class="ttname"><a href="namespacezero__mate_1_1gui.html">zero_mate::gui</a></div><div class="ttdef"><b>Definition:</b> gui.cpp:50</div></div>
+<div class="ttc" id="anamespacezero__mate_1_1gui_html"><div class="ttname"><a href="namespacezero__mate_1_1gui.html">zero_mate::gui</a></div><div class="ttdef"><b>Definition:</b> gui.cpp:51</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

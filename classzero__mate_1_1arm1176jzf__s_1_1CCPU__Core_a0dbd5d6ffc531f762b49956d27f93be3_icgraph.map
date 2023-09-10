@@ -1,0 +1,5 @@
+<map id="zero_mate::arm1176jzf_s::CCPU_Core::Checks_Coprocessor_Access_Mode" name="zero_mate::arm1176jzf_s::CCPU_Core::Checks_Coprocessor_Access_Mode">
+<area shape="rect" id="node1" title="Checks whether a given coprocessor can be accessed from the current CPU mode." alt="" coords="529,5,733,61"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a9d662bbaf486e8924698ecf2208d0d73" title="Performs coprocessor accessibility checks." alt="" coords="229,5,481,61"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ae54c96b9b4395337b22c4ce3686d7862" title="Executes a coprocessor register transfer instruction (coprocessor instruction (1))." alt="" coords="5,13,181,54"/>
+</map>

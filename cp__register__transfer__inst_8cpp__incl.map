@@ -1,0 +1,5 @@
+<map id="src/core/coprocessors/cp10/isa/cp_register_transfer_inst.cpp" name="src/core/coprocessors/cp10/isa/cp_register_transfer_inst.cpp">
+<area shape="rect" id="node1" title="This file implements a general CP10 register transfer instruction." alt="" coords="5,5,168,61"/>
+<area shape="rect" id="node2" href="$cp__register__transfer__inst_8hpp.html" title="This file defines a general CP10 register transfer instruction." alt="" coords="11,109,163,151"/>
+<area shape="rect" id="node3" href="$cp__instruction_8hpp.html" title="This file defines a general CP10 instruction." alt="" coords="16,199,157,225"/>
+</map>

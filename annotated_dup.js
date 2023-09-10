@@ -53,7 +53,21 @@ var annotated_dup =
       ] ],
       [ "coprocessor", "namespacezero__mate_1_1coprocessor.html", [
         [ "cp10", "namespacezero__mate_1_1coprocessor_1_1cp10.html", [
-          [ "CFPU", "classzero__mate_1_1coprocessor_1_1cp10_1_1CFPU.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1CFPU" ]
+          [ "isa", "namespacezero__mate_1_1coprocessor_1_1cp10_1_1isa.html", [
+            [ "CCP_Data_Processing_Inst", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Data__Processing__Inst.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Data__Processing__Inst" ],
+            [ "CCP_Data_Transfer_Inst", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Data__Transfer__Inst.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Data__Transfer__Inst" ],
+            [ "CCP_Instruction", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Instruction.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Instruction" ],
+            [ "CCP_Register_Transfer_Inst", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Register__Transfer__Inst.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Register__Transfer__Inst" ],
+            [ "CData_Processing", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing" ],
+            [ "CData_Transfer", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Transfer.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Transfer" ],
+            [ "CVMOV_ARM_Register_Single_Precision_Register", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CVMOV__ARM__Register__Single__Precision__Register.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CVMOV__ARM__Register__Single__Precision__Register" ],
+            [ "CVMRS", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CVMRS.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CVMRS" ],
+            [ "CVMSR", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CVMSR.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CVMSR" ]
+          ] ],
+          [ "CCP10", "classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10" ],
+          [ "CFPEXC", "classzero__mate_1_1coprocessor_1_1cp10_1_1CFPEXC.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1CFPEXC" ],
+          [ "CFPSCR", "classzero__mate_1_1coprocessor_1_1cp10_1_1CFPSCR.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1CFPSCR" ],
+          [ "CRegister", "classzero__mate_1_1coprocessor_1_1cp10_1_1CRegister.html", "classzero__mate_1_1coprocessor_1_1cp10_1_1CRegister" ]
         ] ],
         [ "cp15", "namespacezero__mate_1_1coprocessor_1_1cp15.html", [
           [ "CC1", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1.html", "classzero__mate_1_1coprocessor_1_1cp15_1_1CC1" ],
@@ -72,6 +86,7 @@ var annotated_dup =
         ] ],
         [ "IGUI_Window", "classzero__mate_1_1gui_1_1IGUI__Window.html", "classzero__mate_1_1gui_1_1IGUI__Window" ],
         [ "CControl_Window", "classzero__mate_1_1gui_1_1CControl__Window.html", "classzero__mate_1_1gui_1_1CControl__Window" ],
+        [ "CCP10_Window", "classzero__mate_1_1gui_1_1CCP10__Window.html", "classzero__mate_1_1gui_1_1CCP10__Window" ],
         [ "CCP15_Window", "classzero__mate_1_1gui_1_1CCP15__Window.html", "classzero__mate_1_1gui_1_1CCP15__Window" ],
         [ "CDemo_Window", "classzero__mate_1_1gui_1_1CDemo__Window.html", "classzero__mate_1_1gui_1_1CDemo__Window" ],
         [ "CCircular_Log_Buffer", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer.html", "classzero__mate_1_1gui_1_1CCircular__Log__Buffer" ],

@@ -63,13 +63,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "alu_8cpp.html",
-"classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CCPU__Exception.html#ae87c33c76ed6571b2408fd293710b6c4",
-"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CPSR__Transfer.html#a57095b246ae459c4135f5d5d9f6cbc85",
-"classzero__mate_1_1coprocessor_1_1cp15_1_1CC7.html#a4088ece446673291134f9ac3beaf4cc3ab4a983d335900fa58a015d44152d3007",
-"classzero__mate_1_1peripheral_1_1CAUX.html",
-"classzero__mate_1_1peripheral_1_1CInterrupt__Controller.html#aced8bea23d34109204febfe822497bd7ac4270f74054cc55ff9109fd3a6ff73d7",
-"external__peripheral_8hpp.html#a8ec2b305d95095a01bc14d1a53cae027",
-"namespacezero__mate_1_1utils_1_1elf.html#a168db2218bf676ff9e0baa59f6fd6696a7b3655191e25bd671e35caf4f5b23a7e"
+"classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#afeea0a05cdda26114d6e03102f2d3a78",
+"classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CMultiply__Long.html#abaa07cd8dd6b2f457b9e559e42fc582c",
+"classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Data__Processing__Inst.html#a49f8f559ae22b85c74611ff2f595207baa7f4315c61692acd004e097e03b1531c",
+"classzero__mate_1_1gui_1_1CCP15__Window.html",
+"classzero__mate_1_1peripheral_1_1CBSC.html#a631f31f819abf852e17bc0d6a54daa58",
+"classzero__mate_1_1peripheral_1_1CMini__UART.html#ac1eceb5f172931b3059c2bb587f5e9bf",
+"functions_func_v.html",
+"primary__reg_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

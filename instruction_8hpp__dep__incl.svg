@@ -37,7 +37,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="isa_8hpp.html" target="_top" xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
+<g id="a_node4"><a xlink:href="arm1176jzf__s_2isa_2isa_8hpp.html" target="_top" xlink:title="This file is just a helper file for including all ARM instructions supported by the emulator.">
 <polygon fill="none" stroke="black" points="1808,-73 1808,-103 1921,-103 1921,-73 1808,-73"/>
 <text text-anchor="start" x="1816" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1864.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/isa.hpp</text>
@@ -115,9 +115,9 @@
 <path fill="none" stroke="midnightblue" d="M1860.04,-236.55C1592.79,-232.76 641.66,-217.38 340.5,-187 324.1,-185.35 306.52,-182.77 290.11,-180.02"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1860.33,-240.06 1870.38,-236.7 1860.43,-233.06 1860.33,-240.06"/>
 </g>
-<!-- Node41 -->
+<!-- Node43 -->
 <g id="node15" class="node">
-<title>Node41</title>
+<title>Node43</title>
 <g id="a_node15"><a xlink:href="coprocessor__data__transfer_8hpp.html" target="_top" xlink:title="This file defines a coprocessor data transfer (LDC, STC).">
 <polygon fill="none" stroke="black" points="350,-145.5 350,-186.5 483,-186.5 483,-145.5 350,-145.5"/>
 <text text-anchor="start" x="358" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -126,15 +126,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node41 -->
+<!-- Node1&#45;&gt;Node43 -->
 <g id="edge18" class="edge">
-<title>Node1&#45;&gt;Node41</title>
+<title>Node1&#45;&gt;Node43</title>
 <path fill="none" stroke="midnightblue" d="M1859.88,-236.57C1611.32,-233.06 777.7,-219.11 512.5,-187 502.95,-185.84 492.94,-184.22 483.14,-182.4"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1860.17,-240.08 1870.22,-236.72 1860.27,-233.08 1860.17,-240.08"/>
 </g>
-<!-- Node43 -->
+<!-- Node45 -->
 <g id="node17" class="node">
-<title>Node43</title>
+<title>Node45</title>
 <g id="a_node17"><a xlink:href="coprocessor__register__transfer_8hpp.html" target="_top" xlink:title="This file defines a coprocessor register transfer (MRC, MCR).">
 <polygon fill="none" stroke="black" points="522,-145.5 522,-186.5 671,-186.5 671,-145.5 522,-145.5"/>
 <text text-anchor="start" x="530" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -143,15 +143,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node43 -->
+<!-- Node1&#45;&gt;Node45 -->
 <g id="edge22" class="edge">
-<title>Node1&#45;&gt;Node43</title>
+<title>Node1&#45;&gt;Node45</title>
 <path fill="none" stroke="midnightblue" d="M1860.12,-236.18C1632.87,-231.66 920.17,-215.53 691.5,-187 684.89,-186.18 678.06,-185.13 671.24,-183.95"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1860.19,-239.68 1870.25,-236.38 1860.32,-232.68 1860.19,-239.68"/>
 </g>
-<!-- Node45 -->
+<!-- Node47 -->
 <g id="node19" class="node">
-<title>Node45</title>
+<title>Node47</title>
 <g id="a_node19"><a xlink:href="cps_8hpp.html" target="_top" xlink:title="This file defines a change processor state instruction (CPS).">
 <polygon fill="none" stroke="black" points="1340,-151 1340,-181 1453,-181 1453,-151 1340,-151"/>
 <text text-anchor="start" x="1348" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -159,31 +159,31 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node45 -->
+<!-- Node1&#45;&gt;Node47 -->
 <g id="edge26" class="edge">
-<title>Node1&#45;&gt;Node45</title>
+<title>Node1&#45;&gt;Node47</title>
 <path fill="none" stroke="midnightblue" d="M1860.45,-234.03C1768.39,-228.54 1602.01,-215.41 1462.5,-187 1454.76,-185.42 1446.62,-183.33 1438.81,-181.09"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1860.29,-237.53 1870.48,-234.61 1860.7,-230.54 1860.29,-237.53"/>
 </g>
-<!-- Node47 -->
+<!-- Node49 -->
 <g id="node21" class="node">
-<title>Node47</title>
-<g id="a_node21"><a xlink:href="data__processing_8hpp.html" target="_top" xlink:title="This file defines a data processing instruction.">
+<title>Node49</title>
+<g id="a_node21"><a xlink:href="arm1176jzf__s_2isa_2data__processing_8hpp.html" target="_top" xlink:title="This file defines a data processing instruction.">
 <polygon fill="none" stroke="black" points="1471.5,-151 1471.5,-181 1619.5,-181 1619.5,-151 1471.5,-151"/>
 <text text-anchor="start" x="1479.5" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1545.5" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/data_processing.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node47 -->
+<!-- Node1&#45;&gt;Node49 -->
 <g id="edge29" class="edge">
-<title>Node1&#45;&gt;Node47</title>
+<title>Node1&#45;&gt;Node49</title>
 <path fill="none" stroke="midnightblue" d="M1860.43,-227.22C1799.05,-217.88 1707.57,-203.12 1628.5,-187 1619.79,-185.22 1610.6,-183.18 1601.64,-181.1"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1859.98,-230.69 1870.39,-228.73 1861.03,-223.77 1859.98,-230.69"/>
 </g>
-<!-- Node51 -->
+<!-- Node53 -->
 <g id="node24" class="node">
-<title>Node51</title>
+<title>Node53</title>
 <g id="a_node24"><a xlink:href="extend_8hpp.html" target="_top" xlink:title="This file defines an extend instruction.">
 <polygon fill="none" stroke="black" points="1638,-151 1638,-181 1751,-181 1751,-151 1638,-151"/>
 <text text-anchor="start" x="1646" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -191,15 +191,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node51 -->
+<!-- Node1&#45;&gt;Node53 -->
 <g id="edge33" class="edge">
-<title>Node1&#45;&gt;Node51</title>
+<title>Node1&#45;&gt;Node53</title>
 <path fill="none" stroke="midnightblue" d="M1873.89,-220.59C1833.5,-208.52 1779.81,-192.48 1741.72,-181.11"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1873.01,-223.98 1883.59,-223.49 1875.01,-217.27 1873.01,-223.98"/>
 </g>
-<!-- Node53 -->
+<!-- Node55 -->
 <g id="node26" class="node">
-<title>Node53</title>
+<title>Node55</title>
 <g id="a_node26"><a xlink:href="halfword__data__transfer_8hpp.html" target="_top" xlink:title="This file defines a Halfword data transfer instruction.">
 <polygon fill="none" stroke="black" points="1939.5,-145.5 1939.5,-186.5 2055.5,-186.5 2055.5,-145.5 1939.5,-145.5"/>
 <text text-anchor="start" x="1947.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -208,15 +208,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node53 -->
+<!-- Node1&#45;&gt;Node55 -->
 <g id="edge36" class="edge">
-<title>Node1&#45;&gt;Node53</title>
+<title>Node1&#45;&gt;Node55</title>
 <path fill="none" stroke="midnightblue" d="M1951.1,-215.82C1959.97,-206.49 1970.25,-195.67 1978.88,-186.59"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1948.41,-213.57 1944.06,-223.23 1953.48,-218.4 1948.41,-213.57"/>
 </g>
-<!-- Node55 -->
+<!-- Node57 -->
 <g id="node28" class="node">
-<title>Node55</title>
+<title>Node57</title>
 <g id="a_node28"><a xlink:href="instruction_8cpp.html" target="_top" xlink:title="This file implements the interface of a general ARM instruction defined in instruction....">
 <polygon fill="none" stroke="black" points="3526,-151 3526,-181 3645,-181 3645,-151 3526,-151"/>
 <text text-anchor="start" x="3534" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -224,15 +224,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node55 -->
+<!-- Node1&#45;&gt;Node57 -->
 <g id="edge39" class="edge">
-<title>Node1&#45;&gt;Node55</title>
+<title>Node1&#45;&gt;Node57</title>
 <path fill="none" stroke="midnightblue" d="M2000.92,-237.6C2267.99,-237.6 3218.28,-234.2 3516.5,-187 3525.25,-185.62 3534.45,-183.46 3543.18,-181.07"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2000.59,-234.1 1990.59,-237.59 2000.59,-241.1 2000.59,-234.1"/>
 </g>
-<!-- Node56 -->
+<!-- Node58 -->
 <g id="node29" class="node">
-<title>Node56</title>
+<title>Node58</title>
 <g id="a_node29"><a xlink:href="isa__decoder_8hpp.html" target="_top" xlink:title="This file defines an instruction decoder.">
 <polygon fill="none" stroke="black" points="3381.5,-151 3381.5,-181 3507.5,-181 3507.5,-151 3381.5,-151"/>
 <text text-anchor="start" x="3389.5" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -240,15 +240,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node56 -->
+<!-- Node1&#45;&gt;Node58 -->
 <g id="edge41" class="edge">
-<title>Node1&#45;&gt;Node56</title>
+<title>Node1&#45;&gt;Node58</title>
 <path fill="none" stroke="midnightblue" d="M2000.82,-236.31C2247.35,-231.93 3071.69,-215.47 3334.5,-187 3349.74,-185.35 3366.06,-182.81 3381.32,-180.09"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2000.49,-232.82 1990.56,-236.49 2000.62,-239.81 2000.49,-232.82"/>
 </g>
-<!-- Node58 -->
+<!-- Node60 -->
 <g id="node31" class="node">
-<title>Node58</title>
+<title>Node60</title>
 <g id="a_node31"><a xlink:href="multiply_8hpp.html" target="_top" xlink:title="This file defines a multiplication instruction (MUL, MLA).">
 <polygon fill="none" stroke="black" points="2074,-151 2074,-181 2187,-181 2187,-151 2074,-151"/>
 <text text-anchor="start" x="2082" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -256,15 +256,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node58 -->
+<!-- Node1&#45;&gt;Node60 -->
 <g id="edge44" class="edge">
-<title>Node1&#45;&gt;Node58</title>
+<title>Node1&#45;&gt;Node60</title>
 <path fill="none" stroke="midnightblue" d="M1980.25,-219.96C2014.3,-207.96 2058.85,-192.26 2090.58,-181.07"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1978.76,-216.78 1970.49,-223.4 1981.09,-223.38 1978.76,-216.78"/>
 </g>
-<!-- Node62 -->
+<!-- Node64 -->
 <g id="node34" class="node">
-<title>Node62</title>
+<title>Node64</title>
 <g id="a_node34"><a xlink:href="multiply__long_8hpp.html" target="_top" xlink:title="This file defines a multiplication (long) instruction.">
 <polygon fill="none" stroke="black" points="2205,-151 2205,-181 2340,-181 2340,-151 2205,-151"/>
 <text text-anchor="start" x="2213" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -272,15 +272,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node62 -->
+<!-- Node1&#45;&gt;Node64 -->
 <g id="edge48" class="edge">
-<title>Node1&#45;&gt;Node62</title>
+<title>Node1&#45;&gt;Node64</title>
 <path fill="none" stroke="midnightblue" d="M2000.8,-225.4C2054.36,-215.87 2129.82,-201.77 2195.5,-187 2203.59,-185.18 2212.11,-183.12 2220.42,-181.02"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1999.96,-222 1990.72,-227.19 2001.18,-228.89 1999.96,-222"/>
 </g>
-<!-- Node64 -->
+<!-- Node66 -->
 <g id="node36" class="node">
-<title>Node64</title>
+<title>Node66</title>
 <g id="a_node36"><a xlink:href="psr__transfer_8hpp.html" target="_top" xlink:title="This file defines a PSR instruction (MRS, MSR).">
 <polygon fill="none" stroke="black" points="2358.5,-151 2358.5,-181 2484.5,-181 2484.5,-151 2358.5,-151"/>
 <text text-anchor="start" x="2366.5" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -288,15 +288,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node64 -->
+<!-- Node1&#45;&gt;Node66 -->
 <g id="edge52" class="edge">
-<title>Node1&#45;&gt;Node64</title>
+<title>Node1&#45;&gt;Node66</title>
 <path fill="none" stroke="midnightblue" d="M2000.94,-232.18C2084.43,-225.13 2227.48,-210.75 2348.5,-187 2356.88,-185.35 2365.71,-183.26 2374.23,-181.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2000.49,-228.7 1990.81,-233.02 2001.07,-235.68 2000.49,-228.7"/>
 </g>
-<!-- Node66 -->
+<!-- Node68 -->
 <g id="node38" class="node">
-<title>Node66</title>
+<title>Node68</title>
 <g id="a_node38"><a xlink:href="rfe_8hpp.html" target="_top" xlink:title="This file defines an RFE instruction (return from exception).">
 <polygon fill="none" stroke="black" points="2503,-151 2503,-181 2616,-181 2616,-151 2503,-151"/>
 <text text-anchor="start" x="2511" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -304,15 +304,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node66 -->
+<!-- Node1&#45;&gt;Node68 -->
 <g id="edge55" class="edge">
-<title>Node1&#45;&gt;Node66</title>
+<title>Node1&#45;&gt;Node68</title>
 <path fill="none" stroke="midnightblue" d="M2000.69,-235.81C2107.85,-232.2 2318.28,-221.03 2493.5,-187 2501.49,-185.45 2509.9,-183.31 2517.93,-181"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2000.53,-232.31 1990.64,-236.14 2000.75,-239.31 2000.53,-232.31"/>
 </g>
-<!-- Node68 -->
+<!-- Node70 -->
 <g id="node40" class="node">
-<title>Node68</title>
+<title>Node70</title>
 <g id="a_node40"><a xlink:href="single__data__transfer_8hpp.html" target="_top" xlink:title="This file defines single data transfer instruction (LDR, STR).">
 <polygon fill="none" stroke="black" points="2634,-151 2634,-181 2801,-181 2801,-151 2634,-151"/>
 <text text-anchor="start" x="2642" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -320,15 +320,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node68 -->
+<!-- Node1&#45;&gt;Node70 -->
 <g id="edge58" class="edge">
-<title>Node1&#45;&gt;Node68</title>
+<title>Node1&#45;&gt;Node70</title>
 <path fill="none" stroke="midnightblue" d="M2000.94,-235.61C2126.71,-231.52 2397.98,-219.44 2624.5,-187 2635.45,-185.43 2647.04,-183.31 2658.19,-181.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2000.56,-232.12 1990.68,-235.94 2000.78,-239.12 2000.56,-232.12"/>
 </g>
-<!-- Node70 -->
+<!-- Node72 -->
 <g id="node42" class="node">
-<title>Node70</title>
+<title>Node72</title>
 <g id="a_node42"><a xlink:href="smlawy_8hpp.html" target="_top" xlink:title="This file defines a SMLAWy instruction.">
 <polygon fill="none" stroke="black" points="2819,-151 2819,-181 2932,-181 2932,-151 2819,-151"/>
 <text text-anchor="start" x="2827" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -336,15 +336,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node70 -->
+<!-- Node1&#45;&gt;Node72 -->
 <g id="edge61" class="edge">
-<title>Node1&#45;&gt;Node70</title>
+<title>Node1&#45;&gt;Node72</title>
 <path fill="none" stroke="midnightblue" d="M2000.9,-235.61C2180.9,-230.42 2654.67,-214.51 2809.5,-187 2817.75,-185.53 2826.43,-183.37 2834.67,-181.01"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2000.64,-232.11 1990.75,-235.9 2000.84,-239.11 2000.64,-232.11"/>
 </g>
-<!-- Node72 -->
+<!-- Node74 -->
 <g id="node44" class="node">
-<title>Node72</title>
+<title>Node74</title>
 <g id="a_node44"><a xlink:href="smlaxy_8hpp.html" target="_top" xlink:title="This file defines a SMLAxy instruction.">
 <polygon fill="none" stroke="black" points="2950,-151 2950,-181 3063,-181 3063,-151 2950,-151"/>
 <text text-anchor="start" x="2958" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -352,15 +352,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node72 -->
+<!-- Node1&#45;&gt;Node74 -->
 <g id="edge64" class="edge">
-<title>Node1&#45;&gt;Node72</title>
+<title>Node1&#45;&gt;Node74</title>
 <path fill="none" stroke="midnightblue" d="M2000.83,-236.22C2199.02,-232.24 2759.43,-218.47 2940.5,-187 2948.76,-185.56 2957.43,-183.42 2965.68,-181.06"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2000.75,-232.72 1990.82,-236.41 2000.89,-239.72 2000.75,-232.72"/>
 </g>
-<!-- Node74 -->
+<!-- Node76 -->
 <g id="node46" class="node">
-<title>Node74</title>
+<title>Node76</title>
 <g id="a_node46"><a xlink:href="smulwy_8hpp.html" target="_top" xlink:title="This file implements a SMULWy instruction.">
 <polygon fill="none" stroke="black" points="3081,-151 3081,-181 3194,-181 3194,-151 3081,-151"/>
 <text text-anchor="start" x="3089" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -368,15 +368,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node74 -->
+<!-- Node1&#45;&gt;Node76 -->
 <g id="edge67" class="edge">
-<title>Node1&#45;&gt;Node74</title>
+<title>Node1&#45;&gt;Node76</title>
 <path fill="none" stroke="midnightblue" d="M2000.84,-236.69C2216.13,-233.83 2864.05,-222.45 3071.5,-187 3079.76,-185.59 3088.44,-183.45 3096.69,-181.1"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2000.56,-233.19 1990.61,-236.82 2000.66,-240.19 2000.56,-233.19"/>
 </g>
-<!-- Node76 -->
+<!-- Node78 -->
 <g id="node48" class="node">
-<title>Node76</title>
+<title>Node78</title>
 <g id="a_node48"><a xlink:href="smulxy_8hpp.html" target="_top" xlink:title="This file defines a SMULxy instruction.">
 <polygon fill="none" stroke="black" points="3212,-151 3212,-181 3325,-181 3325,-151 3212,-151"/>
 <text text-anchor="start" x="3220" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -384,15 +384,15 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node76 -->
+<!-- Node1&#45;&gt;Node78 -->
 <g id="edge70" class="edge">
-<title>Node1&#45;&gt;Node76</title>
+<title>Node1&#45;&gt;Node78</title>
 <path fill="none" stroke="midnightblue" d="M2000.87,-237.06C2232.33,-235.24 2968.55,-226.43 3202.5,-187 3210.88,-185.59 3219.69,-183.42 3228.05,-181.02"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2000.53,-233.56 1990.56,-237.14 2000.58,-240.56 2000.53,-233.56"/>
 </g>
-<!-- Node78 -->
+<!-- Node80 -->
 <g id="node50" class="node">
-<title>Node78</title>
+<title>Node80</title>
 <g id="a_node50"><a xlink:href="srs_8hpp.html" target="_top" xlink:title="This file defines an SRS instruction (store return state onto a stack).">
 <polygon fill="none" stroke="red" points="1808,-151 1808,-181 1921,-181 1921,-151 1808,-151"/>
 <text text-anchor="start" x="1816" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -400,9 +400,9 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node78 -->
+<!-- Node1&#45;&gt;Node80 -->
 <g id="edge73" class="edge">
-<title>Node1&#45;&gt;Node78</title>
+<title>Node1&#45;&gt;Node80</title>
 <path fill="none" stroke="midnightblue" d="M1910.25,-215.86C1899.71,-204.61 1887.14,-191.18 1877.84,-181.25"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1907.75,-218.33 1917.14,-223.23 1912.86,-213.54 1907.75,-218.33"/>
 </g>
@@ -549,21 +549,21 @@
 <path fill="none" stroke="midnightblue" d="M219.2,-135.28C217.6,-124.25 215.86,-112.25 214.56,-103.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="215.77,-136.03 220.67,-145.43 222.7,-135.03 215.77,-136.03"/>
 </g>
-<!-- Node41&#45;&gt;Node4 -->
+<!-- Node43&#45;&gt;Node4 -->
 <g id="edge20" class="edge">
-<title>Node41&#45;&gt;Node4</title>
+<title>Node43&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M493.29,-147.75C499.76,-146.68 506.23,-145.73 512.5,-145 1080.39,-78.43 1234.13,-200.72 1798.5,-109 1807.01,-107.62 1815.95,-105.43 1824.41,-103"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="492.37,-144.36 483.13,-149.53 493.58,-151.25 492.37,-144.36"/>
 </g>
-<!-- Node41&#45;&gt;Node27 -->
+<!-- Node43&#45;&gt;Node27 -->
 <g id="edge21" class="edge">
-<title>Node41&#45;&gt;Node27</title>
+<title>Node43&#45;&gt;Node27</title>
 <path fill="none" stroke="midnightblue" d="M354.59,-141.93C320.61,-129.28 279.58,-113.99 250.36,-103.11"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="353.37,-145.22 363.96,-145.43 355.82,-138.66 353.37,-145.22"/>
 </g>
-<!-- Node42 -->
+<!-- Node44 -->
 <g id="node16" class="node">
-<title>Node42</title>
+<title>Node44</title>
 <g id="a_node16"><a xlink:href="coprocessor__data__transfer_8cpp.html" target="_top" xlink:title="This file implements a coprocessor data transfer (LDC, STC) as defined in coprocessor_data_transfer....">
 <polygon fill="none" stroke="black" points="292,-67.5 292,-108.5 425,-108.5 425,-67.5 292,-67.5"/>
 <text text-anchor="start" x="300" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -572,27 +572,27 @@
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node42 -->
+<!-- Node43&#45;&gt;Node44 -->
 <g id="edge19" class="edge">
-<title>Node41&#45;&gt;Node42</title>
+<title>Node43&#45;&gt;Node44</title>
 <path fill="none" stroke="midnightblue" d="M395.39,-137.34C388.09,-127.78 380.08,-117.27 373.39,-108.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="392.71,-139.6 401.56,-145.43 398.28,-135.36 392.71,-139.6"/>
 </g>
-<!-- Node43&#45;&gt;Node4 -->
+<!-- Node45&#45;&gt;Node4 -->
 <g id="edge24" class="edge">
-<title>Node43&#45;&gt;Node4</title>
+<title>Node45&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M681.13,-146.4C684.62,-145.88 688.09,-145.41 691.5,-145 1180.22,-86.07 1312.79,-189.06 1798.5,-109 1806.89,-107.62 1815.7,-105.46 1824.05,-103.07"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="680.55,-142.95 671.23,-147.99 681.66,-149.86 680.55,-142.95"/>
 </g>
-<!-- Node43&#45;&gt;Node27 -->
+<!-- Node45&#45;&gt;Node27 -->
 <g id="edge25" class="edge">
-<title>Node43&#45;&gt;Node27</title>
+<title>Node45&#45;&gt;Node27</title>
 <path fill="none" stroke="midnightblue" d="M511.87,-148.75C504.98,-147.46 498.12,-146.2 491.5,-145 398.76,-128.18 374.39,-129.98 282.5,-109 274.86,-107.26 266.82,-105.18 259.01,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="511.49,-152.24 521.96,-150.63 512.78,-145.36 511.49,-152.24"/>
 </g>
-<!-- Node44 -->
+<!-- Node46 -->
 <g id="node18" class="node">
-<title>Node44</title>
+<title>Node46</title>
 <g id="a_node18"><a xlink:href="coprocessor__register__transfer_8cpp.html" target="_top" xlink:title="This file implements a coprocessor register transfer as defined in coprocessor_register_transfer....">
 <polygon fill="none" stroke="black" points="443,-67.5 443,-108.5 592,-108.5 592,-67.5 443,-67.5"/>
 <text text-anchor="start" x="451" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -601,21 +601,21 @@
 </a>
 </g>
 </g>
-<!-- Node43&#45;&gt;Node44 -->
+<!-- Node45&#45;&gt;Node46 -->
 <g id="edge23" class="edge">
-<title>Node43&#45;&gt;Node44</title>
+<title>Node45&#45;&gt;Node46</title>
 <path fill="none" stroke="midnightblue" d="M568.95,-138.49C558.69,-128.63 547.26,-117.63 537.78,-108.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="566.52,-141.02 576.16,-145.43 571.38,-135.97 566.52,-141.02"/>
 </g>
-<!-- Node45&#45;&gt;Node4 -->
+<!-- Node47&#45;&gt;Node4 -->
 <g id="edge28" class="edge">
-<title>Node45&#45;&gt;Node4</title>
+<title>Node47&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M1448.81,-148.18C1453.41,-146.99 1458.02,-145.91 1462.5,-145 1609.68,-115.09 1651.32,-138.91 1798.5,-109 1806.24,-107.43 1814.38,-105.33 1822.2,-103.1"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1447.53,-144.9 1438.8,-150.9 1449.37,-151.65 1447.53,-144.9"/>
 </g>
-<!-- Node46 -->
+<!-- Node48 -->
 <g id="node20" class="node">
-<title>Node46</title>
+<title>Node48</title>
 <g id="a_node20"><a xlink:href="cps_8cpp.html" target="_top" xlink:title="This file defines a change processor state instruction (CPS) as defined in cps.hpp.">
 <polygon fill="none" stroke="black" points="1250,-73 1250,-103 1363,-103 1363,-73 1250,-73"/>
 <text text-anchor="start" x="1258" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -623,21 +623,21 @@
 </a>
 </g>
 </g>
-<!-- Node45&#45;&gt;Node46 -->
+<!-- Node47&#45;&gt;Node48 -->
 <g id="edge27" class="edge">
-<title>Node45&#45;&gt;Node46</title>
+<title>Node47&#45;&gt;Node48</title>
 <path fill="none" stroke="midnightblue" d="M1371.51,-143.89C1356.16,-130.93 1336.91,-114.68 1323.35,-103.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1369.67,-146.93 1379.57,-150.7 1374.19,-141.58 1369.67,-146.93"/>
 </g>
-<!-- Node47&#45;&gt;Node4 -->
+<!-- Node49&#45;&gt;Node4 -->
 <g id="edge32" class="edge">
-<title>Node47&#45;&gt;Node4</title>
+<title>Node49&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M1613.08,-148.55C1618.29,-147.33 1623.48,-146.14 1628.5,-145 1703.83,-127.95 1723.7,-128.22 1798.5,-109 1805.46,-107.21 1812.78,-105.16 1819.91,-103.08"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1611.98,-145.21 1603.05,-150.91 1613.59,-152.03 1611.98,-145.21"/>
 </g>
-<!-- Node48 -->
+<!-- Node50 -->
 <g id="node22" class="node">
-<title>Node48</title>
+<title>Node50</title>
 <g id="a_node22"><a xlink:href="alu_8hpp.html" target="_top" xlink:title="This file defines the functionality of the arithmetic logic unit (ALU).">
 <polygon fill="none" stroke="red" points="1381,-73 1381,-103 1494,-103 1494,-73 1381,-73"/>
 <text text-anchor="start" x="1389" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -645,37 +645,37 @@
 </a>
 </g>
 </g>
-<!-- Node47&#45;&gt;Node48 -->
+<!-- Node49&#45;&gt;Node50 -->
 <g id="edge30" class="edge">
-<title>Node47&#45;&gt;Node48</title>
+<title>Node49&#45;&gt;Node50</title>
 <path fill="none" stroke="midnightblue" d="M1517.24,-145.11C1498.45,-131.89 1474.24,-114.86 1457.45,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1515.25,-147.99 1525.44,-150.88 1519.28,-142.27 1515.25,-147.99"/>
 </g>
-<!-- Node50 -->
+<!-- Node52 -->
 <g id="node23" class="node">
-<title>Node50</title>
-<g id="a_node23"><a xlink:href="data__processing_8cpp.html" target="_top" xlink:title="This file implements a data processing instruction as defined in data_processing.hpp.">
+<title>Node52</title>
+<g id="a_node23"><a xlink:href="arm1176jzf__s_2isa_2data__processing_8cpp.html" target="_top" xlink:title="This file implements a data processing instruction as defined in data_processing.hpp.">
 <polygon fill="none" stroke="black" points="1512,-73 1512,-103 1659,-103 1659,-73 1512,-73"/>
 <text text-anchor="start" x="1520" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
 <text text-anchor="middle" x="1585.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">_s/isa/data_processing.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node47&#45;&gt;Node50 -->
+<!-- Node49&#45;&gt;Node52 -->
 <g id="edge31" class="edge">
-<title>Node47&#45;&gt;Node50</title>
+<title>Node49&#45;&gt;Node52</title>
 <path fill="none" stroke="midnightblue" d="M1557.76,-141.7C1564.37,-129.14 1572.32,-114.04 1578.01,-103.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1554.58,-140.23 1553.02,-150.7 1560.78,-143.49 1554.58,-140.23"/>
 </g>
-<!-- Node51&#45;&gt;Node4 -->
+<!-- Node53&#45;&gt;Node4 -->
 <g id="edge35" class="edge">
-<title>Node51&#45;&gt;Node4</title>
+<title>Node53&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M1735.44,-146.7C1765.45,-133.28 1805.59,-115.34 1833.09,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1733.78,-143.61 1726.08,-150.88 1736.64,-150 1733.78,-143.61"/>
 </g>
-<!-- Node52 -->
+<!-- Node54 -->
 <g id="node25" class="node">
-<title>Node52</title>
+<title>Node54</title>
 <g id="a_node25"><a xlink:href="extend_8cpp.html" target="_top" xlink:title="This file implements an extend instruction as defined in extend.hpp.">
 <polygon fill="none" stroke="black" points="1677,-73 1677,-103 1790,-103 1790,-73 1677,-73"/>
 <text text-anchor="start" x="1685" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -683,21 +683,21 @@
 </a>
 </g>
 </g>
-<!-- Node51&#45;&gt;Node52 -->
+<!-- Node53&#45;&gt;Node54 -->
 <g id="edge34" class="edge">
-<title>Node51&#45;&gt;Node52</title>
+<title>Node53&#45;&gt;Node54</title>
 <path fill="none" stroke="midnightblue" d="M1706.45,-141.7C1712.9,-129.14 1720.65,-114.04 1726.2,-103.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1703.29,-140.21 1701.84,-150.7 1709.52,-143.41 1703.29,-140.21"/>
 </g>
-<!-- Node53&#45;&gt;Node4 -->
+<!-- Node55&#45;&gt;Node4 -->
 <g id="edge38" class="edge">
-<title>Node53&#45;&gt;Node4</title>
+<title>Node55&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M1954.3,-140.31C1932.82,-128.04 1907.62,-113.64 1889.39,-103.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1952.83,-143.51 1963.25,-145.43 1956.3,-137.43 1952.83,-143.51"/>
 </g>
-<!-- Node54 -->
+<!-- Node56 -->
 <g id="node27" class="node">
-<title>Node54</title>
+<title>Node56</title>
 <g id="a_node27"><a xlink:href="halfword__data__transfer_8cpp.html" target="_top" xlink:title="This file implements a Halfword data transfer instruction as defined in halfword_data_transfer....">
 <polygon fill="none" stroke="black" points="1939.5,-67.5 1939.5,-108.5 2055.5,-108.5 2055.5,-67.5 1939.5,-67.5"/>
 <text text-anchor="start" x="1947.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -706,21 +706,21 @@
 </a>
 </g>
 </g>
-<!-- Node53&#45;&gt;Node54 -->
+<!-- Node55&#45;&gt;Node56 -->
 <g id="edge37" class="edge">
-<title>Node53&#45;&gt;Node54</title>
+<title>Node55&#45;&gt;Node56</title>
 <path fill="none" stroke="midnightblue" d="M1997.5,-135.3C1997.5,-126.3 1997.5,-116.65 1997.5,-108.51"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1994,-135.43 1997.5,-145.43 2001,-135.43 1994,-135.43"/>
 </g>
-<!-- Node56&#45;&gt;Node5 -->
+<!-- Node58&#45;&gt;Node5 -->
 <g id="edge42" class="edge">
-<title>Node56&#45;&gt;Node5</title>
+<title>Node58&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M3458.68,-142.21C3470.42,-120.14 3482.38,-87.13 3463.5,-67 3438.44,-40.28 2906.95,-23.03 2730.14,-18.02"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="3455.63,-140.51 3453.75,-150.93 3461.72,-143.95 3455.63,-140.51"/>
 </g>
-<!-- Node57 -->
+<!-- Node59 -->
 <g id="node30" class="node">
-<title>Node57</title>
+<title>Node59</title>
 <g id="a_node30"><a xlink:href="isa__decoder_8cpp.html" target="_top" xlink:title="This file implements an instruction decoder defined in isa_decoder.hpp.">
 <polygon fill="none" stroke="black" points="3511,-73 3511,-103 3636,-103 3636,-73 3511,-73"/>
 <text text-anchor="start" x="3519" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -728,21 +728,21 @@
 </a>
 </g>
 </g>
-<!-- Node56&#45;&gt;Node57 -->
+<!-- Node58&#45;&gt;Node59 -->
 <g id="edge43" class="edge">
-<title>Node56&#45;&gt;Node57</title>
+<title>Node58&#45;&gt;Node59</title>
 <path fill="none" stroke="midnightblue" d="M3477.35,-145.64C3499.91,-132.35 3529.34,-115.02 3549.67,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="3475.3,-142.79 3468.46,-150.88 3478.85,-148.82 3475.3,-142.79"/>
 </g>
-<!-- Node58&#45;&gt;Node4 -->
+<!-- Node60&#45;&gt;Node4 -->
 <g id="edge45" class="edge">
-<title>Node58&#45;&gt;Node4</title>
+<title>Node60&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M2074.86,-148C2071.36,-146.98 2067.88,-145.97 2064.5,-145 2005.21,-128.06 1989.79,-125.94 1930.5,-109 1923.94,-107.12 1917.03,-105.09 1910.25,-103.07"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2074.17,-151.45 2084.75,-150.93 2076.16,-144.74 2074.17,-151.45"/>
 </g>
-<!-- Node59 -->
+<!-- Node61 -->
 <g id="node32" class="node">
-<title>Node59</title>
+<title>Node61</title>
 <g id="a_node32"><a xlink:href="multiply_8cpp.html" target="_top" xlink:title="This file implements a multiplication instruction (MUL, MLA) as defined in multiply....">
 <polygon fill="none" stroke="black" points="2074,-73 2074,-103 2187,-103 2187,-73 2074,-73"/>
 <text text-anchor="start" x="2082" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -750,15 +750,15 @@
 </a>
 </g>
 </g>
-<!-- Node58&#45;&gt;Node59 -->
+<!-- Node60&#45;&gt;Node61 -->
 <g id="edge46" class="edge">
-<title>Node58&#45;&gt;Node59</title>
+<title>Node60&#45;&gt;Node61</title>
 <path fill="none" stroke="midnightblue" d="M2130.5,-140.59C2130.5,-128.26 2130.5,-113.72 2130.5,-103.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2127,-140.7 2130.5,-150.7 2134,-140.71 2127,-140.7"/>
 </g>
-<!-- Node60 -->
+<!-- Node62 -->
 <g id="node33" class="node">
-<title>Node60</title>
+<title>Node62</title>
 <g id="a_node33"><a xlink:href="mac_8hpp.html" target="_top" xlink:title="This file defines the functionality of the CPU multiplier (MAC unit).">
 <polygon fill="none" stroke="red" points="2205,-73 2205,-103 2318,-103 2318,-73 2205,-73"/>
 <text text-anchor="start" x="2213" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -766,27 +766,27 @@
 </a>
 </g>
 </g>
-<!-- Node58&#45;&gt;Node60 -->
+<!-- Node60&#45;&gt;Node62 -->
 <g id="edge47" class="edge">
-<title>Node58&#45;&gt;Node60</title>
+<title>Node60&#45;&gt;Node62</title>
 <path fill="none" stroke="midnightblue" d="M2163.56,-145.82C2186.51,-132.51 2216.56,-115.07 2237.3,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2161.73,-142.84 2154.83,-150.88 2165.24,-148.89 2161.73,-142.84"/>
 </g>
-<!-- Node62&#45;&gt;Node4 -->
+<!-- Node64&#45;&gt;Node4 -->
 <g id="edge49" class="edge">
-<title>Node62&#45;&gt;Node4</title>
+<title>Node64&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M2211.87,-148.53C2206.35,-147.25 2200.84,-146.05 2195.5,-145 2078.88,-122.02 2046.63,-134.32 1930.5,-109 1922.9,-107.34 1914.9,-105.24 1907.2,-103.02"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2211.21,-151.97 2221.75,-150.91 2212.85,-145.17 2211.21,-151.97"/>
 </g>
-<!-- Node62&#45;&gt;Node60 -->
+<!-- Node64&#45;&gt;Node62 -->
 <g id="edge51" class="edge">
-<title>Node62&#45;&gt;Node60</title>
+<title>Node64&#45;&gt;Node62</title>
 <path fill="none" stroke="midnightblue" d="M2268.97,-140.59C2267.18,-128.26 2265.08,-113.72 2263.56,-103.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2265.53,-141.31 2270.43,-150.7 2272.46,-140.31 2265.53,-141.31"/>
 </g>
-<!-- Node63 -->
+<!-- Node65 -->
 <g id="node35" class="node">
-<title>Node63</title>
+<title>Node65</title>
 <g id="a_node35"><a xlink:href="multiply__long_8cpp.html" target="_top" xlink:title="This file implements a multiplication (long) instruction as defined in multiply_long....">
 <polygon fill="none" stroke="black" points="2336.5,-73 2336.5,-103 2470.5,-103 2470.5,-73 2336.5,-73"/>
 <text text-anchor="start" x="2344.5" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -794,21 +794,21 @@
 </a>
 </g>
 </g>
-<!-- Node62&#45;&gt;Node63 -->
+<!-- Node64&#45;&gt;Node65 -->
 <g id="edge50" class="edge">
-<title>Node62&#45;&gt;Node63</title>
+<title>Node64&#45;&gt;Node65</title>
 <path fill="none" stroke="midnightblue" d="M2305.56,-145.82C2328.51,-132.51 2358.56,-115.07 2379.3,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2303.73,-142.84 2296.83,-150.88 2307.24,-148.89 2303.73,-142.84"/>
 </g>
-<!-- Node64&#45;&gt;Node4 -->
+<!-- Node66&#45;&gt;Node4 -->
 <g id="edge53" class="edge">
-<title>Node64&#45;&gt;Node4</title>
+<title>Node66&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M2365.09,-148.46C2359.52,-147.15 2353.92,-145.97 2348.5,-145 2164.94,-112.23 2113.61,-144.23 1930.5,-109 1922.51,-107.46 1914.1,-105.33 1906.07,-103.03"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2364.51,-151.92 2375.06,-150.92 2366.19,-145.13 2364.51,-151.92"/>
 </g>
-<!-- Node65 -->
+<!-- Node67 -->
 <g id="node37" class="node">
-<title>Node65</title>
+<title>Node67</title>
 <g id="a_node37"><a xlink:href="psr__transfer_8cpp.html" target="_top" xlink:title="This file implements a PSR instruction (MRS, MSR) as defined in psr_transfer.hpp.">
 <polygon fill="none" stroke="black" points="2489,-73 2489,-103 2614,-103 2614,-73 2489,-73"/>
 <text text-anchor="start" x="2497" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -816,21 +816,21 @@
 </a>
 </g>
 </g>
-<!-- Node64&#45;&gt;Node65 -->
+<!-- Node66&#45;&gt;Node67 -->
 <g id="edge54" class="edge">
-<title>Node64&#45;&gt;Node65</title>
+<title>Node66&#45;&gt;Node67</title>
 <path fill="none" stroke="midnightblue" d="M2454.31,-145.82C2477.08,-132.51 2506.91,-115.07 2527.48,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2452.51,-142.81 2445.65,-150.88 2456.05,-148.86 2452.51,-142.81"/>
 </g>
-<!-- Node66&#45;&gt;Node4 -->
+<!-- Node68&#45;&gt;Node4 -->
 <g id="edge56" class="edge">
-<title>Node66&#45;&gt;Node4</title>
+<title>Node68&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M2508.64,-148.32C2503.56,-147.04 2498.45,-145.9 2493.5,-145 2246.77,-100.35 2177.23,-153.65 1930.5,-109 1922.37,-107.53 1913.83,-105.4 1905.69,-103.07"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2507.75,-151.7 2518.31,-150.93 2509.57,-144.95 2507.75,-151.7"/>
 </g>
-<!-- Node67 -->
+<!-- Node69 -->
 <g id="node39" class="node">
-<title>Node67</title>
+<title>Node69</title>
 <g id="a_node39"><a xlink:href="rfe_8cpp.html" target="_top" xlink:title="This file implements an RFE instruction (return from exception) as defined in rfe....">
 <polygon fill="none" stroke="black" points="2632,-73 2632,-103 2745,-103 2745,-73 2632,-73"/>
 <text text-anchor="start" x="2640" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -838,21 +838,21 @@
 </a>
 </g>
 </g>
-<!-- Node66&#45;&gt;Node67 -->
+<!-- Node68&#45;&gt;Node69 -->
 <g id="edge57" class="edge">
-<title>Node66&#45;&gt;Node67</title>
+<title>Node68&#45;&gt;Node69</title>
 <path fill="none" stroke="midnightblue" d="M2592.35,-145.64C2614.91,-132.35 2644.34,-115.02 2664.67,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2590.3,-142.79 2583.46,-150.88 2593.85,-148.82 2590.3,-142.79"/>
 </g>
-<!-- Node68&#45;&gt;Node4 -->
+<!-- Node70&#45;&gt;Node4 -->
 <g id="edge59" class="edge">
-<title>Node68&#45;&gt;Node4</title>
+<title>Node70&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M2649.18,-149.01C2640.9,-147.46 2632.53,-146.06 2624.5,-145 2318.32,-104.4 2234.75,-162.18 1930.5,-109 1922.24,-107.56 1913.57,-105.41 1905.32,-103.05"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2648.72,-152.49 2659.21,-150.97 2650.07,-145.62 2648.72,-152.49"/>
 </g>
-<!-- Node69 -->
+<!-- Node71 -->
 <g id="node41" class="node">
-<title>Node69</title>
+<title>Node71</title>
 <g id="a_node41"><a xlink:href="single__data__transfer_8cpp.html" target="_top" xlink:title="This file implements single data transfer instruction (LDR, STR) as defined in single_data_transfer....">
 <polygon fill="none" stroke="black" points="2763,-73 2763,-103 2930,-103 2930,-73 2763,-73"/>
 <text text-anchor="start" x="2771" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -860,21 +860,21 @@
 </a>
 </g>
 </g>
-<!-- Node68&#45;&gt;Node69 -->
+<!-- Node70&#45;&gt;Node71 -->
 <g id="edge60" class="edge">
-<title>Node68&#45;&gt;Node69</title>
+<title>Node70&#45;&gt;Node71</title>
 <path fill="none" stroke="midnightblue" d="M2750.35,-145.64C2772.91,-132.35 2802.34,-115.02 2822.67,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2748.3,-142.79 2741.46,-150.88 2751.85,-148.82 2748.3,-142.79"/>
 </g>
-<!-- Node70&#45;&gt;Node4 -->
+<!-- Node72&#45;&gt;Node4 -->
 <g id="edge62" class="edge">
-<title>Node70&#45;&gt;Node4</title>
+<title>Node72&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M2825.1,-148.31C2819.87,-147.01 2814.61,-145.86 2809.5,-145 2423.98,-79.78 2316.02,-174.22 1930.5,-109 1922.12,-107.58 1913.31,-105.41 1904.95,-103.02"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2824.48,-151.77 2835.05,-150.98 2826.3,-145.01 2824.48,-151.77"/>
 </g>
-<!-- Node71 -->
+<!-- Node73 -->
 <g id="node43" class="node">
-<title>Node71</title>
+<title>Node73</title>
 <g id="a_node43"><a xlink:href="smlawy_8cpp.html" target="_top" xlink:title="This file implements a SMLAWy instruction.">
 <polygon fill="none" stroke="black" points="2948,-73 2948,-103 3061,-103 3061,-73 2948,-73"/>
 <text text-anchor="start" x="2956" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -882,21 +882,21 @@
 </a>
 </g>
 </g>
-<!-- Node70&#45;&gt;Node71 -->
+<!-- Node72&#45;&gt;Node73 -->
 <g id="edge63" class="edge">
-<title>Node70&#45;&gt;Node71</title>
+<title>Node72&#45;&gt;Node73</title>
 <path fill="none" stroke="midnightblue" d="M2908.35,-145.64C2930.91,-132.35 2960.34,-115.02 2980.67,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2906.3,-142.79 2899.46,-150.88 2909.85,-148.82 2906.3,-142.79"/>
 </g>
-<!-- Node72&#45;&gt;Node4 -->
+<!-- Node74&#45;&gt;Node4 -->
 <g id="edge65" class="edge">
-<title>Node72&#45;&gt;Node4</title>
+<title>Node74&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M2956.1,-148.28C2950.88,-146.98 2945.61,-145.85 2940.5,-145 2497.42,-71.25 2373.58,-182.75 1930.5,-109 1922.11,-107.6 1913.3,-105.44 1904.95,-103.05"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2955.49,-151.74 2966.05,-150.95 2957.3,-144.98 2955.49,-151.74"/>
 </g>
-<!-- Node73 -->
+<!-- Node75 -->
 <g id="node45" class="node">
-<title>Node73</title>
+<title>Node75</title>
 <g id="a_node45"><a xlink:href="smlaxy_8cpp.html" target="_top" xlink:title="This file implements a SMLAxy instruction.">
 <polygon fill="none" stroke="black" points="3079,-73 3079,-103 3192,-103 3192,-73 3079,-73"/>
 <text text-anchor="start" x="3087" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -904,21 +904,21 @@
 </a>
 </g>
 </g>
-<!-- Node72&#45;&gt;Node73 -->
+<!-- Node74&#45;&gt;Node75 -->
 <g id="edge66" class="edge">
-<title>Node72&#45;&gt;Node73</title>
+<title>Node74&#45;&gt;Node75</title>
 <path fill="none" stroke="midnightblue" d="M3039.35,-145.64C3061.91,-132.35 3091.34,-115.02 3111.67,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="3037.3,-142.79 3030.46,-150.88 3040.85,-148.82 3037.3,-142.79"/>
 </g>
-<!-- Node74&#45;&gt;Node4 -->
+<!-- Node76&#45;&gt;Node4 -->
 <g id="edge68" class="edge">
-<title>Node74&#45;&gt;Node4</title>
+<title>Node76&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M3087.11,-148.26C3081.88,-146.97 3076.61,-145.84 3071.5,-145 2570.85,-62.72 2431.15,-191.28 1930.5,-109 1922.11,-107.62 1913.3,-105.47 1904.94,-103.08"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="3086.49,-151.72 3097.06,-150.92 3088.3,-144.96 3086.49,-151.72"/>
 </g>
-<!-- Node75 -->
+<!-- Node77 -->
 <g id="node47" class="node">
-<title>Node75</title>
+<title>Node77</title>
 <g id="a_node47"><a xlink:href="smulwy_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="3210,-73 3210,-103 3323,-103 3323,-73 3210,-73"/>
 <text text-anchor="start" x="3218" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -926,21 +926,21 @@
 </a>
 </g>
 </g>
-<!-- Node74&#45;&gt;Node75 -->
+<!-- Node76&#45;&gt;Node77 -->
 <g id="edge69" class="edge">
-<title>Node74&#45;&gt;Node75</title>
+<title>Node76&#45;&gt;Node77</title>
 <path fill="none" stroke="midnightblue" d="M3170.35,-145.64C3192.91,-132.35 3222.34,-115.02 3242.67,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="3168.3,-142.79 3161.46,-150.88 3171.85,-148.82 3168.3,-142.79"/>
 </g>
-<!-- Node76&#45;&gt;Node4 -->
+<!-- Node78&#45;&gt;Node4 -->
 <g id="edge71" class="edge">
-<title>Node76&#45;&gt;Node4</title>
+<title>Node78&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M3218.11,-148.24C3212.88,-146.95 3207.61,-145.83 3202.5,-145 2644.28,-54.19 2488.72,-199.81 1930.5,-109 1922.11,-107.64 1913.3,-105.49 1904.94,-103.1"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="3217.49,-151.7 3228.06,-150.9 3219.3,-144.94 3217.49,-151.7"/>
 </g>
-<!-- Node77 -->
+<!-- Node79 -->
 <g id="node49" class="node">
-<title>Node77</title>
+<title>Node79</title>
 <g id="a_node49"><a xlink:href="smulxy_8cpp.html" target="_top" xlink:title="This file implements a SMULxy instruction.">
 <polygon fill="none" stroke="black" points="3341,-73 3341,-103 3454,-103 3454,-73 3341,-73"/>
 <text text-anchor="start" x="3349" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">src/core/arm1176jzf</text>
@@ -948,15 +948,15 @@
 </a>
 </g>
 </g>
-<!-- Node76&#45;&gt;Node77 -->
+<!-- Node78&#45;&gt;Node79 -->
 <g id="edge72" class="edge">
-<title>Node76&#45;&gt;Node77</title>
+<title>Node78&#45;&gt;Node79</title>
 <path fill="none" stroke="midnightblue" d="M3301.35,-145.64C3323.91,-132.35 3353.34,-115.02 3373.67,-103.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="3299.3,-142.79 3292.46,-150.88 3302.85,-148.82 3299.3,-142.79"/>
 </g>
-<!-- Node78&#45;&gt;Node4 -->
+<!-- Node80&#45;&gt;Node4 -->
 <g id="edge74" class="edge">
-<title>Node78&#45;&gt;Node4</title>
+<title>Node80&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M1864.5,-140.59C1864.5,-128.26 1864.5,-113.72 1864.5,-103.23"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1861,-140.7 1864.5,-150.7 1868,-140.71 1861,-140.7"/>
 </g>

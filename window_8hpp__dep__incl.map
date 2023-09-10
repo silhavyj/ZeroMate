@@ -1,31 +1,33 @@
 <map id="src/gui/window.hpp" name="src/gui/window.hpp">
-<area shape="rect" id="node1" title="This file defines an interface for all windows that will be rendered by the application." alt="" coords="1333,5,1479,32"/>
-<area shape="rect" id="node2" href="$gui_8cpp.html" title="This file implements the main GUI entry function that takes care of creating and rendering all window..." alt="" coords="1209,177,1325,203"/>
-<area shape="rect" id="node3" href="$window_8cpp.html" title="This file implements common functions that can be used throughout the GUI of the application." alt="" coords="2827,87,2972,114"/>
+<area shape="rect" id="node1" title="This file defines an interface for all windows that will be rendered by the application." alt="" coords="1449,5,1595,32"/>
+<area shape="rect" id="node2" href="$gui_8cpp.html" title="This file implements the main GUI entry function that takes care of creating and rendering all window..." alt="" coords="1395,177,1511,203"/>
+<area shape="rect" id="node3" href="$window_8cpp.html" title="This file implements common functions that can be used throughout the GUI of the application." alt="" coords="3012,87,3157,114"/>
 <area shape="rect" id="node4" href="$control__window_8hpp.html" title="This file defines a window that allows the user to control CPU execution." alt="" coords="51,80,225,121"/>
-<area shape="rect" id="node6" href="$cp15__window_8hpp.html" title="This file defines a window that displays data (information) related to coprocessor 15." alt="" coords="249,80,411,121"/>
-<area shape="rect" id="node8" href="$demo__window_8hpp.html" title="This file defines a window that displays the ImGui and ImPlot demos (used for debugging)." alt="" coords="435,80,601,121"/>
-<area shape="rect" id="node10" href="$log__window_8hpp.html" title="This file defines a window that displays log messages." alt="" coords="625,80,776,121"/>
-<area shape="rect" id="node12" href="$arm__timer__window_8hpp.html" title="This file defines a window that visualizes the contents of the ARM timer registers." alt="" coords="801,80,1003,121"/>
-<area shape="rect" id="node14" href="$aux__window_8hpp.html" title="This file defines a window that visualizes the auxiliaries (UART1 &amp; SPI1, and SPI2) used in BCM2835." alt="" coords="1027,80,1230,121"/>
-<area shape="rect" id="node16" href="$gpio__window_8hpp.html" title="This file defines a window that visualizes the states and information about GPIO pins." alt="" coords="1305,80,1507,121"/>
-<area shape="rect" id="node18" href="$interrupt__controller__window_8hpp.html" title="This file defines a window that visualizes the interrupt controller IC." alt="" coords="1531,80,1766,121"/>
-<area shape="rect" id="node20" href="$monitor__window_8hpp.html" title="This file defines a window that visualizes the memory&#45;mapped debug monitor." alt="" coords="1790,80,1993,121"/>
-<area shape="rect" id="node22" href="$ram__window_8hpp.html" title="This file defines a window that visualizes the contents of the RAM." alt="" coords="2017,80,2219,121"/>
-<area shape="rect" id="node24" href="$registers__window_8hpp.html" title="This file defines a window that displays the contents of all CPU registers." alt="" coords="2243,80,2430,121"/>
-<area shape="rect" id="node26" href="$source__code__window_8hpp.html" title="This file defines a window that displays loaded ELF files (disassembled instructions of the source co..." alt="" coords="2454,80,2627,121"/>
-<area shape="rect" id="node28" href="$top__bar__menu_8hpp.html" title=" " alt="" coords="2652,80,2803,121"/>
+<area shape="rect" id="node6" href="$cp10__window_8hpp.html" title="This file defines a window that displays data (information) related to coprocessor 10 (FPU)." alt="" coords="249,80,411,121"/>
+<area shape="rect" id="node8" href="$cp15__window_8hpp.html" title="This file defines a window that displays data (information) related to coprocessor 15." alt="" coords="435,80,596,121"/>
+<area shape="rect" id="node10" href="$demo__window_8hpp.html" title="This file defines a window that displays the ImGui and ImPlot demos (used for debugging)." alt="" coords="620,80,787,121"/>
+<area shape="rect" id="node12" href="$log__window_8hpp.html" title="This file defines a window that displays log messages." alt="" coords="811,80,961,121"/>
+<area shape="rect" id="node14" href="$arm__timer__window_8hpp.html" title="This file defines a window that visualizes the contents of the ARM timer registers." alt="" coords="986,80,1189,121"/>
+<area shape="rect" id="node16" href="$aux__window_8hpp.html" title="This file defines a window that visualizes the auxiliaries (UART1 &amp; SPI1, and SPI2) used in BCM2835." alt="" coords="1213,80,1415,121"/>
+<area shape="rect" id="node18" href="$gpio__window_8hpp.html" title="This file defines a window that visualizes the states and information about GPIO pins." alt="" coords="1490,80,1693,121"/>
+<area shape="rect" id="node20" href="$interrupt__controller__window_8hpp.html" title="This file defines a window that visualizes the interrupt controller IC." alt="" coords="1717,80,1951,121"/>
+<area shape="rect" id="node22" href="$monitor__window_8hpp.html" title="This file defines a window that visualizes the memory&#45;mapped debug monitor." alt="" coords="1975,80,2178,121"/>
+<area shape="rect" id="node24" href="$ram__window_8hpp.html" title="This file defines a window that visualizes the contents of the RAM." alt="" coords="2202,80,2405,121"/>
+<area shape="rect" id="node26" href="$registers__window_8hpp.html" title="This file defines a window that displays the contents of all CPU registers." alt="" coords="2429,80,2615,121"/>
+<area shape="rect" id="node28" href="$source__code__window_8hpp.html" title="This file defines a window that displays loaded ELF files (disassembled instructions of the source co..." alt="" coords="2639,80,2813,121"/>
+<area shape="rect" id="node30" href="$top__bar__menu_8hpp.html" title=" " alt="" coords="2837,80,2988,121"/>
 <area shape="rect" id="node5" href="$control__window_8cpp.html" title="This file implements a window that allows the user to control CPU execution." alt="" coords="5,169,180,211"/>
-<area shape="rect" id="node7" href="$cp15__window_8cpp.html" title="This file implements a window that displays data (information) related to coprocessor 15." alt="" coords="204,169,365,211"/>
-<area shape="rect" id="node9" href="$demo__window_8cpp.html" title="This file implements a window that displays the ImGui and ImPlot demos (used for debugging)." alt="" coords="389,169,556,211"/>
-<area shape="rect" id="node11" href="$log__window_8cpp.html" title="This file implements a window that displays log messages." alt="" coords="580,169,731,211"/>
-<area shape="rect" id="node13" href="$arm__timer__window_8cpp.html" title="This file implements a window that visualizes the contents of the ARM timer registers." alt="" coords="755,169,958,211"/>
-<area shape="rect" id="node15" href="$aux__window_8cpp.html" title="This file implements a window that visualizes the auxiliaries (UART1 &amp; SPI1, and SPI2) used in BCM283..." alt="" coords="982,169,1185,211"/>
-<area shape="rect" id="node17" href="$gpio__window_8cpp.html" title="This file implements a window that visualizes the states and information about GPIO pins." alt="" coords="1350,169,1553,211"/>
-<area shape="rect" id="node19" href="$interrupt__controller__window_8cpp.html" title="This file implements a window that visualizes the interrupt controller IC." alt="" coords="1577,169,1811,211"/>
-<area shape="rect" id="node21" href="$monitor__window_8cpp.html" title="This file implements a window that visualizes the memory&#45;mapped debug monitor." alt="" coords="1835,169,2038,211"/>
-<area shape="rect" id="node23" href="$ram__window_8cpp.html" title="This file implements a window that visualizes the contents of the RAM." alt="" coords="2062,169,2265,211"/>
-<area shape="rect" id="node25" href="$registers__window_8cpp.html" title="This file implements a window that displays the contents of all CPU registers." alt="" coords="2289,169,2475,211"/>
-<area shape="rect" id="node27" href="$source__code__window_8cpp.html" title="This file implements a window that displays loaded ELF files (disassembled instructions of the source..." alt="" coords="2499,169,2673,211"/>
-<area shape="rect" id="node29" href="$top__bar__menu_8cpp.html" title=" " alt="" coords="2697,169,2848,211"/>
+<area shape="rect" id="node7" href="$cp10__window_8cpp.html" title="This file implements a window that displays data (information) related to coprocessor 10 (FPU)." alt="" coords="204,169,365,211"/>
+<area shape="rect" id="node9" href="$cp15__window_8cpp.html" title="This file implements a window that displays data (information) related to coprocessor 15." alt="" coords="389,169,551,211"/>
+<area shape="rect" id="node11" href="$demo__window_8cpp.html" title="This file implements a window that displays the ImGui and ImPlot demos (used for debugging)." alt="" coords="575,169,741,211"/>
+<area shape="rect" id="node13" href="$log__window_8cpp.html" title="This file implements a window that displays log messages." alt="" coords="765,169,916,211"/>
+<area shape="rect" id="node15" href="$arm__timer__window_8cpp.html" title="This file implements a window that visualizes the contents of the ARM timer registers." alt="" coords="941,169,1143,211"/>
+<area shape="rect" id="node17" href="$aux__window_8cpp.html" title="This file implements a window that visualizes the auxiliaries (UART1 &amp; SPI1, and SPI2) used in BCM283..." alt="" coords="1167,169,1370,211"/>
+<area shape="rect" id="node19" href="$gpio__window_8cpp.html" title="This file implements a window that visualizes the states and information about GPIO pins." alt="" coords="1535,169,1738,211"/>
+<area shape="rect" id="node21" href="$interrupt__controller__window_8cpp.html" title="This file implements a window that visualizes the interrupt controller IC." alt="" coords="1762,169,1997,211"/>
+<area shape="rect" id="node23" href="$monitor__window_8cpp.html" title="This file implements a window that visualizes the memory&#45;mapped debug monitor." alt="" coords="2021,169,2223,211"/>
+<area shape="rect" id="node25" href="$ram__window_8cpp.html" title="This file implements a window that visualizes the contents of the RAM." alt="" coords="2247,169,2450,211"/>
+<area shape="rect" id="node27" href="$registers__window_8cpp.html" title="This file implements a window that displays the contents of all CPU registers." alt="" coords="2474,169,2661,211"/>
+<area shape="rect" id="node29" href="$source__code__window_8cpp.html" title="This file implements a window that displays loaded ELF files (disassembled instructions of the source..." alt="" coords="2685,169,2858,211"/>
+<area shape="rect" id="node31" href="$top__bar__menu_8cpp.html" title=" " alt="" coords="2883,169,3033,211"/>
 </map>

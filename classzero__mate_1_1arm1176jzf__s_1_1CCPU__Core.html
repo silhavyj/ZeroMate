@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.3.0</span>
+   &#160;<span id="projectnumber">v1.4.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -144,6 +144,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6dbc0995492246b3c8226004149d311a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a6dbc0995492246b3c8226004149d311a">Add_Coprocessor</a> (std::uint32_t id, const std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1ICoprocessor.html">coprocessor::ICoprocessor</a> &gt; &amp;coprocessor)</td></tr>
 <tr class="memdesc:a6dbc0995492246b3c8226004149d311a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a coprocessor.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a6dbc0995492246b3c8226004149d311a">More...</a><br /></td></tr>
 <tr class="separator:a6dbc0995492246b3c8226004149d311a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c94ba199b8260a55358cf8f097d1d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a04c94ba199b8260a55358cf8f097d1d3">Set_Coprocessor_15</a> (const std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt; &amp;cp15)</td></tr>
+<tr class="memdesc:a04c94ba199b8260a55358cf8f097d1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the control coprocessor CP15.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a04c94ba199b8260a55358cf8f097d1d3">More...</a><br /></td></tr>
+<tr class="separator:a04c94ba199b8260a55358cf8f097d1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a755d00905481c69121060e78c59b8c28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html">CCPU_Context</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a755d00905481c69121060e78c59b8c28">Get_CPU_Context</a> ()</td></tr>
 <tr class="memdesc:a755d00905481c69121060e78c59b8c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the CPU context.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a755d00905481c69121060e78c59b8c28">More...</a><br /></td></tr>
 <tr class="separator:a755d00905481c69121060e78c59b8c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,9 +238,15 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a1274541dc5225c51feceb54dd709f0e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a1274541dc5225c51feceb54dd709f0e4">Check_For_Pending_IRQ</a> ()</td></tr>
 <tr class="memdesc:a1274541dc5225c51feceb54dd709f0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">If there are any pending interrupts, it throws the <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CIRQ.html" title="This class represents the IRQ (interrupt) exception.">exceptions::CIRQ</a> exception.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a1274541dc5225c51feceb54dd709f0e4">More...</a><br /></td></tr>
 <tr class="separator:a1274541dc5225c51feceb54dd709f0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2c251aa49f9dc14f692a986ef3a090b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad2c251aa49f9dc14f692a986ef3a090b">Check_Coprocessor_Existence</a> (std::uint32_t coprocessor_id)</td></tr>
-<tr class="memdesc:ad2c251aa49f9dc14f692a986ef3a090b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a coprocessor of a given id is present of not.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ad2c251aa49f9dc14f692a986ef3a090b">More...</a><br /></td></tr>
-<tr class="separator:ad2c251aa49f9dc14f692a986ef3a090b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d662bbaf486e8924698ecf2208d0d73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a9d662bbaf486e8924698ecf2208d0d73">Perform_Coprocessor_Accessibility_Checks</a> (std::uint32_t coprocessor_id)</td></tr>
+<tr class="memdesc:a9d662bbaf486e8924698ecf2208d0d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs coprocessor accessibility checks.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a9d662bbaf486e8924698ecf2208d0d73">More...</a><br /></td></tr>
+<tr class="separator:a9d662bbaf486e8924698ecf2208d0d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c67a1c5fa304f2a58e0ab07ce7e8ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a91c67a1c5fa304f2a58e0ab07ce7e8ac">Check_Coprocessor_Presence</a> (std::uint32_t coprocessor_id)</td></tr>
+<tr class="memdesc:a91c67a1c5fa304f2a58e0ab07ce7e8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a given coprocessor is present or not.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a91c67a1c5fa304f2a58e0ab07ce7e8ac">More...</a><br /></td></tr>
+<tr class="separator:a91c67a1c5fa304f2a58e0ab07ce7e8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dbd5d6ffc531f762b49956d27f93be3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0dbd5d6ffc531f762b49956d27f93be3">Checks_Coprocessor_Access_Mode</a> (std::uint32_t coprocessor_id)</td></tr>
+<tr class="memdesc:a0dbd5d6ffc531f762b49956d27f93be3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a given coprocessor can be accessed from the current CPU mode.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a0dbd5d6ffc531f762b49956d27f93be3">More...</a><br /></td></tr>
+<tr class="separator:a0dbd5d6ffc531f762b49956d27f93be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac81ae05305c6916b7eda83abff602dcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac81ae05305c6916b7eda83abff602dcf">Execute</a> (<a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html">isa::CInstruction</a> <a class="el" href="alu_8cpp.html#a20b51f9ca9dc1a79dba89e3c66d7a648">instruction</a>)</td></tr>
 <tr class="memdesc:ac81ae05305c6916b7eda83abff602dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a single instruction.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ac81ae05305c6916b7eda83abff602dcf">More...</a><br /></td></tr>
 <tr class="separator:ac81ae05305c6916b7eda83abff602dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -380,6 +389,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a006bcec630ea7f8c28f5952d562319c6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classzero__mate_1_1IExternal__Peripheral.html">IExternal_Peripheral</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a006bcec630ea7f8c28f5952d562319c6">m_external_peripherals</a></td></tr>
 <tr class="memdesc:a006bcec630ea7f8c28f5952d562319c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of external peripherals.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a006bcec630ea7f8c28f5952d562319c6">More...</a><br /></td></tr>
 <tr class="separator:a006bcec630ea7f8c28f5952d562319c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63645c5b8ec3c4450cb133b14fa6ff4b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a63645c5b8ec3c4450cb133b14fa6ff4b">m_cp15</a></td></tr>
+<tr class="memdesc:a63645c5b8ec3c4450cb133b14fa6ff4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to coprocessor CP15.  <a href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a63645c5b8ec3c4450cb133b14fa6ff4b">More...</a><br /></td></tr>
+<tr class="separator:a63645c5b8ec3c4450cb133b14fa6ff4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Raspberry Pi Zero CPU core (<a class="el" href="namespacezero__mate_1_1arm1176jzf__s.html">arm1176jzf_s</a>). </p>
@@ -647,8 +659,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ad2c251aa49f9dc14f692a986ef3a090b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2c251aa49f9dc14f692a986ef3a090b">&#9670;&nbsp;</a></span>Check_Coprocessor_Existence()</h2>
+<a id="a91c67a1c5fa304f2a58e0ab07ce7e8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c67a1c5fa304f2a58e0ab07ce7e8ac">&#9670;&nbsp;</a></span>Check_Coprocessor_Presence()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -657,7 +669,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void zero_mate::arm1176jzf_s::CCPU_Core::Check_Coprocessor_Existence </td>
+          <td class="memname">void zero_mate::arm1176jzf_s::CCPU_Core::Check_Coprocessor_Presence </td>
           <td>(</td>
           <td class="paramtype">std::uint32_t&#160;</td>
           <td class="paramname"><em>coprocessor_id</em></td><td>)</td>
@@ -671,7 +683,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Checks if a coprocessor of a given id is present of not. </p>
+<p>Checks whether a given coprocessor is present or not. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coprocessor_id</td><td>ID of the coprocessor </td></tr>
@@ -687,13 +699,13 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ad2c251aa49f9dc14f692a986ef3a090b_cgraph.svg" width="944" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a91c67a1c5fa304f2a58e0ab07ce7e8ac_cgraph.svg" width="940" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ad2c251aa49f9dc14f692a986ef3a090b_icgraph.svg" width="414" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a91c67a1c5fa304f2a58e0ab07ce7e8ac_icgraph.svg" width="710" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -728,6 +740,58 @@ Here is the caller graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a1274541dc5225c51feceb54dd709f0e4_icgraph.svg" width="408" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0dbd5d6ffc531f762b49956d27f93be3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dbd5d6ffc531f762b49956d27f93be3">&#9670;&nbsp;</a></span>Checks_Coprocessor_Access_Mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::arm1176jzf_s::CCPU_Core::Checks_Coprocessor_Access_Mode </td>
+          <td>(</td>
+          <td class="paramtype">std::uint32_t&#160;</td>
+          <td class="paramname"><em>coprocessor_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether a given coprocessor can be accessed from the current CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coprocessor_id</td><td>ID of the coprocessor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CUndefined__Instruction.html" title="This class represents the undefined instruction exception.">exceptions::CUndefined_Instruction</a></td><td>if the check fails </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a0dbd5d6ffc531f762b49956d27f93be3_cgraph.svg" width="970" height="239"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a0dbd5d6ffc531f762b49956d27f93be3_icgraph.svg" width="739" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1027,7 +1091,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a13f003234822a261f628d8339fbff25c_cgraph.svg" width="1168" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a13f003234822a261f628d8339fbff25c_cgraph.svg" width="1494" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1067,7 +1131,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a8fb15d5c9802a6971560ff8ef2a0f9dc_cgraph.svg" width="1168" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a8fb15d5c9802a6971560ff8ef2a0f9dc_cgraph.svg" width="1494" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1107,7 +1171,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ae54c96b9b4395337b22c4ce3686d7862_cgraph.svg" width="1168" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ae54c96b9b4395337b22c4ce3686d7862_cgraph.svg" width="1494" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1427,7 +1491,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a3a90c040b3cbe4545a9acc5e35acdd45_cgraph.svg" width="1714" height="612"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a3a90c040b3cbe4545a9acc5e35acdd45_cgraph.svg" width="1714" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1872,7 +1936,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_abe7461d09a52f28f99037717f61975c6_cgraph.svg" width="1490" height="568"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_abe7461d09a52f28f99037717f61975c6_cgraph.svg" width="1490" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -2144,7 +2208,7 @@ template&lt;typename Instruction &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a4b9e6a828e9739a227ab6da615fb4b15_cgraph.svg" width="467" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a4b9e6a828e9739a227ab6da615fb4b15_cgraph.svg" width="467" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -2404,6 +2468,58 @@ Here is the caller graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a423eacd01e574e782a2b7cf51f28c56c_icgraph.svg" width="1075" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9d662bbaf486e8924698ecf2208d0d73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d662bbaf486e8924698ecf2208d0d73">&#9670;&nbsp;</a></span>Perform_Coprocessor_Accessibility_Checks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::arm1176jzf_s::CCPU_Core::Perform_Coprocessor_Accessibility_Checks </td>
+          <td>(</td>
+          <td class="paramtype">std::uint32_t&#160;</td>
+          <td class="paramname"><em>coprocessor_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs coprocessor accessibility checks. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coprocessor_id</td><td>ID of the coprocessor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1exceptions_1_1CUndefined__Instruction.html" title="This class represents the undefined instruction exception.">exceptions::CUndefined_Instruction</a></td><td>is any of the checks fails </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a9d662bbaf486e8924698ecf2208d0d73_cgraph.svg" width="1270" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_a9d662bbaf486e8924698ecf2208d0d73_icgraph.svg" width="487" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -2800,6 +2916,32 @@ Here is the call graph for this function:</div>
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core_ad07b9956fd3f7b6c64b93c69243092f4_cgraph.svg" width="1615" height="571"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
+
+</div>
+</div>
+<a id="a04c94ba199b8260a55358cf8f097d1d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04c94ba199b8260a55358cf8f097d1d3">&#9670;&nbsp;</a></span>Set_Coprocessor_15()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zero_mate::arm1176jzf_s::CCPU_Core::Set_Coprocessor_15 </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cp15</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the control coprocessor CP15. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp15</td><td>Reference to the CP15 coprocessor </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3362,6 +3504,30 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Collection of different coprocessors. </p>
+
+</div>
+</div>
+<a id="a63645c5b8ec3c4450cb133b14fa6ff4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63645c5b8ec3c4450cb133b14fa6ff4b">&#9670;&nbsp;</a></span>m_cp15</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html">coprocessor::cp15::CCP15</a>&gt; zero_mate::arm1176jzf_s::CCPU_Core::m_cp15</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reference to coprocessor CP15. </p>
 
 </div>
 </div>

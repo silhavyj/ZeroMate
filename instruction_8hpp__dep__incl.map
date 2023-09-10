@@ -1,7 +1,7 @@
 <map id="src/core/arm1176jzf_s/isa/instruction.hpp" name="src/core/arm1176jzf_s/isa/instruction.hpp">
 <area shape="rect" id="node1" title="This file defines the interface of a general ARM instruction." alt="" coords="2499,5,2659,47"/>
 <area shape="rect" id="node2" href="$block__data__transfer_8hpp.html" title="This file defines a block data transfer instruction (LDM, STM)." alt="" coords="939,102,1158,143"/>
-<area shape="rect" id="node4" href="$isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="2416,206,2567,247"/>
+<area shape="rect" id="node4" href="$arm1176jzf__s_2isa_2isa_8hpp.html" title="This file is just a helper file for including all ARM instructions supported by the emulator." alt="" coords="2416,206,2567,247"/>
 <area shape="rect" id="node6" href="$branch_8hpp.html" title="This file defines a branch instruction (B, BL)." alt="" coords="1183,102,1333,143"/>
 <area shape="rect" id="node8" href="$branch__and__exchange_8hpp.html" title="This file defines a branch and exchange instruction (BX)." alt="" coords="1357,102,1593,143"/>
 <area shape="rect" id="node10" href="$clz_8hpp.html" title="This file defines a count leading zeros instruction (CLZ)." alt="" coords="1617,102,1768,143"/>
@@ -9,7 +9,7 @@
 <area shape="rect" id="node15" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="472,95,649,151"/>
 <area shape="rect" id="node17" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="701,95,900,151"/>
 <area shape="rect" id="node19" href="$cps_8hpp.html" title="This file defines a change processor state instruction (CPS)." alt="" coords="1792,102,1943,143"/>
-<area shape="rect" id="node21" href="$data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="1967,102,2165,143"/>
+<area shape="rect" id="node21" href="$arm1176jzf__s_2isa_2data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="1967,102,2165,143"/>
 <area shape="rect" id="node24" href="$extend_8hpp.html" title="This file defines an extend instruction." alt="" coords="2189,102,2340,143"/>
 <area shape="rect" id="node26" href="$halfword__data__transfer_8hpp.html" title="This file defines a Halfword data transfer instruction." alt="" coords="2591,95,2746,151"/>
 <area shape="rect" id="node28" href="$instruction_8cpp.html" title="This file implements the interface of a general ARM instruction defined in instruction...." alt="" coords="4707,102,4865,143"/>
@@ -35,7 +35,7 @@
 <area shape="rect" id="node18" href="$coprocessor__register__transfer_8cpp.html" title="This file implements a coprocessor register transfer as defined in coprocessor_register_transfer...." alt="" coords="596,199,795,255"/>
 <area shape="rect" id="node20" href="$cps_8cpp.html" title="This file defines a change processor state instruction (CPS) as defined in cps.hpp." alt="" coords="1672,206,1823,247"/>
 <area shape="rect" id="node22" href="$alu_8hpp.html" title="This file defines the functionality of the arithmetic logic unit (ALU)." alt="" coords="1847,206,1997,247"/>
-<area shape="rect" id="node23" href="$data__processing_8cpp.html" title="This file implements a data processing instruction as defined in data_processing.hpp." alt="" coords="2021,206,2217,247"/>
+<area shape="rect" id="node23" href="$arm1176jzf__s_2isa_2data__processing_8cpp.html" title="This file implements a data processing instruction as defined in data_processing.hpp." alt="" coords="2021,206,2217,247"/>
 <area shape="rect" id="node25" href="$extend_8cpp.html" title="This file implements an extend instruction as defined in extend.hpp." alt="" coords="2241,206,2392,247"/>
 <area shape="rect" id="node27" href="$halfword__data__transfer_8cpp.html" title="This file implements a Halfword data transfer instruction as defined in halfword_data_transfer...." alt="" coords="2591,199,2746,255"/>
 <area shape="rect" id="node30" href="$isa__decoder_8cpp.html" title="This file implements an instruction decoder defined in isa_decoder.hpp." alt="" coords="4687,206,4853,247"/>

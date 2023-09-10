@@ -1,0 +1,7 @@
+<map id="zero_mate::coprocessor::cp10::CRegister::Get_Value_As" name="zero_mate::coprocessor::cp10::CRegister::Get_Value_As">
+<area shape="rect" id="node1" title="Returns the register value as a desired data type." alt="" coords="271,97,448,153"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CRegister.html#a4bfa2b6208cdd41c26c2b357a4a681bc" title="Overloaded += operator." alt="" coords="5,5,223,47"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CRegister.html#ae797aad92051b6a5e1388698b2895680" title="Overloaded &#45;= operator." alt="" coords="9,71,219,112"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CRegister.html#af455da39427a69cfac7f5764da270b84" title="Overloaded == operator." alt="" coords="5,136,223,177"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CRegister.html#a1e198241f00a01af3a1a9c36f8c9e207" title="Performs a given arithmetic operation and stores the result into this register." alt="" coords="18,202,210,258"/>
+</map>

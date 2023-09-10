@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZeroMate
-   &#160;<span id="projectnumber">v1.3.0</span>
+   &#160;<span id="projectnumber">v1.4.0</span>
    </div>
    <div id="projectbrief">Raspberry Pi Zero Emulator</div>
   </td>
@@ -114,6 +114,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 <li>m_bus
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#aa8f5961ca8496fc44d091dc7597dd889">zero_mate::arm1176jzf_s::CCPU_Core</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#abcff07d1a1e6dcaac0d238bb17073181">zero_mate::arm1176jzf_s::mmu::CMMU</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a1a507645a266ce48b2940603f597259e">zero_mate::coprocessor::cp10::CCP10</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CTop__Bar__Menu.html#aab24a5a85f68c77194e4464a72f6368c">zero_mate::gui::CTop_Bar_Menu</a>
 </li>
 <li>m_context
@@ -125,8 +126,12 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 <li>m_counter
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer_1_1CPrescaler.html#ab8d6a61f81cd3dfe0c1738e4acae2fc5">zero_mate::peripheral::CARM_Timer::CPrescaler</a>
 </li>
+<li>m_cp10
+: <a class="el" href="classzero__mate_1_1gui_1_1CCP10__Window.html#aab3255e4d9f0cf28b018d18887a3100f">zero_mate::gui::CCP10_Window</a>
+</li>
 <li>m_cp15
-: <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a9e34ab127ed523dbf0025936a9426e60">zero_mate::arm1176jzf_s::mmu::CMMU</a>
+: <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#a63645c5b8ec3c4450cb133b14fa6ff4b">zero_mate::arm1176jzf_s::CCPU_Core</a>
+, <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CMMU.html#a9e34ab127ed523dbf0025936a9426e60">zero_mate::arm1176jzf_s::mmu::CMMU</a>
 , <a class="el" href="classzero__mate_1_1CBus.html#a5eba364f064e94d287ecd93d4c57fffd">zero_mate::CBus</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CCP15__Window.html#abe5366c19597841fc3549d05b1d4310c">zero_mate::gui::CCP15_Window</a>
 </li>
@@ -188,6 +193,12 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 <li>m_filter
 : <a class="el" href="classzero__mate_1_1gui_1_1CLog__Window.html#a8c40a3640e74e3ce2cef96228b24f94f">zero_mate::gui::CLog_Window</a>
 </li>
+<li>m_fpexc
+: <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#af32d369f4e4bd385a6ccc735472ab491">zero_mate::coprocessor::cp10::CCP10</a>
+</li>
+<li>m_fpscr
+: <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a703396649d2567a50cec7510281befe8">zero_mate::coprocessor::cp10::CCP10</a>
+</li>
 <li>m_function
 : <a class="el" href="classzero__mate_1_1peripheral_1_1CGPIO__Manager_1_1CPin.html#ac08be66ece8e412c20834bb2e02fa37e">zero_mate::peripheral::CGPIO_Manager::CPin</a>
 </li>
@@ -242,6 +253,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 <li>m_logging_system
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af3064b2b4039870158575655cfce8e41">zero_mate::arm1176jzf_s::CCPU_Context</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Core.html#ab480925859701a68e6ffd261835480b0">zero_mate::arm1176jzf_s::CCPU_Core</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a2c0e0ff544bb9d91f0bd566330f207ac">zero_mate::coprocessor::cp10::CCP10</a>
 , <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#a31f11e820d3441bac30985a57bbf505c">zero_mate::coprocessor::cp15::CCP15</a>
 , <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a45f67ac82e9badd95a53ab4aea20380e">zero_mate::coprocessor::cp15::IPrimary_Reg</a>
 , <a class="el" href="classzero__mate_1_1gui_1_1CControl__Window.html#a9ab3fe7792d02d893c3a1d5cd002bf95">zero_mate::gui::CControl_Window</a>
@@ -304,6 +316,7 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 </li>
 <li>m_regs
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1CCPU__Context.html#af1dab1d3d7a0316dde8db22acacc281b">zero_mate::arm1176jzf_s::CCPU_Context</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a028684608471ac8db0f8594a00469c00">zero_mate::coprocessor::cp10::CCP10</a>
 , <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1CCP15.html#a4bca4003715273de0bc6267c1a2b3376">zero_mate::coprocessor::cp15::CCP15</a>
 , <a class="el" href="classzero__mate_1_1coprocessor_1_1cp15_1_1IPrimary__Reg.html#a81fa817dc7c6a19040f33011f93f54df">zero_mate::coprocessor::cp15::IPrimary_Reg</a>
 , <a class="el" href="classzero__mate_1_1peripheral_1_1CARM__Timer.html#a4a538aa87a43d43b243191c68ebfd098">zero_mate::peripheral::CARM_Timer</a>
@@ -387,9 +400,19 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 <li>m_value
 : <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1isa_1_1CInstruction.html#ac8cd077b7574ab7d94cf34114a9234fa">zero_mate::arm1176jzf_s::isa::CInstruction</a>
 , <a class="el" href="classzero__mate_1_1arm1176jzf__s_1_1mmu_1_1CPage__Entry.html#ab81953f63d311cd1685c2ae089876a1f">zero_mate::arm1176jzf_s::mmu::CPage_Entry</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CFPEXC.html#ac93702dbda1966560ffb35beb0a69f72">zero_mate::coprocessor::cp10::CFPEXC</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CFPSCR.html#a0bac1652e7d3637826bcc5e936232d4e">zero_mate::coprocessor::cp10::CFPSCR</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1CRegister.html#ae087495030124efefd889c6def5bc980">zero_mate::coprocessor::cp10::CRegister</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Instruction.html#aa48c73799fed55ac356f91d005388437">zero_mate::coprocessor::cp10::isa::CCP_Instruction</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Processing.html#a55f4829c7dcf80e4c84c74dd80062e28">zero_mate::coprocessor::cp10::isa::CData_Processing</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CData__Transfer.html#a7d3e11b4505188c1d7a63aea252f7765">zero_mate::coprocessor::cp10::isa::CData_Transfer</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CVMOV__ARM__Register__Single__Precision__Register.html#aec8bb1437e1fec8eb793f463cfb9e887">zero_mate::coprocessor::cp10::isa::CVMOV_ARM_Register_Single_Precision_Register</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CVMRS.html#a17879374ebc58f70f9e72d9a858117c4">zero_mate::coprocessor::cp10::isa::CVMRS</a>
+, <a class="el" href="classzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CVMSR.html#a29e684cbc3980a96289b6db7e83482c9">zero_mate::coprocessor::cp10::isa::CVMSR</a>
 </li>
 <li>mask
 : <a class="el" href="structzero__mate_1_1arm1176jzf__s_1_1isa_1_1CISA__Decoder_1_1TInstruction__Lookup__Record.html#abba07380ebe24c1823ad69b7d4356a6d">zero_mate::arm1176jzf_s::isa::CISA_Decoder::TInstruction_Lookup_Record</a>
+, <a class="el" href="structzero__mate_1_1coprocessor_1_1cp10_1_1isa_1_1CCP__Instruction_1_1TInstruction__Lookup__Record.html#a87ff6616e515ef8762a4291a6447df71">zero_mate::coprocessor::cp10::isa::CCP_Instruction::TInstruction_Lookup_Record&lt; Type &gt;</a>
 </li>
 <li>Max_Logs
 : <a class="el" href="classzero__mate_1_1gui_1_1CLog__Window.html#aae3bed8143e3f7e6deab15cf81d5759e">zero_mate::gui::CLog_Window</a>

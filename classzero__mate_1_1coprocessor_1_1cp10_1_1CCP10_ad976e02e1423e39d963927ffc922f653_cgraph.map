@@ -1,0 +1,26 @@
+<map id="zero_mate::coprocessor::cp10::CCP10::Perform_Data_Operation" name="zero_mate::coprocessor::cp10::CCP10::Perform_Data_Operation">
+<area shape="rect" id="node1" title="Performs a coprocessor data operation instruction (ICoprocessor interface)." alt="" coords="5,524,183,580"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a57ed77e1a5cf822cea532cc5e05c3f60" title="Logs an error message via all registered loggers." alt="" coords="502,677,697,718"/>
+<area shape="rect" id="node7" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a16093f04e482de31680843bad658a93a" title="Executes a VABS floating point instruction." alt="" coords="235,86,446,127"/>
+<area shape="rect" id="node8" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#ada7b266c79cb6ab0b8cbbb33db8581c4" title="Executes a VADD floating point instruction." alt="" coords="233,151,448,193"/>
+<area shape="rect" id="node9" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a648564bc18e05cbdd009c5e76cace9b3" title="Executes a VCMP and CMPE float point instructions." alt="" coords="252,5,429,61"/>
+<area shape="rect" id="node11" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a8c8d7242a607176e4d1f58b1d622668d" title="Executes a VCVT (double&#45;precision to single&#45;precision) instruction." alt="" coords="249,311,432,382"/>
+<area shape="rect" id="node12" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#ad824ae13f53109fd238a3f3bf0be77c8" title="Executes a VCVT and VCVTR floating point instructions." alt="" coords="233,217,448,287"/>
+<area shape="rect" id="node15" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a459029468d45e1d459286fcdc1c3c40f" title="Executes a VDIV floating point instruction." alt="" coords="236,458,445,499"/>
+<area shape="rect" id="node16" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#aec78a50a1ff14c14ed085a80191ca6c3" title="Executes VMLA and VMLS floating point instructions." alt="" coords="252,524,429,580"/>
+<area shape="rect" id="node17" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#afa890dda0cd156b82462bb078d87e760" title="Executes a VMOV floating point instruction." alt="" coords="232,605,449,646"/>
+<area shape="rect" id="node18" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a086d23f857f90771fc856d7086cec293" title="Executes a VMUL floating point instruction." alt="" coords="233,670,448,711"/>
+<area shape="rect" id="node19" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#ab28b0d5642400307460b25383c7d1484" title="Executes a VNEG floating point instruction." alt="" coords="233,735,448,777"/>
+<area shape="rect" id="node20" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a021f5937f594c636f8368f100bb6f414" title="Executes VNMLA, VNMLS, and VNMUL floating point instructions." alt="" coords="248,801,433,857"/>
+<area shape="rect" id="node21" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#aa2f1e79742997b349b0014d6550a16b0" title="Executes a VSQRT floating point instruction." alt="" coords="231,882,451,923"/>
+<area shape="rect" id="node22" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a6a54081b5426f55b309a71f3d7fa9754" title="Executes a VSUB floating point instruction." alt="" coords="234,947,447,989"/>
+<area shape="rect" id="node23" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a42519c95eeada09e8b8f277f899f9185" title="Checks whether the coprocessor is enabled or not." alt="" coords="252,1013,429,1069"/>
+<area shape="rect" id="node3" href="$classzero__mate_1_1utils_1_1CLogging__System.html#a71ed11c796553cbe8fd99773406a1060" title="Creates a formatted message to be logged." alt="" coords="748,633,951,689"/>
+<area shape="rect" id="node6" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ad371c67ef65763966ccf9291002e86f3" title="Extract the filename from a given location within the source files." alt="" coords="750,714,949,755"/>
+<area shape="rect" id="node4" href="$classzero__mate_1_1utils_1_1CLogging__System.html#aa70c102c805079042ffea2a6f2a5ad64" title="Formats a given timestamp." alt="" coords="999,609,1212,650"/>
+<area shape="rect" id="node5" href="$classzero__mate_1_1utils_1_1CLogging__System.html#ae3ca637537dde05e0b9119145c840331" title="Returns the current timestamp that will be used in a log message." alt="" coords="1008,674,1203,715"/>
+<area shape="rect" id="node10" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CFPSCR.html#a93a3f7ff894b184a01146047be25c3d5" title="Sets a given flag in the register value." alt="" coords="507,13,691,54"/>
+<area shape="rect" id="node13" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#ae202127183b1981232465e8d4dee2a07" title="Converts (casts) a floating point value into an integer." alt="" coords="511,264,688,320"/>
+<area shape="rect" id="node14" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#aba83e81d43442cb7b7f01fb21a296d8c" title="Converts (casts) an integer value into a floating point value." alt="" coords="511,184,688,240"/>
+<area shape="rect" id="node24" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CFPEXC.html#a1e9712b7b92c2a1ef3e09f00ada91cf9" title="Checks whether a given flag is set or not." alt="" coords="499,1021,700,1062"/>
+</map>

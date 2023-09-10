@@ -21,10 +21,10 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classzero__mate_1_1coprocessor_1_1cp10_1_1CFPU.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html" target="_top" xlink:title="This class represents coprocessor 10 (single&#45;precision FPU).">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-30.5 133,-30.5 133,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zero_mate::coprocessor</text>
-<text text-anchor="middle" x="66.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::cp10::CFPU</text>
+<text text-anchor="middle" x="66.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::cp10::CCP10</text>
 </a>
 </g>
 </g>

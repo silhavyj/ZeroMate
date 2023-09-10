@@ -1,0 +1,4 @@
+<map id="zero_mate::coprocessor::cp10::CCP10::Execute" name="zero_mate::coprocessor::cp10::CCP10::Execute">
+<area shape="rect" id="node1" title="Executes a VMSR floating point instruction." alt="" coords="231,13,408,54"/>
+<area shape="rect" id="node2" href="$classzero__mate_1_1coprocessor_1_1cp10_1_1CCP10.html#a892715f65d765e9646efd9b1995ad16e" title="Performs a coprocessor register transfer instruction (ICoprocessor interface)." alt="" coords="5,5,183,61"/>
+</map>

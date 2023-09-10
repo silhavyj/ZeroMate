@@ -1,0 +1,38 @@
+<map id="src/gui/windows/cp10_window.hpp" name="src/gui/windows/cp10_window.hpp">
+<area shape="rect" id="node1" title="This file defines a window that displays data (information) related to coprocessor 10 (FPU)." alt="" coords="540,5,701,47"/>
+<area shape="rect" id="node2" href="$window_8hpp.html" title="This file defines an interface for all windows that will be rendered by the application." alt="" coords="485,102,596,129"/>
+<area shape="rect" id="node4" href="$cp10_8hpp.html" title="This file defines coprocessor CP10 (single&#45;precision FPU)." alt="" coords="933,95,1095,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="173,191,285,218"/>
+<area shape="rect" id="node5" href="$fpexc_8hpp.html" title="This file defines the FPEXC register of coprocessor CP10." alt="" coords="1372,191,1459,218"/>
+<area shape="rect" id="node6" href="$fpscr_8hpp.html" title="This file defines the FPSCR register of coprocessor CP10." alt="" coords="1483,191,1564,218"/>
+<area shape="rect" id="node7" href="$register_8hpp.html" title="This file defines a custom single&#45;precision floating point register." alt="" coords="309,191,407,218"/>
+<area shape="rect" id="node8" href="$coprocessors_2cp10_2isa_2isa_8hpp.html" title="This file combines different instruction type includes together." alt="" coords="432,191,524,218"/>
+<area shape="rect" id="node14" href="$cp__data__processing__inst_8hpp.html" title="This file defines a general CP10 data processing instruction." alt="" coords="927,184,1101,225"/>
+<area shape="rect" id="node16" href="$cp__data__transfer__inst_8hpp.html" title="This file defines a general CP10 data transfer instruction (load and store)." alt="" coords="549,184,703,225"/>
+<area shape="rect" id="node17" href="$cp__register__transfer__inst_8hpp.html" title="This file defines a general CP10 register transfer instruction." alt="" coords="728,184,903,225"/>
+<area shape="rect" id="node18" href="$logging__system_8hpp.html" title="This file defines a logging system that is used in the project." alt="" coords="1403,541,1577,583"/>
+<area shape="rect" id="node20" href="$coprocessor_8hpp.html" title="This file defines a general interface of a coprocessor." alt="" coords="1069,363,1207,389"/>
+<area shape="rect" id="node26" href="$bus_8hpp.html" title="This file defines an interface the CPU uses to access different memory&#45;mapped peripherals." alt="" coords="1251,191,1348,218"/>
+<area shape="rect" id="node9" href="$vmsr_8hpp.html" title="This file defines a VMSR instruction (ARM register to a special FPU register)." alt="" coords="565,281,647,307"/>
+<area shape="rect" id="node10" href="$vmrs_8hpp.html" title="This file defines a VMRS instruction (FPU special register to an ARM register)." alt="" coords="671,281,754,307"/>
+<area shape="rect" id="node11" href="$coprocessors_2cp10_2isa_2data__processing_8hpp.html" title="This file defines a data processing instruction." alt="" coords="5,281,161,307"/>
+<area shape="rect" id="node12" href="$data__transfer_8hpp.html" title="This file defines a data transfer instruction." alt="" coords="186,281,322,307"/>
+<area shape="rect" id="node13" href="$vmov__arm__register__single__precision__register_8hpp.html" title="This file defines a VMOV instruction between an ARM register and an FPU register." alt="" coords="346,273,541,315"/>
+<area shape="rect" id="node15" href="$cp__instruction_8hpp.html" title="This file defines a general CP10 instruction." alt="" coords="778,281,919,307"/>
+<area shape="rect" id="node19" href="$logger_8hpp.html" title="This file defines a general logger interface." alt="" coords="1445,631,1535,657"/>
+<area shape="rect" id="node21" href="$context_8hpp.html" title="This file defines the context (registers) of the CPU." alt="" coords="1199,452,1402,479"/>
+<area shape="rect" id="node22" href="$coprocessor__register__transfer_8hpp.html" title="This file defines a coprocessor register transfer (MRC, MCR)." alt="" coords="764,437,925,493"/>
+<area shape="rect" id="node24" href="$coprocessor__data__transfer_8hpp.html" title="This file defines a coprocessor data transfer (LDC, STC)." alt="" coords="949,445,1175,486"/>
+<area shape="rect" id="node25" href="$coprocessor__data__operation_8hpp.html" title="This file defines a coprocessor data operation (CDP)." alt="" coords="503,445,741,486"/>
+<area shape="rect" id="node23" href="$instruction_8hpp.html" title="This file defines the interface of a general ARM instruction." alt="" coords="785,549,904,575"/>
+<area shape="rect" id="node27" href="$cp15_8hpp.html" title="This file defines coprocessor CP15." alt="" coords="1682,281,1887,307"/>
+<area shape="rect" id="node34" href="$peripheral_8hpp.html" title="This file defines an interface for a memory&#45;mapped peripheral." alt="" coords="1227,281,1420,307"/>
+<area shape="rect" id="node35" href="$exceptions_8hpp.html" title="This file defines all exceptions that can be thrown by the CPU during execution." alt="" coords="1445,281,1658,307"/>
+<area shape="rect" id="node28" href="$c1_8hpp.html" title="This file defines the primary register C1 of coprocessor CP15." alt="" coords="1528,363,1593,389"/>
+<area shape="rect" id="node29" href="$primary__reg_8hpp.html" title="This file defines a primary register interface of coprocessor CP15." alt="" coords="1675,452,1804,479"/>
+<area shape="rect" id="node30" href="$c2_8hpp.html" title="This file defines the primary register C2 of coprocessor CP15." alt="" coords="1617,363,1683,389"/>
+<area shape="rect" id="node31" href="$c3_8hpp.html" title="This file defines the primary register C3 of coprocessor CP15." alt="" coords="1707,363,1772,389"/>
+<area shape="rect" id="node32" href="$c7_8hpp.html" title="This file defines the primary register C7 of coprocessor CP15." alt="" coords="1796,363,1861,389"/>
+<area shape="rect" id="node33" href="$c8_8hpp.html" title="This file defines the primary register C8 of coprocessor CP15." alt="" coords="1885,363,1951,389"/>
+<area shape="rect" id="node36" title=" " alt="" coords="939,363,1044,389"/>
+</map>
