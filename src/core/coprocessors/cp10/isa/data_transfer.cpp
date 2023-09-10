@@ -1,3 +1,15 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file data_transfer.cpp
+/// \date 10. 09. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements a data transfer instruction.
+///
+/// It groups up the functionality of the majority of the data transfer instructions.
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Project file imports
+
 #include "data_transfer.hpp"
 
 namespace zero_mate::coprocessor::cp10::isa
@@ -36,4 +48,5 @@ namespace zero_mate::coprocessor::cp10::isa
     {
         return m_value & 0b1111'1111U;
     }
-}
+
+} // namespace zero_mate::coprocessor::cp10::isa

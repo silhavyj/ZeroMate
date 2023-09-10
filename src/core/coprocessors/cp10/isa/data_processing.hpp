@@ -5,7 +5,7 @@
 ///
 /// \brief This file defines a data processing instruction.
 ///
-/// It groups up the functionality of the majory of the data processing instructions.
+/// It groups up the functionality of the majority of the data processing instructions.
 // ---------------------------------------------------------------------------------------------------------------------
 
 #pragma once
@@ -19,7 +19,7 @@ namespace zero_mate::coprocessor::cp10::isa
 {
     // -----------------------------------------------------------------------------------------------------------------
     /// \class CData_Processing
-    /// \brief This class represents a data processing instructions.
+    /// \brief This class represents a data processing instruction.
     // -----------------------------------------------------------------------------------------------------------------
     class CData_Processing final
     {

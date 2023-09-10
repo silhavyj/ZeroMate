@@ -1,3 +1,13 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file vmsr.cpp
+/// \date 10. 09. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements a VMSR instruction (ARM register to a special FPU register).
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Project file imports
+
 #include "vmsr.hpp"
 
 namespace zero_mate::coprocessor::cp10::isa
@@ -16,4 +26,5 @@ namespace zero_mate::coprocessor::cp10::isa
     {
         return (m_value >> 12U) & 0b1111U;
     }
-}
+
+} // namespace zero_mate::coprocessor::cp10::isa

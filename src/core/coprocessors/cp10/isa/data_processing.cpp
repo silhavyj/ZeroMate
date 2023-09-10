@@ -5,7 +5,7 @@
 ///
 /// \brief This file implements a data processing instruction.
 ///
-/// It groups up the functionality of the majory of the data processing instructions.
+/// It groups up the functionality of the majority of the data processing instructions.
 // ---------------------------------------------------------------------------------------------------------------------
 
 // Project file imports

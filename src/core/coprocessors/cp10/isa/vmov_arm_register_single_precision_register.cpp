@@ -1,3 +1,13 @@
+// ---------------------------------------------------------------------------------------------------------------------
+/// \file vmov_arm_register_single_precision_register.cpp
+/// \date 10. 09. 2023
+/// \author Jakub Silhavy (jakub.silhavy.cz@gmail.com)
+///
+/// \brief This file implements a VMOV instruction between an ARM register and an FPU register.
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Project file imports
+
 #include "vmov_arm_register_single_precision_register.hpp"
 
 namespace zero_mate::coprocessor::cp10::isa
@@ -27,4 +37,5 @@ namespace zero_mate::coprocessor::cp10::isa
     {
         return (m_value >> 7U) & 0b1U;
     }
-}
+
+} // namespace zero_mate::coprocessor::cp10::isa
