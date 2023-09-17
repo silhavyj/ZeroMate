@@ -1,0 +1,95 @@
+<mxfile host="Electron" modified="2023-09-16T09:18:11.639Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="rRuxxI48hvRcIbIjXYYK" version="21.6.8" type="device">
+  <diagram name="Page-1" id="4NDvX7rHtRy5pkseYq1-">
+    <mxGraphModel dx="915" dy="690" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-1" value="&lt;font face=&quot;Computer Modern&quot;&gt;User&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="480" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-2" value="ZeroMate" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="350" width="340" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-6" value="Stop the execution&lt;br&gt;of the kernel" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="366" y="520" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-8" value="Load an .ELF file" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="400" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" source="_djAl3Bz32wDH9HO-4N2-15" target="_djAl3Bz32wDH9HO-4N2-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="370" as="sourcePoint" />
+            <mxPoint x="550" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-11" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Computer Modern;" vertex="1" connectable="0" parent="_djAl3Bz32wDH9HO-4N2-10">
+          <mxGeometry x="-0.1004" relative="1" as="geometry">
+            <mxPoint x="17" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="_djAl3Bz32wDH9HO-4N2-14" target="_djAl3Bz32wDH9HO-4N2-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="455" as="sourcePoint" />
+            <mxPoint x="549" y="404" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-13" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Computer Modern;" vertex="1" connectable="0" parent="_djAl3Bz32wDH9HO-4N2-12">
+          <mxGeometry x="-0.1004" relative="1" as="geometry">
+            <mxPoint x="13" y="11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-14" value="Load the symbols&amp;nbsp;&lt;br&gt;of a user process" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="440" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-15" value="Load a kernel" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="370" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-16" value="Add/remove a&lt;br&gt;breakpoint" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="590" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-17" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="_djAl3Bz32wDH9HO-4N2-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="510" as="sourcePoint" />
+            <mxPoint x="270" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-18" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="_djAl3Bz32wDH9HO-4N2-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="510" as="sourcePoint" />
+            <mxPoint x="375" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-19" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="_djAl3Bz32wDH9HO-4N2-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="510" as="sourcePoint" />
+            <mxPoint x="375" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-21" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="_djAl3Bz32wDH9HO-4N2-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="510" as="sourcePoint" />
+            <mxPoint x="375" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-23" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="_djAl3Bz32wDH9HO-4N2-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="510" as="sourcePoint" />
+            <mxPoint x="375" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-5" value="Start the execution&lt;br&gt;of the kernel" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="485" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-25" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="_djAl3Bz32wDH9HO-4N2-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="510" as="sourcePoint" />
+            <mxPoint x="475" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_djAl3Bz32wDH9HO-4N2-7" value="Reset the emulator" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="327" y="600" width="110" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
