@@ -1,0 +1,67 @@
+<mxfile host="Electron" modified="2023-09-23T08:50:25.307Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="dT3__5des6oFkp1VCUAv" version="21.6.8" type="device">
+  <diagram name="Page-1" id="SMuSfyDfoiaIwYy2v_3n">
+    <mxGraphModel dx="523" dy="292" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QaO_-IJN-APRV0getbNG-20" value="0x00000000" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="345" y="240" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-22" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="250" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-23" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="260" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="270" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-25" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="280" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="290" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-27" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="300" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-28" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="310" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-32" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="350" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-33" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="360" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-34" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="370" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-35" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="305" y="348" as="sourcePoint" />
+            <mxPoint x="305" y="318" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-36" value="0x00000004" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="345" y="280" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-37" value="0x0FFFFFFF" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="345" y="360" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-38" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="204" y="250" width="16" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-39" value="512 MB&lt;br&gt;(128 words)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="137" y="310" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-40" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="254" y="250" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QaO_-IJN-APRV0getbNG-41" value="1 word" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="214" y="255" width="50" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
