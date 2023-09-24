@@ -1,10 +1,10 @@
-<mxfile host="Electron" modified="2023-09-18T19:43:17.565Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="uHPMLYQVJ-RFR3RfNNTF" version="21.6.8" type="device">
+<mxfile host="Electron" modified="2023-09-24T07:16:33.778Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="CFIN_rhCnNK_ofvU9zi7" version="21.6.8" type="device">
   <diagram name="Stránka-1" id="joWKRU6rZ8LuYV_TO_0l">
-    <mxGraphModel dx="414" dy="246" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="675" dy="394" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="A4H74f33hg0s5a0wSVyb-2" value="«Component»&lt;br&gt;&lt;b&gt;System BUS&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;shadow=1;rounded=1;fontFamily=Computer Modern;" parent="1" vertex="1">
+        <mxCell id="A4H74f33hg0s5a0wSVyb-2" value="«component»&lt;br&gt;&lt;b&gt;System BUS&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;shadow=1;rounded=1;fontFamily=Computer Modern;" parent="1" vertex="1">
           <mxGeometry x="330" y="240" width="150" height="60" as="geometry" />
         </mxCell>
         <mxCell id="A4H74f33hg0s5a0wSVyb-3" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="A4H74f33hg0s5a0wSVyb-2" vertex="1">
@@ -12,7 +12,7 @@
             <mxPoint x="-27" y="7" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="A4H74f33hg0s5a0wSVyb-4" value="«Component»&lt;br&gt;&lt;b&gt;ELF loader&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;shadow=1;rounded=1;fontFamily=Computer Modern;" parent="1" vertex="1">
+        <mxCell id="A4H74f33hg0s5a0wSVyb-4" value="«component»&lt;br&gt;&lt;b&gt;ELF loader&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;shadow=1;rounded=1;fontFamily=Computer Modern;" parent="1" vertex="1">
           <mxGeometry x="330" y="370" width="150" height="60" as="geometry" />
         </mxCell>
         <mxCell id="A4H74f33hg0s5a0wSVyb-5" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="A4H74f33hg0s5a0wSVyb-4" vertex="1">
@@ -20,7 +20,7 @@
             <mxPoint x="-27" y="7" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="A4H74f33hg0s5a0wSVyb-6" value="«Component»&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;BCM2835 Peripheral(s)&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;shadow=1;rounded=1;fontFamily=Computer Modern;" parent="1" vertex="1">
+        <mxCell id="A4H74f33hg0s5a0wSVyb-6" value="«component»&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;BCM2835 Peripheral(s)&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;shadow=1;rounded=1;fontFamily=Computer Modern;" parent="1" vertex="1">
           <mxGeometry x="530" y="240" width="150" height="60" as="geometry" />
         </mxCell>
         <mxCell id="A4H74f33hg0s5a0wSVyb-7" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="A4H74f33hg0s5a0wSVyb-6" vertex="1">
@@ -130,7 +130,7 @@
             <mxPoint x="400" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="A4H74f33hg0s5a0wSVyb-96" value="«Component»&lt;br&gt;&lt;b&gt;CP15&lt;/b&gt;&lt;br&gt;(System Control &lt;br&gt;Coprocessor)" style="html=1;dropTarget=0;whiteSpace=wrap;shadow=1;rounded=1;fontFamily=Computer Modern;" parent="1" vertex="1">
+        <mxCell id="A4H74f33hg0s5a0wSVyb-96" value="«component»&lt;br&gt;&lt;b&gt;CP15&lt;/b&gt;&lt;br&gt;(System Control &lt;br&gt;Coprocessor)" style="html=1;dropTarget=0;whiteSpace=wrap;shadow=1;rounded=1;fontFamily=Computer Modern;" parent="1" vertex="1">
           <mxGeometry x="330" y="130" width="150" height="60" as="geometry" />
         </mxCell>
         <mxCell id="A4H74f33hg0s5a0wSVyb-97" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="A4H74f33hg0s5a0wSVyb-96" vertex="1">
@@ -138,7 +138,7 @@
             <mxPoint x="-27" y="7" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="pbze--UYEitiYUijM4Ne-1" value="«Component»&lt;br&gt;&lt;b&gt;CP10&lt;/b&gt;&lt;br&gt;(Single-precision FPU)" style="html=1;dropTarget=0;whiteSpace=wrap;shadow=1;rounded=1;fontFamily=Computer Modern;" parent="1" vertex="1">
+        <mxCell id="pbze--UYEitiYUijM4Ne-1" value="«component»&lt;br&gt;&lt;b&gt;CP10&lt;/b&gt;&lt;br&gt;(Single-precision FPU)" style="html=1;dropTarget=0;whiteSpace=wrap;shadow=1;rounded=1;fontFamily=Computer Modern;" parent="1" vertex="1">
           <mxGeometry x="152.5" y="130" width="150" height="60" as="geometry" />
         </mxCell>
         <mxCell id="pbze--UYEitiYUijM4Ne-2" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" parent="pbze--UYEitiYUijM4Ne-1" vertex="1">
