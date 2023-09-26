@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-09-24T07:18:22.550Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="MgDUggd2xAAuWP0tOe3J" version="21.6.8" type="device">
+<mxfile host="Electron" modified="2023-09-26T11:41:14.434Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="zNdGzXMW8BHfdlfyIJuR" version="21.6.8" type="device">
   <diagram name="Page-1" id="sHlIRW1rkiKnrj4J0me7">
-    <mxGraphModel dx="675" dy="394" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1036" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -57,6 +57,9 @@
         </mxCell>
         <mxCell id="JhgqCdLeK90yq2pY33hd-20" value="+ Get_Size(void): ui32&lt;br&gt;+ Read(ui32 addr, char* data, ui32 size)&lt;br&gt;+ Write(ui32 addr, const char* data, ui32 size)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Computer Modern;" parent="JhgqCdLeK90yq2pY33hd-17" vertex="1">
           <mxGeometry y="40" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7lpr2ev6PIK5NOhCgp3b-2" value="N .... 1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="455" y="152" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
