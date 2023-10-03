@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-10-01T08:30:20.682Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="OT7B_Bb7a4AbEWsfb-8N" version="21.6.8" type="device">
+<mxfile host="Electron" modified="2023-10-03T07:39:13.657Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="hHf0XuqbITr922mBXVDG" version="21.6.8" type="device">
   <diagram name="Page-1" id="JiNAABkAr08de9JiWgLx">
-    <mxGraphModel dx="1098" dy="803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="863" dy="512" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -8,10 +8,10 @@
           <mxGeometry x="170" y="100" width="290" height="200" as="geometry" />
         </mxCell>
         <mxCell id="XMsUY44TfDVh9V_akPgO-2" value="&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;RAM&lt;/b&gt;" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" parent="1" vertex="1">
-          <mxGeometry x="320" y="115" width="120" height="50" as="geometry" />
+          <mxGeometry x="320" y="111" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="XMsUY44TfDVh9V_akPgO-3" value="&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;GPIO&lt;/b&gt;" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" parent="1" vertex="1">
-          <mxGeometry x="320" y="175" width="120" height="50" as="geometry" />
+        <mxCell id="XMsUY44TfDVh9V_akPgO-3" value="&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;GPIO&lt;br&gt;Manager&lt;br&gt;&lt;/b&gt;" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="170" width="120" height="55" as="geometry" />
         </mxCell>
         <mxCell id="XMsUY44TfDVh9V_akPgO-4" value="&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Interrupt Controller&lt;/b&gt;" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="235" width="120" height="55" as="geometry" />
