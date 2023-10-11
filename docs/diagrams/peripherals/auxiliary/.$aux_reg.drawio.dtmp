@@ -1,0 +1,46 @@
+<mxfile host="Electron" modified="2023-10-11T11:52:25.349Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="I7GVhULOY9IlQ78t0HjC" version="21.6.8" type="device">
+  <diagram name="Page-1" id="Sw6yUJ92iG4hd-49U8jn">
+    <mxGraphModel dx="714" dy="423" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-2" value="AUX_IRQ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="125" y="240" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-3" value="AUX_Enable" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="195" y="240" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-8" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;rotation=90;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="190" y="150" width="20" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-9" value="Shared AUX registers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="145" y="190" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-11" value="0x00" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="120" y="266" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-12" value="0x04" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="190" y="266" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-13" value="0x40" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="292" y="266" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-15" value="0x80" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="487" y="266" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-10" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#0D0D0D;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="275" y="240" width="25" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-4" value="Mini_UART Registers" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="240" width="165" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#0D0D0D;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="465" y="240" width="25" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7wu1aqJGjrVK6hhlfqNG-5" value="SPI_0 &amp;amp; SPI_1 Registers" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="240" width="130" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
