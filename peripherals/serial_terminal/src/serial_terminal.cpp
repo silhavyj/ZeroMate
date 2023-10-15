@@ -160,8 +160,8 @@ void CSerial_Terminal::Render()
     if (ImGui::Begin(m_name.c_str()))
     {
         Render_Settings();
-        m_terminal.Render();
         Render_User_Input();
+        m_terminal.Render();
     }
 
     ImGui::End();
@@ -250,7 +250,6 @@ void CSerial_Terminal::Render_Settings()
     ImGui::Separator();
     Render_Control_Buttons();
     ImGui::Separator();
-    ImGui::Separator();
 }
 
 void CSerial_Terminal::Render_Baud_Rate()
@@ -313,7 +312,9 @@ void CSerial_Terminal::Render_User_Input()
     {
         Add_User_Input_Into_TX_Queue();
     }
-};
+
+    ImGui::Separator();
+}
 
 void CSerial_Terminal::Add_User_Input_Into_TX_Queue()
 {
