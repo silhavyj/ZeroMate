@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.21)
 # General info about the project
 project(
     ZeroMate
-    VERSION 1.4.0
+    VERSION 1.4.1
     DESCRIPTION "Raspberry Pi Zero emulator"
     HOMEPAGE_URL "https://github.com/silhavyj/ZeroMate"
     LANGUAGES C CXX)
