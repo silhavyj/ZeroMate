@@ -1,0 +1,61 @@
+<mxfile host="Electron" modified="2023-10-29T17:44:07.483Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="3Ci8mN70LMJ1h3B0OeTr" version="21.6.8" type="device">
+  <diagram name="Page-1" id="bTLf8iso4AvvDxyM_fJ3">
+    <mxGraphModel dx="724" dy="433" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-1" value="zero_mate.exe" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;shadow=1;fontFamily=Computer Modern;" parent="1" vertex="1">
+          <mxGeometry x="70" y="510" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-2" value="external_peripheral.dll" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;shadow=1;fontFamily=Computer Modern;" parent="1" vertex="1">
+          <mxGeometry x="490" y="510" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-3" value="logging_system.dll" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;shadow=1;fontFamily=Computer Modern;" parent="1" vertex="1">
+          <mxGeometry x="286" y="510" width="154" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-4" value="" style="endArrow=open;endSize=12;html=1;rounded=0;exitX=0.686;exitY=-0.011;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Computer Modern;" parent="1" source="L_h4ufTxPOReH-7FAyWC-1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="190" y="620" as="sourcePoint" />
+            <mxPoint x="286" y="558" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-5" value="" style="endArrow=open;endSize=12;html=1;rounded=0;exitX=0.343;exitY=1.004;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.339;entryY=-0.003;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Computer Modern;" parent="1" source="L_h4ufTxPOReH-7FAyWC-3" target="L_h4ufTxPOReH-7FAyWC-1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="237" y="568" as="sourcePoint" />
+            <mxPoint x="296" y="568" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-6" value="" style="endArrow=open;endSize=12;html=1;rounded=0;exitX=0.485;exitY=0.995;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.337;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Computer Modern;" parent="1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="489.70000000000005" y="543.95" as="sourcePoint" />
+            <mxPoint x="440" y="544" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-7" value="&amp;nbsp; Log a message" style="shape=note;size=20;whiteSpace=wrap;html=1;fontFamily=Computer Modern;align=left;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="308.5" y="610" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-8" value="&amp;nbsp; forward the message&lt;br&gt;&amp;nbsp; to the endpoint loggers" style="shape=note;size=20;whiteSpace=wrap;html=1;fontFamily=Computer Modern;align=left;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="450" width="145" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-9" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Computer Modern;" parent="1" target="L_h4ufTxPOReH-7FAyWC-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="560" as="sourcePoint" />
+            <mxPoint x="310" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-10" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0;exitY=0;exitDx=115;exitDy=20;exitPerimeter=0;fontFamily=Computer Modern;" parent="1" source="L_h4ufTxPOReH-7FAyWC-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430.5" y="630" as="sourcePoint" />
+            <mxPoint x="478" y="544" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L_h4ufTxPOReH-7FAyWC-11" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Computer Modern;" parent="1" source="L_h4ufTxPOReH-7FAyWC-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="262.5" y="484" as="sourcePoint" />
+            <mxPoint x="260" y="534" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
