@@ -140,7 +140,7 @@ CSerial_Terminal::CSerial_Terminal(const std::string& name,
 , m_logging_system{ logging_system }
 , m_use_cr_lf{ false }
 , m_cpu_cycles{ 0 }
-, m_RX_state{ NState_Machine::Start_Bit }
+, m_RX_state{ NState_Machine::Bus_Idle }
 , m_RX_bit_idx{ 0 }
 , m_terminal{ Terminal_Width, Terminal_Height }
 , m_user_input{}
@@ -160,8 +160,8 @@ void CSerial_Terminal::Render()
     if (ImGui::Begin(m_name.c_str()))
     {
         Render_Settings();
-        Render_User_Input();
         m_terminal.Render();
+        Render_User_Input();
     }
 
     ImGui::End();
@@ -172,6 +172,11 @@ void CSerial_Terminal::Update_RX()
     // UART TX state machine
     switch (m_RX_state)
     {
+        // Bus in an idle state
+        case NState_Machine::Bus_Idle:
+            Check_Bus_Idle_State();
+            break;
+
         // Start bit
         case NState_Machine::Start_Bit:
             Receive_Start_Bit();
@@ -189,6 +194,15 @@ void CSerial_Terminal::Update_RX()
 
         case NState_Machine::End_Of_Frame:
             break;
+    }
+}
+
+void CSerial_Terminal::Check_Bus_Idle_State()
+{
+    // Check if the bus is currently in an idle state.
+    if (m_read_pin(m_RX_pin_idx))
+    {
+        m_RX_state = NState_Machine::Start_Bit;
     }
 }
 
@@ -231,6 +245,9 @@ void CSerial_Terminal::Receive_Stop_Bit()
     if (!m_read_pin(m_RX_pin_idx))
     {
         m_logging_system->Error("Stop bit was not received correctly");
+
+        // Wait until the RX line goes high again before attempting to detect the next start bit.
+        m_RX_state = NState_Machine::Bus_Idle;
     }
     else
     {
@@ -249,6 +266,7 @@ void CSerial_Terminal::Render_Settings()
     Render_Data_Lengths();
     ImGui::Separator();
     Render_Control_Buttons();
+    ImGui::Separator();
     ImGui::Separator();
 }
 
@@ -312,9 +330,7 @@ void CSerial_Terminal::Render_User_Input()
     {
         Add_User_Input_Into_TX_Queue();
     }
-
-    ImGui::Separator();
-}
+};
 
 void CSerial_Terminal::Add_User_Input_Into_TX_Queue()
 {
@@ -372,6 +388,10 @@ void CSerial_Terminal::Update_TX()
 
         case NState_Machine::End_Of_Frame:
             Reset_Transaction();
+            break;
+
+        // Not used for TX
+        case NState_Machine::Bus_Idle:
             break;
     }
 }
