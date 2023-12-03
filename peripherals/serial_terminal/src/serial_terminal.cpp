@@ -331,7 +331,7 @@ void CSerial_Terminal::Render_User_Input()
     }
 
     ImGui::Separator();
-};
+}
 
 void CSerial_Terminal::Add_User_Input_Into_TX_Queue()
 {
