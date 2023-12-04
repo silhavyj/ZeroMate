@@ -1,6 +1,7 @@
 /.vscode
 /.idea
 /.vs
+/.cache
 /build
 /output
 /docs/doxygen

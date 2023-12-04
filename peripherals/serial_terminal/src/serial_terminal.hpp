@@ -102,6 +102,7 @@ public:
     // -----------------------------------------------------------------------------------------------------------------
     enum class NState_Machine
     {
+        Bus_Idle,  ///< Checks if the bus is in an idle state
         Start_Bit, ///< Receive a start bit
         Payload,   ///< Receive a payload (actual data)
         Stop_Bit,  ///< Receive a stop bit (end of frame)
@@ -184,6 +185,11 @@ private:
     void Update_RX();
 
     // -----------------------------------------------------------------------------------------------------------------
+    /// \brief Waits for the bus to be in an idle state (non-blocking).
+    // -----------------------------------------------------------------------------------------------------------------
+    inline void Check_Bus_Idle_State();
+
+    // -----------------------------------------------------------------------------------------------------------------
     /// \brief Receives a start bit.
     // -----------------------------------------------------------------------------------------------------------------
     inline void Receive_Start_Bit();
@@ -238,14 +244,14 @@ private:
     zero_mate::utils::CLogging_System* m_logging_system;         ///< Logging system
     bool m_use_cr_lf;                                            ///< Use CR+LF as the enter termination character
 
-    std::uint32_t m_cpu_cycles;                                  ///< Number of passed CPU cycles
-    NState_Machine m_RX_state;                                   ///< Current state of the UART RX state machine
-    std::uint32_t m_RX_bit_idx;                                  ///< Current bit index of the current payload (RX)
-    std::string m_buffer;                                        ///< Reception FIFO
-    CTerminal m_terminal;                                        ///< GUI element of the serial terminal
-    std::array<char, User_Input_Buffer_Size> m_user_input;       ///< User input (text area)
-    std::queue<std::uint8_t> m_TX_queue;                         ///< TX FIFO (queue)
-    NState_Machine m_TX_state;                                   ///< Current state of the UART TX state machine
-    std::uint32_t m_TX_bit_idx;                                  ///< Current bit index of the current payload (TX)
-    std::uint8_t m_TX_curr_data;                                 ///< Current data being sent via UART (TX)
+    std::uint32_t m_cpu_cycles;                            ///< Number of passed CPU cycles
+    NState_Machine m_RX_state;                             ///< Current state of the UART RX state machine
+    std::uint32_t m_RX_bit_idx;                            ///< Current bit index of the current payload (RX)
+    std::string m_buffer;                                  ///< Reception FIFO
+    CTerminal m_terminal;                                  ///< GUI element of the serial terminal
+    std::array<char, User_Input_Buffer_Size> m_user_input; ///< User input (text area)
+    std::queue<std::uint8_t> m_TX_queue;                   ///< TX FIFO (queue)
+    NState_Machine m_TX_state;                             ///< Current state of the UART TX state machine
+    std::uint32_t m_TX_bit_idx;                            ///< Current bit index of the current payload (TX)
+    std::uint8_t m_TX_curr_data;                           ///< Current data being sent via UART (TX)
 };
