@@ -160,8 +160,8 @@ void CSerial_Terminal::Render()
     if (ImGui::Begin(m_name.c_str()))
     {
         Render_Settings();
-        m_terminal.Render();
         Render_User_Input();
+        m_terminal.Render();
     }
 
     ImGui::End();
