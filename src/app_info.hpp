@@ -11,7 +11,7 @@
 namespace zero_mate::app_info
 {
     /// Current version of the application
-    inline const char* const Version = "v1.4.0";
+    inline const char* const Version = "v1.4.2";
 
     /// URL where the project is held
     inline const char* const URL = "https://github.com/silhavyj/ZeroMate";

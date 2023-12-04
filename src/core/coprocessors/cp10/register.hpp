@@ -10,6 +10,7 @@
 
 // STL imports (excluded from Doxygen)
 /// \cond
+#include <bit>
 #include <cstdint>
 #include <numeric>
 /// \endcond

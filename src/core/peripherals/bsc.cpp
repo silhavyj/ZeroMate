@@ -11,6 +11,7 @@
 
 // STL imports (excluded from Doxygen)
 /// \cond
+#include <bit>
 #include <algorithm>
 /// \endcond
 

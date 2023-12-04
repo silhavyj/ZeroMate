@@ -166,6 +166,9 @@ namespace zero_mate
         template<typename Type>
         [[nodiscard]] inline bool Unaligned_Access_Violation(std::uint32_t addr) const
         {
+            // Word size
+            static constexpr std::uint32_t Word_Size = sizeof(std::uint32_t);
+
             // Make sure CP15 is preset.
             if (m_cp15 == nullptr)
             {
@@ -178,7 +181,7 @@ namespace zero_mate
 
             return !cp15_c1->Is_Control_Flag_Set(
                    coprocessor::cp15::CC1::NC0_Control_Flags::Unaligned_Memory_Access_Enable) &&
-                   (addr % sizeof(Type)) != 0;
+                   (addr % Word_Size) != 0;
         }
 
         // -------------------------------------------------------------------------------------------------------------
