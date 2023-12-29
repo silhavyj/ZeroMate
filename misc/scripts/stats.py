@@ -29,4 +29,4 @@ print()
 print(f"Total instructions: {total_count}")
 print(f"Weighted time: {weighted_time} Minst/s")
 
-print(assert_count)
+print(f"percentage assertion check: {assert_count}")

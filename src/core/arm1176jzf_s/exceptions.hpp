@@ -18,7 +18,7 @@
 
 // 3rd party library includes
 
-#include <fmt/format.h>
+#include "fmt/format.h"
 
 // Project file imports
 
