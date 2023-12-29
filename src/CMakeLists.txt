@@ -3,17 +3,20 @@ include_guard()
 # Find all source files in the utils folder
 file(GLOB_RECURSE utils_source_files
     "utils/*.cpp"
-    "utils/*.hpp")
+    "utils/*.hpp"
+)
 
 # Find all source files making up the core of the emulator
 file(GLOB_RECURSE core_source_files
     "core/*.cpp"
-    "core/*.hpp")
+    "core/*.hpp"
+)
 
 # Find all source files making up the GUI of the emulator
 file(GLOB_RECURSE gui_source_files
     "gui/*.cpp"
-    "gui/*.hpp")
+    "gui/*.hpp"
+)
 
 # Define the main executable
 add_executable(zero_mate)
