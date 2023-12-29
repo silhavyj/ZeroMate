@@ -1,3 +1,5 @@
+include_guard()
+
 # Specify the minimum required version of CMake
 cmake_minimum_required(VERSION 3.21)
 
@@ -5,37 +7,42 @@ cmake_minimum_required(VERSION 3.21)
 add_library(led SHARED)
 
 # Define the ZM_EXTERNAL_PERIPHERAL_EXPORT macro
-target_compile_definitions(led PRIVATE ZM_EXTERNAL_PERIPHERAL_EXPORT)
+target_compile_definitions(led
+    PRIVATE
+        ZM_EXTERNAL_PERIPHERAL_EXPORT
+)
 
 # Specify the public and private include directories
-target_include_directories(
-    led
+target_include_directories(led
     PUBLIC
         $<INSTALL_INTERFACE:include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/../../external
-        ${CMAKE_CURRENT_SOURCE_DIR}/../../external/imgui)
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../external/imgui
+)
 
 # Specify the source file making up the led peripheral
-target_sources(
-    led
+target_sources(led
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/led.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/led.cpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/led.cpp
+)
 
 # Link imgui_glfw and logging_system to the led library so the peripheral can
 # render itself and log messages to the logging system
-target_link_libraries(
-    led
+target_link_libraries(led
     PRIVATE
         imgui_glfw
-        logging_system)
+        logging_system
+)
 
 # Copy the shared library into the output/peripherals directory
 set(output_directory ${PROJECT_SOURCE_DIR}/output/peripherals)
-add_custom_command(
-    TARGET led POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E make_directory ${output_directory}
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:led> ${output_directory})
+
+add_custom_command(TARGET
+    led POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory ${output_directory}
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:led> ${output_directory}
+)
