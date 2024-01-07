@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-12-23T09:46:12.941Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.11 Chrome/114.0.5735.289 Electron/25.9.8 Safari/537.36" etag="FJmWqbyOywQnh8zxx3Id" version="22.1.11" type="device">
+<mxfile host="Electron" modified="2024-01-07T09:27:29.823Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.15 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="U8QrzS3iOlbBg3WRXxoK" version="22.1.15" type="device">
   <diagram name="Page-1" id="rF_JisAr9NftX0KLJ7tZ">
-    <mxGraphModel dx="1773" dy="1035" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1418" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -107,10 +107,10 @@
           <mxGeometry x="68.5" y="30" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="chbkdglr7W8zsBIJW56T-56" value="Physical addresses" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;fontStyle=3;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="326.37" y="30" width="118.25" height="30" as="geometry" />
+          <mxGeometry x="326.38" y="30" width="118.25" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="chbkdglr7W8zsBIJW56T-57" value="Virtual addresses" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;fontStyle=3;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="572.25" y="30" width="118.5" height="30" as="geometry" />
+        <mxCell id="chbkdglr7W8zsBIJW56T-57" value="Virtual addresses&lt;br&gt;(OS-specific)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;fontStyle=3;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="575.3199999999999" y="15" width="112.37" height="60" as="geometry" />
         </mxCell>
         <mxCell id="chbkdglr7W8zsBIJW56T-59" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fontSize=14;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
