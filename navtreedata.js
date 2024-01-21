@@ -70,7 +70,7 @@ var NAVTREEINDEX =
 "classzero__mate_1_1peripheral_1_1CBSC.html#a631f31f819abf852e17bc0d6a54daa58",
 "classzero__mate_1_1peripheral_1_1CMini__UART.html#ac1eceb5f172931b3059c2bb587f5e9bf",
 "functions_func_v.html",
-"primary__reg_8hpp.html"
+"primary__reg_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
