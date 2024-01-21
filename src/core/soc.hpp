@@ -60,18 +60,8 @@ namespace zero_mate::soc
 
         } // namespace sections
 
-        // -------------------------------------------------------------------------------------------------------------
-        /// Helper function to convert a number of bytes to megabytes.
-        /// \param size Number of bytes to convert
-        /// \return Number of megabytes
-        // -------------------------------------------------------------------------------------------------------------
-        inline constexpr std::uint32_t operator""_MB(std::size_t size)
-        {
-            return static_cast<std::uint32_t>(size * 1024 * 1024);
-        }
-
         /// Default RAM size
-        inline constexpr std::uint32_t RAM_Size = 512_MB; // 512 MB
+        inline constexpr std::uint32_t RAM_Size = (512 * 1024 * 1024); // 512 MB
 
         /// Default RAM map address (where it is found in the address space)
         inline constexpr std::uint32_t RAM_Address = 0x0;
