@@ -6,7 +6,6 @@ var namespacezero__mate_1_1soc_1_1config =
       [ "Lib_Name", "namespacezero__mate_1_1soc_1_1config_1_1sections.html#afc8ab9e8adea48a6ed1aa2878da2faa5", null ],
       [ "Name", "namespacezero__mate_1_1soc_1_1config_1_1sections.html#a3fb00279320d8e60661fd7967c3ebeb6", null ]
     ] ],
-    [ "operator\"\"_MB", "namespacezero__mate_1_1soc_1_1config.html#a6eb93dd2613ed4ccd11a8578e6901cb3", null ],
     [ "ARM_Timer_Address", "namespacezero__mate_1_1soc_1_1config.html#a0b9c1816e485f680330c939a4066f17d", null ],
     [ "AUX_Address", "namespacezero__mate_1_1soc_1_1config.html#a22320326abefd378425806d64368eb9b", null ],
     [ "BSC_1_Address", "namespacezero__mate_1_1soc_1_1config.html#a9729f8556afdc64fe3aacba04cfbe23f", null ],
