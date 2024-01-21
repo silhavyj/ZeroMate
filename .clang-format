@@ -44,3 +44,4 @@ BinPackParameters: false
 AllowAllArgumentsOnNextLine: false
 IndentPPDirectives: BeforeHash
 IndentExternBlock: Indent
+AlignEscapedNewlines: Left

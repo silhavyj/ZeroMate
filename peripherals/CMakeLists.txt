@@ -1,3 +1,5 @@
+include_guard()
+
 add_subdirectory(led)
 add_subdirectory(button)
 add_subdirectory(seven_seg_display)

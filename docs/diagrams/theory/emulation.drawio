@@ -1,0 +1,49 @@
+<mxfile host="Electron" modified="2023-12-26T09:57:20.811Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.11 Chrome/114.0.5735.289 Electron/25.9.8 Safari/537.36" etag="NvT1r-r4pvZFyUdhRP_u" version="22.1.11" type="device">
+  <diagram name="Page-1" id="9sPjHj2E_6u03knRBVSh">
+    <mxGraphModel dx="989" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qmTWTVD8Dz4fbwHY-oBH-5" value="app.hex" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="290" width="65" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qmTWTVD8Dz4fbwHY-oBH-6" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#808080;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.monitor;fontFamily=Computer Modern;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="270" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="qmTWTVD8Dz4fbwHY-oBH-4" value="Emulator" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="222.5" y="290" width="65" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qmTWTVD8Dz4fbwHY-oBH-7" value="Host machine" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="216.25" y="372" width="77.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="qmTWTVD8Dz4fbwHY-oBH-8" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Computer Modern;" edge="1" parent="1" source="qmTWTVD8Dz4fbwHY-oBH-4" target="qmTWTVD8Dz4fbwHY-oBH-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="340" y="320" as="sourcePoint" />
+            <mxPoint x="360" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qmTWTVD8Dz4fbwHY-oBH-9" value="&amp;lt;&amp;lt;execute&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" vertex="1" parent="1">
+          <mxGeometry x="310" y="286" width="77.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="qmTWTVD8Dz4fbwHY-oBH-10" value="&amp;nbsp; Emulator program&lt;br&gt;&amp;nbsp; running on a host&amp;nbsp;machine" style="shape=note;size=20;whiteSpace=wrap;html=1;shadow=1;fontFamily=Computer Modern;align=left;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="147.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qmTWTVD8Dz4fbwHY-oBH-11" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Computer Modern;" edge="1" parent="1" source="qmTWTVD8Dz4fbwHY-oBH-4" target="qmTWTVD8Dz4fbwHY-oBH-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-30" y="330" as="sourcePoint" />
+            <mxPoint x="20" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qmTWTVD8Dz4fbwHY-oBH-12" value="&amp;nbsp; Application build for a&amp;nbsp; &amp;nbsp; &lt;br&gt;&amp;nbsp; different architecture" style="shape=note;size=20;whiteSpace=wrap;html=1;shadow=1;fontFamily=Computer Modern;align=left;" vertex="1" parent="1">
+          <mxGeometry x="370" y="200" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qmTWTVD8Dz4fbwHY-oBH-13" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Computer Modern;" edge="1" parent="1" source="qmTWTVD8Dz4fbwHY-oBH-5" target="qmTWTVD8Dz4fbwHY-oBH-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="265" y="300" as="sourcePoint" />
+            <mxPoint x="284" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

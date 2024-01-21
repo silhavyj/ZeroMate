@@ -61,7 +61,7 @@ namespace zero_mate::soc
         } // namespace sections
 
         /// Default RAM size
-        inline constexpr std::uint32_t RAM_Size = 512 * 1024 * 1024; // 512 MB
+        inline constexpr std::uint32_t RAM_Size = (512 * 1024 * 1024); // 512 MB
 
         /// Default RAM map address (where it is found in the address space)
         inline constexpr std::uint32_t RAM_Address = 0x0;

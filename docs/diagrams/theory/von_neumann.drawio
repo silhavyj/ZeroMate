@@ -1,0 +1,37 @@
+<mxfile host="Electron" modified="2023-10-30T12:45:32.167Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="xBGJDmEHMoSCjZORv4VV" version="21.6.8" type="device">
+  <diagram name="Page-1" id="ccoWokSR-h4ZPgTSRdYN">
+    <mxGraphModel dx="978" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1nfj0cnZi2oresLOezPR-1" value="Central Processing &lt;br&gt;Unit (CPU)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="271" y="277" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="1nfj0cnZi2oresLOezPR-2" value="ROM (code)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1nfj0cnZi2oresLOezPR-3" value="RAM (data)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Computer Modern;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="280" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="1nfj0cnZi2oresLOezPR-8" value="Address bus" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" parent="1" vertex="1">
+          <mxGeometry x="393" y="274" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1nfj0cnZi2oresLOezPR-9" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1.001;exitY=0.821;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#f5f5f5;strokeColor=#0D0D0D;entryX=-0.002;entryY=0.605;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1" target="1nfj0cnZi2oresLOezPR-3">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="392.7600000000001" y="340.2800000000001" as="sourcePoint" />
+            <mxPoint x="490" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1nfj0cnZi2oresLOezPR-10" value="" style="shape=flexArrow;endArrow=classic;startArrow=none;html=1;rounded=0;exitX=1.001;exitY=0.821;exitDx=0;exitDy=0;exitPerimeter=0;startFill=0;fillColor=#f5f5f5;strokeColor=#0D0D0D;" parent="1" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="392.7600000000001" y="300.2800000000001" as="sourcePoint" />
+            <mxPoint x="490" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1nfj0cnZi2oresLOezPR-11" value="Data bus" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Computer Modern;" parent="1" vertex="1">
+          <mxGeometry x="401" y="315" width="80" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
