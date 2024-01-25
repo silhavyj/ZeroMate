@@ -27,8 +27,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.4022026"
-     inkscape:cx="99.129756"
-     inkscape:cy="185.06598"
+     inkscape:cx="269.93246"
+     inkscape:cy="355.51211"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -890,7 +890,7 @@
          id="tspan2"
          style="stroke-width:0.15"
          x="77.446297"
-         y="64.871033"># Generated build configurations (CMake)</tspan></text><g
+         y="64.871033"># generated build configurations (CMake)</tspan></text><g
        id="g3"
        transform="translate(-35.757862,-36.829657)"><text
          xml:space="preserve"
