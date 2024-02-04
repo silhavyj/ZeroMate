@@ -3,6 +3,7 @@
 *Raspberry Pi Zero Emulator*
 
 [![version](https://img.shields.io/badge/version-1.4.2-blue)](https://github.com/silhavyj/ZeroMate/releases)
+[![C++20](https://img.shields.io/badge/standard-C%2B%2B%2020-blue.svg?logo=C%2B%2B)](https://isocpp.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 | CI  | Status  |
