@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-10-01T08:05:14.347Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="mCjSDhPN0r16w-gVrJtM" version="21.6.8" type="device">
+<mxfile host="Electron" modified="2024-02-13T18:51:37.320Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="pnYthDlnwu5Akdd2Y0bz" version="23.0.2" type="device">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="1098" dy="803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="875" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -46,7 +46,7 @@
             <mxPoint x="420" y="290.02" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="LSflafZxBvbgAVkMFbog-35" value="Read a ui32 from&amp;nbsp;a&lt;br&gt;&amp;nbsp;physical addr" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Computer Modern;" parent="LSflafZxBvbgAVkMFbog-34" vertex="1" connectable="0">
+        <mxCell id="LSflafZxBvbgAVkMFbog-35" value="Read a ui32 from&amp;nbsp;a&lt;br&gt;&amp;nbsp;physical address" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Computer Modern;" parent="LSflafZxBvbgAVkMFbog-34" vertex="1" connectable="0">
           <mxGeometry x="0.0682" y="1" relative="1" as="geometry">
             <mxPoint x="-7" y="-19" as="offset" />
           </mxGeometry>
@@ -109,7 +109,7 @@
             <mxPoint x="550" y="496" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="LSflafZxBvbgAVkMFbog-52" value="Read a ui32 from &lt;br&gt;within the peripheral&lt;br&gt;(relative addr)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Computer Modern;" parent="LSflafZxBvbgAVkMFbog-51" vertex="1" connectable="0">
+        <mxCell id="LSflafZxBvbgAVkMFbog-52" value="Read a ui32 from &lt;br&gt;within the peripheral&lt;br&gt;(relative address)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Computer Modern;" parent="LSflafZxBvbgAVkMFbog-51" vertex="1" connectable="0">
           <mxGeometry x="0.0682" y="1" relative="1" as="geometry">
             <mxPoint x="-8" y="-25" as="offset" />
           </mxGeometry>
@@ -163,7 +163,7 @@
         <mxCell id="LSflafZxBvbgAVkMFbog-66" value="Check &lt;br&gt;unaligned&lt;br&gt;&amp;nbsp;access" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Computer Modern;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="493.9984848484851" y="390" as="geometry" />
         </mxCell>
-        <mxCell id="LSflafZxBvbgAVkMFbog-67" value="May yiled a&amp;nbsp; Data_Abort exception" style="shape=note;size=20;whiteSpace=wrap;html=1;shadow=1;fontFamily=Computer Modern;" parent="1" vertex="1">
+        <mxCell id="LSflafZxBvbgAVkMFbog-67" value="May throw a&amp;nbsp; Data_Abort exception" style="shape=note;size=20;whiteSpace=wrap;html=1;shadow=1;fontFamily=Computer Modern;" parent="1" vertex="1">
           <mxGeometry x="160" y="307" width="120" height="43" as="geometry" />
         </mxCell>
         <mxCell id="LSflafZxBvbgAVkMFbog-71" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=1;rounded=0;exitX=0;exitY=0;exitDx=120;exitDy=31.5;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="LSflafZxBvbgAVkMFbog-67" target="LSflafZxBvbgAVkMFbog-37" edge="1">
