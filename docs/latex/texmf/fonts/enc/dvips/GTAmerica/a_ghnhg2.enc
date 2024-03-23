@@ -1,0 +1,64 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_ghnhg2wyksua4qnfc6xplk3qff
+% Encoding created by otftotfm on Fri Sep  9 14:19:38 2022
+% Command line follows encoding
+/AutoEnc_ghnhg2wyksua4qnfc6xplk3qff [
+%00
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /cedilla /ogonek /quotesinglbase /C /exclam
+%10
+  /exclamdown /question /quotedblbase /questiondown /endash /.notdef /.notdef /.notdef
+  /arrowleft /arrowright /.notdef /.notdef /.notdef /.notdef /asterisk /.notdef
+%20
+  /.notdef /bar.tf /.notdef /.notdef /dollar.tf /.notdef /.notdef /quotesingle
+  /.notdef /.notdef /.notdef /.notdef /comma.tf /.notdef /period.tf /fraction
+%30
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /minus.tf /.notdef /.notdef
+%40
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%50
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /uni2126
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /arrowup /arrowdown
+%60
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%70
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%80
+  /.notdef /.notdef /.notdef /.notdef /dagger /daggerdbl /.notdef /perthousand.tf
+  /bullet /.notdef /.notdef /.notdef /florin.tf /.notdef /uni20A9.tf /.notdef
+%90
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /trademark
+  /.notdef /.notdef /.notdef /uni2116 /.notdef /estimated /.notdef /.notdef
+%A0
+  /.notdef /.notdef /cent.tf /sterling.tf /currency.tf /yen.tf /brokenbar /section
+  /.notdef /copyright /ordfeminine /.notdef /logicalnot /.notdef /registered /.notdef
+%B0
+  /degree /plusminus /.notdef /.notdef /.notdef /uni00B5 /paragraph /periodcentered
+  /.notdef /.notdef /ordmasculine /radical /onequarter /onehalf /threequarters /Euro.tf
+%C0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%D0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /multiply /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%E0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%F0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /divide.tf /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_ts1
+% --tfm-directory=/home/frantisek/Dokumenty/VS/Administrativa/FASThesis/install/autoinst_output/fonts/tfm/lcdftools/GTAmerica
+% --vf-directory=/home/frantisek/Dokumenty/VS/Administrativa/FASThesis/install/autoinst_output/fonts/vf/lcdftools/GTAmerica
+% --type1-directory=/home/frantisek/Dokumenty/VS/Administrativa/FASThesis/install/autoinst_output/fonts/type1/lcdftools/GTAmerica
+% --encoding-directory=/home/frantisek/Dokumenty/VS/Administrativa/FASThesis/install/autoinst_output/fonts/enc/dvips/GTAmerica
+% --map-file=/home/frantisek/Dokumenty/VS/Administrativa/FASThesis/install/autoinst_output/fonts/map/dvips/GTAmerica/GTAmerica.map
+% --no-updmap --force --coding-scheme=TEX TEXT COMPANION SYMBOLS 1---TS1
+% --feature=onum --feature=tnum GT-America-Condensed-Black-Italic.otf
+% GTAmerica-CondensedBlackItalic-tlf-ts1'
