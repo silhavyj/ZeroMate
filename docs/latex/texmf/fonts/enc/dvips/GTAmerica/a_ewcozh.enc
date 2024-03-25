@@ -1,0 +1,66 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_ewcozhiakz2qpdv7xxrmksqlzd
+% Encoding created by otftotfm on Fri Sep  9 14:19:43 2022
+% Command line follows encoding
+/AutoEnc_ewcozhiakz2qpdv7xxrmksqlzd [
+%00
+  /grave /acute /circumflex /tilde /dieresis /hungarumlaut /ring /caron
+  /breve /macron /dotaccent /cedilla /ogonek /quotesinglbase /guilsinglleft /guilsinglright
+%10
+  /quotedblleft /quotedblright /quotedblbase /guillemotleft /guillemotright /endash /emdash /.notdef
+  /g_g.liga /dotlessi /uni0237 /.notdef /fi /fl /.notdef /.notdef
+%20
+  /.notdef /exclam /quotedbl /numbersign /dollar /percent /ampersand /quoteright
+  /parenleft /parenright /asterisk /plus /comma /hyphen /period /slash
+%30
+  /zero /one /two /three /four /five /six /seven
+  /eight /nine /colon /semicolon /less /equal /greater /question
+%40
+  /at /A /B /C /D /E /F /G
+  /H /I /J /K /L /M /N /O
+%50
+  /P /Q /R /S /T /U /V /W
+  /X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore
+%60
+  /quoteleft /a /b /c /d /e /f /g
+  /h /i /j /k /l /m /n /o
+%70
+  /p /q /r /s /t /u /v /w
+  /x /y /z /braceleft /bar /braceright /asciitilde /hyphen
+%80
+  /Abreve /Aogonek /Cacute /Ccaron /Dcaron /Ecaron /Eogonek /Gbreve
+  /Lacute /Lcaron /Lslash /Nacute /Ncaron /Eng /Ohungarumlaut /Racute
+%90
+  /Rcaron /Sacute /Scaron /Scedilla /Tcaron /uni0162 /Uhungarumlaut /Uring
+  /Ydieresis /Zacute /Zcaron /Zdotaccent /IJ /Idotaccent /dcroat /section
+%A0
+  /abreve /aogonek /cacute /ccaron /dcaron /ecaron /eogonek /gbreve
+  /lacute /lcaron /lslash /nacute /ncaron /eng /ohungarumlaut /racute
+%B0
+  /rcaron /sacute /scaron /scedilla /tcaron /uni0163 /uhungarumlaut /uring
+  /ydieresis /zacute /zcaron /zdotaccent /ij /exclamdown /questiondown /sterling
+%C0
+  /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+  /Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+%D0
+  /Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /OE
+  /Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /.notdef
+%E0
+  /agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla
+  /egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+%F0
+  /eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /oe
+  /oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /germandbls
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_t1
+% --tfm-directory=/home/frantisek/Dokumenty/VS/Administrativa/FASThesis/install/autoinst_output/fonts/tfm/lcdftools/GTAmerica
+% --vf-directory=/home/frantisek/Dokumenty/VS/Administrativa/FASThesis/install/autoinst_output/fonts/vf/lcdftools/GTAmerica
+% --type1-directory=/home/frantisek/Dokumenty/VS/Administrativa/FASThesis/install/autoinst_output/fonts/type1/lcdftools/GTAmerica
+% --encoding-directory=/home/frantisek/Dokumenty/VS/Administrativa/FASThesis/install/autoinst_output/fonts/enc/dvips/GTAmerica
+% --map-file=/home/frantisek/Dokumenty/VS/Administrativa/FASThesis/install/autoinst_output/fonts/map/dvips/GTAmerica/GTAmerica.map
+% --no-updmap --force --coding-scheme=EXTENDED TEX FONT ENCODING - LATIN
+% --feature=kern --feature=liga --feature=lnum --feature=pnum --ligkern=f i
+% =: fi --ligkern=f l =: fl --ligkern=f f =: ff --ligkern=ff i =: ffi
+% --ligkern=ff l =: ffl GT-America-Condensed-Black-Italic.otf
+% GTAmerica-CondensedBlackItalic-lf-t1'
