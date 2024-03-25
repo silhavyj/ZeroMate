@@ -73,7 +73,7 @@ namespace zero_mate::peripheral
 
     std::uint32_t CTRNG::Get_Rnd_Number()
     {
-#if USE_REAL_RND_NUMBER_GENERATOR == 1
+#if (USE_REAL_RND_NUMBER_GENERATOR == 1)
         return m_uniform_dist(m_rand_dev);
 #else
         // More info about the algorithm: https://youtu.be/5_RAHZQCPjE?t=613

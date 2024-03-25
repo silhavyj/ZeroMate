@@ -1,0 +1,40 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{GTAmerica}
+    [2022/09/09 (autoinst)  Style file for GTAmerica fonts.]
+
+\RequirePackage{xkeyval}
+\newcommand*{\GTAmerica@scale}{1}
+\DeclareOptionX{scale}{\renewcommand*{\GTAmerica@scale}{#1}}
+\DeclareOptionX{scaled}{\renewcommand*{\GTAmerica@scale}{#1}}
+
+\DeclareOptionX{lining}{\edef\GTAmerica@figurestyle{LF}}
+\DeclareOptionX{tabular}{\edef\GTAmerica@figurealign{T}}
+\DeclareOptionX{proportional}{\edef\GTAmerica@figurealign{}}
+\DeclareOptionX{mainfont}{
+    \renewcommand{\familydefault}{\rmdefault}
+}
+\ExecuteOptionsX{lining,proportional}
+\ProcessOptionsX\relax
+
+\RequirePackage{fontenc,textcomp}
+\RequirePackage{ifthen}
+\RequirePackage{mweights}
+
+\IfFileExists{fontaxes.sty}{
+    \RequirePackage{fontaxes}
+    \fa@naming@exception{figures}{{superior}{proportional}}{Sup}
+    \fa@naming@exception{figures}{{superior}{tabular}}{Sup}
+    \def\supfigures{\@nomath\supfigures
+        \fontfigurestyle{superior}\selectfont}
+    \let\sufigures\supfigures
+    \DeclareTextFontCommand{\textsup}{\supfigures}
+    \let\textsu\textsup
+    \let\textsuperior\textsup
+
+}{}
+
+\renewcommand*
+    {\rmdefault}
+    {GTAmerica-\GTAmerica@figurealign\GTAmerica@figurestyle}
+
+\endinput
