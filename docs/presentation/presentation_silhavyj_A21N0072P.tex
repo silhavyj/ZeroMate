@@ -1,0 +1,274 @@
+\documentclass[compress]{beamer}
+
+\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+\useinnertheme{circles}
+
+\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+\definecolor{UBCgrey}{rgb}{0.3686, 0.5255, 0.6235} % UBC Grey (secondary)
+
+\setbeamercolor{palette primary}{bg=UBCblue,fg=white}
+\setbeamercolor{palette secondary}{bg=UBCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UBCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UBCblue,fg=white}
+\setbeamercolor{structure}{fg=UBCblue} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UBCblue} % TOC sections
+
+% Override palette coloring with secondary
+\setbeamercolor{subsection in head/foot}{bg=UBCgrey,fg=white}
+\setbeamertemplate{caption}[numbered]
+\setbeamercovered{transparent}
+
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usefonttheme{serif}
+
+\title[Rpi Zero emulátor]{Emulátor ARMv6 procesoru \\ pro emulaci prostředí Raspberry Pi}
+\date{17. 06. 2024}
+\author[Jakub Šilhavý]{Bc. Jakub Šilhavý}
+\institute[KIV ZČU]{vedoucí práce: Ing. Martin Úbl \\ \bigskip Katedra informatiky a výpočetní techniky \\ Fakulta aplikovaných věd \\ Západočeská univerzita v Plzni}
+
+\begin{document}
+	
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Cíle práce}
+
+\subsection{Cíle práce}
+
+\begin{frame}
+	\begin{block}{Cíl práce}
+		\begin{itemize}
+			\item návrh a implementace emulátoru platformy \textbf{Raspberry Pi Zero}
+			\begin{itemize}
+				\item emulace instrukcí procesoru \texttt{ARM1176JZF-S} (\texttt{ARMv6})
+				\item emulace základních periferií \texttt{µC} \texttt{BCM2835} (\texttt{GPIO}, \texttt{MiniUART}, \texttt{BSC}, ...)
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+	\begin{columns}
+		\column{0.57\textwidth}
+		\begin{enumerate}
+			\item vzdělávací účely
+			\begin{itemize}
+				\item vizualizace principů \texttt{OS}
+				\item embedded vývoj
+			\end{itemize}
+			\item testování a ladění \texttt{SW}
+			\item prototypování \texttt{HW}
+			\begin{itemize}
+				\item připojení externích periferií
+				\item návrh vlastního systému
+			\end{itemize}
+		\end{enumerate}
+		\column{0.4\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.60\textwidth]{img/rpi_zero.jpeg}
+			\caption{Raspberry Pi Zero}
+			\label{Raspberry Pi Zero}
+		\end{figure}
+	\end{columns}
+	\vspace{0.2cm}
+	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+	\vspace{-0.4cm}
+	\begin{itemize}
+		\item použití \href{https://github.com/MartinUbl/KIV-RTOS}{\beamergotobutton{KIV-RTOS}} pro ověření správnosti výsledného emulátoru
+	\end{itemize}
+\end{frame}
+
+\section{Existující řešení}
+
+\subsection{CPUlator, ARMSim\#}
+
+\begin{frame}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item vhodné pro seznámení se s programování v assembly
+			\begin{itemize}
+				\item vizualizace, ladění programu
+			\end{itemize}
+			\item floating-point instrukce
+			\item platformová nezávislost
+		\end{itemize}
+		\column{0.5\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.8\textwidth]{img/cpulator.png}
+			\caption{\href{https://cpulator.01xz.net}{\beamergotobutton{CPUlator}}}
+			\label{CPUlator}
+		\end{figure}
+	\end{columns}
+	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+	\begin{block}{Omezení}
+		\begin{itemize}
+			\item emulace pouze \texttt{CPU} (ne celého \texttt{SoC})
+			\item minimální podpora pokročilých systémových operací
+			\begin{itemize}
+				\item $\Rightarrow$ nevhodné pro testování pricipů \texttt{OS}
+			\end{itemize}
+			\item limitovaná podpora připojení externích periferií
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{QEMU}
+
+\begin{frame}
+	\begin{columns}
+		\column{0.6\textwidth}
+		\begin{itemize}
+			\item podpora různých architektur
+			\begin{itemize}
+				\item \texttt{x86}, \texttt{MIPS}, \texttt{ARM}, ...
+			\end{itemize}
+			\item připojení externího debuggeru
+			\item plná podpora systémových oprací
+		\end{itemize}
+		\column{0.4\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/Qemu_logo.pdf}
+			\caption{\href{https://www.qemu.org}{\beamergotobutton{QEMU}}}
+			\label{QEMU}
+		\end{figure}
+	\end{columns}
+	\vspace{0.4cm}
+	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+	\begin{block}{Omezení}
+		\begin{itemize}
+			\item emulace pouze \texttt{CPU} (ne celého \texttt{SoC})
+			\item limitovaná podpora připojení externích periferií
+			\item \texttt{\_start} symbol očekáván na adrese \texttt{0x00010000}
+			\begin{itemize}
+				\item $\rightarrow$ nekompatibilita s \textit{first-stage} \texttt{BL} \texttt{Rpi0} (\texttt{0x00008000})
+			\end{itemize}
+			\item problémy se \texttt{systimer}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{ZeroMate}
+
+\subsection{Jádro emulátoru}
+
+\begin{frame}
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{block}{\texttt{ARM1176JZF-S}}
+			\begin{itemize}
+				\item \texttt{ARMv6} instrukce
+				\item přepínání režimů \texttt{CPU}
+				\item \texttt{ALU}, \texttt{MAC} a \texttt{MMU}
+				\item vyjímky a přerušení
+				\item podpora ko-procesorů
+				\begin{itemize}
+					\item \texttt{CP15}, \texttt{CP10}
+				\end{itemize}
+				\item systémová sběrnice
+			\end{itemize}
+		\end{block}
+		\column{0.4\textwidth}
+		\begin{block}{\texttt{BCM2835}}
+			\begin{itemize}
+				\item \texttt{RAM}
+				\item Interrupt Controller
+				\item \texttt{ARM} timer
+				\item \texttt{TRNG}
+				\item \texttt{GPIO}
+				\item \texttt{BSC\_1} (\texttt{I\textsuperscript{2}C})
+				\item \texttt{AUX} (\texttt{MiniUART})
+			\end{itemize}
+		\end{block}
+	\end{columns}
+	\vspace{0.4cm}
+	\begin{itemize}
+		\item cílem bylo emulovat nejčastěji používané periferie
+		\item dekompoziční návrh architektury 
+		\begin{itemize}
+			\item $\rightarrow$ jednoduché doimplementování dalších periferií
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Externí periferie}
+
+\begin{frame}
+	\vspace{0.4cm}
+	\begin{itemize}
+		\item jednotné rozhraní pro externí periferie
+		\begin{itemize}
+			\item $\rightarrow$ připojeny přes \texttt{GPIO}
+		\end{itemize}
+		\item nezávislé na toolchainu jádra emulátoru
+		\item načtené při inicializaci jako sdílené knihovny (\texttt{.dll}, \texttt{.so})
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{img/peripheral_interface.pdf}
+		\caption{Rozhraní externích periferií}
+	\end{figure}
+\end{frame}
+
+\subsection{Testování}
+
+\section{Ukázka}
+
+\subsection{ZeroMate - uživatelské rozhraní}
+
+\begin{frame}
+	\centering \Large
+	\includegraphics[width=.85\textwidth]{img/screenshot-01.pdf}
+\end{frame}
+
+\subsection{ZeroMate - externí periferie}
+
+\begin{frame}
+	\centering \Large
+	\begin{overlayarea}{\textwidth}{\textheight}
+		\begin{figure}
+			\centering
+			\only<1>
+			{%
+				\includegraphics[width=.85\textwidth]{img/screenshot-02.pdf}%
+			}%
+			\only<2>
+			{%
+				\includegraphics[width=.85\textwidth]{img/screenshot-03.pdf}%
+			}%
+			\only<3>
+			{%
+				\includegraphics[width=.85\textwidth]{img/screenshot-04.pdf}%
+			}%
+			\only<4>
+			{%
+				\includegraphics[width=.85\textwidth]{img/screenshot-05.pdf}%
+			}%
+			\only<5>
+			{%
+				\includegraphics[width=.85\textwidth]{img/screenshot-06.pdf}%
+			}%
+			\only<6>
+			{%
+				\includegraphics[width=.85\textwidth]{img/screenshot-07.pdf}%
+			}%
+		\end{figure}
+	\end{overlayarea}      
+\end{frame}
+
+\section{Závěr}
+
+\begin{frame}
+  \centering \Large
+  Děkuji Vám za pozornost\\
+  \href{https://github.com/silhavyj/ZeroMate}{\beamergotobutton{https://github.com/silhavyj/ZeroMate}}
+  \begin{figure}
+  	\centering
+  	\includegraphics[width=0.10\textwidth]{img/qr-code.pdf}
+  \end{figure}
+\end{frame}
+
+\end{document}
