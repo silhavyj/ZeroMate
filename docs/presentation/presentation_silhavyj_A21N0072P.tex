@@ -4,6 +4,12 @@
 \useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
 \useinnertheme{circles}
 
+%\setbeamertemplate{background} 
+%{
+%	\includegraphics[width=0.8\textwidth]{img/background-kiv.pdf}
+%}
+
+%\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
 \definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
 \definecolor{UBCgrey}{rgb}{0.3686, 0.5255, 0.6235} % UBC Grey (secondary)
 
@@ -34,33 +40,33 @@
     \titlepage
 \end{frame}
 
-\section{Cíle práce}
+\section{Zadání práce}
 
-\subsection{Cíle práce}
+\subsection{Cíl práce}
 
 \begin{frame}
 	\begin{block}{Cíl práce}
 		\begin{itemize}
 			\item návrh a implementace emulátoru platformy \textbf{Raspberry Pi Zero}
 			\begin{itemize}
-				\item emulace instrukcí procesoru \texttt{ARM1176JZF-S} (\texttt{ARMv6})
-				\item emulace základních periferií \texttt{µC} \texttt{BCM2835} (\texttt{GPIO}, \texttt{MiniUART}, \texttt{BSC}, ...)
+				\item<2-> emulace instrukcí procesoru \texttt{ARM1176JZF-S} (\texttt{ARMv6})
+				\item<3-> emulace základních periferií \texttt{µC} \texttt{BCM2835} (\texttt{GPIO}, \texttt{Mini\_UART}, \texttt{BSC}, ...)
 			\end{itemize}
 		\end{itemize}
 	\end{block}
 	\begin{columns}
 		\column{0.57\textwidth}
 		\begin{enumerate}
-			\item vzdělávací účely
+			\item<4-> vzdělávací účely
 			\begin{itemize}
-				\item vizualizace principů \texttt{OS}
-				\item embedded vývoj
+				\item<4-> vizualizace principů \texttt{OS}
+				\item<4-> embedded vývoj
 			\end{itemize}
-			\item testování a ladění \texttt{SW}
-			\item prototypování \texttt{HW}
+			\item<5-> testování a ladění \texttt{SW}
+			\item<6-> prototypování \texttt{HW}
 			\begin{itemize}
-				\item připojení externích periferií
-				\item návrh vlastního systému
+				\item<6-> připojení externích periferií
+				\item<6-> návrh vlastního systému
 			\end{itemize}
 		\end{enumerate}
 		\column{0.4\textwidth}
@@ -75,8 +81,29 @@
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 	\vspace{-0.4cm}
 	\begin{itemize}
-		\item použití \href{https://github.com/MartinUbl/KIV-RTOS}{\beamergotobutton{KIV-RTOS}} pro ověření správnosti výsledného emulátoru
+		\item<7-> použití \href{https://github.com/MartinUbl/KIV-RTOS}{\beamergotobutton{KIV-RTOS}} pro ověření správnosti výsledného emulátoru
 	\end{itemize}
+\end{frame}
+
+\subsection{\texttt{ARMv6} aplikace}
+
+\begin{frame}
+	\begin{columns}
+		\column{0.45\textwidth}
+			\begin{figure}
+			\centering
+			\includegraphics[width=0.85\textwidth]{img/arm_powered_products.jpg}
+			\caption{\texttt{ARM} aplikace}
+			\label{ARM aplikace}
+		\end{figure}
+		\column{0.55\textwidth}
+			\begin{figure}
+			\centering
+			\includegraphics[width=0.9\textwidth]{img/arm_processor_roadmap2.jpeg}
+			\caption{\texttt{ARM} \texttt{CPU} roadmap}
+			\label{ARM CPU roadmap}
+		\end{figure}
+	\end{columns}
 \end{frame}
 
 \section{Existující řešení}
@@ -87,7 +114,7 @@
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{itemize}
-			\item vhodné pro seznámení se s programování v assembly
+			\item vhodné pro seznámení se s programování v \texttt{JSA}
 			\begin{itemize}
 				\item vizualizace, ladění programu
 			\end{itemize}
@@ -142,9 +169,9 @@
 		\begin{itemize}
 			\item emulace pouze \texttt{CPU} (ne celého \texttt{SoC})
 			\item limitovaná podpora připojení externích periferií
-			\item \texttt{\_start} symbol očekáván na adrese \texttt{0x00010000}
+			\item \texttt{\_start} symbol očekáván na adrese \texttt{0x00010000} (\texttt{ARM})
 			\begin{itemize}
-				\item $\rightarrow$ nekompatibilita s \textit{first-stage} \texttt{BL} \texttt{Rpi0} (\texttt{0x00008000})
+				\item $\Rightarrow$ nekompatibilita s \textit{first-stage} \texttt{BL} \texttt{Rpi0} (\texttt{0x00008000})
 			\end{itemize}
 			\item problémy se \texttt{systimer}
 		\end{itemize}
@@ -175,21 +202,24 @@
 		\begin{block}{\texttt{BCM2835}}
 			\begin{itemize}
 				\item \texttt{RAM}
-				\item Interrupt Controller
+				\item interrupt controller
 				\item \texttt{ARM} timer
 				\item \texttt{TRNG}
 				\item \texttt{GPIO}
 				\item \texttt{BSC\_1} (\texttt{I\textsuperscript{2}C})
-				\item \texttt{AUX} (\texttt{MiniUART})
+				\item \texttt{AUX} (\texttt{Mini\_UART})
+				\item debug monitor* 
 			\end{itemize}
 		\end{block}
 	\end{columns}
 	\vspace{0.4cm}
+	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+	\vspace{-0.4cm}
 	\begin{itemize}
 		\item cílem bylo emulovat nejčastěji používané periferie
 		\item dekompoziční návrh architektury 
 		\begin{itemize}
-			\item $\rightarrow$ jednoduché doimplementování dalších periferií
+			\item $\Rightarrow$ snadné rozšíření o další periferie
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -199,12 +229,12 @@
 \begin{frame}
 	\vspace{0.4cm}
 	\begin{itemize}
-		\item jednotné rozhraní pro externí periferie
+		\item jednotné rozhraní pro externí periferie (připojeny přes \texttt{GPIO})
+		\item načtené při inicializaci jako sdílené knihovny (\texttt{.dll}, \texttt{.so})
 		\begin{itemize}
-			\item $\rightarrow$ připojeny přes \texttt{GPIO}
+			\item možnost načtení vícero instancí (např. \texttt{led.dll})
 		\end{itemize}
 		\item nezávislé na toolchainu jádra emulátoru
-		\item načtené při inicializaci jako sdílené knihovny (\texttt{.dll}, \texttt{.so})
 	\end{itemize}
 	\begin{figure}
 		\centering
@@ -213,15 +243,37 @@
 	\end{figure}
 \end{frame}
 
-\subsection{Testování}
-
 \section{Ukázka}
 
 \subsection{ZeroMate - uživatelské rozhraní}
 
 \begin{frame}
 	\centering \Large
-	\includegraphics[width=.85\textwidth]{img/screenshot-01.pdf}
+	\begin{overlayarea}{\textwidth}{\textheight}
+		\begin{figure}
+			\centering
+			\only<1>
+			{%
+				\includegraphics[width=.85\textwidth]{img/gui/01.pdf}%
+			}%
+			\only<2>
+			{%
+				\includegraphics[width=.85\textwidth]{img/gui/02.pdf}%
+			}%
+			\only<3>
+			{%
+				\includegraphics[width=.85\textwidth]{img/gui/03.pdf}%
+			}%
+			\only<4>
+			{%
+				\includegraphics[width=.85\textwidth]{img/gui/04.pdf}%
+			}%
+			\only<5>
+			{%
+				\includegraphics[width=.85\textwidth]{img/gui/05.pdf}%
+			}%
+		\end{figure}
+	\end{overlayarea}      
 \end{frame}
 
 \subsection{ZeroMate - externí periferie}
@@ -257,6 +309,31 @@
 			}%
 		\end{figure}
 	\end{overlayarea}      
+\end{frame}
+
+\section{Technlogie}
+
+\begin{frame}
+	\vspace{-0.5cm}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.07\textwidth]{img/logos/github.pdf}
+	\end{figure}
+	\centering
+	\vspace{-0.4cm}
+	\href{https://github.com/silhavyj/ZeroMate}{\beamergotobutton{https://github.com/silhavyj/ZeroMate}}
+	\vspace{-0.1cm}
+	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/logos/logos.pdf}
+	\end{figure}
+	\begin{itemize}
+		\item \texttt{OpenGL} jako jediná závislost
+			\begin{itemize}
+				\item zbytek automaticky stažen a sestaven (\texttt{.gitmodules} + \texttt{CMake})
+			\end{itemize}
+	\end{itemize}
 \end{frame}
 
 \section{Závěr}
