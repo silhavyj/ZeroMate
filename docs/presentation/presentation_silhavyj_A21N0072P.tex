@@ -49,24 +49,24 @@
 		\begin{itemize}
 			\item návrh a implementace emulátoru platformy \textbf{Raspberry Pi Zero}
 			\begin{itemize}
-				\item<2-> emulace instrukcí procesoru \texttt{ARM1176JZF-S} (\texttt{ARMv6})
-				\item<3-> emulace základních periferií \texttt{µC} \texttt{BCM2835} (\texttt{GPIO}, \texttt{Mini\_UART}, \texttt{BSC}, ...)
+				\item emulace instrukcí procesoru \texttt{ARM1176JZF-S} (\texttt{ARMv6})
+				\item emulace základních periferií \texttt{µC} \texttt{BCM2835} (\texttt{GPIO}, \texttt{Mini\_UART}, \texttt{BSC}, ...)
 			\end{itemize}
 		\end{itemize}
 	\end{block}
 	\begin{columns}
 		\column{0.57\textwidth}
 		\begin{enumerate}
-			\item<4-> vzdělávací účely
+			\item vzdělávací účely
 			\begin{itemize}
-				\item<4-> vizualizace principů \texttt{OS}
-				\item<4-> embedded vývoj
+				\item vizualizace principů \texttt{OS}
+				\item embedded vývoj
 			\end{itemize}
-			\item<5-> testování a ladění \texttt{SW}
-			\item<6-> prototypování \texttt{HW}
+			\item testování a ladění \texttt{SW}
+			\item prototypování \texttt{HW}
 			\begin{itemize}
-				\item<6-> připojení externích periferií
-				\item<6-> návrh vlastního systému
+				\item připojení externích periferií
+				\item návrh vlastního systému
 			\end{itemize}
 		\end{enumerate}
 		\column{0.4\textwidth}
@@ -81,7 +81,7 @@
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 	\vspace{-0.4cm}
 	\begin{itemize}
-		\item<7-> použití \href{https://github.com/MartinUbl/KIV-RTOS}{\beamergotobutton{KIV-RTOS}} pro ověření správnosti výsledného emulátoru
+		\item použití \href{https://github.com/MartinUbl/KIV-RTOS}{\beamergotobutton{KIV-RTOS}} pro ověření správnosti výsledného emulátoru
 	\end{itemize}
 \end{frame}
 
@@ -189,7 +189,7 @@
 			\begin{itemize}
 				\item \texttt{ARMv6} instrukce
 				\item přepínání režimů \texttt{CPU}
-				\item \texttt{ALU}, \texttt{MAC} a \texttt{MMU}
+				\item \texttt{ALU}, \texttt{MAC} a \texttt{MMU} (+ \texttt{TLB})
 				\item vyjímky a přerušení
 				\item podpora ko-procesorů
 				\begin{itemize}
@@ -326,13 +326,81 @@
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.7\textwidth]{img/logos/logos.pdf}
+		\includegraphics[width=0.6\textwidth]{img/logos/logos.pdf}
 	\end{figure}
+	\vspace{-0.6cm}
+	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+	\vspace{-0.3cm}
 	\begin{itemize}
-		\item \texttt{OpenGL} jako jediná závislost
+		\item závislosti automaticky staženy a sestaveny \\ (\texttt{.gitmodules} + \texttt{CMake})
+		\begin{itemize}
+			\item GoogleTest, ImGUI, dylib, elifio, GLFW, capstone, ... 
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\section{Testování}
+
+\subsection{Funkcionalita}
+
+\begin{frame}
+	\begin{block}{1) Unit testy}
+		\begin{itemize}
+			\item jádro emulátoru (exekuce \texttt{ARMv6} instrukcí)
+			\item GoogleTest, \texttt{CI} (regresní testy)
+			\item pokrytí $\approx$ 78\%
+		\end{itemize}
+	\end{block}
+	\begin{block}{2) Funkční testy}
+		\begin{itemize}
+			\item \texttt{BCM2835} periferie
+			\item připravená sada příkladů (\texttt{.ELF})
 			\begin{itemize}
-				\item zbytek automaticky stažen a sestaven (\texttt{.gitmodules} + \texttt{CMake})
+				\item \texttt{UART}, \texttt{FPU}, \texttt{GPIO}, \texttt{I\textsuperscript{2}C}, plánování procesů (\texttt{EDF}, \texttt{RTL}), \texttt{ARM} timer, ...
 			\end{itemize}
+		\end{itemize}
+	\end{block}
+	\begin{block}{3) Aplikační testy, \texttt{GUI}}
+		\begin{itemize}
+			\item \texttt{KIV/OS} cvičení
+			\item dotazník hodnocení celkové použitelnosti
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Výkonnost emulace \texttt{ARMv6} instrukcí}
+
+\begin{frame}
+	\begin{itemize}
+		\item výkonost emulace $\approx$ 4-5 Minst/s (\href{https://github.com/MartinUbl/KIV-RTOS}{\beamergotobutton{KIV-RTOS}})
+		\item analýza rychlosti emulace jednotlivých instrukcí
+		\begin{itemize}
+			\item $\Rightarrow$ potenciální optimalizace
+		\end{itemize}
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\textwidth]{img/performance_2.pdf}
+	\end{figure}
+\end{frame}
+
+\subsection{Porovnání výkonosti s ostatními emulátory}
+
+\begin{frame}
+	\vspace{-0.2cm}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.62\textwidth]{img/performance_comparison.pdf}
+	\end{figure}
+	\vspace{-0.4cm}
+	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+	\vspace{-0.4cm}
+	\begin{itemize}
+		\item pouze orientační (\href{https://cpulator.01xz.net/}{\beamergotobutton{https://cpulator.01xz.net/}})
+		\item \textbf{ZeroMate jako jediný podporuje \texttt{MMU}}
+		\begin{itemize}
+			\item využití s každým přístupem do paměti ($\approx$ 42\% instrukcí)
+		\end{itemize}
 	\end{itemize}
 \end{frame}
 
