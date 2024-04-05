@@ -31,7 +31,7 @@
 
 \title[Rpi Zero emulátor]{Emulátor ARMv6 procesoru \\ pro emulaci prostředí Raspberry Pi}
 \date{17. 06. 2024}
-\author[Jakub Šilhavý]{Bc. Jakub Šilhavý}
+\author[Bc. Jakub Šilhavý]{Bc. Jakub Šilhavý}
 \institute[KIV ZČU]{vedoucí práce: Ing. Martin Úbl \\ \bigskip Katedra informatiky a výpočetní techniky \\ Fakulta aplikovaných věd \\ Západočeská univerzita v Plzni}
 
 \begin{document}
@@ -42,7 +42,7 @@
 
 \section{Zadání práce}
 
-\subsection{Cíl práce}
+\subsection{Zadání \& cíl práce}
 
 \begin{frame}
 	\begin{block}{Cíl práce}
@@ -85,7 +85,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{\texttt{ARMv6} aplikace}
+\subsection{\texttt{ARM} procesory a jejich aplikace}
 
 \begin{frame}
 	\begin{columns}
@@ -108,7 +108,7 @@
 
 \section{Existující řešení}
 
-\subsection{CPUlator, ARMSim\#}
+\subsection{CPUlator}
 
 \begin{frame}
 	\begin{columns}
@@ -148,11 +148,11 @@
 	\begin{columns}
 		\column{0.6\textwidth}
 		\begin{itemize}
-			\item podpora různých architektur
+			\item podpora vícero architektur
 			\begin{itemize}
 				\item \texttt{x86}, \texttt{MIPS}, \texttt{ARM}, ...
 			\end{itemize}
-			\item připojení externího debuggeru
+			\item připojení externího debuggeru (\texttt{GNU})
 			\item plná podpora systémových oprací
 		\end{itemize}
 		\column{0.4\textwidth}
@@ -180,7 +180,7 @@
 
 \section{ZeroMate}
 
-\subsection{Jádro emulátoru}
+\subsection{Jádro emulátoru (emulovaná funkcionalita)}
 
 \begin{frame}
 	\begin{columns}
@@ -208,7 +208,7 @@
 				\item \texttt{GPIO}
 				\item \texttt{BSC\_1} (\texttt{I\textsuperscript{2}C})
 				\item \texttt{AUX} (\texttt{Mini\_UART})
-				\item debug monitor* 
+				\item \textcolor{darkgray}{debug monitor*} 
 			\end{itemize}
 		\end{block}
 	\end{columns}
@@ -227,23 +227,26 @@
 \subsection{Externí periferie}
 
 \begin{frame}
-	\vspace{0.4cm}
+	
 	\begin{itemize}
-		\item jednotné rozhraní pro externí periferie (připojeny přes \texttt{GPIO})
-		\item načtené při inicializaci jako sdílené knihovny (\texttt{.dll}, \texttt{.so})
+		\item jednotné rozhraní pro externí periferie
+		\item načtené při inicializaci jako sdílené knihovny
 		\begin{itemize}
 			\item možnost načtení vícero instancí (např. \texttt{led.dll})
 		\end{itemize}
 		\item nezávislé na toolchainu jádra emulátoru
+		\begin{itemize}
+			\item \texttt{extern "C" \_\_declspec(dllexport)}
+		\end{itemize}
 	\end{itemize}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.6\textwidth]{img/peripheral_interface.pdf}
+		\includegraphics[width=0.58\textwidth]{img/peripheral_interface.pdf}
 		\caption{Rozhraní externích periferií}
 	\end{figure}
 \end{frame}
 
-\section{Ukázka}
+\section{Ukázka (\texttt{GUI})}
 
 \subsection{ZeroMate - uživatelské rozhraní}
 
@@ -313,6 +316,8 @@
 
 \section{Technlogie}
 
+\subsection{Vývoj a pouižité technologie}
+
 \begin{frame}
 	\vspace{-0.5cm}
 	\begin{figure}
@@ -332,7 +337,7 @@
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 	\vspace{-0.3cm}
 	\begin{itemize}
-		\item závislosti automaticky staženy a sestaveny \\ (\texttt{.gitmodules} + \texttt{CMake})
+		\item knihovny třetích stran automaticky staženy a sestaveny \\ (\texttt{.gitmodules} + \texttt{CMake})
 		\begin{itemize}
 			\item GoogleTest, ImGUI, dylib, elifio, GLFW, capstone, ... 
 		\end{itemize}
@@ -341,14 +346,13 @@
 
 \section{Testování}
 
-\subsection{Funkcionalita}
+\subsection{Funkcionalita emulátoru}
 
 \begin{frame}
 	\begin{block}{1) Unit testy}
 		\begin{itemize}
 			\item jádro emulátoru (exekuce \texttt{ARMv6} instrukcí)
-			\item GoogleTest, \texttt{CI} (regresní testy)
-			\item pokrytí $\approx$ 78\%
+			\item GoogleTest, \texttt{CI} (regresní testy), pokrytí $\approx$ 78\%
 		\end{itemize}
 	\end{block}
 	\begin{block}{2) Funkční testy}
@@ -357,6 +361,7 @@
 			\item připravená sada příkladů (\texttt{.ELF})
 			\begin{itemize}
 				\item \texttt{UART}, \texttt{FPU}, \texttt{GPIO}, \texttt{I\textsuperscript{2}C}, plánování procesů (\texttt{EDF}, \texttt{RTL}), \texttt{ARM} timer, ...
+				\item součástí repozitáře (demo/ how-to)
 			\end{itemize}
 		\end{itemize}
 	\end{block}
@@ -372,7 +377,7 @@
 
 \begin{frame}
 	\begin{itemize}
-		\item výkonost emulace $\approx$ 4-5 Minst/s (\href{https://github.com/MartinUbl/KIV-RTOS}{\beamergotobutton{KIV-RTOS}})
+		\item výkon emulátoru $\approx$ 4-5 Minst/s (\href{https://github.com/MartinUbl/KIV-RTOS}{\beamergotobutton{KIV-RTOS}})
 		\item analýza rychlosti emulace jednotlivých instrukcí
 		\begin{itemize}
 			\item $\Rightarrow$ potenciální optimalizace
@@ -384,7 +389,7 @@
 	\end{figure}
 \end{frame}
 
-\subsection{Porovnání výkonosti s ostatními emulátory}
+\subsection{Porovnání výkonnosti s ostatními emulátory}
 
 \begin{frame}
 	\vspace{-0.2cm}
@@ -396,7 +401,7 @@
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 	\vspace{-0.4cm}
 	\begin{itemize}
-		\item pouze orientační (\href{https://cpulator.01xz.net/}{\beamergotobutton{https://cpulator.01xz.net/}})
+		\item \textcolor{red}{pouze orientační} (\href{https://cpulator.01xz.net/}{\beamergotobutton{https://cpulator.01xz.net/}})
 		\item \textbf{ZeroMate jako jediný podporuje \texttt{MMU}}
 		\begin{itemize}
 			\item využití s každým přístupem do paměti ($\approx$ 42\% instrukcí)
