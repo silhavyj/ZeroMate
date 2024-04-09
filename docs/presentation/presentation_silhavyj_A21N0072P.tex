@@ -20,6 +20,11 @@
 \setbeamercolor{structure}{fg=UBCblue} % itemize, enumerate, etc
 \setbeamercolor{section in toc}{fg=UBCblue} % TOC sections
 
+\setbeamertemplate{background} 
+{
+	\includegraphics[width=\paperwidth,height=\paperheight]{img/background.pdf}
+}
+
 % Override palette coloring with secondary
 \setbeamercolor{subsection in head/foot}{bg=UBCgrey,fg=white}
 \setbeamertemplate{caption}[numbered]
@@ -239,9 +244,13 @@
 			\item \texttt{extern "C" \_\_declspec(dllexport)}
 		\end{itemize}
 	\end{itemize}
+	\vspace{-0.4cm}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.58\textwidth]{img/peripheral_interface.pdf}
+		%\includegraphics[width=0.58\textwidth]{img/peripheral_interface.pdf}
+		\hspace{0.4cm}
+		\vspace{-0.4cm}
+		\includegraphics[width=0.92\textwidth]{img/peripheral_interface_2.pdf}
 		\caption{Rozhraní externích periferií}
 	\end{figure}
 \end{frame}
@@ -311,7 +320,7 @@
 				\includegraphics[width=.85\textwidth]{img/screenshot-07.pdf}%
 			}%
 		\end{figure}
-	\end{overlayarea}      
+	\end{overlayarea}
 \end{frame}
 
 \section{Technlogie}
