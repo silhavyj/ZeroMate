@@ -2,15 +2,6 @@
 
 \usepackage{appendixnumberbeamer}
 
-\newcommand{\beginbackup}{
-	\newcounter{framenumbervorappendix}
-	\setcounter{framenumbervorappendix}{\value{framenumber}}
-}
-\newcommand{\backupend}{
-	\addtocounter{framenumbervorappendix}{-\value{framenumber}}
-	\addtocounter{framenumber}{\value{framenumbervorappendix}} 
-}
-
 \usetheme{Madrid}
 \useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
 \useinnertheme{circles}
@@ -447,7 +438,6 @@
 
 \appendix
 
-\beginbackup
 \section{Otázky}
 
 \subsection{Otázka 1}
@@ -468,6 +458,6 @@
 	\end{block}
 \end{frame}
 
-\backupend
+
 
 \end{document}
