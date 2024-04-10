@@ -119,7 +119,7 @@
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{itemize}
-			\item vhodné pro seznámení se s programování v \texttt{JSA}
+			\item \textbf{vhodné pro seznámení se s programování v \texttt{JSA}}
 			\begin{itemize}
 				\item vizualizace, ladění programu
 			\end{itemize}
@@ -348,7 +348,11 @@
 	\begin{itemize}
 		\item knihovny třetích stran automaticky staženy a sestaveny \\ (\texttt{.gitmodules} + \texttt{CMake})
 		\begin{itemize}
-			\item GoogleTest, ImGUI, dylib, elifio, GLFW, capstone, ... 
+			\item \href{https://github.com/google/googletest}{\beamergotobutton{GoogleTest}}, \href{https://github.com/ocornut/imgui}{\beamergotobutton{ImGUI}}, 
+			\href{https://github.com/martin-olivier/dylib}{\beamergotobutton{dylib}}, 
+			\href{https://github.com/serge1/ELFIO}{\beamergotobutton{ELFIO}}, 
+			\href{https://github.com/glfw/glfw}{\beamergotobutton{GLFW}}, 
+			\href{https://github.com/capstone-engine/capstone}{\beamergotobutton{capstone}}, ...
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -361,7 +365,7 @@
 	\begin{block}{1) Unit testy}
 		\begin{itemize}
 			\item jádro emulátoru (exekuce \texttt{ARMv6} instrukcí)
-			\item GoogleTest, \texttt{CI} (regresní testy), pokrytí $\approx$ 78\%
+			\item GoogleTest, \texttt{CI} (regresní testy), \textbf{pokrytí $\approx$ 78\%}
 		\end{itemize}
 	\end{block}
 	\begin{block}{2) Funkční testy}
@@ -370,7 +374,7 @@
 			\item připravená sada příkladů (\texttt{.ELF})
 			\begin{itemize}
 				\item \texttt{UART}, \texttt{FPU}, \texttt{GPIO}, \texttt{I\textsuperscript{2}C}, plánování procesů (\texttt{EDF}, \texttt{RTL}), \texttt{ARM} timer, ...
-				\item součástí repozitáře (demo/ how-to)
+				\item \textbf{součástí repozitáře jako examples}
 			\end{itemize}
 		\end{itemize}
 	\end{block}
@@ -386,7 +390,7 @@
 
 \begin{frame}
 	\begin{itemize}
-		\item výkon emulátoru $\approx$ 4-5 Minst/s (\href{https://github.com/MartinUbl/KIV-RTOS}{\beamergotobutton{KIV-RTOS}})
+		\item \textbf{výkon emulátoru $\approx$ 4-5 Minst/s} (\href{https://github.com/MartinUbl/KIV-RTOS}{\beamergotobutton{KIV-RTOS}})
 		\item analýza rychlosti emulace jednotlivých instrukcí
 		\begin{itemize}
 			\item $\Rightarrow$ potenciální optimalizace
