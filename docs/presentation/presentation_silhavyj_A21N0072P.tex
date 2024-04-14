@@ -24,7 +24,7 @@
 
 \setbeamertemplate{background} 
 {
-	\includegraphics[width=\paperwidth,height=\paperheight]{img/background.pdf}
+	\includegraphics[width=\paperwidth,height=\paperheight]{img/background.png}
 }
 
 % Override palette coloring with secondary
@@ -160,7 +160,7 @@
 				\item \texttt{x86}, \texttt{MIPS}, \texttt{ARM}, ...
 			\end{itemize}
 			\item připojení externího debuggeru (\texttt{GNU})
-			\item plná podpora systémových oprací
+			\item plná podpora systémových operací
 		\end{itemize}
 		\column{0.4\textwidth}
 		\begin{figure}
@@ -185,9 +185,9 @@
 	\end{block}
 \end{frame}
 
-\section{ZeroMate}
+\section{Návrh řešení}
 
-\subsection{Jádro emulátoru (emulovaná funkcionalita)}
+\subsection{ZeroMate - jádro emulátoru (emulovaná funkcionalita)}
 
 \begin{frame}
 	\begin{columns}
@@ -231,7 +231,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Externí periferie}
+\subsection{ZeroMate - externí periferie}
 
 \begin{frame}
 	
@@ -350,11 +350,11 @@
 	\begin{itemize}
 		\item knihovny třetích stran automaticky staženy a sestaveny \\ (\texttt{.gitmodules} + \texttt{CMake})
 		\begin{itemize}
-			\item \href{https://github.com/google/googletest}{\beamergotobutton{GoogleTest}}, \href{https://github.com/ocornut/imgui}{\beamergotobutton{ImGUI}}, 
-			\href{https://github.com/martin-olivier/dylib}{\beamergotobutton{dylib}}, 
-			\href{https://github.com/serge1/ELFIO}{\beamergotobutton{ELFIO}}, 
-			\href{https://github.com/glfw/glfw}{\beamergotobutton{GLFW}}, 
-			\href{https://github.com/capstone-engine/capstone}{\beamergotobutton{capstone}}, ...
+			\item \href{https://github.com/google/googletest}{\beamergotobutton{GoogleTest}} \href{https://github.com/ocornut/imgui}{\beamergotobutton{ImGUI}}
+			\href{https://github.com/martin-olivier/dylib}{\beamergotobutton{dylib}} 
+			\href{https://github.com/serge1/ELFIO}{\beamergotobutton{ELFIO}} 
+			\href{https://github.com/glfw/glfw}{\beamergotobutton{GLFW}} 
+			\href{https://github.com/capstone-engine/capstone}{\beamergotobutton{capstone}}
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -416,7 +416,7 @@
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 	\vspace{-0.4cm}
 	\begin{itemize}
-		\item \textcolor{red}{pouze orientační} (\href{https://cpulator.01xz.net/}{\beamergotobutton{https://cpulator.01xz.net/}})
+		\item \textbf{pouze orientační} (\href{https://cpulator.01xz.net/}{\beamergotobutton{https://cpulator.01xz.net/}}, 2023)
 		\item \textbf{ZeroMate jako jediný podporuje \texttt{MMU}}
 		\begin{itemize}
 			\item využití s každým přístupem do paměti ($\approx$ 42\% instrukcí)
@@ -425,6 +425,31 @@
 \end{frame}
 
 \section{Závěr}
+
+\subsection{Návrhy na budoucí vylepšení}
+
+\begin{frame}
+	\begin{block}{\texttt{IPC}}
+		\begin{itemize}
+			\item např. pomocí socketů
+			\item spuštění vícero instancí ZeroMate emulátoru
+			\begin{itemize}
+				\item $\Rightarrow$ emulace distribuovaných systémů \& algoritmů
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+	\begin{block}{\texttt{CI}-only mód}
+		\begin{itemize}
+			\item integrace do \texttt{CI/CD} pipeline
+			\item validace programů v rámci výuky
+			\begin{itemize}
+				\item např. definováním očekáváné \texttt{UART} komunikace (\texttt{I/O})
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+	Další dle potřeby uživatelů, hlášených bugů, ...
+\end{frame}
 
 \begin{frame}
   \centering \Large
