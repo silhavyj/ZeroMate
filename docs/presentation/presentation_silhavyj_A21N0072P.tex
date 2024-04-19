@@ -118,6 +118,7 @@
 \subsection{CPUlator}
 
 \begin{frame}
+	\vspace{-0.4cm}
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{itemize}
@@ -131,7 +132,7 @@
 		\column{0.5\textwidth}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.8\textwidth]{img/cpulator.png}
+			\includegraphics[width=0.85\textwidth]{img/cpulator.png}
 			\caption{\href{https://cpulator.01xz.net}{\beamergotobutton{CPUlator}}}
 			\label{CPUlator}
 		\end{figure}
@@ -246,13 +247,13 @@
 			\item \texttt{extern "C" \_\_declspec(dllexport)}
 		\end{itemize}
 	\end{itemize}
-	\vspace{-0.4cm}
+	\vspace{0.0cm}
 	\begin{figure}
 		\centering
 		%\includegraphics[width=0.58\textwidth]{img/peripheral_interface.pdf}
 		\hspace{0.4cm}
 		\vspace{-0.4cm}
-		\includegraphics[width=0.92\textwidth]{img/peripheral_interface_2.pdf}
+		\includegraphics[width=0.92\textwidth]{img/peripheral_interface_3.pdf}
 		\caption{Rozhraní externích periferií}
 	\end{figure}
 \end{frame}
@@ -268,22 +269,32 @@
 			\centering
 			\only<1>
 			{%
+				\normalsize \textcolor{UBCblue}{(1) disassembly vstupního \texttt{ELF} souboru}\\
+				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/01.pdf}%
 			}%
 			\only<2>
 			{%
+				\normalsize \textcolor{UBCblue}{(2) řízení emulace (start, stop, step a reset)}\\
+				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/02.pdf}%
 			}%
 			\only<3>
 			{%
+				\normalsize \textcolor{UBCblue}{(3) registry \texttt{CPU} a systémový koprocesor}\\
+				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/03.pdf}%
 			}%
 			\only<4>
 			{%
+				\normalsize \textcolor{UBCblue}{(4) logování událostí (přerušení, vyjímky, ...)}\\
+				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/04.pdf}%
 			}%
 			\only<5>
 			{%
+				\normalsize \textcolor{UBCblue}{(5) \texttt{BCM2835} periferie (registry + interpretace hodnot)}\\
+				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/05.pdf}%
 			}%
 		\end{figure}
@@ -299,26 +310,38 @@
 			\centering
 			\only<1>
 			{%
+				\normalsize \textcolor{UBCblue}{(1) tlačítko (další periferie viz  \href{https://home.zcu.cz/~ublm/files/os/kiv-dpp-01-en.pdf}{\beamergotobutton{KIV-DPP-01}})}\\
+				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-02.pdf}%
 			}%
 			\only<2>
 			{%
+				\normalsize \textcolor{UBCblue}{(2) \texttt{SSD1036} \texttt{OLED} displej řízený přes \texttt{I\textsuperscript{2}C}}\\
+				\vspace{0.075cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-03.pdf}%
 			}%
 			\only<3>
 			{%
+				\normalsize \textcolor{UBCblue}{(3) \texttt{RGB} \texttt{LED}}\\
+				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-04.pdf}%
 			}%
 			\only<4>
 			{%
+				\normalsize \textcolor{UBCblue}{(4) sedmisegmentový \texttt{LED} displej řízený posuvným registrem}\\
+				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-05.pdf}%
 			}%
 			\only<5>
 			{%
+				\normalsize \textcolor{UBCblue}{(5) sériový terminál (\texttt{UART})}\\
+				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-06.pdf}%
 			}%
 			\only<6>
 			{%
+				\normalsize \textcolor{UBCblue}{(6) logický analyzátor}\\
+				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-07.pdf}%
 			}%
 		\end{figure}
@@ -402,6 +425,7 @@
 		\centering
 		\includegraphics[width=0.8\textwidth]{img/performance_2.pdf}
 	\end{figure}
+	\footnote{\vspace{0.5cm}\tiny Měřeno na: Lenovo ThinkPad P50 laptop; Windows 10; Intel(R) Core(TM) i7-6820HQ; \texttt{2.70GHz}; \texttt{16GB}}
 \end{frame}
 
 \subsection{Porovnání výkonnosti s ostatními emulátory}
@@ -448,7 +472,7 @@
 		\end{itemize}
 	\end{block}
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
-	Další viz text diplomové práce...
+	Další viz text \href{https://github.com/silhavyj/ZeroMate/blob/main/docs/latex/DP_silhavyj_A21N0072P.pdf}{\beamergotobutton{diplomové práce}}...
 \end{frame}
 
 \begin{frame}
