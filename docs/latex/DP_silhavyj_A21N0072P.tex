@@ -2023,11 +2023,11 @@ template<typename Type>
 	
 	\section{Emulation Speed}
 	
-	Throughout the run, a total of \textbf{426,922,064 instructions were executed}. The average execution time for each instruction is illustrated in Figure \ref{ZeroMate's emulation performance of KIV-RTOS}. Taking into account both the frequency of individual instruction types and their respective average execution speeds, the overall performance was calculated to be \textbf{4.84 mega instructions per second} using the following formula\footnote{This process was repeated multiple times, consistently yielding results in the range of 4 to 5 mega instructions per second.}.
+	Throughout the run, a total of \textbf{426,922,064 instructions were executed}. The average emulation speed for each instruction is illustrated in Figure \ref{ZeroMate's emulation performance of KIV-RTOS}. Taking into account both the frequency of individual instruction types and their respective average execution times, the overall performance was calculated to be \textbf{4.84 mega instructions per second} using the following formula\footnote{This process was repeated multiple times, consistently yielding results in the range of 4 to 5 mega instructions per second.}.
 	
-	$$ \text{Emulation speed} = \dfrac{1}{t} \sum_{i=1}^{n} (o_i * s_i), $$
+	$$ \text{Emulation speed} = \dfrac{10^{3}}{\dfrac{1}{t} \sum_{i=1}^{n} (o_i * s_i)} \text{\textit{[Minst/s]}}, $$
 	
-	where $t$ represents the total number of instructions, $n$ is the number of different instruction types, $o_i$ is the number of occurrences of instruction $i$, and $s_i$ denotes its average execution speed.
+	where $t$ represents the total number of instructions, $n$ is the number of different instruction types, $o_i$ is the absolute number of occurrences of instruction $i$, and $s_i$ denotes its average execution time in nanoseconds.
 	
 	\begin{figure}[ht]
 		\centering

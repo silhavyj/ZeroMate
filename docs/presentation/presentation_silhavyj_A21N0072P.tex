@@ -224,7 +224,7 @@
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 	\vspace{-0.4cm}
 	\begin{itemize}
-		\item cílem bylo emulovat nejčastěji používané periferie
+		\item \textbf{cílem bylo emulovat nejčastěji používané periferie}
 		\item dekompoziční návrh architektury 
 		\begin{itemize}
 			\item $\Rightarrow$ snadné rozšíření o další periferie
@@ -238,7 +238,7 @@
 	
 	\begin{itemize}
 		\item jednotné rozhraní pro externí periferie
-		\item načtené při inicializaci jako sdílené knihovny
+		\item načtené za běhu jako sdílené knihovny
 		\begin{itemize}
 			\item možnost načtení vícero instancí (např. \texttt{led.dll})
 		\end{itemize}
@@ -281,7 +281,7 @@
 			}%
 			\only<3>
 			{%
-				\normalsize \textcolor{UBCblue}{(3) registry \texttt{CPU} a systémový koprocesor}\\
+				\normalsize \textcolor{UBCblue}{(3) registry \texttt{CPU} a systémový koprocesor \texttt{CP15}}\\
 				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/03.pdf}%
 			}%
@@ -425,7 +425,7 @@
 		\centering
 		\includegraphics[width=0.8\textwidth]{img/performance_2.pdf}
 	\end{figure}
-	\footnote{\vspace{0.5cm}\tiny Měřeno na: Lenovo ThinkPad P50 laptop; Windows 10; Intel(R) Core(TM) i7-6820HQ; \texttt{2.70GHz}; \texttt{16GB}}
+	\footnote{\tiny Měřeno na: \textit{Lenovo ThinkPad P50 laptop; Windows 10; \newline Intel(R) Core(TM) i7-6820HQ; \texttt{2.70GHz}; \texttt{16GB}} \vspace{0.5cm}}
 \end{frame}
 
 \subsection{Porovnání výkonnosti s ostatními emulátory}
