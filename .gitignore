@@ -1,9 +1,37 @@
+# IDE
 /.vscode
 /.idea
 /.vs
 /.cache
+
+# build
 /build
 /output
+
+# Doxygen
 /docs/doxygen
 doxygen-warnings.log
 doxygen.tag
+
+# LaTex
+docs/latex/DP_silhavyj_A21N0072P.aux
+docs/latex/DP_silhavyj_A21N0072P.bbl
+docs/latex/DP_silhavyj_A21N0072P.bcf
+docs/latex/DP_silhavyj_A21N0072P.lof
+docs/latex/DP_silhavyj_A21N0072P.log
+docs/latex/DP_silhavyj_A21N0072P.lol
+docs/latex/DP_silhavyj_A21N0072P.lot
+docs/latex/DP_silhavyj_A21N0072P.out
+docs/latex/DP_silhavyj_A21N0072P.blg
+docs/latex/DP_silhavyj_A21N0072P.run.xml
+docs/latex/DP_silhavyj_A21N0072P.synctex.gz
+docs/latex/DP_silhavyj_A21N0072P.toc
+
+# Presentation
+docs/presentation/presentation_silhavyj_A21N0072P.aux
+docs/presentation/presentation_silhavyj_A21N0072P.log
+docs/presentation/presentation_silhavyj_A21N0072P.nav
+docs/presentation/presentation_silhavyj_A21N0072P.out
+docs/presentation/presentation_silhavyj_A21N0072P.snm
+docs/presentation/presentation_silhavyj_A21N0072P.synctex.gz
+docs/presentation/presentation_silhavyj_A21N0072P.toc
