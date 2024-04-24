@@ -1,0 +1,109 @@
+\documentclass{template_svk}
+
+\usepackage[utf8]{inputenc}
+%\usepackage[czech]{babel}
+\usepackage{url}
+
+\def\mtt#1{{\footnotesize\tt#1}}
+\def\comm#1{\mtt{\char92#1}}
+
+\begin{document}
+
+\title{Title of extended abstract}
+
+% Autoři
+ \author{Adam First}{student of the bachelor (master, doctoral)
+   degree program Applied Sciences, field of study Mechanics, e-mail: first@students.zcu.cz}
+
+ \author{Eva Second}{student of the bachelor (master, doctoral)
+   degree program Applied Sciences, field of study Mechanics, e-mail: second@students.zcu.cz}
+
+\maketitle
+
+\section{Introduction}
+
+This sample serves as a brief guide to using the template {\tt template\_svk} for
+writing of a contribution to the proceedings {\em Student Scientific Conference FAV ZCU}. The template is developed for \LaTeX{}u or pdf\LaTeX{}u users. The author affiliations should be written in the same language as the language of the text. The length of the extended abstract must be 2 page long. The text can be split into sections using commands \comm{section} and \comm{subsection}. 
+
+\section{Figures, tables and equations}
+
+Figures are inserted using the standard command \comm{includegraphics}{\footnotesize\verb|[options]{name}|}, where {\it name} is
+the name of the file containing the desired image. To insert multiple images side by side, or below each other, you can use the {\it minipage} environment or commands from the {\it subfigure} package. Standard command \comm{caption} creates captions for figures and tables. In the case of figures and tables, center the caption always under the given object.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=40mm]{logozcu}
+  \caption{Logo UWB}\label{F1}
+\end{figure}
+
+The reference to the figure or table labels defined by command \comm{label} are called by \comm{ref}{\footnotesize\verb|{label_name}|}, e.g. in Fig. \ref{F1} or Tab. \ref{T1}. The reference to the equation is made similar way in round brackets, e.g. see equation (\ref{R1}). For writing the equations, use the environments {\it equation} (numbered) or \$\$ (unnumbered). The equation included in the text should be ended by the full stop or comma, e.g.
+%
+\begin{equation}\label{R1}
+  {\bf x} =  {\bf A}^+ {\bf y}\,.
+\end{equation}
+%
+
+%
+\begin{table}[!ht]
+  \begin{center}
+    \begin{tabular}[t]{|l|l|}
+      \hline
+      \comm{author} & adding author and contact address \\
+      \hline
+      \comm{title} & adding abstract title \\
+      \hline
+      \comm{acknowledgement} & adding acknowledgement \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \captionof{table}{Table of commands}\label{T1}
+\end{table}
+
+
+\section{References and their citation}
+
+The list of references at the end of the abstract is alphabetically ordered (surname of the first author) in the format listed below (Harvard style). The names of the books, journal, proceedings and technical report write in italic using command \comm{it}{\footnotesize\{\dots\}}. The item is added to the list of references by command \comm{bibitem}, e.g.
+%
+\begin{verbatim}
+\bibitem[Lee et al.(1982)]{lee}
+ Lee, Y., Korpela. S.A., and Horne, R.N., 1982. Structure of
+ Multi-Cellular Natural Convection in a Tall Vertical Annulus.
+ {\it Proceedings, 7th International Heat Transfer Conference}.
+\end{verbatim}
+%
+and cited in the text as follows \comm{cite}{\footnotesize\verb|{lee}|}.
+
+The references should be cited in the text by author surname and year, e.g.: \dots current research of \cite{thung} \dots or \dots currently Clark (1986) and Sparrow (1980a). In case of three and more authors, use citation in the form \ldots as shown in \cite{lee} \dots. For distinguishing more references published in the same years and by the same authors, you can add symbols {\it a}, {\it b}, etc. behind the published year.
+
+\acknowledgement{Your acknowledgement, e.g. This work was supported by project \dots}
+
+
+\begin{thebibliography}{99}\itemsep=.75ex%
+
+\bibitem[Clark (1986)]{clark}
+Clark, J.A. (1986) {\em Basic Knowledges}. Amsterdam, Elsevier.
+
+\bibitem[Lee et al. (1982)]{lee}
+Lee, Y., Korpela. S.A., a Horne, R.N. (1982) Structure of Multi-Cellular
+Natural Convection in a Tall Vertical Annulus. {\it Proceedings, 7th
+International Heat Transfer Conference}. Hemisphere, Washington, DC,
+pp. 221--226.
+
+\bibitem[Sparrow (1980)]{sparrow}
+Sparrow, E.M. (1980) Forced Convection Heat Transfer in a
+Duct Having Spanwise-Periodic Rectangular Protuberances. {\it Numerical Heat
+Transfer}, Volume 3, pp. 149--167.
+
+\bibitem[Becerra-Sagredo et al. (2017)]{becerra}
+Becerra-Sagredo, J.T., Mandujano, F., Malaga, C. (2017) {\it A GPU-based
+Multi-level Algorithm for Boundary Value Problems}.
+Available from: \url{https://arxiv.org/abs/1703.07206}
+[Accessed 19th April 2017].
+
+\bibitem[Thung and Yang (1982)]{thung}
+Tung, C.Y., a Yang, Y. (1982) {\it Evaporative Heat Transfer in the Contact
+Line of a~Mixture}. Ph.D. thesis. Troyn, NY, Rensselaer Polytechnic Institute.
+
+\end{thebibliography}
+
+\end{document}
