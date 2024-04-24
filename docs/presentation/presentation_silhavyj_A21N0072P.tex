@@ -1,5 +1,6 @@
 \documentclass[compress]{beamer}
 
+\usepackage[czech]{babel}
 \usepackage{appendixnumberbeamer}
 
 \usetheme{Madrid}
@@ -235,7 +236,6 @@
 \subsection{ZeroMate - externí periferie}
 
 \begin{frame}
-	
 	\begin{itemize}
 		\item jednotné rozhraní pro externí periferie
 		\item načtené za běhu jako sdílené knihovny
@@ -254,6 +254,7 @@
 		\hspace{0.4cm}
 		\vspace{-0.4cm}
 		\includegraphics[width=0.92\textwidth]{img/peripheral_interface_3.pdf}
+		\vspace{0.2cm}
 		\caption{Rozhraní externích periferií}
 	\end{figure}
 \end{frame}
@@ -269,33 +270,33 @@
 			\centering
 			\only<1>
 			{%
-				\normalsize \textcolor{UBCblue}{(1) disassembly vstupního \texttt{ELF} souboru}\\
-				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/01.pdf}%
+				\vspace{-0.4cm}
+				\caption{a) Disassembly vstupního \texttt{ELF} souboru}
 			}%
 			\only<2>
 			{%
-				\normalsize \textcolor{UBCblue}{(2) řízení emulace (start, stop, step a reset)}\\
-				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/02.pdf}%
+				\vspace{-0.4cm}
+				\caption{b) Řízení emulace (start, stop, step a reset)}
 			}%
 			\only<3>
 			{%
-				\normalsize \textcolor{UBCblue}{(3) registry \texttt{CPU} a systémový koprocesor \texttt{CP15}}\\
-				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/03.pdf}%
+				\vspace{-0.4cm}
+				\caption{c) Registry \texttt{CPU} a systémový koprocesor \texttt{CP15}}
 			}%
 			\only<4>
 			{%
-				\normalsize \textcolor{UBCblue}{(4) logování událostí (přerušení, vyjímky, ...)}\\
-				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/04.pdf}%
+				\vspace{-0.4cm}
+				\caption{d) Logování událostí (přerušení, vyjímky, ...)}
 			}%
 			\only<5>
 			{%
-				\normalsize \textcolor{UBCblue}{(5) \texttt{BCM2835} periferie (registry + interpretace hodnot)}\\
-				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/gui/05.pdf}%
+				\vspace{-0.4cm}
+				\caption{e) \texttt{BCM2835} periferie (registry + interpretace hodnot)}
 			}%
 		\end{figure}
 	\end{overlayarea}      
@@ -310,39 +311,39 @@
 			\centering
 			\only<1>
 			{%
-				\normalsize \textcolor{UBCblue}{(1) tlačítko (další periferie viz  \href{https://home.zcu.cz/~ublm/files/os/kiv-dpp-01-en.pdf}{\beamergotobutton{KIV-DPP-01}})}\\
-				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-02.pdf}%
+				\vspace{-0.4cm}
+				\caption{a) Tlačítko (další periferie viz  \href{https://home.zcu.cz/~ublm/files/os/kiv-dpp-01-en.pdf}{\beamergotobutton{KIV-DPP-01}})}
 			}%
 			\only<2>
 			{%
-				\normalsize \textcolor{UBCblue}{(2) \texttt{SSD1036} \texttt{OLED} displej řízený přes \texttt{I\textsuperscript{2}C}}\\
-				\vspace{0.075cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-03.pdf}%
+				\vspace{-0.4cm}
+				\caption{b) \texttt{SSD1036} \texttt{OLED} displej řízený přes \texttt{I\textsuperscript{2}C}}
 			}%
 			\only<3>
 			{%
-				\normalsize \textcolor{UBCblue}{(3) \texttt{RGB} \texttt{LED}}\\
-				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-04.pdf}%
+				\vspace{-0.4cm}
+				\caption{c) \texttt{RGB} \texttt{LED}}
 			}%
 			\only<4>
 			{%
-				\normalsize \textcolor{UBCblue}{(4) sedmisegmentový \texttt{LED} displej řízený posuvným registrem}\\
-				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-05.pdf}%
+				\vspace{-0.4cm}
+				\caption{d) Sedmisegmentový \texttt{LED} displej řízený posuvným registrem}
 			}%
 			\only<5>
 			{%
-				\normalsize \textcolor{UBCblue}{(5) sériový terminál (\texttt{UART})}\\
-				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-06.pdf}%
+				\vspace{-0.4cm}
+				\caption{e) Sériový terminál (\texttt{UART})}
 			}%
 			\only<6>
 			{%
-				\normalsize \textcolor{UBCblue}{(6) logický analyzátor}\\
-				\vspace{0.1cm}
 				\includegraphics[width=.85\textwidth]{img/screenshot-07.pdf}%
+				\vspace{-0.4cm}
+				\caption{f) Logický analyzátor}
 			}%
 		\end{figure}
 	\end{overlayarea}
@@ -363,11 +364,25 @@
 	\href{https://github.com/silhavyj/ZeroMate}{\beamergotobutton{https://github.com/silhavyj/ZeroMate}}
 	\vspace{-0.1cm}
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.6\textwidth]{img/logos/logos.pdf}
-	\end{figure}
-	\vspace{-0.6cm}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{block}{vývoj}
+			\begin{itemize}
+				\item \texttt{C++20} (\texttt{Clang}, \texttt{GCC} a \texttt{MSVC})
+				\item \texttt{CMake}
+				\item Linux, Windows, \textcolor{darkgray}{MacOS*}
+			\end{itemize}
+		\end{block}
+		\column{0.4\textwidth}
+		\begin{block}{\texttt{CI} pipeline}
+			\begin{itemize}
+				\item \href{https://app.codecov.io/gh/silhavyj/ZeroMate}{\beamergotobutton{Codecov}}
+				\item \href{https://app.codacy.com/gh/silhavyj/ZeroMate/dashboard}{\beamergotobutton{Codacy}}
+				\item \href{https://silhavyj.github.io/ZeroMate}{\beamergotobutton{Doxygen}}
+			\end{itemize}
+		\end{block}
+	\end{columns}
+	\vspace{0.2cm}
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 	\vspace{-0.3cm}
 	\begin{itemize}
@@ -440,7 +455,7 @@
 	\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
 	\vspace{-0.4cm}
 	\begin{itemize}
-		\item \textbf{pouze orientační} (\href{https://cpulator.01xz.net/}{\beamergotobutton{https://cpulator.01xz.net/}}, 2023)
+		\item \textbf{pouze orientační} (\href{https://cpulator.01xz.net/}{\beamergotobutton{https://cpulator.01xz.net [2023]}})
 		\item \textbf{ZeroMate jako jediný podporuje \texttt{MMU}}
 		\begin{itemize}
 			\item využití s každým přístupem do paměti ($\approx$ 42\% instrukcí)
