@@ -10,8 +10,8 @@
 \title{ARMv6 Processor Emulator for Raspberry Pi Environment Emulation}
 \author{Jakub}{Šilhavý}{Bc.}{}
 \supervisor{Ing. Martin Úbl}
-\assignment{zadani.pdf}
-\signdate{10}{09}{2023}{V Plzni}% << the longest local name in the Czech Rep.
+\assignment{zadani_signed.pdf}
+\signdate{27}{04}{2024}{V Plzni}% << the longest local name in the Czech Rep.
 
 \usepackage{biblatex}
 \usepackage{subcaption}
@@ -658,7 +658,7 @@
 	
 	\subsection{Emulation} \label{subsection-Emulation}
 	
-	In emulation, each instruction of architecture \textit{A}, an emulated architecture, is replaced with one or more instructions of architecture \textit{B}, the underlying architecture \cite{computer-emulation}. This typically results in an implicit slowdown in performance as it requires more operations to achieve the same functionality. The primary advantage of an emulator is that it enables the execution of a program that is not originally written for the underlying architecture. Some popular examples of emulators include \break DOSBox, which can be used for playing retro video games on a modern computer, and QEMU \cite{QEMU}, a full-emulation system capable of running various architectures.
+	In emulation, each instruction of architecture \textit{A}, an emulated architecture, is replaced with one or more instructions of architecture \textit{B}, the underlying architecture \cite{computer-emulation}. This typically results in an implicit slowdown in performance as it requires more operations to achieve the same functionality. The primary advantage of an emulator is that it enables the execution of a program that is not originally written for the underlying architecture. Some popular examples of emulators include \break DOSBox \cite{DOSBox}, which can be used for playing retro video games on a modern computer, and QEMU \cite{QEMU}, a full-emulation system capable of running various architectures.
 	
 	\subsection{Virtualization}
 	
@@ -2023,11 +2023,11 @@ template<typename Type>
 	
 	\section{Emulation Speed}
 	
-	Throughout the run, a total of \textbf{426,922,064 instructions were executed}. The average execution time for each instruction is illustrated in Figure \ref{ZeroMate's emulation performance of KIV-RTOS}. Taking into account both the frequency of individual instruction types and their respective average execution speeds, the overall performance was calculated to be \textbf{4.84 mega instructions per second} using the following formula\footnote{This process was repeated multiple times, consistently yielding results in the range of 4 to 5 mega instructions per second.}.
+	Throughout the run, a total of \textbf{426,922,064 instructions were executed}. The average emulation speed for each instruction is illustrated in Figure \ref{ZeroMate's emulation performance of KIV-RTOS}. Taking into account both the frequency of individual instruction types and their respective average execution times, the overall performance was calculated to be \textbf{4.84 mega instructions per second} using the following formula\footnote{This process was repeated multiple times, consistently yielding results in the range of 4 to 5 mega instructions per second.}.
 	
-	$$ \text{Emulation speed} = \dfrac{1}{t} \sum_{i=1}^{n} (o_i * s_i), $$
+	$$ \text{Emulation speed} = \dfrac{10^{3}}{\dfrac{1}{t} \sum_{i=1}^{n} (o_i * s_i)} \text{\textit{[Minst/s]}}, $$
 	
-	where $t$ represents the total number of instructions, $n$ is the number of different instruction types, $o_i$ is the number of occurrences of instruction $i$, and $s_i$ denotes its average execution speed.
+	where $t$ represents the total number of instructions, $n$ is the number of different instruction types, $o_i$ is the absolute number of occurrences of instruction $i$, and $s_i$ denotes its average execution time in nanoseconds.
 	
 	\begin{figure}[ht]
 		\centering
@@ -2106,9 +2106,9 @@ template<typename Type>
 	
 	Enhancing the functionality of the system also requires addressing the issues previously outlined in Section \ref{section-Current-Limitations}.
 	
-	\paragraph{\texttt{CI}-only Mode}
+	\paragraph{\texttt{CLI} Mode}
 	
-	ZeroMate functions as a \texttt{GUI} application. Nevertheless, there could be an advantage in introducing a \texttt{CI}-only mode, specifically tailored for deployment in continuous integration environments as a testing utility for embedded applications.
+	ZeroMate functions as a \texttt{GUI} application. Nevertheless, there could be an advantage in introducing a \texttt{CLI} mode, specifically tailored for deployment in continuous integration environments as a testing utility for embedded applications.
 	
 	\paragraph{Socket Communication}
 	
@@ -2174,6 +2174,7 @@ template<typename Type>
 	\noindent
 	\textbf{\texttt{CISC}} - Complex Instruction Set Computer \\
 	\textbf{\texttt{CI}}   - Continuous Integration \\
+	\textbf{\texttt{CLI}}  - Command Line Interface \\
 	\textbf{\texttt{CP10}} - Co-processor 10 \\
 	\textbf{\texttt{CP15}} - Co-processor 15 \\
 	\textbf{\texttt{CPI}}  - Cycles Per Instruction \\
