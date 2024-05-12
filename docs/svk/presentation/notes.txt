@@ -1,0 +1,29 @@
+SLIDE 01
+========
+
+Dobrý den, moje jméno je Jakub Šilhavý a tímto bych Vám chtěl představit svoji diplomovou práci s názvem "Emulálor ARM procesoru za účelem emulace prostředí Raspberry Pi"
+
+SLIDE 02
+========
+
+Jak už je z názvu patrné, tak cílem práce bylo prozkoumat a ohodnotit existující možnosti řešení a na základě toho navrhnout a implementovat vlastní řešení, což principiálně zahrnuje dvě věci. Konkrétně se jedná  emulaci jednotlivých ARM instrukcí a také emulaci paměťově mapovaných periferií mikrokontroléru BCM2835 jako je například ARM časovač, UART rozhraní nebo GPIO piny.
+
+Mezi hlavní přínosy takovéhoto emulátoru patří kromě vzdělávacích a demonstračních účelů také testování SW v případech kdy HW není aktuálně k dispozici nebo také prototypování při návrhu komplexního systému, který se skládá z vícero HW komponent.
+
+Pro testovací a verifikační účely byl jako referenční SW použit KIV-RTOS, což je real-timeový OS, který byl vyvinut pro vzdělávací účely.
+
+SLIDE 03
+========
+
+Na tomto slidu je znázorněno v jakých všech aplikacích lze dnes nalézt ARM architekturu. Kromě klasických osobních počítačů se především jedná o embedded zařízení jako jsou například routery, medicínská zařízení, různé typy IoT zařízení a tak podobně.
+
+Na pravé straně je poté možné vidět zařazení ARM procesoru, který se nachází v Raspberry Pi Zero mezi ostatní typy ARM procesorů, včetně nových funkcionalit, které přináší oproti jeho předchůdcům jako jsou například SIMD instrukce nebo TrustZone.
+
+SLIDE 04
+========
+
+Při analýze možností řešení bylo vzato v úvahu několik existujících emulátorů, které do jisté míry podporují emulaci ARM procesoru.
+
+Jedním z takovýchto řešení je CPUlator, což je online vývojové prostředí, kde se dají zkoušet a testovat principy programování v jazyku symbolických adres. 
+
+Nicméně z pohledu plnohodnotné emulace prostředí Raspberry Pi Zero má tohle řešení několik omezení. Například zde není možné přepínat režimy CPU nebo zde také chybí podpora MMU, což v podstatě zabraňuje jakékoliv pokročilejší emulaci v podobě například real-timového OS.
