@@ -17,7 +17,7 @@ SLIDE 03
 
 Na tomto slidu je znázorněno v jakých všech aplikacích lze dnes nalézt ARM architekturu. Kromě klasických osobních počítačů se především jedná o embedded zařízení jako jsou například routery, medicínská zařízení, různé typy IoT zařízení a tak podobně.
 
-Na pravé straně je poté možné vidět zařazení ARM procesoru, který se nachází v Raspberry Pi Zero mezi ostatní typy ARM procesorů, včetně nových funkcionalit, které přináší oproti jeho předchůdcům jako jsou například SIMD instrukce nebo TrustZone.
+Na pravé straně je poté možné vidět zařazení procesoru, který se nachází v Raspberry Pi Zero mezi ostatní typy ARM procesorů, včetně nových funkcionalit, které přináší oproti jeho předchůdcům jako je například Jazelle technologie, TrustZone nebo SIMD instrukce.
 
 SLIDE 04
 ========
@@ -27,3 +27,23 @@ Při analýze možností řešení bylo vzato v úvahu několik existujících e
 Jedním z takovýchto řešení je CPUlator, což je online vývojové prostředí, kde se dají zkoušet a testovat principy programování v jazyku symbolických adres. 
 
 Nicméně z pohledu plnohodnotné emulace prostředí Raspberry Pi Zero má tohle řešení několik omezení. Například zde není možné přepínat režimy CPU nebo zde také chybí podpora MMU, což v podstatě zabraňuje jakékoliv pokročilejší emulaci v podobě například real-timového OS.
+
+SLIDE 05
+========
+
+Jako salší možnost se nabízí využití QEMU, které kromě i jiných architektur již nabízí plnou podporu pro ARM procesor pomocí technicky pomocí dynamického binárního překladu. Nicméně stejně jako v předchozím případě je i zde omezená podpora připojení externích periferií.
+
+Zároveň je zde také problém s bootovacím procesem, protože QEMU, co se týče ARM architektury, očekává _start symbol na adrese 10 tisíc hexa, což je nekompatibilní s first-stage Raspberry Pi Zero bootloaderem, který tento symbol očekává na adrese 8 tisíc hexa. Tento problém se dá vyřešit v podstatě dvěma způsoby. Buď se udělá custom build celého QEMU, kde se tato adresa patřičně upraví nebo se v procesu buildu emulované aplikace budou brát v úvahu dva různé linker scripty, které se použijí v závislosti na tom, jestli buildíme pro fyzický HW nebo pro QEMU.
+ 
+Jako hlavní problém je zde ale hlášený problém se systémovým časovačem, který údajně v předmětu KIV/OS zabraňoval implementaci preemptivního plánovače a proto se bylo cílem navrhnout emulátor, které by tyto nedostatky eliminoval a plně podporoval emulaci KIV-RTOSu.
+
+SLIDE 06
+========
+
+Na tomto slidu je shrnuta implementovaná a  funkcionalita navrženého emulátoru.
+
+Z pohledu procesoru má ZeroMate podporu ARMv6 instrukcí, přepínání módu (společně s bank registry, což je typická vlastnost ARM procesorů, aritmeticko-logickou jednotku, jednotku pro operace násobení a jednotku pro memory-management, pomocí které lze implementovat například stránkování. Dále je zde podpora pro koprocesory, kterých může být teoreticky až 16. V současné době ZeroMate podporuje pouze řídící komprocesor CP15 a koprocesor CP10, který zajišťuje vykonávání floating-point operací.
+
+Z pohledu periferií byla implementována podpora pro operační paměť, řadič přerušení, ARM časovač, generátor náhodných čísel a řadič GPIO. Co se týče komunikačních rozhraní, tak je zde podpora pro I2C a Mini UART.
+
+Jako poslední zde byla implementována pomocná periferie nazvaná debug monitor, která plní roli paměťově mapovaného displeje. Tento monitor může posloužit pro debuggovací účely v momentě kdy například uživatel ještě nemá implementovaný například driver pro UART.
