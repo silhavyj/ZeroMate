@@ -6,9 +6,9 @@ Dobrý den, moje jméno je Jakub Šilhavý a tímto bych Vám chtěl představit
 SLIDE 02
 ========
 
-Jak už je z názvu patrné, tak cílem bylo prozkoumat a ohodnotit existující možnosti řešení a na základě toho navrhnout a implementovat vlastní řešení, což principiálně zahrnuje dvě věci. Konkrétně se jedná  emulaci jednotlivých ARM instrukcí a také emulaci paměťově mapovaných periferií mikrokontroléru BCM2835 jako je například ARM časovač, UART rozhraní nebo GPIO piny.
+Jak už je z názvu patrné, tak cílem bylo prozkoumat a ohodnotit existující možnosti řešení a na základě toho navrhnout a implementovat vlastní řešení, což principiálně zahrnuje dvě věci. Konkrétně se jedná o emulaci jednotlivých ARM instrukcí a také emulaci paměťově mapovaných periferií mikrokontroléru BCM2835 jako je například ARM časovač, UART rozhraní nebo GPIO piny.
 
-Mezi hlavní přínosy takovéhoto emulátoru patří kromě vzdělávacích a demonstračních účelů také testování SW v případech kdy HW není momentálně k dispozici nebo také prototypování při návrhu komplexního systému, který se skládá z vícero HW komponent.
+Mezi hlavní přínosy takovéhoto emulátoru patří kromě vzdělávacích a demonstračních účelů také testování SW v případech kdy HW není aktuálně k dispozici nebo také prototypování při návrhu komplexního systému, který se skládá z vícero HW komponent.
 
 Pro testovací a verifikační účely byl jako referenční SW použit KIV-RTOS, což je real-timeový operační systém, který byl vyvinut pro vzdělávací účely.
 
@@ -26,12 +26,12 @@ Při analýze možností řešení bylo vzato v úvahu několik existujících e
 
 Jedním z takovýchto řešení je například CPUlator, což je online vývojové prostředí, kde se dají zkoušet a testovat principy programování v jazyku symbolických adres. 
 
-Nicméně z pohledu plnohodnotné emulace prostředí Raspberry Pi Zero má tohle řešení několik zásadních omezení. Například zde není možné přepínat režimy CPU nebo zde také chybí podpora MMU, což je memory management unit, což v podstatě zabraňuje jakékoliv pokročilejší emulaci v podobě například real-timového OS.
+Nicméně z pohledu plnohodnotné emulace prostředí Raspberry Pi Zero má tohle řešení několik zásadních omezení. Například zde není možné přepínat režimy CPU nebo zde chybí podpora MMU, což je memory management unit, což v podstatě zabraňuje jakékoliv pokročilejší emulaci v podobě například real-timového OS.
 
 SLIDE 05
 ========
 
-Jako další možnost se nabízí využití QEMU, které má kromě i jiných architektur již  plnou podporu pro ARM procesor pomocí techniky dynamického binárního překladu. Nicméně stejně jako v předchozím případě je i zde omezená podpora připojení externích periferií.
+Jako další možnost se nabízí využití QEMU, které má kromě i jiných architektur již plnou podporu pro ARM procesor pomocí techniky dynamického binárního překladu. Nicméně stejně jako v předchozím případě je i zde omezená podpora připojení externích periferií.
 
 Zároveň je zde také problém s bootovacím procesem, protože QEMU, co se týče ARM architektury, očekává _start symbol na adrese 10 tisíc hexa, což je nekompatibilní s first-stage level bootloaderem Raspberry Pi Zero, který tento symbol očekává na adrese 8 tisíc hexa. Tento problém se dá vyřešit v podstatě dvěma způsoby. Buď se udělá custom build celého QEMU, kde se tato adresa patřičně upraví nebo se v procesu buildu emulované aplikace budou brát v úvahu dva různé linker scripty, které se použijí v závislosti na tom, jestli buildíme pro fyzický HW nebo pro QEMU.
  
@@ -49,6 +49,28 @@ Z pohledu periferií byla implementována podpora pro operační paměť, řadi�
 SLIDE 07
 ========
 
-Jednou z předních výhod ZeroMate je, že má definované jednotné rozhraní pro připojení externích periferií, které nejsou nijak závislé na toolchainu použitého pro sestavení jádra emulátoru. Uživatel si tím pádem může ve svém oblíbeném programovacím jazyce implementovat například modul dopravní křižovatky, kterou pomocí konfiguračního souboru připojí k GPIO pinům.
+Jednou z předních výhod ZeroMate je, že má definované jednotné rozhraní pro připojení externích periferií, které jsou nezávislé na toolchainu použitého pro sestavení jádra emulátoru. Uživatel si tím pádem může ve svém oblíbeném programovacím jazyce implementovat například modul dopravní křižovatky, který pomocí konfiguračního souboru připojí k GPIO pinům.
 
-Každá periferie má také možnost se zaregistrovat jako posluchač nějaké množiny GPIO pinů na jejichž změny může pak patřičně reagovat nebo také jako posluchač systémového času, který pak může využít k synchronizaci se samotným jádrem - to je využito zejména pak v komunikačních protokolech typu I2C nebo UART
+SLIDE 08
+========
+
+Hlavní okno uživatelského rozhraní tvoří samotné disassembly vstupního ELF souboru, který uživatel nahrál do emulátoru jako jeho aplikaci, což v případě KIV-RTOSs představuje samotný kernel. Jednotlivé instrukce jsou rozděleny do sekcí podle názvu funkcí tak, aby se v tom dalo snadněji orientovat a navigovat například při nastavování breakpointů.
+
+V řídícím okně emulátoru je poté možné celou emulaci spustit, pozastavit, resetovat nebo také krokovat.
+
+V levé části možné vidět aktuální obsah všech registrů ve všech módech procesoru. Je zde také možnost přepínat mezi způsoby zobrazení pro jejich snazší interpretaci.
+
+Ve spodní části emulátoru je pak celý průběh emulace je logován. Jednotlivé logy lze pak filtrovat a lze tedy tím pádem zobrazit například jenom errorové hlášky nebo jenom interrupty a tak podobně.
+
+V pravé části emulátoru jsou pak v jednotlivých záložkách vizualizace jednotlivých interních periferií jako je operační paměť RAM, GPIO piny a tak podobně.
+
+Jednotlivá okna lze pomocí dockingu přeuspořádat nebo například vyjmout, takže si uživatel může celé GUI upravit, tak aby se mu s tím co nejlépe a nejefektivněji pracovalo.
+
+SLIDE 09
+========
+
+Tady jsou jenom pro ukázku uvedené příklady externích periferií, které jsou součástí finálního releasu a uživatel si je tedy může pomocí konfiguračního souboru připojit na jim zvolené GPIO piny.
+
+Jedne taková eterterní periferie je například jednoduché tlačítko nebo OLED displej, který je řízen pres I2C. Další externí periferii je například LED dioda nebo nebo sedmi segmentový displej, který je řízen pomocí posuvného registru nebo také sériový terminál, kde si uživatel může nastavit například délku framu (datové části) nebo baurate.
+
+Jako poslední externí periferie je zde logický analyzátor, který může být použit pro ladění různých typů komunikace. Na tomhle obrázku je pak tuším část UART komunikace.
