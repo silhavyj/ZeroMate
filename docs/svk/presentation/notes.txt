@@ -69,8 +69,6 @@ Jednotlivá okna lze pomocí dockingu přeuspořádat nebo například vyjmout, 
 SLIDE 09
 ========
 
-Tady jsou jenom pro ukázku uvedené příklady externích periferií, které jsou součástí finálního releasu a uživatel si je tedy může pomocí konfiguračního souboru připojit na jim zvolené GPIO piny.
+Tady jsou jenom pro ukázku uvedené příklady externích periferií, které jsou součástí finálního releasu, jako například jednoduché tlačítko, OLED displej, který je řízen pres I2C protokol, LED dioda, sedmi segmentový displej, který je řízen pomocí posuvného registru nebo také sériový UART terminál.
 
-Jedne taková eterterní periferie je například jednoduché tlačítko nebo OLED displej, který je řízen pres I2C. Další externí periferii je například LED dioda nebo nebo sedmi segmentový displej, který je řízen pomocí posuvného registru nebo také sériový terminál, kde si uživatel může nastavit například délku framu (datové části) nebo baurate.
-
-Jako poslední externí periferie je zde logický analyzátor, který může být použit pro ladění různých typů komunikace. Na tomhle obrázku je pak tuším část UART komunikace.
+Jako poslední externí periferie je zde logický analyzátor, který může být použit pro ladění různých typů komunikace. Na tomhle obrázku je pak zachycen jeden rámec UART komunikace.
