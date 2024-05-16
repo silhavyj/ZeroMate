@@ -26,7 +26,7 @@ Při analýze možností řešení bylo vzato v úvahu několik existujících e
 
 Jedním z takovýchto řešení je například CPUlator, což je online vývojové prostředí, kde se dají zkoušet a testovat principy programování v jazyku symbolických adres. 
 
-Nicméně z pohledu plnohodnotné emulace prostředí Raspberry Pi Zero má tohle řešení několik zásadních omezení. Například zde není možné přepínat režimy CPU nebo zde chybí podpora MMU, což je memory management unit, což v podstatě zabraňuje jakékoliv pokročilejší emulaci v podobě například real-timového OS.
+Nicméně z pohledu plnohodnotné emulace prostředí Raspberry Pi Zero má tohle řešení několik zásadních omezení. Například zde není možné přepínat režimy procesoru nebo zde chybí podpora MMU, což je memory management unit, což v podstatě zabraňuje jakékoliv pokročilejší emulaci v podobě například real-timového OS.
 
 SLIDE 05
 ========
@@ -49,7 +49,7 @@ Z pohledu periferií byla implementována podpora pro operační paměť, řadi�
 SLIDE 07
 ========
 
-Jednou z předních výhod ZeroMate je, že má definované jednotné rozhraní pro připojení externích periferií, které jsou nezávislé na toolchainu, který je použit pro sestavení jádra emulátoru. Uživatel si tím pádem může ve svém oblíbeném programovacím jazyce implementovat například modul dopravní křižovatky a pomocí  konfiguračního souboru jej může připojí k GPIO pinům.
+Jednou z předních výhod ZeroMate je, že má definované jednotné rozhraní pro připojení externích periferií, které jsou nezávislé na toolchainu, který je použit pro sestavení jádra emulátoru. Uživatel si tím pádem může ve svém oblíbeném programovacím jazyce implementovat například modul dopravní křižovatky a pomocí konfiguračního souboru jej může připojit k GPIO pinům.
 
 SLIDE 08
 ========
@@ -62,7 +62,7 @@ V levé části je možné vidět aktuální obsah všech registrů ve všech m�
 
 Ve spodní části emulátoru je pak celý průběh emulace je logován. Jednotlivé logy lze pak filtrovat a lze tedy tím pádem zobrazit například jenom errorové hlášky nebo jenom interrupty a tak podobně.
 
-V pravé části emulátoru jsou pak v jednotlivých záložkách vizualizace jednotlivých interních periferií jako je operační paměť RAM, GPIO piny a tak podobně.
+V pravé části emulátoru jsou pak v jednotlivých záložkách vizualizace jednotlivých interních periferií jako je operační paměť RAM, GPIO piny a tak dále.
 
 Jednotlivá okna lze pomocí dockingu přeuspořádat nebo například vyjmout, takže si uživatel může celé GUI upravit, tak aby se mu s tím co nejlépe a nejefektivněji pracovalo.
 
@@ -89,6 +89,26 @@ Proces testovaní emulátoru byl rozdělen do 3 fází, které na sebe postupně
 
 Při vývoji samotného jádra byl kladen velký důraz na jednotkové testování za účelem včasného odchycení chyb při emulaci jednotlivých instrukcí. Tyto testy byly zároveň použity jako regresní testy v CI pipelině.
 
-BCM2835 periferie byly poté testovány pomocí sady předpřipravených příkladů, které reflektovaly výuku v předmětu KIV/OS. Tyto příklady jsou taktéž součástí repozitáře společně s krátkým README popisem a můžou být tím pádem použity jako dema nebo ukázky toho, jak se dá daná funkcionalita například implementovat.
+BCM2835 periferie byly poté testovány pomocí sady připravených příkladů, které reflektovaly výuku v předmětu KIV/OS. Tyto příklady jsou taktéž součástí repozitáře společně s krátkým README popisem a můžou být tím pádem použity jako dema nebo ukázky toho, jak se dá daná funkcionalita například implementovat.
 
 Poslední fáze testování byla poté provedena studenty samotného předmětu, kde byl emulátor použit pro reálné testování koncovými uživateli.
+
+SLIDE 12
+========
+
+Součástí testování bylo také měření výkonu emulace jednotlivých ARM instrukcí. V tomto grafu je možné vidět jaké typy instrukcí mají největší dopad na rychlost celé emulace, což mohou být dobří kandidáti například na nějakou budoucí optimalizaci. Celkový výkon emulátor poté odpovídá orientačně čtyřem megainstrukcím za sekundu.
+
+SLIDE 13
+========
+
+Na dalším slidu je potom zobrazeno porovnání výkonnosti ZeroMate s ostatními emulátory. Nicméně tohle porovnání je čistě orientační, protože CPUlator, odkud byla data převzata, nezmiňuje nic o tom, jak byla tato data naměřena nebo na jakém stroji byl experiment proveden.
+
+Zároveň bych chtěl také zmínit, že z těchto uvedených emulátorů je ZeroMate jediný který má podporu MMU, což má také do jisté míry dopad na celkovou rychlost emulace. Samozřejmě to do jisté míry potlačuje použití TLB.
+
+SLIDE 14
+========
+
+SLIDE 15
+========
+
+A tímto bych Vám všem chtěl poděkovat za Vaši pozornost.
