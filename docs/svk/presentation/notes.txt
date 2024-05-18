@@ -1,7 +1,7 @@
 SLIDE 01
 ========
 
-Dobrý den, moje jméno je Jakub Šilhavý a tímto bych Vám chtěl představit svoji diplomovou práci s názvem "Emulálor ARM procesoru za účelem emulace prostředí Raspberry Pi"
+Dobrý den, moje jméno je Jakub Šilhavý a tímto bych Vám chtěl představit svoji diplomovou práci s názvem "Emulátor ARM procesoru za účelem emulace prostředí Raspberry Pi"
 
 SLIDE 02
 ========
@@ -60,7 +60,7 @@ V řídícím okně emulátoru je poté možné celou emulaci spustit, pozastavi
 
 V levé části je možné vidět aktuální obsah všech registrů ve všech módech procesoru. Je zde také možnost přepínat mezi způsoby zobrazení pro jejich snazší interpretaci.
 
-Ve spodní části emulátoru je pak celý průběh emulace je logován. Jednotlivé logy lze pak filtrovat a lze tedy tím pádem zobrazit například jenom errorové hlášky nebo jenom interrupty a tak podobně.
+Ve spodní části emulátoru je pak celý průběh emulace logován. Jednotlivé logy lze pak filtrovat a lze tedy tím pádem zobrazit například jenom errorové hlášky nebo jenom interrupty a tak podobně.
 
 V pravé části emulátoru jsou pak v jednotlivých záložkách vizualizace jednotlivých interních periferií jako je operační paměť RAM, GPIO piny a tak dále.
 
@@ -101,14 +101,18 @@ Součástí testování bylo také měření výkonu emulace jednotlivých ARM i
 SLIDE 13
 ========
 
-Na dalším slidu je potom zobrazeno porovnání výkonnosti ZeroMate s ostatními emulátory. Nicméně tohle porovnání je čistě orientační, protože CPUlator, odkud byla data převzata, nezmiňuje nic o tom, jak byla tato data naměřena nebo na jakém stroji byl experiment proveden.
+Na dalším slidu je potom zobrazeno porovnání výkonnosti ZeroMate s ostatními emulátory. Nicméně tohle porovnání je čistě orientační, protože CPUlator, odkud byla data převzata, nezmiňuje nic o tom, jak byla tato data naměřena ani nic o tom, na jakém stroji byl experiment proveden.
 
-Zároveň bych chtěl také zmínit, že z těchto uvedených emulátorů je ZeroMate jediný který má podporu MMU, což má také do jisté míry dopad na celkovou rychlost emulace. Samozřejmě to do jisté míry potlačuje použití TLB.
+Zároveň bych chtěl také zmínit, že z těchto uvedených emulátorů má ZeroMate jako jediný podporu pro MMU, což má vzhledem k přidané režii také do jisté míry dopad na celkovou rychlost emulace.
 
 SLIDE 14
 ========
 
+Na závěr bych chtěl jenom zmínit nějaké návrhy na budoucí vylepšení, jako je například podpora pro meziprocesovou komunikaci mezi vícero instancemi ZeroMate emulátoru, což může být použito například pro emulaci principů distribuovaných algoritmů jako je například map-reduce nebo farmer-worker.
+
+Další vylepšení může být například podpora pro headless mode, tak aby se dal emulátor použít jako commandlinová utilitka například v CI/CD pipelině. 
+
 SLIDE 15
 ========
 
-A tímto bych Vám všem chtěl poděkovat za Vaši pozornost.
+A tímto bych Vám chtěl poděkovat za Vaši pozornost.
