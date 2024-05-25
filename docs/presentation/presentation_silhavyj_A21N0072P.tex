@@ -349,7 +349,7 @@
 	\end{overlayarea}
 \end{frame}
 
-\section{Technlogie}
+\section{Technologie}
 
 \subsection{Vývoj a pouižité technologie}
 
@@ -502,14 +502,21 @@
 
 \appendix
 
-\section{Otázky}
+\section{Otázky oponenta}
 
 \subsection{Otázka 1}
 
 \begin{frame}
 	\begin{block}{Otázka}
+		Byla zvažována možnost modifikace existujících emulátorů, namísto vývoje vlastního?
 	\end{block}
 	\begin{block}{Odpověď}
+		Tento přístup nebyl považován za vhodné řešení
+		\begin{itemize}
+			\item limitovaná/nestandardní podpora externích periferií
+			\item modifikace a údržba legacy \texttt{C} kódu
+			\item licenční podmínky
+		\end{itemize}
 	\end{block}
 \end{frame}
 
@@ -517,11 +524,29 @@
 
 \begin{frame}
 	\begin{block}{Otázka}
+		Jaký vliv měla implementace periférií na celkový výkon emulátoru?
+	\end{block}
+	\begin{block}{Odpověď}
+		\begin{itemize}
+			\item \texttt{R/W} instrukce $\Rightarrow$ lookup periferie dle adresy
+			\begin{itemize}
+				\item většina \texttt{R/W} instrukcí přistupuje do \texttt{RAM} $\Rightarrow$ optimalizace?
+			\end{itemize}
+			\item implementace \texttt{R/W} callbacku
+			\item \texttt{ISystem\_Clock\_Listener} 
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Otázka 3}
+
+\begin{frame}
+	\begin{block}{Otázka}
+		Jaká je rychlost emulátoru vůči
+		reálnému Raspberry Pi?
 	\end{block}
 	\begin{block}{Odpověď}
 	\end{block}
 \end{frame}
-
-
 
 \end{document}
