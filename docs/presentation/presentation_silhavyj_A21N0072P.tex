@@ -511,13 +511,18 @@
 		Byla zvažována možnost modifikace existujících emulátorů, namísto vývoje vlastního?
 	\end{block}
 	\begin{block}{Odpověď}
-		Tento přístup nebyl považován za vhodné řešení
-		\begin{itemize}
+		analýza existujících emulátorů
+		\begin{enumerate}
+			\item omezená podpora pro pokročilé systémové operace
 			\item limitovaná/nestandardní podpora externích periferií
+		\end{enumerate}
+		\vspace{0.2cm}
+		$\Rightarrow$ jejich modifikace nebyla považována za vhodné řešení
+		\begin{itemize}
 			\item modifikace a údržba legacy \texttt{C} kódu
 			\item licenční podmínky
 		\end{itemize}
-	\end{block}
+	\end{block} 
 \end{frame}
 
 \subsection{Otázka 2}
@@ -547,14 +552,15 @@
 	\end{block}
 	\begin{block}{Odpověď}
 		\begin{itemize}
-			\item exaktní experiment nebyl proveden
+			\item měření provedeno na osobním \texttt{PC}
+			\item výkonnější \texttt{PC}/server $\Rightarrow$ dosažení lepšího výsledku?
+			\item teoreticky
 			\begin{itemize}
 				\item \texttt{MIPS}(ZeroMate) $\approx$ 4.8
 				\item \texttt{MIPS}(\texttt{ARM11}) $\approx$ 740 (\href{https://www.vut.cz/www_base/zav_prace_soubor_verejne.php?file_id=16089}{\beamergotobutton{Dhrystone}})
 				\vspace{0.1cm}
 				\item $\Rightarrow$ reálný \texttt{HW} je $\approx$ 154x rychlejší
 			\end{itemize}
-			\item empirické určení průměrné hodnoty \texttt{CPI}
 		\end{itemize}
 	\end{block}
 \end{frame}
