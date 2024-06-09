@@ -116,3 +116,25 @@ SLIDE 15
 ========
 
 A tímto bych Vám chtěl poděkovat za Vaši pozornost.
+
+OPONENT 01
+==========
+
+Byla zvažována možnost modifikace existujících emulátorů, namísto vývoje vlastního?
+
+Jak již bylo zmíněno, tak analýzou existujících emulátorů jsem dospěl k závěru, že téměř většina z nich má buďto limitovanou podporu pro pokročilé systémové operace nebo nestandardní či omezenou podporu pro připojení externích periferií. Další komplikace mohou v některých případech licenční podmínky nebo také údržba celého většinou legacy "C" projektu.
+
+OPONENT 02
+==========
+
+Jaký vliv měla implementace periférií na celkový výkon emulátoru?
+
+S každou read-write instrukcí, se musí provést lookup samotné periferie, které je pak požadavek přeposlán. Tento lookup musí být časově efektivní, protože se statisticky jedná o každou druhou instrukci. To samé pak platí pro implementaci samotného callbacku jednotlivých periferií, protože se z pohledu exekuce procesoru jedná o blokující operaci. Zároveň se každá periferie může zaregistrovat jako posluchač systémového času, kde se poté její příslušný callback volá s každou vykonanou instrukcí.
+
+
+OPONENT 03
+==========
+
+Jaká je rychlost emulátoru vůči reálnému Raspberry Pi?
+
+Jak již bylo zmíněno, tak měření výkonnosti bylo provedeno na osobním počítači. V porovnání s reálním HW jehož výkon byl změřen na 740 MIPS to poté teoreticky odpovídá 154 násobného zpomalení.
