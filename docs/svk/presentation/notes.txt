@@ -1,0 +1,140 @@
+SLIDE 01
+========
+
+Dobrý den, moje jméno je Jakub Šilhavý a tímto bych Vám chtěl představit svoji diplomovou práci s názvem "Emulátor ARM procesoru za účelem emulace prostředí Raspberry Pi"
+
+SLIDE 02
+========
+
+Jak už je z názvu patrné, tak cílem bylo prozkoumat a ohodnotit existující možnosti řešení a na základě toho navrhnout a implementovat vlastní řešení, což principiálně zahrnuje dvě věci. Konkrétně se jedná o emulaci jednotlivých ARM instrukcí a také emulaci paměťově mapovaných periferií mikrokontroléru BCM2835 jako je například ARM časovač, UART rozhraní nebo GPIO piny.
+
+Mezi hlavní přínosy takovéhoto emulátoru patří kromě vzdělávacích a demonstračních účelů také testování SW v případech kdy HW není aktuálně k dispozici nebo také prototypování při návrhu komplexního systému, který se skládá z vícero HW komponent.
+
+Pro testovací a verifikační účely byl jako referenční SW použit KIV-RTOS, což je real-timeový operační systém, který byl vyvinut pro vzdělávací účely.
+
+SLIDE 03
+========
+
+Na tomto slidu je znázorněno v jakých všech oblastech lze dnes nalézt ARM architekturu. Kromě klasických osobních počítačů se především jedná o embedded zařízení jako jsou například routery, tiskárny, medicínská zařízení nebo různé typy IoT zařízení.
+
+Na pravé straně je poté možné vidět zařazení procesoru, který se nachází v Raspberry Pi Zero mezi ostatní typy ARM procesorů, včetně nových funkcionalit, které přináší oproti jeho předchůdcům jako je například technologie Jazelle, TrustZone nebo SIMD instrukce.
+
+SLIDE 04
+========
+
+Při analýze možností řešení bylo vzato v úvahu několik existujících emulátorů, které do jisté míry podporují emulaci ARM procesoru.
+
+Jedním z takovýchto řešení je například CPUlator, což je online vývojové prostředí, kde se dají zkoušet a testovat principy programování v jazyku symbolických adres. 
+
+Nicméně z pohledu plnohodnotné emulace prostředí Raspberry Pi Zero má tohle řešení několik zásadních omezení. Například zde není možné přepínat režimy procesoru nebo zde chybí podpora MMU, což je memory management unit, což v podstatě zabraňuje jakékoliv pokročilejší emulaci v podobě například real-timového OS.
+
+SLIDE 05
+========
+
+Jako další možnost se nabízí využití QEMU, které má kromě i jiných architektur již plnou podporu pro ARM procesor. Nicméně stejně jako v předchozím případě je i zde omezená podpora pro připojení externích periferií.
+
+Zároveň je zde také problém s bootovacím procesem, protože QEMU, co se týče ARM architektury, očekává _start symbol na adrese 10 tisíc hexa, což je nekompatibilní s first-stage level bootloaderem Raspberry Pi Zero, který tento symbol očekává na adrese 8 tisíc hexa. Tento problém se dá vyřešit v podstatě dvěma způsoby. Buď se udělá custom build celého QEMU, kde se tato adresa patřičně upraví nebo se v procesu buildu emulované aplikace budou brát v úvahu dva různé linker scripty, které se použijí v závislosti na tom, jestli buildíme pro fyzický HW nebo pro QEMU.
+ 
+Jako hlavní problém je zde ale hlášený problém se systémovým časovačem, který údajně v předmětu KIV/OS zabraňoval implementaci preemptivního plánovače a proto bylo cílem navrhnout emulátor, které by tyto nedostatky eliminoval a plně podporoval emulaci KIV-RTOSu.
+
+SLIDE 06
+========
+
+Na tomto slidu je shrnuta implementovaná funkcionalita navrženého emulátoru, který byl pojmenován ZeroMate.
+
+Z pohledu procesoru má ZeroMate podporu ARM instrukcí, přepínání CPU módu společně s bank registry, což je typická vlastnost ARM procesorů, aritmeticko-logickou jednotku, jednotku pro násobení a jednotku pro memory-management, pomocí které lze implementovat například stránkování. Dále je zde podpora pro koprocesory, kterých může být teoreticky až 16, ale v současné době ZeroMate podporuje pouze řídící komprocesor CP15 a koprocesor CP10, který zajišťuje vykonávání floating-point operací.
+
+Z pohledu periferií byla implementována podpora pro operační paměť, řadič přerušení, ARM časovač, generátor náhodných čísel a řadič GPIO. Co se týče komunikačních rozhraní, tak je zde podpora pro I2C protokol a Mini UART.
+
+SLIDE 07
+========
+
+Jednou z předních výhod ZeroMate je, že má definované jednotné rozhraní pro připojení externích periferií, které jsou nezávislé na toolchainu, který je použit pro sestavení jádra emulátoru. Uživatel si tím pádem může ve svém oblíbeném programovacím jazyce implementovat například modul dopravní křižovatky a pomocí konfiguračního souboru jej může připojit k GPIO pinům.
+
+SLIDE 08
+========
+
+Hlavní okno uživatelského rozhraní tvoří disassembly vstupního ELF souboru, který uživatel nahrál do emulátoru jako jeho aplikaci, což v případě KIV-RTOSu představuje samotný kernel. Jednotlivé instrukce jsou rozděleny do sekcí podle názvu funkcí tak, aby se v tom dalo snadněji orientovat a navigovat například při nastavování breakpointů.
+
+V řídícím okně emulátoru je poté možné celou emulaci spustit, pozastavit, resetovat nebo také krokovat.
+
+V levé části je možné vidět aktuální obsah všech registrů ve všech módech procesoru. Je zde také možnost přepínat mezi způsoby zobrazení pro jejich snazší interpretaci.
+
+Ve spodní části emulátoru je pak celý průběh emulace logován. Jednotlivé logy lze pak filtrovat a lze tedy tím pádem zobrazit například jenom errorové hlášky nebo jenom interrupty a tak podobně.
+
+V pravé části emulátoru jsou pak v jednotlivých záložkách vizualizace jednotlivých interních periferií jako je operační paměť RAM, GPIO piny a tak dále.
+
+Jednotlivá okna lze pomocí dockingu přeuspořádat nebo například vyjmout, takže si uživatel může celé GUI upravit, tak aby se mu s tím co nejlépe a nejefektivněji pracovalo.
+
+SLIDE 09
+========
+
+Tady jsou jenom pro ukázku uvedené příklady externích periferií, které jsou součástí finálního releasu, jako například jednoduché tlačítko, OLED displej, který je řízen pres I2C protokol, LED dioda, sedmi segmentový displej, který je řízen pomocí posuvného registru nebo také sériový UART terminál.
+
+Jako poslední externí periferie je zde logický analyzátor, který může být použit pro ladění různých typů komunikace. Na tomhle obrázku je pak zachycen jeden rámec UART komunikace.
+
+SLIDE 10
+========
+
+Celý emulátor je napsaný v C++20 a otestovaný s použitím 3 hlavních překladačů, což je Clang, GCC a MSVC.
+
+Jako build systém byl použit CMake, který pak společně s Git Submodules zajišťuje to, že si uživatel nemusí nic manuálně instalovat, protože při rekurzivním naklonování celého repozitáře se automaticky stáhnou i všechny knihovny třetích stran.
+ 
+Celý vývoj probíhal na GitHubu, kde se také uplatnili CI technologie jako je automatické spuštění regresních testů, reportování pokrytí testů, statická analýza nebo například automatické generování a nasazovaní dokumentace.
+
+SLIDE 11
+========
+
+Proces testovaní emulátoru byl rozdělen do 3 fází, které na sebe postupně navazovaly.
+
+Při vývoji samotného jádra byl kladen velký důraz na jednotkové testování za účelem včasného odchycení chyb při emulaci jednotlivých instrukcí. Tyto testy byly zároveň použity jako regresní testy v CI pipelině.
+
+BCM2835 periferie byly poté testovány pomocí sady připravených příkladů, které reflektovaly výuku v předmětu KIV/OS. Tyto příklady jsou taktéž součástí repozitáře společně s krátkým README popisem a můžou být tím pádem použity jako dema nebo ukázky toho, jak se dá daná funkcionalita například implementovat.
+
+Poslední fáze testování byla poté provedena studenty samotného předmětu, kde byl emulátor použit pro reálné testování koncovými uživateli.
+
+SLIDE 12
+========
+
+Součástí testování bylo také měření výkonu emulace jednotlivých ARM instrukcí. V tomto grafu je možné vidět jaké typy instrukcí mají největší dopad na rychlost celé emulace, což mohou být dobří kandidáti například na nějakou budoucí optimalizaci. Celkový výkon emulátor poté odpovídá orientačně čtyřem megainstrukcím za sekundu.
+
+SLIDE 13
+========
+
+Na dalším slidu je potom zobrazeno porovnání výkonnosti ZeroMate s ostatními emulátory. Nicméně tohle porovnání je čistě orientační, protože CPUlator, odkud byla data převzata, nezmiňuje nic o tom, jak byla tato data naměřena ani nic o tom, na jakém stroji byl experiment proveden.
+
+Zároveň bych chtěl také zmínit, že z těchto uvedených emulátorů má ZeroMate jako jediný podporu pro MMU, což má vzhledem k přidané režii také do jisté míry dopad na celkovou rychlost emulace.
+
+SLIDE 14
+========
+
+Na závěr bych chtěl jenom zmínit nějaké návrhy na budoucí vylepšení, jako je například podpora pro meziprocesovou komunikaci mezi vícero instancemi ZeroMate emulátoru, což může být použito například pro emulaci principů distribuovaných algoritmů jako je například map-reduce nebo farmer-worker.
+
+Další vylepšení může být například podpora pro headless mode, tak aby se dal emulátor použít jako commandlinová utilitka například v CI/CD pipelině. 
+
+SLIDE 15
+========
+
+A tímto bych Vám chtěl poděkovat za Vaši pozornost.
+
+OPONENT 01
+==========
+
+Byla zvažována možnost modifikace existujících emulátorů, namísto vývoje vlastního?
+
+Jak již bylo zmíněno, tak analýzou existujících emulátorů jsem dospěl k závěru, že téměř většina z nich má buďto limitovanou podporu pro pokročilé systémové operace nebo nestandardní či omezenou podporu pro připojení externích periferií. Další komplikace mohou v některých případech licenční podmínky nebo také údržba celého většinou legacy "C" projektu.
+
+OPONENT 02
+==========
+
+Jaký vliv měla implementace periférií na celkový výkon emulátoru?
+
+S každou read-write instrukcí, se musí provést lookup samotné periferie, které je pak požadavek přeposlán. Tento lookup musí být časově efektivní, protože se statisticky jedná o každou druhou instrukci. To samé pak platí pro implementaci samotného callbacku jednotlivých periferií, protože se z pohledu exekuce procesoru jedná o blokující operaci. Zároveň se každá periferie může zaregistrovat jako posluchač systémového času, kde se poté její příslušný callback volá s každou vykonanou instrukcí.
+
+
+OPONENT 03
+==========
+
+Jaká je rychlost emulátoru vůči reálnému Raspberry Pi?
+
+Jak již bylo zmíněno, tak měření výkonu bylo provedeno na osobním počítači, kde byl výkon emulátoru odhadnut na 4-5 megainstrukcí za sekuncu. V porovnání s reálním HW to poté teoreticky odpovídá 154 násobného zpomalení.

@@ -123,7 +123,7 @@
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{itemize}
-			\item \textbf{vhodné pro seznámení se s programování v \texttt{JSA}}
+			\item \textbf{vhodné pro seznámení se s programováním v \texttt{JSA}}
 			\begin{itemize}
 				\item vizualizace, ladění programu
 			\end{itemize}
@@ -349,7 +349,7 @@
 	\end{overlayarea}
 \end{frame}
 
-\section{Technlogie}
+\section{Technologie}
 
 \subsection{Vývoj a pouižité technologie}
 
@@ -498,30 +498,74 @@
   	\centering
   	\includegraphics[width=0.10\textwidth]{img/qr-code.pdf}
   \end{figure}
+  \small
+  \textit{Prezentováno na SVK 2024}
 \end{frame}
 
 \appendix
 
-\section{Otázky}
+\section{Otázky oponenta (Ing. Tomáš Mainzer, PhD)}
 
 \subsection{Otázka 1}
 
 \begin{frame}
 	\begin{block}{Otázka}
+		Byla zvažována možnost modifikace existujících emulátorů, namísto vývoje vlastního?
 	\end{block}
 	\begin{block}{Odpověď}
-	\end{block}
+		analýza existujících emulátorů
+		\begin{enumerate}
+			\item omezená podpora pro pokročilé systémové operace
+			\item limitovaná/nestandardní podpora externích periferií
+		\end{enumerate}
+		\vspace{-0.2cm}
+		\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+		$\Rightarrow$ jejich modifikace nebyla považována za vhodné řešení
+		\begin{itemize}
+			\item modifikace a údržba legacy \texttt{C} kódu
+			\item licenční podmínky
+		\end{itemize}
+	\end{block} 
 \end{frame}
 
 \subsection{Otázka 2}
 
 \begin{frame}
 	\begin{block}{Otázka}
+		Jaký vliv měla implementace periférií na celkový výkon emulátoru?
 	\end{block}
 	\begin{block}{Odpověď}
+		\begin{itemize}
+			\item \texttt{R/W} instrukce $\Rightarrow$ lookup periferie dle adresy
+			\begin{itemize}
+				\item většina \texttt{R/W} instrukcí přistupuje do \texttt{RAM} $\Rightarrow$ optimalizace?
+			\end{itemize}
+			\item implementace \texttt{R/W} callbacku
+			\item \texttt{ISystem\_Clock\_Listener} 
+		\end{itemize}
 	\end{block}
 \end{frame}
 
+\subsection{Otázka 3}
 
+\begin{frame}
+	\begin{block}{Otázka}
+		Jaká je rychlost emulátoru vůči
+		reálnému Raspberry Pi?
+	\end{block}
+	\begin{block}{Odpověď}
+		\begin{itemize}
+			\item měření provedeno na osobním \texttt{PC}
+			\item výkonnější \texttt{PC}/server $\Rightarrow$ dosažení lepšího výsledku?
+			\item teoreticky
+			\begin{itemize}
+				\item \texttt{MIPS}(ZeroMate) $\approx$ 4.8
+				\item \texttt{MIPS}(\texttt{ARM11}) $\approx$ 740 (\href{https://www.vut.cz/www_base/zav_prace_soubor_verejne.php?file_id=16089}{\beamergotobutton{Dhrystone}})
+				\vspace{0.1cm}
+				\item $\Rightarrow$ reálný \texttt{HW} je $\approx$ 154x rychlejší
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+\end{frame}
 
 \end{document}
