@@ -137,4 +137,4 @@ OPONENT 03
 
 Jaká je rychlost emulátoru vůči reálnému Raspberry Pi?
 
-Jak již bylo zmíněno, tak měření výkonnosti bylo provedeno na osobním počítači. V porovnání s reálním HW jehož výkon byl změřen na 740 MIPS to poté teoreticky odpovídá 154 násobného zpomalení.
+Jak již bylo zmíněno, tak měření výkonu bylo provedeno na osobním počítači, kde byl výkon emulátoru odhadnut na 4-5 megainstrukcí za sekuncu. V porovnání s reálním HW to poté teoreticky odpovídá 154 násobného zpomalení.
